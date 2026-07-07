@@ -1,0 +1,210 @@
+import {
+  boolean,
+  integer,
+  jsonb,
+  pgTable,
+  text,
+  timestamp,
+  uniqueIndex,
+  index,
+  uuid,
+  varchar,
+} from "drizzle-orm/pg-core";
+
+export const plans = pgTable("plans", {
+  id: varchar("id", { length: 32 }).primaryKey(), // free | pro | business
+  name: varchar("name", { length: 64 }).notNull(),
+  priceCents: integer("price_cents").notNull().default(0),
+  maxUsers: integer("max_users").notNull().default(3),
+  maxChannels: integer("max_channels").notNull().default(1),
+  maxContacts: integer("max_contacts").notNull().default(500),
+  maxMonthlyMessages: integer("max_monthly_messages").notNull().default(1000),
+  features: jsonb("features").$type<string[]>().notNull().default([]),
+});
+
+export const companies = pgTable("companies", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  name: varchar("name", { length: 128 }).notNull(),
+  slug: varchar("slug", { length: 64 }).notNull().unique(),
+  planId: varchar("plan_id", { length: 32 })
+    .notNull()
+    .references(() => plans.id)
+    .default("free"),
+  status: varchar("status", { length: 16 }).notNull().default("active"), // active | suspended
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const users = pgTable(
+  "users",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    name: varchar("name", { length: 128 }).notNull(),
+    email: varchar("email", { length: 255 }).notNull(),
+    passwordHash: text("password_hash").notNull(),
+    role: varchar("role", { length: 16 }).notNull().default("agent"), // admin | agent
+    isActive: boolean("is_active").notNull().default(true),
+    lastLoginAt: timestamp("last_login_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [uniqueIndex("users_email_ux").on(t.email)]
+);
+
+export const refreshTokens = pgTable(
+  "refresh_tokens",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    userId: uuid("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    tokenHash: text("token_hash").notNull(),
+    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+    revokedAt: timestamp("revoked_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("refresh_tokens_user_ix").on(t.userId)]
+);
+
+export const channels = pgTable("channels", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  companyId: uuid("company_id")
+    .notNull()
+    .references(() => companies.id, { onDelete: "cascade" }),
+  type: varchar("type", { length: 24 }).notNull(), // whatsapp | simulator
+  name: varchar("name", { length: 128 }).notNull(),
+  status: varchar("status", { length: 24 }).notNull().default("disconnected"), // connected | connecting | disconnected
+  config: jsonb("config").$type<Record<string, unknown>>().notNull().default({}),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const contacts = pgTable(
+  "contacts",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    name: varchar("name", { length: 128 }).notNull(),
+    phone: varchar("phone", { length: 32 }),
+    email: varchar("email", { length: 255 }),
+    tags: jsonb("tags").$type<string[]>().notNull().default([]),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    uniqueIndex("contacts_company_phone_ux").on(t.companyId, t.phone),
+    index("contacts_company_ix").on(t.companyId),
+  ]
+);
+
+export const conversations = pgTable(
+  "conversations",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    contactId: uuid("contact_id")
+      .notNull()
+      .references(() => contacts.id, { onDelete: "cascade" }),
+    channelId: uuid("channel_id").references(() => channels.id, { onDelete: "set null" }),
+    status: varchar("status", { length: 16 }).notNull().default("pending"), // pending | open | resolved
+    assignedUserId: uuid("assigned_user_id").references(() => users.id, {
+      onDelete: "set null",
+    }),
+    unreadCount: integer("unread_count").notNull().default(0),
+    lastMessageAt: timestamp("last_message_at", { withTimezone: true }),
+    firstResponseAt: timestamp("first_response_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    index("conversations_company_status_ix").on(t.companyId, t.status),
+    index("conversations_last_msg_ix").on(t.companyId, t.lastMessageAt),
+  ]
+);
+
+export const messages = pgTable(
+  "messages",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    conversationId: uuid("conversation_id")
+      .notNull()
+      .references(() => conversations.id, { onDelete: "cascade" }),
+    direction: varchar("direction", { length: 8 }).notNull(), // in | out
+    authorUserId: uuid("author_user_id").references(() => users.id, {
+      onDelete: "set null",
+    }),
+    contentType: varchar("content_type", { length: 16 }).notNull().default("text"),
+    body: text("body").notNull(),
+    status: varchar("status", { length: 16 }).notNull().default("sent"), // sent | delivered | read | failed
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("messages_conversation_ix").on(t.conversationId, t.createdAt)]
+);
+
+export const apiKeys = pgTable(
+  "api_keys",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    name: varchar("name", { length: 64 }).notNull(),
+    prefix: varchar("prefix", { length: 12 }).notNull(),
+    keyHash: text("key_hash").notNull(),
+    lastUsedAt: timestamp("last_used_at", { withTimezone: true }),
+    revokedAt: timestamp("revoked_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("api_keys_company_ix").on(t.companyId)]
+);
+
+export const webhooks = pgTable("webhooks", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  companyId: uuid("company_id")
+    .notNull()
+    .references(() => companies.id, { onDelete: "cascade" }),
+  url: text("url").notNull(),
+  secret: text("secret").notNull(),
+  events: jsonb("events").$type<string[]>().notNull().default([]),
+  isActive: boolean("is_active").notNull().default(true),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const webhookDeliveries = pgTable(
+  "webhook_deliveries",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    webhookId: uuid("webhook_id")
+      .notNull()
+      .references(() => webhooks.id, { onDelete: "cascade" }),
+    event: varchar("event", { length: 64 }).notNull(),
+    payload: jsonb("payload").notNull(),
+    status: varchar("status", { length: 16 }).notNull().default("pending"), // pending | success | failed
+    attempts: integer("attempts").notNull().default(0),
+    lastError: text("last_error"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("webhook_deliveries_hook_ix").on(t.webhookId, t.createdAt)]
+);
+
+export const auditLogs = pgTable(
+  "audit_logs",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    userId: uuid("user_id").references(() => users.id, { onDelete: "set null" }),
+    action: varchar("action", { length: 64 }).notNull(),
+    entity: varchar("entity", { length: 32 }).notNull(),
+    entityId: varchar("entity_id", { length: 64 }),
+    meta: jsonb("meta").$type<Record<string, unknown>>().notNull().default({}),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("audit_logs_company_ix").on(t.companyId, t.createdAt)]
+);
