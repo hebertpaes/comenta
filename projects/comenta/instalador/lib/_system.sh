@@ -38,6 +38,7 @@ system_git_clone() {
 
   sudo su - deploy <<EOF
   git clone ${link_git} /home/deploy/${instancia_add}/
+EOF
 
   sleep 2
 }
@@ -85,10 +86,8 @@ deletar_tudo() {
   
   sleep 2
 
-  sudo su - postgres
-  dropuser ${empresa_delete}
-  dropdb ${empresa_delete}
-  exit
+  sudo -u postgres dropdb ${empresa_delete}
+  sudo -u postgres dropuser ${empresa_delete}
 EOF
 
 sleep 2
@@ -186,10 +185,10 @@ sleep 2
 
   sudo su - deploy <<EOF
   cd && cd /home/deploy/${empresa_dominio}/frontend
-  sed -i "1c\REACT_APP_BACKEND_URL=https://${alter_backend_url}" .env
+  sed -i "s|^REACT_APP_BACKEND_URL=.*|REACT_APP_BACKEND_URL=https://${alter_backend_url}|" .env
   cd && cd /home/deploy/${empresa_dominio}/backend
-  sed -i "2c\BACKEND_URL=https://${alter_backend_url}" .env
-  sed -i "3c\FRONTEND_URL=https://${alter_frontend_url}" .env 
+  sed -i "s|^BACKEND_URL=.*|BACKEND_URL=https://${alter_backend_url}|" .env
+  sed -i "s|^FRONTEND_URL=.*|FRONTEND_URL=https://${alter_frontend_url}|" .env
 EOF
 
 sleep 2
@@ -248,8 +247,8 @@ EOF
 
   sleep 2
 
-  backend_domain=$(echo "${backend_url/https:\/\/}")
-  frontend_domain=$(echo "${frontend_url/https:\/\/}")
+  backend_domain=$(echo "${alter_backend_url/https:\/\/}")
+  frontend_domain=$(echo "${alter_frontend_url/https:\/\/}")
 
   sudo su - root <<EOF
   certbot -m $deploy_email \
@@ -316,7 +315,7 @@ system_docker_install() {
 
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
   
-  add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+  add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu \$(lsb_release -cs) stable"
 
   apt install -y docker-ce
 EOF
