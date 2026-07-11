@@ -57,6 +57,8 @@ if [ ! -f "$DEPLOY_DIR/.env" ]; then
   sed -i "s|^REDIS_PASSWORD=.*|REDIS_PASSWORD=$(openssl rand -hex 16)|" "$DEPLOY_DIR/.env"
   sed -i "s|^JWT_SECRET=.*|JWT_SECRET=$(gen)|"                          "$DEPLOY_DIR/.env"
   sed -i "s|^JWT_REFRESH_SECRET=.*|JWT_REFRESH_SECRET=$(gen)|"          "$DEPLOY_DIR/.env"
+  sed -i "s|^GHOST_DB_PASSWORD=.*|GHOST_DB_PASSWORD=$(openssl rand -hex 16)|" "$DEPLOY_DIR/.env"
+  sed -i "s|^GHOST_URL=.*|GHOST_URL=https://blog.$DOMAIN|"              "$DEPLOY_DIR/.env"
   echo "  .env gerado com segredos aleatórios. Edite p/ ANTHROPIC_API_KEY e NEXT_PUBLIC_WHATSAPP."
 else
   echo "  .env já existe — mantido."
@@ -82,13 +84,13 @@ nginx -t && systemctl reload nginx
 log "7/7 HTTPS (Let's Encrypt)"
 if [ "$SKIP_SSL" = "1" ]; then
   echo "  SKIP_SSL=1 — pulei o certbot. Rode depois:"
-  echo "  certbot --nginx -d $DOMAIN -d www.$DOMAIN -d app.$DOMAIN -d api.$DOMAIN"
+  echo "  certbot --nginx -d $DOMAIN -d www.$DOMAIN -d app.$DOMAIN -d api.$DOMAIN -d blog.$DOMAIN"
 elif [ -z "$EMAIL" ]; then
   echo "  EMAIL não definido — pulei o SSL. Rode:"
-  echo "  certbot --nginx -d $DOMAIN -d www.$DOMAIN -d app.$DOMAIN -d api.$DOMAIN -m SEU@EMAIL --agree-tos"
+  echo "  certbot --nginx -d $DOMAIN -d www.$DOMAIN -d app.$DOMAIN -d api.$DOMAIN -d blog.$DOMAIN -m SEU@EMAIL --agree-tos"
 else
   certbot --nginx --non-interactive --agree-tos -m "$EMAIL" \
-    -d "$DOMAIN" -d "www.$DOMAIN" -d "app.$DOMAIN" -d "api.$DOMAIN" \
+    -d "$DOMAIN" -d "www.$DOMAIN" -d "app.$DOMAIN" -d "api.$DOMAIN" -d "blog.$DOMAIN" \
     || echo "  certbot falhou (DNS já propagou p/ este servidor?). Reveja e rode manualmente."
 fi
 
@@ -97,6 +99,7 @@ cat <<EOF
   Site .... https://$DOMAIN
   Painel .. https://app.$DOMAIN
   API ..... https://api.$DOMAIN   (OpenAPI em /docs)
+  Blog .... https://blog.$DOMAIN  (Ghost — configure o admin em /ghost)
 
   Status:   cd $DEPLOY_DIR && docker compose ps
   Logs:     cd $DEPLOY_DIR && docker compose logs -f site

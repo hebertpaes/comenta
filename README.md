@@ -21,6 +21,7 @@ comenta/
 | Site + chat | `site/` | `comenta.com.br` | Landing e assistente de atendimento (IA + humano, filas, WhatsApp) |
 | API | `saas/api/` | `api.comenta.com.br` | Backend multi-tenant com IA Claude, tempo real e webhooks |
 | Painel | `saas/web/` | `app.comenta.com.br` | Interface de atendimento estilo WhatsApp |
+| Blog / CMS | Ghost (deploy) | `blog.comenta.com.br` | Blog/novidades/newsletter (Ghost 5 + MySQL) |
 | Editor de vídeo | raiz | — | Edição no navegador com FFmpeg.wasm ([docs](docs/editor.md)) |
 
 ## Desenvolvimento

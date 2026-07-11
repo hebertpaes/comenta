@@ -7,6 +7,7 @@ Repositório **único** (monorepo). Coloca **todos os produtos** no ar sob `come
 | Site / landing + chat (Next.js) | `comenta.com.br` (+ `www`) | `site/` | `site` (:3000) |
 | Painel (React/Vite) | `app.comenta.com.br` | `saas/web` | `panel` (:8080) |
 | API (Fastify + Postgres + Redis) | `api.comenta.com.br` | `saas/api` | `api` (:4000) |
+| Blog / CMS (Ghost + MySQL) | `blog.comenta.com.br` | imagem oficial | `ghost` (:2368) |
 
 Os serviços escutam só em `127.0.0.1`; o **Nginx do host** (com TLS via Let's Encrypt) publica os domínios.
 
@@ -30,7 +31,7 @@ enquanto o DNS não propagou.
 ## Passo a passo
 
 ### 1. DNS
-Registros **A** para o IP do VPS: `@`, `www`, `app`, `api`.
+Registros **A** para o IP do VPS: `@`, `www`, `app`, `api`, `blog`.
 
 ### 2. Pré-requisitos no VPS
 ```bash
