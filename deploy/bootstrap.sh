@@ -29,6 +29,26 @@ log(){ printf "\n\033[1;36m==> %s\033[0m\n" "$*"; }
 die(){ printf "\n\033[1;31mERRO: %s\033[0m\n" "$*" >&2; exit 1; }
 [ "$(id -u)" = "0" ] || die "rode como root (use sudo)."
 
+log "0/7 Swap (evita OOM do MySQL/Ghost em VM pequena)"
+# VMs Azure sobem sem swap. Com pouca RAM, o MySQL 8 (ghost-db) é morto
+# pelo OOM killer e fica 'unhealthy'. Cria 2G de swap se não houver.
+if [ "$(swapon --show --noheadings 2>/dev/null | wc -l)" = "0" ]; then
+  MEM_MB=$(awk '/MemTotal/{print int($2/1024)}' /proc/meminfo 2>/dev/null || echo 0)
+  if [ "${MEM_MB:-0}" -lt 4096 ]; then
+    if fallocate -l 2G /swapfile 2>/dev/null || dd if=/dev/zero of=/swapfile bs=1M count=2048 2>/dev/null; then
+      chmod 600 /swapfile && mkswap /swapfile >/dev/null 2>&1 && swapon /swapfile || true
+      grep -q '^/swapfile' /etc/fstab 2>/dev/null || echo '/swapfile none swap sw 0 0' >> /etc/fstab
+      echo "  swap de 2G ativado (RAM detectada: ${MEM_MB}MB)."
+    else
+      echo "  aviso: não consegui criar swapfile (disco cheio?). Seguindo mesmo assim."
+    fi
+  else
+    echo "  RAM suficiente (${MEM_MB}MB) — swap não é necessário."
+  fi
+else
+  echo "  swap já ativo — mantido."
+fi
+
 log "1/7 Dependências (Docker, Nginx, Certbot)"
 export DEBIAN_FRONTEND=noninteractive
 command -v docker >/dev/null 2>&1 || curl -fsSL https://get.docker.com | sh

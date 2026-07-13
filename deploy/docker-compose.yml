@@ -96,7 +96,14 @@ services:
   ghost-db:
     image: mysql:8
     restart: always
-    command: ["--default-authentication-plugin=mysql_native_password"]
+    # Flags enxutas para caber em VMs pequenas (buffer pool reduzido,
+    # performance_schema desligado) e auth compatível com Ghost 5.
+    command:
+      - "--default-authentication-plugin=mysql_native_password"
+      - "--innodb-buffer-pool-size=128M"
+      - "--performance-schema=OFF"
+      - "--skip-log-bin"
+      - "--max-connections=50"
     environment:
       MYSQL_ROOT_PASSWORD: ${GHOST_DB_PASSWORD:?defina GHOST_DB_PASSWORD no .env}
       MYSQL_DATABASE: ghost
@@ -108,7 +115,10 @@ services:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${GHOST_DB_PASSWORD}"]
       interval: 10s
       timeout: 5s
-      retries: 10
+      retries: 20
+      # Primeira inicialização do MySQL 8 (criação do datadir) pode
+      # demorar bastante em VM pequena — não conte esse tempo como falha.
+      start_period: 120s
 
   # Ghost (CMS/blog) — blog.comenta.com.br — porta 2368
   ghost:
