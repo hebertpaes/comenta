@@ -9,3 +9,9 @@ public/ffmpeg
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Segredos de deploy (nunca versionar)
+.env
+deploy/.env
+**/.env
+!**/.env.example

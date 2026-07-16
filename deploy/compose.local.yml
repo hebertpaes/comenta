@@ -1,0 +1,24 @@
+# =============================================================
+# Override para rodar TUDO localmente (Mac/PC) — só localhost.
+# Uso (via deploy/local-mac.sh, que já injeta estes -f):
+#   docker compose -f docker-compose.yml -f compose.local.yml up -d --build
+#
+# Ele troca os domínios de produção (comenta.com.br) por localhost,
+# ajusta o CORS pro painel local e aponta o Ghost pra porta local.
+# NÃO é carregado no deploy da VPS (o bootstrap usa só o compose base).
+# =============================================================
+services:
+  api:
+    environment:
+      APP_URL: http://localhost:8080
+      API_URL: http://localhost:4000
+      CORS_ORIGINS: http://localhost:8080
+
+  site:
+    environment:
+      # Site chama a API/painel por localhost quando rodando na sua máquina.
+      NEXT_PUBLIC_WHATSAPP: ${NEXT_PUBLIC_WHATSAPP:-5566999999999}
+
+  ghost:
+    environment:
+      url: http://localhost:2368
