@@ -19,8 +19,7 @@ cd "$(dirname "$0")"
 info(){ printf "\n\033[1;36m==> %s\033[0m\n" "$*"; }
 die(){ printf "\n\033[1;31mERRO: %s\033[0m\n" "$*" >&2; exit 1; }
 
-command -v docker >/dev/null 2>&1 || die "Docker Desktop não encontrado. Instale: https://www.docker.com/products/docker-desktop/"
-docker info >/dev/null 2>&1 || die "O Docker não está rodando. Abra o Docker Desktop, espere ficar verde e rode de novo."
+# (a checagem do Docker acontece depois de gerar o .env — ver abaixo)
 
 # ---- 1) .env com segredos aleatórios (só na 1ª vez) ----
 if [ ! -f .env ]; then
@@ -50,6 +49,10 @@ EOF
 else
   echo "  .env já existe — mantido."
 fi
+
+# ---- A partir daqui o Docker precisa estar rodando ----
+command -v docker >/dev/null 2>&1 || die "Docker Desktop não encontrado. Instale: https://www.docker.com/products/docker-desktop/"
+docker info >/dev/null 2>&1 || die "O Docker não está rodando. Abra o Docker Desktop, espere ficar verde e rode de novo (o .env já foi criado)."
 
 # ---- 2) Build do painel (Vite) dentro de um container node ----
 info "Buildando o painel (sem precisar de Node no seu Mac)"
