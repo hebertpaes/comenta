@@ -92,9 +92,10 @@ services:
     ports:
       - "127.0.0.1:8080:80"
 
-  # Banco do Ghost (Ghost 5 exige MySQL 8)
+  # Banco do Ghost (Ghost 5 exige MySQL 8). Fixado em 8.0: o 8.4 removeu
+  # a flag --default-authentication-plugin e aborta o boot.
   ghost-db:
-    image: mysql:8
+    image: mysql:8.0
     restart: always
     # Flags enxutas para caber em VMs pequenas (buffer pool reduzido,
     # performance_schema desligado) e auth compatível com Ghost 5.

@@ -3,7 +3,8 @@ FROM node:22-alpine
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install --omit=dev --no-audit --no-fund
+# Inclui devDependencies: o start usa tsx e drizzle-kit (migração/seed) em runtime.
+RUN npm install --no-audit --no-fund
 
 COPY tsconfig.json drizzle.config.ts ./
 COPY src ./src
