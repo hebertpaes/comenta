@@ -15,3 +15,7 @@ yarn-error.log*
 deploy/.env
 **/.env
 !**/.env.example
+
+# Redis dump local
+dump.rdb
+**/dump.rdb
