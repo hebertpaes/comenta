@@ -48,6 +48,8 @@ function verifyToken(conversationId: string, token: string): boolean {
 const StartBody = z.object({
   name: z.string().min(1).max(80).optional(),
   team: z.string().min(1).max(40).optional(),
+  // WhatsApp obrigatório: só dígitos (com DDI+DDD), 10 a 15.
+  phone: z.string().regex(/^\+?\d{10,15}$/, "informe um WhatsApp válido (com DDD)"),
   message: z.string().max(2000).optional(),
 });
 const MsgBody = z.object({
@@ -64,13 +66,21 @@ const PollQuery = z.object({
 export async function widgetRoutes(app: FastifyInstance) {
   // Inicia um atendimento humano a partir do site.
   app.post("/widget/start", async (req, reply) => {
-    const { name, team, message } = parse(StartBody, req.body);
+    const { name, team, phone, message } = parse(StartBody, req.body);
     const companyId = await widgetCompanyId();
+    const digits = phone.replace(/\D/g, "");
 
-    const [contact] = await db
-      .insert(schema.contacts)
-      .values({ companyId, name: name?.trim() || "Visitante do site", tags: team ? [team] : [] })
-      .returning();
+    // Reusa o contato pelo WhatsApp (índice único company+phone) ou cria.
+    let [contact] = await db
+      .select()
+      .from(schema.contacts)
+      .where(and(eq(schema.contacts.companyId, companyId), eq(schema.contacts.phone, digits)));
+    if (!contact) {
+      [contact] = await db
+        .insert(schema.contacts)
+        .values({ companyId, name: name?.trim() || "Visitante do site", phone: digits, tags: team ? [team] : [] })
+        .returning();
+    }
 
     const [conv] = await db
       .insert(schema.conversations)

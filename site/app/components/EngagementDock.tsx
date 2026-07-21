@@ -12,7 +12,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
 type Consent = "unknown" | "accepted" | "declined";
-type Phase = "inicio" | "fila" | "agent";
+type Phase = "inicio" | "fila" | "contato" | "agent";
 type Modo = "ia" | "humano" | null;
 type From = "bot" | "user" | "agent" | "system";
 type Fila = { id: string; nome: string; emoji: string; online: number };
@@ -58,12 +58,12 @@ function botAnswer(key: string): Msg {
 }
 
 // ---- chamadas ao widget público da API ----
-async function waStart(team: string): Promise<{ conversationId: string; token: string } | null> {
+async function waStart(team: string, name: string, phone: string): Promise<{ conversationId: string; token: string } | null> {
   try {
     const r = await fetch(`${API_URL}/widget/start`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: "Visitante do site", team }),
+      body: JSON.stringify({ name: name || "Visitante do site", team, phone }),
     });
     if (!r.ok) return null;
     return await r.json();
@@ -100,6 +100,12 @@ export default function EngagementDock() {
   const [fila, setFila] = useState<Fila | null>(null);
   const [agent, setAgent] = useState<string | null>(null);
   const [resolveTeam, setResolveTeam] = useState<string | null>(null); // aguardando "resolveu? sim/não"
+
+  // coleta de contato antes da fila humana (WhatsApp obrigatório)
+  const [pendingTeam, setPendingTeam] = useState<Fila | null>(null);
+  const [leadName, setLeadName] = useState("");
+  const [leadPhone, setLeadPhone] = useState("");
+  const [leadErr, setLeadErr] = useState("");
 
   // conversa real (fila humana)
   const [conv, setConv] = useState<{ conversationId: string; token: string } | null>(null);
@@ -198,7 +204,7 @@ export default function EngagementDock() {
     setResolveTeam(null);
     const f = FILAS_HUMANAS.find((x) => x.id === team) || FILAS_HUMANAS[0];
     say({ id: nid(), from: "agent", author: "Assistente IA", text: `Sem problema — vou te transferir para o time de ${f.nome}. 👇` }, 600, "Assistente IA");
-    later(() => entrarTime(f), 1200);
+    later(() => pedirContato(f), 1200);
   };
 
   const pedirFilaHumana = () => {
@@ -206,24 +212,37 @@ export default function EngagementDock() {
     say({ id: nid(), from: "bot", text: `Certo! Temos ${TOTAL_HUMANOS} atendentes humanos online. Com qual time você quer falar?` }, 500);
   };
 
-  // ---- FILA HUMANA: transfere para o sistema (conversa real) ----
-  const entrarTime = async (f: Fila) => {
+  // ---- FILA HUMANA: 1) coleta o WhatsApp (obrigatório), 2) abre a conversa ----
+  const pedirContato = (f: Fila) => {
     clearTimers();
-    setFila(f); setModo("humano"); setAgent(null); setPhase("agent");
+    setFila(f); setPendingTeam(f); setLeadErr(""); setPhase("contato");
+  };
+  const iniciarAtendimento = async () => {
+    const f = pendingTeam;
+    if (!f) return;
+    const digits = leadPhone.replace(/\D/g, "");
+    if (digits.length < 10 || digits.length > 15) {
+      setLeadErr("Informe um WhatsApp válido com DDD (ex.: 66 99999-8888).");
+      return;
+    }
+    setLeadErr("");
+    setModo("humano"); setAgent(null); setPhase("agent");
     agentJoinedRef.current = false; lastTsRef.current = null;
     addMsg({ id: nid(), from: "system", text: `Transferindo para o time de ${f.nome} ${f.emoji}…` });
-    const c = await waStart(f.id);
+    const c = await waStart(f.id, leadName, digits);
     if (!c) {
-      addMsg({ id: nid(), from: "system", text: "Não consegui abrir o atendimento agora. Tente novamente em instantes." });
+      addMsg({ id: nid(), from: "system", text: "Não consegui abrir o atendimento agora. Confira o número e tente de novo." });
+      setPhase("contato");
       return;
     }
     setConv(c);
-    addMsg({ id: nid(), from: "system", text: `Você está na fila de ${f.nome}. Um atendente vai te responder aqui mesmo. 💬` });
+    addMsg({ id: nid(), from: "system", text: `Recebemos seu WhatsApp (${digits}). Você entrou na fila de ${f.nome}; um atendente responde aqui e pode te chamar no WhatsApp. 💬` });
   };
 
   const encerrar = () => {
     clearTimers();
     setConv(null); agentJoinedRef.current = false; lastTsRef.current = null;
+    setPendingTeam(null); setLeadPhone(""); setLeadName(""); setLeadErr("");
     addMsg({ id: nid(), from: "system", text: "Atendimento encerrado ✅ Obrigado pelo contato!" });
     setPhase("inicio"); setModo(null); setFila(null); setAgent(null);
     say({ id: nid(), from: "bot", text: "Precisa de mais alguma coisa? Quer falar com a IA ou com um humano?" }, 700);
@@ -329,12 +348,41 @@ export default function EngagementDock() {
                 {phase === "fila" && !typing && (
                   <div className="flex flex-col gap-2">
                     {FILAS_HUMANAS.map((f) => (
-                      <button key={f.id} onClick={() => entrarTime(f)} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-left text-sm font-medium text-slate-700 transition hover:border-fuchsia-300 hover:bg-fuchsia-50">
+                      <button key={f.id} onClick={() => pedirContato(f)} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-left text-sm font-medium text-slate-700 transition hover:border-fuchsia-300 hover:bg-fuchsia-50">
                         <span className="text-lg">{f.emoji}</span> {f.nome}
                         <span className="ml-auto text-xs text-slate-400">{f.online} online</span>
                       </button>
                     ))}
                   </div>
+                )}
+
+                {/* coleta de contato — WhatsApp obrigatório antes de entrar na fila */}
+                {phase === "contato" && pendingTeam && (
+                  <form
+                    onSubmit={(e) => { e.preventDefault(); iniciarAtendimento(); }}
+                    className="rounded-2xl border border-fuchsia-200 bg-white p-4"
+                  >
+                    <div className="text-sm font-semibold text-slate-800">Falar com {pendingTeam.nome} {pendingTeam.emoji}</div>
+                    <div className="mt-0.5 text-xs text-slate-500">Informe seu WhatsApp para o atendente falar com você.</div>
+                    <input
+                      value={leadName}
+                      onChange={(e) => setLeadName(e.target.value)}
+                      placeholder="Seu nome (opcional)"
+                      className="mt-3 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-fuchsia-400 focus:outline-none"
+                    />
+                    <input
+                      value={leadPhone}
+                      onChange={(e) => setLeadPhone(e.target.value)}
+                      inputMode="tel"
+                      placeholder="WhatsApp com DDD (ex.: 66 99999-8888)"
+                      className="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-fuchsia-400 focus:outline-none"
+                      required
+                    />
+                    {leadErr && <div className="mt-1 text-xs font-medium text-red-500">{leadErr}</div>}
+                    <button type="submit" className="mt-3 w-full rounded-full bg-gradient-to-r from-fuchsia-600 to-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+                      Iniciar atendimento
+                    </button>
+                  </form>
                 )}
 
                 {/* aguardando atendente entrar (fila humana) */}
@@ -379,7 +427,7 @@ export default function EngagementDock() {
                 {phase === "agent" && modo === "humano" && (
                   <button onClick={encerrar} className="qr">Encerrar atendimento</button>
                 )}
-                {phase === "fila" && (<button onClick={encerrar} className="qr">Cancelar</button>)}
+                {(phase === "fila" || phase === "contato") && (<button onClick={encerrar} className="qr">Cancelar</button>)}
               </div>
 
               <form onSubmit={(e) => { e.preventDefault(); send(input); }} className="flex gap-2 bg-white p-3">

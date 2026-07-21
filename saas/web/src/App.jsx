@@ -208,7 +208,19 @@ function Conversations() {
           {!detail && <p className="muted">Selecione uma conversa</p>}
           {detail && (
             <>
-              <div style={{ fontWeight: 600, marginBottom: 8 }}>{detail.contact?.name}</div>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                <span style={{ fontWeight: 600 }}>{detail.contact?.name}</span>
+                {detail.contact?.phone && (
+                  <>
+                    <span className="muted" style={{ fontSize: 13 }}>📱 {detail.contact.phone}</span>
+                    <a
+                      href={`https://wa.me/${detail.contact.phone.replace(/\D/g, "")}`}
+                      target="_blank" rel="noopener noreferrer"
+                      style={{ marginLeft: "auto", background: "#22c55e", color: "#fff", padding: "4px 10px", borderRadius: 999, fontSize: 12, fontWeight: 600, textDecoration: "none" }}
+                    >💬 WhatsApp</a>
+                  </>
+                )}
+              </div>
               <AiPanel conversationId={detail.id} />
               <div className="msgs">
                 {(detail.messages || []).map((msg) => (
