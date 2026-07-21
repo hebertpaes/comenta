@@ -12,7 +12,8 @@ services:
     environment:
       APP_URL: http://localhost:8080
       API_URL: http://localhost:4000
-      CORS_ORIGINS: http://localhost:8080
+      # painel (8080) + site/widget (3000)
+      CORS_ORIGINS: http://localhost:8080,http://localhost:3000
 
   site:
     # Embute as URLs locais no build do site (os links "Entrar"/"Começar

@@ -3,33 +3,43 @@
 // EngagementDock — consentimento (LGPD) + DUAS filas de atendimento.
 //  1. 1ª visita: banner de cookies/termos. Ao ACEITAR, o assistente abre
 //     sozinho e pergunta: falar com a IA ou com um humano?
-//  2. FILA DA IA (✨): atendida na hora pela IA, que resolve dúvidas comuns
-//     (planos, IA, começar) e pode encaminhar a um humano.
-//  3. FILA HUMANA: escolhe o time (Suporte/Vendas/Financeiro/Marketing),
-//     entra na fila com posição/tempo e um dos vários atendentes assume.
-//  A qualquer momento dá pra continuar no WhatsApp.
+//  2. FILA DA IA (✨): atendida na hora pela IA, que resolve dúvidas comuns.
+//  3. FILA HUMANA: escolhe o time (Suporte/Vendas/Financeiro/Marketing) e a
+//     conversa é TRANSFERIDA para dentro do sistema — vira um atendimento real
+//     no painel, e a resposta do atendente aparece AQUI no próprio chat do site
+//     (nada de sair para o WhatsApp).
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
 type Consent = "unknown" | "accepted" | "declined";
-type Phase = "inicio" | "fila" | "queue" | "agent";
+type Phase = "inicio" | "fila" | "agent";
 type Modo = "ia" | "humano" | null;
 type From = "bot" | "user" | "agent" | "system";
-type Fila = { id: string; nome: string; emoji: string; agents: string[] };
+type Fila = { id: string; nome: string; emoji: string; online: number };
 type Msg = { id: number; from: From; text: string; author?: string; cta?: { label: string; href: string } };
 
 const STORAGE_KEY = "comenta_consent";
-const WA_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || "5566999999999";
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.comenta.com.br";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.comenta.com.br";
 
-const FILA_IA: Fila = { id: "ia", nome: "Atendimento IA", emoji: "✨", agents: ["Assistente IA"] };
 const FILAS_HUMANAS: Fila[] = [
-  { id: "suporte", nome: "Suporte", emoji: "🛟", agents: ["Camila", "Diego"] },
-  { id: "vendas", nome: "Vendas", emoji: "💼", agents: ["Priscila", "Marcos"] },
-  { id: "financeiro", nome: "Financeiro", emoji: "💳", agents: ["Rafaela"] },
-  { id: "marketing", nome: "Marketing", emoji: "📣", agents: ["Letícia", "Bruno"] },
+  { id: "Suporte", nome: "Suporte", emoji: "🛟", online: 2 },
+  { id: "Vendas", nome: "Vendas", emoji: "💼", online: 2 },
+  { id: "Financeiro", nome: "Financeiro", emoji: "💳", online: 1 },
+  { id: "Marketing", nome: "Marketing", emoji: "📣", online: 2 },
 ];
-const TOTAL_HUMANOS = FILAS_HUMANAS.reduce((n, f) => n + f.agents.length, 0);
+const TOTAL_HUMANOS = FILAS_HUMANAS.reduce((n, f) => n + f.online, 0);
+
+// Fluxo de RESOLUÇÃO (self-service): tópicos que a IA tenta resolver sozinha.
+// Cada um mapeia para o time humano usado só se o visitante disser que NÃO
+// resolveu. Funciona sem chave de IA (respostas guiadas).
+type Topico = { key: string; label: string; team: string; steps: string };
+const RESOLUCOES: Topico[] = [
+  { key: "planos", label: "Dúvida sobre planos 💳", team: "Vendas", steps: "Temos 3 planos: Free (R$0, sem cartão), Pro (R$99/mês — todos os canais + IA completa) e Business (R$299/mês — multi-tenant, API, SLA). Dá pra começar no Free e migrar quando quiser." },
+  { key: "tecnico", label: "Suporte técnico 🛠️", team: "Suporte", steps: "Para a maioria dos casos: 1) atualize a página; 2) confira sua conexão; 3) saia e entre de novo no painel. Se for em um canal (ex.: WhatsApp), reconecte-o em Conexões." },
+  { key: "financeiro", label: "Financeiro / pagamento 💰", team: "Financeiro", steps: "Faturas, 2ª via, troca de cartão e upgrade/downgrade ficam no painel em Configurações › Cobrança." },
+  { key: "comecar", label: "Quero começar 🚀", team: "Vendas", steps: "É rápido: crie sua conta no painel (sem cartão), conecte um canal e já comece a atender com a IA sugerindo as respostas." },
+];
 
 let _id = 1;
 const nid = () => _id++;
@@ -43,12 +53,38 @@ function botAnswer(key: string): Msg {
     case "comecar":
       return { id: nid(), from: "agent", author: "Assistente IA", text: "É só criar sua conta no painel — sem cartão de crédito. 🚀", cta: { label: "Criar conta grátis", href: APP_URL } };
     default:
-      return { id: nid(), from: "agent", author: "Assistente IA", text: "Posso ajudar com planos, como a IA funciona ou te passar para um humano. O que prefere?" };
+      return { id: nid(), from: "agent", author: "Assistente IA", text: "Posso ajudar com planos, como a IA funciona ou te transferir para um humano. O que prefere?" };
   }
 }
 
-function waLink(contexto: string) {
-  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`Olá! Vim do site do Comenta e gostaria de falar sobre: ${contexto}`)}`;
+// ---- chamadas ao widget público da API ----
+async function waStart(team: string): Promise<{ conversationId: string; token: string } | null> {
+  try {
+    const r = await fetch(`${API_URL}/widget/start`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: "Visitante do site", team }),
+    });
+    if (!r.ok) return null;
+    return await r.json();
+  } catch { return null; }
+}
+async function waSend(conversationId: string, token: string, body: string) {
+  try {
+    await fetch(`${API_URL}/widget/message`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ conversationId, token, body }),
+    });
+  } catch {}
+}
+async function waPoll(conversationId: string, token: string, after: string | null) {
+  try {
+    const qs = new URLSearchParams({ conversationId, token, ...(after ? { after } : {}) });
+    const r = await fetch(`${API_URL}/widget/messages?${qs.toString()}`);
+    if (!r.ok) return [];
+    return (await r.json()).data as Array<{ id: string; direction: string; body: string; createdAt: string; author: string | null }>;
+  } catch { return []; }
 }
 
 export default function EngagementDock() {
@@ -63,7 +99,12 @@ export default function EngagementDock() {
   const [modo, setModo] = useState<Modo>(null);
   const [fila, setFila] = useState<Fila | null>(null);
   const [agent, setAgent] = useState<string | null>(null);
-  const [queuePos, setQueuePos] = useState(0);
+  const [resolveTeam, setResolveTeam] = useState<string | null>(null); // aguardando "resolveu? sim/não"
+
+  // conversa real (fila humana)
+  const [conv, setConv] = useState<{ conversationId: string; token: string } | null>(null);
+  const lastTsRef = useRef<string | null>(null);
+  const agentJoinedRef = useRef(false);
 
   const greeted = useRef(false);
   const timers = useRef<number[]>([]);
@@ -83,18 +124,43 @@ export default function EngagementDock() {
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages, typing, open, phase]);
 
+  const addMsg = (m: Msg) => setMessages((prev) => [...prev, m]);
+  const say = useCallback((m: Msg, delay = 700, author?: string) => {
+    setTyping({ author: author ?? m.author ?? "Assistente" });
+    later(() => { setTyping(false); addMsg(m); }, delay);
+  }, []);
+
+  // ---- polling das respostas do atendente (fila humana) ----
+  useEffect(() => {
+    if (!conv) return;
+    let alive = true;
+    const tick = async () => {
+      const msgs = await waPoll(conv.conversationId, conv.token, lastTsRef.current);
+      if (!alive) return;
+      for (const sm of msgs) {
+        lastTsRef.current = sm.createdAt;
+        if (sm.direction === "out") {
+          const nome = sm.author || "Atendente";
+          if (!agentJoinedRef.current) {
+            agentJoinedRef.current = true;
+            setAgent(nome);
+            addMsg({ id: nid(), from: "system", text: `${nome} assumiu o seu atendimento.` });
+          }
+          addMsg({ id: nid(), from: "agent", author: nome, text: sm.body });
+        }
+      }
+    };
+    tick();
+    const iv = window.setInterval(tick, 3000);
+    return () => { alive = false; clearInterval(iv); };
+  }, [conv]);
+
   const persist = (v: Consent) => {
     try {
       localStorage.setItem(STORAGE_KEY, v);
       document.cookie = `${STORAGE_KEY}=${v}; max-age=31536000; path=/; SameSite=Lax`;
     } catch {}
   };
-
-  const addMsg = (m: Msg) => setMessages((prev) => [...prev, m]);
-  const say = useCallback((m: Msg, delay = 700, author?: string) => {
-    setTyping({ author: author ?? m.author ?? "Assistente" });
-    later(() => { setTyping(false); addMsg(m); }, delay);
-  }, []);
 
   const startConversation = useCallback(() => {
     if (greeted.current) return;
@@ -107,49 +173,57 @@ export default function EngagementDock() {
   const accept = () => { persist("accepted"); setConsent("accepted"); later(startConversation, 800); };
   const decline = () => { persist("declined"); setConsent("declined"); };
 
-  // ---- entra numa fila (IA ou humana) ----
-  const entrarNaFila = (f: Fila, m: Modo, instant = false) => {
+  // ---- FILA IA + FLUXO DE RESOLUÇÃO (self-service) ----
+  const falarComIA = () => {
     clearTimers();
-    setFila(f); setModo(m); setPhase("queue");
-    const pos = instant ? 1 : 1 + Math.floor(Math.random() * 3);
-    setQueuePos(pos);
-    addMsg({ id: nid(), from: "system", text: `Você entrou na fila de ${f.nome} ${f.emoji} — ${f.agents.length} atendente(s).` });
-    const stepMs = instant ? 800 : 1600;
-    const step = (p: number) => {
-      if (p <= 0) {
-        const nome = f.agents[Math.floor(Math.random() * f.agents.length)];
-        setAgent(nome); setPhase("agent");
-        addMsg({ id: nid(), from: "system", text: `${nome} assumiu o seu atendimento.` });
-        const greet = m === "ia"
-          ? { id: nid(), from: "agent" as From, author: nome, text: `Oi! Sou o ${nome} ✨. Posso resolver por aqui: me pergunte sobre planos, a IA ou como começar.` }
-          : { id: nid(), from: "agent" as From, author: nome, text: `Oi! Aqui é ${nome}, do time de ${f.nome}. 👋 Como posso te ajudar?` };
-        say(greet, 900, nome);
-        return;
-      }
-      setQueuePos(p);
-      later(() => step(p - 1), stepMs);
-    };
-    later(() => step(pos - 1), stepMs);
+    setModo("ia"); setFila(null); setAgent("Assistente IA"); setPhase("agent"); setResolveTeam(null);
+    addMsg({ id: nid(), from: "system", text: "Você entrou na fila de Atendimento IA ✨." });
+    say({ id: nid(), from: "agent", author: "Assistente IA", text: "Oi! Sou o Assistente IA ✨. Vou tentar resolver aqui mesmo. Sobre o que é? Escolha um tópico ou escreva sua dúvida." }, 800, "Assistente IA");
   };
 
-  const falarComIA = () => entrarNaFila(FILA_IA, "ia", true);
+  // Tenta resolver o tópico e, depois, pergunta se resolveu.
+  const resolver = (t: Topico) => {
+    setResolveTeam(null);
+    addMsg({ id: nid(), from: "user", text: t.label });
+    say({ id: nid(), from: "agent", author: "Assistente IA", text: t.steps }, 800, "Assistente IA");
+    later(() => { addMsg({ id: nid(), from: "system", text: "Isso resolveu sua dúvida?" }); setResolveTeam(t.team); }, 1600);
+  };
+  const marcarResolvido = () => {
+    setResolveTeam(null);
+    addMsg({ id: nid(), from: "system", text: "Perfeito, atendimento resolvido ✅" });
+    say({ id: nid(), from: "agent", author: "Assistente IA", text: "Que bom que ajudei! 🎉 Precisa de mais alguma coisa?" }, 700, "Assistente IA");
+  };
+  const naoResolvido = () => {
+    const team = resolveTeam || "Suporte";
+    setResolveTeam(null);
+    const f = FILAS_HUMANAS.find((x) => x.id === team) || FILAS_HUMANAS[0];
+    say({ id: nid(), from: "agent", author: "Assistente IA", text: `Sem problema — vou te transferir para o time de ${f.nome}. 👇` }, 600, "Assistente IA");
+    later(() => entrarTime(f), 1200);
+  };
+
   const pedirFilaHumana = () => {
     setPhase("fila");
     say({ id: nid(), from: "bot", text: `Certo! Temos ${TOTAL_HUMANOS} atendentes humanos online. Com qual time você quer falar?` }, 500);
   };
 
-  const respostaAgente = (nome: string, fnome: string): Msg => {
-    const opts = [
-      "Perfeito, já estou verificando isso pra você. 🙌",
-      "Entendi! Consigo resolver por aqui mesmo. Me dá 1 minutinho?",
-      "Boa pergunta — vou te explicar certinho.",
-      `Se preferir, posso continuar com você no WhatsApp do time de ${fnome}.`,
-    ];
-    return { id: nid(), from: "agent", author: nome, text: opts[Math.floor(Math.random() * opts.length)] };
+  // ---- FILA HUMANA: transfere para o sistema (conversa real) ----
+  const entrarTime = async (f: Fila) => {
+    clearTimers();
+    setFila(f); setModo("humano"); setAgent(null); setPhase("agent");
+    agentJoinedRef.current = false; lastTsRef.current = null;
+    addMsg({ id: nid(), from: "system", text: `Transferindo para o time de ${f.nome} ${f.emoji}…` });
+    const c = await waStart(f.id);
+    if (!c) {
+      addMsg({ id: nid(), from: "system", text: "Não consegui abrir o atendimento agora. Tente novamente em instantes." });
+      return;
+    }
+    setConv(c);
+    addMsg({ id: nid(), from: "system", text: `Você está na fila de ${f.nome}. Um atendente vai te responder aqui mesmo. 💬` });
   };
 
   const encerrar = () => {
     clearTimers();
+    setConv(null); agentJoinedRef.current = false; lastTsRef.current = null;
     addMsg({ id: nid(), from: "system", text: "Atendimento encerrado ✅ Obrigado pelo contato!" });
     setPhase("inicio"); setModo(null); setFila(null); setAgent(null);
     say({ id: nid(), from: "bot", text: "Precisa de mais alguma coisa? Quer falar com a IA ou com um humano?" }, 700);
@@ -160,7 +234,7 @@ export default function EngagementDock() {
     if (/plano|preç|preco|valor/.test(l)) say(botAnswer("planos"), 700);
     else if (/\bia\b|intelig|claude|autom/.test(l)) say(botAnswer("ia"), 700);
     else if (/começ|comec|cadastr|conta|grátis|gratis/.test(l)) say(botAnswer("comecar"), 700);
-    else say({ id: nid(), from: "agent", author: "Assistente IA", text: "Consigo te ajudar com isso ou posso chamar um atendente humano. Quer falar com o time?" }, 700);
+    else say({ id: nid(), from: "agent", author: "Assistente IA", text: "Consigo te ajudar com isso ou posso te transferir para um atendente humano. Quer falar com o time?" }, 700);
   };
 
   const send = (text: string) => {
@@ -168,17 +242,24 @@ export default function EngagementDock() {
     if (!t) return;
     addMsg({ id: nid(), from: "user", text: t });
     setInput("");
-    if (phase === "agent" && modo === "humano" && agent && fila) say(respostaAgente(agent, fila.nome), 900, agent);
-    else respIA(t); // IA responde na fila da IA e antes de escolher
+    if (modo === "humano" && conv) {
+      waSend(conv.conversationId, conv.token, t); // vai para o painel; resposta volta pelo polling
+    } else {
+      respIA(t);
+    }
   };
 
   if (!ready) return null;
 
-  const headerTitle = phase === "agent" && agent ? agent : phase === "queue" && fila ? `Na fila · ${fila.nome}` : "Assistente Comenta";
+  const headerTitle =
+    phase === "agent" && modo === "humano" && agent ? agent :
+    phase === "agent" && modo === "humano" ? "Aguardando atendente" :
+    phase === "agent" && modo === "ia" ? "Assistente IA" :
+    "Assistente Comenta";
   const headerSub =
     phase === "agent" && modo === "ia" ? "Atendimento IA" :
-    phase === "agent" && fila ? `Atendente · ${fila.nome}` :
-    phase === "queue" ? `Posição ${queuePos} · aguarde` :
+    phase === "agent" && modo === "humano" && agent ? `Atendente · ${fila?.nome ?? ""}` :
+    phase === "agent" && modo === "humano" ? `Na fila de ${fila?.nome ?? ""}…` :
     `IA + ${TOTAL_HUMANOS} humanos online`;
 
   return (
@@ -248,22 +329,19 @@ export default function EngagementDock() {
                 {phase === "fila" && !typing && (
                   <div className="flex flex-col gap-2">
                     {FILAS_HUMANAS.map((f) => (
-                      <button key={f.id} onClick={() => entrarNaFila(f, "humano")} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-left text-sm font-medium text-slate-700 transition hover:border-fuchsia-300 hover:bg-fuchsia-50">
+                      <button key={f.id} onClick={() => entrarTime(f)} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-left text-sm font-medium text-slate-700 transition hover:border-fuchsia-300 hover:bg-fuchsia-50">
                         <span className="text-lg">{f.emoji}</span> {f.nome}
-                        <span className="ml-auto text-xs text-slate-400">{f.agents.length} online</span>
+                        <span className="ml-auto text-xs text-slate-400">{f.online} online</span>
                       </button>
                     ))}
                   </div>
                 )}
 
-                {/* card da fila */}
-                {phase === "queue" && fila && (
-                  <div className={`rounded-2xl border p-4 text-center ${modo === "ia" ? "border-indigo-200 bg-indigo-50" : "border-fuchsia-200 bg-fuchsia-50"}`}>
-                    <div className={`text-3xl font-extrabold ${modo === "ia" ? "text-indigo-600" : "text-fuchsia-600"}`}>{queuePos}º</div>
-                    <div className="text-xs text-slate-600">na fila de {fila.nome} · ~{queuePos} min</div>
-                    {modo === "humano" && (
-                      <a href={waLink(`fila de ${fila.nome}`)} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-2 rounded-full bg-emerald-500 px-4 py-2 text-xs font-semibold text-white hover:opacity-90">💬 Continuar no WhatsApp</a>
-                    )}
+                {/* aguardando atendente entrar (fila humana) */}
+                {phase === "agent" && modo === "humano" && !agent && (
+                  <div className="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-4 text-center">
+                    <div className="text-sm font-semibold text-fuchsia-700">Na fila de {fila?.nome}</div>
+                    <div className="mt-1 text-xs text-slate-600">Um atendente vai assumir aqui neste chat. Pode já escrever sua dúvida. 💬</div>
                   </div>
                 )}
 
@@ -283,21 +361,25 @@ export default function EngagementDock() {
                     <button onClick={pedirFilaHumana} className="qr border-fuchsia-300 text-fuchsia-700">Falar com um humano 🧑‍💼</button>
                   </>
                 )}
-                {phase === "agent" && modo === "ia" && (
+                {phase === "agent" && modo === "ia" && !resolveTeam && (
                   <>
-                    <button onClick={() => say(botAnswer("planos"), 600)} className="qr">Ver planos 💳</button>
-                    <button onClick={() => say(botAnswer("ia"), 600)} className="qr">Como a IA funciona? ✨</button>
-                    <button onClick={pedirFilaHumana} className="qr">Falar com um humano 🧑‍💼</button>
+                    {RESOLUCOES.map((t) => (
+                      <button key={t.key} onClick={() => resolver(t)} className="qr">{t.label}</button>
+                    ))}
+                    <button onClick={pedirFilaHumana} className="qr border-fuchsia-300 text-fuchsia-700">Falar com um humano 🧑‍💼</button>
                     <button onClick={encerrar} className="qr">Encerrar</button>
                   </>
                 )}
-                {phase === "agent" && modo === "humano" && fila && (
+                {phase === "agent" && modo === "ia" && resolveTeam && (
                   <>
-                    <a href={waLink(`atendimento de ${fila.nome}`)} target="_blank" rel="noopener noreferrer" className="qr border-emerald-300 text-emerald-700">💬 Continuar no WhatsApp</a>
-                    <button onClick={encerrar} className="qr">Encerrar atendimento</button>
+                    <button onClick={marcarResolvido} className="qr border-emerald-300 text-emerald-700">✅ Sim, resolveu</button>
+                    <button onClick={naoResolvido} className="qr border-fuchsia-300 text-fuchsia-700">❌ Não, falar com humano</button>
                   </>
                 )}
-                {(phase === "queue" || phase === "fila") && (<button onClick={encerrar} className="qr">Cancelar</button>)}
+                {phase === "agent" && modo === "humano" && (
+                  <button onClick={encerrar} className="qr">Encerrar atendimento</button>
+                )}
+                {phase === "fila" && (<button onClick={encerrar} className="qr">Cancelar</button>)}
               </div>
 
               <form onSubmit={(e) => { e.preventDefault(); send(input); }} className="flex gap-2 bg-white p-3">

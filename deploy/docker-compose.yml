@@ -55,7 +55,7 @@ services:
       REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379
       JWT_SECRET: ${JWT_SECRET:?defina JWT_SECRET no .env}
       JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:?defina JWT_REFRESH_SECRET no .env}
-      CORS_ORIGINS: https://app.comenta.com.br
+      CORS_ORIGINS: https://app.comenta.com.br,https://comenta.com.br,https://www.comenta.com.br
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       AI_MODEL_CLASSIFY: ${AI_MODEL_CLASSIFY:-claude-haiku-4-5}
       AI_MODEL_SUMMARIZE: ${AI_MODEL_SUMMARIZE:-claude-haiku-4-5}

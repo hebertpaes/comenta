@@ -18,6 +18,7 @@ import { apiKeyRoutes } from "./modules/apikeys.js";
 import { webhookRoutes } from "./modules/webhooks.js";
 import { aiRoutes } from "./modules/ai.js";
 import { channelRoutes } from "./modules/channels.js";
+import { widgetRoutes } from "./modules/widget.js";
 
 const app = Fastify({
   logger: { level: config.NODE_ENV === "production" ? "info" : "debug" },
@@ -69,6 +70,7 @@ await app.register(apiKeyRoutes);
 await app.register(webhookRoutes);
 await app.register(aiRoutes);
 await app.register(channelRoutes);
+await app.register(widgetRoutes);
 
 // socket.io compartilha o mesmo servidor HTTP
 const server = createServer();
