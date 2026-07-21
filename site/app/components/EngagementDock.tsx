@@ -344,17 +344,8 @@ export default function EngagementDock() {
                   );
                 })}
 
-                {/* seleção de time (fila humana) */}
-                {phase === "fila" && !typing && (
-                  <div className="flex flex-col gap-2">
-                    {FILAS_HUMANAS.map((f) => (
-                      <button key={f.id} onClick={() => pedirContato(f)} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-left text-sm font-medium text-slate-700 transition hover:border-fuchsia-300 hover:bg-fuchsia-50">
-                        <span className="text-lg">{f.emoji}</span> {f.nome}
-                        <span className="ml-auto text-xs text-slate-400">{f.online} online</span>
-                      </button>
-                    ))}
-                  </div>
-                )}
+                {/* (a seleção de time foi movida para a barra de ações abaixo,
+                    onde os cliques são confiáveis — fora da área de rolagem) */}
 
                 {/* coleta de contato — WhatsApp obrigatório antes de entrar na fila */}
                 {phase === "contato" && pendingTeam && (
@@ -427,7 +418,23 @@ export default function EngagementDock() {
                 {phase === "agent" && modo === "humano" && (
                   <button onClick={encerrar} className="qr">Encerrar atendimento</button>
                 )}
-                {(phase === "fila" || phase === "contato") && (<button onClick={encerrar} className="qr">Cancelar</button>)}
+                {phase === "fila" && (
+                  <div className="flex w-full flex-col gap-2">
+                    {FILAS_HUMANAS.map((f) => (
+                      <button
+                        key={f.id}
+                        type="button"
+                        onClick={() => pedirContato(f)}
+                        className="flex w-full items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-left text-sm font-medium text-slate-700 transition hover:border-fuchsia-300 hover:bg-fuchsia-50"
+                      >
+                        <span className="text-lg">{f.emoji}</span> {f.nome}
+                        <span className="ml-auto text-xs text-slate-400">{f.online} online</span>
+                      </button>
+                    ))}
+                    <button type="button" onClick={encerrar} className="qr self-start">Cancelar</button>
+                  </div>
+                )}
+                {phase === "contato" && (<button type="button" onClick={encerrar} className="qr">Cancelar</button>)}
               </div>
 
               <form onSubmit={(e) => { e.preventDefault(); send(input); }} className="flex gap-2 bg-white p-3">
