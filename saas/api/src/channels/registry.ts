@@ -26,12 +26,14 @@ registerDriver({
   },
 });
 
-// Canal WhatsApp (Baileys): carregado sob demanda para não pesar o boot.
-// Em produção, o worker de sessão mantém o socket; aqui fica o ponto de encaixe.
+// Canal WhatsApp: a entrega real é feita pelo gerenciador de sessão
+// (../channels/whatsapp.ts → sendToContact), chamado direto no envio da
+// mensagem. Aqui o driver é no-op para não duplicar o envio nem lançar erro
+// quando a conversa está vinculada a um canal WhatsApp.
 registerDriver({
   type: "whatsapp",
   async send() {
-    throw new Error("Sessão WhatsApp não conectada — conecte o canal pelo painel");
+    /* entrega tratada pelo gerenciador de sessão do WhatsApp */
   },
 });
 

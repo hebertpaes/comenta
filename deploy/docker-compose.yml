@@ -60,7 +60,13 @@ services:
       AI_MODEL_CLASSIFY: ${AI_MODEL_CLASSIFY:-claude-haiku-4-5}
       AI_MODEL_SUMMARIZE: ${AI_MODEL_SUMMARIZE:-claude-haiku-4-5}
       AI_MODEL_SUGGEST: ${AI_MODEL_SUGGEST:-claude-sonnet-5}
+      # WhatsApp (Baileys): 'baileys' usa a conexão real; 'demo' simula o
+      # pareamento. As credenciais pareadas ficam no volume wa_data.
+      WHATSAPP_MODE: ${WHATSAPP_MODE:-baileys}
+      WHATSAPP_DATA_DIR: /data/wa
     command: sh -c "npx drizzle-kit push --force && npx tsx src/db/seed.ts && npx tsx src/index.ts"
+    volumes:
+      - wa_data:/data/wa
     ports:
       - "127.0.0.1:4000:4000"
 
@@ -167,3 +173,4 @@ volumes:
   redis_data:
   ghost_db:
   ghost_content:
+  wa_data:

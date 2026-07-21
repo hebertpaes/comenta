@@ -19,6 +19,7 @@ import { webhookRoutes } from "./modules/webhooks.js";
 import { aiRoutes } from "./modules/ai.js";
 import { channelRoutes } from "./modules/channels.js";
 import { widgetRoutes } from "./modules/widget.js";
+import { restoreSessions } from "./channels/whatsapp.js";
 
 const app = Fastify({
   logger: { level: config.NODE_ENV === "production" ? "info" : "debug" },
@@ -79,6 +80,8 @@ await app.ready();
 server.on("request", (req, res) => app.routing(req, res));
 
 startWorkers();
+// Restaura sessões de WhatsApp previamente pareadas (credenciais em disco).
+restoreSessions().catch(() => {});
 server.listen(config.PORT, "0.0.0.0", () => {
   app.log.info(`Comenta API on :${config.PORT} — docs em /docs — IA ${aiEnabled() ? "ativa" : "inativa"}`);
 });

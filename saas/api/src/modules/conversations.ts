@@ -7,6 +7,7 @@ import { audit } from "../lib/audit.js";
 import { emitToCompany } from "../realtime.js";
 import { publishEvent } from "../queues.js";
 import { deliverOutbound } from "../channels/registry.js";
+import { sendToContact } from "../channels/whatsapp.js";
 
 const ListQuery = z.object({
   status: z.enum(["pending", "open", "resolved"]).optional(),
@@ -101,8 +102,11 @@ export async function conversationRoutes(app: FastifyInstance) {
     if (!conv.assignedUserId && p.userId) patch.assignedUserId = p.userId;
     await db.update(schema.conversations).set(patch).where(eq(schema.conversations.id, id));
 
-    // entrega pelo canal (simulador/whatsapp) — não bloqueia a resposta
+    // entrega pelo canal vinculado (simulador) — não bloqueia a resposta
     deliverOutbound(conv.channelId, conv.contactId, body).catch(() => {});
+    // e também no WhatsApp do cliente, se a empresa tiver o número conectado.
+    // Assim a conversa que começou no chat do site continua no WhatsApp dele.
+    sendToContact(p.companyId, conv.contactId, body).catch(() => {});
 
     emitToCompany(p.companyId, "message.created", { conversationId: id, message: msg });
     publishEvent(p.companyId, "message.created", { conversationId: id, message: msg }).catch(() => {});

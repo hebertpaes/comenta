@@ -1,7 +1,7 @@
 {
   "name": "@comenta/api",
   "version": "1.0.0",
-  "description": "Comenta SaaS \u2014 API de atendimento multicanal (comenta.com.br)",
+  "description": "Comenta SaaS — API de atendimento multicanal (comenta.com.br)",
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
@@ -12,10 +12,12 @@
     "smoke": "bash test/smoke.sh"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.68.0",
     "@fastify/cors": "^10.0.1",
     "@fastify/rate-limit": "^10.1.1",
     "@fastify/swagger": "^9.4.0",
     "@fastify/swagger-ui": "^5.1.0",
+    "@whiskeysockets/baileys": "^6.7.23",
     "bcryptjs": "^2.4.3",
     "bullmq": "^5.34.0",
     "drizzle-orm": "^0.38.2",
@@ -25,8 +27,7 @@
     "postgres": "^3.4.5",
     "qrcode": "^1.5.4",
     "socket.io": "^4.8.1",
-    "zod": "^3.24.1",
-    "@anthropic-ai/sdk": "^0.68.0"
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
