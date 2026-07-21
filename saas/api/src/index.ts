@@ -17,6 +17,7 @@ import { conversationRoutes } from "./modules/conversations.js";
 import { apiKeyRoutes } from "./modules/apikeys.js";
 import { webhookRoutes } from "./modules/webhooks.js";
 import { aiRoutes } from "./modules/ai.js";
+import { channelRoutes } from "./modules/channels.js";
 
 const app = Fastify({
   logger: { level: config.NODE_ENV === "production" ? "info" : "debug" },
@@ -67,6 +68,7 @@ await app.register(conversationRoutes);
 await app.register(apiKeyRoutes);
 await app.register(webhookRoutes);
 await app.register(aiRoutes);
+await app.register(channelRoutes);
 
 // socket.io compartilha o mesmo servidor HTTP
 const server = createServer();

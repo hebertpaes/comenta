@@ -4,6 +4,12 @@ import Testimonials from "./components/Testimonials";
 // Landing do Comenta — SaaS de atendimento multicanal com IA (Claude).
 // Server Component, estático. Visual colorido/vibrante com Tailwind.
 
+// URLs do app/painel e da API. Configuráveis por build arg
+// (NEXT_PUBLIC_APP_URL / NEXT_PUBLIC_API_URL) para apontar ao ambiente local
+// em testes; sem eles, caem no domínio de produção.
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.comenta.com.br";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.comenta.com.br";
+
 const FEATURES = [
   {
     icon: "💬",
@@ -89,10 +95,10 @@ export default function HomePage() {
             <a href="#recursos" className="hover:text-slate-900">Recursos</a>
             <a href="#ia" className="hover:text-slate-900">IA</a>
             <a href="#planos" className="hover:text-slate-900">Planos</a>
-            <a href="https://app.comenta.com.br" className="hover:text-slate-900">Entrar</a>
+            <a href={APP_URL} className="hover:text-slate-900">Entrar</a>
           </nav>
           <a
-            href="https://app.comenta.com.br"
+            href={APP_URL}
             className="rounded-full bg-gradient-to-r from-fuchsia-600 to-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/25 transition hover:opacity-90"
           >
             Começar grátis
@@ -123,7 +129,7 @@ export default function HomePage() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="https://app.comenta.com.br"
+                href={APP_URL}
                 className="rounded-full bg-gradient-to-r from-fuchsia-600 to-indigo-600 px-6 py-3 text-center font-semibold text-white shadow-xl shadow-fuchsia-500/30 transition hover:opacity-90"
               >
                 Começar grátis
@@ -304,7 +310,7 @@ export default function HomePage() {
                 </span>
               </div>
               <a
-                href="https://app.comenta.com.br"
+                href={APP_URL}
                 className={`mt-6 block rounded-full px-4 py-3 text-center font-semibold transition ${
                   p.destaque
                     ? "bg-white text-fuchsia-700 hover:opacity-90"
@@ -339,7 +345,7 @@ export default function HomePage() {
               Conecte seus canais em minutos e deixe a IA acelerar cada resposta.
             </p>
             <a
-              href="https://app.comenta.com.br"
+              href={APP_URL}
               className="mt-8 inline-block rounded-full bg-white px-8 py-3 font-semibold text-fuchsia-700 shadow-xl transition hover:opacity-90"
             >
               Começar grátis
@@ -360,8 +366,8 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-500">
             <a href="#recursos" className="hover:text-slate-900">Recursos</a>
             <a href="#planos" className="hover:text-slate-900">Planos</a>
-            <a href="https://app.comenta.com.br" className="hover:text-slate-900">Entrar</a>
-            <a href="https://api.comenta.com.br/docs" className="hover:text-slate-900">API</a>
+            <a href={APP_URL} className="hover:text-slate-900">Entrar</a>
+            <a href={`/docs`} className="hover:text-slate-900">API</a>
           </div>
           <p className="text-sm text-slate-400">
             © {new Date().getFullYear()} Comenta

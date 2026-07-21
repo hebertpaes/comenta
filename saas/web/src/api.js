@@ -51,4 +51,8 @@ export const api = {
   aiClassify: (id) => req("POST", `/conversations/${id}/ai/classify`),
   aiSummary: (id) => req("POST", `/conversations/${id}/ai/summary`),
   aiSuggest: (id) => req("POST", `/conversations/${id}/ai/suggest`),
+  channels: () => req("GET", "/channels"),
+  waConnect: () => req("POST", "/channels/whatsapp/connect"),
+  waStatus: () => req("GET", "/channels/whatsapp/status"),
+  waDisconnect: () => req("POST", "/channels/whatsapp/disconnect"),
 };

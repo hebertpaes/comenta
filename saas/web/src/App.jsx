@@ -103,6 +103,77 @@ function AiPanel({ conversationId }) {
   );
 }
 
+function Connections() {
+  const [st, setSt] = useState({ status: "disconnected", qr: null, phone: null });
+  const [busy, setBusy] = useState(false);
+
+  const refresh = () => api.waStatus().then(setSt).catch(() => {});
+  useEffect(() => {
+    refresh();
+    const t = setInterval(refresh, 3000); // polling do estado
+    return () => clearInterval(t);
+  }, []);
+
+  const connect = async () => {
+    setBusy(true);
+    try { setSt(await api.waConnect()); } catch (e) { alert(e.message); } finally { setBusy(false); }
+  };
+  const disconnect = async () => {
+    setBusy(true);
+    try { setSt(await api.waDisconnect()); } catch (e) { alert(e.message); } finally { setBusy(false); }
+  };
+
+  return (
+    <>
+      <h2>Conexões</h2>
+      <div className="card" style={{ maxWidth: 460, padding: 20 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
+          <span style={{ fontSize: 26 }}>🟢</span>
+          <div>
+            <div style={{ fontWeight: 700 }}>WhatsApp Business</div>
+            <div className="muted" style={{ fontSize: 13 }}>Conecte seu número via QR Code</div>
+          </div>
+        </div>
+
+        {st.status === "connected" && (
+          <div className="aibox" style={{ borderColor: "#22c55e" }}>
+            ✅ <b>Conectado</b>{st.phone ? ` — ${st.phone}` : ""}
+            <div style={{ marginTop: 12 }}>
+              <button disabled={busy} onClick={disconnect}>Desconectar</button>
+            </div>
+          </div>
+        )}
+
+        {st.status === "connecting" && st.qr && (
+          <div style={{ textAlign: "center" }}>
+            <img src={st.qr} alt="QR do WhatsApp" width={260} height={260}
+              style={{ borderRadius: 12, background: "#fff", padding: 8 }} />
+            <p className="muted" style={{ fontSize: 13, marginTop: 10 }}>
+              Abra o WhatsApp → <b>Aparelhos conectados</b> → <b>Conectar aparelho</b> e aponte para o QR.
+            </p>
+            <p className="muted" style={{ fontSize: 12 }}>Aguardando leitura…</p>
+          </div>
+        )}
+
+        {st.status === "disconnected" && (
+          <div>
+            <p className="muted" style={{ fontSize: 14, marginBottom: 12 }}>
+              Nenhum número conectado. Gere o QR para parear seu WhatsApp Business.
+            </p>
+            <button disabled={busy} onClick={connect}>{busy ? "Gerando…" : "📲 Conectar WhatsApp"}</button>
+          </div>
+        )}
+
+        {st.demo && (
+          <p className="muted" style={{ fontSize: 11, marginTop: 16, opacity: 0.8 }}>
+            Modo demonstração: o pareamento é simulado para testes. Integração real via Baileys já tem o ponto de encaixe no back-end.
+          </p>
+        )}
+      </div>
+    </>
+  );
+}
+
 function Conversations() {
   const [list, setList] = useState([]);
   const [sel, setSel] = useState(null);
@@ -173,6 +244,7 @@ export function App() {
         <nav className="nav">
           <button className={tab === "dashboard" ? "active" : ""} onClick={() => setTab("dashboard")}>📊 Dashboard</button>
           <button className={tab === "conversas" ? "active" : ""} onClick={() => setTab("conversas")}>💬 Conversas</button>
+          <button className={tab === "conexoes" ? "active" : ""} onClick={() => setTab("conexoes")}>📲 Conexões</button>
         </nav>
         <div style={{ position: "absolute", bottom: 18, fontSize: 13 }} className="muted">
           {me?.company?.name}<br />
@@ -180,7 +252,9 @@ export function App() {
         </div>
       </aside>
       <main className="main">
-        {tab === "dashboard" ? <Dashboard /> : <Conversations />}
+        {tab === "dashboard" && <Dashboard />}
+        {tab === "conversas" && <Conversations />}
+        {tab === "conexoes" && <Connections />}
       </main>
     </div>
   );

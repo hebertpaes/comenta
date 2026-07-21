@@ -20,6 +20,7 @@ type Msg = { id: number; from: From; text: string; author?: string; cta?: { labe
 
 const STORAGE_KEY = "comenta_consent";
 const WA_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP || "5566999999999";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.comenta.com.br";
 
 const FILA_IA: Fila = { id: "ia", nome: "Atendimento IA", emoji: "✨", agents: ["Assistente IA"] };
 const FILAS_HUMANAS: Fila[] = [
@@ -40,7 +41,7 @@ function botAnswer(key: string): Msg {
     case "ia":
       return { id: nid(), from: "agent", author: "Assistente IA", text: "Eu (Claude) classifico, resumo e sugiro a resposta — você só revisa e envia. 👇", cta: { label: "Ver a IA em ação", href: "#ia" } };
     case "comecar":
-      return { id: nid(), from: "agent", author: "Assistente IA", text: "É só criar sua conta no painel — sem cartão de crédito. 🚀", cta: { label: "Criar conta grátis", href: "https://app.comenta.com.br" } };
+      return { id: nid(), from: "agent", author: "Assistente IA", text: "É só criar sua conta no painel — sem cartão de crédito. 🚀", cta: { label: "Criar conta grátis", href: APP_URL } };
     default:
       return { id: nid(), from: "agent", author: "Assistente IA", text: "Posso ajudar com planos, como a IA funciona ou te passar para um humano. O que prefere?" };
   }

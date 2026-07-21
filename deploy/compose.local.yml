@@ -15,8 +15,14 @@ services:
       CORS_ORIGINS: http://localhost:8080
 
   site:
+    # Embute as URLs locais no build do site (os links "Entrar"/"Começar
+    # grátis"/planos passam a apontar para o painel local em vez de produção).
+    build:
+      args:
+        NEXT_PUBLIC_APP_URL: http://localhost:8080
+        NEXT_PUBLIC_API_URL: http://localhost:4000
+        NEXT_PUBLIC_WHATSAPP: ${NEXT_PUBLIC_WHATSAPP:-5566999999999}
     environment:
-      # Site chama a API/painel por localhost quando rodando na sua máquina.
       NEXT_PUBLIC_WHATSAPP: ${NEXT_PUBLIC_WHATSAPP:-5566999999999}
 
   ghost:

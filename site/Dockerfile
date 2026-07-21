@@ -13,6 +13,14 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
+# URLs do painel/API embutidas no build (NEXT_PUBLIC_*). Sem args, caem no
+# domínio de produção pelo fallback no código.
+ARG NEXT_PUBLIC_APP_URL
+ARG NEXT_PUBLIC_API_URL
+ARG NEXT_PUBLIC_WHATSAPP
+ENV NEXT_PUBLIC_APP_URL=$NEXT_PUBLIC_APP_URL
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_WHATSAPP=$NEXT_PUBLIC_WHATSAPP
 RUN npm run build
 
 # ---- runner ----
