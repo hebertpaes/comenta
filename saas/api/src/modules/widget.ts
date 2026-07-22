@@ -7,6 +7,18 @@ import { config } from "../config.js";
 import { parse, ApiError } from "../lib/http.js";
 import { emitToCompany } from "../realtime.js";
 import { publishEvent } from "../queues.js";
+import { aiEnabled, chatAssistant } from "../lib/ai.js";
+
+// Base de conhecimento padrão do assistente do site (sobre o Comenta).
+// Em produção, cada empresa pode ter a sua (roadmap: editar pelo painel).
+const COMENTA_KB = `
+Comenta é uma plataforma de atendimento multicanal com IA.
+Canais: chat no site, WhatsApp Business, e um painel para os atendentes.
+Planos: Free (R$0, sem cartão), Pro (R$99/mês — todos os canais + IA completa),
+Business (R$299/mês — multi-empresa, API, SLA). Começa no Free e migra quando quiser.
+A IA (Claude) classifica, resume e sugere respostas; o atendente revisa e envia.
+Integrações via API e webhooks (automação com n8n/Zapier).
+`.trim();
 
 /**
  * Widget público do chat do site.
@@ -61,6 +73,13 @@ const PollQuery = z.object({
   conversationId: z.string().uuid(),
   token: z.string().min(16),
   after: z.string().datetime().optional(),
+});
+const AiBody = z.object({
+  message: z.string().min(1).max(2000),
+  history: z
+    .array(z.object({ role: z.enum(["user", "assistant"]), content: z.string().max(2000) }))
+    .max(20)
+    .optional(),
 });
 
 export async function widgetRoutes(app: FastifyInstance) {
@@ -145,5 +164,21 @@ export async function widgetRoutes(app: FastifyInstance) {
       .orderBy(asc(schema.messages.createdAt));
 
     return { data: rows };
+  });
+
+  // Chat com IA real (Claude) direto no site — o visitante conversa e a IA
+  // responde com base no conhecimento do Comenta. Sem login. Se não houver
+  // ANTHROPIC_API_KEY, devolve aiEnabled=false e o site cai nas respostas guiadas.
+  app.post("/widget/ai", async (req, reply) => {
+    const { message, history } = parse(AiBody, req.body);
+    if (!aiEnabled()) return reply.send({ reply: null, aiEnabled: false });
+    try {
+      const turns = [...(history ?? []), { role: "user" as const, content: message }];
+      const answer = await chatAssistant(turns, { companyName: "Comenta", knowledge: COMENTA_KB });
+      return reply.send({ reply: answer, aiEnabled: true });
+    } catch (err) {
+      req.log.error(err);
+      return reply.send({ reply: null, aiEnabled: true, error: true });
+    }
   });
 }

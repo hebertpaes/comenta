@@ -131,3 +131,33 @@ export async function suggestReply(
   });
   return firstText(res).trim();
 }
+
+// ---- Chat do assistente (site) ---------------------------------------------
+// Conversa aberta com o cliente no widget do site. Diferente do suggestReply
+// (voltado ao atendente), aqui a IA fala DIRETO com o visitante.
+
+export type ChatTurn = { role: "user" | "assistant"; content: string };
+const MODEL_CHAT = process.env.AI_MODEL_CHAT ?? "claude-sonnet-5";
+
+export async function chatAssistant(
+  history: ChatTurn[],
+  opts: { companyName?: string; knowledge?: string } = {}
+): Promise<string> {
+  const company = opts.companyName ?? "Comenta";
+  const kb = opts.knowledge ? `\n\n# Base de conhecimento da empresa\n${opts.knowledge}` : "";
+  const res = await client.messages.create({
+    model: MODEL_CHAT,
+    max_tokens: 700,
+    system:
+      `Você é o assistente virtual do ${company}, uma plataforma brasileira de ` +
+      `atendimento multicanal com IA (chat no site + WhatsApp + painel para os atendentes). ` +
+      `Fale em português do Brasil, de forma cordial, curta e objetiva (2 a 5 frases). ` +
+      `Ajude com dúvidas sobre planos, recursos, integrações, primeiros passos e uso do produto. ` +
+      `Se o cliente pedir algo que exige um humano (negociar contrato, dado sensível/financeiro, ` +
+      `um problema específico da conta), diga que pode transferir para um atendente e sugira o botão ` +
+      `"Falar com um humano". Nunca invente preços, prazos ou políticas que não estejam na base de ` +
+      `conhecimento — se não souber, admita e ofereça o atendimento humano.${kb}`,
+    messages: history.slice(-20).map((t) => ({ role: t.role, content: t.content })),
+  });
+  return firstText(res).trim();
+}

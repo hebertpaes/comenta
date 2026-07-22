@@ -87,6 +87,22 @@ async function waPoll(conversationId: string, token: string, after: string | nul
   } catch { return []; }
 }
 
+// Chat com IA real (Claude) — o visitante conversa e a IA responde.
+type AiTurn = { role: "user" | "assistant"; content: string };
+async function aiChat(history: AiTurn[], message: string): Promise<{ reply: string | null; aiEnabled: boolean }> {
+  try {
+    const r = await fetch(`${API_URL}/widget/ai`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message, history: history.slice(-16) }),
+    });
+    if (!r.ok) return { reply: null, aiEnabled: true };
+    return await r.json();
+  } catch {
+    return { reply: null, aiEnabled: true };
+  }
+}
+
 export default function EngagementDock() {
   const [consent, setConsent] = useState<Consent>("unknown");
   const [ready, setReady] = useState(false);
@@ -115,6 +131,7 @@ export default function EngagementDock() {
   const greeted = useRef(false);
   const timers = useRef<number[]>([]);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const aiHist = useRef<AiTurn[]>([]); // histórico da conversa com a IA (Claude)
 
   const clearTimers = () => { timers.current.forEach((t) => clearTimeout(t)); timers.current = []; };
   const later = (fn: () => void, ms: number) => { const t = window.setTimeout(fn, ms); timers.current.push(t); };
@@ -248,12 +265,27 @@ export default function EngagementDock() {
     say({ id: nid(), from: "bot", text: "Precisa de mais alguma coisa? Quer falar com a IA ou com um humano?" }, 700);
   };
 
-  const respIA = (t: string) => {
+  // Respostas guiadas (fallback sem IA/erro).
+  const respIACanned = (t: string) => {
     const l = t.toLowerCase();
     if (/plano|preç|preco|valor/.test(l)) say(botAnswer("planos"), 700);
     else if (/\bia\b|intelig|claude|autom/.test(l)) say(botAnswer("ia"), 700);
     else if (/começ|comec|cadastr|conta|grátis|gratis/.test(l)) say(botAnswer("comecar"), 700);
     else say({ id: nid(), from: "agent", author: "Assistente IA", text: "Consigo te ajudar com isso ou posso te transferir para um atendente humano. Quer falar com o time?" }, 700);
+  };
+
+  // IA de verdade (Claude): tenta responder pela API; se não houver chave de IA
+  // ou der erro, cai nas respostas guiadas — o chat nunca fica sem resposta.
+  const respIA = async (t: string) => {
+    setTyping({ author: "Assistente IA" });
+    const res = await aiChat(aiHist.current, t);
+    setTyping(false);
+    if (res.aiEnabled && res.reply) {
+      aiHist.current.push({ role: "user", content: t }, { role: "assistant", content: res.reply });
+      addMsg({ id: nid(), from: "agent", author: "Assistente IA", text: res.reply });
+    } else {
+      respIACanned(t);
+    }
   };
 
   const send = (text: string) => {
