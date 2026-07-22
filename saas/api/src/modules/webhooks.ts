@@ -6,7 +6,7 @@ import { db, schema } from "../db/client.js";
 import { authenticate, requireAdmin, parse, ApiError } from "../lib/http.js";
 import { audit } from "../lib/audit.js";
 
-const WEBHOOK_EVENTS = ["message.created", "conversation.updated"] as const;
+const WEBHOOK_EVENTS = ["conversation.created", "message.created", "conversation.updated"] as const;
 
 export async function webhookRoutes(app: FastifyInstance) {
   app.addHook("preHandler", authenticate);

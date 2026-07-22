@@ -114,6 +114,7 @@ export async function widgetRoutes(app: FastifyInstance) {
 
     emitToCompany(companyId, "conversation.created", { conversation: conv, contact });
     emitToCompany(companyId, "message.created", { conversationId: conv.id, message: msg });
+    publishEvent(companyId, "conversation.created", { conversation: conv, contact }).catch(() => {});
     publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(() => {});
 
     return reply.code(201).send({ conversationId: conv.id, token: signToken(conv.id) });

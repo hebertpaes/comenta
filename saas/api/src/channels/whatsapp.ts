@@ -149,7 +149,10 @@ async function recordInbound(companyId: string, phone: string, name: string, bod
     .set({ lastMessageAt: new Date(), unreadCount: (conv.unreadCount ?? 0) + 1 })
     .where(eq(schema.conversations.id, conv.id));
 
-  if (created) emitToCompany(companyId, "conversation.created", { conversation: conv, contact });
+  if (created) {
+    emitToCompany(companyId, "conversation.created", { conversation: conv, contact });
+    publishEvent(companyId, "conversation.created", { conversation: conv, contact }).catch(() => {});
+  }
   emitToCompany(companyId, "message.created", { conversationId: conv.id, message: msg });
   publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(() => {});
 }
