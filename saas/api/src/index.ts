@@ -28,6 +28,20 @@ const app = Fastify({
 
 await app.register(cors, { origin: corsOrigins, credentials: true });
 await app.register(rateLimit, { max: 300, timeWindow: "1 minute", redis });
+
+// Aceita corpo JSON vazio: alguns POSTs (ex.: conectar/desconectar WhatsApp)
+// mandam Content-Type: application/json sem body. O parser padrão do Fastify
+// rejeitaria com FST_ERR_CTP_EMPTY_JSON_BODY; aqui tratamos vazio como {}.
+app.addContentTypeParser("application/json", { parseAs: "string" }, (_req, body, done) => {
+  const raw = (body as string) ?? "";
+  if (raw.trim() === "") return done(null, {});
+  try {
+    done(null, JSON.parse(raw));
+  } catch (err) {
+    (err as { statusCode?: number }).statusCode = 400;
+    done(err as Error, undefined);
+  }
+});
 await app.register(swagger, {
   openapi: {
     info: { title: "Comenta SaaS API", version: "1.0.0", description: "API de atendimento multicanal — comenta.com.br" },
