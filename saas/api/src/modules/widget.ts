@@ -8,6 +8,7 @@ import { parse, ApiError } from "../lib/http.js";
 import { emitToCompany } from "../realtime.js";
 import { publishEvent } from "../queues.js";
 import { aiEnabled, chatAssistant } from "../lib/ai.js";
+import { applyAutomations } from "./automations.js";
 
 // Base de conhecimento padrão do assistente do site (sobre o Comenta).
 // Em produção, cada empresa pode ter a sua (roadmap: editar pelo painel).
@@ -116,6 +117,8 @@ export async function widgetRoutes(app: FastifyInstance) {
     emitToCompany(companyId, "message.created", { conversationId: conv.id, message: msg });
     publishEvent(companyId, "conversation.created", { conversation: conv, contact }).catch(() => {});
     publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(() => {});
+    // bot de fluxo (boas-vindas / fora do horário / palavra-chave)
+    applyAutomations(companyId, { id: conv.id, contactId: contact.id }, first, true).catch(() => {});
 
     return reply.code(201).send({ conversationId: conv.id, token: signToken(conv.id) });
   });
@@ -139,6 +142,7 @@ export async function widgetRoutes(app: FastifyInstance) {
 
     emitToCompany(conv.companyId, "message.created", { conversationId, message: msg });
     publishEvent(conv.companyId, "message.created", { conversationId, message: msg }).catch(() => {});
+    applyAutomations(conv.companyId, { id: conversationId, contactId: conv.contactId }, body, false).catch(() => {});
 
     return reply.code(201).send({ id: msg.id, createdAt: msg.createdAt });
   });

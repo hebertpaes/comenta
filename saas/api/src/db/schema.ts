@@ -208,3 +208,21 @@ export const auditLogs = pgTable(
   },
   (t) => [index("audit_logs_company_ix").on(t.companyId, t.createdAt)]
 );
+
+// Automações / bot de fluxo: regras que respondem/roteiam sozinhas as conversas.
+// type: welcome (1ª mensagem) | business_hours (fora do horário) | keyword.
+export const automations = pgTable(
+  "automations",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    name: varchar("name", { length: 120 }).notNull(),
+    type: varchar("type", { length: 24 }).notNull(),
+    isActive: boolean("is_active").notNull().default(true),
+    config: jsonb("config").$type<Record<string, unknown>>().notNull().default({}),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("automations_company_ix").on(t.companyId)]
+);

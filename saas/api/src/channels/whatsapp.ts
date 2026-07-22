@@ -155,6 +155,10 @@ async function recordInbound(companyId: string, phone: string, name: string, bod
   }
   emitToCompany(companyId, "message.created", { conversationId: conv.id, message: msg });
   publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(() => {});
+  // bot de fluxo (import dinâmico evita ciclo entre automations e whatsapp)
+  import("../modules/automations.js")
+    .then((m) => m.applyAutomations(companyId, { id: conv.id, contactId: contact.id }, body, created))
+    .catch(() => {});
 }
 
 // ---- Conexão real (Baileys) -------------------------------------------------
