@@ -249,6 +249,189 @@ function Conversations() {
   );
 }
 
+const AUTOMATION_TYPES = {
+  welcome: {
+    label: "Boas-vindas",
+    icon: "👋",
+    hint: "Responde automaticamente na 1ª mensagem de cada nova conversa.",
+  },
+  business_hours: {
+    label: "Fora do horário",
+    icon: "🕐",
+    hint: "Responde só quando o cliente escreve fora do horário de atendimento.",
+  },
+  keyword: {
+    label: "Palavra-chave",
+    icon: "🔑",
+    hint: "Responde quando a mensagem do cliente contém um dos termos.",
+  },
+};
+
+// Formulário de criação de uma nova regra (bot de fluxo).
+function AutomationForm({ onCreate }) {
+  const [type, setType] = useState("welcome");
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+  const [reply, setReply] = useState("");
+  const [keywords, setKeywords] = useState("");
+  const [days, setDays] = useState([1, 2, 3, 4, 5]);
+  const [start, setStart] = useState("09:00");
+  const [end, setEnd] = useState("18:00");
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState("");
+
+  const DAYS = [["Seg", 1], ["Ter", 2], ["Qua", 3], ["Qui", 4], ["Sex", 5], ["Sáb", 6], ["Dom", 7]];
+  const toggleDay = (d) => setDays((cur) => (cur.includes(d) ? cur.filter((x) => x !== d) : [...cur, d].sort()));
+
+  const submit = async (e) => {
+    e.preventDefault();
+    setErr("");
+    let config = {};
+    if (type === "welcome") {
+      if (!message.trim()) return setErr("Escreva a mensagem de boas-vindas.");
+      config = { message: message.trim() };
+    } else if (type === "business_hours") {
+      if (!message.trim()) return setErr("Escreva a mensagem de fora do horário.");
+      if (!days.length) return setErr("Escolha ao menos um dia de atendimento.");
+      config = { days, start, end, message: message.trim() };
+    } else if (type === "keyword") {
+      const kws = keywords.split(",").map((k) => k.trim()).filter(Boolean);
+      if (!kws.length) return setErr("Informe ao menos uma palavra-chave.");
+      if (!reply.trim()) return setErr("Escreva a resposta da regra.");
+      config = { keywords: kws, reply: reply.trim() };
+    }
+    setBusy(true);
+    try {
+      await onCreate({ name: name.trim() || AUTOMATION_TYPES[type].label, type, config });
+      setName(""); setMessage(""); setReply(""); setKeywords("");
+    } catch (e) { setErr(e.message); } finally { setBusy(false); }
+  };
+
+  return (
+    <form className="card" style={{ maxWidth: 520, padding: 20 }} onSubmit={submit}>
+      <div style={{ fontWeight: 700, marginBottom: 12 }}>Nova regra</div>
+      <div className="field">
+        <label>Tipo</label>
+        <select value={type} onChange={(e) => setType(e.target.value)}
+          style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }}>
+          {Object.entries(AUTOMATION_TYPES).map(([k, v]) => (
+            <option key={k} value={k}>{v.icon} {v.label}</option>
+          ))}
+        </select>
+        <p className="muted" style={{ fontSize: 12, marginTop: 6 }}>{AUTOMATION_TYPES[type].hint}</p>
+      </div>
+      <div className="field"><label>Nome (opcional)</label>
+        <input value={name} onChange={(e) => setName(e.target.value)} placeholder={AUTOMATION_TYPES[type].label} /></div>
+
+      {type === "keyword" ? (
+        <>
+          <div className="field"><label>Palavras-chave (separadas por vírgula)</label>
+            <input value={keywords} onChange={(e) => setKeywords(e.target.value)} placeholder="preço, valor, planos, quanto custa" /></div>
+          <div className="field"><label>Resposta</label>
+            <textarea value={reply} onChange={(e) => setReply(e.target.value)} rows={3}
+              placeholder="Nossos planos: Free, Pro e Business…"
+              style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", resize: "vertical" }} /></div>
+        </>
+      ) : (
+        <>
+          {type === "business_hours" && (
+            <>
+              <div className="field"><label>Dias de atendimento</label>
+                <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                  {DAYS.map(([lbl, d]) => (
+                    <button type="button" key={d} onClick={() => toggleDay(d)}
+                      style={{
+                        padding: "5px 10px", borderRadius: 999, fontSize: 13, cursor: "pointer",
+                        border: "1px solid " + (days.includes(d) ? "#6d28d9" : "#d0d5dd"),
+                        background: days.includes(d) ? "#6d28d9" : "#fff",
+                        color: days.includes(d) ? "#fff" : "#333",
+                      }}>{lbl}</button>
+                  ))}
+                </div>
+              </div>
+              <div style={{ display: "flex", gap: 12 }}>
+                <div className="field" style={{ flex: 1 }}><label>Abre</label>
+                  <input type="time" value={start} onChange={(e) => setStart(e.target.value)} /></div>
+                <div className="field" style={{ flex: 1 }}><label>Fecha</label>
+                  <input type="time" value={end} onChange={(e) => setEnd(e.target.value)} /></div>
+              </div>
+            </>
+          )}
+          <div className="field"><label>Mensagem</label>
+            <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows={3}
+              placeholder={type === "welcome"
+                ? "Olá! 👋 Recebemos sua mensagem e já vamos te atender."
+                : "Estamos fora do horário (seg–sex, 9h–18h). Retornamos em breve!"}
+              style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", resize: "vertical" }} /></div>
+        </>
+      )}
+
+      {err && <div className="err">{err}</div>}
+      <button disabled={busy} style={{ marginTop: 8 }}>{busy ? "Salvando…" : "➕ Criar regra"}</button>
+    </form>
+  );
+}
+
+function Automations() {
+  const [list, setList] = useState(null);
+  const load = () => api.automations().then((r) => setList(r.data || [])).catch(() => setList([]));
+  useEffect(() => { load(); }, []);
+
+  const create = async (body) => { await api.automationCreate(body); await load(); };
+  const toggle = async (a) => { await api.automationUpdate(a.id, { isActive: !a.isActive }); await load(); };
+  const remove = async (a) => {
+    if (!confirm(`Remover a regra "${a.name}"?`)) return;
+    await api.automationDelete(a.id); await load();
+  };
+
+  const describe = (a) => {
+    const c = a.config || {};
+    if (a.type === "keyword") return `Se contém: ${(c.keywords || []).join(", ")} → responde`;
+    if (a.type === "business_hours") return `Fora de ${c.start || "09:00"}–${c.end || "18:00"} → responde`;
+    return String(c.message || "").slice(0, 80);
+  };
+
+  return (
+    <>
+      <h2>Automações</h2>
+      <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 620 }}>
+        Regras que respondem ou roteiam a conversa sozinhas quando o cliente escreve — no chat do site e no
+        WhatsApp. A resposta do bot aparece no painel, no chat e vai ao WhatsApp do cliente (se conectado).
+      </p>
+      <div style={{ display: "flex", gap: 24, flexWrap: "wrap", alignItems: "flex-start" }}>
+        <AutomationForm onCreate={create} />
+        <div style={{ flex: 1, minWidth: 300 }}>
+          <div style={{ fontWeight: 700, marginBottom: 12 }}>Regras ativas</div>
+          {list === null && <p className="muted">Carregando…</p>}
+          {list && list.length === 0 && <p className="muted">Nenhuma regra ainda. Crie a primeira ao lado.</p>}
+          {list && list.map((a) => {
+            const meta = AUTOMATION_TYPES[a.type] || { icon: "⚙️", label: a.type };
+            return (
+              <div key={a.id} className="card" style={{ padding: 14, marginBottom: 10, opacity: a.isActive ? 1 : 0.55 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <span style={{ fontSize: 20 }}>{meta.icon}</span>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontWeight: 600 }}>{a.name}</div>
+                    <div className="muted" style={{ fontSize: 12 }}>{meta.label}</div>
+                  </div>
+                  <span className="tag" style={{ background: a.isActive ? "#dcfce7" : "#f1f5f9", color: a.isActive ? "#166534" : "#64748b" }}>
+                    {a.isActive ? "ativa" : "pausada"}
+                  </span>
+                </div>
+                <div className="muted" style={{ fontSize: 13, marginTop: 8 }}>{describe(a)}</div>
+                <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
+                  <button className="link" onClick={() => toggle(a)}>{a.isActive ? "Pausar" : "Ativar"}</button>
+                  <button className="link" style={{ color: "#dc2626" }} onClick={() => remove(a)}>Remover</button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
+}
+
 export function App() {
   const [logged, setLogged] = useState(isLoggedIn());
   const [me, setMe] = useState(null);
@@ -265,6 +448,7 @@ export function App() {
         <nav className="nav">
           <button className={tab === "dashboard" ? "active" : ""} onClick={() => setTab("dashboard")}>📊 Dashboard</button>
           <button className={tab === "conversas" ? "active" : ""} onClick={() => setTab("conversas")}>💬 Conversas</button>
+          <button className={tab === "automacoes" ? "active" : ""} onClick={() => setTab("automacoes")}>🤖 Automações</button>
           <button className={tab === "conexoes" ? "active" : ""} onClick={() => setTab("conexoes")}>📲 Conexões</button>
         </nav>
         <div style={{ position: "absolute", bottom: 18, fontSize: 13 }} className="muted">
@@ -275,6 +459,7 @@ export function App() {
       <main className="main">
         {tab === "dashboard" && <Dashboard />}
         {tab === "conversas" && <Conversations />}
+        {tab === "automacoes" && <Automations />}
         {tab === "conexoes" && <Connections />}
       </main>
     </div>

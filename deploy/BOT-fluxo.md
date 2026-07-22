@@ -4,8 +4,24 @@ Regras que respondem ou roteiam a conversa **sozinhas** quando o cliente escreve
 Rodam nas mensagens recebidas (chat do site e WhatsApp). A resposta do bot
 aparece no painel, no chat do site e vai ao WhatsApp do cliente (se conectado).
 
-Enquanto a aba de automações no painel (fase seguinte) não chega, crie as regras
-pela API (admin). Use o token do painel (Bearer) ou uma API Key.
+## Pelo painel (recomendado)
+
+No admin há a aba **🤖 Automações**: escolha o tipo, preencha e clique em
+**Criar regra**. Dá para **pausar/ativar** e **remover** cada regra na lista, sem
+tocar em curl. É a forma mais simples de gerenciar o bot de fluxo.
+
+## Pela API (opcional / integrações)
+
+Se preferir automatizar a criação das regras, use a API (admin). Pegue o token
+do painel (Bearer) fazendo login, ou use uma API Key:
+
+```bash
+# token de admin (troque a senha se você mudou)
+curl -s -X POST http://localhost:4000/auth/login \
+  -H 'Content-Type: application/json' \
+  -d '{"email":"admin@comenta.com.br","password":"comenta123"}'
+# copie o valor de "token" e use no lugar de SEU_TOKEN abaixo
+```
 
 ## Tipos de regra
 

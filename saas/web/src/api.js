@@ -55,4 +55,8 @@ export const api = {
   waConnect: () => req("POST", "/channels/whatsapp/connect"),
   waStatus: () => req("GET", "/channels/whatsapp/status"),
   waDisconnect: () => req("POST", "/channels/whatsapp/disconnect"),
+  automations: () => req("GET", "/automations"),
+  automationCreate: (body) => req("POST", "/automations", body),
+  automationUpdate: (id, body) => req("PATCH", `/automations/${id}`, body),
+  automationDelete: (id) => req("DELETE", `/automations/${id}`),
 };
