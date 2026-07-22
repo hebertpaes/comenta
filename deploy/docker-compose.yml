@@ -169,9 +169,65 @@ services:
       BLOG_INTERVAL_MIN: ${BLOG_INTERVAL_MIN:-0}
       BLOG_PER_FEED: ${BLOG_PER_FEED:-3}
 
+  # =============================================================
+  # Catálogo de ferramentas open-source (produto/serviço/treinamento).
+  # NÃO sobem por padrão (profile "tools"): cada uma é auto-contida e
+  # opcional. Suba as que quiser sob demanda:
+  #   docker compose --profile tools up -d n8n metabase nocodb
+  # e desligue com:
+  #   docker compose --profile tools down
+  # No painel, a aba "🧩 Ferramentas" descreve cada uma e abre o link.
+  # =============================================================
+
+  # n8n — automação de fluxos (webhooks + centenas de integrações).
+  # Casa com os webhooks do Comenta (evento conversation.created etc.).
+  n8n:
+    image: n8nio/n8n:latest
+    profiles: ["tools"]
+    restart: always
+    environment:
+      N8N_HOST: localhost
+      N8N_PORT: 5678
+      N8N_PROTOCOL: http
+      WEBHOOK_URL: ${N8N_WEBHOOK_URL:-http://localhost:5678/}
+      GENERIC_TIMEZONE: ${TZ:-America/Cuiaba}
+      # cookie seguro só faz sentido atrás de HTTPS; local usa http.
+      N8N_SECURE_COOKIE: "false"
+    volumes:
+      - n8n_data:/home/node/.n8n
+    ports:
+      - "127.0.0.1:5678:5678"
+
+  # Metabase — BI / relatórios e dashboards sobre os dados da empresa.
+  # (Site na 3000, então Metabase publica em 3001.)
+  metabase:
+    image: metabase/metabase:latest
+    profiles: ["tools"]
+    restart: always
+    environment:
+      MB_DB_FILE: /metabase-data/metabase.db
+    volumes:
+      - metabase_data:/metabase-data
+    ports:
+      - "127.0.0.1:3001:3000"
+
+  # NocoDB — banco de dados no-code (tipo Airtable) para planilhas,
+  # CRMs simples e catálogos que a equipe monta sozinha.
+  nocodb:
+    image: nocodb/nocodb:latest
+    profiles: ["tools"]
+    restart: always
+    volumes:
+      - nocodb_data:/usr/app/data
+    ports:
+      - "127.0.0.1:8090:8080"
+
 volumes:
   pg_data:
   redis_data:
   ghost_db:
   ghost_content:
   wa_data:
+  n8n_data:
+  metabase_data:
+  nocodb_data:
