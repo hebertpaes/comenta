@@ -155,6 +155,15 @@ function Connections() {
           </div>
         )}
 
+        {st.status === "connecting" && !st.qr && (
+          <div className="aibox">
+            ⏳ Gerando QR Code… aguarde alguns segundos.
+            <div style={{ marginTop: 12 }}>
+              <button disabled={busy} onClick={disconnect}>Cancelar</button>
+            </div>
+          </div>
+        )}
+
         {st.status === "disconnected" && (
           <div>
             <p className="muted" style={{ fontSize: 14, marginBottom: 12 }}>

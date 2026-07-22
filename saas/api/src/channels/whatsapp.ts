@@ -56,6 +56,26 @@ const silentLogger: any = {
 function dataDir(): string {
   return process.env.WHATSAPP_DATA_DIR || "/data/wa";
 }
+
+// Versão do protocolo do WhatsApp Web. Sem isso, o Baileys usa uma versão
+// embutida que pode estar desatualizada — o WhatsApp então fecha a conexão
+// antes de emitir o QR (fica "conectando" para sempre, sem QR).
+let waVersion: any;
+async function fetchWaVersion(mod: any) {
+  if (waVersion !== undefined) return waVersion;
+  try {
+    const r = await mod.fetchLatestBaileysVersion();
+    waVersion = r?.version ?? null;
+    console.log(`[wa] versão WhatsApp Web: ${Array.isArray(waVersion) ? waVersion.join(".") : "padrão"}`);
+  } catch (e: any) {
+    waVersion = null;
+    console.log(`[wa] não consegui buscar a versão (${e?.message ?? e}); usando a padrão`);
+  }
+  return waVersion || undefined;
+}
+
+// Contador de reconexões por empresa (evita loop infinito sem QR).
+const reconnects = new Map<string, number>();
 function jidToPhone(jid?: string | null): string | null {
   if (!jid) return null;
   const digits = jid.split("@")[0].split(":")[0].replace(/\D/g, "");
@@ -141,9 +161,12 @@ async function connectBaileys(companyId: string, mod: any) {
   if (prev?.sock) { try { prev.sock.end?.(); } catch { /* ignore */ } }
 
   const { state, saveCreds } = await mod.useMultiFileAuthState(`${dataDir()}/${companyId}`);
+  const version = await fetchWaVersion(mod);
   const makeSock = mod.default || mod.makeWASocket;
+  console.log(`[wa] iniciando sessão (${companyId})`);
   const sock = makeSock({
     auth: state,
+    version,
     logger: silentLogger,
     browser: ["Comenta", "Chrome", "1.0.0"],
     syncFullHistory: false,
@@ -156,10 +179,13 @@ async function connectBaileys(companyId: string, mod: any) {
 
   sock.ev.on("connection.update", async (u: any) => {
     if (u.qr) {
+      console.log(`[wa] QR recebido (${companyId})`);
       session.qr = await QRCode.toDataURL(u.qr, { width: 320, margin: 1 }).catch(() => null);
       session.status = "connecting";
     }
     if (u.connection === "open") {
+      console.log(`[wa] conectado (${companyId}) ${jidToPhone(sock.user?.id) ?? ""}`);
+      reconnects.delete(companyId);
       session.status = "connected";
       session.qr = null;
       session.phone = jidToPhone(sock.user?.id);
@@ -167,15 +193,21 @@ async function connectBaileys(companyId: string, mod: any) {
     }
     if (u.connection === "close") {
       const code = u.lastDisconnect?.error?.output?.statusCode;
+      const msg = u.lastDisconnect?.error?.message ?? "";
       const loggedOut = code === mod.DisconnectReason?.loggedOut;
-      if (loggedOut) {
+      const tries = (reconnects.get(companyId) ?? 0) + 1;
+      console.log(`[wa] conexão fechada (${companyId}) code=${code ?? "?"} tentativa=${tries} ${msg}`);
+      if (loggedOut || tries > 5) {
+        // desistiu (deslogado ou muitas falhas): volta a "desconectado" no painel
+        reconnects.delete(companyId);
         session.status = "disconnected";
         session.sock = null;
         sessions.delete(companyId);
         await setChannelStatus(companyId, "disconnected", {});
       } else if (sessions.get(companyId) === session) {
         // queda transitória: tenta reconectar com as credenciais salvas
-        connectBaileys(companyId, mod).catch(() => {});
+        reconnects.set(companyId, tries);
+        connectBaileys(companyId, mod).catch((e: any) => console.log(`[wa] erro ao reconectar: ${e?.message ?? e}`));
       }
     }
   });
