@@ -968,6 +968,87 @@ function Queues() {
   );
 }
 
+// ---- Kanban de conversas (arrastar por etapa) ----
+const KANBAN_COLS = [
+  { key: "pending", label: "Aguardando", color: "#d97706" },
+  { key: "open", label: "Em atendimento", color: "#2563eb" },
+  { key: "resolved", label: "Resolvido", color: "#16a34a" },
+];
+
+function Kanban() {
+  const [cols, setCols] = useState({ pending: [], open: [], resolved: [] });
+  const [queues, setQueues] = useState([]);
+  const [drag, setDrag] = useState(null); // { id, from }
+
+  const load = async () => {
+    const next = { pending: [], open: [], resolved: [] };
+    await Promise.all(
+      KANBAN_COLS.map(async (c) => {
+        const r = await api.conversations({ status: c.key }).catch(() => ({ data: [] }));
+        next[c.key] = r.data || [];
+      })
+    );
+    setCols(next);
+  };
+  useEffect(() => { load(); api.queues().then((r) => setQueues(r.data || [])).catch(() => {}); }, []);
+  const queueOf = (id) => queues.find((q) => q.id === id);
+
+  const onDrop = async (toStatus) => {
+    if (!drag || drag.from === toStatus) { setDrag(null); return; }
+    // move otimista
+    setCols((cur) => {
+      const card = cur[drag.from].find((c) => c.id === drag.id);
+      if (!card) return cur;
+      return {
+        ...cur,
+        [drag.from]: cur[drag.from].filter((c) => c.id !== drag.id),
+        [toStatus]: [{ ...card, status: toStatus }, ...cur[toStatus]],
+      };
+    });
+    const id = drag.id;
+    setDrag(null);
+    try { await api.conversationUpdate(id, { status: toStatus }); } catch { load(); }
+  };
+
+  return (
+    <>
+      <h2>Kanban</h2>
+      <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 680 }}>
+        Arraste as conversas entre as etapas. Mover um card muda o status da conversa.
+      </p>
+      <div style={{ display: "flex", gap: 14, alignItems: "flex-start", overflowX: "auto", paddingBottom: 8 }}>
+        {KANBAN_COLS.map((col) => (
+          <div key={col.key}
+            onDragOver={(e) => e.preventDefault()}
+            onDrop={() => onDrop(col.key)}
+            style={{ flex: "1 0 260px", minWidth: 260, background: "#f8fafc", borderRadius: 12, padding: 10, border: "1px solid #e2e8f0" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10, fontWeight: 700 }}>
+              <span style={{ width: 10, height: 10, borderRadius: 999, background: col.color }} />
+              {col.label}
+              <span className="muted" style={{ marginLeft: "auto", fontSize: 12 }}>{cols[col.key].length}</span>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8, minHeight: 60 }}>
+              {cols[col.key].length === 0 && <div className="muted" style={{ fontSize: 12, padding: 8 }}>Vazio</div>}
+              {cols[col.key].map((c) => {
+                const q = queueOf(c.queueId);
+                return (
+                  <div key={c.id} draggable
+                    onDragStart={() => setDrag({ id: c.id, from: col.key })}
+                    className="card" style={{ padding: 12, textAlign: "left", alignItems: "stretch", cursor: "grab", boxShadow: "0 1px 2px rgba(0,0,0,.06)" }}>
+                    <div style={{ fontWeight: 600, fontSize: 14 }}>{c.contact?.name || "Contato"}</div>
+                    <div className="muted" style={{ fontSize: 12, marginTop: 2 }}>{c.contact?.phone || ""}</div>
+                    {q && <span className="tag" style={{ background: q.color, color: "#fff", fontSize: 10, marginTop: 6, alignSelf: "flex-start" }}>{q.name}</span>}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
 export function App() {
   const [logged, setLogged] = useState(isLoggedIn());
   const [me, setMe] = useState(null);
@@ -984,6 +1065,7 @@ export function App() {
         <nav className="nav">
           <button className={tab === "dashboard" ? "active" : ""} onClick={() => setTab("dashboard")}>📊 Dashboard</button>
           <button className={tab === "conversas" ? "active" : ""} onClick={() => setTab("conversas")}>💬 Conversas</button>
+          <button className={tab === "kanban" ? "active" : ""} onClick={() => setTab("kanban")}>📋 Kanban</button>
           {me?.principal?.role === "admin" && <button className={tab === "filas" ? "active" : ""} onClick={() => setTab("filas")}>🗂️ Filas</button>}
           <button className={tab === "automacoes" ? "active" : ""} onClick={() => setTab("automacoes")}>🤖 Automações</button>
           <button className={tab === "ferramentas" ? "active" : ""} onClick={() => setTab("ferramentas")}>🧩 Ferramentas</button>
@@ -998,6 +1080,7 @@ export function App() {
       <main className="main">
         {tab === "dashboard" && <Dashboard />}
         {tab === "conversas" && <Conversations />}
+        {tab === "kanban" && <Kanban />}
         {tab === "filas" && <Queues />}
         {tab === "automacoes" && <Automations />}
         {tab === "ferramentas" && <Tools />}
