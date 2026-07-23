@@ -364,3 +364,50 @@ export const conversationNotes = pgTable(
   },
   (t) => [index("conversation_notes_ix").on(t.conversationId, t.createdAt)]
 );
+
+// Campanhas (Lote 3) — disparo de mensagens para listas de contatos, na hora
+// ou agendado. Cada campanha tem seus destinatários com status individual.
+export const campaigns = pgTable(
+  "campaigns",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    name: varchar("name", { length: 160 }).notNull(),
+    message: text("message").notNull(),
+    // draft | scheduled | running | done | canceled
+    status: varchar("status", { length: 16 }).notNull().default("draft"),
+    filterTag: varchar("filter_tag", { length: 64 }), // tag usada para montar a lista (informativo)
+    scheduledAt: timestamp("scheduled_at", { withTimezone: true }),
+    startedAt: timestamp("started_at", { withTimezone: true }),
+    finishedAt: timestamp("finished_at", { withTimezone: true }),
+    total: integer("total").notNull().default(0),
+    sent: integer("sent").notNull().default(0),
+    failed: integer("failed").notNull().default(0),
+    createdByUserId: uuid("created_by_user_id").references(() => users.id, { onDelete: "set null" }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("campaigns_company_ix").on(t.companyId, t.status)]
+);
+
+export const campaignRecipients = pgTable(
+  "campaign_recipients",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    campaignId: uuid("campaign_id")
+      .notNull()
+      .references(() => campaigns.id, { onDelete: "cascade" }),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    contactId: uuid("contact_id")
+      .notNull()
+      .references(() => contacts.id, { onDelete: "cascade" }),
+    // pending | sent | failed
+    status: varchar("status", { length: 16 }).notNull().default("pending"),
+    error: text("error"),
+    sentAt: timestamp("sent_at", { withTimezone: true }),
+  },
+  (t) => [index("campaign_recipients_ix").on(t.campaignId, t.status)]
+);

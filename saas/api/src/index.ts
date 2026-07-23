@@ -23,6 +23,7 @@ import { automationRoutes } from "./modules/automations.js";
 import { courseRoutes } from "./modules/courses.js";
 import { queueRoutes } from "./modules/queues.js";
 import { toolkitRoutes } from "./modules/toolkit.js";
+import { campaignRoutes, startCampaignScheduler } from "./modules/campaigns.js";
 import { restoreSessions } from "./channels/whatsapp.js";
 
 const app = Fastify({
@@ -94,6 +95,7 @@ await app.register(automationRoutes);
 await app.register(courseRoutes);
 await app.register(queueRoutes);
 await app.register(toolkitRoutes);
+await app.register(campaignRoutes);
 
 // socket.io compartilha o mesmo servidor HTTP
 const server = createServer();
@@ -104,6 +106,7 @@ server.on("request", (req, res) => app.routing(req, res));
 startWorkers();
 // Restaura sessões de WhatsApp previamente pareadas (credenciais em disco).
 restoreSessions().catch(() => {});
+startCampaignScheduler();
 server.listen(config.PORT, "0.0.0.0", () => {
   app.log.info(`Comenta API on :${config.PORT} — docs em /docs — IA ${aiEnabled() ? "ativa" : "inativa"}`);
 });

@@ -1513,6 +1513,162 @@ function Users() {
   );
 }
 
+const CAMPAIGN_STATUS = {
+  draft: { label: "Rascunho", color: "#64748b", bg: "#f1f5f9" },
+  scheduled: { label: "Agendada", color: "#7c5cff", bg: "#ede9fe" },
+  running: { label: "Enviando…", color: "#2563eb", bg: "#dbeafe" },
+  done: { label: "Concluída", color: "#16a34a", bg: "#dcfce7" },
+  canceled: { label: "Cancelada", color: "#dc2626", bg: "#fee2e2" },
+};
+
+function CampaignForm({ audience, onCreate }) {
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+  const [aud, setAud] = useState("all");
+  const [tag, setTag] = useState("");
+  const [when, setWhen] = useState("now");
+  const [scheduledAt, setScheduledAt] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState("");
+
+  const tags = Object.entries(audience?.tags || {});
+  const total = aud === "all" ? (audience?.totalWithPhone || 0) : aud === "tag" ? (audience?.tags?.[tag] || 0) : 0;
+
+  const submit = async (e) => {
+    e.preventDefault();
+    setErr("");
+    if (!name.trim()) return setErr("Dê um nome à campanha.");
+    if (!message.trim()) return setErr("Escreva a mensagem.");
+    if (aud === "tag" && !tag) return setErr("Escolha uma tag para o público.");
+    const body = { name: name.trim(), message: message.trim(), audience: aud };
+    if (aud === "tag") body.tag = tag;
+    if (when === "schedule") {
+      if (!scheduledAt) return setErr("Escolha a data/hora do agendamento.");
+      body.scheduledAt = new Date(scheduledAt).toISOString();
+    }
+    setBusy(true);
+    try {
+      await onCreate(body, when === "now");
+      setName(""); setMessage(""); setScheduledAt("");
+    } catch (e) { setErr(e.message); } finally { setBusy(false); }
+  };
+
+  const inp = { width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid var(--border)", background: "var(--panel2)", color: "var(--text)" };
+  return (
+    <form className="card" style={{ maxWidth: 520, padding: 20 }} onSubmit={submit}>
+      <div style={{ fontWeight: 700, marginBottom: 12 }}>Nova campanha</div>
+      <div className="field"><label>Nome</label>
+        <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Promoção de julho" /></div>
+      <div className="field"><label>Mensagem</label>
+        <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows={4}
+          placeholder={"Olá {nome}! Temos uma oferta especial pra você…"}
+          style={{ ...inp, resize: "vertical" }} />
+        <p className="muted" style={{ fontSize: 12, marginTop: 4 }}>Use <b>{"{nome}"}</b> para personalizar com o nome do contato.</p>
+      </div>
+      <div className="field"><label>Público</label>
+        <select value={aud} onChange={(e) => setAud(e.target.value)} style={inp}>
+          <option value="all">Todos os contatos com telefone ({audience?.totalWithPhone || 0})</option>
+          <option value="tag">Por tag</option>
+        </select>
+      </div>
+      {aud === "tag" && (
+        <div className="field"><label>Tag</label>
+          <select value={tag} onChange={(e) => setTag(e.target.value)} style={inp}>
+            <option value="">Escolha…</option>
+            {tags.map(([t, n]) => <option key={t} value={t}>{t} ({n})</option>)}
+          </select>
+        </div>
+      )}
+      <div className="field"><label>Quando</label>
+        <select value={when} onChange={(e) => setWhen(e.target.value)} style={inp}>
+          <option value="now">Salvar como rascunho (envio pelo botão)</option>
+          <option value="schedule">Agendar data/hora</option>
+        </select>
+      </div>
+      {when === "schedule" && (
+        <div className="field"><label>Data e hora</label>
+          <input type="datetime-local" value={scheduledAt} onChange={(e) => setScheduledAt(e.target.value)} style={inp} /></div>
+      )}
+      <p className="muted" style={{ fontSize: 12 }}>Destinatários estimados: <b>{total}</b> contato(s).</p>
+      {err && <div className="err">{err}</div>}
+      <button disabled={busy} style={{ marginTop: 8 }}>{busy ? "Salvando…" : "➕ Criar campanha"}</button>
+    </form>
+  );
+}
+
+function Campaigns() {
+  const [list, setList] = useState(null);
+  const [audience, setAudience] = useState(null);
+  const load = () => api.campaigns().then((r) => { setList(r.data || []); setAudience(r.audience || null); }).catch(() => setList([]));
+  useEffect(() => {
+    load();
+    const t = setInterval(load, 4000); // acompanha o progresso em tempo quase real
+    return () => clearInterval(t);
+  }, []);
+
+  const create = async (body) => { await api.campaignCreate(body); await load(); };
+  const send = async (c) => { if (confirm(`Disparar a campanha "${c.name}" para ${c.total} contato(s) agora?`)) { await api.campaignSend(c.id); await load(); } };
+  const cancel = async (c) => { if (confirm(`Cancelar a campanha "${c.name}"?`)) { await api.campaignCancel(c.id); await load(); } };
+  const remove = async (c) => { if (confirm(`Remover a campanha "${c.name}"?`)) { await api.campaignDelete(c.id); await load(); } };
+
+  const fmt = (d) => d ? new Date(d).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" }) : "";
+
+  return (
+    <>
+      <h2>Campanhas</h2>
+      <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 640 }}>
+        Dispare uma mensagem para uma lista de contatos — na hora ou agendada. A entrega usa o WhatsApp
+        conectado; cada envio também fica registrado na conversa do contato. Sincronize a agenda em <b>Conexões</b> para
+        ter mais contatos.
+      </p>
+      <div style={{ display: "flex", gap: 24, flexWrap: "wrap", alignItems: "flex-start" }}>
+        <CampaignForm audience={audience} onCreate={create} />
+        <div style={{ flex: 1, minWidth: 320 }}>
+          <div style={{ fontWeight: 700, marginBottom: 12 }}>Suas campanhas</div>
+          {list === null && <p className="muted">Carregando…</p>}
+          {list && list.length === 0 && <p className="muted">Nenhuma campanha ainda. Crie a primeira ao lado.</p>}
+          {list && list.map((c) => {
+            const st = CAMPAIGN_STATUS[c.status] || CAMPAIGN_STATUS.draft;
+            const pct = c.total ? Math.round(((c.sent + c.failed) / c.total) * 100) : 0;
+            return (
+              <div key={c.id} className="card" style={{ padding: 14, marginBottom: 10 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <div style={{ flex: 1, fontWeight: 600 }}>{c.name}</div>
+                  <span className="tag" style={{ background: st.bg, color: st.color }}>{st.label}</span>
+                </div>
+                <div className="muted" style={{ fontSize: 13, margin: "6px 0", whiteSpace: "pre-wrap" }}>{String(c.message).slice(0, 140)}</div>
+                <div style={{ display: "flex", gap: 14, fontSize: 12 }} className="muted">
+                  <span>👥 {c.total}</span>
+                  <span style={{ color: "#16a34a" }}>✓ {c.sent}</span>
+                  {c.failed > 0 && <span style={{ color: "#dc2626" }}>✗ {c.failed}</span>}
+                  {c.filterTag && <span>🏷️ {c.filterTag}</span>}
+                  {c.scheduledAt && <span>🕐 {fmt(c.scheduledAt)}</span>}
+                </div>
+                {(c.status === "running" || c.status === "done") && (
+                  <div style={{ height: 6, background: "var(--panel2)", borderRadius: 6, marginTop: 8, overflow: "hidden" }}>
+                    <div style={{ width: `${pct}%`, height: "100%", background: c.status === "done" ? "#16a34a" : "var(--accent)" }} />
+                  </div>
+                )}
+                <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
+                  {(c.status === "draft" || c.status === "scheduled") && (
+                    <button onClick={() => send(c)}>🚀 Enviar agora</button>
+                  )}
+                  {(c.status === "scheduled" || c.status === "running") && (
+                    <button className="ghost" onClick={() => cancel(c)}>Cancelar</button>
+                  )}
+                  {c.status !== "running" && (
+                    <button className="link" style={{ color: "#dc2626" }} onClick={() => remove(c)}>Remover</button>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
+}
+
 export function App() {
   const [logged, setLogged] = useState(isLoggedIn());
   const [me, setMe] = useState(null);
@@ -1542,6 +1698,7 @@ export function App() {
           <button className={tab === "respostas" ? "active" : ""} onClick={() => setTab("respostas")}>⚡ Respostas</button>
           {me?.principal?.role === "admin" && <button className={tab === "tags" ? "active" : ""} onClick={() => setTab("tags")}>🏷️ Tags</button>}
           <button className={tab === "automacoes" ? "active" : ""} onClick={() => setTab("automacoes")}>🤖 Automações</button>
+          {me?.principal?.role === "admin" && <button className={tab === "campanhas" ? "active" : ""} onClick={() => setTab("campanhas")}>📣 Campanhas</button>}
           <button className={tab === "ferramentas" ? "active" : ""} onClick={() => setTab("ferramentas")}>🧩 Ferramentas</button>
           <button className={tab === "cursos" ? "active" : ""} onClick={() => setTab("cursos")}>🎓 Academia</button>
           <button className={tab === "conexoes" ? "active" : ""} onClick={() => setTab("conexoes")}>📲 Conexões</button>
@@ -1564,6 +1721,7 @@ export function App() {
         {tab === "respostas" && <QuickReplies />}
         {tab === "tags" && <TagsManager />}
         {tab === "automacoes" && <Automations />}
+        {tab === "campanhas" && <Campaigns />}
         {tab === "ferramentas" && <Tools />}
         {tab === "cursos" && <Academy isAdmin={me?.principal?.role === "admin"} />}
         {tab === "conexoes" && <Connections isAdmin={me?.principal?.role === "admin"} />}
