@@ -118,6 +118,7 @@ function Dashboard() {
     { l: "Mensagens hoje", n: m.messagesToday, icon: "✉️", color: "#6d28d9" },
     { l: "Contatos", n: m.contacts, icon: "👥", color: "#0891b2" },
     { l: "1ª resposta (méd.)", n: m.avgFirstResponseSeconds != null ? `${Math.round(m.avgFirstResponseSeconds)}s` : "—", icon: "⚡", color: "#db2777" },
+    { l: m.rating?.count ? `Satisfação (${m.rating.count} aval.)` : "Satisfação", n: m.rating?.average != null ? `${m.rating.average}/10` : "—", icon: "⭐", color: "#f59e0b" },
   ];
   return (
     <>
@@ -628,6 +629,11 @@ const AUTOMATION_TYPES = {
     icon: "🔑",
     hint: "Responde quando a mensagem do cliente contém um dos termos.",
   },
+  rating: {
+    label: "Avaliação / NPS",
+    icon: "⭐",
+    hint: "Ao resolver a conversa, pede uma nota ao cliente. A resposta numérica vira uma avaliação (aparece no Dashboard).",
+  },
 };
 
 // Formulário de criação de uma nova regra (bot de fluxo).
@@ -643,6 +649,8 @@ function AutomationForm({ onCreate }) {
   const [knowledge, setKnowledge] = useState("");
   const [tone, setTone] = useState("");
   const [handoffMessage, setHandoffMessage] = useState("");
+  const [scale, setScale] = useState(10);
+  const [thanks, setThanks] = useState("");
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
 
@@ -672,11 +680,17 @@ function AutomationForm({ onCreate }) {
         ...(tone.trim() ? { tone: tone.trim() } : {}),
         ...(handoffMessage.trim() ? { handoffMessage: handoffMessage.trim() } : {}),
       };
+    } else if (type === "rating") {
+      config = {
+        scale: Number(scale),
+        ...(message.trim() ? { message: message.trim() } : {}),
+        ...(thanks.trim() ? { thanks: thanks.trim() } : {}),
+      };
     }
     setBusy(true);
     try {
       await onCreate({ name: name.trim() || AUTOMATION_TYPES[type].label, type, config });
-      setName(""); setMessage(""); setReply(""); setKeywords(""); setKnowledge(""); setTone(""); setHandoffMessage("");
+      setName(""); setMessage(""); setReply(""); setKeywords(""); setKnowledge(""); setTone(""); setHandoffMessage(""); setThanks("");
     } catch (e) { setErr(e.message); } finally { setBusy(false); }
   };
 
@@ -709,6 +723,27 @@ function AutomationForm({ onCreate }) {
           <p className="muted" style={{ fontSize: 12 }}>
             A IA responde o cliente sozinha e transfere para um humano quando o cliente pede ou quando o caso foge da base.
             Requer a <b>ANTHROPIC_API_KEY</b> configurada — sem ela a IA fica inativa.
+          </p>
+        </>
+      )}
+
+      {type === "rating" && (
+        <>
+          <div className="field"><label>Escala</label>
+            <select value={scale} onChange={(e) => setScale(Number(e.target.value))}
+              style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid var(--border)", background: "var(--panel2)", color: "var(--text)" }}>
+              <option value={10}>0 a 10 (NPS)</option>
+              <option value={5}>1 a 5 (estrelas)</option>
+            </select>
+          </div>
+          <div className="field"><label>Mensagem do pedido de nota (opcional)</label>
+            <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows={2}
+              placeholder={`De 0 a ${scale}, como você avalia nosso atendimento? Responda apenas com o número. 🙏`}
+              style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid var(--border)", background: "var(--panel2)", color: "var(--text)", resize: "vertical" }} /></div>
+          <div className="field"><label>Agradecimento (opcional)</label>
+            <input value={thanks} onChange={(e) => setThanks(e.target.value)} placeholder="Obrigado pela sua avaliação! 💜" /></div>
+          <p className="muted" style={{ fontSize: 12 }}>
+            Ao resolver uma conversa, o cliente recebe o pedido de nota. A próxima resposta numérica dele (em até 24h) vira uma avaliação.
           </p>
         </>
       )}
@@ -778,6 +813,7 @@ function Automations() {
 
   const describe = (a) => {
     const c = a.config || {};
+    if (a.type === "rating") return `Pesquisa de satisfação (0–${c.scale || 10}) ao resolver a conversa`;
     if (a.type === "ai") return "IA responde o cliente e transfere para humano quando necessário";
     if (a.type === "keyword") return `Se contém: ${(c.keywords || []).join(", ")} → responde`;
     if (a.type === "business_hours") return `Fora de ${c.start || "09:00"}–${c.end || "18:00"} → responde`;

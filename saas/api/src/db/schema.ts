@@ -117,6 +117,10 @@ export const conversations = pgTable(
     // Autoatendimento por IA: enquanto true e ninguém humano assumiu, o bot de IA
     // responde o cliente. Vira false no handoff (IA decide, ou o cliente pede humano).
     botActive: boolean("bot_active").notNull().default(true),
+    // Avaliação/NPS: quando a conversa é resolvida e a pesquisa está ativa,
+    // marcamos o momento em que pedimos a nota; a próxima resposta numérica do
+    // cliente (dentro da janela) vira uma avaliação. null = não aguardando.
+    awaitingRatingAt: timestamp("awaiting_rating_at", { withTimezone: true }),
     unreadCount: integer("unread_count").notNull().default(0),
     lastMessageAt: timestamp("last_message_at", { withTimezone: true }),
     firstResponseAt: timestamp("first_response_at", { withTimezone: true }),
@@ -410,4 +414,27 @@ export const campaignRecipients = pgTable(
     sentAt: timestamp("sent_at", { withTimezone: true }),
   },
   (t) => [index("campaign_recipients_ix").on(t.campaignId, t.status)]
+);
+
+// Avaliação / NPS (Lote 4) — nota de satisfação dada pelo cliente ao fim do
+// atendimento. Uma linha por avaliação, ligada à conversa e ao atendente.
+export const ratings = pgTable(
+  "ratings",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    conversationId: uuid("conversation_id")
+      .notNull()
+      .references(() => conversations.id, { onDelete: "cascade" }),
+    contactId: uuid("contact_id")
+      .notNull()
+      .references(() => contacts.id, { onDelete: "cascade" }),
+    agentUserId: uuid("agent_user_id").references(() => users.id, { onDelete: "set null" }),
+    score: integer("score").notNull(),
+    scale: integer("scale").notNull().default(10), // 5 ou 10
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("ratings_company_ix").on(t.companyId, t.createdAt)]
 );

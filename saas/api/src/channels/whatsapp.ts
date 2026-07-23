@@ -141,6 +141,13 @@ async function recordInbound(companyId: string, phone: string, name: string, bod
       .returning();
   }
 
+  // Se a conversa anterior está aguardando avaliação, esta resposta pode ser a
+  // nota do cliente — nesse caso consumimos a mensagem e não abrimos uma nova.
+  const consumed = await import("../modules/ratings.js")
+    .then((m) => m.tryCaptureRating(companyId, contact.id, body))
+    .catch(() => false);
+  if (consumed) return;
+
   let [conv] = await db
     .select()
     .from(schema.conversations)

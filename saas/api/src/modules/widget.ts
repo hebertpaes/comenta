@@ -131,6 +131,12 @@ export async function widgetRoutes(app: FastifyInstance) {
     const [conv] = await db.select().from(schema.conversations).where(eq(schema.conversations.id, conversationId));
     if (!conv) throw new ApiError(404, "Conversa não encontrada");
 
+    // Se a conversa aguarda avaliação, esta resposta pode ser a nota do cliente.
+    const consumed = await import("./ratings.js")
+      .then((m) => m.tryCaptureRating(conv.companyId, conv.contactId, body))
+      .catch(() => false);
+    if (consumed) return reply.code(201).send({ ok: true, rated: true });
+
     const [msg] = await db
       .insert(schema.messages)
       .values({ companyId: conv.companyId, conversationId, direction: "in", body })

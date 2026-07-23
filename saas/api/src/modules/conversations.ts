@@ -142,6 +142,12 @@ export async function conversationRoutes(app: FastifyInstance) {
     emitToCompany(p.companyId, "conversation.updated", conv);
     publishEvent(p.companyId, "conversation.updated", conv).catch(() => {});
     audit(p, "conversation.updated", "conversation", id, body);
+    // Resolveu a conversa: se a pesquisa de satisfação estiver ativa, pede a nota.
+    if (body.status === "resolved") {
+      import("./ratings.js")
+        .then((m) => m.requestRatingOnResolve(p.companyId, { id: conv.id, contactId: conv.contactId }))
+        .catch(() => {});
+    }
     return conv;
   });
 
@@ -193,6 +199,7 @@ export async function conversationRoutes(app: FastifyInstance) {
       const key = d.toISOString().slice(0, 10);
       days.push({ day: key, count: seriesMap[key] ?? 0 });
     }
+    const rating = await import("./ratings.js").then((m) => m.ratingMetrics(cid)).catch(() => ({ count: 0, average: null, nps: null }));
     return {
       conversations: {
         pending: statusMap.pending ?? 0,
@@ -204,6 +211,7 @@ export async function conversationRoutes(app: FastifyInstance) {
       avgFirstResponseSeconds: avgFirstResponse.seconds,
       messages7d: days,
       byQueue: byQueue.map((q) => ({ name: q.name, color: q.color, count: Number(q.count) })),
+      rating,
     };
   });
 }

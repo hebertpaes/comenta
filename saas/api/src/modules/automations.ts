@@ -16,7 +16,7 @@ import { publishEvent } from "../queues.js";
  *                      sozinha e escala para humano quando necessário (handoff)
  */
 
-const TYPES = ["welcome", "business_hours", "keyword", "ai"] as const;
+const TYPES = ["welcome", "business_hours", "keyword", "ai", "rating"] as const;
 
 const DEFAULT_HANDOFF_WORDS = ["humano", "atendente", "pessoa", "falar com alguem", "falar com alguém", "quero falar com"];
 
