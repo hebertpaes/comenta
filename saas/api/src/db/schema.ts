@@ -298,3 +298,66 @@ export const userQueues = pgTable(
   },
   (t) => [uniqueIndex("user_queues_ux").on(t.queueId, t.userId)]
 );
+
+// Kit de atendimento (Fase 10): respostas rápidas, tags e notas internas.
+export const quickReplies = pgTable(
+  "quick_replies",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    shortcut: varchar("shortcut", { length: 40 }).notNull(),
+    message: text("message").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("quick_replies_company_ix").on(t.companyId)]
+);
+
+export const tags = pgTable(
+  "tags",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    name: varchar("name", { length: 60 }).notNull(),
+    color: varchar("color", { length: 16 }).notNull().default("#6d28d9"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("tags_company_ix").on(t.companyId)]
+);
+
+export const conversationTags = pgTable(
+  "conversation_tags",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    conversationId: uuid("conversation_id")
+      .notNull()
+      .references(() => conversations.id, { onDelete: "cascade" }),
+    tagId: uuid("tag_id")
+      .notNull()
+      .references(() => tags.id, { onDelete: "cascade" }),
+  },
+  (t) => [uniqueIndex("conversation_tags_ux").on(t.conversationId, t.tagId)]
+);
+
+export const conversationNotes = pgTable(
+  "conversation_notes",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    conversationId: uuid("conversation_id")
+      .notNull()
+      .references(() => conversations.id, { onDelete: "cascade" }),
+    authorUserId: uuid("author_user_id").references(() => users.id, { onDelete: "set null" }),
+    body: text("body").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("conversation_notes_ix").on(t.conversationId, t.createdAt)]
+);

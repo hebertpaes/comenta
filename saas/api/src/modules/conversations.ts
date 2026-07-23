@@ -8,6 +8,7 @@ import { emitToCompany } from "../realtime.js";
 import { publishEvent } from "../queues.js";
 import { deliverOutbound } from "../channels/registry.js";
 import { sendToContact } from "../channels/whatsapp.js";
+import { tagsForConversations } from "./toolkit.js";
 
 const ListQuery = z.object({
   status: z.enum(["pending", "open", "resolved"]).optional(),
@@ -52,7 +53,9 @@ export async function conversationRoutes(app: FastifyInstance) {
       .select({ count: dsql<number>`count(*)::int` })
       .from(schema.conversations)
       .where(where);
-    return { data: rows, meta: { page, perPage: limit, total: count } };
+    const tagMap = await tagsForConversations(p.companyId, rows.map((r) => r.id));
+    const data = rows.map((r) => ({ ...r, tags: tagMap[r.id] ?? [] }));
+    return { data, meta: { page, perPage: limit, total: count } };
   });
 
   app.get("/conversations/:id", async (req) => {
@@ -74,7 +77,8 @@ export async function conversationRoutes(app: FastifyInstance) {
     if (conv.unreadCount > 0) {
       await db.update(schema.conversations).set({ unreadCount: 0 }).where(eq(schema.conversations.id, id));
     }
-    return { ...conv, contact, messages: msgs };
+    const tagMap = await tagsForConversations(p.companyId, [id]);
+    return { ...conv, contact, messages: msgs, tags: tagMap[id] ?? [] };
   });
 
   // Envia mensagem do atendente (outbound)

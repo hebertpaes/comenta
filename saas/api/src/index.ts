@@ -22,6 +22,7 @@ import { widgetRoutes } from "./modules/widget.js";
 import { automationRoutes } from "./modules/automations.js";
 import { courseRoutes } from "./modules/courses.js";
 import { queueRoutes } from "./modules/queues.js";
+import { toolkitRoutes } from "./modules/toolkit.js";
 import { restoreSessions } from "./channels/whatsapp.js";
 
 const app = Fastify({
@@ -92,6 +93,7 @@ await app.register(widgetRoutes);
 await app.register(automationRoutes);
 await app.register(courseRoutes);
 await app.register(queueRoutes);
+await app.register(toolkitRoutes);
 
 // socket.io compartilha o mesmo servidor HTTP
 const server = createServer();

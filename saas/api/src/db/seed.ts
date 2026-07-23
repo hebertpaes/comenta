@@ -175,6 +175,28 @@ async function seed() {
   }
   console.log(`✓ filas: ${novasFilas} novas / ${defaultQueues.length} no total`);
 
+  // Kit de atendimento (Fase 10): respostas rápidas e tags padrão. Idempotente.
+  const qrs = await db.select({ id: schema.quickReplies.id }).from(schema.quickReplies).where(eq(schema.quickReplies.companyId, companyId));
+  if (qrs.length === 0) {
+    await db.insert(schema.quickReplies).values([
+      { companyId, shortcut: "/ola", message: "Olá! Tudo bem? Como posso te ajudar hoje?" },
+      { companyId, shortcut: "/aguarde", message: "Só um momento, por favor, já verifico isso para você." },
+      { companyId, shortcut: "/obrigado", message: "Obrigado pelo contato! Precisando, estamos à disposição. 😊" },
+      { companyId, shortcut: "/planos", message: "Nossos planos: Free (R$0), Pro (R$99/mês) e Business (R$299/mês). Quer que eu detalhe algum?" },
+    ]);
+    console.log("✓ respostas rápidas padrão");
+  }
+  const tgs = await db.select({ id: schema.tags.id }).from(schema.tags).where(eq(schema.tags.companyId, companyId));
+  if (tgs.length === 0) {
+    await db.insert(schema.tags).values([
+      { companyId, name: "Novo cliente", color: "#16a34a" },
+      { companyId, name: "Urgente", color: "#dc2626" },
+      { companyId, name: "Aguardando pagamento", color: "#d97706" },
+      { companyId, name: "Resolvido", color: "#2563eb" },
+    ]);
+    console.log("✓ tags padrão");
+  }
+
   await sql.end();
 }
 

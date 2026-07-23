@@ -299,6 +299,41 @@ function Connections({ isAdmin }) {
   );
 }
 
+// Notas internas de uma conversa.
+function NotesPanel({ conversationId }) {
+  const [notes, setNotes] = useState([]);
+  const [text, setText] = useState("");
+  const [open, setOpen] = useState(false);
+  const load = () => api.notes(conversationId).then((r) => setNotes(r.data || [])).catch(() => {});
+  useEffect(() => { if (open) load(); }, [conversationId, open]);
+  const add = async () => { if (!text.trim()) return; await api.noteCreate(conversationId, text.trim()); setText(""); load(); };
+  const del = async (id) => { await api.noteDelete(id); load(); };
+  return (
+    <div style={{ marginTop: 8 }}>
+      <button className="link" onClick={() => setOpen((o) => !o)}>🗒️ Notas internas {open ? "▲" : "▼"} {notes.length ? `(${notes.length})` : ""}</button>
+      {open && (
+        <div style={{ background: "#fffbeb", border: "1px solid #fde68a", borderRadius: 8, padding: 10, marginTop: 6 }}>
+          <div style={{ display: "flex", gap: 6 }}>
+            <input value={text} onChange={(e) => setText(e.target.value)} placeholder="Anotação visível só para a equipe…"
+              onKeyDown={(e) => e.key === "Enter" && add()}
+              style={{ flex: 1, padding: "6px 8px", borderRadius: 6, border: "1px solid #d0d5dd" }} />
+            <button onClick={add}>Anotar</button>
+          </div>
+          {notes.map((n) => (
+            <div key={n.id} style={{ fontSize: 13, marginTop: 8, borderTop: "1px dashed #fde68a", paddingTop: 6 }}>
+              <div>{n.body}</div>
+              <div className="muted" style={{ fontSize: 11, display: "flex", gap: 8 }}>
+                <span>{n.author || "—"}</span>
+                <button className="link" style={{ color: "#dc2626", fontSize: 11 }} onClick={() => del(n.id)}>remover</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function Conversations() {
   const [list, setList] = useState([]);
   const [sel, setSel] = useState(null);
@@ -306,10 +341,17 @@ function Conversations() {
   const [draft, setDraft] = useState("");
   const [queues, setQueues] = useState([]);
   const [filterQueue, setFilterQueue] = useState("");
+  const [allTags, setAllTags] = useState([]);
+  const [quick, setQuick] = useState([]);
+  const [showQuick, setShowQuick] = useState(false);
 
   const queueOf = (id) => queues.find((q) => q.id === id);
   const load = () => api.conversations(filterQueue ? { queueId: filterQueue } : {}).then((r) => setList(r.data || [])).catch(() => {});
-  useEffect(() => { api.queues().then((r) => setQueues(r.data || [])).catch(() => {}); }, []);
+  useEffect(() => {
+    api.queues().then((r) => setQueues(r.data || [])).catch(() => {});
+    api.tags().then((r) => setAllTags(r.data || [])).catch(() => {});
+    api.quickReplies().then((r) => setQuick(r.data || [])).catch(() => {});
+  }, []);
   useEffect(() => { load(); }, [filterQueue]);
   useEffect(() => { if (sel) api.conversation(sel).then(setDetail).catch(() => {}); }, [sel]);
 
@@ -325,13 +367,24 @@ function Conversations() {
     api.conversation(sel).then(setDetail);
     load();
   };
+  const toggleTag = async (tagId) => {
+    if (!detail) return;
+    const cur = (detail.tags || []).map((t) => t.id);
+    const next = cur.includes(tagId) ? cur.filter((x) => x !== tagId) : [...cur, tagId];
+    await api.conversationSetTags(detail.id, next);
+    api.conversation(detail.id).then(setDetail);
+    load();
+  };
+  const insertQuick = (msg) => { setDraft((d) => (d ? d + " " : "") + msg); setShowQuick(false); };
+
+  const activeTagIds = (detail?.tags || []).map((t) => t.id);
 
   return (
     <>
       <h2>Conversas</h2>
       <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 10, flexWrap: "wrap" }}>
         <span className="muted" style={{ fontSize: 13 }}>Fila:</span>
-        <button onClick={() => setFilterQueue("")} className={filterQueue === "" ? "" : "link"}
+        <button onClick={() => setFilterQueue("")}
           style={{ padding: "5px 12px", borderRadius: 999, fontSize: 13, cursor: "pointer",
             border: "1px solid " + (filterQueue === "" ? "#6d28d9" : "#d0d5dd"), background: filterQueue === "" ? "#6d28d9" : "#fff", color: filterQueue === "" ? "#fff" : "#333" }}>
           Todas
@@ -352,9 +405,10 @@ function Conversations() {
             return (
               <div key={c.id} className={`item ${sel === c.id ? "active" : ""}`} onClick={() => setSel(c.id)}>
                 <div className="name">{c.contact?.name || "Contato"}</div>
-                <div className="last" style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                <div className="last" style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
                   <span>{c.status} · {c.contact?.phone || ""}</span>
                   {q && <span className="tag" style={{ background: q.color, color: "#fff", fontSize: 10 }}>{q.name}</span>}
+                  {(c.tags || []).map((t) => <span key={t.id} className="tag" style={{ background: t.color, color: "#fff", fontSize: 10 }}>{t.name}</span>)}
                 </div>
               </div>
             );
@@ -382,13 +436,47 @@ function Conversations() {
                   >💬 WhatsApp</a>
                 )}
               </div>
+
+              {allTags.length > 0 && (
+                <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 6 }}>
+                  {allTags.map((t) => {
+                    const on = activeTagIds.includes(t.id);
+                    return (
+                      <button key={t.id} onClick={() => toggleTag(t.id)} title="clique para aplicar/remover"
+                        style={{ padding: "3px 10px", borderRadius: 999, fontSize: 12, cursor: "pointer",
+                          border: "1px solid " + t.color, background: on ? t.color : "#fff", color: on ? "#fff" : t.color }}>
+                        {on ? "✓ " : ""}{t.name}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+
               <AiPanel conversationId={detail.id} />
+              <NotesPanel conversationId={detail.id} />
               <div className="msgs">
                 {(detail.messages || []).map((msg) => (
                   <div key={msg.id} className={`bubble ${msg.direction}`}>{msg.body}</div>
                 ))}
               </div>
+
+              {showQuick && quick.length > 0 && (
+                <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 8, padding: 8, marginBottom: 6, maxHeight: 160, overflowY: "auto" }}>
+                  {quick.map((qr) => (
+                    <div key={qr.id} onClick={() => insertQuick(qr.message)}
+                      style={{ padding: "6px 8px", borderRadius: 6, cursor: "pointer", fontSize: 13 }}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = "#eef2ff")}
+                      onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}>
+                      <b>{qr.shortcut}</b> — <span className="muted">{qr.message.slice(0, 70)}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
               <div className="composer">
+                {quick.length > 0 && (
+                  <button title="Respostas rápidas" onClick={() => setShowQuick((s) => !s)}
+                    style={{ padding: "0 12px" }}>⚡</button>
+                )}
                 <input value={draft} onChange={(e) => setDraft(e.target.value)} placeholder="Escreva uma resposta…"
                   onKeyDown={(e) => e.key === "Enter" && send()} />
                 <button onClick={send}>Enviar</button>
@@ -1049,6 +1137,89 @@ function Kanban() {
   );
 }
 
+// ---- Respostas rápidas (gestão) ----
+function QuickReplies() {
+  const [list, setList] = useState(null);
+  const [f, setF] = useState({ shortcut: "", message: "" });
+  const load = () => api.quickReplies().then((r) => setList(r.data || [])).catch(() => setList([]));
+  useEffect(() => { load(); }, []);
+  const create = async (e) => {
+    e.preventDefault();
+    if (!f.shortcut.trim() || !f.message.trim()) return;
+    let sc = f.shortcut.trim(); if (!sc.startsWith("/")) sc = "/" + sc;
+    try { await api.quickReplyCreate({ shortcut: sc, message: f.message.trim() }); setF({ shortcut: "", message: "" }); load(); }
+    catch (e) { alert(e.message); }
+  };
+  const del = async (id) => { if (confirm("Remover esta resposta rápida?")) { await api.quickReplyDelete(id); load(); } };
+  return (
+    <>
+      <h2>Respostas rápidas</h2>
+      <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 680 }}>
+        Atalhos de mensagem que o atendente insere na conversa com um clique (botão ⚡ no chat).
+      </p>
+      <form onSubmit={create} className="card" style={{ padding: 16, marginBottom: 18, maxWidth: 620, alignItems: "stretch" }}>
+        <div style={{ display: "flex", gap: 8 }}>
+          <input value={f.shortcut} onChange={(e) => setF({ ...f, shortcut: e.target.value })} placeholder="/atalho"
+            style={{ width: 140, padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }} />
+          <input value={f.message} onChange={(e) => setF({ ...f, message: e.target.value })} placeholder="Texto da mensagem"
+            style={{ flex: 1, padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }} />
+          <button>➕ Criar</button>
+        </div>
+      </form>
+      {list === null && <p className="muted">Carregando…</p>}
+      {list && list.length === 0 && <p className="muted">Nenhuma resposta rápida ainda.</p>}
+      <div style={{ display: "flex", flexDirection: "column", gap: 8, maxWidth: 680 }}>
+        {list && list.map((qr) => (
+          <div key={qr.id} className="card" style={{ padding: 12, flexDirection: "row", display: "flex", alignItems: "center", gap: 10 }}>
+            <span className="tag" style={{ background: "#eef2ff", color: "#4338ca" }}>{qr.shortcut}</span>
+            <span style={{ flex: 1, fontSize: 14 }}>{qr.message}</span>
+            <button className="link" style={{ color: "#dc2626" }} onClick={() => del(qr.id)}>Remover</button>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+// ---- Tags (gestão) ----
+function TagsManager() {
+  const [list, setList] = useState(null);
+  const [f, setF] = useState({ name: "", color: "#6d28d9" });
+  const load = () => api.tags().then((r) => setList(r.data || [])).catch(() => setList([]));
+  useEffect(() => { load(); }, []);
+  const create = async (e) => {
+    e.preventDefault();
+    if (!f.name.trim()) return;
+    try { await api.tagCreate({ name: f.name.trim(), color: f.color }); setF({ name: "", color: "#6d28d9" }); load(); }
+    catch (e) { alert(e.message); }
+  };
+  const del = async (id) => { if (confirm("Remover esta tag?")) { await api.tagDelete(id); load(); } };
+  return (
+    <>
+      <h2>Tags</h2>
+      <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 680 }}>
+        Etiquetas coloridas para classificar conversas (aplicadas no cabeçalho de cada conversa).
+      </p>
+      <form onSubmit={create} className="card" style={{ padding: 16, marginBottom: 18, maxWidth: 460, flexDirection: "row", display: "flex", gap: 8, alignItems: "center" }}>
+        <input type="color" value={f.color} onChange={(e) => setF({ ...f, color: e.target.value })} style={{ width: 40, height: 38, border: "none", background: "none" }} />
+        <input value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} placeholder="Nome da tag"
+          style={{ flex: 1, padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }} />
+        <button>➕ Criar</button>
+      </form>
+      {list === null && <p className="muted">Carregando…</p>}
+      {list && list.length === 0 && <p className="muted">Nenhuma tag ainda.</p>}
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+        {list && list.map((t) => (
+          <div key={t.id} className="card" style={{ padding: "8px 12px", flexDirection: "row", display: "flex", alignItems: "center", gap: 8 }}>
+            <span className="tag" style={{ background: t.color, color: "#fff" }}>{t.name}</span>
+            <button className="link" style={{ color: "#dc2626", fontSize: 12 }} onClick={() => del(t.id)}>×</button>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
 export function App() {
   const [logged, setLogged] = useState(isLoggedIn());
   const [me, setMe] = useState(null);
@@ -1067,6 +1238,8 @@ export function App() {
           <button className={tab === "conversas" ? "active" : ""} onClick={() => setTab("conversas")}>💬 Conversas</button>
           <button className={tab === "kanban" ? "active" : ""} onClick={() => setTab("kanban")}>📋 Kanban</button>
           {me?.principal?.role === "admin" && <button className={tab === "filas" ? "active" : ""} onClick={() => setTab("filas")}>🗂️ Filas</button>}
+          <button className={tab === "respostas" ? "active" : ""} onClick={() => setTab("respostas")}>⚡ Respostas</button>
+          {me?.principal?.role === "admin" && <button className={tab === "tags" ? "active" : ""} onClick={() => setTab("tags")}>🏷️ Tags</button>}
           <button className={tab === "automacoes" ? "active" : ""} onClick={() => setTab("automacoes")}>🤖 Automações</button>
           <button className={tab === "ferramentas" ? "active" : ""} onClick={() => setTab("ferramentas")}>🧩 Ferramentas</button>
           <button className={tab === "cursos" ? "active" : ""} onClick={() => setTab("cursos")}>🎓 Academia</button>
@@ -1082,6 +1255,8 @@ export function App() {
         {tab === "conversas" && <Conversations />}
         {tab === "kanban" && <Kanban />}
         {tab === "filas" && <Queues />}
+        {tab === "respostas" && <QuickReplies />}
+        {tab === "tags" && <TagsManager />}
         {tab === "automacoes" && <Automations />}
         {tab === "ferramentas" && <Tools />}
         {tab === "cursos" && <Academy isAdmin={me?.principal?.role === "admin"} />}
