@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { api, isLoggedIn } from "./api.js";
 
 const Logo = () => (
@@ -1705,6 +1705,87 @@ function Campaigns() {
   );
 }
 
+// Chat interno da equipe — canal único da empresa, atendentes conversando entre si.
+function TeamChat({ me }) {
+  const [msgs, setMsgs] = useState([]);
+  const [text, setText] = useState("");
+  const [busy, setBusy] = useState(false);
+  const lastAt = useRef(null);
+  const boxRef = useRef(null);
+  const myId = me?.principal?.userId;
+
+  const scrollDown = () => { const b = boxRef.current; if (b) b.scrollTop = b.scrollHeight; };
+
+  useEffect(() => {
+    let alive = true;
+    const load = async (incremental) => {
+      try {
+        const r = await api.teamMessages(incremental ? lastAt.current : null);
+        if (!alive || !r.data) return;
+        if (r.data.length) lastAt.current = r.data[r.data.length - 1].createdAt;
+        setMsgs((cur) => {
+          if (!incremental) return r.data;
+          const seen = new Set(cur.map((m) => m.id));
+          const fresh = r.data.filter((m) => !seen.has(m.id));
+          return fresh.length ? [...cur, ...fresh] : cur;
+        });
+      } catch { /* silencioso */ }
+    };
+    load(false).then(() => setTimeout(scrollDown, 50));
+    const t = setInterval(() => load(true).then(scrollDown), 3000);
+    return () => { alive = false; clearInterval(t); };
+  }, []);
+
+  const send = async () => {
+    const body = text.trim();
+    if (!body) return;
+    setBusy(true);
+    try {
+      const m = await api.teamSend(body);
+      lastAt.current = m.createdAt;
+      setMsgs((cur) => (cur.some((x) => x.id === m.id) ? cur : [...cur, m]));
+      setText("");
+      setTimeout(scrollDown, 50);
+    } catch (e) { alert(e.message); } finally { setBusy(false); }
+  };
+
+  const time = (d) => new Date(d).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+
+  return (
+    <>
+      <h2>Chat da equipe</h2>
+      <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 620 }}>
+        Canal interno entre os atendentes desta empresa. As mensagens aqui <b>não vão para o cliente</b> —
+        é só para a equipe se coordenar.
+      </p>
+      <div className="thread" style={{ maxWidth: 720 }}>
+        <div className="msgs" ref={boxRef}>
+          {msgs.length === 0 && <p className="muted" style={{ margin: "auto" }}>Nenhuma mensagem ainda. Diga um oi para a equipe 👋</p>}
+          {msgs.map((m) => {
+            const mine = m.userId && m.userId === myId;
+            return (
+              <div key={m.id} className={`bubble ${mine ? "out" : "in"}`} style={{ maxWidth: "78%" }}>
+                {!mine && <div style={{ fontSize: 11, fontWeight: 700, marginBottom: 2, opacity: 0.85 }}>{m.userName || "Atendente"}</div>}
+                <div style={{ whiteSpace: "pre-wrap" }}>{m.body}</div>
+                <div style={{ fontSize: 10, opacity: 0.6, textAlign: "right", marginTop: 2 }}>{time(m.createdAt)}</div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="composer">
+          <input
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } }}
+            placeholder="Escreva para a equipe…"
+          />
+          <button disabled={busy || !text.trim()} onClick={send}>Enviar</button>
+        </div>
+      </div>
+    </>
+  );
+}
+
 export function App() {
   const [logged, setLogged] = useState(isLoggedIn());
   const [me, setMe] = useState(null);
@@ -1728,6 +1809,7 @@ export function App() {
           <button className={tab === "dashboard" ? "active" : ""} onClick={() => setTab("dashboard")}>📊 Dashboard</button>
           <button className={tab === "conversas" ? "active" : ""} onClick={() => setTab("conversas")}>💬 Conversas</button>
           <button className={tab === "kanban" ? "active" : ""} onClick={() => setTab("kanban")}>📋 Kanban</button>
+          <button className={tab === "equipe" ? "active" : ""} onClick={() => setTab("equipe")}>💬 Equipe</button>
           <button className={tab === "contatos" ? "active" : ""} onClick={() => setTab("contatos")}>👥 Contatos</button>
           {me?.principal?.role === "admin" && <button className={tab === "usuarios" ? "active" : ""} onClick={() => setTab("usuarios")}>🧑‍💼 Usuários</button>}
           {me?.principal?.role === "admin" && <button className={tab === "filas" ? "active" : ""} onClick={() => setTab("filas")}>🗂️ Filas</button>}
@@ -1751,6 +1833,7 @@ export function App() {
         {tab === "dashboard" && <Dashboard />}
         {tab === "conversas" && <Conversations />}
         {tab === "kanban" && <Kanban />}
+        {tab === "equipe" && <TeamChat me={me} />}
         {tab === "contatos" && <Contacts />}
         {tab === "usuarios" && <Users />}
         {tab === "filas" && <Queues />}

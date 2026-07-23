@@ -438,3 +438,19 @@ export const ratings = pgTable(
   },
   (t) => [index("ratings_company_ix").on(t.companyId, t.createdAt)]
 );
+
+// Chat interno da equipe (Lote 4) — canal único por empresa onde os atendentes
+// conversam entre si (não vai para o cliente). Mensagens simples com autor.
+export const teamMessages = pgTable(
+  "team_messages",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    userId: uuid("user_id").references(() => users.id, { onDelete: "set null" }),
+    body: text("body").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("team_messages_ix").on(t.companyId, t.createdAt)]
+);
