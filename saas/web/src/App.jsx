@@ -103,81 +103,167 @@ function AiPanel({ conversationId }) {
   );
 }
 
-function Connections() {
-  const [st, setSt] = useState({ status: "disconnected", qr: null, phone: null });
+const STATUS_META = {
+  connected: { label: "Conectado", color: "#22c55e", bg: "#dcfce7" },
+  connecting: { label: "Conectando…", color: "#d97706", bg: "#fef3c7" },
+  configured: { label: "Configurado", color: "#2563eb", bg: "#dbeafe" },
+  disconnected: { label: "Desconectado", color: "#64748b", bg: "#f1f5f9" },
+};
+
+// Card de uma conexão de WhatsApp (QR real, status ao vivo).
+function WhatsappCard({ ch, isAdmin, onChanged }) {
+  const [st, setSt] = useState({ status: ch.status, qr: ch.live?.qr || null, phone: ch.live?.phone || (ch.config || {}).phone || null });
   const [busy, setBusy] = useState(false);
-
-  const refresh = () => api.waStatus().then(setSt).catch(() => {});
   useEffect(() => {
-    refresh();
-    const t = setInterval(refresh, 3000); // polling do estado
-    return () => clearInterval(t);
-  }, []);
+    let alive = true;
+    const tick = () => api.channelStatus(ch.id).then((s) => { if (alive) setSt(s); }).catch(() => {});
+    tick();
+    const t = setInterval(tick, 3000);
+    return () => { alive = false; clearInterval(t); };
+  }, [ch.id]);
 
-  const connect = async () => {
+  const connect = async () => { setBusy(true); try { setSt(await api.channelConnect(ch.id)); } catch (e) { alert(e.message); } finally { setBusy(false); } };
+  const disconnect = async () => { setBusy(true); try { setSt(await api.channelDisconnect(ch.id)); onChanged?.(); } catch (e) { alert(e.message); } finally { setBusy(false); } };
+  const remove = async () => { if (confirm(`Remover a conexão "${ch.name}"?`)) { await api.channelDelete(ch.id); onChanged?.(); } };
+
+  const meta = STATUS_META[st.status] || STATUS_META.disconnected;
+  return (
+    <div className="card" style={{ padding: 18, textAlign: "left", alignItems: "stretch", maxWidth: 380 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <span style={{ fontSize: 24 }}>🟢</span>
+        <div style={{ flex: 1 }}>
+          <div style={{ fontWeight: 700 }}>{ch.name}</div>
+          <div className="muted" style={{ fontSize: 12 }}>WhatsApp {st.phone ? `· ${st.phone}` : ""}</div>
+        </div>
+        <span className="tag" style={{ background: meta.bg, color: meta.color }}>{meta.label}</span>
+      </div>
+
+      {st.status === "connecting" && st.qr && (
+        <div style={{ textAlign: "center", marginTop: 12 }}>
+          <img src={st.qr} alt="QR do WhatsApp" width={220} height={220} style={{ borderRadius: 12, background: "#fff", padding: 8 }} />
+          <p className="muted" style={{ fontSize: 12, marginTop: 8 }}>WhatsApp → <b>Aparelhos conectados</b> → <b>Conectar aparelho</b> e aponte para o QR.</p>
+        </div>
+      )}
+      {st.status === "connecting" && !st.qr && <div className="aibox" style={{ marginTop: 12 }}>⏳ Gerando QR Code…</div>}
+      {st.demo && <p className="muted" style={{ fontSize: 11, marginTop: 10, opacity: 0.8 }}>Modo demonstração (sem a lib Baileys): pareamento simulado.</p>}
+
+      {isAdmin && (
+        <div style={{ display: "flex", gap: 10, marginTop: 14 }}>
+          {st.status === "connected" || st.status === "connecting"
+            ? <button disabled={busy} onClick={disconnect}>{st.status === "connecting" ? "Cancelar" : "Desconectar"}</button>
+            : <button disabled={busy} onClick={connect}>{busy ? "Gerando…" : "📲 Conectar"}</button>}
+          <button className="link" style={{ color: "#dc2626" }} onClick={remove}>Remover</button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Card de um canal não-WhatsApp (encaixe pronto: configurar credenciais).
+function ChannelCard({ ch, meta, isAdmin, onChanged }) {
+  const [open, setOpen] = useState(false);
+  const [cfg, setCfg] = useState(JSON.stringify(ch.config || {}, null, 2));
+  const [busy, setBusy] = useState(false);
+  const status = ch.type === "widget" ? "connected" : ch.status;
+  const sm = STATUS_META[status] || STATUS_META.disconnected;
+
+  const save = async () => {
     setBusy(true);
-    try { setSt(await api.waConnect()); } catch (e) { alert(e.message); } finally { setBusy(false); }
+    try {
+      let parsed = {};
+      try { parsed = cfg.trim() ? JSON.parse(cfg) : {}; } catch { alert("Config precisa ser JSON válido."); setBusy(false); return; }
+      await api.channelUpdate(ch.id, { config: parsed });
+      await api.channelConnect(ch.id).catch(() => {});
+      setOpen(false); onChanged?.();
+    } catch (e) { alert(e.message); } finally { setBusy(false); }
   };
-  const disconnect = async () => {
-    setBusy(true);
-    try { setSt(await api.waDisconnect()); } catch (e) { alert(e.message); } finally { setBusy(false); }
+  const remove = async () => { if (confirm(`Remover a conexão "${ch.name}"?`)) { await api.channelDelete(ch.id); onChanged?.(); } };
+
+  return (
+    <div className="card" style={{ padding: 18, textAlign: "left", alignItems: "stretch", maxWidth: 380 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <span style={{ fontSize: 24 }}>{meta?.icon || "🔌"}</span>
+        <div style={{ flex: 1 }}>
+          <div style={{ fontWeight: 700 }}>{ch.name}</div>
+          <div className="muted" style={{ fontSize: 12 }}>{meta?.label || ch.type}</div>
+        </div>
+        <span className="tag" style={{ background: sm.bg, color: sm.color }}>{sm.label}</span>
+      </div>
+      <p className="muted" style={{ fontSize: 12, marginTop: 8 }}>{meta?.help}</p>
+      {ch.type !== "widget" && meta && !meta.real && (
+        <p className="muted" style={{ fontSize: 11, marginTop: 4, opacity: 0.8 }}>Encaixe pronto — a integração do provedor entra quando as credenciais forem informadas.</p>
+      )}
+
+      {isAdmin && ch.type !== "widget" && (
+        <>
+          {open ? (
+            <div style={{ marginTop: 10 }}>
+              <textarea value={cfg} onChange={(e) => setCfg(e.target.value)} rows={4}
+                placeholder='{"token":"..."}'
+                style={{ width: "100%", fontFamily: "monospace", fontSize: 12, padding: 8, borderRadius: 8, border: "1px solid #d0d5dd" }} />
+              <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
+                <button disabled={busy} onClick={save}>{busy ? "Salvando…" : "Salvar e conectar"}</button>
+                <button className="link" onClick={() => setOpen(false)}>Cancelar</button>
+              </div>
+            </div>
+          ) : (
+            <div style={{ display: "flex", gap: 10, marginTop: 12 }}>
+              <button onClick={() => setOpen(true)}>Configurar</button>
+              <button className="link" style={{ color: "#dc2626" }} onClick={remove}>Remover</button>
+            </div>
+          )}
+        </>
+      )}
+      {isAdmin && ch.type === "widget" && (
+        <div style={{ marginTop: 12 }}><button className="link" style={{ color: "#dc2626" }} onClick={remove}>Remover</button></div>
+      )}
+    </div>
+  );
+}
+
+function Connections({ isAdmin }) {
+  const [list, setList] = useState(null);
+  const [catalog, setCatalog] = useState([]);
+  const [adding, setAdding] = useState(false);
+  const load = () => api.channels().then((r) => { setList(r.data || []); setCatalog(r.catalog || []); }).catch(() => setList([]));
+  useEffect(() => { load(); }, []);
+
+  const add = async (type) => {
+    setAdding(true);
+    try { await api.channelCreate(type); await load(); } catch (e) { alert(e.message); } finally { setAdding(false); }
   };
+  const metaOf = (type) => catalog.find((c) => c.type === type);
 
   return (
     <>
       <h2>Conexões</h2>
-      <div className="card" style={{ maxWidth: 460, padding: 20 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-          <span style={{ fontSize: 26 }}>🟢</span>
-          <div>
-            <div style={{ fontWeight: 700 }}>WhatsApp Business</div>
-            <div className="muted" style={{ fontSize: 13 }}>Conecte seu número via QR Code</div>
+      <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 680 }}>
+        Conecte vários canais e vários números ao mesmo tempo. WhatsApp é conexão real (QR);
+        os demais canais já têm o encaixe pronto para receber as credenciais.
+      </p>
+
+      {isAdmin && (
+        <div className="card" style={{ padding: 16, marginBottom: 18, textAlign: "left", alignItems: "stretch", maxWidth: 680 }}>
+          <div style={{ fontWeight: 700, marginBottom: 10 }}>Adicionar conexão</div>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+            {catalog.map((c) => (
+              <button key={c.type} disabled={adding} onClick={() => add(c.type)}
+                style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 12px", borderRadius: 999, border: "1px solid #d0d5dd", background: "#fff", cursor: "pointer", fontSize: 13 }}>
+                <span style={{ fontSize: 16 }}>{c.icon}</span> {c.label}
+              </button>
+            ))}
           </div>
         </div>
+      )}
 
-        {st.status === "connected" && (
-          <div className="aibox" style={{ borderColor: "#22c55e" }}>
-            ✅ <b>Conectado</b>{st.phone ? ` — ${st.phone}` : ""}
-            <div style={{ marginTop: 12 }}>
-              <button disabled={busy} onClick={disconnect}>Desconectar</button>
-            </div>
-          </div>
-        )}
-
-        {st.status === "connecting" && st.qr && (
-          <div style={{ textAlign: "center" }}>
-            <img src={st.qr} alt="QR do WhatsApp" width={260} height={260}
-              style={{ borderRadius: 12, background: "#fff", padding: 8 }} />
-            <p className="muted" style={{ fontSize: 13, marginTop: 10 }}>
-              Abra o WhatsApp → <b>Aparelhos conectados</b> → <b>Conectar aparelho</b> e aponte para o QR.
-            </p>
-            <p className="muted" style={{ fontSize: 12 }}>Aguardando leitura…</p>
-          </div>
-        )}
-
-        {st.status === "connecting" && !st.qr && (
-          <div className="aibox">
-            ⏳ Gerando QR Code… aguarde alguns segundos.
-            <div style={{ marginTop: 12 }}>
-              <button disabled={busy} onClick={disconnect}>Cancelar</button>
-            </div>
-          </div>
-        )}
-
-        {st.status === "disconnected" && (
-          <div>
-            <p className="muted" style={{ fontSize: 14, marginBottom: 12 }}>
-              Nenhum número conectado. Gere o QR para parear seu WhatsApp Business.
-            </p>
-            <button disabled={busy} onClick={connect}>{busy ? "Gerando…" : "📲 Conectar WhatsApp"}</button>
-          </div>
-        )}
-
-        {st.demo && (
-          <p className="muted" style={{ fontSize: 11, marginTop: 16, opacity: 0.8 }}>
-            Modo demonstração: o pareamento é simulado para testes. Integração real via Baileys já tem o ponto de encaixe no back-end.
-          </p>
-        )}
+      {list === null && <p className="muted">Carregando…</p>}
+      {list && list.length === 0 && <p className="muted">Nenhuma conexão ainda{isAdmin ? " — adicione uma acima." : "."}</p>}
+      <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "flex-start" }}>
+        {list && list.map((ch) => (
+          ch.type === "whatsapp"
+            ? <WhatsappCard key={ch.id} ch={ch} isAdmin={isAdmin} onChanged={load} />
+            : <ChannelCard key={ch.id} ch={ch} meta={metaOf(ch.type)} isAdmin={isAdmin} onChanged={load} />
+        ))}
       </div>
     </>
   );
@@ -771,7 +857,7 @@ export function App() {
         {tab === "automacoes" && <Automations />}
         {tab === "ferramentas" && <Tools />}
         {tab === "cursos" && <Academy isAdmin={me?.principal?.role === "admin"} />}
-        {tab === "conexoes" && <Connections />}
+        {tab === "conexoes" && <Connections isAdmin={me?.principal?.role === "admin"} />}
       </main>
     </div>
   );

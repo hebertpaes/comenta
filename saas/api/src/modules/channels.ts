@@ -1,48 +1,145 @@
 import type { FastifyInstance } from "fastify";
-import { eq, desc } from "drizzle-orm";
+import { z } from "zod";
+import { and, asc, eq } from "drizzle-orm";
 import { db, schema } from "../db/client.js";
-import { authenticate } from "../lib/http.js";
+import { authenticate, requireAdmin, parse, ApiError } from "../lib/http.js";
 import { audit } from "../lib/audit.js";
 import * as whatsapp from "../channels/whatsapp.js";
 
 /**
- * Canais — conexão de WhatsApp Business via QR.
+ * Canais / Conexões — MULTICANAL e MULTI-CONEXÃO.
  *
- * Toda a lógica de sessão (QR real, pareamento, ingestão de mensagens e envio)
- * vive em ../channels/whatsapp.ts. Com a lib Baileys instalada a conexão é real;
- * sem ela (ou WHATSAPP_MODE=demo) o gerenciador cai num modo de demonstração
- * que gera um QR e simula o pareamento — o painel funciona nos dois casos.
+ * Uma empresa pode ter várias conexões, de tipos diferentes: vários números de
+ * WhatsApp, Instagram, Facebook, Telegram, Widget do site e E-mail. Cada conexão
+ * é uma linha em `channels` com status próprio.
+ *
+ * WhatsApp é conexão REAL (Baileys, QR). Os demais canais têm o encaixe pronto
+ * (linha, status e configuração) — a integração com o provedor entra por cima
+ * quando as credenciais forem informadas.
  */
+
+// Catálogo de tipos de canal que o painel oferece para adicionar.
+const CHANNEL_CATALOG = [
+  { type: "whatsapp", label: "WhatsApp", icon: "🟢", real: true, help: "Conecte um número via QR Code (Baileys)." },
+  { type: "instagram", label: "Instagram Direct", icon: "📸", real: false, help: "Mensagens do Instagram. Requer conta profissional + token da Meta." },
+  { type: "facebook", label: "Facebook Messenger", icon: "💬", real: false, help: "Mensagens da página. Requer token da página (Meta)." },
+  { type: "telegram", label: "Telegram", icon: "✈️", real: false, help: "Bot do Telegram. Requer o token do @BotFather." },
+  { type: "widget", label: "Widget do site", icon: "🌐", real: true, help: "Chat do site — já ativo por padrão." },
+  { type: "email", label: "E-mail", icon: "✉️", real: false, help: "Caixa de e-mail (IMAP/SMTP). Requer credenciais do servidor." },
+] as const;
+const TYPES = CHANNEL_CATALOG.map((c) => c.type) as [string, ...string[]];
 
 export async function channelRoutes(app: FastifyInstance) {
   app.addHook("preHandler", authenticate);
 
-  // Lista os canais da empresa.
+  // Lista as conexões da empresa (mescla o status ao vivo do WhatsApp).
   app.get("/channels", async (req) => {
     const rows = await db
       .select()
       .from(schema.channels)
       .where(eq(schema.channels.companyId, req.principal.companyId))
-      .orderBy(desc(schema.channels.createdAt));
-    return { data: rows };
+      .orderBy(asc(schema.channels.createdAt));
+    const data = rows.map((r) => {
+      if (r.type === "whatsapp") {
+        const live = whatsapp.status(r.id);
+        return { ...r, status: live.status !== "disconnected" ? live.status : r.status, live };
+      }
+      return r;
+    });
+    return { data, catalog: CHANNEL_CATALOG };
   });
 
-  // Inicia (ou reinicia) a conexão do WhatsApp e devolve o QR para escanear.
-  app.post("/channels/whatsapp/connect", async (req) => {
-    const out = await whatsapp.connect(req.principal.companyId);
-    audit(req.principal, "channel.whatsapp.connect", "channel", req.principal.companyId);
-    return out;
+  // Cria uma nova conexão. (admin)
+  app.post("/channels", { preHandler: requireAdmin }, async (req, reply) => {
+    const { type, name } = parse(
+      z.object({ type: z.enum(TYPES), name: z.string().min(1).max(128).optional() }),
+      req.body
+    );
+    const meta = CHANNEL_CATALOG.find((c) => c.type === type)!;
+    // Widget do site já nasce "conectado" (o chat do site está sempre ativo).
+    const status = type === "widget" ? "connected" : "disconnected";
+    const [row] = await db
+      .insert(schema.channels)
+      .values({ companyId: req.principal.companyId, type, name: name?.trim() || meta.label, status })
+      .returning();
+    audit(req.principal, "channel.create", "channel", row.id);
+    return reply.code(201).send(row);
   });
 
-  // Estado atual da conexão (o painel faz polling aqui).
-  app.get("/channels/whatsapp/status", async (req) => {
-    return whatsapp.status(req.principal.companyId);
+  // Renomeia / salva configuração de uma conexão. (admin)
+  app.patch("/channels/:id", { preHandler: requireAdmin }, async (req) => {
+    const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
+    const body = parse(
+      z.object({ name: z.string().min(1).max(128).optional(), config: z.record(z.any()).optional() }),
+      req.body
+    );
+    const [row] = await db
+      .update(schema.channels)
+      .set(body)
+      .where(and(eq(schema.channels.id, id), eq(schema.channels.companyId, req.principal.companyId)))
+      .returning();
+    if (!row) throw new ApiError(404, "Conexão não encontrada");
+    return row;
   });
 
-  // Desconecta o WhatsApp.
-  app.post("/channels/whatsapp/disconnect", async (req) => {
-    const out = await whatsapp.disconnect(req.principal.companyId);
-    audit(req.principal, "channel.whatsapp.disconnect", "channel", req.principal.companyId);
-    return out;
+  // Remove uma conexão. (admin) — encerra a sessão de WhatsApp se houver.
+  app.delete("/channels/:id", { preHandler: requireAdmin }, async (req, reply) => {
+    const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
+    const [row] = await db
+      .select()
+      .from(schema.channels)
+      .where(and(eq(schema.channels.id, id), eq(schema.channels.companyId, req.principal.companyId)));
+    if (!row) throw new ApiError(404, "Conexão não encontrada");
+    if (row.type === "whatsapp") await whatsapp.disconnect(id).catch(() => {});
+    await db.delete(schema.channels).where(eq(schema.channels.id, id));
+    audit(req.principal, "channel.delete", "channel", id);
+    return reply.code(204).send();
+  });
+
+  // Busca a conexão garantindo que é da empresa.
+  async function own(companyId: string, id: string) {
+    const [row] = await db
+      .select()
+      .from(schema.channels)
+      .where(and(eq(schema.channels.id, id), eq(schema.channels.companyId, companyId)));
+    if (!row) throw new ApiError(404, "Conexão não encontrada");
+    return row;
+  }
+
+  // Conecta uma conexão. (admin)
+  app.post("/channels/:id/connect", { preHandler: requireAdmin }, async (req) => {
+    const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
+    const row = await own(req.principal.companyId, id);
+    audit(req.principal, "channel.connect", "channel", id);
+    if (row.type === "whatsapp") return whatsapp.connect(id);
+    if (row.type === "widget") {
+      await db.update(schema.channels).set({ status: "connected" }).where(eq(schema.channels.id, id));
+      return { status: "connected" as const };
+    }
+    // Demais canais: exigem configuração (encaixe pronto p/ integração real).
+    const cfg = (row.config as Record<string, unknown>) || {};
+    if (!Object.keys(cfg).length) {
+      throw new ApiError(400, "Configure as credenciais desta conexão antes de conectar.");
+    }
+    await db.update(schema.channels).set({ status: "configured" }).where(eq(schema.channels.id, id));
+    return { status: "configured" as const, note: "Configuração salva. A integração do provedor entra por cima." };
+  });
+
+  // Status de uma conexão (o painel faz polling nas de WhatsApp).
+  app.get("/channels/:id/status", async (req) => {
+    const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
+    const row = await own(req.principal.companyId, id);
+    if (row.type === "whatsapp") return whatsapp.status(id);
+    return { status: row.status, qr: null, phone: (row.config as any)?.phone ?? null };
+  });
+
+  // Desconecta uma conexão. (admin)
+  app.post("/channels/:id/disconnect", { preHandler: requireAdmin }, async (req) => {
+    const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
+    const row = await own(req.principal.companyId, id);
+    audit(req.principal, "channel.disconnect", "channel", id);
+    if (row.type === "whatsapp") return whatsapp.disconnect(id);
+    await db.update(schema.channels).set({ status: "disconnected" }).where(eq(schema.channels.id, id));
+    return { status: "disconnected" as const };
   });
 }

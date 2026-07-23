@@ -128,6 +128,20 @@ async function seed() {
   }
   console.log(`✓ cursos (Academia): ${novosCursos} novos / ${starterCourses.length} no total`);
 
+  // Conexões iniciais (multicanal): cria WhatsApp + Widget se a empresa não
+  // tiver nenhuma conexão ainda. Idempotente.
+  const existingChannels = await db
+    .select({ id: schema.channels.id })
+    .from(schema.channels)
+    .where(eq(schema.channels.companyId, companyId));
+  if (existingChannels.length === 0) {
+    await db.insert(schema.channels).values([
+      { companyId, type: "whatsapp", name: "WhatsApp Business", status: "disconnected" },
+      { companyId, type: "widget", name: "Widget do site", status: "connected" },
+    ]);
+    console.log("✓ conexões iniciais: WhatsApp + Widget");
+  }
+
   await sql.end();
 }
 

@@ -1,23 +1,28 @@
 import QRCode from "qrcode";
+import fs from "node:fs";
 import { and, desc, eq, ne } from "drizzle-orm";
 import { db, schema } from "../db/client.js";
 import { emitToCompany } from "../realtime.js";
 import { publishEvent } from "../queues.js";
 
 /**
- * Sessão de WhatsApp por empresa (Baileys).
+ * Sessões de WhatsApp (Baileys) — MULTI-CONEXÃO.
  *
- * O painel pareia o número da empresa via QR. A partir daí:
+ * Cada conexão é uma linha em `channels` (type=whatsapp). Uma empresa pode ter
+ * VÁRIOS números conectados ao mesmo tempo; cada sessão é indexada pelo id da
+ * conexão (channelId), não mais pela empresa.
+ *
+ * O painel pareia cada número via QR. A partir daí:
  *   • mensagens que chegam no WhatsApp viram conversas na plataforma (inbound);
  *   • respostas do atendente são entregues no WhatsApp do cliente (outbound).
  *
  * O Baileys é carregado sob demanda (import dinâmico). Se a lib não estiver
  * instalada, ou se WHATSAPP_MODE=demo, caímos num MODO DEMONSTRAÇÃO que gera um
- * QR real e simula o pareamento — assim o painel funciona mesmo sem a lib, e o
- * boot da API nunca quebra por causa dela.
+ * QR real e simula o pareamento — assim o painel funciona mesmo sem a lib.
  */
 
 type Session = {
+  channelId: string;
   companyId: string;
   status: "connecting" | "connected" | "disconnected";
   qr: string | null; // data URL
@@ -27,7 +32,8 @@ type Session = {
   timer?: NodeJS.Timeout;
 };
 
-const sessions = new Map<string, Session>();
+const sessions = new Map<string, Session>(); // channelId -> Session
+const reconnects = new Map<string, number>(); // channelId -> tentativas
 
 // undefined = ainda não tentamos importar; null = indisponível; objeto = ok.
 let baileys: any | undefined;
@@ -35,8 +41,6 @@ async function loadBaileys(): Promise<any | null> {
   if (baileys !== undefined) return baileys;
   if (process.env.WHATSAPP_MODE === "demo") return (baileys = null);
   try {
-    // Specifier em variável: o tsc trata como `any` e não exige os tipos da lib
-    // em build; em runtime o tsx resolve normalmente quando ela está instalada.
     const name = "@whiskeysockets/baileys";
     baileys = await import(name);
   } catch {
@@ -45,8 +49,6 @@ async function loadBaileys(): Promise<any | null> {
   return baileys;
 }
 
-// Logger no-op compatível com a interface que o Baileys espera (evita depender
-// do pino só para silenciar os logs internos da lib).
 const silentLogger: any = {
   level: "silent",
   trace() {}, debug() {}, info() {}, warn() {}, error() {}, fatal() {},
@@ -57,9 +59,18 @@ function dataDir(): string {
   return process.env.WHATSAPP_DATA_DIR || "/data/wa";
 }
 
-// Versão do protocolo do WhatsApp Web. Sem isso, o Baileys usa uma versão
-// embutida que pode estar desatualizada — o WhatsApp então fecha a conexão
-// antes de emitir o QR (fica "conectando" para sempre, sem QR).
+// Pasta de credenciais desta conexão. Migra a pasta legada (indexada por
+// empresa, do tempo em que só havia 1 WhatsApp) para o novo esquema por
+// conexão, preservando o número já pareado.
+function authDir(channelId: string, companyId: string): string {
+  const dir = `${dataDir()}/${channelId}`;
+  try {
+    const legacy = `${dataDir()}/${companyId}`;
+    if (!fs.existsSync(dir) && fs.existsSync(legacy)) fs.renameSync(legacy, dir);
+  } catch { /* best-effort */ }
+  return dir;
+}
+
 let waVersion: any;
 async function fetchWaVersion(mod: any) {
   if (waVersion !== undefined) return waVersion;
@@ -74,31 +85,28 @@ async function fetchWaVersion(mod: any) {
   return waVersion || undefined;
 }
 
-// Contador de reconexões por empresa (evita loop infinito sem QR).
-const reconnects = new Map<string, number>();
 function jidToPhone(jid?: string | null): string | null {
   if (!jid) return null;
   const digits = jid.split("@")[0].split(":")[0].replace(/\D/g, "");
   return digits || null;
 }
 
-async function ensureWhatsappChannel(companyId: string) {
-  const [existing] = await db
-    .select()
+type Channel = { id: string; companyId: string };
+
+async function loadChannel(channelId: string): Promise<Channel | null> {
+  const [ch] = await db
+    .select({ id: schema.channels.id, companyId: schema.channels.companyId, type: schema.channels.type })
     .from(schema.channels)
-    .where(and(eq(schema.channels.companyId, companyId), eq(schema.channels.type, "whatsapp")));
-  if (existing) return existing;
-  const [created] = await db
-    .insert(schema.channels)
-    .values({ companyId, type: "whatsapp", name: "WhatsApp Business", status: "disconnected" })
-    .returning();
-  return created;
+    .where(eq(schema.channels.id, channelId));
+  if (!ch || ch.type !== "whatsapp") return null;
+  return { id: ch.id, companyId: ch.companyId };
 }
-async function setChannelStatus(companyId: string, status: string, config?: Record<string, unknown>) {
+
+async function setChannelStatus(channelId: string, status: string, config?: Record<string, unknown>) {
   await db
     .update(schema.channels)
     .set({ status, ...(config ? { config } : {}) })
-    .where(and(eq(schema.channels.companyId, companyId), eq(schema.channels.type, "whatsapp")))
+    .where(eq(schema.channels.id, channelId))
     .catch(() => {});
 }
 
@@ -118,7 +126,6 @@ async function recordInbound(companyId: string, phone: string, name: string, bod
       .returning();
   }
 
-  // Reaproveita a conversa em aberto (pending/open) do contato; senão cria.
   let [conv] = await db
     .select()
     .from(schema.conversations)
@@ -155,22 +162,20 @@ async function recordInbound(companyId: string, phone: string, name: string, bod
   }
   emitToCompany(companyId, "message.created", { conversationId: conv.id, message: msg });
   publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(() => {});
-  // bot de fluxo (import dinâmico evita ciclo entre automations e whatsapp)
   import("../modules/automations.js")
     .then((m) => m.applyAutomations(companyId, { id: conv.id, contactId: contact.id }, body, created))
     .catch(() => {});
 }
 
 // ---- Conexão real (Baileys) -------------------------------------------------
-async function connectBaileys(companyId: string, mod: any) {
-  // encerra socket anterior, se houver
-  const prev = sessions.get(companyId);
+async function connectBaileys(channel: Channel, mod: any) {
+  const prev = sessions.get(channel.id);
   if (prev?.sock) { try { prev.sock.end?.(); } catch { /* ignore */ } }
 
-  const { state, saveCreds } = await mod.useMultiFileAuthState(`${dataDir()}/${companyId}`);
+  const { state, saveCreds } = await mod.useMultiFileAuthState(authDir(channel.id, channel.companyId));
   const version = await fetchWaVersion(mod);
   const makeSock = mod.default || mod.makeWASocket;
-  console.log(`[wa] iniciando sessão (${companyId})`);
+  console.log(`[wa] iniciando sessão (canal ${channel.id})`);
   const sock = makeSock({
     auth: state,
     version,
@@ -179,42 +184,40 @@ async function connectBaileys(companyId: string, mod: any) {
     syncFullHistory: false,
   });
 
-  const session: Session = { companyId, status: "connecting", qr: null, phone: null, mode: "baileys", sock };
-  sessions.set(companyId, session);
+  const session: Session = { channelId: channel.id, companyId: channel.companyId, status: "connecting", qr: null, phone: null, mode: "baileys", sock };
+  sessions.set(channel.id, session);
 
   sock.ev.on("creds.update", saveCreds);
 
   sock.ev.on("connection.update", async (u: any) => {
     if (u.qr) {
-      console.log(`[wa] QR recebido (${companyId})`);
+      console.log(`[wa] QR recebido (canal ${channel.id})`);
       session.qr = await QRCode.toDataURL(u.qr, { width: 320, margin: 1 }).catch(() => null);
       session.status = "connecting";
     }
     if (u.connection === "open") {
-      console.log(`[wa] conectado (${companyId}) ${jidToPhone(sock.user?.id) ?? ""}`);
-      reconnects.delete(companyId);
+      console.log(`[wa] conectado (canal ${channel.id}) ${jidToPhone(sock.user?.id) ?? ""}`);
+      reconnects.delete(channel.id);
       session.status = "connected";
       session.qr = null;
       session.phone = jidToPhone(sock.user?.id);
-      await setChannelStatus(companyId, "connected", { phone: session.phone, mode: "baileys" });
+      await setChannelStatus(channel.id, "connected", { phone: session.phone, mode: "baileys" });
     }
     if (u.connection === "close") {
       const code = u.lastDisconnect?.error?.output?.statusCode;
       const msg = u.lastDisconnect?.error?.message ?? "";
       const loggedOut = code === mod.DisconnectReason?.loggedOut;
-      const tries = (reconnects.get(companyId) ?? 0) + 1;
-      console.log(`[wa] conexão fechada (${companyId}) code=${code ?? "?"} tentativa=${tries} ${msg}`);
+      const tries = (reconnects.get(channel.id) ?? 0) + 1;
+      console.log(`[wa] conexão fechada (canal ${channel.id}) code=${code ?? "?"} tentativa=${tries} ${msg}`);
       if (loggedOut || tries > 5) {
-        // desistiu (deslogado ou muitas falhas): volta a "desconectado" no painel
-        reconnects.delete(companyId);
+        reconnects.delete(channel.id);
         session.status = "disconnected";
         session.sock = null;
-        sessions.delete(companyId);
-        await setChannelStatus(companyId, "disconnected", {});
-      } else if (sessions.get(companyId) === session) {
-        // queda transitória: tenta reconectar com as credenciais salvas
-        reconnects.set(companyId, tries);
-        connectBaileys(companyId, mod).catch((e: any) => console.log(`[wa] erro ao reconectar: ${e?.message ?? e}`));
+        sessions.delete(channel.id);
+        await setChannelStatus(channel.id, "disconnected", {});
+      } else if (sessions.get(channel.id) === session) {
+        reconnects.set(channel.id, tries);
+        connectBaileys(channel, mod).catch((e: any) => console.log(`[wa] erro ao reconectar: ${e?.message ?? e}`));
       }
     }
   });
@@ -232,70 +235,73 @@ async function connectBaileys(companyId: string, mod: any) {
         m.message.videoMessage?.caption ||
         "";
       if (!text.trim()) continue;
-      await recordInbound(companyId, jidToPhone(jid) || "", m.pushName || "Contato WhatsApp", text).catch(() => {});
+      await recordInbound(channel.companyId, jidToPhone(jid) || "", m.pushName || "Contato WhatsApp", text).catch(() => {});
     }
   });
 
-  await ensureWhatsappChannel(companyId);
-  await setChannelStatus(companyId, "connecting");
+  await setChannelStatus(channel.id, "connecting");
   return { status: session.status, qr: session.qr, demo: false };
 }
 
 // ---- Modo demonstração (sem lib / WHATSAPP_MODE=demo) -----------------------
-async function connectDemo(companyId: string) {
-  const prev = sessions.get(companyId);
+async function connectDemo(channel: Channel) {
+  const prev = sessions.get(channel.id);
   if (prev?.timer) clearTimeout(prev.timer);
 
-  const pairingToken = `comenta-wa:${companyId}:${Date.now()}`;
+  const pairingToken = `comenta-wa:${channel.id}:${Date.now()}`;
   const qr = await QRCode.toDataURL(pairingToken, { width: 320, margin: 1 });
-  const session: Session = { companyId, status: "connecting", qr, phone: null, mode: "demo", sock: null };
+  const session: Session = { channelId: channel.id, companyId: channel.companyId, status: "connecting", qr, phone: null, mode: "demo", sock: null };
 
   session.timer = setTimeout(async () => {
-    const s = sessions.get(companyId);
+    const s = sessions.get(channel.id);
     if (!s || s.status !== "connecting") return;
     s.status = "connected";
     s.qr = null;
     s.phone = "5566999999999"; // demo — no modo real é o número pareado
-    await setChannelStatus(companyId, "connected", { phone: s.phone, mode: "demo" });
+    await setChannelStatus(channel.id, "connected", { phone: s.phone, mode: "demo" });
   }, 12000);
 
-  sessions.set(companyId, session);
-  await ensureWhatsappChannel(companyId);
-  await setChannelStatus(companyId, "connecting");
+  sessions.set(channel.id, session);
+  await setChannelStatus(channel.id, "connecting");
   return { status: session.status, qr: session.qr, demo: true };
 }
 
 // ---- API pública do gerenciador --------------------------------------------
-export async function connect(companyId: string) {
+export async function connect(channelId: string) {
+  const channel = await loadChannel(channelId);
+  if (!channel) return { status: "disconnected" as const, qr: null, error: "canal inválido" };
   const mod = await loadBaileys();
-  return mod ? connectBaileys(companyId, mod) : connectDemo(companyId);
+  return mod ? connectBaileys(channel, mod) : connectDemo(channel);
 }
 
-export function status(companyId: string) {
-  const s = sessions.get(companyId);
+export function status(channelId: string) {
+  const s = sessions.get(channelId);
   if (!s) return { status: "disconnected" as const, qr: null, phone: null, demo: baileys == null };
   return { status: s.status, qr: s.qr, phone: s.phone, demo: s.mode === "demo" };
 }
 
-export async function disconnect(companyId: string) {
-  const s = sessions.get(companyId);
+export async function disconnect(channelId: string) {
+  const s = sessions.get(channelId);
   if (s?.timer) clearTimeout(s.timer);
   if (s?.sock) { try { await s.sock.logout?.(); } catch { try { s.sock.end?.(); } catch { /* ignore */ } } }
-  sessions.delete(companyId);
-  await setChannelStatus(companyId, "disconnected", {});
+  sessions.delete(channelId);
+  await setChannelStatus(channelId, "disconnected", {});
   return { status: "disconnected" as const };
 }
 
-/** Entrega uma mensagem outbound no WhatsApp do contato. Retorna false se o
- *  canal não estiver conectado ou o contato não tiver telefone. */
+/** Entrega uma mensagem outbound no WhatsApp do contato, usando QUALQUER sessão
+ *  conectada da empresa. Retorna false se nenhuma estiver conectada ou o contato
+ *  não tiver telefone. */
 export async function sendToContact(companyId: string, contactId: string, body: string): Promise<boolean> {
-  const s = sessions.get(companyId);
-  if (!s || s.status !== "connected") return false;
+  let session: Session | null = null;
+  for (const s of sessions.values()) {
+    if (s.companyId === companyId && s.status === "connected" && s.mode === "baileys" && s.sock) { session = s; break; }
+  }
+  if (!session) return false;
   const [contact] = await db.select().from(schema.contacts).where(eq(schema.contacts.id, contactId));
   const digits = contact?.phone?.replace(/\D/g, "");
   if (!digits) return false;
-  if (s.mode === "demo" || !s.sock) return false; // demo não entrega de verdade
-  await s.sock.sendMessage(`${digits}@s.whatsapp.net`, { text: body });
+  await session.sock.sendMessage(`${digits}@s.whatsapp.net`, { text: body });
   return true;
 }
 
@@ -310,6 +316,6 @@ export async function restoreSessions() {
     .catch(() => [] as any[]);
   for (const ch of rows) {
     const wasConnected = ch.status === "connected" || (ch.config as any)?.mode === "baileys";
-    if (wasConnected) await connectBaileys(ch.companyId, mod).catch(() => {});
+    if (wasConnected) await connectBaileys({ id: ch.id, companyId: ch.companyId }, mod).catch(() => {});
   }
 }
