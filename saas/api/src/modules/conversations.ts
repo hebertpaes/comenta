@@ -148,7 +148,7 @@ export async function conversationRoutes(app: FastifyInstance) {
   app.get("/dashboard/metrics", async (req) => {
     const p = req.principal;
     const cid = p.companyId;
-    const [byStatus, [msgToday], [contactsTotal], [avgFirstResponse]] = await Promise.all([
+    const [byStatus, [msgToday], [contactsTotal], [avgFirstResponse], series, byQueue] = await Promise.all([
       db
         .select({ status: schema.conversations.status, count: dsql<number>`count(*)::int` })
         .from(schema.conversations)
@@ -168,8 +168,30 @@ export async function conversationRoutes(app: FastifyInstance) {
         })
         .from(schema.conversations)
         .where(and(eq(schema.conversations.companyId, cid), dsql`first_response_at is not null`)),
+      // mensagens por dia nos últimos 7 dias
+      db
+        .select({ day: dsql<string>`to_char(date_trunc('day', created_at), 'YYYY-MM-DD')`, count: dsql<number>`count(*)::int` })
+        .from(schema.messages)
+        .where(and(eq(schema.messages.companyId, cid), dsql`created_at >= date_trunc('day', now()) - interval '6 days'`))
+        .groupBy(dsql`date_trunc('day', created_at)`),
+      // conversas por fila
+      db
+        .select({ name: schema.queues.name, color: schema.queues.color, count: dsql<number>`count(${schema.conversations.id})::int` })
+        .from(schema.queues)
+        .leftJoin(schema.conversations, eq(schema.conversations.queueId, schema.queues.id))
+        .where(eq(schema.queues.companyId, cid))
+        .groupBy(schema.queues.id, schema.queues.name, schema.queues.color),
     ]);
     const statusMap = Object.fromEntries(byStatus.map((r) => [r.status, r.count]));
+    // monta a série contínua de 7 dias (preenche zeros)
+    const seriesMap = Object.fromEntries(series.map((r) => [r.day, r.count]));
+    const days: { day: string; count: number }[] = [];
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date();
+      d.setUTCDate(d.getUTCDate() - i);
+      const key = d.toISOString().slice(0, 10);
+      days.push({ day: key, count: seriesMap[key] ?? 0 });
+    }
     return {
       conversations: {
         pending: statusMap.pending ?? 0,
@@ -179,6 +201,8 @@ export async function conversationRoutes(app: FastifyInstance) {
       messagesToday: msgToday.count,
       contacts: contactsTotal.count,
       avgFirstResponseSeconds: avgFirstResponse.seconds,
+      messages7d: days,
+      byQueue: byQueue.map((q) => ({ name: q.name, color: q.color, count: Number(q.count) })),
     };
   });
 }

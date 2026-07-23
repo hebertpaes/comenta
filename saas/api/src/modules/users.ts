@@ -87,4 +87,17 @@ export async function userRoutes(app: FastifyInstance) {
     audit(p, "user.updated", "user", id, body);
     return { id: user.id, name: user.name, role: user.role, isActive: user.isActive };
   });
+
+  app.delete("/users/:id", { preHandler: [requireAdmin] }, async (req, reply) => {
+    const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
+    const p = req.principal;
+    if (id === p.userId) throw new ApiError(400, "Você não pode remover a si mesmo");
+    const [user] = await db
+      .delete(schema.users)
+      .where(and(eq(schema.users.id, id), eq(schema.users.companyId, p.companyId)))
+      .returning();
+    if (!user) throw new ApiError(404, "Usuário não encontrado");
+    audit(p, "user.deleted", "user", id);
+    return reply.code(204).send();
+  });
 }

@@ -67,6 +67,33 @@ export async function contactRoutes(app: FastifyInstance) {
     }
   });
 
+  // Importação em massa (planilha CSV convertida em JSON pelo painel).
+  app.post("/contacts/import", async (req) => {
+    const { contacts } = parse(
+      z.object({
+        contacts: z
+          .array(z.object({ name: z.string().min(1).max(128), phone: z.string().max(32).optional(), email: z.string().max(255).optional() }))
+          .max(5000),
+      }),
+      req.body
+    );
+    const p = req.principal;
+    let imported = 0;
+    let skipped = 0;
+    for (const c of contacts) {
+      const phone = c.phone?.replace(/\D/g, "") || undefined;
+      const res = await db
+        .insert(schema.contacts)
+        .values({ companyId: p.companyId, name: c.name.trim(), phone, email: c.email?.trim() || null, tags: [] })
+        .onConflictDoNothing()
+        .returning();
+      if (res.length) imported++;
+      else skipped++;
+    }
+    audit(p, "contact.import", "contact", undefined, { imported, skipped });
+    return { imported, skipped };
+  });
+
   app.patch("/contacts/:id", async (req) => {
     const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
     const body = parse(ContactBody.partial(), req.body);

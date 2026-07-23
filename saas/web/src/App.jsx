@@ -48,26 +48,126 @@ function Login({ onLogin }) {
   );
 }
 
+// Mini gráfico de barras (SVG) para a série de 7 dias.
+function BarChart({ data }) {
+  const max = Math.max(1, ...data.map((d) => d.count));
+  const w = 100 / data.length;
+  return (
+    <svg viewBox="0 0 100 46" style={{ width: "100%", height: 150 }} preserveAspectRatio="none">
+      {data.map((d, i) => {
+        const h = (d.count / max) * 38;
+        return (
+          <g key={d.day}>
+            <rect x={i * w + w * 0.18} y={40 - h} width={w * 0.64} height={h} rx="1" fill="#6d28d9" />
+            <text x={i * w + w / 2} y={45} fontSize="3" textAnchor="middle" fill="#94a3b8">
+              {d.day.slice(8, 10)}/{d.day.slice(5, 7)}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+// Donut de status (SVG).
+function Donut({ segments }) {
+  const total = Math.max(1, segments.reduce((s, x) => s + x.value, 0));
+  let acc = 0;
+  const R = 16, C = 2 * Math.PI * R;
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+      <svg viewBox="0 0 40 40" style={{ width: 120, height: 120 }}>
+        <circle cx="20" cy="20" r={R} fill="none" stroke="#eef0f4" strokeWidth="7" />
+        {segments.map((s) => {
+          const frac = s.value / total;
+          const dash = frac * C;
+          const el = (
+            <circle key={s.label} cx="20" cy="20" r={R} fill="none" stroke={s.color} strokeWidth="7"
+              strokeDasharray={`${dash} ${C - dash}`} strokeDashoffset={-acc * C / 1} transform="rotate(-90 20 20)" />
+          );
+          acc += frac;
+          return el;
+        })}
+        <text x="20" y="21" fontSize="7" textAnchor="middle" fontWeight="700" fill="currentColor">{total}</text>
+      </svg>
+      <div>
+        {segments.map((s) => (
+          <div key={s.label} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, marginBottom: 4 }}>
+            <span style={{ width: 10, height: 10, borderRadius: 3, background: s.color }} />
+            {s.label} <b style={{ marginLeft: 4 }}>{s.value}</b>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Dashboard() {
   const [m, setM] = useState(null);
-  useEffect(() => { api.metrics().then(setM).catch(() => {}); }, []);
+  useEffect(() => {
+    api.metrics().then(setM).catch(() => {});
+    const t = setInterval(() => api.metrics().then(setM).catch(() => {}), 15000);
+    return () => clearInterval(t);
+  }, []);
   if (!m) return <p className="muted">Carregando…</p>;
-  const cards = [
-    ["Em atendimento", m.conversations.open, ""],
-    ["Aguardando", m.conversations.pending, ""],
-    ["Resolvidas", m.conversations.resolved, ""],
-    ["Mensagens hoje", m.messagesToday, ""],
-    ["Contatos", m.contacts, ""],
-    ["1ª resposta (méd.)", m.avgFirstResponseSeconds != null ? `${Math.round(m.avgFirstResponseSeconds)}s` : "—", ""],
+  const totalConv = m.conversations.open + m.conversations.pending + m.conversations.resolved;
+  const kpis = [
+    { l: "Em atendimento", n: m.conversations.open, icon: "💬", color: "#2563eb" },
+    { l: "Aguardando", n: m.conversations.pending, icon: "⏳", color: "#d97706" },
+    { l: "Resolvidas", n: m.conversations.resolved, icon: "✅", color: "#16a34a" },
+    { l: "Mensagens hoje", n: m.messagesToday, icon: "✉️", color: "#6d28d9" },
+    { l: "Contatos", n: m.contacts, icon: "👥", color: "#0891b2" },
+    { l: "1ª resposta (méd.)", n: m.avgFirstResponseSeconds != null ? `${Math.round(m.avgFirstResponseSeconds)}s` : "—", icon: "⚡", color: "#db2777" },
   ];
   return (
     <>
       <h2>Dashboard</h2>
-      <div className="cards">
-        {cards.map(([l, n]) => (
-          <div className="card" key={l}><div className="n">{n}</div><div className="l">{l}</div></div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 12, marginBottom: 20 }}>
+        {kpis.map((k) => (
+          <div key={k.l} className="card" style={{ padding: 16, textAlign: "left", alignItems: "stretch" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <span style={{ fontSize: 22 }}>{k.icon}</span>
+              <span style={{ width: 8, height: 8, borderRadius: 999, background: k.color }} />
+            </div>
+            <div style={{ fontSize: 28, fontWeight: 800, marginTop: 8 }}>{k.n}</div>
+            <div className="muted" style={{ fontSize: 12 }}>{k.l}</div>
+          </div>
         ))}
       </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 16, alignItems: "start" }}>
+        <div className="card" style={{ padding: 18, alignItems: "stretch" }}>
+          <div style={{ fontWeight: 700, marginBottom: 10 }}>Mensagens (últimos 7 dias)</div>
+          <BarChart data={m.messages7d || []} />
+        </div>
+        <div className="card" style={{ padding: 18, alignItems: "stretch" }}>
+          <div style={{ fontWeight: 700, marginBottom: 10 }}>Conversas por status</div>
+          <Donut segments={[
+            { label: "Em atendimento", value: m.conversations.open, color: "#2563eb" },
+            { label: "Aguardando", value: m.conversations.pending, color: "#d97706" },
+            { label: "Resolvidas", value: m.conversations.resolved, color: "#16a34a" },
+          ]} />
+        </div>
+      </div>
+
+      {(m.byQueue || []).length > 0 && (
+        <div className="card" style={{ padding: 18, alignItems: "stretch", marginTop: 16 }}>
+          <div style={{ fontWeight: 700, marginBottom: 12 }}>Conversas por fila</div>
+          {m.byQueue.map((q) => {
+            const maxq = Math.max(1, ...m.byQueue.map((x) => x.count));
+            return (
+              <div key={q.name} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                <span style={{ width: 110, fontSize: 13 }}>{q.name}</span>
+                <div style={{ flex: 1, background: "#eef0f4", borderRadius: 999, height: 12, overflow: "hidden" }}>
+                  <div style={{ width: `${(q.count / maxq) * 100}%`, height: "100%", background: q.color }} />
+                </div>
+                <b style={{ width: 30, textAlign: "right", fontSize: 13 }}>{q.count}</b>
+              </div>
+            );
+          })}
+        </div>
+      )}
+      <p className="muted" style={{ fontSize: 12, marginTop: 12 }}>Total de conversas: {totalConv} · atualiza a cada 15s.</p>
     </>
   );
 }
@@ -1220,6 +1320,146 @@ function TagsManager() {
   );
 }
 
+// ---- Contatos (Lote 2) ----
+function Contacts() {
+  const [list, setList] = useState(null);
+  const [q, setQ] = useState("");
+  const [f, setF] = useState({ name: "", phone: "", email: "" });
+  const [imp, setImp] = useState(null);
+  const load = () => api.contacts(q).then((r) => setList(r.data || [])).catch(() => setList([]));
+  useEffect(() => { load(); }, []);
+
+  const search = (e) => { e.preventDefault(); load(); };
+  const create = async (e) => {
+    e.preventDefault();
+    if (!f.name.trim()) return;
+    try {
+      await api.contactCreate({ name: f.name.trim(), phone: f.phone.replace(/\D/g, "") || undefined, email: f.email.trim() || undefined });
+      setF({ name: "", phone: "", email: "" }); load();
+    } catch (e) { alert(e.message); }
+  };
+  const del = async (id) => { if (confirm("Remover este contato?")) { await api.contactDelete(id); load(); } };
+
+  const exportCsv = () => {
+    const rows = [["Nome", "Telefone", "Email"], ...(list || []).map((c) => [c.name, c.phone || "", c.email || ""])];
+    const csv = rows.map((r) => r.map((v) => `"${String(v).replace(/"/g, '""')}"`).join(",")).join("\n");
+    const url = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+    const a = document.createElement("a"); a.href = url; a.download = "contatos.csv"; a.click(); URL.revokeObjectURL(url);
+  };
+  const importCsv = async (e) => {
+    const file = e.target.files?.[0]; if (!file) return;
+    const txt = await file.text();
+    const lines = txt.split(/\r?\n/).filter((l) => l.trim());
+    if (!lines.length) return;
+    const sep = lines[0].includes(";") ? ";" : ",";
+    const head = lines[0].toLowerCase();
+    const hasHeader = /nome|name|telefone|phone|email/.test(head);
+    const rows = (hasHeader ? lines.slice(1) : lines).map((l) => l.split(sep).map((c) => c.replace(/^"|"$/g, "").trim()));
+    const contacts = rows.map((c) => ({ name: c[0] || "", phone: (c[1] || "").replace(/\D/g, "") || undefined, email: c[2] || undefined })).filter((c) => c.name);
+    if (!contacts.length) { alert("Nenhum contato válido no arquivo."); return; }
+    try { const r = await api.contactsImport(contacts); setImp(r); load(); } catch (e) { alert(e.message); }
+    e.target.value = "";
+  };
+
+  return (
+    <>
+      <h2>Contatos</h2>
+      <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center", marginBottom: 14 }}>
+        <form onSubmit={search} style={{ display: "flex", gap: 6 }}>
+          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Buscar por nome/telefone…"
+            style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", width: 240 }} />
+          <button>Buscar</button>
+        </form>
+        <button onClick={exportCsv}>⬇️ Exportar CSV</button>
+        <label style={{ cursor: "pointer", background: "#6d28d9", color: "#fff", padding: "8px 12px", borderRadius: 8, fontSize: 14 }}>
+          ⬆️ Importar CSV
+          <input type="file" accept=".csv,text/csv" onChange={importCsv} style={{ display: "none" }} />
+        </label>
+        {imp && <span className="muted" style={{ fontSize: 13 }}>Importados: {imp.imported} · pulados: {imp.skipped}</span>}
+      </div>
+
+      <form onSubmit={create} className="card" style={{ padding: 14, marginBottom: 16, flexDirection: "row", display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+        <input value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} placeholder="Nome"
+          style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", flex: "1 1 160px" }} />
+        <input value={f.phone} onChange={(e) => setF({ ...f, phone: e.target.value })} placeholder="Telefone (DDD)"
+          style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", flex: "1 1 140px" }} />
+        <input value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} placeholder="E-mail (opcional)"
+          style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", flex: "1 1 180px" }} />
+        <button>➕ Adicionar</button>
+      </form>
+
+      {list === null && <p className="muted">Carregando…</p>}
+      {list && list.length === 0 && <p className="muted">Nenhum contato.</p>}
+      <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+        {list && list.map((c) => (
+          <div key={c.id} className="card" style={{ padding: 12, flexDirection: "row", display: "flex", alignItems: "center", gap: 12 }}>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontWeight: 600 }}>{c.name}</div>
+              <div className="muted" style={{ fontSize: 13 }}>{c.phone ? `📱 ${c.phone}` : ""} {c.email ? `· ✉️ ${c.email}` : ""}</div>
+            </div>
+            {c.phone && <a href={`https://wa.me/${c.phone.replace(/\D/g, "")}`} target="_blank" rel="noopener noreferrer"
+              style={{ background: "#22c55e", color: "#fff", padding: "4px 10px", borderRadius: 999, fontSize: 12, fontWeight: 600, textDecoration: "none" }}>WhatsApp</a>}
+            <button className="link" style={{ color: "#dc2626" }} onClick={() => del(c.id)}>Remover</button>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+// ---- Usuários (Lote 2) ----
+function Users() {
+  const [list, setList] = useState(null);
+  const [f, setF] = useState({ name: "", email: "", password: "", role: "agent" });
+  const load = () => api.users().then((r) => setList(r.data || r || [])).catch(() => setList([]));
+  useEffect(() => { load(); }, []);
+  const create = async (e) => {
+    e.preventDefault();
+    if (!f.name.trim() || !f.email.trim() || !f.password) return alert("Preencha nome, e-mail e senha.");
+    try { await api.userCreate({ name: f.name.trim(), email: f.email.trim(), password: f.password, role: f.role }); setF({ name: "", email: "", password: "", role: "agent" }); load(); }
+    catch (e) { alert(e.message); }
+  };
+  const setRole = async (u, role) => { await api.userUpdate(u.id, { role }); load(); };
+  const del = async (u) => { if (confirm(`Remover o usuário ${u.name}?`)) { try { await api.userDelete(u.id); load(); } catch (e) { alert(e.message); } } };
+  return (
+    <>
+      <h2>Usuários</h2>
+      <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 680 }}>Atendentes e administradores da empresa.</p>
+      <form onSubmit={create} className="card" style={{ padding: 14, marginBottom: 16, flexDirection: "row", display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+        <input value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} placeholder="Nome"
+          style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", flex: "1 1 140px" }} />
+        <input value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} placeholder="E-mail" type="email"
+          style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", flex: "1 1 160px" }} />
+        <input value={f.password} onChange={(e) => setF({ ...f, password: e.target.value })} placeholder="Senha" type="password"
+          style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", flex: "1 1 120px" }} />
+        <select value={f.role} onChange={(e) => setF({ ...f, role: e.target.value })}
+          style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }}>
+          <option value="agent">Atendente</option>
+          <option value="admin">Administrador</option>
+        </select>
+        <button>➕ Criar</button>
+      </form>
+      {list === null && <p className="muted">Carregando…</p>}
+      <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+        {list && list.map((u) => (
+          <div key={u.id} className="card" style={{ padding: 12, flexDirection: "row", display: "flex", alignItems: "center", gap: 12 }}>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontWeight: 600 }}>{u.name}</div>
+              <div className="muted" style={{ fontSize: 13 }}>{u.email}</div>
+            </div>
+            <select value={u.role} onChange={(e) => setRole(u, e.target.value)}
+              style={{ padding: "5px 8px", borderRadius: 8, border: "1px solid #d0d5dd", fontSize: 13 }}>
+              <option value="agent">Atendente</option>
+              <option value="admin">Administrador</option>
+            </select>
+            <button className="link" style={{ color: "#dc2626" }} onClick={() => del(u)}>Remover</button>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
 export function App() {
   const [logged, setLogged] = useState(isLoggedIn());
   const [me, setMe] = useState(null);
@@ -1237,6 +1477,8 @@ export function App() {
           <button className={tab === "dashboard" ? "active" : ""} onClick={() => setTab("dashboard")}>📊 Dashboard</button>
           <button className={tab === "conversas" ? "active" : ""} onClick={() => setTab("conversas")}>💬 Conversas</button>
           <button className={tab === "kanban" ? "active" : ""} onClick={() => setTab("kanban")}>📋 Kanban</button>
+          <button className={tab === "contatos" ? "active" : ""} onClick={() => setTab("contatos")}>👥 Contatos</button>
+          {me?.principal?.role === "admin" && <button className={tab === "usuarios" ? "active" : ""} onClick={() => setTab("usuarios")}>🧑‍💼 Usuários</button>}
           {me?.principal?.role === "admin" && <button className={tab === "filas" ? "active" : ""} onClick={() => setTab("filas")}>🗂️ Filas</button>}
           <button className={tab === "respostas" ? "active" : ""} onClick={() => setTab("respostas")}>⚡ Respostas</button>
           {me?.principal?.role === "admin" && <button className={tab === "tags" ? "active" : ""} onClick={() => setTab("tags")}>🏷️ Tags</button>}
@@ -1254,6 +1496,8 @@ export function App() {
         {tab === "dashboard" && <Dashboard />}
         {tab === "conversas" && <Conversations />}
         {tab === "kanban" && <Kanban />}
+        {tab === "contatos" && <Contacts />}
+        {tab === "usuarios" && <Users />}
         {tab === "filas" && <Queues />}
         {tab === "respostas" && <QuickReplies />}
         {tab === "tags" && <TagsManager />}
