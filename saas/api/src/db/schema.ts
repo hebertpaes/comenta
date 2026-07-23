@@ -226,3 +226,40 @@ export const automations = pgTable(
   },
   (t) => [index("automations_company_ix").on(t.companyId)]
 );
+
+// Academia Comenta (Fase 6) — plataforma de cursos/treinamentos.
+// Cada empresa tem seus cursos; cada curso tem aulas ordenadas (vídeo + texto).
+export const courses = pgTable(
+  "courses",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    title: varchar("title", { length: 160 }).notNull(),
+    description: text("description").notNull().default(""),
+    emoji: varchar("emoji", { length: 8 }).notNull().default("🎓"),
+    level: varchar("level", { length: 16 }).notNull().default("iniciante"), // iniciante | intermediario | avancado
+    isPublished: boolean("is_published").notNull().default(true),
+    position: integer("position").notNull().default(0),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("courses_company_ix").on(t.companyId, t.position)]
+);
+
+export const lessons = pgTable(
+  "lessons",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    courseId: uuid("course_id")
+      .notNull()
+      .references(() => courses.id, { onDelete: "cascade" }),
+    title: varchar("title", { length: 160 }).notNull(),
+    videoUrl: varchar("video_url", { length: 500 }).notNull().default(""),
+    content: text("content").notNull().default(""),
+    durationMin: integer("duration_min").notNull().default(0),
+    position: integer("position").notNull().default(0),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("lessons_course_ix").on(t.courseId, t.position)]
+);

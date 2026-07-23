@@ -59,4 +59,12 @@ export const api = {
   automationCreate: (body) => req("POST", "/automations", body),
   automationUpdate: (id, body) => req("PATCH", `/automations/${id}`, body),
   automationDelete: (id) => req("DELETE", `/automations/${id}`),
+  courses: () => req("GET", "/courses"),
+  course: (id) => req("GET", `/courses/${id}`),
+  courseCreate: (body) => req("POST", "/courses", body),
+  courseUpdate: (id, body) => req("PATCH", `/courses/${id}`, body),
+  courseDelete: (id) => req("DELETE", `/courses/${id}`),
+  lessonCreate: (courseId, body) => req("POST", `/courses/${courseId}/lessons`, body),
+  lessonUpdate: (id, body) => req("PATCH", `/lessons/${id}`, body),
+  lessonDelete: (id) => req("DELETE", `/lessons/${id}`),
 };

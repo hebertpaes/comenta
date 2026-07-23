@@ -539,6 +539,206 @@ function Tools() {
   );
 }
 
+// ---- Academia Comenta (Fase 6): cursos/treinamentos com vídeo ----
+
+// Converte um link de vídeo em URL embutível (YouTube/Vimeo) ou detecta MP4.
+function embedInfo(url) {
+  if (!url) return null;
+  const yt = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([A-Za-z0-9_-]{6,})/);
+  if (yt) return { type: "iframe", src: `https://www.youtube.com/embed/${yt[1]}` };
+  const vm = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  if (vm) return { type: "iframe", src: `https://player.vimeo.com/video/${vm[1]}` };
+  if (/\.(mp4|webm|ogg)(\?|$)/i.test(url)) return { type: "video", src: url };
+  return { type: "link", src: url };
+}
+
+const doneKey = (id) => `comenta_lesson_done_${id}`;
+const isDone = (id) => localStorage.getItem(doneKey(id)) === "1";
+
+const LEVEL_LABEL = { iniciante: "Iniciante", intermediario: "Intermediário", avancado: "Avançado" };
+
+// Formulário admin para criar um curso.
+function CourseForm({ onCreate }) {
+  const [f, setF] = useState({ title: "", emoji: "🎓", level: "iniciante", description: "" });
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState("");
+  const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
+  const submit = async (e) => {
+    e.preventDefault(); setErr("");
+    if (!f.title.trim()) return setErr("Dê um título ao curso.");
+    setBusy(true);
+    try { await onCreate({ ...f, title: f.title.trim() }); setF({ title: "", emoji: "🎓", level: "iniciante", description: "" }); }
+    catch (e) { setErr(e.message); } finally { setBusy(false); }
+  };
+  return (
+    <form className="card" style={{ padding: 16, marginBottom: 16, maxWidth: 620, textAlign: "left", alignItems: "stretch" }} onSubmit={submit}>
+      <div style={{ fontWeight: 700, marginBottom: 10 }}>Novo curso</div>
+      <div style={{ display: "flex", gap: 10 }}>
+        <div className="field" style={{ width: 70 }}><label>Emoji</label>
+          <input value={f.emoji} onChange={set("emoji")} maxLength={4} style={{ textAlign: "center" }} /></div>
+        <div className="field" style={{ flex: 1 }}><label>Título</label>
+          <input value={f.title} onChange={set("title")} placeholder="Ex.: Atendimento nota 10" /></div>
+        <div className="field" style={{ width: 150 }}><label>Nível</label>
+          <select value={f.level} onChange={set("level")} style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }}>
+            <option value="iniciante">Iniciante</option>
+            <option value="intermediario">Intermediário</option>
+            <option value="avancado">Avançado</option>
+          </select></div>
+      </div>
+      <div className="field"><label>Descrição</label>
+        <textarea value={f.description} onChange={set("description")} rows={2}
+          style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", resize: "vertical" }} /></div>
+      {err && <div className="err">{err}</div>}
+      <button disabled={busy} style={{ marginTop: 6, alignSelf: "flex-start" }}>{busy ? "Salvando…" : "➕ Criar curso"}</button>
+    </form>
+  );
+}
+
+// Formulário admin para adicionar uma aula a um curso.
+function LessonForm({ onCreate }) {
+  const [f, setF] = useState({ title: "", videoUrl: "", content: "", durationMin: "" });
+  const [busy, setBusy] = useState(false);
+  const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
+  const submit = async (e) => {
+    e.preventDefault();
+    if (!f.title.trim()) return;
+    setBusy(true);
+    try {
+      await onCreate({ title: f.title.trim(), videoUrl: f.videoUrl.trim(), content: f.content.trim(), durationMin: Number(f.durationMin) || 0 });
+      setF({ title: "", videoUrl: "", content: "", durationMin: "" });
+    } finally { setBusy(false); }
+  };
+  return (
+    <form onSubmit={submit} style={{ marginTop: 12, borderTop: "1px dashed #d0d5dd", paddingTop: 12 }}>
+      <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 8 }}>Adicionar aula</div>
+      <div className="field"><input value={f.title} onChange={set("title")} placeholder="Título da aula" /></div>
+      <div className="field"><input value={f.videoUrl} onChange={set("videoUrl")} placeholder="Link do vídeo (YouTube, Vimeo ou .mp4) — opcional" /></div>
+      <div className="field"><textarea value={f.content} onChange={set("content")} rows={2} placeholder="Conteúdo / resumo da aula"
+        style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", resize: "vertical" }} /></div>
+      <button disabled={busy} className="link">{busy ? "…" : "＋ Adicionar aula"}</button>
+    </form>
+  );
+}
+
+function CourseView({ courseId, isAdmin, onBack }) {
+  const [course, setCourse] = useState(null);
+  const [sel, setSel] = useState(null);
+  const [, force] = useState(0);
+  const load = () => api.course(courseId).then((c) => { setCourse(c); setSel((s) => s ?? (c.lessons[0]?.id || null)); }).catch(() => {});
+  useEffect(() => { load(); }, [courseId]);
+  if (!course) return <p className="muted">Carregando…</p>;
+
+  const lesson = course.lessons.find((l) => l.id === sel) || null;
+  const done = course.lessons.filter((l) => isDone(l.id)).length;
+  const total = course.lessons.length;
+  const pct = total ? Math.round((done / total) * 100) : 0;
+  const toggleDone = (id) => { localStorage.setItem(doneKey(id), isDone(id) ? "0" : "1"); force((x) => x + 1); };
+
+  const addLesson = async (body) => { await api.lessonCreate(courseId, body); await load(); };
+  const delLesson = async (id) => { if (confirm("Remover esta aula?")) { await api.lessonDelete(id); setSel(null); await load(); } };
+
+  const emb = lesson ? embedInfo(lesson.videoUrl) : null;
+
+  return (
+    <>
+      <button className="link" onClick={onBack}>← Voltar aos cursos</button>
+      <h2 style={{ marginTop: 6 }}>{course.emoji} {course.title}</h2>
+      <p className="muted" style={{ marginTop: -8, maxWidth: 680 }}>{course.description}</p>
+      <div style={{ maxWidth: 680, marginBottom: 16 }}>
+        <div style={{ height: 8, background: "#eef0f4", borderRadius: 999, overflow: "hidden" }}>
+          <div style={{ width: `${pct}%`, height: "100%", background: "#6d28d9" }} />
+        </div>
+        <div className="muted" style={{ fontSize: 12, marginTop: 4 }}>{done}/{total} aulas concluídas · {pct}%</div>
+      </div>
+      <div className="convgrid">
+        <div className="list">
+          {course.lessons.length === 0 && <div className="item muted">Sem aulas ainda</div>}
+          {course.lessons.map((l, i) => (
+            <div key={l.id} className={`item ${sel === l.id ? "active" : ""}`} onClick={() => setSel(l.id)}>
+              <div className="name">{isDone(l.id) ? "✅ " : `${i + 1}. `}{l.title}</div>
+              <div className="last">{l.durationMin ? `${l.durationMin} min` : "aula"}</div>
+            </div>
+          ))}
+          {isAdmin && <LessonForm onCreate={addLesson} />}
+        </div>
+        <div className="thread">
+          {!lesson && <p className="muted">Selecione uma aula</p>}
+          {lesson && (
+            <>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                <span style={{ fontWeight: 600 }}>{lesson.title}</span>
+                {isAdmin && <button className="link" style={{ marginLeft: "auto", color: "#dc2626" }} onClick={() => delLesson(lesson.id)}>Remover aula</button>}
+              </div>
+              {emb && emb.type === "iframe" && (
+                <div style={{ position: "relative", paddingTop: "56.25%", borderRadius: 12, overflow: "hidden", background: "#000" }}>
+                  <iframe src={emb.src} title={lesson.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0 }} />
+                </div>
+              )}
+              {emb && emb.type === "video" && (
+                <video src={emb.src} controls style={{ width: "100%", borderRadius: 12, background: "#000" }} />
+              )}
+              {emb && emb.type === "link" && (
+                <a href={emb.src} target="_blank" rel="noopener noreferrer" className="aibox" style={{ display: "block" }}>▶ Abrir vídeo em nova aba</a>
+              )}
+              {lesson.content && <p style={{ marginTop: 12, whiteSpace: "pre-wrap", lineHeight: 1.5 }}>{lesson.content}</p>}
+              <div style={{ marginTop: 14 }}>
+                <button onClick={() => toggleDone(lesson.id)}
+                  style={{ background: isDone(lesson.id) ? "#e2e8f0" : "#22c55e", color: isDone(lesson.id) ? "#334155" : "#fff", border: 0, padding: "8px 14px", borderRadius: 8, fontWeight: 600, cursor: "pointer" }}>
+                  {isDone(lesson.id) ? "✓ Concluída — desmarcar" : "Marcar como concluída"}
+                </button>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    </>
+  );
+}
+
+function Academy({ isAdmin }) {
+  const [list, setList] = useState(null);
+  const [openId, setOpenId] = useState(null);
+  const load = () => api.courses().then((r) => setList(r.data || [])).catch(() => setList([]));
+  useEffect(() => { load(); }, []);
+
+  const create = async (body) => { await api.courseCreate(body); await load(); };
+  const remove = async (c) => { if (confirm(`Remover o curso "${c.title}"?`)) { await api.courseDelete(c.id); await load(); } };
+
+  if (openId) return <CourseView courseId={openId} isAdmin={isAdmin} onBack={() => { setOpenId(null); load(); }} />;
+
+  return (
+    <>
+      <h2>Academia</h2>
+      <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 680 }}>
+        Cursos e treinamentos para a equipe dominar o Comenta e as ferramentas. Assista às aulas,
+        marque como concluídas e acompanhe seu progresso.
+      </p>
+      {isAdmin && <CourseForm onCreate={create} />}
+      {list === null && <p className="muted">Carregando…</p>}
+      {list && list.length === 0 && <p className="muted">Nenhum curso ainda{isAdmin ? " — crie o primeiro acima." : "."}</p>}
+      <div className="cards" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))" }}>
+        {list && list.map((c) => (
+          <div key={c.id} className="card" style={{ padding: 18, textAlign: "left", alignItems: "flex-start" }}>
+            <div style={{ fontSize: 30 }}>{c.emoji}</div>
+            <div style={{ fontWeight: 700, marginTop: 6 }}>{c.title}</div>
+            <span className="tag" style={{ margin: "6px 0" }}>{LEVEL_LABEL[c.level] || c.level}</span>
+            <p className="muted" style={{ fontSize: 13, margin: 0 }}>{c.description}</p>
+            <div className="muted" style={{ fontSize: 12, marginTop: 8 }}>{c.lessonCount} aula{c.lessonCount === 1 ? "" : "s"}</div>
+            <div style={{ display: "flex", gap: 10, marginTop: 12, width: "100%" }}>
+              <button onClick={() => setOpenId(c.id)}
+                style={{ background: "#6d28d9", color: "#fff", border: 0, padding: "7px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: "pointer" }}>
+                {c.lessonCount ? "Assistir" : "Abrir"}
+              </button>
+              {isAdmin && <button className="link" style={{ color: "#dc2626" }} onClick={() => remove(c)}>Remover</button>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
 export function App() {
   const [logged, setLogged] = useState(isLoggedIn());
   const [me, setMe] = useState(null);
@@ -557,6 +757,7 @@ export function App() {
           <button className={tab === "conversas" ? "active" : ""} onClick={() => setTab("conversas")}>💬 Conversas</button>
           <button className={tab === "automacoes" ? "active" : ""} onClick={() => setTab("automacoes")}>🤖 Automações</button>
           <button className={tab === "ferramentas" ? "active" : ""} onClick={() => setTab("ferramentas")}>🧩 Ferramentas</button>
+          <button className={tab === "cursos" ? "active" : ""} onClick={() => setTab("cursos")}>🎓 Academia</button>
           <button className={tab === "conexoes" ? "active" : ""} onClick={() => setTab("conexoes")}>📲 Conexões</button>
         </nav>
         <div style={{ position: "absolute", bottom: 18, fontSize: 13 }} className="muted">
@@ -569,6 +770,7 @@ export function App() {
         {tab === "conversas" && <Conversations />}
         {tab === "automacoes" && <Automations />}
         {tab === "ferramentas" && <Tools />}
+        {tab === "cursos" && <Academy isAdmin={me?.principal?.role === "admin"} />}
         {tab === "conexoes" && <Connections />}
       </main>
     </div>

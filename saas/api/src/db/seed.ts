@@ -1,4 +1,4 @@
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { db, schema, sql } from "./client.js";
 import { hashPassword } from "../lib/auth.js";
 
@@ -59,6 +59,74 @@ async function seed() {
     if (res.length) novos++;
   }
   console.log(`✓ atendentes: ${novos} novos / ${agents.length} no total (senha agente123)`);
+
+  // Academia Comenta (Fase 6): cursos de treinamento iniciais. Idempotente
+  // por título+empresa: só cria o que faltar, com suas aulas.
+  const starterCourses = [
+    {
+      title: "Comece pelo Comenta",
+      emoji: "🚀",
+      level: "iniciante",
+      position: 1,
+      description: "Do zero ao primeiro atendimento: painel, conversas e times.",
+      lessons: [
+        { title: "Visão geral da plataforma", durationMin: 6, content: "Conheça o painel: Dashboard, Conversas, Automações, Ferramentas e Conexões.", videoUrl: "" },
+        { title: "Atendendo no painel", durationMin: 8, content: "Como pegar uma conversa da fila, responder e resolver. Uso da IA (classificar, resumir, sugerir).", videoUrl: "" },
+        { title: "Times e roteamento", durationMin: 5, content: "Como as conversas chegam por time (Suporte, Vendas, Financeiro, Marketing).", videoUrl: "" },
+      ],
+    },
+    {
+      title: "WhatsApp e canais",
+      emoji: "📲",
+      level: "iniciante",
+      position: 2,
+      description: "Conecte o WhatsApp Business por QR e atenda o cliente no canal dele.",
+      lessons: [
+        { title: "Conectar o WhatsApp (QR)", durationMin: 5, content: "Aba Conexões → Conectar WhatsApp → leia o QR no celular da empresa.", videoUrl: "" },
+        { title: "Fluxo site + WhatsApp", durationMin: 6, content: "O atendimento iniciado no site também chega ao WhatsApp do cliente.", videoUrl: "" },
+      ],
+    },
+    {
+      title: "Automação e bot de fluxo",
+      emoji: "🤖",
+      level: "intermediario",
+      position: 3,
+      description: "Respostas automáticas (boas-vindas, fora do horário, palavra-chave).",
+      lessons: [
+        { title: "Criando regras na aba Automações", durationMin: 7, content: "Boas-vindas, fora do horário e palavra-chave — criar, pausar e remover.", videoUrl: "" },
+        { title: "Boas práticas de bot", durationMin: 6, content: "Quando responder automático e quando transferir para humano.", videoUrl: "" },
+      ],
+    },
+    {
+      title: "Ferramentas open-source",
+      emoji: "🧩",
+      level: "avancado",
+      position: 4,
+      description: "n8n (automação), Metabase (BI) e NocoDB (no-code) integrados ao Comenta.",
+      lessons: [
+        { title: "n8n: automações por webhook", durationMin: 10, content: "Ligar o n8n, criar um webhook e reagir aos eventos do Comenta.", videoUrl: "" },
+        { title: "Metabase: relatórios", durationMin: 9, content: "Conectar no Postgres e montar dashboards de atendimento.", videoUrl: "" },
+        { title: "NocoDB: base no-code", durationMin: 7, content: "Montar um mini-CRM e alimentar o n8n.", videoUrl: "" },
+      ],
+    },
+  ];
+  let novosCursos = 0;
+  for (const c of starterCourses) {
+    const [exists] = await db
+      .select({ id: schema.courses.id })
+      .from(schema.courses)
+      .where(and(eq(schema.courses.companyId, companyId), eq(schema.courses.title, c.title)));
+    if (exists) continue;
+    const [course] = await db
+      .insert(schema.courses)
+      .values({ companyId, title: c.title, description: c.description, emoji: c.emoji, level: c.level, position: c.position })
+      .returning();
+    await db.insert(schema.lessons).values(
+      c.lessons.map((l, i) => ({ courseId: course.id, title: l.title, content: l.content, videoUrl: l.videoUrl, durationMin: l.durationMin, position: i + 1 }))
+    );
+    novosCursos++;
+  }
+  console.log(`✓ cursos (Academia): ${novosCursos} novos / ${starterCourses.length} no total`);
 
   await sql.end();
 }
