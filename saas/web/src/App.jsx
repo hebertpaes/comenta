@@ -1464,6 +1464,12 @@ export function App() {
   const [logged, setLogged] = useState(isLoggedIn());
   const [me, setMe] = useState(null);
   const [tab, setTab] = useState("dashboard");
+  const [theme, setTheme] = useState(() => localStorage.getItem("comenta_theme") || "dark");
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem("comenta_theme", theme);
+  }, [theme]);
 
   useEffect(() => { if (logged) api.me().then(setMe).catch(() => { api.logout(); setLogged(false); }); }, [logged]);
 
@@ -1487,7 +1493,10 @@ export function App() {
           <button className={tab === "cursos" ? "active" : ""} onClick={() => setTab("cursos")}>🎓 Academia</button>
           <button className={tab === "conexoes" ? "active" : ""} onClick={() => setTab("conexoes")}>📲 Conexões</button>
         </nav>
-        <div style={{ position: "absolute", bottom: 18, fontSize: 13 }} className="muted">
+        <div style={{ position: "absolute", bottom: 18, fontSize: 13, width: 192 }} className="muted">
+          <button className="themebtn" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+            {theme === "dark" ? "☀️ Modo claro" : "🌙 Modo escuro"}
+          </button>
           {me?.company?.name}<br />
           <button className="link" onClick={() => { api.logout(); setLogged(false); }}>Sair</button>
         </div>
