@@ -225,6 +225,15 @@ function WhatsappCard({ ch, isAdmin, onChanged }) {
   const connect = async () => { setBusy(true); try { setSt(await api.channelConnect(ch.id)); } catch (e) { alert(e.message); } finally { setBusy(false); } };
   const disconnect = async () => { setBusy(true); try { setSt(await api.channelDisconnect(ch.id)); onChanged?.(); } catch (e) { alert(e.message); } finally { setBusy(false); } };
   const remove = async () => { if (confirm(`Remover a conexão "${ch.name}"?`)) { await api.channelDelete(ch.id); onChanged?.(); } };
+  const [syncing, setSyncing] = useState(false);
+  const syncContacts = async () => {
+    setSyncing(true);
+    try {
+      const r = await api.channelSyncContacts(ch.id);
+      alert(`Agenda sincronizada:\n• ${r.imported} novo(s) contato(s)\n• ${r.skipped} já existia(m)\n• ${r.total} na agenda do aparelho`);
+      onChanged?.();
+    } catch (e) { alert(e.message); } finally { setSyncing(false); }
+  };
 
   const meta = STATUS_META[st.status] || STATUS_META.disconnected;
   return (
@@ -246,6 +255,15 @@ function WhatsappCard({ ch, isAdmin, onChanged }) {
       )}
       {st.status === "connecting" && !st.qr && <div className="aibox" style={{ marginTop: 12 }}>⏳ Gerando QR Code…</div>}
       {st.demo && <p className="muted" style={{ fontSize: 11, marginTop: 10, opacity: 0.8 }}>Modo demonstração (sem a lib Baileys): pareamento simulado.</p>}
+
+      {isAdmin && st.status === "connected" && (
+        <div style={{ marginTop: 14 }}>
+          <button className="ghost" style={{ width: "100%" }} disabled={syncing} onClick={syncContacts}>
+            {syncing ? "Sincronizando…" : `🔄 Sincronizar contatos${st.contactsAvailable ? ` (${st.contactsAvailable})` : ""}`}
+          </button>
+          <p className="muted" style={{ fontSize: 11, marginTop: 6 }}>Importa a agenda deste aparelho para os seus Contatos (não sobrescreve os já cadastrados).</p>
+        </div>
+      )}
 
       {isAdmin && (
         <div style={{ display: "flex", gap: 10, marginTop: 14 }}>

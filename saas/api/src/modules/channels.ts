@@ -129,8 +129,19 @@ export async function channelRoutes(app: FastifyInstance) {
   app.get("/channels/:id/status", async (req) => {
     const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
     const row = await own(req.principal.companyId, id);
-    if (row.type === "whatsapp") return whatsapp.status(id);
+    if (row.type === "whatsapp") return { ...whatsapp.status(id), contactsAvailable: whatsapp.contactsCount(id) };
     return { status: row.status, qr: null, phone: (row.config as any)?.phone ?? null };
+  });
+
+  // Sincroniza a agenda do aparelho conectado para os Contatos da empresa. (admin)
+  app.post("/channels/:id/sync-contacts", { preHandler: requireAdmin }, async (req) => {
+    const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
+    const row = await own(req.principal.companyId, id);
+    if (row.type !== "whatsapp") throw new ApiError(400, "Sincronização de agenda só está disponível no WhatsApp.");
+    const res = await whatsapp.syncContacts(id);
+    if (!res.ok) throw new ApiError(409, res.error || "Não foi possível sincronizar");
+    audit(req.principal, "channel.sync_contacts", "channel", id, { imported: res.imported, skipped: res.skipped });
+    return res;
   });
 
   // Desconecta uma conexão. (admin)

@@ -29,6 +29,7 @@ type Session = {
   phone: string | null;
   mode: "baileys" | "demo";
   sock: any | null;
+  contacts: Map<string, string>; // phone (dígitos) -> nome da agenda do aparelho
   timer?: NodeJS.Timeout;
 };
 
@@ -89,6 +90,20 @@ function jidToPhone(jid?: string | null): string | null {
   if (!jid) return null;
   const digits = jid.split("@")[0].split(":")[0].replace(/\D/g, "");
   return digits || null;
+}
+
+// Acumula os contatos da agenda do aparelho conectado nesta sessão. O WhatsApp
+// entrega a lista por eventos (contacts.upsert/update e o sync inicial de
+// histórico); guardamos o melhor nome disponível para cada número.
+function ingestContacts(session: Session, list: any[] | undefined) {
+  for (const c of list || []) {
+    const jid: string = c?.id || c?.jid || "";
+    if (!jid.endsWith("@s.whatsapp.net")) continue; // ignora grupos/broadcast
+    const phone = jidToPhone(jid);
+    if (!phone) continue;
+    const name = (c?.name || c?.verifiedName || c?.notify || "").trim();
+    if (name || !session.contacts.has(phone)) session.contacts.set(phone, name);
+  }
 }
 
 type Channel = { id: string; companyId: string };
@@ -184,10 +199,15 @@ async function connectBaileys(channel: Channel, mod: any) {
     syncFullHistory: false,
   });
 
-  const session: Session = { channelId: channel.id, companyId: channel.companyId, status: "connecting", qr: null, phone: null, mode: "baileys", sock };
+  const session: Session = { channelId: channel.id, companyId: channel.companyId, status: "connecting", qr: null, phone: null, mode: "baileys", sock, contacts: new Map() };
   sessions.set(channel.id, session);
 
   sock.ev.on("creds.update", saveCreds);
+
+  // Agenda do aparelho: captura a lista de contatos conforme o WhatsApp a envia.
+  sock.ev.on("contacts.upsert", (list: any[]) => ingestContacts(session, list));
+  sock.ev.on("contacts.update", (list: any[]) => ingestContacts(session, list));
+  sock.ev.on("messaging-history.set", (h: any) => ingestContacts(session, h?.contacts));
 
   sock.ev.on("connection.update", async (u: any) => {
     if (u.qr) {
@@ -250,7 +270,7 @@ async function connectDemo(channel: Channel) {
 
   const pairingToken = `comenta-wa:${channel.id}:${Date.now()}`;
   const qr = await QRCode.toDataURL(pairingToken, { width: 320, margin: 1 });
-  const session: Session = { channelId: channel.id, companyId: channel.companyId, status: "connecting", qr, phone: null, mode: "demo", sock: null };
+  const session: Session = { channelId: channel.id, companyId: channel.companyId, status: "connecting", qr, phone: null, mode: "demo", sock: null, contacts: new Map() };
 
   session.timer = setTimeout(async () => {
     const s = sessions.get(channel.id);
@@ -303,6 +323,48 @@ export async function sendToContact(companyId: string, contactId: string, body: 
   if (!digits) return false;
   await session.sock.sendMessage(`${digits}@s.whatsapp.net`, { text: body });
   return true;
+}
+
+/** Quantos contatos a sessão já capturou da agenda do aparelho (para o painel
+ *  mostrar antes de sincronizar). */
+export function contactsCount(channelId: string): number {
+  return sessions.get(channelId)?.contacts.size ?? 0;
+}
+
+/** Sincroniza a agenda do aparelho conectado para os Contatos da empresa.
+ *  Insere quem ainda não existe (por telefone) com a tag "whatsapp"; nunca
+ *  sobrescreve contatos já cadastrados. */
+export async function syncContacts(channelId: string): Promise<{ ok: boolean; imported: number; skipped: number; total: number; error?: string }> {
+  const s = sessions.get(channelId);
+  if (!s) return { ok: false, imported: 0, skipped: 0, total: 0, error: "conexão não está ativa" };
+  if (s.status !== "connected") return { ok: false, imported: 0, skipped: 0, total: 0, error: "conecte o WhatsApp antes de sincronizar" };
+
+  let entries = [...s.contacts.entries()];
+  // No modo demonstração (sem lib), gera uma agenda de exemplo para o fluxo ficar visível.
+  if (s.mode === "demo" && entries.length === 0) {
+    entries = [
+      ["5566990000101", "João da Agenda"],
+      ["5566990000102", "Maria Contato"],
+      ["5566990000103", "Pedro Cliente"],
+      ["5566990000104", "Ana Fornecedora"],
+      ["5566990000105", "Carlos Parceiro"],
+    ];
+  }
+
+  let imported = 0;
+  let skipped = 0;
+  for (const [phone, name] of entries) {
+    const digits = phone.replace(/\D/g, "");
+    if (!digits) continue;
+    const res = await db
+      .insert(schema.contacts)
+      .values({ companyId: s.companyId, name: name?.trim() || `Contato ${digits}`, phone: digits, tags: ["whatsapp"] })
+      .onConflictDoNothing()
+      .returning();
+    if (res.length) imported++;
+    else skipped++;
+  }
+  return { ok: true, imported, skipped, total: entries.length };
 }
 
 /** Restaura sessões previamente conectadas (credenciais em disco) no boot. */

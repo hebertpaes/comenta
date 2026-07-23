@@ -72,6 +72,7 @@ export const api = {
   channelConnect: (id) => req("POST", `/channels/${id}/connect`),
   channelStatus: (id) => req("GET", `/channels/${id}/status`),
   channelDisconnect: (id) => req("POST", `/channels/${id}/disconnect`),
+  channelSyncContacts: (id) => req("POST", `/channels/${id}/sync-contacts`),
   automations: () => req("GET", "/automations"),
   automationCreate: (body) => req("POST", "/automations", body),
   automationUpdate: (id, body) => req("PATCH", `/automations/${id}`, body),
