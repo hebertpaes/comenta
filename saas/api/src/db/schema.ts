@@ -114,6 +114,9 @@ export const conversations = pgTable(
     assignedUserId: uuid("assigned_user_id").references(() => users.id, {
       onDelete: "set null",
     }),
+    // Autoatendimento por IA: enquanto true e ninguém humano assumiu, o bot de IA
+    // responde o cliente. Vira false no handoff (IA decide, ou o cliente pede humano).
+    botActive: boolean("bot_active").notNull().default(true),
     unreadCount: integer("unread_count").notNull().default(0),
     lastMessageAt: timestamp("last_message_at", { withTimezone: true }),
     firstResponseAt: timestamp("first_response_at", { withTimezone: true }),

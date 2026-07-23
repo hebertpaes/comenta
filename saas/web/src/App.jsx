@@ -608,6 +608,11 @@ function Conversations() {
 }
 
 const AUTOMATION_TYPES = {
+  ai: {
+    label: "Autoatendimento por IA",
+    icon: "🤖",
+    hint: "A IA Claude responde o cliente sozinha usando a sua base de conhecimento e transfere para um humano quando necessário.",
+  },
   welcome: {
     label: "Boas-vindas",
     icon: "👋",
@@ -627,7 +632,7 @@ const AUTOMATION_TYPES = {
 
 // Formulário de criação de uma nova regra (bot de fluxo).
 function AutomationForm({ onCreate }) {
-  const [type, setType] = useState("welcome");
+  const [type, setType] = useState("ai");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [reply, setReply] = useState("");
@@ -635,6 +640,9 @@ function AutomationForm({ onCreate }) {
   const [days, setDays] = useState([1, 2, 3, 4, 5]);
   const [start, setStart] = useState("09:00");
   const [end, setEnd] = useState("18:00");
+  const [knowledge, setKnowledge] = useState("");
+  const [tone, setTone] = useState("");
+  const [handoffMessage, setHandoffMessage] = useState("");
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
 
@@ -657,11 +665,18 @@ function AutomationForm({ onCreate }) {
       if (!kws.length) return setErr("Informe ao menos uma palavra-chave.");
       if (!reply.trim()) return setErr("Escreva a resposta da regra.");
       config = { keywords: kws, reply: reply.trim() };
+    } else if (type === "ai") {
+      if (!knowledge.trim()) return setErr("Escreva a base de conhecimento (o que a IA pode dizer).");
+      config = {
+        knowledge: knowledge.trim(),
+        ...(tone.trim() ? { tone: tone.trim() } : {}),
+        ...(handoffMessage.trim() ? { handoffMessage: handoffMessage.trim() } : {}),
+      };
     }
     setBusy(true);
     try {
       await onCreate({ name: name.trim() || AUTOMATION_TYPES[type].label, type, config });
-      setName(""); setMessage(""); setReply(""); setKeywords("");
+      setName(""); setMessage(""); setReply(""); setKeywords(""); setKnowledge(""); setTone(""); setHandoffMessage("");
     } catch (e) { setErr(e.message); } finally { setBusy(false); }
   };
 
@@ -681,7 +696,24 @@ function AutomationForm({ onCreate }) {
       <div className="field"><label>Nome (opcional)</label>
         <input value={name} onChange={(e) => setName(e.target.value)} placeholder={AUTOMATION_TYPES[type].label} /></div>
 
-      {type === "keyword" ? (
+      {type === "ai" && (
+        <>
+          <div className="field"><label>Base de conhecimento (o que a IA sabe e pode responder)</label>
+            <textarea value={knowledge} onChange={(e) => setKnowledge(e.target.value)} rows={6}
+              placeholder={"Ex.: Somos a Comenta, atendimento com IA.\nPlanos: Free (R$0), Pro (R$99/mês), Business (R$299/mês).\nHorário: seg–sex, 9h–18h.\nEndereço: ...\nPolítica de troca: ...\nA IA deve usar SÓ estas informações; se não souber, transfere para humano."}
+              style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", resize: "vertical" }} /></div>
+          <div className="field"><label>Tom de voz (opcional)</label>
+            <input value={tone} onChange={(e) => setTone(e.target.value)} placeholder="cordial, objetivo e prestativo" /></div>
+          <div className="field"><label>Mensagem ao transferir para humano (opcional)</label>
+            <input value={handoffMessage} onChange={(e) => setHandoffMessage(e.target.value)} placeholder="Certo! Vou te transferir para um atendente humano. 🙂" /></div>
+          <p className="muted" style={{ fontSize: 12 }}>
+            A IA responde o cliente sozinha e transfere para um humano quando o cliente pede ou quando o caso foge da base.
+            Requer a <b>ANTHROPIC_API_KEY</b> configurada — sem ela a IA fica inativa.
+          </p>
+        </>
+      )}
+
+      {type === "keyword" && (
         <>
           <div className="field"><label>Palavras-chave (separadas por vírgula)</label>
             <input value={keywords} onChange={(e) => setKeywords(e.target.value)} placeholder="preço, valor, planos, quanto custa" /></div>
@@ -690,7 +722,9 @@ function AutomationForm({ onCreate }) {
               placeholder="Nossos planos: Free, Pro e Business…"
               style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", resize: "vertical" }} /></div>
         </>
-      ) : (
+      )}
+
+      {(type === "welcome" || type === "business_hours") && (
         <>
           {type === "business_hours" && (
             <>
@@ -744,6 +778,7 @@ function Automations() {
 
   const describe = (a) => {
     const c = a.config || {};
+    if (a.type === "ai") return "IA responde o cliente e transfere para humano quando necessário";
     if (a.type === "keyword") return `Se contém: ${(c.keywords || []).join(", ")} → responde`;
     if (a.type === "business_hours") return `Fora de ${c.start || "09:00"}–${c.end || "18:00"} → responde`;
     return String(c.message || "").slice(0, 80);

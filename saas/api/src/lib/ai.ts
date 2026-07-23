@@ -132,6 +132,59 @@ export async function suggestReply(
   return firstText(res).trim();
 }
 
+// ---- Autoatendimento por IA (WhatsApp / conversas) -------------------------
+// A IA responde o cliente DIRETAMENTE numa conversa de atendimento e sinaliza
+// quando o caso precisa de um humano (handoff). Diferente do chatAssistant
+// (widget do site), aqui há base de conhecimento da empresa e decisão de handoff.
+
+const MODEL_AUTOREPLY = process.env.AI_MODEL_AUTOREPLY ?? "claude-sonnet-5";
+
+export type AutoReply = { reply: string; needsHuman: boolean };
+
+const AUTOREPLY_SCHEMA = {
+  type: "object",
+  properties: {
+    reply: { type: "string", description: "Mensagem para enviar ao cliente, em português do Brasil" },
+    needsHuman: {
+      type: "boolean",
+      description: "true se o caso precisa de um atendente humano (pedido explícito, negociação, dado sensível, ou fora do escopo da base de conhecimento)",
+    },
+  },
+  required: ["reply", "needsHuman"],
+  additionalProperties: false,
+} as const;
+
+export async function aiAutoReply(
+  messages: AiMessage[],
+  opts: { companyName?: string; knowledge?: string; tone?: string } = {}
+): Promise<AutoReply> {
+  const company = opts.companyName ?? "a empresa";
+  const tone = opts.tone ?? "cordial, objetivo e prestativo";
+  const kb = opts.knowledge ? `\n\n# Base de conhecimento da empresa (use como verdade)\n${opts.knowledge}` : "";
+  const res = await client.messages.create({
+    model: MODEL_AUTOREPLY,
+    max_tokens: 700,
+    system:
+      `Você é o atendente virtual de ${company} e responde o cliente DIRETAMENTE no WhatsApp. ` +
+      `Tom: ${tone}. Escreva em português do Brasil, curto e objetivo (1 a 4 frases). ` +
+      `Resolva o que der com base no conhecimento abaixo. NUNCA invente preços, prazos, dados da conta ` +
+      `ou políticas que não estejam na base — se não souber, seja honesto. ` +
+      `Marque needsHuman=true quando: o cliente pedir explicitamente uma pessoa/atendente; ` +
+      `precisar negociar contrato/valores; envolver dado sensível ou financeiro da conta; ` +
+      `ou o pedido estiver claramente fora do que você consegue resolver. ` +
+      `Quando needsHuman=true, escreva uma mensagem curta avisando que vai transferir para um atendente humano.${kb}`,
+    ...({ output_config: { format: { type: "json_schema", schema: AUTOREPLY_SCHEMA } } } as object),
+    messages: [
+      {
+        role: "user",
+        content: `Histórico da conversa:\n\n${transcript(messages)}\n\nResponda o cliente agora (JSON com reply e needsHuman).`,
+      },
+    ],
+  });
+  const parsed = JSON.parse(extractJson(firstText(res))) as AutoReply;
+  return { reply: String(parsed.reply || "").trim(), needsHuman: Boolean(parsed.needsHuman) };
+}
+
 // ---- Chat do assistente (site) ---------------------------------------------
 // Conversa aberta com o cliente no widget do site. Diferente do suggestReply
 // (voltado ao atendente), aqui a IA fala DIRETO com o visitante.

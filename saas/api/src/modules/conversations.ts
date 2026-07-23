@@ -104,7 +104,8 @@ export async function conversationRoutes(app: FastifyInstance) {
       })
       .returning();
 
-    const patch: Record<string, unknown> = { lastMessageAt: new Date(), status: "open" };
+    // Um humano respondeu: assume a conversa e desliga o autoatendimento por IA.
+    const patch: Record<string, unknown> = { lastMessageAt: new Date(), status: "open", botActive: false };
     if (!conv.firstResponseAt) patch.firstResponseAt = new Date();
     if (!conv.assignedUserId && p.userId) patch.assignedUserId = p.userId;
     await db.update(schema.conversations).set(patch).where(eq(schema.conversations.id, id));

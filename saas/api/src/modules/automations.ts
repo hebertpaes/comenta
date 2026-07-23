@@ -1,6 +1,6 @@
 import type { FastifyInstance } from "fastify";
 import { z } from "zod";
-import { and, eq } from "drizzle-orm";
+import { and, asc, eq } from "drizzle-orm";
 import { db, schema } from "../db/client.js";
 import { authenticate, requireAdmin, parse, ApiError } from "../lib/http.js";
 import { emitToCompany } from "../realtime.js";
@@ -12,9 +12,13 @@ import { publishEvent } from "../queues.js";
  *   - welcome        : responde na 1ª mensagem da conversa
  *   - business_hours : responde quando está FORA do horário de atendimento
  *   - keyword        : responde quando a mensagem contém palavras-chave
+ *   - ai             : autoatendimento por IA — a Claude responde o cliente
+ *                      sozinha e escala para humano quando necessário (handoff)
  */
 
-const TYPES = ["welcome", "business_hours", "keyword"] as const;
+const TYPES = ["welcome", "business_hours", "keyword", "ai"] as const;
+
+const DEFAULT_HANDOFF_WORDS = ["humano", "atendente", "pessoa", "falar com alguem", "falar com alguém", "quero falar com"];
 
 type Conv = { id: string; contactId: string };
 
@@ -48,6 +52,64 @@ function withinBusinessHours(cfg: Record<string, unknown>): boolean {
   return mins >= sh * 60 + sm && mins < eh * 60 + em;
 }
 
+// Autoatendimento por IA: a Claude responde o cliente sozinha enquanto o bot
+// estiver ativo na conversa e ninguém humano tiver assumido. No handoff (o
+// cliente pede humano, ou a IA decide que precisa), o bot desliga e a conversa
+// vai para a fila (pending) para um atendente assumir.
+async function runAiAutoservice(companyId: string, conv: Conv, text: string, cfg: Record<string, unknown>) {
+  const ai = await import("../lib/ai.js");
+  if (!ai.aiEnabled()) return; // sem ANTHROPIC_API_KEY, IA fica inativa
+
+  const [c] = await db.select().from(schema.conversations).where(eq(schema.conversations.id, conv.id));
+  if (!c) return;
+  // Não intromete se já foi para um humano, se já saiu do bot, ou se resolvida.
+  if (c.assignedUserId || c.botActive === false || c.status === "resolved") return;
+
+  const l = (text || "").toLowerCase();
+  const handoffWords = Array.isArray(cfg.handoffKeywords) && cfg.handoffKeywords.length
+    ? (cfg.handoffKeywords as unknown[]).map((k) => String(k).toLowerCase())
+    : DEFAULT_HANDOFF_WORDS;
+  const askedForHuman = handoffWords.some((w) => l.includes(w));
+
+  async function handoff() {
+    const msg = String(cfg.handoffMessage || "Certo! Vou te transferir para um atendente humano. Um instante, por favor. 🙂");
+    await botReply(companyId, conv, msg);
+    const queueId = cfg.queueId ? String(cfg.queueId) : undefined;
+    await db
+      .update(schema.conversations)
+      .set({ botActive: false, status: "pending", ...(queueId ? { queueId } : {}) })
+      .where(eq(schema.conversations.id, conv.id));
+    emitToCompany(companyId, "conversation.updated", { id: conv.id, botActive: false, ...(queueId ? { queueId } : {}) });
+  }
+
+  // Pedido explícito de humano: nem chama a IA (economiza tokens).
+  if (askedForHuman) return handoff();
+
+  // Histórico recente para dar contexto à IA.
+  const hist = await db
+    .select({ direction: schema.messages.direction, body: schema.messages.body })
+    .from(schema.messages)
+    .where(eq(schema.messages.conversationId, conv.id))
+    .orderBy(asc(schema.messages.createdAt))
+    .limit(40);
+  const [company] = await db.select().from(schema.companies).where(eq(schema.companies.id, companyId));
+
+  const { reply, needsHuman } = await ai.aiAutoReply(
+    hist.map((m) => ({ direction: m.direction as "in" | "out", body: m.body })),
+    { companyName: company?.name, knowledge: cfg.knowledge ? String(cfg.knowledge) : undefined, tone: cfg.tone ? String(cfg.tone) : undefined }
+  );
+
+  if (reply) await botReply(companyId, conv, reply);
+  if (needsHuman) {
+    const queueId = cfg.queueId ? String(cfg.queueId) : undefined;
+    await db
+      .update(schema.conversations)
+      .set({ botActive: false, status: "pending", ...(queueId ? { queueId } : {}) })
+      .where(eq(schema.conversations.id, conv.id));
+    emitToCompany(companyId, "conversation.updated", { id: conv.id, botActive: false, ...(queueId ? { queueId } : {}) });
+  }
+}
+
 /** Roda as automações ativas da empresa para uma mensagem recebida. */
 export async function applyAutomations(
   companyId: string,
@@ -71,6 +133,8 @@ export async function applyAutomations(
       } else if (r.type === "keyword" && Array.isArray(cfg.keywords) && cfg.reply) {
         const hit = (cfg.keywords as unknown[]).some((k) => l.includes(String(k).toLowerCase()));
         if (hit) await botReply(companyId, conv, String(cfg.reply));
+      } else if (r.type === "ai") {
+        await runAiAutoservice(companyId, conv, text, cfg);
       }
     } catch {
       /* uma regra que falha não derruba as outras */
