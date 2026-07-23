@@ -160,23 +160,53 @@ function WhatsappCard({ ch, isAdmin, onChanged }) {
 }
 
 // Card de um canal não-WhatsApp (encaixe pronto: configurar credenciais).
+// Campos de configuração por tipo de canal (em vez de JSON cru).
+const CHANNEL_FIELDS = {
+  telegram: [{ key: "botToken", label: "Bot Token (@BotFather)", ph: "123456:ABC-DEF..." }],
+  instagram: [
+    { key: "accessToken", label: "Access Token (Meta)", ph: "EAAB..." },
+    { key: "igBusinessId", label: "Instagram Business ID", ph: "1784XXXXXXXX" },
+  ],
+  facebook: [
+    { key: "pageAccessToken", label: "Page Access Token", ph: "EAAB..." },
+    { key: "pageId", label: "Page ID", ph: "1029XXXXXXXX" },
+  ],
+  email: [
+    { key: "imapHost", label: "IMAP host", ph: "imap.gmail.com" },
+    { key: "imapPort", label: "IMAP porta", ph: "993" },
+    { key: "user", label: "Usuário / E-mail", ph: "voce@empresa.com" },
+    { key: "password", label: "Senha", type: "password", ph: "••••••••" },
+    { key: "smtpHost", label: "SMTP host", ph: "smtp.gmail.com" },
+    { key: "smtpPort", label: "SMTP porta", ph: "587" },
+  ],
+};
+
 function ChannelCard({ ch, meta, isAdmin, onChanged }) {
-  const [open, setOpen] = useState(false);
-  const [cfg, setCfg] = useState(JSON.stringify(ch.config || {}, null, 2));
+  const fields = CHANNEL_FIELDS[ch.type] || [];
+  const [form, setForm] = useState(() => {
+    const c = ch.config || {};
+    const init = {};
+    for (const f of fields) init[f.key] = c[f.key] != null ? String(c[f.key]) : "";
+    return init;
+  });
   const [busy, setBusy] = useState(false);
   const status = ch.type === "widget" ? "connected" : ch.status;
   const sm = STATUS_META[status] || STATUS_META.disconnected;
+  const isLive = status === "connected" || status === "configured";
+  const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
-  const save = async () => {
+  const connect = async () => {
+    const cfg = {};
+    for (const f of fields) if (form[f.key]?.trim()) cfg[f.key] = form[f.key].trim();
+    if (fields.length && !Object.keys(cfg).length) return alert("Preencha as credenciais para conectar.");
     setBusy(true);
     try {
-      let parsed = {};
-      try { parsed = cfg.trim() ? JSON.parse(cfg) : {}; } catch { alert("Config precisa ser JSON válido."); setBusy(false); return; }
-      await api.channelUpdate(ch.id, { config: parsed });
-      await api.channelConnect(ch.id).catch(() => {});
-      setOpen(false); onChanged?.();
+      await api.channelUpdate(ch.id, { config: cfg });
+      await api.channelConnect(ch.id);
+      onChanged?.();
     } catch (e) { alert(e.message); } finally { setBusy(false); }
   };
+  const disconnect = async () => { setBusy(true); try { await api.channelDisconnect(ch.id); onChanged?.(); } catch (e) { alert(e.message); } finally { setBusy(false); } };
   const remove = async () => { if (confirm(`Remover a conexão "${ch.name}"?`)) { await api.channelDelete(ch.id); onChanged?.(); } };
 
   return (
@@ -190,32 +220,32 @@ function ChannelCard({ ch, meta, isAdmin, onChanged }) {
         <span className="tag" style={{ background: sm.bg, color: sm.color }}>{sm.label}</span>
       </div>
       <p className="muted" style={{ fontSize: 12, marginTop: 8 }}>{meta?.help}</p>
-      {ch.type !== "widget" && meta && !meta.real && (
-        <p className="muted" style={{ fontSize: 11, marginTop: 4, opacity: 0.8 }}>Encaixe pronto — a integração do provedor entra quando as credenciais forem informadas.</p>
-      )}
 
-      {isAdmin && ch.type !== "widget" && (
-        <>
-          {open ? (
-            <div style={{ marginTop: 10 }}>
-              <textarea value={cfg} onChange={(e) => setCfg(e.target.value)} rows={4}
-                placeholder='{"token":"..."}'
-                style={{ width: "100%", fontFamily: "monospace", fontSize: 12, padding: 8, borderRadius: 8, border: "1px solid #d0d5dd" }} />
-              <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
-                <button disabled={busy} onClick={save}>{busy ? "Salvando…" : "Salvar e conectar"}</button>
-                <button className="link" onClick={() => setOpen(false)}>Cancelar</button>
-              </div>
+      {ch.type === "widget" ? (
+        isAdmin && <div style={{ marginTop: 12 }}><button className="link" style={{ color: "#dc2626" }} onClick={remove}>Remover</button></div>
+      ) : isLive ? (
+        isAdmin && (
+          <div style={{ display: "flex", gap: 10, marginTop: 14 }}>
+            <button disabled={busy} onClick={disconnect}>Desconectar</button>
+            <button className="link" style={{ color: "#dc2626" }} onClick={remove}>Remover</button>
+          </div>
+        )
+      ) : isAdmin ? (
+        <div style={{ marginTop: 12 }}>
+          {fields.map((f) => (
+            <div className="field" key={f.key} style={{ marginBottom: 8 }}>
+              <label style={{ fontSize: 12 }}>{f.label}</label>
+              <input type={f.type || "text"} value={form[f.key]} onChange={set(f.key)} placeholder={f.ph}
+                style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }} />
             </div>
-          ) : (
-            <div style={{ display: "flex", gap: 10, marginTop: 12 }}>
-              <button onClick={() => setOpen(true)}>Configurar</button>
-              <button className="link" style={{ color: "#dc2626" }} onClick={remove}>Remover</button>
-            </div>
-          )}
-        </>
-      )}
-      {isAdmin && ch.type === "widget" && (
-        <div style={{ marginTop: 12 }}><button className="link" style={{ color: "#dc2626" }} onClick={remove}>Remover</button></div>
+          ))}
+          <div style={{ display: "flex", gap: 10, marginTop: 6 }}>
+            <button disabled={busy} onClick={connect}>{busy ? "Conectando…" : "Conectar"}</button>
+            <button className="link" style={{ color: "#dc2626" }} onClick={remove}>Remover</button>
+          </div>
+        </div>
+      ) : (
+        <p className="muted" style={{ fontSize: 12, marginTop: 10 }}>Somente administradores configuram este canal.</p>
       )}
     </div>
   );
@@ -248,7 +278,7 @@ function Connections({ isAdmin }) {
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
             {catalog.map((c) => (
               <button key={c.type} disabled={adding} onClick={() => add(c.type)}
-                style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 12px", borderRadius: 999, border: "1px solid #d0d5dd", background: "#fff", cursor: "pointer", fontSize: 13 }}>
+                style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 12px", borderRadius: 999, border: "1px solid #d0d5dd", background: "#fff", color: "#1f2937", fontWeight: 600, cursor: "pointer", fontSize: 13 }}>
                 <span style={{ fontSize: 16 }}>{c.icon}</span> {c.label}
               </button>
             ))}
