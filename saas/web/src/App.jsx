@@ -304,9 +304,13 @@ function Conversations() {
   const [sel, setSel] = useState(null);
   const [detail, setDetail] = useState(null);
   const [draft, setDraft] = useState("");
+  const [queues, setQueues] = useState([]);
+  const [filterQueue, setFilterQueue] = useState("");
 
-  const load = () => api.conversations().then((r) => setList(r.data || [])).catch(() => {});
-  useEffect(() => { load(); }, []);
+  const queueOf = (id) => queues.find((q) => q.id === id);
+  const load = () => api.conversations(filterQueue ? { queueId: filterQueue } : {}).then((r) => setList(r.data || [])).catch(() => {});
+  useEffect(() => { api.queues().then((r) => setQueues(r.data || [])).catch(() => {}); }, []);
+  useEffect(() => { load(); }, [filterQueue]);
   useEffect(() => { if (sel) api.conversation(sel).then(setDetail).catch(() => {}); }, [sel]);
 
   const send = async () => {
@@ -315,35 +319,67 @@ function Conversations() {
     setDraft("");
     api.conversation(sel).then(setDetail);
   };
+  const transfer = async (queueId) => {
+    if (!sel) return;
+    await api.conversationUpdate(sel, { queueId: queueId || null });
+    api.conversation(sel).then(setDetail);
+    load();
+  };
 
   return (
     <>
       <h2>Conversas</h2>
+      <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 10, flexWrap: "wrap" }}>
+        <span className="muted" style={{ fontSize: 13 }}>Fila:</span>
+        <button onClick={() => setFilterQueue("")} className={filterQueue === "" ? "" : "link"}
+          style={{ padding: "5px 12px", borderRadius: 999, fontSize: 13, cursor: "pointer",
+            border: "1px solid " + (filterQueue === "" ? "#6d28d9" : "#d0d5dd"), background: filterQueue === "" ? "#6d28d9" : "#fff", color: filterQueue === "" ? "#fff" : "#333" }}>
+          Todas
+        </button>
+        {queues.map((q) => (
+          <button key={q.id} onClick={() => setFilterQueue(q.id)}
+            style={{ padding: "5px 12px", borderRadius: 999, fontSize: 13, cursor: "pointer",
+              border: "1px solid " + (filterQueue === q.id ? q.color : "#d0d5dd"), background: filterQueue === q.id ? q.color : "#fff", color: filterQueue === q.id ? "#fff" : "#333" }}>
+            {q.name}
+          </button>
+        ))}
+      </div>
       <div className="convgrid">
         <div className="list">
           {list.length === 0 && <div className="item muted">Nenhuma conversa</div>}
-          {list.map((c) => (
-            <div key={c.id} className={`item ${sel === c.id ? "active" : ""}`} onClick={() => setSel(c.id)}>
-              <div className="name">{c.contact?.name || "Contato"}</div>
-              <div className="last">{c.status} · {c.contact?.phone || ""}</div>
-            </div>
-          ))}
+          {list.map((c) => {
+            const q = queueOf(c.queueId);
+            return (
+              <div key={c.id} className={`item ${sel === c.id ? "active" : ""}`} onClick={() => setSel(c.id)}>
+                <div className="name">{c.contact?.name || "Contato"}</div>
+                <div className="last" style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                  <span>{c.status} · {c.contact?.phone || ""}</span>
+                  {q && <span className="tag" style={{ background: q.color, color: "#fff", fontSize: 10 }}>{q.name}</span>}
+                </div>
+              </div>
+            );
+          })}
         </div>
         <div className="thread">
           {!detail && <p className="muted">Selecione uma conversa</p>}
           {detail && (
             <>
-              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8, flexWrap: "wrap" }}>
                 <span style={{ fontWeight: 600 }}>{detail.contact?.name}</span>
                 {detail.contact?.phone && (
-                  <>
-                    <span className="muted" style={{ fontSize: 13 }}>📱 {detail.contact.phone}</span>
-                    <a
-                      href={`https://wa.me/${detail.contact.phone.replace(/\D/g, "")}`}
-                      target="_blank" rel="noopener noreferrer"
-                      style={{ marginLeft: "auto", background: "#22c55e", color: "#fff", padding: "4px 10px", borderRadius: 999, fontSize: 12, fontWeight: 600, textDecoration: "none" }}
-                    >💬 WhatsApp</a>
-                  </>
+                  <span className="muted" style={{ fontSize: 13 }}>📱 {detail.contact.phone}</span>
+                )}
+                <select value={detail.queueId || ""} onChange={(e) => transfer(e.target.value)}
+                  title="Transferir para fila"
+                  style={{ marginLeft: "auto", padding: "5px 8px", borderRadius: 8, border: "1px solid #d0d5dd", fontSize: 13 }}>
+                  <option value="">Sem fila</option>
+                  {queues.map((q) => <option key={q.id} value={q.id}>↪ {q.name}</option>)}
+                </select>
+                {detail.contact?.phone && (
+                  <a href={`https://wa.me/${detail.contact.phone.replace(/\D/g, "")}`}
+                    target="_blank" rel="noopener noreferrer"
+                    style={{ background: "#22c55e", color: "#fff", padding: "4px 10px", borderRadius: 999, fontSize: 12, fontWeight: 600, textDecoration: "none" }}
+                  >💬 WhatsApp</a>
                 )}
               </div>
               <AiPanel conversationId={detail.id} />
@@ -855,6 +891,83 @@ function Academy({ isAdmin }) {
   );
 }
 
+// ---- Filas / Departamentos (Fase 8) ----
+const QUEUE_COLORS = ["#6d28d9", "#2563eb", "#16a34a", "#d97706", "#db2777", "#0891b2", "#dc2626", "#4b5563"];
+
+function QueueCard({ q, users, onChanged }) {
+  const [members, setMembers] = useState(q.memberIds || []);
+  const [busy, setBusy] = useState(false);
+  const toggle = (uid) => setMembers((cur) => (cur.includes(uid) ? cur.filter((x) => x !== uid) : [...cur, uid]));
+  const save = async () => { setBusy(true); try { await api.queueSetMembers(q.id, members); onChanged?.(); } catch (e) { alert(e.message); } finally { setBusy(false); } };
+  const setColor = async (color) => { await api.queueUpdate(q.id, { color }); onChanged?.(); };
+  const remove = async () => { if (confirm(`Remover a fila "${q.name}"?`)) { await api.queueDelete(q.id); onChanged?.(); } };
+  const dirty = JSON.stringify([...members].sort()) !== JSON.stringify([...(q.memberIds || [])].sort());
+
+  return (
+    <div className="card" style={{ padding: 18, textAlign: "left", alignItems: "stretch", maxWidth: 360 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <span style={{ width: 14, height: 14, borderRadius: 4, background: q.color }} />
+        <div style={{ fontWeight: 700, flex: 1 }}>{q.name}</div>
+        <button className="link" style={{ color: "#dc2626" }} onClick={remove}>Remover</button>
+      </div>
+      <div style={{ display: "flex", gap: 6, margin: "10px 0", flexWrap: "wrap" }}>
+        {QUEUE_COLORS.map((c) => (
+          <span key={c} onClick={() => setColor(c)} title="cor da fila"
+            style={{ width: 18, height: 18, borderRadius: 4, background: c, cursor: "pointer", outline: q.color === c ? "2px solid #111" : "none" }} />
+        ))}
+      </div>
+      <div className="muted" style={{ fontSize: 12, marginBottom: 6 }}>Atendentes na fila:</div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 4, maxHeight: 160, overflowY: "auto" }}>
+        {users.filter((u) => u.role !== "admin" || members.includes(u.id)).map((u) => (
+          <label key={u.id} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, cursor: "pointer" }}>
+            <input type="checkbox" checked={members.includes(u.id)} onChange={() => toggle(u.id)} />
+            {u.name}
+          </label>
+        ))}
+        {users.length === 0 && <span className="muted" style={{ fontSize: 12 }}>Sem atendentes cadastrados.</span>}
+      </div>
+      {dirty && <button disabled={busy} style={{ marginTop: 10, alignSelf: "flex-start" }} onClick={save}>{busy ? "Salvando…" : "Salvar membros"}</button>}
+    </div>
+  );
+}
+
+function Queues() {
+  const [list, setList] = useState(null);
+  const [users, setUsers] = useState([]);
+  const [name, setName] = useState("");
+  const [busy, setBusy] = useState(false);
+  const load = () => api.queues().then((r) => setList(r.data || [])).catch(() => setList([]));
+  useEffect(() => { load(); api.users().then((r) => setUsers(r.data || r || [])).catch(() => {}); }, []);
+
+  const create = async (e) => {
+    e.preventDefault();
+    if (!name.trim()) return;
+    setBusy(true);
+    try { await api.queueCreate({ name: name.trim(), color: QUEUE_COLORS[(list?.length || 0) % QUEUE_COLORS.length] }); setName(""); await load(); }
+    catch (e) { alert(e.message); } finally { setBusy(false); }
+  };
+
+  return (
+    <>
+      <h2>Filas</h2>
+      <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 680 }}>
+        Departamentos de atendimento (Suporte, Vendas…). Cada conversa pode ser transferida para uma fila,
+        e cada fila tem seus atendentes. Filtre as conversas por fila na aba Conversas.
+      </p>
+      <form onSubmit={create} className="card" style={{ padding: 14, marginBottom: 18, maxWidth: 460, flexDirection: "row", display: "flex", gap: 8, alignItems: "center" }}>
+        <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Nome da nova fila (ex.: Cobrança)"
+          style={{ flex: 1, padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }} />
+        <button disabled={busy}>{busy ? "…" : "➕ Criar fila"}</button>
+      </form>
+      {list === null && <p className="muted">Carregando…</p>}
+      {list && list.length === 0 && <p className="muted">Nenhuma fila ainda — crie a primeira acima.</p>}
+      <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "flex-start" }}>
+        {list && list.map((q) => <QueueCard key={q.id} q={q} users={users} onChanged={load} />)}
+      </div>
+    </>
+  );
+}
+
 export function App() {
   const [logged, setLogged] = useState(isLoggedIn());
   const [me, setMe] = useState(null);
@@ -871,6 +984,7 @@ export function App() {
         <nav className="nav">
           <button className={tab === "dashboard" ? "active" : ""} onClick={() => setTab("dashboard")}>📊 Dashboard</button>
           <button className={tab === "conversas" ? "active" : ""} onClick={() => setTab("conversas")}>💬 Conversas</button>
+          {me?.principal?.role === "admin" && <button className={tab === "filas" ? "active" : ""} onClick={() => setTab("filas")}>🗂️ Filas</button>}
           <button className={tab === "automacoes" ? "active" : ""} onClick={() => setTab("automacoes")}>🤖 Automações</button>
           <button className={tab === "ferramentas" ? "active" : ""} onClick={() => setTab("ferramentas")}>🧩 Ferramentas</button>
           <button className={tab === "cursos" ? "active" : ""} onClick={() => setTab("cursos")}>🎓 Academia</button>
@@ -884,6 +998,7 @@ export function App() {
       <main className="main">
         {tab === "dashboard" && <Dashboard />}
         {tab === "conversas" && <Conversations />}
+        {tab === "filas" && <Queues />}
         {tab === "automacoes" && <Automations />}
         {tab === "ferramentas" && <Tools />}
         {tab === "cursos" && <Academy isAdmin={me?.principal?.role === "admin"} />}

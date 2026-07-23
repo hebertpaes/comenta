@@ -109,6 +109,7 @@ export const conversations = pgTable(
       .notNull()
       .references(() => contacts.id, { onDelete: "cascade" }),
     channelId: uuid("channel_id").references(() => channels.id, { onDelete: "set null" }),
+    queueId: uuid("queue_id"),
     status: varchar("status", { length: 16 }).notNull().default("pending"), // pending | open | resolved
     assignedUserId: uuid("assigned_user_id").references(() => users.id, {
       onDelete: "set null",
@@ -262,4 +263,38 @@ export const lessons = pgTable(
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [index("lessons_course_ix").on(t.courseId, t.position)]
+);
+
+// Filas / Departamentos (Fase 8) — roteamento das conversas por setor.
+export const queues = pgTable(
+  "queues",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    name: varchar("name", { length: 80 }).notNull(),
+    color: varchar("color", { length: 16 }).notNull().default("#6d28d9"),
+    orderIndex: integer("order_index").notNull().default(0),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("queues_company_ix").on(t.companyId, t.orderIndex)]
+);
+
+// Quais atendentes participam de cada fila (para distribuição).
+export const userQueues = pgTable(
+  "user_queues",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    companyId: uuid("company_id")
+      .notNull()
+      .references(() => companies.id, { onDelete: "cascade" }),
+    queueId: uuid("queue_id")
+      .notNull()
+      .references(() => queues.id, { onDelete: "cascade" }),
+    userId: uuid("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+  },
+  (t) => [uniqueIndex("user_queues_ux").on(t.queueId, t.userId)]
 );

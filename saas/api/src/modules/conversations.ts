@@ -12,6 +12,7 @@ import { sendToContact } from "../channels/whatsapp.js";
 const ListQuery = z.object({
   status: z.enum(["pending", "open", "resolved"]).optional(),
   assignedToMe: z.coerce.boolean().default(false),
+  queueId: z.string().uuid().optional(),
   page: z.coerce.number().default(1),
   perPage: z.coerce.number().default(20),
 });
@@ -20,12 +21,13 @@ export async function conversationRoutes(app: FastifyInstance) {
   app.addHook("preHandler", authenticate);
 
   app.get("/conversations", async (req) => {
-    const { status, assignedToMe, page, perPage } = parse(ListQuery, req.query);
+    const { status, assignedToMe, queueId, page, perPage } = parse(ListQuery, req.query);
     const p = req.principal;
     const { limit, offset } = paginated(page, perPage);
     const conds = [eq(schema.conversations.companyId, p.companyId)];
     if (status) conds.push(eq(schema.conversations.status, status));
     if (assignedToMe && p.userId) conds.push(eq(schema.conversations.assignedUserId, p.userId));
+    if (queueId) conds.push(eq(schema.conversations.queueId, queueId));
     const where = and(...conds);
 
     const rows = await db
@@ -38,6 +40,7 @@ export async function conversationRoutes(app: FastifyInstance) {
         contact: { id: schema.contacts.id, name: schema.contacts.name, phone: schema.contacts.phone },
         assignedUserId: schema.conversations.assignedUserId,
         channelId: schema.conversations.channelId,
+        queueId: schema.conversations.queueId,
       })
       .from(schema.conversations)
       .innerJoin(schema.contacts, eq(schema.contacts.id, schema.conversations.contactId))
@@ -120,6 +123,7 @@ export async function conversationRoutes(app: FastifyInstance) {
       z.object({
         status: z.enum(["pending", "open", "resolved"]).optional(),
         assignedUserId: z.string().uuid().nullable().optional(),
+        queueId: z.string().uuid().nullable().optional(),
       }),
       req.body
     );

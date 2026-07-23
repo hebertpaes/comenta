@@ -142,6 +142,39 @@ async function seed() {
     console.log("✓ conexões iniciais: WhatsApp + Widget");
   }
 
+  // Filas / Departamentos (Fase 8): cria as 4 filas padrão e liga cada
+  // atendente à fila do seu time. Idempotente por nome de fila.
+  const defaultQueues = [
+    { name: "Suporte", color: "#2563eb", orderIndex: 1 },
+    { name: "Vendas", color: "#16a34a", orderIndex: 2 },
+    { name: "Financeiro", color: "#d97706", orderIndex: 3 },
+    { name: "Marketing", color: "#db2777", orderIndex: 4 },
+  ];
+  const companyUsers = await db
+    .select({ id: schema.users.id, name: schema.users.name })
+    .from(schema.users)
+    .where(eq(schema.users.companyId, companyId));
+  let novasFilas = 0;
+  for (const q of defaultQueues) {
+    let [queue] = await db
+      .select()
+      .from(schema.queues)
+      .where(and(eq(schema.queues.companyId, companyId), eq(schema.queues.name, q.name)));
+    if (!queue) {
+      [queue] = await db.insert(schema.queues).values({ companyId, ...q }).returning();
+      novasFilas++;
+    }
+    // membros: atendentes cujo nome traz o time (ex.: "Camila · Suporte")
+    const memberIds = companyUsers.filter((u) => u.name.includes(q.name)).map((u) => u.id);
+    for (const userId of memberIds) {
+      await db
+        .insert(schema.userQueues)
+        .values({ companyId, queueId: queue.id, userId })
+        .onConflictDoNothing();
+    }
+  }
+  console.log(`✓ filas: ${novasFilas} novas / ${defaultQueues.length} no total`);
+
   await sql.end();
 }
 

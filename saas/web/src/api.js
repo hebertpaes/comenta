@@ -44,9 +44,16 @@ export const api = {
   logout: () => setTokens("", ""),
   me: () => req("GET", "/auth/me"),
   metrics: () => req("GET", "/dashboard/metrics"),
-  conversations: (status) => req("GET", `/conversations${status ? `?status=${status}` : ""}`),
+  conversations: (opts = {}) => {
+    const qs = new URLSearchParams();
+    if (typeof opts === "string") { if (opts) qs.set("status", opts); }
+    else { if (opts.status) qs.set("status", opts.status); if (opts.queueId) qs.set("queueId", opts.queueId); }
+    const s = qs.toString();
+    return req("GET", `/conversations${s ? `?${s}` : ""}`);
+  },
   conversation: (id) => req("GET", `/conversations/${id}`),
   sendMessage: (id, body) => req("POST", `/conversations/${id}/messages`, { body }),
+  conversationUpdate: (id, body) => req("PATCH", `/conversations/${id}`, body),
   contacts: () => req("GET", "/contacts"),
   aiClassify: (id) => req("POST", `/conversations/${id}/ai/classify`),
   aiSummary: (id) => req("POST", `/conversations/${id}/ai/summary`),
@@ -70,4 +77,10 @@ export const api = {
   lessonCreate: (courseId, body) => req("POST", `/courses/${courseId}/lessons`, body),
   lessonUpdate: (id, body) => req("PATCH", `/lessons/${id}`, body),
   lessonDelete: (id) => req("DELETE", `/lessons/${id}`),
+  users: () => req("GET", "/users"),
+  queues: () => req("GET", "/queues"),
+  queueCreate: (body) => req("POST", "/queues", body),
+  queueUpdate: (id, body) => req("PATCH", `/queues/${id}`, body),
+  queueDelete: (id) => req("DELETE", `/queues/${id}`),
+  queueSetMembers: (id, userIds) => req("PUT", `/queues/${id}/members`, { userIds }),
 };
