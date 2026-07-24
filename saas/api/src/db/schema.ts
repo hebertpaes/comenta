@@ -31,6 +31,8 @@ export const companies = pgTable("companies", {
     .references(() => plans.id)
     .default("free"),
   status: varchar("status", { length: 16 }).notNull().default("active"), // active | suspended
+  // Configurações gerais da empresa (base de conhecimento do widget, etc.).
+  settings: jsonb("settings").$type<Record<string, unknown>>().notNull().default({}),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
 
@@ -285,6 +287,9 @@ export const queues = pgTable(
     name: varchar("name", { length: 80 }).notNull(),
     color: varchar("color", { length: 16 }).notNull().default("#6d28d9"),
     orderIndex: integer("order_index").notNull().default(0),
+    // Horário de atendimento da fila: { enabled, days:[1..7], start:"HH:MM",
+    // end:"HH:MM", message } — fora do horário, o bot responde `message`.
+    schedule: jsonb("schedule").$type<Record<string, unknown>>().notNull().default({}),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [index("queues_company_ix").on(t.companyId, t.orderIndex)]

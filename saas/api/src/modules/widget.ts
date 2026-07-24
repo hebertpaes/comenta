@@ -9,6 +9,8 @@ import { emitToCompany } from "../realtime.js";
 import { publishEvent } from "../queues.js";
 import { aiEnabled, chatAssistant } from "../lib/ai.js";
 import { applyAutomations } from "./automations.js";
+import { isOpenNow } from "../lib/schedule.js";
+import { companyWidgetKnowledge } from "./settings.js";
 
 // Base de conhecimento padrão do assistente do site (sobre o Comenta).
 // Em produção, cada empresa pode ter a sua (roadmap: editar pelo painel).
@@ -102,9 +104,17 @@ export async function widgetRoutes(app: FastifyInstance) {
         .returning();
     }
 
+    // Direciona para a fila do time escolhido (se houver uma com esse nome) e
+    // avalia o horário de atendimento dela.
+    let queue: typeof schema.queues.$inferSelect | undefined;
+    if (team) {
+      const qs = await db.select().from(schema.queues).where(eq(schema.queues.companyId, companyId));
+      queue = qs.find((q) => q.name.toLowerCase() === team.toLowerCase());
+    }
+
     const [conv] = await db
       .insert(schema.conversations)
-      .values({ companyId, contactId: contact.id, status: "pending", unreadCount: 1, lastMessageAt: new Date() })
+      .values({ companyId, contactId: contact.id, queueId: queue?.id ?? null, status: "pending", unreadCount: 1, lastMessageAt: new Date() })
       .returning();
 
     const first = message?.trim() || `Olá! Vim pelo site e gostaria de falar com o time${team ? ` de ${team}` : ""}.`;
@@ -119,6 +129,18 @@ export async function widgetRoutes(app: FastifyInstance) {
     publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(() => {});
     // bot de fluxo (boas-vindas / fora do horário / palavra-chave)
     applyAutomations(companyId, { id: conv.id, contactId: contact.id }, first, true).catch(() => {});
+
+    // Fora do horário de atendimento da fila → responde a mensagem configurada.
+    const sched = (queue?.schedule as Record<string, unknown> | undefined) ?? {};
+    if (queue && sched.enabled && !isOpenNow(sched)) {
+      const outMsg = String(sched.message || `No momento estamos fora do horário de atendimento do time ${queue.name}. Deixe sua mensagem que retornaremos assim que possível. 🙂`);
+      const [bot] = await db
+        .insert(schema.messages)
+        .values({ companyId, conversationId: conv.id, direction: "out", body: outMsg })
+        .returning();
+      emitToCompany(companyId, "message.created", { conversationId: conv.id, message: bot });
+      publishEvent(companyId, "message.created", { conversationId: conv.id, message: bot }).catch(() => {});
+    }
 
     return reply.code(201).send({ conversationId: conv.id, token: signToken(conv.id) });
   });
@@ -185,7 +207,11 @@ export async function widgetRoutes(app: FastifyInstance) {
     if (!aiEnabled()) return reply.send({ reply: null, aiEnabled: false });
     try {
       const turns = [...(history ?? []), { role: "user" as const, content: message }];
-      const answer = await chatAssistant(turns, { companyName: "Comenta", knowledge: COMENTA_KB });
+      // Usa a base de conhecimento definida pela empresa (Configurações), com
+      // fallback para a base padrão do Comenta.
+      const companyId = await widgetCompanyId().catch(() => null);
+      const kb = (companyId && (await companyWidgetKnowledge(companyId))) || COMENTA_KB;
+      const answer = await chatAssistant(turns, { companyName: "Comenta", knowledge: kb });
       return reply.send({ reply: answer, aiEnabled: true });
     } catch (err) {
       req.log.error(err);

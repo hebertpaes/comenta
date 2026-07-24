@@ -3,6 +3,17 @@ import { z } from "zod";
 import { and, asc, eq, inArray } from "drizzle-orm";
 import { db, schema } from "../db/client.js";
 import { authenticate, requireAdmin, parse, ApiError } from "../lib/http.js";
+import { isOpenNow } from "../lib/schedule.js";
+
+const ScheduleSchema = z
+  .object({
+    enabled: z.boolean().default(false),
+    days: z.array(z.number().int().min(1).max(7)).max(7).optional(),
+    start: z.string().regex(/^\d{2}:\d{2}$/).optional(),
+    end: z.string().regex(/^\d{2}:\d{2}$/).optional(),
+    message: z.string().max(1000).optional(),
+  })
+  .optional();
 
 /**
  * Filas / Departamentos (Fase 8). Setores de atendimento (Suporte, Vendas…)
@@ -31,6 +42,7 @@ export async function queueRoutes(app: FastifyInstance) {
     const data = rows.map((q) => ({
       ...q,
       memberIds: members.filter((m) => m.queueId === q.id).map((m) => m.userId),
+      isOpen: isOpenNow(q.schedule as Record<string, unknown>),
     }));
     return { data };
   });
@@ -41,12 +53,13 @@ export async function queueRoutes(app: FastifyInstance) {
         name: z.string().min(1).max(80),
         color: z.string().max(16).default("#6d28d9"),
         orderIndex: z.number().int().min(0).default(0),
+        schedule: ScheduleSchema,
       }),
       req.body
     );
     const [row] = await db
       .insert(schema.queues)
-      .values({ companyId: req.principal.companyId, ...body })
+      .values({ companyId: req.principal.companyId, ...body, schedule: body.schedule ?? {} })
       .returning();
     return reply.code(201).send(row);
   });
@@ -58,6 +71,7 @@ export async function queueRoutes(app: FastifyInstance) {
         name: z.string().min(1).max(80).optional(),
         color: z.string().max(16).optional(),
         orderIndex: z.number().int().min(0).optional(),
+        schedule: ScheduleSchema,
       }),
       req.body
     );

@@ -82,6 +82,8 @@ export const api = {
   campaignDelete: (id) => req("DELETE", `/campaigns/${id}`),
   teamMessages: (after) => req("GET", `/team/messages${after ? `?after=${encodeURIComponent(after)}` : ""}`),
   teamSend: (body) => req("POST", "/team/messages", { body }),
+  settings: () => req("GET", "/settings"),
+  settingsUpdate: (body) => req("PUT", "/settings", body),
   automations: () => req("GET", "/automations"),
   automationCreate: (body) => req("POST", "/automations", body),
   automationUpdate: (id, body) => req("PATCH", `/automations/${id}`, body),

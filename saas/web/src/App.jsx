@@ -1202,20 +1202,38 @@ function Academy({ isAdmin }) {
 // ---- Filas / Departamentos (Fase 8) ----
 const QUEUE_COLORS = ["#6d28d9", "#2563eb", "#16a34a", "#d97706", "#db2777", "#0891b2", "#dc2626", "#4b5563"];
 
+const WEEK_DAYS = [["Seg", 1], ["Ter", 2], ["Qua", 3], ["Qui", 4], ["Sex", 5], ["Sáb", 6], ["Dom", 7]];
+
 function QueueCard({ q, users, onChanged }) {
   const [members, setMembers] = useState(q.memberIds || []);
   const [busy, setBusy] = useState(false);
+  const sched0 = q.schedule || {};
+  const [sched, setSched] = useState({
+    enabled: !!sched0.enabled,
+    days: sched0.days || [1, 2, 3, 4, 5],
+    start: sched0.start || "09:00",
+    end: sched0.end || "18:00",
+    message: sched0.message || "",
+  });
+  const [schedBusy, setSchedBusy] = useState(false);
   const toggle = (uid) => setMembers((cur) => (cur.includes(uid) ? cur.filter((x) => x !== uid) : [...cur, uid]));
   const save = async () => { setBusy(true); try { await api.queueSetMembers(q.id, members); onChanged?.(); } catch (e) { alert(e.message); } finally { setBusy(false); } };
   const setColor = async (color) => { await api.queueUpdate(q.id, { color }); onChanged?.(); };
   const remove = async () => { if (confirm(`Remover a fila "${q.name}"?`)) { await api.queueDelete(q.id); onChanged?.(); } };
   const dirty = JSON.stringify([...members].sort()) !== JSON.stringify([...(q.memberIds || [])].sort());
+  const toggleDay = (d) => setSched((s) => ({ ...s, days: s.days.includes(d) ? s.days.filter((x) => x !== d) : [...s.days, d].sort() }));
+  const saveSched = async () => { setSchedBusy(true); try { await api.queueUpdate(q.id, { schedule: sched }); onChanged?.(); } catch (e) { alert(e.message); } finally { setSchedBusy(false); } };
 
   return (
     <div className="card" style={{ padding: 18, textAlign: "left", alignItems: "stretch", maxWidth: 360 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
         <span style={{ width: 14, height: 14, borderRadius: 4, background: q.color }} />
         <div style={{ fontWeight: 700, flex: 1 }}>{q.name}</div>
+        {sched0.enabled && (
+          <span className="tag" style={{ background: q.isOpen ? "#dcfce7" : "#fee2e2", color: q.isOpen ? "#16a34a" : "#dc2626" }}>
+            {q.isOpen ? "🟢 Aberto" : "🔴 Fechado"}
+          </span>
+        )}
         <button className="link" style={{ color: "#dc2626" }} onClick={remove}>Remover</button>
       </div>
       <div style={{ display: "flex", gap: 6, margin: "10px 0", flexWrap: "wrap" }}>
@@ -1235,6 +1253,34 @@ function QueueCard({ q, users, onChanged }) {
         {users.length === 0 && <span className="muted" style={{ fontSize: 12 }}>Sem atendentes cadastrados.</span>}
       </div>
       {dirty && <button disabled={busy} style={{ marginTop: 10, alignSelf: "flex-start" }} onClick={save}>{busy ? "Salvando…" : "Salvar membros"}</button>}
+
+      <div style={{ borderTop: "1px solid var(--border)", marginTop: 14, paddingTop: 12 }}>
+        <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 600, cursor: "pointer" }}>
+          <input type="checkbox" checked={sched.enabled} onChange={(e) => setSched({ ...sched, enabled: e.target.checked })} />
+          🕐 Horário de atendimento
+        </label>
+        {sched.enabled && (
+          <div style={{ marginTop: 8 }}>
+            <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 8 }}>
+              {WEEK_DAYS.map(([lbl, d]) => (
+                <button type="button" key={d} onClick={() => toggleDay(d)}
+                  style={{ padding: "4px 8px", borderRadius: 999, fontSize: 12, cursor: "pointer",
+                    border: "1px solid " + (sched.days.includes(d) ? "var(--accent)" : "var(--border)"),
+                    background: sched.days.includes(d) ? "var(--accent)" : "transparent",
+                    color: sched.days.includes(d) ? "#fff" : "var(--text)" }}>{lbl}</button>
+              ))}
+            </div>
+            <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
+              <label style={{ fontSize: 12, flex: 1 }}>Abre<input type="time" value={sched.start} onChange={(e) => setSched({ ...sched, start: e.target.value })} /></label>
+              <label style={{ fontSize: 12, flex: 1 }}>Fecha<input type="time" value={sched.end} onChange={(e) => setSched({ ...sched, end: e.target.value })} /></label>
+            </div>
+            <textarea rows={2} value={sched.message} onChange={(e) => setSched({ ...sched, message: e.target.value })}
+              placeholder="Mensagem fora do horário (o bot responde isso quando o time está fechado)"
+              style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid var(--border)", background: "var(--panel2)", color: "var(--text)", resize: "vertical" }} />
+          </div>
+        )}
+        <button className="ghost" disabled={schedBusy} style={{ marginTop: 8 }} onClick={saveSched}>{schedBusy ? "Salvando…" : "Salvar horário"}</button>
+      </div>
     </div>
   );
 }
@@ -1817,6 +1863,48 @@ function TeamChat({ me }) {
   );
 }
 
+// Configurações gerais da empresa (admin).
+function Settings() {
+  const [kb, setKb] = useState("");
+  const [loaded, setLoaded] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [msg, setMsg] = useState("");
+  useEffect(() => {
+    api.settings().then((r) => { setKb((r.settings?.widgetKnowledge) || ""); setLoaded(true); }).catch(() => setLoaded(true));
+  }, []);
+  const save = async () => {
+    setBusy(true); setMsg("");
+    try { await api.settingsUpdate({ widgetKnowledge: kb }); setMsg("Configurações salvas ✓"); }
+    catch (e) { setMsg(e.message); } finally { setBusy(false); }
+  };
+  return (
+    <>
+      <h2>Configurações</h2>
+      <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 640 }}>
+        Ajustes gerais da empresa. O horário de atendimento por departamento fica na aba <b>Filas</b>.
+      </p>
+      <div className="card" style={{ padding: 20, maxWidth: 640, alignItems: "stretch" }}>
+        <div style={{ fontWeight: 700, marginBottom: 6 }}>🌐 Base de conhecimento do chat do site</div>
+        <p className="muted" style={{ fontSize: 13, marginTop: 0 }}>
+          O assistente de IA do widget do site responde os visitantes usando este texto (planos, horários,
+          políticas, endereço…). Se ficar vazio, usa a base padrão do Comenta.
+        </p>
+        {!loaded ? <p className="muted">Carregando…</p> : (
+          <>
+            <textarea rows={10} value={kb} onChange={(e) => setKb(e.target.value)}
+              placeholder={"Ex.: Somos a Loja X.\nHorário: seg–sex 9h–18h.\nPlanos/preços: ...\nPolítica de troca: ...\nEndereço: ..."}
+              style={{ width: "100%", padding: "10px 12px", borderRadius: 8, border: "1px solid var(--border)", background: "var(--panel2)", color: "var(--text)", resize: "vertical" }} />
+            <div style={{ display: "flex", gap: 12, alignItems: "center", marginTop: 10 }}>
+              <button disabled={busy} onClick={save}>{busy ? "Salvando…" : "Salvar"}</button>
+              {msg && <span className="muted" style={{ fontSize: 13 }}>{msg}</span>}
+            </div>
+          </>
+        )}
+      </div>
+    </>
+  );
+}
+
 export function App() {
   const [logged, setLogged] = useState(isLoggedIn());
   const [me, setMe] = useState(null);
@@ -1848,6 +1936,7 @@ export function App() {
           {me?.principal?.role === "admin" && <button className={tab === "filas" ? "active" : ""} onClick={() => setTab("filas")}>🗂️ Filas</button>}
           <button className={tab === "respostas" ? "active" : ""} onClick={() => setTab("respostas")}>⚡ Respostas</button>
           {me?.principal?.role === "admin" && <button className={tab === "tags" ? "active" : ""} onClick={() => setTab("tags")}>🏷️ Tags</button>}
+          {me?.principal?.role === "admin" && <button className={tab === "config" ? "active" : ""} onClick={() => setTab("config")}>⚙️ Configurações</button>}
           <button className={tab === "automacoes" ? "active" : ""} onClick={() => setTab("automacoes")}>🤖 Automações</button>
           {me?.principal?.role === "admin" && <button className={tab === "campanhas" ? "active" : ""} onClick={() => setTab("campanhas")}>📣 Campanhas</button>}
           <button className={tab === "ferramentas" ? "active" : ""} onClick={() => setTab("ferramentas")}>🧩 Ferramentas</button>
@@ -1872,6 +1961,7 @@ export function App() {
         {tab === "filas" && <Queues />}
         {tab === "respostas" && <QuickReplies />}
         {tab === "tags" && <TagsManager />}
+        {tab === "config" && <Settings />}
         {tab === "automacoes" && <Automations />}
         {tab === "campanhas" && <Campaigns />}
         {tab === "ferramentas" && <Tools />}
