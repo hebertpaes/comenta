@@ -79,11 +79,32 @@ export async function authRoutes(app: FastifyInstance) {
     });
     const refreshToken = await issueRefreshToken(user.id);
     return reply.send({
-      user: { id: user.id, name: user.name, email: user.email, role: user.role },
+      user: { id: user.id, name: user.name, email: user.email, role: user.role, mustChangePassword: user.mustChangePassword },
       company: { id: company.id, name: company.name, planId: company.planId },
       accessToken,
       refreshToken,
     });
+  });
+
+  // Troca de senha do usuário logado (exigida no 1º login de contas semeadas).
+  const ChangePwBody = z.object({
+    currentPassword: z.string().min(1),
+    newPassword: z.string().min(8, "mínimo 8 caracteres").max(72),
+  });
+  app.post("/auth/change-password", { preHandler: [authenticate] }, async (req, reply) => {
+    const { currentPassword, newPassword } = parse(ChangePwBody, req.body);
+    const p = req.principal;
+    if (!p.userId) throw new ApiError(400, "Sessão inválida para troca de senha");
+    const [user] = await db.select().from(schema.users).where(eq(schema.users.id, p.userId));
+    if (!user) throw new ApiError(404, "Usuário não encontrado");
+    if (!(await verifyPassword(currentPassword, user.passwordHash))) throw new ApiError(401, "Senha atual incorreta");
+    if (await verifyPassword(newPassword, user.passwordHash)) throw new ApiError(400, "A nova senha deve ser diferente da atual");
+    await db
+      .update(schema.users)
+      .set({ passwordHash: await hashPassword(newPassword), mustChangePassword: false })
+      .where(eq(schema.users.id, user.id));
+    audit(p, "auth.change_password", "user", user.id);
+    return reply.send({ ok: true });
   });
 
   app.post("/auth/refresh", async (req, reply) => {
@@ -115,12 +136,16 @@ export async function authRoutes(app: FastifyInstance) {
       .select({ count: dsql<number>`count(*)::int` })
       .from(schema.users)
       .where(eq(schema.users.companyId, p.companyId));
+    const [self] = p.userId
+      ? await db.select({ must: schema.users.mustChangePassword }).from(schema.users).where(eq(schema.users.id, p.userId))
+      : [{ must: false }];
     audit(p, "auth.me", "user", p.userId ?? undefined);
     return {
       principal: p,
       company: { id: company.id, name: company.name, slug: company.slug, status: company.status },
       plan,
       usage: { users: userCount },
+      mustChangePassword: self?.must ?? false,
     };
   });
 }

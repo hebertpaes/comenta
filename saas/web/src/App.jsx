@@ -48,6 +48,37 @@ function Login({ onLogin }) {
   );
 }
 
+// Troca obrigatória de senha (contas semeadas / senha provisória).
+function ForcePasswordChange({ onDone, onLogout }) {
+  const [cur, setCur] = useState("");
+  const [nw, setNw] = useState("");
+  const [nw2, setNw2] = useState("");
+  const [err, setErr] = useState("");
+  const [busy, setBusy] = useState(false);
+  const submit = async (e) => {
+    e.preventDefault(); setErr("");
+    if (nw.length < 8) return setErr("A nova senha precisa ter ao menos 8 caracteres.");
+    if (nw !== nw2) return setErr("As senhas não conferem.");
+    setBusy(true);
+    try { await api.changePassword(cur, nw); onDone(); }
+    catch (e) { setErr(e.message); } finally { setBusy(false); }
+  };
+  return (
+    <form className="login" onSubmit={submit}>
+      <Logo />
+      <p className="muted">Por segurança, troque a senha provisória antes de continuar.</p>
+      <div className="field"><label>Senha atual</label><input type="password" value={cur} onChange={(e) => setCur(e.target.value)} required /></div>
+      <div className="field"><label>Nova senha</label><input type="password" value={nw} onChange={(e) => setNw(e.target.value)} required /></div>
+      <div className="field"><label>Confirmar nova senha</label><input type="password" value={nw2} onChange={(e) => setNw2(e.target.value)} required /></div>
+      {err && <div className="err">{err}</div>}
+      <button style={{ width: "100%", marginTop: 8 }} disabled={busy}>{busy ? "..." : "Trocar senha e entrar"}</button>
+      <p className="muted" style={{ marginTop: 14, fontSize: 13 }}>
+        <button type="button" className="link" onClick={onLogout}>Sair</button>
+      </p>
+    </form>
+  );
+}
+
 // Mini gráfico de barras (SVG) para a série de 7 dias.
 function BarChart({ data }) {
   const max = Math.max(1, ...data.map((d) => d.count));
@@ -1800,6 +1831,8 @@ export function App() {
   useEffect(() => { if (logged) api.me().then(setMe).catch(() => { api.logout(); setLogged(false); }); }, [logged]);
 
   if (!logged) return <Login onLogin={() => setLogged(true)} />;
+  if (me && me.mustChangePassword)
+    return <ForcePasswordChange onDone={() => api.me().then(setMe)} onLogout={() => { api.logout(); setLogged(false); }} />;
 
   return (
     <div className="app">

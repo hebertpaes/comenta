@@ -46,6 +46,8 @@ export const users = pgTable(
     passwordHash: text("password_hash").notNull(),
     role: varchar("role", { length: 16 }).notNull().default("agent"), // admin | agent
     isActive: boolean("is_active").notNull().default(true),
+    // Força a troca de senha no próximo login (contas semeadas / senha provisória).
+    mustChangePassword: boolean("must_change_password").notNull().default(false),
     lastLoginAt: timestamp("last_login_at", { withTimezone: true }),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },

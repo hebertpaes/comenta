@@ -14,6 +14,22 @@ async function seed() {
   }
   console.log(`✓ ${plans.length} planos`);
 
+  // SEGURANÇA: os dados de DEMONSTRAÇÃO (empresa/admin/atendentes com senha
+  // padrão) NÃO são criados em produção — senão qualquer um entraria com as
+  // credenciais conhecidas. Em produção, cadastre a 1ª empresa pelo painel
+  // (signup). Para forçar o seed demo mesmo em produção, defina SEED_DEMO=true.
+  const isProd = process.env.NODE_ENV === "production";
+  const seedDemo = process.env.SEED_DEMO === "true" || !isProd;
+  if (!seedDemo) {
+    console.log("• produção: seed de demonstração desativado. Cadastre a 1ª empresa pelo painel (signup).");
+    console.log("  (defina SEED_DEMO=true para forçar dados de demonstração)");
+    await sql.end();
+    return;
+  }
+
+  // Senha do admin de demonstração — configurável por env; troca obrigatória no
+  // 1º login de qualquer forma (mustChangePassword).
+  const adminPassword = process.env.SEED_ADMIN_PASSWORD || "comenta123";
   const email = "admin@comenta.com.br";
   const [existing] = await db.select().from(schema.users).where(eq(schema.users.email, email));
   let companyId: string;
@@ -27,10 +43,11 @@ async function seed() {
       companyId,
       name: "Administrador",
       email,
-      passwordHash: await hashPassword("comenta123"),
+      passwordHash: await hashPassword(adminPassword),
       role: "admin",
+      mustChangePassword: true,
     });
-    console.log(`✓ empresa "Comenta Demo" + admin ${email} / comenta123`);
+    console.log(`✓ empresa "Comenta Demo" + admin ${email} (troca de senha obrigatória no 1º login)`);
   } else {
     companyId = existing.companyId;
     console.log(`• admin ${email} já existe`);
@@ -53,7 +70,7 @@ async function seed() {
     const login = a.nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
     const res = await db
       .insert(schema.users)
-      .values({ companyId, name: `${a.nome} · ${a.time}`, email: `${login}@comenta.com.br`, passwordHash: agentHash, role: "agent" })
+      .values({ companyId, name: `${a.nome} · ${a.time}`, email: `${login}@comenta.com.br`, passwordHash: agentHash, role: "agent", mustChangePassword: true })
       .onConflictDoNothing({ target: schema.users.email })
       .returning();
     if (res.length) novos++;

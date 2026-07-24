@@ -43,6 +43,7 @@ export const api = {
   },
   logout: () => setTokens("", ""),
   me: () => req("GET", "/auth/me"),
+  changePassword: (currentPassword, newPassword) => req("POST", "/auth/change-password", { currentPassword, newPassword }),
   metrics: () => req("GET", "/dashboard/metrics"),
   conversations: (opts = {}) => {
     const qs = new URLSearchParams();
