@@ -45,7 +45,7 @@ export async function summarize({ title, snippet, link, source, category }) {
     const html = (msg.content || []).map((b) => (b.type === "text" ? b.text : "")).join("").trim();
     if (!html) throw new Error("resposta vazia");
     return { title, html: html + fonte + DISCLAIMER, excerpt: (snippet || title).slice(0, 200) };
-  } catch (e) {
+  } catch {
     const body = snippet ? `<p>${esc(snippet)}</p>` : `<p>Veja a matéria completa na fonte.</p>`;
     return { title, html: body + fonte + DISCLAIMER, excerpt: (snippet || title).slice(0, 200) };
   }

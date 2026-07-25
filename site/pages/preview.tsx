@@ -50,7 +50,13 @@ const PLACEHOLDER_DATA_URL = `data:image/svg+xml;utf8,${encodeURIComponent(
 
 // UID helper para prévia (fallback se randomUUID não existir)
 function uid(){
-  try { const c: any = (globalThis as any).crypto; if (c?.randomUUID) return c.randomUUID(); } catch {}
+  try {
+    const c: any = (globalThis as any).crypto;
+    if (c?.randomUUID) return c.randomUUID();
+  } catch {
+    // crypto.randomUUID exige contexto seguro; fora dele caímos no gerador
+    // manual logo abaixo.
+  }
   return Math.random().toString(36).slice(2);
 }
 
@@ -142,8 +148,8 @@ function ContrastStyles(){
 
       /* Cards & surfaces */
       .dark-mode .bg-white, .dark-mode .bg-slate-50{background:#0f172a !important}
-      .dark-mode .bg-white\/80{background:rgba(15,23,42,.80) !important}
-      .dark-mode .bg-white\/90{background:rgba(15,23,42,.90) !important}
+      .dark-mode .bg-white\\/80{background:rgba(15,23,42,.80) !important}
+      .dark-mode .bg-white\\/90{background:rgba(15,23,42,.90) !important}
       .dark-mode .border-slate-200{border-color:#334155 !important}
       .dark-mode .border-slate-300{border-color:#475569 !important}
 
@@ -159,7 +165,7 @@ function ContrastStyles(){
       .dark-mode .bg-white.border{background:#0f172a !important; border-color:#334155 !important}
 
       /* Hover tweaks */
-      .dark-mode .hover\:bg-slate-50:hover{background:#111827 !important}
+      .dark-mode .hover\\:bg-slate-50:hover{background:#111827 !important}
 
       /* Post date high-contrast */
       .dark-mode .post-date{color:#C8D2DF !important}
@@ -647,7 +653,7 @@ Próximos passos:
 3) Registrar logs e latência.
 
 Dica: use o agente de busca integrado em /agente_busca_integrado.html para levantar fontes.`;
-    let i=0; let t: any;
+    let i=0;
     const tick = () => {
       i += Math.max(3, Math.floor(target.length/40));
       const partial = target.slice(0,i);
@@ -658,9 +664,9 @@ Dica: use o agente de busca integrado em /agente_busca_integrado.html para levan
         a.content = partial;
         return [...others, a];
       });
-      if(i < target.length) { t = setTimeout(tick, 30); } else { setStreamingId(undefined); }
+      if(i < target.length) { setTimeout(tick, 30); } else { setStreamingId(undefined); }
     };
-    t = setTimeout(tick, 120);
+    setTimeout(tick, 120);
   }
 
   function onSubmit(e:React.FormEvent){ e.preventDefault(); send(); }

@@ -1,6 +1,6 @@
 import type { FastifyInstance } from "fastify";
 import { z } from "zod";
-import { and, asc, desc, eq, inArray, sql as dsql } from "drizzle-orm";
+import { and, asc, desc, eq, sql as dsql } from "drizzle-orm";
 import { db, schema } from "../db/client.js";
 import { authenticate, requireAdmin, parse, ApiError } from "../lib/http.js";
 import { emitToCompany } from "../realtime.js";

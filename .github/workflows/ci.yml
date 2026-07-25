@@ -11,8 +11,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: monorepo (build de todos os workspaces)
+  ci:
+    name: lint + typecheck + test + build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,6 +22,22 @@ jobs:
           cache: npm
       # Um lockfile só na raiz: `npm ci` instala todos os workspaces de uma vez.
       - run: npm ci
+
       # @comenta/shared precisa dos .d.ts gerados antes de api e web compilarem.
-      - run: npm run build -w @comenta/shared
-      - run: npm run build --workspaces --if-present
+      - name: Build do pacote compartilhado
+        run: npm run build -w @comenta/shared
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Formatação
+        run: npm run format:check
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Testes
+        run: npm test
+
+      - name: Build
+        run: npm run build --workspaces --if-present

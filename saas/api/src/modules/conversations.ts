@@ -1,6 +1,6 @@
 import type { FastifyInstance } from "fastify";
 import { z } from "zod";
-import { and, asc, desc, eq, isNull, sql as dsql } from "drizzle-orm";
+import { and, asc, desc, eq, sql as dsql } from "drizzle-orm";
 import { db, schema } from "../db/client.js";
 import { authenticate, parse, paginated, ApiError } from "../lib/http.js";
 import { audit } from "../lib/audit.js";

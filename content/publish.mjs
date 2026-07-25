@@ -33,7 +33,7 @@ function pickImage(item) {
   return (
     item.enclosure?.url ||
     item["media:content"]?.$?.url ||
-    (item.content && (item.content.match(/<img[^>]+src=\"([^\"]+)\"/) || [])[1]) ||
+    (item.content && (item.content.match(/<img[^>]+src="([^"]+)"/) || [])[1]) ||
     undefined
   );
 }

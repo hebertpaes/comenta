@@ -8,7 +8,6 @@ import Testimonials from "./components/Testimonials";
 // (NEXT_PUBLIC_APP_URL / NEXT_PUBLIC_API_URL) para apontar ao ambiente local
 // em testes; sem eles, caem no domínio de produção.
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.comenta.com.br";
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.comenta.com.br";
 
 const FEATURES = [
   {

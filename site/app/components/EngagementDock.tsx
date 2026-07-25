@@ -76,7 +76,10 @@ async function waSend(conversationId: string, token: string, body: string) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ conversationId, token, body }),
     });
-  } catch {}
+  } catch {
+    // Envio best-effort: se a API estiver fora, o widget segue funcionando e a
+    // mensagem simplesmente não é registrada. Nada a fazer aqui.
+  }
 }
 async function waPoll(conversationId: string, token: string, after: string | null) {
   try {
@@ -140,7 +143,10 @@ export default function EngagementDock() {
     try {
       const v = localStorage.getItem(STORAGE_KEY) as Consent | null;
       if (v === "accepted" || v === "declined") setConsent(v);
-    } catch {}
+    } catch {
+      // localStorage lança em navegação privada / cookies bloqueados. Sem
+      // consentimento salvo, o widget pergunta de novo — que é o certo.
+    }
     setReady(true);
     return clearTimers;
   }, []);
@@ -182,7 +188,9 @@ export default function EngagementDock() {
     try {
       localStorage.setItem(STORAGE_KEY, v);
       document.cookie = `${STORAGE_KEY}=${v}; max-age=31536000; path=/; SameSite=Lax`;
-    } catch {}
+    } catch {
+      // Idem: sem storage disponível o consentimento vale só para esta sessão.
+    }
   };
 
   const startConversation = useCallback(() => {

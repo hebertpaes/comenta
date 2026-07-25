@@ -15,8 +15,8 @@ export function setTokens(access, refresh) {
 
 export const isLoggedIn = () => Boolean(accessToken);
 
-async function req(method, path, body) {
-  const res = await fetch(BASE + path, {
+function send(method, path, body) {
+  return fetch(BASE + path, {
     method,
     headers: {
       "Content-Type": "application/json",
@@ -24,6 +24,53 @@ async function req(method, path, body) {
     },
     body: body ? JSON.stringify(body) : undefined,
   });
+}
+
+// O access token dura 15 minutos (ACCESS_TOKEN_TTL na API). Sem renovar, toda
+// requisição passa a falhar com 401 depois desse tempo e o usuário é obrigado a
+// deslogar e logar de novo — era o que acontecia: o refresh token era guardado
+// no localStorage e nunca usado.
+//
+// Uma renovação de cada vez: se várias requisições tomarem 401 juntas, todas
+// esperam a mesma promessa em vez de disparar refreshes concorrentes (que
+// falhariam, porque o endpoint rotaciona e invalida o token anterior).
+let refreshing = null;
+
+async function refreshAccessToken() {
+  if (!refreshToken) return false;
+  refreshing ??= (async () => {
+    try {
+      const res = await fetch(BASE + "/auth/refresh", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ refreshToken }),
+      });
+      if (!res.ok) return false;
+      const data = await res.json();
+      setTokens(data.accessToken, data.refreshToken);
+      return true;
+    } catch {
+      return false;
+    } finally {
+      refreshing = null;
+    }
+  })();
+  return refreshing;
+}
+
+async function req(method, path, body) {
+  let res = await send(method, path, body);
+
+  // 401 em rota de auth não é sessão expirada, é credencial errada: não adianta
+  // renovar.
+  if (res.status === 401 && !path.startsWith("/auth/")) {
+    if (await refreshAccessToken()) {
+      res = await send(method, path, body);
+    } else {
+      setTokens("", "");
+    }
+  }
+
   if (res.status === 204) return null;
   const data = await res.json().catch(() => ({}));
   if (!res.ok) throw new Error(data.error || `Erro ${res.status}`);
@@ -41,7 +88,21 @@ export const api = {
     setTokens(r.accessToken, r.refreshToken);
     return r;
   },
-  logout: () => setTokens("", ""),
+  // Revoga o refresh token no servidor antes de limpar o local: sem isso ele
+  // seguia válido por 30 dias (REFRESH_TOKEN_TTL_DAYS) mesmo depois de "sair".
+  logout: () => {
+    const token = refreshToken;
+    setTokens("", "");
+    if (token) {
+      fetch(BASE + "/auth/logout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ refreshToken: token }),
+      }).catch(() => {
+        // Best-effort: a sessão local já foi encerrada de qualquer forma.
+      });
+    }
+  },
   me: () => req("GET", "/auth/me"),
   changePassword: (currentPassword, newPassword) => req("POST", "/auth/change-password", { currentPassword, newPassword }),
   metrics: () => req("GET", "/dashboard/metrics"),
