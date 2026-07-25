@@ -52,8 +52,15 @@ async function loadBaileys(): Promise<any | null> {
 
 const silentLogger: any = {
   level: "silent",
-  trace() {}, debug() {}, info() {}, warn() {}, error() {}, fatal() {},
-  child() { return silentLogger; },
+  trace() {},
+  debug() {},
+  info() {},
+  warn() {},
+  error() {},
+  fatal() {},
+  child() {
+    return silentLogger;
+  },
 };
 
 function dataDir(): string {
@@ -68,7 +75,9 @@ function authDir(channelId: string, companyId: string): string {
   try {
     const legacy = `${dataDir()}/${companyId}`;
     if (!fs.existsSync(dir) && fs.existsSync(legacy)) fs.renameSync(legacy, dir);
-  } catch { /* best-effort */ }
+  } catch {
+    /* best-effort */
+  }
   return dir;
 }
 
@@ -78,7 +87,9 @@ async function fetchWaVersion(mod: any) {
   try {
     const r = await mod.fetchLatestBaileysVersion();
     waVersion = r?.version ?? null;
-    console.log(`[wa] versão WhatsApp Web: ${Array.isArray(waVersion) ? waVersion.join(".") : "padrão"}`);
+    console.log(
+      `[wa] versão WhatsApp Web: ${Array.isArray(waVersion) ? waVersion.join(".") : "padrão"}`
+    );
   } catch (e: any) {
     waVersion = null;
     console.log(`[wa] não consegui buscar a versão (${e?.message ?? e}); usando a padrão`);
@@ -110,14 +121,22 @@ type Channel = { id: string; companyId: string };
 
 async function loadChannel(channelId: string): Promise<Channel | null> {
   const [ch] = await db
-    .select({ id: schema.channels.id, companyId: schema.channels.companyId, type: schema.channels.type })
+    .select({
+      id: schema.channels.id,
+      companyId: schema.channels.companyId,
+      type: schema.channels.type,
+    })
     .from(schema.channels)
     .where(eq(schema.channels.id, channelId));
   if (!ch || ch.type !== "whatsapp") return null;
   return { id: ch.id, companyId: ch.companyId };
 }
 
-async function setChannelStatus(channelId: string, status: string, config?: Record<string, unknown>) {
+async function setChannelStatus(
+  channelId: string,
+  status: string,
+  config?: Record<string, unknown>
+) {
   await db
     .update(schema.channels)
     .set({ status, ...(config ? { config } : {}) })
@@ -137,7 +156,12 @@ async function recordInbound(companyId: string, phone: string, name: string, bod
   if (!contact) {
     [contact] = await db
       .insert(schema.contacts)
-      .values({ companyId, name: name?.trim() || "Contato WhatsApp", phone: digits, tags: ["whatsapp"] })
+      .values({
+        companyId,
+        name: name?.trim() || "Contato WhatsApp",
+        phone: digits,
+        tags: ["whatsapp"],
+      })
       .returning();
   }
 
@@ -164,7 +188,13 @@ async function recordInbound(companyId: string, phone: string, name: string, bod
   if (!conv) {
     [conv] = await db
       .insert(schema.conversations)
-      .values({ companyId, contactId: contact.id, status: "pending", unreadCount: 0, lastMessageAt: new Date() })
+      .values({
+        companyId,
+        contactId: contact.id,
+        status: "pending",
+        unreadCount: 0,
+        lastMessageAt: new Date(),
+      })
       .returning();
     created = true;
   }
@@ -180,21 +210,35 @@ async function recordInbound(companyId: string, phone: string, name: string, bod
 
   if (created) {
     emitToCompany(companyId, "conversation.created", { conversation: conv, contact });
-    publishEvent(companyId, "conversation.created", { conversation: conv, contact }).catch(() => {});
+    publishEvent(companyId, "conversation.created", { conversation: conv, contact }).catch(
+      () => {}
+    );
   }
   emitToCompany(companyId, "message.created", { conversationId: conv.id, message: msg });
-  publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(() => {});
+  publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(
+    () => {}
+  );
   import("../modules/automations.js")
-    .then((m) => m.applyAutomations(companyId, { id: conv.id, contactId: contact.id }, body, created))
+    .then((m) =>
+      m.applyAutomations(companyId, { id: conv.id, contactId: contact.id }, body, created)
+    )
     .catch(() => {});
 }
 
 // ---- Conexão real (Baileys) -------------------------------------------------
 async function connectBaileys(channel: Channel, mod: any) {
   const prev = sessions.get(channel.id);
-  if (prev?.sock) { try { prev.sock.end?.(); } catch { /* ignore */ } }
+  if (prev?.sock) {
+    try {
+      prev.sock.end?.();
+    } catch {
+      /* ignore */
+    }
+  }
 
-  const { state, saveCreds } = await mod.useMultiFileAuthState(authDir(channel.id, channel.companyId));
+  const { state, saveCreds } = await mod.useMultiFileAuthState(
+    authDir(channel.id, channel.companyId)
+  );
   const version = await fetchWaVersion(mod);
   const makeSock = mod.default || mod.makeWASocket;
   console.log(`[wa] iniciando sessão (canal ${channel.id})`);
@@ -206,7 +250,16 @@ async function connectBaileys(channel: Channel, mod: any) {
     syncFullHistory: false,
   });
 
-  const session: Session = { channelId: channel.id, companyId: channel.companyId, status: "connecting", qr: null, phone: null, mode: "baileys", sock, contacts: new Map() };
+  const session: Session = {
+    channelId: channel.id,
+    companyId: channel.companyId,
+    status: "connecting",
+    qr: null,
+    phone: null,
+    mode: "baileys",
+    sock,
+    contacts: new Map(),
+  };
   sessions.set(channel.id, session);
 
   sock.ev.on("creds.update", saveCreds);
@@ -235,7 +288,9 @@ async function connectBaileys(channel: Channel, mod: any) {
       const msg = u.lastDisconnect?.error?.message ?? "";
       const loggedOut = code === mod.DisconnectReason?.loggedOut;
       const tries = (reconnects.get(channel.id) ?? 0) + 1;
-      console.log(`[wa] conexão fechada (canal ${channel.id}) code=${code ?? "?"} tentativa=${tries} ${msg}`);
+      console.log(
+        `[wa] conexão fechada (canal ${channel.id}) code=${code ?? "?"} tentativa=${tries} ${msg}`
+      );
       if (loggedOut || tries > 5) {
         reconnects.delete(channel.id);
         session.status = "disconnected";
@@ -244,7 +299,9 @@ async function connectBaileys(channel: Channel, mod: any) {
         await setChannelStatus(channel.id, "disconnected", {});
       } else if (sessions.get(channel.id) === session) {
         reconnects.set(channel.id, tries);
-        connectBaileys(channel, mod).catch((e: any) => console.log(`[wa] erro ao reconectar: ${e?.message ?? e}`));
+        connectBaileys(channel, mod).catch((e: any) =>
+          console.log(`[wa] erro ao reconectar: ${e?.message ?? e}`)
+        );
       }
     }
   });
@@ -262,7 +319,12 @@ async function connectBaileys(channel: Channel, mod: any) {
         m.message.videoMessage?.caption ||
         "";
       if (!text.trim()) continue;
-      await recordInbound(channel.companyId, jidToPhone(jid) || "", m.pushName || "Contato WhatsApp", text).catch(() => {});
+      await recordInbound(
+        channel.companyId,
+        jidToPhone(jid) || "",
+        m.pushName || "Contato WhatsApp",
+        text
+      ).catch(() => {});
     }
   });
 
@@ -277,7 +339,16 @@ async function connectDemo(channel: Channel) {
 
   const pairingToken = `comenta-wa:${channel.id}:${Date.now()}`;
   const qr = await QRCode.toDataURL(pairingToken, { width: 320, margin: 1 });
-  const session: Session = { channelId: channel.id, companyId: channel.companyId, status: "connecting", qr, phone: null, mode: "demo", sock: null, contacts: new Map() };
+  const session: Session = {
+    channelId: channel.id,
+    companyId: channel.companyId,
+    status: "connecting",
+    qr,
+    phone: null,
+    mode: "demo",
+    sock: null,
+    contacts: new Map(),
+  };
 
   session.timer = setTimeout(async () => {
     const s = sessions.get(channel.id);
@@ -310,7 +381,17 @@ export function status(channelId: string) {
 export async function disconnect(channelId: string) {
   const s = sessions.get(channelId);
   if (s?.timer) clearTimeout(s.timer);
-  if (s?.sock) { try { await s.sock.logout?.(); } catch { try { s.sock.end?.(); } catch { /* ignore */ } } }
+  if (s?.sock) {
+    try {
+      await s.sock.logout?.();
+    } catch {
+      try {
+        s.sock.end?.();
+      } catch {
+        /* ignore */
+      }
+    }
+  }
   sessions.delete(channelId);
   await setChannelStatus(channelId, "disconnected", {});
   return { status: "disconnected" as const };
@@ -319,13 +400,23 @@ export async function disconnect(channelId: string) {
 /** Entrega uma mensagem outbound no WhatsApp do contato, usando QUALQUER sessão
  *  conectada da empresa. Retorna false se nenhuma estiver conectada ou o contato
  *  não tiver telefone. */
-export async function sendToContact(companyId: string, contactId: string, body: string): Promise<boolean> {
+export async function sendToContact(
+  companyId: string,
+  contactId: string,
+  body: string
+): Promise<boolean> {
   let session: Session | null = null;
   for (const s of sessions.values()) {
-    if (s.companyId === companyId && s.status === "connected" && s.mode === "baileys" && s.sock) { session = s; break; }
+    if (s.companyId === companyId && s.status === "connected" && s.mode === "baileys" && s.sock) {
+      session = s;
+      break;
+    }
   }
   if (!session) return false;
-  const [contact] = await db.select().from(schema.contacts).where(eq(schema.contacts.id, contactId));
+  const [contact] = await db
+    .select()
+    .from(schema.contacts)
+    .where(eq(schema.contacts.id, contactId));
   const digits = contact?.phone?.replace(/\D/g, "");
   if (!digits) return false;
   await session.sock.sendMessage(`${digits}@s.whatsapp.net`, { text: body });
@@ -341,10 +432,19 @@ export function contactsCount(channelId: string): number {
 /** Sincroniza a agenda do aparelho conectado para os Contatos da empresa.
  *  Insere quem ainda não existe (por telefone) com a tag "whatsapp"; nunca
  *  sobrescreve contatos já cadastrados. */
-export async function syncContacts(channelId: string): Promise<{ ok: boolean; imported: number; skipped: number; total: number; error?: string }> {
+export async function syncContacts(
+  channelId: string
+): Promise<{ ok: boolean; imported: number; skipped: number; total: number; error?: string }> {
   const s = sessions.get(channelId);
   if (!s) return { ok: false, imported: 0, skipped: 0, total: 0, error: "conexão não está ativa" };
-  if (s.status !== "connected") return { ok: false, imported: 0, skipped: 0, total: 0, error: "conecte o WhatsApp antes de sincronizar" };
+  if (s.status !== "connected")
+    return {
+      ok: false,
+      imported: 0,
+      skipped: 0,
+      total: 0,
+      error: "conecte o WhatsApp antes de sincronizar",
+    };
 
   let entries = [...s.contacts.entries()];
   // No modo demonstração (sem lib), gera uma agenda de exemplo para o fluxo ficar visível.
@@ -365,7 +465,12 @@ export async function syncContacts(channelId: string): Promise<{ ok: boolean; im
     if (!digits) continue;
     const res = await db
       .insert(schema.contacts)
-      .values({ companyId: s.companyId, name: name?.trim() || `Contato ${digits}`, phone: digits, tags: ["whatsapp"] })
+      .values({
+        companyId: s.companyId,
+        name: name?.trim() || `Contato ${digits}`,
+        phone: digits,
+        tags: ["whatsapp"],
+      })
       .onConflictDoNothing()
       .returning();
     if (res.length) imported++;
@@ -385,6 +490,7 @@ export async function restoreSessions() {
     .catch(() => [] as any[]);
   for (const ch of rows) {
     const wasConnected = ch.status === "connected" || (ch.config as any)?.mode === "baileys";
-    if (wasConnected) await connectBaileys({ id: ch.id, companyId: ch.companyId }, mod).catch(() => {});
+    if (wasConnected)
+      await connectBaileys({ id: ch.id, companyId: ch.companyId }, mod).catch(() => {});
   }
 }

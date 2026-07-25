@@ -4,19 +4,19 @@ Provisiona a stack inteira em **serviços gerenciados**, usando só o **Azure CL
 — feito para colar e rodar no **Cloud Shell** do próprio portal, sem Docker
 local nem servidor.
 
-| Componente | Serviço Azure | Papel |
-|---|---|---|
-| Banco | **PostgreSQL Flexible Server** (`Standard_B1ms`) | dados (SSL obrigatório) |
-| Fila / realtime | **Azure Cache for Redis** (`Basic C0`) | BullMQ + Socket.IO (TLS 6380) |
-| Imagem | **Container Registry** (`Basic`) | build remoto via `az acr build` |
-| API | **Container Apps** (Fastify, porta 4000) | ingress HTTPS, réplicas 1–3 |
-| Painel | **Storage static website** (React/Vite) | SPA servida como estático |
+| Componente      | Serviço Azure                                    | Papel                           |
+| --------------- | ------------------------------------------------ | ------------------------------- |
+| Banco           | **PostgreSQL Flexible Server** (`Standard_B1ms`) | dados (SSL obrigatório)         |
+| Fila / realtime | **Azure Cache for Redis** (`Basic C0`)           | BullMQ + Socket.IO (TLS 6380)   |
+| Imagem          | **Container Registry** (`Basic`)                 | build remoto via `az acr build` |
+| API             | **Container Apps** (Fastify, porta 4000)         | ingress HTTPS, réplicas 1–3     |
+| Painel          | **Storage static website** (React/Vite)          | SPA servida como estático       |
 
 ## Pré-requisitos
 
 - Uma assinatura Azure com permissão de **Contributor** (para criar recursos).
 - Os arquivos da pasta `saas/` acessíveis no Cloud Shell (clone do repo ou upload).
-- *(Opcional)* uma `ANTHROPIC_API_KEY` — sem ela a API sobe normal, mas os
+- _(Opcional)_ uma `ANTHROPIC_API_KEY` — sem ela a API sobe normal, mas os
   endpoints `/ai` (classificar/resumir/sugerir) respondem `503`.
 
 ## Como rodar
@@ -27,7 +27,7 @@ local nem servidor.
    ```bash
    git clone <URL-do-seu-repo> comenta && cd comenta/saas/deploy/azure
    ```
-3. *(Opcional)* habilite a IA:
+3. _(Opcional)_ habilite a IA:
    ```bash
    export ANTHROPIC_API_KEY="sk-ant-..."
    ```
@@ -70,7 +70,7 @@ az containerapp update -n comenta-api -g rg-comenta \
 - **CORS x URL**: o painel é criado antes da API para que o `CORS_ORIGINS` já
   saia com a origem exata; o build do painel só roda depois, com a URL real da
   API em `VITE_API_URL`.
-- **Socket.IO**: ativa *sticky sessions* no ingress para funcionar com mais de
+- **Socket.IO**: ativa _sticky sessions_ no ingress para funcionar com mais de
   uma réplica.
 - **Migração + seed**: o comando de start do container espelha o `docker-compose`
   (`drizzle-kit push` + `seed` idempotente + `index.ts`).
@@ -81,11 +81,13 @@ O deploy base sobe nos domínios padrão do Azure. Para usar os domínios do
 projeto, depois de rodar o script:
 
 **API (`api.comenta.com.br`) no Container App:**
+
 ```bash
 az containerapp hostname add     -n comenta-api -g rg-comenta --hostname api.comenta.com.br
 az containerapp hostname bind    -n comenta-api -g rg-comenta --hostname api.comenta.com.br \
   --environment comenta-env --validation-method CNAME     # cria/gerencia o certificado
 ```
+
 Aponte no seu DNS um `CNAME api → <fqdn-do-container-app>` (o FQDN impresso no
 resumo) e o registro `asuid.api` de validação que o comando indicar.
 
@@ -93,6 +95,7 @@ resumo) e o registro `asuid.api` de validação que o comando indicar.
 domínio próprio sozinho — coloque um **Azure Front Door** (ou CDN) na frente do
 endpoint `$web` e vincule o domínio + certificado ali. Lembre de acrescentar
 `https://app.comenta.com.br` ao `CORS_ORIGINS` da API:
+
 ```bash
 az containerapp update -n comenta-api -g rg-comenta \
   --set-env-vars CORS_ORIGINS="https://app.comenta.com.br"

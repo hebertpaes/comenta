@@ -80,7 +80,9 @@ async function deliverToContact(companyId: string, contactId: string, body: stri
     publishEvent(companyId, "conversation.created", { conversation: conv }).catch(() => {});
   }
   emitToCompany(companyId, "message.created", { conversationId: conv.id, message: msg });
-  publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(() => {});
+  publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(
+    () => {}
+  );
 
   // Entrega no WhatsApp (best-effort): se não houver conexão, a mensagem fica
   // registrada na conversa mesmo assim. Import dinâmico evita ciclo de módulo.
@@ -94,7 +96,10 @@ export async function runCampaign(campaignId: string) {
   if (inFlight.has(campaignId)) return;
   inFlight.add(campaignId);
   try {
-    const [camp] = await db.select().from(schema.campaigns).where(eq(schema.campaigns.id, campaignId));
+    const [camp] = await db
+      .select()
+      .from(schema.campaigns)
+      .where(eq(schema.campaigns.id, campaignId));
     if (!camp || camp.status === "canceled" || camp.status === "done") return;
 
     await db
@@ -109,7 +114,12 @@ export async function runCampaign(campaignId: string) {
         contactId: schema.campaignRecipients.contactId,
       })
       .from(schema.campaignRecipients)
-      .where(and(eq(schema.campaignRecipients.campaignId, campaignId), eq(schema.campaignRecipients.status, "pending")));
+      .where(
+        and(
+          eq(schema.campaignRecipients.campaignId, campaignId),
+          eq(schema.campaignRecipients.status, "pending")
+        )
+      );
 
     let sent = camp.sent;
     let failed = camp.failed;
@@ -122,7 +132,10 @@ export async function runCampaign(campaignId: string) {
         .where(eq(schema.campaigns.id, campaignId));
       if (!fresh || fresh.status === "canceled") break;
 
-      const [contact] = await db.select().from(schema.contacts).where(eq(schema.contacts.id, r.contactId));
+      const [contact] = await db
+        .select()
+        .from(schema.contacts)
+        .where(eq(schema.contacts.id, r.contactId));
       try {
         if (!contact?.phone) throw new Error("contato sem telefone");
         const body = render(camp.message, { name: contact.name });
@@ -140,8 +153,16 @@ export async function runCampaign(campaignId: string) {
         failed++;
       }
 
-      await db.update(schema.campaigns).set({ sent, failed }).where(eq(schema.campaigns.id, campaignId));
-      emitToCompany(camp.companyId, "campaign.progress", { id: campaignId, sent, failed, total: camp.total });
+      await db
+        .update(schema.campaigns)
+        .set({ sent, failed })
+        .where(eq(schema.campaigns.id, campaignId));
+      emitToCompany(camp.companyId, "campaign.progress", {
+        id: campaignId,
+        sent,
+        failed,
+        total: camp.total,
+      });
       if (SEND_GAP_MS > 0) await sleep(SEND_GAP_MS);
     }
 
@@ -154,7 +175,12 @@ export async function runCampaign(campaignId: string) {
         .update(schema.campaigns)
         .set({ status: "done", finishedAt: new Date() })
         .where(eq(schema.campaigns.id, campaignId));
-      emitToCompany(camp.companyId, "campaign.updated", { id: campaignId, status: "done", sent, failed });
+      emitToCompany(camp.companyId, "campaign.updated", {
+        id: campaignId,
+        status: "done",
+        sent,
+        failed,
+      });
     }
   } finally {
     inFlight.delete(campaignId);
@@ -227,7 +253,10 @@ export async function campaignRoutes(app: FastifyInstance) {
     const p = req.principal;
     const [rows, contactsRows] = await Promise.all([
       withCounts(p.companyId),
-      db.select({ tags: schema.contacts.tags, phone: schema.contacts.phone }).from(schema.contacts).where(eq(schema.contacts.companyId, p.companyId)),
+      db
+        .select({ tags: schema.contacts.tags, phone: schema.contacts.phone })
+        .from(schema.contacts)
+        .where(eq(schema.contacts.companyId, p.companyId)),
     ]);
     const tagCounts: Record<string, number> = {};
     let withPhone = 0;
@@ -287,7 +316,8 @@ export async function campaignRoutes(app: FastifyInstance) {
       tag: body.audience === "tag" ? body.tag : undefined,
       contactIds: body.audience === "contacts" ? body.contactIds : undefined,
     });
-    if (!audience.length) throw new ApiError(400, "Nenhum contato com telefone no público selecionado.");
+    if (!audience.length)
+      throw new ApiError(400, "Nenhum contato com telefone no público selecionado.");
 
     const scheduledAt = body.scheduledAt ? new Date(body.scheduledAt) : null;
     if (scheduledAt && scheduledAt.getTime() < Date.now() - 60_000) {
@@ -302,16 +332,18 @@ export async function campaignRoutes(app: FastifyInstance) {
         name: body.name.trim(),
         message: body.message,
         status,
-        filterTag: body.audience === "tag" ? body.tag ?? null : null,
+        filterTag: body.audience === "tag" ? (body.tag ?? null) : null,
         scheduledAt,
         total: audience.length,
         createdByUserId: p.userId ?? null,
       })
       .returning();
 
-    await db.insert(schema.campaignRecipients).values(
-      audience.map((a) => ({ campaignId: camp.id, companyId: p.companyId, contactId: a.id }))
-    );
+    await db
+      .insert(schema.campaignRecipients)
+      .values(
+        audience.map((a) => ({ campaignId: camp.id, companyId: p.companyId, contactId: a.id }))
+      );
 
     audit(p, "campaign.created", "campaign", camp.id, { total: audience.length, status });
     return reply.code(201).send(camp);

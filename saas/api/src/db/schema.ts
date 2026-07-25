@@ -396,7 +396,9 @@ export const campaigns = pgTable(
     total: integer("total").notNull().default(0),
     sent: integer("sent").notNull().default(0),
     failed: integer("failed").notNull().default(0),
-    createdByUserId: uuid("created_by_user_id").references(() => users.id, { onDelete: "set null" }),
+    createdByUserId: uuid("created_by_user_id").references(() => users.id, {
+      onDelete: "set null",
+    }),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [index("campaigns_company_ix").on(t.companyId, t.status)]

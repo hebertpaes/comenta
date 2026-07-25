@@ -5,9 +5,7 @@ const Env = z.object({
   PORT: z.coerce.number().default(4000),
   APP_URL: z.string().default("http://localhost:5173"),
   API_URL: z.string().default("http://localhost:4000"),
-  DATABASE_URL: z
-    .string()
-    .default("postgresql://comenta:comenta123@localhost:5432/comenta_saas"),
+  DATABASE_URL: z.string().default("postgresql://comenta:comenta123@localhost:5432/comenta_saas"),
   REDIS_URL: z.string().default("redis://:comenta123@localhost:6379"),
   JWT_SECRET: z.string().default("dev-secret-change-me"),
   JWT_REFRESH_SECRET: z.string().default("dev-refresh-secret-change-me"),

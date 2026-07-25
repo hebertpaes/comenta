@@ -64,7 +64,13 @@ const PLANOS = [
     periodo: "/mês",
     desc: "Para equipes que atendem de verdade.",
     destaque: true,
-    itens: ["Até 10 usuários", "Todos os canais", "IA completa (resumo + sugestão)", "Conversas ilimitadas", "Métricas e relatórios"],
+    itens: [
+      "Até 10 usuários",
+      "Todos os canais",
+      "IA completa (resumo + sugestão)",
+      "Conversas ilimitadas",
+      "Métricas e relatórios",
+    ],
     cta: "Assinar Pro",
   },
   {
@@ -73,7 +79,13 @@ const PLANOS = [
     periodo: "/mês",
     desc: "Para operações e multi-marca.",
     destaque: false,
-    itens: ["Usuários ilimitados", "Multi-tenant", "Webhooks & API", "Auditoria e SLA", "Suporte prioritário"],
+    itens: [
+      "Usuários ilimitados",
+      "Multi-tenant",
+      "Webhooks & API",
+      "Auditoria e SLA",
+      "Suporte prioritário",
+    ],
     cta: "Falar com vendas",
   },
 ];
@@ -91,10 +103,18 @@ export default function HomePage() {
             Comenta
           </a>
           <nav className="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex">
-            <a href="#recursos" className="hover:text-slate-900">Recursos</a>
-            <a href="#ia" className="hover:text-slate-900">IA</a>
-            <a href="#planos" className="hover:text-slate-900">Planos</a>
-            <a href={APP_URL} className="hover:text-slate-900">Entrar</a>
+            <a href="#recursos" className="hover:text-slate-900">
+              Recursos
+            </a>
+            <a href="#ia" className="hover:text-slate-900">
+              IA
+            </a>
+            <a href="#planos" className="hover:text-slate-900">
+              Planos
+            </a>
+            <a href={APP_URL} className="hover:text-slate-900">
+              Entrar
+            </a>
           </nav>
           <a
             href={APP_URL}
@@ -108,8 +128,14 @@ export default function HomePage() {
       {/* ===== Hero ===== */}
       <section className="relative">
         <div className="blob left-[-6rem] top-[-4rem] h-72 w-72 bg-fuchsia-400" />
-        <div className="blob right-[-5rem] top-10 h-80 w-80 bg-indigo-400" style={{ animationDelay: "-4s" }} />
-        <div className="blob left-1/3 top-40 h-72 w-72 bg-amber-300" style={{ animationDelay: "-8s" }} />
+        <div
+          className="blob right-[-5rem] top-10 h-80 w-80 bg-indigo-400"
+          style={{ animationDelay: "-4s" }}
+        />
+        <div
+          className="blob left-1/3 top-40 h-72 w-72 bg-amber-300"
+          style={{ animationDelay: "-8s" }}
+        />
 
         <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 py-20 lg:grid-cols-2 lg:py-28">
           <div className="reveal">
@@ -122,9 +148,8 @@ export default function HomePage() {
               <span className="text-gradient">IA que responde por você</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg text-slate-600">
-              O Comenta reúne seus canais, entende cada conversa e sugere a
-              melhor resposta. Sua equipe atende mais rápido, sem perder o toque
-              humano.
+              O Comenta reúne seus canais, entende cada conversa e sugere a melhor resposta. Sua
+              equipe atende mais rápido, sem perder o toque humano.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -178,8 +203,8 @@ export default function HomePage() {
             Tudo para atender <span className="text-gradient">melhor e mais rápido</span>
           </h2>
           <p className="mt-4 text-slate-600">
-            Uma plataforma completa de atendimento — com inteligência artificial
-            em cada etapa da conversa.
+            Uma plataforma completa de atendimento — com inteligência artificial em cada etapa da
+            conversa.
           </p>
         </div>
 
@@ -204,7 +229,10 @@ export default function HomePage() {
       {/* ===== Destaque IA ===== */}
       <section id="ia" className="relative overflow-hidden bg-slate-950 text-white">
         <div className="blob left-10 top-0 h-72 w-72 bg-fuchsia-600" />
-        <div className="blob right-0 bottom-0 h-80 w-80 bg-indigo-600" style={{ animationDelay: "-6s" }} />
+        <div
+          className="blob right-0 bottom-0 h-80 w-80 bg-indigo-600"
+          style={{ animationDelay: "-6s" }}
+        />
         <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 py-20 lg:grid-cols-2 lg:py-28">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-fuchsia-200">
@@ -215,7 +243,10 @@ export default function HomePage() {
             </h2>
             <ul className="mt-8 space-y-4">
               {[
-                ["Classifica", "prioriza e organiza cada nova conversa — modelo rápido e econômico (Haiku)."],
+                [
+                  "Classifica",
+                  "prioriza e organiza cada nova conversa — modelo rápido e econômico (Haiku).",
+                ],
                 ["Resume", "condensa históricos longos para o atendente entender na hora."],
                 ["Sugere", "escreve a resposta ideal para você revisar e enviar (Sonnet)."],
               ].map(([t, d]) => (
@@ -230,8 +261,8 @@ export default function HomePage() {
               ))}
             </ul>
             <p className="mt-6 text-sm text-slate-400">
-              Modelos configuráveis. Sem chave de IA, o restante da plataforma
-              segue funcionando normalmente.
+              Modelos configuráveis. Sem chave de IA, o restante da plataforma segue funcionando
+              normalmente.
             </p>
           </div>
 
@@ -245,9 +276,8 @@ export default function HomePage() {
               <div className="my-4 h-px bg-white/10" />
               <p className="text-fuchsia-300">Comenta sugere:</p>
               <p className="mt-1">
-                “Oi! Sinto muito pela demora 🙏 Localizei o pedido #1043 — ele
-                saiu para entrega hoje e chega até amanhã. Quer que eu te envie o
-                código de rastreio agora?”
+                “Oi! Sinto muito pela demora 🙏 Localizei o pedido #1043 — ele saiu para entrega
+                hoje e chega até amanhã. Quer que eu te envie o código de rastreio agora?”
               </p>
             </div>
             <div className="mt-4 flex gap-2">
@@ -275,9 +305,7 @@ export default function HomePage() {
       {/* ===== Planos ===== */}
       <section id="planos" className="mx-auto max-w-6xl px-4 py-20 sm:py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-extrabold sm:text-4xl">
-            Planos que crescem com você
-          </h2>
+          <h2 className="text-3xl font-extrabold sm:text-4xl">Planos que crescem com você</h2>
           <p className="mt-4 text-slate-600">
             Comece grátis e evolua quando precisar. Valores ilustrativos.
           </p>
@@ -304,7 +332,9 @@ export default function HomePage() {
               </p>
               <div className="mt-5 flex items-end gap-1">
                 <span className="text-4xl font-extrabold">{p.preco}</span>
-                <span className={`mb-1 text-sm ${p.destaque ? "text-fuchsia-100" : "text-slate-500"}`}>
+                <span
+                  className={`mb-1 text-sm ${p.destaque ? "text-fuchsia-100" : "text-slate-500"}`}
+                >
                   {p.periodo}
                 </span>
               </div>
@@ -335,11 +365,12 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 pb-24">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-fuchsia-600 via-purple-600 to-indigo-600 px-6 py-16 text-center text-white">
           <div className="blob left-10 top-0 h-56 w-56 bg-amber-300" />
-          <div className="blob right-10 bottom-0 h-56 w-56 bg-pink-400" style={{ animationDelay: "-5s" }} />
+          <div
+            className="blob right-10 bottom-0 h-56 w-56 bg-pink-400"
+            style={{ animationDelay: "-5s" }}
+          />
           <div className="relative">
-            <h2 className="text-3xl font-extrabold sm:text-4xl">
-              Pronto para atender melhor?
-            </h2>
+            <h2 className="text-3xl font-extrabold sm:text-4xl">Pronto para atender melhor?</h2>
             <p className="mx-auto mt-3 max-w-xl text-fuchsia-100">
               Conecte seus canais em minutos e deixe a IA acelerar cada resposta.
             </p>
@@ -363,14 +394,20 @@ export default function HomePage() {
             Comenta
           </div>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-500">
-            <a href="#recursos" className="hover:text-slate-900">Recursos</a>
-            <a href="#planos" className="hover:text-slate-900">Planos</a>
-            <a href={APP_URL} className="hover:text-slate-900">Entrar</a>
-            <a href={`/docs`} className="hover:text-slate-900">API</a>
+            <a href="#recursos" className="hover:text-slate-900">
+              Recursos
+            </a>
+            <a href="#planos" className="hover:text-slate-900">
+              Planos
+            </a>
+            <a href={APP_URL} className="hover:text-slate-900">
+              Entrar
+            </a>
+            <a href={`/docs`} className="hover:text-slate-900">
+              API
+            </a>
           </div>
-          <p className="text-sm text-slate-400">
-            © {new Date().getFullYear()} Comenta
-          </p>
+          <p className="text-sm text-slate-400">© {new Date().getFullYear()} Comenta</p>
         </div>
       </footer>
     </div>
@@ -380,9 +417,30 @@ export default function HomePage() {
 // Mockup visual da caixa de entrada multicanal (estático).
 function ChatMockup() {
   const convos = [
-    { canal: "💬", nome: "Ana · WhatsApp", msg: "Oi, meu pedido chegou hoje?", tag: "Urgente", cor: "bg-rose-100 text-rose-700", ring: "ring-emerald-400" },
-    { canal: "📸", nome: "João · Instagram", msg: "Vocês têm no tamanho M?", tag: "Vendas", cor: "bg-violet-100 text-violet-700", ring: "ring-fuchsia-400" },
-    { canal: "✉️", nome: "Suporte · E-mail", msg: "Preciso da 2ª via da nota…", tag: "Financeiro", cor: "bg-amber-100 text-amber-700", ring: "ring-sky-400" },
+    {
+      canal: "💬",
+      nome: "Ana · WhatsApp",
+      msg: "Oi, meu pedido chegou hoje?",
+      tag: "Urgente",
+      cor: "bg-rose-100 text-rose-700",
+      ring: "ring-emerald-400",
+    },
+    {
+      canal: "📸",
+      nome: "João · Instagram",
+      msg: "Vocês têm no tamanho M?",
+      tag: "Vendas",
+      cor: "bg-violet-100 text-violet-700",
+      ring: "ring-fuchsia-400",
+    },
+    {
+      canal: "✉️",
+      nome: "Suporte · E-mail",
+      msg: "Preciso da 2ª via da nota…",
+      tag: "Financeiro",
+      cor: "bg-amber-100 text-amber-700",
+      ring: "ring-sky-400",
+    },
   ];
   return (
     <div className="relative">
@@ -396,14 +454,21 @@ function ChatMockup() {
         </div>
         <div className="space-y-2">
           {convos.map((c) => (
-            <div key={c.nome} className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-slate-50/70 p-3">
-              <span className={`inline-flex h-10 w-10 flex-none items-center justify-center rounded-full bg-white text-lg ring-2 ${c.ring}`}>
+            <div
+              key={c.nome}
+              className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-slate-50/70 p-3"
+            >
+              <span
+                className={`inline-flex h-10 w-10 flex-none items-center justify-center rounded-full bg-white text-lg ring-2 ${c.ring}`}
+              >
                 {c.canal}
               </span>
               <div className="min-w-0 flex-1">
                 <div className="flex items-center justify-between gap-2">
                   <span className="truncate text-sm font-semibold">{c.nome}</span>
-                  <span className={`flex-none rounded-full px-2 py-0.5 text-[10px] font-bold ${c.cor}`}>
+                  <span
+                    className={`flex-none rounded-full px-2 py-0.5 text-[10px] font-bold ${c.cor}`}
+                  >
                     {c.tag}
                   </span>
                 </div>

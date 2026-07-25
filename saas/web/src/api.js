@@ -104,19 +104,25 @@ export const api = {
     }
   },
   me: () => req("GET", "/auth/me"),
-  changePassword: (currentPassword, newPassword) => req("POST", "/auth/change-password", { currentPassword, newPassword }),
+  changePassword: (currentPassword, newPassword) =>
+    req("POST", "/auth/change-password", { currentPassword, newPassword }),
   metrics: () => req("GET", "/dashboard/metrics"),
   conversations: (opts = {}) => {
     const qs = new URLSearchParams();
-    if (typeof opts === "string") { if (opts) qs.set("status", opts); }
-    else { if (opts.status) qs.set("status", opts.status); if (opts.queueId) qs.set("queueId", opts.queueId); }
+    if (typeof opts === "string") {
+      if (opts) qs.set("status", opts);
+    } else {
+      if (opts.status) qs.set("status", opts.status);
+      if (opts.queueId) qs.set("queueId", opts.queueId);
+    }
     const s = qs.toString();
     return req("GET", `/conversations${s ? `?${s}` : ""}`);
   },
   conversation: (id) => req("GET", `/conversations/${id}`),
   sendMessage: (id, body) => req("POST", `/conversations/${id}/messages`, { body }),
   conversationUpdate: (id, body) => req("PATCH", `/conversations/${id}`, body),
-  contacts: (q) => req("GET", `/contacts${q ? `?q=${encodeURIComponent(q)}&perPage=100` : "?perPage=100"}`),
+  contacts: (q) =>
+    req("GET", `/contacts${q ? `?q=${encodeURIComponent(q)}&perPage=100` : "?perPage=100"}`),
   contactCreate: (body) => req("POST", "/contacts", body),
   contactUpdate: (id, body) => req("PATCH", `/contacts/${id}`, body),
   contactDelete: (id) => req("DELETE", `/contacts/${id}`),
@@ -141,7 +147,8 @@ export const api = {
   campaignSend: (id) => req("POST", `/campaigns/${id}/send`),
   campaignCancel: (id) => req("POST", `/campaigns/${id}/cancel`),
   campaignDelete: (id) => req("DELETE", `/campaigns/${id}`),
-  teamMessages: (after) => req("GET", `/team/messages${after ? `?after=${encodeURIComponent(after)}` : ""}`),
+  teamMessages: (after) =>
+    req("GET", `/team/messages${after ? `?after=${encodeURIComponent(after)}` : ""}`),
   teamSend: (body) => req("POST", "/team/messages", { body }),
   settings: () => req("GET", "/settings"),
   settingsUpdate: (body) => req("PUT", "/settings", body),

@@ -35,7 +35,10 @@ export async function settingsRoutes(app: FastifyInstance) {
       .where(eq(schema.companies.id, req.principal.companyId));
     if (!company) throw new ApiError(404, "Empresa não encontrada");
     const merged = { ...(company.settings as Record<string, unknown>), ...body };
-    await db.update(schema.companies).set({ settings: merged }).where(eq(schema.companies.id, req.principal.companyId));
+    await db
+      .update(schema.companies)
+      .set({ settings: merged })
+      .where(eq(schema.companies.id, req.principal.companyId));
     audit(req.principal, "settings.update", "company", req.principal.companyId);
     return { settings: merged };
   });

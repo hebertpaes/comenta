@@ -9,19 +9,29 @@ const Logo = () => (
 
 function Login({ onLogin }) {
   const [mode, setMode] = useState("login");
-  const [f, setF] = useState({ companyName: "", name: "", email: "admin@comenta.com.br", password: "comenta123" });
+  const [f, setF] = useState({
+    companyName: "",
+    name: "",
+    email: "admin@comenta.com.br",
+    password: "comenta123",
+  });
   const [err, setErr] = useState("");
   const [busy, setBusy] = useState(false);
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
 
   const submit = async (e) => {
     e.preventDefault();
-    setErr(""); setBusy(true);
+    setErr("");
+    setBusy(true);
     try {
       if (mode === "login") await api.login(f.email, f.password);
       else await api.signup(f.companyName, f.name, f.email, f.password);
       onLogin();
-    } catch (e) { setErr(e.message); } finally { setBusy(false); }
+    } catch (e) {
+      setErr(e.message);
+    } finally {
+      setBusy(false);
+    }
   };
 
   return (
@@ -30,17 +40,35 @@ function Login({ onLogin }) {
       <p className="muted">Plataforma de atendimento multicanal</p>
       {mode === "signup" && (
         <>
-          <div className="field"><label>Empresa</label><input value={f.companyName} onChange={set("companyName")} required /></div>
-          <div className="field"><label>Seu nome</label><input value={f.name} onChange={set("name")} required /></div>
+          <div className="field">
+            <label>Empresa</label>
+            <input value={f.companyName} onChange={set("companyName")} required />
+          </div>
+          <div className="field">
+            <label>Seu nome</label>
+            <input value={f.name} onChange={set("name")} required />
+          </div>
         </>
       )}
-      <div className="field"><label>E-mail</label><input type="email" value={f.email} onChange={set("email")} required /></div>
-      <div className="field"><label>Senha</label><input type="password" value={f.password} onChange={set("password")} required /></div>
+      <div className="field">
+        <label>E-mail</label>
+        <input type="email" value={f.email} onChange={set("email")} required />
+      </div>
+      <div className="field">
+        <label>Senha</label>
+        <input type="password" value={f.password} onChange={set("password")} required />
+      </div>
       {err && <div className="err">{err}</div>}
-      <button style={{ width: "100%", marginTop: 8 }} disabled={busy}>{busy ? "..." : mode === "login" ? "Entrar" : "Criar conta"}</button>
+      <button style={{ width: "100%", marginTop: 8 }} disabled={busy}>
+        {busy ? "..." : mode === "login" ? "Entrar" : "Criar conta"}
+      </button>
       <p className="muted" style={{ marginTop: 14, fontSize: 13 }}>
         {mode === "login" ? "Não tem conta? " : "Já tem conta? "}
-        <button type="button" className="link" onClick={() => setMode(mode === "login" ? "signup" : "login")}>
+        <button
+          type="button"
+          className="link"
+          onClick={() => setMode(mode === "login" ? "signup" : "login")}
+        >
           {mode === "login" ? "Criar empresa" : "Entrar"}
         </button>
       </p>
@@ -56,24 +84,44 @@ function ForcePasswordChange({ onDone, onLogout }) {
   const [err, setErr] = useState("");
   const [busy, setBusy] = useState(false);
   const submit = async (e) => {
-    e.preventDefault(); setErr("");
+    e.preventDefault();
+    setErr("");
     if (nw.length < 8) return setErr("A nova senha precisa ter ao menos 8 caracteres.");
     if (nw !== nw2) return setErr("As senhas não conferem.");
     setBusy(true);
-    try { await api.changePassword(cur, nw); onDone(); }
-    catch (e) { setErr(e.message); } finally { setBusy(false); }
+    try {
+      await api.changePassword(cur, nw);
+      onDone();
+    } catch (e) {
+      setErr(e.message);
+    } finally {
+      setBusy(false);
+    }
   };
   return (
     <form className="login" onSubmit={submit}>
       <Logo />
       <p className="muted">Por segurança, troque a senha provisória antes de continuar.</p>
-      <div className="field"><label>Senha atual</label><input type="password" value={cur} onChange={(e) => setCur(e.target.value)} required /></div>
-      <div className="field"><label>Nova senha</label><input type="password" value={nw} onChange={(e) => setNw(e.target.value)} required /></div>
-      <div className="field"><label>Confirmar nova senha</label><input type="password" value={nw2} onChange={(e) => setNw2(e.target.value)} required /></div>
+      <div className="field">
+        <label>Senha atual</label>
+        <input type="password" value={cur} onChange={(e) => setCur(e.target.value)} required />
+      </div>
+      <div className="field">
+        <label>Nova senha</label>
+        <input type="password" value={nw} onChange={(e) => setNw(e.target.value)} required />
+      </div>
+      <div className="field">
+        <label>Confirmar nova senha</label>
+        <input type="password" value={nw2} onChange={(e) => setNw2(e.target.value)} required />
+      </div>
       {err && <div className="err">{err}</div>}
-      <button style={{ width: "100%", marginTop: 8 }} disabled={busy}>{busy ? "..." : "Trocar senha e entrar"}</button>
+      <button style={{ width: "100%", marginTop: 8 }} disabled={busy}>
+        {busy ? "..." : "Trocar senha e entrar"}
+      </button>
       <p className="muted" style={{ marginTop: 14, fontSize: 13 }}>
-        <button type="button" className="link" onClick={onLogout}>Sair</button>
+        <button type="button" className="link" onClick={onLogout}>
+          Sair
+        </button>
       </p>
     </form>
   );
@@ -89,7 +137,14 @@ function BarChart({ data }) {
         const h = (d.count / max) * 38;
         return (
           <g key={d.day}>
-            <rect x={i * w + w * 0.18} y={40 - h} width={w * 0.64} height={h} rx="1" fill="#6d28d9" />
+            <rect
+              x={i * w + w * 0.18}
+              y={40 - h}
+              width={w * 0.64}
+              height={h}
+              rx="1"
+              fill="#6d28d9"
+            />
             <text x={i * w + w / 2} y={45} fontSize="3" textAnchor="middle" fill="#94a3b8">
               {d.day.slice(8, 10)}/{d.day.slice(5, 7)}
             </text>
@@ -102,9 +157,13 @@ function BarChart({ data }) {
 
 // Donut de status (SVG).
 function Donut({ segments }) {
-  const total = Math.max(1, segments.reduce((s, x) => s + x.value, 0));
+  const total = Math.max(
+    1,
+    segments.reduce((s, x) => s + x.value, 0)
+  );
   let acc = 0;
-  const R = 16, C = 2 * Math.PI * R;
+  const R = 16,
+    C = 2 * Math.PI * R;
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
       <svg viewBox="0 0 40 40" style={{ width: 120, height: 120 }}>
@@ -113,17 +172,32 @@ function Donut({ segments }) {
           const frac = s.value / total;
           const dash = frac * C;
           const el = (
-            <circle key={s.label} cx="20" cy="20" r={R} fill="none" stroke={s.color} strokeWidth="7"
-              strokeDasharray={`${dash} ${C - dash}`} strokeDashoffset={-acc * C / 1} transform="rotate(-90 20 20)" />
+            <circle
+              key={s.label}
+              cx="20"
+              cy="20"
+              r={R}
+              fill="none"
+              stroke={s.color}
+              strokeWidth="7"
+              strokeDasharray={`${dash} ${C - dash}`}
+              strokeDashoffset={(-acc * C) / 1}
+              transform="rotate(-90 20 20)"
+            />
           );
           acc += frac;
           return el;
         })}
-        <text x="20" y="21" fontSize="7" textAnchor="middle" fontWeight="700" fill="currentColor">{total}</text>
+        <text x="20" y="21" fontSize="7" textAnchor="middle" fontWeight="700" fill="currentColor">
+          {total}
+        </text>
       </svg>
       <div>
         {segments.map((s) => (
-          <div key={s.label} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, marginBottom: 4 }}>
+          <div
+            key={s.label}
+            style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, marginBottom: 4 }}
+          >
             <span style={{ width: 10, height: 10, borderRadius: 3, background: s.color }} />
             {s.label} <b style={{ marginLeft: 4 }}>{s.value}</b>
           </div>
@@ -136,8 +210,18 @@ function Donut({ segments }) {
 function Dashboard() {
   const [m, setM] = useState(null);
   useEffect(() => {
-    api.metrics().then(setM).catch(() => {});
-    const t = setInterval(() => api.metrics().then(setM).catch(() => {}), 15000);
+    api
+      .metrics()
+      .then(setM)
+      .catch(() => {});
+    const t = setInterval(
+      () =>
+        api
+          .metrics()
+          .then(setM)
+          .catch(() => {}),
+      15000
+    );
     return () => clearInterval(t);
   }, []);
   if (!m) return <p className="muted">Carregando…</p>;
@@ -148,37 +232,64 @@ function Dashboard() {
     { l: "Resolvidas", n: m.conversations.resolved, icon: "✅", color: "#16a34a" },
     { l: "Mensagens hoje", n: m.messagesToday, icon: "✉️", color: "#6d28d9" },
     { l: "Contatos", n: m.contacts, icon: "👥", color: "#0891b2" },
-    { l: "1ª resposta (méd.)", n: m.avgFirstResponseSeconds != null ? `${Math.round(m.avgFirstResponseSeconds)}s` : "—", icon: "⚡", color: "#db2777" },
-    { l: m.rating?.count ? `Satisfação (${m.rating.count} aval.)` : "Satisfação", n: m.rating?.average != null ? `${m.rating.average}/10` : "—", icon: "⭐", color: "#f59e0b" },
+    {
+      l: "1ª resposta (méd.)",
+      n: m.avgFirstResponseSeconds != null ? `${Math.round(m.avgFirstResponseSeconds)}s` : "—",
+      icon: "⚡",
+      color: "#db2777",
+    },
+    {
+      l: m.rating?.count ? `Satisfação (${m.rating.count} aval.)` : "Satisfação",
+      n: m.rating?.average != null ? `${m.rating.average}/10` : "—",
+      icon: "⭐",
+      color: "#f59e0b",
+    },
   ];
   return (
     <>
       <h2>Dashboard</h2>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 12, marginBottom: 20 }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+          gap: 12,
+          marginBottom: 20,
+        }}
+      >
         {kpis.map((k) => (
-          <div key={k.l} className="card" style={{ padding: 16, textAlign: "left", alignItems: "stretch" }}>
+          <div
+            key={k.l}
+            className="card"
+            style={{ padding: 16, textAlign: "left", alignItems: "stretch" }}
+          >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span style={{ fontSize: 22 }}>{k.icon}</span>
               <span style={{ width: 8, height: 8, borderRadius: 999, background: k.color }} />
             </div>
             <div style={{ fontSize: 28, fontWeight: 800, marginTop: 8 }}>{k.n}</div>
-            <div className="muted" style={{ fontSize: 12 }}>{k.l}</div>
+            <div className="muted" style={{ fontSize: 12 }}>
+              {k.l}
+            </div>
           </div>
         ))}
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 16, alignItems: "start" }}>
+      <div
+        style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 16, alignItems: "start" }}
+      >
         <div className="card" style={{ padding: 18, alignItems: "stretch" }}>
           <div style={{ fontWeight: 700, marginBottom: 10 }}>Mensagens (últimos 7 dias)</div>
           <BarChart data={m.messages7d || []} />
         </div>
         <div className="card" style={{ padding: 18, alignItems: "stretch" }}>
           <div style={{ fontWeight: 700, marginBottom: 10 }}>Conversas por status</div>
-          <Donut segments={[
-            { label: "Em atendimento", value: m.conversations.open, color: "#2563eb" },
-            { label: "Aguardando", value: m.conversations.pending, color: "#d97706" },
-            { label: "Resolvidas", value: m.conversations.resolved, color: "#16a34a" },
-          ]} />
+          <Donut
+            segments={[
+              { label: "Em atendimento", value: m.conversations.open, color: "#2563eb" },
+              { label: "Aguardando", value: m.conversations.pending, color: "#d97706" },
+              { label: "Resolvidas", value: m.conversations.resolved, color: "#16a34a" },
+            ]}
+          />
         </div>
       </div>
 
@@ -188,10 +299,27 @@ function Dashboard() {
           {m.byQueue.map((q) => {
             const maxq = Math.max(1, ...m.byQueue.map((x) => x.count));
             return (
-              <div key={q.name} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+              <div
+                key={q.name}
+                style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}
+              >
                 <span style={{ width: 110, fontSize: 13 }}>{q.name}</span>
-                <div style={{ flex: 1, background: "#eef0f4", borderRadius: 999, height: 12, overflow: "hidden" }}>
-                  <div style={{ width: `${(q.count / maxq) * 100}%`, height: "100%", background: q.color }} />
+                <div
+                  style={{
+                    flex: 1,
+                    background: "#eef0f4",
+                    borderRadius: 999,
+                    height: 12,
+                    overflow: "hidden",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: `${(q.count / maxq) * 100}%`,
+                      height: "100%",
+                      background: q.color,
+                    }}
+                  />
                 </div>
                 <b style={{ width: 30, textAlign: "right", fontSize: 13 }}>{q.count}</b>
               </div>
@@ -199,7 +327,9 @@ function Dashboard() {
           })}
         </div>
       )}
-      <p className="muted" style={{ fontSize: 12, marginTop: 12 }}>Total de conversas: {totalConv} · atualiza a cada 15s.</p>
+      <p className="muted" style={{ fontSize: 12, marginTop: 12 }}>
+        Total de conversas: {totalConv} · atualiza a cada 15s.
+      </p>
     </>
   );
 }
@@ -208,29 +338,50 @@ function AiPanel({ conversationId }) {
   const [out, setOut] = useState(null);
   const [busy, setBusy] = useState("");
   const run = async (kind, fn) => {
-    setBusy(kind); setOut(null);
-    try { setOut({ kind, data: await fn(conversationId) }); }
-    catch (e) { setOut({ kind, error: e.message }); }
-    finally { setBusy(""); }
+    setBusy(kind);
+    setOut(null);
+    try {
+      setOut({ kind, data: await fn(conversationId) });
+    } catch (e) {
+      setOut({ kind, error: e.message });
+    } finally {
+      setBusy("");
+    }
   };
   return (
     <div>
       <div className="aibar">
-        <button disabled={!!busy} onClick={() => run("classify", api.aiClassify)}>{busy === "classify" ? "…" : "🏷️ Classificar"}</button>
-        <button disabled={!!busy} onClick={() => run("summary", api.aiSummary)}>{busy === "summary" ? "…" : "📝 Resumir"}</button>
-        <button disabled={!!busy} onClick={() => run("suggest", api.aiSuggest)}>{busy === "suggest" ? "…" : "✨ Sugerir resposta"}</button>
+        <button disabled={!!busy} onClick={() => run("classify", api.aiClassify)}>
+          {busy === "classify" ? "…" : "🏷️ Classificar"}
+        </button>
+        <button disabled={!!busy} onClick={() => run("summary", api.aiSummary)}>
+          {busy === "summary" ? "…" : "📝 Resumir"}
+        </button>
+        <button disabled={!!busy} onClick={() => run("suggest", api.aiSuggest)}>
+          {busy === "suggest" ? "…" : "✨ Sugerir resposta"}
+        </button>
       </div>
-      {out && out.error && <div className="aibox" style={{ borderColor: "#ff6b6b" }}>IA: {out.error}</div>}
+      {out && out.error && (
+        <div className="aibox" style={{ borderColor: "#ff6b6b" }}>
+          IA: {out.error}
+        </div>
+      )}
       {out && !out.error && out.kind === "classify" && (
         <div className="aibox">
           <span className="tag">{out.data.category}</span>
           <span className="tag">{out.data.sentiment}</span>
           <span className="tag">urgência: {out.data.urgency}</span>
-          <div style={{ marginTop: 8 }}><b>{out.data.intent}</b> — {out.data.summary}</div>
+          <div style={{ marginTop: 8 }}>
+            <b>{out.data.intent}</b> — {out.data.summary}
+          </div>
         </div>
       )}
-      {out && !out.error && out.kind === "summary" && <div className="aibox">{out.data.summary}</div>}
-      {out && !out.error && out.kind === "suggest" && <div className="aibox">{out.data.suggestion}</div>}
+      {out && !out.error && out.kind === "summary" && (
+        <div className="aibox">{out.data.summary}</div>
+      )}
+      {out && !out.error && out.kind === "suggest" && (
+        <div className="aibox">{out.data.suggestion}</div>
+      )}
     </div>
   );
 }
@@ -244,65 +395,149 @@ const STATUS_META = {
 
 // Card de uma conexão de WhatsApp (QR real, status ao vivo).
 function WhatsappCard({ ch, isAdmin, onChanged }) {
-  const [st, setSt] = useState({ status: ch.status, qr: ch.live?.qr || null, phone: ch.live?.phone || (ch.config || {}).phone || null });
+  const [st, setSt] = useState({
+    status: ch.status,
+    qr: ch.live?.qr || null,
+    phone: ch.live?.phone || (ch.config || {}).phone || null,
+  });
   const [busy, setBusy] = useState(false);
   useEffect(() => {
     let alive = true;
-    const tick = () => api.channelStatus(ch.id).then((s) => { if (alive) setSt(s); }).catch(() => {});
+    const tick = () =>
+      api
+        .channelStatus(ch.id)
+        .then((s) => {
+          if (alive) setSt(s);
+        })
+        .catch(() => {});
     tick();
     const t = setInterval(tick, 3000);
-    return () => { alive = false; clearInterval(t); };
+    return () => {
+      alive = false;
+      clearInterval(t);
+    };
   }, [ch.id]);
 
-  const connect = async () => { setBusy(true); try { setSt(await api.channelConnect(ch.id)); } catch (e) { alert(e.message); } finally { setBusy(false); } };
-  const disconnect = async () => { setBusy(true); try { setSt(await api.channelDisconnect(ch.id)); onChanged?.(); } catch (e) { alert(e.message); } finally { setBusy(false); } };
-  const remove = async () => { if (confirm(`Remover a conexão "${ch.name}"?`)) { await api.channelDelete(ch.id); onChanged?.(); } };
+  const connect = async () => {
+    setBusy(true);
+    try {
+      setSt(await api.channelConnect(ch.id));
+    } catch (e) {
+      alert(e.message);
+    } finally {
+      setBusy(false);
+    }
+  };
+  const disconnect = async () => {
+    setBusy(true);
+    try {
+      setSt(await api.channelDisconnect(ch.id));
+      onChanged?.();
+    } catch (e) {
+      alert(e.message);
+    } finally {
+      setBusy(false);
+    }
+  };
+  const remove = async () => {
+    if (confirm(`Remover a conexão "${ch.name}"?`)) {
+      await api.channelDelete(ch.id);
+      onChanged?.();
+    }
+  };
   const [syncing, setSyncing] = useState(false);
   const syncContacts = async () => {
     setSyncing(true);
     try {
       const r = await api.channelSyncContacts(ch.id);
-      alert(`Agenda sincronizada:\n• ${r.imported} novo(s) contato(s)\n• ${r.skipped} já existia(m)\n• ${r.total} na agenda do aparelho`);
+      alert(
+        `Agenda sincronizada:\n• ${r.imported} novo(s) contato(s)\n• ${r.skipped} já existia(m)\n• ${r.total} na agenda do aparelho`
+      );
       onChanged?.();
-    } catch (e) { alert(e.message); } finally { setSyncing(false); }
+    } catch (e) {
+      alert(e.message);
+    } finally {
+      setSyncing(false);
+    }
   };
 
   const meta = STATUS_META[st.status] || STATUS_META.disconnected;
   return (
-    <div className="card" style={{ padding: 18, textAlign: "left", alignItems: "stretch", maxWidth: 380 }}>
+    <div
+      className="card"
+      style={{ padding: 18, textAlign: "left", alignItems: "stretch", maxWidth: 380 }}
+    >
       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
         <span style={{ fontSize: 24 }}>🟢</span>
         <div style={{ flex: 1 }}>
           <div style={{ fontWeight: 700 }}>{ch.name}</div>
-          <div className="muted" style={{ fontSize: 12 }}>WhatsApp {st.phone ? `· ${st.phone}` : ""}</div>
+          <div className="muted" style={{ fontSize: 12 }}>
+            WhatsApp {st.phone ? `· ${st.phone}` : ""}
+          </div>
         </div>
-        <span className="tag" style={{ background: meta.bg, color: meta.color }}>{meta.label}</span>
+        <span className="tag" style={{ background: meta.bg, color: meta.color }}>
+          {meta.label}
+        </span>
       </div>
 
       {st.status === "connecting" && st.qr && (
         <div style={{ textAlign: "center", marginTop: 12 }}>
-          <img src={st.qr} alt="QR do WhatsApp" width={220} height={220} style={{ borderRadius: 12, background: "#fff", padding: 8 }} />
-          <p className="muted" style={{ fontSize: 12, marginTop: 8 }}>WhatsApp → <b>Aparelhos conectados</b> → <b>Conectar aparelho</b> e aponte para o QR.</p>
+          <img
+            src={st.qr}
+            alt="QR do WhatsApp"
+            width={220}
+            height={220}
+            style={{ borderRadius: 12, background: "#fff", padding: 8 }}
+          />
+          <p className="muted" style={{ fontSize: 12, marginTop: 8 }}>
+            WhatsApp → <b>Aparelhos conectados</b> → <b>Conectar aparelho</b> e aponte para o QR.
+          </p>
         </div>
       )}
-      {st.status === "connecting" && !st.qr && <div className="aibox" style={{ marginTop: 12 }}>⏳ Gerando QR Code…</div>}
-      {st.demo && <p className="muted" style={{ fontSize: 11, marginTop: 10, opacity: 0.8 }}>Modo demonstração (sem a lib Baileys): pareamento simulado.</p>}
+      {st.status === "connecting" && !st.qr && (
+        <div className="aibox" style={{ marginTop: 12 }}>
+          ⏳ Gerando QR Code…
+        </div>
+      )}
+      {st.demo && (
+        <p className="muted" style={{ fontSize: 11, marginTop: 10, opacity: 0.8 }}>
+          Modo demonstração (sem a lib Baileys): pareamento simulado.
+        </p>
+      )}
 
       {isAdmin && st.status === "connected" && (
         <div style={{ marginTop: 14 }}>
-          <button className="ghost" style={{ width: "100%" }} disabled={syncing} onClick={syncContacts}>
-            {syncing ? "Sincronizando…" : `🔄 Sincronizar contatos${st.contactsAvailable ? ` (${st.contactsAvailable})` : ""}`}
+          <button
+            className="ghost"
+            style={{ width: "100%" }}
+            disabled={syncing}
+            onClick={syncContacts}
+          >
+            {syncing
+              ? "Sincronizando…"
+              : `🔄 Sincronizar contatos${st.contactsAvailable ? ` (${st.contactsAvailable})` : ""}`}
           </button>
-          <p className="muted" style={{ fontSize: 11, marginTop: 6 }}>Importa a agenda deste aparelho para os seus Contatos (não sobrescreve os já cadastrados).</p>
+          <p className="muted" style={{ fontSize: 11, marginTop: 6 }}>
+            Importa a agenda deste aparelho para os seus Contatos (não sobrescreve os já
+            cadastrados).
+          </p>
         </div>
       )}
 
       {isAdmin && (
         <div style={{ display: "flex", gap: 10, marginTop: 14 }}>
-          {st.status === "connected" || st.status === "connecting"
-            ? <button disabled={busy} onClick={disconnect}>{st.status === "connecting" ? "Cancelar" : "Desconectar"}</button>
-            : <button disabled={busy} onClick={connect}>{busy ? "Gerando…" : "📲 Conectar"}</button>}
-          <button className="link" style={{ color: "#dc2626" }} onClick={remove}>Remover</button>
+          {st.status === "connected" || st.status === "connecting" ? (
+            <button disabled={busy} onClick={disconnect}>
+              {st.status === "connecting" ? "Cancelar" : "Desconectar"}
+            </button>
+          ) : (
+            <button disabled={busy} onClick={connect}>
+              {busy ? "Gerando…" : "📲 Conectar"}
+            </button>
+          )}
+          <button className="link" style={{ color: "#dc2626" }} onClick={remove}>
+            Remover
+          </button>
         </div>
       )}
     </div>
@@ -348,36 +583,75 @@ function ChannelCard({ ch, meta, isAdmin, onChanged }) {
   const connect = async () => {
     const cfg = {};
     for (const f of fields) if (form[f.key]?.trim()) cfg[f.key] = form[f.key].trim();
-    if (fields.length && !Object.keys(cfg).length) return alert("Preencha as credenciais para conectar.");
+    if (fields.length && !Object.keys(cfg).length)
+      return alert("Preencha as credenciais para conectar.");
     setBusy(true);
     try {
       await api.channelUpdate(ch.id, { config: cfg });
       await api.channelConnect(ch.id);
       onChanged?.();
-    } catch (e) { alert(e.message); } finally { setBusy(false); }
+    } catch (e) {
+      alert(e.message);
+    } finally {
+      setBusy(false);
+    }
   };
-  const disconnect = async () => { setBusy(true); try { await api.channelDisconnect(ch.id); onChanged?.(); } catch (e) { alert(e.message); } finally { setBusy(false); } };
-  const remove = async () => { if (confirm(`Remover a conexão "${ch.name}"?`)) { await api.channelDelete(ch.id); onChanged?.(); } };
+  const disconnect = async () => {
+    setBusy(true);
+    try {
+      await api.channelDisconnect(ch.id);
+      onChanged?.();
+    } catch (e) {
+      alert(e.message);
+    } finally {
+      setBusy(false);
+    }
+  };
+  const remove = async () => {
+    if (confirm(`Remover a conexão "${ch.name}"?`)) {
+      await api.channelDelete(ch.id);
+      onChanged?.();
+    }
+  };
 
   return (
-    <div className="card" style={{ padding: 18, textAlign: "left", alignItems: "stretch", maxWidth: 380 }}>
+    <div
+      className="card"
+      style={{ padding: 18, textAlign: "left", alignItems: "stretch", maxWidth: 380 }}
+    >
       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
         <span style={{ fontSize: 24 }}>{meta?.icon || "🔌"}</span>
         <div style={{ flex: 1 }}>
           <div style={{ fontWeight: 700 }}>{ch.name}</div>
-          <div className="muted" style={{ fontSize: 12 }}>{meta?.label || ch.type}</div>
+          <div className="muted" style={{ fontSize: 12 }}>
+            {meta?.label || ch.type}
+          </div>
         </div>
-        <span className="tag" style={{ background: sm.bg, color: sm.color }}>{sm.label}</span>
+        <span className="tag" style={{ background: sm.bg, color: sm.color }}>
+          {sm.label}
+        </span>
       </div>
-      <p className="muted" style={{ fontSize: 12, marginTop: 8 }}>{meta?.help}</p>
+      <p className="muted" style={{ fontSize: 12, marginTop: 8 }}>
+        {meta?.help}
+      </p>
 
       {ch.type === "widget" ? (
-        isAdmin && <div style={{ marginTop: 12 }}><button className="link" style={{ color: "#dc2626" }} onClick={remove}>Remover</button></div>
+        isAdmin && (
+          <div style={{ marginTop: 12 }}>
+            <button className="link" style={{ color: "#dc2626" }} onClick={remove}>
+              Remover
+            </button>
+          </div>
+        )
       ) : isLive ? (
         isAdmin && (
           <div style={{ display: "flex", gap: 10, marginTop: 14 }}>
-            <button disabled={busy} onClick={disconnect}>Desconectar</button>
-            <button className="link" style={{ color: "#dc2626" }} onClick={remove}>Remover</button>
+            <button disabled={busy} onClick={disconnect}>
+              Desconectar
+            </button>
+            <button className="link" style={{ color: "#dc2626" }} onClick={remove}>
+              Remover
+            </button>
           </div>
         )
       ) : isAdmin ? (
@@ -385,17 +659,33 @@ function ChannelCard({ ch, meta, isAdmin, onChanged }) {
           {fields.map((f) => (
             <div className="field" key={f.key} style={{ marginBottom: 8 }}>
               <label style={{ fontSize: 12 }}>{f.label}</label>
-              <input type={f.type || "text"} value={form[f.key]} onChange={set(f.key)} placeholder={f.ph}
-                style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }} />
+              <input
+                type={f.type || "text"}
+                value={form[f.key]}
+                onChange={set(f.key)}
+                placeholder={f.ph}
+                style={{
+                  width: "100%",
+                  padding: "8px 10px",
+                  borderRadius: 8,
+                  border: "1px solid #d0d5dd",
+                }}
+              />
             </div>
           ))}
           <div style={{ display: "flex", gap: 10, marginTop: 6 }}>
-            <button disabled={busy} onClick={connect}>{busy ? "Conectando…" : "Conectar"}</button>
-            <button className="link" style={{ color: "#dc2626" }} onClick={remove}>Remover</button>
+            <button disabled={busy} onClick={connect}>
+              {busy ? "Conectando…" : "Conectar"}
+            </button>
+            <button className="link" style={{ color: "#dc2626" }} onClick={remove}>
+              Remover
+            </button>
           </div>
         </div>
       ) : (
-        <p className="muted" style={{ fontSize: 12, marginTop: 10 }}>Somente administradores configuram este canal.</p>
+        <p className="muted" style={{ fontSize: 12, marginTop: 10 }}>
+          Somente administradores configuram este canal.
+        </p>
       )}
     </div>
   );
@@ -405,12 +695,28 @@ function Connections({ isAdmin }) {
   const [list, setList] = useState(null);
   const [catalog, setCatalog] = useState([]);
   const [adding, setAdding] = useState(false);
-  const load = () => api.channels().then((r) => { setList(r.data || []); setCatalog(r.catalog || []); }).catch(() => setList([]));
-  useEffect(() => { load(); }, []);
+  const load = () =>
+    api
+      .channels()
+      .then((r) => {
+        setList(r.data || []);
+        setCatalog(r.catalog || []);
+      })
+      .catch(() => setList([]));
+  useEffect(() => {
+    load();
+  }, []);
 
   const add = async (type) => {
     setAdding(true);
-    try { await api.channelCreate(type); await load(); } catch (e) { alert(e.message); } finally { setAdding(false); }
+    try {
+      await api.channelCreate(type);
+      await load();
+    } catch (e) {
+      alert(e.message);
+    } finally {
+      setAdding(false);
+    }
   };
   const metaOf = (type) => catalog.find((c) => c.type === type);
 
@@ -418,17 +724,42 @@ function Connections({ isAdmin }) {
     <>
       <h2>Conexões</h2>
       <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 680 }}>
-        Conecte vários canais e vários números ao mesmo tempo. WhatsApp é conexão real (QR);
-        os demais canais já têm o encaixe pronto para receber as credenciais.
+        Conecte vários canais e vários números ao mesmo tempo. WhatsApp é conexão real (QR); os
+        demais canais já têm o encaixe pronto para receber as credenciais.
       </p>
 
       {isAdmin && (
-        <div className="card" style={{ padding: 16, marginBottom: 18, textAlign: "left", alignItems: "stretch", maxWidth: 680 }}>
+        <div
+          className="card"
+          style={{
+            padding: 16,
+            marginBottom: 18,
+            textAlign: "left",
+            alignItems: "stretch",
+            maxWidth: 680,
+          }}
+        >
           <div style={{ fontWeight: 700, marginBottom: 10 }}>Adicionar conexão</div>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
             {catalog.map((c) => (
-              <button key={c.type} disabled={adding} onClick={() => add(c.type)}
-                style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 12px", borderRadius: 999, border: "1px solid #d0d5dd", background: "#fff", color: "#1f2937", fontWeight: 600, cursor: "pointer", fontSize: 13 }}>
+              <button
+                key={c.type}
+                disabled={adding}
+                onClick={() => add(c.type)}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 6,
+                  padding: "8px 12px",
+                  borderRadius: 999,
+                  border: "1px solid #d0d5dd",
+                  background: "#fff",
+                  color: "#1f2937",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                  fontSize: 13,
+                }}
+              >
                 <span style={{ fontSize: 16 }}>{c.icon}</span> {c.label}
               </button>
             ))}
@@ -437,13 +768,24 @@ function Connections({ isAdmin }) {
       )}
 
       {list === null && <p className="muted">Carregando…</p>}
-      {list && list.length === 0 && <p className="muted">Nenhuma conexão ainda{isAdmin ? " — adicione uma acima." : "."}</p>}
+      {list && list.length === 0 && (
+        <p className="muted">Nenhuma conexão ainda{isAdmin ? " — adicione uma acima." : "."}</p>
+      )}
       <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "flex-start" }}>
-        {list && list.map((ch) => (
-          ch.type === "whatsapp"
-            ? <WhatsappCard key={ch.id} ch={ch} isAdmin={isAdmin} onChanged={load} />
-            : <ChannelCard key={ch.id} ch={ch} meta={metaOf(ch.type)} isAdmin={isAdmin} onChanged={load} />
-        ))}
+        {list &&
+          list.map((ch) =>
+            ch.type === "whatsapp" ? (
+              <WhatsappCard key={ch.id} ch={ch} isAdmin={isAdmin} onChanged={load} />
+            ) : (
+              <ChannelCard
+                key={ch.id}
+                ch={ch}
+                meta={metaOf(ch.type)}
+                isAdmin={isAdmin}
+                onChanged={load}
+              />
+            )
+          )}
       </div>
     </>
   );
@@ -454,27 +796,64 @@ function NotesPanel({ conversationId }) {
   const [notes, setNotes] = useState([]);
   const [text, setText] = useState("");
   const [open, setOpen] = useState(false);
-  const load = () => api.notes(conversationId).then((r) => setNotes(r.data || [])).catch(() => {});
-  useEffect(() => { if (open) load(); }, [conversationId, open]);
-  const add = async () => { if (!text.trim()) return; await api.noteCreate(conversationId, text.trim()); setText(""); load(); };
-  const del = async (id) => { await api.noteDelete(id); load(); };
+  const load = () =>
+    api
+      .notes(conversationId)
+      .then((r) => setNotes(r.data || []))
+      .catch(() => {});
+  useEffect(() => {
+    if (open) load();
+  }, [conversationId, open]);
+  const add = async () => {
+    if (!text.trim()) return;
+    await api.noteCreate(conversationId, text.trim());
+    setText("");
+    load();
+  };
+  const del = async (id) => {
+    await api.noteDelete(id);
+    load();
+  };
   return (
     <div style={{ marginTop: 8 }}>
-      <button className="link" onClick={() => setOpen((o) => !o)}>🗒️ Notas internas {open ? "▲" : "▼"} {notes.length ? `(${notes.length})` : ""}</button>
+      <button className="link" onClick={() => setOpen((o) => !o)}>
+        🗒️ Notas internas {open ? "▲" : "▼"} {notes.length ? `(${notes.length})` : ""}
+      </button>
       {open && (
-        <div style={{ background: "#fffbeb", border: "1px solid #fde68a", borderRadius: 8, padding: 10, marginTop: 6 }}>
+        <div
+          style={{
+            background: "#fffbeb",
+            border: "1px solid #fde68a",
+            borderRadius: 8,
+            padding: 10,
+            marginTop: 6,
+          }}
+        >
           <div style={{ display: "flex", gap: 6 }}>
-            <input value={text} onChange={(e) => setText(e.target.value)} placeholder="Anotação visível só para a equipe…"
+            <input
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              placeholder="Anotação visível só para a equipe…"
               onKeyDown={(e) => e.key === "Enter" && add()}
-              style={{ flex: 1, padding: "6px 8px", borderRadius: 6, border: "1px solid #d0d5dd" }} />
+              style={{ flex: 1, padding: "6px 8px", borderRadius: 6, border: "1px solid #d0d5dd" }}
+            />
             <button onClick={add}>Anotar</button>
           </div>
           {notes.map((n) => (
-            <div key={n.id} style={{ fontSize: 13, marginTop: 8, borderTop: "1px dashed #fde68a", paddingTop: 6 }}>
+            <div
+              key={n.id}
+              style={{ fontSize: 13, marginTop: 8, borderTop: "1px dashed #fde68a", paddingTop: 6 }}
+            >
               <div>{n.body}</div>
               <div className="muted" style={{ fontSize: 11, display: "flex", gap: 8 }}>
                 <span>{n.author || "—"}</span>
-                <button className="link" style={{ color: "#dc2626", fontSize: 11 }} onClick={() => del(n.id)}>remover</button>
+                <button
+                  className="link"
+                  style={{ color: "#dc2626", fontSize: 11 }}
+                  onClick={() => del(n.id)}
+                >
+                  remover
+                </button>
               </div>
             </div>
           ))}
@@ -496,14 +875,35 @@ function Conversations() {
   const [showQuick, setShowQuick] = useState(false);
 
   const queueOf = (id) => queues.find((q) => q.id === id);
-  const load = () => api.conversations(filterQueue ? { queueId: filterQueue } : {}).then((r) => setList(r.data || [])).catch(() => {});
+  const load = () =>
+    api
+      .conversations(filterQueue ? { queueId: filterQueue } : {})
+      .then((r) => setList(r.data || []))
+      .catch(() => {});
   useEffect(() => {
-    api.queues().then((r) => setQueues(r.data || [])).catch(() => {});
-    api.tags().then((r) => setAllTags(r.data || [])).catch(() => {});
-    api.quickReplies().then((r) => setQuick(r.data || [])).catch(() => {});
+    api
+      .queues()
+      .then((r) => setQueues(r.data || []))
+      .catch(() => {});
+    api
+      .tags()
+      .then((r) => setAllTags(r.data || []))
+      .catch(() => {});
+    api
+      .quickReplies()
+      .then((r) => setQuick(r.data || []))
+      .catch(() => {});
   }, []);
-  useEffect(() => { load(); }, [filterQueue]);
-  useEffect(() => { if (sel) api.conversation(sel).then(setDetail).catch(() => {}); }, [sel]);
+  useEffect(() => {
+    load();
+  }, [filterQueue]);
+  useEffect(() => {
+    if (sel)
+      api
+        .conversation(sel)
+        .then(setDetail)
+        .catch(() => {});
+  }, [sel]);
 
   const send = async () => {
     if (!draft.trim() || !sel) return;
@@ -525,24 +925,56 @@ function Conversations() {
     api.conversation(detail.id).then(setDetail);
     load();
   };
-  const insertQuick = (msg) => { setDraft((d) => (d ? d + " " : "") + msg); setShowQuick(false); };
+  const insertQuick = (msg) => {
+    setDraft((d) => (d ? d + " " : "") + msg);
+    setShowQuick(false);
+  };
 
   const activeTagIds = (detail?.tags || []).map((t) => t.id);
 
   return (
     <>
       <h2>Conversas</h2>
-      <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 10, flexWrap: "wrap" }}>
-        <span className="muted" style={{ fontSize: 13 }}>Fila:</span>
-        <button onClick={() => setFilterQueue("")}
-          style={{ padding: "5px 12px", borderRadius: 999, fontSize: 13, cursor: "pointer",
-            border: "1px solid " + (filterQueue === "" ? "#6d28d9" : "#d0d5dd"), background: filterQueue === "" ? "#6d28d9" : "#fff", color: filterQueue === "" ? "#fff" : "#333" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: 8,
+          alignItems: "center",
+          marginBottom: 10,
+          flexWrap: "wrap",
+        }}
+      >
+        <span className="muted" style={{ fontSize: 13 }}>
+          Fila:
+        </span>
+        <button
+          onClick={() => setFilterQueue("")}
+          style={{
+            padding: "5px 12px",
+            borderRadius: 999,
+            fontSize: 13,
+            cursor: "pointer",
+            border: "1px solid " + (filterQueue === "" ? "#6d28d9" : "#d0d5dd"),
+            background: filterQueue === "" ? "#6d28d9" : "#fff",
+            color: filterQueue === "" ? "#fff" : "#333",
+          }}
+        >
           Todas
         </button>
         {queues.map((q) => (
-          <button key={q.id} onClick={() => setFilterQueue(q.id)}
-            style={{ padding: "5px 12px", borderRadius: 999, fontSize: 13, cursor: "pointer",
-              border: "1px solid " + (filterQueue === q.id ? q.color : "#d0d5dd"), background: filterQueue === q.id ? q.color : "#fff", color: filterQueue === q.id ? "#fff" : "#333" }}>
+          <button
+            key={q.id}
+            onClick={() => setFilterQueue(q.id)}
+            style={{
+              padding: "5px 12px",
+              borderRadius: 999,
+              fontSize: 13,
+              cursor: "pointer",
+              border: "1px solid " + (filterQueue === q.id ? q.color : "#d0d5dd"),
+              background: filterQueue === q.id ? q.color : "#fff",
+              color: filterQueue === q.id ? "#fff" : "#333",
+            }}
+          >
             {q.name}
           </button>
         ))}
@@ -553,12 +985,36 @@ function Conversations() {
           {list.map((c) => {
             const q = queueOf(c.queueId);
             return (
-              <div key={c.id} className={`item ${sel === c.id ? "active" : ""}`} onClick={() => setSel(c.id)}>
+              <div
+                key={c.id}
+                className={`item ${sel === c.id ? "active" : ""}`}
+                onClick={() => setSel(c.id)}
+              >
                 <div className="name">{c.contact?.name || "Contato"}</div>
-                <div className="last" style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
-                  <span>{c.status} · {c.contact?.phone || ""}</span>
-                  {q && <span className="tag" style={{ background: q.color, color: "#fff", fontSize: 10 }}>{q.name}</span>}
-                  {(c.tags || []).map((t) => <span key={t.id} className="tag" style={{ background: t.color, color: "#fff", fontSize: 10 }}>{t.name}</span>)}
+                <div
+                  className="last"
+                  style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}
+                >
+                  <span>
+                    {c.status} · {c.contact?.phone || ""}
+                  </span>
+                  {q && (
+                    <span
+                      className="tag"
+                      style={{ background: q.color, color: "#fff", fontSize: 10 }}
+                    >
+                      {q.name}
+                    </span>
+                  )}
+                  {(c.tags || []).map((t) => (
+                    <span
+                      key={t.id}
+                      className="tag"
+                      style={{ background: t.color, color: "#fff", fontSize: 10 }}
+                    >
+                      {t.name}
+                    </span>
+                  ))}
                 </div>
               </div>
             );
@@ -568,22 +1024,57 @@ function Conversations() {
           {!detail && <p className="muted">Selecione uma conversa</p>}
           {detail && (
             <>
-              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8, flexWrap: "wrap" }}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  marginBottom: 8,
+                  flexWrap: "wrap",
+                }}
+              >
                 <span style={{ fontWeight: 600 }}>{detail.contact?.name}</span>
                 {detail.contact?.phone && (
-                  <span className="muted" style={{ fontSize: 13 }}>📱 {detail.contact.phone}</span>
+                  <span className="muted" style={{ fontSize: 13 }}>
+                    📱 {detail.contact.phone}
+                  </span>
                 )}
-                <select value={detail.queueId || ""} onChange={(e) => transfer(e.target.value)}
+                <select
+                  value={detail.queueId || ""}
+                  onChange={(e) => transfer(e.target.value)}
                   title="Transferir para fila"
-                  style={{ marginLeft: "auto", padding: "5px 8px", borderRadius: 8, border: "1px solid #d0d5dd", fontSize: 13 }}>
+                  style={{
+                    marginLeft: "auto",
+                    padding: "5px 8px",
+                    borderRadius: 8,
+                    border: "1px solid #d0d5dd",
+                    fontSize: 13,
+                  }}
+                >
                   <option value="">Sem fila</option>
-                  {queues.map((q) => <option key={q.id} value={q.id}>↪ {q.name}</option>)}
+                  {queues.map((q) => (
+                    <option key={q.id} value={q.id}>
+                      ↪ {q.name}
+                    </option>
+                  ))}
                 </select>
                 {detail.contact?.phone && (
-                  <a href={`https://wa.me/${detail.contact.phone.replace(/\D/g, "")}`}
-                    target="_blank" rel="noopener noreferrer"
-                    style={{ background: "#22c55e", color: "#fff", padding: "4px 10px", borderRadius: 999, fontSize: 12, fontWeight: 600, textDecoration: "none" }}
-                  >💬 WhatsApp</a>
+                  <a
+                    href={`https://wa.me/${detail.contact.phone.replace(/\D/g, "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      background: "#22c55e",
+                      color: "#fff",
+                      padding: "4px 10px",
+                      borderRadius: 999,
+                      fontSize: 12,
+                      fontWeight: 600,
+                      textDecoration: "none",
+                    }}
+                  >
+                    💬 WhatsApp
+                  </a>
                 )}
               </div>
 
@@ -592,10 +1083,22 @@ function Conversations() {
                   {allTags.map((t) => {
                     const on = activeTagIds.includes(t.id);
                     return (
-                      <button key={t.id} onClick={() => toggleTag(t.id)} title="clique para aplicar/remover"
-                        style={{ padding: "3px 10px", borderRadius: 999, fontSize: 12, cursor: "pointer",
-                          border: "1px solid " + t.color, background: on ? t.color : "#fff", color: on ? "#fff" : t.color }}>
-                        {on ? "✓ " : ""}{t.name}
+                      <button
+                        key={t.id}
+                        onClick={() => toggleTag(t.id)}
+                        title="clique para aplicar/remover"
+                        style={{
+                          padding: "3px 10px",
+                          borderRadius: 999,
+                          fontSize: 12,
+                          cursor: "pointer",
+                          border: "1px solid " + t.color,
+                          background: on ? t.color : "#fff",
+                          color: on ? "#fff" : t.color,
+                        }}
+                      >
+                        {on ? "✓ " : ""}
+                        {t.name}
                       </button>
                     );
                   })}
@@ -606,29 +1109,59 @@ function Conversations() {
               <NotesPanel conversationId={detail.id} />
               <div className="msgs">
                 {(detail.messages || []).map((msg) => (
-                  <div key={msg.id} className={`bubble ${msg.direction}`}>{msg.body}</div>
+                  <div key={msg.id} className={`bubble ${msg.direction}`}>
+                    {msg.body}
+                  </div>
                 ))}
               </div>
 
               {showQuick && quick.length > 0 && (
-                <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 8, padding: 8, marginBottom: 6, maxHeight: 160, overflowY: "auto" }}>
+                <div
+                  style={{
+                    background: "#f8fafc",
+                    border: "1px solid #e2e8f0",
+                    borderRadius: 8,
+                    padding: 8,
+                    marginBottom: 6,
+                    maxHeight: 160,
+                    overflowY: "auto",
+                  }}
+                >
                   {quick.map((qr) => (
-                    <div key={qr.id} onClick={() => insertQuick(qr.message)}
-                      style={{ padding: "6px 8px", borderRadius: 6, cursor: "pointer", fontSize: 13 }}
+                    <div
+                      key={qr.id}
+                      onClick={() => insertQuick(qr.message)}
+                      style={{
+                        padding: "6px 8px",
+                        borderRadius: 6,
+                        cursor: "pointer",
+                        fontSize: 13,
+                      }}
                       onMouseEnter={(e) => (e.currentTarget.style.background = "#eef2ff")}
-                      onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}>
-                      <b>{qr.shortcut}</b> — <span className="muted">{qr.message.slice(0, 70)}</span>
+                      onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                    >
+                      <b>{qr.shortcut}</b> —{" "}
+                      <span className="muted">{qr.message.slice(0, 70)}</span>
                     </div>
                   ))}
                 </div>
               )}
               <div className="composer">
                 {quick.length > 0 && (
-                  <button title="Respostas rápidas" onClick={() => setShowQuick((s) => !s)}
-                    style={{ padding: "0 12px" }}>⚡</button>
+                  <button
+                    title="Respostas rápidas"
+                    onClick={() => setShowQuick((s) => !s)}
+                    style={{ padding: "0 12px" }}
+                  >
+                    ⚡
+                  </button>
                 )}
-                <input value={draft} onChange={(e) => setDraft(e.target.value)} placeholder="Escreva uma resposta…"
-                  onKeyDown={(e) => e.key === "Enter" && send()} />
+                <input
+                  value={draft}
+                  onChange={(e) => setDraft(e.target.value)}
+                  placeholder="Escreva uma resposta…"
+                  onKeyDown={(e) => e.key === "Enter" && send()}
+                />
                 <button onClick={send}>Enviar</button>
               </div>
             </>
@@ -685,8 +1218,17 @@ function AutomationForm({ onCreate }) {
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
 
-  const DAYS = [["Seg", 1], ["Ter", 2], ["Qua", 3], ["Qui", 4], ["Sex", 5], ["Sáb", 6], ["Dom", 7]];
-  const toggleDay = (d) => setDays((cur) => (cur.includes(d) ? cur.filter((x) => x !== d) : [...cur, d].sort()));
+  const DAYS = [
+    ["Seg", 1],
+    ["Ter", 2],
+    ["Qua", 3],
+    ["Qui", 4],
+    ["Sex", 5],
+    ["Sáb", 6],
+    ["Dom", 7],
+  ];
+  const toggleDay = (d) =>
+    setDays((cur) => (cur.includes(d) ? cur.filter((x) => x !== d) : [...cur, d].sort()));
 
   const submit = async (e) => {
     e.preventDefault();
@@ -700,12 +1242,16 @@ function AutomationForm({ onCreate }) {
       if (!days.length) return setErr("Escolha ao menos um dia de atendimento.");
       config = { days, start, end, message: message.trim() };
     } else if (type === "keyword") {
-      const kws = keywords.split(",").map((k) => k.trim()).filter(Boolean);
+      const kws = keywords
+        .split(",")
+        .map((k) => k.trim())
+        .filter(Boolean);
       if (!kws.length) return setErr("Informe ao menos uma palavra-chave.");
       if (!reply.trim()) return setErr("Escreva a resposta da regra.");
       config = { keywords: kws, reply: reply.trim() };
     } else if (type === "ai") {
-      if (!knowledge.trim()) return setErr("Escreva a base de conhecimento (o que a IA pode dizer).");
+      if (!knowledge.trim())
+        return setErr("Escreva a base de conhecimento (o que a IA pode dizer).");
       config = {
         knowledge: knowledge.trim(),
         ...(tone.trim() ? { tone: tone.trim() } : {}),
@@ -721,8 +1267,19 @@ function AutomationForm({ onCreate }) {
     setBusy(true);
     try {
       await onCreate({ name: name.trim() || AUTOMATION_TYPES[type].label, type, config });
-      setName(""); setMessage(""); setReply(""); setKeywords(""); setKnowledge(""); setTone(""); setHandoffMessage(""); setThanks("");
-    } catch (e) { setErr(e.message); } finally { setBusy(false); }
+      setName("");
+      setMessage("");
+      setReply("");
+      setKeywords("");
+      setKnowledge("");
+      setTone("");
+      setHandoffMessage("");
+      setThanks("");
+    } catch (e) {
+      setErr(e.message);
+    } finally {
+      setBusy(false);
+    }
   };
 
   return (
@@ -730,63 +1287,158 @@ function AutomationForm({ onCreate }) {
       <div style={{ fontWeight: 700, marginBottom: 12 }}>Nova regra</div>
       <div className="field">
         <label>Tipo</label>
-        <select value={type} onChange={(e) => setType(e.target.value)}
-          style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }}>
+        <select
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+          style={{
+            width: "100%",
+            padding: "8px 10px",
+            borderRadius: 8,
+            border: "1px solid #d0d5dd",
+          }}
+        >
           {Object.entries(AUTOMATION_TYPES).map(([k, v]) => (
-            <option key={k} value={k}>{v.icon} {v.label}</option>
+            <option key={k} value={k}>
+              {v.icon} {v.label}
+            </option>
           ))}
         </select>
-        <p className="muted" style={{ fontSize: 12, marginTop: 6 }}>{AUTOMATION_TYPES[type].hint}</p>
+        <p className="muted" style={{ fontSize: 12, marginTop: 6 }}>
+          {AUTOMATION_TYPES[type].hint}
+        </p>
       </div>
-      <div className="field"><label>Nome (opcional)</label>
-        <input value={name} onChange={(e) => setName(e.target.value)} placeholder={AUTOMATION_TYPES[type].label} /></div>
+      <div className="field">
+        <label>Nome (opcional)</label>
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder={AUTOMATION_TYPES[type].label}
+        />
+      </div>
 
       {type === "ai" && (
         <>
-          <div className="field"><label>Base de conhecimento (o que a IA sabe e pode responder)</label>
-            <textarea value={knowledge} onChange={(e) => setKnowledge(e.target.value)} rows={6}
-              placeholder={"Ex.: Somos a Comenta, atendimento com IA.\nPlanos: Free (R$0), Pro (R$99/mês), Business (R$299/mês).\nHorário: seg–sex, 9h–18h.\nEndereço: ...\nPolítica de troca: ...\nA IA deve usar SÓ estas informações; se não souber, transfere para humano."}
-              style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", resize: "vertical" }} /></div>
-          <div className="field"><label>Tom de voz (opcional)</label>
-            <input value={tone} onChange={(e) => setTone(e.target.value)} placeholder="cordial, objetivo e prestativo" /></div>
-          <div className="field"><label>Mensagem ao transferir para humano (opcional)</label>
-            <input value={handoffMessage} onChange={(e) => setHandoffMessage(e.target.value)} placeholder="Certo! Vou te transferir para um atendente humano. 🙂" /></div>
+          <div className="field">
+            <label>Base de conhecimento (o que a IA sabe e pode responder)</label>
+            <textarea
+              value={knowledge}
+              onChange={(e) => setKnowledge(e.target.value)}
+              rows={6}
+              placeholder={
+                "Ex.: Somos a Comenta, atendimento com IA.\nPlanos: Free (R$0), Pro (R$99/mês), Business (R$299/mês).\nHorário: seg–sex, 9h–18h.\nEndereço: ...\nPolítica de troca: ...\nA IA deve usar SÓ estas informações; se não souber, transfere para humano."
+              }
+              style={{
+                width: "100%",
+                padding: "8px 10px",
+                borderRadius: 8,
+                border: "1px solid #d0d5dd",
+                resize: "vertical",
+              }}
+            />
+          </div>
+          <div className="field">
+            <label>Tom de voz (opcional)</label>
+            <input
+              value={tone}
+              onChange={(e) => setTone(e.target.value)}
+              placeholder="cordial, objetivo e prestativo"
+            />
+          </div>
+          <div className="field">
+            <label>Mensagem ao transferir para humano (opcional)</label>
+            <input
+              value={handoffMessage}
+              onChange={(e) => setHandoffMessage(e.target.value)}
+              placeholder="Certo! Vou te transferir para um atendente humano. 🙂"
+            />
+          </div>
           <p className="muted" style={{ fontSize: 12 }}>
-            A IA responde o cliente sozinha e transfere para um humano quando o cliente pede ou quando o caso foge da base.
-            Requer a <b>ANTHROPIC_API_KEY</b> configurada — sem ela a IA fica inativa.
+            A IA responde o cliente sozinha e transfere para um humano quando o cliente pede ou
+            quando o caso foge da base. Requer a <b>ANTHROPIC_API_KEY</b> configurada — sem ela a IA
+            fica inativa.
           </p>
         </>
       )}
 
       {type === "rating" && (
         <>
-          <div className="field"><label>Escala</label>
-            <select value={scale} onChange={(e) => setScale(Number(e.target.value))}
-              style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid var(--border)", background: "var(--panel2)", color: "var(--text)" }}>
+          <div className="field">
+            <label>Escala</label>
+            <select
+              value={scale}
+              onChange={(e) => setScale(Number(e.target.value))}
+              style={{
+                width: "100%",
+                padding: "8px 10px",
+                borderRadius: 8,
+                border: "1px solid var(--border)",
+                background: "var(--panel2)",
+                color: "var(--text)",
+              }}
+            >
               <option value={10}>0 a 10 (NPS)</option>
               <option value={5}>1 a 5 (estrelas)</option>
             </select>
           </div>
-          <div className="field"><label>Mensagem do pedido de nota (opcional)</label>
-            <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows={2}
+          <div className="field">
+            <label>Mensagem do pedido de nota (opcional)</label>
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              rows={2}
               placeholder={`De 0 a ${scale}, como você avalia nosso atendimento? Responda apenas com o número. 🙏`}
-              style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid var(--border)", background: "var(--panel2)", color: "var(--text)", resize: "vertical" }} /></div>
-          <div className="field"><label>Agradecimento (opcional)</label>
-            <input value={thanks} onChange={(e) => setThanks(e.target.value)} placeholder="Obrigado pela sua avaliação! 💜" /></div>
+              style={{
+                width: "100%",
+                padding: "8px 10px",
+                borderRadius: 8,
+                border: "1px solid var(--border)",
+                background: "var(--panel2)",
+                color: "var(--text)",
+                resize: "vertical",
+              }}
+            />
+          </div>
+          <div className="field">
+            <label>Agradecimento (opcional)</label>
+            <input
+              value={thanks}
+              onChange={(e) => setThanks(e.target.value)}
+              placeholder="Obrigado pela sua avaliação! 💜"
+            />
+          </div>
           <p className="muted" style={{ fontSize: 12 }}>
-            Ao resolver uma conversa, o cliente recebe o pedido de nota. A próxima resposta numérica dele (em até 24h) vira uma avaliação.
+            Ao resolver uma conversa, o cliente recebe o pedido de nota. A próxima resposta numérica
+            dele (em até 24h) vira uma avaliação.
           </p>
         </>
       )}
 
       {type === "keyword" && (
         <>
-          <div className="field"><label>Palavras-chave (separadas por vírgula)</label>
-            <input value={keywords} onChange={(e) => setKeywords(e.target.value)} placeholder="preço, valor, planos, quanto custa" /></div>
-          <div className="field"><label>Resposta</label>
-            <textarea value={reply} onChange={(e) => setReply(e.target.value)} rows={3}
+          <div className="field">
+            <label>Palavras-chave (separadas por vírgula)</label>
+            <input
+              value={keywords}
+              onChange={(e) => setKeywords(e.target.value)}
+              placeholder="preço, valor, planos, quanto custa"
+            />
+          </div>
+          <div className="field">
+            <label>Resposta</label>
+            <textarea
+              value={reply}
+              onChange={(e) => setReply(e.target.value)}
+              rows={3}
               placeholder="Nossos planos: Free, Pro e Business…"
-              style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", resize: "vertical" }} /></div>
+              style={{
+                width: "100%",
+                padding: "8px 10px",
+                borderRadius: 8,
+                border: "1px solid #d0d5dd",
+                resize: "vertical",
+              }}
+            />
+          </div>
         </>
       )}
 
@@ -794,60 +1446,105 @@ function AutomationForm({ onCreate }) {
         <>
           {type === "business_hours" && (
             <>
-              <div className="field"><label>Dias de atendimento</label>
+              <div className="field">
+                <label>Dias de atendimento</label>
                 <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                   {DAYS.map(([lbl, d]) => (
-                    <button type="button" key={d} onClick={() => toggleDay(d)}
+                    <button
+                      type="button"
+                      key={d}
+                      onClick={() => toggleDay(d)}
                       style={{
-                        padding: "5px 10px", borderRadius: 999, fontSize: 13, cursor: "pointer",
+                        padding: "5px 10px",
+                        borderRadius: 999,
+                        fontSize: 13,
+                        cursor: "pointer",
                         border: "1px solid " + (days.includes(d) ? "#6d28d9" : "#d0d5dd"),
                         background: days.includes(d) ? "#6d28d9" : "#fff",
                         color: days.includes(d) ? "#fff" : "#333",
-                      }}>{lbl}</button>
+                      }}
+                    >
+                      {lbl}
+                    </button>
                   ))}
                 </div>
               </div>
               <div style={{ display: "flex", gap: 12 }}>
-                <div className="field" style={{ flex: 1 }}><label>Abre</label>
-                  <input type="time" value={start} onChange={(e) => setStart(e.target.value)} /></div>
-                <div className="field" style={{ flex: 1 }}><label>Fecha</label>
-                  <input type="time" value={end} onChange={(e) => setEnd(e.target.value)} /></div>
+                <div className="field" style={{ flex: 1 }}>
+                  <label>Abre</label>
+                  <input type="time" value={start} onChange={(e) => setStart(e.target.value)} />
+                </div>
+                <div className="field" style={{ flex: 1 }}>
+                  <label>Fecha</label>
+                  <input type="time" value={end} onChange={(e) => setEnd(e.target.value)} />
+                </div>
               </div>
             </>
           )}
-          <div className="field"><label>Mensagem</label>
-            <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows={3}
-              placeholder={type === "welcome"
-                ? "Olá! 👋 Recebemos sua mensagem e já vamos te atender."
-                : "Estamos fora do horário (seg–sex, 9h–18h). Retornamos em breve!"}
-              style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", resize: "vertical" }} /></div>
+          <div className="field">
+            <label>Mensagem</label>
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              rows={3}
+              placeholder={
+                type === "welcome"
+                  ? "Olá! 👋 Recebemos sua mensagem e já vamos te atender."
+                  : "Estamos fora do horário (seg–sex, 9h–18h). Retornamos em breve!"
+              }
+              style={{
+                width: "100%",
+                padding: "8px 10px",
+                borderRadius: 8,
+                border: "1px solid #d0d5dd",
+                resize: "vertical",
+              }}
+            />
+          </div>
         </>
       )}
 
       {err && <div className="err">{err}</div>}
-      <button disabled={busy} style={{ marginTop: 8 }}>{busy ? "Salvando…" : "➕ Criar regra"}</button>
+      <button disabled={busy} style={{ marginTop: 8 }}>
+        {busy ? "Salvando…" : "➕ Criar regra"}
+      </button>
     </form>
   );
 }
 
 function Automations() {
   const [list, setList] = useState(null);
-  const load = () => api.automations().then((r) => setList(r.data || [])).catch(() => setList([]));
-  useEffect(() => { load(); }, []);
+  const load = () =>
+    api
+      .automations()
+      .then((r) => setList(r.data || []))
+      .catch(() => setList([]));
+  useEffect(() => {
+    load();
+  }, []);
 
-  const create = async (body) => { await api.automationCreate(body); await load(); };
-  const toggle = async (a) => { await api.automationUpdate(a.id, { isActive: !a.isActive }); await load(); };
+  const create = async (body) => {
+    await api.automationCreate(body);
+    await load();
+  };
+  const toggle = async (a) => {
+    await api.automationUpdate(a.id, { isActive: !a.isActive });
+    await load();
+  };
   const remove = async (a) => {
     if (!confirm(`Remover a regra "${a.name}"?`)) return;
-    await api.automationDelete(a.id); await load();
+    await api.automationDelete(a.id);
+    await load();
   };
 
   const describe = (a) => {
     const c = a.config || {};
-    if (a.type === "rating") return `Pesquisa de satisfação (0–${c.scale || 10}) ao resolver a conversa`;
+    if (a.type === "rating")
+      return `Pesquisa de satisfação (0–${c.scale || 10}) ao resolver a conversa`;
     if (a.type === "ai") return "IA responde o cliente e transfere para humano quando necessário";
     if (a.type === "keyword") return `Se contém: ${(c.keywords || []).join(", ")} → responde`;
-    if (a.type === "business_hours") return `Fora de ${c.start || "09:00"}–${c.end || "18:00"} → responde`;
+    if (a.type === "business_hours")
+      return `Fora de ${c.start || "09:00"}–${c.end || "18:00"} → responde`;
     return String(c.message || "").slice(0, 80);
   };
 
@@ -855,37 +1552,59 @@ function Automations() {
     <>
       <h2>Automações</h2>
       <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 620 }}>
-        Regras que respondem ou roteiam a conversa sozinhas quando o cliente escreve — no chat do site e no
-        WhatsApp. A resposta do bot aparece no painel, no chat e vai ao WhatsApp do cliente (se conectado).
+        Regras que respondem ou roteiam a conversa sozinhas quando o cliente escreve — no chat do
+        site e no WhatsApp. A resposta do bot aparece no painel, no chat e vai ao WhatsApp do
+        cliente (se conectado).
       </p>
       <div style={{ display: "flex", gap: 24, flexWrap: "wrap", alignItems: "flex-start" }}>
         <AutomationForm onCreate={create} />
         <div style={{ flex: 1, minWidth: 300 }}>
           <div style={{ fontWeight: 700, marginBottom: 12 }}>Regras ativas</div>
           {list === null && <p className="muted">Carregando…</p>}
-          {list && list.length === 0 && <p className="muted">Nenhuma regra ainda. Crie a primeira ao lado.</p>}
-          {list && list.map((a) => {
-            const meta = AUTOMATION_TYPES[a.type] || { icon: "⚙️", label: a.type };
-            return (
-              <div key={a.id} className="card" style={{ padding: 14, marginBottom: 10, opacity: a.isActive ? 1 : 0.55 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <span style={{ fontSize: 20 }}>{meta.icon}</span>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontWeight: 600 }}>{a.name}</div>
-                    <div className="muted" style={{ fontSize: 12 }}>{meta.label}</div>
+          {list && list.length === 0 && (
+            <p className="muted">Nenhuma regra ainda. Crie a primeira ao lado.</p>
+          )}
+          {list &&
+            list.map((a) => {
+              const meta = AUTOMATION_TYPES[a.type] || { icon: "⚙️", label: a.type };
+              return (
+                <div
+                  key={a.id}
+                  className="card"
+                  style={{ padding: 14, marginBottom: 10, opacity: a.isActive ? 1 : 0.55 }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <span style={{ fontSize: 20 }}>{meta.icon}</span>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontWeight: 600 }}>{a.name}</div>
+                      <div className="muted" style={{ fontSize: 12 }}>
+                        {meta.label}
+                      </div>
+                    </div>
+                    <span
+                      className="tag"
+                      style={{
+                        background: a.isActive ? "#dcfce7" : "#f1f5f9",
+                        color: a.isActive ? "#166534" : "#64748b",
+                      }}
+                    >
+                      {a.isActive ? "ativa" : "pausada"}
+                    </span>
                   </div>
-                  <span className="tag" style={{ background: a.isActive ? "#dcfce7" : "#f1f5f9", color: a.isActive ? "#166534" : "#64748b" }}>
-                    {a.isActive ? "ativa" : "pausada"}
-                  </span>
+                  <div className="muted" style={{ fontSize: 13, marginTop: 8 }}>
+                    {describe(a)}
+                  </div>
+                  <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
+                    <button className="link" onClick={() => toggle(a)}>
+                      {a.isActive ? "Pausar" : "Ativar"}
+                    </button>
+                    <button className="link" style={{ color: "#dc2626" }} onClick={() => remove(a)}>
+                      Remover
+                    </button>
+                  </div>
                 </div>
-                <div className="muted" style={{ fontSize: 13, marginTop: 8 }}>{describe(a)}</div>
-                <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
-                  <button className="link" onClick={() => toggle(a)}>{a.isActive ? "Pausar" : "Ativar"}</button>
-                  <button className="link" style={{ color: "#dc2626" }} onClick={() => remove(a)}>Remover</button>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
         </div>
       </div>
     </>
@@ -961,18 +1680,31 @@ function Tools() {
         <b> treinamento</b> para a sua equipe. Elas não sobem por padrão: ligue só as que quiser.
       </p>
       <div className="aibox" style={{ maxWidth: 680, marginBottom: 18 }}>
-        Para ligar (no terminal, na pasta <code>deploy</code>):<br />
-        <code style={{ fontSize: 12 }}>docker compose --profile tools up -d n8n metabase nocodb</code><br />
+        Para ligar (no terminal, na pasta <code>deploy</code>):
+        <br />
+        <code style={{ fontSize: 12 }}>
+          docker compose --profile tools up -d n8n metabase nocodb
+        </code>
+        <br />
         Para desligar: <code style={{ fontSize: 12 }}>docker compose --profile tools down</code>
       </div>
-      <div className="cards" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))" }}>
+      <div
+        className="cards"
+        style={{ gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))" }}
+      >
         {TOOLS.map((t) => (
-          <div key={t.key} className="card" style={{ padding: 18, textAlign: "left", alignItems: "flex-start" }}>
+          <div
+            key={t.key}
+            className="card"
+            style={{ padding: 18, textAlign: "left", alignItems: "flex-start" }}
+          >
             <div style={{ display: "flex", alignItems: "center", gap: 10, width: "100%" }}>
               <span style={{ fontSize: 26 }}>{t.icon}</span>
               <div style={{ fontWeight: 700 }}>{t.name}</div>
             </div>
-            <p className="muted" style={{ fontSize: 13, margin: "8px 0" }}>{t.tagline}</p>
+            <p className="muted" style={{ fontSize: 13, margin: "8px 0" }}>
+              {t.tagline}
+            </p>
             <button className="link" onClick={() => setOpen(open === t.key ? null : t.key)}>
               {open === t.key ? "Ocultar detalhes" : "Como usar / treinar"}
             </button>
@@ -980,16 +1712,37 @@ function Tools() {
               <div style={{ marginTop: 8, fontSize: 13 }}>
                 <div style={{ fontWeight: 600, marginTop: 6 }}>Como a empresa usa</div>
                 <ul style={{ margin: "4px 0 0", paddingLeft: 18 }}>
-                  {t.uses.map((u, i) => <li key={i} style={{ marginBottom: 3 }}>{u}</li>)}
+                  {t.uses.map((u, i) => (
+                    <li key={i} style={{ marginBottom: 3 }}>
+                      {u}
+                    </li>
+                  ))}
                 </ul>
                 <div style={{ fontWeight: 600, marginTop: 10 }}>Roteiro de treinamento</div>
                 <ul style={{ margin: "4px 0 0", paddingLeft: 18, listStyle: "none" }}>
-                  {t.training.map((s, i) => <li key={i} style={{ marginBottom: 3 }}>{s}</li>)}
+                  {t.training.map((s, i) => (
+                    <li key={i} style={{ marginBottom: 3 }}>
+                      {s}
+                    </li>
+                  ))}
                 </ul>
               </div>
             )}
-            <a href={t.url} target="_blank" rel="noopener noreferrer"
-              style={{ marginTop: 12, background: "#6d28d9", color: "#fff", padding: "7px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, textDecoration: "none" }}>
+            <a
+              href={t.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                marginTop: 12,
+                background: "#6d28d9",
+                color: "#fff",
+                padding: "7px 14px",
+                borderRadius: 8,
+                fontSize: 13,
+                fontWeight: 600,
+                textDecoration: "none",
+              }}
+            >
               Abrir ↗
             </a>
           </div>
@@ -1004,7 +1757,9 @@ function Tools() {
 // Converte um link de vídeo em URL embutível (YouTube/Vimeo) ou detecta MP4.
 function embedInfo(url) {
   if (!url) return null;
-  const yt = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([A-Za-z0-9_-]{6,})/);
+  const yt = url.match(
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([A-Za-z0-9_-]{6,})/
+  );
   if (yt) return { type: "iframe", src: `https://www.youtube.com/embed/${yt[1]}` };
   const vm = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
   if (vm) return { type: "iframe", src: `https://player.vimeo.com/video/${vm[1]}` };
@@ -1015,7 +1770,11 @@ function embedInfo(url) {
 const doneKey = (id) => `comenta_lesson_done_${id}`;
 const isDone = (id) => localStorage.getItem(doneKey(id)) === "1";
 
-const LEVEL_LABEL = { iniciante: "Iniciante", intermediario: "Intermediário", avancado: "Avançado" };
+const LEVEL_LABEL = {
+  iniciante: "Iniciante",
+  intermediario: "Intermediário",
+  avancado: "Avançado",
+};
 
 // Formulário admin para criar um curso.
 function CourseForm({ onCreate }) {
@@ -1024,32 +1783,83 @@ function CourseForm({ onCreate }) {
   const [err, setErr] = useState("");
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
   const submit = async (e) => {
-    e.preventDefault(); setErr("");
+    e.preventDefault();
+    setErr("");
     if (!f.title.trim()) return setErr("Dê um título ao curso.");
     setBusy(true);
-    try { await onCreate({ ...f, title: f.title.trim() }); setF({ title: "", emoji: "🎓", level: "iniciante", description: "" }); }
-    catch (e) { setErr(e.message); } finally { setBusy(false); }
+    try {
+      await onCreate({ ...f, title: f.title.trim() });
+      setF({ title: "", emoji: "🎓", level: "iniciante", description: "" });
+    } catch (e) {
+      setErr(e.message);
+    } finally {
+      setBusy(false);
+    }
   };
   return (
-    <form className="card" style={{ padding: 16, marginBottom: 16, maxWidth: 620, textAlign: "left", alignItems: "stretch" }} onSubmit={submit}>
+    <form
+      className="card"
+      style={{
+        padding: 16,
+        marginBottom: 16,
+        maxWidth: 620,
+        textAlign: "left",
+        alignItems: "stretch",
+      }}
+      onSubmit={submit}
+    >
       <div style={{ fontWeight: 700, marginBottom: 10 }}>Novo curso</div>
       <div style={{ display: "flex", gap: 10 }}>
-        <div className="field" style={{ width: 70 }}><label>Emoji</label>
-          <input value={f.emoji} onChange={set("emoji")} maxLength={4} style={{ textAlign: "center" }} /></div>
-        <div className="field" style={{ flex: 1 }}><label>Título</label>
-          <input value={f.title} onChange={set("title")} placeholder="Ex.: Atendimento nota 10" /></div>
-        <div className="field" style={{ width: 150 }}><label>Nível</label>
-          <select value={f.level} onChange={set("level")} style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }}>
+        <div className="field" style={{ width: 70 }}>
+          <label>Emoji</label>
+          <input
+            value={f.emoji}
+            onChange={set("emoji")}
+            maxLength={4}
+            style={{ textAlign: "center" }}
+          />
+        </div>
+        <div className="field" style={{ flex: 1 }}>
+          <label>Título</label>
+          <input value={f.title} onChange={set("title")} placeholder="Ex.: Atendimento nota 10" />
+        </div>
+        <div className="field" style={{ width: 150 }}>
+          <label>Nível</label>
+          <select
+            value={f.level}
+            onChange={set("level")}
+            style={{
+              width: "100%",
+              padding: "8px 10px",
+              borderRadius: 8,
+              border: "1px solid #d0d5dd",
+            }}
+          >
             <option value="iniciante">Iniciante</option>
             <option value="intermediario">Intermediário</option>
             <option value="avancado">Avançado</option>
-          </select></div>
+          </select>
+        </div>
       </div>
-      <div className="field"><label>Descrição</label>
-        <textarea value={f.description} onChange={set("description")} rows={2}
-          style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", resize: "vertical" }} /></div>
+      <div className="field">
+        <label>Descrição</label>
+        <textarea
+          value={f.description}
+          onChange={set("description")}
+          rows={2}
+          style={{
+            width: "100%",
+            padding: "8px 10px",
+            borderRadius: 8,
+            border: "1px solid #d0d5dd",
+            resize: "vertical",
+          }}
+        />
+      </div>
       {err && <div className="err">{err}</div>}
-      <button disabled={busy} style={{ marginTop: 6, alignSelf: "flex-start" }}>{busy ? "Salvando…" : "➕ Criar curso"}</button>
+      <button disabled={busy} style={{ marginTop: 6, alignSelf: "flex-start" }}>
+        {busy ? "Salvando…" : "➕ Criar curso"}
+      </button>
     </form>
   );
 }
@@ -1064,18 +1874,51 @@ function LessonForm({ onCreate }) {
     if (!f.title.trim()) return;
     setBusy(true);
     try {
-      await onCreate({ title: f.title.trim(), videoUrl: f.videoUrl.trim(), content: f.content.trim(), durationMin: Number(f.durationMin) || 0 });
+      await onCreate({
+        title: f.title.trim(),
+        videoUrl: f.videoUrl.trim(),
+        content: f.content.trim(),
+        durationMin: Number(f.durationMin) || 0,
+      });
       setF({ title: "", videoUrl: "", content: "", durationMin: "" });
-    } finally { setBusy(false); }
+    } finally {
+      setBusy(false);
+    }
   };
   return (
-    <form onSubmit={submit} style={{ marginTop: 12, borderTop: "1px dashed #d0d5dd", paddingTop: 12 }}>
+    <form
+      onSubmit={submit}
+      style={{ marginTop: 12, borderTop: "1px dashed #d0d5dd", paddingTop: 12 }}
+    >
       <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 8 }}>Adicionar aula</div>
-      <div className="field"><input value={f.title} onChange={set("title")} placeholder="Título da aula" /></div>
-      <div className="field"><input value={f.videoUrl} onChange={set("videoUrl")} placeholder="Link do vídeo (YouTube, Vimeo ou .mp4) — opcional" /></div>
-      <div className="field"><textarea value={f.content} onChange={set("content")} rows={2} placeholder="Conteúdo / resumo da aula"
-        style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", resize: "vertical" }} /></div>
-      <button disabled={busy} className="link">{busy ? "…" : "＋ Adicionar aula"}</button>
+      <div className="field">
+        <input value={f.title} onChange={set("title")} placeholder="Título da aula" />
+      </div>
+      <div className="field">
+        <input
+          value={f.videoUrl}
+          onChange={set("videoUrl")}
+          placeholder="Link do vídeo (YouTube, Vimeo ou .mp4) — opcional"
+        />
+      </div>
+      <div className="field">
+        <textarea
+          value={f.content}
+          onChange={set("content")}
+          rows={2}
+          placeholder="Conteúdo / resumo da aula"
+          style={{
+            width: "100%",
+            padding: "8px 10px",
+            borderRadius: 8,
+            border: "1px solid #d0d5dd",
+            resize: "vertical",
+          }}
+        />
+      </div>
+      <button disabled={busy} className="link">
+        {busy ? "…" : "＋ Adicionar aula"}
+      </button>
     </form>
   );
 }
@@ -1084,38 +1927,74 @@ function CourseView({ courseId, isAdmin, onBack }) {
   const [course, setCourse] = useState(null);
   const [sel, setSel] = useState(null);
   const [, force] = useState(0);
-  const load = () => api.course(courseId).then((c) => { setCourse(c); setSel((s) => s ?? (c.lessons[0]?.id || null)); }).catch(() => {});
-  useEffect(() => { load(); }, [courseId]);
+  const load = () =>
+    api
+      .course(courseId)
+      .then((c) => {
+        setCourse(c);
+        setSel((s) => s ?? (c.lessons[0]?.id || null));
+      })
+      .catch(() => {});
+  useEffect(() => {
+    load();
+  }, [courseId]);
   if (!course) return <p className="muted">Carregando…</p>;
 
   const lesson = course.lessons.find((l) => l.id === sel) || null;
   const done = course.lessons.filter((l) => isDone(l.id)).length;
   const total = course.lessons.length;
   const pct = total ? Math.round((done / total) * 100) : 0;
-  const toggleDone = (id) => { localStorage.setItem(doneKey(id), isDone(id) ? "0" : "1"); force((x) => x + 1); };
+  const toggleDone = (id) => {
+    localStorage.setItem(doneKey(id), isDone(id) ? "0" : "1");
+    force((x) => x + 1);
+  };
 
-  const addLesson = async (body) => { await api.lessonCreate(courseId, body); await load(); };
-  const delLesson = async (id) => { if (confirm("Remover esta aula?")) { await api.lessonDelete(id); setSel(null); await load(); } };
+  const addLesson = async (body) => {
+    await api.lessonCreate(courseId, body);
+    await load();
+  };
+  const delLesson = async (id) => {
+    if (confirm("Remover esta aula?")) {
+      await api.lessonDelete(id);
+      setSel(null);
+      await load();
+    }
+  };
 
   const emb = lesson ? embedInfo(lesson.videoUrl) : null;
 
   return (
     <>
-      <button className="link" onClick={onBack}>← Voltar aos cursos</button>
-      <h2 style={{ marginTop: 6 }}>{course.emoji} {course.title}</h2>
-      <p className="muted" style={{ marginTop: -8, maxWidth: 680 }}>{course.description}</p>
+      <button className="link" onClick={onBack}>
+        ← Voltar aos cursos
+      </button>
+      <h2 style={{ marginTop: 6 }}>
+        {course.emoji} {course.title}
+      </h2>
+      <p className="muted" style={{ marginTop: -8, maxWidth: 680 }}>
+        {course.description}
+      </p>
       <div style={{ maxWidth: 680, marginBottom: 16 }}>
         <div style={{ height: 8, background: "#eef0f4", borderRadius: 999, overflow: "hidden" }}>
           <div style={{ width: `${pct}%`, height: "100%", background: "#6d28d9" }} />
         </div>
-        <div className="muted" style={{ fontSize: 12, marginTop: 4 }}>{done}/{total} aulas concluídas · {pct}%</div>
+        <div className="muted" style={{ fontSize: 12, marginTop: 4 }}>
+          {done}/{total} aulas concluídas · {pct}%
+        </div>
       </div>
       <div className="convgrid">
         <div className="list">
           {course.lessons.length === 0 && <div className="item muted">Sem aulas ainda</div>}
           {course.lessons.map((l, i) => (
-            <div key={l.id} className={`item ${sel === l.id ? "active" : ""}`} onClick={() => setSel(l.id)}>
-              <div className="name">{isDone(l.id) ? "✅ " : `${i + 1}. `}{l.title}</div>
+            <div
+              key={l.id}
+              className={`item ${sel === l.id ? "active" : ""}`}
+              onClick={() => setSel(l.id)}
+            >
+              <div className="name">
+                {isDone(l.id) ? "✅ " : `${i + 1}. `}
+                {l.title}
+              </div>
               <div className="last">{l.durationMin ? `${l.durationMin} min` : "aula"}</div>
             </div>
           ))}
@@ -1127,24 +2006,77 @@ function CourseView({ courseId, isAdmin, onBack }) {
             <>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
                 <span style={{ fontWeight: 600 }}>{lesson.title}</span>
-                {isAdmin && <button className="link" style={{ marginLeft: "auto", color: "#dc2626" }} onClick={() => delLesson(lesson.id)}>Remover aula</button>}
+                {isAdmin && (
+                  <button
+                    className="link"
+                    style={{ marginLeft: "auto", color: "#dc2626" }}
+                    onClick={() => delLesson(lesson.id)}
+                  >
+                    Remover aula
+                  </button>
+                )}
               </div>
               {emb && emb.type === "iframe" && (
-                <div style={{ position: "relative", paddingTop: "56.25%", borderRadius: 12, overflow: "hidden", background: "#000" }}>
-                  <iframe src={emb.src} title={lesson.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen
-                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0 }} />
+                <div
+                  style={{
+                    position: "relative",
+                    paddingTop: "56.25%",
+                    borderRadius: 12,
+                    overflow: "hidden",
+                    background: "#000",
+                  }}
+                >
+                  <iframe
+                    src={emb.src}
+                    title={lesson.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      width: "100%",
+                      height: "100%",
+                      border: 0,
+                    }}
+                  />
                 </div>
               )}
               {emb && emb.type === "video" && (
-                <video src={emb.src} controls style={{ width: "100%", borderRadius: 12, background: "#000" }} />
+                <video
+                  src={emb.src}
+                  controls
+                  style={{ width: "100%", borderRadius: 12, background: "#000" }}
+                />
               )}
               {emb && emb.type === "link" && (
-                <a href={emb.src} target="_blank" rel="noopener noreferrer" className="aibox" style={{ display: "block" }}>▶ Abrir vídeo em nova aba</a>
+                <a
+                  href={emb.src}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="aibox"
+                  style={{ display: "block" }}
+                >
+                  ▶ Abrir vídeo em nova aba
+                </a>
               )}
-              {lesson.content && <p style={{ marginTop: 12, whiteSpace: "pre-wrap", lineHeight: 1.5 }}>{lesson.content}</p>}
+              {lesson.content && (
+                <p style={{ marginTop: 12, whiteSpace: "pre-wrap", lineHeight: 1.5 }}>
+                  {lesson.content}
+                </p>
+              )}
               <div style={{ marginTop: 14 }}>
-                <button onClick={() => toggleDone(lesson.id)}
-                  style={{ background: isDone(lesson.id) ? "#e2e8f0" : "#22c55e", color: isDone(lesson.id) ? "#334155" : "#fff", border: 0, padding: "8px 14px", borderRadius: 8, fontWeight: 600, cursor: "pointer" }}>
+                <button
+                  onClick={() => toggleDone(lesson.id)}
+                  style={{
+                    background: isDone(lesson.id) ? "#e2e8f0" : "#22c55e",
+                    color: isDone(lesson.id) ? "#334155" : "#fff",
+                    border: 0,
+                    padding: "8px 14px",
+                    borderRadius: 8,
+                    fontWeight: 600,
+                    cursor: "pointer",
+                  }}
+                >
                   {isDone(lesson.id) ? "✓ Concluída — desmarcar" : "Marcar como concluída"}
                 </button>
               </div>
@@ -1159,13 +2091,37 @@ function CourseView({ courseId, isAdmin, onBack }) {
 function Academy({ isAdmin }) {
   const [list, setList] = useState(null);
   const [openId, setOpenId] = useState(null);
-  const load = () => api.courses().then((r) => setList(r.data || [])).catch(() => setList([]));
-  useEffect(() => { load(); }, []);
+  const load = () =>
+    api
+      .courses()
+      .then((r) => setList(r.data || []))
+      .catch(() => setList([]));
+  useEffect(() => {
+    load();
+  }, []);
 
-  const create = async (body) => { await api.courseCreate(body); await load(); };
-  const remove = async (c) => { if (confirm(`Remover o curso "${c.title}"?`)) { await api.courseDelete(c.id); await load(); } };
+  const create = async (body) => {
+    await api.courseCreate(body);
+    await load();
+  };
+  const remove = async (c) => {
+    if (confirm(`Remover o curso "${c.title}"?`)) {
+      await api.courseDelete(c.id);
+      await load();
+    }
+  };
 
-  if (openId) return <CourseView courseId={openId} isAdmin={isAdmin} onBack={() => { setOpenId(null); load(); }} />;
+  if (openId)
+    return (
+      <CourseView
+        courseId={openId}
+        isAdmin={isAdmin}
+        onBack={() => {
+          setOpenId(null);
+          load();
+        }}
+      />
+    );
 
   return (
     <>
@@ -1176,33 +2132,81 @@ function Academy({ isAdmin }) {
       </p>
       {isAdmin && <CourseForm onCreate={create} />}
       {list === null && <p className="muted">Carregando…</p>}
-      {list && list.length === 0 && <p className="muted">Nenhum curso ainda{isAdmin ? " — crie o primeiro acima." : "."}</p>}
-      <div className="cards" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))" }}>
-        {list && list.map((c) => (
-          <div key={c.id} className="card" style={{ padding: 18, textAlign: "left", alignItems: "flex-start" }}>
-            <div style={{ fontSize: 30 }}>{c.emoji}</div>
-            <div style={{ fontWeight: 700, marginTop: 6 }}>{c.title}</div>
-            <span className="tag" style={{ margin: "6px 0" }}>{LEVEL_LABEL[c.level] || c.level}</span>
-            <p className="muted" style={{ fontSize: 13, margin: 0 }}>{c.description}</p>
-            <div className="muted" style={{ fontSize: 12, marginTop: 8 }}>{c.lessonCount} aula{c.lessonCount === 1 ? "" : "s"}</div>
-            <div style={{ display: "flex", gap: 10, marginTop: 12, width: "100%" }}>
-              <button onClick={() => setOpenId(c.id)}
-                style={{ background: "#6d28d9", color: "#fff", border: 0, padding: "7px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: "pointer" }}>
-                {c.lessonCount ? "Assistir" : "Abrir"}
-              </button>
-              {isAdmin && <button className="link" style={{ color: "#dc2626" }} onClick={() => remove(c)}>Remover</button>}
+      {list && list.length === 0 && (
+        <p className="muted">Nenhum curso ainda{isAdmin ? " — crie o primeiro acima." : "."}</p>
+      )}
+      <div
+        className="cards"
+        style={{ gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))" }}
+      >
+        {list &&
+          list.map((c) => (
+            <div
+              key={c.id}
+              className="card"
+              style={{ padding: 18, textAlign: "left", alignItems: "flex-start" }}
+            >
+              <div style={{ fontSize: 30 }}>{c.emoji}</div>
+              <div style={{ fontWeight: 700, marginTop: 6 }}>{c.title}</div>
+              <span className="tag" style={{ margin: "6px 0" }}>
+                {LEVEL_LABEL[c.level] || c.level}
+              </span>
+              <p className="muted" style={{ fontSize: 13, margin: 0 }}>
+                {c.description}
+              </p>
+              <div className="muted" style={{ fontSize: 12, marginTop: 8 }}>
+                {c.lessonCount} aula{c.lessonCount === 1 ? "" : "s"}
+              </div>
+              <div style={{ display: "flex", gap: 10, marginTop: 12, width: "100%" }}>
+                <button
+                  onClick={() => setOpenId(c.id)}
+                  style={{
+                    background: "#6d28d9",
+                    color: "#fff",
+                    border: 0,
+                    padding: "7px 14px",
+                    borderRadius: 8,
+                    fontSize: 13,
+                    fontWeight: 600,
+                    cursor: "pointer",
+                  }}
+                >
+                  {c.lessonCount ? "Assistir" : "Abrir"}
+                </button>
+                {isAdmin && (
+                  <button className="link" style={{ color: "#dc2626" }} onClick={() => remove(c)}>
+                    Remover
+                  </button>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     </>
   );
 }
 
 // ---- Filas / Departamentos (Fase 8) ----
-const QUEUE_COLORS = ["#6d28d9", "#2563eb", "#16a34a", "#d97706", "#db2777", "#0891b2", "#dc2626", "#4b5563"];
+const QUEUE_COLORS = [
+  "#6d28d9",
+  "#2563eb",
+  "#16a34a",
+  "#d97706",
+  "#db2777",
+  "#0891b2",
+  "#dc2626",
+  "#4b5563",
+];
 
-const WEEK_DAYS = [["Seg", 1], ["Ter", 2], ["Qua", 3], ["Qui", 4], ["Sex", 5], ["Sáb", 6], ["Dom", 7]];
+const WEEK_DAYS = [
+  ["Seg", 1],
+  ["Ter", 2],
+  ["Qua", 3],
+  ["Qui", 4],
+  ["Sex", 5],
+  ["Sáb", 6],
+  ["Dom", 7],
+];
 
 function QueueCard({ q, users, onChanged }) {
   const [members, setMembers] = useState(q.memberIds || []);
@@ -1216,70 +2220,212 @@ function QueueCard({ q, users, onChanged }) {
     message: sched0.message || "",
   });
   const [schedBusy, setSchedBusy] = useState(false);
-  const toggle = (uid) => setMembers((cur) => (cur.includes(uid) ? cur.filter((x) => x !== uid) : [...cur, uid]));
-  const save = async () => { setBusy(true); try { await api.queueSetMembers(q.id, members); onChanged?.(); } catch (e) { alert(e.message); } finally { setBusy(false); } };
-  const setColor = async (color) => { await api.queueUpdate(q.id, { color }); onChanged?.(); };
-  const remove = async () => { if (confirm(`Remover a fila "${q.name}"?`)) { await api.queueDelete(q.id); onChanged?.(); } };
-  const dirty = JSON.stringify([...members].sort()) !== JSON.stringify([...(q.memberIds || [])].sort());
-  const toggleDay = (d) => setSched((s) => ({ ...s, days: s.days.includes(d) ? s.days.filter((x) => x !== d) : [...s.days, d].sort() }));
-  const saveSched = async () => { setSchedBusy(true); try { await api.queueUpdate(q.id, { schedule: sched }); onChanged?.(); } catch (e) { alert(e.message); } finally { setSchedBusy(false); } };
+  const toggle = (uid) =>
+    setMembers((cur) => (cur.includes(uid) ? cur.filter((x) => x !== uid) : [...cur, uid]));
+  const save = async () => {
+    setBusy(true);
+    try {
+      await api.queueSetMembers(q.id, members);
+      onChanged?.();
+    } catch (e) {
+      alert(e.message);
+    } finally {
+      setBusy(false);
+    }
+  };
+  const setColor = async (color) => {
+    await api.queueUpdate(q.id, { color });
+    onChanged?.();
+  };
+  const remove = async () => {
+    if (confirm(`Remover a fila "${q.name}"?`)) {
+      await api.queueDelete(q.id);
+      onChanged?.();
+    }
+  };
+  const dirty =
+    JSON.stringify([...members].sort()) !== JSON.stringify([...(q.memberIds || [])].sort());
+  const toggleDay = (d) =>
+    setSched((s) => ({
+      ...s,
+      days: s.days.includes(d) ? s.days.filter((x) => x !== d) : [...s.days, d].sort(),
+    }));
+  const saveSched = async () => {
+    setSchedBusy(true);
+    try {
+      await api.queueUpdate(q.id, { schedule: sched });
+      onChanged?.();
+    } catch (e) {
+      alert(e.message);
+    } finally {
+      setSchedBusy(false);
+    }
+  };
 
   return (
-    <div className="card" style={{ padding: 18, textAlign: "left", alignItems: "stretch", maxWidth: 360 }}>
+    <div
+      className="card"
+      style={{ padding: 18, textAlign: "left", alignItems: "stretch", maxWidth: 360 }}
+    >
       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
         <span style={{ width: 14, height: 14, borderRadius: 4, background: q.color }} />
         <div style={{ fontWeight: 700, flex: 1 }}>{q.name}</div>
         {sched0.enabled && (
-          <span className="tag" style={{ background: q.isOpen ? "#dcfce7" : "#fee2e2", color: q.isOpen ? "#16a34a" : "#dc2626" }}>
+          <span
+            className="tag"
+            style={{
+              background: q.isOpen ? "#dcfce7" : "#fee2e2",
+              color: q.isOpen ? "#16a34a" : "#dc2626",
+            }}
+          >
             {q.isOpen ? "🟢 Aberto" : "🔴 Fechado"}
           </span>
         )}
-        <button className="link" style={{ color: "#dc2626" }} onClick={remove}>Remover</button>
+        <button className="link" style={{ color: "#dc2626" }} onClick={remove}>
+          Remover
+        </button>
       </div>
       <div style={{ display: "flex", gap: 6, margin: "10px 0", flexWrap: "wrap" }}>
         {QUEUE_COLORS.map((c) => (
-          <span key={c} onClick={() => setColor(c)} title="cor da fila"
-            style={{ width: 18, height: 18, borderRadius: 4, background: c, cursor: "pointer", outline: q.color === c ? "2px solid #111" : "none" }} />
+          <span
+            key={c}
+            onClick={() => setColor(c)}
+            title="cor da fila"
+            style={{
+              width: 18,
+              height: 18,
+              borderRadius: 4,
+              background: c,
+              cursor: "pointer",
+              outline: q.color === c ? "2px solid #111" : "none",
+            }}
+          />
         ))}
       </div>
-      <div className="muted" style={{ fontSize: 12, marginBottom: 6 }}>Atendentes na fila:</div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 4, maxHeight: 160, overflowY: "auto" }}>
-        {users.filter((u) => u.role !== "admin" || members.includes(u.id)).map((u) => (
-          <label key={u.id} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, cursor: "pointer" }}>
-            <input type="checkbox" checked={members.includes(u.id)} onChange={() => toggle(u.id)} />
-            {u.name}
-          </label>
-        ))}
-        {users.length === 0 && <span className="muted" style={{ fontSize: 12 }}>Sem atendentes cadastrados.</span>}
+      <div className="muted" style={{ fontSize: 12, marginBottom: 6 }}>
+        Atendentes na fila:
       </div>
-      {dirty && <button disabled={busy} style={{ marginTop: 10, alignSelf: "flex-start" }} onClick={save}>{busy ? "Salvando…" : "Salvar membros"}</button>}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 4,
+          maxHeight: 160,
+          overflowY: "auto",
+        }}
+      >
+        {users
+          .filter((u) => u.role !== "admin" || members.includes(u.id))
+          .map((u) => (
+            <label
+              key={u.id}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+                fontSize: 13,
+                cursor: "pointer",
+              }}
+            >
+              <input
+                type="checkbox"
+                checked={members.includes(u.id)}
+                onChange={() => toggle(u.id)}
+              />
+              {u.name}
+            </label>
+          ))}
+        {users.length === 0 && (
+          <span className="muted" style={{ fontSize: 12 }}>
+            Sem atendentes cadastrados.
+          </span>
+        )}
+      </div>
+      {dirty && (
+        <button disabled={busy} style={{ marginTop: 10, alignSelf: "flex-start" }} onClick={save}>
+          {busy ? "Salvando…" : "Salvar membros"}
+        </button>
+      )}
 
       <div style={{ borderTop: "1px solid var(--border)", marginTop: 14, paddingTop: 12 }}>
-        <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 600, cursor: "pointer" }}>
-          <input type="checkbox" checked={sched.enabled} onChange={(e) => setSched({ ...sched, enabled: e.target.checked })} />
+        <label
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+            fontSize: 13,
+            fontWeight: 600,
+            cursor: "pointer",
+          }}
+        >
+          <input
+            type="checkbox"
+            checked={sched.enabled}
+            onChange={(e) => setSched({ ...sched, enabled: e.target.checked })}
+          />
           🕐 Horário de atendimento
         </label>
         {sched.enabled && (
           <div style={{ marginTop: 8 }}>
             <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 8 }}>
               {WEEK_DAYS.map(([lbl, d]) => (
-                <button type="button" key={d} onClick={() => toggleDay(d)}
-                  style={{ padding: "4px 8px", borderRadius: 999, fontSize: 12, cursor: "pointer",
-                    border: "1px solid " + (sched.days.includes(d) ? "var(--accent)" : "var(--border)"),
+                <button
+                  type="button"
+                  key={d}
+                  onClick={() => toggleDay(d)}
+                  style={{
+                    padding: "4px 8px",
+                    borderRadius: 999,
+                    fontSize: 12,
+                    cursor: "pointer",
+                    border:
+                      "1px solid " + (sched.days.includes(d) ? "var(--accent)" : "var(--border)"),
                     background: sched.days.includes(d) ? "var(--accent)" : "transparent",
-                    color: sched.days.includes(d) ? "#fff" : "var(--text)" }}>{lbl}</button>
+                    color: sched.days.includes(d) ? "#fff" : "var(--text)",
+                  }}
+                >
+                  {lbl}
+                </button>
               ))}
             </div>
             <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
-              <label style={{ fontSize: 12, flex: 1 }}>Abre<input type="time" value={sched.start} onChange={(e) => setSched({ ...sched, start: e.target.value })} /></label>
-              <label style={{ fontSize: 12, flex: 1 }}>Fecha<input type="time" value={sched.end} onChange={(e) => setSched({ ...sched, end: e.target.value })} /></label>
+              <label style={{ fontSize: 12, flex: 1 }}>
+                Abre
+                <input
+                  type="time"
+                  value={sched.start}
+                  onChange={(e) => setSched({ ...sched, start: e.target.value })}
+                />
+              </label>
+              <label style={{ fontSize: 12, flex: 1 }}>
+                Fecha
+                <input
+                  type="time"
+                  value={sched.end}
+                  onChange={(e) => setSched({ ...sched, end: e.target.value })}
+                />
+              </label>
             </div>
-            <textarea rows={2} value={sched.message} onChange={(e) => setSched({ ...sched, message: e.target.value })}
+            <textarea
+              rows={2}
+              value={sched.message}
+              onChange={(e) => setSched({ ...sched, message: e.target.value })}
               placeholder="Mensagem fora do horário (o bot responde isso quando o time está fechado)"
-              style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid var(--border)", background: "var(--panel2)", color: "var(--text)", resize: "vertical" }} />
+              style={{
+                width: "100%",
+                padding: "8px 10px",
+                borderRadius: 8,
+                border: "1px solid var(--border)",
+                background: "var(--panel2)",
+                color: "var(--text)",
+                resize: "vertical",
+              }}
+            />
           </div>
         )}
-        <button className="ghost" disabled={schedBusy} style={{ marginTop: 8 }} onClick={saveSched}>{schedBusy ? "Salvando…" : "Salvar horário"}</button>
+        <button className="ghost" disabled={schedBusy} style={{ marginTop: 8 }} onClick={saveSched}>
+          {schedBusy ? "Salvando…" : "Salvar horário"}
+        </button>
       </div>
     </div>
   );
@@ -1290,31 +2436,69 @@ function Queues() {
   const [users, setUsers] = useState([]);
   const [name, setName] = useState("");
   const [busy, setBusy] = useState(false);
-  const load = () => api.queues().then((r) => setList(r.data || [])).catch(() => setList([]));
-  useEffect(() => { load(); api.users().then((r) => setUsers(r.data || r || [])).catch(() => {}); }, []);
+  const load = () =>
+    api
+      .queues()
+      .then((r) => setList(r.data || []))
+      .catch(() => setList([]));
+  useEffect(() => {
+    load();
+    api
+      .users()
+      .then((r) => setUsers(r.data || r || []))
+      .catch(() => {});
+  }, []);
 
   const create = async (e) => {
     e.preventDefault();
     if (!name.trim()) return;
     setBusy(true);
-    try { await api.queueCreate({ name: name.trim(), color: QUEUE_COLORS[(list?.length || 0) % QUEUE_COLORS.length] }); setName(""); await load(); }
-    catch (e) { alert(e.message); } finally { setBusy(false); }
+    try {
+      await api.queueCreate({
+        name: name.trim(),
+        color: QUEUE_COLORS[(list?.length || 0) % QUEUE_COLORS.length],
+      });
+      setName("");
+      await load();
+    } catch (e) {
+      alert(e.message);
+    } finally {
+      setBusy(false);
+    }
   };
 
   return (
     <>
       <h2>Filas</h2>
       <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 680 }}>
-        Departamentos de atendimento (Suporte, Vendas…). Cada conversa pode ser transferida para uma fila,
-        e cada fila tem seus atendentes. Filtre as conversas por fila na aba Conversas.
+        Departamentos de atendimento (Suporte, Vendas…). Cada conversa pode ser transferida para uma
+        fila, e cada fila tem seus atendentes. Filtre as conversas por fila na aba Conversas.
       </p>
-      <form onSubmit={create} className="card" style={{ padding: 14, marginBottom: 18, maxWidth: 460, flexDirection: "row", display: "flex", gap: 8, alignItems: "center" }}>
-        <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Nome da nova fila (ex.: Cobrança)"
-          style={{ flex: 1, padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }} />
+      <form
+        onSubmit={create}
+        className="card"
+        style={{
+          padding: 14,
+          marginBottom: 18,
+          maxWidth: 460,
+          flexDirection: "row",
+          display: "flex",
+          gap: 8,
+          alignItems: "center",
+        }}
+      >
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Nome da nova fila (ex.: Cobrança)"
+          style={{ flex: 1, padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }}
+        />
         <button disabled={busy}>{busy ? "…" : "➕ Criar fila"}</button>
       </form>
       {list === null && <p className="muted">Carregando…</p>}
-      {list && list.length === 0 && <p className="muted">Nenhuma fila ainda — crie a primeira acima.</p>}
+      {list && list.length === 0 && (
+        <p className="muted">Nenhuma fila ainda — crie a primeira acima.</p>
+      )}
       <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "flex-start" }}>
         {list && list.map((q) => <QueueCard key={q.id} q={q} users={users} onChanged={load} />)}
       </div>
@@ -1344,11 +2528,20 @@ function Kanban() {
     );
     setCols(next);
   };
-  useEffect(() => { load(); api.queues().then((r) => setQueues(r.data || [])).catch(() => {}); }, []);
+  useEffect(() => {
+    load();
+    api
+      .queues()
+      .then((r) => setQueues(r.data || []))
+      .catch(() => {});
+  }, []);
   const queueOf = (id) => queues.find((q) => q.id === id);
 
   const onDrop = async (toStatus) => {
-    if (!drag || drag.from === toStatus) { setDrag(null); return; }
+    if (!drag || drag.from === toStatus) {
+      setDrag(null);
+      return;
+    }
     // move otimista
     setCols((cur) => {
       const card = cur[drag.from].find((c) => c.id === drag.id);
@@ -1361,7 +2554,11 @@ function Kanban() {
     });
     const id = drag.id;
     setDrag(null);
-    try { await api.conversationUpdate(id, { status: toStatus }); } catch { load(); }
+    try {
+      await api.conversationUpdate(id, { status: toStatus });
+    } catch {
+      load();
+    }
   };
 
   return (
@@ -1370,28 +2567,86 @@ function Kanban() {
       <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 680 }}>
         Arraste as conversas entre as etapas. Mover um card muda o status da conversa.
       </p>
-      <div style={{ display: "flex", gap: 14, alignItems: "flex-start", overflowX: "auto", paddingBottom: 8 }}>
+      <div
+        style={{
+          display: "flex",
+          gap: 14,
+          alignItems: "flex-start",
+          overflowX: "auto",
+          paddingBottom: 8,
+        }}
+      >
         {KANBAN_COLS.map((col) => (
-          <div key={col.key}
+          <div
+            key={col.key}
             onDragOver={(e) => e.preventDefault()}
             onDrop={() => onDrop(col.key)}
-            style={{ flex: "1 0 260px", minWidth: 260, background: "#f8fafc", borderRadius: 12, padding: 10, border: "1px solid #e2e8f0" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10, fontWeight: 700 }}>
+            style={{
+              flex: "1 0 260px",
+              minWidth: 260,
+              background: "#f8fafc",
+              borderRadius: 12,
+              padding: 10,
+              border: "1px solid #e2e8f0",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+                marginBottom: 10,
+                fontWeight: 700,
+              }}
+            >
               <span style={{ width: 10, height: 10, borderRadius: 999, background: col.color }} />
               {col.label}
-              <span className="muted" style={{ marginLeft: "auto", fontSize: 12 }}>{cols[col.key].length}</span>
+              <span className="muted" style={{ marginLeft: "auto", fontSize: 12 }}>
+                {cols[col.key].length}
+              </span>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 8, minHeight: 60 }}>
-              {cols[col.key].length === 0 && <div className="muted" style={{ fontSize: 12, padding: 8 }}>Vazio</div>}
+              {cols[col.key].length === 0 && (
+                <div className="muted" style={{ fontSize: 12, padding: 8 }}>
+                  Vazio
+                </div>
+              )}
               {cols[col.key].map((c) => {
                 const q = queueOf(c.queueId);
                 return (
-                  <div key={c.id} draggable
+                  <div
+                    key={c.id}
+                    draggable
                     onDragStart={() => setDrag({ id: c.id, from: col.key })}
-                    className="card" style={{ padding: 12, textAlign: "left", alignItems: "stretch", cursor: "grab", boxShadow: "0 1px 2px rgba(0,0,0,.06)" }}>
-                    <div style={{ fontWeight: 600, fontSize: 14 }}>{c.contact?.name || "Contato"}</div>
-                    <div className="muted" style={{ fontSize: 12, marginTop: 2 }}>{c.contact?.phone || ""}</div>
-                    {q && <span className="tag" style={{ background: q.color, color: "#fff", fontSize: 10, marginTop: 6, alignSelf: "flex-start" }}>{q.name}</span>}
+                    className="card"
+                    style={{
+                      padding: 12,
+                      textAlign: "left",
+                      alignItems: "stretch",
+                      cursor: "grab",
+                      boxShadow: "0 1px 2px rgba(0,0,0,.06)",
+                    }}
+                  >
+                    <div style={{ fontWeight: 600, fontSize: 14 }}>
+                      {c.contact?.name || "Contato"}
+                    </div>
+                    <div className="muted" style={{ fontSize: 12, marginTop: 2 }}>
+                      {c.contact?.phone || ""}
+                    </div>
+                    {q && (
+                      <span
+                        className="tag"
+                        style={{
+                          background: q.color,
+                          color: "#fff",
+                          fontSize: 10,
+                          marginTop: 6,
+                          alignSelf: "flex-start",
+                        }}
+                      >
+                        {q.name}
+                      </span>
+                    )}
                   </div>
                 );
               })}
@@ -1407,41 +2662,90 @@ function Kanban() {
 function QuickReplies() {
   const [list, setList] = useState(null);
   const [f, setF] = useState({ shortcut: "", message: "" });
-  const load = () => api.quickReplies().then((r) => setList(r.data || [])).catch(() => setList([]));
-  useEffect(() => { load(); }, []);
+  const load = () =>
+    api
+      .quickReplies()
+      .then((r) => setList(r.data || []))
+      .catch(() => setList([]));
+  useEffect(() => {
+    load();
+  }, []);
   const create = async (e) => {
     e.preventDefault();
     if (!f.shortcut.trim() || !f.message.trim()) return;
-    let sc = f.shortcut.trim(); if (!sc.startsWith("/")) sc = "/" + sc;
-    try { await api.quickReplyCreate({ shortcut: sc, message: f.message.trim() }); setF({ shortcut: "", message: "" }); load(); }
-    catch (e) { alert(e.message); }
+    let sc = f.shortcut.trim();
+    if (!sc.startsWith("/")) sc = "/" + sc;
+    try {
+      await api.quickReplyCreate({ shortcut: sc, message: f.message.trim() });
+      setF({ shortcut: "", message: "" });
+      load();
+    } catch (e) {
+      alert(e.message);
+    }
   };
-  const del = async (id) => { if (confirm("Remover esta resposta rápida?")) { await api.quickReplyDelete(id); load(); } };
+  const del = async (id) => {
+    if (confirm("Remover esta resposta rápida?")) {
+      await api.quickReplyDelete(id);
+      load();
+    }
+  };
   return (
     <>
       <h2>Respostas rápidas</h2>
       <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 680 }}>
         Atalhos de mensagem que o atendente insere na conversa com um clique (botão ⚡ no chat).
       </p>
-      <form onSubmit={create} className="card" style={{ padding: 16, marginBottom: 18, maxWidth: 620, alignItems: "stretch" }}>
+      <form
+        onSubmit={create}
+        className="card"
+        style={{ padding: 16, marginBottom: 18, maxWidth: 620, alignItems: "stretch" }}
+      >
         <div style={{ display: "flex", gap: 8 }}>
-          <input value={f.shortcut} onChange={(e) => setF({ ...f, shortcut: e.target.value })} placeholder="/atalho"
-            style={{ width: 140, padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }} />
-          <input value={f.message} onChange={(e) => setF({ ...f, message: e.target.value })} placeholder="Texto da mensagem"
-            style={{ flex: 1, padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }} />
+          <input
+            value={f.shortcut}
+            onChange={(e) => setF({ ...f, shortcut: e.target.value })}
+            placeholder="/atalho"
+            style={{
+              width: 140,
+              padding: "8px 10px",
+              borderRadius: 8,
+              border: "1px solid #d0d5dd",
+            }}
+          />
+          <input
+            value={f.message}
+            onChange={(e) => setF({ ...f, message: e.target.value })}
+            placeholder="Texto da mensagem"
+            style={{ flex: 1, padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }}
+          />
           <button>➕ Criar</button>
         </div>
       </form>
       {list === null && <p className="muted">Carregando…</p>}
       {list && list.length === 0 && <p className="muted">Nenhuma resposta rápida ainda.</p>}
       <div style={{ display: "flex", flexDirection: "column", gap: 8, maxWidth: 680 }}>
-        {list && list.map((qr) => (
-          <div key={qr.id} className="card" style={{ padding: 12, flexDirection: "row", display: "flex", alignItems: "center", gap: 10 }}>
-            <span className="tag" style={{ background: "#eef2ff", color: "#4338ca" }}>{qr.shortcut}</span>
-            <span style={{ flex: 1, fontSize: 14 }}>{qr.message}</span>
-            <button className="link" style={{ color: "#dc2626" }} onClick={() => del(qr.id)}>Remover</button>
-          </div>
-        ))}
+        {list &&
+          list.map((qr) => (
+            <div
+              key={qr.id}
+              className="card"
+              style={{
+                padding: 12,
+                flexDirection: "row",
+                display: "flex",
+                alignItems: "center",
+                gap: 10,
+              }}
+            >
+              <span className="tag" style={{ background: "#eef2ff", color: "#4338ca" }}>
+                {qr.shortcut}
+              </span>
+              <span style={{ flex: 1, fontSize: 14 }}>{qr.message}</span>
+              <button className="link" style={{ color: "#dc2626" }} onClick={() => del(qr.id)}>
+                Remover
+              </button>
+            </div>
+          ))}
       </div>
     </>
   );
@@ -1451,36 +2755,92 @@ function QuickReplies() {
 function TagsManager() {
   const [list, setList] = useState(null);
   const [f, setF] = useState({ name: "", color: "#6d28d9" });
-  const load = () => api.tags().then((r) => setList(r.data || [])).catch(() => setList([]));
-  useEffect(() => { load(); }, []);
+  const load = () =>
+    api
+      .tags()
+      .then((r) => setList(r.data || []))
+      .catch(() => setList([]));
+  useEffect(() => {
+    load();
+  }, []);
   const create = async (e) => {
     e.preventDefault();
     if (!f.name.trim()) return;
-    try { await api.tagCreate({ name: f.name.trim(), color: f.color }); setF({ name: "", color: "#6d28d9" }); load(); }
-    catch (e) { alert(e.message); }
+    try {
+      await api.tagCreate({ name: f.name.trim(), color: f.color });
+      setF({ name: "", color: "#6d28d9" });
+      load();
+    } catch (e) {
+      alert(e.message);
+    }
   };
-  const del = async (id) => { if (confirm("Remover esta tag?")) { await api.tagDelete(id); load(); } };
+  const del = async (id) => {
+    if (confirm("Remover esta tag?")) {
+      await api.tagDelete(id);
+      load();
+    }
+  };
   return (
     <>
       <h2>Tags</h2>
       <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 680 }}>
         Etiquetas coloridas para classificar conversas (aplicadas no cabeçalho de cada conversa).
       </p>
-      <form onSubmit={create} className="card" style={{ padding: 16, marginBottom: 18, maxWidth: 460, flexDirection: "row", display: "flex", gap: 8, alignItems: "center" }}>
-        <input type="color" value={f.color} onChange={(e) => setF({ ...f, color: e.target.value })} style={{ width: 40, height: 38, border: "none", background: "none" }} />
-        <input value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} placeholder="Nome da tag"
-          style={{ flex: 1, padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }} />
+      <form
+        onSubmit={create}
+        className="card"
+        style={{
+          padding: 16,
+          marginBottom: 18,
+          maxWidth: 460,
+          flexDirection: "row",
+          display: "flex",
+          gap: 8,
+          alignItems: "center",
+        }}
+      >
+        <input
+          type="color"
+          value={f.color}
+          onChange={(e) => setF({ ...f, color: e.target.value })}
+          style={{ width: 40, height: 38, border: "none", background: "none" }}
+        />
+        <input
+          value={f.name}
+          onChange={(e) => setF({ ...f, name: e.target.value })}
+          placeholder="Nome da tag"
+          style={{ flex: 1, padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }}
+        />
         <button>➕ Criar</button>
       </form>
       {list === null && <p className="muted">Carregando…</p>}
       {list && list.length === 0 && <p className="muted">Nenhuma tag ainda.</p>}
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-        {list && list.map((t) => (
-          <div key={t.id} className="card" style={{ padding: "8px 12px", flexDirection: "row", display: "flex", alignItems: "center", gap: 8 }}>
-            <span className="tag" style={{ background: t.color, color: "#fff" }}>{t.name}</span>
-            <button className="link" style={{ color: "#dc2626", fontSize: 12 }} onClick={() => del(t.id)}>×</button>
-          </div>
-        ))}
+        {list &&
+          list.map((t) => (
+            <div
+              key={t.id}
+              className="card"
+              style={{
+                padding: "8px 12px",
+                flexDirection: "row",
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+              }}
+            >
+              <span className="tag" style={{ background: t.color, color: "#fff" }}>
+                {t.name}
+              </span>
+              <button
+                className="link"
+                style={{ color: "#dc2626", fontSize: 12 }}
+                onClick={() => del(t.id)}
+              >
+                ×
+              </button>
+            </div>
+          ))}
       </div>
     </>
   );
@@ -1492,82 +2852,235 @@ function Contacts() {
   const [q, setQ] = useState("");
   const [f, setF] = useState({ name: "", phone: "", email: "" });
   const [imp, setImp] = useState(null);
-  const load = () => api.contacts(q).then((r) => setList(r.data || [])).catch(() => setList([]));
-  useEffect(() => { load(); }, []);
+  const load = () =>
+    api
+      .contacts(q)
+      .then((r) => setList(r.data || []))
+      .catch(() => setList([]));
+  useEffect(() => {
+    load();
+  }, []);
 
-  const search = (e) => { e.preventDefault(); load(); };
+  const search = (e) => {
+    e.preventDefault();
+    load();
+  };
   const create = async (e) => {
     e.preventDefault();
     if (!f.name.trim()) return;
     try {
-      await api.contactCreate({ name: f.name.trim(), phone: f.phone.replace(/\D/g, "") || undefined, email: f.email.trim() || undefined });
-      setF({ name: "", phone: "", email: "" }); load();
-    } catch (e) { alert(e.message); }
+      await api.contactCreate({
+        name: f.name.trim(),
+        phone: f.phone.replace(/\D/g, "") || undefined,
+        email: f.email.trim() || undefined,
+      });
+      setF({ name: "", phone: "", email: "" });
+      load();
+    } catch (e) {
+      alert(e.message);
+    }
   };
-  const del = async (id) => { if (confirm("Remover este contato?")) { await api.contactDelete(id); load(); } };
+  const del = async (id) => {
+    if (confirm("Remover este contato?")) {
+      await api.contactDelete(id);
+      load();
+    }
+  };
 
   const exportCsv = () => {
-    const rows = [["Nome", "Telefone", "Email"], ...(list || []).map((c) => [c.name, c.phone || "", c.email || ""])];
-    const csv = rows.map((r) => r.map((v) => `"${String(v).replace(/"/g, '""')}"`).join(",")).join("\n");
+    const rows = [
+      ["Nome", "Telefone", "Email"],
+      ...(list || []).map((c) => [c.name, c.phone || "", c.email || ""]),
+    ];
+    const csv = rows
+      .map((r) => r.map((v) => `"${String(v).replace(/"/g, '""')}"`).join(","))
+      .join("\n");
     const url = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
-    const a = document.createElement("a"); a.href = url; a.download = "contatos.csv"; a.click(); URL.revokeObjectURL(url);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "contatos.csv";
+    a.click();
+    URL.revokeObjectURL(url);
   };
   const importCsv = async (e) => {
-    const file = e.target.files?.[0]; if (!file) return;
+    const file = e.target.files?.[0];
+    if (!file) return;
     const txt = await file.text();
     const lines = txt.split(/\r?\n/).filter((l) => l.trim());
     if (!lines.length) return;
     const sep = lines[0].includes(";") ? ";" : ",";
     const head = lines[0].toLowerCase();
     const hasHeader = /nome|name|telefone|phone|email/.test(head);
-    const rows = (hasHeader ? lines.slice(1) : lines).map((l) => l.split(sep).map((c) => c.replace(/^"|"$/g, "").trim()));
-    const contacts = rows.map((c) => ({ name: c[0] || "", phone: (c[1] || "").replace(/\D/g, "") || undefined, email: c[2] || undefined })).filter((c) => c.name);
-    if (!contacts.length) { alert("Nenhum contato válido no arquivo."); return; }
-    try { const r = await api.contactsImport(contacts); setImp(r); load(); } catch (e) { alert(e.message); }
+    const rows = (hasHeader ? lines.slice(1) : lines).map((l) =>
+      l.split(sep).map((c) => c.replace(/^"|"$/g, "").trim())
+    );
+    const contacts = rows
+      .map((c) => ({
+        name: c[0] || "",
+        phone: (c[1] || "").replace(/\D/g, "") || undefined,
+        email: c[2] || undefined,
+      }))
+      .filter((c) => c.name);
+    if (!contacts.length) {
+      alert("Nenhum contato válido no arquivo.");
+      return;
+    }
+    try {
+      const r = await api.contactsImport(contacts);
+      setImp(r);
+      load();
+    } catch (e) {
+      alert(e.message);
+    }
     e.target.value = "";
   };
 
   return (
     <>
       <h2>Contatos</h2>
-      <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center", marginBottom: 14 }}>
+      <div
+        style={{
+          display: "flex",
+          gap: 10,
+          flexWrap: "wrap",
+          alignItems: "center",
+          marginBottom: 14,
+        }}
+      >
         <form onSubmit={search} style={{ display: "flex", gap: 6 }}>
-          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Buscar por nome/telefone…"
-            style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", width: 240 }} />
+          <input
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            placeholder="Buscar por nome/telefone…"
+            style={{
+              padding: "8px 10px",
+              borderRadius: 8,
+              border: "1px solid #d0d5dd",
+              width: 240,
+            }}
+          />
           <button>Buscar</button>
         </form>
         <button onClick={exportCsv}>⬇️ Exportar CSV</button>
-        <label style={{ cursor: "pointer", background: "#6d28d9", color: "#fff", padding: "8px 12px", borderRadius: 8, fontSize: 14 }}>
+        <label
+          style={{
+            cursor: "pointer",
+            background: "#6d28d9",
+            color: "#fff",
+            padding: "8px 12px",
+            borderRadius: 8,
+            fontSize: 14,
+          }}
+        >
           ⬆️ Importar CSV
-          <input type="file" accept=".csv,text/csv" onChange={importCsv} style={{ display: "none" }} />
+          <input
+            type="file"
+            accept=".csv,text/csv"
+            onChange={importCsv}
+            style={{ display: "none" }}
+          />
         </label>
-        {imp && <span className="muted" style={{ fontSize: 13 }}>Importados: {imp.imported} · pulados: {imp.skipped}</span>}
+        {imp && (
+          <span className="muted" style={{ fontSize: 13 }}>
+            Importados: {imp.imported} · pulados: {imp.skipped}
+          </span>
+        )}
       </div>
 
-      <form onSubmit={create} className="card" style={{ padding: 14, marginBottom: 16, flexDirection: "row", display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
-        <input value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} placeholder="Nome"
-          style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", flex: "1 1 160px" }} />
-        <input value={f.phone} onChange={(e) => setF({ ...f, phone: e.target.value })} placeholder="Telefone (DDD)"
-          style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", flex: "1 1 140px" }} />
-        <input value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} placeholder="E-mail (opcional)"
-          style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", flex: "1 1 180px" }} />
+      <form
+        onSubmit={create}
+        className="card"
+        style={{
+          padding: 14,
+          marginBottom: 16,
+          flexDirection: "row",
+          display: "flex",
+          gap: 8,
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}
+      >
+        <input
+          value={f.name}
+          onChange={(e) => setF({ ...f, name: e.target.value })}
+          placeholder="Nome"
+          style={{
+            padding: "8px 10px",
+            borderRadius: 8,
+            border: "1px solid #d0d5dd",
+            flex: "1 1 160px",
+          }}
+        />
+        <input
+          value={f.phone}
+          onChange={(e) => setF({ ...f, phone: e.target.value })}
+          placeholder="Telefone (DDD)"
+          style={{
+            padding: "8px 10px",
+            borderRadius: 8,
+            border: "1px solid #d0d5dd",
+            flex: "1 1 140px",
+          }}
+        />
+        <input
+          value={f.email}
+          onChange={(e) => setF({ ...f, email: e.target.value })}
+          placeholder="E-mail (opcional)"
+          style={{
+            padding: "8px 10px",
+            borderRadius: 8,
+            border: "1px solid #d0d5dd",
+            flex: "1 1 180px",
+          }}
+        />
         <button>➕ Adicionar</button>
       </form>
 
       {list === null && <p className="muted">Carregando…</p>}
       {list && list.length === 0 && <p className="muted">Nenhum contato.</p>}
       <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-        {list && list.map((c) => (
-          <div key={c.id} className="card" style={{ padding: 12, flexDirection: "row", display: "flex", alignItems: "center", gap: 12 }}>
-            <div style={{ flex: 1 }}>
-              <div style={{ fontWeight: 600 }}>{c.name}</div>
-              <div className="muted" style={{ fontSize: 13 }}>{c.phone ? `📱 ${c.phone}` : ""} {c.email ? `· ✉️ ${c.email}` : ""}</div>
+        {list &&
+          list.map((c) => (
+            <div
+              key={c.id}
+              className="card"
+              style={{
+                padding: 12,
+                flexDirection: "row",
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+              }}
+            >
+              <div style={{ flex: 1 }}>
+                <div style={{ fontWeight: 600 }}>{c.name}</div>
+                <div className="muted" style={{ fontSize: 13 }}>
+                  {c.phone ? `📱 ${c.phone}` : ""} {c.email ? `· ✉️ ${c.email}` : ""}
+                </div>
+              </div>
+              {c.phone && (
+                <a
+                  href={`https://wa.me/${c.phone.replace(/\D/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    background: "#22c55e",
+                    color: "#fff",
+                    padding: "4px 10px",
+                    borderRadius: 999,
+                    fontSize: 12,
+                    fontWeight: 600,
+                    textDecoration: "none",
+                  }}
+                >
+                  WhatsApp
+                </a>
+              )}
+              <button className="link" style={{ color: "#dc2626" }} onClick={() => del(c.id)}>
+                Remover
+              </button>
             </div>
-            {c.phone && <a href={`https://wa.me/${c.phone.replace(/\D/g, "")}`} target="_blank" rel="noopener noreferrer"
-              style={{ background: "#22c55e", color: "#fff", padding: "4px 10px", borderRadius: 999, fontSize: 12, fontWeight: 600, textDecoration: "none" }}>WhatsApp</a>}
-            <button className="link" style={{ color: "#dc2626" }} onClick={() => del(c.id)}>Remover</button>
-          </div>
-        ))}
+          ))}
       </div>
     </>
   );
@@ -1577,29 +3090,104 @@ function Contacts() {
 function Users() {
   const [list, setList] = useState(null);
   const [f, setF] = useState({ name: "", email: "", password: "", role: "agent" });
-  const load = () => api.users().then((r) => setList(r.data || r || [])).catch(() => setList([]));
-  useEffect(() => { load(); }, []);
+  const load = () =>
+    api
+      .users()
+      .then((r) => setList(r.data || r || []))
+      .catch(() => setList([]));
+  useEffect(() => {
+    load();
+  }, []);
   const create = async (e) => {
     e.preventDefault();
-    if (!f.name.trim() || !f.email.trim() || !f.password) return alert("Preencha nome, e-mail e senha.");
-    try { await api.userCreate({ name: f.name.trim(), email: f.email.trim(), password: f.password, role: f.role }); setF({ name: "", email: "", password: "", role: "agent" }); load(); }
-    catch (e) { alert(e.message); }
+    if (!f.name.trim() || !f.email.trim() || !f.password)
+      return alert("Preencha nome, e-mail e senha.");
+    try {
+      await api.userCreate({
+        name: f.name.trim(),
+        email: f.email.trim(),
+        password: f.password,
+        role: f.role,
+      });
+      setF({ name: "", email: "", password: "", role: "agent" });
+      load();
+    } catch (e) {
+      alert(e.message);
+    }
   };
-  const setRole = async (u, role) => { await api.userUpdate(u.id, { role }); load(); };
-  const del = async (u) => { if (confirm(`Remover o usuário ${u.name}?`)) { try { await api.userDelete(u.id); load(); } catch (e) { alert(e.message); } } };
+  const setRole = async (u, role) => {
+    await api.userUpdate(u.id, { role });
+    load();
+  };
+  const del = async (u) => {
+    if (confirm(`Remover o usuário ${u.name}?`)) {
+      try {
+        await api.userDelete(u.id);
+        load();
+      } catch (e) {
+        alert(e.message);
+      }
+    }
+  };
   return (
     <>
       <h2>Usuários</h2>
-      <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 680 }}>Atendentes e administradores da empresa.</p>
-      <form onSubmit={create} className="card" style={{ padding: 14, marginBottom: 16, flexDirection: "row", display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
-        <input value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} placeholder="Nome"
-          style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", flex: "1 1 140px" }} />
-        <input value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} placeholder="E-mail" type="email"
-          style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", flex: "1 1 160px" }} />
-        <input value={f.password} onChange={(e) => setF({ ...f, password: e.target.value })} placeholder="Senha" type="password"
-          style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd", flex: "1 1 120px" }} />
-        <select value={f.role} onChange={(e) => setF({ ...f, role: e.target.value })}
-          style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }}>
+      <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 680 }}>
+        Atendentes e administradores da empresa.
+      </p>
+      <form
+        onSubmit={create}
+        className="card"
+        style={{
+          padding: 14,
+          marginBottom: 16,
+          flexDirection: "row",
+          display: "flex",
+          gap: 8,
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}
+      >
+        <input
+          value={f.name}
+          onChange={(e) => setF({ ...f, name: e.target.value })}
+          placeholder="Nome"
+          style={{
+            padding: "8px 10px",
+            borderRadius: 8,
+            border: "1px solid #d0d5dd",
+            flex: "1 1 140px",
+          }}
+        />
+        <input
+          value={f.email}
+          onChange={(e) => setF({ ...f, email: e.target.value })}
+          placeholder="E-mail"
+          type="email"
+          style={{
+            padding: "8px 10px",
+            borderRadius: 8,
+            border: "1px solid #d0d5dd",
+            flex: "1 1 160px",
+          }}
+        />
+        <input
+          value={f.password}
+          onChange={(e) => setF({ ...f, password: e.target.value })}
+          placeholder="Senha"
+          type="password"
+          style={{
+            padding: "8px 10px",
+            borderRadius: 8,
+            border: "1px solid #d0d5dd",
+            flex: "1 1 120px",
+          }}
+        />
+        <select
+          value={f.role}
+          onChange={(e) => setF({ ...f, role: e.target.value })}
+          style={{ padding: "8px 10px", borderRadius: 8, border: "1px solid #d0d5dd" }}
+        >
           <option value="agent">Atendente</option>
           <option value="admin">Administrador</option>
         </select>
@@ -1607,20 +3195,43 @@ function Users() {
       </form>
       {list === null && <p className="muted">Carregando…</p>}
       <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-        {list && list.map((u) => (
-          <div key={u.id} className="card" style={{ padding: 12, flexDirection: "row", display: "flex", alignItems: "center", gap: 12 }}>
-            <div style={{ flex: 1 }}>
-              <div style={{ fontWeight: 600 }}>{u.name}</div>
-              <div className="muted" style={{ fontSize: 13 }}>{u.email}</div>
+        {list &&
+          list.map((u) => (
+            <div
+              key={u.id}
+              className="card"
+              style={{
+                padding: 12,
+                flexDirection: "row",
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+              }}
+            >
+              <div style={{ flex: 1 }}>
+                <div style={{ fontWeight: 600 }}>{u.name}</div>
+                <div className="muted" style={{ fontSize: 13 }}>
+                  {u.email}
+                </div>
+              </div>
+              <select
+                value={u.role}
+                onChange={(e) => setRole(u, e.target.value)}
+                style={{
+                  padding: "5px 8px",
+                  borderRadius: 8,
+                  border: "1px solid #d0d5dd",
+                  fontSize: 13,
+                }}
+              >
+                <option value="agent">Atendente</option>
+                <option value="admin">Administrador</option>
+              </select>
+              <button className="link" style={{ color: "#dc2626" }} onClick={() => del(u)}>
+                Remover
+              </button>
             </div>
-            <select value={u.role} onChange={(e) => setRole(u, e.target.value)}
-              style={{ padding: "5px 8px", borderRadius: 8, border: "1px solid #d0d5dd", fontSize: 13 }}>
-              <option value="agent">Atendente</option>
-              <option value="admin">Administrador</option>
-            </select>
-            <button className="link" style={{ color: "#dc2626" }} onClick={() => del(u)}>Remover</button>
-          </div>
-        ))}
+          ))}
       </div>
     </>
   );
@@ -1645,7 +3256,8 @@ function CampaignForm({ audience, onCreate }) {
   const [err, setErr] = useState("");
 
   const tags = Object.entries(audience?.tags || {});
-  const total = aud === "all" ? (audience?.totalWithPhone || 0) : aud === "tag" ? (audience?.tags?.[tag] || 0) : 0;
+  const total =
+    aud === "all" ? audience?.totalWithPhone || 0 : aud === "tag" ? audience?.tags?.[tag] || 0 : 0;
 
   const submit = async (e) => {
     e.preventDefault();
@@ -1662,49 +3274,95 @@ function CampaignForm({ audience, onCreate }) {
     setBusy(true);
     try {
       await onCreate(body, when === "now");
-      setName(""); setMessage(""); setScheduledAt("");
-    } catch (e) { setErr(e.message); } finally { setBusy(false); }
+      setName("");
+      setMessage("");
+      setScheduledAt("");
+    } catch (e) {
+      setErr(e.message);
+    } finally {
+      setBusy(false);
+    }
   };
 
-  const inp = { width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid var(--border)", background: "var(--panel2)", color: "var(--text)" };
+  const inp = {
+    width: "100%",
+    padding: "8px 10px",
+    borderRadius: 8,
+    border: "1px solid var(--border)",
+    background: "var(--panel2)",
+    color: "var(--text)",
+  };
   return (
     <form className="card" style={{ maxWidth: 520, padding: 20 }} onSubmit={submit}>
       <div style={{ fontWeight: 700, marginBottom: 12 }}>Nova campanha</div>
-      <div className="field"><label>Nome</label>
-        <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Promoção de julho" /></div>
-      <div className="field"><label>Mensagem</label>
-        <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows={4}
-          placeholder={"Olá {nome}! Temos uma oferta especial pra você…"}
-          style={{ ...inp, resize: "vertical" }} />
-        <p className="muted" style={{ fontSize: 12, marginTop: 4 }}>Use <b>{"{nome}"}</b> para personalizar com o nome do contato.</p>
+      <div className="field">
+        <label>Nome</label>
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Promoção de julho"
+        />
       </div>
-      <div className="field"><label>Público</label>
+      <div className="field">
+        <label>Mensagem</label>
+        <textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          rows={4}
+          placeholder={"Olá {nome}! Temos uma oferta especial pra você…"}
+          style={{ ...inp, resize: "vertical" }}
+        />
+        <p className="muted" style={{ fontSize: 12, marginTop: 4 }}>
+          Use <b>{"{nome}"}</b> para personalizar com o nome do contato.
+        </p>
+      </div>
+      <div className="field">
+        <label>Público</label>
         <select value={aud} onChange={(e) => setAud(e.target.value)} style={inp}>
-          <option value="all">Todos os contatos com telefone ({audience?.totalWithPhone || 0})</option>
+          <option value="all">
+            Todos os contatos com telefone ({audience?.totalWithPhone || 0})
+          </option>
           <option value="tag">Por tag</option>
         </select>
       </div>
       {aud === "tag" && (
-        <div className="field"><label>Tag</label>
+        <div className="field">
+          <label>Tag</label>
           <select value={tag} onChange={(e) => setTag(e.target.value)} style={inp}>
             <option value="">Escolha…</option>
-            {tags.map(([t, n]) => <option key={t} value={t}>{t} ({n})</option>)}
+            {tags.map(([t, n]) => (
+              <option key={t} value={t}>
+                {t} ({n})
+              </option>
+            ))}
           </select>
         </div>
       )}
-      <div className="field"><label>Quando</label>
+      <div className="field">
+        <label>Quando</label>
         <select value={when} onChange={(e) => setWhen(e.target.value)} style={inp}>
           <option value="now">Salvar como rascunho (envio pelo botão)</option>
           <option value="schedule">Agendar data/hora</option>
         </select>
       </div>
       {when === "schedule" && (
-        <div className="field"><label>Data e hora</label>
-          <input type="datetime-local" value={scheduledAt} onChange={(e) => setScheduledAt(e.target.value)} style={inp} /></div>
+        <div className="field">
+          <label>Data e hora</label>
+          <input
+            type="datetime-local"
+            value={scheduledAt}
+            onChange={(e) => setScheduledAt(e.target.value)}
+            style={inp}
+          />
+        </div>
       )}
-      <p className="muted" style={{ fontSize: 12 }}>Destinatários estimados: <b>{total}</b> contato(s).</p>
+      <p className="muted" style={{ fontSize: 12 }}>
+        Destinatários estimados: <b>{total}</b> contato(s).
+      </p>
       {err && <div className="err">{err}</div>}
-      <button disabled={busy} style={{ marginTop: 8 }}>{busy ? "Salvando…" : "➕ Criar campanha"}</button>
+      <button disabled={busy} style={{ marginTop: 8 }}>
+        {busy ? "Salvando…" : "➕ Criar campanha"}
+      </button>
     </form>
   );
 }
@@ -1712,70 +3370,128 @@ function CampaignForm({ audience, onCreate }) {
 function Campaigns() {
   const [list, setList] = useState(null);
   const [audience, setAudience] = useState(null);
-  const load = () => api.campaigns().then((r) => { setList(r.data || []); setAudience(r.audience || null); }).catch(() => setList([]));
+  const load = () =>
+    api
+      .campaigns()
+      .then((r) => {
+        setList(r.data || []);
+        setAudience(r.audience || null);
+      })
+      .catch(() => setList([]));
   useEffect(() => {
     load();
     const t = setInterval(load, 4000); // acompanha o progresso em tempo quase real
     return () => clearInterval(t);
   }, []);
 
-  const create = async (body) => { await api.campaignCreate(body); await load(); };
-  const send = async (c) => { if (confirm(`Disparar a campanha "${c.name}" para ${c.total} contato(s) agora?`)) { await api.campaignSend(c.id); await load(); } };
-  const cancel = async (c) => { if (confirm(`Cancelar a campanha "${c.name}"?`)) { await api.campaignCancel(c.id); await load(); } };
-  const remove = async (c) => { if (confirm(`Remover a campanha "${c.name}"?`)) { await api.campaignDelete(c.id); await load(); } };
+  const create = async (body) => {
+    await api.campaignCreate(body);
+    await load();
+  };
+  const send = async (c) => {
+    if (confirm(`Disparar a campanha "${c.name}" para ${c.total} contato(s) agora?`)) {
+      await api.campaignSend(c.id);
+      await load();
+    }
+  };
+  const cancel = async (c) => {
+    if (confirm(`Cancelar a campanha "${c.name}"?`)) {
+      await api.campaignCancel(c.id);
+      await load();
+    }
+  };
+  const remove = async (c) => {
+    if (confirm(`Remover a campanha "${c.name}"?`)) {
+      await api.campaignDelete(c.id);
+      await load();
+    }
+  };
 
-  const fmt = (d) => d ? new Date(d).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" }) : "";
+  const fmt = (d) =>
+    d ? new Date(d).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" }) : "";
 
   return (
     <>
       <h2>Campanhas</h2>
       <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 640 }}>
-        Dispare uma mensagem para uma lista de contatos — na hora ou agendada. A entrega usa o WhatsApp
-        conectado; cada envio também fica registrado na conversa do contato. Sincronize a agenda em <b>Conexões</b> para
-        ter mais contatos.
+        Dispare uma mensagem para uma lista de contatos — na hora ou agendada. A entrega usa o
+        WhatsApp conectado; cada envio também fica registrado na conversa do contato. Sincronize a
+        agenda em <b>Conexões</b> para ter mais contatos.
       </p>
       <div style={{ display: "flex", gap: 24, flexWrap: "wrap", alignItems: "flex-start" }}>
         <CampaignForm audience={audience} onCreate={create} />
         <div style={{ flex: 1, minWidth: 320 }}>
           <div style={{ fontWeight: 700, marginBottom: 12 }}>Suas campanhas</div>
           {list === null && <p className="muted">Carregando…</p>}
-          {list && list.length === 0 && <p className="muted">Nenhuma campanha ainda. Crie a primeira ao lado.</p>}
-          {list && list.map((c) => {
-            const st = CAMPAIGN_STATUS[c.status] || CAMPAIGN_STATUS.draft;
-            const pct = c.total ? Math.round(((c.sent + c.failed) / c.total) * 100) : 0;
-            return (
-              <div key={c.id} className="card" style={{ padding: 14, marginBottom: 10 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <div style={{ flex: 1, fontWeight: 600 }}>{c.name}</div>
-                  <span className="tag" style={{ background: st.bg, color: st.color }}>{st.label}</span>
-                </div>
-                <div className="muted" style={{ fontSize: 13, margin: "6px 0", whiteSpace: "pre-wrap" }}>{String(c.message).slice(0, 140)}</div>
-                <div style={{ display: "flex", gap: 14, fontSize: 12 }} className="muted">
-                  <span>👥 {c.total}</span>
-                  <span style={{ color: "#16a34a" }}>✓ {c.sent}</span>
-                  {c.failed > 0 && <span style={{ color: "#dc2626" }}>✗ {c.failed}</span>}
-                  {c.filterTag && <span>🏷️ {c.filterTag}</span>}
-                  {c.scheduledAt && <span>🕐 {fmt(c.scheduledAt)}</span>}
-                </div>
-                {(c.status === "running" || c.status === "done") && (
-                  <div style={{ height: 6, background: "var(--panel2)", borderRadius: 6, marginTop: 8, overflow: "hidden" }}>
-                    <div style={{ width: `${pct}%`, height: "100%", background: c.status === "done" ? "#16a34a" : "var(--accent)" }} />
+          {list && list.length === 0 && (
+            <p className="muted">Nenhuma campanha ainda. Crie a primeira ao lado.</p>
+          )}
+          {list &&
+            list.map((c) => {
+              const st = CAMPAIGN_STATUS[c.status] || CAMPAIGN_STATUS.draft;
+              const pct = c.total ? Math.round(((c.sent + c.failed) / c.total) * 100) : 0;
+              return (
+                <div key={c.id} className="card" style={{ padding: 14, marginBottom: 10 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <div style={{ flex: 1, fontWeight: 600 }}>{c.name}</div>
+                    <span className="tag" style={{ background: st.bg, color: st.color }}>
+                      {st.label}
+                    </span>
                   </div>
-                )}
-                <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
-                  {(c.status === "draft" || c.status === "scheduled") && (
-                    <button onClick={() => send(c)}>🚀 Enviar agora</button>
+                  <div
+                    className="muted"
+                    style={{ fontSize: 13, margin: "6px 0", whiteSpace: "pre-wrap" }}
+                  >
+                    {String(c.message).slice(0, 140)}
+                  </div>
+                  <div style={{ display: "flex", gap: 14, fontSize: 12 }} className="muted">
+                    <span>👥 {c.total}</span>
+                    <span style={{ color: "#16a34a" }}>✓ {c.sent}</span>
+                    {c.failed > 0 && <span style={{ color: "#dc2626" }}>✗ {c.failed}</span>}
+                    {c.filterTag && <span>🏷️ {c.filterTag}</span>}
+                    {c.scheduledAt && <span>🕐 {fmt(c.scheduledAt)}</span>}
+                  </div>
+                  {(c.status === "running" || c.status === "done") && (
+                    <div
+                      style={{
+                        height: 6,
+                        background: "var(--panel2)",
+                        borderRadius: 6,
+                        marginTop: 8,
+                        overflow: "hidden",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: `${pct}%`,
+                          height: "100%",
+                          background: c.status === "done" ? "#16a34a" : "var(--accent)",
+                        }}
+                      />
+                    </div>
                   )}
-                  {(c.status === "scheduled" || c.status === "running") && (
-                    <button className="ghost" onClick={() => cancel(c)}>Cancelar</button>
-                  )}
-                  {c.status !== "running" && (
-                    <button className="link" style={{ color: "#dc2626" }} onClick={() => remove(c)}>Remover</button>
-                  )}
+                  <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
+                    {(c.status === "draft" || c.status === "scheduled") && (
+                      <button onClick={() => send(c)}>🚀 Enviar agora</button>
+                    )}
+                    {(c.status === "scheduled" || c.status === "running") && (
+                      <button className="ghost" onClick={() => cancel(c)}>
+                        Cancelar
+                      </button>
+                    )}
+                    {c.status !== "running" && (
+                      <button
+                        className="link"
+                        style={{ color: "#dc2626" }}
+                        onClick={() => remove(c)}
+                      >
+                        Remover
+                      </button>
+                    )}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
         </div>
       </div>
     </>
@@ -1791,7 +3507,10 @@ function TeamChat({ me }) {
   const boxRef = useRef(null);
   const myId = me?.principal?.userId;
 
-  const scrollDown = () => { const b = boxRef.current; if (b) b.scrollTop = b.scrollHeight; };
+  const scrollDown = () => {
+    const b = boxRef.current;
+    if (b) b.scrollTop = b.scrollHeight;
+  };
 
   useEffect(() => {
     let alive = true;
@@ -1806,11 +3525,16 @@ function TeamChat({ me }) {
           const fresh = r.data.filter((m) => !seen.has(m.id));
           return fresh.length ? [...cur, ...fresh] : cur;
         });
-      } catch { /* silencioso */ }
+      } catch {
+        /* silencioso */
+      }
     };
     load(false).then(() => setTimeout(scrollDown, 50));
     const t = setInterval(() => load(true).then(scrollDown), 3000);
-    return () => { alive = false; clearInterval(t); };
+    return () => {
+      alive = false;
+      clearInterval(t);
+    };
   }, []);
 
   const send = async () => {
@@ -1823,28 +3547,47 @@ function TeamChat({ me }) {
       setMsgs((cur) => (cur.some((x) => x.id === m.id) ? cur : [...cur, m]));
       setText("");
       setTimeout(scrollDown, 50);
-    } catch (e) { alert(e.message); } finally { setBusy(false); }
+    } catch (e) {
+      alert(e.message);
+    } finally {
+      setBusy(false);
+    }
   };
 
-  const time = (d) => new Date(d).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+  const time = (d) =>
+    new Date(d).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
 
   return (
     <>
       <h2>Chat da equipe</h2>
       <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 620 }}>
-        Canal interno entre os atendentes desta empresa. As mensagens aqui <b>não vão para o cliente</b> —
-        é só para a equipe se coordenar.
+        Canal interno entre os atendentes desta empresa. As mensagens aqui{" "}
+        <b>não vão para o cliente</b> — é só para a equipe se coordenar.
       </p>
       <div className="thread" style={{ maxWidth: 720 }}>
         <div className="msgs" ref={boxRef}>
-          {msgs.length === 0 && <p className="muted" style={{ margin: "auto" }}>Nenhuma mensagem ainda. Diga um oi para a equipe 👋</p>}
+          {msgs.length === 0 && (
+            <p className="muted" style={{ margin: "auto" }}>
+              Nenhuma mensagem ainda. Diga um oi para a equipe 👋
+            </p>
+          )}
           {msgs.map((m) => {
             const mine = m.userId && m.userId === myId;
             return (
-              <div key={m.id} className={`bubble ${mine ? "out" : "in"}`} style={{ maxWidth: "78%" }}>
-                {!mine && <div style={{ fontSize: 11, fontWeight: 700, marginBottom: 2, opacity: 0.85 }}>{m.userName || "Atendente"}</div>}
+              <div
+                key={m.id}
+                className={`bubble ${mine ? "out" : "in"}`}
+                style={{ maxWidth: "78%" }}
+              >
+                {!mine && (
+                  <div style={{ fontSize: 11, fontWeight: 700, marginBottom: 2, opacity: 0.85 }}>
+                    {m.userName || "Atendente"}
+                  </div>
+                )}
                 <div style={{ whiteSpace: "pre-wrap" }}>{m.body}</div>
-                <div style={{ fontSize: 10, opacity: 0.6, textAlign: "right", marginTop: 2 }}>{time(m.createdAt)}</div>
+                <div style={{ fontSize: 10, opacity: 0.6, textAlign: "right", marginTop: 2 }}>
+                  {time(m.createdAt)}
+                </div>
               </div>
             );
           })}
@@ -1853,10 +3596,17 @@ function TeamChat({ me }) {
           <input
             value={text}
             onChange={(e) => setText(e.target.value)}
-            onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                send();
+              }
+            }}
             placeholder="Escreva para a equipe…"
           />
-          <button disabled={busy || !text.trim()} onClick={send}>Enviar</button>
+          <button disabled={busy || !text.trim()} onClick={send}>
+            Enviar
+          </button>
         </div>
       </div>
     </>
@@ -1870,33 +3620,71 @@ function Settings() {
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState("");
   useEffect(() => {
-    api.settings().then((r) => { setKb((r.settings?.widgetKnowledge) || ""); setLoaded(true); }).catch(() => setLoaded(true));
+    api
+      .settings()
+      .then((r) => {
+        setKb(r.settings?.widgetKnowledge || "");
+        setLoaded(true);
+      })
+      .catch(() => setLoaded(true));
   }, []);
   const save = async () => {
-    setBusy(true); setMsg("");
-    try { await api.settingsUpdate({ widgetKnowledge: kb }); setMsg("Configurações salvas ✓"); }
-    catch (e) { setMsg(e.message); } finally { setBusy(false); }
+    setBusy(true);
+    setMsg("");
+    try {
+      await api.settingsUpdate({ widgetKnowledge: kb });
+      setMsg("Configurações salvas ✓");
+    } catch (e) {
+      setMsg(e.message);
+    } finally {
+      setBusy(false);
+    }
   };
   return (
     <>
       <h2>Configurações</h2>
       <p className="muted" style={{ marginTop: -8, marginBottom: 16, maxWidth: 640 }}>
-        Ajustes gerais da empresa. O horário de atendimento por departamento fica na aba <b>Filas</b>.
+        Ajustes gerais da empresa. O horário de atendimento por departamento fica na aba{" "}
+        <b>Filas</b>.
       </p>
       <div className="card" style={{ padding: 20, maxWidth: 640, alignItems: "stretch" }}>
-        <div style={{ fontWeight: 700, marginBottom: 6 }}>🌐 Base de conhecimento do chat do site</div>
+        <div style={{ fontWeight: 700, marginBottom: 6 }}>
+          🌐 Base de conhecimento do chat do site
+        </div>
         <p className="muted" style={{ fontSize: 13, marginTop: 0 }}>
-          O assistente de IA do widget do site responde os visitantes usando este texto (planos, horários,
-          políticas, endereço…). Se ficar vazio, usa a base padrão do Comenta.
+          O assistente de IA do widget do site responde os visitantes usando este texto (planos,
+          horários, políticas, endereço…). Se ficar vazio, usa a base padrão do Comenta.
         </p>
-        {!loaded ? <p className="muted">Carregando…</p> : (
+        {!loaded ? (
+          <p className="muted">Carregando…</p>
+        ) : (
           <>
-            <textarea rows={10} value={kb} onChange={(e) => setKb(e.target.value)}
-              placeholder={"Ex.: Somos a Loja X.\nHorário: seg–sex 9h–18h.\nPlanos/preços: ...\nPolítica de troca: ...\nEndereço: ..."}
-              style={{ width: "100%", padding: "10px 12px", borderRadius: 8, border: "1px solid var(--border)", background: "var(--panel2)", color: "var(--text)", resize: "vertical" }} />
+            <textarea
+              rows={10}
+              value={kb}
+              onChange={(e) => setKb(e.target.value)}
+              placeholder={
+                "Ex.: Somos a Loja X.\nHorário: seg–sex 9h–18h.\nPlanos/preços: ...\nPolítica de troca: ...\nEndereço: ..."
+              }
+              style={{
+                width: "100%",
+                padding: "10px 12px",
+                borderRadius: 8,
+                border: "1px solid var(--border)",
+                background: "var(--panel2)",
+                color: "var(--text)",
+                resize: "vertical",
+              }}
+            />
             <div style={{ display: "flex", gap: 12, alignItems: "center", marginTop: 10 }}>
-              <button disabled={busy} onClick={save}>{busy ? "Salvando…" : "Salvar"}</button>
-              {msg && <span className="muted" style={{ fontSize: 13 }}>{msg}</span>}
+              <button disabled={busy} onClick={save}>
+                {busy ? "Salvando…" : "Salvar"}
+              </button>
+              {msg && (
+                <span className="muted" style={{ fontSize: 13 }}>
+                  {msg}
+                </span>
+              )}
             </div>
           </>
         )}
@@ -1916,39 +3704,132 @@ export function App() {
     localStorage.setItem("comenta_theme", theme);
   }, [theme]);
 
-  useEffect(() => { if (logged) api.me().then(setMe).catch(() => { api.logout(); setLogged(false); }); }, [logged]);
+  useEffect(() => {
+    if (logged)
+      api
+        .me()
+        .then(setMe)
+        .catch(() => {
+          api.logout();
+          setLogged(false);
+        });
+  }, [logged]);
 
   if (!logged) return <Login onLogin={() => setLogged(true)} />;
   if (me && me.mustChangePassword)
-    return <ForcePasswordChange onDone={() => api.me().then(setMe)} onLogout={() => { api.logout(); setLogged(false); }} />;
+    return (
+      <ForcePasswordChange
+        onDone={() => api.me().then(setMe)}
+        onLogout={() => {
+          api.logout();
+          setLogged(false);
+        }}
+      />
+    );
 
   return (
     <div className="app">
       <aside className="side">
         <Logo />
         <nav className="nav">
-          <button className={tab === "dashboard" ? "active" : ""} onClick={() => setTab("dashboard")}>📊 Dashboard</button>
-          <button className={tab === "conversas" ? "active" : ""} onClick={() => setTab("conversas")}>💬 Conversas</button>
-          <button className={tab === "kanban" ? "active" : ""} onClick={() => setTab("kanban")}>📋 Kanban</button>
-          <button className={tab === "equipe" ? "active" : ""} onClick={() => setTab("equipe")}>💬 Equipe</button>
-          <button className={tab === "contatos" ? "active" : ""} onClick={() => setTab("contatos")}>👥 Contatos</button>
-          {me?.principal?.role === "admin" && <button className={tab === "usuarios" ? "active" : ""} onClick={() => setTab("usuarios")}>🧑‍💼 Usuários</button>}
-          {me?.principal?.role === "admin" && <button className={tab === "filas" ? "active" : ""} onClick={() => setTab("filas")}>🗂️ Filas</button>}
-          <button className={tab === "respostas" ? "active" : ""} onClick={() => setTab("respostas")}>⚡ Respostas</button>
-          {me?.principal?.role === "admin" && <button className={tab === "tags" ? "active" : ""} onClick={() => setTab("tags")}>🏷️ Tags</button>}
-          {me?.principal?.role === "admin" && <button className={tab === "config" ? "active" : ""} onClick={() => setTab("config")}>⚙️ Configurações</button>}
-          <button className={tab === "automacoes" ? "active" : ""} onClick={() => setTab("automacoes")}>🤖 Automações</button>
-          {me?.principal?.role === "admin" && <button className={tab === "campanhas" ? "active" : ""} onClick={() => setTab("campanhas")}>📣 Campanhas</button>}
-          <button className={tab === "ferramentas" ? "active" : ""} onClick={() => setTab("ferramentas")}>🧩 Ferramentas</button>
-          <button className={tab === "cursos" ? "active" : ""} onClick={() => setTab("cursos")}>🎓 Academia</button>
-          <button className={tab === "conexoes" ? "active" : ""} onClick={() => setTab("conexoes")}>📲 Conexões</button>
+          <button
+            className={tab === "dashboard" ? "active" : ""}
+            onClick={() => setTab("dashboard")}
+          >
+            📊 Dashboard
+          </button>
+          <button
+            className={tab === "conversas" ? "active" : ""}
+            onClick={() => setTab("conversas")}
+          >
+            💬 Conversas
+          </button>
+          <button className={tab === "kanban" ? "active" : ""} onClick={() => setTab("kanban")}>
+            📋 Kanban
+          </button>
+          <button className={tab === "equipe" ? "active" : ""} onClick={() => setTab("equipe")}>
+            💬 Equipe
+          </button>
+          <button className={tab === "contatos" ? "active" : ""} onClick={() => setTab("contatos")}>
+            👥 Contatos
+          </button>
+          {me?.principal?.role === "admin" && (
+            <button
+              className={tab === "usuarios" ? "active" : ""}
+              onClick={() => setTab("usuarios")}
+            >
+              🧑‍💼 Usuários
+            </button>
+          )}
+          {me?.principal?.role === "admin" && (
+            <button className={tab === "filas" ? "active" : ""} onClick={() => setTab("filas")}>
+              🗂️ Filas
+            </button>
+          )}
+          <button
+            className={tab === "respostas" ? "active" : ""}
+            onClick={() => setTab("respostas")}
+          >
+            ⚡ Respostas
+          </button>
+          {me?.principal?.role === "admin" && (
+            <button className={tab === "tags" ? "active" : ""} onClick={() => setTab("tags")}>
+              🏷️ Tags
+            </button>
+          )}
+          {me?.principal?.role === "admin" && (
+            <button className={tab === "config" ? "active" : ""} onClick={() => setTab("config")}>
+              ⚙️ Configurações
+            </button>
+          )}
+          <button
+            className={tab === "automacoes" ? "active" : ""}
+            onClick={() => setTab("automacoes")}
+          >
+            🤖 Automações
+          </button>
+          {me?.principal?.role === "admin" && (
+            <button
+              className={tab === "campanhas" ? "active" : ""}
+              onClick={() => setTab("campanhas")}
+            >
+              📣 Campanhas
+            </button>
+          )}
+          <button
+            className={tab === "ferramentas" ? "active" : ""}
+            onClick={() => setTab("ferramentas")}
+          >
+            🧩 Ferramentas
+          </button>
+          <button className={tab === "cursos" ? "active" : ""} onClick={() => setTab("cursos")}>
+            🎓 Academia
+          </button>
+          <button className={tab === "conexoes" ? "active" : ""} onClick={() => setTab("conexoes")}>
+            📲 Conexões
+          </button>
         </nav>
-        <div style={{ position: "absolute", bottom: 18, fontSize: 13, width: 192 }} className="muted">
-          <button className="themebtn" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+        <div
+          style={{ position: "absolute", bottom: 18, fontSize: 13, width: 192 }}
+          className="muted"
+        >
+          <button
+            className="themebtn"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          >
             {theme === "dark" ? "☀️ Modo claro" : "🌙 Modo escuro"}
           </button>
-          {me?.company?.name}<br />
-          <button className="link" onClick={() => { api.logout(); setLogged(false); }}>Sair</button>
+          {me?.company?.name}
+          <br />
+          <button
+            className="link"
+            onClick={() => {
+              api.logout();
+              setLogged(false);
+            }}
+          >
+            Sair
+          </button>
         </div>
       </aside>
       <main className="main">

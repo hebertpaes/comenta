@@ -26,7 +26,10 @@ export async function courseRoutes(app: FastifyInstance) {
       .orderBy(asc(schema.courses.position), asc(schema.courses.createdAt));
     const withCounts = await Promise.all(
       rows.map(async (c) => {
-        const ls = await db.select({ id: schema.lessons.id }).from(schema.lessons).where(eq(schema.lessons.courseId, c.id));
+        const ls = await db
+          .select({ id: schema.lessons.id })
+          .from(schema.lessons)
+          .where(eq(schema.lessons.courseId, c.id));
         return { ...c, lessonCount: ls.length };
       })
     );
@@ -123,7 +126,10 @@ export async function courseRoutes(app: FastifyInstance) {
       }),
       req.body
     );
-    const [row] = await db.insert(schema.lessons).values({ courseId: id, ...body }).returning();
+    const [row] = await db
+      .insert(schema.lessons)
+      .values({ courseId: id, ...body })
+      .returning();
     return reply.code(201).send(row);
   });
 
@@ -143,7 +149,11 @@ export async function courseRoutes(app: FastifyInstance) {
     const [lesson] = await db.select().from(schema.lessons).where(eq(schema.lessons.id, id));
     if (!lesson) throw new ApiError(404, "Aula não encontrada");
     await ownCourse(req.principal.companyId, lesson.courseId);
-    const [row] = await db.update(schema.lessons).set(body).where(eq(schema.lessons.id, id)).returning();
+    const [row] = await db
+      .update(schema.lessons)
+      .set(body)
+      .where(eq(schema.lessons.id, id))
+      .returning();
     return row;
   });
 

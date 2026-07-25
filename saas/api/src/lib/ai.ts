@@ -75,7 +75,9 @@ export async function classifyConversation(messages: AiMessage[]): Promise<Class
       "Responda somente com o JSON solicitado, em português, sem texto adicional.",
     // structured outputs garantem JSON válido nos modelos que suportam;
     // o prompt também pede JSON puro para robustez entre versões de SDK/API.
-    ...({ output_config: { format: { type: "json_schema", schema: CLASSIFICATION_SCHEMA } } } as object),
+    ...({
+      output_config: { format: { type: "json_schema", schema: CLASSIFICATION_SCHEMA } },
+    } as object),
     messages: [{ role: "user", content: `Classifique esta conversa:\n\n${transcript(messages)}` }],
   });
   return JSON.parse(extractJson(firstText(res))) as Classification;
@@ -144,10 +146,14 @@ export type AutoReply = { reply: string; needsHuman: boolean };
 const AUTOREPLY_SCHEMA = {
   type: "object",
   properties: {
-    reply: { type: "string", description: "Mensagem para enviar ao cliente, em português do Brasil" },
+    reply: {
+      type: "string",
+      description: "Mensagem para enviar ao cliente, em português do Brasil",
+    },
     needsHuman: {
       type: "boolean",
-      description: "true se o caso precisa de um atendente humano (pedido explícito, negociação, dado sensível, ou fora do escopo da base de conhecimento)",
+      description:
+        "true se o caso precisa de um atendente humano (pedido explícito, negociação, dado sensível, ou fora do escopo da base de conhecimento)",
     },
   },
   required: ["reply", "needsHuman"],
@@ -160,7 +166,9 @@ export async function aiAutoReply(
 ): Promise<AutoReply> {
   const company = opts.companyName ?? "a empresa";
   const tone = opts.tone ?? "cordial, objetivo e prestativo";
-  const kb = opts.knowledge ? `\n\n# Base de conhecimento da empresa (use como verdade)\n${opts.knowledge}` : "";
+  const kb = opts.knowledge
+    ? `\n\n# Base de conhecimento da empresa (use como verdade)\n${opts.knowledge}`
+    : "";
   const res = await client.messages.create({
     model: MODEL_AUTOREPLY,
     max_tokens: 700,

@@ -48,7 +48,9 @@ export async function webhookRoutes(app: FastifyInstance) {
     const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
     const [row] = await db
       .delete(schema.webhooks)
-      .where(and(eq(schema.webhooks.id, id), eq(schema.webhooks.companyId, req.principal.companyId)))
+      .where(
+        and(eq(schema.webhooks.id, id), eq(schema.webhooks.companyId, req.principal.companyId))
+      )
       .returning();
     if (!row) throw new ApiError(404, "Webhook não encontrado");
     audit(req.principal, "webhook.deleted", "webhook", id);
@@ -60,7 +62,9 @@ export async function webhookRoutes(app: FastifyInstance) {
     const [hook] = await db
       .select()
       .from(schema.webhooks)
-      .where(and(eq(schema.webhooks.id, id), eq(schema.webhooks.companyId, req.principal.companyId)));
+      .where(
+        and(eq(schema.webhooks.id, id), eq(schema.webhooks.companyId, req.principal.companyId))
+      );
     if (!hook) throw new ApiError(404, "Webhook não encontrado");
     const rows = await db
       .select({

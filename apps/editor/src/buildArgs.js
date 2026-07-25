@@ -2,7 +2,7 @@
 // argumentos do FFmpeg. Fica isolada aqui para poder ser testada em Node.
 
 function fmt(seconds) {
-  return Number(seconds).toFixed(3)
+  return Number(seconds).toFixed(3);
 }
 
 /**
@@ -33,68 +33,72 @@ export function buildArgs(opts) {
     fadeOut,
     audioMode,
     videoHasAudio,
-  } = opts
+  } = opts;
 
-  const duration = Math.max(0, trimEnd - trimStart)
-  const args = []
+  const duration = Math.max(0, trimEnd - trimStart);
+  const args = [];
 
   // Corte do vídeo: -ss/-to antes do -i é mais rápido e preciso o suficiente.
-  if (trimStart > 0) args.push('-ss', fmt(trimStart))
-  if (trimEnd > 0) args.push('-to', fmt(trimEnd))
-  args.push('-i', videoName)
+  if (trimStart > 0) args.push("-ss", fmt(trimStart));
+  if (trimEnd > 0) args.push("-to", fmt(trimEnd));
+  args.push("-i", videoName);
 
   // Filtros de áudio aplicados à música importada.
   const buildAudioFilters = (label) => {
-    const chain = []
-    if (volume !== 1) chain.push(`volume=${volume}`)
-    if (fadeIn > 0) chain.push(`afade=t=in:st=0:d=${fmt(fadeIn)}`)
+    const chain = [];
+    if (volume !== 1) chain.push(`volume=${volume}`);
+    if (fadeIn > 0) chain.push(`afade=t=in:st=0:d=${fmt(fadeIn)}`);
     if (fadeOut > 0) {
-      const start = Math.max(0, duration - fadeOut)
-      chain.push(`afade=t=out:st=${fmt(start)}:d=${fmt(fadeOut)}`)
+      const start = Math.max(0, duration - fadeOut);
+      chain.push(`afade=t=out:st=${fmt(start)}:d=${fmt(fadeOut)}`);
     }
     // Sempre alinhamos o áudio ao início da trilha cortada.
-    chain.push('asetpts=PTS-STARTPTS')
-    return `[${label}]${chain.join(',')}`
-  }
+    chain.push("asetpts=PTS-STARTPTS");
+    return `[${label}]${chain.join(",")}`;
+  };
 
   if (audioName) {
-    args.push('-i', audioName)
+    args.push("-i", audioName);
 
-    if (audioMode === 'misturar' && videoHasAudio) {
+    if (audioMode === "misturar" && videoHasAudio) {
       // Mistura a trilha original do vídeo com a música importada.
-      const music = buildAudioFilters('1:a')
+      const music = buildAudioFilters("1:a");
       args.push(
-        '-filter_complex',
+        "-filter_complex",
         `${music}[music];[0:a][music]amix=inputs=2:duration=first:dropout_transition=0[aout]`,
-        '-map', '0:v',
-        '-map', '[aout]',
-      )
+        "-map",
+        "0:v",
+        "-map",
+        "[aout]"
+      );
     } else {
       // Substitui totalmente o áudio pelo importado (caso mais comum:
       // vídeo do CapCut + música do Suno).
-      const music = buildAudioFilters('1:a')
-      args.push(
-        '-filter_complex', `${music}[aout]`,
-        '-map', '0:v',
-        '-map', '[aout]',
-      )
+      const music = buildAudioFilters("1:a");
+      args.push("-filter_complex", `${music}[aout]`, "-map", "0:v", "-map", "[aout]");
     }
   } else {
     // Sem áudio importado: apenas mantém o vídeo (e o áudio original, se houver).
-    args.push('-map', '0:v')
-    if (videoHasAudio) args.push('-map', '0:a')
+    args.push("-map", "0:v");
+    if (videoHasAudio) args.push("-map", "0:a");
   }
 
   args.push(
-    '-c:v', 'libx264',
-    '-preset', 'ultrafast',
-    '-pix_fmt', 'yuv420p',
-    '-c:a', 'aac',
-    '-b:a', '192k',
-    '-shortest',
-    '-movflags', '+faststart',
-    outputName,
-  )
+    "-c:v",
+    "libx264",
+    "-preset",
+    "ultrafast",
+    "-pix_fmt",
+    "yuv420p",
+    "-c:a",
+    "aac",
+    "-b:a",
+    "192k",
+    "-shortest",
+    "-movflags",
+    "+faststart",
+    outputName
+  );
 
-  return args
+  return args;
 }

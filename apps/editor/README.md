@@ -10,7 +10,7 @@ para servidores. Todo o processamento roda localmente com **FFmpeg (WebAssembly)
 - **Cortar / aparar** o vídeo (definindo início e fim).
 - **Juntar áudio + vídeo**: substituir totalmente o áudio pela música importada
   ou **misturar** a música com o áudio original.
-- **Ajustar o áudio**: volume, *fade in* e *fade out*.
+- **Ajustar o áudio**: volume, _fade in_ e _fade out_.
 - **Exportar** o resultado em **MP4** e baixar.
 
 ## 🚀 Como rodar
@@ -46,7 +46,7 @@ credencial ou integração não oficial.
 - **React + Vite** para a interface.
 - **@ffmpeg/ffmpeg** (FFmpeg.wasm) para corte, mixagem, fades e exportação.
 - O FFmpeg multithread usa `SharedArrayBuffer`, então a página precisa ser
-  *cross-origin isolated*. Os cabeçalhos `COOP`/`COEP` já estão configurados no
+  _cross-origin isolated_. Os cabeçalhos `COOP`/`COEP` já estão configurados no
   `vite.config.js` para os servidores de dev e de preview. Em produção, o host
   precisa enviar:
   - `Cross-Origin-Opener-Policy: same-origin`

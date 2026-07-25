@@ -18,7 +18,14 @@ import { publishEvent } from "../queues.js";
 
 const TYPES = ["welcome", "business_hours", "keyword", "ai", "rating"] as const;
 
-const DEFAULT_HANDOFF_WORDS = ["humano", "atendente", "pessoa", "falar com alguem", "falar com alguém", "quero falar com"];
+const DEFAULT_HANDOFF_WORDS = [
+  "humano",
+  "atendente",
+  "pessoa",
+  "falar com alguem",
+  "falar com alguém",
+  "quero falar com",
+];
 
 type Conv = { id: string; contactId: string };
 
@@ -34,7 +41,9 @@ async function botReply(companyId: string, conv: Conv, body: string) {
     .set({ lastMessageAt: new Date() })
     .where(eq(schema.conversations.id, conv.id));
   emitToCompany(companyId, "message.created", { conversationId: conv.id, message: msg });
-  publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(() => {});
+  publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(
+    () => {}
+  );
   // entrega no WhatsApp (import dinâmico evita ciclo com channels/whatsapp)
   import("../channels/whatsapp.js")
     .then((m) => m.sendToContact(companyId, conv.contactId, body))
@@ -44,10 +53,15 @@ async function botReply(companyId: string, conv: Conv, body: string) {
 function withinBusinessHours(cfg: Record<string, unknown>): boolean {
   const now = new Date();
   const day = now.getDay() === 0 ? 7 : now.getDay(); // 1=seg … 7=dom
-  const days = Array.isArray(cfg.days) && cfg.days.length ? (cfg.days as number[]) : [1, 2, 3, 4, 5];
+  const days =
+    Array.isArray(cfg.days) && cfg.days.length ? (cfg.days as number[]) : [1, 2, 3, 4, 5];
   if (!days.includes(day)) return false;
-  const [sh, sm] = String(cfg.start ?? "09:00").split(":").map(Number);
-  const [eh, em] = String(cfg.end ?? "18:00").split(":").map(Number);
+  const [sh, sm] = String(cfg.start ?? "09:00")
+    .split(":")
+    .map(Number);
+  const [eh, em] = String(cfg.end ?? "18:00")
+    .split(":")
+    .map(Number);
   const mins = now.getHours() * 60 + now.getMinutes();
   return mins >= sh * 60 + sm && mins < eh * 60 + em;
 }
@@ -56,30 +70,46 @@ function withinBusinessHours(cfg: Record<string, unknown>): boolean {
 // estiver ativo na conversa e ninguém humano tiver assumido. No handoff (o
 // cliente pede humano, ou a IA decide que precisa), o bot desliga e a conversa
 // vai para a fila (pending) para um atendente assumir.
-async function runAiAutoservice(companyId: string, conv: Conv, text: string, cfg: Record<string, unknown>) {
+async function runAiAutoservice(
+  companyId: string,
+  conv: Conv,
+  text: string,
+  cfg: Record<string, unknown>
+) {
   const ai = await import("../lib/ai.js");
   if (!ai.aiEnabled()) return; // sem ANTHROPIC_API_KEY, IA fica inativa
 
-  const [c] = await db.select().from(schema.conversations).where(eq(schema.conversations.id, conv.id));
+  const [c] = await db
+    .select()
+    .from(schema.conversations)
+    .where(eq(schema.conversations.id, conv.id));
   if (!c) return;
   // Não intromete se já foi para um humano, se já saiu do bot, ou se resolvida.
   if (c.assignedUserId || c.botActive === false || c.status === "resolved") return;
 
   const l = (text || "").toLowerCase();
-  const handoffWords = Array.isArray(cfg.handoffKeywords) && cfg.handoffKeywords.length
-    ? (cfg.handoffKeywords as unknown[]).map((k) => String(k).toLowerCase())
-    : DEFAULT_HANDOFF_WORDS;
+  const handoffWords =
+    Array.isArray(cfg.handoffKeywords) && cfg.handoffKeywords.length
+      ? (cfg.handoffKeywords as unknown[]).map((k) => String(k).toLowerCase())
+      : DEFAULT_HANDOFF_WORDS;
   const askedForHuman = handoffWords.some((w) => l.includes(w));
 
   async function handoff() {
-    const msg = String(cfg.handoffMessage || "Certo! Vou te transferir para um atendente humano. Um instante, por favor. 🙂");
+    const msg = String(
+      cfg.handoffMessage ||
+        "Certo! Vou te transferir para um atendente humano. Um instante, por favor. 🙂"
+    );
     await botReply(companyId, conv, msg);
     const queueId = cfg.queueId ? String(cfg.queueId) : undefined;
     await db
       .update(schema.conversations)
       .set({ botActive: false, status: "pending", ...(queueId ? { queueId } : {}) })
       .where(eq(schema.conversations.id, conv.id));
-    emitToCompany(companyId, "conversation.updated", { id: conv.id, botActive: false, ...(queueId ? { queueId } : {}) });
+    emitToCompany(companyId, "conversation.updated", {
+      id: conv.id,
+      botActive: false,
+      ...(queueId ? { queueId } : {}),
+    });
   }
 
   // Pedido explícito de humano: nem chama a IA (economiza tokens).
@@ -92,11 +122,18 @@ async function runAiAutoservice(companyId: string, conv: Conv, text: string, cfg
     .where(eq(schema.messages.conversationId, conv.id))
     .orderBy(asc(schema.messages.createdAt))
     .limit(40);
-  const [company] = await db.select().from(schema.companies).where(eq(schema.companies.id, companyId));
+  const [company] = await db
+    .select()
+    .from(schema.companies)
+    .where(eq(schema.companies.id, companyId));
 
   const { reply, needsHuman } = await ai.aiAutoReply(
     hist.map((m) => ({ direction: m.direction as "in" | "out", body: m.body })),
-    { companyName: company?.name, knowledge: cfg.knowledge ? String(cfg.knowledge) : undefined, tone: cfg.tone ? String(cfg.tone) : undefined }
+    {
+      companyName: company?.name,
+      knowledge: cfg.knowledge ? String(cfg.knowledge) : undefined,
+      tone: cfg.tone ? String(cfg.tone) : undefined,
+    }
   );
 
   if (reply) await botReply(companyId, conv, reply);
@@ -106,7 +143,11 @@ async function runAiAutoservice(companyId: string, conv: Conv, text: string, cfg
       .update(schema.conversations)
       .set({ botActive: false, status: "pending", ...(queueId ? { queueId } : {}) })
       .where(eq(schema.conversations.id, conv.id));
-    emitToCompany(companyId, "conversation.updated", { id: conv.id, botActive: false, ...(queueId ? { queueId } : {}) });
+    emitToCompany(companyId, "conversation.updated", {
+      id: conv.id,
+      botActive: false,
+      ...(queueId ? { queueId } : {}),
+    });
   }
 }
 
@@ -128,7 +169,12 @@ export async function applyAutomations(
     try {
       if (r.type === "welcome" && firstMessage && cfg.message) {
         await botReply(companyId, conv, String(cfg.message));
-      } else if (r.type === "business_hours" && firstMessage && cfg.message && !withinBusinessHours(cfg)) {
+      } else if (
+        r.type === "business_hours" &&
+        firstMessage &&
+        cfg.message &&
+        !withinBusinessHours(cfg)
+      ) {
         await botReply(companyId, conv, String(cfg.message));
       } else if (r.type === "keyword" && Array.isArray(cfg.keywords) && cfg.reply) {
         const hit = (cfg.keywords as unknown[]).some((k) => l.includes(String(k).toLowerCase()));
@@ -184,7 +230,12 @@ export async function automationRoutes(app: FastifyInstance) {
     const [row] = await db
       .update(schema.automations)
       .set(body)
-      .where(and(eq(schema.automations.id, id), eq(schema.automations.companyId, req.principal.companyId)))
+      .where(
+        and(
+          eq(schema.automations.id, id),
+          eq(schema.automations.companyId, req.principal.companyId)
+        )
+      )
       .returning();
     if (!row) throw new ApiError(404, "Automação não encontrada");
     return row;
@@ -194,7 +245,12 @@ export async function automationRoutes(app: FastifyInstance) {
     const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
     const [row] = await db
       .delete(schema.automations)
-      .where(and(eq(schema.automations.id, id), eq(schema.automations.companyId, req.principal.companyId)))
+      .where(
+        and(
+          eq(schema.automations.id, id),
+          eq(schema.automations.companyId, req.principal.companyId)
+        )
+      )
       .returning();
     if (!row) throw new ApiError(404, "Automação não encontrada");
     return reply.code(204).send();

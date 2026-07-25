@@ -15,10 +15,16 @@ export async function teamRoutes(app: FastifyInstance) {
   // Lista as mensagens (as 100 mais recentes, em ordem cronológica).
   // Aceita ?after=<ISO> para buscar só o que chegou depois (polling incremental).
   app.get("/team/messages", async (req) => {
-    const { after } = parse(z.object({ after: z.string().datetime({ offset: true }).optional() }), req.query);
+    const { after } = parse(
+      z.object({ after: z.string().datetime({ offset: true }).optional() }),
+      req.query
+    );
     const p = req.principal;
     const where = after
-      ? and(eq(schema.teamMessages.companyId, p.companyId), gt(schema.teamMessages.createdAt, new Date(after)))
+      ? and(
+          eq(schema.teamMessages.companyId, p.companyId),
+          gt(schema.teamMessages.createdAt, new Date(after))
+        )
       : eq(schema.teamMessages.companyId, p.companyId);
     const rows = await db
       .select({
@@ -44,7 +50,10 @@ export async function teamRoutes(app: FastifyInstance) {
       .insert(schema.teamMessages)
       .values({ companyId: p.companyId, userId: p.userId ?? null, body: body.trim() })
       .returning();
-    const [author] = await db.select({ name: schema.users.name }).from(schema.users).where(eq(schema.users.id, p.userId ?? ""));
+    const [author] = await db
+      .select({ name: schema.users.name })
+      .from(schema.users)
+      .where(eq(schema.users.id, p.userId ?? ""));
     const msg = { ...row, userName: author?.name ?? "Você" };
     emitToCompany(p.companyId, "team.message", msg);
     return reply.code(201).send(msg);

@@ -52,7 +52,11 @@ app.addContentTypeParser("application/json", { parseAs: "string" }, (_req, body,
 });
 await app.register(swagger, {
   openapi: {
-    info: { title: "Comenta SaaS API", version: "1.0.0", description: "API de atendimento multicanal — comenta.com.br" },
+    info: {
+      title: "Comenta SaaS API",
+      version: "1.0.0",
+      description: "API de atendimento multicanal — comenta.com.br",
+    },
     servers: [{ url: config.API_URL }],
     components: {
       securitySchemes: {
@@ -65,7 +69,8 @@ await app.register(swagger, {
 await app.register(swaggerUi, { routePrefix: "/docs" });
 
 app.setErrorHandler((err, _req, reply) => {
-  if (err instanceof ApiError) return reply.code(err.statusCode).send({ error: err.message, code: err.code });
+  if (err instanceof ApiError)
+    return reply.code(err.statusCode).send({ error: err.message, code: err.code });
   if ((err as { statusCode?: number }).statusCode === 429)
     return reply.code(429).send({ error: "Muitas requisições — tente novamente em instantes" });
   app.log.error(err);
@@ -114,7 +119,9 @@ startWorkers();
 restoreSessions().catch(() => {});
 startCampaignScheduler();
 server.listen(config.PORT, "0.0.0.0", () => {
-  app.log.info(`Comenta API on :${config.PORT} — docs em /docs — IA ${aiEnabled() ? "ativa" : "inativa"}`);
+  app.log.info(
+    `Comenta API on :${config.PORT} — docs em /docs — IA ${aiEnabled() ? "ativa" : "inativa"}`
+  );
 });
 
 const shutdown = async () => {

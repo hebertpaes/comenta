@@ -38,7 +38,11 @@ export async function conversationRoutes(app: FastifyInstance) {
         unreadCount: schema.conversations.unreadCount,
         lastMessageAt: schema.conversations.lastMessageAt,
         createdAt: schema.conversations.createdAt,
-        contact: { id: schema.contacts.id, name: schema.contacts.name, phone: schema.contacts.phone },
+        contact: {
+          id: schema.contacts.id,
+          name: schema.contacts.name,
+          phone: schema.contacts.phone,
+        },
         assignedUserId: schema.conversations.assignedUserId,
         channelId: schema.conversations.channelId,
         queueId: schema.conversations.queueId,
@@ -53,7 +57,10 @@ export async function conversationRoutes(app: FastifyInstance) {
       .select({ count: dsql<number>`count(*)::int` })
       .from(schema.conversations)
       .where(where);
-    const tagMap = await tagsForConversations(p.companyId, rows.map((r) => r.id));
+    const tagMap = await tagsForConversations(
+      p.companyId,
+      rows.map((r) => r.id)
+    );
     const data = rows.map((r) => ({ ...r, tags: tagMap[r.id] ?? [] }));
     return { data, meta: { page, perPage: limit, total: count } };
   });
@@ -66,7 +73,10 @@ export async function conversationRoutes(app: FastifyInstance) {
       .from(schema.conversations)
       .where(and(eq(schema.conversations.id, id), eq(schema.conversations.companyId, p.companyId)));
     if (!conv) throw new ApiError(404, "Conversa não encontrada");
-    const [contact] = await db.select().from(schema.contacts).where(eq(schema.contacts.id, conv.contactId));
+    const [contact] = await db
+      .select()
+      .from(schema.contacts)
+      .where(eq(schema.contacts.id, conv.contactId));
     const msgs = await db
       .select()
       .from(schema.messages)
@@ -75,7 +85,10 @@ export async function conversationRoutes(app: FastifyInstance) {
       .limit(500);
     // marca como lida
     if (conv.unreadCount > 0) {
-      await db.update(schema.conversations).set({ unreadCount: 0 }).where(eq(schema.conversations.id, id));
+      await db
+        .update(schema.conversations)
+        .set({ unreadCount: 0 })
+        .where(eq(schema.conversations.id, id));
     }
     const tagMap = await tagsForConversations(p.companyId, [id]);
     return { ...conv, contact, messages: msgs, tags: tagMap[id] ?? [] };
@@ -105,7 +118,11 @@ export async function conversationRoutes(app: FastifyInstance) {
       .returning();
 
     // Um humano respondeu: assume a conversa e desliga o autoatendimento por IA.
-    const patch: Record<string, unknown> = { lastMessageAt: new Date(), status: "open", botActive: false };
+    const patch: Record<string, unknown> = {
+      lastMessageAt: new Date(),
+      status: "open",
+      botActive: false,
+    };
     if (!conv.firstResponseAt) patch.firstResponseAt = new Date();
     if (!conv.assignedUserId && p.userId) patch.assignedUserId = p.userId;
     await db.update(schema.conversations).set(patch).where(eq(schema.conversations.id, id));
@@ -117,7 +134,9 @@ export async function conversationRoutes(app: FastifyInstance) {
     sendToContact(p.companyId, conv.contactId, body).catch(() => {});
 
     emitToCompany(p.companyId, "message.created", { conversationId: id, message: msg });
-    publishEvent(p.companyId, "message.created", { conversationId: id, message: msg }).catch(() => {});
+    publishEvent(p.companyId, "message.created", { conversationId: id, message: msg }).catch(
+      () => {}
+    );
     audit(p, "message.sent", "conversation", id);
     return reply.code(201).send(msg);
   });
@@ -145,7 +164,9 @@ export async function conversationRoutes(app: FastifyInstance) {
     // Resolveu a conversa: se a pesquisa de satisfação estiver ativa, pede a nota.
     if (body.status === "resolved") {
       import("./ratings.js")
-        .then((m) => m.requestRatingOnResolve(p.companyId, { id: conv.id, contactId: conv.contactId }))
+        .then((m) =>
+          m.requestRatingOnResolve(p.companyId, { id: conv.id, contactId: conv.contactId })
+        )
         .catch(() => {});
     }
     return conv;
@@ -155,40 +176,57 @@ export async function conversationRoutes(app: FastifyInstance) {
   app.get("/dashboard/metrics", async (req) => {
     const p = req.principal;
     const cid = p.companyId;
-    const [byStatus, [msgToday], [contactsTotal], [avgFirstResponse], series, byQueue] = await Promise.all([
-      db
-        .select({ status: schema.conversations.status, count: dsql<number>`count(*)::int` })
-        .from(schema.conversations)
-        .where(eq(schema.conversations.companyId, cid))
-        .groupBy(schema.conversations.status),
-      db
-        .select({ count: dsql<number>`count(*)::int` })
-        .from(schema.messages)
-        .where(and(eq(schema.messages.companyId, cid), dsql`created_at >= date_trunc('day', now())`)),
-      db
-        .select({ count: dsql<number>`count(*)::int` })
-        .from(schema.contacts)
-        .where(eq(schema.contacts.companyId, cid)),
-      db
-        .select({
-          seconds: dsql<number | null>`avg(extract(epoch from first_response_at - created_at))::int`,
-        })
-        .from(schema.conversations)
-        .where(and(eq(schema.conversations.companyId, cid), dsql`first_response_at is not null`)),
-      // mensagens por dia nos últimos 7 dias
-      db
-        .select({ day: dsql<string>`to_char(date_trunc('day', created_at), 'YYYY-MM-DD')`, count: dsql<number>`count(*)::int` })
-        .from(schema.messages)
-        .where(and(eq(schema.messages.companyId, cid), dsql`created_at >= date_trunc('day', now()) - interval '6 days'`))
-        .groupBy(dsql`date_trunc('day', created_at)`),
-      // conversas por fila
-      db
-        .select({ name: schema.queues.name, color: schema.queues.color, count: dsql<number>`count(${schema.conversations.id})::int` })
-        .from(schema.queues)
-        .leftJoin(schema.conversations, eq(schema.conversations.queueId, schema.queues.id))
-        .where(eq(schema.queues.companyId, cid))
-        .groupBy(schema.queues.id, schema.queues.name, schema.queues.color),
-    ]);
+    const [byStatus, [msgToday], [contactsTotal], [avgFirstResponse], series, byQueue] =
+      await Promise.all([
+        db
+          .select({ status: schema.conversations.status, count: dsql<number>`count(*)::int` })
+          .from(schema.conversations)
+          .where(eq(schema.conversations.companyId, cid))
+          .groupBy(schema.conversations.status),
+        db
+          .select({ count: dsql<number>`count(*)::int` })
+          .from(schema.messages)
+          .where(
+            and(eq(schema.messages.companyId, cid), dsql`created_at >= date_trunc('day', now())`)
+          ),
+        db
+          .select({ count: dsql<number>`count(*)::int` })
+          .from(schema.contacts)
+          .where(eq(schema.contacts.companyId, cid)),
+        db
+          .select({
+            seconds: dsql<
+              number | null
+            >`avg(extract(epoch from first_response_at - created_at))::int`,
+          })
+          .from(schema.conversations)
+          .where(and(eq(schema.conversations.companyId, cid), dsql`first_response_at is not null`)),
+        // mensagens por dia nos últimos 7 dias
+        db
+          .select({
+            day: dsql<string>`to_char(date_trunc('day', created_at), 'YYYY-MM-DD')`,
+            count: dsql<number>`count(*)::int`,
+          })
+          .from(schema.messages)
+          .where(
+            and(
+              eq(schema.messages.companyId, cid),
+              dsql`created_at >= date_trunc('day', now()) - interval '6 days'`
+            )
+          )
+          .groupBy(dsql`date_trunc('day', created_at)`),
+        // conversas por fila
+        db
+          .select({
+            name: schema.queues.name,
+            color: schema.queues.color,
+            count: dsql<number>`count(${schema.conversations.id})::int`,
+          })
+          .from(schema.queues)
+          .leftJoin(schema.conversations, eq(schema.conversations.queueId, schema.queues.id))
+          .where(eq(schema.queues.companyId, cid))
+          .groupBy(schema.queues.id, schema.queues.name, schema.queues.color),
+      ]);
     const statusMap = Object.fromEntries(byStatus.map((r) => [r.status, r.count]));
     // monta a série contínua de 7 dias (preenche zeros)
     const seriesMap = Object.fromEntries(series.map((r) => [r.day, r.count]));
@@ -199,7 +237,9 @@ export async function conversationRoutes(app: FastifyInstance) {
       const key = d.toISOString().slice(0, 10);
       days.push({ day: key, count: seriesMap[key] ?? 0 });
     }
-    const rating = await import("./ratings.js").then((m) => m.ratingMetrics(cid)).catch(() => ({ count: 0, average: null, nps: null }));
+    const rating = await import("./ratings.js")
+      .then((m) => m.ratingMetrics(cid))
+      .catch(() => ({ count: 0, average: null, nps: null }));
     return {
       conversations: {
         pending: statusMap.pending ?? 0,

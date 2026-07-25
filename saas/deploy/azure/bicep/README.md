@@ -12,7 +12,7 @@ revisão em PR e `what-if`.
   e depois habilita o site estático + publica o painel React.
 
 > Build de imagem (`az acr build`) e upload de blobs são operações de
-> *data-plane* — por isso ficam no wrapper, não no template.
+> _data-plane_ — por isso ficam no wrapper, não no template.
 
 ## Rodar (Azure Cloud Shell)
 

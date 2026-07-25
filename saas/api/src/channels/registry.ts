@@ -9,7 +9,11 @@ import { db, schema } from "../db/client.js";
 export type ChannelDriver = {
   type: string;
   /** Entrega uma mensagem outbound ao contato. Lança erro se falhar. */
-  send(channelConfig: Record<string, unknown>, to: { phone: string | null }, body: string): Promise<void>;
+  send(
+    channelConfig: Record<string, unknown>,
+    to: { phone: string | null },
+    body: string
+  ): Promise<void>;
 };
 
 const drivers = new Map<string, ChannelDriver>();
@@ -39,10 +43,16 @@ registerDriver({
 
 export async function deliverOutbound(channelId: string | null, contactId: string, body: string) {
   if (!channelId) return;
-  const [channel] = await db.select().from(schema.channels).where(eq(schema.channels.id, channelId));
+  const [channel] = await db
+    .select()
+    .from(schema.channels)
+    .where(eq(schema.channels.id, channelId));
   if (!channel) return;
   const driver = drivers.get(channel.type);
   if (!driver) return;
-  const [contact] = await db.select().from(schema.contacts).where(eq(schema.contacts.id, contactId));
+  const [contact] = await db
+    .select()
+    .from(schema.contacts)
+    .where(eq(schema.contacts.id, contactId));
   await driver.send(channel.config, { phone: contact?.phone ?? null }, body);
 }

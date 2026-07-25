@@ -11,18 +11,28 @@
   --radius: 14px;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body, #root { height: 100%; }
+html,
+body,
+#root {
+  height: 100%;
+}
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   color: var(--text);
   background:
     radial-gradient(1000px 600px at 10% -10%, rgba(124, 92, 255, 0.18), transparent 60%),
-    radial-gradient(900px 500px at 100% 0%, rgba(38, 208, 206, 0.12), transparent 55%),
-    var(--bg);
+    radial-gradient(900px 500px at 100% 0%, rgba(38, 208, 206, 0.12), transparent 55%), var(--bg);
 }
 
 .app {
@@ -48,7 +58,9 @@ body {
   color: var(--muted);
   line-height: 1.55;
 }
-.hero strong { color: var(--text); }
+.hero strong {
+  color: var(--text);
+}
 
 .apps-row {
   display: flex;
@@ -65,8 +77,13 @@ body {
   border-radius: 999px;
   min-width: 96px;
 }
-.app-chip strong { font-size: 0.9rem; }
-.app-chip span { font-size: 0.72rem; color: var(--muted); }
+.app-chip strong {
+  font-size: 0.9rem;
+}
+.app-chip span {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
 
 .grid {
   display: grid;
@@ -74,7 +91,9 @@ body {
   gap: 18px;
 }
 @media (max-width: 900px) {
-  .grid { grid-template-columns: 1fr; }
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .panel {
@@ -110,14 +129,21 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  transition: border-color 0.15s, background 0.15s;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
 }
 .drop:hover .drop-inner {
   border-color: var(--brand);
   background: rgba(124, 92, 255, 0.06);
 }
-.drop-icon { font-size: 1.6rem; }
-.drop-inner small { color: var(--muted); font-size: 0.75rem; }
+.drop-icon {
+  font-size: 1.6rem;
+}
+.drop-inner small {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
 
 .preview {
   width: 100%;
@@ -132,9 +158,13 @@ fieldset {
   padding: 0;
   margin: 0;
 }
-fieldset[disabled] { opacity: 0.45; }
+fieldset[disabled] {
+  opacity: 0.45;
+}
 
-.field { margin-bottom: 18px; }
+.field {
+  margin-bottom: 18px;
+}
 .field.two {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -157,7 +187,7 @@ fieldset[disabled] { opacity: 0.45; }
   font-variant-numeric: tabular-nums;
 }
 
-input[type='range'] {
+input[type="range"] {
   width: 100%;
   accent-color: var(--brand);
 }
@@ -188,9 +218,12 @@ input[type='range'] {
   color: var(--text);
   background: rgba(124, 92, 255, 0.14);
 }
-.segmented button:disabled { cursor: not-allowed; }
+.segmented button:disabled {
+  cursor: not-allowed;
+}
 
-.render-btn, .download-btn {
+.render-btn,
+.download-btn {
   display: block;
   width: 100%;
   text-align: center;
@@ -203,11 +236,17 @@ input[type='range'] {
   text-decoration: none;
   color: #fff;
   background: linear-gradient(90deg, var(--brand), #9a7bff);
-  transition: transform 0.1s, filter 0.15s;
+  transition:
+    transform 0.1s,
+    filter 0.15s;
 }
 .render-btn:hover:not(:disabled),
-.download-btn:hover { filter: brightness(1.08); }
-.render-btn:active:not(:disabled) { transform: scale(0.99); }
+.download-btn:hover {
+  filter: brightness(1.08);
+}
+.render-btn:active:not(:disabled) {
+  transform: scale(0.99);
+}
 .render-btn:disabled {
   background: var(--panel-2);
   color: var(--muted);
@@ -231,12 +270,31 @@ input[type='range'] {
   background: linear-gradient(90deg, var(--brand), var(--brand-2));
   transition: width 0.2s;
 }
-.status { color: var(--muted); font-size: 0.85rem; margin: 10px 0 0; }
-.error { color: var(--danger); font-size: 0.85rem; margin: 10px 0 0; line-height: 1.5; }
-.hint { color: var(--muted); font-size: 0.88rem; line-height: 1.55; }
+.status {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 10px 0 0;
+}
+.error {
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin: 10px 0 0;
+  line-height: 1.5;
+}
+.hint {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
 
-.logs { margin-top: 14px; }
-.logs summary { cursor: pointer; color: var(--muted); font-size: 0.8rem; }
+.logs {
+  margin-top: 14px;
+}
+.logs summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
 .logs pre {
   margin-top: 8px;
   max-height: 160px;

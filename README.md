@@ -20,13 +20,13 @@ comenta/
 └─ projects/comenta/   # Análise + instalador white-label (fora dos workspaces)
 ```
 
-| Produto | Pasta | Domínio | Descrição |
-|---|---|---|---|
-| Site + chat | `site/` | `comenta.com.br` | Landing e assistente de atendimento (IA + humano, filas, WhatsApp) |
-| API | `saas/api/` | `api.comenta.com.br` | Backend multi-tenant com IA Claude, tempo real e webhooks |
-| Painel | `saas/web/` | `app.comenta.com.br` | Interface de atendimento estilo WhatsApp |
-| Blog / CMS | Ghost (deploy) | `blog.comenta.com.br` | Blog/novidades/newsletter (Ghost 5 + MySQL) |
-| Editor de vídeo | `apps/editor/` | — | Edição no navegador com FFmpeg.wasm ([docs](apps/editor/README.md)) |
+| Produto         | Pasta          | Domínio               | Descrição                                                           |
+| --------------- | -------------- | --------------------- | ------------------------------------------------------------------- |
+| Site + chat     | `site/`        | `comenta.com.br`      | Landing e assistente de atendimento (IA + humano, filas, WhatsApp)  |
+| API             | `saas/api/`    | `api.comenta.com.br`  | Backend multi-tenant com IA Claude, tempo real e webhooks           |
+| Painel          | `saas/web/`    | `app.comenta.com.br`  | Interface de atendimento estilo WhatsApp                            |
+| Blog / CMS      | Ghost (deploy) | `blog.comenta.com.br` | Blog/novidades/newsletter (Ghost 5 + MySQL)                         |
+| Editor de vídeo | `apps/editor/` | —                     | Edição no navegador com FFmpeg.wasm ([docs](apps/editor/README.md)) |
 
 ## Desenvolvimento
 
@@ -69,11 +69,11 @@ curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/<branch>/deploy/
 
 ## Configuração (variáveis principais)
 
-| Variável | Onde | Para quê |
-|---|---|---|
-| `ANTHROPIC_API_KEY` | API | habilita a IA Claude (classificar/resumir/sugerir) |
-| `NEXT_PUBLIC_WHATSAPP` | site | número do "Continuar no WhatsApp" |
-| `NEXT_PUBLIC_NEWS_SOURCE` | site | fonte do carrossel de notícias (opcional) |
-| `DB_PASSWORD` / `REDIS_PASSWORD` / `JWT_SECRET` / `JWT_REFRESH_SECRET` | deploy | infra e autenticação |
+| Variável                                                               | Onde   | Para quê                                           |
+| ---------------------------------------------------------------------- | ------ | -------------------------------------------------- |
+| `ANTHROPIC_API_KEY`                                                    | API    | habilita a IA Claude (classificar/resumir/sugerir) |
+| `NEXT_PUBLIC_WHATSAPP`                                                 | site   | número do "Continuar no WhatsApp"                  |
+| `NEXT_PUBLIC_NEWS_SOURCE`                                              | site   | fonte do carrossel de notícias (opcional)          |
+| `DB_PASSWORD` / `REDIS_PASSWORD` / `JWT_SECRET` / `JWT_REFRESH_SECRET` | deploy | infra e autenticação                               |
 
 Detalhes de deploy e todas as variáveis em [`deploy/.env.example`](deploy/.env.example).

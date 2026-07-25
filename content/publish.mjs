@@ -24,10 +24,17 @@ const parser = new Parser({ timeout: 15000 });
 const PER_FEED = Number(process.env.BLOG_PER_FEED || 3);
 
 const slugify = (s) =>
-  s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
+  s
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 60);
 
 // slug estável por fonte → dedupe idempotente
-const sourceSlug = (url, title) => `cur-${slugify(title).slice(0, 40)}-${crypto.createHash("sha1").update(url).digest("hex").slice(0, 8)}`;
+const sourceSlug = (url, title) =>
+  `cur-${slugify(title).slice(0, 40)}-${crypto.createHash("sha1").update(url).digest("hex").slice(0, 8)}`;
 
 function pickImage(item) {
   return (
@@ -41,13 +48,20 @@ function pickImage(item) {
 async function runOnce() {
   const cfg = JSON.parse(await readFile(new URL("./feeds.json", import.meta.url)));
   const api = ghostClient();
-  let created = 0, skipped = 0, failed = 0;
+  let created = 0,
+    skipped = 0,
+    failed = 0;
 
   for (const cat of cfg.categorias) {
     for (const feedUrl of cat.feeds) {
       let feed;
-      try { feed = await parser.parseURL(feedUrl); }
-      catch (e) { console.warn(`  feed falhou: ${feedUrl} (${e.message})`); failed++; continue; }
+      try {
+        feed = await parser.parseURL(feedUrl);
+      } catch (e) {
+        console.warn(`  feed falhou: ${feedUrl} (${e.message})`);
+        failed++;
+        continue;
+      }
       const source = feed.title || new URL(feedUrl).hostname;
 
       for (const item of (feed.items || []).slice(0, PER_FEED)) {
@@ -56,7 +70,10 @@ async function runOnce() {
         if (!link || !title) continue;
         const slug = sourceSlug(link, title);
 
-        if (await postExists(api, slug)) { skipped++; continue; }
+        if (await postExists(api, slug)) {
+          skipped++;
+          continue;
+        }
 
         const snippet = (item.contentSnippet || item.summary || "").trim().slice(0, 1200);
         try {
@@ -85,11 +102,18 @@ async function runOnce() {
 const intervalMin = Number(process.env.BLOG_INTERVAL_MIN || 0);
 if (intervalMin > 0 && !process.argv.includes("--once")) {
   const loop = async () => {
-    try { await runOnce(); } catch (e) { console.error("erro:", e.message); }
+    try {
+      await runOnce();
+    } catch (e) {
+      console.error("erro:", e.message);
+    }
     console.log(`próxima rodada em ${intervalMin} min…`);
   };
   await loop();
   setInterval(loop, intervalMin * 60_000);
 } else {
-  await runOnce().catch((e) => { console.error("erro:", e.message); process.exit(1); });
+  await runOnce().catch((e) => {
+    console.error("erro:", e.message);
+    process.exit(1);
+  });
 }

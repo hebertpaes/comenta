@@ -1,25 +1,18 @@
 {
   "note": "Fontes REAIS (RSS). O robô nunca inventa fatos: resume o que a fonte publicou e sempre credita/linka a origem. Edite à vontade — troque por fontes que você confia.",
   "categorias": [
-    { "tag": "Tecnologia", "feeds": [
-      "https://g1.globo.com/rss/g1/tecnologia/",
-      "https://feeds.arstechnica.com/arstechnica/technology-lab",
-      "https://www.theverge.com/rss/index.xml"
-    ]},
-    { "tag": "Ciência & Saúde", "feeds": [
-      "https://g1.globo.com/rss/g1/ciencia-e-saude/"
-    ]},
-    { "tag": "Esporte", "feeds": [
-      "https://ge.globo.com/rss/ge/"
-    ]},
-    { "tag": "Política", "feeds": [
-      "https://g1.globo.com/rss/g1/politica/"
-    ]},
-    { "tag": "Brasil", "feeds": [
-      "https://g1.globo.com/rss/g1/"
-    ]},
-    { "tag": "Mundo", "feeds": [
-      "https://g1.globo.com/rss/g1/mundo/"
-    ]}
+    {
+      "tag": "Tecnologia",
+      "feeds": [
+        "https://g1.globo.com/rss/g1/tecnologia/",
+        "https://feeds.arstechnica.com/arstechnica/technology-lab",
+        "https://www.theverge.com/rss/index.xml"
+      ]
+    },
+    { "tag": "Ciência & Saúde", "feeds": ["https://g1.globo.com/rss/g1/ciencia-e-saude/"] },
+    { "tag": "Esporte", "feeds": ["https://ge.globo.com/rss/ge/"] },
+    { "tag": "Política", "feeds": ["https://g1.globo.com/rss/g1/politica/"] },
+    { "tag": "Brasil", "feeds": ["https://g1.globo.com/rss/g1/"] },
+    { "tag": "Mundo", "feeds": ["https://g1.globo.com/rss/g1/mundo/"] }
   ]
 }

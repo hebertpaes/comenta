@@ -5,12 +5,12 @@ Documento de trabalho da reescrita. Branch: `claude/modernizacao`, a partir de
 
 ## Baseline (medido em 2026-07-25, antes de qualquer mudança)
 
-| Projeto | Stack | `npm run build` |
-| --- | --- | --- |
-| `saas/api` | Fastify 5, Drizzle 0.38, Node 22, TS 5.7 | ✅ |
-| `saas/web` | React 18, Vite 6, **JavaScript puro** | ✅ (após `node_modules` limpo) |
-| `site` | Next 14, React 18, Tailwind 3 | ✅ |
-| `.` (editor de vídeo) | React 18, Vite 5, ffmpeg.wasm | ✅ |
+| Projeto               | Stack                                    | `npm run build`                |
+| --------------------- | ---------------------------------------- | ------------------------------ |
+| `saas/api`            | Fastify 5, Drizzle 0.38, Node 22, TS 5.7 | ✅                             |
+| `saas/web`            | React 18, Vite 6, **JavaScript puro**    | ✅ (após `node_modules` limpo) |
+| `site`                | Next 14, React 18, Tailwind 3            | ✅                             |
+| `.` (editor de vídeo) | React 18, Vite 5, ffmpeg.wasm            | ✅                             |
 
 Total: ~10.000 linhas de código em 143 arquivos versionados.
 
@@ -64,9 +64,9 @@ graceful shutdown. 16 dos 17 módulos já validam entrada com Zod.
 - [ ] **1** — Monorepo npm workspaces + `packages/shared` com os contratos Zod
 - [ ] **2** — ESLint 9 flat + Prettier + Vitest + CI com lint/typecheck/test/build
 - [ ] **3** — Reescrita do painel: TS, React 19, Vite 7, React Router 7,
-  TanStack Query, estrutura por feature, refresh token funcionando
+      TanStack Query, estrutura por feature, refresh token funcionando
 - [ ] **4** — API: rotas tipadas via `fastify-type-provider-zod`, testes de
-  integração de auth / conversas / isolamento multi-tenant
+      integração de auth / conversas / isolamento multi-tenant
 - [ ] **5** — Site: Next 15, React 19, Tailwind 4, só App Router
 - [ ] **6** — Consolidar `deploy/` e `saas/deploy/` num só
 

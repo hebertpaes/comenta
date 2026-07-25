@@ -54,9 +54,7 @@ function mapPost(p: any): NewsItem | null {
     media?.source_url ||
     FALLBACK_IMAGE;
 
-  const terms: any[] = Array.isArray(p._embedded?.["wp:term"])
-    ? p._embedded["wp:term"].flat()
-    : [];
+  const terms: any[] = Array.isArray(p._embedded?.["wp:term"]) ? p._embedded["wp:term"].flat() : [];
   const category = terms.find((t) => t?.taxonomy === "category")?.name;
 
   const title = decodeEntities(p.title?.rendered ?? "");
@@ -68,7 +66,7 @@ function mapPost(p: any): NewsItem | null {
     excerpt: decodeEntities(p.excerpt?.rendered ?? "").slice(0, 180),
     url: typeof p.link === "string" ? p.link : SOURCE,
     image,
-    date: p.date_gmt ? `${p.date_gmt}Z` : p.date ?? new Date().toISOString(),
+    date: p.date_gmt ? `${p.date_gmt}Z` : (p.date ?? new Date().toISOString()),
     category,
     urgent: Boolean(p.sticky),
   };
@@ -76,13 +74,10 @@ function mapPost(p: any): NewsItem | null {
 
 export async function getLatestNews(): Promise<NewsItem[]> {
   try {
-    const res = await fetch(
-      `${SOURCE}/wp-json/wp/v2/posts?per_page=${COUNT}&_embed=1`,
-      {
-        next: { revalidate: REVALIDATE_SECONDS },
-        headers: { "User-Agent": "ComentaPlatform/1.0 (+news-carousel)" },
-      }
-    );
+    const res = await fetch(`${SOURCE}/wp-json/wp/v2/posts?per_page=${COUNT}&_embed=1`, {
+      next: { revalidate: REVALIDATE_SECONDS },
+      headers: { "User-Agent": "ComentaPlatform/1.0 (+news-carousel)" },
+    });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const posts = await res.json();
     const items = (Array.isArray(posts) ? posts : [])
@@ -141,8 +136,7 @@ export const FALLBACK_NEWS: NewsItem[] = [
   {
     id: "fb-3",
     title: "Acompanhe as transmissões ao vivo",
-    excerpt:
-      "Programas e coberturas especiais direto da redação, com atualização contínua.",
+    excerpt: "Programas e coberturas especiais direto da redação, com atualização contínua.",
     url: SOURCE,
     image: cover("Ao vivo", "#f472b6", "#db2777"),
     date: new Date().toISOString(),
@@ -151,8 +145,7 @@ export const FALLBACK_NEWS: NewsItem[] = [
   {
     id: "fb-4",
     title: "Serviço e utilidade pública",
-    excerpt:
-      "Campanhas, mutirões e informações essenciais para a população da região.",
+    excerpt: "Campanhas, mutirões e informações essenciais para a população da região.",
     url: SOURCE,
     image: cover("Serviço", "#f59e0b", "#d97706"),
     date: new Date().toISOString(),

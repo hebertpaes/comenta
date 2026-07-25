@@ -44,14 +44,20 @@ export async function userRoutes(app: FastifyInstance) {
     const p = req.principal;
 
     // limite do plano
-    const [company] = await db.select().from(schema.companies).where(eq(schema.companies.id, p.companyId));
+    const [company] = await db
+      .select()
+      .from(schema.companies)
+      .where(eq(schema.companies.id, p.companyId));
     const [plan] = await db.select().from(schema.plans).where(eq(schema.plans.id, company.planId));
     const [{ count }] = await db
       .select({ count: dsql<number>`count(*)::int` })
       .from(schema.users)
       .where(eq(schema.users.companyId, p.companyId));
     if (count >= plan.maxUsers) {
-      throw new ApiError(402, `Limite de ${plan.maxUsers} usuários do plano ${plan.name} atingido — faça upgrade`);
+      throw new ApiError(
+        402,
+        `Limite de ${plan.maxUsers} usuários do plano ${plan.name} atingido — faça upgrade`
+      );
     }
 
     const [exists] = await db.select().from(schema.users).where(eq(schema.users.email, body.email));
@@ -68,7 +74,9 @@ export async function userRoutes(app: FastifyInstance) {
       })
       .returning();
     audit(p, "user.created", "user", user.id, { email: body.email, role: body.role });
-    return reply.code(201).send({ id: user.id, name: user.name, email: user.email, role: user.role });
+    return reply
+      .code(201)
+      .send({ id: user.id, name: user.name, email: user.email, role: user.role });
   });
 
   app.patch("/users/:id", { preHandler: [requireAdmin] }, async (req) => {

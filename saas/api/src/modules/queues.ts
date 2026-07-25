@@ -9,8 +9,14 @@ const ScheduleSchema = z
   .object({
     enabled: z.boolean().default(false),
     days: z.array(z.number().int().min(1).max(7)).max(7).optional(),
-    start: z.string().regex(/^\d{2}:\d{2}$/).optional(),
-    end: z.string().regex(/^\d{2}:\d{2}$/).optional(),
+    start: z
+      .string()
+      .regex(/^\d{2}:\d{2}$/)
+      .optional(),
+    end: z
+      .string()
+      .regex(/^\d{2}:\d{2}$/)
+      .optional(),
     message: z.string().max(1000).optional(),
   })
   .optional();
@@ -37,7 +43,12 @@ export async function queueRoutes(app: FastifyInstance) {
       ? await db
           .select()
           .from(schema.userQueues)
-          .where(inArray(schema.userQueues.queueId, rows.map((q) => q.id)))
+          .where(
+            inArray(
+              schema.userQueues.queueId,
+              rows.map((q) => q.id)
+            )
+          )
       : [];
     const data = rows.map((q) => ({
       ...q,
@@ -92,7 +103,10 @@ export async function queueRoutes(app: FastifyInstance) {
       .returning();
     if (!row) throw new ApiError(404, "Fila não encontrada");
     // solta as conversas que estavam nesta fila
-    await db.update(schema.conversations).set({ queueId: null }).where(eq(schema.conversations.queueId, id));
+    await db
+      .update(schema.conversations)
+      .set({ queueId: null })
+      .where(eq(schema.conversations.queueId, id));
     return reply.code(204).send();
   });
 
@@ -107,9 +121,11 @@ export async function queueRoutes(app: FastifyInstance) {
     if (!queue) throw new ApiError(404, "Fila não encontrada");
     await db.delete(schema.userQueues).where(eq(schema.userQueues.queueId, id));
     if (userIds.length) {
-      await db.insert(schema.userQueues).values(
-        userIds.map((userId) => ({ companyId: req.principal.companyId, queueId: id, userId }))
-      );
+      await db
+        .insert(schema.userQueues)
+        .values(
+          userIds.map((userId) => ({ companyId: req.principal.companyId, queueId: id, userId }))
+        );
     }
     return { queueId: id, memberIds: userIds };
   });

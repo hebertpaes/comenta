@@ -26,12 +26,12 @@ saas/
 
 ## Arquitetura
 
-| Domínio | Subdomínio | Serviço |
-|---|---|---|
+| Domínio             | Subdomínio           | Serviço               |
+| ------------------- | -------------------- | --------------------- |
 | Painel do atendente | `app.comenta.com.br` | React/Vite (estático) |
-| API + tempo real | `api.comenta.com.br` | Fastify + Socket.IO |
-| Banco | interno | PostgreSQL 16 |
-| Filas / cache | interno | Redis 7 + BullMQ |
+| API + tempo real    | `api.comenta.com.br` | Fastify + Socket.IO   |
+| Banco               | interno              | PostgreSQL 16         |
+| Filas / cache       | interno              | Redis 7 + BullMQ      |
 
 ## Publicando em comenta.com.br
 

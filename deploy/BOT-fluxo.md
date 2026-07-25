@@ -26,6 +26,7 @@ curl -s -X POST http://localhost:4000/auth/login \
 ## Tipos de regra
 
 ### 1. Boas-vindas (`welcome`) — responde na 1ª mensagem
+
 ```bash
 curl -X POST http://localhost:4000/automations \
   -H "Authorization: Bearer SEU_TOKEN" -H "Content-Type: application/json" \
@@ -34,6 +35,7 @@ curl -X POST http://localhost:4000/automations \
 ```
 
 ### 2. Fora do horário (`business_hours`) — responde só fora do expediente
+
 ```bash
 curl -X POST http://localhost:4000/automations \
   -H "Authorization: Bearer SEU_TOKEN" -H "Content-Type: application/json" \
@@ -41,9 +43,11 @@ curl -X POST http://localhost:4000/automations \
        "config":{"days":[1,2,3,4,5],"start":"09:00","end":"18:00",
        "message":"Estamos fora do horário de atendimento (seg–sex, 9h–18h). Retornamos em breve!"}}'
 ```
+
 `days`: 1=segunda … 7=domingo. Horário do servidor.
 
 ### 3. Palavra-chave (`keyword`) — responde quando a mensagem contém termos
+
 ```bash
 curl -X POST http://localhost:4000/automations \
   -H "Authorization: Bearer SEU_TOKEN" -H "Content-Type: application/json" \
@@ -53,8 +57,9 @@ curl -X POST http://localhost:4000/automations \
 ```
 
 ## Gerenciar
+
 - Listar: `GET /automations`
-- Ligar/desligar ou editar: `PATCH /automations/{id}`  `{"isActive":false}`
+- Ligar/desligar ou editar: `PATCH /automations/{id}` `{"isActive":false}`
 - Remover: `DELETE /automations/{id}`
 
 > Observação: `welcome` e `business_hours` disparam na primeira mensagem da
