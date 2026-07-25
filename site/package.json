@@ -1,13 +1,13 @@
 {
-  "name": "hebertpaes-website",
+  "name": "@comenta/site",
   "version": "1.0.0",
   "description": "Plataforma pessoal Hebert Paes - Next.js no Cloud Run",
-  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "next": "^14.2.5",
@@ -25,5 +25,6 @@
   },
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "private": true
 }

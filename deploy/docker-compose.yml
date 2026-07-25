@@ -41,7 +41,8 @@ services:
   # API do SaaS (saas/api) — porta 4000
   api:
     build:
-      context: ../saas/api
+      context: ..
+      dockerfile: saas/api/Dockerfile
     restart: always
     depends_on:
       postgres:
@@ -74,7 +75,8 @@ services:
   # Site institucional / landing + chat (site/) — porta 3000
   site:
     build:
-      context: ../site
+      context: ..
+      dockerfile: site/Dockerfile
     restart: always
     environment:
       NODE_ENV: production
@@ -156,7 +158,8 @@ services:
   # Precisa de GHOST_ADMIN_API_KEY (Ghost → Integrations → Custom).
   blog-bot:
     build:
-      context: ../content
+      context: ..
+      dockerfile: content/Dockerfile
     profiles: ["bot"]
     restart: "no"
     depends_on:

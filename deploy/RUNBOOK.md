@@ -56,9 +56,14 @@ nano .env              # DB_PASSWORD, REDIS_PASSWORD, ANTHROPIC_API_KEY, NEXT_PU
 ```
 
 ### 5. Build do painel (uma vez)
+O repositório é um monorepo npm workspaces: o `npm ci` roda na raiz, uma vez
+para todos os projetos. O painel importa `@comenta/shared`, que precisa ser
+compilado antes.
 ```bash
-cd /srv/comenta/comenta/saas/web
-npm ci && VITE_API_URL=https://api.comenta.com.br npm run build
+cd /srv/comenta/comenta
+npm ci
+npm run build -w @comenta/shared
+VITE_API_URL=https://api.comenta.com.br npm run build -w @comenta/web
 ```
 
 ### 6. Subir tudo
@@ -81,7 +86,9 @@ sudo certbot --nginx -d comenta.com.br -d www.comenta.com.br -d app.comenta.com.
 ## Atualizar
 ```bash
 cd /srv/comenta/comenta && git pull
-(cd saas/web && npm ci && VITE_API_URL=https://api.comenta.com.br npm run build)
+npm ci
+npm run build -w @comenta/shared
+VITE_API_URL=https://api.comenta.com.br npm run build -w @comenta/web
 cd deploy && docker compose --env-file .env up -d --build
 ```
 
@@ -95,4 +102,5 @@ docker compose logs -f api
 ## Notas
 - **IA Claude**: sem `ANTHROPIC_API_KEY`, a API responde `503` só nos endpoints de IA.
 - **WhatsApp** do chat do site: ajuste `NEXT_PUBLIC_WHATSAPP` no `.env`.
-- Estrutura do monorepo: `site/` (landing+chat), `saas/api`, `saas/web`, `deploy/` (este), além do editor de vídeo na raiz e `projects/comenta/` (instalador).
+- Estrutura do monorepo (npm workspaces, lockfile único na raiz): `site/` (landing+chat), `saas/api`, `saas/web`, `packages/shared` (contratos comuns à API e ao painel), `content/` (robô do blog), `apps/editor` (editor de vídeo), `deploy/` (este) e `projects/comenta/` (instalador, fora dos workspaces).
+- Os Dockerfiles de `saas/api`, `site` e `content` usam a **raiz** do repositório como contexto de build, porque o lockfile é único e `@comenta/shared` só existe localmente.

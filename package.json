@@ -1,27 +1,27 @@
 {
-  "name": "comenta-editor",
+  "name": "comenta",
+  "version": "0.0.0",
   "private": true,
-  "version": "0.1.0",
   "type": "module",
-  "description": "Editor web de vídeo e música que importa arquivos de apps externos (Suno, CapCut, etc.) e edita tudo no navegador.",
+  "description": "Monorepo do Comenta — plataforma de atendimento multicanal (comenta.com.br)",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "saas/api",
+    "saas/web",
+    "site",
+    "content"
+  ],
   "scripts": {
-    "copy-core": "node scripts/copy-core.mjs",
-    "postinstall": "node scripts/copy-core.mjs",
-    "predev": "node scripts/copy-core.mjs",
-    "dev": "vite",
-    "prebuild": "node scripts/copy-core.mjs",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@ffmpeg/core": "^0.12.6",
-    "@ffmpeg/ffmpeg": "^0.12.10",
-    "@ffmpeg/util": "^0.12.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^5.4.11"
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "dev:api": "npm run dev -w @comenta/api",
+    "dev:web": "npm run dev -w @comenta/web",
+    "dev:site": "npm run dev -w @comenta/site",
+    "dev:editor": "npm run dev -w @comenta/editor"
   }
 }

@@ -9,7 +9,8 @@
     "build": "tsc",
     "db:push": "drizzle-kit push",
     "db:seed": "tsx src/db/seed.ts",
-    "smoke": "bash test/smoke.sh"
+    "smoke": "bash test/smoke.sh",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.68.0",
@@ -27,7 +28,8 @@
     "postgres": "^3.4.5",
     "qrcode": "^1.5.4",
     "socket.io": "^4.8.1",
-    "zod": "^3.24.1"
+    "zod": "^3.24.1",
+    "@comenta/shared": "*"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",

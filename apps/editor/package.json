@@ -1,0 +1,27 @@
+{
+  "name": "@comenta/editor",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Editor web de vídeo e música que importa arquivos de apps externos (Suno, CapCut, etc.) e edita tudo no navegador.",
+  "scripts": {
+    "copy-core": "node scripts/copy-core.mjs",
+    "postinstall": "node scripts/copy-core.mjs",
+    "predev": "node scripts/copy-core.mjs",
+    "dev": "vite",
+    "prebuild": "node scripts/copy-core.mjs",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ffmpeg/core": "^0.12.6",
+    "@ffmpeg/ffmpeg": "^0.12.10",
+    "@ffmpeg/util": "^0.12.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  }
+}

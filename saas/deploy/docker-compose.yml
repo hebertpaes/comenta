@@ -23,7 +23,8 @@ services:
 
   api:
     build:
-      context: ../api
+      context: ../..
+      dockerfile: saas/api/Dockerfile
     restart: always
     depends_on:
       postgres:
