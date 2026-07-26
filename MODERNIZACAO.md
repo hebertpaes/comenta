@@ -70,7 +70,8 @@ graceful shutdown. 16 dos 17 módulos já validam entrada com Zod.
 - [x] **4** — API: testes de auth e isolamento multi-tenant contra Postgres
       real. A migração para `fastify-type-provider-zod` ficou de fora — motivo
       abaixo.
-- [ ] **5** — Site: Next 15, React 19, Tailwind 4, só App Router
+- [x] **5** — Site: Next **16** (não 15 — é a versão atual), React 19,
+      Tailwind 4, só App Router, TypeScript estrito
 - [ ] **6** — Consolidar `deploy/` e `saas/deploy/` num só
 
 Entrega: um commit por etapa, sem push. Nada vai para o remoto sem ordem
@@ -113,11 +114,13 @@ como rede.
 
 ## Pendências conhecidas
 
-- **34 → 33 `any`** restantes, quase todos em `saas/api/src/channels/whatsapp.ts`
-  (Baileys tipa mal o que devolve) e em `site/pages/preview.tsx` (some na
-  etapa 5). O lint avisa mas não reprova; vira erro quando zerar.
+- **`any` restantes: 18**, de 34 no começo. Os 15 do site foram eliminados na
+  etapa 5. Sobraram 17 em `saas/api/src/channels/whatsapp.ts` (o Baileys tipa
+  mal o que devolve) e 1 em `modules/channels.ts`. O lint avisa mas não
+  reprova; vira erro quando zerar.
 - **Progresso das aulas** da Academia continua no `localStorage`: não existe
   endpoint de progresso na API, então não acompanha o usuário entre
   dispositivos. Mantido como estava para não inventar comportamento.
-- **`site/pages/preview.tsx`** encadeia `setTimeout` sem cancelar no unmount.
-  A etapa 5 migra o arquivo e é a hora de resolver.
+- ~~**`site/pages/preview.tsx`** encadeia `setTimeout` sem cancelar no
+  unmount.~~ Resolvido na etapa 5: o handle vai num ref e um efeito de
+  limpeza cancela ao desmontar.

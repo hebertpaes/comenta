@@ -1,6 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind 4: uma importação no lugar das três diretivas, e a varredura de
+   classes é automática (não há mais `content` para configurar). O
+   tailwind.config.js foi removido porque não continha nenhuma customização. */
+@import "tailwindcss";
 
 :root {
   color-scheme: light;

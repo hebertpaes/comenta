@@ -44,7 +44,35 @@ function decodeEntities(s: string): string {
     .trim();
 }
 
-function mapPost(p: any): NewsItem | null {
+/**
+ * Forma parcial de um post da REST API do WordPress.
+ *
+ * Só os campos que consumimos, todos opcionais: a resposta vem de um site de
+ * terceiros e pode mudar sem aviso — daí `mapPost` devolver null em vez de
+ * confiar que os campos existem.
+ */
+interface WpMediaSize {
+  source_url?: string;
+}
+interface WpPost {
+  id?: number | string;
+  slug?: string;
+  link?: string;
+  date?: string;
+  date_gmt?: string;
+  sticky?: boolean;
+  title?: { rendered?: string };
+  excerpt?: { rendered?: string };
+  _embedded?: {
+    "wp:featuredmedia"?: {
+      source_url?: string;
+      media_details?: { sizes?: Record<string, WpMediaSize | undefined> };
+    }[];
+    "wp:term"?: { taxonomy?: string; name?: string }[][];
+  };
+}
+
+function mapPost(p: WpPost | null | undefined): NewsItem | null {
   if (!p) return null;
   const media = p._embedded?.["wp:featuredmedia"]?.[0];
   const sizes = media?.media_details?.sizes;
@@ -54,7 +82,7 @@ function mapPost(p: any): NewsItem | null {
     media?.source_url ||
     FALLBACK_IMAGE;
 
-  const terms: any[] = Array.isArray(p._embedded?.["wp:term"]) ? p._embedded["wp:term"].flat() : [];
+  const terms = p._embedded?.["wp:term"]?.flat() ?? [];
   const category = terms.find((t) => t?.taxonomy === "category")?.name;
 
   const title = decodeEntities(p.title?.rendered ?? "");

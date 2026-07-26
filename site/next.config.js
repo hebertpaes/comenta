@@ -34,9 +34,8 @@ const nextConfig = {
   // Monorepo npm workspaces: as dependências são içadas para o node_modules da
   // raiz. Sem apontar a raiz aqui, o Next rastreia arquivos a partir de site/ e
   // o bundle standalone sai incompleto.
-  experimental: {
-    outputFileTracingRoot: path.join(__dirname, ".."),
-  },
+  // Saiu de `experimental` para a raiz da config no Next 15.
+  outputFileTracingRoot: path.join(__dirname, ".."),
   poweredByHeader: false,
   reactStrictMode: true,
   async headers() {

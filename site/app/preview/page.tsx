@@ -1,3 +1,8 @@
+// A página inteira é interativa (useState em praticamente todo componente),
+// então é um Client Component. Antes vivia em pages/preview.tsx: o site tinha
+// os dois roteadores do Next ao mesmo tempo, e agora só o App Router.
+"use client";
+
 import React, { useState } from "react";
 
 // =============================================================
@@ -51,8 +56,9 @@ const PLACEHOLDER_DATA_URL = `data:image/svg+xml;utf8,${encodeURIComponent(
 // UID helper para prévia (fallback se randomUUID não existir)
 function uid() {
   try {
-    const c: any = (globalThis as any).crypto;
-    if (c?.randomUUID) return c.randomUUID();
+    if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+      return crypto.randomUUID();
+    }
   } catch {
     // crypto.randomUUID exige contexto seguro; fora dele caímos no gerador
     // manual logo abaixo.
@@ -301,6 +307,10 @@ function PreviewNewsSlider() {
     >
       <div className="relative" style={{ aspectRatio: "16 / 10", background: "#0f172a" }}>
         {previewNews.map((s, idx) => (
+          // As imagens desta prévia são data: URIs geradas em memória. O
+          // next/image não otimiza data: URI e ainda exigiria configurar
+          // remotePatterns por host — sem ganho aqui.
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             key={s.id}
             src={s.img}
@@ -459,21 +469,53 @@ function CacheControls() {
 
 // ======= Admin (Prévia) =======
 // Simula CRUD em memória. Na seção "ARQUIVOS REAIS" há o código Next.js + Firestore.
-const sampleUsersAdmin = [
+type AdminRole = "admin" | "editor" | "user";
+type AdminStatus = "draft" | "published";
+
+interface AdminUser {
+  id: string;
+  email: string;
+  role: string;
+  createdAt: string;
+}
+interface AdminTerm {
+  id: string;
+  name: string;
+  slug: string;
+}
+interface AdminPost {
+  id: string;
+  title: string;
+  slug: string;
+  status: string;
+  categories: string[];
+  tags: string[];
+  publishedAt: string;
+}
+interface AdminPage {
+  id: string;
+  title: string;
+  slug: string;
+  status: string;
+}
+
+const sampleUsersAdmin: AdminUser[] = [
   { id: "u1", email: "admin@hebertpaes.com", role: "admin", createdAt: new Date().toISOString() },
   { id: "u2", email: "user@hebertpaes.com", role: "user", createdAt: new Date().toISOString() },
 ];
-const sampleCategoriesAdmin = [
+const sampleCategoriesAdmin: AdminTerm[] = [
   { id: "c1", name: "Cloud", slug: "cloud" },
   { id: "c2", name: "Dev", slug: "dev" },
 ];
-const sampleTagsAdmin = [
+const sampleTagsAdmin: AdminTerm[] = [
   { id: "t1", name: "gcp", slug: "gcp" },
   { id: "t2", name: "nextjs", slug: "nextjs" },
   { id: "t3", name: "firestore", slug: "firestore" },
 ];
-const samplePagesAdmin = [{ id: "pg1", title: "Sobre", slug: "sobre", status: "published" }];
-const samplePostsAdmin = [
+const samplePagesAdmin: AdminPage[] = [
+  { id: "pg1", title: "Sobre", slug: "sobre", status: "published" },
+];
+const samplePostsAdmin: AdminPost[] = [
   {
     id: "p1",
     title: "Hello World",
@@ -537,7 +579,7 @@ function AdminPanel() {
 }
 
 function UsersAdmin() {
-  const [items, setItems] = React.useState<any[]>(sampleUsersAdmin);
+  const [items, setItems] = React.useState<AdminUser[]>(sampleUsersAdmin);
   const [email, setEmail] = React.useState("");
   const [role, setRole] = React.useState<"admin" | "editor" | "user">("user");
   function add(e: React.FormEvent) {
@@ -562,7 +604,7 @@ function UsersAdmin() {
         />
         <select
           value={role}
-          onChange={(e) => setRole(e.target.value as any)}
+          onChange={(e) => setRole(e.target.value as AdminRole)}
           className="rounded-xl border px-3 py-2"
         >
           <option value="admin">admin</option>
@@ -602,7 +644,7 @@ function UsersAdmin() {
 }
 
 function PostsAdmin() {
-  const [items, setItems] = React.useState<any[]>(samplePostsAdmin);
+  const [items, setItems] = React.useState<AdminPost[]>(samplePostsAdmin);
   const [title, setTitle] = React.useState("");
   const [slug, setSlug] = React.useState("");
   const [status, setStatus] = React.useState<"draft" | "published">("draft");
@@ -656,7 +698,7 @@ function PostsAdmin() {
         />
         <select
           value={status}
-          onChange={(e) => setStatus(e.target.value as any)}
+          onChange={(e) => setStatus(e.target.value as AdminStatus)}
           className="rounded-xl border px-3 py-2"
         >
           <option value="draft">draft</option>
@@ -713,7 +755,7 @@ function PostsAdmin() {
 }
 
 function CategoriesAdmin() {
-  const [items, setItems] = React.useState<any[]>(sampleCategoriesAdmin);
+  const [items, setItems] = React.useState<AdminTerm[]>(sampleCategoriesAdmin);
   const [name, setName] = React.useState("");
   const [slug, setSlug] = React.useState("");
   function add(e: React.FormEvent) {
@@ -761,7 +803,7 @@ function CategoriesAdmin() {
 }
 
 function TagsAdmin() {
-  const [items, setItems] = React.useState<any[]>(sampleTagsAdmin);
+  const [items, setItems] = React.useState<AdminTerm[]>(sampleTagsAdmin);
   const [name, setName] = React.useState("");
   const [slug, setSlug] = React.useState("");
   function add(e: React.FormEvent) {
@@ -809,7 +851,7 @@ function TagsAdmin() {
 }
 
 function PagesAdmin() {
-  const [items, setItems] = React.useState<any[]>(samplePagesAdmin);
+  const [items, setItems] = React.useState<AdminPage[]>(samplePagesAdmin);
   const [title, setTitle] = React.useState("");
   const [slug, setSlug] = React.useState("");
   const [status, setStatus] = React.useState<"draft" | "published">("draft");
@@ -842,7 +884,7 @@ function PagesAdmin() {
         />
         <select
           value={status}
-          onChange={(e) => setStatus(e.target.value as any)}
+          onChange={(e) => setStatus(e.target.value as AdminStatus)}
           className="rounded-xl border px-3 py-2"
         >
           <option value="draft">draft</option>
@@ -881,13 +923,26 @@ function PagesAdmin() {
 }
 
 // ======= Blockchain (Prévia) =======
+interface PreviewTx {
+  id: string;
+  type: string;
+  payload: { slug: string; contentHash: string };
+  timestamp: number;
+}
+interface PreviewBlock {
+  height: number;
+  hash: string;
+  tx: PreviewTx[];
+  timestamp: number;
+}
+
 function BlockchainAdminPreview() {
   const [pub, setPub] = React.useState<string | undefined>();
   const [prv, setPrv] = React.useState<string | undefined>();
   const [slug, setSlug] = React.useState("hello-world");
   const [hash, setHash] = React.useState("sha256-do-conteudo");
-  const [mempool, setMempool] = React.useState<any[]>([]);
-  const [blocks, setBlocks] = React.useState<any[]>([]);
+  const [mempool, setMempool] = React.useState<PreviewTx[]>([]);
+  const [blocks, setBlocks] = React.useState<PreviewBlock[]>([]);
 
   function generateKeys() {
     // PRÉVIA: apenas simula PEMs (não usar em produção)
@@ -1033,6 +1088,7 @@ function BlockchainAdminPreview() {
 
 // ======= Chat (Prévia) =======
 type ChatMsg = { id: string; role: "user" | "assistant"; content: string };
+type ChatModel = "gpt" | "gemini" | "meta" | "manus" | "deepseek" | "mistral";
 
 function ChatBubble({ msg }: { msg: ChatMsg }) {
   const isUser = msg.role === "user";
@@ -1051,9 +1107,7 @@ function ChatBubble({ msg }: { msg: ChatMsg }) {
 }
 
 function ChatPanel() {
-  const [model, setModel] = React.useState<
-    "gpt" | "gemini" | "meta" | "manus" | "deepseek" | "mistral"
-  >("gpt");
+  const [model, setModel] = React.useState<ChatModel>("gpt");
   const [messages, setMessages] = React.useState<ChatMsg[]>([
     { id: uid(), role: "assistant", content: "Olá! Sou seu agente de chat. Como posso ajudar?" },
   ]);
@@ -1063,6 +1117,12 @@ function ChatPanel() {
   React.useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, streamingId]);
+
+  // A resposta simulada é escrita letra a letra por uma cadeia de setTimeout.
+  // Sem guardar o handle, sair da página no meio da digitação deixaria os
+  // timers rodando e chamando setState num componente já desmontado.
+  const typingTimer = React.useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  React.useEffect(() => () => clearTimeout(typingTimer.current), []);
 
   function send(text?: string) {
     const content = (text ?? input).trim();
@@ -1097,12 +1157,12 @@ Dica: use o agente de busca integrado em /agente_busca_integrado.html para levan
         return [...others, a];
       });
       if (i < target.length) {
-        setTimeout(tick, 30);
+        typingTimer.current = setTimeout(tick, 30);
       } else {
         setStreamingId(undefined);
       }
     };
-    setTimeout(tick, 120);
+    typingTimer.current = setTimeout(tick, 120);
   }
 
   function onSubmit(e: React.FormEvent) {
@@ -1129,7 +1189,7 @@ Dica: use o agente de busca integrado em /agente_busca_integrado.html para levan
           Modelo:&nbsp;
           <select
             value={model}
-            onChange={(e) => setModel(e.target.value as any)}
+            onChange={(e) => setModel(e.target.value as ChatModel)}
             className="border rounded-md px-2 py-1"
           >
             <option value="gpt">GPT</option>
@@ -1408,6 +1468,9 @@ function PostCard({
           onClick={(e) => e.preventDefault()}
           className="block aspect-[16/9] bg-slate-100"
         >
+          {/* Mesma razão do slider acima: origem arbitrária, com fallback
+              para uma data: URI quando a imagem não carrega. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={post.coverImage}
             alt={post.title}
