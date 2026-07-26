@@ -9,8 +9,8 @@
 #   • Azure Storage static website                    (painel React/Vite)
 #
 # Como usar (no portal → botão "Cloud Shell", ambiente Bash):
-#   1. Clone/baixe o repo OU faça upload da pasta saas/.
-#   2. cd saas/deploy/azure
+#   1. Clone o repositório (o build usa a raiz do monorepo).
+#   2. cd deploy/azure
 #   3. (opcional) export ANTHROPIC_API_KEY="sk-ant-..."   # habilita os endpoints /ai
 #   4. bash deploy.sh
 #
@@ -44,8 +44,11 @@ APP_NAME="comenta-api"
 IMAGE_TAG="comenta-api:latest"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-API_DIR="$(cd "$SCRIPT_DIR/../../api" && pwd)"
-WEB_DIR="$(cd "$SCRIPT_DIR/../../web" && pwd)"
+# A raiz do monorepo é o contexto de build da imagem da API (o Dockerfile
+# precisa do lockfile único e de packages/shared) e também de onde sai o
+# `npm ci` do painel.
+ROOT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
+WEB_DIST="$ROOT_DIR/saas/web/dist"
 
 # Segredos gerados (hex = seguros dentro de URLs, sem precisar de URL-encode)
 PG_PASS="$(openssl rand -hex 24)"
@@ -128,7 +131,11 @@ REDIS_URL="rediss://:${REDIS_KEY_ENC}@${REDIS_HOST}:6380"
 say "Container Registry $ACR_NAME + build da imagem da API…"
 az acr create -n "$ACR_NAME" -g "$RG" --sku Basic --admin-enabled true \
   --only-show-errors 1>/dev/null
-az acr build --registry "$ACR_NAME" --image "$IMAGE_TAG" "$API_DIR" \
+# Contexto = raiz do repo, Dockerfile apontado explicitamente: desde a
+# migração para npm workspaces a imagem da API precisa do lockfile da raiz e
+# de packages/shared, que não existem dentro de saas/api.
+az acr build --registry "$ACR_NAME" --image "$IMAGE_TAG" "$ROOT_DIR" \
+  --file "$ROOT_DIR/saas/api/Dockerfile" \
   --only-show-errors 1>/dev/null
 ACR_SERVER="$(az acr show -n "$ACR_NAME" --query loginServer -o tsv)"
 ACR_USER="$(az acr credential show -n "$ACR_NAME" --query username -o tsv)"
@@ -187,10 +194,14 @@ echo "  API: $API_URL"
 # 7. Build do painel apontando para a API e publicação no site estático
 # ─────────────────────────────────────────────────────────────────────────────
 say "Build do painel (VITE_API_URL=$API_URL) + upload…"
-( cd "$WEB_DIR" && npm ci --no-audit --no-fund \
-    && VITE_API_URL="$API_URL" npm run build )
+# Monorepo: instala na raiz e compila @comenta/shared antes do painel.
+# --ignore-scripts pula o postinstall do editor (32 MB do core do FFmpeg).
+( cd "$ROOT_DIR" \
+    && npm ci --ignore-scripts --no-audit --no-fund \
+    && npm run build -w @comenta/shared \
+    && VITE_API_URL="$API_URL" npm run build -w @comenta/web )
 az storage blob upload-batch --account-name "$STORAGE" --account-key "$STORAGE_KEY" \
-  -s "$WEB_DIR/dist" -d '$web' --overwrite --only-show-errors 1>/dev/null
+  -s "$WEB_DIST" -d '$web' --overwrite --only-show-errors 1>/dev/null
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Resumo

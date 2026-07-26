@@ -16,7 +16,7 @@ comenta/
 ├─ packages/shared/    # Contratos de domínio compartilhados entre a API e o painel
 ├─ apps/editor/        # Editor de vídeo/música (React + Vite + FFmpeg.wasm)
 ├─ content/            # Robô de conteúdo do blog (curadoria → Ghost)
-├─ deploy/             # Deploy unificado (Docker Compose + Nginx + bootstrap)
+├─ deploy/             # Deploy: Compose + Nginx + bootstrap + azure/ (único lugar)
 └─ projects/comenta/   # Análise + instalador white-label (fora dos workspaces)
 ```
 

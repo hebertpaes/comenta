@@ -6,8 +6,9 @@
 #
 # Rode a partir de deploy/ (na raiz do repo comenta):
 #   cp .env.example .env   # e preencha os segredos
-#   # build do painel (Vite) uma vez:
-#   (cd ../saas/web && npm ci && VITE_API_URL=https://api.comenta.com.br npm run build)
+#   # build do painel (Vite) uma vez, a partir da raiz do monorepo:
+#   (cd .. && npm ci && npm run build -w @comenta/shared \
+#      && VITE_API_URL=https://api.comenta.com.br npm run build -w @comenta/web)
 #   docker compose --env-file .env up -d --build
 #
 # As portas ficam expostas só em 127.0.0.1 — o Nginx do host (com TLS)

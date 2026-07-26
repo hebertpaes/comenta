@@ -85,10 +85,13 @@ else
 fi
 
 log "4/7 Build do painel (Vite) via container node"
+# O repositório é um monorepo npm workspaces: o lockfile é único, na raiz, e o
+# painel importa @comenta/shared. Montar só saas/web (como era antes) não
+# funciona mais — lá não há lockfile nem como resolver o pacote local.
 docker run --rm \
   -e VITE_API_URL="https://api.$DOMAIN" \
-  -v "$REPO_DIR/saas/web":/app -w /app \
-  node:22-alpine sh -c "npm ci && npm run build"
+  -v "$REPO_DIR":/repo -w /repo \
+  node:22-alpine sh -c "npm ci --ignore-scripts && npm run build -w @comenta/shared && npm run build -w @comenta/web"
 
 log "5/7 Subindo containers (site + api + painel + postgres + redis)"
 cd "$DEPLOY_DIR"

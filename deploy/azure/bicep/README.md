@@ -17,7 +17,7 @@ revisão em PR e `what-if`.
 ## Rodar (Azure Cloud Shell)
 
 ```bash
-cd saas/deploy/azure/bicep
+cd deploy/azure/bicep
 export ANTHROPIC_API_KEY="sk-ant-..."   # opcional (sem ela, /ai responde 503)
 bash deploy-bicep.sh
 ```

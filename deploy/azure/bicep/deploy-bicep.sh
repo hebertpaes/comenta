@@ -9,7 +9,7 @@
 #
 # Uso:
 #   1. az login  (o Cloud Shell já vem autenticado)
-#   2. cd saas/deploy/azure/bicep
+#   2. cd deploy/azure/bicep
 #   3. (opcional) export ANTHROPIC_API_KEY="sk-ant-..."
 #   4. bash deploy-bicep.sh
 #
@@ -25,8 +25,8 @@ STORAGE="comentaweb${SUFFIX}"           # tem de casar com main.bicep
 IMAGE_TAG="comenta-api:latest"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-API_DIR="$(cd "$SCRIPT_DIR/../../../api" && pwd)"
-WEB_DIR="$(cd "$SCRIPT_DIR/../../../web" && pwd)"
+ROOT_DIR="$(cd "$SCRIPT_DIR/../../.." && pwd)"
+WEB_DIST="$ROOT_DIR/saas/web/dist"
 BICEP="$SCRIPT_DIR/main.bicep"
 
 # Segredos gerados (hex = seguro em URL; base64 ok como valor de env)
@@ -57,7 +57,8 @@ az group create -n "$RG" -l "$LOCATION" --only-show-errors 1>/dev/null
 say "Container Registry $ACR_NAME + build da imagem da API…"
 az acr create -n "$ACR_NAME" -g "$RG" --sku Basic --admin-enabled true \
   --only-show-errors 1>/dev/null
-az acr build --registry "$ACR_NAME" --image "$IMAGE_TAG" "$API_DIR" \
+az acr build --registry "$ACR_NAME" --image "$IMAGE_TAG" "$ROOT_DIR" \
+  --file "$ROOT_DIR/saas/api/Dockerfile" \
   --only-show-errors 1>/dev/null
 ACR_SERVER="$(az acr show -n "$ACR_NAME" --query loginServer -o tsv)"
 ACR_USER="$(az acr credential show -n "$ACR_NAME" --query username -o tsv)"
@@ -93,9 +94,12 @@ az storage blob service-properties update --account-name "$STORAGE" \
   --index-document index.html --404-document index.html \
   --only-show-errors 1>/dev/null
 
-( cd "$WEB_DIR" && npm ci --no-audit --no-fund && VITE_API_URL="$API_URL" npm run build )
+( cd "$ROOT_DIR" \
+    && npm ci --ignore-scripts --no-audit --no-fund \
+    && npm run build -w @comenta/shared \
+    && VITE_API_URL="$API_URL" npm run build -w @comenta/web )
 az storage blob upload-batch --account-name "$STORAGE" --account-key "$STORAGE_KEY" \
-  -s "$WEB_DIR/dist" -d '$web' --overwrite --only-show-errors 1>/dev/null
+  -s "$WEB_DIST" -d '$web' --overwrite --only-show-errors 1>/dev/null
 
 # ── Resumo ──────────────────────────────────────────────────────────────────
 cat <<RESUMO

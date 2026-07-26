@@ -72,7 +72,7 @@ graceful shutdown. 16 dos 17 módulos já validam entrada com Zod.
       abaixo.
 - [x] **5** — Site: Next **16** (não 15 — é a versão atual), React 19,
       Tailwind 4, só App Router, TypeScript estrito
-- [ ] **6** — Consolidar `deploy/` e `saas/deploy/` num só
+- [x] **6** — Consolidar `deploy/` e `saas/deploy/` num só
 
 Entrega: um commit por etapa, sem push. Nada vai para o remoto sem ordem
 explícita.

@@ -25,7 +25,7 @@ local nem servidor.
    topo) e escolha o ambiente **Bash**.
 2. Obtenha os arquivos, por exemplo:
    ```bash
-   git clone <URL-do-seu-repo> comenta && cd comenta/saas/deploy/azure
+   git clone <URL-do-seu-repo> comenta && cd comenta/deploy/azure
    ```
 3. _(Opcional)_ habilite a IA:
    ```bash

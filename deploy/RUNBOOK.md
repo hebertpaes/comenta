@@ -115,3 +115,4 @@ docker compose logs -f api
 - **WhatsApp** do chat do site: ajuste `NEXT_PUBLIC_WHATSAPP` no `.env`.
 - Estrutura do monorepo (npm workspaces, lockfile único na raiz): `site/` (landing+chat), `saas/api`, `saas/web`, `packages/shared` (contratos comuns à API e ao painel), `content/` (robô do blog), `apps/editor` (editor de vídeo), `deploy/` (este) e `projects/comenta/` (instalador, fora dos workspaces).
 - Os Dockerfiles de `saas/api`, `site` e `content` usam a **raiz** do repositório como contexto de build, porque o lockfile é único e `@comenta/shared` só existe localmente.
+- `deploy/` é o **único** lugar de deploy do repositório: compose, nginx, `bootstrap.sh` e, em `deploy/azure/`, os scripts de publicação na Azure. O antigo `saas/deploy/` foi removido — era um subconjunto deste, sem site, blog e painel, e expunha a API direto na porta 4000 em vez de só em `127.0.0.1`.
