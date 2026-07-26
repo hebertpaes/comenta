@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { CompanyStatus, PlanId, UserRole } from "./enums.js";
+import { CompanyStatus, PlanId, PrincipalRole, UserRole } from "./enums.js";
 
 /**
  * Contratos de autenticação.
@@ -81,8 +81,8 @@ export type RefreshResponse = z.infer<typeof RefreshResponse>;
 export const Principal = z.object({
   userId: z.string().uuid().nullable(),
   companyId: z.string().uuid(),
-  role: UserRole,
-  name: z.string().optional(),
+  role: PrincipalRole,
+  name: z.string(),
 });
 export type Principal = z.infer<typeof Principal>;
 

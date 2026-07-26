@@ -14,6 +14,39 @@ jobs:
   ci:
     name: lint + typecheck + test + build
     runs-on: ubuntu-latest
+
+    # Os testes de integração da API rodam contra um Postgres de verdade: é o
+    # comportamento das queries (o `where companyId` de cada uma) que eles
+    # verificam, e isso um banco falso não provaria. O Redis sobe porque
+    # src/queues.ts abre conexão no import.
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: comenta
+          POSTGRES_PASSWORD: comenta
+          POSTGRES_DB: comenta_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U comenta -d comenta_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      TEST_DATABASE_URL: postgresql://comenta:comenta@localhost:5432/comenta_test
+      TEST_REDIS_URL: redis://localhost:6379
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -38,6 +71,17 @@ jobs:
 
       - name: Testes
         run: npm test
+
+      # Rede de segurança: sem TEST_DATABASE_URL os testes de integração se
+      # pulam sozinhos. Se algum dia a variável sumir da CI, esta verificação
+      # falha em vez de deixar a suíte passar sem exercitar o multi-tenant.
+      - name: Confirma que os testes de integração rodaram
+        run: |
+          npm test -w @comenta/api 2>&1 | tee /tmp/api-test.log
+          if grep -q "PULADO" /tmp/api-test.log; then
+            echo "::error::Testes de integração da API foram pulados — TEST_DATABASE_URL não chegou."
+            exit 1
+          fi
 
       - name: Build
         run: npm run build --workspaces --if-present

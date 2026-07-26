@@ -49,7 +49,9 @@ graceful shutdown. 16 dos 17 módulos já validam entrada com Zod.
    Os contratos de dados entre API e painel são reescritos à mão dos dois lados,
    sem nada que garanta que continuem iguais.
 
-6. **`ratings.ts`** é o único módulo da API sem validação Zod.
+6. ~~**`ratings.ts`** é o único módulo da API sem validação Zod.~~ **Errado.**
+   O módulo tem uma rota só, `GET /ratings`, que não recebe nenhuma entrada —
+   não há o que validar. A ausência de Zod ali não é lacuna.
 
 7. **Deploy duplicado.** `deploy/` na raiz e `saas/deploy/` — dois
    `docker-compose.yml` e duas configs de nginx descrevendo o mesmo sistema.
@@ -65,8 +67,9 @@ graceful shutdown. 16 dos 17 módulos já validam entrada com Zod.
 - [x] **2** — ESLint 10 flat + Prettier + Vitest + CI com lint/typecheck/test/build
 - [x] **3** — Reescrita do painel: TS, React 19, Vite 8, React Router 8,
       TanStack Query, estrutura por feature, refresh token funcionando
-- [ ] **4** — API: rotas tipadas via `fastify-type-provider-zod`, testes de
-      integração de auth / conversas / isolamento multi-tenant
+- [x] **4** — API: testes de auth e isolamento multi-tenant contra Postgres
+      real. A migração para `fastify-type-provider-zod` ficou de fora — motivo
+      abaixo.
 - [ ] **5** — Site: Next 15, React 19, Tailwind 4, só App Router
 - [ ] **6** — Consolidar `deploy/` e `saas/deploy/` num só
 
@@ -84,6 +87,29 @@ desatualizados:
 | `automations.type`  | `welcome \| business_hours \| keyword`    | também aceita `ai` e `rating`                            |
 | `channels.status`   | `connected \| connecting \| disconnected` | `modules/channels.ts` também grava `configured`          |
 | `conversationNotes` | —                                         | a rota devolve o autor como `author`, não `authorUserId` |
+
+## O que ficou de fora da etapa 4, e por quê
+
+O plano previa migrar as rotas para `fastify-type-provider-zod`. **Não fiz**, e
+a decisão é minha — vale discordar.
+
+O ganho seria o `/docs` passar a descrever os corpos de requisição, que hoje
+só documenta os esquemas de segurança. O custo é alto para o que entrega:
+
+- São **84 chamadas de `parse()` em 17 módulos**. As entradas **já são
+  validadas** com Zod hoje; a migração troca a forma, não adiciona proteção.
+- Os testes de integração cobrem 5 dos 17 módulos. Mexer nos outros 12 sem
+  rede de proteção é justamente o tipo de mudança grande e silenciosa que
+  costuma quebrar em produção.
+- Se junto vierem `response` schemas — que é o que faz o OpenAPI ficar
+  completo —, o Fastify passa a **serializar** por eles e **descarta em
+  silêncio** qualquer campo ausente do esquema. Num painel que acabou de ser
+  reescrito contra as respostas atuais, esse é um jeito fácil de sumir com
+  dados sem ninguém perceber.
+
+Ordem que eu sugiro, se quiser seguir: ampliar os testes de integração para os
+módulos restantes primeiro, e só então migrar — módulo a módulo, com os testes
+como rede.
 
 ## Pendências conhecidas
 

@@ -22,6 +22,13 @@ export const USER_ROLES = ["admin", "agent"] as const;
 export const UserRole = z.enum(USER_ROLES);
 export type UserRole = z.infer<typeof UserRole>;
 
+/** Papel de quem fez a chamada. Além dos papéis de usuário existe `api`, usado
+ *  quando a autenticação veio de uma API key em vez de uma sessão — e que o
+ *  `requireAdmin` trata como administrador. */
+export const PRINCIPAL_ROLES = ["admin", "agent", "api"] as const;
+export const PrincipalRole = z.enum(PRINCIPAL_ROLES);
+export type PrincipalRole = z.infer<typeof PrincipalRole>;
+
 /** Catálogo de canais oferecidos pelo painel. `real` distingue as integrações
  *  que já entregam mensagem das que só têm o encaixe pronto. */
 export const CHANNEL_CATALOG = [
