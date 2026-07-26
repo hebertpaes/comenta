@@ -44,7 +44,12 @@ function render(template: string, contact: { name: string }): string {
 
 // Registra a mensagem de saída na conversa do contato (cria a conversa se não
 // houver uma aberta) e tenta entregar no WhatsApp. Lança em caso de falha grave.
-async function deliverToContact(companyId: string, contactId: string, body: string) {
+async function deliverToContact(
+  companyId: string,
+  contactId: string,
+  body: string,
+  media?: { url: string; type: "image" | "file" }
+) {
   let [conv] = await db
     .select()
     .from(schema.conversations)
@@ -68,7 +73,14 @@ async function deliverToContact(companyId: string, contactId: string, body: stri
 
   const [msg] = await db
     .insert(schema.messages)
-    .values({ companyId, conversationId: conv.id, direction: "out", body })
+    .values({
+      companyId,
+      conversationId: conv.id,
+      direction: "out",
+      body,
+      contentType: media ? media.type : "text",
+      mediaUrl: media?.url ?? null,
+    })
     .returning();
   await db
     .update(schema.conversations)
@@ -85,7 +97,7 @@ async function deliverToContact(companyId: string, contactId: string, body: stri
   // Entrega no WhatsApp (best-effort): se não houver conexão, a mensagem fica
   // registrada na conversa mesmo assim. Import dinâmico evita ciclo de módulo.
   await import("../channels/whatsapp.js")
-    .then((m) => m.sendToContact(companyId, contactId, body))
+    .then((m) => m.sendToContact(companyId, contactId, body, media))
     .catch(() => false);
 }
 
@@ -126,7 +138,10 @@ export async function runCampaign(campaignId: string) {
       try {
         if (!contact?.phone) throw new Error("contato sem telefone");
         const body = render(camp.message, { name: contact.name });
-        await deliverToContact(camp.companyId, contact.id, body);
+        const media = camp.mediaUrl
+          ? { url: camp.mediaUrl, type: (camp.mediaType === "file" ? "file" : "image") as "image" | "file" }
+          : undefined;
+        await deliverToContact(camp.companyId, contact.id, body, media);
         await db
           .update(schema.campaignRecipients)
           .set({ status: "sent", sentAt: new Date(), error: null })
@@ -272,7 +287,10 @@ export async function campaignRoutes(app: FastifyInstance) {
     const body = parse(
       z.object({
         name: z.string().min(1).max(160),
-        message: z.string().min(1).max(4096),
+        // Com mídia, a mensagem (legenda) pode ficar vazia.
+        message: z.string().max(4096).default(""),
+        mediaUrl: z.string().url().max(2048).optional(),
+        mediaType: z.enum(["image", "file"]).optional(),
         audience: z.enum(["all", "tag", "contacts"]).default("all"),
         tag: z.string().max(64).optional(),
         contactIds: z.array(z.string().uuid()).max(5000).optional(),
@@ -281,6 +299,12 @@ export async function campaignRoutes(app: FastifyInstance) {
       req.body
     );
     const p = req.principal;
+
+    const mediaUrl = body.mediaUrl?.trim() || null;
+    const mediaType = mediaUrl ? (body.mediaType ?? "image") : null;
+    if (!body.message.trim() && !mediaUrl) {
+      throw new ApiError(400, "Escreva uma mensagem ou anexe uma mídia.");
+    }
 
     const audience = await resolveAudience(p.companyId, {
       all: body.audience === "all",
@@ -301,6 +325,8 @@ export async function campaignRoutes(app: FastifyInstance) {
         companyId: p.companyId,
         name: body.name.trim(),
         message: body.message,
+        mediaUrl,
+        mediaType,
         status,
         filterTag: body.audience === "tag" ? body.tag ?? null : null,
         scheduledAt,

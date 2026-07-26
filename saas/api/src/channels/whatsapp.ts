@@ -319,7 +319,12 @@ export async function disconnect(channelId: string) {
 /** Entrega uma mensagem outbound no WhatsApp do contato, usando QUALQUER sessão
  *  conectada da empresa. Retorna false se nenhuma estiver conectada ou o contato
  *  não tiver telefone. */
-export async function sendToContact(companyId: string, contactId: string, body: string): Promise<boolean> {
+export async function sendToContact(
+  companyId: string,
+  contactId: string,
+  body: string,
+  media?: { url: string; type: "image" | "file"; fileName?: string }
+): Promise<boolean> {
   let session: Session | null = null;
   for (const s of sessions.values()) {
     if (s.companyId === companyId && s.status === "connected" && s.mode === "baileys" && s.sock) { session = s; break; }
@@ -328,7 +333,18 @@ export async function sendToContact(companyId: string, contactId: string, body: 
   const [contact] = await db.select().from(schema.contacts).where(eq(schema.contacts.id, contactId));
   const digits = contact?.phone?.replace(/\D/g, "");
   if (!digits) return false;
-  await session.sock.sendMessage(`${digits}@s.whatsapp.net`, { text: body });
+  const jid = `${digits}@s.whatsapp.net`;
+  if (media?.url) {
+    // Baileys busca a mídia pela URL. Imagem entra com legenda; arquivo como documento.
+    if (media.type === "image") {
+      await session.sock.sendMessage(jid, { image: { url: media.url }, caption: body || undefined });
+    } else {
+      const fileName = media.fileName || media.url.split("/").pop()?.split("?")[0] || "arquivo";
+      await session.sock.sendMessage(jid, { document: { url: media.url }, fileName, caption: body || undefined });
+    }
+    return true;
+  }
+  await session.sock.sendMessage(jid, { text: body });
   return true;
 }
 

@@ -606,7 +606,18 @@ function Conversations() {
               <NotesPanel conversationId={detail.id} />
               <div className="msgs">
                 {(detail.messages || []).map((msg) => (
-                  <div key={msg.id} className={`bubble ${msg.direction}`}>{msg.body}</div>
+                  <div key={msg.id} className={`bubble ${msg.direction}`}>
+                    {msg.mediaUrl && msg.contentType === "image" && (
+                      <a href={msg.mediaUrl} target="_blank" rel="noopener noreferrer">
+                        <img src={msg.mediaUrl} alt="" style={{ maxWidth: "100%", borderRadius: 8, display: "block", marginBottom: msg.body ? 6 : 0 }} />
+                      </a>
+                    )}
+                    {msg.mediaUrl && msg.contentType === "file" && (
+                      <a href={msg.mediaUrl} target="_blank" rel="noopener noreferrer"
+                        style={{ display: "inline-block", marginBottom: msg.body ? 6 : 0 }}>📎 Abrir arquivo</a>
+                    )}
+                    {msg.body}
+                  </div>
                 ))}
               </div>
 
@@ -1641,6 +1652,8 @@ function CampaignForm({ audience, onCreate }) {
   const [tag, setTag] = useState("");
   const [when, setWhen] = useState("now");
   const [scheduledAt, setScheduledAt] = useState("");
+  const [mediaType, setMediaType] = useState("none");
+  const [mediaUrl, setMediaUrl] = useState("");
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
 
@@ -1651,10 +1664,13 @@ function CampaignForm({ audience, onCreate }) {
     e.preventDefault();
     setErr("");
     if (!name.trim()) return setErr("Dê um nome à campanha.");
-    if (!message.trim()) return setErr("Escreva a mensagem.");
+    const hasMedia = mediaType !== "none" && mediaUrl.trim();
+    if (!message.trim() && !hasMedia) return setErr("Escreva a mensagem ou anexe uma mídia.");
+    if (mediaType !== "none" && !mediaUrl.trim()) return setErr("Informe a URL da mídia.");
     if (aud === "tag" && !tag) return setErr("Escolha uma tag para o público.");
     const body = { name: name.trim(), message: message.trim(), audience: aud };
     if (aud === "tag") body.tag = tag;
+    if (hasMedia) { body.mediaType = mediaType; body.mediaUrl = mediaUrl.trim(); }
     if (when === "schedule") {
       if (!scheduledAt) return setErr("Escolha a data/hora do agendamento.");
       body.scheduledAt = new Date(scheduledAt).toISOString();
@@ -1662,7 +1678,7 @@ function CampaignForm({ audience, onCreate }) {
     setBusy(true);
     try {
       await onCreate(body, when === "now");
-      setName(""); setMessage(""); setScheduledAt("");
+      setName(""); setMessage(""); setScheduledAt(""); setMediaType("none"); setMediaUrl("");
     } catch (e) { setErr(e.message); } finally { setBusy(false); }
   };
 
@@ -1678,6 +1694,21 @@ function CampaignForm({ audience, onCreate }) {
           style={{ ...inp, resize: "vertical" }} />
         <p className="muted" style={{ fontSize: 12, marginTop: 4 }}>Use <b>{"{nome}"}</b> para personalizar com o nome do contato.</p>
       </div>
+      <div className="field"><label>Mídia (opcional)</label>
+        <select value={mediaType} onChange={(e) => setMediaType(e.target.value)} style={inp}>
+          <option value="none">Sem mídia</option>
+          <option value="image">Imagem</option>
+          <option value="file">Arquivo</option>
+        </select>
+      </div>
+      {mediaType !== "none" && (
+        <div className="field"><label>URL da {mediaType === "image" ? "imagem" : "arquivo"}</label>
+          <input value={mediaUrl} onChange={(e) => setMediaUrl(e.target.value)} placeholder="https://…" style={inp} />
+          <p className="muted" style={{ fontSize: 12, marginTop: 4 }}>
+            Link público do arquivo. A mensagem acima vira a legenda.
+          </p>
+        </div>
+      )}
       <div className="field"><label>Público</label>
         <select value={aud} onChange={(e) => setAud(e.target.value)} style={inp}>
           <option value="all">Todos os contatos com telefone ({audience?.totalWithPhone || 0})</option>
