@@ -6,6 +6,15 @@
 # Ele troca os domínios de produção (comenta.com.br) por localhost,
 # ajusta o CORS pro painel local e aponta o Ghost pra porta local.
 # NÃO é carregado no deploy da VPS (o bootstrap usa só o compose base).
+#
+# Também adiciona o loopback IPv6 (`[::1]`) em cada porta publicada. O compose
+# base publica só em `127.0.0.1`, que é IPv4; mas o /etc/hosts do macOS mapeia
+# `localhost` para 127.0.0.1 E ::1, e o navegador tenta o ::1 primeiro — o que
+# dá "conexão recusada" ao abrir http://localhost:8080 mesmo com tudo no ar.
+# O `curl` disfarça o problema porque cai no IPv4 sozinho.
+#
+# As listas de portas do Compose são somadas, não substituídas: o bind original
+# em 127.0.0.1 continua valendo e estes entram por cima.
 # =============================================================
 services:
   api:
@@ -14,6 +23,8 @@ services:
       API_URL: http://localhost:4000
       # painel (8080) + site/widget (3000)
       CORS_ORIGINS: http://localhost:8080,http://localhost:3000
+    ports:
+      - "[::1]:4000:4000"
 
   site:
     # Embute as URLs locais no build do site (os links "Entrar"/"Começar
@@ -25,7 +36,29 @@ services:
         NEXT_PUBLIC_WHATSAPP: ${NEXT_PUBLIC_WHATSAPP:-5566999999999}
     environment:
       NEXT_PUBLIC_WHATSAPP: ${NEXT_PUBLIC_WHATSAPP:-5566999999999}
+    ports:
+      - "[::1]:3000:3000"
+
+  panel:
+    ports:
+      - "[::1]:8080:80"
 
   ghost:
     environment:
       url: http://localhost:2368
+    ports:
+      - "[::1]:2368:2368"
+
+  # Ferramentas do profile "tools": só sobem sob demanda, mas se subirem
+  # precisam do mesmo tratamento para abrir por `localhost` no navegador.
+  n8n:
+    ports:
+      - "[::1]:5678:5678"
+
+  metabase:
+    ports:
+      - "[::1]:3001:3000"
+
+  nocodb:
+    ports:
+      - "[::1]:8090:8080"
