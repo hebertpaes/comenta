@@ -61,9 +61,9 @@ graceful shutdown. 16 dos 17 módulos já validam entrada com Zod.
 ## Etapas
 
 - [x] **0** — Branch e baseline
-- [ ] **1** — Monorepo npm workspaces + `packages/shared` com os contratos Zod
-- [ ] **2** — ESLint 9 flat + Prettier + Vitest + CI com lint/typecheck/test/build
-- [ ] **3** — Reescrita do painel: TS, React 19, Vite 7, React Router 7,
+- [x] **1** — Monorepo npm workspaces + `packages/shared` com os contratos Zod
+- [x] **2** — ESLint 10 flat + Prettier + Vitest + CI com lint/typecheck/test/build
+- [x] **3** — Reescrita do painel: TS, React 19, Vite 8, React Router 8,
       TanStack Query, estrutura por feature, refresh token funcionando
 - [ ] **4** — API: rotas tipadas via `fastify-type-provider-zod`, testes de
       integração de auth / conversas / isolamento multi-tenant
@@ -72,3 +72,26 @@ graceful shutdown. 16 dos 17 módulos já validam entrada com Zod.
 
 Entrega: um commit por etapa, sem push. Nada vai para o remoto sem ordem
 explícita.
+
+## Divergências encontradas entre o código e o que estava documentado
+
+Extrair os contratos para `packages/shared` obrigou a conferir cada valor
+contra o que o código realmente faz. Três comentários do schema estavam
+desatualizados:
+
+| Onde                | Comentário dizia                          | Código faz                                               |
+| ------------------- | ----------------------------------------- | -------------------------------------------------------- |
+| `automations.type`  | `welcome \| business_hours \| keyword`    | também aceita `ai` e `rating`                            |
+| `channels.status`   | `connected \| connecting \| disconnected` | `modules/channels.ts` também grava `configured`          |
+| `conversationNotes` | —                                         | a rota devolve o autor como `author`, não `authorUserId` |
+
+## Pendências conhecidas
+
+- **34 → 33 `any`** restantes, quase todos em `saas/api/src/channels/whatsapp.ts`
+  (Baileys tipa mal o que devolve) e em `site/pages/preview.tsx` (some na
+  etapa 5). O lint avisa mas não reprova; vira erro quando zerar.
+- **Progresso das aulas** da Academia continua no `localStorage`: não existe
+  endpoint de progresso na API, então não acompanha o usuário entre
+  dispositivos. Mantido como estava para não inventar comportamento.
+- **`site/pages/preview.tsx`** encadeia `setTimeout` sem cancelar no unmount.
+  A etapa 5 migra o arquivo e é a hora de resolver.

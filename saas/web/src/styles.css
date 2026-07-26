@@ -130,7 +130,10 @@ textarea {
   font-size: 18px;
   margin-bottom: 22px;
 }
-.nav button {
+/* A navegação agora usa <NavLink>, que renderiza <a>. Os seletores cobrem os
+   dois para não depender do elemento. */
+.nav button,
+.nav a {
   display: block;
   width: 100%;
   text-align: left;
@@ -139,8 +142,14 @@ textarea {
   padding: 10px 12px;
   border-radius: 8px;
   margin-bottom: 4px;
+  text-decoration: none;
+  cursor: pointer;
 }
-.nav button.active {
+.nav button.active,
+.nav a.active {
+  background: var(--panel2);
+}
+.nav a:hover {
   background: var(--panel2);
 }
 .main {

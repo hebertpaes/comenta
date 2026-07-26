@@ -98,6 +98,8 @@ services:
     restart: always
     volumes:
       - ../saas/web/dist:/usr/share/nginx/html:ro
+      # Fallback de SPA: sem isto, abrir /conversas/:id direto dá 404.
+      - ./nginx/panel.conf:/etc/nginx/conf.d/default.conf:ro
     ports:
       - "127.0.0.1:8080:80"
 

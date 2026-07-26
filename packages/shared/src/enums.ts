@@ -44,7 +44,10 @@ export const CHANNEL_TYPES = [
 export const ChannelType = z.enum(CHANNEL_TYPES);
 export type ChannelType = z.infer<typeof ChannelType>;
 
-export const CHANNEL_STATUSES = ["connected", "connecting", "disconnected"] as const;
+/** Inclui `configured`: o comentário da coluna no schema listava só três
+ *  valores, mas modules/channels.ts grava "configured" no banco quando um canal
+ *  sem integração real recebe credenciais. */
+export const CHANNEL_STATUSES = ["connected", "connecting", "configured", "disconnected"] as const;
 export const ChannelStatus = z.enum(CHANNEL_STATUSES);
 export type ChannelStatus = z.infer<typeof ChannelStatus>;
 
