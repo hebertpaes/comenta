@@ -392,6 +392,19 @@ export const campaigns = pgTable(
     // Mídia opcional anexada à campanha (URL pública). mediaType: image | file.
     mediaUrl: text("media_url"),
     mediaType: varchar("media_type", { length: 8 }),
+    // Configuração de disparo (anti-bloqueio): intervalos, lotes, limite diário,
+    // horário comercial e ordem aleatória. Ver DEFAULT_DISPATCH em campaigns.ts.
+    dispatch: jsonb("dispatch").$type<{
+      minSec: number;
+      maxSec: number;
+      batchSize: number;
+      batchPauseMin: number;
+      dailyLimit: number;
+      businessOnly: boolean;
+      start: string;
+      end: string;
+      shuffle: boolean;
+    }>(),
     // draft | scheduled | running | done | canceled
     status: varchar("status", { length: 16 }).notNull().default("draft"),
     filterTag: varchar("filter_tag", { length: 64 }), // tag usada para montar a lista (informativo)

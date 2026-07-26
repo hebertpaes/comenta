@@ -1654,6 +1654,16 @@ function CampaignForm({ audience, onCreate }) {
   const [scheduledAt, setScheduledAt] = useState("");
   const [mediaType, setMediaType] = useState("none");
   const [mediaUrl, setMediaUrl] = useState("");
+  const [showAdv, setShowAdv] = useState(false);
+  const [disp, setDisp] = useState({
+    minSec: 5, maxSec: 15, batchSize: 30, batchPauseMin: 3,
+    dailyLimit: 0, businessOnly: false, start: "08:00", end: "18:00", shuffle: true,
+  });
+  const setD = (k) => (e) => {
+    const v = e.target.type === "checkbox" ? e.target.checked
+      : e.target.type === "number" ? Math.max(0, parseInt(e.target.value || "0", 10)) : e.target.value;
+    setDisp((d) => ({ ...d, [k]: v }));
+  };
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
 
@@ -1671,6 +1681,8 @@ function CampaignForm({ audience, onCreate }) {
     const body = { name: name.trim(), message: message.trim(), audience: aud };
     if (aud === "tag") body.tag = tag;
     if (hasMedia) { body.mediaType = mediaType; body.mediaUrl = mediaUrl.trim(); }
+    if (disp.maxSec < disp.minSec) return setErr("O intervalo máximo não pode ser menor que o mínimo.");
+    body.dispatch = disp;
     if (when === "schedule") {
       if (!scheduledAt) return setErr("Escolha a data/hora do agendamento.");
       body.scheduledAt = new Date(scheduledAt).toISOString();
@@ -1733,6 +1745,54 @@ function CampaignForm({ audience, onCreate }) {
         <div className="field"><label>Data e hora</label>
           <input type="datetime-local" value={scheduledAt} onChange={(e) => setScheduledAt(e.target.value)} style={inp} /></div>
       )}
+
+      {/* Configurações anti-bloqueio do WhatsApp */}
+      <button type="button" className="link" onClick={() => setShowAdv((v) => !v)}
+        style={{ marginTop: 4, marginBottom: 8, textAlign: "left" }}>
+        {showAdv ? "▼" : "▶"} 🛡️ Configurações de envio (anti-bloqueio)
+      </button>
+      {showAdv && (
+        <div style={{ border: "1px solid var(--border)", borderRadius: 10, padding: 12, marginBottom: 10 }}>
+          <p className="muted" style={{ fontSize: 12, marginTop: 0, marginBottom: 10 }}>
+            Enviar rápido demais bloqueia o número. Estes limites espaçam os envios pra imitar um humano.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+            <div className="field" style={{ margin: 0 }}><label>Intervalo mín. (seg)</label>
+              <input type="number" min="0" value={disp.minSec} onChange={setD("minSec")} style={inp} /></div>
+            <div className="field" style={{ margin: 0 }}><label>Intervalo máx. (seg)</label>
+              <input type="number" min="0" value={disp.maxSec} onChange={setD("maxSec")} style={inp} /></div>
+            <div className="field" style={{ margin: 0 }}><label>Mensagens por lote</label>
+              <input type="number" min="0" value={disp.batchSize} onChange={setD("batchSize")} style={inp} /></div>
+            <div className="field" style={{ margin: 0 }}><label>Pausa entre lotes (min)</label>
+              <input type="number" min="0" value={disp.batchPauseMin} onChange={setD("batchPauseMin")} style={inp} /></div>
+            <div className="field" style={{ margin: 0 }}><label>Limite por dia (0 = sem limite)</label>
+              <input type="number" min="0" value={disp.dailyLimit} onChange={setD("dailyLimit")} style={inp} /></div>
+            <div className="field" style={{ margin: 0, display: "flex", alignItems: "flex-end" }}>
+              <label style={{ display: "flex", alignItems: "center", gap: 6, cursor: "pointer" }}>
+                <input type="checkbox" checked={disp.shuffle} onChange={setD("shuffle")} style={{ width: "auto" }} />
+                Ordem aleatória
+              </label>
+            </div>
+          </div>
+          <label style={{ display: "flex", alignItems: "center", gap: 6, cursor: "pointer", marginTop: 10 }}>
+            <input type="checkbox" checked={disp.businessOnly} onChange={setD("businessOnly")} style={{ width: "auto" }} />
+            Só enviar em horário comercial
+          </label>
+          {disp.businessOnly && (
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginTop: 8 }}>
+              <div className="field" style={{ margin: 0 }}><label>Início</label>
+                <input type="time" value={disp.start} onChange={setD("start")} style={inp} /></div>
+              <div className="field" style={{ margin: 0 }}><label>Fim</label>
+                <input type="time" value={disp.end} onChange={setD("end")} style={inp} /></div>
+            </div>
+          )}
+          <p className="muted" style={{ fontSize: 11, marginTop: 10, marginBottom: 0 }}>
+            Padrão: 1 envio a cada 5–15s, lotes de 30 com 3 min de descanso. Fora do horário/limite, a campanha
+            pausa sozinha e retoma depois.
+          </p>
+        </div>
+      )}
+
       <p className="muted" style={{ fontSize: 12 }}>Destinatários estimados: <b>{total}</b> contato(s).</p>
       {err && <div className="err">{err}</div>}
       <button disabled={busy} style={{ marginTop: 8 }}>{busy ? "Salvando…" : "➕ Criar campanha"}</button>

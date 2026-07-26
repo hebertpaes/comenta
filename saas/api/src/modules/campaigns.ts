@@ -26,11 +26,99 @@ import { audit } from "../lib/audit.js";
 // Campanhas em execução no processo (evita disparo duplicado pelo agendador).
 const inFlight = new Set<string>();
 
-// Intervalo entre envios (anti-bloqueio do WhatsApp). Configurável por env.
+// Intervalo padrão entre envios (fallback quando a campanha não define nada).
 const SEND_GAP_MS = Number(process.env.CAMPAIGN_SEND_GAP_MS || 700);
+
+// Configuração de disparo padrão (anti-bloqueio). Valores conservadores: pausa
+// aleatória entre mensagens, lotes com descanso, e ordem embaralhada.
+export const DEFAULT_DISPATCH = {
+  minSec: 5,          // intervalo mínimo entre mensagens (segundos)
+  maxSec: 15,         // intervalo máximo — o real é sorteado entre min e max
+  batchSize: 30,      // envia em lotes de N; 0 desliga o lote
+  batchPauseMin: 3,   // descanso entre lotes (minutos)
+  dailyLimit: 0,      // teto de envios por dia; 0 = sem limite
+  businessOnly: false, // só dispara dentro do horário comercial
+  start: "08:00",     // início do horário comercial
+  end: "18:00",       // fim do horário comercial
+  shuffle: true,      // embaralha a ordem dos destinatários
+};
+type Dispatch = typeof DEFAULT_DISPATCH;
+
+// Schema Zod para o corpo (todos opcionais; merge com o padrão).
+const DispatchSchema = z
+  .object({
+    minSec: z.number().int().min(0).max(3600),
+    maxSec: z.number().int().min(0).max(7200),
+    batchSize: z.number().int().min(0).max(100000),
+    batchPauseMin: z.number().int().min(0).max(1440),
+    dailyLimit: z.number().int().min(0).max(1000000),
+    businessOnly: z.boolean(),
+    start: z.string().regex(/^\d{2}:\d{2}$/),
+    end: z.string().regex(/^\d{2}:\d{2}$/),
+    shuffle: z.boolean(),
+  })
+  .partial();
+
+// Normaliza a config salva na campanha, aplicando defaults e sanidade.
+function dispatchOf(camp: { dispatch?: unknown }): Dispatch {
+  const d = { ...DEFAULT_DISPATCH, ...((camp.dispatch as Partial<Dispatch>) || {}) };
+  if (d.maxSec < d.minSec) d.maxSec = d.minSec; // evita intervalo invertido
+  return d;
+}
 
 function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms));
+}
+
+// Embaralha uma lista (Fisher-Yates) — para não disparar sempre na mesma ordem.
+function shuffle<T>(arr: T[]): T[] {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Minutos desde a meia-noite para "HH:MM".
+function hhmmToMin(s: string): number {
+  const [h, m] = s.split(":").map((n) => parseInt(n, 10));
+  return (h || 0) * 60 + (m || 0);
+}
+
+// Está dentro do horário comercial agora? (janela simples HH:MM–HH:MM, todo dia)
+function withinBusiness(d: Dispatch, now = new Date()): boolean {
+  if (!d.businessOnly) return true;
+  const cur = now.getHours() * 60 + now.getMinutes();
+  const a = hhmmToMin(d.start);
+  const b = hhmmToMin(d.end);
+  return a <= b ? cur >= a && cur < b : cur >= a || cur < b; // suporta janela que vira a meia-noite
+}
+
+// Próximo horário de abertura da janela comercial (para reagendar).
+function nextBusinessOpen(d: Dispatch, now = new Date()): Date {
+  const open = new Date(now);
+  const [h, m] = d.start.split(":").map((n) => parseInt(n, 10));
+  open.setHours(h || 0, m || 0, 0, 0);
+  if (open.getTime() <= now.getTime()) open.setDate(open.getDate() + 1);
+  return open;
+}
+
+// Início do próximo dia (para reagendar após bater o limite diário).
+function startOfTomorrow(now = new Date()): Date {
+  const t = new Date(now);
+  t.setDate(t.getDate() + 1);
+  t.setHours(0, 5, 0, 0);
+  return t;
+}
+
+// Coloca a campanha de volta na fila para retomar mais tarde (limite/horário).
+async function rescheduleCampaign(campaignId: string, companyId: string, when: Date, sent: number, failed: number) {
+  await db
+    .update(schema.campaigns)
+    .set({ status: "scheduled", scheduledAt: when, sent, failed })
+    .where(eq(schema.campaigns.id, campaignId));
+  emitToCompany(companyId, "campaign.updated", { id: campaignId, status: "scheduled", resumeAt: when.toISOString() });
 }
 
 function render(template: string, contact: { name: string }): string {
@@ -115,16 +203,39 @@ export async function runCampaign(campaignId: string) {
       .where(eq(schema.campaigns.id, campaignId));
     emitToCompany(camp.companyId, "campaign.updated", { id: campaignId, status: "running" });
 
-    const recipients = await db
-      .select({
-        id: schema.campaignRecipients.id,
-        contactId: schema.campaignRecipients.contactId,
-      })
+    const d = dispatchOf(camp);
+
+    // Fora do horário comercial no arranque → reagenda para a próxima abertura.
+    if (!withinBusiness(d)) {
+      await rescheduleCampaign(campaignId, camp.companyId, nextBusinessOpen(d), camp.sent, camp.failed);
+      return;
+    }
+
+    let recipients = await db
+      .select({ id: schema.campaignRecipients.id, contactId: schema.campaignRecipients.contactId })
       .from(schema.campaignRecipients)
       .where(and(eq(schema.campaignRecipients.campaignId, campaignId), eq(schema.campaignRecipients.status, "pending")));
+    if (d.shuffle) recipients = shuffle(recipients);
+
+    // Quantos já foram enviados hoje (para respeitar o limite diário).
+    let sentToday = 0;
+    if (d.dailyLimit > 0) {
+      const [row] = await db
+        .select({ n: dsql<number>`count(*)::int` })
+        .from(schema.campaignRecipients)
+        .where(
+          and(
+            eq(schema.campaignRecipients.campaignId, campaignId),
+            eq(schema.campaignRecipients.status, "sent"),
+            dsql`${schema.campaignRecipients.sentAt} >= date_trunc('day', now())`
+          )
+        );
+      sentToday = row?.n ?? 0;
+    }
 
     let sent = camp.sent;
     let failed = camp.failed;
+    let inBatch = 0;
 
     for (const r of recipients) {
       // Respeita cancelamento no meio do disparo.
@@ -133,6 +244,17 @@ export async function runCampaign(campaignId: string) {
         .from(schema.campaigns)
         .where(eq(schema.campaigns.id, campaignId));
       if (!fresh || fresh.status === "canceled") break;
+
+      // Saiu do horário comercial → pausa e retoma na próxima abertura.
+      if (!withinBusiness(d)) {
+        await rescheduleCampaign(campaignId, camp.companyId, nextBusinessOpen(d), sent, failed);
+        return;
+      }
+      // Bateu o limite diário → retoma amanhã.
+      if (d.dailyLimit > 0 && sentToday >= d.dailyLimit) {
+        await rescheduleCampaign(campaignId, camp.companyId, startOfTomorrow(), sent, failed);
+        return;
+      }
 
       const [contact] = await db.select().from(schema.contacts).where(eq(schema.contacts.id, r.contactId));
       try {
@@ -146,7 +268,7 @@ export async function runCampaign(campaignId: string) {
           .update(schema.campaignRecipients)
           .set({ status: "sent", sentAt: new Date(), error: null })
           .where(eq(schema.campaignRecipients.id, r.id));
-        sent++;
+        sent++; sentToday++; inBatch++;
       } catch (e) {
         await db
           .update(schema.campaignRecipients)
@@ -157,7 +279,17 @@ export async function runCampaign(campaignId: string) {
 
       await db.update(schema.campaigns).set({ sent, failed }).where(eq(schema.campaigns.id, campaignId));
       emitToCompany(camp.companyId, "campaign.progress", { id: campaignId, sent, failed, total: camp.total });
-      if (SEND_GAP_MS > 0) await sleep(SEND_GAP_MS);
+
+      // Descanso entre lotes; senão, intervalo aleatório entre mensagens.
+      if (d.batchSize > 0 && inBatch >= d.batchSize) {
+        inBatch = 0;
+        await sleep(d.batchPauseMin * 60_000);
+      } else {
+        const lo = d.minSec * 1000;
+        const hi = d.maxSec * 1000;
+        const wait = hi > lo ? lo + Math.floor(Math.random() * (hi - lo)) : lo || SEND_GAP_MS;
+        if (wait > 0) await sleep(wait);
+      }
     }
 
     const [after] = await db
@@ -295,6 +427,7 @@ export async function campaignRoutes(app: FastifyInstance) {
         tag: z.string().max(64).optional(),
         contactIds: z.array(z.string().uuid()).max(5000).optional(),
         scheduledAt: z.string().datetime({ offset: true }).optional(),
+        dispatch: DispatchSchema.optional(),
       }),
       req.body
     );
@@ -305,6 +438,8 @@ export async function campaignRoutes(app: FastifyInstance) {
     if (!body.message.trim() && !mediaUrl) {
       throw new ApiError(400, "Escreva uma mensagem ou anexe uma mídia.");
     }
+    // Config de disparo: merge do que veio com o padrão (mantém sanidade).
+    const dispatch = body.dispatch ? dispatchOf({ dispatch: body.dispatch }) : DEFAULT_DISPATCH;
 
     const audience = await resolveAudience(p.companyId, {
       all: body.audience === "all",
@@ -327,6 +462,7 @@ export async function campaignRoutes(app: FastifyInstance) {
         message: body.message,
         mediaUrl,
         mediaType,
+        dispatch,
         status,
         filterTag: body.audience === "tag" ? body.tag ?? null : null,
         scheduledAt,
