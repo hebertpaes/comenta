@@ -19,7 +19,10 @@
 set -euo pipefail
 
 DOMAIN="${DOMAIN:-comenta.com.br}"
-BRANCH="${BRANCH:-claude/project-creation-az9g99}"
+# O padrão precisa apontar para um ramo que já tenha o monorepo npm
+# workspaces: a etapa 4/7 abaixo roda `npm ci` na raiz e compila
+# @comenta/shared, o que não existe nos ramos anteriores à modernização.
+BRANCH="${BRANCH:-claude/modernizacao}"
 BASE="${BASE:-/srv/comenta}"
 EMAIL="${EMAIL:-}"
 SKIP_SSL="${SKIP_SSL:-0}"

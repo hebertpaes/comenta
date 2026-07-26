@@ -112,6 +112,27 @@ Ordem que eu sugiro, se quiser seguir: ampliar os testes de integração para os
 módulos restantes primeiro, e só então migrar — módulo a módulo, com os testes
 como rede.
 
+## Estado do deploy (verificado em 26/07/2026)
+
+**Nada deste repositório está no ar.** Conferido por DNS e HTTP:
+
+| Host                  | DNS                            | HTTP                          |
+| --------------------- | ------------------------------ | ----------------------------- |
+| `comenta.com.br`      | A → 104.21.93.129 (Cloudflare) | 404 — e o 404 é do **Google** |
+| `www.comenta.com.br`  | não existe                     | —                             |
+| `app.comenta.com.br`  | não existe                     | —                             |
+| `api.comenta.com.br`  | não existe                     | —                             |
+| `blog.comenta.com.br` | não existe                     | —                             |
+
+O apex responde por um serviço antigo do Google (provável Cloud Run, de quando
+o `site/` se chamava "Plataforma pessoal Hebert Paes"), não pelo Next deste
+repositório. Os quatro subdomínios nunca foram criados.
+
+Falta o que só o dono do domínio pode fazer: ter um VPS e apontar `@`, `www`,
+`app`, `api` e `blog` para o IP dele no Cloudflare. O `RUNBOOK.md` ganhou uma
+seção sobre isso, incluindo por que o proxy do Cloudflare precisa ficar
+desligado até o Certbot emitir os certificados.
+
 ## Pendências conhecidas
 
 - **`any` restantes: 18**, de 34 no começo. Os 15 do site foram eliminados na

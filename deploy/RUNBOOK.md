@@ -18,9 +18,15 @@ Os serviços escutam só em `127.0.0.1`; o **Nginx do host** (com TLS via Let's 
 Com o **DNS já apontando** para o VPS, rode como root:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/claude/project-creation-az9g99/deploy/bootstrap.sh \
+curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/claude/modernizacao/deploy/bootstrap.sh \
   | sudo DOMAIN=comenta.com.br [email protected] bash
 ```
+
+> **Use `claude/modernizacao`, não o ramo base.** O `bootstrap.sh` do
+> `claude/project-creation-az9g99` está quebrado desde a migração para npm
+> workspaces: ele monta só `saas/web` e roda `npm ci` lá dentro, onde não
+> existe mais lockfile — falha na etapa 4/7. A correção está no ramo desta
+> modernização. Depois que o PR for mesclado, troque para o ramo padrão.
 
 O `bootstrap.sh` instala Docker/Nginx/Certbot, clona **este** repo, builda o
 painel, sobe os containers, configura o Nginx e emite o SSL. Use `SKIP_SSL=1`
@@ -34,6 +40,62 @@ enquanto o DNS não propagou.
 
 Registros **A** para o IP do VPS: `@`, `www`, `app`, `api`, `blog`.
 
+**Estado em 26/07/2026:** só o apex `comenta.com.br` tem registro A (aponta
+para o Cloudflare, `104.21.93.129`, e o que responde atrás dele é um 404 do
+Google — sobra de um deploy antigo em Cloud Run, não este repositório).
+`www`, `app`, `api` e `blog` **não existem** — nem A, nem CNAME. Nenhum
+serviço deste repositório está no ar hoje.
+
+#### Se o domínio estiver no Cloudflare (é o caso hoje)
+
+Os nameservers de `comenta.com.br` são `cheryl.ns.cloudflare.com` e
+`evan.ns.cloudflare.com`, então os registros se criam no painel do Cloudflare.
+
+Crie os cinco registros com o **proxy desligado** (nuvem **cinza**, "DNS only"):
+
+| Tipo | Nome   | Conteúdo  | Proxy |
+| ---- | ------ | --------- | ----- |
+| A    | `@`    | IP do VPS | cinza |
+| A    | `www`  | IP do VPS | cinza |
+| A    | `app`  | IP do VPS | cinza |
+| A    | `api`  | IP do VPS | cinza |
+| A    | `blog` | IP do VPS | cinza |
+
+O proxy precisa ficar desligado **pelo menos até o SSL sair**. Com a nuvem
+laranja, o Cloudflare responde no lugar do seu servidor e o desafio HTTP-01 do
+`certbot --nginx` nunca chega no Nginx — a emissão falha com
+`Invalid response ... 404`. O apex hoje está justamente nesse estado.
+
+Depois que o Certbot emitir os certificados, você pode religar o proxy — mas
+só com **SSL/TLS → Overview → Full (strict)**. Em "Flexible" o Cloudflare fala
+HTTP com o seu servidor, e o Nginx responde com um redirecionamento para HTTPS:
+o resultado é um laço de redirecionamento infinito.
+
+Duas coisas que também merecem atenção com o proxy ligado:
+
+- **WebSocket do painel.** A API usa Socket.IO em `api.comenta.com.br`. O
+  Cloudflare suporta WebSocket, mas confirme em **Network → WebSockets** que
+  está habilitado, senão o tempo real do painel para de funcionar.
+- **QR do WhatsApp.** O pareamento via Baileys depende de conexão longa; o
+  timeout de 100 s do Cloudflare no plano gratuito pode cortar. Se o QR ficar
+  expirando, deixe `api` sem proxy (nuvem cinza).
+
+Alternativa, se quiser manter o proxy ligado desde o início: emita um
+**Origin Certificate** no Cloudflare (SSL/TLS → Origin Server), instale-o no
+Nginx e rode o bootstrap com `SKIP_SSL=1`, pulando o Certbot.
+
+Confira a propagação antes de seguir:
+
+```bash
+for h in comenta.com.br www.comenta.com.br app.comenta.com.br \
+         api.comenta.com.br blog.comenta.com.br; do
+  printf '%-24s %s\n' "$h" "$(dig +short "$h" A | tail -1)"
+done
+```
+
+Todos os cinco têm de devolver o IP do VPS. Enquanto não devolverem, use
+`SKIP_SSL=1` no bootstrap e emita o certificado depois.
+
 ### 2. Pré-requisitos no VPS
 
 ```bash
@@ -46,7 +108,7 @@ sudo apt-get update && sudo apt-get install -y nginx certbot python3-certbot-ngi
 ```bash
 sudo mkdir -p /srv/comenta && cd /srv/comenta
 git clone https://github.com/hebertpaes/comenta.git
-git -C comenta checkout claude/project-creation-az9g99   # enquanto não mesclar
+git -C comenta checkout claude/modernizacao   # enquanto o PR não for mesclado
 ```
 
 ### 4. Segredos
@@ -86,7 +148,7 @@ docker compose ps
 sudo cp deploy/nginx/comenta.conf /etc/nginx/sites-available/comenta.conf
 sudo ln -s /etc/nginx/sites-available/comenta.conf /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
-sudo certbot --nginx -d comenta.com.br -d www.comenta.com.br -d app.comenta.com.br -d api.comenta.com.br
+sudo certbot --nginx -d comenta.com.br -d www.comenta.com.br -d app.comenta.com.br -d api.comenta.com.br -d blog.comenta.com.br
 ```
 
 ---
