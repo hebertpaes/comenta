@@ -44,6 +44,13 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
+# O server.js do standalone faz `process.env.HOSTNAME || "0.0.0.0"`, e o Docker
+# já define HOSTNAME com o nome do container — que resolve para o IP dele. Sem
+# fixar isto, o Next escuta só em 172.x.x.x: funciona de fora (o Docker
+# encaminha a porta) mas recusa conexão no loopback, e o healthcheck do compose,
+# que usa localhost, falha para sempre. Era o motivo de o site aparecer
+# "unhealthy" mesmo servindo normalmente.
+ENV HOSTNAME=0.0.0.0
 RUN addgroup -g 1001 -S nodejs && adduser -S nextjs -u 1001
 
 # O standalone do Next num monorepo preserva a estrutura de diretórios: o
