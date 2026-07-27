@@ -121,6 +121,15 @@ export default tseslint.config(
     languageOptions: { globals: { ...globals.node, ...globals.browser } },
   },
 
+  // Extensao do Chrome: roda no navegador e ainda enxerga a API `chrome`, que
+  // nao existe em nenhum outro lugar do repo.
+  {
+    files: ["deploy/extensao-chrome/**/*.js"],
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.webextensions },
+    },
+  },
+
   // Desliga tudo que conflita com o Prettier. Precisa ficar por último.
   prettier
 );

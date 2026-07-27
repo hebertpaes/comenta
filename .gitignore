@@ -22,3 +22,10 @@ dump.rdb
 
 # Cache incremental do tsc (gerado; estava versionado por engano)
 *.tsbuildinfo
+
+# Build do Xcode (app iOS) - so o codigo-fonte vai pro repo
+apps/ios/build/
+apps/ios/build-sim/
+DerivedData/
+*.xcuserdatad
+xcuserdata/
