@@ -160,6 +160,8 @@ export const messages = pgTable(
     }),
     contentType: varchar("content_type", { length: 16 }).notNull().default("text"),
     body: text("body").notNull(),
+    // URL da mídia quando contentType é image/file (legenda vai em body).
+    mediaUrl: text("media_url"),
     status: varchar("status", { length: 16 }).notNull().default("sent"), // sent | delivered | read | failed
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
@@ -395,6 +397,22 @@ export const campaigns = pgTable(
       .references(() => companies.id, { onDelete: "cascade" }),
     name: varchar("name", { length: 160 }).notNull(),
     message: text("message").notNull(),
+    // Mídia opcional anexada à campanha (URL pública). mediaType: image | file.
+    mediaUrl: text("media_url"),
+    mediaType: varchar("media_type", { length: 8 }),
+    // Configuração de disparo (anti-bloqueio): intervalos, lotes, limite diário,
+    // horário comercial e ordem aleatória. Ver DEFAULT_DISPATCH em campaigns.ts.
+    dispatch: jsonb("dispatch").$type<{
+      minSec: number;
+      maxSec: number;
+      batchSize: number;
+      batchPauseMin: number;
+      dailyLimit: number;
+      businessOnly: boolean;
+      start: string;
+      end: string;
+      shuffle: boolean;
+    }>(),
     // draft | scheduled | running | done | canceled
     status: varchar("status", { length: 16 }).notNull().default("draft"),
     filterTag: varchar("filter_tag", { length: 64 }), // tag usada para montar a lista (informativo)
