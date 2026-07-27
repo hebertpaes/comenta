@@ -9,8 +9,8 @@ A aba **📲 Conexões** virou um catálogo estilo atendechat: a empresa tem
 | --------------------- | ---------------------------------------------------------------------- |
 | 🟢 **WhatsApp**       | **Real** (Baileys, QR). Pode ter **vários números** conectados juntos. |
 | 🌐 **Widget do site** | **Ativo** por padrão (o chat do site).                                 |
-| 📸 Instagram Direct   | Encaixe pronto — requer token da Meta.                                 |
-| 💬 Facebook Messenger | Encaixe pronto — requer token da página.                               |
+| 📸 **Instagram Direct**   | **Real** (Graph API). Requer conta profissional + página + token.  |
+| 💬 **Facebook Messenger** | **Real** (Graph API). Requer página + token da página.             |
 | ✈️ Telegram           | Encaixe pronto — requer token do @BotFather.                           |
 | ✉️ E-mail             | Encaixe pronto — requer IMAP/SMTP.                                     |
 
@@ -47,3 +47,45 @@ Atendentes veem os canais e o status, mas só admins criam/conectam/removem.
 - `DELETE /channels/:id` — remove (admin)
 - `POST /channels/:id/connect` · `POST /channels/:id/disconnect` (admin)
 - `GET /channels/:id/status` — status ao vivo (painel faz polling no WhatsApp)
+
+## Meta (Instagram Direct + Facebook Messenger)
+
+Os dois canais compartilham a mesma Graph API, o mesmo formato de webhook e o
+mesmo token de página — por isso um adaptador só (`src/channels/meta.ts`).
+
+### O que você precisa
+
+No protótipo existe **um app da Meta** para toda a instalação. Os segredos do
+app ficam no ambiente da API; só o que é da página o admin cola no painel.
+
+| Onde                  | Variável / campo     | O que é                                        |
+| --------------------- | -------------------- | ---------------------------------------------- |
+| `.env` da API         | `META_APP_SECRET`    | App Secret, usado para conferir a assinatura    |
+| `.env` da API         | `META_VERIFY_TOKEN`  | Você inventa; repete no painel da Meta          |
+| Painel → Configurar   | `pageId`             | ID da página do Facebook                        |
+| Painel → Configurar   | `igAccountId`        | ID da conta do Instagram (só no canal IG)       |
+| Painel → Configurar   | `pageAccessToken`    | Token **da página**, longa duração               |
+
+Uma conexão pode sobrescrever `appSecret`/`verifyToken` no próprio config
+quando a empresa trouxer o app dela.
+
+### Webhook
+
+Cadastre no painel da Meta: `https://api.SEU-DOMINIO/webhooks/meta`
+
+- `GET` responde ao handshake devolvendo o `hub.challenge` como texto puro.
+- `POST` recebe os eventos. A rota é pública (a Meta não manda JWT); o que prova
+  a origem é o HMAC `X-Hub-Signature-256` sobre o **corpo cru**. Assinatura que
+  não fecha → 403, e nada é gravado.
+
+Mensagem que chega vira contato (identificado pelo PSID/IGSID em
+`contacts.external_id`, porque a Meta não entrega telefone), conversa amarrada à
+conexão e mensagem de entrada — mesmo caminho do WhatsApp, em
+`src/channels/inbound.ts`. Ecos da própria resposta são descartados.
+
+### Limite da plataforma (não é escolha nossa)
+
+A Meta só permite responder **dentro de 24h** contadas da última mensagem do
+usuário. Fora da janela a Graph API recusa o envio (erro 10). **Não existe
+disparo em massa** por estes canais: a conversa é sempre iniciada por quem
+escreve para a página.

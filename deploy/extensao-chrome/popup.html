@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>Comenta — Hub local</title>
+  </head>
+  <body>
+    <header>
+      <div class="marca">
+        <span class="logo" aria-hidden="true"></span>
+        <strong>Comenta</strong>
+      </div>
+      <button id="recarregar" type="button" title="Verificar de novo">Verificar</button>
+    </header>
+
+    <p id="resumo" class="resumo" role="status">Verificando serviços…</p>
+
+    <main id="lista"></main>
+
+    <footer>
+      <label for="lan">IP do Mac na rede (para abrir no iPhone)</label>
+      <div class="linha-lan">
+        <input
+          id="lan"
+          type="text"
+          inputmode="decimal"
+          placeholder="ex.: 192.168.1.126"
+          autocomplete="off"
+        />
+        <button id="limpar-lan" type="button" title="Limpar">×</button>
+      </div>
+      <p class="dica">
+        Exponha com <code>bash local-mac.sh --lan</code>. Só painel, site e API saem
+        do Mac.
+      </p>
+    </footer>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
