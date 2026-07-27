@@ -51,7 +51,11 @@ function traduzErroAnthropic(e: unknown): never {
     );
   }
   if (e instanceof Anthropic.RateLimitError) {
-    throw new ApiError(429, "Limite de uso da IA atingido — tente de novo em instantes.", "ai_rate_limit");
+    throw new ApiError(
+      429,
+      "Limite de uso da IA atingido — tente de novo em instantes.",
+      "ai_rate_limit"
+    );
   }
   if (e instanceof Anthropic.APIConnectionError) {
     throw new ApiError(502, "Não consegui falar com a API da Anthropic.", "ai_offline");

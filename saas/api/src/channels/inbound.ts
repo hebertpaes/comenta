@@ -73,13 +73,17 @@ export async function recordInbound(
 
   if (created) {
     emitToCompany(companyId, "conversation.created", { conversation: conv, contact });
-    publishEvent(companyId, "conversation.created", { conversation: conv, contact }).catch(() => {});
+    publishEvent(companyId, "conversation.created", { conversation: conv, contact }).catch(
+      () => {}
+    );
   }
   emitToCompany(companyId, "message.created", { conversationId: conv.id, message: msg });
   publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(
     () => {}
   );
   import("../modules/automations.js")
-    .then((m) => m.applyAutomations(companyId, { id: conv.id, contactId: contact.id }, body, created))
+    .then((m) =>
+      m.applyAutomations(companyId, { id: conv.id, contactId: contact.id }, body, created)
+    )
     .catch(() => {});
 }

@@ -32,9 +32,9 @@ describe("checkSignature", () => {
   it("recusa cabeçalho ausente ou sem o prefixo sha256=", () => {
     expect(checkSignature(corpo, undefined, SEGREDO)).toBe(false);
     expect(checkSignature(corpo, "sha1=abc", SEGREDO)).toBe(false);
-    expect(checkSignature(corpo, createHmac("sha256", SEGREDO).update(corpo).digest("hex"), SEGREDO)).toBe(
-      false
-    );
+    expect(
+      checkSignature(corpo, createHmac("sha256", SEGREDO).update(corpo).digest("hex"), SEGREDO)
+    ).toBe(false);
   });
 
   it("recusa hex inválido sem estourar exceção", () => {

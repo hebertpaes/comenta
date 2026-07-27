@@ -142,10 +142,7 @@ const Evento = z.object({
 /** Acha a conexão dona de um `entry.id` (id da página ou da conta do IG). */
 async function acharCanal(objeto: string, entryId: string) {
   const tipo: MetaType = objeto === "instagram" ? "instagram" : "facebook";
-  const canais = await db
-    .select()
-    .from(schema.channels)
-    .where(eq(schema.channels.type, tipo));
+  const canais = await db.select().from(schema.channels).where(eq(schema.channels.type, tipo));
   return canais.find((c) => {
     const cfg = (c.config as Record<string, unknown>) || {};
     return cfg.pageId === entryId || cfg.igAccountId === entryId;
@@ -157,7 +154,12 @@ async function acharCanal(objeto: string, entryId: string) {
  * `externalId` — o PSID/IGSID — porque a Meta NÃO entrega telefone nem e-mail:
  * o mesmo usuário é um id opaco, diferente por página.
  */
-async function resolverContato(companyId: string, externalId: string, tipo: MetaType, nome: string) {
+async function resolverContato(
+  companyId: string,
+  externalId: string,
+  tipo: MetaType,
+  nome: string
+) {
   const [existente] = await db
     .select()
     .from(schema.contacts)
@@ -182,7 +184,9 @@ async function resolverContato(companyId: string, externalId: string, tipo: Meta
 async function buscarNome(psid: string, token: string, tipo: MetaType): Promise<string> {
   const generico = tipo === "instagram" ? "Contato Instagram" : "Contato Messenger";
   try {
-    const res = await fetch(`${GRAPH}/${psid}?fields=name&access_token=${encodeURIComponent(token)}`);
+    const res = await fetch(
+      `${GRAPH}/${psid}?fields=name&access_token=${encodeURIComponent(token)}`
+    );
     if (!res.ok) return generico;
     const data = (await res.json()) as { name?: string };
     return data.name?.trim() || generico;

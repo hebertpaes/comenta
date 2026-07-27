@@ -5,14 +5,14 @@ A aba **📲 Conexões** virou um catálogo estilo atendechat: a empresa tem
 
 ## Canais
 
-| Canal                 | Situação                                                               |
-| --------------------- | ---------------------------------------------------------------------- |
-| 🟢 **WhatsApp**       | **Real** (Baileys, QR). Pode ter **vários números** conectados juntos. |
-| 🌐 **Widget do site** | **Ativo** por padrão (o chat do site).                                 |
-| 📸 **Instagram Direct**   | **Real** (Graph API). Requer conta profissional + página + token.  |
-| 💬 **Facebook Messenger** | **Real** (Graph API). Requer página + token da página.             |
-| ✈️ Telegram           | Encaixe pronto — requer token do @BotFather.                           |
-| ✉️ E-mail             | Encaixe pronto — requer IMAP/SMTP.                                     |
+| Canal                     | Situação                                                               |
+| ------------------------- | ---------------------------------------------------------------------- |
+| 🟢 **WhatsApp**           | **Real** (Baileys, QR). Pode ter **vários números** conectados juntos. |
+| 🌐 **Widget do site**     | **Ativo** por padrão (o chat do site).                                 |
+| 📸 **Instagram Direct**   | **Real** (Graph API). Requer conta profissional + página + token.      |
+| 💬 **Facebook Messenger** | **Real** (Graph API). Requer página + token da página.                 |
+| ✈️ Telegram               | Encaixe pronto — requer token do @BotFather.                           |
+| ✉️ E-mail                 | Encaixe pronto — requer IMAP/SMTP.                                     |
 
 "Encaixe pronto" = a conexão existe (linha, status, tela de configuração e
 endpoints); a integração real com o provedor entra por cima quando você informa
@@ -58,13 +58,13 @@ mesmo token de página — por isso um adaptador só (`src/channels/meta.ts`).
 No protótipo existe **um app da Meta** para toda a instalação. Os segredos do
 app ficam no ambiente da API; só o que é da página o admin cola no painel.
 
-| Onde                  | Variável / campo     | O que é                                        |
-| --------------------- | -------------------- | ---------------------------------------------- |
-| `.env` da API         | `META_APP_SECRET`    | App Secret, usado para conferir a assinatura    |
-| `.env` da API         | `META_VERIFY_TOKEN`  | Você inventa; repete no painel da Meta          |
-| Painel → Configurar   | `pageId`             | ID da página do Facebook                        |
-| Painel → Configurar   | `igAccountId`        | ID da conta do Instagram (só no canal IG)       |
-| Painel → Configurar   | `pageAccessToken`    | Token **da página**, longa duração               |
+| Onde                | Variável / campo    | O que é                                      |
+| ------------------- | ------------------- | -------------------------------------------- |
+| `.env` da API       | `META_APP_SECRET`   | App Secret, usado para conferir a assinatura |
+| `.env` da API       | `META_VERIFY_TOKEN` | Você inventa; repete no painel da Meta       |
+| Painel → Configurar | `pageId`            | ID da página do Facebook                     |
+| Painel → Configurar | `igAccountId`       | ID da conta do Instagram (só no canal IG)    |
+| Painel → Configurar | `pageAccessToken`   | Token **da página**, longa duração           |
 
 Uma conexão pode sobrescrever `appSecret`/`verifyToken` no próprio config
 quando a empresa trouxer o app dela.

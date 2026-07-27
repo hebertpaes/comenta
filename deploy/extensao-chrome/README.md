@@ -4,16 +4,16 @@ Um popup que lista **todos** os serviços do Comenta rodando no seu Mac, mostra
 quais estão no ar e abre cada um com um clique. Substitui o punhado de abas
 fixadas e o "qual era mesmo a porta do NocoDB?".
 
-| Serviço  | Porta | Sobe por padrão? |
-| -------- | ----- | ---------------- |
-| Painel   | 8080  | sim              |
-| Site     | 3000  | sim              |
-| API      | 4000  | sim              |
-| Ghost    | 2368  | sim              |
+| Serviço  | Porta | Sobe por padrão?         |
+| -------- | ----- | ------------------------ |
+| Painel   | 8080  | sim                      |
+| Site     | 3000  | sim                      |
+| API      | 4000  | sim                      |
+| Ghost    | 2368  | sim                      |
 | n8n      | 5678  | só com `--profile tools` |
 | NocoDB   | 8090  | só com `--profile tools` |
 | Metabase | 3001  | só com `--profile tools` |
-| Moodle   | 8088  | container à parte |
+| Moodle   | 8088  | container à parte        |
 
 ## Instalar
 

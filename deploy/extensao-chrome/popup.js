@@ -94,7 +94,7 @@ async function verificar() {
 
   // Em paralelo: são 8 sondas de rede local, sequencial só somaria espera.
   const resultados = await Promise.all(
-    SERVICOS.map(async (s) => ({ servico: s, ...(await sondar(s)) })),
+    SERVICOS.map(async (s) => ({ servico: s, ...(await sondar(s)) }))
   );
 
   for (const { servico, estado, ms } of resultados) {
