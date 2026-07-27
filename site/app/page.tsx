@@ -9,11 +9,14 @@ import Testimonials from "./components/Testimonials";
 // em testes; sem eles, caem no domínio de produção.
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.comenta.com.br";
 
+// Cada card descreve algo que a plataforma REALMENTE faz hoje. O que ainda não
+// entrega mensagem mora na tabela de canais abaixo, marcado como "em breve" —
+// prometer aqui o que não existe cria expectativa que o produto não paga.
 const FEATURES = [
   {
     icon: "💬",
     title: "Tudo em uma caixa de entrada",
-    desc: "WhatsApp, Instagram, e-mail e chat do site num só lugar. Nenhuma mensagem cai no vácuo.",
+    desc: "WhatsApp, Instagram Direct, Messenger e o chat do site num só lugar. Nenhuma mensagem cai no vácuo.",
     color: "from-fuchsia-500 to-pink-500",
   },
   {
@@ -35,6 +38,66 @@ const FEATURES = [
     color: "from-emerald-500 to-teal-500",
   },
   {
+    icon: "🤖",
+    title: "Autoatendimento com handoff",
+    desc: "A IA responde sozinha as dúvidas simples e passa para uma pessoa no instante em que o caso pede.",
+    color: "from-purple-500 to-fuchsia-500",
+  },
+  {
+    icon: "📋",
+    title: "Kanban de atendimento",
+    desc: "Arraste a conversa entre aguardando, em atendimento e resolvida. O status muda junto.",
+    color: "from-blue-500 to-indigo-500",
+  },
+  {
+    icon: "🗂️",
+    title: "Filas por departamento",
+    desc: "Vendas, suporte, financeiro — cada fila com sua equipe e seu horário de funcionamento.",
+    color: "from-teal-500 to-emerald-500",
+  },
+  {
+    icon: "🕐",
+    title: "Horário comercial que responde",
+    desc: "Fora do expediente o cliente recebe um aviso na hora, em vez de silêncio até o dia seguinte.",
+    color: "from-slate-500 to-slate-700",
+  },
+  {
+    icon: "⌨️",
+    title: "Respostas rápidas",
+    desc: "Atalhos para o que sua equipe repete o dia inteiro. Digita o atalho, sai o texto completo.",
+    color: "from-lime-500 to-green-500",
+  },
+  {
+    icon: "🏷️",
+    title: "Tags e notas internas",
+    desc: "Marque o assunto e deixe recados que só a equipe vê — o cliente nunca enxerga.",
+    color: "from-orange-500 to-amber-500",
+  },
+  {
+    icon: "📣",
+    title: "Campanhas com ritmo humano",
+    desc: "Envio espaçado, em lotes e dentro do horário comercial — para o número não ser bloqueado.",
+    color: "from-pink-500 to-rose-500",
+  },
+  {
+    icon: "⭐",
+    title: "Avaliação depois do atendimento",
+    desc: "Ao resolver, o cliente recebe a pesquisa e a nota volta para o painel automaticamente.",
+    color: "from-yellow-500 to-amber-500",
+  },
+  {
+    icon: "💼",
+    title: "Chat interno da equipe",
+    desc: "Combine a resposta com o colega sem sair da plataforma nem abrir outro aplicativo.",
+    color: "from-cyan-500 to-blue-500",
+  },
+  {
+    icon: "🎓",
+    title: "Academia para treinar o time",
+    desc: "Cursos e aulas dentro do próprio painel — quem entra hoje aprende a atender sozinho.",
+    color: "from-indigo-500 to-violet-500",
+  },
+  {
     icon: "🔔",
     title: "Tempo real",
     desc: "Mensagens e métricas ao vivo via WebSocket. O time vê tudo acontecer na hora.",
@@ -45,6 +108,64 @@ const FEATURES = [
     title: "Webhooks & automações",
     desc: "Conecte seu CRM e ferramentas com entregas assinadas (HMAC) e retry em fila.",
     color: "from-rose-500 to-red-500",
+  },
+  {
+    icon: "👥",
+    title: "Times e permissões",
+    desc: "Administradores configuram; atendentes atendem. Cada um enxerga só o que precisa.",
+    color: "from-violet-500 to-purple-500",
+  },
+  {
+    icon: "📇",
+    title: "Contatos importados",
+    desc: "Traga sua base por planilha ou puxe a agenda do WhatsApp conectado, sem digitar um a um.",
+    color: "from-emerald-500 to-green-500",
+  },
+];
+
+/**
+ * Canais, com o estado real de cada um.
+ *
+ * `pronto: false` NÃO é "quase lá": significa que a conexão existe no painel mas
+ * ainda não entrega mensagem. Dizer o contrário aqui vira reclamação no primeiro
+ * dia de uso.
+ */
+const CANAIS = [
+  {
+    icon: "🟢",
+    nome: "WhatsApp",
+    detalhe: "Vários números ao mesmo tempo, conectados por QR Code.",
+    pronto: true,
+  },
+  {
+    icon: "📸",
+    nome: "Instagram Direct",
+    detalhe: "Conta profissional ligada a uma página do Facebook.",
+    pronto: true,
+  },
+  {
+    icon: "💬",
+    nome: "Facebook Messenger",
+    detalhe: "Mensagens da sua página caem na mesma caixa de entrada.",
+    pronto: true,
+  },
+  {
+    icon: "🌐",
+    nome: "Chat do site",
+    detalhe: "Widget pronto para colar no seu site. Ativo por padrão.",
+    pronto: true,
+  },
+  {
+    icon: "✈️",
+    nome: "Telegram",
+    detalhe: "Encaixe pronto no painel; a entrega de mensagens vem a seguir.",
+    pronto: false,
+  },
+  {
+    icon: "✉️",
+    nome: "E-mail",
+    detalhe: "Encaixe pronto no painel; a entrega de mensagens vem a seguir.",
+    pronto: false,
   },
 ];
 
@@ -106,6 +227,9 @@ export default function HomePage() {
             <a href="#recursos" className="hover:text-slate-900">
               Recursos
             </a>
+            <a href="#canais" className="hover:text-slate-900">
+              Canais
+            </a>
             <a href="#ia" className="hover:text-slate-900">
               IA
             </a>
@@ -141,7 +265,7 @@ export default function HomePage() {
           <div className="reveal">
             <span className="inline-flex items-center gap-2 rounded-full border border-fuchsia-200 bg-fuchsia-50 px-3 py-1 text-xs font-semibold text-fuchsia-700">
               <span className="h-2 w-2 rounded-full bg-fuchsia-500" />
-              Atendimento com IA · WhatsApp, Instagram, e-mail e mais
+              Atendimento com IA · WhatsApp, Instagram, Messenger e mais
             </span>
             <h1 className="mt-5 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
               Todo o seu atendimento em um só lugar — com{" "}
@@ -182,7 +306,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-10 sm:grid-cols-4">
           {[
             ["−60%", "tempo de resposta"],
-            ["5+", "canais integrados"],
+            ["4", "canais prontos para usar"],
             ["24/7", "atendimento com IA"],
             ["99,9%", "de disponibilidade"],
           ].map(([n, l]) => (
@@ -223,6 +347,54 @@ export default function HomePage() {
               <p className="mt-2 text-sm leading-relaxed text-slate-600">{f.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ===== Canais ===== */}
+      <section id="canais" className="border-y border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:py-24">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-extrabold sm:text-4xl">
+              Seus canais, <span className="text-gradient">uma conversa só</span>
+            </h2>
+            <p className="mt-4 text-slate-600">
+              O cliente escolhe por onde falar. Sua equipe atende tudo na mesma tela, com o
+              histórico junto.
+            </p>
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {CANAIS.map((c) => (
+              <div
+                key={c.nome}
+                className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5"
+              >
+                <span className="text-2xl leading-none" aria-hidden="true">
+                  {c.icon}
+                </span>
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h3 className="font-bold">{c.nome}</h3>
+                    <span
+                      className={
+                        c.pronto
+                          ? "rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-semibold text-emerald-700"
+                          : "rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-500"
+                      }
+                    >
+                      {c.pronto ? "Disponível" : "Em breve"}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{c.detalhe}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-8 text-center text-sm text-slate-500">
+            Marcamos como <strong className="text-slate-700">Disponível</strong> só o que já entrega
+            mensagem de verdade.
+          </p>
         </div>
       </section>
 
