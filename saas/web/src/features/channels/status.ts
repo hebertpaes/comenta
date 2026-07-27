@@ -27,9 +27,14 @@ export const CHANNEL_FIELDS: Record<string, ChannelField[]> = {
   telegram: [
     { key: "botToken", label: "Bot Token (@BotFather)", placeholder: "123456:ABC-DEF..." },
   ],
+  // As chaves precisam bater EXATAMENTE com MetaConfig
+  // (saas/api/src/channels/meta.ts) — é esse objeto que vai para channels.config
+  // e é validado no connect. O Instagram Direct passa pela página do Facebook a
+  // que a conta está ligada: o token é o DA PÁGINA, não o da conta do IG.
   instagram: [
-    { key: "accessToken", label: "Access Token (Meta)", placeholder: "EAAB..." },
-    { key: "igBusinessId", label: "Instagram Business ID", placeholder: "1784XXXXXXXX" },
+    { key: "pageAccessToken", label: "Token da página (Meta)", placeholder: "EAAB..." },
+    { key: "pageId", label: "ID da página do Facebook", placeholder: "1029XXXXXXXX" },
+    { key: "igAccountId", label: "ID da conta do Instagram", placeholder: "1784XXXXXXXX" },
   ],
   facebook: [
     { key: "pageAccessToken", label: "Page Access Token", placeholder: "EAAB..." },

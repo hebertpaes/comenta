@@ -12,6 +12,13 @@ const Env = z.object({
   ACCESS_TOKEN_TTL: z.string().default("15m"),
   REFRESH_TOKEN_TTL_DAYS: z.coerce.number().default(30),
   CORS_ORIGINS: z.string().default("http://localhost:5173"),
+  // Meta (Instagram Direct + Facebook Messenger). No protótipo existe UM app da
+  // Meta para toda a instalação, então o segredo e o token de verificação ficam
+  // aqui — só o id e o token da página variam por conexão, e esses o admin cola
+  // no painel. Uma conexão ainda pode sobrescrever ambos no seu config quando a
+  // empresa tiver app próprio.
+  META_APP_SECRET: z.string().default(""),
+  META_VERIFY_TOKEN: z.string().default(""),
 });
 
 export const config = Env.parse(process.env);

@@ -1,9 +1,8 @@
 import QRCode from "qrcode";
 import fs from "node:fs";
-import { and, desc, eq, ne } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { db, schema } from "../db/client.js";
-import { emitToCompany } from "../realtime.js";
-import { publishEvent } from "../queues.js";
+import { recordInbound } from "./inbound.js";
 
 /**
  * Sessões de WhatsApp (Baileys) — MULTI-CONEXÃO.
@@ -31,6 +30,7 @@ type Session = {
   sock: any | null;
   contacts: Map<string, string>; // phone (dígitos) -> nome da agenda do aparelho
   timer?: NodeJS.Timeout;
+  saveTimer?: NodeJS.Timeout; // grava a agenda em lote (ver scheduleSaveContacts)
 };
 
 const sessions = new Map<string, Session>(); // channelId -> Session
@@ -103,18 +103,101 @@ function jidToPhone(jid?: string | null): string | null {
   return digits || null;
 }
 
-// Acumula os contatos da agenda do aparelho conectado nesta sessão. O WhatsApp
-// entrega a lista por eventos (contacts.upsert/update e o sync inicial de
-// histórico); guardamos o melhor nome disponível para cada número.
+// ---- Agenda do aparelho ----------------------------------------------------
+//
+// O WhatsApp entrega a agenda por eventos (contacts.upsert/update e o sync de
+// app-state), quase toda de uma vez logo após o pareamento. Guardar só em
+// memória perdia tudo no primeiro restart da API: numa sessão restaurada o
+// WhatsApp NÃO reenvia a lista, então o botão "sincronizar contatos" só
+// funcionava na exata execução em que o número foi pareado. Por isso a agenda
+// é gravada junto das credenciais e recarregada ao restaurar a sessão.
+
+function contactsFile(session: Session): string {
+  return `${authDir(session.channelId, session.companyId)}/contatos.json`;
+}
+
+/** Grava a agenda em disco. Agendado, não imediato: os eventos chegam em
+ *  rajadas de centenas e um write por evento castigaria o disco à toa. */
+function scheduleSaveContacts(session: Session) {
+  if (session.saveTimer) return;
+  session.saveTimer = setTimeout(() => {
+    session.saveTimer = undefined;
+    try {
+      fs.writeFileSync(
+        contactsFile(session),
+        JSON.stringify([...session.contacts.entries()])
+      );
+    } catch {
+      /* best-effort: perder o cache não quebra o atendimento */
+    }
+  }, 2000);
+}
+
+/** Recarrega a agenda gravada, para a sincronização sobreviver a restarts. */
+function loadContacts(session: Session) {
+  try {
+    const raw = fs.readFileSync(contactsFile(session), "utf8");
+    for (const [phone, name] of JSON.parse(raw) as [string, string][]) {
+      session.contacts.set(phone, name);
+    }
+    if (session.contacts.size) {
+      console.log(`[wa] agenda recuperada do disco: ${session.contacts.size} contatos`);
+    }
+  } catch {
+    /* primeira conexão ainda não tem arquivo */
+  }
+}
+
+// Acumula os contatos da agenda do aparelho conectado nesta sessão.
 function ingestContacts(session: Session, list: any[] | undefined) {
+  let mudou = false;
   for (const c of list || []) {
     const jid: string = c?.id || c?.jid || "";
     if (!jid.endsWith("@s.whatsapp.net")) continue; // ignora grupos/broadcast
     const phone = jidToPhone(jid);
     if (!phone) continue;
     const name = (c?.name || c?.verifiedName || c?.notify || "").trim();
-    if (name || !session.contacts.has(phone)) session.contacts.set(phone, name);
+    if (name || !session.contacts.has(phone)) {
+      session.contacts.set(phone, name);
+      mudou = true;
+    }
   }
+  if (mudou) scheduleSaveContacts(session);
+}
+
+/**
+ * Pede ao WhatsApp que reenvie o app-state (que inclui a agenda) e espera os
+ * eventos chegarem. É o que recupera a lista numa sessão já pareada, sem
+ * precisar ler o QR de novo.
+ */
+async function resyncContacts(session: Session, timeoutMs = 15000): Promise<void> {
+  const sock = session.sock;
+  if (!sock?.resyncAppState) return;
+  const antes = session.contacts.size;
+  try {
+    // Mesmos coletores que o Baileys usa no sync inicial.
+    await sock.resyncAppState(
+      ["critical_block", "critical_unblock_low", "regular_high", "regular_low", "regular"],
+      true
+    );
+  } catch (e: any) {
+    console.log(`[wa] resync da agenda falhou: ${e?.message ?? e}`);
+    return;
+  }
+  // Os eventos chegam de forma assíncrona depois do resync; aguarda a agenda
+  // parar de crescer em vez de devolver uma lista pela metade.
+  const limite = Date.now() + timeoutMs;
+  let ultimo = session.contacts.size;
+  let estavel = 0;
+  while (Date.now() < limite && estavel < 3) {
+    await new Promise((r) => setTimeout(r, 700));
+    if (session.contacts.size === ultimo) estavel++;
+    else {
+      estavel = 0;
+      ultimo = session.contacts.size;
+    }
+  }
+  console.log(`[wa] resync da agenda: ${antes} -> ${session.contacts.size} contatos`);
 }
 
 type Channel = { id: string; companyId: string };
@@ -145,7 +228,7 @@ async function setChannelStatus(
 }
 
 // ---- Ingestão de mensagens recebidas (WhatsApp → plataforma) ---------------
-async function recordInbound(companyId: string, phone: string, name: string, body: string) {
+async function recordInboundByPhone(companyId: string, phone: string, name: string, body: string) {
   const digits = phone.replace(/\D/g, "");
   if (!digits) return;
 
@@ -165,64 +248,11 @@ async function recordInbound(companyId: string, phone: string, name: string, bod
       .returning();
   }
 
-  // Se a conversa anterior está aguardando avaliação, esta resposta pode ser a
-  // nota do cliente — nesse caso consumimos a mensagem e não abrimos uma nova.
-  const consumed = await import("../modules/ratings.js")
-    .then((m) => m.tryCaptureRating(companyId, contact.id, body))
-    .catch(() => false);
-  if (consumed) return;
-
-  let [conv] = await db
-    .select()
-    .from(schema.conversations)
-    .where(
-      and(
-        eq(schema.conversations.companyId, companyId),
-        eq(schema.conversations.contactId, contact.id),
-        ne(schema.conversations.status, "resolved")
-      )
-    )
-    .orderBy(desc(schema.conversations.lastMessageAt))
-    .limit(1);
-  let created = false;
-  if (!conv) {
-    [conv] = await db
-      .insert(schema.conversations)
-      .values({
-        companyId,
-        contactId: contact.id,
-        status: "pending",
-        unreadCount: 0,
-        lastMessageAt: new Date(),
-      })
-      .returning();
-    created = true;
-  }
-
-  const [msg] = await db
-    .insert(schema.messages)
-    .values({ companyId, conversationId: conv.id, direction: "in", body })
-    .returning();
-  await db
-    .update(schema.conversations)
-    .set({ lastMessageAt: new Date(), unreadCount: (conv.unreadCount ?? 0) + 1 })
-    .where(eq(schema.conversations.id, conv.id));
-
-  if (created) {
-    emitToCompany(companyId, "conversation.created", { conversation: conv, contact });
-    publishEvent(companyId, "conversation.created", { conversation: conv, contact }).catch(
-      () => {}
-    );
-  }
-  emitToCompany(companyId, "message.created", { conversationId: conv.id, message: msg });
-  publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(
-    () => {}
-  );
-  import("../modules/automations.js")
-    .then((m) =>
-      m.applyAutomations(companyId, { id: conv.id, contactId: contact.id }, body, created)
-    )
-    .catch(() => {});
+  // Daqui pra frente o fluxo é igual em todo canal (conversa, mensagem, eventos,
+  // automações) e mora em ./inbound.ts. `channelId` fica null de propósito: o
+  // envio no WhatsApp usa qualquer sessão conectada da empresa, não a conexão
+  // exata que recebeu.
+  await recordInbound(companyId, contact, body, null);
 }
 
 // ---- Conexão real (Baileys) -------------------------------------------------
@@ -261,6 +291,8 @@ async function connectBaileys(channel: Channel, mod: any) {
     contacts: new Map(),
   };
   sessions.set(channel.id, session);
+  // Antes de qualquer evento: recupera a agenda gravada na execução anterior.
+  loadContacts(session);
 
   sock.ev.on("creds.update", saveCreds);
 
@@ -319,7 +351,7 @@ async function connectBaileys(channel: Channel, mod: any) {
         m.message.videoMessage?.caption ||
         "";
       if (!text.trim()) continue;
-      await recordInbound(
+      await recordInboundByPhone(
         channel.companyId,
         jidToPhone(jid) || "",
         m.pushName || "Contato WhatsApp",
@@ -432,9 +464,14 @@ export function contactsCount(channelId: string): number {
 /** Sincroniza a agenda do aparelho conectado para os Contatos da empresa.
  *  Insere quem ainda não existe (por telefone) com a tag "whatsapp"; nunca
  *  sobrescreve contatos já cadastrados. */
-export async function syncContacts(
-  channelId: string
-): Promise<{ ok: boolean; imported: number; skipped: number; total: number; error?: string }> {
+export async function syncContacts(channelId: string): Promise<{
+  ok: boolean;
+  imported: number;
+  renamed?: number;
+  skipped: number;
+  total: number;
+  error?: string;
+}> {
   const s = sessions.get(channelId);
   if (!s) return { ok: false, imported: 0, skipped: 0, total: 0, error: "conexão não está ativa" };
   if (s.status !== "connected")
@@ -445,6 +482,13 @@ export async function syncContacts(
       total: 0,
       error: "conecte o WhatsApp antes de sincronizar",
     };
+
+  // Agenda vazia numa sessão real significa, quase sempre, sessão restaurada:
+  // o WhatsApp mandou a lista no pareamento e não a reenvia sozinho. Pedir o
+  // app-state de novo recupera sem precisar reler o QR.
+  if (s.mode === "baileys" && s.contacts.size === 0) {
+    await resyncContacts(s);
+  }
 
   let entries = [...s.contacts.entries()];
   // No modo demonstração (sem lib), gera uma agenda de exemplo para o fluxo ficar visível.
@@ -459,24 +503,55 @@ export async function syncContacts(
   }
 
   let imported = 0;
+  let renamed = 0;
   let skipped = 0;
   for (const [phone, name] of entries) {
     const digits = phone.replace(/\D/g, "");
     if (!digits) continue;
+    const daAgenda = name?.trim() ?? "";
     const res = await db
       .insert(schema.contacts)
       .values({
         companyId: s.companyId,
-        name: name?.trim() || `Contato ${digits}`,
+        name: daAgenda || `Contato ${digits}`,
         phone: digits,
         tags: ["whatsapp"],
       })
       .onConflictDoNothing()
       .returning();
-    if (res.length) imported++;
-    else skipped++;
+    if (res.length) {
+      imported++;
+      continue;
+    }
+
+    // Já existia. Contato criado por mensagem recebida fica com nome genérico
+    // ("Contato WhatsApp"); a agenda tem o nome de verdade e é isso que o
+    // atendente quer ver na lista. Só sobrescrevemos o genérico — um nome
+    // editado à mão na plataforma é escolha de alguém e permanece.
+    if (daAgenda) {
+      const [atual] = await db
+        .select({ id: schema.contacts.id, name: schema.contacts.name })
+        .from(schema.contacts)
+        .where(and(eq(schema.contacts.companyId, s.companyId), eq(schema.contacts.phone, digits)));
+      if (atual && ehNomeGenerico(atual.name, digits) && atual.name !== daAgenda) {
+        await db
+          .update(schema.contacts)
+          .set({ name: daAgenda })
+          .where(eq(schema.contacts.id, atual.id));
+        renamed++;
+        continue;
+      }
+    }
+    skipped++;
   }
-  return { ok: true, imported, skipped, total: entries.length };
+  // `imported` soma os renomeados para o painel continuar dizendo quantos
+  // contatos a sincronização de fato melhorou; `renamed` detalha para quem lê a API.
+  return { ok: true, imported: imported + renamed, renamed, skipped, total: entries.length };
+}
+
+/** Nome que a plataforma gerou sozinha (não veio de pessoa nem da agenda). */
+export function ehNomeGenerico(nome: string, digits: string): boolean {
+  return nome === "Contato WhatsApp" || nome === `Contato ${digits}`;
 }
 
 /** Restaura sessões previamente conectadas (credenciais em disco) no boot. */

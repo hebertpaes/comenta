@@ -33,8 +33,8 @@ export type PrincipalRole = z.infer<typeof PrincipalRole>;
  *  que já entregam mensagem das que só têm o encaixe pronto. */
 export const CHANNEL_CATALOG = [
   { type: "whatsapp", label: "WhatsApp", icon: "🟢", real: true },
-  { type: "instagram", label: "Instagram Direct", icon: "📸", real: false },
-  { type: "facebook", label: "Facebook Messenger", icon: "💬", real: false },
+  { type: "instagram", label: "Instagram Direct", icon: "📸", real: true },
+  { type: "facebook", label: "Facebook Messenger", icon: "💬", real: true },
   { type: "telegram", label: "Telegram", icon: "✈️", real: false },
   { type: "widget", label: "Widget do site", icon: "🌐", real: true },
   { type: "email", label: "E-mail", icon: "✉️", real: false },

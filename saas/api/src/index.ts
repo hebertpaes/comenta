@@ -18,6 +18,7 @@ import { apiKeyRoutes } from "./modules/apikeys.js";
 import { webhookRoutes } from "./modules/webhooks.js";
 import { aiRoutes } from "./modules/ai.js";
 import { channelRoutes } from "./modules/channels.js";
+import { metaWebhookRoutes } from "./modules/meta-webhooks.js";
 import { widgetRoutes } from "./modules/widget.js";
 import { automationRoutes } from "./modules/automations.js";
 import { courseRoutes } from "./modules/courses.js";
@@ -40,8 +41,11 @@ await app.register(rateLimit, { max: 300, timeWindow: "1 minute", redis });
 // Aceita corpo JSON vazio: alguns POSTs (ex.: conectar/desconectar WhatsApp)
 // mandam Content-Type: application/json sem body. O parser padrão do Fastify
 // rejeitaria com FST_ERR_CTP_EMPTY_JSON_BODY; aqui tratamos vazio como {}.
-app.addContentTypeParser("application/json", { parseAs: "string" }, (_req, body, done) => {
+app.addContentTypeParser("application/json", { parseAs: "string" }, (req, body, done) => {
   const raw = (body as string) ?? "";
+  // Guarda o corpo CRU: o webhook da Meta assina exatamente estes bytes, e
+  // reserializar o JSON (espaços, ordem de chaves) faria o HMAC não fechar.
+  (req as { rawBody?: string }).rawBody = raw;
   if (raw.trim() === "") return done(null, {});
   try {
     done(null, JSON.parse(raw));
@@ -98,6 +102,7 @@ await app.register(apiKeyRoutes);
 await app.register(webhookRoutes);
 await app.register(aiRoutes);
 await app.register(channelRoutes);
+await app.register(metaWebhookRoutes);
 await app.register(widgetRoutes);
 await app.register(automationRoutes);
 await app.register(courseRoutes);

@@ -11,7 +11,7 @@ export type ChannelDriver = {
   /** Entrega uma mensagem outbound ao contato. Lança erro se falhar. */
   send(
     channelConfig: Record<string, unknown>,
-    to: { phone: string | null },
+    to: { phone: string | null; externalId: string | null },
     body: string
   ): Promise<void>;
 };
@@ -41,6 +41,22 @@ registerDriver({
   },
 });
 
+// Instagram Direct e Facebook Messenger: entrega real pela Graph API. Os dois
+// usam o mesmo endpoint da página, então compartilham o driver — o que muda é
+// só de qual conexão vem o config.
+for (const tipo of ["instagram", "facebook"] as const) {
+  registerDriver({
+    type: tipo,
+    async send(channelConfig, to, body) {
+      if (!to.externalId) {
+        throw new Error("Contato sem id da Meta — não dá para responder por este canal");
+      }
+      const { enviar, MetaConfig } = await import("./meta.js");
+      await enviar(MetaConfig.parse(channelConfig), to.externalId, body);
+    },
+  });
+}
+
 export async function deliverOutbound(channelId: string | null, contactId: string, body: string) {
   if (!channelId) return;
   const [channel] = await db
@@ -54,5 +70,9 @@ export async function deliverOutbound(channelId: string | null, contactId: strin
     .select()
     .from(schema.contacts)
     .where(eq(schema.contacts.id, contactId));
-  await driver.send(channel.config, { phone: contact?.phone ?? null }, body);
+  await driver.send(
+    channel.config,
+    { phone: contact?.phone ?? null, externalId: contact?.externalId ?? null },
+    body
+  );
 }

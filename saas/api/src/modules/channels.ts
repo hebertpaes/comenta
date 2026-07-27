@@ -5,6 +5,7 @@ import { db, schema } from "../db/client.js";
 import { authenticate, requireAdmin, parse, ApiError } from "../lib/http.js";
 import { audit } from "../lib/audit.js";
 import * as whatsapp from "../channels/whatsapp.js";
+import * as meta from "../channels/meta.js";
 
 /**
  * Canais / Conexões — MULTICANAL e MULTI-CONEXÃO.
@@ -31,15 +32,15 @@ const CHANNEL_CATALOG = [
     type: "instagram",
     label: "Instagram Direct",
     icon: "📸",
-    real: false,
-    help: "Mensagens do Instagram. Requer conta profissional + token da Meta.",
+    real: true,
+    help: "Conta profissional ligada a uma página. Informe o ID da conta, o ID da página e o token da página.",
   },
   {
     type: "facebook",
     label: "Facebook Messenger",
     icon: "💬",
-    real: false,
-    help: "Mensagens da página. Requer token da página (Meta).",
+    real: true,
+    help: "Mensagens da página. Informe o ID da página e o token de acesso da página.",
   },
   {
     type: "telegram",
@@ -167,11 +168,35 @@ export async function channelRoutes(app: FastifyInstance) {
         .where(eq(schema.channels.id, id));
       return { status: "connected" as const };
     }
-    // Demais canais: exigem configuração (encaixe pronto p/ integração real).
     const cfg = (row.config as Record<string, unknown>) || {};
     if (!Object.keys(cfg).length) {
       throw new ApiError(400, "Configure as credenciais desta conexão antes de conectar.");
     }
+
+    // Instagram/Messenger: integração real. Só marcamos "connected" depois que a
+    // Graph API aceita o token — senão o painel mostraria verde para uma conexão
+    // que não entrega mensagem nenhuma.
+    if (meta.isMetaType(row.type)) {
+      const parsed = meta.MetaConfig.safeParse(cfg);
+      if (!parsed.success) {
+        throw new ApiError(400, parsed.error.issues[0]?.message ?? "Credenciais incompletas");
+      }
+      if (!meta.appSecretDe(parsed.data)) {
+        throw new ApiError(
+          400,
+          "Falta o App Secret da Meta: defina META_APP_SECRET na API ou informe appSecret nesta conexão."
+        );
+      }
+      const teste = await meta.testarCredenciais(parsed.data);
+      if (!teste.ok) throw new ApiError(400, teste.erro);
+      await db
+        .update(schema.channels)
+        .set({ status: "connected" })
+        .where(eq(schema.channels.id, id));
+      return { status: "connected" as const, page: teste.nome };
+    }
+
+    // Demais canais: encaixe pronto, sem integração real ainda.
     await db
       .update(schema.channels)
       .set({ status: "configured" })
