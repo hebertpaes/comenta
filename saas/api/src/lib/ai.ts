@@ -1,4 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
+import { ApiError } from "./http.js";
 
 /**
  * Integração com a API da Anthropic (Claude) para o Comenta SaaS.
@@ -19,7 +20,58 @@ const client = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
-export const aiEnabled = () => Boolean(process.env.ANTHROPIC_API_KEY);
+/**
+ * A IA está realmente utilizável?
+ *
+ * Não basta a variável estar preenchida: o `.env` de exemplo vem com um
+ * placeholder (`sk-ant-COLE_A_REAL`), e só checar "não vazio" fazia o /health
+ * anunciar `ai: true` numa instalação onde toda chamada à Anthropic devolvia
+ * 401. Chave real tem o prefixo `sk-ant-` e é bem mais longa que qualquer
+ * placeholder — as duas condições juntas separam os casos sem falso negativo.
+ */
+export function aiEnabled(): boolean {
+  const key = process.env.ANTHROPIC_API_KEY ?? "";
+  return key.startsWith("sk-ant-") && key.length >= 40;
+}
+
+/**
+ * Traduz erro do SDK da Anthropic em erro da nossa API.
+ *
+ * Sem isto qualquer falha vira "Erro interno" (500) no painel: o atendente vê
+ * uma mensagem genérica e o administrador não descobre que o problema é a
+ * chave. 401/403 viram 502 com instrução — é falha de configuração nossa, não
+ * pedido inválido de quem clicou.
+ */
+function traduzErroAnthropic(e: unknown): never {
+  if (e instanceof Anthropic.AuthenticationError || e instanceof Anthropic.PermissionDeniedError) {
+    throw new ApiError(
+      502,
+      "A Anthropic recusou a chave de API. Confira ANTHROPIC_API_KEY no .env da API e reinicie o container.",
+      "ai_auth"
+    );
+  }
+  if (e instanceof Anthropic.RateLimitError) {
+    throw new ApiError(429, "Limite de uso da IA atingido — tente de novo em instantes.", "ai_rate_limit");
+  }
+  if (e instanceof Anthropic.APIConnectionError) {
+    throw new ApiError(502, "Não consegui falar com a API da Anthropic.", "ai_offline");
+  }
+  throw e;
+}
+
+/** Envolve uma chamada ao Claude com a tradução de erro acima. */
+async function chamarClaude(
+  params: Anthropic.MessageCreateParamsNonStreaming
+): Promise<Anthropic.Message> {
+  if (!aiEnabled()) {
+    throw new ApiError(503, "A IA não está configurada nesta instalação.", "ai_disabled");
+  }
+  try {
+    return await client.messages.create(params);
+  } catch (e) {
+    traduzErroAnthropic(e);
+  }
+}
 
 const MODEL_CLASSIFY = process.env.AI_MODEL_CLASSIFY ?? "claude-haiku-4-5";
 const MODEL_SUMMARIZE = process.env.AI_MODEL_SUMMARIZE ?? "claude-haiku-4-5";
@@ -67,7 +119,7 @@ const CLASSIFICATION_SCHEMA = {
 } as const;
 
 export async function classifyConversation(messages: AiMessage[]): Promise<Classification> {
-  const res = await client.messages.create({
+  const res = await chamarClaude({
     model: MODEL_CLASSIFY,
     max_tokens: 512,
     system:
@@ -96,7 +148,7 @@ function extractJson(text: string): string {
 // ---- Resumo -----------------------------------------------------------------
 
 export async function summarizeConversation(messages: AiMessage[]): Promise<string> {
-  const res = await client.messages.create({
+  const res = await chamarClaude({
     model: MODEL_SUMMARIZE,
     max_tokens: 600,
     system:
@@ -116,7 +168,7 @@ export async function suggestReply(
 ): Promise<string> {
   const tone = opts.tone ?? "cordial, objetivo e prestativo";
   const company = opts.companyName ?? "a empresa";
-  const res = await client.messages.create({
+  const res = await chamarClaude({
     model: MODEL_SUGGEST,
     max_tokens: 700,
     system:
@@ -169,7 +221,7 @@ export async function aiAutoReply(
   const kb = opts.knowledge
     ? `\n\n# Base de conhecimento da empresa (use como verdade)\n${opts.knowledge}`
     : "";
-  const res = await client.messages.create({
+  const res = await chamarClaude({
     model: MODEL_AUTOREPLY,
     max_tokens: 700,
     system:
@@ -206,7 +258,7 @@ export async function chatAssistant(
 ): Promise<string> {
   const company = opts.companyName ?? "Comenta";
   const kb = opts.knowledge ? `\n\n# Base de conhecimento da empresa\n${opts.knowledge}` : "";
-  const res = await client.messages.create({
+  const res = await chamarClaude({
     model: MODEL_CHAT,
     max_tokens: 700,
     system:
