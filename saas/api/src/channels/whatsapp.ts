@@ -134,10 +134,7 @@ function scheduleSaveContacts(session: Session) {
   session.saveTimer = setTimeout(() => {
     session.saveTimer = undefined;
     try {
-      fs.writeFileSync(
-        contactsFile(session),
-        JSON.stringify([...session.contacts.entries()])
-      );
+      fs.writeFileSync(contactsFile(session), JSON.stringify([...session.contacts.entries()]));
     } catch {
       /* best-effort: perder o cache não quebra o atendimento */
     }
@@ -481,10 +478,17 @@ export async function sendToContact(
   if (media?.url) {
     // Baileys busca a mídia pela URL. Imagem entra com legenda; arquivo como documento.
     if (media.type === "image") {
-      await session.sock.sendMessage(jid, { image: { url: media.url }, caption: body || undefined });
+      await session.sock.sendMessage(jid, {
+        image: { url: media.url },
+        caption: body || undefined,
+      });
     } else {
       const fileName = media.fileName || media.url.split("/").pop()?.split("?")[0] || "arquivo";
-      await session.sock.sendMessage(jid, { document: { url: media.url }, fileName, caption: body || undefined });
+      await session.sock.sendMessage(jid, {
+        document: { url: media.url },
+        fileName,
+        caption: body || undefined,
+      });
     }
     return true;
   }

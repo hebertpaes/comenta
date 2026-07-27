@@ -289,6 +289,30 @@ export function ConversationsPage() {
               <div className="msgs">
                 {detail.messages.map((msg) => (
                   <div key={msg.id} className={`bubble ${msg.direction}`}>
+                    {msg.mediaUrl &&
+                      (msg.contentType === "image" ? (
+                        <a href={msg.mediaUrl} target="_blank" rel="noopener noreferrer">
+                          <img
+                            src={msg.mediaUrl}
+                            alt=""
+                            style={{
+                              maxWidth: "100%",
+                              borderRadius: 8,
+                              display: "block",
+                              marginBottom: msg.body ? 6 : 0,
+                            }}
+                          />
+                        </a>
+                      ) : (
+                        <a
+                          href={msg.mediaUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ display: "inline-block", marginBottom: msg.body ? 6 : 0 }}
+                        >
+                          📎 Abrir arquivo
+                        </a>
+                      ))}
                     {msg.body}
                   </div>
                 ))}

@@ -32,15 +32,15 @@ const SEND_GAP_MS = Number(process.env.CAMPAIGN_SEND_GAP_MS || 700);
 // Configuração de disparo padrão (anti-bloqueio). Valores conservadores: pausa
 // aleatória entre mensagens, lotes com descanso, e ordem embaralhada.
 export const DEFAULT_DISPATCH = {
-  minSec: 5,          // intervalo mínimo entre mensagens (segundos)
-  maxSec: 15,         // intervalo máximo — o real é sorteado entre min e max
-  batchSize: 30,      // envia em lotes de N; 0 desliga o lote
-  batchPauseMin: 3,   // descanso entre lotes (minutos)
-  dailyLimit: 0,      // teto de envios por dia; 0 = sem limite
+  minSec: 5, // intervalo mínimo entre mensagens (segundos)
+  maxSec: 15, // intervalo máximo — o real é sorteado entre min e max
+  batchSize: 30, // envia em lotes de N; 0 desliga o lote
+  batchPauseMin: 3, // descanso entre lotes (minutos)
+  dailyLimit: 0, // teto de envios por dia; 0 = sem limite
   businessOnly: false, // só dispara dentro do horário comercial
-  start: "08:00",     // início do horário comercial
-  end: "18:00",       // fim do horário comercial
-  shuffle: true,      // embaralha a ordem dos destinatários
+  start: "08:00", // início do horário comercial
+  end: "18:00", // fim do horário comercial
+  shuffle: true, // embaralha a ordem dos destinatários
 };
 type Dispatch = typeof DEFAULT_DISPATCH;
 
@@ -113,12 +113,22 @@ function startOfTomorrow(now = new Date()): Date {
 }
 
 // Coloca a campanha de volta na fila para retomar mais tarde (limite/horário).
-async function rescheduleCampaign(campaignId: string, companyId: string, when: Date, sent: number, failed: number) {
+async function rescheduleCampaign(
+  campaignId: string,
+  companyId: string,
+  when: Date,
+  sent: number,
+  failed: number
+) {
   await db
     .update(schema.campaigns)
     .set({ status: "scheduled", scheduledAt: when, sent, failed })
     .where(eq(schema.campaigns.id, campaignId));
-  emitToCompany(companyId, "campaign.updated", { id: campaignId, status: "scheduled", resumeAt: when.toISOString() });
+  emitToCompany(companyId, "campaign.updated", {
+    id: campaignId,
+    status: "scheduled",
+    resumeAt: when.toISOString(),
+  });
 }
 
 function render(template: string, contact: { name: string }): string {
@@ -212,7 +222,13 @@ export async function runCampaign(campaignId: string) {
 
     // Fora do horário comercial no arranque → reagenda para a próxima abertura.
     if (!withinBusiness(d)) {
-      await rescheduleCampaign(campaignId, camp.companyId, nextBusinessOpen(d), camp.sent, camp.failed);
+      await rescheduleCampaign(
+        campaignId,
+        camp.companyId,
+        nextBusinessOpen(d),
+        camp.sent,
+        camp.failed
+      );
       return;
     }
 
@@ -274,14 +290,19 @@ export async function runCampaign(campaignId: string) {
         if (!contact?.phone) throw new Error("contato sem telefone");
         const body = render(camp.message, { name: contact.name });
         const media = camp.mediaUrl
-          ? { url: camp.mediaUrl, type: (camp.mediaType === "file" ? "file" : "image") as "image" | "file" }
+          ? {
+              url: camp.mediaUrl,
+              type: (camp.mediaType === "file" ? "file" : "image") as "image" | "file",
+            }
           : undefined;
         await deliverToContact(camp.companyId, contact.id, body, media);
         await db
           .update(schema.campaignRecipients)
           .set({ status: "sent", sentAt: new Date(), error: null })
           .where(eq(schema.campaignRecipients.id, r.id));
-        sent++; sentToday++; inBatch++;
+        sent++;
+        sentToday++;
+        inBatch++;
       } catch (e) {
         await db
           .update(schema.campaignRecipients)

@@ -72,6 +72,8 @@ export interface Message {
   authorUserId: string | null;
   contentType: string;
   body: string;
+  /** Link da mídia quando `contentType` é "image" ou "file"; `body` é a legenda. */
+  mediaUrl: string | null;
   status: MessageStatus;
   createdAt: Iso;
 }
@@ -248,6 +250,36 @@ export interface Course {
   lessons?: Lesson[];
 }
 
+/**
+ * Ritmo do disparo — o que impede o número de ser bloqueado.
+ *
+ * O WhatsApp bloqueia número que envia rápido demais para muita gente, então
+ * a campanha imita gente: espera um tempo sorteado entre `minSec` e `maxSec`,
+ * descansa `batchPauseMin` a cada `batchSize` mensagens e, se `businessOnly`,
+ * dorme fora de `start`–`end` em vez de continuar de madrugada.
+ * Os padrões vivem em DEFAULT_DISPATCH (saas/api/src/modules/campaigns.ts).
+ */
+export interface CampaignDispatch {
+  /** Intervalo mínimo entre mensagens, em segundos. */
+  minSec: number;
+  /** Intervalo máximo; o real é sorteado entre mínimo e máximo. */
+  maxSec: number;
+  /** Envia em lotes de N mensagens; 0 desliga o lote. */
+  batchSize: number;
+  /** Descanso entre lotes, em minutos. */
+  batchPauseMin: number;
+  /** Teto de envios por dia; 0 = sem limite. */
+  dailyLimit: number;
+  /** Só dispara dentro do horário comercial abaixo. */
+  businessOnly: boolean;
+  /** Início do horário comercial, "HH:MM". */
+  start: string;
+  /** Fim do horário comercial, "HH:MM". */
+  end: string;
+  /** Embaralha a ordem dos destinatários. */
+  shuffle: boolean;
+}
+
 export interface Campaign {
   id: string;
   companyId: string;
@@ -261,6 +293,11 @@ export interface Campaign {
   total: number;
   sent: number;
   failed: number;
+  /** Link público da mídia anexada; a `message` vira legenda. */
+  mediaUrl: string | null;
+  mediaType: "image" | "file" | null;
+  /** Ausente em campanhas criadas antes do campo existir — caia no padrão. */
+  dispatch: CampaignDispatch | null;
   createdByUserId: string | null;
   createdAt: Iso;
 }
