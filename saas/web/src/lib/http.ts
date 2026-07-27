@@ -1,6 +1,12 @@
 import { clearTokens, getAccessToken, getRefreshToken, setTokens } from "./tokens";
 
-export const BASE = import.meta.env.VITE_API_URL ?? "http://localhost:4000";
+// Em produção o build crava a URL da API (VITE_API_URL, via bootstrap.sh). Sem
+// ela — o caso do build local — a API é derivada do host que serviu o painel,
+// não de "localhost" fixo: assim o MESMO bundle funciona aberto por localhost,
+// por 127.0.0.1 e pelo IP da LAN (o iPhone), onde "localhost" seria o próprio
+// aparelho e nenhuma chamada chegaria ao Mac.
+export const BASE =
+  import.meta.env.VITE_API_URL ?? `${location.protocol}//${location.hostname}:4000`;
 
 /** Erro de API com o status preservado, para a UI distinguir 403 de 500. */
 export class ApiError extends Error {
