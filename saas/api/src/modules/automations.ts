@@ -77,7 +77,6 @@ async function runAiAutoservice(
   cfg: Record<string, unknown>
 ) {
   const ai = await import("../lib/ai.js");
-  if (!ai.aiEnabled()) return;
 
   const [c] = await db
     .select()
@@ -115,6 +114,11 @@ async function runAiAutoservice(
   // Pedido explícito de humano: nem chama a IA (economiza tokens).
   if (askedForHuman) return handoff();
 
+  // Sem ANTHROPIC_API_KEY não há autoatendimento — mas o handoff acima é só
+  // comparação de texto e não depende da Anthropic. Checar a chave antes dele
+  // deixava a regra 100% muda numa instalação sem chave: o cliente pedia um
+  // atendente, não recebia resposta e a conversa nunca ia para a fila.
+  if (!ai.aiEnabled()) return;
 
   // Histórico recente para dar contexto à IA.
   const hist = await db
