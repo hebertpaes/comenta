@@ -29,6 +29,12 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
+# O server.js do standalone faz `process.env.HOSTNAME || "0.0.0.0"`, e o Docker
+# já define HOSTNAME com o nome do container — que resolve para o IP dele. Sem
+# fixar isto, o Next escuta só no IP interno: funciona de fora (o Docker
+# encaminha a porta) mas recusa conexão no loopback, e o healthcheck do compose
+# falha para sempre.
+ENV HOSTNAME=0.0.0.0
 RUN addgroup -g 1001 -S nodejs && adduser -S nextjs -u 1001
 
 COPY --from=build /app/public ./public
