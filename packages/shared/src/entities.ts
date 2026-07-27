@@ -179,7 +179,10 @@ export interface ChannelLiveStatus {
 /** Resultado de /channels/:id/sync-contacts (importa a agenda do aparelho). */
 export interface SyncContactsResult {
   ok: boolean;
+  /** Contatos novos + os que ganharam o nome real da agenda. */
   imported: number;
+  /** Quantos dos `imported` já existiam e só tiveram o nome genérico corrigido. */
+  renamed?: number;
   skipped: number;
   total: number;
   error?: string;
