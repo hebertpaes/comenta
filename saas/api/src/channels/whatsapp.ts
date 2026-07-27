@@ -67,6 +67,17 @@ function dataDir(): string {
   return process.env.WHATSAPP_DATA_DIR || "/data/wa";
 }
 
+/**
+ * Puxa o histórico completo no pareamento — é junto dele que o WhatsApp manda a
+ * agenda do aparelho.
+ *
+ * Fica DESLIGADO por padrão: ligado, o sync inicial é pesado e, num teste aqui,
+ * derrubou uma sessão restaurada em loop de reconexão (código 408). Ligue
+ * (WHATSAPP_FULL_SYNC=1) apenas quando for parear um número novo e você quiser
+ * importar a agenda dele — e observe a estabilidade da conexão.
+ */
+const WHATSAPP_FULL_SYNC = process.env.WHATSAPP_FULL_SYNC === "1";
+
 // Pasta de credenciais desta conexão. Migra a pasta legada (indexada por
 // empresa, do tempo em que só havia 1 WhatsApp) para o novo esquema por
 // conexão, preservando o número já pareado.
@@ -149,7 +160,12 @@ function loadContacts(session: Session) {
 }
 
 // Acumula os contatos da agenda do aparelho conectado nesta sessão.
-function ingestContacts(session: Session, list: any[] | undefined) {
+function ingestContacts(session: Session, list: any[] | undefined, origem = "?") {
+  // Sem este log não há como distinguir "o WhatsApp não mandou a agenda" de
+  // "mandou e o filtro descartou" — os dois terminam com a lista vazia.
+  if (list?.length) {
+    console.log(`[wa] evento de contatos (${origem}): ${list.length} entrada(s)`);
+  }
   let mudou = false;
   for (const c of list || []) {
     const jid: string = c?.id || c?.jid || "";
@@ -277,7 +293,11 @@ async function connectBaileys(channel: Channel, mod: any) {
     version,
     logger: silentLogger,
     browser: ["Comenta", "Chrome", "1.0.0"],
-    syncFullHistory: false,
+    // A agenda do aparelho vem junto do sync de histórico. Com `false` o
+    // WhatsApp manda um sync mínimo e a lista de contatos não vem — era por
+    // isso que "sincronizar contatos" não trazia nada. Ligado, o sync inicial
+    // é mais pesado, mas acontece uma vez por pareamento.
+    syncFullHistory: WHATSAPP_FULL_SYNC,
   });
 
   const session: Session = {
@@ -297,9 +317,14 @@ async function connectBaileys(channel: Channel, mod: any) {
   sock.ev.on("creds.update", saveCreds);
 
   // Agenda do aparelho: captura a lista de contatos conforme o WhatsApp a envia.
-  sock.ev.on("contacts.upsert", (list: any[]) => ingestContacts(session, list));
-  sock.ev.on("contacts.update", (list: any[]) => ingestContacts(session, list));
-  sock.ev.on("messaging-history.set", (h: any) => ingestContacts(session, h?.contacts));
+  sock.ev.on("contacts.upsert", (list: any[]) => ingestContacts(session, list, "upsert"));
+  sock.ev.on("contacts.update", (list: any[]) => ingestContacts(session, list, "update"));
+  sock.ev.on("messaging-history.set", (h: any) => {
+    console.log(
+      `[wa] history.set: ${h?.contacts?.length ?? 0} contatos, ${h?.chats?.length ?? 0} conversas, isLatest=${h?.isLatest}`
+    );
+    ingestContacts(session, h?.contacts, "history");
+  });
 
   sock.ev.on("connection.update", async (u: any) => {
     if (u.qr) {

@@ -77,7 +77,7 @@ async function runAiAutoservice(
   cfg: Record<string, unknown>
 ) {
   const ai = await import("../lib/ai.js");
-  if (!ai.aiEnabled()) return; // sem ANTHROPIC_API_KEY, IA fica inativa
+  if (!ai.aiEnabled()) return;
 
   const [c] = await db
     .select()
@@ -114,6 +114,7 @@ async function runAiAutoservice(
 
   // Pedido explícito de humano: nem chama a IA (economiza tokens).
   if (askedForHuman) return handoff();
+
 
   // Histórico recente para dar contexto à IA.
   const hist = await db
