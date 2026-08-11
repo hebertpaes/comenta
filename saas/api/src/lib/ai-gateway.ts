@@ -1,6 +1,6 @@
 import { ApiError } from "./http.js";
 
-export type AIProvider = "google" | "openai" | "anthropic" | "deepseek" | "groq" | "ollama" | "github";
+export type AIProvider = "google" | "openai" | "anthropic" | "deepseek" | "groq" | "ollama" | "github" | "meta" | "manus";
 
 export type AIProviderConfig = {
   provider: AIProvider;
