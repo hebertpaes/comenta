@@ -5,6 +5,7 @@ import PriceCalculator from "./components/PriceCalculator";
 import SiteFooter from "./components/SiteFooter";
 import FeatureCards from "./components/FeatureCards";
 import Testimonials from "./components/Testimonials";
+import StreamingSection from "./components/StreamingSection";
 import { PLANOS } from "./lib/plans";
 import { RECURSOS } from "./recursos/dados";
 
@@ -439,6 +440,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ===== Streaming Netflix / YouTube / Amazon Style ===== */}
+      <StreamingSection />
 
       {/* ===== Depoimentos ===== */}
       <section className="relative overflow-hidden bg-gradient-to-b from-white to-fuchsia-50 py-20 sm:py-24">

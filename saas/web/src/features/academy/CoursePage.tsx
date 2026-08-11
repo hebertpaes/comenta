@@ -207,14 +207,15 @@ export function CoursePage() {
               <ErrorBox error={addLesson.error ?? removeLesson.error} />
             )}
 
-            {/* MODO REELS / SHORTS (VERTICAL 9:16) */}
+            {/* MODO REELS / SHORTS (VERTICAL 9:16) - RESPONSIVO */}
             {modoReels ? (
-              <div style={{ display: "flex", gap: 20, flexWrap: "wrap", alignItems: "flex-start", marginTop: 20 }}>
-                {/* Player Estilo Reels / Shorts Vertical */}
+              <div style={{ display: "flex", gap: 20, flexWrap: "wrap", alignItems: "flex-start", marginTop: 20, width: "100%" }}>
+                {/* Player Estilo Reels / Shorts Vertical (Responsivo) */}
                 <div
                   style={{
-                    width: 360,
-                    height: 640,
+                    width: "min(360px, 100%)",
+                    height: "min(640px, 80vh)",
+                    maxWidth: "100%",
                     borderRadius: 24,
                     background: "#000",
                     position: "relative",
@@ -222,6 +223,7 @@ export function CoursePage() {
                     boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
                     border: "3px solid #2e2f31",
                     flex: "none",
+                    margin: "0 auto",
                   }}
                 >
                   {/* Vídeo / Iframe */}
