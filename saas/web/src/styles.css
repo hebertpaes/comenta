@@ -1,296 +1,406 @@
 :root,
 :root[data-theme="dark"] {
-  --bg: #0f1020;
-  --panel: #1a1b2e;
-  --panel2: #22243a;
-  --accent: #7c5cff;
-  --accent2: #22c55e;
-  --text: #e8e8f0;
-  --muted: #9092a8;
-  --border: #2c2e46;
-  --aibg: #12132a;
+  --bg: #0b0c16;
+  --panel: #131424;
+  --panel2: #1c1d36;
+  --accent: #6d28d9;
+  --accent2: #10b981;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.08);
+  --aibg: #181432;
+  --glass: rgba(19, 20, 36, 0.75);
 }
+
 :root[data-theme="light"] {
-  --bg: #f4f5fb;
+  --bg: #f8fafc;
   --panel: #ffffff;
-  --panel2: #eef0f7;
-  --accent: #7c5cff;
-  --accent2: #16a34a;
-  --text: #1f2233;
-  --muted: #6b6f88;
-  --border: #e2e4f0;
-  --aibg: #f0eeff;
+  --panel2: #f1f5f9;
+  --accent: #6d28d9;
+  --accent2: #10b981;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: rgba(0, 0, 0, 0.08);
+  --aibg: #f5f3ff;
+  --glass: rgba(255, 255, 255, 0.85);
 }
-body {
-  transition:
-    background 0.2s,
-    color 0.2s;
-}
+
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
-  font-family:
-    system-ui,
-    -apple-system,
-    Segoe UI,
-    Roboto,
-    sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: var(--bg);
   color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+  -webkit-font-smoothing: antialiased;
 }
+
 button {
   cursor: pointer;
   font: inherit;
   border: none;
-  border-radius: 8px;
-  padding: 9px 14px;
+  border-radius: 10px;
+  padding: 10px 16px;
   background: var(--accent);
   color: #fff;
+  font-weight: 600;
+  transition: transform 0.1s ease, filter 0.15s ease, background 0.15s ease;
 }
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
 button.ghost {
   background: var(--panel2);
   color: var(--text);
   border: 1px solid var(--border);
 }
+
 button:disabled {
   opacity: 0.5;
   cursor: default;
+  transform: none;
 }
+
 input,
-textarea {
+textarea,
+select {
   width: 100%;
-  padding: 10px 12px;
-  border-radius: 8px;
+  padding: 11px 14px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--panel2);
   color: var(--text);
   font: inherit;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.2);
 }
 
 .login {
-  max-width: 380px;
+  max-width: 400px;
   margin: 8vh auto;
-  padding: 28px;
+  padding: 32px;
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(16px);
 }
+
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 4px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
+
 .dot {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: var(--accent);
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), #9333ea);
   display: grid;
   place-items: center;
+  box-shadow: 0 4px 12px rgba(109, 40, 217, 0.4);
 }
+
 .field {
-  margin: 12px 0;
+  margin: 14px 0;
 }
+
 .field label {
   display: block;
   font-size: 13px;
+  font-weight: 600;
   color: var(--muted);
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
+
 .err {
-  color: #ff6b6b;
+  color: #ef4444;
   font-size: 13px;
   margin-top: 8px;
 }
+
 .muted {
   color: var(--muted);
 }
+
 .link {
   color: var(--accent);
   background: none;
   padding: 0;
+  border: none;
+  font-weight: 600;
 }
 
+/* App Master Layout estilo Modern SaaS / Linear App */
 .app {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 240px 1fr;
   min-height: 100vh;
 }
+
+@media (max-width: 860px) {
+  .app {
+    grid-template-columns: 1fr;
+    padding-bottom: 72px; /* Espaço para o Bottom Nav Mobile */
+  }
+
+  .side {
+    display: none; /* Esconde a sidebar no celular */
+  }
+}
+
 .side {
-  background: var(--panel);
+  background: var(--glass);
+  backdrop-filter: blur(16px);
   border-right: 1px solid var(--border);
-  padding: 18px 14px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
 }
-.side .brand {
-  font-size: 18px;
-  margin-bottom: 22px;
+
+.nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 10px;
 }
-/* A navegação agora usa <NavLink>, que renderiza <a>. Os seletores cobrem os
-   dois para não depender do elemento. */
+
 .nav button,
 .nav a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   width: 100%;
   text-align: left;
-  background: none;
-  color: var(--text);
-  padding: 10px 12px;
-  border-radius: 8px;
-  margin-bottom: 4px;
+  background: transparent;
+  color: var(--muted);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
   text-decoration: none;
-  cursor: pointer;
+  transition: all 0.15s ease;
 }
-.nav button.active,
-.nav a.active {
-  background: var(--panel2);
-}
+
+.nav button:hover,
 .nav a:hover {
   background: var(--panel2);
+  color: var(--text);
 }
+
+.nav button.active,
+.nav a.active {
+  background: rgba(109, 40, 217, 0.14);
+  color: var(--accent);
+  font-weight: 700;
+  border-left: 3px solid var(--accent);
+}
+
 .main {
-  padding: 22px 26px;
+  padding: 24px 32px;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
 }
+
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 14px;
-  margin-bottom: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
 }
+
 .card {
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 16px;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+}
+
 .card .n {
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1px;
 }
+
 .card .l {
   color: var(--muted);
   font-size: 13px;
+  font-weight: 600;
+  margin-top: 4px;
 }
 
 .convgrid {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 16px;
+  grid-template-columns: 340px 1fr;
+  gap: 20px;
 }
+
+@media (max-width: 960px) {
+  .convgrid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .list {
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
 }
+
 .list .item {
-  padding: 13px 15px;
+  padding: 14px 18px;
   border-bottom: 1px solid var(--border);
   cursor: pointer;
+  transition: background 0.15s ease;
 }
+
 .list .item:hover,
 .list .item.active {
   background: var(--panel2);
 }
+
 .list .item .name {
-  font-weight: 600;
+  font-weight: 700;
 }
+
 .list .item .last {
   color: var(--muted);
   font-size: 13px;
-  margin-top: 3px;
+  margin-top: 4px;
 }
+
 .thread {
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 16px;
+  border-radius: 16px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  min-height: 60vh;
+  min-height: 65vh;
 }
+
 .msgs {
   flex: 1;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 6px;
+  gap: 10px;
+  padding: 8px;
 }
+
 .bubble {
-  max-width: 72%;
-  padding: 9px 13px;
-  border-radius: 12px;
+  max-width: 75%;
+  padding: 11px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.5;
 }
+
 .bubble.in {
   background: var(--panel2);
   align-self: flex-start;
+  border-bottom-left-radius: 4px;
 }
+
 .bubble.out {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), #7c3aed);
   color: #fff;
   align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 4px 12px rgba(109, 40, 217, 0.3);
 }
+
 .composer {
   display: flex;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 10px;
+  margin-top: 14px;
 }
+
 .aibar {
   display: flex;
   gap: 8px;
-  margin: 10px 0;
+  margin: 12px 0;
   flex-wrap: wrap;
 }
+
 .aibar button {
   background: var(--panel2);
   border: 1px solid var(--border);
   color: var(--text);
   font-size: 13px;
+  border-radius: 8px;
 }
+
 .aibox {
   background: var(--aibg);
   border: 1px dashed var(--accent);
-  border-radius: 10px;
-  padding: 12px;
-  margin-top: 8px;
+  border-radius: 12px;
+  padding: 14px;
+  margin-top: 10px;
   font-size: 14px;
   white-space: pre-wrap;
 }
-select {
+
+.themebtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
   background: var(--panel2);
   color: var(--text);
-  font: inherit;
-}
-.themebtn {
-  display: block;
-  width: 100%;
-  text-align: left;
-  background: none;
-  color: var(--text);
-  padding: 10px 12px;
-  border-radius: 8px;
-  margin-bottom: 4px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 6px;
   border: 1px solid var(--border);
+  font-size: 13px;
+  font-weight: 600;
 }
-/* Mesmo formato do botão de tema, mas na cor da marca: é uma oferta, aparece
-   uma vez só e some depois de instalado. */
+
 .instalarbtn {
   border-color: var(--accent);
   color: var(--accent);
+  background: rgba(109, 40, 217, 0.12);
 }
+
 .tag {
   display: inline-block;
   font-size: 11px;
-  padding: 2px 8px;
+  font-weight: 700;
+  padding: 3px 10px;
   border-radius: 20px;
   background: var(--panel2);
   border: 1px solid var(--border);
@@ -301,65 +411,120 @@ select {
 .kbd {
   font: inherit;
   font-size: 11px;
-  padding: 1px 5px;
-  border-radius: 4px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 6px;
   border: 1px solid var(--border);
-  background: var(--panel2);
-  margin-left: 4px;
+  background: var(--panel);
+  margin-left: 6px;
 }
+
 .palette-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding-top: 12vh;
-  z-index: 50;
+  z-index: 999;
 }
+
 .palette {
-  width: min(560px, 92vw);
+  width: min(600px, 94vw);
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
   overflow: hidden;
 }
+
 .palette-input {
   width: 100%;
-  padding: 14px 16px;
+  padding: 16px 20px;
   border: none;
   border-bottom: 1px solid var(--border);
   background: transparent;
   color: var(--text);
   font: inherit;
-  font-size: 15px;
+  font-size: 16px;
   outline: none;
 }
+
 .palette-list {
-  max-height: 46vh;
+  max-height: 50vh;
   overflow-y: auto;
 }
+
 .palette-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
   width: 100%;
-  padding: 10px 16px;
+  padding: 12px 20px;
   background: none;
   border: none;
-  border-radius: 0;
   color: var(--text);
   font: inherit;
   text-align: left;
   cursor: pointer;
 }
+
 .palette-item.active {
   background: var(--panel2);
 }
+
 .palette-foot {
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-top: 1px solid var(--border);
-  font-size: 11px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Barra de Navegação Inferior estilo App Mobile Native (Instagram / Slack / Linear Mobile) */
+.mobile-bottom-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  z-index: 90;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 8px;
+}
+
+@media (max-width: 860px) {
+  .mobile-bottom-bar {
+    display: flex;
+  }
+}
+
+.mobile-bottom-bar a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: color 0.15s ease;
+}
+
+.mobile-bottom-bar a.active {
+  color: var(--accent);
+}
+
+.mobile-bottom-bar a .icon {
+  font-size: 18px;
 }

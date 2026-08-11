@@ -4,6 +4,8 @@ export interface NavItem {
   /** Só aparece para admin. Espelha o `RequireAdmin` das rotas — a decisão de
    *  verdade continua na API; aqui é só não mostrar o que vai dar 403. */
   adminOnly?: boolean;
+  /** Oculta da barra lateral, mas permite busca na paleta. */
+  hidden?: boolean;
   /** Palavras que o usuário pode digitar na paleta procurando esta tela, sem
    *  que apareçam no rótulo (ex.: "nps" para Avaliações). */
   aliases?: string[];
