@@ -1,0 +1,34 @@
+# =============================================================
+# Override OPCIONAL: publica painel, site e API também no IP da LAN,
+# para abrir o Comenta no iPhone (ou em qualquer aparelho do mesmo Wi-Fi).
+#
+# Uso (o local-mac.sh injeta sozinho com a flag --lan):
+#   LAN_IP=192.168.1.126 docker compose \
+#     -f docker-compose.yml -f compose.local.yml -f compose.lan.yml \
+#     --env-file .env up -d
+#
+# Só estes três serviços saem do loopback. As ferramentas do profile "tools"
+# (n8n, Metabase, NocoDB) e os bancos continuam presos a 127.0.0.1 — elas
+# sobem sem senha forte no primeiro acesso, então não devem ficar visíveis
+# na rede.
+#
+# Publicamos no ENDEREÇO da LAN, não em 0.0.0.0: o compose soma as listas de
+# portas em vez de substituí-las, e o bind de 127.0.0.1 do arquivo base
+# continua valendo. Um 0.0.0.0:8080 colidiria com ele ("port already
+# allocated"), enquanto um IP específico convive numa boa.
+#
+# ATENÇÃO: enquanto isto estiver no ar, qualquer aparelho do seu Wi-Fi
+# alcança o painel e a API. Não use em rede pública.
+# =============================================================
+services:
+  api:
+    ports:
+      - "${LAN_IP:?defina LAN_IP (ex.: LAN_IP=192.168.1.126) ou use local-mac.sh --lan}:4000:4000"
+
+  site:
+    ports:
+      - "${LAN_IP}:3000:3000"
+
+  panel:
+    ports:
+      - "${LAN_IP}:8080:80"

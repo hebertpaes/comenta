@@ -44,7 +44,35 @@ function decodeEntities(s: string): string {
     .trim();
 }
 
-function mapPost(p: any): NewsItem | null {
+/**
+ * Forma parcial de um post da REST API do WordPress.
+ *
+ * Só os campos que consumimos, todos opcionais: a resposta vem de um site de
+ * terceiros e pode mudar sem aviso — daí `mapPost` devolver null em vez de
+ * confiar que os campos existem.
+ */
+interface WpMediaSize {
+  source_url?: string;
+}
+interface WpPost {
+  id?: number | string;
+  slug?: string;
+  link?: string;
+  date?: string;
+  date_gmt?: string;
+  sticky?: boolean;
+  title?: { rendered?: string };
+  excerpt?: { rendered?: string };
+  _embedded?: {
+    "wp:featuredmedia"?: {
+      source_url?: string;
+      media_details?: { sizes?: Record<string, WpMediaSize | undefined> };
+    }[];
+    "wp:term"?: { taxonomy?: string; name?: string }[][];
+  };
+}
+
+function mapPost(p: WpPost | null | undefined): NewsItem | null {
   if (!p) return null;
   const media = p._embedded?.["wp:featuredmedia"]?.[0];
   const sizes = media?.media_details?.sizes;
@@ -54,9 +82,7 @@ function mapPost(p: any): NewsItem | null {
     media?.source_url ||
     FALLBACK_IMAGE;
 
-  const terms: any[] = Array.isArray(p._embedded?.["wp:term"])
-    ? p._embedded["wp:term"].flat()
-    : [];
+  const terms = p._embedded?.["wp:term"]?.flat() ?? [];
   const category = terms.find((t) => t?.taxonomy === "category")?.name;
 
   const title = decodeEntities(p.title?.rendered ?? "");
@@ -68,7 +94,7 @@ function mapPost(p: any): NewsItem | null {
     excerpt: decodeEntities(p.excerpt?.rendered ?? "").slice(0, 180),
     url: typeof p.link === "string" ? p.link : SOURCE,
     image,
-    date: p.date_gmt ? `${p.date_gmt}Z` : p.date ?? new Date().toISOString(),
+    date: p.date_gmt ? `${p.date_gmt}Z` : (p.date ?? new Date().toISOString()),
     category,
     urgent: Boolean(p.sticky),
   };
@@ -76,13 +102,10 @@ function mapPost(p: any): NewsItem | null {
 
 export async function getLatestNews(): Promise<NewsItem[]> {
   try {
-    const res = await fetch(
-      `${SOURCE}/wp-json/wp/v2/posts?per_page=${COUNT}&_embed=1`,
-      {
-        next: { revalidate: REVALIDATE_SECONDS },
-        headers: { "User-Agent": "ComentaPlatform/1.0 (+news-carousel)" },
-      }
-    );
+    const res = await fetch(`${SOURCE}/wp-json/wp/v2/posts?per_page=${COUNT}&_embed=1`, {
+      next: { revalidate: REVALIDATE_SECONDS },
+      headers: { "User-Agent": "ComentaPlatform/1.0 (+news-carousel)" },
+    });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const posts = await res.json();
     const items = (Array.isArray(posts) ? posts : [])
@@ -141,8 +164,7 @@ export const FALLBACK_NEWS: NewsItem[] = [
   {
     id: "fb-3",
     title: "Acompanhe as transmissões ao vivo",
-    excerpt:
-      "Programas e coberturas especiais direto da redação, com atualização contínua.",
+    excerpt: "Programas e coberturas especiais direto da redação, com atualização contínua.",
     url: SOURCE,
     image: cover("Ao vivo", "#f472b6", "#db2777"),
     date: new Date().toISOString(),
@@ -151,8 +173,7 @@ export const FALLBACK_NEWS: NewsItem[] = [
   {
     id: "fb-4",
     title: "Serviço e utilidade pública",
-    excerpt:
-      "Campanhas, mutirões e informações essenciais para a população da região.",
+    excerpt: "Campanhas, mutirões e informações essenciais para a população da região.",
     url: SOURCE,
     image: cover("Serviço", "#f59e0b", "#d97706"),
     date: new Date().toISOString(),

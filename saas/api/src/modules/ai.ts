@@ -16,7 +16,12 @@ async function loadMessages(companyId: string, conversationId: string): Promise<
   const [conv] = await db
     .select()
     .from(schema.conversations)
-    .where(and(eq(schema.conversations.id, conversationId), eq(schema.conversations.companyId, companyId)));
+    .where(
+      and(
+        eq(schema.conversations.id, conversationId),
+        eq(schema.conversations.companyId, companyId)
+      )
+    );
   if (!conv) throw new ApiError(404, "Conversa não encontrada");
   const rows = await db
     .select({ direction: schema.messages.direction, body: schema.messages.body })
@@ -62,7 +67,10 @@ export async function aiRoutes(app: FastifyInstance) {
       .select({ name: schema.companies.name })
       .from(schema.companies)
       .where(eq(schema.companies.id, req.principal.companyId));
-    const suggestion = await suggestReply(messages, { companyName: company?.name, tone: body.tone });
+    const suggestion = await suggestReply(messages, {
+      companyName: company?.name,
+      tone: body.tone,
+    });
     audit(req.principal, "ai.suggest", "conversation", id);
     return { suggestion };
   });

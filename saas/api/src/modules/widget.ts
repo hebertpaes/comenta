@@ -100,7 +100,12 @@ export async function widgetRoutes(app: FastifyInstance) {
     if (!contact) {
       [contact] = await db
         .insert(schema.contacts)
-        .values({ companyId, name: name?.trim() || "Visitante do site", phone: digits, tags: team ? [team] : [] })
+        .values({
+          companyId,
+          name: name?.trim() || "Visitante do site",
+          phone: digits,
+          tags: team ? [team] : [],
+        })
         .returning();
     }
 
@@ -108,16 +113,28 @@ export async function widgetRoutes(app: FastifyInstance) {
     // avalia o horário de atendimento dela.
     let queue: typeof schema.queues.$inferSelect | undefined;
     if (team) {
-      const qs = await db.select().from(schema.queues).where(eq(schema.queues.companyId, companyId));
+      const qs = await db
+        .select()
+        .from(schema.queues)
+        .where(eq(schema.queues.companyId, companyId));
       queue = qs.find((q) => q.name.toLowerCase() === team.toLowerCase());
     }
 
     const [conv] = await db
       .insert(schema.conversations)
-      .values({ companyId, contactId: contact.id, queueId: queue?.id ?? null, status: "pending", unreadCount: 1, lastMessageAt: new Date() })
+      .values({
+        companyId,
+        contactId: contact.id,
+        queueId: queue?.id ?? null,
+        status: "pending",
+        unreadCount: 1,
+        lastMessageAt: new Date(),
+      })
       .returning();
 
-    const first = message?.trim() || `Olá! Vim pelo site e gostaria de falar com o time${team ? ` de ${team}` : ""}.`;
+    const first =
+      message?.trim() ||
+      `Olá! Vim pelo site e gostaria de falar com o time${team ? ` de ${team}` : ""}.`;
     const [msg] = await db
       .insert(schema.messages)
       .values({ companyId, conversationId: conv.id, direction: "in", body: first })
@@ -125,21 +142,32 @@ export async function widgetRoutes(app: FastifyInstance) {
 
     emitToCompany(companyId, "conversation.created", { conversation: conv, contact });
     emitToCompany(companyId, "message.created", { conversationId: conv.id, message: msg });
-    publishEvent(companyId, "conversation.created", { conversation: conv, contact }).catch(() => {});
-    publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(() => {});
+    publishEvent(companyId, "conversation.created", { conversation: conv, contact }).catch(
+      () => {}
+    );
+    publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(
+      () => {}
+    );
     // bot de fluxo (boas-vindas / fora do horário / palavra-chave)
-    applyAutomations(companyId, { id: conv.id, contactId: contact.id }, first, true).catch(() => {});
+    applyAutomations(companyId, { id: conv.id, contactId: contact.id }, first, true).catch(
+      () => {}
+    );
 
     // Fora do horário de atendimento da fila → responde a mensagem configurada.
     const sched = (queue?.schedule as Record<string, unknown> | undefined) ?? {};
     if (queue && sched.enabled && !isOpenNow(sched)) {
-      const outMsg = String(sched.message || `No momento estamos fora do horário de atendimento do time ${queue.name}. Deixe sua mensagem que retornaremos assim que possível. 🙂`);
+      const outMsg = String(
+        sched.message ||
+          `No momento estamos fora do horário de atendimento do time ${queue.name}. Deixe sua mensagem que retornaremos assim que possível. 🙂`
+      );
       const [bot] = await db
         .insert(schema.messages)
         .values({ companyId, conversationId: conv.id, direction: "out", body: outMsg })
         .returning();
       emitToCompany(companyId, "message.created", { conversationId: conv.id, message: bot });
-      publishEvent(companyId, "message.created", { conversationId: conv.id, message: bot }).catch(() => {});
+      publishEvent(companyId, "message.created", { conversationId: conv.id, message: bot }).catch(
+        () => {}
+      );
     }
 
     return reply.code(201).send({ conversationId: conv.id, token: signToken(conv.id) });
@@ -150,7 +178,10 @@ export async function widgetRoutes(app: FastifyInstance) {
     const { conversationId, token, body } = parse(MsgBody, req.body);
     if (!verifyToken(conversationId, token)) throw new ApiError(401, "Token inválido");
 
-    const [conv] = await db.select().from(schema.conversations).where(eq(schema.conversations.id, conversationId));
+    const [conv] = await db
+      .select()
+      .from(schema.conversations)
+      .where(eq(schema.conversations.id, conversationId));
     if (!conv) throw new ApiError(404, "Conversa não encontrada");
 
     // Se a conversa aguarda avaliação, esta resposta pode ser a nota do cliente.
@@ -169,8 +200,15 @@ export async function widgetRoutes(app: FastifyInstance) {
       .where(eq(schema.conversations.id, conversationId));
 
     emitToCompany(conv.companyId, "message.created", { conversationId, message: msg });
-    publishEvent(conv.companyId, "message.created", { conversationId, message: msg }).catch(() => {});
-    applyAutomations(conv.companyId, { id: conversationId, contactId: conv.contactId }, body, false).catch(() => {});
+    publishEvent(conv.companyId, "message.created", { conversationId, message: msg }).catch(
+      () => {}
+    );
+    applyAutomations(
+      conv.companyId,
+      { id: conversationId, contactId: conv.contactId },
+      body,
+      false
+    ).catch(() => {});
 
     return reply.code(201).send({ id: msg.id, createdAt: msg.createdAt });
   });

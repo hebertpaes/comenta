@@ -37,13 +37,21 @@ export async function toolkitRoutes(app: FastifyInstance) {
   app.patch("/quick-replies/:id", async (req) => {
     const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
     const body = parse(
-      z.object({ shortcut: z.string().min(1).max(40).optional(), message: z.string().min(1).max(4000).optional() }),
+      z.object({
+        shortcut: z.string().min(1).max(40).optional(),
+        message: z.string().min(1).max(4000).optional(),
+      }),
       req.body
     );
     const [row] = await db
       .update(schema.quickReplies)
       .set(body)
-      .where(and(eq(schema.quickReplies.id, id), eq(schema.quickReplies.companyId, req.principal.companyId)))
+      .where(
+        and(
+          eq(schema.quickReplies.id, id),
+          eq(schema.quickReplies.companyId, req.principal.companyId)
+        )
+      )
       .returning();
     if (!row) throw new ApiError(404, "Resposta rápida não encontrada");
     return row;
@@ -52,7 +60,12 @@ export async function toolkitRoutes(app: FastifyInstance) {
     const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
     const [row] = await db
       .delete(schema.quickReplies)
-      .where(and(eq(schema.quickReplies.id, id), eq(schema.quickReplies.companyId, req.principal.companyId)))
+      .where(
+        and(
+          eq(schema.quickReplies.id, id),
+          eq(schema.quickReplies.companyId, req.principal.companyId)
+        )
+      )
       .returning();
     if (!row) throw new ApiError(404, "Resposta rápida não encontrada");
     return reply.code(204).send();
@@ -81,7 +94,10 @@ export async function toolkitRoutes(app: FastifyInstance) {
   app.patch("/tags/:id", { preHandler: requireAdmin }, async (req) => {
     const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
     const body = parse(
-      z.object({ name: z.string().min(1).max(60).optional(), color: z.string().max(16).optional() }),
+      z.object({
+        name: z.string().min(1).max(60).optional(),
+        color: z.string().max(16).optional(),
+      }),
       req.body
     );
     const [row] = await db
@@ -114,9 +130,9 @@ export async function toolkitRoutes(app: FastifyInstance) {
     if (!conv) throw new ApiError(404, "Conversa não encontrada");
     await db.delete(schema.conversationTags).where(eq(schema.conversationTags.conversationId, id));
     if (tagIds.length) {
-      await db.insert(schema.conversationTags).values(
-        tagIds.map((tagId) => ({ companyId: cid, conversationId: id, tagId }))
-      );
+      await db
+        .insert(schema.conversationTags)
+        .values(tagIds.map((tagId) => ({ companyId: cid, conversationId: id, tagId })));
     }
     return { conversationId: id, tagIds };
   });
@@ -147,7 +163,12 @@ export async function toolkitRoutes(app: FastifyInstance) {
     const { body } = parse(z.object({ body: z.string().min(1).max(4000) }), req.body);
     const [row] = await db
       .insert(schema.conversationNotes)
-      .values({ companyId: req.principal.companyId, conversationId: id, authorUserId: req.principal.userId, body })
+      .values({
+        companyId: req.principal.companyId,
+        conversationId: id,
+        authorUserId: req.principal.userId,
+        body,
+      })
       .returning();
     return reply.code(201).send(row);
   });
@@ -155,7 +176,12 @@ export async function toolkitRoutes(app: FastifyInstance) {
     const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
     const [row] = await db
       .delete(schema.conversationNotes)
-      .where(and(eq(schema.conversationNotes.id, id), eq(schema.conversationNotes.companyId, req.principal.companyId)))
+      .where(
+        and(
+          eq(schema.conversationNotes.id, id),
+          eq(schema.conversationNotes.companyId, req.principal.companyId)
+        )
+      )
       .returning();
     if (!row) throw new ApiError(404, "Nota não encontrada");
     return reply.code(204).send();
@@ -174,7 +200,12 @@ export async function tagsForConversations(companyId: string, convIds: string[])
     })
     .from(schema.conversationTags)
     .innerJoin(schema.tags, eq(schema.tags.id, schema.conversationTags.tagId))
-    .where(and(eq(schema.conversationTags.companyId, companyId), inArray(schema.conversationTags.conversationId, convIds)));
+    .where(
+      and(
+        eq(schema.conversationTags.companyId, companyId),
+        inArray(schema.conversationTags.conversationId, convIds)
+      )
+    );
   const map: Record<string, { id: string; name: string; color: string }[]> = {};
   for (const r of rows) {
     (map[r.conversationId] ??= []).push({ id: r.id, name: r.name, color: r.color });

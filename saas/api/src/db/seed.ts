@@ -5,9 +5,36 @@ import { hashPassword } from "../lib/auth.js";
 /** Popula planos, empresa/admin de demonstração e atendentes. Idempotente. */
 async function seed() {
   const plans = [
-    { id: "free", name: "Free", priceCents: 0, maxUsers: 3, maxChannels: 1, maxContacts: 500, maxMonthlyMessages: 1000, features: ["multicanal", "ia_basica"] },
-    { id: "pro", name: "Pro", priceCents: 9900, maxUsers: 15, maxChannels: 5, maxContacts: 10000, maxMonthlyMessages: 50000, features: ["multicanal", "ia_avancada", "api", "webhooks"] },
-    { id: "business", name: "Business", priceCents: 29900, maxUsers: 100, maxChannels: 20, maxContacts: 200000, maxMonthlyMessages: 1000000, features: ["multicanal", "ia_avancada", "api", "webhooks", "sla", "sso"] },
+    {
+      id: "free",
+      name: "Free",
+      priceCents: 0,
+      maxUsers: 3,
+      maxChannels: 1,
+      maxContacts: 500,
+      maxMonthlyMessages: 1000,
+      features: ["multicanal", "ia_basica"],
+    },
+    {
+      id: "pro",
+      name: "Pro",
+      priceCents: 9900,
+      maxUsers: 15,
+      maxChannels: 5,
+      maxContacts: 10000,
+      maxMonthlyMessages: 50000,
+      features: ["multicanal", "ia_avancada", "api", "webhooks"],
+    },
+    {
+      id: "business",
+      name: "Business",
+      priceCents: 29900,
+      maxUsers: 100,
+      maxChannels: 20,
+      maxContacts: 200000,
+      maxMonthlyMessages: 1000000,
+      features: ["multicanal", "ia_avancada", "api", "webhooks", "sla", "sso"],
+    },
   ];
   for (const p of plans) {
     await db.insert(schema.plans).values(p).onConflictDoUpdate({ target: schema.plans.id, set: p });
@@ -21,7 +48,9 @@ async function seed() {
   const isProd = process.env.NODE_ENV === "production";
   const seedDemo = process.env.SEED_DEMO === "true" || !isProd;
   if (!seedDemo) {
-    console.log("• produção: seed de demonstração desativado. Cadastre a 1ª empresa pelo painel (signup).");
+    console.log(
+      "• produção: seed de demonstração desativado. Cadastre a 1ª empresa pelo painel (signup)."
+    );
     console.log("  (defina SEED_DEMO=true para forçar dados de demonstração)");
     await sql.end();
     return;
@@ -47,7 +76,9 @@ async function seed() {
       role: "admin",
       mustChangePassword: true,
     });
-    console.log(`✓ empresa "Comenta Demo" + admin ${email} (troca de senha obrigatória no 1º login)`);
+    console.log(
+      `✓ empresa "Comenta Demo" + admin ${email} (troca de senha obrigatória no 1º login)`
+    );
   } else {
     companyId = existing.companyId;
     console.log(`• admin ${email} já existe`);
@@ -67,10 +98,20 @@ async function seed() {
   const agentHash = await hashPassword("agente123");
   let novos = 0;
   for (const a of agents) {
-    const login = a.nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    const login = a.nome
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
     const res = await db
       .insert(schema.users)
-      .values({ companyId, name: `${a.nome} · ${a.time}`, email: `${login}@comenta.com.br`, passwordHash: agentHash, role: "agent", mustChangePassword: true })
+      .values({
+        companyId,
+        name: `${a.nome} · ${a.time}`,
+        email: `${login}@comenta.com.br`,
+        passwordHash: agentHash,
+        role: "agent",
+        mustChangePassword: true,
+      })
       .onConflictDoNothing({ target: schema.users.email })
       .returning();
     if (res.length) novos++;
@@ -87,9 +128,25 @@ async function seed() {
       position: 1,
       description: "Do zero ao primeiro atendimento: painel, conversas e times.",
       lessons: [
-        { title: "Visão geral da plataforma", durationMin: 6, content: "Conheça o painel: Dashboard, Conversas, Automações, Ferramentas e Conexões.", videoUrl: "" },
-        { title: "Atendendo no painel", durationMin: 8, content: "Como pegar uma conversa da fila, responder e resolver. Uso da IA (classificar, resumir, sugerir).", videoUrl: "" },
-        { title: "Times e roteamento", durationMin: 5, content: "Como as conversas chegam por time (Suporte, Vendas, Financeiro, Marketing).", videoUrl: "" },
+        {
+          title: "Visão geral da plataforma",
+          durationMin: 6,
+          content: "Conheça o painel: Dashboard, Conversas, Automações, Ferramentas e Conexões.",
+          videoUrl: "",
+        },
+        {
+          title: "Atendendo no painel",
+          durationMin: 8,
+          content:
+            "Como pegar uma conversa da fila, responder e resolver. Uso da IA (classificar, resumir, sugerir).",
+          videoUrl: "",
+        },
+        {
+          title: "Times e roteamento",
+          durationMin: 5,
+          content: "Como as conversas chegam por time (Suporte, Vendas, Financeiro, Marketing).",
+          videoUrl: "",
+        },
       ],
     },
     {
@@ -99,8 +156,18 @@ async function seed() {
       position: 2,
       description: "Conecte o WhatsApp Business por QR e atenda o cliente no canal dele.",
       lessons: [
-        { title: "Conectar o WhatsApp (QR)", durationMin: 5, content: "Aba Conexões → Conectar WhatsApp → leia o QR no celular da empresa.", videoUrl: "" },
-        { title: "Fluxo site + WhatsApp", durationMin: 6, content: "O atendimento iniciado no site também chega ao WhatsApp do cliente.", videoUrl: "" },
+        {
+          title: "Conectar o WhatsApp (QR)",
+          durationMin: 5,
+          content: "Aba Conexões → Conectar WhatsApp → leia o QR no celular da empresa.",
+          videoUrl: "",
+        },
+        {
+          title: "Fluxo site + WhatsApp",
+          durationMin: 6,
+          content: "O atendimento iniciado no site também chega ao WhatsApp do cliente.",
+          videoUrl: "",
+        },
       ],
     },
     {
@@ -110,8 +177,18 @@ async function seed() {
       position: 3,
       description: "Respostas automáticas (boas-vindas, fora do horário, palavra-chave).",
       lessons: [
-        { title: "Criando regras na aba Automações", durationMin: 7, content: "Boas-vindas, fora do horário e palavra-chave — criar, pausar e remover.", videoUrl: "" },
-        { title: "Boas práticas de bot", durationMin: 6, content: "Quando responder automático e quando transferir para humano.", videoUrl: "" },
+        {
+          title: "Criando regras na aba Automações",
+          durationMin: 7,
+          content: "Boas-vindas, fora do horário e palavra-chave — criar, pausar e remover.",
+          videoUrl: "",
+        },
+        {
+          title: "Boas práticas de bot",
+          durationMin: 6,
+          content: "Quando responder automático e quando transferir para humano.",
+          videoUrl: "",
+        },
       ],
     },
     {
@@ -121,9 +198,24 @@ async function seed() {
       position: 4,
       description: "n8n (automação), Metabase (BI) e NocoDB (no-code) integrados ao Comenta.",
       lessons: [
-        { title: "n8n: automações por webhook", durationMin: 10, content: "Ligar o n8n, criar um webhook e reagir aos eventos do Comenta.", videoUrl: "" },
-        { title: "Metabase: relatórios", durationMin: 9, content: "Conectar no Postgres e montar dashboards de atendimento.", videoUrl: "" },
-        { title: "NocoDB: base no-code", durationMin: 7, content: "Montar um mini-CRM e alimentar o n8n.", videoUrl: "" },
+        {
+          title: "n8n: automações por webhook",
+          durationMin: 10,
+          content: "Ligar o n8n, criar um webhook e reagir aos eventos do Comenta.",
+          videoUrl: "",
+        },
+        {
+          title: "Metabase: relatórios",
+          durationMin: 9,
+          content: "Conectar no Postgres e montar dashboards de atendimento.",
+          videoUrl: "",
+        },
+        {
+          title: "NocoDB: base no-code",
+          durationMin: 7,
+          content: "Montar um mini-CRM e alimentar o n8n.",
+          videoUrl: "",
+        },
       ],
     },
   ];
@@ -136,10 +228,24 @@ async function seed() {
     if (exists) continue;
     const [course] = await db
       .insert(schema.courses)
-      .values({ companyId, title: c.title, description: c.description, emoji: c.emoji, level: c.level, position: c.position })
+      .values({
+        companyId,
+        title: c.title,
+        description: c.description,
+        emoji: c.emoji,
+        level: c.level,
+        position: c.position,
+      })
       .returning();
     await db.insert(schema.lessons).values(
-      c.lessons.map((l, i) => ({ courseId: course.id, title: l.title, content: l.content, videoUrl: l.videoUrl, durationMin: l.durationMin, position: i + 1 }))
+      c.lessons.map((l, i) => ({
+        courseId: course.id,
+        title: l.title,
+        content: l.content,
+        videoUrl: l.videoUrl,
+        durationMin: l.durationMin,
+        position: i + 1,
+      }))
     );
     novosCursos++;
   }
@@ -178,7 +284,10 @@ async function seed() {
       .from(schema.queues)
       .where(and(eq(schema.queues.companyId, companyId), eq(schema.queues.name, q.name)));
     if (!queue) {
-      [queue] = await db.insert(schema.queues).values({ companyId, ...q }).returning();
+      [queue] = await db
+        .insert(schema.queues)
+        .values({ companyId, ...q })
+        .returning();
       novasFilas++;
     }
     // membros: atendentes cujo nome traz o time (ex.: "Camila · Suporte")
@@ -193,17 +302,36 @@ async function seed() {
   console.log(`✓ filas: ${novasFilas} novas / ${defaultQueues.length} no total`);
 
   // Kit de atendimento (Fase 10): respostas rápidas e tags padrão. Idempotente.
-  const qrs = await db.select({ id: schema.quickReplies.id }).from(schema.quickReplies).where(eq(schema.quickReplies.companyId, companyId));
+  const qrs = await db
+    .select({ id: schema.quickReplies.id })
+    .from(schema.quickReplies)
+    .where(eq(schema.quickReplies.companyId, companyId));
   if (qrs.length === 0) {
     await db.insert(schema.quickReplies).values([
       { companyId, shortcut: "/ola", message: "Olá! Tudo bem? Como posso te ajudar hoje?" },
-      { companyId, shortcut: "/aguarde", message: "Só um momento, por favor, já verifico isso para você." },
-      { companyId, shortcut: "/obrigado", message: "Obrigado pelo contato! Precisando, estamos à disposição. 😊" },
-      { companyId, shortcut: "/planos", message: "Nossos planos: Free (R$0), Pro (R$99/mês) e Business (R$299/mês). Quer que eu detalhe algum?" },
+      {
+        companyId,
+        shortcut: "/aguarde",
+        message: "Só um momento, por favor, já verifico isso para você.",
+      },
+      {
+        companyId,
+        shortcut: "/obrigado",
+        message: "Obrigado pelo contato! Precisando, estamos à disposição. 😊",
+      },
+      {
+        companyId,
+        shortcut: "/planos",
+        message:
+          "Nossos planos: Free (R$0), Pro (R$99/mês) e Business (R$299/mês). Quer que eu detalhe algum?",
+      },
     ]);
     console.log("✓ respostas rápidas padrão");
   }
-  const tgs = await db.select({ id: schema.tags.id }).from(schema.tags).where(eq(schema.tags.companyId, companyId));
+  const tgs = await db
+    .select({ id: schema.tags.id })
+    .from(schema.tags)
+    .where(eq(schema.tags.companyId, companyId));
   if (tgs.length === 0) {
     await db.insert(schema.tags).values([
       { companyId, name: "Novo cliente", color: "#16a34a" },

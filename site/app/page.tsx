@@ -8,13 +8,15 @@ import Testimonials from "./components/Testimonials";
 // (NEXT_PUBLIC_APP_URL / NEXT_PUBLIC_API_URL) para apontar ao ambiente local
 // em testes; sem eles, caem no domínio de produção.
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.comenta.com.br";
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.comenta.com.br";
 
+// Cada card descreve algo que a plataforma REALMENTE faz hoje. O que ainda não
+// entrega mensagem mora na tabela de canais abaixo, marcado como "em breve" —
+// prometer aqui o que não existe cria expectativa que o produto não paga.
 const FEATURES = [
   {
     icon: "💬",
     title: "Tudo em uma caixa de entrada",
-    desc: "WhatsApp, Instagram, e-mail e chat do site num só lugar. Nenhuma mensagem cai no vácuo.",
+    desc: "WhatsApp, Instagram Direct, Messenger e o chat do site num só lugar. Nenhuma mensagem cai no vácuo.",
     color: "from-fuchsia-500 to-pink-500",
   },
   {
@@ -36,6 +38,66 @@ const FEATURES = [
     color: "from-emerald-500 to-teal-500",
   },
   {
+    icon: "🤖",
+    title: "Autoatendimento com handoff",
+    desc: "A IA responde sozinha as dúvidas simples e passa para uma pessoa no instante em que o caso pede.",
+    color: "from-purple-500 to-fuchsia-500",
+  },
+  {
+    icon: "📋",
+    title: "Kanban de atendimento",
+    desc: "Arraste a conversa entre aguardando, em atendimento e resolvida. O status muda junto.",
+    color: "from-blue-500 to-indigo-500",
+  },
+  {
+    icon: "🗂️",
+    title: "Filas por departamento",
+    desc: "Vendas, suporte, financeiro — cada fila com sua equipe e seu horário de funcionamento.",
+    color: "from-teal-500 to-emerald-500",
+  },
+  {
+    icon: "🕐",
+    title: "Horário comercial que responde",
+    desc: "Fora do expediente o cliente recebe um aviso na hora, em vez de silêncio até o dia seguinte.",
+    color: "from-slate-500 to-slate-700",
+  },
+  {
+    icon: "⌨️",
+    title: "Respostas rápidas",
+    desc: "Atalhos para o que sua equipe repete o dia inteiro. Digita o atalho, sai o texto completo.",
+    color: "from-lime-500 to-green-500",
+  },
+  {
+    icon: "🏷️",
+    title: "Tags e notas internas",
+    desc: "Marque o assunto e deixe recados que só a equipe vê — o cliente nunca enxerga.",
+    color: "from-orange-500 to-amber-500",
+  },
+  {
+    icon: "📣",
+    title: "Campanhas com ritmo humano",
+    desc: "Envio espaçado, em lotes e dentro do horário comercial — para o número não ser bloqueado.",
+    color: "from-pink-500 to-rose-500",
+  },
+  {
+    icon: "⭐",
+    title: "Avaliação depois do atendimento",
+    desc: "Ao resolver, o cliente recebe a pesquisa e a nota volta para o painel automaticamente.",
+    color: "from-yellow-500 to-amber-500",
+  },
+  {
+    icon: "💼",
+    title: "Chat interno da equipe",
+    desc: "Combine a resposta com o colega sem sair da plataforma nem abrir outro aplicativo.",
+    color: "from-cyan-500 to-blue-500",
+  },
+  {
+    icon: "🎓",
+    title: "Academia para treinar o time",
+    desc: "Cursos e aulas dentro do próprio painel — quem entra hoje aprende a atender sozinho.",
+    color: "from-indigo-500 to-violet-500",
+  },
+  {
     icon: "🔔",
     title: "Tempo real",
     desc: "Mensagens e métricas ao vivo via WebSocket. O time vê tudo acontecer na hora.",
@@ -46,6 +108,64 @@ const FEATURES = [
     title: "Webhooks & automações",
     desc: "Conecte seu CRM e ferramentas com entregas assinadas (HMAC) e retry em fila.",
     color: "from-rose-500 to-red-500",
+  },
+  {
+    icon: "👥",
+    title: "Times e permissões",
+    desc: "Administradores configuram; atendentes atendem. Cada um enxerga só o que precisa.",
+    color: "from-violet-500 to-purple-500",
+  },
+  {
+    icon: "📇",
+    title: "Contatos importados",
+    desc: "Traga sua base por planilha ou puxe a agenda do WhatsApp conectado, sem digitar um a um.",
+    color: "from-emerald-500 to-green-500",
+  },
+];
+
+/**
+ * Canais, com o estado real de cada um.
+ *
+ * `pronto: false` NÃO é "quase lá": significa que a conexão existe no painel mas
+ * ainda não entrega mensagem. Dizer o contrário aqui vira reclamação no primeiro
+ * dia de uso.
+ */
+const CANAIS = [
+  {
+    icon: "🟢",
+    nome: "WhatsApp",
+    detalhe: "Vários números ao mesmo tempo, conectados por QR Code.",
+    pronto: true,
+  },
+  {
+    icon: "📸",
+    nome: "Instagram Direct",
+    detalhe: "Conta profissional ligada a uma página do Facebook.",
+    pronto: true,
+  },
+  {
+    icon: "💬",
+    nome: "Facebook Messenger",
+    detalhe: "Mensagens da sua página caem na mesma caixa de entrada.",
+    pronto: true,
+  },
+  {
+    icon: "🌐",
+    nome: "Chat do site",
+    detalhe: "Widget pronto para colar no seu site. Ativo por padrão.",
+    pronto: true,
+  },
+  {
+    icon: "✈️",
+    nome: "Telegram",
+    detalhe: "Encaixe pronto no painel; a entrega de mensagens vem a seguir.",
+    pronto: false,
+  },
+  {
+    icon: "✉️",
+    nome: "E-mail",
+    detalhe: "Encaixe pronto no painel; a entrega de mensagens vem a seguir.",
+    pronto: false,
   },
 ];
 
@@ -65,7 +185,13 @@ const PLANOS = [
     periodo: "/mês",
     desc: "Para equipes que atendem de verdade.",
     destaque: true,
-    itens: ["Até 10 usuários", "Todos os canais", "IA completa (resumo + sugestão)", "Conversas ilimitadas", "Métricas e relatórios"],
+    itens: [
+      "Até 10 usuários",
+      "Todos os canais",
+      "IA completa (resumo + sugestão)",
+      "Conversas ilimitadas",
+      "Métricas e relatórios",
+    ],
     cta: "Assinar Pro",
   },
   {
@@ -74,7 +200,13 @@ const PLANOS = [
     periodo: "/mês",
     desc: "Para operações e multi-marca.",
     destaque: false,
-    itens: ["Usuários ilimitados", "Multi-tenant", "Webhooks & API", "Auditoria e SLA", "Suporte prioritário"],
+    itens: [
+      "Usuários ilimitados",
+      "Multi-tenant",
+      "Webhooks & API",
+      "Auditoria e SLA",
+      "Suporte prioritário",
+    ],
     cta: "Falar com vendas",
   },
 ];
@@ -92,10 +224,21 @@ export default function HomePage() {
             Comenta
           </a>
           <nav className="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex">
-            <a href="#recursos" className="hover:text-slate-900">Recursos</a>
-            <a href="#ia" className="hover:text-slate-900">IA</a>
-            <a href="#planos" className="hover:text-slate-900">Planos</a>
-            <a href={APP_URL} className="hover:text-slate-900">Entrar</a>
+            <a href="#recursos" className="hover:text-slate-900">
+              Recursos
+            </a>
+            <a href="#canais" className="hover:text-slate-900">
+              Canais
+            </a>
+            <a href="#ia" className="hover:text-slate-900">
+              IA
+            </a>
+            <a href="#planos" className="hover:text-slate-900">
+              Planos
+            </a>
+            <a href={APP_URL} className="hover:text-slate-900">
+              Entrar
+            </a>
           </nav>
           <a
             href={APP_URL}
@@ -109,23 +252,28 @@ export default function HomePage() {
       {/* ===== Hero ===== */}
       <section className="relative">
         <div className="blob left-[-6rem] top-[-4rem] h-72 w-72 bg-fuchsia-400" />
-        <div className="blob right-[-5rem] top-10 h-80 w-80 bg-indigo-400" style={{ animationDelay: "-4s" }} />
-        <div className="blob left-1/3 top-40 h-72 w-72 bg-amber-300" style={{ animationDelay: "-8s" }} />
+        <div
+          className="blob right-[-5rem] top-10 h-80 w-80 bg-indigo-400"
+          style={{ animationDelay: "-4s" }}
+        />
+        <div
+          className="blob left-1/3 top-40 h-72 w-72 bg-amber-300"
+          style={{ animationDelay: "-8s" }}
+        />
 
         <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 py-20 lg:grid-cols-2 lg:py-28">
           <div className="reveal">
             <span className="inline-flex items-center gap-2 rounded-full border border-fuchsia-200 bg-fuchsia-50 px-3 py-1 text-xs font-semibold text-fuchsia-700">
               <span className="h-2 w-2 rounded-full bg-fuchsia-500" />
-              Atendimento com IA · WhatsApp, Instagram, e-mail e mais
+              Atendimento com IA · WhatsApp, Instagram, Messenger e mais
             </span>
             <h1 className="mt-5 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
               Todo o seu atendimento em um só lugar — com{" "}
               <span className="text-gradient">IA que responde por você</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg text-slate-600">
-              O Comenta reúne seus canais, entende cada conversa e sugere a
-              melhor resposta. Sua equipe atende mais rápido, sem perder o toque
-              humano.
+              O Comenta reúne seus canais, entende cada conversa e sugere a melhor resposta. Sua
+              equipe atende mais rápido, sem perder o toque humano.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -158,7 +306,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-10 sm:grid-cols-4">
           {[
             ["−60%", "tempo de resposta"],
-            ["5+", "canais integrados"],
+            ["4", "canais prontos para usar"],
             ["24/7", "atendimento com IA"],
             ["99,9%", "de disponibilidade"],
           ].map(([n, l]) => (
@@ -179,8 +327,8 @@ export default function HomePage() {
             Tudo para atender <span className="text-gradient">melhor e mais rápido</span>
           </h2>
           <p className="mt-4 text-slate-600">
-            Uma plataforma completa de atendimento — com inteligência artificial
-            em cada etapa da conversa.
+            Uma plataforma completa de atendimento — com inteligência artificial em cada etapa da
+            conversa.
           </p>
         </div>
 
@@ -202,10 +350,61 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== Canais ===== */}
+      <section id="canais" className="border-y border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:py-24">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-extrabold sm:text-4xl">
+              Seus canais, <span className="text-gradient">uma conversa só</span>
+            </h2>
+            <p className="mt-4 text-slate-600">
+              O cliente escolhe por onde falar. Sua equipe atende tudo na mesma tela, com o
+              histórico junto.
+            </p>
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {CANAIS.map((c) => (
+              <div
+                key={c.nome}
+                className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5"
+              >
+                <span className="text-2xl leading-none" aria-hidden="true">
+                  {c.icon}
+                </span>
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h3 className="font-bold">{c.nome}</h3>
+                    <span
+                      className={
+                        c.pronto
+                          ? "rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-semibold text-emerald-700"
+                          : "rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-500"
+                      }
+                    >
+                      {c.pronto ? "Disponível" : "Em breve"}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{c.detalhe}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-8 text-center text-sm text-slate-500">
+            Marcamos como <strong className="text-slate-700">Disponível</strong> só o que já entrega
+            mensagem de verdade.
+          </p>
+        </div>
+      </section>
+
       {/* ===== Destaque IA ===== */}
       <section id="ia" className="relative overflow-hidden bg-slate-950 text-white">
         <div className="blob left-10 top-0 h-72 w-72 bg-fuchsia-600" />
-        <div className="blob right-0 bottom-0 h-80 w-80 bg-indigo-600" style={{ animationDelay: "-6s" }} />
+        <div
+          className="blob right-0 bottom-0 h-80 w-80 bg-indigo-600"
+          style={{ animationDelay: "-6s" }}
+        />
         <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 py-20 lg:grid-cols-2 lg:py-28">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-fuchsia-200">
@@ -216,7 +415,10 @@ export default function HomePage() {
             </h2>
             <ul className="mt-8 space-y-4">
               {[
-                ["Classifica", "prioriza e organiza cada nova conversa — modelo rápido e econômico (Haiku)."],
+                [
+                  "Classifica",
+                  "prioriza e organiza cada nova conversa — modelo rápido e econômico (Haiku).",
+                ],
                 ["Resume", "condensa históricos longos para o atendente entender na hora."],
                 ["Sugere", "escreve a resposta ideal para você revisar e enviar (Sonnet)."],
               ].map(([t, d]) => (
@@ -231,8 +433,8 @@ export default function HomePage() {
               ))}
             </ul>
             <p className="mt-6 text-sm text-slate-400">
-              Modelos configuráveis. Sem chave de IA, o restante da plataforma
-              segue funcionando normalmente.
+              Modelos configuráveis. Sem chave de IA, o restante da plataforma segue funcionando
+              normalmente.
             </p>
           </div>
 
@@ -246,9 +448,8 @@ export default function HomePage() {
               <div className="my-4 h-px bg-white/10" />
               <p className="text-fuchsia-300">Comenta sugere:</p>
               <p className="mt-1">
-                “Oi! Sinto muito pela demora 🙏 Localizei o pedido #1043 — ele
-                saiu para entrega hoje e chega até amanhã. Quer que eu te envie o
-                código de rastreio agora?”
+                “Oi! Sinto muito pela demora 🙏 Localizei o pedido #1043 — ele saiu para entrega
+                hoje e chega até amanhã. Quer que eu te envie o código de rastreio agora?”
               </p>
             </div>
             <div className="mt-4 flex gap-2">
@@ -276,9 +477,7 @@ export default function HomePage() {
       {/* ===== Planos ===== */}
       <section id="planos" className="mx-auto max-w-6xl px-4 py-20 sm:py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-extrabold sm:text-4xl">
-            Planos que crescem com você
-          </h2>
+          <h2 className="text-3xl font-extrabold sm:text-4xl">Planos que crescem com você</h2>
           <p className="mt-4 text-slate-600">
             Comece grátis e evolua quando precisar. Valores ilustrativos.
           </p>
@@ -305,7 +504,9 @@ export default function HomePage() {
               </p>
               <div className="mt-5 flex items-end gap-1">
                 <span className="text-4xl font-extrabold">{p.preco}</span>
-                <span className={`mb-1 text-sm ${p.destaque ? "text-fuchsia-100" : "text-slate-500"}`}>
+                <span
+                  className={`mb-1 text-sm ${p.destaque ? "text-fuchsia-100" : "text-slate-500"}`}
+                >
                   {p.periodo}
                 </span>
               </div>
@@ -336,11 +537,12 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 pb-24">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-fuchsia-600 via-purple-600 to-indigo-600 px-6 py-16 text-center text-white">
           <div className="blob left-10 top-0 h-56 w-56 bg-amber-300" />
-          <div className="blob right-10 bottom-0 h-56 w-56 bg-pink-400" style={{ animationDelay: "-5s" }} />
+          <div
+            className="blob right-10 bottom-0 h-56 w-56 bg-pink-400"
+            style={{ animationDelay: "-5s" }}
+          />
           <div className="relative">
-            <h2 className="text-3xl font-extrabold sm:text-4xl">
-              Pronto para atender melhor?
-            </h2>
+            <h2 className="text-3xl font-extrabold sm:text-4xl">Pronto para atender melhor?</h2>
             <p className="mx-auto mt-3 max-w-xl text-fuchsia-100">
               Conecte seus canais em minutos e deixe a IA acelerar cada resposta.
             </p>
@@ -364,14 +566,20 @@ export default function HomePage() {
             Comenta
           </div>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-500">
-            <a href="#recursos" className="hover:text-slate-900">Recursos</a>
-            <a href="#planos" className="hover:text-slate-900">Planos</a>
-            <a href={APP_URL} className="hover:text-slate-900">Entrar</a>
-            <a href={`/docs`} className="hover:text-slate-900">API</a>
+            <a href="#recursos" className="hover:text-slate-900">
+              Recursos
+            </a>
+            <a href="#planos" className="hover:text-slate-900">
+              Planos
+            </a>
+            <a href={APP_URL} className="hover:text-slate-900">
+              Entrar
+            </a>
+            <a href={`/docs`} className="hover:text-slate-900">
+              API
+            </a>
           </div>
-          <p className="text-sm text-slate-400">
-            © {new Date().getFullYear()} Comenta
-          </p>
+          <p className="text-sm text-slate-400">© {new Date().getFullYear()} Comenta</p>
         </div>
       </footer>
     </div>
@@ -381,9 +589,30 @@ export default function HomePage() {
 // Mockup visual da caixa de entrada multicanal (estático).
 function ChatMockup() {
   const convos = [
-    { canal: "💬", nome: "Ana · WhatsApp", msg: "Oi, meu pedido chegou hoje?", tag: "Urgente", cor: "bg-rose-100 text-rose-700", ring: "ring-emerald-400" },
-    { canal: "📸", nome: "João · Instagram", msg: "Vocês têm no tamanho M?", tag: "Vendas", cor: "bg-violet-100 text-violet-700", ring: "ring-fuchsia-400" },
-    { canal: "✉️", nome: "Suporte · E-mail", msg: "Preciso da 2ª via da nota…", tag: "Financeiro", cor: "bg-amber-100 text-amber-700", ring: "ring-sky-400" },
+    {
+      canal: "💬",
+      nome: "Ana · WhatsApp",
+      msg: "Oi, meu pedido chegou hoje?",
+      tag: "Urgente",
+      cor: "bg-rose-100 text-rose-700",
+      ring: "ring-emerald-400",
+    },
+    {
+      canal: "📸",
+      nome: "João · Instagram",
+      msg: "Vocês têm no tamanho M?",
+      tag: "Vendas",
+      cor: "bg-violet-100 text-violet-700",
+      ring: "ring-fuchsia-400",
+    },
+    {
+      canal: "✉️",
+      nome: "Suporte · E-mail",
+      msg: "Preciso da 2ª via da nota…",
+      tag: "Financeiro",
+      cor: "bg-amber-100 text-amber-700",
+      ring: "ring-sky-400",
+    },
   ];
   return (
     <div className="relative">
@@ -397,14 +626,21 @@ function ChatMockup() {
         </div>
         <div className="space-y-2">
           {convos.map((c) => (
-            <div key={c.nome} className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-slate-50/70 p-3">
-              <span className={`inline-flex h-10 w-10 flex-none items-center justify-center rounded-full bg-white text-lg ring-2 ${c.ring}`}>
+            <div
+              key={c.nome}
+              className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-slate-50/70 p-3"
+            >
+              <span
+                className={`inline-flex h-10 w-10 flex-none items-center justify-center rounded-full bg-white text-lg ring-2 ${c.ring}`}
+              >
                 {c.canal}
               </span>
               <div className="min-w-0 flex-1">
                 <div className="flex items-center justify-between gap-2">
                   <span className="truncate text-sm font-semibold">{c.nome}</span>
-                  <span className={`flex-none rounded-full px-2 py-0.5 text-[10px] font-bold ${c.cor}`}>
+                  <span
+                    className={`flex-none rounded-full px-2 py-0.5 text-[10px] font-bold ${c.cor}`}
+                  >
                     {c.tag}
                   </span>
                 </div>

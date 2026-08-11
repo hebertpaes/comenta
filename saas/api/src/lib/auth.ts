@@ -15,7 +15,12 @@ export type Principal = {
 export const hashPassword = (plain: string) => bcrypt.hash(plain, 10);
 export const verifyPassword = (plain: string, hash: string) => bcrypt.compare(plain, hash);
 
-export function signAccessToken(p: { userId: string; companyId: string; role: string; name: string }) {
+export function signAccessToken(p: {
+  userId: string;
+  companyId: string;
+  role: string;
+  name: string;
+}) {
   return jwt.sign(
     { sub: p.userId, companyId: p.companyId, role: p.role, name: p.name },
     config.JWT_SECRET,
@@ -47,7 +52,9 @@ export async function rotateRefreshToken(raw: string) {
   const [row] = await db
     .select()
     .from(schema.refreshTokens)
-    .where(and(eq(schema.refreshTokens.tokenHash, sha256(raw)), isNull(schema.refreshTokens.revokedAt)));
+    .where(
+      and(eq(schema.refreshTokens.tokenHash, sha256(raw)), isNull(schema.refreshTokens.revokedAt))
+    );
   if (!row || row.expiresAt < new Date()) return null;
   await db
     .update(schema.refreshTokens)

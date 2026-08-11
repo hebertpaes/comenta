@@ -7,7 +7,12 @@ import { audit } from "../lib/audit.js";
 
 const ContactBody = z.object({
   name: z.string().min(1).max(128),
-  phone: z.string().min(8).max(32).regex(/^\+?[0-9]+$/, "apenas dígitos").optional(),
+  phone: z
+    .string()
+    .min(8)
+    .max(32)
+    .regex(/^\+?[0-9]+$/, "apenas dígitos")
+    .optional(),
   email: z.string().email().optional(),
   tags: z.array(z.string().max(32)).max(20).default([]),
 });
@@ -32,8 +37,17 @@ export async function contactRoutes(app: FastifyInstance) {
         )
       : eq(schema.contacts.companyId, p.companyId);
     const [rows, [{ count }]] = await Promise.all([
-      db.select().from(schema.contacts).where(where).orderBy(desc(schema.contacts.createdAt)).limit(limit).offset(offset),
-      db.select({ count: dsql<number>`count(*)::int` }).from(schema.contacts).where(where),
+      db
+        .select()
+        .from(schema.contacts)
+        .where(where)
+        .orderBy(desc(schema.contacts.createdAt))
+        .limit(limit)
+        .offset(offset),
+      db
+        .select({ count: dsql<number>`count(*)::int` })
+        .from(schema.contacts)
+        .where(where),
     ]);
     return { data: rows, meta: { page, perPage: limit, total: count } };
   });
@@ -42,14 +56,20 @@ export async function contactRoutes(app: FastifyInstance) {
     const body = parse(ContactBody, req.body);
     const p = req.principal;
 
-    const [company] = await db.select().from(schema.companies).where(eq(schema.companies.id, p.companyId));
+    const [company] = await db
+      .select()
+      .from(schema.companies)
+      .where(eq(schema.companies.id, p.companyId));
     const [plan] = await db.select().from(schema.plans).where(eq(schema.plans.id, company.planId));
     const [{ count }] = await db
       .select({ count: dsql<number>`count(*)::int` })
       .from(schema.contacts)
       .where(eq(schema.contacts.companyId, p.companyId));
     if (count >= plan.maxContacts) {
-      throw new ApiError(402, `Limite de ${plan.maxContacts} contatos do plano ${plan.name} atingido — faça upgrade`);
+      throw new ApiError(
+        402,
+        `Limite de ${plan.maxContacts} contatos do plano ${plan.name} atingido — faça upgrade`
+      );
     }
 
     try {
@@ -72,7 +92,13 @@ export async function contactRoutes(app: FastifyInstance) {
     const { contacts } = parse(
       z.object({
         contacts: z
-          .array(z.object({ name: z.string().min(1).max(128), phone: z.string().max(32).optional(), email: z.string().max(255).optional() }))
+          .array(
+            z.object({
+              name: z.string().min(1).max(128),
+              phone: z.string().max(32).optional(),
+              email: z.string().max(255).optional(),
+            })
+          )
           .max(5000),
       }),
       req.body
@@ -84,7 +110,13 @@ export async function contactRoutes(app: FastifyInstance) {
       const phone = c.phone?.replace(/\D/g, "") || undefined;
       const res = await db
         .insert(schema.contacts)
-        .values({ companyId: p.companyId, name: c.name.trim(), phone, email: c.email?.trim() || null, tags: [] })
+        .values({
+          companyId: p.companyId,
+          name: c.name.trim(),
+          phone,
+          email: c.email?.trim() || null,
+          tags: [],
+        })
         .onConflictDoNothing()
         .returning();
       if (res.length) imported++;
@@ -100,7 +132,9 @@ export async function contactRoutes(app: FastifyInstance) {
     const [contact] = await db
       .update(schema.contacts)
       .set(body)
-      .where(and(eq(schema.contacts.id, id), eq(schema.contacts.companyId, req.principal.companyId)))
+      .where(
+        and(eq(schema.contacts.id, id), eq(schema.contacts.companyId, req.principal.companyId))
+      )
       .returning();
     if (!contact) throw new ApiError(404, "Contato não encontrado");
     audit(req.principal, "contact.updated", "contact", id, body);
@@ -111,7 +145,9 @@ export async function contactRoutes(app: FastifyInstance) {
     const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
     const [row] = await db
       .delete(schema.contacts)
-      .where(and(eq(schema.contacts.id, id), eq(schema.contacts.companyId, req.principal.companyId)))
+      .where(
+        and(eq(schema.contacts.id, id), eq(schema.contacts.companyId, req.principal.companyId))
+      )
       .returning();
     if (!row) throw new ApiError(404, "Contato não encontrado");
     audit(req.principal, "contact.deleted", "contact", id);

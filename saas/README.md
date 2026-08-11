@@ -20,28 +20,24 @@ saas/
 - **Integração Claude** (`saas/api/src/lib/ai.ts`): classificação, resumo e
   sugestão de resposta de conversas — modelos configuráveis, custo baixo por
   padrão (Haiku 4.5 / Sonnet 5). Ver `saas/api/README.md`.
-- **Deploy** (`saas/deploy`): `docker-compose.yml` (Postgres + Redis + API com
-  migração automática) e `nginx.comenta.conf` para `app.comenta.com.br` +
-  `api.comenta.com.br` com SSL via Certbot.
+- **Deploy** (`deploy/`, na raiz): um único `docker-compose.yml` com todos os
+  serviços do produto, `nginx/` e o `bootstrap.sh` de instalação. O
+  `saas/deploy/` foi removido — era um subconjunto deste.
 
 ## Arquitetura
 
-| Domínio | Subdomínio | Serviço |
-|---|---|---|
+| Domínio             | Subdomínio           | Serviço               |
+| ------------------- | -------------------- | --------------------- |
 | Painel do atendente | `app.comenta.com.br` | React/Vite (estático) |
-| API + tempo real | `api.comenta.com.br` | Fastify + Socket.IO |
-| Banco | interno | PostgreSQL 16 |
-| Filas / cache | interno | Redis 7 + BullMQ |
+| API + tempo real    | `api.comenta.com.br` | Fastify + Socket.IO   |
+| Banco               | interno              | PostgreSQL 16         |
+| Filas / cache       | interno              | Redis 7 + BullMQ      |
 
 ## Publicando em comenta.com.br
 
-1. Aponte no DNS `app.comenta.com.br` e `api.comenta.com.br` para o IP do servidor.
-2. No servidor, em `saas/deploy`, crie um `.env` com `DB_PASSWORD`,
-   `REDIS_PASSWORD`, `JWT_SECRET`, `JWT_REFRESH_SECRET` e `ANTHROPIC_API_KEY`.
-3. `docker compose up -d --build` (sobe banco, Redis e API; migra e faz seed).
-4. Instale o Nginx com `nginx.comenta.conf` e rode
-   `sudo certbot --nginx -d app.comenta.com.br -d api.comenta.com.br`.
-5. Faça o build do painel (`saas/web`) e sirva o `dist/` em `/var/www/comenta-app`.
+O passo a passo completo mora em [`deploy/RUNBOOK.md`](../deploy/RUNBOOK.md) —
+inclusive o `bootstrap.sh`, que instala tudo com um comando. Para publicar na
+Azure em vez de num VPS, veja [`deploy/azure/`](../deploy/azure/README.md).
 
 ## Próximos passos
 

@@ -16,7 +16,13 @@ type Phase = "inicio" | "fila" | "contato" | "agent";
 type Modo = "ia" | "humano" | null;
 type From = "bot" | "user" | "agent" | "system";
 type Fila = { id: string; nome: string; emoji: string; online: number };
-type Msg = { id: number; from: From; text: string; author?: string; cta?: { label: string; href: string } };
+type Msg = {
+  id: number;
+  from: From;
+  text: string;
+  author?: string;
+  cta?: { label: string; href: string };
+};
 
 const STORAGE_KEY = "comenta_consent";
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.comenta.com.br";
@@ -35,10 +41,34 @@ const TOTAL_HUMANOS = FILAS_HUMANAS.reduce((n, f) => n + f.online, 0);
 // resolveu. Funciona sem chave de IA (respostas guiadas).
 type Topico = { key: string; label: string; team: string; steps: string };
 const RESOLUCOES: Topico[] = [
-  { key: "planos", label: "Dúvida sobre planos 💳", team: "Vendas", steps: "Temos 3 planos: Free (R$0, sem cartão), Pro (R$99/mês — todos os canais + IA completa) e Business (R$299/mês — multi-tenant, API, SLA). Dá pra começar no Free e migrar quando quiser." },
-  { key: "tecnico", label: "Suporte técnico 🛠️", team: "Suporte", steps: "Para a maioria dos casos: 1) atualize a página; 2) confira sua conexão; 3) saia e entre de novo no painel. Se for em um canal (ex.: WhatsApp), reconecte-o em Conexões." },
-  { key: "financeiro", label: "Financeiro / pagamento 💰", team: "Financeiro", steps: "Faturas, 2ª via, troca de cartão e upgrade/downgrade ficam no painel em Configurações › Cobrança." },
-  { key: "comecar", label: "Quero começar 🚀", team: "Vendas", steps: "É rápido: crie sua conta no painel (sem cartão), conecte um canal e já comece a atender com a IA sugerindo as respostas." },
+  {
+    key: "planos",
+    label: "Dúvida sobre planos 💳",
+    team: "Vendas",
+    steps:
+      "Temos 3 planos: Free (R$0, sem cartão), Pro (R$99/mês — todos os canais + IA completa) e Business (R$299/mês — multi-tenant, API, SLA). Dá pra começar no Free e migrar quando quiser.",
+  },
+  {
+    key: "tecnico",
+    label: "Suporte técnico 🛠️",
+    team: "Suporte",
+    steps:
+      "Para a maioria dos casos: 1) atualize a página; 2) confira sua conexão; 3) saia e entre de novo no painel. Se for em um canal (ex.: WhatsApp), reconecte-o em Conexões.",
+  },
+  {
+    key: "financeiro",
+    label: "Financeiro / pagamento 💰",
+    team: "Financeiro",
+    steps:
+      "Faturas, 2ª via, troca de cartão e upgrade/downgrade ficam no painel em Configurações › Cobrança.",
+  },
+  {
+    key: "comecar",
+    label: "Quero começar 🚀",
+    team: "Vendas",
+    steps:
+      "É rápido: crie sua conta no painel (sem cartão), conecte um canal e já comece a atender com a IA sugerindo as respostas.",
+  },
 ];
 
 let _id = 1;
@@ -47,18 +77,45 @@ const nid = () => _id++;
 function botAnswer(key: string): Msg {
   switch (key) {
     case "planos":
-      return { id: nid(), from: "agent", author: "Assistente IA", text: "Temos 3 planos: Free (R$0), Pro (R$99/mês) e Business (R$299/mês).", cta: { label: "Ver planos", href: "#planos" } };
+      return {
+        id: nid(),
+        from: "agent",
+        author: "Assistente IA",
+        text: "Temos 3 planos: Free (R$0), Pro (R$99/mês) e Business (R$299/mês).",
+        cta: { label: "Ver planos", href: "#planos" },
+      };
     case "ia":
-      return { id: nid(), from: "agent", author: "Assistente IA", text: "Eu (Claude) classifico, resumo e sugiro a resposta — você só revisa e envia. 👇", cta: { label: "Ver a IA em ação", href: "#ia" } };
+      return {
+        id: nid(),
+        from: "agent",
+        author: "Assistente IA",
+        text: "Eu (Claude) classifico, resumo e sugiro a resposta — você só revisa e envia. 👇",
+        cta: { label: "Ver a IA em ação", href: "#ia" },
+      };
     case "comecar":
-      return { id: nid(), from: "agent", author: "Assistente IA", text: "É só criar sua conta no painel — sem cartão de crédito. 🚀", cta: { label: "Criar conta grátis", href: APP_URL } };
+      return {
+        id: nid(),
+        from: "agent",
+        author: "Assistente IA",
+        text: "É só criar sua conta no painel — sem cartão de crédito. 🚀",
+        cta: { label: "Criar conta grátis", href: APP_URL },
+      };
     default:
-      return { id: nid(), from: "agent", author: "Assistente IA", text: "Posso ajudar com planos, como a IA funciona ou te transferir para um humano. O que prefere?" };
+      return {
+        id: nid(),
+        from: "agent",
+        author: "Assistente IA",
+        text: "Posso ajudar com planos, como a IA funciona ou te transferir para um humano. O que prefere?",
+      };
   }
 }
 
 // ---- chamadas ao widget público da API ----
-async function waStart(team: string, name: string, phone: string): Promise<{ conversationId: string; token: string } | null> {
+async function waStart(
+  team: string,
+  name: string,
+  phone: string
+): Promise<{ conversationId: string; token: string } | null> {
   try {
     const r = await fetch(`${API_URL}/widget/start`, {
       method: "POST",
@@ -67,7 +124,9 @@ async function waStart(team: string, name: string, phone: string): Promise<{ con
     });
     if (!r.ok) return null;
     return await r.json();
-  } catch { return null; }
+  } catch {
+    return null;
+  }
 }
 async function waSend(conversationId: string, token: string, body: string) {
   try {
@@ -76,20 +135,34 @@ async function waSend(conversationId: string, token: string, body: string) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ conversationId, token, body }),
     });
-  } catch {}
+  } catch {
+    // Envio best-effort: se a API estiver fora, o widget segue funcionando e a
+    // mensagem simplesmente não é registrada. Nada a fazer aqui.
+  }
 }
 async function waPoll(conversationId: string, token: string, after: string | null) {
   try {
     const qs = new URLSearchParams({ conversationId, token, ...(after ? { after } : {}) });
     const r = await fetch(`${API_URL}/widget/messages?${qs.toString()}`);
     if (!r.ok) return [];
-    return (await r.json()).data as Array<{ id: string; direction: string; body: string; createdAt: string; author: string | null }>;
-  } catch { return []; }
+    return (await r.json()).data as Array<{
+      id: string;
+      direction: string;
+      body: string;
+      createdAt: string;
+      author: string | null;
+    }>;
+  } catch {
+    return [];
+  }
 }
 
 // Chat com IA real (Claude) — o visitante conversa e a IA responde.
 type AiTurn = { role: "user" | "assistant"; content: string };
-async function aiChat(history: AiTurn[], message: string): Promise<{ reply: string | null; aiEnabled: boolean }> {
+async function aiChat(
+  history: AiTurn[],
+  message: string
+): Promise<{ reply: string | null; aiEnabled: boolean }> {
   try {
     const r = await fetch(`${API_URL}/widget/ai`, {
       method: "POST",
@@ -133,24 +206,38 @@ export default function EngagementDock() {
   const bottomRef = useRef<HTMLDivElement>(null);
   const aiHist = useRef<AiTurn[]>([]); // histórico da conversa com a IA (Claude)
 
-  const clearTimers = () => { timers.current.forEach((t) => clearTimeout(t)); timers.current = []; };
-  const later = (fn: () => void, ms: number) => { const t = window.setTimeout(fn, ms); timers.current.push(t); };
+  const clearTimers = () => {
+    timers.current.forEach((t) => clearTimeout(t));
+    timers.current = [];
+  };
+  const later = (fn: () => void, ms: number) => {
+    const t = window.setTimeout(fn, ms);
+    timers.current.push(t);
+  };
 
   useEffect(() => {
     try {
       const v = localStorage.getItem(STORAGE_KEY) as Consent | null;
       if (v === "accepted" || v === "declined") setConsent(v);
-    } catch {}
+    } catch {
+      // localStorage lança em navegação privada / cookies bloqueados. Sem
+      // consentimento salvo, o widget pergunta de novo — que é o certo.
+    }
     setReady(true);
     return clearTimers;
   }, []);
 
-  useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages, typing, open, phase]);
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, typing, open, phase]);
 
   const addMsg = (m: Msg) => setMessages((prev) => [...prev, m]);
   const say = useCallback((m: Msg, delay = 700, author?: string) => {
     setTyping({ author: author ?? m.author ?? "Assistente" });
-    later(() => { setTyping(false); addMsg(m); }, delay);
+    later(() => {
+      setTyping(false);
+      addMsg(m);
+    }, delay);
   }, []);
 
   // ---- polling das respostas do atendente (fila humana) ----
@@ -175,14 +262,19 @@ export default function EngagementDock() {
     };
     tick();
     const iv = window.setInterval(tick, 3000);
-    return () => { alive = false; clearInterval(iv); };
+    return () => {
+      alive = false;
+      clearInterval(iv);
+    };
   }, [conv]);
 
   const persist = (v: Consent) => {
     try {
       localStorage.setItem(STORAGE_KEY, v);
       document.cookie = `${STORAGE_KEY}=${v}; max-age=31536000; path=/; SameSite=Lax`;
-    } catch {}
+    } catch {
+      // Idem: sem storage disponível o consentimento vale só para esta sessão.
+    }
   };
 
   const startConversation = useCallback(() => {
@@ -190,18 +282,45 @@ export default function EngagementDock() {
     greeted.current = true;
     setOpen(true);
     setPhase("inicio");
-    say({ id: nid(), from: "bot", text: "Olá! 👋 Sou o assistente do Comenta. Você quer falar com a IA ou com um humano?" }, 600);
+    say(
+      {
+        id: nid(),
+        from: "bot",
+        text: "Olá! 👋 Sou o assistente do Comenta. Você quer falar com a IA ou com um humano?",
+      },
+      600
+    );
   }, [say]);
 
-  const accept = () => { persist("accepted"); setConsent("accepted"); later(startConversation, 800); };
-  const decline = () => { persist("declined"); setConsent("declined"); };
+  const accept = () => {
+    persist("accepted");
+    setConsent("accepted");
+    later(startConversation, 800);
+  };
+  const decline = () => {
+    persist("declined");
+    setConsent("declined");
+  };
 
   // ---- FILA IA + FLUXO DE RESOLUÇÃO (self-service) ----
   const falarComIA = () => {
     clearTimers();
-    setModo("ia"); setFila(null); setAgent("Assistente IA"); setPhase("agent"); setResolveTeam(null);
+    setModo("ia");
+    setFila(null);
+    setAgent("Assistente IA");
+    setPhase("agent");
+    setResolveTeam(null);
     addMsg({ id: nid(), from: "system", text: "Você entrou na fila de Atendimento IA ✨." });
-    say({ id: nid(), from: "agent", author: "Assistente IA", text: "Oi! Sou o Assistente IA ✨. Vou tentar resolver aqui mesmo. Sobre o que é? Escolha um tópico ou escreva sua dúvida." }, 800, "Assistente IA");
+    say(
+      {
+        id: nid(),
+        from: "agent",
+        author: "Assistente IA",
+        text: "Oi! Sou o Assistente IA ✨. Vou tentar resolver aqui mesmo. Sobre o que é? Escolha um tópico ou escreva sua dúvida.",
+      },
+      800,
+      "Assistente IA"
+    );
   };
 
   // Tenta resolver o tópico e, depois, pergunta se resolveu.
@@ -209,30 +328,61 @@ export default function EngagementDock() {
     setResolveTeam(null);
     addMsg({ id: nid(), from: "user", text: t.label });
     say({ id: nid(), from: "agent", author: "Assistente IA", text: t.steps }, 800, "Assistente IA");
-    later(() => { addMsg({ id: nid(), from: "system", text: "Isso resolveu sua dúvida?" }); setResolveTeam(t.team); }, 1600);
+    later(() => {
+      addMsg({ id: nid(), from: "system", text: "Isso resolveu sua dúvida?" });
+      setResolveTeam(t.team);
+    }, 1600);
   };
   const marcarResolvido = () => {
     setResolveTeam(null);
     addMsg({ id: nid(), from: "system", text: "Perfeito, atendimento resolvido ✅" });
-    say({ id: nid(), from: "agent", author: "Assistente IA", text: "Que bom que ajudei! 🎉 Precisa de mais alguma coisa?" }, 700, "Assistente IA");
+    say(
+      {
+        id: nid(),
+        from: "agent",
+        author: "Assistente IA",
+        text: "Que bom que ajudei! 🎉 Precisa de mais alguma coisa?",
+      },
+      700,
+      "Assistente IA"
+    );
   };
   const naoResolvido = () => {
     const team = resolveTeam || "Suporte";
     setResolveTeam(null);
     const f = FILAS_HUMANAS.find((x) => x.id === team) || FILAS_HUMANAS[0];
-    say({ id: nid(), from: "agent", author: "Assistente IA", text: `Sem problema — vou te transferir para o time de ${f.nome}. 👇` }, 600, "Assistente IA");
+    say(
+      {
+        id: nid(),
+        from: "agent",
+        author: "Assistente IA",
+        text: `Sem problema — vou te transferir para o time de ${f.nome}. 👇`,
+      },
+      600,
+      "Assistente IA"
+    );
     later(() => pedirContato(f), 1200);
   };
 
   const pedirFilaHumana = () => {
     setPhase("fila");
-    say({ id: nid(), from: "bot", text: `Certo! Temos ${TOTAL_HUMANOS} atendentes humanos online. Com qual time você quer falar?` }, 500);
+    say(
+      {
+        id: nid(),
+        from: "bot",
+        text: `Certo! Temos ${TOTAL_HUMANOS} atendentes humanos online. Com qual time você quer falar?`,
+      },
+      500
+    );
   };
 
   // ---- FILA HUMANA: 1) coleta o WhatsApp (obrigatório), 2) abre a conversa ----
   const pedirContato = (f: Fila) => {
     clearTimers();
-    setFila(f); setPendingTeam(f); setLeadErr(""); setPhase("contato");
+    setFila(f);
+    setPendingTeam(f);
+    setLeadErr("");
+    setPhase("contato");
   };
   const iniciarAtendimento = async () => {
     const f = pendingTeam;
@@ -243,26 +393,56 @@ export default function EngagementDock() {
       return;
     }
     setLeadErr("");
-    setModo("humano"); setAgent(null); setPhase("agent");
-    agentJoinedRef.current = false; lastTsRef.current = null;
-    addMsg({ id: nid(), from: "system", text: `Transferindo para o time de ${f.nome} ${f.emoji}…` });
+    setModo("humano");
+    setAgent(null);
+    setPhase("agent");
+    agentJoinedRef.current = false;
+    lastTsRef.current = null;
+    addMsg({
+      id: nid(),
+      from: "system",
+      text: `Transferindo para o time de ${f.nome} ${f.emoji}…`,
+    });
     const c = await waStart(f.id, leadName, digits);
     if (!c) {
-      addMsg({ id: nid(), from: "system", text: "Não consegui abrir o atendimento agora. Confira o número e tente de novo." });
+      addMsg({
+        id: nid(),
+        from: "system",
+        text: "Não consegui abrir o atendimento agora. Confira o número e tente de novo.",
+      });
       setPhase("contato");
       return;
     }
     setConv(c);
-    addMsg({ id: nid(), from: "system", text: `Recebemos seu WhatsApp (${digits}). Você entrou na fila de ${f.nome}; um atendente responde aqui e pode te chamar no WhatsApp. 💬` });
+    addMsg({
+      id: nid(),
+      from: "system",
+      text: `Recebemos seu WhatsApp (${digits}). Você entrou na fila de ${f.nome}; um atendente responde aqui e pode te chamar no WhatsApp. 💬`,
+    });
   };
 
   const encerrar = () => {
     clearTimers();
-    setConv(null); agentJoinedRef.current = false; lastTsRef.current = null;
-    setPendingTeam(null); setLeadPhone(""); setLeadName(""); setLeadErr("");
+    setConv(null);
+    agentJoinedRef.current = false;
+    lastTsRef.current = null;
+    setPendingTeam(null);
+    setLeadPhone("");
+    setLeadName("");
+    setLeadErr("");
     addMsg({ id: nid(), from: "system", text: "Atendimento encerrado ✅ Obrigado pelo contato!" });
-    setPhase("inicio"); setModo(null); setFila(null); setAgent(null);
-    say({ id: nid(), from: "bot", text: "Precisa de mais alguma coisa? Quer falar com a IA ou com um humano?" }, 700);
+    setPhase("inicio");
+    setModo(null);
+    setFila(null);
+    setAgent(null);
+    say(
+      {
+        id: nid(),
+        from: "bot",
+        text: "Precisa de mais alguma coisa? Quer falar com a IA ou com um humano?",
+      },
+      700
+    );
   };
 
   // Respostas guiadas (fallback sem IA/erro).
@@ -271,7 +451,16 @@ export default function EngagementDock() {
     if (/plano|preç|preco|valor/.test(l)) say(botAnswer("planos"), 700);
     else if (/\bia\b|intelig|claude|autom/.test(l)) say(botAnswer("ia"), 700);
     else if (/começ|comec|cadastr|conta|grátis|gratis/.test(l)) say(botAnswer("comecar"), 700);
-    else say({ id: nid(), from: "agent", author: "Assistente IA", text: "Consigo te ajudar com isso ou posso te transferir para um atendente humano. Quer falar com o time?" }, 700);
+    else
+      say(
+        {
+          id: nid(),
+          from: "agent",
+          author: "Assistente IA",
+          text: "Consigo te ajudar com isso ou posso te transferir para um atendente humano. Quer falar com o time?",
+        },
+        700
+      );
   };
 
   // IA de verdade (Claude): tenta responder pela API; se não houver chave de IA
@@ -303,15 +492,21 @@ export default function EngagementDock() {
   if (!ready) return null;
 
   const headerTitle =
-    phase === "agent" && modo === "humano" && agent ? agent :
-    phase === "agent" && modo === "humano" ? "Aguardando atendente" :
-    phase === "agent" && modo === "ia" ? "Assistente IA" :
-    "Assistente Comenta";
+    phase === "agent" && modo === "humano" && agent
+      ? agent
+      : phase === "agent" && modo === "humano"
+        ? "Aguardando atendente"
+        : phase === "agent" && modo === "ia"
+          ? "Assistente IA"
+          : "Assistente Comenta";
   const headerSub =
-    phase === "agent" && modo === "ia" ? "Atendimento IA" :
-    phase === "agent" && modo === "humano" && agent ? `Atendente · ${fila?.nome ?? ""}` :
-    phase === "agent" && modo === "humano" ? `Na fila de ${fila?.nome ?? ""}…` :
-    `IA + ${TOTAL_HUMANOS} humanos online`;
+    phase === "agent" && modo === "ia"
+      ? "Atendimento IA"
+      : phase === "agent" && modo === "humano" && agent
+        ? `Atendente · ${fila?.nome ?? ""}`
+        : phase === "agent" && modo === "humano"
+          ? `Na fila de ${fila?.nome ?? ""}…`
+          : `IA + ${TOTAL_HUMANOS} humanos online`;
 
   return (
     <>
@@ -321,14 +516,30 @@ export default function EngagementDock() {
           <div className="mx-auto flex max-w-4xl flex-col gap-4 rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-2xl backdrop-blur sm:flex-row sm:items-center sm:p-5">
             <div className="text-2xl">🍪</div>
             <p className="flex-1 text-sm text-slate-600">
-              Usamos cookies para melhorar sua experiência, analisar o tráfego e
-              personalizar conteúdo. Ao aceitar, você concorda com nossa{" "}
-              <a href="#" className="font-medium text-fuchsia-600 underline">Política de Privacidade</a>{" "}
-              e os <a href="#" className="font-medium text-fuchsia-600 underline">Termos de Uso</a>.
+              Usamos cookies para melhorar sua experiência, analisar o tráfego e personalizar
+              conteúdo. Ao aceitar, você concorda com nossa{" "}
+              <a href="#" className="font-medium text-fuchsia-600 underline">
+                Política de Privacidade
+              </a>{" "}
+              e os{" "}
+              <a href="#" className="font-medium text-fuchsia-600 underline">
+                Termos de Uso
+              </a>
+              .
             </p>
             <div className="flex flex-none gap-2">
-              <button onClick={decline} className="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-50">Recusar</button>
-              <button onClick={accept} className="rounded-full bg-gradient-to-r from-fuchsia-600 to-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/25 transition hover:opacity-90">Aceitar e continuar</button>
+              <button
+                onClick={decline}
+                className="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-50"
+              >
+                Recusar
+              </button>
+              <button
+                onClick={accept}
+                className="rounded-full bg-gradient-to-r from-fuchsia-600 to-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/25 transition hover:opacity-90"
+              >
+                Aceitar e continuar
+              </button>
             </div>
           </div>
         </div>
@@ -350,9 +561,20 @@ export default function EngagementDock() {
                   </div>
                 </div>
                 {phase === "agent" && (
-                  <button onClick={encerrar} className="rounded-full bg-white/15 px-2 py-1 text-xs font-semibold hover:bg-white/25">Encerrar</button>
+                  <button
+                    onClick={encerrar}
+                    className="rounded-full bg-white/15 px-2 py-1 text-xs font-semibold hover:bg-white/25"
+                  >
+                    Encerrar
+                  </button>
                 )}
-                <button onClick={() => setOpen(false)} aria-label="Fechar chat" className="rounded-full p-1 text-white/90 hover:bg-white/10">✕</button>
+                <button
+                  onClick={() => setOpen(false)}
+                  aria-label="Fechar chat"
+                  className="rounded-full p-1 text-white/90 hover:bg-white/10"
+                >
+                  ✕
+                </button>
               </div>
 
               <div className="flex-1 space-y-3 overflow-y-auto bg-slate-50 p-4">
@@ -360,17 +582,32 @@ export default function EngagementDock() {
                   if (m.from === "system") {
                     return (
                       <div key={m.id} className="flex justify-center">
-                        <span className="rounded-full bg-slate-200 px-3 py-1 text-center text-[11px] font-medium text-slate-600">{m.text}</span>
+                        <span className="rounded-full bg-slate-200 px-3 py-1 text-center text-[11px] font-medium text-slate-600">
+                          {m.text}
+                        </span>
                       </div>
                     );
                   }
                   const mine = m.from === "user";
                   return (
                     <div key={m.id} className={`flex ${mine ? "justify-end" : ""}`}>
-                      <div className={`max-w-[85%] rounded-2xl px-3.5 py-2.5 text-sm ${mine ? "bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white" : "border border-slate-200 bg-white text-slate-700"}`}>
-                        {m.from === "agent" && m.author && (<div className="mb-0.5 text-[11px] font-bold text-fuchsia-600">{m.author}</div>)}
+                      <div
+                        className={`max-w-[85%] rounded-2xl px-3.5 py-2.5 text-sm ${mine ? "bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white" : "border border-slate-200 bg-white text-slate-700"}`}
+                      >
+                        {m.from === "agent" && m.author && (
+                          <div className="mb-0.5 text-[11px] font-bold text-fuchsia-600">
+                            {m.author}
+                          </div>
+                        )}
                         {m.text}
-                        {m.cta && (<a href={m.cta.href} className="mt-2 block rounded-lg bg-slate-900 px-3 py-1.5 text-center text-xs font-semibold text-white hover:opacity-90">{m.cta.label}</a>)}
+                        {m.cta && (
+                          <a
+                            href={m.cta.href}
+                            className="mt-2 block rounded-lg bg-slate-900 px-3 py-1.5 text-center text-xs font-semibold text-white hover:opacity-90"
+                          >
+                            {m.cta.label}
+                          </a>
+                        )}
                       </div>
                     </div>
                   );
@@ -382,11 +619,18 @@ export default function EngagementDock() {
                 {/* coleta de contato — WhatsApp obrigatório antes de entrar na fila */}
                 {phase === "contato" && pendingTeam && (
                   <form
-                    onSubmit={(e) => { e.preventDefault(); iniciarAtendimento(); }}
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      iniciarAtendimento();
+                    }}
                     className="rounded-2xl border border-fuchsia-200 bg-white p-4"
                   >
-                    <div className="text-sm font-semibold text-slate-800">Falar com {pendingTeam.nome} {pendingTeam.emoji}</div>
-                    <div className="mt-0.5 text-xs text-slate-500">Informe seu WhatsApp para o atendente falar com você.</div>
+                    <div className="text-sm font-semibold text-slate-800">
+                      Falar com {pendingTeam.nome} {pendingTeam.emoji}
+                    </div>
+                    <div className="mt-0.5 text-xs text-slate-500">
+                      Informe seu WhatsApp para o atendente falar com você.
+                    </div>
                     <input
                       value={leadName}
                       onChange={(e) => setLeadName(e.target.value)}
@@ -401,8 +645,13 @@ export default function EngagementDock() {
                       className="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-fuchsia-400 focus:outline-none"
                       required
                     />
-                    {leadErr && <div className="mt-1 text-xs font-medium text-red-500">{leadErr}</div>}
-                    <button type="submit" className="mt-3 w-full rounded-full bg-gradient-to-r from-fuchsia-600 to-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+                    {leadErr && (
+                      <div className="mt-1 text-xs font-medium text-red-500">{leadErr}</div>
+                    )}
+                    <button
+                      type="submit"
+                      className="mt-3 w-full rounded-full bg-gradient-to-r from-fuchsia-600 to-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
+                    >
                       Iniciar atendimento
                     </button>
                   </form>
@@ -411,14 +660,20 @@ export default function EngagementDock() {
                 {/* aguardando atendente entrar (fila humana) */}
                 {phase === "agent" && modo === "humano" && !agent && (
                   <div className="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-4 text-center">
-                    <div className="text-sm font-semibold text-fuchsia-700">Na fila de {fila?.nome}</div>
-                    <div className="mt-1 text-xs text-slate-600">Um atendente vai assumir aqui neste chat. Pode já escrever sua dúvida. 💬</div>
+                    <div className="text-sm font-semibold text-fuchsia-700">
+                      Na fila de {fila?.nome}
+                    </div>
+                    <div className="mt-1 text-xs text-slate-600">
+                      Um atendente vai assumir aqui neste chat. Pode já escrever sua dúvida. 💬
+                    </div>
                   </div>
                 )}
 
                 {typing && (
                   <div className="flex">
-                    <div className="rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-400">{typing.author} digitando…</div>
+                    <div className="rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-400">
+                      {typing.author} digitando…
+                    </div>
                   </div>
                 )}
                 <div ref={bottomRef} />
@@ -428,27 +683,55 @@ export default function EngagementDock() {
               <div className="flex flex-wrap gap-2 border-t border-slate-100 bg-white px-3 pt-3">
                 {phase === "inicio" && (
                   <>
-                    <button onClick={falarComIA} className="qr border-indigo-300 text-indigo-700">Falar com a IA ✨</button>
-                    <button onClick={pedirFilaHumana} className="qr border-fuchsia-300 text-fuchsia-700">Falar com um humano 🧑‍💼</button>
+                    <button onClick={falarComIA} className="qr border-indigo-300 text-indigo-700">
+                      Falar com a IA ✨
+                    </button>
+                    <button
+                      onClick={pedirFilaHumana}
+                      className="qr border-fuchsia-300 text-fuchsia-700"
+                    >
+                      Falar com um humano 🧑‍💼
+                    </button>
                   </>
                 )}
                 {phase === "agent" && modo === "ia" && !resolveTeam && (
                   <>
                     {RESOLUCOES.map((t) => (
-                      <button key={t.key} onClick={() => resolver(t)} className="qr">{t.label}</button>
+                      <button key={t.key} onClick={() => resolver(t)} className="qr">
+                        {t.label}
+                      </button>
                     ))}
-                    <button onClick={pedirFilaHumana} className="qr border-fuchsia-300 text-fuchsia-700">Falar com um humano 🧑‍💼</button>
-                    <button onClick={encerrar} className="qr">Encerrar</button>
+                    <button
+                      onClick={pedirFilaHumana}
+                      className="qr border-fuchsia-300 text-fuchsia-700"
+                    >
+                      Falar com um humano 🧑‍💼
+                    </button>
+                    <button onClick={encerrar} className="qr">
+                      Encerrar
+                    </button>
                   </>
                 )}
                 {phase === "agent" && modo === "ia" && resolveTeam && (
                   <>
-                    <button onClick={marcarResolvido} className="qr border-emerald-300 text-emerald-700">✅ Sim, resolveu</button>
-                    <button onClick={naoResolvido} className="qr border-fuchsia-300 text-fuchsia-700">❌ Não, falar com humano</button>
+                    <button
+                      onClick={marcarResolvido}
+                      className="qr border-emerald-300 text-emerald-700"
+                    >
+                      ✅ Sim, resolveu
+                    </button>
+                    <button
+                      onClick={naoResolvido}
+                      className="qr border-fuchsia-300 text-fuchsia-700"
+                    >
+                      ❌ Não, falar com humano
+                    </button>
                   </>
                 )}
                 {phase === "agent" && modo === "humano" && (
-                  <button onClick={encerrar} className="qr">Encerrar atendimento</button>
+                  <button onClick={encerrar} className="qr">
+                    Encerrar atendimento
+                  </button>
                 )}
                 {phase === "fila" && (
                   <div className="flex w-full flex-col gap-2">
@@ -463,26 +746,51 @@ export default function EngagementDock() {
                         <span className="ml-auto text-xs text-slate-400">{f.online} online</span>
                       </button>
                     ))}
-                    <button type="button" onClick={encerrar} className="qr self-start">Cancelar</button>
+                    <button type="button" onClick={encerrar} className="qr self-start">
+                      Cancelar
+                    </button>
                   </div>
                 )}
-                {phase === "contato" && (<button type="button" onClick={encerrar} className="qr">Cancelar</button>)}
+                {phase === "contato" && (
+                  <button type="button" onClick={encerrar} className="qr">
+                    Cancelar
+                  </button>
+                )}
               </div>
 
-              <form onSubmit={(e) => { e.preventDefault(); send(input); }} className="flex gap-2 bg-white p-3">
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  send(input);
+                }}
+                className="flex gap-2 bg-white p-3"
+              >
                 <input
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder={phase === "agent" && modo === "humano" ? "Fale com o atendente…" : "Escreva uma mensagem…"}
+                  placeholder={
+                    phase === "agent" && modo === "humano"
+                      ? "Fale com o atendente…"
+                      : "Escreva uma mensagem…"
+                  }
                   className="flex-1 rounded-full border border-slate-300 px-4 py-2 text-sm focus:border-fuchsia-400 focus:outline-none"
                 />
-                <button type="submit" aria-label="Enviar" className="inline-flex h-10 w-10 flex-none items-center justify-center rounded-full bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white">➤</button>
+                <button
+                  type="submit"
+                  aria-label="Enviar"
+                  className="inline-flex h-10 w-10 flex-none items-center justify-center rounded-full bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white"
+                >
+                  ➤
+                </button>
               </form>
             </div>
           )}
 
           <button
-            onClick={() => { setOpen((o) => !o); if (!greeted.current) startConversation(); }}
+            onClick={() => {
+              setOpen((o) => !o);
+              if (!greeted.current) startConversation();
+            }}
             aria-label={open ? "Fechar chat" : "Abrir chat"}
             className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-600 to-indigo-600 text-2xl text-white shadow-xl shadow-fuchsia-500/30 transition hover:scale-105"
           >
@@ -501,7 +809,10 @@ export default function EngagementDock() {
           color: #475569;
           transition: all 0.15s;
         }
-        .qr:hover { border-color: #f0abfc; color: #a21caf; }
+        .qr:hover {
+          border-color: #f0abfc;
+          color: #a21caf;
+        }
       `}</style>
     </>
   );

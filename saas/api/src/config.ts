@@ -5,15 +5,20 @@ const Env = z.object({
   PORT: z.coerce.number().default(4000),
   APP_URL: z.string().default("http://localhost:5173"),
   API_URL: z.string().default("http://localhost:4000"),
-  DATABASE_URL: z
-    .string()
-    .default("postgresql://comenta:comenta123@localhost:5432/comenta_saas"),
+  DATABASE_URL: z.string().default("postgresql://comenta:comenta123@localhost:5432/comenta_saas"),
   REDIS_URL: z.string().default("redis://:comenta123@localhost:6379"),
   JWT_SECRET: z.string().default("dev-secret-change-me"),
   JWT_REFRESH_SECRET: z.string().default("dev-refresh-secret-change-me"),
   ACCESS_TOKEN_TTL: z.string().default("15m"),
   REFRESH_TOKEN_TTL_DAYS: z.coerce.number().default(30),
   CORS_ORIGINS: z.string().default("http://localhost:5173"),
+  // Meta (Instagram Direct + Facebook Messenger). No protótipo existe UM app da
+  // Meta para toda a instalação, então o segredo e o token de verificação ficam
+  // aqui — só o id e o token da página variam por conexão, e esses o admin cola
+  // no painel. Uma conexão ainda pode sobrescrever ambos no seu config quando a
+  // empresa tiver app próprio.
+  META_APP_SECRET: z.string().default(""),
+  META_VERIFY_TOKEN: z.string().default(""),
 });
 
 export const config = Env.parse(process.env);

@@ -21,8 +21,17 @@ services:
     environment:
       APP_URL: http://localhost:8080
       API_URL: http://localhost:4000
-      # painel (8080) + site/widget (3000)
-      CORS_ORIGINS: http://localhost:8080,http://localhost:3000
+      # painel (8080) + site/widget (3000). Precisa listar `127.0.0.1` além de
+      # `localhost`: são origens DIFERENTES para o navegador, e abrir o painel
+      # pelo IP com só `localhost` liberado dá tela de login que nunca carrega
+      # nada (toda chamada barrada no CORS, sem erro visível na interface).
+      # LAN_ORIGINS entra vazio por padrão; o local-mac.sh --lan preenche com o
+      # IP do Mac para liberar o acesso pelo iPhone.
+      CORS_ORIGINS: http://localhost:8080,http://localhost:3000,http://127.0.0.1:8080,http://127.0.0.1:3000${LAN_ORIGINS:-}
+      # App único da Meta do protótipo (Instagram Direct + Messenger). O
+      # verify token é o que você repete no painel da Meta ao assinar o webhook.
+      META_APP_SECRET: ${META_APP_SECRET:-}
+      META_VERIFY_TOKEN: ${META_VERIFY_TOKEN:-comenta-local}
     ports:
       - "[::1]:4000:4000"
 

@@ -32,7 +32,10 @@ async function activeRatingConfig(companyId: string): Promise<RatingConfig | nul
   const scale = Number(cfg.scale) === 5 ? 5 : 10;
   return {
     scale,
-    message: String(cfg.message || `De 0 a ${scale}, como você avalia nosso atendimento? Responda apenas com o número. 🙏`),
+    message: String(
+      cfg.message ||
+        `De 0 a ${scale}, como você avalia nosso atendimento? Responda apenas com o número. 🙏`
+    ),
     thanks: String(cfg.thanks || "Obrigado pela sua avaliação! 💜"),
   };
 }
@@ -43,14 +46,22 @@ async function botSay(companyId: string, conversationId: string, contactId: stri
     .insert(schema.messages)
     .values({ companyId, conversationId, direction: "out", body })
     .returning();
-  await db.update(schema.conversations).set({ lastMessageAt: new Date() }).where(eq(schema.conversations.id, conversationId));
+  await db
+    .update(schema.conversations)
+    .set({ lastMessageAt: new Date() })
+    .where(eq(schema.conversations.id, conversationId));
   emitToCompany(companyId, "message.created", { conversationId, message: msg });
   publishEvent(companyId, "message.created", { conversationId, message: msg }).catch(() => {});
-  await import("../channels/whatsapp.js").then((m) => m.sendToContact(companyId, contactId, body)).catch(() => {});
+  await import("../channels/whatsapp.js")
+    .then((m) => m.sendToContact(companyId, contactId, body))
+    .catch(() => {});
 }
 
 /** Chamado quando a conversa é resolvida: se a pesquisa estiver ativa, pede a nota. */
-export async function requestRatingOnResolve(companyId: string, conv: { id: string; contactId: string }) {
+export async function requestRatingOnResolve(
+  companyId: string,
+  conv: { id: string; contactId: string }
+) {
   const cfg = await activeRatingConfig(companyId);
   if (!cfg) return;
   await db
@@ -62,7 +73,11 @@ export async function requestRatingOnResolve(companyId: string, conv: { id: stri
 
 /** Tenta interpretar a mensagem recebida como uma nota de avaliação.
  *  Retorna true se consumiu a mensagem (não deve seguir o fluxo normal). */
-export async function tryCaptureRating(companyId: string, contactId: string, text: string): Promise<boolean> {
+export async function tryCaptureRating(
+  companyId: string,
+  contactId: string,
+  text: string
+): Promise<boolean> {
   const cfg = await activeRatingConfig(companyId);
   if (!cfg) return false;
 
@@ -100,7 +115,10 @@ export async function tryCaptureRating(companyId: string, contactId: string, tex
     score,
     scale: cfg.scale,
   });
-  await db.update(schema.conversations).set({ awaitingRatingAt: null }).where(eq(schema.conversations.id, conv.id));
+  await db
+    .update(schema.conversations)
+    .set({ awaitingRatingAt: null })
+    .where(eq(schema.conversations.id, conv.id));
   emitToCompany(companyId, "rating.created", { conversationId: conv.id, score, scale: cfg.scale });
   await botSay(companyId, conv.id, contactId, cfg.thanks);
   return true;
@@ -116,7 +134,9 @@ export async function ratingMetrics(companyId: string) {
       detractors: dsql<number>`count(*) filter (where score::float / scale * 10 <= 6)::int`,
     })
     .from(schema.ratings)
-    .where(and(eq(schema.ratings.companyId, companyId), dsql`created_at >= now() - interval '30 days'`));
+    .where(
+      and(eq(schema.ratings.companyId, companyId), dsql`created_at >= now() - interval '30 days'`)
+    );
   const count = row?.count ?? 0;
   const avg = row?.avg10 != null ? Math.round(Number(row.avg10) * 10) / 10 : null;
   // NPS clássico: %promotores - %detratores (nota normalizada 0-10)

@@ -42,11 +42,11 @@ npm run smoke
 Os endpoints de IA usam a API da Anthropic. Requerem `ANTHROPIC_API_KEY` no
 ambiente — sem ela respondem **503**. Requisições únicas (sem streaming).
 
-| Endpoint | Descrição | Modelo padrão |
-|---|---|---|
-| `POST /conversations/:id/ai/classify` | Categoria, intenção, sentimento, urgência (JSON) | `claude-haiku-4-5` |
-| `POST /conversations/:id/ai/summary` | Resumo para handoff entre atendentes | `claude-haiku-4-5` |
-| `POST /conversations/:id/ai/suggest` | Sugestão de resposta pronta (corpo aceita `{"tone"}`) | `claude-sonnet-5` |
+| Endpoint                              | Descrição                                             | Modelo padrão      |
+| ------------------------------------- | ----------------------------------------------------- | ------------------ |
+| `POST /conversations/:id/ai/classify` | Categoria, intenção, sentimento, urgência (JSON)      | `claude-haiku-4-5` |
+| `POST /conversations/:id/ai/summary`  | Resumo para handoff entre atendentes                  | `claude-haiku-4-5` |
+| `POST /conversations/:id/ai/suggest`  | Sugestão de resposta pronta (corpo aceita `{"tone"}`) | `claude-sonnet-5`  |
 
 Os modelos são configuráveis por `AI_MODEL_CLASSIFY`, `AI_MODEL_SUMMARIZE` e
 `AI_MODEL_SUGGEST`. Escolha de padrões: **Haiku 4.5** para classificação/resumo

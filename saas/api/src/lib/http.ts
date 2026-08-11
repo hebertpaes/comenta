@@ -9,7 +9,11 @@ declare module "fastify" {
 }
 
 export class ApiError extends Error {
-  constructor(public statusCode: number, message: string, public code = "error") {
+  constructor(
+    public statusCode: number,
+    message: string,
+    public code = "error"
+  ) {
     super(message);
   }
 }

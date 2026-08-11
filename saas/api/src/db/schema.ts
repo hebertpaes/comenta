@@ -93,11 +93,19 @@ export const contacts = pgTable(
     name: varchar("name", { length: 128 }).notNull(),
     phone: varchar("phone", { length: 32 }),
     email: varchar("email", { length: 255 }),
+    // Id do contato no provedor, quando o canal não identifica por telefone: o
+    // PSID (Messenger) ou IGSID (Instagram). A Meta não entrega telefone nem
+    // e-mail — o usuário é um id opaco, e é só por ele que dá para reconhecer
+    // quem voltou a escrever.
+    externalId: varchar("external_id", { length: 64 }),
     tags: jsonb("tags").$type<string[]>().notNull().default([]),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [
     uniqueIndex("contacts_company_phone_ux").on(t.companyId, t.phone),
+    // NULLs são distintos entre si no Postgres, então os contatos de WhatsApp
+    // (sem external_id) não colidem nem entre si nem com os da Meta.
+    uniqueIndex("contacts_company_external_ux").on(t.companyId, t.externalId),
     index("contacts_company_ix").on(t.companyId),
   ]
 );
@@ -414,7 +422,9 @@ export const campaigns = pgTable(
     total: integer("total").notNull().default(0),
     sent: integer("sent").notNull().default(0),
     failed: integer("failed").notNull().default(0),
-    createdByUserId: uuid("created_by_user_id").references(() => users.id, { onDelete: "set null" }),
+    createdByUserId: uuid("created_by_user_id").references(() => users.id, {
+      onDelete: "set null",
+    }),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [index("campaigns_company_ix").on(t.companyId, t.status)]

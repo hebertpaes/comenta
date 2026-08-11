@@ -1,8 +1,8 @@
 node_modules
 dist
 dist-ssr
-# core do FFmpeg copiado do node_modules (gerado por scripts/copy-core.mjs)
-public/ffmpeg
+# core do FFmpeg copiado do node_modules (gerado por apps/editor/scripts/copy-core.mjs)
+**/public/ffmpeg
 *.local
 .DS_Store
 .vite
@@ -19,3 +19,13 @@ deploy/.env
 # Redis dump local
 dump.rdb
 **/dump.rdb
+
+# Cache incremental do tsc (gerado; estava versionado por engano)
+*.tsbuildinfo
+
+# Build do Xcode (app iOS) - so o codigo-fonte vai pro repo
+apps/ios/build/
+apps/ios/build-sim/
+DerivedData/
+*.xcuserdatad
+xcuserdata/

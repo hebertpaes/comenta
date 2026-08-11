@@ -5,6 +5,7 @@ conversas são roteadas — como no atendechat. Cada fila tem cor e seus
 atendentes; cada conversa pode ser transferida para uma fila.
 
 ## No painel
+
 - **Aba 🗂️ Filas** (admin): criar filas, escolher a cor, definir os atendentes
   de cada fila (checkbox) e remover filas.
 - **Aba 💬 Conversas**: filtro por fila no topo (chips coloridos "Todas / Suporte
@@ -15,6 +16,7 @@ No primeiro boot o seed cria 4 filas (Suporte, Vendas, Financeiro, Marketing) e
 liga os atendentes de cada time à sua fila.
 
 ## API
+
 - `GET /queues` — lista filas + `memberIds`
 - `POST /queues {name,color}` · `PATCH /queues/:id` · `DELETE /queues/:id` (admin)
 - `PUT /queues/:id/members {userIds:[...]}` — define os atendentes da fila (admin)

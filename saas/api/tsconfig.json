@@ -4,13 +4,15 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "lib": ["ES2022"],
-    "outDir": "dist",
-    "rootDir": "src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "noEmit": true
   },
-  "include": ["src"]
+  // Cobre src e test: é este o tsconfig que o editor e o Vitest enxergam, e
+  // sem `test` aqui o transform do Vitest não acha configuração para os
+  // arquivos de teste. A emissão do build fica em tsconfig.build.json.
+  "include": ["src", "test"]
 }

@@ -6,8 +6,9 @@
 #
 # Rode a partir de deploy/ (na raiz do repo comenta):
 #   cp .env.example .env   # e preencha os segredos
-#   # build do painel (Vite) uma vez:
-#   (cd ../saas/web && npm ci && VITE_API_URL=https://api.comenta.com.br npm run build)
+#   # build do painel (Vite) uma vez, a partir da raiz do monorepo:
+#   (cd .. && npm ci && npm run build -w @comenta/shared \
+#      && VITE_API_URL=https://api.comenta.com.br npm run build -w @comenta/web)
 #   docker compose --env-file .env up -d --build
 #
 # As portas ficam expostas só em 127.0.0.1 — o Nginx do host (com TLS)
@@ -41,7 +42,8 @@ services:
   # API do SaaS (saas/api) — porta 4000
   api:
     build:
-      context: ../saas/api
+      context: ..
+      dockerfile: saas/api/Dockerfile
     restart: always
     depends_on:
       postgres:
@@ -74,7 +76,8 @@ services:
   # Site institucional / landing + chat (site/) — porta 3000
   site:
     build:
-      context: ../site
+      context: ..
+      dockerfile: site/Dockerfile
     restart: always
     environment:
       NODE_ENV: production
@@ -99,6 +102,8 @@ services:
     restart: always
     volumes:
       - ../saas/web/dist:/usr/share/nginx/html:ro
+      # Fallback de SPA: sem isto, abrir /conversas/:id direto dá 404.
+      - ./nginx/panel.conf:/etc/nginx/conf.d/default.conf:ro
     ports:
       - "127.0.0.1:8080:80"
 
@@ -159,7 +164,8 @@ services:
   # Precisa de GHOST_ADMIN_API_KEY (Ghost → Integrations → Custom).
   blog-bot:
     build:
-      context: ../content
+      context: ..
+      dockerfile: content/Dockerfile
     profiles: ["bot"]
     restart: "no"
     depends_on:

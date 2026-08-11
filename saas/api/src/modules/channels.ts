@@ -5,6 +5,7 @@ import { db, schema } from "../db/client.js";
 import { authenticate, requireAdmin, parse, ApiError } from "../lib/http.js";
 import { audit } from "../lib/audit.js";
 import * as whatsapp from "../channels/whatsapp.js";
+import * as meta from "../channels/meta.js";
 
 /**
  * Canais / Conexões — MULTICANAL e MULTI-CONEXÃO.
@@ -20,12 +21,48 @@ import * as whatsapp from "../channels/whatsapp.js";
 
 // Catálogo de tipos de canal que o painel oferece para adicionar.
 const CHANNEL_CATALOG = [
-  { type: "whatsapp", label: "WhatsApp", icon: "🟢", real: true, help: "Conecte um número via QR Code (Baileys)." },
-  { type: "instagram", label: "Instagram Direct", icon: "📸", real: false, help: "Mensagens do Instagram. Requer conta profissional + token da Meta." },
-  { type: "facebook", label: "Facebook Messenger", icon: "💬", real: false, help: "Mensagens da página. Requer token da página (Meta)." },
-  { type: "telegram", label: "Telegram", icon: "✈️", real: false, help: "Bot do Telegram. Requer o token do @BotFather." },
-  { type: "widget", label: "Widget do site", icon: "🌐", real: true, help: "Chat do site — já ativo por padrão." },
-  { type: "email", label: "E-mail", icon: "✉️", real: false, help: "Caixa de e-mail (IMAP/SMTP). Requer credenciais do servidor." },
+  {
+    type: "whatsapp",
+    label: "WhatsApp",
+    icon: "🟢",
+    real: true,
+    help: "Conecte um número via QR Code (Baileys).",
+  },
+  {
+    type: "instagram",
+    label: "Instagram Direct",
+    icon: "📸",
+    real: true,
+    help: "Conta profissional ligada a uma página. Informe o ID da conta, o ID da página e o token da página.",
+  },
+  {
+    type: "facebook",
+    label: "Facebook Messenger",
+    icon: "💬",
+    real: true,
+    help: "Mensagens da página. Informe o ID da página e o token de acesso da página.",
+  },
+  {
+    type: "telegram",
+    label: "Telegram",
+    icon: "✈️",
+    real: false,
+    help: "Bot do Telegram. Requer o token do @BotFather.",
+  },
+  {
+    type: "widget",
+    label: "Widget do site",
+    icon: "🌐",
+    real: true,
+    help: "Chat do site — já ativo por padrão.",
+  },
+  {
+    type: "email",
+    label: "E-mail",
+    icon: "✉️",
+    real: false,
+    help: "Caixa de e-mail (IMAP/SMTP). Requer credenciais do servidor.",
+  },
 ] as const;
 const TYPES = CHANNEL_CATALOG.map((c) => c.type) as [string, ...string[]];
 
@@ -60,7 +97,12 @@ export async function channelRoutes(app: FastifyInstance) {
     const status = type === "widget" ? "connected" : "disconnected";
     const [row] = await db
       .insert(schema.channels)
-      .values({ companyId: req.principal.companyId, type, name: name?.trim() || meta.label, status })
+      .values({
+        companyId: req.principal.companyId,
+        type,
+        name: name?.trim() || meta.label,
+        status,
+      })
       .returning();
     audit(req.principal, "channel.create", "channel", row.id);
     return reply.code(201).send(row);
@@ -70,13 +112,18 @@ export async function channelRoutes(app: FastifyInstance) {
   app.patch("/channels/:id", { preHandler: requireAdmin }, async (req) => {
     const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
     const body = parse(
-      z.object({ name: z.string().min(1).max(128).optional(), config: z.record(z.any()).optional() }),
+      z.object({
+        name: z.string().min(1).max(128).optional(),
+        config: z.record(z.any()).optional(),
+      }),
       req.body
     );
     const [row] = await db
       .update(schema.channels)
       .set(body)
-      .where(and(eq(schema.channels.id, id), eq(schema.channels.companyId, req.principal.companyId)))
+      .where(
+        and(eq(schema.channels.id, id), eq(schema.channels.companyId, req.principal.companyId))
+      )
       .returning();
     if (!row) throw new ApiError(404, "Conexão não encontrada");
     return row;
@@ -88,7 +135,9 @@ export async function channelRoutes(app: FastifyInstance) {
     const [row] = await db
       .select()
       .from(schema.channels)
-      .where(and(eq(schema.channels.id, id), eq(schema.channels.companyId, req.principal.companyId)));
+      .where(
+        and(eq(schema.channels.id, id), eq(schema.channels.companyId, req.principal.companyId))
+      );
     if (!row) throw new ApiError(404, "Conexão não encontrada");
     if (row.type === "whatsapp") await whatsapp.disconnect(id).catch(() => {});
     await db.delete(schema.channels).where(eq(schema.channels.id, id));
@@ -113,23 +162,57 @@ export async function channelRoutes(app: FastifyInstance) {
     audit(req.principal, "channel.connect", "channel", id);
     if (row.type === "whatsapp") return whatsapp.connect(id);
     if (row.type === "widget") {
-      await db.update(schema.channels).set({ status: "connected" }).where(eq(schema.channels.id, id));
+      await db
+        .update(schema.channels)
+        .set({ status: "connected" })
+        .where(eq(schema.channels.id, id));
       return { status: "connected" as const };
     }
-    // Demais canais: exigem configuração (encaixe pronto p/ integração real).
     const cfg = (row.config as Record<string, unknown>) || {};
     if (!Object.keys(cfg).length) {
       throw new ApiError(400, "Configure as credenciais desta conexão antes de conectar.");
     }
-    await db.update(schema.channels).set({ status: "configured" }).where(eq(schema.channels.id, id));
-    return { status: "configured" as const, note: "Configuração salva. A integração do provedor entra por cima." };
+
+    // Instagram/Messenger: integração real. Só marcamos "connected" depois que a
+    // Graph API aceita o token — senão o painel mostraria verde para uma conexão
+    // que não entrega mensagem nenhuma.
+    if (meta.isMetaType(row.type)) {
+      const parsed = meta.MetaConfig.safeParse(cfg);
+      if (!parsed.success) {
+        throw new ApiError(400, parsed.error.issues[0]?.message ?? "Credenciais incompletas");
+      }
+      if (!meta.appSecretDe(parsed.data)) {
+        throw new ApiError(
+          400,
+          "Falta o App Secret da Meta: defina META_APP_SECRET na API ou informe appSecret nesta conexão."
+        );
+      }
+      const teste = await meta.testarCredenciais(parsed.data);
+      if (!teste.ok) throw new ApiError(400, teste.erro);
+      await db
+        .update(schema.channels)
+        .set({ status: "connected" })
+        .where(eq(schema.channels.id, id));
+      return { status: "connected" as const, page: teste.nome };
+    }
+
+    // Demais canais: encaixe pronto, sem integração real ainda.
+    await db
+      .update(schema.channels)
+      .set({ status: "configured" })
+      .where(eq(schema.channels.id, id));
+    return {
+      status: "configured" as const,
+      note: "Configuração salva. A integração do provedor entra por cima.",
+    };
   });
 
   // Status de uma conexão (o painel faz polling nas de WhatsApp).
   app.get("/channels/:id/status", async (req) => {
     const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
     const row = await own(req.principal.companyId, id);
-    if (row.type === "whatsapp") return { ...whatsapp.status(id), contactsAvailable: whatsapp.contactsCount(id) };
+    if (row.type === "whatsapp")
+      return { ...whatsapp.status(id), contactsAvailable: whatsapp.contactsCount(id) };
     return { status: row.status, qr: null, phone: (row.config as any)?.phone ?? null };
   });
 
@@ -137,10 +220,14 @@ export async function channelRoutes(app: FastifyInstance) {
   app.post("/channels/:id/sync-contacts", { preHandler: requireAdmin }, async (req) => {
     const { id } = parse(z.object({ id: z.string().uuid() }), req.params);
     const row = await own(req.principal.companyId, id);
-    if (row.type !== "whatsapp") throw new ApiError(400, "Sincronização de agenda só está disponível no WhatsApp.");
+    if (row.type !== "whatsapp")
+      throw new ApiError(400, "Sincronização de agenda só está disponível no WhatsApp.");
     const res = await whatsapp.syncContacts(id);
     if (!res.ok) throw new ApiError(409, res.error || "Não foi possível sincronizar");
-    audit(req.principal, "channel.sync_contacts", "channel", id, { imported: res.imported, skipped: res.skipped });
+    audit(req.principal, "channel.sync_contacts", "channel", id, {
+      imported: res.imported,
+      skipped: res.skipped,
+    });
     return res;
   });
 
@@ -150,7 +237,10 @@ export async function channelRoutes(app: FastifyInstance) {
     const row = await own(req.principal.companyId, id);
     audit(req.principal, "channel.disconnect", "channel", id);
     if (row.type === "whatsapp") return whatsapp.disconnect(id);
-    await db.update(schema.channels).set({ status: "disconnected" }).where(eq(schema.channels.id, id));
+    await db
+      .update(schema.channels)
+      .set({ status: "disconnected" })
+      .where(eq(schema.channels.id, id));
     return { status: "disconnected" as const };
   });
 }

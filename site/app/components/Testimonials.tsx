@@ -52,9 +52,7 @@ export default function Testimonials() {
     <div className="relative mx-auto max-w-3xl">
       <div className="rounded-3xl border border-white/60 bg-white/80 p-8 sm:p-10 shadow-xl backdrop-blur">
         <div className="text-5xl leading-none text-fuchsia-400">“</div>
-        <p className="-mt-4 text-lg sm:text-xl font-medium text-slate-800">
-          {cur.quote}
-        </p>
+        <p className="-mt-4 text-lg sm:text-xl font-medium text-slate-800">{cur.quote}</p>
         <div className="mt-6 flex items-center gap-3">
           <span
             className={`inline-flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br ${cur.color} text-white font-bold`}

@@ -38,10 +38,7 @@ export default function NewsCarousel({ items }: { items: NewsItem[] }) {
   const hoverRef = useRef(false);
   const count = slides.length;
 
-  const go = useCallback(
-    (n: number) => setIndex((i) => ((n % count) + count) % count),
-    [count]
-  );
+  const go = useCallback((n: number) => setIndex(((n % count) + count) % count), [count]);
   const next = useCallback(() => go(index + 1), [go, index]);
   const prev = useCallback(() => go(index - 1), [go, index]);
 

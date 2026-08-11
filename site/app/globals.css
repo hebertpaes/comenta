@@ -1,6 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind 4: uma importação no lugar das três diretivas, e a varredura de
+   classes é automática (não há mais `content` para configurar). O
+   tailwind.config.js foi removido porque não continha nenhuma customização. */
+@import "tailwindcss";
 
 :root {
   color-scheme: light;
@@ -26,8 +27,13 @@ body {
 }
 
 @keyframes gradient-x {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 /* Blobs coloridos flutuando ao fundo */
@@ -40,9 +46,16 @@ body {
   pointer-events: none;
 }
 @keyframes blob {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(24px, -32px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.95); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(24px, -32px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
 }
 
 /* Entrada suave */
@@ -50,11 +63,23 @@ body {
   animation: reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 @keyframes reveal {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .text-gradient, .blob, .reveal { animation: none; }
-  html { scroll-behavior: auto; }
+  .text-gradient,
+  .blob,
+  .reveal {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

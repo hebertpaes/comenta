@@ -18,6 +18,7 @@ import { apiKeyRoutes } from "./modules/apikeys.js";
 import { webhookRoutes } from "./modules/webhooks.js";
 import { aiRoutes } from "./modules/ai.js";
 import { channelRoutes } from "./modules/channels.js";
+import { metaWebhookRoutes } from "./modules/meta-webhooks.js";
 import { widgetRoutes } from "./modules/widget.js";
 import { automationRoutes } from "./modules/automations.js";
 import { courseRoutes } from "./modules/courses.js";
@@ -40,8 +41,11 @@ await app.register(rateLimit, { max: 300, timeWindow: "1 minute", redis });
 // Aceita corpo JSON vazio: alguns POSTs (ex.: conectar/desconectar WhatsApp)
 // mandam Content-Type: application/json sem body. O parser padrão do Fastify
 // rejeitaria com FST_ERR_CTP_EMPTY_JSON_BODY; aqui tratamos vazio como {}.
-app.addContentTypeParser("application/json", { parseAs: "string" }, (_req, body, done) => {
+app.addContentTypeParser("application/json", { parseAs: "string" }, (req, body, done) => {
   const raw = (body as string) ?? "";
+  // Guarda o corpo CRU: o webhook da Meta assina exatamente estes bytes, e
+  // reserializar o JSON (espaços, ordem de chaves) faria o HMAC não fechar.
+  (req as { rawBody?: string }).rawBody = raw;
   if (raw.trim() === "") return done(null, {});
   try {
     done(null, JSON.parse(raw));
@@ -52,7 +56,11 @@ app.addContentTypeParser("application/json", { parseAs: "string" }, (_req, body,
 });
 await app.register(swagger, {
   openapi: {
-    info: { title: "Comenta SaaS API", version: "1.0.0", description: "API de atendimento multicanal — comenta.com.br" },
+    info: {
+      title: "Comenta SaaS API",
+      version: "1.0.0",
+      description: "API de atendimento multicanal — comenta.com.br",
+    },
     servers: [{ url: config.API_URL }],
     components: {
       securitySchemes: {
@@ -65,7 +73,8 @@ await app.register(swagger, {
 await app.register(swaggerUi, { routePrefix: "/docs" });
 
 app.setErrorHandler((err, _req, reply) => {
-  if (err instanceof ApiError) return reply.code(err.statusCode).send({ error: err.message, code: err.code });
+  if (err instanceof ApiError)
+    return reply.code(err.statusCode).send({ error: err.message, code: err.code });
   if ((err as { statusCode?: number }).statusCode === 429)
     return reply.code(429).send({ error: "Muitas requisições — tente novamente em instantes" });
   app.log.error(err);
@@ -93,6 +102,7 @@ await app.register(apiKeyRoutes);
 await app.register(webhookRoutes);
 await app.register(aiRoutes);
 await app.register(channelRoutes);
+await app.register(metaWebhookRoutes);
 await app.register(widgetRoutes);
 await app.register(automationRoutes);
 await app.register(courseRoutes);
@@ -114,7 +124,9 @@ startWorkers();
 restoreSessions().catch(() => {});
 startCampaignScheduler();
 server.listen(config.PORT, "0.0.0.0", () => {
-  app.log.info(`Comenta API on :${config.PORT} — docs em /docs — IA ${aiEnabled() ? "ativa" : "inativa"}`);
+  app.log.info(
+    `Comenta API on :${config.PORT} — docs em /docs — IA ${aiEnabled() ? "ativa" : "inativa"}`
+  );
 });
 
 const shutdown = async () => {

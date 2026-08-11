@@ -1,11 +1,14 @@
 import Anthropic from "@anthropic-ai/sdk";
 
 function esc(s = "") {
-  return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  return String(s).replace(
+    /[&<>"]/g,
+    (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]
+  );
 }
 
 const DISCLAIMER =
-  '<hr><p><em>Conteúdo de curadoria automática, resumido a partir da fonte citada. Confira sempre a matéria original.</em></p>';
+  "<hr><p><em>Conteúdo de curadoria automática, resumido a partir da fonte citada. Confira sempre a matéria original.</em></p>";
 
 /**
  * Escreve um resumo ORIGINAL em PT-BR baseado APENAS no material fornecido
@@ -42,10 +45,13 @@ export async function summarize({ title, snippet, link, source, category }) {
       max_tokens: 800,
       messages: [{ role: "user", content: prompt }],
     });
-    const html = (msg.content || []).map((b) => (b.type === "text" ? b.text : "")).join("").trim();
+    const html = (msg.content || [])
+      .map((b) => (b.type === "text" ? b.text : ""))
+      .join("")
+      .trim();
     if (!html) throw new Error("resposta vazia");
     return { title, html: html + fonte + DISCLAIMER, excerpt: (snippet || title).slice(0, 200) };
-  } catch (e) {
+  } catch {
     const body = snippet ? `<p>${esc(snippet)}</p>` : `<p>Veja a matéria completa na fonte.</p>`;
     return { title, html: body + fonte + DISCLAIMER, excerpt: (snippet || title).slice(0, 200) };
   }
