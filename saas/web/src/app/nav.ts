@@ -28,6 +28,7 @@ export const NAV: NavItem[] = [
   { to: "/tags", label: "🏷️ Tags", adminOnly: true, aliases: ["etiquetas"] },
   { to: "/avaliacoes", label: "⭐ Avaliações", aliases: ["nps", "satisfação", "notas"] },
   { to: "/config", label: "⚙️ Configurações", adminOnly: true, aliases: ["settings"] },
+  { to: "/permissoes", label: "🛡️ Permissões", adminOnly: true, aliases: ["rbac", "cargos", "niveis"] },
   { to: "/automacoes", label: "🤖 Automações", aliases: ["bot", "regras"] },
   { to: "/flowbuilder", label: "⚡ FlowBuilder IA", aliases: ["construtor", "fluxos", "visual"] },
   { to: "/agentes", label: "🤖 Agentes IA & Mídia", aliases: ["ia", "agente", "imagens", "vídeo", "banners"] },
