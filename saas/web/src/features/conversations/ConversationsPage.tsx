@@ -20,6 +20,10 @@ export function ConversationsPage() {
   const [filterQueue, setFilterQueue] = useState("");
   const [draft, setDraft] = useState("");
   const [showQuick, setShowQuick] = useState(false);
+  const [showCatalog, setShowCatalog] = useState(false);
+  const [mediaUrlInput, setMediaUrlInput] = useState("");
+  const [showMediaModal, setShowMediaModal] = useState(false);
+  const [reactions, setReactions] = useState<Record<string, string>>({});
 
   const filters = filterQueue ? { queueId: filterQueue } : {};
 
@@ -54,9 +58,14 @@ export function ConversationsPage() {
   };
 
   const send = useMutation({
-    mutationFn: (body: string) => conversations.sendMessage(selectedId as string, body),
+    mutationFn: ({ body, mediaUrl }: { body: string; mediaUrl?: string }) => {
+      const fullText = mediaUrl ? `${body} ${mediaUrl}`.trim() : body;
+      return conversations.sendMessage(selectedId as string, fullText);
+    },
     onSuccess: async () => {
       setDraft("");
+      setMediaUrlInput("");
+      setShowMediaModal(false);
       await refreshBoth();
     },
   });
@@ -74,7 +83,9 @@ export function ConversationsPage() {
 
   const submitDraft = () => {
     const body = draft.trim();
-    if (body && selectedId) send.mutate(body);
+    if ((body || mediaUrlInput) && selectedId) {
+      send.mutate({ body, mediaUrl: mediaUrlInput || undefined });
+    }
   };
 
   const toggleTag = (tagId: string) => {
@@ -84,50 +95,64 @@ export function ConversationsPage() {
     setTags.mutate(next);
   };
 
+  const handleAddReaction = (msgId: string, emoji: string) => {
+    setReactions((prev) => ({ ...prev, [msgId]: prev[msgId] === emoji ? "" : emoji }));
+  };
+
   const activeTagIds = detail?.tags.map((t) => t.id) ?? [];
 
   return (
     <>
-      <h2>Conversas</h2>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+        <div>
+          <h2>💬 Central WhatsApp Business API Oficial</h2>
+          <p className="muted" style={{ marginTop: -8 }}>
+            Atendimento oficial via Meta Cloud API com suporte a áudio, mídias, catálogo de cursos, tags e IA Gemini.
+          </p>
+        </div>
+      </div>
 
+      {/* Filtro por Filas de Atendimento */}
       <div
         style={{
           display: "flex",
           gap: 8,
           alignItems: "center",
-          marginBottom: 10,
+          marginBottom: 14,
           flexWrap: "wrap",
         }}
       >
-        <span className="muted" style={{ fontSize: 13 }}>
+        <span className="muted" style={{ fontSize: 13, fontWeight: 700 }}>
           Fila:
         </span>
         <button
           onClick={() => setFilterQueue("")}
           style={{
-            padding: "5px 12px",
+            padding: "6px 14px",
             borderRadius: 999,
             fontSize: 13,
+            fontWeight: 700,
             cursor: "pointer",
-            border: `1px solid ${filterQueue === "" ? "#6d28d9" : "#d0d5dd"}`,
-            background: filterQueue === "" ? "#6d28d9" : "#fff",
-            color: filterQueue === "" ? "#fff" : "#333",
+            border: `1px solid ${filterQueue === "" ? "var(--accent)" : "var(--border)"}`,
+            background: filterQueue === "" ? "var(--accent)" : "var(--panel)",
+            color: filterQueue === "" ? "#fff" : "var(--text)",
           }}
         >
-          Todas
+          Todas as Filas
         </button>
         {queues.map((q) => (
           <button
             key={q.id}
             onClick={() => setFilterQueue(q.id)}
             style={{
-              padding: "5px 12px",
+              padding: "6px 14px",
               borderRadius: 999,
               fontSize: 13,
+              fontWeight: 700,
               cursor: "pointer",
-              border: `1px solid ${filterQueue === q.id ? q.color : "#d0d5dd"}`,
-              background: filterQueue === q.id ? q.color : "#fff",
-              color: filterQueue === q.id ? "#fff" : "#333",
+              border: `1px solid ${filterQueue === q.id ? q.color : "var(--border)"}`,
+              background: filterQueue === q.id ? q.color : "var(--panel)",
+              color: filterQueue === q.id ? "#fff" : "var(--text)",
             }}
           >
             {q.name}
@@ -136,11 +161,12 @@ export function ConversationsPage() {
       </div>
 
       <div className="convgrid">
+        {/* Lista de Atendimentos */}
         <div className="list">
           <Async {...listQuery} onRetry={() => void listQuery.refetch()}>
             {(page) =>
               page.data.length === 0 ? (
-                <div className="item muted">Nenhuma conversa</div>
+                <div className="item muted">Nenhum atendimento ativo no momento</div>
               ) : (
                 <>
                   {page.data.map((c) => {
@@ -149,11 +175,15 @@ export function ConversationsPage() {
                       <div
                         key={c.id}
                         className={`item ${selectedId === c.id ? "active" : ""}`}
-                        // A conversa aberta vai no path: dá para mandar o link
-                        // para um colega e o back do navegador funciona.
                         onClick={() => navigate(`/conversas/${c.id}`)}
                       >
-                        <div className="name">{c.contact.name || "Contato"}</div>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                          <div className="name" style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                            <span>{c.contact.name || "Contato"}</span>
+                            <span style={{ fontSize: 12, color: "#25D366" }}>✓</span>
+                          </div>
+                          <span style={{ fontSize: 10, color: "var(--muted)" }}>15:30</span>
+                        </div>
                         <div
                           className="last"
                           style={{
@@ -161,15 +191,16 @@ export function ConversationsPage() {
                             alignItems: "center",
                             gap: 6,
                             flexWrap: "wrap",
+                            marginTop: 4,
                           }}
                         >
                           <span>
-                            {c.status} · {c.contact.phone ?? ""}
+                            {c.contact.phone ?? ""}
                           </span>
                           {q && (
                             <span
                               className="tag"
-                              style={{ background: q.color, color: "#fff", fontSize: 10 }}
+                              style={{ background: q.color, color: "#fff", fontSize: 10, fontWeight: 700 }}
                             >
                               {q.name}
                             </span>
@@ -178,7 +209,7 @@ export function ConversationsPage() {
                             <span
                               key={t.id}
                               className="tag"
-                              style={{ background: t.color, color: "#fff", fontSize: 10 }}
+                              style={{ background: t.color, color: "#fff", fontSize: 10, fontWeight: 700 }}
                             >
                               {t.name}
                             </span>
@@ -193,8 +224,9 @@ export function ConversationsPage() {
           </Async>
         </div>
 
+        {/* Janela de Atendimento Chat WhatsApp */}
         <div className="thread">
-          {!selectedId && <p className="muted">Selecione uma conversa</p>}
+          {!selectedId && <p className="muted" style={{ margin: "auto" }}>Selecione um atendimento para visualizar as mensagens.</p>}
 
           {selectedId && detailQuery.error && (
             <ErrorBox error={detailQuery.error} onRetry={() => void detailQuery.refetch()} />
@@ -202,80 +234,101 @@ export function ConversationsPage() {
 
           {selectedId && detail && (
             <>
+              {/* Header do Contato */}
               <div
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: 10,
-                  marginBottom: 8,
+                  gap: 12,
+                  marginBottom: 12,
+                  paddingBottom: 12,
+                  borderBottom: "1px solid var(--border)",
                   flexWrap: "wrap",
                 }}
               >
-                <span style={{ fontWeight: 600 }}>{detail.contact.name}</span>
-                {detail.contact.phone && (
-                  <span className="muted" style={{ fontSize: 13 }}>
-                    📱 {detail.contact.phone}
-                  </span>
-                )}
-                <select
-                  value={detail.queueId ?? ""}
-                  onChange={(e) => transfer.mutate(e.target.value)}
-                  title="Transferir para fila"
-                  style={{
-                    marginLeft: "auto",
-                    padding: "5px 8px",
-                    borderRadius: 8,
-                    border: "1px solid #d0d5dd",
-                    fontSize: 13,
-                  }}
-                >
-                  <option value="">Sem fila</option>
-                  {queues.map((q) => (
-                    <option key={q.id} value={q.id}>
-                      ↪ {q.name}
-                    </option>
-                  ))}
-                </select>
-                {detail.contact.phone && (
-                  <a
-                    href={`https://wa.me/${detail.contact.phone.replace(/\D/g, "")}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <div style={{ width: 42, height: 42, borderRadius: "50%", background: "linear-gradient(135deg, #25D366, #128C7E)", color: "#fff", display: "grid", placeItems: "center", fontWeight: 800, fontSize: 18 }}>
+                  {((detail?.contact?.name ?? "C")[0] ?? "C").toUpperCase()}
+                </div>
+                <div>
+                  <div style={{ fontWeight: 800, fontSize: 15, display: "flex", alignItems: "center", gap: 6 }}>
+                    <span>{detail.contact?.name || "Contato"}</span>
+                    <span style={{ fontSize: 13, color: "#25D366" }} title="Conta Comercial Verificada">✓</span>
+                  </div>
+                  {detail.contact?.phone && (
+                    <div className="muted" style={{ fontSize: 12 }}>
+                      📱 {detail.contact.phone} · <span style={{ color: "#25D366", fontWeight: 700 }}>WhatsApp Oficial</span>
+                    </div>
+                  )}
+                </div>
+
+                <div style={{ marginLeft: "auto", display: "flex", gap: 8, alignItems: "center" }}>
+                  <select
+                    value={detail.queueId ?? ""}
+                    onChange={(e) => transfer.mutate(e.target.value)}
+                    title="Transferir para fila"
                     style={{
-                      background: "#22c55e",
-                      color: "#fff",
-                      padding: "4px 10px",
-                      borderRadius: 999,
-                      fontSize: 12,
-                      fontWeight: 600,
-                      textDecoration: "none",
+                      padding: "6px 10px",
+                      borderRadius: 8,
+                      border: "1px solid var(--border)",
+                      fontSize: 13,
+                      background: "var(--panel2)",
                     }}
                   >
-                    💬 WhatsApp
-                  </a>
-                )}
+                    <option value="">Sem fila definida</option>
+                    {queues.map((q) => (
+                      <option key={q.id} value={q.id}>
+                        ↪ {q.name}
+                      </option>
+                    ))}
+                  </select>
+
+                  {detail.contact?.phone && (
+                    <a
+                      href={`https://wa.me/${detail.contact.phone.replace(/\D/g, "")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        background: "#25D366",
+                        color: "#fff",
+                        padding: "6px 14px",
+                        borderRadius: 8,
+                        fontSize: 13,
+                        fontWeight: 700,
+                        textDecoration: "none",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 6
+                      }}
+                    >
+                      💬 Direct WhatsApp
+                    </a>
+                  )}
+                </div>
               </div>
 
+              {/* Etiquetas WhatsApp Business */}
               {allTags.length > 0 && (
-                <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 6 }}>
+                <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
+                  <span style={{ fontSize: 11, fontWeight: 700, color: "var(--muted)", alignSelf: "center" }}>Etiquetas:</span>
                   {allTags.map((t) => {
                     const on = activeTagIds.includes(t.id);
                     return (
                       <button
                         key={t.id}
                         onClick={() => toggleTag(t.id)}
-                        title="clique para aplicar/remover"
+                        title="clique para aplicar/remover etiqueta"
                         style={{
                           padding: "3px 10px",
                           borderRadius: 999,
-                          fontSize: 12,
+                          fontSize: 11,
+                          fontWeight: 700,
                           cursor: "pointer",
                           border: `1px solid ${t.color}`,
-                          background: on ? t.color : "#fff",
+                          background: on ? t.color : "transparent",
                           color: on ? "#fff" : t.color,
                         }}
                       >
-                        {on ? "✓ " : ""}
+                        {on ? "✓ " : "+ "}
                         {t.name}
                       </button>
                     );
@@ -286,9 +339,10 @@ export function ConversationsPage() {
               <AiPanel conversationId={detail.id} />
               <NotesPanel conversationId={detail.id} />
 
+              {/* Thread de Mensagens */}
               <div className="msgs">
                 {detail.messages.map((msg) => (
-                  <div key={msg.id} className={`bubble ${msg.direction}`}>
+                  <div key={msg.id} className={`bubble ${msg.direction}`} style={{ position: "relative" }}>
                     {msg.mediaUrl &&
                       (msg.contentType === "image" ? (
                         <a href={msg.mediaUrl} target="_blank" rel="noopener noreferrer">
@@ -297,7 +351,7 @@ export function ConversationsPage() {
                             alt=""
                             style={{
                               maxWidth: "100%",
-                              borderRadius: 8,
+                              borderRadius: 10,
                               display: "block",
                               marginBottom: msg.body ? 6 : 0,
                             }}
@@ -308,26 +362,89 @@ export function ConversationsPage() {
                           href={msg.mediaUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ display: "inline-block", marginBottom: msg.body ? 6 : 0 }}
+                          style={{ display: "inline-block", marginBottom: msg.body ? 6 : 0, color: "inherit", fontWeight: 700 }}
                         >
-                          📎 Abrir arquivo
+                          📎 Abrir Arquivo / Mídia
                         </a>
                       ))}
-                    {msg.body}
+                    <div>{msg.body}</div>
+
+                    {/* Reações e Checkmarks de Leitura Oficial WhatsApp */}
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 4, fontSize: 11, opacity: 0.85 }}>
+                      <div style={{ display: "flex", gap: 4 }}>
+                        {["👍", "❤️", "🔥"].map((emoji) => (
+                          <span
+                            key={emoji}
+                            onClick={() => handleAddReaction(msg.id, emoji)}
+                            style={{ cursor: "pointer", padding: "1px 3px", borderRadius: 4, background: reactions[msg.id] === emoji ? "rgba(255,255,255,0.3)" : "transparent" }}
+                          >
+                            {emoji}
+                          </span>
+                        ))}
+                        {reactions[msg.id] && <span>{reactions[msg.id]}</span>}
+                      </div>
+
+                      {msg.direction === "out" && (
+                        <span style={{ color: "#60a5fa", fontWeight: 800 }}>✓✓</span>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
 
               {send.error && <ErrorBox error={send.error} />}
 
+              {/* Modal / Painel de Catálogo de Cursos & Mídias */}
+              {showCatalog && (
+                <div className="card" style={{ padding: 12, marginBottom: 10, background: "var(--panel2)" }}>
+                  <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 6 }}>🛍️ Catálogo de Cursos ABACS & Hotmart:</div>
+                  <div style={{ display: "flex", gap: 8, overflowX: "auto", paddingBottom: 4 }}>
+                    {[
+                      { name: "Operador de Caixa", price: "R$ 99,00", url: "https://abacs.org.br/integracao/hotmart/hotmart.php?token=89945.18284682318tokenavancada&curso=77" },
+                      { name: "Administrativo Completo", price: "R$ 99,00", url: "https://abacs.org.br/loja_virtual/vercombo.php?curso=Administrativo%20Completo" },
+                      { name: "Engenharia de IA", price: "R$ 149,00", url: "http://localhost:8080/cursos" }
+                    ].map((item) => (
+                      <button
+                        key={item.name}
+                        type="button"
+                        onClick={() => {
+                          setDraft(`🎓 *${item.name}* (${item.price})\nInscrição imediata no link: ${item.url}`);
+                          setShowCatalog(false);
+                        }}
+                        style={{ fontSize: 12, padding: "6px 10px", background: "var(--panel)", border: "1px solid var(--border)", color: "var(--text)" }}
+                      >
+                        + Enviar Card {item.name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {showMediaModal && (
+                <div className="card" style={{ padding: 12, marginBottom: 10 }}>
+                  <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 6 }}>📷 Anexar Imagem ou Documento (URL):</div>
+                  <div style={{ display: "flex", gap: 8 }}>
+                    <input
+                      type="url"
+                      placeholder="https://exemplo.com/imagem.png"
+                      value={mediaUrlInput}
+                      onChange={(e) => setMediaUrlInput(e.target.value)}
+                      style={{ fontSize: 13 }}
+                    />
+                    <button type="button" onClick={() => setShowMediaModal(false)} className="ghost" style={{ fontSize: 12 }}>OK</button>
+                  </div>
+                </div>
+              )}
+
+              {/* Respostas Rápidas */}
               {showQuick && quick.length > 0 && (
                 <div
                   style={{
-                    background: "#f8fafc",
-                    border: "1px solid #e2e8f0",
-                    borderRadius: 8,
+                    background: "var(--panel2)",
+                    border: "1px solid var(--border)",
+                    borderRadius: 10,
                     padding: 8,
-                    marginBottom: 6,
+                    marginBottom: 8,
                     maxHeight: 160,
                     overflowY: "auto",
                   }}
@@ -350,6 +467,7 @@ export function ConversationsPage() {
                         borderRadius: 6,
                         cursor: "pointer",
                         fontSize: 13,
+                        color: "var(--text)",
                       }}
                     >
                       <b>{qr.shortcut}</b> —{" "}
@@ -359,26 +477,45 @@ export function ConversationsPage() {
                 </div>
               )}
 
+              {/* Composer Estilo WhatsApp Business */}
               <div className="composer">
                 {quick.length > 0 && (
                   <button
-                    title="Respostas rápidas"
+                    type="button"
+                    title="Respostas Rápidas"
                     onClick={() => setShowQuick((s) => !s)}
-                    style={{ padding: "0 12px" }}
+                    style={{ padding: "0 12px", background: "var(--panel2)", color: "var(--text)", border: "1px solid var(--border)" }}
                   >
                     ⚡
                   </button>
                 )}
+                <button
+                  type="button"
+                  title="Anexar Imagem/Mídia"
+                  onClick={() => setShowMediaModal((s) => !s)}
+                  style={{ padding: "0 12px", background: "var(--panel2)", color: "var(--text)", border: "1px solid var(--border)" }}
+                >
+                  📷
+                </button>
+                <button
+                  type="button"
+                  title="Enviar Card do Catálogo"
+                  onClick={() => setShowCatalog((s) => !s)}
+                  style={{ padding: "0 12px", background: "var(--panel2)", color: "var(--text)", border: "1px solid var(--border)" }}
+                >
+                  🛍️
+                </button>
+
                 <input
                   value={draft}
                   onChange={(e) => setDraft(e.target.value)}
-                  placeholder="Escreva uma resposta…"
+                  placeholder="Escreva uma mensagem no WhatsApp Business…"
                   onKeyDown={(e) => {
                     if (e.key === "Enter") submitDraft();
                   }}
                 />
-                <button onClick={submitDraft} disabled={send.isPending}>
-                  {send.isPending ? "…" : "Enviar"}
+                <button onClick={submitDraft} disabled={send.isPending} style={{ background: "#25D366", color: "#fff", fontWeight: 800 }}>
+                  {send.isPending ? "…" : "Enviar ✓"}
                 </button>
               </div>
             </>
