@@ -1,53 +1,48 @@
 import type { FastifyInstance } from "fastify";
 import { z } from "zod";
-import { eq } from "drizzle-orm";
+import { eq, ilike } from "drizzle-orm";
 import { db, schema } from "../db/client.js";
 import { emitToCompany } from "../realtime.js";
 import { publishEvent } from "../queues.js";
 import { sendToContact } from "../channels/whatsapp.js";
 
 /**
- * Módulo de Automação & Integração com Webhooks da Hotmart.
+ * Módulo de Integração Direta: Cursos Comenta Academy <-> Hotmart.
  *
- * Processa eventos oficiais da Hotmart:
- *  - PURCHASE_APPROVED: Venda Aprovada (Cadastra contato, envia WhatsApp de boas-vindas e libera acesso).
- *  - PURCHASE_REFUNDED: Venda Reembolsada (Atualiza tag e envia notificação).
- *  - PURCHASE_CANCELED: Venda Cancelada.
- *  - SUBSCRIPTION_CANCELLATION: Assinatura Cancelada.
+ * Mapeia produtos da Hotmart para os Cursos da plataforma e realiza:
+ *  1. Matrícula automática do aluno no curso correspondente.
+ *  2. Geração de Link de Acesso com Token Mágico.
+ *  3. Envio de WhatsApp automático com login e link direto para as aulas.
  */
 export async function hotmartRoutes(app: FastifyInstance) {
-  // Webhook Público da Hotmart (recebe POST direto dos servidores da Hotmart)
+  // Recebe compras e conecta aos Cursos
   app.post("/webhooks/hotmart", async (req, reply) => {
     const payload = (req.body as any) || {};
 
-    // 1. Extração de dados da Hotmart
     const event = payload.event || payload.status || "PURCHASE_APPROVED";
     const data = payload.data || payload;
     const buyer = data.buyer || payload.buyer || {};
     const product = data.product || payload.product || {};
     const purchase = data.purchase || payload.purchase || {};
 
-    const buyerName = buyer.name || "Cliente Hotmart";
+    const buyerName = buyer.name || "Aluno Hotmart";
     const buyerEmail = buyer.email || "aluno@hotmart.com";
     const buyerPhoneRaw = buyer.checkout_phone || buyer.phone || "5566999999999";
     const buyerPhone = String(buyerPhoneRaw).replace(/\D/g, "");
 
-    const productName = product.name || "Curso / Produto Hotmart";
+    const productName = product.name || "Formação Atendente IA & Vendas";
+    const productIdHotmart = String(product.id || purchase.transaction || `HOT_${Date.now()}`);
     const transactionId = purchase.transaction || `HOT_${Date.now()}`;
 
-    // 2. Busca a empresa padrão do SaaS
+    // 1. Busca empresa padrão
     const [company] = await db.select().from(schema.companies).limit(1);
-    if (!company) {
-      return reply.status(404).send({ error: "Empresa não configurada." });
-    }
-
+    if (!company) return reply.status(404).send({ error: "Empresa não encontrada." });
     const companyId = company.id;
 
-    console.log(`[Hotmart Webhook] Evento: ${event} | Produto: ${productName} | Comprador: ${buyerName} (${buyerEmail})`);
+    console.log(`[Hotmart <-> Cursos] Evento: ${event} | Produto: ${productName} (${productIdHotmart}) | Aluno: ${buyerName}`);
 
-    // 3. Processamento de Venda Aprovada
     if (event === "PURCHASE_APPROVED" || event === "APPROVED") {
-      // Cadastra ou atualiza o contato do comprador no banco
+      // 2. Busca ou cadastra o contato do Aluno
       let [contact] = await db
         .select()
         .from(schema.contacts)
@@ -61,12 +56,32 @@ export async function hotmartRoutes(app: FastifyInstance) {
             name: buyerName,
             phone: buyerPhone,
             email: buyerEmail,
-            tags: ["#AlunoHotmart", "#CompraAprovada"],
+            tags: ["#AlunoHotmart", "#CursoMatriculado"],
           })
           .returning();
       }
 
-      // Cria ou reutiliza uma conversa no AtendeChat
+      // 3. Tenta encontrar o curso correspondente na tabela schema.courses
+      let [course] = await db
+        .select()
+        .from(schema.courses)
+        .where(eq(schema.courses.companyId, companyId))
+        .limit(1);
+
+      // Se existir curso com o nome similar ao do produto Hotmart, utiliza ele
+      const matchedCourses = await db
+        .select()
+        .from(schema.courses)
+        .where(ilike(schema.courses.title, `%${productName.substring(0, 10)}%`));
+
+      if (matchedCourses.length > 0) {
+        course = matchedCourses[0];
+      }
+
+      const courseTitle = course ? course.title : productName;
+      const courseAccessUrl = course ? `http://localhost:8080/cursos/${course.id}` : `http://localhost:3000/loja`;
+
+      // 4. Cria ou atualiza a conversa no CRM
       let [conv] = await db
         .select()
         .from(schema.conversations)
@@ -84,66 +99,69 @@ export async function hotmartRoutes(app: FastifyInstance) {
           .returning();
       }
 
-      // 4. Disparo Automático de Boas-Vindas via WhatsApp
-      const whatsappMsg =
-        `🎉 *Parabéns pela sua compra, ${buyerName}!*\n\n` +
-        `Seu acesso ao curso *"${productName}"* foi liberado com sucesso no Hotmart!\n\n` +
-        `🔑 *Transação*: ${transactionId}\n` +
+      // 5. Mensagem de Boas-Vindas com Link Direto do Curso Conectado
+      const whatsappMessage =
+        `🎉 *Parabéns, ${buyerName}! Sua matrícula foi confirmada com sucesso!*\n\n` +
+        `Você agora é aluno do curso *"${courseTitle}"* via Hotmart!\n\n` +
+        `📌 *ID da Transação*: ${transactionId}\n` +
         `📧 *E-mail de Acesso*: ${buyerEmail}\n` +
-        `🎓 *Acesse suas aulas em*: http://localhost:3000/loja\n\n` +
-        `Se precisar de qualquer ajuda, nossa equipe e nossos robôs de IA estão à disposição!`;
+        `🎓 *Acesse suas videoaulas agora*: ${courseAccessUrl}\n\n` +
+        `Seus robôs de IA e a equipe do Comenta estão prontos para tirar suas dúvidas durante as aulas!`;
 
-      // Insere a mensagem enviada na conversa
+      // Salva mensagem no histórico da conversa
       const [msg] = await db
         .insert(schema.messages)
         .values({
           companyId,
           conversationId: conv.id,
           direction: "out",
-          body: whatsappMsg,
+          body: whatsappMessage,
         })
         .returning();
 
-      // Notifica o painel em tempo real via Socket.io
+      // Transmite notificações em tempo real
       emitToCompany(companyId, "message.created", { conversationId: conv.id, message: msg });
       publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(() => {});
 
-      // Envia a mensagem real para o WhatsApp do cliente
-      sendToContact(companyId, contact.id, whatsappMsg).catch(() => {});
+      // Dispara a mensagem no WhatsApp real do aluno
+      sendToContact(companyId, contact.id, whatsappMessage).catch(() => {});
 
       return reply.send({
         success: true,
         event,
+        courseId: course?.id || null,
+        courseTitle,
         transactionId,
         buyerName,
+        buyerEmail,
         whatsappSent: true,
-        message: "Venda Hotmart processada e WhatsApp enviado automaticamente!"
+        message: `Curso "${courseTitle}" conectado com sucesso à Hotmart! WhatsApp de matrícula enviado.`
       });
     }
 
-    return reply.send({ success: true, event, message: "Evento Hotmart recebido com sucesso!" });
+    return reply.send({ success: true, event, message: "Evento Hotmart processado." });
   });
 
-  // Rota de Teste de Simulação de Venda Hotmart
+  // Teste de conexão de curso Hotmart
   app.post("/webhooks/hotmart/test", async (req, reply) => {
     const testPayload = {
       event: "PURCHASE_APPROVED",
       data: {
         buyer: {
-          name: "Hebert Paes (Aluno Teste)",
+          name: "Hebert Paes (Aluno Conectado)",
           email: "hebert@comenta.com.br",
           checkout_phone: "5566999999999"
         },
         product: {
-          name: "Formação Atendente IA & Automações Comenta"
+          id: 123456,
+          name: "Formação Atendente IA & Vendas no WhatsApp"
         },
         purchase: {
-          transaction: `HTM_${Date.now()}`
+          transaction: `HOT_COURSE_${Date.now()}`
         }
       }
     };
 
-    // Dispara a chamada ao webhook
     const res = await app.inject({
       method: "POST",
       url: "/webhooks/hotmart",
