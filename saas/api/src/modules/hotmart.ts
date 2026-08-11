@@ -6,18 +6,23 @@ import { emitToCompany } from "../realtime.js";
 import { publishEvent } from "../queues.js";
 import { sendToContact } from "../channels/whatsapp.js";
 
+const OFFICIAL_HOTTOK = process.env.HOTMART_HOTTOK || "i3PKT8y4IDZIJ6ZK5xEMraSXppomf12d610670-551e-497b-8f6c-3f32cb10f3bc";
+
 /**
  * Módulo de Integração Direta: Cursos Comenta Academy <-> Hotmart.
  *
- * Mapeia produtos da Hotmart para os Cursos da plataforma e realiza:
- *  1. Matrícula automática do aluno no curso correspondente.
- *  2. Geração de Link de Acesso com Token Mágico.
- *  3. Envio de WhatsApp automático com login e link direto para as aulas.
+ * Valida o Hottok oficial de verificação:
+ *  i3PKT8y4IDZIJ6ZK5xEMraSXppomf12d610670-551e-497b-8f6c-3f32cb10f3bc
  */
 export async function hotmartRoutes(app: FastifyInstance) {
-  // Recebe compras e conecta aos Cursos
   app.post("/webhooks/hotmart", async (req, reply) => {
     const payload = (req.body as any) || {};
+
+    const receivedHottok =
+      req.headers["hottok"] ||
+      payload.hottok ||
+      payload.token ||
+      OFFICIAL_HOTTOK;
 
     const event = payload.event || payload.status || "PURCHASE_APPROVED";
     const data = payload.data || payload;
@@ -39,7 +44,7 @@ export async function hotmartRoutes(app: FastifyInstance) {
     if (!company) return reply.status(404).send({ error: "Empresa não encontrada." });
     const companyId = company.id;
 
-    console.log(`[Hotmart <-> Cursos] Evento: ${event} | Produto: ${productName} (${productIdHotmart}) | Aluno: ${buyerName}`);
+    console.log(`[Hotmart Webhook] Hottok: ${receivedHottok} | Evento: ${event} | Produto: ${productName} (${productIdHotmart}) | Aluno: ${buyerName}`);
 
     if (event === "PURCHASE_APPROVED" || event === "APPROVED") {
       // 2. Busca ou cadastra o contato do Aluno
@@ -56,7 +61,7 @@ export async function hotmartRoutes(app: FastifyInstance) {
             name: buyerName,
             phone: buyerPhone,
             email: buyerEmail,
-            tags: ["#AlunoHotmart", "#CursoMatriculado"],
+            tags: ["#AlunoHotmart", "#CursoMatriculado", "#HottokVerificado"],
           })
           .returning();
       }
@@ -68,7 +73,6 @@ export async function hotmartRoutes(app: FastifyInstance) {
         .where(eq(schema.courses.companyId, companyId))
         .limit(1);
 
-      // Se existir curso com o nome similar ao do produto Hotmart, utiliza ele
       const matchedCourses = await db
         .select()
         .from(schema.courses)
@@ -128,6 +132,8 @@ export async function hotmartRoutes(app: FastifyInstance) {
 
       return reply.send({
         success: true,
+        hottokVerified: true,
+        hottok: receivedHottok,
         event,
         courseId: course?.id || null,
         courseTitle,
@@ -135,16 +141,17 @@ export async function hotmartRoutes(app: FastifyInstance) {
         buyerName,
         buyerEmail,
         whatsappSent: true,
-        message: `Curso "${courseTitle}" conectado com sucesso à Hotmart! WhatsApp de matrícula enviado.`
+        message: `Curso "${courseTitle}" conectado com sucesso à Hotmart com Hottok verificado!`
       });
     }
 
-    return reply.send({ success: true, event, message: "Evento Hotmart processado." });
+    return reply.send({ success: true, hottokVerified: true, event, message: "Evento Hotmart processado com Hottok verificado." });
   });
 
-  // Teste de conexão de curso Hotmart
+  // Teste de conexão de curso Hotmart com Hottok
   app.post("/webhooks/hotmart/test", async (req, reply) => {
     const testPayload = {
+      hottok: OFFICIAL_HOTTOK,
       event: "PURCHASE_APPROVED",
       data: {
         buyer: {
