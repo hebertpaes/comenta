@@ -282,27 +282,22 @@ export function ConversationsPage() {
                     ))}
                   </select>
 
-                  {detail.contact?.phone && (
-                    <a
-                      href={`https://wa.me/${detail.contact.phone.replace(/\D/g, "")}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        background: "#25D366",
-                        color: "#fff",
-                        padding: "6px 14px",
-                        borderRadius: 8,
-                        fontSize: 13,
-                        fontWeight: 700,
-                        textDecoration: "none",
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: 6
-                      }}
-                    >
-                      💬 Direct WhatsApp
-                    </a>
-                  )}
+                  <span
+                    style={{
+                      background: "rgba(37, 211, 102, 0.15)",
+                      color: "#10b981",
+                      border: "1px solid #10b981",
+                      padding: "6px 14px",
+                      borderRadius: 8,
+                      fontSize: 12,
+                      fontWeight: 700,
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 6
+                    }}
+                  >
+                    💬 Atendimento Integrado no App
+                  </span>
                 </div>
               </div>
 

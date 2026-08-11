@@ -25,6 +25,28 @@ export async function conversationRoutes(app: FastifyInstance) {
     const { status, assignedToMe, queueId, page, perPage } = parse(ListQuery, req.query);
     const p = req.principal;
     const { limit, offset } = paginated(page, perPage);
+
+    // Garante que todo contato possua uma conversa cadastrada para exibir 100% dos contatos no chat
+    const allContacts = await db
+      .select({ id: schema.contacts.id })
+      .from(schema.contacts)
+      .where(eq(schema.contacts.companyId, p.companyId));
+
+    for (const c of allContacts) {
+      const [existing] = await db
+        .select({ id: schema.conversations.id })
+        .from(schema.conversations)
+        .where(and(eq(schema.conversations.companyId, p.companyId), eq(schema.conversations.contactId, c.id)))
+        .limit(1);
+
+      if (!existing) {
+        await db.insert(schema.conversations).values({
+          companyId: p.companyId,
+          contactId: c.id,
+          status: "open",
+        });
+      }
+    }
     const conds = [eq(schema.conversations.companyId, p.companyId)];
     if (status) conds.push(eq(schema.conversations.status, status));
     if (assignedToMe && p.userId) conds.push(eq(schema.conversations.assignedUserId, p.userId));

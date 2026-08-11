@@ -1,6 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
+import { useNavigate } from "react-router";
 import { contacts } from "../../api/endpoints";
 import { keys } from "../../api/keys";
 import { Async, ErrorBox } from "../../components/Async";
@@ -11,6 +12,7 @@ const inputStyle = { padding: "9px 12px", borderRadius: 10, border: "1px solid v
 
 export function ContactsPage() {
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
 
   const [term, setTerm] = useState("");
   const [search, setSearch] = useState("");
@@ -305,27 +307,25 @@ export function ContactsPage() {
                     </div>
                   </div>
 
-                  {c.phone && (
-                    <a
-                      href={`https://wa.me/${c.phone.replace(/\D/g, "")}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        background: "#25D366",
-                        color: "#fff",
-                        padding: "6px 12px",
-                        borderRadius: 8,
-                        fontSize: 12,
-                        fontWeight: 700,
-                        textDecoration: "none",
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: 4
-                      }}
-                    >
-                      💬 WhatsApp
-                    </a>
-                  )}
+                  <button
+                    type="button"
+                    onClick={() => navigate("/conversas")}
+                    style={{
+                      background: "var(--accent)",
+                      color: "#fff",
+                      padding: "6px 14px",
+                      borderRadius: 8,
+                      fontSize: 12,
+                      fontWeight: 700,
+                      cursor: "pointer",
+                      border: "none",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 4
+                    }}
+                  >
+                    💬 Abrir Chat no App
+                  </button>
 
                   <button
                     className="link"
