@@ -151,8 +151,16 @@ export function SettingsPage() {
 
       {/* Card 1: Integração Oficial Hotmart */}
       <div className="card" style={{ padding: 20, marginBottom: 20, alignItems: "stretch" }}>
-        <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
-          🛍️ Automação & Webhook da Hotmart
+        <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <span>🛍️ Automação & Webhook da Hotmart</span>
+          <a
+            href="https://app.hotmart.com/tools/webhook"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontSize: 11, padding: "4px 12px", borderRadius: 12, background: "linear-gradient(135deg, #ff416c, #ff4b2b)", color: "#fff", fontWeight: 700, textDecoration: "none" }}
+          >
+            ↗ Abrir Ferramentas Hotmart Webhook
+          </a>
         </div>
         <p className="muted" style={{ fontSize: 13, marginTop: 0 }}>
           Ao realizar vendas na Hotmart, este webhook cadastra o comprador automaticamente, envia a mensagem de boas-vindas no WhatsApp e libera o acesso aos cursos.
