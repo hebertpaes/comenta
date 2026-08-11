@@ -10,30 +10,30 @@ import { sendToContact } from "../channels/whatsapp.js";
  * Módulo de Integração ABACS / Escola Avançada / Playcurso <-> Hotmart & Comenta.
  *
  * Suporta a URL oficial de integração ABACS:
- *   /webhooks/abacs/integracao/hotmart?token=SEU_TOKEN&curso=ID_DO_CURSO
+ *   https://abacs.org.br/integracao/hotmart/hotmart.php?token=89945.18284682318tokenavancada&curso=77
  *
- * E realiza o sincronismo automático de login e usuários com https://abacs.org.br/login.php
+ * E realiza o sincronismo automático de login com https://abacs.org.br/login.php
  */
 export async function abacsRoutes(app: FastifyInstance) {
-  // Webhook Principal ABACS / Hotmart Integrado
-  app.all("/webhooks/abacs/integracao/hotmart", async (req, reply) => {
+  // Handler Unificado de Webhook ABACS / Hotmart (suporta tanto /webhooks/abacs/... quanto /integracao/hotmart/hotmart.php)
+  const processAbacsWebhook = async (req: any, reply: any) => {
     const queryParams = (req.query as Record<string, string>) || {};
     const bodyPayload = (req.body as any) || {};
 
-    const token = queryParams.token || bodyPayload.token || "ABACS_DEFAULT_TOKEN";
-    const cursoIdParam = queryParams.curso || bodyPayload.curso || "";
+    const token = queryParams.token || bodyPayload.token || "89945.18284682318tokenavancada";
+    const cursoIdParam = queryParams.curso || bodyPayload.curso || "77";
 
     const payloadData = bodyPayload.data || bodyPayload;
     const buyer = payloadData.buyer || bodyPayload.buyer || {};
     const product = payloadData.product || bodyPayload.product || {};
     const purchase = payloadData.purchase || bodyPayload.purchase || {};
 
-    const buyerName = buyer.name || queryParams.name || "Aluno ABACS Escola Avançada";
-    const buyerEmail = buyer.email || queryParams.email || "aluno@abacs.org.br";
+    const buyerName = buyer.name || queryParams.name || "Aluno Operador de Caixa ABACS";
+    const buyerEmail = buyer.email || queryParams.email || "aluno.caixa@abacs.org.br";
     const buyerPhoneRaw = buyer.checkout_phone || buyer.phone || queryParams.phone || "5566999999999";
     const buyerPhone = String(buyerPhoneRaw).replace(/\D/g, "");
 
-    const productName = product.name || queryParams.product_name || "Curso ABACS Escola Avançada";
+    const productName = product.name || queryParams.product_name || "Operador de Caixa";
     const transactionId = purchase.transaction || queryParams.transaction || `ABACS_${Date.now()}`;
 
     // 1. Busca a empresa cadastrada
@@ -41,7 +41,7 @@ export async function abacsRoutes(app: FastifyInstance) {
     if (!company) return reply.status(404).send({ error: "Empresa não configurada." });
     const companyId = company.id;
 
-    console.log(`[ABACS Webhook Hotmart] Token: ${token} | Curso ID: ${cursoIdParam} | Comprador: ${buyerName} (${buyerPhone})`);
+    console.log(`[ABACS Webhook Operador de Caixa] Token: ${token} | Curso ID: ${cursoIdParam} | Comprador: ${buyerName} (${buyerPhone})`);
 
     // 2. Busca ou insere o contato do Aluno
     let [contact] = await db
@@ -57,17 +57,16 @@ export async function abacsRoutes(app: FastifyInstance) {
           name: buyerName,
           phone: buyerPhone,
           email: buyerEmail,
-          tags: ["#AlunoABACS", "#EscolaAvancada", "#HotmartIntegrado"],
+          tags: ["#AlunoABACS", "#OperadorDeCaixa", "#EscolaAvancada", "#HotmartIntegrado"],
         })
         .returning();
     }
 
-    // 3. Mapeia o Curso pelo ID ou título
+    // 3. Mapeia o Curso Operador de Caixa pelo ID 77 ou nome
     let [course] = await db
       .select()
       .from(schema.courses)
-      .where(eq(schema.courses.id, cursoIdParam))
-      .catch(() => []);
+      .where(ilike(schema.courses.title, "%Operador de Caixa%"));
 
     if (!course) {
       const match = await db
@@ -101,10 +100,10 @@ export async function abacsRoutes(app: FastifyInstance) {
 
     // 5. Envia mensagem de matrícula no WhatsApp do Aluno ABACS
     const whatsappMsg =
-      `🎉 *Confirmação de Matrícula ABACS & Escola Avançada!*\n\n` +
-      `Olá ${buyerName}, sua inscrição no curso *"${courseTitle}"* via Hotmart foi processada com sucesso!\n\n` +
+      `🎉 *Confirmação de Matrícula: Operador de Caixa!*\n\n` +
+      `Olá ${buyerName}, sua inscrição no curso *"${courseTitle}"* via Hotmart foi confirmada com sucesso!\n\n` +
       `📌 *Transação*: ${transactionId}\n` +
-      `🔑 *Token de Integração*: ${token}\n` +
+      `🔑 *Token da Escola Avançada*: ${token}\n` +
       `📧 *E-mail de Login*: ${buyerEmail}\n` +
       `🌐 *Portal ABACS*: https://abacs.org.br/login.php\n` +
       `🎓 *Acesse suas videoaulas no Comenta*: ${courseUrl}\n\n` +
@@ -128,6 +127,7 @@ export async function abacsRoutes(app: FastifyInstance) {
       status: "success",
       integration: "ABACS_EscolaAvancada_Hotmart",
       abacsPortalUrl: "https://abacs.org.br/login.php",
+      configName: "Operador de Caixa",
       token,
       cursoId: course?.id || cursoIdParam,
       courseTitle,
@@ -135,9 +135,13 @@ export async function abacsRoutes(app: FastifyInstance) {
       buyerName,
       whatsappSent: true,
       accessUrl: courseUrl,
-      message: "Webhook ABACS/Hotmart recebido, aluno sincronizado com o portal https://abacs.org.br/login.php e WhatsApp disparado com sucesso!"
+      message: "Webhook ABACS Operador de Caixa recebido com sucesso!"
     });
-  });
+  };
+
+  // Rotas suportadas para a integração ABACS
+  app.all("/webhooks/abacs/integracao/hotmart", processAbacsWebhook);
+  app.all("/integracao/hotmart/hotmart.php", processAbacsWebhook);
 
   // Endpoints para salvar e recuperar Credenciais de Pagamento (Mercado Pago / Card / Boleto / ABACS)
   app.get("/abacs/config", async (req, reply) => {
@@ -146,13 +150,15 @@ export async function abacsRoutes(app: FastifyInstance) {
 
     const settings = (company.settings as Record<string, any>) || {};
     return reply.send({
+      configName: "Operador de Caixa",
       abacsPortalUrl: "https://abacs.org.br/login.php",
-      abacsToken: settings.abacsToken || "ABACS_SECURE_TOKEN_2026",
+      abacsToken: settings.abacsToken || "89945.18284682318tokenavancada",
+      cursoId: "77",
       paymentApiKey: settings.paymentApiKey || "API_KEY_CARTAO_BOLETO_OCULTO",
       accessTokenCard: settings.accessTokenCard || "ACCESS_TOKEN_CARTAO_OCULTO",
       publicKey: settings.publicKey || "PUBLIC_KEY_OCULTO",
       collectorId: settings.collectorId || "COLLECTOR_ID_OCULTO",
-      webhookUrl: "http://localhost:4000/webhooks/abacs/integracao/hotmart?token=SUA_API_KEY&curso=ID_DO_CURSO",
+      webhookUrl: "https://abacs.org.br/integracao/hotmart/hotmart.php?token=89945.18284682318tokenavancada&curso=77",
     });
   });
 
@@ -164,7 +170,7 @@ export async function abacsRoutes(app: FastifyInstance) {
 
     const updatedSettings = {
       ...((company.settings as Record<string, any>) || {}),
-      abacsToken: body.abacsToken,
+      abacsToken: body.abacsToken || "89945.18284682318tokenavancada",
       paymentApiKey: body.paymentApiKey,
       accessTokenCard: body.accessTokenCard,
       publicKey: body.publicKey,
@@ -176,17 +182,16 @@ export async function abacsRoutes(app: FastifyInstance) {
       .set({ settings: updatedSettings })
       .where(eq(schema.companies.id, company.id));
 
-    return reply.send({ success: true, message: "Credenciais da ABACS e Meios de Pagamento salvas com sucesso!" });
+    return reply.send({ success: true, message: "Credenciais da ABACS e Operador de Caixa salvas com sucesso!" });
   });
 
   // Teste de Sincronismo de Aluno Hotmart -> ABACS Portal (login.php)
   app.post("/abacs/sync-hotmart", async (req, reply) => {
     const body = (req.body as any) || {};
-    const usuario = body.usuario || "aluno.abacs";
+    const usuario = body.usuario || "aluno.caixa";
     const senha = body.senha || "123456";
 
     try {
-      // Simula requisição POST ao processa.php da ABACS usando fetch nativo
       const abacsRes = await fetch("https://abacs.org.br/processa.php", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -198,7 +203,7 @@ export async function abacsRoutes(app: FastifyInstance) {
         abacsPortalUrl: "https://abacs.org.br/login.php",
         synced: true,
         status: abacsRes ? abacsRes.status : 200,
-        message: `Aluno ${usuario} sincronizado com a ABACS e Hotmart com sucesso!`
+        message: `Aluno ${usuario} (Operador de Caixa) sincronizado com a ABACS e Hotmart com sucesso!`
       });
     } catch {
       return reply.send({
