@@ -1,0 +1,8 @@
+node_modules
+dist
+build
+.next
+package-lock.json
+**/public/ffmpeg
+projects
+*.tsbuildinfo

@@ -1,0 +1,201 @@
+/* Paleta alinhada ao painel (tema escuro, roxo #7c5cff). */
+:root {
+  --bg: #11121a;
+  --card: #1a1c28;
+  --card-hover: #222536;
+  --borda: #2a2d3f;
+  --texto: #e8e9f0;
+  --suave: #9599ad;
+  --roxo: #7c5cff;
+  --verde: #34d399;
+  --vermelho: #f87171;
+  --amarelo: #fbbf24;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 340px;
+  margin: 0;
+  padding: 12px;
+  background: var(--bg);
+  color: var(--texto);
+  font:
+    13px/1.45 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+
+.logo {
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  background: var(--roxo);
+  display: inline-block;
+}
+
+button {
+  font: inherit;
+  color: var(--texto);
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--card-hover);
+}
+
+.resumo {
+  margin: 0 0 10px;
+  color: var(--suave);
+  font-size: 12px;
+}
+
+h2 {
+  margin: 12px 0 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--suave);
+}
+
+.servico {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  margin-bottom: 4px;
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+}
+
+.servico:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.bolinha {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--amarelo);
+}
+
+.bolinha[data-estado="no-ar"] {
+  background: var(--verde);
+}
+
+.bolinha[data-estado="fora"] {
+  background: var(--vermelho);
+}
+
+.info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.nome {
+  display: block;
+  font-weight: 600;
+}
+
+.descricao {
+  display: block;
+  color: var(--suave);
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.porta {
+  flex: 0 0 auto;
+  color: var(--suave);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Link do iPhone: some quando não há IP configurado. */
+.lan-link {
+  display: block;
+  margin: 2px 0 6px 28px;
+  color: var(--roxo);
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.lan-link:hover {
+  text-decoration: underline;
+}
+
+footer {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--borda);
+}
+
+footer label {
+  display: block;
+  color: var(--suave);
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.linha-lan {
+  display: flex;
+  gap: 6px;
+}
+
+input {
+  flex: 1 1 auto;
+  min-width: 0;
+  font: inherit;
+  color: var(--texto);
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  padding: 5px 8px;
+}
+
+input:focus {
+  outline: 2px solid var(--roxo);
+  outline-offset: -1px;
+}
+
+.dica {
+  margin: 8px 0 0;
+  color: var(--suave);
+  font-size: 11px;
+}
+
+code {
+  background: var(--card);
+  border-radius: 4px;
+  padding: 1px 4px;
+  font-size: 10px;
+}

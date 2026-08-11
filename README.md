@@ -1,66 +1,79 @@
-# 🎬 Comenta — Editor de Vídeo e Música
+# Comenta — monorepo
 
-Editor **web** que importa arquivos exportados de apps externos (ex.: vídeo do
-**CapCut**, música do **Suno**) e edita tudo **no navegador**, sem enviar nada
-para servidores. Todo o processamento roda localmente com **FFmpeg (WebAssembly)**.
+Plataforma **Comenta**: atendimento multicanal com **IA (Claude)**, mais o site
+institucional e ferramentas auxiliares — tudo em um repositório só.
 
-## ✨ O que dá pra fazer (MVP)
+## Estrutura
 
-- **Importar** um vídeo (MP4, MOV…) e, opcionalmente, uma música (MP3, WAV…).
-- **Cortar / aparar** o vídeo (definindo início e fim).
-- **Juntar áudio + vídeo**: substituir totalmente o áudio pela música importada
-  ou **misturar** a música com o áudio original.
-- **Ajustar o áudio**: volume, *fade in* e *fade out*.
-- **Exportar** o resultado em **MP4** e baixar.
+Monorepo **npm workspaces**: um `package-lock.json` só, na raiz, e um `npm ci`
+que instala todos os projetos de uma vez.
 
-## 🚀 Como rodar
-
-```bash
-npm install
-npm run dev
+```
+comenta/
+├─ site/               # Landing do Comenta (Next.js) + chat de atendimento
+├─ saas/api/           # API (Fastify + Postgres/Drizzle + Redis/BullMQ + Socket.IO)
+├─ saas/web/           # Painel (React + Vite)
+├─ packages/shared/    # Contratos de domínio compartilhados entre a API e o painel
+├─ apps/editor/        # Editor de vídeo/música (React + Vite + FFmpeg.wasm)
+├─ content/            # Robô de conteúdo do blog (curadoria → Ghost)
+├─ deploy/             # Deploy: Compose + Nginx + bootstrap + azure/ (único lugar)
+└─ projects/comenta/   # Análise + instalador white-label (fora dos workspaces)
 ```
 
-Abra o endereço mostrado no terminal (normalmente `http://localhost:5173`).
+| Produto         | Pasta          | Domínio               | Descrição                                                           |
+| --------------- | -------------- | --------------------- | ------------------------------------------------------------------- |
+| Site + chat     | `site/`        | `comenta.com.br`      | Landing e assistente de atendimento (IA + humano, filas, WhatsApp)  |
+| API             | `saas/api/`    | `api.comenta.com.br`  | Backend multi-tenant com IA Claude, tempo real e webhooks           |
+| Painel          | `saas/web/`    | `app.comenta.com.br`  | Interface de atendimento estilo WhatsApp                            |
+| Blog / CMS      | Ghost (deploy) | `blog.comenta.com.br` | Blog/novidades/newsletter (Ghost 5 + MySQL)                         |
+| Editor de vídeo | `apps/editor/` | —                     | Edição no navegador com FFmpeg.wasm ([docs](apps/editor/README.md)) |
 
-Para gerar a versão de produção:
+## Desenvolvimento
+
+Instale uma vez, na raiz — o npm resolve todos os workspaces juntos:
 
 ```bash
-npm run build
-npm run preview
+npm ci
+npm run build -w @comenta/shared   # gera os .d.ts que a API e o painel importam
 ```
 
-## 🧩 Como funciona a "integração" com Suno, CapCut etc.
+Depois, cada projeto:
 
-Suno e CapCut não oferecem uma API pública oficial para integração direta.
-O fluxo realista e que funciona hoje é:
+```bash
+npm run dev:site      # http://localhost:3000
+npm run dev:api       # http://localhost:4000  (precisa de Postgres + Redis: use o compose do deploy)
+npm run dev:web       # http://localhost:5173
+npm run dev:editor
+```
 
-1. Você **exporta/baixa** o arquivo no app externo (MP4 no CapCut, MP3 no Suno).
-2. **Importa** esse arquivo no Comenta.
-3. Edita e **baixa** o resultado final.
+Comandos em todos os workspaces de uma vez: `npm run build`, `npm run typecheck`,
+`npm test`.
 
-Isso mantém tudo dentro do que os apps permitem e não depende de nenhuma
-credencial ou integração não oficial.
+## Publicar em produção (VPS)
 
-## ⚙️ Detalhes técnicos
+Tudo sob `comenta.com.br` com um comando (Docker + Nginx + SSL). Veja
+[`deploy/RUNBOOK.md`](deploy/RUNBOOK.md):
 
-- **React + Vite** para a interface.
-- **@ffmpeg/ffmpeg** (FFmpeg.wasm) para corte, mixagem, fades e exportação.
-- O FFmpeg multithread usa `SharedArrayBuffer`, então a página precisa ser
-  *cross-origin isolated*. Os cabeçalhos `COOP`/`COEP` já estão configurados no
-  `vite.config.js` para os servidores de dev e de preview. Em produção, o host
-  precisa enviar:
-  - `Cross-Origin-Opener-Policy: same-origin`
-  - `Cross-Origin-Embedder-Policy: require-corp`
+```bash
+curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/<branch>/deploy/bootstrap.sh \
+  | sudo DOMAIN=comenta.com.br [email protected] bash
+```
 
-## 🗺️ Próximos passos (ideias)
+## Qualidade e segurança
 
-- Múltiplas trilhas de áudio e vídeo (timeline).
-- Legendas automáticas.
-- Cortes automáticos por IA (estilo Vizard) para gerar clipes curtos.
-- Presets de proporção (9:16 para Reels/TikTok, 1:1, 16:9).
-- Filtros e textos sobrepostos.
+- **CI** (`.github/workflows/ci.yml`): `npm ci` na raiz e build de todos os workspaces a cada push/PR.
+- **Headers de segurança** no site (CSP, HSTS, X-Frame-Options, etc. em `site/next.config.js`).
+- **Health check** do site em `/health`.
+- **Segredos** só via `.env` (nunca versionados); JWT/DB/Redis com valores aleatórios no bootstrap.
+- IA com **degradação graciosa** (503) quando `ANTHROPIC_API_KEY` não está configurada.
 
-## ⚠️ Direitos autorais
+## Configuração (variáveis principais)
 
-Use apenas conteúdo que você tenha direito de usar. O Comenta não hospeda nem
-distribui mídia — ele apenas edita arquivos que você mesmo fornece.
+| Variável                                                               | Onde   | Para quê                                           |
+| ---------------------------------------------------------------------- | ------ | -------------------------------------------------- |
+| `ANTHROPIC_API_KEY`                                                    | API    | habilita a IA Claude (classificar/resumir/sugerir) |
+| `NEXT_PUBLIC_WHATSAPP`                                                 | site   | número do "Continuar no WhatsApp"                  |
+| `NEXT_PUBLIC_NEWS_SOURCE`                                              | site   | fonte do carrossel de notícias (opcional)          |
+| `DB_PASSWORD` / `REDIS_PASSWORD` / `JWT_SECRET` / `JWT_REFRESH_SECRET` | deploy | infra e autenticação                               |
+
+Detalhes de deploy e todas as variáveis em [`deploy/.env.example`](deploy/.env.example).

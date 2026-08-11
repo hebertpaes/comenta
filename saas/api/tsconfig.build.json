@@ -1,0 +1,10 @@
+{
+  // Só o build emite: os testes ficam de fora do dist.
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": ["src"]
+}
