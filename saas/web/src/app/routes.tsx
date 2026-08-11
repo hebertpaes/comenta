@@ -81,6 +81,12 @@ export const routes: RouteObject[] = [
         }),
       },
       {
+        path: "flowbuilder",
+        lazy: async () => ({
+          Component: (await import("../features/flowbuilder/FlowBuilderPage")).FlowBuilderPage,
+        }),
+      },
+      {
         path: "ferramentas",
         lazy: async () => ({
           Component: (await import("../features/tools/ToolsPage")).ToolsPage,

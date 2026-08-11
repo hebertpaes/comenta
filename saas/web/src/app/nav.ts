@@ -27,6 +27,7 @@ export const NAV: NavItem[] = [
   { to: "/avaliacoes", label: "⭐ Avaliações", aliases: ["nps", "satisfação", "notas"] },
   { to: "/config", label: "⚙️ Configurações", adminOnly: true, aliases: ["settings"] },
   { to: "/automacoes", label: "🤖 Automações", aliases: ["bot", "regras"] },
+  { to: "/flowbuilder", label: "⚡ FlowBuilder IA", aliases: ["construtor", "fluxos", "visual"] },
   { to: "/agentes", label: "🤖 Agentes IA & Mídia", aliases: ["ia", "agente", "imagens", "vídeo", "banners"] },
   {
     to: "/campanhas",
