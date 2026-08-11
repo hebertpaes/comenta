@@ -5,7 +5,10 @@ import { RouterProvider, createBrowserRouter } from "react-router";
 import { AuthProvider } from "./auth/AuthContext";
 import { routes } from "./app/routes";
 import { createQueryClient } from "./lib/queryClient";
+import { registrarServiceWorker } from "./lib/pwa";
 import "./styles.css";
+
+registrarServiceWorker();
 
 const queryClient = createQueryClient();
 const router = createBrowserRouter(routes);

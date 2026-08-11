@@ -121,6 +121,12 @@ export const conversations = pgTable(
       .notNull()
       .references(() => contacts.id, { onDelete: "cascade" }),
     channelId: uuid("channel_id").references(() => channels.id, { onDelete: "set null" }),
+    // Alvo de resposta no provedor, quando responder exige apontar para a
+    // mensagem original e não só para a pessoa: a thread do comentário no
+    // YouTube, o tweet a responder no X. Vale o da ÚLTIMA mensagem recebida —
+    // é nela que a resposta do atendente aparece. null nos canais em que basta
+    // conhecer o contato (WhatsApp, Instagram, Messenger).
+    externalRef: varchar("external_ref", { length: 128 }),
     queueId: uuid("queue_id"),
     status: varchar("status", { length: 16 }).notNull().default("pending"), // pending | open | resolved
     assignedUserId: uuid("assigned_user_id").references(() => users.id, {

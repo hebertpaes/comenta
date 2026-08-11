@@ -10,6 +10,9 @@ import { afterEach, describe, expect, it, vi } from "vitest";
  */
 async function comChave(valor: string | undefined) {
   vi.resetModules();
+  delete process.env.GEMINI_API_KEY;
+  delete process.env.GOOGLE_AI_API_KEY;
+  delete process.env.GOOGLE_API_KEY;
   if (valor === undefined) delete process.env.ANTHROPIC_API_KEY;
   else process.env.ANTHROPIC_API_KEY = valor;
   return import("../src/lib/ai.js");
@@ -19,6 +22,9 @@ const CHAVE_REAL = "sk-ant-api03-" + "x".repeat(80);
 
 afterEach(() => {
   delete process.env.ANTHROPIC_API_KEY;
+  delete process.env.GEMINI_API_KEY;
+  delete process.env.GOOGLE_AI_API_KEY;
+  delete process.env.GOOGLE_API_KEY;
 });
 
 describe("aiEnabled", () => {

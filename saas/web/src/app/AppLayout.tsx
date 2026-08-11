@@ -1,36 +1,19 @@
+import { useState } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router";
 import { useAuth } from "../auth/useAuth";
+import { BotaoInstalar } from "../components/BotaoInstalar";
+import { CommandPalette } from "../components/CommandPalette";
 import { Logo } from "../components/Logo";
 import { useTheme } from "../lib/useTheme";
-
-interface NavItem {
-  to: string;
-  label: string;
-  adminOnly?: boolean;
-}
-
-const NAV: NavItem[] = [
-  { to: "/dashboard", label: "📊 Dashboard" },
-  { to: "/conversas", label: "💬 Conversas" },
-  { to: "/kanban", label: "📋 Kanban" },
-  { to: "/equipe", label: "💬 Equipe" },
-  { to: "/contatos", label: "👥 Contatos" },
-  { to: "/usuarios", label: "🧑‍💼 Usuários", adminOnly: true },
-  { to: "/filas", label: "🗂️ Filas", adminOnly: true },
-  { to: "/respostas", label: "⚡ Respostas" },
-  { to: "/tags", label: "🏷️ Tags", adminOnly: true },
-  { to: "/config", label: "⚙️ Configurações", adminOnly: true },
-  { to: "/automacoes", label: "🤖 Automações" },
-  { to: "/campanhas", label: "📣 Campanhas", adminOnly: true },
-  { to: "/ferramentas", label: "🧩 Ferramentas" },
-  { to: "/cursos", label: "🎓 Academia" },
-  { to: "/conexoes", label: "📲 Conexões" },
-];
+import { NAV } from "./nav";
 
 export function AppLayout() {
   const { me, isAdmin, logout } = useAuth();
   const { theme, toggle } = useTheme();
   const navigate = useNavigate();
+  // Estado da paleta mora aqui para que o botão da lateral — o caminho de quem
+  // está no celular e não tem ⌘K — abra a mesma coisa que o atalho.
+  const [paletteOpen, setPaletteOpen] = useState(false);
 
   const items = NAV.filter((i) => !i.adminOnly || isAdmin);
 
@@ -53,6 +36,10 @@ export function AppLayout() {
           style={{ position: "absolute", bottom: 18, fontSize: 13, width: 192 }}
           className="muted"
         >
+          <BotaoInstalar />
+          <button className="themebtn" onClick={() => setPaletteOpen(true)}>
+            🔎 Buscar <kbd className="kbd">⌘K</kbd>
+          </button>
           <button className="themebtn" onClick={toggle}>
             {theme === "dark" ? "☀️ Modo claro" : "🌙 Modo escuro"}
           </button>
@@ -72,6 +59,7 @@ export function AppLayout() {
       <main className="main">
         <Outlet />
       </main>
+      <CommandPalette isAdmin={isAdmin} open={paletteOpen} onOpenChange={setPaletteOpen} />
     </div>
   );
 }

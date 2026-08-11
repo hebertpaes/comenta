@@ -87,6 +87,12 @@ export const routes: RouteObject[] = [
         }),
       },
       {
+        path: "agentes",
+        lazy: async () => ({
+          Component: (await import("../features/agents/AgentsPage")).AgentsPage,
+        }),
+      },
+      {
         path: "cursos",
         lazy: async () => ({
           Component: (await import("../features/academy/AcademyPage")).AcademyPage,
@@ -102,6 +108,12 @@ export const routes: RouteObject[] = [
         path: "conexoes",
         lazy: async () => ({
           Component: (await import("../features/channels/ConnectionsPage")).ConnectionsPage,
+        }),
+      },
+      {
+        path: "avaliacoes",
+        lazy: async () => ({
+          Component: (await import("../features/ratings/RatingsPage")).RatingsPage,
         }),
       },
 
@@ -138,6 +150,18 @@ export const routes: RouteObject[] = [
             path: "campanhas",
             lazy: async () => ({
               Component: (await import("../features/campaigns/CampaignsPage")).CampaignsPage,
+            }),
+          },
+          {
+            path: "chaves",
+            lazy: async () => ({
+              Component: (await import("../features/apikeys/ApiKeysPage")).ApiKeysPage,
+            }),
+          },
+          {
+            path: "webhooks",
+            lazy: async () => ({
+              Component: (await import("../features/webhooks/WebhooksPage")).WebhooksPage,
             }),
           },
         ],

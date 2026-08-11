@@ -1,5 +1,12 @@
 import React from "react";
+import Faq from "./components/Faq";
+import PlanComparison from "./components/PlanComparison";
+import PriceCalculator from "./components/PriceCalculator";
+import SiteFooter from "./components/SiteFooter";
+import FeatureCards from "./components/FeatureCards";
 import Testimonials from "./components/Testimonials";
+import { PLANOS } from "./lib/plans";
+import { RECURSOS } from "./recursos/dados";
 
 // Landing do Comenta — SaaS de atendimento multicanal com IA (Claude).
 // Server Component, estático. Visual colorido/vibrante com Tailwind.
@@ -169,48 +176,6 @@ const CANAIS = [
   },
 ];
 
-const PLANOS = [
-  {
-    nome: "Free",
-    preco: "R$0",
-    periodo: "para sempre",
-    desc: "Para começar e testar.",
-    destaque: false,
-    itens: ["1 usuário", "1 canal", "IA básica (classificação)", "500 conversas/mês"],
-    cta: "Começar grátis",
-  },
-  {
-    nome: "Pro",
-    preco: "R$99",
-    periodo: "/mês",
-    desc: "Para equipes que atendem de verdade.",
-    destaque: true,
-    itens: [
-      "Até 10 usuários",
-      "Todos os canais",
-      "IA completa (resumo + sugestão)",
-      "Conversas ilimitadas",
-      "Métricas e relatórios",
-    ],
-    cta: "Assinar Pro",
-  },
-  {
-    nome: "Business",
-    preco: "R$299",
-    periodo: "/mês",
-    desc: "Para operações e multi-marca.",
-    destaque: false,
-    itens: [
-      "Usuários ilimitados",
-      "Multi-tenant",
-      "Webhooks & API",
-      "Auditoria e SLA",
-      "Suporte prioritário",
-    ],
-    cta: "Falar com vendas",
-  },
-];
-
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden">
@@ -235,6 +200,12 @@ export default function HomePage() {
             </a>
             <a href="#planos" className="hover:text-slate-900">
               Planos
+            </a>
+            <a href="/docs" className="hover:text-slate-900">
+              Docs
+            </a>
+            <a href="/contato" className="hover:text-slate-900">
+              Contato
             </a>
             <a href={APP_URL} className="hover:text-slate-900">
               Entrar
@@ -332,21 +303,26 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {FEATURES.map((f) => (
-            <div
-              key={f.title}
-              className="group rounded-3xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-xl"
-            >
-              <div
-                className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${f.color} text-2xl shadow-lg`}
+        <div className="mt-14">
+          <FeatureCards />
+        </div>
+
+        {/* Os cards acima resumem; quem quer saber COMO funciona vai para a
+            página do recurso. */}
+        <div className="mt-16">
+          <h3 className="text-center text-lg font-bold text-slate-900">Aprofunde no que importa</h3>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            {RECURSOS.map((r) => (
+              <a
+                key={r.slug}
+                href={`/recursos/${r.slug}`}
+                className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-fuchsia-400 hover:text-fuchsia-600"
               >
-                {f.icon}
-              </div>
-              <h3 className="mt-4 text-lg font-bold">{f.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">{f.desc}</p>
-            </div>
-          ))}
+                <span aria-hidden="true">{r.icone}</span>
+                {r.titulo}
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -531,6 +507,58 @@ export default function HomePage() {
             </div>
           ))}
         </div>
+
+        {/* Calculadora: responde "qual plano é o meu?" sem obrigar a comparar
+            três cards de cabeça. */}
+        <div className="mt-20">
+          <div className="mx-auto max-w-2xl text-center">
+            <h3 className="text-2xl font-extrabold sm:text-3xl">Qual plano é o seu?</h3>
+            <p className="mt-3 text-slate-600">
+              Ajuste o tamanho da sua operação e veja a recomendação.
+            </p>
+          </div>
+          <div className="mt-10">
+            <PriceCalculator />
+          </div>
+        </div>
+
+        {/* Tabela: para quem já entendeu o preço e quer conferir recurso a
+            recurso antes de decidir. */}
+        <div className="mt-20">
+          <div className="mx-auto max-w-2xl text-center">
+            <h3 className="text-2xl font-extrabold sm:text-3xl">Comparação completa</h3>
+            <p className="mt-3 text-slate-600">Tudo que entra em cada plano, item por item.</p>
+          </div>
+          <div className="mt-10">
+            <PlanComparison />
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Perguntas frequentes ===== */}
+      <section id="faq" className="scroll-mt-20 bg-slate-50 py-20 sm:py-24">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-extrabold sm:text-4xl">Perguntas frequentes</h2>
+            <p className="mt-4 text-slate-600">
+              As dúvidas que aparecem antes de conectar o primeiro número.
+            </p>
+          </div>
+          <div className="mt-12">
+            <Faq />
+          </div>
+          <p className="mt-10 text-center text-slate-600">
+            Não achou a sua?{" "}
+            <a href="/contato" className="font-semibold text-fuchsia-600 hover:underline">
+              Fale com a gente
+            </a>{" "}
+            ou veja a{" "}
+            <a href="/docs" className="font-semibold text-fuchsia-600 hover:underline">
+              documentação
+            </a>
+            .
+          </p>
+        </div>
       </section>
 
       {/* ===== CTA final ===== */}
@@ -556,32 +584,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== Footer ===== */}
-      <footer className="border-t border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-10 sm:flex-row sm:items-center">
-          <div className="flex items-center gap-2 font-extrabold">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-fuchsia-600 to-indigo-600 text-white">
-              C
-            </span>
-            Comenta
-          </div>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-500">
-            <a href="#recursos" className="hover:text-slate-900">
-              Recursos
-            </a>
-            <a href="#planos" className="hover:text-slate-900">
-              Planos
-            </a>
-            <a href={APP_URL} className="hover:text-slate-900">
-              Entrar
-            </a>
-            <a href={`/docs`} className="hover:text-slate-900">
-              API
-            </a>
-          </div>
-          <p className="text-sm text-slate-400">© {new Date().getFullYear()} Comenta</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

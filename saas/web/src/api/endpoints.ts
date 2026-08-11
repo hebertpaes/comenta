@@ -1,4 +1,6 @@
 import type {
+  ApiKey,
+  ApiKeyCreated,
   Automation,
   Campaign,
   Channel,
@@ -20,10 +22,16 @@ import type {
   Paginated,
   Queue,
   QuickReply,
+  Rating,
+  RatingMetrics,
   SignupResponse,
   Tag,
   TeamMessage,
   User,
+  Webhook,
+  WebhookCreated,
+  WebhookDelivery,
+  WebhookEvent,
 } from "@comenta/shared";
 import { http, qs } from "../lib/http";
 import { clearTokens, getRefreshToken, setTokens } from "../lib/tokens";
@@ -225,4 +233,22 @@ export const team = {
 export const settings = {
   get: () => http.get<{ settings: CompanySettings }>("/settings"),
   update: (body: CompanySettings) => http.put<{ settings: CompanySettings }>("/settings", body),
+};
+
+export const ratings = {
+  list: () => http.get<Listed<Rating> & { metrics: RatingMetrics }>("/ratings"),
+};
+
+export const apiKeys = {
+  list: () => http.get<Listed<ApiKey>>("/api-keys"),
+  create: (name: string) => http.post<ApiKeyCreated>("/api-keys", { name }),
+  revoke: (id: string) => http.del<null>(`/api-keys/${id}`),
+};
+
+export const webhooks = {
+  list: () => http.get<Listed<Webhook> & { availableEvents: WebhookEvent[] }>("/webhooks"),
+  create: (url: string, events: WebhookEvent[]) =>
+    http.post<WebhookCreated>("/webhooks", { url, events }),
+  remove: (id: string) => http.del<null>(`/webhooks/${id}`),
+  deliveries: (id: string) => http.get<Listed<WebhookDelivery>>(`/webhooks/${id}/deliveries`),
 };

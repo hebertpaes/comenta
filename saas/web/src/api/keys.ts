@@ -28,4 +28,8 @@ export const keys = {
   campaigns: ["campaigns"] as const,
   teamMessages: ["team", "messages"] as const,
   settings: ["settings"] as const,
+  ratings: ["ratings"] as const,
+  apiKeys: ["api-keys"] as const,
+  webhooks: ["webhooks"] as const,
+  webhookDeliveries: (id: string) => ["webhook", id, "deliveries"] as const,
 };

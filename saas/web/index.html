@@ -2,8 +2,23 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Comenta — Painel</title>
+    <meta
+      name="description"
+      content="Atendimento multicanal do Comenta: conversas, kanban, campanhas e automações."
+    />
+
+    <!-- App instalável: é o manifesto que faz o Chrome oferecer "Instalar" na
+         barra de endereços e o painel ganhar janela e ícone próprios, como o
+         Chrome Remote Desktop. -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0f1020" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <!-- O iPhone ignora o manifesto: no "Adicionar à Tela de Início" ele lê
+         estas duas tags. -->
+    <link rel="apple-touch-icon" href="/icones/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Comenta" />
   </head>
   <body>
     <div id="root"></div>

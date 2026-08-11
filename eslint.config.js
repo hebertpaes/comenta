@@ -44,7 +44,12 @@ export default tseslint.config(
 
   // ---------------------------------------------------- API e scripts (Node)
   {
-    files: ["saas/api/**/*.ts", "content/**/*.mjs", "apps/editor/scripts/**/*.mjs"],
+    files: [
+      "saas/api/**/*.ts",
+      "content/**/*.mjs",
+      "apps/editor/scripts/**/*.mjs",
+      "saas/web/scripts/**/*.mjs",
+    ],
     languageOptions: {
       globals: globals.node,
       ecmaVersion: 2023,

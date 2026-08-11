@@ -20,13 +20,13 @@ comenta/
 └─ projects/comenta/   # Análise + instalador white-label (fora dos workspaces)
 ```
 
-| Produto         | Pasta          | Domínio               | Descrição                                                           |
-| --------------- | -------------- | --------------------- | ------------------------------------------------------------------- |
-| Site + chat     | `site/`        | `comenta.com.br`      | Landing e assistente de atendimento (IA + humano, filas, WhatsApp)  |
-| API             | `saas/api/`    | `api.comenta.com.br`  | Backend multi-tenant com IA Claude, tempo real e webhooks           |
-| Painel          | `saas/web/`    | `app.comenta.com.br`  | Interface de atendimento estilo WhatsApp                            |
-| Blog / CMS      | Ghost (deploy) | `blog.comenta.com.br` | Blog/novidades/newsletter (Ghost 5 + MySQL)                         |
-| Editor de vídeo | `apps/editor/` | —                     | Edição no navegador com FFmpeg.wasm ([docs](apps/editor/README.md)) |
+| Produto         | Pasta          | Domínio               | Descrição                                                                     |
+| --------------- | -------------- | --------------------- | ----------------------------------------------------------------------------- |
+| Site + chat     | `site/`        | `comenta.com.br`      | Landing e assistente de atendimento (IA + humano, filas, WhatsApp)            |
+| API             | `saas/api/`    | `api.comenta.com.br`  | Backend multi-tenant com IA Claude, tempo real e webhooks                     |
+| Painel          | `saas/web/`    | `app.comenta.com.br`  | Atendimento estilo WhatsApp, instalável como app ([docs](saas/web/README.md)) |
+| Blog / CMS      | Ghost (deploy) | `blog.comenta.com.br` | Blog/novidades/newsletter (Ghost 5 + MySQL)                                   |
+| Editor de vídeo | `apps/editor/` | —                     | Edição no navegador com FFmpeg.wasm ([docs](apps/editor/README.md))           |
 
 ## Desenvolvimento
 

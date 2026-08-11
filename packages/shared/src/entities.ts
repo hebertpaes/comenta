@@ -8,6 +8,8 @@ import type {
   MessageDirection,
   MessageStatus,
   UserRole,
+  WebhookDeliveryStatus,
+  WebhookEvent,
 } from "./enums.js";
 
 /**
@@ -306,6 +308,62 @@ export interface RatingMetrics {
   count: number;
   average: number | null;
   nps: number | null;
+}
+
+/** Uma avaliação como `GET /ratings` devolve: o nome do contato e o do
+ *  atendente vêm de left joins, então são nulos se o registro sumiu. */
+export interface Rating {
+  id: string;
+  score: number;
+  scale: number;
+  createdAt: Iso;
+  contactName: string | null;
+  agentName: string | null;
+}
+
+/** Chave de API. O segredo em si nunca volta numa listagem — só `prefix`,
+ *  o suficiente para o admin reconhecer qual chave é qual. */
+export interface ApiKey {
+  id: string;
+  name: string;
+  prefix: string;
+  lastUsedAt: Iso | null;
+  revokedAt: Iso | null;
+  createdAt: Iso;
+}
+
+/** Resposta de `POST /api-keys`: é a única vez que a chave em claro aparece. */
+export interface ApiKeyCreated {
+  id: string;
+  name: string;
+  prefix: string;
+  key: string;
+}
+
+export interface Webhook {
+  id: string;
+  url: string;
+  events: WebhookEvent[];
+  isActive: boolean;
+  createdAt: Iso;
+}
+
+/** Resposta de `POST /webhooks`: `secret` assina o corpo (HMAC-SHA256) e,
+ *  como a chave de API, só é exibido nesta resposta. */
+export interface WebhookCreated {
+  id: string;
+  url: string;
+  events: WebhookEvent[];
+  secret: string;
+}
+
+export interface WebhookDelivery {
+  id: string;
+  event: WebhookEvent;
+  status: WebhookDeliveryStatus;
+  attempts: number;
+  lastError: string | null;
+  createdAt: Iso;
 }
 
 export interface DashboardMetrics {

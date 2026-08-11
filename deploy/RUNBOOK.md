@@ -174,6 +174,7 @@ docker compose logs -f api
 ## Notas
 
 - **IA Claude**: sem `ANTHROPIC_API_KEY`, a API responde `503` só nos endpoints de IA.
+- **Painel instalável**: em `https://app.comenta.com.br` o Chrome oferece "Instalar" e o atendente ganha um app de janela própria, com ícone no Dock — como o Chrome Remote Desktop. Depende do HTTPS do passo 7: por `http://` (ou pelo IP da LAN) o navegador não oferece nada. Detalhes e solução de problemas em [`saas/web/README.md`](../saas/web/README.md).
 - **WhatsApp** do chat do site: ajuste `NEXT_PUBLIC_WHATSAPP` no `.env`.
 - Estrutura do monorepo (npm workspaces, lockfile único na raiz): `site/` (landing+chat), `saas/api`, `saas/web`, `packages/shared` (contratos comuns à API e ao painel), `content/` (robô do blog), `apps/editor` (editor de vídeo), `deploy/` (este) e `projects/comenta/` (instalador, fora dos workspaces).
 - Os Dockerfiles de `saas/api`, `site` e `content` usam a **raiz** do repositório como contexto de build, porque o lockfile é único e `@comenta/shared` só existe localmente.
