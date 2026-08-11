@@ -247,6 +247,42 @@ export function SettingsPage() {
           )}
         </Async>
       </div>
+      {/* Kiwify & AtendeChat Portal Bridge */}
+      <div className="card" style={{ padding: 18, marginTop: 16 }}>
+        <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>
+          🎓 Portal de Cursos AtendeChat & Kiwify (curso.atendechat.com)
+        </div>
+        <p className="muted" style={{ fontSize: 13, marginTop: 0, marginBottom: 12 }}>
+          Integração oficial de alunos, membros e webhooks com a área de membros Kiwify.
+        </p>
+
+        <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
+          <a
+            href="https://curso.atendechat.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="button secondary"
+            style={{
+              fontSize: 13,
+              fontWeight: 700,
+              textDecoration: "none",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 6,
+              background: "#16a34a",
+              color: "#fff",
+              padding: "8px 14px",
+              borderRadius: 8,
+            }}
+          >
+            ↗ Abrir Portal Kiwify AtendeChat (curso.atendechat.com)
+          </a>
+
+          <span style={{ fontSize: 12, color: "var(--muted)" }}>
+            Webhook Endpoint: <code>http://localhost:4000/webhooks/kiwify</code>
+          </span>
+        </div>
+      </div>
     </div>
   );
 }
