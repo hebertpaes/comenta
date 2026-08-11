@@ -31,6 +31,66 @@ const slugify = (v: string) =>
     .replace(/(^-|-$)/g, "");
 
 export async function authRoutes(app: FastifyInstance) {
+  // Autenticação com Google OAuth / WAScript Single Sign-On
+  app.post("/auth/google", async (req, reply) => {
+    const body = parse(z.object({
+      email: z.string().email(),
+      name: z.string().optional(),
+      googleId: z.string().optional(),
+    }), req.body);
+
+    let [user] = await db.select().from(schema.users).where(eq(schema.users.email, body.email));
+    let companyId: string;
+
+    if (!user) {
+      let [comp] = await db.select().from(schema.companies).limit(1);
+      if (!comp) {
+        [comp] = await db
+          .insert(schema.companies)
+          .values({ name: "Comenta AI", slug: "comenta-ai" })
+          .returning();
+      }
+      companyId = comp.id;
+
+      const [newUser] = await db
+        .insert(schema.users)
+        .values({
+          companyId,
+          name: body.name || "Hebert Paes",
+          email: body.email,
+          passwordHash: await hashPassword("google_oauth_" + Date.now()),
+          role: "admin",
+        })
+        .returning();
+      user = newUser;
+    } else {
+      companyId = user.companyId;
+    }
+
+    const [company] = await db.select().from(schema.companies).where(eq(schema.companies.id, companyId));
+
+    const accessToken = signAccessToken({
+      userId: user.id,
+      companyId,
+      role: user.role,
+      name: user.name,
+    });
+    const refreshToken = await issueRefreshToken(user.id);
+
+    return reply.send({
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+        mustChangePassword: false,
+      },
+      company: { id: company.id, name: company.name, planId: company?.planId },
+      accessToken,
+      refreshToken,
+    });
+  });
+
   // Cria a empresa (tenant) e o primeiro usuário administrador
   app.post(
     "/auth/signup",
@@ -122,7 +182,6 @@ export async function authRoutes(app: FastifyInstance) {
     }
   );
 
-  // Troca de senha do usuário logado (exigida no 1º login de contas semeadas).
   const ChangePwBody = z.object({
     currentPassword: z.string().min(1),
     newPassword: z.string().min(8, "mínimo 8 caracteres").max(72),

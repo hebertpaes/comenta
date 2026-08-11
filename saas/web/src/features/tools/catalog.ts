@@ -67,4 +67,21 @@ export const TOOLS: Tool[] = [
       "4. Gere uma API/webhook para integrar com o n8n.",
     ],
   },
+  {
+    key: "wascript",
+    icon: "🌐",
+    name: "WAScript — WhatsApp Web Extension & Notes",
+    url: "https://app.wascript.com.br",
+    tagline: "Extensão Chrome com CRM, anotações de contatos e autenticação Google OAuth.",
+    uses: [
+      "Painel lateral de anotações (Notes) diretamente na tela do WhatsApp Web.",
+      "Sincronização de contatos com Google OAuth (hebertpaes@gmail.com).",
+      "Geração de gatilhos e respostas rápidas integradas ao Comenta.",
+    ],
+    training: [
+      "1. Acesse o WAScript e conecte sua conta Google OAuth.",
+      "2. Instale a extensão no Google Chrome e ative o painel lateral em web.whatsapp.com.",
+      "3. Sincronize suas anotações e contatos com o banco do Comenta SaaS.",
+    ],
+  },
 ];
