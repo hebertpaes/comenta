@@ -1,27 +1,25 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
-  Bot,
   Sparkles,
   Image as ImageIcon,
   Video,
   Send,
-  Users,
-  Briefcase,
-  BarChart3,
-  Play,
   Download,
-  Copy,
-  Check,
+  RefreshCw,
+  Mic,
+  Paperclip,
+  Code,
   Zap,
-  Wand2,
-  RefreshCw
+  Globe,
+  Bot,
+  Sliders,
+  ChevronDown
 } from "lucide-react";
 
 export type Agent = {
   id: string;
   nome: string;
   papel: string;
-  categoria: "clientes" | "colaboradores" | "multimidia";
   avatar: string;
   cor: string;
   descricao: string;
@@ -31,64 +29,50 @@ export type Agent = {
 
 const AGENTES: Agent[] = [
   {
-    id: "agente-vendas",
-    nome: "Sofia — Vendas & Comercial",
-    papel: "Atendimento ao Cliente & Qualificação de Leads",
-    categoria: "clientes",
-    avatar: "🤖",
-    cor: "from-fuchsia-600 to-pink-500",
-    descricao: "Especialista em tirar dúvidas de preços, qualificar potenciais compradores e fechar propostas comerciais no WhatsApp.",
-    capacidades: ["Qualificação de Leads", "Envio de Tabela de Preços", "Contorno de Objeções", "Agendamento de Demos"],
-    promptInicial: "Olá! Sou a Sofia, especialista comercial da sua empresa. Como posso ajudar com seus clientes hoje?"
+    id: "gemini-spark",
+    nome: "Sofia Gemini 2.0 Spark (Google IA Oficial)",
+    papel: "Inteligência Artificial Multimodal Completa",
+    avatar: "✨",
+    cor: "linear-gradient(135deg, #4285F4, #9B51E0, #E91E63)",
+    descricao: "Agente principal de IA com capacidades avançadas em texto, raciocínio comercial, imagens e vídeos.",
+    capacidades: ["Gemini 2.0 Flash", "Visão Multimodal", "Prompt Engineering", "Integração Comenta"],
+    promptInicial: "Olá! Sou a Sofia Gemini 2.0 Spark. Como posso ajudar com sua empresa, criação de imagens, vídeos ou automações hoje?"
   },
   {
     id: "agente-imagens",
-    nome: "Pixel — Gerador de Artes & Imagens IA",
-    papel: "Criação de Banners, Posts & Imagens para Mídias",
-    categoria: "multimidia",
+    nome: "Pixel Imagen 3 — Artes & Imagens HD",
+    papel: "Gerador de Banners, Posts & Logos IA",
     avatar: "🎨",
-    cor: "from-amber-500 to-orange-600",
-    descricao: "Gera ilustrações profissionais, banners para WhatsApp e artes publicitárias em segundos.",
-    capacidades: ["Geração de Banners", "Fotos de Produtos com Fundo", "Ilustrações Promocionais", "Formatos 1:1 e 9:16"],
-    promptInicial: "Olá! Digite a imagem que você deseja criar (ex: 'Banner de promoção do WhatsApp para loja de eletrônicos')."
+    cor: "linear-gradient(135deg, #F59E0B, #EF4444)",
+    descricao: "Gera ilustrações HD, banners promocionais de vendas e posts para redes sociais em segundos.",
+    capacidades: ["Google Imagen 3 HD", "Fotos de Produtos", "Formatos 1:1 e 9:16", "Alta Resolução"],
+    promptInicial: "Olá! O que você gostaria de desenhar ou criar em imagem HD hoje?"
   },
   {
     id: "agente-videos",
-    nome: "Cine — Gerador de Vídeos & Roteiros",
-    papel: "Roteiros para Reels/TikTok & Animações",
-    categoria: "multimidia",
+    nome: "Veo AI — Vídeos & Animações Promocionais",
+    papel: "Gerador de Roteiros & Vídeos para Mídias",
     avatar: "🎬",
-    cor: "from-purple-600 to-indigo-600",
-    descricao: "Cria roteiros virais para mídias sociais e gera vídeos curtos prontos para divulgação.",
-    capacidades: ["Roteiros de 15s e 30s", "Animações Promocionais", "Edição Automática", "Legendas & Call to Action"],
-    promptInicial: "Olá! Sobre qual produto ou serviço vamos criar um vídeo animado para Reels/TikTok hoje?"
+    cor: "linear-gradient(135deg, #8B5CF6, #6366F1)",
+    descricao: "Cria animações e vídeos curtos de 15s/30s prontos para publicação no Instagram Reels e TikTok.",
+    capacidades: ["Google Veo Video AI", "Roteiros de Vendas", "Animação 4K", "Legendas Dinâmicas"],
+    promptInicial: "Olá! Qual produto ou oferta você quer transformar em um vídeo publicitário incrível?"
   },
   {
-    id: "agente-rh-suporte",
-    nome: "Bruno — Onboarding & Suporte Interno",
-    papel: "Atendimento a Colaboradores & Treinamentos",
-    categoria: "colaboradores",
-    avatar: "💼",
-    cor: "from-emerald-500 to-teal-600",
-    descricao: "Auxilia sua equipe tirando dúvidas sobre manuais de trabalho, políticas internas e primeiros passos na empresa.",
-    capacidades: ["Manual do Colaborador", "Resolução de Dúvidas Internas", "Suporte a Procedimentos", "Boas-vindas ao Time"],
-    promptInicial: "Olá! Sou o Bruno do Suporte Interno. Em que posso ajudar você ou sua equipe hoje?"
-  },
-  {
-    id: "agente-analista-bi",
-    nome: "Atlas — Analista de Métricas & BI",
+    id: "agente-bi",
+    nome: "Atlas Analytics — BI & Raciocínio Profundo",
     papel: "Relatórios de Vendas & Desempenho",
-    categoria: "colaboradores",
     avatar: "📊",
-    cor: "from-blue-600 to-cyan-600",
-    descricao: "Sintetiza estatísticas de atendimento, tempo de resposta e volume de vendas em resumos executivos.",
-    capacidades: ["Métricas de Atendimento", "Análise de Churn", "Relatórios de Desempenho", "Insights de Crescimento"],
-    promptInicial: "Olá! Sou o Atlas, analista de dados. Digite 'gerar relatório' para ver as métricas da sua empresa."
+    cor: "linear-gradient(135deg, #10B981, #06B6D4)",
+    descricao: "Analisa conversas, taxas de conversão de leads e relatórios executivos em tempo real.",
+    capacidades: ["Gemini Thinking Pro", "Métricas de Atendimento", "Análise de Vendas", "Insights de Crescimento"],
+    promptInicial: "Olá! Sou o Atlas Analytics. Solicite um relatório de vendas ou métricas de atendimento a qualquer momento."
   }
 ];
 
 export function AgentsPage() {
   const [agenteSelecionado, setAgenteSelecionado] = useState<Agent>(AGENTES[0]!);
+  const [modeloAtivo, setModeloAtivo] = useState<string>("gemini-2.0-flash");
   const [mensagens, setMensagens] = useState<Array<{ remetente: "user" | "agent"; texto: string; imagemUrl?: string; videoUrl?: string }>>([
     { remetente: "agent", texto: AGENTES[0]!.promptInicial }
   ]);
@@ -100,29 +84,27 @@ export function AgentsPage() {
     setMensagens([{ remetente: "agent", texto: agente.promptInicial }]);
   };
 
-  const enviarMensagem = () => {
-    if (!inputTexto.trim()) return;
+  const enviarMensagemPrompt = (promptText?: string) => {
+    const textoFinal = (promptText || inputTexto).trim();
+    if (!textoFinal) return;
 
-    const textoUsuario = inputTexto;
     setInputTexto("");
-    setMensagens((prev) => [...prev, { remetente: "user", texto: textoUsuario }]);
+    setMensagens((prev) => [...prev, { remetente: "user", texto: textoFinal }]);
     setCarregando(true);
 
     setTimeout(() => {
-      let respostaTexto = `Compreendido! Como agente ${agenteSelecionado.nome}, processei sua solicitação: "${textoUsuario}".`;
+      let respostaTexto = `Compreendido! Como agente ${agenteSelecionado.nome}, processei sua solicitação no modelo ${modeloAtivo}: "${textoFinal}".`;
       let img: string | undefined = undefined;
       let vid: string | undefined = undefined;
 
-      if (agenteSelecionado.id === "agente-imagens") {
-        respostaTexto = `🎨 Imagem gerada com sucesso para o prompt: "${textoUsuario}"!`;
+      if (agenteSelecionado.id === "agente-imagens" || textoFinal.toLowerCase().includes("imagem") || textoFinal.toLowerCase().includes("banner")) {
+        respostaTexto = `🎨 Imagem HD gerada com sucesso via Google Imagen 3 para o prompt: "${textoFinal}"!`;
         img = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80";
-      } else if (agenteSelecionado.id === "agente-videos") {
-        respostaTexto = `🎬 Roteiro e vídeo gerados com sucesso!\n\n📹 **Cena 1**: Apresentação da marca.\n📹 **Cena 2**: Demonstração do AtendeChat.\n📹 **Cena 3**: Chamada para Ação!`;
+      } else if (agenteSelecionado.id === "agente-videos" || textoFinal.toLowerCase().includes("vídeo") || textoFinal.toLowerCase().includes("roteiro")) {
+        respostaTexto = `🎬 Roteiro e vídeo animado gerados com sucesso via Google Veo AI!\n\n📹 **Cena 1**: Apresentação visual da oferta.\n📹 **Cena 2**: Demonstração de recursos do Comenta SaaS.\n📹 **Cena 3**: Call to Action com direcionamento para WhatsApp.`;
         vid = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4";
-      } else if (agenteSelecionado.id === "agente-vendas") {
-        respostaTexto = `Entendido! Aqui está o script de atendimento personalizado:\n\n"Olá! Seja bem-vindo. Nosso plano Pro inclui WhatsApp + IA com liberação imediata por R$ 349/mês. Posso enviar seu link de ativação agora?"`;
-      } else if (agenteSelecionado.id === "agente-analista-bi") {
-        respostaTexto = `📊 **Relatório Executivo de Vendas & Atendimento**:\n\n• Conversas Ativas: 42\n• Tempo Médio de Resposta: 45 segundos\n• Avaliação de Satisfação (NPS): 4.9/5.0 ⭐\n• Taxa de Conversão: 34%`;
+      } else if (agenteSelecionado.id === "agente-bi") {
+        respostaTexto = `📊 **Relatório Executivo de Vendas & Atendimento**:\n\n• Conversas Ativas: 42\n• Tempo Médio de Resposta: 14s\n• Avaliação de Satisfação (NPS): 9.8 / 10 ⭐\n• Vendas Acumuladas: R$ 14.890,00`;
       }
 
       setMensagens((prev) => [
@@ -134,128 +116,217 @@ export function AgentsPage() {
   };
 
   return (
-    <div className="p-6 space-y-6 max-w-7xl mx-auto">
-      {/* Header da Página */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
-        <div>
-          <span className="inline-flex items-center gap-2 rounded-full bg-fuchsia-50 px-3 py-1 text-xs font-bold text-fuchsia-700">
-            <Sparkles className="w-4 h-4 text-fuchsia-500" />
-            Central de Agentes de IA Autônomos
-          </span>
-          <h1 className="text-2xl font-extrabold text-slate-900 mt-2">
-            Chat de Agentes & Gerador Multimídia
-          </h1>
-          <p className="text-xs text-slate-500 mt-1">
-            Agentes especializados para atender clientes, apoiar colaboradores e gerar imagens/vídeos automaticamente.
-          </p>
+    <div style={{ paddingBottom: 40, maxWidth: 1280, margin: "0 auto" }}>
+      {/* Google Gemini Spark Interface Header */}
+      <div
+        className="card"
+        style={{
+          padding: 24,
+          borderRadius: 24,
+          marginBottom: 20,
+          background: "var(--panel)",
+          border: "1px solid var(--border)",
+          boxShadow: "0 10px 30px rgba(0,0,0,0.1)"
+        }}
+      >
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <div
+              style={{
+                width: 48,
+                height: 48,
+                borderRadius: 16,
+                background: "linear-gradient(135deg, #4285F4, #9B51E0, #E91E63)",
+                display: "grid",
+                placeItems: "center",
+                color: "#fff",
+                fontSize: 24,
+                boxShadow: "0 4px 20px rgba(66, 133, 244, 0.4)",
+              }}
+            >
+              ✨
+            </div>
+            <div>
+              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                <h1 style={{ margin: 0, fontSize: 22, fontWeight: 800, letterSpacing: "-0.5px" }}>
+                  Google Gemini Spark AI
+                </h1>
+                <span className="tag" style={{ background: "rgba(66, 133, 244, 0.15)", color: "#3b82f6", border: "1px solid #3b82f6", fontSize: 10 }}>
+                  gemini.google.com/spark
+                </span>
+              </div>
+              <p className="muted" style={{ margin: "2px 0 0 0", fontSize: 13 }}>
+                Ambiente de Inteligência Artificial Multimodal com geração de texto, imagens Imagen 3 e vídeos Veo.
+              </p>
+            </div>
+          </div>
+
+          {/* Seletor de Modelo de IA */}
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <span style={{ fontSize: 12, fontWeight: 700, color: "var(--muted)" }}>Modelo:</span>
+            <select
+              value={modeloAtivo}
+              onChange={(e) => setModeloAtivo(e.target.value)}
+              style={{
+                padding: "8px 14px",
+                borderRadius: 12,
+                fontSize: 13,
+                fontWeight: 700,
+                background: "var(--panel2)",
+                border: "1px solid var(--border)",
+                color: "var(--text)"
+              }}
+            >
+              <option value="gemini-2.0-flash">✦ Gemini 2.0 Flash (Mais Rápido)</option>
+              <option value="gemini-thinking">🧠 Gemini Thinking Pro (Raciocínio)</option>
+              <option value="imagen-3">🎨 Google Imagen 3 (Imagens HD)</option>
+              <option value="veo-video">🎬 Google Veo AI (Vídeos MP4)</option>
+            </select>
+          </div>
         </div>
       </div>
 
-      {/* Grid Principal: Lista de Agentes + Chat Ativo */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Painel de Seleção de Agentes */}
-        <div className="space-y-3">
-          <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 px-1">
-            Selecione o Agente de IA:
-          </h2>
+      {/* Grid Principal: Seletor de Agentes + Workspace do Gemini Spark */}
+      <div style={{ display: "grid", gridTemplateColumns: "320px 1fr", gap: 20 }}>
+        {/* Painel Lateral de Agentes */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          <span style={{ fontSize: 12, fontWeight: 700, textTransform: "uppercase", color: "var(--muted)", paddingLeft: 4 }}>
+            Agentes Especializados Gemini Spark
+          </span>
 
-          <div className="space-y-2.5">
-            {AGENTES.map((a) => (
-              <div
-                key={a.id}
-                onClick={() => trocarAgente(a)}
-                className={`p-4 rounded-2xl border cursor-pointer transition-all ${
-                  agenteSelecionado.id === a.id
-                    ? "bg-slate-900 border-slate-900 text-white shadow-lg shadow-slate-900/20"
-                    : "bg-white border-slate-200 text-slate-900 hover:border-fuchsia-300"
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <div
-                    className={`w-11 h-11 rounded-xl bg-gradient-to-br ${a.cor} text-white flex items-center justify-center text-xl font-bold flex-none`}
-                  >
-                    {a.avatar}
+          {AGENTES.map((a) => (
+            <div
+              key={a.id}
+              onClick={() => trocarAgente(a)}
+              style={{
+                padding: 14,
+                borderRadius: 16,
+                border: agenteSelecionado.id === a.id ? "2px solid var(--accent)" : "1px solid var(--border)",
+                background: agenteSelecionado.id === a.id ? "rgba(109, 40, 217, 0.12)" : "var(--panel)",
+                cursor: "pointer",
+                transition: "all 0.15s ease"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                <div
+                  style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: 12,
+                    background: a.cor,
+                    color: "#fff",
+                    display: "grid",
+                    placeItems: "center",
+                    fontSize: 20,
+                    fontWeight: 800,
+                    flexShrink: 0
+                  }}
+                >
+                  {a.avatar}
+                </div>
+                <div style={{ minWidth: 0, flex: 1 }}>
+                  <div style={{ fontWeight: 700, fontSize: 13, color: "var(--text)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                    {a.nome}
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <h3 className="text-sm font-bold truncate">{a.nome}</h3>
-                    <p className={`text-[11px] truncate ${agenteSelecionado.id === a.id ? "text-slate-300" : "text-slate-500"}`}>
-                      {a.papel}
-                    </p>
+                  <div className="muted" style={{ fontSize: 11, marginTop: 2, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                    {a.papel}
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
-        {/* Janela de Chat do Agente Ativo */}
-        <div className="lg:col-span-2 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between h-[600px] overflow-hidden">
+        {/* Workspace Estilo Google Gemini Spark */}
+        <div
+          className="card"
+          style={{
+            padding: 0,
+            borderRadius: 24,
+            display: "flex",
+            flexDirection: "column",
+            minHeight: 620,
+            overflow: "hidden",
+            background: "var(--panel)",
+            border: "1px solid var(--border)"
+          }}
+        >
           {/* Header do Agente Ativo */}
-          <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
-            <div className="flex items-center gap-3">
-              <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${agenteSelecionado.cor} text-white flex items-center justify-center text-xl shadow-md`}>
+          <div style={{ padding: "16px 22px", borderBottom: "1px solid var(--border)", background: "var(--panel2)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <div style={{ width: 36, height: 36, borderRadius: 10, background: agenteSelecionado.cor, color: "#fff", display: "grid", placeItems: "center", fontSize: 18 }}>
                 {agenteSelecionado.avatar}
               </div>
               <div>
-                <h3 className="text-sm font-bold text-slate-900">{agenteSelecionado.nome}</h3>
-                <span className="text-[10px] text-emerald-600 font-bold flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" /> Agente Ativo 24/7
-                </span>
+                <div style={{ fontWeight: 800, fontSize: 15 }}>{agenteSelecionado.nome}</div>
+                <div style={{ fontSize: 11, color: "#10b981", fontWeight: 700, display: "flex", alignItems: "center", gap: 4 }}>
+                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#10b981" }} /> Agente Online & Pronto
+                </div>
               </div>
             </div>
 
-            <div className="flex items-center gap-1">
+            <div style={{ display: "flex", gap: 6 }}>
               {agenteSelecionado.capacidades.map((cap) => (
-                <span key={cap} className="hidden sm:inline-block px-2.5 py-1 rounded-full bg-slate-100 text-[10px] font-semibold text-slate-600">
+                <span key={cap} className="tag" style={{ fontSize: 10, background: "var(--panel)" }}>
                   {cap}
                 </span>
               ))}
             </div>
           </div>
 
-          {/* Histórico de Mensagens */}
-          <div className="p-6 overflow-y-auto space-y-4 flex-1">
+          {/* Área de Mensagens / Chat Spark */}
+          <div style={{ flex: 1, padding: 22, overflowY: "auto", display: "flex", flexDirection: "column", gap: 16 }}>
             {mensagens.map((msg, idx) => (
               <div
                 key={idx}
-                className={`flex gap-3 ${msg.remetente === "user" ? "justify-end" : "justify-start"}`}
+                style={{
+                  display: "flex",
+                  gap: 12,
+                  justifyContent: msg.remetente === "user" ? "flex-end" : "flex-start"
+                }}
               >
                 {msg.remetente === "agent" && (
-                  <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${agenteSelecionado.cor} text-white flex items-center justify-center text-sm flex-none`}>
+                  <div style={{ width: 32, height: 32, borderRadius: 8, background: agenteSelecionado.cor, color: "#fff", display: "grid", placeItems: "center", fontSize: 14, flexShrink: 0 }}>
                     {agenteSelecionado.avatar}
                   </div>
                 )}
 
                 <div
-                  className={`max-w-md p-4 rounded-2xl text-xs leading-relaxed space-y-3 ${
-                    msg.remetente === "user"
-                      ? "bg-fuchsia-600 text-white font-medium rounded-tr-none"
-                      : "bg-slate-100 text-slate-800 rounded-tl-none font-medium"
-                  }`}
+                  style={{
+                    maxWidth: "75%",
+                    padding: "12px 18px",
+                    borderRadius: 18,
+                    fontSize: 14,
+                    lineHeight: 1.5,
+                    background: msg.remetente === "user" ? "var(--accent)" : "var(--panel2)",
+                    color: msg.remetente === "user" ? "#fff" : "var(--text)",
+                    borderBottomLeftRadius: msg.remetente === "agent" ? 4 : 18,
+                    borderBottomRightRadius: msg.remetente === "user" ? 4 : 18,
+                  }}
                 >
-                  <p className="whitespace-pre-wrap">{msg.texto}</p>
+                  <div style={{ whiteSpace: "pre-wrap" }}>{msg.texto}</div>
 
-                  {/* Renderizador de Imagem se for gerado por Agente de Imagem */}
+                  {/* Renderizar Imagem Gerada */}
                   {msg.imagemUrl && (
-                    <div className="mt-2 rounded-xl overflow-hidden border border-slate-200">
-                      <img src={msg.imagemUrl} alt="Imagem IA Gerada" className="w-full h-48 object-cover" />
-                      <div className="p-2 bg-slate-900 text-white flex items-center justify-between text-[10px]">
-                        <span>Imagem HD Gerada via IA</span>
-                        <a href={msg.imagemUrl} target="_blank" download className="text-fuchsia-400 font-bold flex items-center gap-1 hover:underline">
-                          <Download className="w-3 h-3" /> Baixar Imagem
+                    <div style={{ marginTop: 12, borderRadius: 14, overflow: "hidden", border: "1px solid var(--border)" }}>
+                      <img src={msg.imagemUrl} alt="Imagem IA Gerada" style={{ width: "100%", height: 220, objectFit: "cover" }} />
+                      <div style={{ padding: "8px 12px", background: "rgba(0,0,0,0.8)", color: "#fff", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 11 }}>
+                        <span>🎨 Imagem HD Gerada via Google Imagen 3</span>
+                        <a href={msg.imagemUrl} target="_blank" rel="noopener noreferrer" download style={{ color: "#a855f7", fontWeight: 700, textDecoration: "none" }}>
+                          ⬇️ Baixar Imagem
                         </a>
                       </div>
                     </div>
                   )}
 
-                  {/* Renderizador de Vídeo se for gerado por Agente de Vídeo */}
+                  {/* Renderizar Vídeo Gerado */}
                   {msg.videoUrl && (
-                    <div className="mt-2 rounded-xl overflow-hidden border border-slate-200">
-                      <video src={msg.videoUrl} controls className="w-full h-48 bg-black" />
-                      <div className="p-2 bg-slate-900 text-white flex items-center justify-between text-[10px]">
-                        <span>Vídeo Animação Pronta</span>
-                        <a href={msg.videoUrl} target="_blank" download className="text-fuchsia-400 font-bold flex items-center gap-1 hover:underline">
-                          <Download className="w-3 h-3" /> Baixar Vídeo MP4
+                    <div style={{ marginTop: 12, borderRadius: 14, overflow: "hidden", border: "1px solid var(--border)" }}>
+                      <video src={msg.videoUrl} controls style={{ width: "100%", height: 220, background: "#000" }} />
+                      <div style={{ padding: "8px 12px", background: "rgba(0,0,0,0.8)", color: "#fff", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 11 }}>
+                        <span>🎬 Vídeo Promocional Gerado via Google Veo</span>
+                        <a href={msg.videoUrl} target="_blank" rel="noopener noreferrer" download style={{ color: "#a855f7", fontWeight: 700, textDecoration: "none" }}>
+                          ⬇️ Baixar MP4
                         </a>
                       </div>
                     </div>
@@ -265,39 +336,78 @@ export function AgentsPage() {
             ))}
 
             {carregando && (
-              <div className="flex gap-3 justify-start items-center">
-                <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${agenteSelecionado.cor} text-white flex items-center justify-center text-sm animate-spin`}>
-                  <RefreshCw className="w-4 h-4" />
+              <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+                <div style={{ width: 28, height: 28, borderRadius: 8, background: agenteSelecionado.cor, color: "#fff", display: "grid", placeItems: "center", fontSize: 12 }}>
+                  ✨
                 </div>
-                <span className="text-xs text-slate-400 animate-pulse font-medium">
-                  {agenteSelecionado.nome} está processando sua solicitação...
+                <span className="muted" style={{ fontSize: 13 }}>
+                  Sofia Gemini Spark está processando seu comando no modelo {modeloAtivo}...
                 </span>
               </div>
             )}
           </div>
 
-          {/* Campo de Entrada de Mensagem */}
-          <div className="p-4 border-t border-slate-100 bg-slate-50/50">
+          {/* Prompt Cards Sugeridos estilo Gemini Spark */}
+          <div style={{ padding: "0 22px 12px 22px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 8 }}>
+            {[
+              { label: "🎨 Gerar Banner de Vendas", prompt: "Crie um banner promocional para o WhatsApp sobre nosso curso de IA." },
+              { label: "🎬 Criar Vídeo para Reels", prompt: "Gere um roteiro e vídeo animado de 15 segundos para mídias sociais." },
+              { label: "📝 Redigir Script Comercial", prompt: "Escreva um script de atendimento matador para converter leads no WhatsApp." },
+              { label: "📊 Ver Métricas do Sistema", prompt: "Gere um relatório executivo de métricas de vendas e atendimento." }
+            ].map((card) => (
+              <button
+                key={card.label}
+                type="button"
+                onClick={() => enviarMensagemPrompt(card.prompt)}
+                className="ghost"
+                style={{ fontSize: 11, padding: "8px 12px", borderRadius: 10, textAlign: "left" }}
+              >
+                {card.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Multimodal Prompt Input Composer Bar (Gemini Spark Style) */}
+          <div style={{ padding: 16, borderTop: "1px solid var(--border)", background: "var(--panel2)" }}>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                enviarMensagem();
+                enviarMensagemPrompt();
               }}
-              className="flex items-center gap-2"
+              style={{ display: "flex", alignItems: "center", gap: 10 }}
             >
+              <button type="button" className="ghost" title="Anexar Imagem ou Arquivo" style={{ padding: "10px 12px" }}>
+                <Paperclip className="w-4 h-4" />
+              </button>
+
               <input
                 type="text"
-                placeholder={`Interagir com ${agenteSelecionado.nome}...`}
+                placeholder={`Pergunte ao Gemini Spark ou solicite imagens/vídeos...`}
                 value={inputTexto}
                 onChange={(e) => setInputTexto(e.target.value)}
-                className="flex-1 px-4 py-3 border border-slate-200 rounded-2xl text-xs focus:outline-none focus:ring-2 focus:ring-fuchsia-500 bg-white"
+                style={{ flex: 1, padding: "12px 16px", borderRadius: 14, fontSize: 14 }}
               />
+
+              <button type="button" className="ghost" title="Ativar Microfone / Voz" style={{ padding: "10px 12px" }}>
+                <Mic className="w-4 h-4" />
+              </button>
+
               <button
                 type="submit"
                 disabled={!inputTexto.trim()}
-                className="px-5 py-3 rounded-2xl bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white font-bold text-xs shadow-md hover:opacity-90 transition-opacity flex items-center gap-2 disabled:opacity-40"
+                style={{
+                  padding: "12px 20px",
+                  borderRadius: 14,
+                  background: "linear-gradient(135deg, #4285F4, #9B51E0, #E91E63)",
+                  color: "#fff",
+                  fontWeight: 800,
+                  fontSize: 13,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 6
+                }}
               >
-                <Send className="w-4 h-4" /> Enviar
+                <span>Enviar</span> ✨
               </button>
             </form>
           </div>

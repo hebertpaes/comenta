@@ -99,6 +99,12 @@ export const routes: RouteObject[] = [
         }),
       },
       {
+        path: "spark",
+        lazy: async () => ({
+          Component: (await import("../features/agents/AgentsPage")).AgentsPage,
+        }),
+      },
+      {
         path: "cursos",
         lazy: async () => ({
           Component: (await import("../features/academy/AcademyPage")).AcademyPage,
