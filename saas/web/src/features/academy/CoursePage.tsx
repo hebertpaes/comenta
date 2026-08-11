@@ -166,7 +166,7 @@ export function CoursePage() {
                     cursor: "pointer",
                   }}
                 >
-                  📱 Modo Reels / Shorts (9:16)
+                  📱 Modo Vertical (9:16)
                 </button>
                 <button
                   type="button"
@@ -182,7 +182,7 @@ export function CoursePage() {
                     cursor: "pointer",
                   }}
                 >
-                  📺 Modo Tradicional (16:9)
+                  📺 Modo Cinema (16:9)
                 </button>
               </div>
             </div>

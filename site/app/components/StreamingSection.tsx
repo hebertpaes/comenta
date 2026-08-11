@@ -23,7 +23,7 @@ const COURSES: CourseItem[] = [
     rating: "99% Relevante",
     duration: "45 min",
     lessons: 3,
-    badge: "🔥 TOP 1 BRASIL",
+    badge: "🔥 CURSO DESTAQUE",
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
     youtubeId: "dQw4w9WgXcQ",
     synopsis: "Aprenda a criar e treinar robôs autônomos com Google Gemini para responder clientes 24/7 e vender no WhatsApp.",
@@ -35,7 +35,7 @@ const COURSES: CourseItem[] = [
     rating: "98% Relevante",
     duration: "30 min",
     lessons: 2,
-    badge: "⚡ NOVO EPISÓDIO",
+    badge: "⚡ NOVO CONTEÚDO",
     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
     youtubeId: "dQw4w9WgXcQ",
     synopsis: "Conecte webhooks da Hotmart ao Comenta API para matricular alunos e disparar mensagens automáticas de boas-vindas.",
@@ -47,7 +47,7 @@ const COURSES: CourseItem[] = [
     rating: "96% Relevante",
     duration: "35 min",
     lessons: 2,
-    badge: "✦ ORIGINAL COMENTA",
+    badge: "✦ EXCLUSIVO COMENTA",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
     youtubeId: "dQw4w9WgXcQ",
     synopsis: "Domine a caixa de entrada unificada do WhatsApp e Instagram, organize seu funil no Kanban e meça o NPS da equipe.",
@@ -63,22 +63,22 @@ export default function StreamingSection() {
   const filtrados = categoria === "Todos" ? COURSES : COURSES.filter((c) => c.category === categoria);
 
   return (
-    <section className="bg-[#141414] text-white py-16 px-4 md:px-8 border-t border-slate-800">
+    <section className="bg-slate-950 text-white py-16 px-4 md:px-8 border-t border-slate-800">
       <div className="max-w-7xl mx-auto">
-        {/* Header Estilo Netflix Streaming */}
+        {/* Header Comenta Play */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
           <div>
             <div className="flex items-center gap-2">
-              <span className="bg-red-600 text-white text-xs font-black px-2 py-0.5 rounded tracking-widest uppercase">
-                COMENTA STREAMING
+              <span className="bg-purple-600 text-white text-xs font-black px-2.5 py-0.5 rounded tracking-widest uppercase">
+                COMENTA PLAY
               </span>
-              <span className="text-slate-400 text-xs font-semibold">✦ ACADEMIA HD & 4K</span>
+              <span className="text-slate-400 text-xs font-semibold">✦ ACADEMIA DE TREINAMENTO HD</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-black mt-2 tracking-tight">
-              Aprenda no Estilo <span className="text-red-600">Netflix & YouTube</span>
+              Academia Comenta — <span className="text-purple-500">Formações & Aulas em Vídeo</span>
             </h2>
             <p className="text-slate-400 text-sm md:text-base mt-1">
-              Treine sua equipe com séries e videoaulas de alta performance. Assista em qualquer dispositivo.
+              Treine sua equipe com módulos e videoaulas de alta performance. Assista em qualquer dispositivo.
             </p>
           </div>
 
@@ -91,7 +91,7 @@ export default function StreamingSection() {
                 onClick={() => setCategoria(cat)}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
                   categoria === cat
-                    ? "bg-red-600 text-white shadow-lg shadow-red-600/40"
+                    ? "bg-purple-600 text-white shadow-lg shadow-purple-600/40"
                     : "bg-slate-800 text-slate-300 hover:bg-slate-700"
                 }`}
               >
@@ -101,11 +101,11 @@ export default function StreamingSection() {
           </div>
         </div>
 
-        {/* Hero Billboard Banner Netflix */}
-        <div className="relative rounded-3xl overflow-hidden mb-12 bg-gradient-to-r from-black via-slate-900 to-red-950 border border-slate-800 shadow-2xl min-h-[380px] flex items-center p-8 md:p-12">
+        {/* Hero Billboard Banner Comenta Play */}
+        <div className="relative rounded-3xl overflow-hidden mb-12 bg-gradient-to-r from-slate-950 via-purple-950 to-indigo-950 border border-slate-800 shadow-2xl min-h-[380px] flex items-center p-8 md:p-12">
           <div className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay" style={{ backgroundImage: `url(${COURSES[0].image})` }} />
           <div className="relative z-10 max-w-2xl">
-            <span className="bg-red-600/90 backdrop-blur text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">
+            <span className="bg-purple-600/90 backdrop-blur text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">
               🔥 DESTAQUE DA SEMANA
             </span>
             <h3 className="text-3xl md:text-5xl font-black leading-tight text-white mb-4">
@@ -118,9 +118,9 @@ export default function StreamingSection() {
               <button
                 type="button"
                 onClick={() => setSelectedVideo(COURSES[0])}
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3.5 rounded-xl font-black text-sm flex items-center gap-2 transition shadow-xl shadow-red-600/30"
+                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3.5 rounded-xl font-black text-sm flex items-center gap-2 transition shadow-xl shadow-purple-600/30"
               >
-                ▶ ASSISTIR AGORA
+                ▶ ASSISTIR AULA
               </button>
               <a
                 href="http://localhost:8080/cursos"
@@ -132,13 +132,13 @@ export default function StreamingSection() {
           </div>
         </div>
 
-        {/* Fileira de Cursos (Netflix Horizontal Grid) */}
+        {/* Grid de Cursos */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtrados.map((course) => (
             <div
               key={course.id}
               onClick={() => setSelectedVideo(course)}
-              className="group relative bg-slate-900/90 rounded-2xl overflow-hidden border border-slate-800 hover:border-red-600/50 transition-all duration-300 hover:scale-[1.03] cursor-pointer shadow-xl"
+              className="group relative bg-slate-900/90 rounded-2xl overflow-hidden border border-slate-800 hover:border-purple-600/50 transition-all duration-300 hover:scale-[1.03] cursor-pointer shadow-xl"
             >
               {/* Miniatura do Curso */}
               <div className="relative aspect-video overflow-hidden">
@@ -148,7 +148,7 @@ export default function StreamingSection() {
                   className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
-                <span className="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase shadow">
+                <span className="absolute top-3 left-3 bg-purple-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase shadow">
                   {course.badge}
                 </span>
                 <span className="absolute top-3 right-3 bg-black/70 backdrop-blur text-white text-[10px] font-bold px-2 py-0.5 rounded border border-white/20">
@@ -162,7 +162,7 @@ export default function StreamingSection() {
 
               {/* Informações do Curso */}
               <div className="p-5">
-                <h4 className="font-extrabold text-lg text-white group-hover:text-red-500 transition line-clamp-1">
+                <h4 className="font-extrabold text-lg text-white group-hover:text-purple-400 transition line-clamp-1">
                   {course.title}
                 </h4>
                 <p className="text-slate-400 text-xs mt-2 line-clamp-2 leading-relaxed">
@@ -172,8 +172,8 @@ export default function StreamingSection() {
                   <span className="text-xs font-semibold text-slate-500 bg-slate-800 px-3 py-1 rounded-full">
                     {course.category}
                   </span>
-                  <span className="text-xs font-bold text-red-500 group-hover:translate-x-1 transition flex items-center gap-1">
-                    Assistir Episódio &rarr;
+                  <span className="text-xs font-bold text-purple-400 group-hover:translate-x-1 transition flex items-center gap-1">
+                    Assistir Aula &rarr;
                   </span>
                 </div>
               </div>
@@ -182,14 +182,14 @@ export default function StreamingSection() {
         </div>
       </div>
 
-      {/* Modal Video Player Estilo Netflix / YouTube */}
+      {/* Modal Video Player Comenta Play */}
       {selectedVideo && (
         <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
           <div className="relative w-full max-w-4xl bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 shadow-2xl">
             <div className="flex items-center justify-between p-4 bg-slate-950 border-b border-slate-800">
               <div className="flex items-center gap-2">
-                <span className="bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded">
-                  PLAYING NOW
+                <span className="bg-purple-600 text-white text-[10px] font-black px-2 py-0.5 rounded">
+                  REPRODUZINDO AULA
                 </span>
                 <span className="font-bold text-white text-sm truncate">{selectedVideo.title}</span>
               </div>
@@ -225,7 +225,7 @@ export default function StreamingSection() {
               <div className="mt-4 flex gap-3">
                 <a
                   href="http://localhost:8080/cursos"
-                  className="bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-xl font-bold text-xs transition"
+                  className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2.5 rounded-xl font-bold text-xs transition"
                 >
                   🎓 Abrir no Painel de Alunos
                 </a>
