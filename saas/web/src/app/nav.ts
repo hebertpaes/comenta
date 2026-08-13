@@ -20,6 +20,7 @@ export const NAV: NavItem[] = [
   { to: "/dashboard", label: "📊 Dashboard", aliases: ["início", "home", "métricas"] },
   { to: "/conversas", label: "💬 Conversas", aliases: ["atendimento", "inbox"] },
   { to: "/kanban", label: "📋 Kanban", aliases: ["funil", "quadro"] },
+  { to: "/erp", label: "💼 CRM & ERP", aliases: ["financeiro", "vendas", "estoque", "menu"] },
   { to: "/equipe", label: "💬 Equipe", aliases: ["chat interno"] },
   { to: "/contatos", label: "👥 Contatos", aliases: ["clientes", "agenda"] },
   { to: "/usuarios", label: "🧑‍💼 Usuários", adminOnly: true, aliases: ["atendentes", "equipe"] },
