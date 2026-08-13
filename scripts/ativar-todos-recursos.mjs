@@ -23,7 +23,7 @@ async function main() {
 
     // 2) Ampliação Master da Base de Conhecimento de IA no PostgreSQL
     const masterKnowledge = `
-# BASE DE CONHECIMENTO OFICIAL COMENTA ATENDECHAT (GOOGE GEMINI IA)
+# BASE DE CONHECIMENTO OFICIAL COMENTA AI (GOOGE GEMINI IA)
 
 ## 1. Visão Geral do Sistema
 O Comenta é a plataforma SaaS de atendimento multicanal líder no Brasil. Reúne WhatsApp, Instagram Direct, Facebook Messenger, E-mail e WebChat em uma única caixa de entrada inteligente.
@@ -74,7 +74,7 @@ Se o cliente solicitar falar com um atendente humano, a IA deve responder cordia
         name: "👋 Boas-vindas Automáticas ao Novo Cliente",
         type: "welcome",
         config: {
-          message: "Olá! Seja muito bem-vindo ao atendimento do Comenta AtendeChat. Como posso te ajudar hoje?"
+          message: "Olá! Seja muito bem-vindo ao atendimento do Comenta AI. Como posso te ajudar hoje?"
         }
       },
       {
@@ -150,7 +150,7 @@ Se o cliente solicitar falar com um atendente humano, a IA deve responder cordia
     }
 
     console.log("=========================================================");
-    console.log("🎉 TODOS OS RECURSOS DO ATENDECHAT FORAM ATIVADOS E EXPANDIDOS!");
+    console.log("🎉 TODOS OS RECURSOS DO COMENTA FORAM ATIVADOS E EXPANDIDOS!");
     console.log("=========================================================");
   } catch (err) {
     console.error("❌ Erro:", err);

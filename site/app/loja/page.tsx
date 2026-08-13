@@ -46,7 +46,7 @@ const PRODUTOS: Produto[] = [
   // --- PLANOS SAAS ---
   {
     id: "plano-starter",
-    nome: "Plano Starter — AtendeChat",
+    nome: "Plano Starter — Comenta",
     categoria: "planos",
     preco: "R$ 149",
     precoCentavos: 14900,
@@ -63,7 +63,7 @@ const PRODUTOS: Produto[] = [
   },
   {
     id: "plano-pro",
-    nome: "Plano Pro — AtendeChat + IA",
+    nome: "Plano Pro — Comenta AI",
     categoria: "planos",
     preco: "R$ 349",
     precoCentavos: 34900,
@@ -202,7 +202,7 @@ const PRODUTOS: Produto[] = [
   // --- SERVIÇOS PROFISSIONAIS ---
   {
     id: "servico-implantacao",
-    nome: "Implantação Completa Turnkey AtendeChat",
+    nome: "Implantação Completa Turnkey Comenta",
     categoria: "servicos",
     preco: "R$ 1.200",
     precoCentavos: 120000,
@@ -289,14 +289,14 @@ export default function LojaPage() {
   );
 
   const aplicarCupom = () => {
-    if (cupom.trim().toUpperCase() === "COMENDA10" || cupom.trim().toUpperCase() === "ATENDECHAT") {
+    if (cupom.trim().toUpperCase() === "COMENDA10" || cupom.trim().toUpperCase() === "COMENTA") {
       setDescontoPerc(10);
       setErroPagamento("");
     } else if (cupom.trim().toUpperCase() === "PROMO20") {
       setDescontoPerc(20);
       setErroPagamento("");
     } else {
-      setErroPagamento("Cupom inválido. Tente 'ATENDECHAT' para 10% OFF.");
+      setErroPagamento("Cupom inválido. Tente 'COMENTA' para 10% OFF.");
     }
   };
 
@@ -320,7 +320,7 @@ export default function LojaPage() {
     currency: "BRL"
   });
 
-  const payloadPix = `00020126580014BR.GOV.BCB.PIX0136comenta-pagamentos-pix-ia-atendechat520400005303986540${(totalCentavos / 100).toFixed(2)}5802BR5920Comenta Tecnologia6007CUIABA62070503***6304A8F9`;
+  const payloadPix = `00020126580014BR.GOV.BCB.PIX0136comenta-pagamentos-pix-ia-comenta520400005303986540${(totalCentavos / 100).toFixed(2)}5802BR5920Comenta Tecnologia6007CUIABA62070503***6304A8F9`;
 
   const copiarPix = () => {
     navigator.clipboard.writeText(payloadPix);
@@ -385,7 +385,7 @@ export default function LojaPage() {
           <div className="relative mx-auto max-w-6xl px-4 text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold text-fuchsia-200">
               <ShoppingBag className="w-4 h-4 text-fuchsia-400" />
-              Loja Oficial Comenta & AtendeChat
+              Loja Oficial Comenta AI
             </span>
             <h1 className="mt-5 text-4xl font-extrabold sm:text-5xl lg:text-6xl tracking-tight">
               Tudo para impulsionar suas <span className="text-gradient">Vendas & Atendimento</span>
@@ -565,7 +565,7 @@ export default function LojaPage() {
                     <div className="flex gap-2">
                       <input
                         type="text"
-                        placeholder="Cupom (ex: ATENDECHAT)"
+                        placeholder="Cupom (ex: COMENTA)"
                         value={cupom}
                         onChange={(e) => setCupom(e.target.value)}
                         className="flex-1 px-3 py-2 border border-slate-200 rounded-xl text-xs uppercase focus:outline-none focus:ring-2 focus:ring-fuchsia-500"

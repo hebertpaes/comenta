@@ -455,7 +455,7 @@ export default function FeatureCards() {
                   target="_blank"
                   className="px-6 py-2.5 rounded-full bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white font-semibold text-xs shadow-md shadow-fuchsia-500/25 hover:opacity-90 transition-opacity flex items-center gap-2 ml-auto"
                 >
-                  Testar no Painel AtendeChat <ArrowRight className="w-4 h-4" />
+                  Testar no Painel Comenta <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             </div>

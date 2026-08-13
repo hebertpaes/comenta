@@ -59,7 +59,7 @@ const AGENTES: Agent[] = [
     sugestoes: [
       "Como qualificar um cliente interessado no Plano Pro?",
       "Escreva um script de vendas de WhatsApp para clínica médica",
-      "Qual o retorno sobre investimento (ROI) do AtendeChat?"
+      "Qual o retorno sobre investimento (ROI) do Comenta?"
     ]
   },
   {
@@ -91,7 +91,7 @@ const AGENTES: Agent[] = [
     capacidades: ["Roteiros de 15s e 30s", "Animações MP4", "Edição WASM", "Legendas & Call to Action"],
     promptInicial: "Olá! Qual produto ou serviço vamos transformar em vídeo animado para Reels/TikTok hoje?",
     sugestoes: [
-      "Gerar vídeo de 15 segundos apresentando o AtendeChat",
+      "Gerar vídeo de 15 segundos apresentando o Comenta",
       "Criar roteiro viral para TikTok sobre atendimento automatizado",
       "Gerar animação promocional de lançamento de produto"
     ]
@@ -185,7 +185,7 @@ export default function FullscreenComentaAIPage() {
         respostaTexto = `🎬 **Vídeo animado MP4 gerado com sucesso via Comenta Veo**\n\n• **Roteiro**: "Transforme seu atendimento com o Comenta AI."\n• **Duração**: 15 segundos\n• **Resolução**: 1080p HD`;
         vid = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4";
       } else if (agenteSelecionado.id === "agente-vendas") {
-        respostaTexto = `Com certeza! Aqui está a recomendação de abordagem comercial baseada no **${modeloAtivo}**:\n\n"Olá! Seja bem-vindo ao Comenta AtendeChat. Nosso Plano Pro inclui 3 conexões de WhatsApp + IA generativa por apenas R$ 349/mês. Gostaria de ativar sua avaliação gratuita de 7 dias?"`;
+        respostaTexto = `Com certeza! Aqui está a recomendação de abordagem comercial baseada no **${modeloAtivo}**:\n\n"Olá! Seja bem-vindo ao Comenta SaaS. Nosso Plano Pro inclui 3 conexões de WhatsApp + IA generativa por apenas R$ 349/mês. Gostaria de ativar sua avaliação gratuita de 7 dias?"`;
       } else if (agenteSelecionado.id === "agente-analista-bi") {
         respostaTexto = `📊 **Boletim Executivo de Inteligência de Dados**:\n\n• **Conversas Ativas**: 48 no total\n• **Tempo Médio de Atendimento**: 52 segundos\n• **NPS Geral**: 4.95 / 5.0 ⭐\n• **Respostas por IA**: 84% de resolução automática sem transbordo`;
       }
@@ -321,7 +321,7 @@ export default function FullscreenComentaAIPage() {
               target="_blank"
               className="px-3.5 py-1.5 rounded-full bg-[#2e2f31] text-white hover:bg-[#3c4043] font-semibold transition-colors flex items-center gap-1.5 text-xs"
             >
-              Painel AtendeChat <ArrowRight className="w-3 h-3" />
+              Painel Comenta <ArrowRight className="w-3 h-3" />
             </a>
           </div>
         </header>
