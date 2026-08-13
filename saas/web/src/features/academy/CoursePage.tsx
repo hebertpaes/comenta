@@ -144,19 +144,19 @@ export function CoursePage() {
         const indexAtual = lessons.findIndex((l) => l.id === lesson?.id);
 
         return (
-          <>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+          <div style={{ width: "100%", maxWidth: "100%", overflowX: "hidden" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12, flexWrap: "wrap", gap: 10 }}>
               <Link className="link" to="/cursos">
                 ← Voltar aos cursos
               </Link>
 
               {/* Seletor de Modo Reels / Tradicional */}
-              <div style={{ display: "flex", gap: 8, background: "var(--panel2)", padding: 4, borderRadius: 20, border: "1px solid var(--border)" }}>
+              <div style={{ display: "flex", gap: 6, background: "var(--panel2)", padding: 4, borderRadius: 20, border: "1px solid var(--border)" }}>
                 <button
                   type="button"
                   onClick={() => setModoReels(true)}
                   style={{
-                    padding: "6px 14px",
+                    padding: "6px 12px",
                     borderRadius: 16,
                     border: 0,
                     fontSize: 12,
@@ -166,13 +166,13 @@ export function CoursePage() {
                     cursor: "pointer",
                   }}
                 >
-                  📱 Modo Vertical (9:16)
+                  📱 Vertical (9:16)
                 </button>
                 <button
                   type="button"
                   onClick={() => setModoReels(false)}
                   style={{
-                    padding: "6px 14px",
+                    padding: "6px 12px",
                     borderRadius: 16,
                     border: 0,
                     fontSize: 12,
@@ -182,7 +182,7 @@ export function CoursePage() {
                     cursor: "pointer",
                   }}
                 >
-                  📺 Modo Cinema (16:9)
+                  📺 Cinema (16:9)
                 </button>
               </div>
             </div>
@@ -207,26 +207,26 @@ export function CoursePage() {
               <ErrorBox error={addLesson.error ?? removeLesson.error} />
             )}
 
-            {/* MODO REELS / SHORTS (VERTICAL 9:16) - RESPONSIVO */}
+            {/* MODO REELS / SHORTS (VERTICAL 9:16) - 100% RESPONSIVO */}
             {modoReels ? (
-              <div style={{ display: "flex", gap: 20, flexWrap: "wrap", alignItems: "flex-start", marginTop: 20, width: "100%" }}>
-                {/* Player Estilo Reels / Shorts Vertical (Responsivo) */}
+              <div style={{ display: "flex", gap: 20, flexWrap: "wrap", alignItems: "flex-start", marginTop: 16, width: "100%" }}>
+                {/* Player Estilo Reels / Shorts Vertical (100% Responsivo com Aspect Ratio 9:16) */}
                 <div
                   style={{
-                    width: "min(360px, 100%)",
-                    height: "min(640px, 80vh)",
-                    maxWidth: "100%",
+                    width: "100%",
+                    maxWidth: 380,
+                    aspectRatio: "9/16",
                     borderRadius: 24,
                     background: "#000",
                     position: "relative",
                     overflow: "hidden",
                     boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
                     border: "3px solid #2e2f31",
-                    flex: "none",
+                    flex: "1 1 320px",
                     margin: "0 auto",
                   }}
                 >
-                  {/* Vídeo / Iframe */}
+                  {/* Vídeo / Iframe Responsivo */}
                   {emb?.type === "iframe" && (
                     <iframe
                       src={emb.src}
@@ -239,6 +239,7 @@ export function CoursePage() {
                         width: "100%",
                         height: "100%",
                         border: 0,
+                        objectFit: "cover"
                       }}
                     />
                   )}
@@ -246,6 +247,7 @@ export function CoursePage() {
                     <video
                       src={emb.src}
                       controls
+                      playsInline
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
                   )}
@@ -266,7 +268,7 @@ export function CoursePage() {
                         bottom: 80,
                         display: "flex",
                         flexDirection: "column",
-                        gap: 16,
+                        gap: 14,
                         alignItems: "center",
                         zIndex: 20,
                       }}
@@ -378,7 +380,7 @@ export function CoursePage() {
                 </div>
 
                 {/* Lista de Aulas e Navegação ao Lado */}
-                <div className="card" style={{ flex: 1, minWidth: 280, padding: 16, alignItems: "stretch" }}>
+                <div className="card" style={{ flex: "1 1 300px", minWidth: 280, padding: 16, alignItems: "stretch" }}>
                   <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12 }}>
                     📋 Aulas do Curso ({lessons.length})
                   </div>
@@ -425,23 +427,38 @@ export function CoursePage() {
                 </div>
               </div>
             ) : (
-              /* MODO TRADICIONAL (16:9) */
-              <div className="convgrid">
-                <div className="list">
+              /* MODO TRADICIONAL (16:9) - 100% RESPONSIVO */
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20, width: "100%" }}>
+                <div className="card" style={{ padding: 16, alignItems: "stretch" }}>
+                  <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12 }}>
+                    📋 Aulas do Curso ({lessons.length})
+                  </div>
                   {lessons.length === 0 && <div className="item muted">Sem aulas ainda</div>}
-                  {lessons.map((l, i) => (
-                    <div
-                      key={l.id}
-                      className={`item ${lesson?.id === l.id ? "active" : ""}`}
-                      onClick={() => setSearchParams({ aula: l.id })}
-                    >
-                      <div className="name">
-                        {isLessonDone(l.id) ? "✅ " : `${i + 1}. `}
-                        {l.title}
+                  <div style={{ display: "flex", flexDirection: "column", gap: 6, maxHeight: 500, overflowY: "auto" }}>
+                    {lessons.map((l, i) => (
+                      <div
+                        key={l.id}
+                        onClick={() => setSearchParams({ aula: l.id })}
+                        style={{
+                          padding: 10,
+                          borderRadius: 8,
+                          background: lesson?.id === l.id ? "var(--panel2)" : "transparent",
+                          border: lesson?.id === l.id ? "1px solid var(--accent)" : "1px solid transparent",
+                          cursor: "pointer",
+                          display: "flex",
+                          justifyContent: "space-between",
+                          fontSize: 13
+                        }}
+                      >
+                        <div style={{ fontWeight: lesson?.id === l.id ? 700 : 500 }}>
+                          {isLessonDone(l.id) ? "✅ " : `${i + 1}. `}
+                          {l.title}
+                        </div>
+                        <span className="muted" style={{ fontSize: 11 }}>{l.durationMin ? `${l.durationMin} min` : "aula"}</span>
                       </div>
-                      <div className="last">{l.durationMin ? `${l.durationMin} min` : "aula"}</div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+
                   {isAdmin && (
                     <LessonForm
                       onCreate={(body) => addLesson.mutateAsync(body)}
@@ -450,12 +467,12 @@ export function CoursePage() {
                   )}
                 </div>
 
-                <div className="thread">
+                <div className="card" style={{ padding: 18, alignItems: "stretch" }}>
                   {!lesson && <p className="muted">Selecione uma aula</p>}
                   {lesson && (
                     <>
-                      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-                        <span style={{ fontWeight: 600 }}>{lesson.title}</span>
+                      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
+                        <span style={{ fontWeight: 800, fontSize: 16 }}>{lesson.title}</span>
                         {isAdmin && (
                           <button
                             className="link"
@@ -469,14 +486,16 @@ export function CoursePage() {
                         )}
                       </div>
 
+                      {/* Container do Vídeo 16:9 Responsivo Fluid */}
                       {emb?.type === "iframe" && (
                         <div
                           style={{
-                            position: "relative",
-                            paddingTop: "56.25%",
+                            width: "100%",
+                            aspectRatio: "16/9",
                             borderRadius: 12,
                             overflow: "hidden",
                             background: "#000",
+                            position: "relative"
                           }}
                         >
                           <iframe
@@ -495,15 +514,26 @@ export function CoursePage() {
                         </div>
                       )}
                       {emb?.type === "video" && (
-                        <video
-                          src={emb.src}
-                          controls
-                          style={{ width: "100%", borderRadius: 12, background: "#000" }}
-                        />
+                        <div
+                          style={{
+                            width: "100%",
+                            aspectRatio: "16/9",
+                            borderRadius: 12,
+                            overflow: "hidden",
+                            background: "#000"
+                          }}
+                        >
+                          <video
+                            src={emb.src}
+                            controls
+                            playsInline
+                            style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                          />
+                        </div>
                       )}
 
                       {lesson.content && (
-                        <p style={{ marginTop: 12, whiteSpace: "pre-wrap", lineHeight: 1.5 }}>
+                        <p style={{ marginTop: 12, whiteSpace: "pre-wrap", lineHeight: 1.5, fontSize: 13 }}>
                           {lesson.content}
                         </p>
                       )}
@@ -515,12 +545,12 @@ export function CoursePage() {
                             setProgressTick((n) => n + 1);
                           }}
                           style={{
-                            background: lessonDone ? "#e2e8f0" : "#22c55e",
-                            color: lessonDone ? "#334155" : "#fff",
-                            border: 0,
-                            padding: "8px 14px",
+                            background: lessonDone ? "var(--panel2)" : "#22c55e",
+                            color: lessonDone ? "var(--text)" : "#fff",
+                            border: "1px solid var(--border)",
+                            padding: "8px 16px",
                             borderRadius: 8,
-                            fontWeight: 600,
+                            fontWeight: 700,
                             cursor: "pointer",
                           }}
                         >
@@ -532,7 +562,7 @@ export function CoursePage() {
                 </div>
               </div>
             )}
-          </>
+          </div>
         );
       }}
     </Async>
