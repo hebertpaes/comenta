@@ -7,34 +7,31 @@ import { audit } from "../lib/audit.js";
 
 /**
  * Módulo Completo de CRM (Gestão de Oportunidades & Pipeline) + ERP (Financeiro, Estoque, Pedidos)
- * e Gerador do Menu Interativo Completo do WhatsApp do Sistema.
+ * e Gerador Editável do Menu Interativo Completo do WhatsApp do Sistema.
  */
 
-export const SYSTEM_WHATSAPP_MENU = `🤖 *MENU INTERATIVO - COMENTA AI & ABACS*
-_Seja bem-vindo ao sistema de atendimento inteligente oficial!_
+export const DEFAULT_WHATSAPP_MENU_CONFIG = {
+  headerTitle: "🤖 *MENU INTERATIVO - COMENTA AI & ABACS*",
+  greeting: "_Seja bem-vindo ao sistema de atendimento inteligente oficial!_\n\nPor favor, escolha uma opção digitando o número correspondente:",
+  footerText: "--- \n📱 *Comenta SaaS v2.0* · _https://abacs.org.br_",
+  options: [
+    { key: "1️⃣", label: "🎓 *Cursos & Treinamentos ABACS*", subtitle: "Ver catálogo de 17 cursos, ementas e matricular-se", action: "courses_catalog", customResponse: "" },
+    { key: "2️⃣", label: "🛍️ *Loja Virtual & Produtos ERP*", subtitle: "Consultar catálogo de produtos, equipamentos e compra", action: "store_products", customResponse: "" },
+    { key: "3️⃣", label: "🧾 *Financeiro & 2ª Via de Faturas (ERP)*", subtitle: "Consultar extrato de mensalidade, faturas Hotmart e Pix", action: "financial_invoices", customResponse: "" },
+    { key: "4️⃣", label: "📊 *Status do Atendimento / Pedido (CRM)*", subtitle: "Acompanhar andamento da sua inscrição ou suporte", action: "crm_status", customResponse: "" },
+    { key: "5️⃣", label: "✨ *Falar com Sofia Gemini 2.0 IA Spark*", subtitle: "Tirar dúvidas por IA com respostas humanas em tempo real", action: "ai_spark", customResponse: "" },
+    { key: "6️⃣", label: "🧑‍💼 *Falar com um Atendente Humano*", subtitle: "Transferência imediata para a fila de suporte comercial", action: "human_agent", customResponse: "" }
+  ]
+};
 
-Por favor, escolha uma opção digitando o número correspondente:
-
-1️⃣ 🎓 *Cursos & Treinamentos ABACS*
-   _Ver catálogo de 17 cursos, ementas e matricular-se_
-
-2️⃣ 🛍️ *Loja Virtual & Produtos ERP*
-   _Consultar catálogo de produtos, equipamentos e compra_
-
-3️⃣ 🧾 *Financeiro & 2ª Via de Faturas (ERP)*
-   _Consultar extrato de mensalidade, faturas Hotmart e Pix_
-
-4️⃣ 📊 *Status do Atendimento / Pedido (CRM)*
-   _Acompanhar andamento da sua inscrição ou suporte_
-
-5️⃣ ✨ *Falar com Sofia Gemini 2.0 IA Spark*
-   _Tirar dúvidas por IA com respostas humanas em tempo real_
-
-6️⃣ 🧑‍💼 *Falar com um Atendente Humano*
-   _Transferência imediata para a fila de suporte comercial_
-
----
-📱 *Comenta SaaS v2.0* · _https://abacs.org.br_`;
+export function buildFormattedMenuText(config: typeof DEFAULT_WHATSAPP_MENU_CONFIG): string {
+  let text = `${config.headerTitle}\n${config.greeting}\n\n`;
+  config.options.forEach((opt) => {
+    text += `${opt.key} ${opt.label}\n   _${opt.subtitle}_\n\n`;
+  });
+  text += config.footerText;
+  return text;
+}
 
 export async function erpCrmRoutes(app: FastifyInstance) {
   app.addHook("preHandler", authenticate);
@@ -51,10 +48,10 @@ export async function erpCrmRoutes(app: FastifyInstance) {
     const settingsObj = (company?.settings as Record<string, any> | undefined) ?? {};
     const erpData = settingsObj.erpData || {
       transactions: [
-        { id: "tx_1", type: "receita", description: "Venda Curso Operador de Caixa (Hotmart)", amount: 99.00, date: "2026-08-11", category: "Cursos" },
-        { id: "tx_2", type: "receita", description: "Mensalidade Comenta SaaS Pro", amount: 349.00, date: "2026-08-11", category: "SaaS" },
-        { id: "tx_3", type: "despesa", description: "Servidores & Nuvem AWS / Gemini API", amount: 120.00, date: "2026-08-10", category: "Infraestrutura" },
-        { id: "tx_4", type: "receita", description: "Inscrição Engenharia de IA ABACS", amount: 149.00, date: "2026-08-10", category: "Cursos" },
+        { id: "tx_1", type: "receita", description: "Venda Curso Operador de Caixa (Hotmart)", amount: 99.00, date: "2026-08-13", category: "Cursos" },
+        { id: "tx_2", type: "receita", description: "Mensalidade Comenta SaaS Pro", amount: 349.00, date: "2026-08-13", category: "SaaS" },
+        { id: "tx_3", type: "despesa", description: "Servidores & Nuvem AWS / Gemini API", amount: 120.00, date: "2026-08-12", category: "Infraestrutura" },
+        { id: "tx_4", type: "receita", description: "Inscrição Engenharia de IA ABACS", amount: 149.00, date: "2026-08-12", category: "Cursos" },
       ],
       deals: [
         { id: "deal_1", title: "Treinamento Corporativo Pacote Office", contactName: "Empresa ABC Ltda", stage: "proposta", amount: 2500.00, probability: 80 },
@@ -67,6 +64,8 @@ export async function erpCrmRoutes(app: FastifyInstance) {
         { id: "prod_3", name: "Headset Profissional USB Atendimento", sku: "EQP-002", costPrice: 65.00, sellPrice: 140.00, stock: 45, category: "Físico" }
       ]
     };
+
+    const whatsappMenuConfig = settingsObj.whatsappMenuConfig || DEFAULT_WHATSAPP_MENU_CONFIG;
 
     const totalReceitas = erpData.transactions
       .filter((t: any) => t.type === "receita")
@@ -90,11 +89,55 @@ export async function erpCrmRoutes(app: FastifyInstance) {
       transactions: erpData.transactions,
       deals: erpData.deals,
       products: erpData.products,
-      whatsappMenu: SYSTEM_WHATSAPP_MENU
+      whatsappMenuConfig,
+      whatsappMenuText: buildFormattedMenuText(whatsappMenuConfig)
     };
   });
 
-  // 2. Lançar Transação no ERP (Receita / Despesa)
+  // 2. Salvar Configuração Editável do Menu no WhatsApp
+  app.put("/whatsapp/interactive-menu", async (req, reply) => {
+    const body = parse(
+      z.object({
+        headerTitle: z.string().min(1),
+        greeting: z.string().min(1),
+        footerText: z.string().default(""),
+        options: z.array(
+          z.object({
+            key: z.string(),
+            label: z.string(),
+            subtitle: z.string(),
+            action: z.string(),
+            customResponse: z.string().optional().default("")
+          })
+        )
+      }),
+      req.body
+    );
+    const p = req.principal;
+
+    const [company] = await db
+      .select({ settings: schema.companies.settings })
+      .from(schema.companies)
+      .where(eq(schema.companies.id, p.companyId));
+
+    const settingsObj = (company?.settings as Record<string, any> | undefined) ?? {};
+
+    await db
+      .update(schema.companies)
+      .set({ settings: { ...settingsObj, whatsappMenuConfig: body } })
+      .where(eq(schema.companies.id, p.companyId));
+
+    audit(p, "whatsapp.menu_updated", "settings", p.companyId, { optionsCount: body.options.length });
+
+    return reply.send({
+      success: true,
+      message: "Menu interativo do WhatsApp atualizado com sucesso!",
+      menuConfig: body,
+      menuText: buildFormattedMenuText(body)
+    });
+  });
+
+  // 3. Lançar Transação no ERP (Receita / Despesa)
   app.post("/erp/transactions", async (req, reply) => {
     const body = parse(
       z.object({
@@ -139,7 +182,7 @@ export async function erpCrmRoutes(app: FastifyInstance) {
     return reply.code(201).send(newTx);
   });
 
-  // 3. Criar Oportunidade no CRM
+  // 4. Criar Oportunidade no CRM
   app.post("/crm/deals", async (req, reply) => {
     const body = parse(
       z.object({
@@ -184,19 +227,23 @@ export async function erpCrmRoutes(app: FastifyInstance) {
     return reply.code(201).send(newDeal);
   });
 
-  // 4. Retorna o Menu Interativo Formatado do WhatsApp para o Bot
-  app.get("/whatsapp/interactive-menu", async () => {
+  // 5. Retorna o Menu Interativo Formatado do WhatsApp para o Bot
+  app.get("/whatsapp/interactive-menu", async (req) => {
+    const p = req.principal;
+
+    const [company] = await db
+      .select({ settings: schema.companies.settings })
+      .from(schema.companies)
+      .where(eq(schema.companies.id, p.companyId));
+
+    const settingsObj = (company?.settings as Record<string, any> | undefined) ?? {};
+    const config = settingsObj.whatsappMenuConfig || DEFAULT_WHATSAPP_MENU_CONFIG;
+
     return {
       success: true,
-      menuText: SYSTEM_WHATSAPP_MENU,
-      options: [
-        { key: "1", label: "🎓 Cursos & Treinamentos ABACS", action: "courses_catalog" },
-        { key: "2", label: "🛍️ Loja Virtual & Produtos ERP", action: "store_products" },
-        { key: "3", label: "🧾 Financeiro & 2ª Via de Fatura (ERP)", action: "financial_invoices" },
-        { key: "4", label: "📊 Status do Atendimento / Pedido (CRM)", action: "crm_status" },
-        { key: "5", label: "✨ Sofia Gemini 2.0 IA Spark", action: "ai_spark" },
-        { key: "6", label: "🧑‍💼 Falar com Atendente Humano", action: "human_agent" }
-      ]
+      menuConfig: config,
+      menuText: buildFormattedMenuText(config),
+      options: config.options
     };
   });
 }

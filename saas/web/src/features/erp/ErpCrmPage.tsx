@@ -28,8 +28,40 @@ interface Product {
   category: string;
 }
 
+interface MenuOption {
+  key: string;
+  label: string;
+  subtitle: string;
+  action: string;
+  customResponse?: string;
+}
+
+interface MenuConfig {
+  headerTitle: string;
+  greeting: string;
+  footerText: string;
+  options: MenuOption[];
+}
+
 export function ErpCrmPage() {
-  const [activeTab, setActiveTab] = useState<"crm" | "financial" | "stock" | "whatsapp_menu">("crm");
+  const [activeTab, setActiveTab] = useState<"crm" | "financial" | "stock" | "whatsapp_menu">("whatsapp_menu");
+
+  // Configuração Editável do Menu no WhatsApp
+  const [menuConfig, setMenuConfig] = useState<MenuConfig>({
+    headerTitle: "🤖 *MENU INTERATIVO - COMENTA AI & ABACS*",
+    greeting: "_Seja bem-vindo ao sistema de atendimento inteligente oficial!_\n\nPor favor, escolha uma opção digitando o número correspondente:",
+    footerText: "--- \n📱 *Comenta SaaS v2.0* · _https://abacs.org.br_",
+    options: [
+      { key: "1️⃣", label: "🎓 *Cursos & Treinamentos ABACS*", subtitle: "Ver catálogo de 17 cursos, ementas e matricular-se", action: "courses_catalog" },
+      { key: "2️⃣", label: "🛍️ *Loja Virtual & Produtos ERP*", subtitle: "Consultar catálogo de produtos, equipamentos e compra", action: "store_products" },
+      { key: "3️⃣", label: "🧾 *Financeiro & 2ª Via de Faturas (ERP)*", subtitle: "Consultar extrato de mensalidade, faturas Hotmart e Pix", action: "financial_invoices" },
+      { key: "4️⃣", label: "📊 *Status do Atendimento / Pedido (CRM)*", subtitle: "Acompanhar andamento da sua inscrição ou suporte", action: "crm_status" },
+      { key: "5️⃣", label: "✨ *Falar com Sofia Gemini 2.0 IA Spark*", subtitle: "Tirar dúvidas por IA com respostas humanas em tempo real", action: "ai_spark" },
+      { key: "6️⃣", label: "🧑‍💼 *Falar com um Atendente Humano*", subtitle: "Transferência imediata para a fila de suporte comercial", action: "human_agent" }
+    ]
+  });
+
+  const [savedSuccess, setSavedSuccess] = useState(false);
 
   // Dados Locais do CRM / ERP
   const [transactions, setTransactions] = useState<Transaction[]>([
@@ -61,6 +93,33 @@ export function ErpCrmPage() {
   const [dealTitle, setDealTitle] = useState("");
   const [dealContact, setDealContact] = useState("");
   const [dealAmount, setDealAmount] = useState("");
+
+  const handleAddOption = () => {
+    const nextNum = menuConfig.options.length + 1;
+    const newOpt: MenuOption = {
+      key: `${nextNum}️⃣`,
+      label: `*Nova Opção ${nextNum}*`,
+      subtitle: "Descrição personalizada da nova funcionalidade",
+      action: "custom_text",
+      customResponse: "Resposta automática personalizada."
+    };
+    setMenuConfig({ ...menuConfig, options: [...menuConfig.options, newOpt] });
+  };
+
+  const handleRemoveOption = (index: number) => {
+    const updated = menuConfig.options.filter((_, idx) => idx !== index);
+    setMenuConfig({ ...menuConfig, options: updated });
+  };
+
+  const handleOptionChange = (index: number, field: keyof MenuOption, value: string) => {
+    const updated = menuConfig.options.map((opt, idx) => (idx === index ? { ...opt, [field]: value } : opt));
+    setMenuConfig({ ...menuConfig, options: updated });
+  };
+
+  const handleSaveMenu = () => {
+    setSavedSuccess(true);
+    setTimeout(() => setSavedSuccess(false), 3000);
+  };
 
   const handleAddTransaction = (e: React.FormEvent) => {
     e.preventDefault();
@@ -111,14 +170,19 @@ export function ErpCrmPage() {
   const totalDespesas = transactions.filter((t) => t.type === "despesa").reduce((a, b) => a + b.amount, 0);
   const pipelineTotal = deals.reduce((a, b) => a + b.amount, 0);
 
+  // Texto formatado para o simulador do WhatsApp
+  const previewText = `${menuConfig.headerTitle}\n${menuConfig.greeting}\n\n` +
+    menuConfig.options.map((opt) => `${opt.key} ${opt.label}\n   _${opt.subtitle}_`).join("\n\n") +
+    `\n\n${menuConfig.footerText}`;
+
   return (
     <div style={{ paddingBottom: 40 }}>
       {/* Top Header do Módulo CRM & ERP */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 18, flexWrap: "wrap", gap: 12 }}>
         <div>
-          <h2>💼 Gestão Integrada CRM & ERP + Menu WhatsApp</h2>
+          <h2>💼 Gestão Integrada CRM & ERP + Formulário de Menu no WhatsApp</h2>
           <p className="muted" style={{ marginTop: -8, marginBottom: 0 }}>
-            Controle de funil de vendas, receitas, despesas, catálogo de produtos e automação do Menu no WhatsApp.
+            Crie e edite opções do menu do WhatsApp, gerencie propostas comerciais, lançamentos do ERP e produtos.
           </p>
         </div>
       </div>
@@ -158,6 +222,19 @@ export function ErpCrmPage() {
       <div style={{ display: "flex", gap: 8, borderBottom: "1px solid var(--border)", paddingBottom: 10, marginBottom: 20 }}>
         <button
           type="button"
+          onClick={() => setActiveTab("whatsapp_menu")}
+          style={{
+            background: activeTab === "whatsapp_menu" ? "#25D366" : "var(--panel2)",
+            color: activeTab === "whatsapp_menu" ? "#fff" : "var(--text)",
+            fontWeight: 700,
+            fontSize: 13
+          }}
+        >
+          ⚙️ Criar / Editar Menu no WhatsApp
+        </button>
+
+        <button
+          type="button"
           onClick={() => setActiveTab("crm")}
           style={{
             background: activeTab === "crm" ? "var(--accent)" : "var(--panel2)",
@@ -194,22 +271,158 @@ export function ErpCrmPage() {
         >
           📦 ERP Catálogo de Produtos
         </button>
-
-        <button
-          type="button"
-          onClick={() => setActiveTab("whatsapp_menu")}
-          style={{
-            background: activeTab === "whatsapp_menu" ? "#25D366" : "var(--panel2)",
-            color: activeTab === "whatsapp_menu" ? "#fff" : "var(--text)",
-            fontWeight: 700,
-            fontSize: 13
-          }}
-        >
-          🤖 Menu no WhatsApp Integrado
-        </button>
       </div>
 
-      {/* TAB 1: CRM & FUNIL DE VENDAS */}
+      {/* TAB: FORMULÁRIO DE CRIAÇÃO & EDIÇÃO DO MENU NO WHATSAPP */}
+      {activeTab === "whatsapp_menu" && (
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 420px", gap: 20 }}>
+          {/* Formulário Editável das Opções do Menu */}
+          <div className="card" style={{ padding: 20 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
+              <div>
+                <h3 style={{ margin: 0, fontSize: 16, fontWeight: 800 }}>⚙️ Editor do Menu Interativo do WhatsApp</h3>
+                <p className="muted" style={{ fontSize: 12, margin: "2px 0 0 0" }}>
+                  Altere os textos, títulos e crie novas opções que o robô envia no WhatsApp.
+                </p>
+              </div>
+              <button type="button" onClick={handleSaveMenu} style={{ background: "#25D366", color: "#fff", fontWeight: 800, padding: "8px 16px" }}>
+                💾 Salvar Menu
+              </button>
+            </div>
+
+            {savedSuccess && (
+              <div style={{ padding: "10px 14px", borderRadius: 8, background: "rgba(37, 211, 102, 0.15)", border: "1px solid #25D366", color: "#10b981", fontSize: 13, fontWeight: 700, marginBottom: 16 }}>
+                ✓ Menu interativo do WhatsApp salvo com sucesso!
+              </div>
+            )}
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              {/* Título do Cabeçalho */}
+              <div>
+                <label style={{ fontSize: 12, fontWeight: 700, color: "var(--muted)", display: "block", marginBottom: 4 }}>
+                  Cabeçalho / Título Principal do Menu:
+                </label>
+                <input
+                  type="text"
+                  value={menuConfig.headerTitle}
+                  onChange={(e) => setMenuConfig({ ...menuConfig, headerTitle: e.target.value })}
+                  style={{ fontSize: 13, fontWeight: 700 }}
+                />
+              </div>
+
+              {/* Mensagem de Boas-Vindas */}
+              <div>
+                <label style={{ fontSize: 12, fontWeight: 700, color: "var(--muted)", display: "block", marginBottom: 4 }}>
+                  Mensagem de Boas-Vindas & Instruções:
+                </label>
+                <textarea
+                  rows={2}
+                  value={menuConfig.greeting}
+                  onChange={(e) => setMenuConfig({ ...menuConfig, greeting: e.target.value })}
+                  style={{ fontSize: 13 }}
+                />
+              </div>
+
+              {/* Lista de Opções do Menu Editáveis */}
+              <div>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+                  <label style={{ fontSize: 12, fontWeight: 800, color: "var(--accent)", textTransform: "uppercase" }}>
+                    Opções do Menu Interativo ({menuConfig.options.length}):
+                  </label>
+                  <button type="button" onClick={handleAddOption} className="ghost" style={{ fontSize: 12, padding: "4px 10px" }}>
+                    + Adicionar Opção
+                  </button>
+                </div>
+
+                <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                  {menuConfig.options.map((opt, idx) => (
+                    <div key={idx} style={{ background: "var(--panel2)", borderRadius: 12, padding: 14, border: "1px solid var(--border)" }}>
+                      <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 8 }}>
+                        <input
+                          type="text"
+                          value={opt.key}
+                          onChange={(e) => handleOptionChange(idx, "key", e.target.value)}
+                          placeholder="1️⃣"
+                          style={{ width: 60, textAlign: "center", fontWeight: 800 }}
+                        />
+                        <input
+                          type="text"
+                          value={opt.label}
+                          onChange={(e) => handleOptionChange(idx, "label", e.target.value)}
+                          placeholder="Título da opção"
+                          style={{ flex: 1, fontWeight: 700 }}
+                        />
+                        <button
+                          type="button"
+                          onClick={() => handleRemoveOption(idx)}
+                          className="ghost"
+                          style={{ color: "#ef4444", padding: "6px 10px", fontSize: 12 }}
+                        >
+                          ✕ Excluir
+                        </button>
+                      </div>
+
+                      <input
+                        type="text"
+                        value={opt.subtitle}
+                        onChange={(e) => handleOptionChange(idx, "subtitle", e.target.value)}
+                        placeholder="Subtítulo / Descrição explicativa"
+                        style={{ fontSize: 12, marginBottom: 8 }}
+                      />
+
+                      <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                        <select
+                          value={opt.action}
+                          onChange={(e) => handleOptionChange(idx, "action", e.target.value)}
+                          style={{ flex: 1, fontSize: 12 }}
+                        >
+                          <option value="courses_catalog">🎓 Enviar Catálogo de 17 Cursos ABACS</option>
+                          <option value="store_products">🛍️ Enviar Catálogo de Produtos ERP</option>
+                          <option value="financial_invoices">🧾 Consultar Faturas / PIX (ERP)</option>
+                          <option value="crm_status">📊 Consultar Status no CRM</option>
+                          <option value="ai_spark">✨ Ativar Sofia Gemini 2.0 IA Spark</option>
+                          <option value="human_agent">🧑‍💼 Transferir para Atendente Humano</option>
+                          <option value="custom_text">💬 Texto de Resposta Personalizado</option>
+                        </select>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Rodapé do Menu */}
+              <div>
+                <label style={{ fontSize: 12, fontWeight: 700, color: "var(--muted)", display: "block", marginBottom: 4 }}>
+                  Rodapé / Assinatura do Menu:
+                </label>
+                <input
+                  type="text"
+                  value={menuConfig.footerText}
+                  onChange={(e) => setMenuConfig({ ...menuConfig, footerText: e.target.value })}
+                  style={{ fontSize: 13 }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Simulador ao Vivo da Mensagem do WhatsApp */}
+          <div className="card" style={{ padding: 20, height: "fit-content", position: "sticky", top: 20 }}>
+            <h3 style={{ margin: "0 0 10px 0", fontSize: 15, fontWeight: 800, display: "flex", alignItems: "center", gap: 6 }}>
+              <span>📱 Simulador da Mensagem no WhatsApp</span>
+              <span className="tag" style={{ background: "#25D366", color: "#fff", fontSize: 10 }}>Ao Vivo</span>
+            </h3>
+            <p className="muted" style={{ fontSize: 12, marginTop: 0 }}>
+              Visualização exata de como a mensagem aparecerá no celular do seu cliente:
+            </p>
+
+            <div style={{ background: "#0b141a", color: "#e9edef", padding: 18, borderRadius: 16, fontFamily: "sans-serif", fontSize: 13, whiteSpace: "pre-wrap", lineHeight: 1.5, border: "1px solid #222d34" }}>
+              {previewText}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* TAB 2: CRM & FUNIL DE VENDAS */}
       {activeTab === "crm" && (
         <div>
           <form onSubmit={handleAddDeal} className="card" style={{ padding: 16, marginBottom: 20, display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
@@ -236,7 +449,6 @@ export function ErpCrmPage() {
             <button type="submit" style={{ fontWeight: 700 }}>Cadastrar Oportunidade</button>
           </form>
 
-          {/* Quadro Kanban de Estágios do CRM */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 14 }}>
             {[
               { id: "prospecao", label: "🔎 Prospecção", color: "#3b82f6" },
@@ -261,7 +473,6 @@ export function ErpCrmPage() {
                           R$ {deal.amount.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
                         </div>
 
-                        {/* Mover de Estágio */}
                         <div style={{ display: "flex", gap: 4, marginTop: 8 }}>
                           {stage.id !== "fechado" && (
                             <button
@@ -284,7 +495,7 @@ export function ErpCrmPage() {
         </div>
       )}
 
-      {/* TAB 2: ERP FINANCEIRO (FLUXO DE CAIXA) */}
+      {/* TAB 3: ERP FINANCEIRO (FLUXO DE CAIXA) */}
       {activeTab === "financial" && (
         <div>
           <form onSubmit={handleAddTransaction} className="card" style={{ padding: 16, marginBottom: 20, display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
@@ -309,7 +520,6 @@ export function ErpCrmPage() {
             <button type="submit" style={{ fontWeight: 700 }}>Salvar no ERP</button>
           </form>
 
-          {/* Tabela do Fluxo de Caixa */}
           <div className="card" style={{ padding: 0, overflow: "hidden" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13, textAlign: "left" }}>
               <thead>
@@ -341,7 +551,7 @@ export function ErpCrmPage() {
         </div>
       )}
 
-      {/* TAB 3: ERP CATÁLOGO DE PRODUTOS & ESTOQUE */}
+      {/* TAB 4: ERP CATÁLOGO DE PRODUTOS & ESTOQUE */}
       {activeTab === "stock" && (
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 14 }}>
           {products.map((prod) => (
@@ -367,63 +577,6 @@ export function ErpCrmPage() {
               </div>
             </div>
           ))}
-        </div>
-      )}
-
-      {/* TAB 4: MENU INTERATIVO NO WHATSAPP DO SISTEMA */}
-      {activeTab === "whatsapp_menu" && (
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-          <div className="card" style={{ padding: 20 }}>
-            <h3 style={{ margin: "0 0 10px 0", fontSize: 16, fontWeight: 800 }}>🤖 Menu Interativo Oficial do WhatsApp</h3>
-            <p className="muted" style={{ fontSize: 12, marginTop: 0 }}>
-              Este menu é enviado automaticamente para todos os contatos que enviam mensagens no WhatsApp ou interagem com o robô.
-            </p>
-
-            <div style={{ background: "#0b141a", color: "#e9edef", padding: 18, borderRadius: 16, fontFamily: "monospace", fontSize: 13, whiteSpace: "pre-wrap", lineHeight: 1.5, border: "1px solid #222d34" }}>
-{`🤖 *MENU INTERATIVO - COMENTA AI & ABACS*
-_Seja bem-vindo ao sistema de atendimento inteligente oficial!_
-
-Por favor, escolha uma opção digitando o número correspondente:
-
-1️⃣ 🎓 *Cursos & Treinamentos ABACS*
-   _Ver catálogo de 17 cursos, ementas e matricular-se_
-
-2️⃣ 🛍️ *Loja Virtual & Produtos ERP*
-   _Consultar catálogo de produtos, equipamentos e compra_
-
-3️⃣ 🧾 *Financeiro & 2ª Via de Faturas (ERP)*
-   _Consultar extrato de mensalidade, faturas Hotmart e Pix_
-
-4️⃣ 📊 *Status do Atendimento / Pedido (CRM)*
-   _Acompanhar andamento da sua inscrição ou suporte_
-
-5️⃣ ✨ *Falar com Sofia Gemini 2.0 IA Spark*
-   _Tirar dúvidas por IA com respostas humanas em tempo real_
-
-6️⃣ 🧑‍💼 *Falar com um Atendente Humano*
-   _Transferência imediata para a fila de suporte comercial_`}
-            </div>
-          </div>
-
-          <div className="card" style={{ padding: 20 }}>
-            <h3 style={{ margin: "0 0 10px 0", fontSize: 16, fontWeight: 800 }}>⚡ Ações Automáticas das Opções</h3>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              {[
-                { opt: "Opção 1", title: "Cursos ABACS", desc: "Retorna o catálogo completo de 17 cursos com links da Hotmart e Loja Virtual." },
-                { opt: "Opção 2", title: "Loja Virtual ERP", desc: "Exibe produtos do estoque e links para checkout direto." },
-                { opt: "Opção 3", title: "Financeiro & Faturas", desc: "Gera e envia o código PIX / Fatura 2ª Via do aluno/cliente." },
-                { opt: "Opção 4", title: "Status CRM", desc: "Verifica em qual etapa do funil comercial o cliente se encontra." },
-                { opt: "Opção 5", title: "Sofia Gemini IA", desc: "Ativa a IA Gemini 2.0 Spark para responder em linguagem natural." },
-                { opt: "Opção 6", title: "Atendente Humano", desc: "Transfere o atendimento para a Fila Comercial no painel." }
-              ].map((item) => (
-                <div key={item.opt} style={{ padding: 10, background: "var(--panel2)", borderRadius: 10, border: "1px solid var(--border)" }}>
-                  <div style={{ fontWeight: 800, fontSize: 13, color: "var(--accent)" }}>{item.opt}: {item.title}</div>
-                  <div className="muted" style={{ fontSize: 12, marginTop: 2 }}>{item.desc}</div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       )}
     </div>
