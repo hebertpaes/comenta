@@ -93,7 +93,7 @@ export function CoursePage() {
   const selected = searchParams.get("aula");
 
   const [progressTick, setProgressTick] = useState(0);
-  const [modoReels, setModoReels] = useState(true);
+  const [aspectRatioMode, setAspectRatioMode] = useState<"16/9" | "9/16" | "1/1">("16/9");
   const [likes, setLikes] = useState<Record<string, number>>({});
   const [curtido, setCurtido] = useState<Record<string, boolean>>({});
 
@@ -145,61 +145,82 @@ export function CoursePage() {
 
         return (
           <div style={{ width: "100%", maxWidth: "100%", overflowX: "hidden" }}>
+            {/* Header de Navegação do Curso */}
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12, flexWrap: "wrap", gap: 10 }}>
-              <Link className="link" to="/cursos">
+              <Link className="link" to="/cursos" style={{ fontWeight: 600 }}>
                 ← Voltar aos cursos
               </Link>
 
-              {/* Seletor de Modo Reels / Tradicional */}
+              {/* Seletor do Formato de Vídeo Responsivo (16:9 Cinema / 9:16 Vertical / 1:1 Quadrado) */}
               <div style={{ display: "flex", gap: 6, background: "var(--panel2)", padding: 4, borderRadius: 20, border: "1px solid var(--border)" }}>
                 <button
                   type="button"
-                  onClick={() => setModoReels(true)}
+                  onClick={() => setAspectRatioMode("16/9")}
                   style={{
-                    padding: "6px 12px",
+                    padding: "6px 14px",
                     borderRadius: 16,
                     border: 0,
                     fontSize: 12,
                     fontWeight: 700,
-                    background: modoReels ? "linear-gradient(135deg, #4285f4, #d96570)" : "transparent",
-                    color: modoReels ? "#fff" : "var(--text)",
+                    background: aspectRatioMode === "16/9" ? "linear-gradient(135deg, #6d28d9, #4285f4)" : "transparent",
+                    color: aspectRatioMode === "16/9" ? "#fff" : "var(--muted)",
                     cursor: "pointer",
+                    transition: "all 0.2s ease",
                   }}
                 >
-                  📱 Vertical (9:16)
+                  📺 Widescreen 16:9
                 </button>
                 <button
                   type="button"
-                  onClick={() => setModoReels(false)}
+                  onClick={() => setAspectRatioMode("9/16")}
                   style={{
-                    padding: "6px 12px",
+                    padding: "6px 14px",
                     borderRadius: 16,
                     border: 0,
                     fontSize: 12,
                     fontWeight: 700,
-                    background: !modoReels ? "var(--panel)" : "transparent",
-                    color: !modoReels ? "var(--text)" : "var(--muted)",
+                    background: aspectRatioMode === "9/16" ? "linear-gradient(135deg, #ff7700, #ff0055)" : "transparent",
+                    color: aspectRatioMode === "9/16" ? "#fff" : "var(--muted)",
                     cursor: "pointer",
+                    transition: "all 0.2s ease",
                   }}
                 >
-                  📺 Cinema (16:9)
+                  📱 Vertical 9:16 (Reels)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setAspectRatioMode("1/1")}
+                  style={{
+                    padding: "6px 14px",
+                    borderRadius: 16,
+                    border: 0,
+                    fontSize: 12,
+                    fontWeight: 700,
+                    background: aspectRatioMode === "1/1" ? "linear-gradient(135deg, #10b981, #06b6d4)" : "transparent",
+                    color: aspectRatioMode === "1/1" ? "#fff" : "var(--muted)",
+                    cursor: "pointer",
+                    transition: "all 0.2s ease",
+                  }}
+                >
+                  🔳 Quadrado 1:1
                 </button>
               </div>
             </div>
 
-            <h2 style={{ marginTop: 0 }}>
+            <h2 style={{ marginTop: 0, fontSize: 24, fontWeight: 800 }}>
               {course.emoji} {course.title}
             </h2>
-            <p className="muted" style={{ marginTop: -8, maxWidth: 680 }}>
+            <p className="muted" style={{ marginTop: -4, maxWidth: 720, fontSize: 14 }}>
               {course.description}
             </p>
 
-            <div style={{ maxWidth: 680, marginBottom: 16 }}>
+            {/* Barra de Progresso do Curso */}
+            <div style={{ maxWidth: 720, marginBottom: 20 }}>
               <div style={{ height: 8, background: "#eef0f4", borderRadius: 999, overflow: "hidden" }}>
-                <div style={{ width: `${pct}%`, height: "100%", background: "#6d28d9" }} />
+                <div style={{ width: `${pct}%`, height: "100%", background: "linear-gradient(90deg, #6d28d9, #4285f4)", transition: "width 0.3s ease" }} />
               </div>
-              <div className="muted" style={{ fontSize: 12, marginTop: 4 }}>
-                {done}/{total} aulas concluídas · {pct}%
+              <div className="muted" style={{ fontSize: 12, marginTop: 6, fontWeight: 600 }}>
+                {done}/{total} aulas concluídas · {pct}% de progresso
               </div>
             </div>
 
@@ -207,361 +228,246 @@ export function CoursePage() {
               <ErrorBox error={addLesson.error ?? removeLesson.error} />
             )}
 
-            {/* MODO REELS / SHORTS (VERTICAL 9:16) - 100% RESPONSIVO */}
-            {modoReels ? (
-              <div style={{ display: "flex", gap: 20, flexWrap: "wrap", alignItems: "flex-start", marginTop: 16, width: "100%" }}>
-                {/* Player Estilo Reels / Shorts Vertical (100% Responsivo com Aspect Ratio 9:16) */}
-                <div
-                  style={{
-                    width: "100%",
-                    maxWidth: 380,
-                    aspectRatio: "9/16",
-                    borderRadius: 24,
-                    background: "#000",
-                    position: "relative",
-                    overflow: "hidden",
-                    boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
-                    border: "3px solid #2e2f31",
-                    flex: "1 1 320px",
-                    margin: "0 auto",
-                  }}
-                >
-                  {/* Vídeo / Iframe Responsivo */}
-                  {emb?.type === "iframe" && (
-                    <iframe
-                      src={emb.src}
-                      title={lesson?.title ?? "Aula"}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      style={{
-                        position: "absolute",
-                        inset: 0,
-                        width: "100%",
-                        height: "100%",
-                        border: 0,
-                        objectFit: "cover"
-                      }}
-                    />
-                  )}
-                  {emb?.type === "video" && (
-                    <video
-                      src={emb.src}
-                      controls
-                      playsInline
-                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                    />
-                  )}
-                  {(!emb || emb.type === "link") && (
-                    <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", color: "#fff", padding: 20, textAlign: "center" }}>
-                      <div style={{ fontSize: 48, marginBottom: 12 }}>📱</div>
-                      <div style={{ fontWeight: 700, fontSize: 16 }}>{lesson?.title}</div>
-                      <p style={{ fontSize: 12, opacity: 0.8, marginTop: 8 }}>{lesson?.content}</p>
-                    </div>
-                  )}
-
-                  {/* Overlay Lateral Direito Estilo TikTok/Reels */}
-                  {lesson && (
-                    <div
-                      style={{
-                        position: "absolute",
-                        right: 12,
-                        bottom: 80,
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: 14,
-                        alignItems: "center",
-                        zIndex: 20,
-                      }}
-                    >
-                      {/* Botão de Like */}
-                      <button
-                        type="button"
-                        onClick={() => alternarLike(lesson.id)}
-                        style={{
-                          background: "rgba(0,0,0,0.6)",
-                          backdropFilter: "blur(8px)",
-                          border: "1px solid rgba(255,255,255,0.2)",
-                          color: curtido[lesson.id] ? "#ef4444" : "#fff",
-                          width: 44,
-                          height: 44,
-                          borderRadius: 22,
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontSize: 18,
-                          cursor: "pointer",
-                        }}
-                      >
-                        ❤️
-                        <span style={{ fontSize: 9, color: "#fff", marginTop: 2, fontWeight: 700 }}>
-                          {likes[lesson.id] || 142}
+            {/* LAYOUT PRINCIPAL RESPONSIVO 100% FLUIDO */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24, width: "100%", alignItems: "flex-start" }}>
+              
+              {/* COLUNA ESQUERDA / CENTRAL: PLAYER DE VÍDEO RESPONSIVO */}
+              <div className="card" style={{ padding: 18, alignItems: "stretch", background: "var(--panel)", borderRadius: 20 }}>
+                {!lesson && <p className="muted">Selecione uma aula na lista</p>}
+                {lesson && (
+                  <>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10, marginBottom: 14, flexWrap: "wrap" }}>
+                      <div>
+                        <span style={{ fontSize: 11, textTransform: "uppercase", fontWeight: 800, color: "#6d28d9", letterSpacing: 0.5 }}>
+                          Aula {indexAtual + 1} de {lessons.length}
                         </span>
-                      </button>
-
-                      {/* Botão Concluída */}
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setLessonDone(lesson.id, !lessonDone);
-                          setProgressTick((n) => n + 1);
-                        }}
-                        style={{
-                          background: lessonDone ? "#22c55e" : "rgba(0,0,0,0.6)",
-                          backdropFilter: "blur(8px)",
-                          border: "1px solid rgba(255,255,255,0.2)",
-                          color: "#fff",
-                          width: 44,
-                          height: 44,
-                          borderRadius: 22,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontSize: 18,
-                          cursor: "pointer",
-                        }}
-                        title={lessonDone ? "Aula Concluída" : "Marcar como Concluída"}
-                      >
-                        {lessonDone ? "✅" : "✔️"}
-                      </button>
-
-                      {/* Próxima Aula */}
-                      {indexAtual < lessons.length - 1 && (
+                        <h3 style={{ margin: 0, fontSize: 18, fontWeight: 800 }}>{lesson.title}</h3>
+                      </div>
+                      {isAdmin && (
                         <button
-                          type="button"
-                          onClick={() => setSearchParams({ aula: lessons[indexAtual + 1]!.id })}
-                          style={{
-                            background: "rgba(0,0,0,0.6)",
-                            backdropFilter: "blur(8px)",
-                            border: "1px solid rgba(255,255,255,0.2)",
-                            color: "#fff",
-                            width: 44,
-                            height: 44,
-                            borderRadius: 22,
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            fontSize: 18,
-                            cursor: "pointer",
+                          className="link"
+                          style={{ color: "#dc2626", fontSize: 12 }}
+                          onClick={() => {
+                            if (confirm("Remover esta aula?")) removeLesson.mutate(lesson.id);
                           }}
-                          title="Próxima Aula"
                         >
-                          ⬇️
+                          Remover aula
                         </button>
                       )}
                     </div>
-                  )}
 
-                  {/* Overlay Inferior com Autor & Título da Aula */}
-                  {lesson && (
+                    {/* CONTAINER DO PLAYER COM ASPECT RATIO RESPONSIVO AJUSTÁVEL */}
                     <div
                       style={{
-                        position: "absolute",
-                        left: 12,
-                        bottom: 16,
-                        right: 70,
-                        zIndex: 20,
-                        color: "#fff",
-                        textShadow: "0 2px 4px rgba(0,0,0,0.8)",
+                        width: "100%",
+                        maxWidth: aspectRatioMode === "9/16" ? 380 : "100%",
+                        aspectRatio: aspectRatioMode,
+                        margin: aspectRatioMode === "9/16" ? "0 auto" : 0,
+                        borderRadius: 18,
+                        overflow: "hidden",
+                        background: "#000",
+                        position: "relative",
+                        boxShadow: "0 12px 30px rgba(0,0,0,0.3)",
+                        border: "1px solid var(--border)",
+                        transition: "all 0.3s ease",
                       }}
                     >
-                      <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4 }}>
-                        <span style={{ fontWeight: 800, fontSize: 13 }}>@ComentaAcademy ✦</span>
-                        <span style={{ background: "#4285f4", fontSize: 9, padding: "2px 6px", borderRadius: 10, fontWeight: 700 }}>
-                          VERIFICADO
-                        </span>
-                      </div>
-                      <div style={{ fontWeight: 700, fontSize: 14, lineHeight: 1.2 }}>{lesson.title}</div>
-                      <div style={{ fontSize: 11, opacity: 0.9, marginTop: 4, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
-                        {lesson.content || "Assista a esta aula para dominar o atendimento com IA."}
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* Lista de Aulas e Navegação ao Lado */}
-                <div className="card" style={{ flex: "1 1 300px", minWidth: 280, padding: 16, alignItems: "stretch" }}>
-                  <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12 }}>
-                    📋 Aulas do Curso ({lessons.length})
-                  </div>
-                  <div style={{ display: "flex", flexDirection: "column", gap: 8, maxHeight: 540, overflowY: "auto" }}>
-                    {lessons.map((l, i) => (
-                      <div
-                        key={l.id}
-                        onClick={() => setSearchParams({ aula: l.id })}
-                        style={{
-                          padding: 12,
-                          borderRadius: 12,
-                          background: lesson?.id === l.id ? "var(--panel2)" : "transparent",
-                          border: lesson?.id === l.id ? "2px solid #6d28d9" : "1px solid var(--border)",
-                          cursor: "pointer",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <div>
-                          <div style={{ fontWeight: 700, fontSize: 13 }}>
-                            {isLessonDone(l.id) ? "✅ " : `${i + 1}. `}
-                            {l.title}
-                          </div>
-                          <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 2 }}>
-                            {l.durationMin ? `${l.durationMin} min` : "Vídeo Shorts"}
-                          </div>
-                        </div>
-                        {lesson?.id === l.id && (
-                          <span style={{ fontSize: 11, background: "#6d28d9", color: "#fff", padding: "2px 8px", borderRadius: 10, fontWeight: 700 }}>
-                            ASSISTINDO
-                          </span>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-
-                  {isAdmin && (
-                    <LessonForm
-                      onCreate={(body) => addLesson.mutateAsync(body)}
-                      isPending={addLesson.isPending}
-                    />
-                  )}
-                </div>
-              </div>
-            ) : (
-              /* MODO TRADICIONAL (16:9) - 100% RESPONSIVO */
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20, width: "100%" }}>
-                <div className="card" style={{ padding: 16, alignItems: "stretch" }}>
-                  <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12 }}>
-                    📋 Aulas do Curso ({lessons.length})
-                  </div>
-                  {lessons.length === 0 && <div className="item muted">Sem aulas ainda</div>}
-                  <div style={{ display: "flex", flexDirection: "column", gap: 6, maxHeight: 500, overflowY: "auto" }}>
-                    {lessons.map((l, i) => (
-                      <div
-                        key={l.id}
-                        onClick={() => setSearchParams({ aula: l.id })}
-                        style={{
-                          padding: 10,
-                          borderRadius: 8,
-                          background: lesson?.id === l.id ? "var(--panel2)" : "transparent",
-                          border: lesson?.id === l.id ? "1px solid var(--accent)" : "1px solid transparent",
-                          cursor: "pointer",
-                          display: "flex",
-                          justifyContent: "space-between",
-                          fontSize: 13
-                        }}
-                      >
-                        <div style={{ fontWeight: lesson?.id === l.id ? 700 : 500 }}>
-                          {isLessonDone(l.id) ? "✅ " : `${i + 1}. `}
-                          {l.title}
-                        </div>
-                        <span className="muted" style={{ fontSize: 11 }}>{l.durationMin ? `${l.durationMin} min` : "aula"}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {isAdmin && (
-                    <LessonForm
-                      onCreate={(body) => addLesson.mutateAsync(body)}
-                      isPending={addLesson.isPending}
-                    />
-                  )}
-                </div>
-
-                <div className="card" style={{ padding: 18, alignItems: "stretch" }}>
-                  {!lesson && <p className="muted">Selecione uma aula</p>}
-                  {lesson && (
-                    <>
-                      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-                        <span style={{ fontWeight: 800, fontSize: 16 }}>{lesson.title}</span>
-                        {isAdmin && (
-                          <button
-                            className="link"
-                            style={{ marginLeft: "auto", color: "#dc2626" }}
-                            onClick={() => {
-                              if (confirm("Remover esta aula?")) removeLesson.mutate(lesson.id);
-                            }}
-                          >
-                            Remover aula
-                          </button>
-                        )}
-                      </div>
-
-                      {/* Container do Vídeo 16:9 Responsivo Fluid */}
                       {emb?.type === "iframe" && (
-                        <div
+                        <iframe
+                          src={emb.src}
+                          title={lesson.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
                           style={{
+                            position: "absolute",
+                            inset: 0,
                             width: "100%",
-                            aspectRatio: "16/9",
-                            borderRadius: 12,
-                            overflow: "hidden",
-                            background: "#000",
-                            position: "relative"
+                            height: "100%",
+                            border: 0,
+                            objectFit: aspectRatioMode === "9/16" ? "cover" : "contain",
                           }}
-                        >
-                          <iframe
-                            src={emb.src}
-                            title={lesson.title}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            style={{
-                              position: "absolute",
-                              inset: 0,
-                              width: "100%",
-                              height: "100%",
-                              border: 0,
-                            }}
-                          />
-                        </div>
+                        />
                       )}
                       {emb?.type === "video" && (
-                        <div
+                        <video
+                          src={emb.src}
+                          controls
+                          playsInline
                           style={{
                             width: "100%",
-                            aspectRatio: "16/9",
-                            borderRadius: 12,
-                            overflow: "hidden",
-                            background: "#000"
+                            height: "100%",
+                            objectFit: aspectRatioMode === "9/16" ? "cover" : "contain",
                           }}
-                        >
-                          <video
-                            src={emb.src}
-                            controls
-                            playsInline
-                            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-                          />
+                        />
+                      )}
+                      {(!emb || emb.type === "link") && (
+                        <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", color: "#fff", padding: 24, textAlign: "center" }}>
+                          <div style={{ fontSize: 52, marginBottom: 12 }}>🎬</div>
+                          <div style={{ fontWeight: 800, fontSize: 18 }}>{lesson.title}</div>
+                          <p style={{ fontSize: 13, opacity: 0.8, marginTop: 8, maxWidth: 400 }}>
+                            {lesson.content || "Assista a esta aula completa do treinamento Comenta Academy."}
+                          </p>
                         </div>
                       )}
+                    </div>
 
-                      {lesson.content && (
-                        <p style={{ marginTop: 12, whiteSpace: "pre-wrap", lineHeight: 1.5, fontSize: 13 }}>
-                          {lesson.content}
-                        </p>
-                      )}
-
-                      <div style={{ marginTop: 14 }}>
+                    {/* CONTROLES E AÇÕES DA AULA */}
+                    <div style={{ marginTop: 16, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12, borderTop: "1px solid var(--border)", paddingTop: 14 }}>
+                      <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
                         <button
+                          type="button"
                           onClick={() => {
                             setLessonDone(lesson.id, !lessonDone);
                             setProgressTick((n) => n + 1);
                           }}
                           style={{
-                            background: lessonDone ? "var(--panel2)" : "#22c55e",
-                            color: lessonDone ? "var(--text)" : "#fff",
-                            border: "1px solid var(--border)",
-                            padding: "8px 16px",
-                            borderRadius: 8,
+                            background: lessonDone ? "#22c55e" : "#6d28d9",
+                            color: "#fff",
+                            border: 0,
+                            padding: "9px 18px",
+                            borderRadius: 12,
                             fontWeight: 700,
+                            fontSize: 13,
                             cursor: "pointer",
+                            boxShadow: lessonDone ? "0 4px 12px rgba(34,197,94,0.3)" : "0 4px 12px rgba(109,40,217,0.3)",
+                            transition: "all 0.2s ease",
                           }}
                         >
-                          {lessonDone ? "✓ Concluída — desmarcar" : "Marcar como concluída"}
+                          {lessonDone ? "✅ Concluída (Desmarcar)" : "✓ Marcar como Concluída"}
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() => alternarLike(lesson.id)}
+                          style={{
+                            background: curtido[lesson.id] ? "rgba(239,68,68,0.15)" : "var(--panel2)",
+                            color: curtido[lesson.id] ? "#ef4444" : "var(--text)",
+                            border: "1px solid var(--border)",
+                            padding: "8px 14px",
+                            borderRadius: 12,
+                            fontWeight: 700,
+                            fontSize: 13,
+                            cursor: "pointer",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 6,
+                          }}
+                        >
+                          ❤️ {likes[lesson.id] || 142} Curtidas
                         </button>
                       </div>
-                    </>
-                  )}
-                </div>
+
+                      {/* Botões de Navegação Anterior / Próxima */}
+                      <div style={{ display: "flex", gap: 8 }}>
+                        {indexAtual > 0 && (
+                          <button
+                            type="button"
+                            onClick={() => setSearchParams({ aula: lessons[indexAtual - 1]!.id })}
+                            style={{
+                              background: "var(--panel2)",
+                              color: "var(--text)",
+                              border: "1px solid var(--border)",
+                              padding: "8px 14px",
+                              borderRadius: 10,
+                              fontSize: 12,
+                              fontWeight: 700,
+                              cursor: "pointer",
+                            }}
+                          >
+                            ← Anterior
+                          </button>
+                        )}
+                        {indexAtual < lessons.length - 1 && (
+                          <button
+                            type="button"
+                            onClick={() => setSearchParams({ aula: lessons[indexAtual + 1]!.id })}
+                            style={{
+                              background: "var(--panel2)",
+                              color: "var(--text)",
+                              border: "1px solid var(--border)",
+                              padding: "8px 14px",
+                              borderRadius: 10,
+                              fontSize: 12,
+                              fontWeight: 700,
+                              cursor: "pointer",
+                            }}
+                          >
+                            Próxima →
+                          </button>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Descrição / Conteúdo da Aula */}
+                    {lesson.content && (
+                      <div style={{ marginTop: 16, background: "var(--panel2)", padding: 14, borderRadius: 12, border: "1px solid var(--border)" }}>
+                        <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 6 }}>📝 Resumo & Material de Apoio</div>
+                        <p style={{ margin: 0, whiteSpace: "pre-wrap", lineHeight: 1.6, fontSize: 13, color: "var(--text)" }}>
+                          {lesson.content}
+                        </p>
+                      </div>
+                    )}
+                  </>
+                )}
               </div>
-            )}
+
+              {/* COLUNA DIREITA: LISTA DE AULAS DO CURSO */}
+              <div className="card" style={{ padding: 18, alignItems: "stretch", background: "var(--panel)", borderRadius: 20 }}>
+                <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <span>📋 Aulas do Curso ({lessons.length})</span>
+                  <span style={{ fontSize: 11, background: "rgba(109, 40, 217, 0.15)", color: "#6d28d9", padding: "2px 8px", borderRadius: 10, fontWeight: 700 }}>
+                    {pct}% CONCLUÍDO
+                  </span>
+                </div>
+                {lessons.length === 0 && <div className="item muted">Nenhuma aula cadastrada neste curso ainda.</div>}
+                
+                <div style={{ display: "flex", flexDirection: "column", gap: 8, maxHeight: 560, overflowY: "auto", paddingRight: 4 }}>
+                  {lessons.map((l, i) => {
+                    const isSelected = lesson?.id === l.id;
+                    const isDone = isLessonDone(l.id);
+                    return (
+                      <div
+                        key={l.id}
+                        onClick={() => setSearchParams({ aula: l.id })}
+                        style={{
+                          padding: "12px 14px",
+                          borderRadius: 14,
+                          background: isSelected ? "linear-gradient(135deg, rgba(109,40,217,0.12), rgba(66,133,244,0.12))" : "var(--panel2)",
+                          border: isSelected ? "2px solid #6d28d9" : "1px solid var(--border)",
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          transition: "all 0.2s ease",
+                        }}
+                      >
+                        <div>
+                          <div style={{ fontWeight: isSelected ? 800 : 600, fontSize: 13, color: isSelected ? "#6d28d9" : "var(--text)" }}>
+                            {isDone ? "✅ " : `${i + 1}. `}
+                            {l.title}
+                          </div>
+                          <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 2 }}>
+                            {l.durationMin ? `⏱️ ${l.durationMin} min` : "📹 Videoaula"}
+                          </div>
+                        </div>
+                        {isSelected && (
+                          <span style={{ fontSize: 10, background: "#6d28d9", color: "#fff", padding: "3px 8px", borderRadius: 10, fontWeight: 800 }}>
+                            REPRODUZINDO
+                          </span>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {isAdmin && (
+                  <LessonForm
+                    onCreate={(body) => addLesson.mutateAsync(body)}
+                    isPending={addLesson.isPending}
+                  />
+                )}
+              </div>
+            </div>
           </div>
         );
       }}
