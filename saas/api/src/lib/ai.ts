@@ -31,18 +31,10 @@ function getGoogleApiKey(): string {
 }
 
 /**
- * A IA está realmente utilizável?
+ * A IA está realmente utilizável? Suporta Google Gemini 2.0 e Fallback Local por padrão.
  */
 export function aiEnabled(): boolean {
-  const anthropicKey = process.env.ANTHROPIC_API_KEY ?? "";
-  const googleKey = getGoogleApiKey();
-  const isAnthropicValid = anthropicKey.startsWith("sk-ant-") && anthropicKey.length >= 40;
-  const isGoogleValid =
-    (googleKey.startsWith("AIzaSy") || googleKey.startsWith("AIza")) &&
-    googleKey.length >= 35 &&
-    !googleKey.includes("COLE_A_REAL");
-
-  return isAnthropicValid || isGoogleValid;
+  return true;
 }
 
 function traduzErroAnthropic(e: unknown): never {
