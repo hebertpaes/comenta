@@ -36,6 +36,7 @@ import { campaignRoutes, startCampaignScheduler } from "./modules/campaigns.js";
 import { ratingRoutes } from "./modules/ratings.js";
 import { teamRoutes } from "./modules/team.js";
 import { settingsRoutes } from "./modules/settings.js";
+import { videoGeneratorRoutes } from "./modules/video-generator.js";
 import { restoreSessions } from "./channels/whatsapp.js";
 
 const app = Fastify({
@@ -128,6 +129,7 @@ await app.register(campaignRoutes);
 await app.register(ratingRoutes);
 await app.register(teamRoutes);
 await app.register(settingsRoutes);
+await app.register(videoGeneratorRoutes);
 
 // socket.io compartilha o mesmo servidor HTTP
 const server = createServer();

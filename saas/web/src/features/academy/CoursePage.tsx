@@ -9,6 +9,7 @@ import { useAuth } from "../../auth/useAuth";
 import { Async, ErrorBox } from "../../components/Async";
 import { embedInfo, isLessonDone, setLessonDone } from "./lessons";
 import { ComentaVideoPlayer } from "./ComentaVideoPlayer";
+import { VideoGeneratorTool } from "./VideoGeneratorTool";
 
 interface LessonDraft {
   title: string;
@@ -97,6 +98,7 @@ export function CoursePage() {
   const [aspectRatioMode, setAspectRatioMode] = useState<"16/9" | "9/16" | "1/1">("16/9");
   const [likes, setLikes] = useState<Record<string, number>>({});
   const [curtido, setCurtido] = useState<Record<string, boolean>>({});
+  const [showStudioModal, setShowStudioModal] = useState(false);
 
   const query = useQuery({
     queryKey: keys.course(courseId ?? ""),
@@ -152,61 +154,96 @@ export function CoursePage() {
                 ← Voltar aos cursos
               </Link>
 
-              {/* Seletor do Formato de Vídeo Responsivo (16:9 Cinema / 9:16 Vertical / 1:1 Quadrado) */}
-              <div style={{ display: "flex", gap: 6, background: "var(--panel2)", padding: 4, borderRadius: 20, border: "1px solid var(--border)" }}>
+              {/* Botão de Acesso ao Studio Gerador de Vídeos IA & Seletor de Formato */}
+              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
                 <button
                   type="button"
-                  onClick={() => setAspectRatioMode("16/9")}
+                  onClick={() => setShowStudioModal(true)}
                   style={{
-                    padding: "6px 14px",
-                    borderRadius: 16,
+                    padding: "7px 16px",
+                    borderRadius: 20,
                     border: 0,
                     fontSize: 12,
-                    fontWeight: 700,
-                    background: aspectRatioMode === "16/9" ? "linear-gradient(135deg, #6d28d9, #4285f4)" : "transparent",
-                    color: aspectRatioMode === "16/9" ? "#fff" : "var(--muted)",
+                    fontWeight: 800,
+                    background: "linear-gradient(135deg, #a855f7, #ef4444)",
+                    color: "#fff",
                     cursor: "pointer",
-                    transition: "all 0.2s ease",
+                    boxShadow: "0 4px 12px rgba(168,85,247,0.3)",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 6,
                   }}
                 >
-                  📺 Widescreen 16:9
+                  🎬 Studio Gerador de Vídeos IA (1 Minuto)
                 </button>
-                <button
-                  type="button"
-                  onClick={() => setAspectRatioMode("9/16")}
-                  style={{
-                    padding: "6px 14px",
-                    borderRadius: 16,
-                    border: 0,
-                    fontSize: 12,
-                    fontWeight: 700,
-                    background: aspectRatioMode === "9/16" ? "linear-gradient(135deg, #ff7700, #ff0055)" : "transparent",
-                    color: aspectRatioMode === "9/16" ? "#fff" : "var(--muted)",
-                    cursor: "pointer",
-                    transition: "all 0.2s ease",
-                  }}
-                >
-                  📱 Vertical 9:16 (Reels)
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setAspectRatioMode("1/1")}
-                  style={{
-                    padding: "6px 14px",
-                    borderRadius: 16,
-                    border: 0,
-                    fontSize: 12,
-                    fontWeight: 700,
-                    background: aspectRatioMode === "1/1" ? "linear-gradient(135deg, #10b981, #06b6d4)" : "transparent",
-                    color: aspectRatioMode === "1/1" ? "#fff" : "var(--muted)",
-                    cursor: "pointer",
-                    transition: "all 0.2s ease",
-                  }}
-                >
-                  🔳 Quadrado 1:1
-                </button>
+
+                <div style={{ display: "flex", gap: 6, background: "var(--panel2)", padding: 4, borderRadius: 20, border: "1px solid var(--border)" }}>
+                  <button
+                    type="button"
+                    onClick={() => setAspectRatioMode("16/9")}
+                    style={{
+                      padding: "6px 14px",
+                      borderRadius: 16,
+                      border: 0,
+                      fontSize: 12,
+                      fontWeight: 700,
+                      background: aspectRatioMode === "16/9" ? "linear-gradient(135deg, #6d28d9, #4285f4)" : "transparent",
+                      color: aspectRatioMode === "16/9" ? "#fff" : "var(--muted)",
+                      cursor: "pointer",
+                      transition: "all 0.2s ease",
+                    }}
+                  >
+                    📺 Widescreen 16:9
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setAspectRatioMode("9/16")}
+                    style={{
+                      padding: "6px 14px",
+                      borderRadius: 16,
+                      border: 0,
+                      fontSize: 12,
+                      fontWeight: 700,
+                      background: aspectRatioMode === "9/16" ? "linear-gradient(135deg, #ff7700, #ff0055)" : "transparent",
+                      color: aspectRatioMode === "9/16" ? "#fff" : "var(--muted)",
+                      cursor: "pointer",
+                      transition: "all 0.2s ease",
+                    }}
+                  >
+                    📱 Vertical 9:16 (Reels)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setAspectRatioMode("1/1")}
+                    style={{
+                      padding: "6px 14px",
+                      borderRadius: 16,
+                      border: 0,
+                      fontSize: 12,
+                      fontWeight: 700,
+                      background: aspectRatioMode === "1/1" ? "linear-gradient(135deg, #10b981, #06b6d4)" : "transparent",
+                      color: aspectRatioMode === "1/1" ? "#fff" : "var(--muted)",
+                      cursor: "pointer",
+                      transition: "all 0.2s ease",
+                    }}
+                  >
+                    🔳 Quadrado 1:1
+                  </button>
+                </div>
               </div>
             </div>
+
+            {/* Modal do Studio Gerador de Vídeos IA */}
+            {showStudioModal && (
+              <VideoGeneratorTool
+                courseId={courseId as string}
+                lessonId={lesson?.id}
+                onClose={() => setShowStudioModal(false)}
+                onSuccess={() => {
+                  invalidate();
+                }}
+              />
+            )}
 
             <h2 style={{ marginTop: 0, fontSize: 24, fontWeight: 800 }}>
               {course.emoji} {course.title}
