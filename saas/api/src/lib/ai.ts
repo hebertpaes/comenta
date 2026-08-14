@@ -135,7 +135,7 @@ async function chamarClaude(
   const userText = params.messages
     .map((m) => (typeof m.content === "string" ? m.content : ""))
     .join("\n");
-  let mockResult = "Olá! Como posso ajudar você hoje no Comenta AtendeChat?";
+  let mockResult = "Olá! Como posso ajudar você hoje no Comenta?";
 
   const systemStr = typeof params.system === "string" ? params.system : "";
 

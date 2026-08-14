@@ -29,7 +29,7 @@ export async function aiTrainingRoutes(app: FastifyInstance) {
       .where(eq(schema.companies.id, companyId));
 
     const settingsObj = (company?.settings as Record<string, unknown> | undefined) ?? {};
-    const currentKnowledge = (settingsObj.widgetKnowledge as string) || "Empresa Comenta SaaS AtendeChat";
+    const currentKnowledge = (settingsObj.widgetKnowledge as string) || "Empresa Comenta SaaS";
 
     // 2) Coleta e enriquecimento de novos diálogos resolvidos do dia
     const novosAprendizados = [

@@ -216,7 +216,7 @@ export function SettingsPage() {
                 }}
                 aria-label="Base de conhecimento do widget"
                 placeholder={
-                  "Ex.: Somos o Comenta AtendeChat.\nHorário: seg–sex 8h–18h.\nPlanos/preços: Starter R$ 149, Pro R$ 349...\n..."
+                  "Ex.: Somos o Comenta.\nHorário: seg–sex 8h–18h.\nPlanos/preços: Starter R$ 149, Pro R$ 349...\n..."
                 }
                 style={{
                   width: "100%",
@@ -247,10 +247,10 @@ export function SettingsPage() {
           )}
         </Async>
       </div>
-      {/* Kiwify & AtendeChat Portal Bridge */}
+      {/* Kiwify & Comenta Portal Bridge */}
       <div className="card" style={{ padding: 18, marginTop: 16 }}>
         <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>
-          🎓 Portal de Cursos AtendeChat & Kiwify (curso.atendechat.com)
+          🎓 Portal de Cursos Comenta & Kiwify (curso.comenta.com.br)
         </div>
         <p className="muted" style={{ fontSize: 13, marginTop: 0, marginBottom: 12 }}>
           Integração oficial de alunos, membros e webhooks com a área de membros Kiwify.
@@ -258,7 +258,7 @@ export function SettingsPage() {
 
         <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
           <a
-            href="https://curso.atendechat.com/"
+            href="https://curso.comenta.com.br/"
             target="_blank"
             rel="noreferrer"
             className="button secondary"
@@ -275,7 +275,7 @@ export function SettingsPage() {
               borderRadius: 8,
             }}
           >
-            ↗ Abrir Portal Kiwify AtendeChat (curso.atendechat.com)
+            ↗ Abrir Portal Kiwify Comenta (curso.comenta.com.br)
           </a>
 
           <span style={{ fontSize: 12, color: "var(--muted)" }}>

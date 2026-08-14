@@ -4,19 +4,19 @@ import { db, schema } from "../db/client.js";
 import { audit } from "../lib/audit.js";
 
 /**
- * Módulo de Integração com o Portal Kiwify / AtendeChat (https://curso.atendechat.com/)
+ * Módulo de Integração com o Portal Kiwify / Comenta (https://curso.comenta.com.br/)
  */
 
 export async function kiwifyRoutes(app: FastifyInstance) {
-  // Webhook Kiwify para Alunos do AtendeChat
+  // Webhook Kiwify para Alunos do Comenta
   app.all("/webhooks/kiwify", async (req, reply) => {
     const body = (req.body as Record<string, any>) || {};
 
     const event = body.order_status || body.event || "approved";
-    const email = body.Customer?.email || body.email || "aluno@atendechat.com";
-    const name = body.Customer?.full_name || body.name || "Aluno Kiwify AtendeChat";
+    const email = body.Customer?.email || body.email || "aluno@comenta.com.br";
+    const name = body.Customer?.full_name || body.name || "Aluno Kiwify Comenta";
     const phone = body.Customer?.mobile || body.phone || "";
-    const productName = body.Product?.product_name || "Curso AtendeChat SaaS";
+    const productName = body.Product?.product_name || "Curso Comenta SaaS";
 
     const [comp] = await db.select({ id: schema.companies.id }).from(schema.companies).limit(1);
     if (!comp) return reply.code(400).send({ error: "Nenhuma empresa cadastrada." });
@@ -27,7 +27,7 @@ export async function kiwifyRoutes(app: FastifyInstance) {
         .from(schema.contacts)
         .where(eq(schema.contacts.email, email.toLowerCase().trim()));
 
-      const tags = ["#AlunoKiwify", "#AtendeChatCurso", "#KiwifyIntegrado"];
+      const tags = ["#AlunoKiwify", "#ComentaCurso", "#KiwifyIntegrado"];
 
       if (!contact) {
         [contact] = await db
@@ -52,14 +52,14 @@ export async function kiwifyRoutes(app: FastifyInstance) {
       audit({ companyId: comp.id, userId: null, role: "admin", name: "Kiwify Webhook" }, "kiwify.sale_approved", "contact", contact.id, {
         productName,
         email,
-        portalUrl: "https://curso.atendechat.com/"
+        portalUrl: "https://curso.comenta.com.br/"
       });
     }
 
     return reply.send({
       status: "success",
-      message: "Webhook Kiwify AtendeChat processado com sucesso!",
-      portalUrl: "https://curso.atendechat.com/",
+      message: "Webhook Kiwify Comenta processado com sucesso!",
+      portalUrl: "https://curso.comenta.com.br/",
       timestamp: new Date().toISOString()
     });
   });

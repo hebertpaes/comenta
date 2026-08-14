@@ -88,7 +88,7 @@ def generate_pdf(filename):
         ["Módulo / Serviço", "URL / Porta", "Descrição & Função Principal"],
         ["Comenta AI App", "http://localhost:3000/agentes", "Interface full-screen dos robôs de IA generativa."],
         ["Comenta Play", "http://localhost:3000/", "Plataforma de streaming de treinamentos e videoaulas HD."],
-        ["Painel AtendeChat", "http://localhost:8080/", "Caixa de entrada multicanal, Kanban CRM e Cursos."],
+        ["Painel Comenta", "http://localhost:8080/", "Caixa de entrada multicanal, Kanban CRM e Cursos."],
         ["Fastify API & Swagger", "http://localhost:4000/docs", "API REST, webhooks e automações de atendimento."],
         ["n8n Workflows", "http://localhost:5678/", "Motor de automação de processos e agendamento cron."],
         ["Portal ABACS", "https://abacs.org.br/login.php", "Portal de autenticação e sincronismo de alunos."],
