@@ -8,6 +8,7 @@ import { keys } from "../../api/keys";
 import { useAuth } from "../../auth/useAuth";
 import { Async, ErrorBox } from "../../components/Async";
 import { LEVEL_LABEL } from "./lessons";
+import { ComentaCourseStudio } from "./ComentaCourseStudio";
 
 interface CourseDraft {
   title: string;
@@ -133,6 +134,7 @@ export function AcademyPage() {
   const { isAdmin } = useAuth();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
+  const [showStudioModal, setShowStudioModal] = useState(false);
 
   const query = useQuery({ queryKey: keys.courses, queryFn: courses.list });
   const reload = () => queryClient.invalidateQueries({ queryKey: keys.courses });
@@ -153,6 +155,40 @@ export function AcademyPage() {
         Cursos e treinamentos para a equipe dominar o Comenta e as ferramentas. Assista às aulas,
         marque como concluídas e acompanhe seu progresso.
       </p>
+
+      <div style={{ display: "flex", gap: 10, marginBottom: 16, flexWrap: "wrap" }}>
+        <button
+          type="button"
+          onClick={() => setShowStudioModal(true)}
+          style={{
+            padding: "9px 20px",
+            borderRadius: 14,
+            border: 0,
+            fontSize: 13,
+            fontWeight: 800,
+            background: "linear-gradient(135deg, #6d28d9, #4285f4)",
+            color: "#fff",
+            cursor: "pointer",
+            boxShadow: "0 6px 18px rgba(109,40,217,0.35)",
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+          }}
+        >
+          🚀 Studio Gerador de Cursos IA (Instrução do Professor + Desejo do Aluno)
+        </button>
+      </div>
+
+      {showStudioModal && (
+        <ComentaCourseStudio
+          onClose={() => setShowStudioModal(false)}
+          onSuccess={(courseId) => {
+            setShowStudioModal(false);
+            void reload();
+            navigate(`/cursos/${courseId}`);
+          }}
+        />
+      )}
 
       {isAdmin && (
         <CourseForm

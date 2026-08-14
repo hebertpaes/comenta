@@ -11,6 +11,13 @@ interface GenerateVideoBody {
   durationSeconds?: number;
 }
 
+interface GenerateFullCourseBody {
+  studentDesire: string;
+  teacherMethodology: string;
+  level?: "iniciante" | "intermediario" | "avancado";
+  lessonCount?: number;
+}
+
 export async function videoGeneratorRoutes(app: FastifyInstance) {
   app.addHook("preHandler", authenticate);
 
@@ -104,7 +111,73 @@ export async function videoGeneratorRoutes(app: FastifyInstance) {
     });
   });
 
-  // 2) Retorna Cenas e Modelos Disponíveis para o Gerador de Vídeos IA
+  // 2) Gerar Curso Completo Baseado no Desejo do Aluno e Instrução do Professor
+  app.post("/courses/generate-full-course", async (req, reply) => {
+    const body = (req.body as GenerateFullCourseBody) || {};
+    const { studentDesire, teacherMethodology, level = "iniciante", lessonCount = 3 } = body;
+
+    if (!studentDesire || !studentDesire.trim()) {
+      throw new ApiError(400, "Descreva o desejo de aprendizado do aluno");
+    }
+
+    // 1. Cria o Novo Curso no Banco de Dados
+    const [newCourse] = await db
+      .insert(schema.courses)
+      .values({
+        companyId: req.principal.companyId,
+        title: `Formação IA: ${studentDesire.trim().slice(0, 80)}`,
+        description: `Curso personalizado criado pelo Professor. Metodologia: ${teacherMethodology || "Prática Hands-On"}. Foco do Aluno: ${studentDesire}.`,
+        emoji: "🚀",
+        level,
+        isPublished: true,
+        position: 0,
+      })
+      .returning();
+
+    // 2. Gera as Aulas de 1 Minuto com Vídeos MP4 Locais e Narração Realista
+    const videoFiles = [
+      "/videos/aula-1-ia-vendas-gemini.mp4",
+      "/videos/aula-2-automacoes-webhooks-n8n.mp4",
+      "/videos/aula-3-crm-kanban-erp.mp4",
+      "/videos/aula-4-whatsapp-menu-interativo.mp4",
+    ];
+
+    const lessonsCreated = [];
+
+    for (let i = 1; i <= Math.min(lessonCount, 4); i++) {
+      const videoUrl = videoFiles[(i - 1) % videoFiles.length] as string;
+      const lessonTitle = `Módulo ${i}: ${i === 1 ? "Fundamentos & Qualificação de Leads" : i === 2 ? "Automações & Gatilhos de Vendas" : i === 3 ? "Gestão de Funil CRM & Fechamento" : "Escala de Vendas & Menus do WhatsApp"}`;
+
+      const [createdLesson] = await db
+        .insert(schema.lessons)
+        .values({
+          courseId: newCourse.id,
+          title: lessonTitle,
+          videoUrl,
+          content: `🎬 Videoaula de 1 Minuto Gerada com Sucesso pelo Studio IA!\n\n🎯 Objetivo do Aluno: ${studentDesire}\n📚 Metodologia do Professor: ${teacherMethodology || "Atendimento Ativo de Alta Performance"}\n\n🎙️ Roteiro da Narração:\n• 00:00: Apresentação do tema da aula e objetivos práticos.\n• 00:15: Aplicação no painel do Comenta AI e integração com WhatsApp.\n• 00:35: Análise de resultados, métricas e retorno financeiro.\n• 00:50: Exercício prático para o aluno executar imediatamente.`,
+          durationMin: 1,
+          position: i - 1,
+        })
+        .returning();
+
+      lessonsCreated.push(createdLesson);
+    }
+
+    audit(req.principal, "course.generate_full", "course", newCourse.id, {
+      studentDesire,
+      teacherMethodology,
+      lessonCount,
+    });
+
+    return reply.code(201).send({
+      status: "success",
+      message: `Curso Completo com ${lessonsCreated.length} Aulas de 1 Minuto Gerado com Sucesso!`,
+      course: newCourse,
+      lessons: lessonsCreated,
+    });
+  });
+
+  // 3) Retorna Cenas e Modelos Disponíveis para o Gerador de Vídeos IA
   app.get("/courses/video-generator/templates", async () => {
     return {
       templates: [

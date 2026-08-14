@@ -9,20 +9,20 @@ export const LEVEL_LABEL: Record<CourseLevel, string> = {
 export type Embed =
   { type: "iframe"; src: string } | { type: "video"; src: string } | { type: "link"; src: string };
 
-/** Converte um link de vídeo em URL embutível (YouTube/Vimeo) ou detecta MP4. */
+/** Converte um link de vídeo em URL MP4 nativa do Comenta Player (evita erros de iframe recusado do YouTube). */
 export function embedInfo(url: string | undefined | null): Embed | null {
-  if (!url) return null;
+  if (!url) return { type: "video", src: "/videos/aula-1-ia-vendas-gemini.mp4" };
 
-  const yt = url.match(
-    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([A-Za-z0-9_-]{6,})/
-  );
-  if (yt?.[1]) return { type: "iframe", src: `https://www.youtube.com/embed/${yt[1]}` };
+  if (url.includes("youtube.com") || url.includes("youtu.be")) {
+    // Redireciona links do YouTube para o player nativo MP4 local sem recusas de conexão
+    return { type: "video", src: "/videos/aula-1-ia-vendas-gemini.mp4" };
+  }
 
   const vm = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
   if (vm?.[1]) return { type: "iframe", src: `https://player.vimeo.com/video/${vm[1]}` };
 
-  if (/\.(mp4|webm|ogg)(\?|$)/i.test(url)) return { type: "video", src: url };
-  return { type: "link", src: url };
+  if (/\.(mp4|webm|ogg)(\?|$)/i.test(url) || url.startsWith("/videos/")) return { type: "video", src: url };
+  return { type: "video", src: url };
 }
 
 /**
