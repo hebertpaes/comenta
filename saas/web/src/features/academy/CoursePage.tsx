@@ -8,6 +8,7 @@ import { keys } from "../../api/keys";
 import { useAuth } from "../../auth/useAuth";
 import { Async, ErrorBox } from "../../components/Async";
 import { embedInfo, isLessonDone, setLessonDone } from "./lessons";
+import { ComentaVideoPlayer } from "./ComentaVideoPlayer";
 
 interface LessonDraft {
   title: string;
@@ -256,60 +257,17 @@ export function CoursePage() {
                       )}
                     </div>
 
-                    {/* CONTAINER DO PLAYER COM ASPECT RATIO RESPONSIVO AJUSTÁVEL */}
-                    <div
-                      style={{
-                        width: "100%",
-                        maxWidth: aspectRatioMode === "9/16" ? 380 : "100%",
-                        aspectRatio: aspectRatioMode,
-                        margin: aspectRatioMode === "9/16" ? "0 auto" : 0,
-                        borderRadius: 18,
-                        overflow: "hidden",
-                        background: "#000",
-                        position: "relative",
-                        boxShadow: "0 12px 30px rgba(0,0,0,0.3)",
-                        border: "1px solid var(--border)",
-                        transition: "all 0.3s ease",
+                    {/* PLAYER DE VÍDEO PRÓPRIO E CUSTOMIZADO DO COMENTA */}
+                    <ComentaVideoPlayer
+                      src={lesson.videoUrl || "/videos/aula-1-ia-vendas-gemini.mp4"}
+                      title={lesson.title}
+                      type={emb?.type || "video"}
+                      aspectRatio={aspectRatioMode}
+                      onEnded={() => {
+                        setLessonDone(lesson.id, true);
+                        setProgressTick((n) => n + 1);
                       }}
-                    >
-                      {emb?.type === "iframe" && (
-                        <iframe
-                          src={emb.src}
-                          title={lesson.title}
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                          style={{
-                            position: "absolute",
-                            inset: 0,
-                            width: "100%",
-                            height: "100%",
-                            border: 0,
-                            objectFit: aspectRatioMode === "9/16" ? "cover" : "contain",
-                          }}
-                        />
-                      )}
-                      {emb?.type === "video" && (
-                        <video
-                          src={emb.src}
-                          controls
-                          playsInline
-                          style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: aspectRatioMode === "9/16" ? "cover" : "contain",
-                          }}
-                        />
-                      )}
-                      {(!emb || emb.type === "link") && (
-                        <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", color: "#fff", padding: 24, textAlign: "center" }}>
-                          <div style={{ fontSize: 52, marginBottom: 12 }}>🎬</div>
-                          <div style={{ fontWeight: 800, fontSize: 18 }}>{lesson.title}</div>
-                          <p style={{ fontSize: 13, opacity: 0.8, marginTop: 8, maxWidth: 400 }}>
-                            {lesson.content || "Assista a esta aula completa do treinamento Comenta Academy."}
-                          </p>
-                        </div>
-                      )}
-                    </div>
+                    />
 
                     {/* CONTROLES E AÇÕES DA AULA */}
                     <div style={{ marginTop: 16, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12, borderTop: "1px solid var(--border)", paddingTop: 14 }}>
