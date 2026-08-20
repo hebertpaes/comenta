@@ -190,6 +190,9 @@ export default function HomePage() {
             Comenta
           </a>
           <nav className="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex">
+            <a href="/gumesmomo" className="font-bold text-fuchsia-600 hover:text-fuchsia-700">
+              gumesmomo.com.br
+            </a>
             <a href="#recursos" className="hover:text-slate-900">
               Recursos
             </a>
