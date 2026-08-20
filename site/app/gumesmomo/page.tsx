@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Dumbbell, Zap, Flame, ShieldCheck, HeartPulse, Sparkles, CheckCircle2, ArrowRight, Star, ShoppingCart, Award, Truck, ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -40,8 +41,8 @@ export default function GumesmomoFitnessPage() {
             <a href="#beneficios" className="hover:text-emerald-400 transition-colors">
               Benefícios
             </a>
-            <a href="#sabores" className="hover:text-emerald-400 transition-colors">
-              Sabores & Nutrição
+            <a href="#galeria" className="hover:text-emerald-400 transition-colors">
+              Galeria de Fotos
             </a>
             <a href="#combos" className="hover:text-emerald-400 transition-colors">
               Kits & Promoções
@@ -94,52 +95,94 @@ export default function GumesmomoFitnessPage() {
           </a>
         </div>
 
-        {/* MOCKUP DO PRODUTO & EMBALAGEM GUMESMOMO */}
-        <div className="mt-16 relative mx-auto max-w-4xl rounded-3xl overflow-hidden border border-emerald-500/30 bg-slate-950/90 shadow-2xl shadow-emerald-950/60 p-6 sm:p-10 text-left">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        {/* FOTO EM DESTAQUE DO POTE GUMESMOMO CREATINE GUMMIES */}
+        <div className="mt-16 relative mx-auto max-w-5xl rounded-3xl overflow-hidden border border-emerald-500/30 bg-slate-950/90 shadow-2xl shadow-emerald-950/60 p-6 sm:p-10 text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="space-y-6">
-              <div className="inline-block px-3 py-1 rounded-md bg-emerald-500/20 text-emerald-400 font-black text-xs uppercase tracking-wider">
+              <div className="inline-block px-3.5 py-1.5 rounded-md bg-emerald-500/20 text-emerald-400 font-black text-xs uppercase tracking-wider">
                 🔬 Fórmula Premium 100% Pura
               </div>
 
-              <h2 className="text-3xl font-black text-white leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight">
                 Por que trocar a Creatina em Pó pelas Gomas Gumesmomo?
               </h2>
 
-              <ul className="space-y-3.5 text-sm font-semibold text-slate-300">
+              <ul className="space-y-4 text-sm font-semibold text-slate-300">
                 <li className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                  <span><strong>3g de Creatina Pura por Dose:</strong> Exatamente o recomendado por nutricionistas.</span>
+                  <span><strong>3g de Creatina Pura por Dose:</strong> Exatamente o recomendado por nutricionistas esportivos.</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                  <span><strong>Zero Açúcar & Baixas Calorias:</strong> Encaixa perfeitamente na sua dieta.</span>
+                  <span><strong>Zero Açúcar & Baixas Calorias:</strong> Encaixa perfeitamente em dietas de cutting e bulking.</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                  <span><strong>Sem Necessidade de Água:</strong> Consuma no treino, no carro ou no trabalho.</span>
+                  <span><strong>Sem Necessidade de Água:</strong> Consuma no treino, no carro ou no escritório.</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                  <span><strong>Absorção Rápida:</strong> Maior conforto gástrico sem estômago pesado.</span>
+                  <span><strong>Absorção Rápida & Deliciosa:</strong> Digestão leve sem inchaço gástrico.</span>
                 </li>
               </ul>
             </div>
 
-            {/* CARD VISUAL DA EMBALAGEM / POTE DE GOMAS */}
-            <div className="relative rounded-2xl bg-gradient-to-br from-emerald-950 via-slate-900 to-teal-950 p-8 border border-emerald-500/40 text-center flex flex-col items-center justify-center shadow-inner">
-              <div className="w-24 h-24 rounded-full bg-emerald-400/20 flex items-center justify-center text-5xl mb-4 shadow-lg shadow-emerald-500/30 animate-bounce">
-                🍬
+            {/* IMAGEM GERADA 1: EMBALAGEM / POTE DE GOMAS GUMESMOMO */}
+            <div className="relative rounded-2xl overflow-hidden border border-emerald-500/40 shadow-2xl group">
+              <Image
+                src="/images/gumesmomo_jar.jpg"
+                alt="Pote de Gomas de Creatina Gumesmomo Creatine Gummies"
+                width={600}
+                height={600}
+                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60" />
+              <div className="absolute bottom-4 left-4 right-4 bg-slate-950/80 backdrop-blur-md p-3 rounded-xl border border-emerald-500/30 text-xs font-bold text-emerald-300 flex items-center justify-between">
+                <span>🍬 Gumesmomo Creatine Gummies (1000mg/goma)</span>
+                <span className="text-amber-400 font-black">★ 4.9/5.0</span>
               </div>
-              <div className="text-2xl font-black text-white">GUMESMOMO CREATINE</div>
-              <div className="text-xs font-extrabold text-emerald-400 tracking-widest mt-1">
-                60 GOMAS DE ALTA PERFORMANCE
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* GALERIA DE FOTOS EM ALTA DEFINIÇÃO */}
+      <section id="galeria" className="py-20 bg-slate-950/80 border-t border-slate-800/80 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <span className="text-xs font-black text-emerald-400 uppercase tracking-widest">
+            Foto do Produto Real
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-12">
+            Gomas Saborosas, Macias e Práticas de Consumir
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div className="relative rounded-3xl overflow-hidden border border-emerald-500/30 shadow-2xl">
+              <Image
+                src="/images/gumesmomo_hand.jpg"
+                alt="Gomas de Creatina Gumesmomo na mão na academia"
+                width={600}
+                height={600}
+                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+              />
+              <div className="p-4 bg-slate-900 border-t border-slate-800 text-left text-xs">
+                <span className="font-bold text-white block">Sabor Frutas Vermelhas & Limão Cítrico</span>
+                <span className="text-slate-400">Gomas macias revestidas de cristais de creatina pura sem açúcar.</span>
               </div>
-              <div className="mt-4 flex items-center justify-center gap-1 text-amber-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400" />
-                ))}
-                <span className="text-xs font-bold text-slate-300 ml-2">(4.9/5.0 — 1.840 Avaliações)</span>
+            </div>
+
+            <div className="relative rounded-3xl overflow-hidden border border-emerald-500/30 shadow-2xl">
+              <Image
+                src="/images/gumesmomo_jar.jpg"
+                alt="Gumesmomo Creatine Gummies Jar"
+                width={600}
+                height={600}
+                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+              />
+              <div className="p-4 bg-slate-900 border-t border-slate-800 text-left text-xs">
+                <span className="font-bold text-white block">Pote Translucido de Alta Proteção UV</span>
+                <span className="text-slate-400">Mantém o sabor e a potência da creatina intactos por mais tempo.</span>
               </div>
             </div>
           </div>
@@ -147,47 +190,45 @@ export default function GumesmomoFitnessPage() {
       </section>
 
       {/* BENEFÍCIOS PARA SAÚDE E FITNESS */}
-      <section id="beneficios" className="py-20 bg-slate-950/70 border-t border-slate-800/80 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-black text-emerald-400 uppercase tracking-widest">
-              Ciência & Nutrição Esportiva
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-3">
-              Desenvolvido para quem busca resultados de verdade
-            </h2>
+      <section id="beneficios" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-xs font-black text-emerald-400 uppercase tracking-widest">
+            Ciência & Nutrição Esportiva
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-3">
+            Desenvolvido para quem busca resultados de verdade
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="p-8 rounded-3xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold mb-6">
+              <Dumbbell className="w-6 h-6" />
+            </div>
+            <h3 className="text-xl font-bold text-white mb-2">Hipertrofia & Força Bruta</h3>
+            <p className="text-sm text-slate-400 leading-relaxed">
+              Aumenta os estoques de fosfocreatina muscular, permitindo mais cargas e mais repetições em cada treino de musculação ou crossfit.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-3xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 transition-all">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold mb-6">
-                <Dumbbell className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Hipertrofia & Força Bruta</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                Aumenta os estoques de fosfocreatina muscular, permitindo mais cargas e mais repetições em cada treino de musculação ou crossfit.
-              </p>
+          <div className="p-8 rounded-3xl bg-slate-900/90 border border-slate-800 hover:border-teal-500/50 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold mb-6">
+              <Zap className="w-6 h-6" />
             </div>
+            <h3 className="text-xl font-bold text-white mb-2">Explosão & Recuperação</h3>
+            <p className="text-sm text-slate-400 leading-relaxed">
+              Ressintetiza as moléculas de ATP em segundos, reduzindo a fadiga muscular e acelerando a recuperação entre os sets de exercícios.
+            </p>
+          </div>
 
-            <div className="p-8 rounded-3xl bg-slate-900/90 border border-slate-800 hover:border-teal-500/50 transition-all">
-              <div className="w-12 h-12 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold mb-6">
-                <Zap className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Explosão & Recuperação</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                Ressintetiza as moléculas de ATP em segundos, reduzindo a fadiga muscular e acelerando a recuperação entre os sets de exercícios.
-              </p>
+          <div className="p-8 rounded-3xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/50 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold mb-6">
+              <HeartPulse className="w-6 h-6" />
             </div>
-
-            <div className="p-8 rounded-3xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/50 transition-all">
-              <div className="w-12 h-12 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold mb-6">
-                <HeartPulse className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Foco Mental & Cognição</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                A creatina também alimenta os neurônios, fornecendo clareza mental, foco para trabalhar e estudar, além de proteger a saúde celular.
-              </p>
-            </div>
+            <h3 className="text-xl font-bold text-white mb-2">Foco Mental & Cognição</h3>
+            <p className="text-sm text-slate-400 leading-relaxed">
+              A creatina também alimenta os neurônios, fornecendo clareza mental, foco para trabalhar e estudar, além de proteger a saúde celular.
+            </p>
           </div>
         </div>
       </section>
