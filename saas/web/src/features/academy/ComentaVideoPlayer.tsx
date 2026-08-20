@@ -59,10 +59,8 @@ export function ComentaVideoPlayer({
   const [showControls, setShowControls] = useState(true);
   const [currentAspect, setCurrentAspect] = useState<"16/9" | "9/16" | "1/1">(aspectRatio);
 
-  // Estados de Legenda e Narração em Português Brasileiro (pt-BR)
+  // Estados de Legenda em Português Brasileiro (pt-BR)
   const [showSubtitles, setShowSubtitles] = useState(true);
-  const [enableNarration, setEnableNarration] = useState(true);
-  const [lastSpokenIndex, setLastSpokenIndex] = useState<number | null>(null);
 
   const subtitles = customSubtitles && customSubtitles.length > 0 ? customSubtitles : DEFAULT_SUBTITLES_PTBR;
 
@@ -76,28 +74,6 @@ export function ComentaVideoPlayer({
   );
   const activeSubtitle = currentSubtitleIndex !== -1 ? subtitles[currentSubtitleIndex] : null;
 
-  // Síntese de Fala em Português Brasileiro (Web Speech API Narration)
-  useEffect(() => {
-    if (!isPlaying || !enableNarration || currentSubtitleIndex === -1 || lastSpokenIndex === currentSubtitleIndex) {
-      return;
-    }
-
-    if ("speechSynthesis" in window && activeSubtitle) {
-      window.speechSynthesis.cancel(); // Cancela falas anteriores
-      const utterance = new SpeechSynthesisUtterance(activeSubtitle.textPtBr);
-      utterance.lang = "pt-BR";
-      utterance.rate = playbackSpeed;
-
-      // Seleciona voz em Português do Brasil se disponível
-      const voices = window.speechSynthesis.getVoices();
-      const ptBrVoice = voices.find((v) => v.lang.includes("pt-BR") || v.lang.includes("pt_BR"));
-      if (ptBrVoice) utterance.voice = ptBrVoice;
-
-      window.speechSynthesis.speak(utterance);
-      setLastSpokenIndex(currentSubtitleIndex);
-    }
-  }, [activeSubtitle, currentSubtitleIndex, enableNarration, isPlaying, lastSpokenIndex, playbackSpeed]);
-
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -106,7 +82,6 @@ export function ComentaVideoPlayer({
     const handleLoadedMetadata = () => setDuration(video.duration || 0);
     const handleEnded = () => {
       setIsPlaying(false);
-      if ("speechSynthesis" in window) window.speechSynthesis.cancel();
       if (onEnded) onEnded();
     };
 
@@ -127,7 +102,6 @@ export function ComentaVideoPlayer({
     if (isPlaying) {
       video.pause();
       setIsPlaying(false);
-      if ("speechSynthesis" in window) window.speechSynthesis.cancel();
     } else {
       void video.play();
       setIsPlaying(true);
@@ -139,8 +113,6 @@ export function ComentaVideoPlayer({
     if (!video) return;
     video.currentTime = time;
     setCurrentTime(time);
-    setLastSpokenIndex(null);
-    if ("speechSynthesis" in window) window.speechSynthesis.cancel();
   };
 
   const skip = (seconds: number) => {
@@ -395,29 +367,8 @@ export function ComentaVideoPlayer({
                   </span>
                 </div>
 
-                {/* Lado Direito: Narração, Legendas PT-BR, Volume, Velocidade & Tela Cheia */}
+                {/* Lado Direito: Legendas PT-BR, Volume, Velocidade & Tela Cheia */}
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginLeft: "auto" }}>
-                  {/* Botão de Narração em Voz em PT-BR */}
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setEnableNarration(!enableNarration);
-                      if ("speechSynthesis" in window) window.speechSynthesis.cancel();
-                    }}
-                    style={{
-                      background: enableNarration ? "rgba(109, 40, 217, 0.4)" : "rgba(255,255,255,0.1)",
-                      border: `1px solid ${enableNarration ? "#6d28d9" : "rgba(255,255,255,0.2)"}`,
-                      color: "#fff",
-                      borderRadius: 6,
-                      padding: "3px 8px",
-                      fontSize: 11,
-                      fontWeight: 700,
-                      cursor: "pointer",
-                    }}
-                    title="Ativar/Desativar Narração de Fala em Português"
-                  >
-                    🎙️ Voz PT-BR {enableNarration ? "ON" : "OFF"}
-                  </button>
 
                   {/* Botão de Legendas PT-BR */}
                   <button
