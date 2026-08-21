@@ -41,6 +41,7 @@ export const NAV: NavItem[] = [
   },
   { to: "/ferramentas", label: "🧩 Ferramentas" },
   { to: "/cursos", label: "🎓 Academia", aliases: ["treinamento", "aulas"] },
+  { to: "/gumesmomo", label: "🍬 Gumesmomo.fit", aliases: ["goma", "creatina", "fitness", "saude"] },
   { to: "/conexoes", label: "📲 Conexões", aliases: ["whatsapp", "canais", "instagram"] },
   { to: "/chaves", label: "🔑 Chaves de API", adminOnly: true, aliases: ["api key", "token"] },
   { to: "/webhooks", label: "🪝 Webhooks", adminOnly: true, aliases: ["integração", "callback"] },

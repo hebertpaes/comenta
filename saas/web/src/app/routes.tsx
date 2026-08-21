@@ -117,6 +117,18 @@ export const routes: RouteObject[] = [
         }),
       },
       {
+        path: "gumesmomo",
+        lazy: async () => ({
+          Component: (await import("../features/gumesmomo/GumesmomoPage")).GumesmomoPage,
+        }),
+      },
+      {
+        path: "gumesmomo.com.br",
+        lazy: async () => ({
+          Component: (await import("../features/gumesmomo/GumesmomoPage")).GumesmomoPage,
+        }),
+      },
+      {
         path: "cursos/:id",
         lazy: async () => ({
           Component: (await import("../features/academy/CoursePage")).CoursePage,
