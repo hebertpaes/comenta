@@ -1,0 +1,28 @@
+{{!--
+  Zona de publicidade com ROTAÇÃO. Cada anúncio é um POST no Ghost:
+    • Imagem destacada → o banner (feature_image)
+    • Resumo (excerpt) → URL de destino do clique
+    • Tags             → #ad  +  #ad-leaderboard | #ad-video | #ad-vertical | #ad-sidebar | #ad-inarticle
+  Se houver mais de um banner na zona, eles giram a cada 5 segundos (data-interval).
+  Sem anúncio, mostra o banner-casa (GIF). O CSS esconde o banner-casa nas zonas
+  quadradas/verticais (onde o GIF horizontal não cabe).
+--}}
+<aside class="ad ad-{{zone}}" aria-label="Publicidade">
+    {{#get "posts" filter=filter limit=limit order="published_at desc" as |ads|}}
+        {{#if ads}}
+            <div class="ad-rotator" data-interval="5000">
+                {{#foreach ads}}
+                    <a class="ad-banner ad-slide{{#if @first}} active{{/if}}"
+                       href="{{#if custom_excerpt}}{{custom_excerpt}}{{else}}{{url}}{{/if}}"
+                       target="_blank" rel="nofollow sponsored noopener" data-ad="{{slug}}">
+                        {{#if feature_image}}<img src="{{img_url feature_image size="xl"}}" alt="{{title}}" loading="lazy" />{{else}}<span class="ad-text">{{title}}</span>{{/if}}
+                    </a>
+                {{/foreach}}
+            </div>
+        {{else}}
+            <a class="ad-banner ad-house" href="{{#if @custom.banner_link}}{{@custom.banner_link}}{{else}}https://wa.me/{{@custom.whatsapp_redacao}}?text=Quero%20anunciar%20no%20portal%20{{@site.title}}.{{/if}}" target="_blank" rel="noopener" aria-label="Anuncie">
+                {{#if @custom.banner_casa}}<img class="ad-house-img" src="{{@custom.banner_casa}}" alt="Anuncie no {{@site.title}}" loading="lazy" />{{else}}<img class="ad-house-img ad-house-gif" src="{{asset "img/anuncie.gif"}}" alt="Anuncie no {{@site.title}}" loading="lazy" /><span class="ad-house-card"><span class="ad-house-card-ico">📣</span><span class="ad-house-card-txt"><b>Anuncie aqui</b><small>Fale com a redação</small></span></span>{{/if}}
+            </a>
+        {{/if}}
+    {{/get}}
+</aside>

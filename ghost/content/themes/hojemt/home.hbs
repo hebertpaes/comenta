@@ -1,0 +1,40 @@
+{{!< default}}
+
+{{!-- ===== Topo Editorial USA TODAY: manchete principal + lista de destaques ===== --}}
+<section class="hero-row container">
+    {{> hero-slider}}
+    <aside class="hero-live" id="live">
+        <div class="side-block-title">🔥 Destaques da Redação</div>
+        {{> most-read}}
+    </aside>
+</section>
+
+{{!-- ===== Colunas de Conteúdo Destaque ===== --}}
+<section class="columns container">
+    {{> curtinhas}}
+    {{> videos}}
+</section>
+
+{{!-- ===== Notícias Recentes ===== --}}
+<div class="container sections">
+    <section class="section-block">
+        <div class="section-head">
+            <h2 class="section-title"><a href="{{@site.url}}/">Últimas Notícias</a></h2>
+        </div>
+        <div class="section-grid">
+            {{#get "posts" filter="tag:-hash-ad" limit="12" order="featured desc, published_at desc" as |recent|}}
+                {{#foreach recent}}
+                    {{> article-card size="compact"}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </section>
+</div>
+
+{{!-- ===== Editorias por Categoria ===== --}}
+<div class="container sections">
+    {{> section-block slug="cidades"      titulo="Cidades & Região"    filter="tag:cidades+tag:-hash-ad"}}
+    {{> section-block slug="policia"      titulo="Política & Poder"    filter="tag:policia+tag:-hash-ad"}}
+    {{> section-block slug="economia"     titulo="Economia & Mercado"  filter="tag:economia+tag:-hash-ad"}}
+    {{> section-block slug="gumesmomo"     titulo="Saúde & Fitness"     filter="tag:gumesmomo+tag:-hash-ad"}}
+</div>

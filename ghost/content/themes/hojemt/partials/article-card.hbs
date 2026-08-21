@@ -1,0 +1,20 @@
+<article class="article-card">
+    <a class="card-img-wrap" href="{{url}}" tabindex="-1" aria-hidden="true">
+        {{#if feature_image}}
+            <img class="card-img" src="{{img_url feature_image size="m"}}" alt="{{title}}" loading="lazy" />
+        {{else}}
+            <img class="card-img" src="{{asset "img/ph-1.svg"}}" alt="{{title}}" loading="lazy" />
+        {{/if}}
+    </a>
+    <div class="card-body">
+        <div>
+            {{#primary_tag}}<a class="card-tag" href="{{url}}">{{name}}</a>{{/primary_tag}}
+            <h3 class="card-title"><a href="{{url}}">{{title}}</a></h3>
+            <p class="card-excerpt">{{excerpt words="20"}}</p>
+        </div>
+        <div class="card-meta">
+            {{#if primary_author}}<span>By {{primary_author.name}}</span> • {{/if}}
+            <span>{{reading_time}}</span>
+        </div>
+    </div>
+</article>

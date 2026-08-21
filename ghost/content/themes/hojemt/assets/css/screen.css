@@ -1,0 +1,187 @@
+/* ===========================================================================
+   HOJE MT — USA TODAY DESIGN SYSTEM TEMA GHOST
+   Inspiração de layout e marca: USA TODAY (www.usatoday.com)
+   Estilo: Azul USA Today (#0050ff / #002b66), vermelho de urgência (#d60000),
+   grid de notícias limpo, tipografia alta legibilidade e badges arredondados.
+   =========================================================================== */
+
+:root {
+  --urgent: #d60000;          /* vermelho para notícias urgentes / breaking */
+  --usa-blue: #0050ff;        /* azul assinatura USA Today */
+  --usa-navy: #002b66;        /* azul marinho do cabeçalho */
+  --usa-blue-hover: #003cc7;
+  --ink: #0f172a;             /* texto principal escuro */
+  --ink-soft: #475569;        /* texto secundário */
+  --line: #e2e8f0;            /* divisórias suaves */
+  --bg: #ffffff;
+  --bg-soft: #f8fafc;
+  --nav-bg: var(--usa-navy);  /* barra de navegação estilo USA Today */
+  --nav-ink: #ffffff;
+  --brand: var(--usa-blue);
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --font-ui: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-head: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --maxw: 1240px;
+}
+
+[data-theme="dark"] {
+  --ink: #f8fafc;
+  --ink-soft: #94a3b8;
+  --line: #1e293b;
+  --bg: #0b0f19;
+  --bg-soft: #141a29;
+  --nav-bg: #060911;
+  --nav-ink: #ffffff;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; overflow-x: clip; }
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+  font-size: 16px;
+  overflow-x: clip;
+}
+a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+a:hover { color: var(--usa-blue); }
+img { max-width: 100%; display: block; border-radius: 8px; }
+
+.gh-content iframe, .gh-content video, .gh-content embed { max-width: 100%; }
+.gh-content table { display: block; width: 100%; overflow-x: auto; }
+h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.2; margin: 0; font-weight: 800; tracking: -0.02em; }
+.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+@media (max-width: 719px) { .container { padding-left: 16px; padding-right: 16px; } }
+
+#site-main { overflow-x: clip; padding-bottom: 40px; }
+.columns > *, .section-grid > *, .hero-row > *, .pol-grid > *, .copa-cards > * { min-width: 0; }
+.card-title, .slide-title, .most-read-list a, .curtinhas-list a, .video-title, .article-title, .curt-kicker { overflow-wrap: anywhere; }
+
+/* ---- Botões Estilo USA Today ---- */
+.btn-subscribe {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--usa-blue); color: #fff; font-family: var(--font-ui);
+  font-weight: 800; font-size: 13px; letter-spacing: .03em; text-transform: uppercase;
+  padding: 10px 20px; border-radius: 20px; border: 0; cursor: pointer; white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0, 80, 255, 0.35); transition: all 0.2s ease;
+}
+.btn-subscribe:hover { background: var(--usa-blue-hover); transform: translateY(-1px); }
+
+.icon-btn {
+  background: transparent; border: 0; cursor: pointer; font-size: 20px; color: var(--ink);
+  width: 42px; height: 42px; border-radius: 50%; display: inline-grid; place-items: center;
+  transition: background 0.2s ease;
+}
+.icon-btn:hover { background: var(--bg-soft); color: var(--usa-blue); }
+
+/* ---- Ticker de Urgência (USA Today Breaking News Bar) ---- */
+.topbar { background: var(--usa-navy); color: #fff; border-bottom: 3px solid var(--usa-blue); }
+.topbar-inner { display: flex; align-items: center; gap: 14px; height: 42px; overflow: hidden; }
+.topbar-flag {
+  font-weight: 900; font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+  background: var(--urgent); color: #fff; padding: 4px 10px; border-radius: 4px; flex: none;
+  box-shadow: 0 2px 8px rgba(214, 0, 0, 0.4);
+}
+.ticker { flex: 1; overflow: hidden; position: relative; height: 42px; }
+.ticker-track { display: flex; align-items: center; gap: 0; white-space: nowrap; height: 42px; animation: ticker 38s linear infinite; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-item { font-size: 13.5px; font-weight: 700; color: #fff; padding: 0 6px; }
+.ticker-item:hover { color: #93c5fd; text-decoration: underline; }
+.ticker-dot { opacity: .5; padding: 0 10px; color: var(--usa-blue); }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.topbar-clock { flex: none; font-size: 12px; font-weight: 700; opacity: .85; }
+
+/* ---- Cabeçalho USA Today ---- */
+.site-header { background: var(--bg); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 40; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 86px; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand-dot { width: 28px; height: 28px; border-radius: 50%; background: var(--usa-blue); display: inline-block; box-shadow: 0 0 12px rgba(0,80,255,0.5); }
+.brand-text { font-size: 30px; font-weight: 900; letter-spacing: -0.04em; color: var(--ink); text-transform: uppercase; }
+.brand-text span { color: var(--usa-blue); }
+
+.header-meta { text-align: right; line-height: 1.2; }
+.header-date { font-size: 13px; font-weight: 700; color: var(--ink); }
+.header-place { font-size: 11px; color: var(--ink-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.header-actions { display: flex; align-items: center; gap: 8px; }
+
+/* ---- Navegação Principal (USA Today Navy Bar) ---- */
+.main-nav { background: var(--usa-navy); color: #fff; position: relative; z-index: 35; border-bottom: 2px solid var(--line); }
+.nav-inner { display: flex; align-items: center; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+.nav-inner::-webkit-scrollbar { display: none; }
+.nav-link {
+  display: inline-block; padding: 14px 18px; font-size: 13px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.04em; color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap; transition: all 0.2s ease; border-bottom: 3px solid transparent;
+}
+.nav-link:hover, .nav-link.active { color: #fff; background: rgba(255, 255, 255, 0.1); border-bottom-color: var(--usa-blue); }
+
+/* ---- Layout Editorial USA Today (Home & Cards) ---- */
+.hero-row { display: grid; grid-template-columns: 1fr 340px; gap: 24px; margin-top: 24px; margin-bottom: 32px; }
+@media (max-width: 991px) { .hero-row { grid-template-columns: 1fr; } }
+
+.hero-slider { position: relative; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); background: #000; }
+.slide { position: relative; min-height: 440px; display: flex; align-items: flex-end; }
+.slide-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.slide-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+  padding: 32px; display: flex; flex-direction: column; justify-content: flex-end; color: #fff;
+}
+.slide-tag {
+  display: inline-block; background: var(--usa-blue); color: #fff; font-size: 11px;
+  font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; padding: 4px 12px;
+  border-radius: 12px; width: fit-content; margin-bottom: 12px;
+}
+.slide-title { font-size: 32px; font-weight: 900; line-height: 1.15; color: #fff; margin-bottom: 10px; }
+@media (max-width: 640px) { .slide-title { font-size: 22px; } }
+.slide-meta { font-size: 12px; opacity: 0.85; font-weight: 600; }
+
+/* Sidebar Live & Most Read USA Today */
+.hero-live { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+.side-block-title {
+  font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--usa-blue); border-left: 4px solid var(--usa-blue); padding-left: 10px; margin-bottom: 16px;
+}
+
+/* Sections & Grid estilo USA Today */
+.section-block { margin-bottom: 40px; }
+.section-head {
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 2px solid var(--usa-blue); padding-bottom: 8px; margin-bottom: 20px;
+}
+.section-title { font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; color: var(--ink); }
+
+.section-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+
+.article-card {
+  background: var(--bg); border: 1px solid var(--line); border-radius: 14px;
+  overflow: hidden; box-shadow: var(--shadow); transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.article-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0, 80, 255, 0.15); border-color: var(--usa-blue); }
+
+.card-img-wrap { position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; background: #000; }
+.card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.article-card:hover .card-img { transform: scale(1.05); }
+
+.card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.card-tag {
+  display: inline-block; font-size: 11px; font-weight: 900; color: var(--usa-blue);
+  text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;
+}
+.card-title { font-size: 18px; font-weight: 800; color: var(--ink); line-height: 1.25; margin-bottom: 8px; }
+.card-excerpt { font-size: 13px; color: var(--ink-soft); line-height: 1.5; margin-bottom: 12px; }
+.card-meta { font-size: 11px; color: var(--ink-soft); font-weight: 600; display: flex; gap: 8px; }
+
+/* ---- Rodapé USA Today ---- */
+.site-footer { background: var(--usa-navy); color: #fff; padding: 48px 0 24px; border-top: 4px solid var(--usa-blue); margin-top: 60px; }
+.footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+@media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; } }
+.footer-brand { font-size: 26px; font-weight: 900; text-transform: uppercase; color: #fff; }
+.footer-brand span { color: var(--usa-blue); }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 10px; }
