@@ -1,17 +1,19 @@
 {{!< default}}
 
 {{#post}}
-<article class="container page">
+<article class="container usat-page-container">
     {{#if @page.show_title_and_feature_image}}
-        <header class="page-head">
-            <h1 class="page-title">{{title}}</h1>
-            {{#if custom_excerpt}}<p class="article-sub">{{custom_excerpt}}</p>{{/if}}
+        <header class="usat-article-head">
+            <h1 class="usat-article-title">{{title}}</h1>
+            {{#if custom_excerpt}}<p class="usat-article-sub">{{custom_excerpt}}</p>{{/if}}
         </header>
         {{#if feature_image}}
-            <figure class="article-hero"><img src="{{img_url feature_image size="xl"}}" alt="{{title}}" loading="lazy" onerror="this.closest('.article-hero').remove()" /></figure>
+            <figure class="usat-article-hero">
+                <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" loading="lazy" onerror="this.closest('.usat-article-hero').remove()" />
+            </figure>
         {{/if}}
     {{/if}}
-    <div class="gh-content">
+    <div class="gh-content usat-article-content">
         {{content}}
     </div>
 </article>

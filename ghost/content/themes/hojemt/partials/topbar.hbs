@@ -1,16 +1,29 @@
-{{!-- Faixa de últimas notícias (ticker) na cor de destaque, estilo Fox/CNN. --}}
-<div class="topbar">
-    <div class="container topbar-inner">
-        <span class="topbar-flag">URGENTE</span>
-        <div class="ticker" aria-label="Últimas notícias">
-            <div class="ticker-track">
-                {{#get "posts" filter="tag:-hash-ad" limit="8" order="published_at desc" as |urgent|}}
-                    {{#foreach urgent}}
-                        <a class="ticker-item" href="{{url}}">{{title}}</a><span class="ticker-dot">•</span>
-                    {{/foreach}}
-                {{/get}}
+{{!-- Topbar no estilo USA TODAY: Data atual, Clima/Localização, Ticker de Urgência e Ações Rápidas --}}
+<div class="usat-topbar">
+    <div class="container usat-topbar-inner">
+        <div class="usat-topbar-left">
+            <span class="usat-date" id="topDate"></span>
+            <span class="usat-weather"><span class="weather-icon">☀️</span> Cuiabá, MT <strong>32°C</strong></span>
+            <span class="usat-edition">Edição Digital</span>
+        </div>
+
+        <div class="usat-topbar-ticker">
+            <span class="usat-ticker-badge">URGENTE</span>
+            <div class="usat-ticker-content" aria-label="Últimas notícias">
+                <div class="usat-ticker-track">
+                    {{#get "posts" filter="tag:-hash-ad" limit="8" order="published_at desc" as |urgent|}}
+                        {{#foreach urgent}}
+                            <a class="usat-ticker-item" href="{{url}}">{{title}}</a>
+                            <span class="usat-ticker-sep">•</span>
+                        {{/foreach}}
+                    {{/get}}
+                </div>
             </div>
         </div>
-        <span class="topbar-clock" id="topClock"></span>
+
+        <div class="usat-topbar-right">
+            <a class="usat-top-link" href="#/portal/signin" data-portal="signin">Entrar</a>
+            <a class="usat-btn-subscribe-sm" href="#/portal/signup" data-portal="signup">Assinar</a>
+        </div>
     </div>
 </div>

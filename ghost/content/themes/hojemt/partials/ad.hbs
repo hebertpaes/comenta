@@ -1,13 +1,11 @@
 {{!--
-  Zona de publicidade com ROTAÇÃO. Cada anúncio é um POST no Ghost:
+  Zona de publicidade com ROTAÇÃO e Banner da Casa Ultra-Limpo no estilo USA TODAY.
+  Cada anúncio é um POST no Ghost:
     • Imagem destacada → o banner (feature_image)
     • Resumo (excerpt) → URL de destino do clique
     • Tags             → #ad  +  #ad-leaderboard | #ad-video | #ad-vertical | #ad-sidebar | #ad-inarticle
-  Se houver mais de um banner na zona, eles giram a cada 5 segundos (data-interval).
-  Sem anúncio, mostra o banner-casa (GIF). O CSS esconde o banner-casa nas zonas
-  quadradas/verticais (onde o GIF horizontal não cabe).
 --}}
-<aside class="ad ad-{{zone}}" aria-label="Publicidade">
+<aside class="ad ad-{{zone}}" aria-label="Espaço Publicitário">
     {{#get "posts" filter=filter limit=limit order="published_at desc" as |ads|}}
         {{#if ads}}
             <div class="ad-rotator" data-interval="5000">
@@ -15,14 +13,35 @@
                     <a class="ad-banner ad-slide{{#if @first}} active{{/if}}"
                        href="{{#if custom_excerpt}}{{custom_excerpt}}{{else}}{{url}}{{/if}}"
                        target="_blank" rel="nofollow sponsored noopener" data-ad="{{slug}}">
-                        {{#if feature_image}}<img src="{{img_url feature_image size="xl"}}" alt="{{title}}" loading="lazy" />{{else}}<span class="ad-text">{{title}}</span>{{/if}}
+                        {{#if feature_image}}
+                            <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" loading="lazy" />
+                        {{else}}
+                            <span class="ad-text">{{title}}</span>
+                        {{/if}}
                     </a>
                 {{/foreach}}
             </div>
         {{else}}
-            <a class="ad-banner ad-house" href="{{#if @custom.banner_link}}{{@custom.banner_link}}{{else}}https://wa.me/{{@custom.whatsapp_redacao}}?text=Quero%20anunciar%20no%20portal%20{{@site.title}}.{{/if}}" target="_blank" rel="noopener" aria-label="Anuncie">
-                {{#if @custom.banner_casa}}<img class="ad-house-img" src="{{@custom.banner_casa}}" alt="Anuncie no {{@site.title}}" loading="lazy" />{{else}}<img class="ad-house-img ad-house-gif" src="{{asset "img/anuncie.gif"}}" alt="Anuncie no {{@site.title}}" loading="lazy" /><span class="ad-house-card"><span class="ad-house-card-ico">📣</span><span class="ad-house-card-txt"><b>Anuncie aqui</b><small>Fale com a redação</small></span></span>{{/if}}
-            </a>
+            {{#if @custom.banner_casa}}
+                <a class="ad-banner ad-house-custom" href="{{#if @custom.banner_link}}{{@custom.banner_link}}{{else}}https://wa.me/{{@custom.whatsapp_redacao}}?text=Quero%20anunciar%20no%20portal%20{{@site.title}}.{{/if}}" target="_blank" rel="noopener" aria-label="Anuncie no Hoje MT">
+                    <img class="ad-house-img" src="{{@custom.banner_casa}}" alt="Anuncie no {{@site.title}}" loading="lazy" />
+                </a>
+            {{else}}
+                {{!-- Banner Institucional Ultra-Limpo & Responsivo no Design USA TODAY --}}
+                <a class="ad-banner ad-house-card-modern" href="{{#if @custom.banner_link}}{{@custom.banner_link}}{{else}}https://wa.me/{{@custom.whatsapp_redacao}}?text=Olá,%20gostaria%20de%20receber%20o%20Mídia%20Kit%20e%20anunciar%20no%20Hoje%20MT.{{/if}}" target="_blank" rel="noopener" aria-label="Anuncie no Hoje MT">
+                    <div class="ad-house-left">
+                        <div class="ad-house-badge-icon">📣</div>
+                        <div class="ad-house-info">
+                            <div class="ad-house-pill">ESPAÇO PUBLICITÁRIO · MÍDIA KIT 2026</div>
+                            <h3 class="ad-house-title">Sua marca em destaque para milhares de leitores em Mato Grosso</h3>
+                            <p class="ad-house-desc">Formatos digitais de alto impacto em Cuiabá, Várzea Grande e todo o Estado.</p>
+                        </div>
+                    </div>
+                    <div class="ad-house-right">
+                        <span class="ad-house-btn">ANUNCIE AQUI →</span>
+                    </div>
+                </a>
+            {{/if}}
         {{/if}}
     {{/get}}
 </aside>

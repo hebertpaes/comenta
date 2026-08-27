@@ -1,6 +1,6 @@
 {{!< default}}
 
-<div class="container error-page">
+<div class="container error-page" id="errorWrap">
     <span class="error-code">{{statusCode}}</span>
     <h1 class="error-title">{{#match statusCode "404"}}Página não encontrada{{else}}{{message}}{{/match}}</h1>
     <p>A página que você procurou não foi encontrada ou saiu do ar.</p>

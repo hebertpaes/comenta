@@ -1,28 +1,90 @@
 {{!< default}}
 
-{{!-- ===== Topo Editorial USA TODAY: manchete principal + lista de destaques ===== --}}
-<section class="hero-row container">
-    {{> hero-slider}}
-    <aside class="hero-live" id="live">
-        <div class="side-block-title">🔥 Destaques da Redação</div>
+{{!-- ===== HERO SECTION (ESTILO USA TODAY) =====
+      Coluna da Esquerda: Grande manchete em destaque com slider dinâmico
+      Coluna da Direita: Painel lateral com notícias mais lidas (1 a 6) alinhadas
+--}}
+<section class="usat-hero-container container">
+    <div class="usat-hero-main">
+        {{> hero-slider}}
+    </div>
+    <aside class="usat-hero-side">
         {{> most-read}}
     </aside>
 </section>
 
-{{!-- ===== Colunas de Conteúdo Destaque ===== --}}
-<section class="columns container">
+{{!-- ===== GRID DE 3 COLUNAS RÁPIDAS (GIRO RÁPIDO · VÍDEOS · OPINIÃO) ===== --}}
+<section class="usat-columns-container container">
     {{> curtinhas}}
     {{> videos}}
+    {{!-- Bloco de Opinião / Colunistas --}}
+    <aside class="usat-rail-box usat-opinion-box" aria-label="Opinião e Análises">
+        <div class="usat-rail-header">
+            <h2 class="usat-rail-title"><span class="usat-dot-accent"></span> Opinião &amp; Análise</h2>
+            <span class="usat-rail-badge">COLUNISTAS</span>
+        </div>
+        <div class="usat-opinion-list">
+            {{#get "posts" include="tags,authors" filter="tag:opiniao+tag:-hash-ad" limit="4" order="published_at desc" as |opinions|}}
+                {{#if opinions}}
+                    {{#foreach opinions}}
+                        <article class="usat-opinion-card">
+                            <div class="usat-opinion-avatar">
+                                {{#primary_author}}
+                                    {{#if profile_image}}
+                                        <img src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                                    {{else}}
+                                        <span class="avatar-fallback">{{name.[0]}}</span>
+                                    {{/if}}
+                                {{else}}
+                                    <span class="avatar-fallback">MT</span>
+                                {{/primary_author}}
+                            </div>
+                            <div class="usat-opinion-text">
+                                {{#primary_author}}<span class="opinion-author">{{name}}</span>{{else}}<span class="opinion-author">COLUNA DE OPINIÃO</span>{{/primary_author}}
+                                <h3 class="opinion-title"><a href="{{url}}">{{title}}</a></h3>
+                            </div>
+                        </article>
+                    {{/foreach}}
+                {{else}}
+                    {{#get "posts" include="tags,authors" filter="tag:-hash-ad" limit="4" order="published_at desc" as |fallbackOp|}}
+                        {{#foreach fallbackOp}}
+                            <article class="usat-opinion-card">
+                                <div class="usat-opinion-avatar">
+                                    {{#primary_author}}
+                                        {{#if profile_image}}
+                                            <img src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                                        {{else}}
+                                            <span class="avatar-fallback">{{name.[0]}}</span>
+                                        {{/if}}
+                                    {{else}}
+                                        <span class="avatar-fallback">MT</span>
+                                    {{/primary_author}}
+                                </div>
+                                <div class="usat-opinion-text">
+                                    {{#primary_author}}<span class="opinion-author">{{name}}</span>{{else}}<span class="opinion-author">COLUNA MT</span>{{/primary_author}}
+                                    <h3 class="opinion-title"><a href="{{url}}">{{title}}</a></h3>
+                                </div>
+                            </article>
+                        {{/foreach}}
+                    {{/get}}
+                {{/if}}
+            {{/get}}
+        </div>
+    </aside>
 </section>
 
-{{!-- ===== Notícias Recentes ===== --}}
-<div class="container sections">
-    <section class="section-block">
-        <div class="section-head">
-            <h2 class="section-title"><a href="{{@site.url}}/">Últimas Notícias</a></h2>
+{{!-- ===== SEÇÃO PRINCIPAL DE ÚLTIMAS NOTÍCIAS ===== --}}
+<div class="container usat-sections-container">
+    <section class="usat-section-block">
+        <div class="usat-section-head">
+            <div class="usat-section-title-wrap">
+                <span class="usat-section-pill"></span>
+                <h2 class="usat-section-title"><a href="{{@site.url}}/">Últimas Notícias em Destaque</a></h2>
+            </div>
+            <span class="usat-section-badge-live">COBERTURA 24H</span>
         </div>
-        <div class="section-grid">
-            {{#get "posts" filter="tag:-hash-ad" limit="12" order="featured desc, published_at desc" as |recent|}}
+        <div class="usat-section-grid">
+            {{#get "posts" include="tags,authors" filter="tag:-hash-ad" limit="12" order="featured desc, published_at desc" as |recent|}}
                 {{#foreach recent}}
                     {{> article-card size="compact"}}
                 {{/foreach}}
@@ -31,10 +93,17 @@
     </section>
 </div>
 
-{{!-- ===== Editorias por Categoria ===== --}}
-<div class="container sections">
-    {{> section-block slug="cidades"      titulo="Cidades & Região"    filter="tag:cidades+tag:-hash-ad"}}
-    {{> section-block slug="policia"      titulo="Política & Poder"    filter="tag:policia+tag:-hash-ad"}}
-    {{> section-block slug="economia"     titulo="Economia & Mercado"  filter="tag:economia+tag:-hash-ad"}}
-    {{> section-block slug="gumesmomo"     titulo="Saúde & Fitness"     filter="tag:gumesmomo+tag:-hash-ad"}}
+{{!-- ===== NEWSLETTER PROMINENTE USA TODAY ===== --}}
+{{> newsletter}}
+
+{{!-- ===== TODAS AS EDITORIAS DE MATO GROSSO ===== --}}
+<div class="container usat-sections-container">
+    {{> section-block slug="politica" titulo="Política &amp; Poder" filter="tag:politica+tag:-hash-ad"}}
+    {{> section-block slug="cidades" titulo="Cidades &amp; Mato Grosso" filter="tag:cidades+tag:-hash-ad"}}
+    {{> section-block slug="economia" titulo="Economia &amp; Negócios" filter="tag:economia+tag:-hash-ad"}}
+    {{> section-block slug="agro" titulo="Agronegócio &amp; Sustentabilidade" filter="tag:agro+tag:-hash-ad"}}
+    {{> section-block slug="policia" titulo="Polícia &amp; Segurança Pública" filter="tag:policia+tag:-hash-ad"}}
+    {{> section-block slug="esportes" titulo="Esportes &amp; Competições" filter="tag:esportes+tag:-hash-ad"}}
+    {{> section-block slug="saude" titulo="Saúde, Fitness &amp; Bem-Estar" filter="tag:saude+tag:-hash-ad"}}
+    {{> section-block slug="cultura" titulo="Cultura, Lazer &amp; Turismo" filter="tag:cultura+tag:-hash-ad"}}
 </div>

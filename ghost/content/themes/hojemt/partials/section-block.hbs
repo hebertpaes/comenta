@@ -1,18 +1,22 @@
-{{!-- Bloco de uma editoria na home. Params: slug, titulo. --}}
-<section class="section-block">
-    <div class="section-head">
-        <h2 class="section-title"><a href="{{@site.url}}/tag/{{slug}}/">{{titulo}}</a></h2>
-        <a class="section-more" href="{{@site.url}}/tag/{{slug}}/">Ver tudo →</a>
+{{!-- Bloco de Editoria no estilo USA TODAY: Header com Linha de Destaque Verde + Grid de 4 Colunas --}}
+<section class="usat-section-block">
+    <div class="usat-section-head">
+        <div class="usat-section-title-wrap">
+            <span class="usat-section-pill"></span>
+            <h2 class="usat-section-title"><a href="{{@site.url}}/tag/{{slug}}/">{{titulo}}</a></h2>
+        </div>
+        <a class="usat-section-more" href="{{@site.url}}/tag/{{slug}}/">Ver mais em {{titulo}} →</a>
     </div>
-    {{#get "posts" filter=filter limit="4" order="published_at desc" as |items|}}
+
+    {{#get "posts" include="tags,authors" filter=filter limit="4" order="published_at desc" as |items|}}
         {{#if items}}
-            <div class="section-grid">
+            <div class="usat-section-grid">
                 {{#foreach items}}
                     {{> article-card size="compact"}}
                 {{/foreach}}
             </div>
         {{else}}
-            <p class="section-empty">Ainda não há matérias publicadas nesta editoria.</p>
+            <p class="usat-section-empty">Nenhuma notícia recente nesta editoria.</p>
         {{/if}}
     {{/get}}
 </section>

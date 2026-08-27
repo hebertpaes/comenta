@@ -1,30 +1,89 @@
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <div>
-            <div class="footer-brand">HOJE MT <span>NEWS</span></div>
-            <div class="footer-copy">
-                Portal de Notícias • Tema Ghost no Estilo USA TODAY (usatoday.com).<br />
-                Mato Grosso, Brasil • © {{date format="YYYY"}} {{@site.title}}. Todos os direitos reservados.
+{{!-- Rodapé no estilo USA TODAY: Fundo Deep Navy (#002b66) + Colunas Estruturadas + Redes + Direitos --}}
+<footer class="usat-footer">
+    <div class="container">
+        <div class="usat-footer-top">
+            <div class="usat-footer-brand">
+                <a class="usat-footer-logo-link" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img class="footer-logo logo-light" src="{{@site.logo}}" alt="{{@site.title}}" />
+                        <img class="footer-logo logo-dark" src="{{#if @custom.logo_dark}}{{@custom.logo_dark}}{{else}}{{@site.logo}}{{/if}}" alt="{{@site.title}}" />
+                    {{else}}
+                        <img class="footer-logo logo-light" src="{{asset "img/logo.svg"}}" alt="{{@site.title}}" />
+                        <img class="footer-logo logo-dark" src="{{#if @custom.logo_dark}}{{@custom.logo_dark}}{{else}}{{asset "img/logo-branco.svg"}}{{/if}}" alt="{{@site.title}}" />
+                    {{/if}}
+                </a>
+                <p class="usat-footer-desc">
+                    {{#if @site.description}}{{@site.description}}{{else}}O portal de notícias mais completo de Mato Grosso e do Brasil. Notícias em tempo real, política, economia, agro e grandes reportagens.{{/if}}
+                </p>
+                <div class="usat-footer-social">
+                    {{#if @custom.whatsapp_redacao}}
+                        <a href="https://wa.me/{{@custom.whatsapp_redacao}}" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="social-ico">💬</span> WhatsApp</a>
+                    {{/if}}
+                    {{#if @custom.insta_url}}
+                        <a href="{{@custom.insta_url}}" target="_blank" rel="noopener" aria-label="Instagram"><span class="social-ico">📸</span> Instagram</a>
+                    {{/if}}
+                    {{#if @custom.yt_url}}
+                        <a href="{{@custom.yt_url}}" target="_blank" rel="noopener" aria-label="YouTube"><span class="social-ico">▶</span> YouTube</a>
+                    {{/if}}
+                    {{#if @custom.x_url}}
+                        <a href="{{@custom.x_url}}" target="_blank" rel="noopener" aria-label="X / Twitter"><span class="social-ico">𝕏</span> Twitter</a>
+                    {{/if}}
+                    {{#if @custom.face_url}}
+                        <a href="{{@custom.face_url}}" target="_blank" rel="noopener" aria-label="Facebook"><span class="social-ico">👥</span> Facebook</a>
+                    {{/if}}
+                </div>
+            </div>
+
+            <div class="usat-footer-col">
+                <h4 class="usat-footer-heading">Editorias</h4>
+                <ul class="usat-footer-links">
+                    <li><a href="{{@site.url}}/tag/politica/">Política</a></li>
+                    <li><a href="{{@site.url}}/tag/cidades/">Cidades &amp; Mato Grosso</a></li>
+                    <li><a href="{{@site.url}}/tag/economia/">Economia</a></li>
+                    <li><a href="{{@site.url}}/tag/agro/">Agronegócio</a></li>
+                    <li><a href="{{@site.url}}/tag/policia/">Polícia</a></li>
+                    <li><a href="{{@site.url}}/tag/esportes/">Esportes</a></li>
+                    <li><a href="{{@site.url}}/tag/saude/">Saúde &amp; Fitness</a></li>
+                </ul>
+            </div>
+
+            <div class="usat-footer-col">
+                <h4 class="usat-footer-heading">Institucional</h4>
+                <ul class="usat-footer-links">
+                    <li><a href="{{@site.url}}/sobre/">Sobre o Hoje MT</a></li>
+                    <li><a href="{{@site.url}}/anuncie/">Mídia Kit &amp; Anuncie</a></li>
+                    <li><a href="{{@site.url}}/fontes-oficiais/">Fontes Oficiais</a></li>
+                    <li><a href="{{@site.url}}/codigo-de-etica/">Código de Ética</a></li>
+                    <li><a href="{{@site.url}}/termos/">Termos de Uso</a></li>
+                    <li><a href="{{@site.url}}/privacidade/">Política de Privacidade</a></li>
+                </ul>
+            </div>
+
+            <div class="usat-footer-col">
+                <h4 class="usat-footer-heading">Redação &amp; Suporte</h4>
+                <ul class="usat-footer-links">
+                    {{#if @custom.whatsapp_redacao}}
+                        <li><a href="https://wa.me/{{@custom.whatsapp_redacao}}" target="_blank" rel="noopener">Pauta &amp; Flagrantes (WhatsApp)</a></li>
+                    {{/if}}
+                    {{#if @custom.email_contato}}
+                        <li><a href="mailto:{{@custom.email_contato}}">{{@custom.email_contato}}</a></li>
+                    {{/if}}
+                    <li><span class="footer-meta-loc">📍 Cuiabá / Várzea Grande, MT</span></li>
+                    <li><a class="usat-btn-subscribe-footer" href="#/portal/signup" data-portal="signup">Assinar Newsletter Grátis</a></li>
+                </ul>
             </div>
         </div>
 
-        <div>
-            <h4 style="color:#fff; font-size:13px; font-weight:800; text-transform:uppercase; margin-bottom:12px;">Editorias</h4>
-            <div style="display:flex; flex-direction:column; gap:8px; font-size:12px; color:rgba(255,255,255,0.8);">
-                <a href="{{@site.url}}/gumesmomo">Gumesmomo Fit</a>
-                <a href="{{@site.url}}/blog">Blog & Publicações</a>
-                <a href="{{@site.url}}/tag/cidades/">Brasil & Cidades</a>
-                <a href="{{@site.url}}/tag/policia/">Política & Poder</a>
-                <a href="{{@site.url}}/tag/economia/">Economia</a>
+        <div class="usat-footer-bottom">
+            <div class="usat-footer-copy">
+                <span>© {{date format="YYYY"}} {{@site.title}}. Todos os direitos reservados. Proibida a reprodução sem autorização.</span>
             </div>
-        </div>
-
-        <div>
-            <h4 style="color:#fff; font-size:13px; font-weight:800; text-transform:uppercase; margin-bottom:12px;">Redação & Contato</h4>
-            <div style="display:flex; flex-direction:column; gap:8px; font-size:12px; color:rgba(255,255,255,0.8);">
-                <a href="{{@site.url}}/contato/">Fale com a Redação</a>
-                <a href="{{@site.url}}/anuncie/">Anuncie Conosco</a>
-                <a href="{{@site.url}}/ghost">Painel Ghost Admin</a>
+            <div class="usat-footer-extra">
+                <a href="{{@site.url}}/rss/">RSS Feed</a>
+                <span>•</span>
+                <a href="{{@site.url}}/sitemap.xml">Mapa do Site</a>
+                <span>•</span>
+                <a href="https://ghost.org" target="_blank" rel="noopener">Desenvolvido com Ghost CMS</a>
             </div>
         </div>
     </div>

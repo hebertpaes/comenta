@@ -1,30 +1,46 @@
-<header class="site-header">
-    <div class="container header-inner">
-        <button class="icon-btn nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">☰</button>
-
-        <a class="brand" href="{{@site.url}}" aria-label="{{@site.title}} — início">
-            <span class="brand-dot"></span>
-            <span class="brand-text">HOJE MT <span>NEWS</span></span>
-        </a>
-
-        <div class="header-meta">
-            <span class="header-date" id="headerDate">Sexta-feira, 21 de Agosto de 2026</span>
-            <span class="header-place">Redação Central • Mato Grosso, Brasil</span>
+{{!-- Header principal no estilo USA TODAY: Globo Luminoso (Azul -> Verde) + Mapa Brasil/MT + Tipografia Forte + Busca + Ações --}}
+<header class="usat-header">
+    <div class="container usat-header-inner">
+        <div class="usat-header-left">
+            <button class="usat-burger-btn" id="navBurger" aria-label="Abrir Menu de Navegação" aria-expanded="false">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+            <button class="usat-search-btn" id="searchToggle" aria-label="Buscar Notícias">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
+                <span class="search-btn-label">Buscar</span>
+            </button>
         </div>
 
-        <div class="header-actions">
-            <button class="icon-btn search-toggle" id="searchToggle" aria-label="Buscar">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
+        <div class="usat-header-center">
+            <a class="usat-brand" href="{{@site.url}}" aria-label="{{@site.title}} — Página Inicial">
+                {{#if @site.logo}}
+                    <img class="usat-logo logo-light" src="{{@site.logo}}" alt="{{@site.title}}" />
+                    <img class="usat-logo logo-dark" src="{{#if @custom.logo_dark}}{{@custom.logo_dark}}{{else}}{{@site.logo}}{{/if}}" alt="{{@site.title}}" />
+                {{else}}
+                    <img class="usat-logo logo-light" src="{{asset "img/logo.svg"}}" alt="{{@site.title}}" />
+                    <img class="usat-logo logo-dark" src="{{#if @custom.logo_dark}}{{@custom.logo_dark}}{{else}}{{asset "img/logo-branco.svg"}}{{/if}}" alt="{{@site.title}}" />
+                {{/if}}
+            </a>
+        </div>
+
+        <div class="usat-header-right">
+            <button class="usat-theme-toggle" id="themeToggle" type="button" aria-label="Alternar Modo Escuro/Claro">
+                <span class="theme-icon-sun">☀️</span>
+                <span class="theme-icon-moon">🌙</span>
             </button>
-            <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro"><span class="theme-icon">🌙</span></button>
-            <a class="btn-subscribe" href="https://hojemt.com.br/gumesmomo">Gumesmomo Fit</a>
+            <a class="usat-btn-subscribe" href="#/portal/signup" data-portal="signup">ASSINAR AGORA</a>
         </div>
     </div>
 
-    <div class="search-drawer" id="searchDrawer" hidden>
-        <form class="container search-form" action="{{@site.url}}/search/" method="get" role="search">
-            <input type="search" name="q" id="searchInput" placeholder="Buscar notícias, política, economia, esportes…" autocomplete="off" />
-            <button type="submit" class="btn-subscribe">Buscar</button>
-        </form>
+    {{!-- Gaveta de busca --}}
+    <div class="usat-search-drawer" id="searchDrawer" hidden>
+        <div class="container">
+            <form class="usat-search-form" action="{{@site.url}}/search/" method="get" role="search">
+                <input type="search" name="q" id="searchInput" placeholder="O que você deseja pesquisar hoje? (Notícias, política, economia, agro...)" autocomplete="off" />
+                <button type="submit" class="usat-btn-subscribe">Buscar</button>
+            </form>
+        </div>
     </div>
 </header>

@@ -1,14 +1,20 @@
-{{!-- "Mais lidas". Para TRAVAR uma matéria no topo, marque-a com a tag interna
-      #destaque no Ghost — elas vêm primeiro; o restante completa com as mais
-      recentes. A numeração (1..6) é contínua via CSS e o limite é 6. --}}
-<aside class="most-read" aria-label="Mais lidas">
-    <h2 class="rail-title">Mais lidas</h2>
-    <ol class="most-read-list">
-        {{#get "posts" filter="tag:hash-destaque+tag:-hash-ad" limit="6" order="published_at desc" as |pin|}}
-            {{#foreach pin}}<li><a href="{{url}}">{{title}}</a></li>{{/foreach}}
-        {{/get}}
-        {{#get "posts" filter="tag:-hash-destaque+tag:-hash-ad" limit="6" order="published_at desc" as |top|}}
-            {{#foreach top}}<li><a href="{{url}}">{{title}}</a></li>{{/foreach}}
+{{!-- Mais Lidas no estilo USA TODAY: 6 Notícias Numeradas alinhadas perfeitamente com a Manchete Principal --}}
+<aside class="usat-rail-box usat-most-read" aria-label="Notícias Mais Lidas">
+    <div class="usat-rail-header">
+        <h2 class="usat-rail-title"><span class="usat-dot-accent"></span> Mais Lidas</h2>
+        <span class="usat-rail-badge">TRENDING</span>
+    </div>
+    <ol class="usat-most-read-list">
+        {{#get "posts" include="tags,authors" filter="tag:-hash-ad" limit="6" order="featured desc, published_at desc" as |top|}}
+            {{#foreach top}}
+                <li class="usat-ranked-item">
+                    <span class="rank-number">{{@number}}</span>
+                    <div class="rank-content">
+                        {{#primary_tag}}<a class="usat-kicker-sm" href="{{url}}">{{name}}</a>{{else}}<span class="usat-kicker-sm">DESTAQUE</span>{{/primary_tag}}
+                        <a class="rank-title" href="{{url}}">{{title}}</a>
+                    </div>
+                </li>
+            {{/foreach}}
         {{/get}}
     </ol>
 </aside>

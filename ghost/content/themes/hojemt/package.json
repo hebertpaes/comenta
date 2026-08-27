@@ -1,7 +1,7 @@
 {
   "name": "hojemt",
-  "description": "Hoje MT — portal de notícias de Mato Grosso.",
-  "version": "1.2.0",
+  "description": "Hoje MT — Portal de Notícias de Mato Grosso (USA TODAY Design System com Verde Predominante).",
+  "version": "1.4.0",
   "engines": {
     "ghost": ">=5.0.0"
   },
@@ -15,10 +15,12 @@
     "news",
     "magazine",
     "jornal",
-    "noticias"
+    "noticias",
+    "usatoday",
+    "matogrosso"
   ],
   "config": {
-    "posts_per_page": 14,
+    "posts_per_page": 12,
     "image_sizes": {
       "xs": {
         "width": 160
@@ -40,8 +42,8 @@
     "custom": {
       "cor_destaque": {
         "type": "color",
-        "default": "#0F9D58",
-        "description": "Cor de destaque (kickers, faixa de últimas, badges)."
+        "default": "#00a859",
+        "description": "Cor de destaque do tema (padrão: Verde Esmeralda #00a859)."
       },
       "slides_home": {
         "type": "select",
@@ -51,96 +53,58 @@
           "5",
           "6",
           "7",
-          "8",
-          "9",
-          "10"
+          "8"
         ],
         "default": "5",
-        "description": "Quantos posts no slider da home (Featured ficam fixados)."
+        "description": "Quantidade de notícias no slider da capa."
       },
       "logo_dark": {
         "type": "image",
-        "description": "Logo para o modo escuro (fundo escuro/cabeçalho preto). Vazio = usa a logo normal."
-      },
-      "banner_casa": {
-        "type": "image",
-        "description": "Banner 'Anuncie aqui' da casa (sem anúncio pago). Vazio = usa o GIF do tema."
-      },
-      "banner_link": {
-        "type": "text",
-        "default": "",
-        "description": "Para onde o banner da casa leva no clique. Vazio = abre o WhatsApp da redação."
+        "description": "Logotipo para o modo escuro (Dark Theme)."
       },
       "whatsapp_redacao": {
         "type": "text",
         "default": "5565999900005",
-        "description": "Número da redação (somente dígitos) para o botão de contato/denúncia."
+        "description": "Número de WhatsApp da redação (somente dígitos)."
       },
       "email_contato": {
         "type": "text",
         "default": "contato@hojemt.com.br",
-        "description": "E-mail de contato/redação exibido no rodapé."
+        "description": "E-mail de contato e pauta exibido no rodapé."
       },
       "chat_ativo": {
         "type": "boolean",
         "default": true,
-        "description": "Mostrar o chat flutuante (assistente/IA) estilo WhatsApp."
-      },
-      "youtube_canal_id": {
-        "type": "text",
-        "default": "",
-        "description": "ID do SEU canal (UC...) p/ tocar a live automaticamente (canal que permita incorporação)."
-      },
-      "youtube_live_id": {
-        "type": "text",
-        "default": "",
-        "description": "ID do vídeo do YouTube p/ tocar no AO VIVO (um jogo específico)."
-      },
-      "youtube_canal": {
-        "type": "text",
-        "default": "",
-        "description": "Link do 'ao vivo' no YouTube (botão de abrir a transmissão)."
-      },
-      "youtube_embed": {
-        "type": "boolean",
-        "default": true,
-        "description": "Toca o vídeo embutido (autoplay mudo). Desligue se o vídeo bloquear embed."
-      },
-      "copa_ativa": {
-        "type": "boolean",
-        "default": true,
-        "description": "Mostrar o bloco de futebol (resultados + próximos + tabela) abaixo do player."
-      },
-      "copa_api": {
-        "type": "text",
-        "default": "https://www.thesportsdb.com/api/v1/json/123/eventspastleague.php?id=5762 https://www.thesportsdb.com/api/v1/json/123/eventspastleague.php?id=4725 https://www.thesportsdb.com/api/v1/json/123/eventspastleague.php?id=4351",
-        "description": "Resultados (JSON 'events'). Várias URLs por espaço (Mato-grossense, Copa do Brasil, Brasileirão)."
-      },
-      "copa_api_next": {
-        "type": "text",
-        "default": "https://www.thesportsdb.com/api/v1/json/123/eventsnextleague.php?id=5762 https://www.thesportsdb.com/api/v1/json/123/eventsnextleague.php?id=4725 https://www.thesportsdb.com/api/v1/json/123/eventsnextleague.php?id=4351",
-        "description": "Próximos jogos (JSON 'events'). Várias URLs por espaço."
-      },
-      "copa_tabela": {
-        "type": "text",
-        "default": "https://www.thesportsdb.com/api/v1/json/123/lookuptable.php?l=4351&s=2026",
-        "description": "API da classificação (opcional). Padrão: tabela do Brasileirão. Vazio = oculta a tabela."
+        "description": "Ativar o chat flutuante de atendimento e IA."
       },
       "face_url": {
         "type": "text",
-        "description": "Link da página no Facebook."
+        "default": "https://facebook.com",
+        "description": "URL da página oficial no Facebook."
       },
       "insta_url": {
         "type": "text",
-        "description": "Link do Instagram."
+        "default": "https://instagram.com",
+        "description": "URL do perfil no Instagram."
       },
       "x_url": {
         "type": "text",
-        "description": "Link do X (Twitter)."
+        "default": "https://twitter.com",
+        "description": "URL do perfil no X (antigo Twitter)."
       },
       "yt_url": {
         "type": "text",
-        "description": "Link do canal no YouTube."
+        "default": "https://youtube.com",
+        "description": "URL do canal oficial no YouTube."
+      },
+      "banner_casa": {
+        "type": "image",
+        "description": "Banner institucional da casa (quando não houver anúncio pago)."
+      },
+      "banner_link": {
+        "type": "text",
+        "default": "",
+        "description": "Link de destino ao clicar no banner institucional da casa."
       }
     }
   }

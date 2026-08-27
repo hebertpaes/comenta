@@ -1,24 +1,66 @@
-{{!-- Bloco "Vídeos" da barra lateral: matérias marcadas com a tag pública "video". --}}
-<aside class="videos-box" aria-label="Vídeos">
-    <h2 class="rail-title"><span class="play-ico">▶</span> Vídeos</h2>
-    {{#get "posts" filter="tag:video+tag:-hash-ad" limit="4" order="published_at desc" as |vids|}}
-        {{#if vids}}
-            <ul class="video-list">
-                {{#foreach vids}}
-                    <li>
-                        <a href="{{url}}">
-                            <span class="video-thumb">
-                                {{#if feature_image}}<img src="{{img_url feature_image size="s"}}" alt="" loading="lazy" />{{/if}}
-                                <span class="video-play">▶</span>
+{{!-- Bloco de Vídeos & Mídia no estilo USA TODAY: Categoria / Tag Real no Selo Superior e Overlay Transparente --}}
+<aside class="usat-rail-box usat-videos-box" aria-label="Vídeos e Reportagens">
+    <div class="usat-rail-header">
+        <h2 class="usat-rail-title"><span class="usat-play-badge">▶</span> Vídeos &amp; Reportagens</h2>
+        <a class="usat-rail-more" href="{{@site.url}}/tag/video/">Ver canal →</a>
+    </div>
+    
+    <div class="usat-videos-grid">
+        {{#get "posts" include="tags,authors" filter="tag:-hash-ad" limit="2" order="published_at desc" as |vids|}}
+            {{#foreach vids}}
+                <article class="usat-video-card">
+                    <a class="usat-video-card-link" href="{{url}}">
+                        <div class="usat-video-card-media">
+                            {{#if feature_image}}
+                                <img src="{{img_url feature_image size="m"}}" alt="{{title}}" loading="lazy" />
+                            {{else}}
+                                <div class="usat-no-img-placeholder sm">▶</div>
+                            {{/if}}
+                            <div class="usat-video-play-center">
+                                <span class="play-icon-glow">▶</span>
+                            </div>
+                            <span class="usat-video-badge-pill">
+                                {{#primary_tag}}{{name}}{{else}}NOTÍCIAS{{/primary_tag}}
                             </span>
-                            <span class="video-title">{{title}}</span>
-                        </a>
-                    </li>
-                {{/foreach}}
-            </ul>
-            <a class="videos-more" href="{{@site.url}}/tag/video/">Ver todos os vídeos →</a>
-        {{else}}
-            <p class="rail-empty">Marque matérias com a tag <b>video</b> no Ghost para exibi-las aqui.</p>
-        {{/if}}
-    {{/get}}
+                            <div class="usat-video-overlay-caption">
+                                <h3 class="video-card-title">{{title}}</h3>
+                                <div class="video-meta">
+                                    <span class="video-time">⏱️ Assista agora</span>
+                                    <span class="video-dot">•</span>
+                                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD/MM/YYYY"}}</time>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            {{else}}
+                <article class="usat-video-card">
+                    <a class="usat-video-card-link" href="/obra-viaduto-imigrantes-altera-trafego-palmiro-paes-90-dias/">
+                        <div class="usat-video-card-media">
+                            <img src="https://images.unsplash.com/photo-1545459720-aac8509eb02c?auto=format&fit=crop&w=800&q=80" alt="Obras MT" />
+                            <div class="usat-video-play-center"><span class="play-icon-glow">▶</span></div>
+                            <span class="usat-video-badge-pill">INFRAESTRUTURA</span>
+                            <div class="usat-video-overlay-caption">
+                                <h3 class="video-card-title">Obras do viaduto na Rodovia dos Imigrantes alteram fluxo por 90 dias</h3>
+                                <div class="video-meta"><span>⏱️ 2 min</span> • <time>Hoje</time></div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                <article class="usat-video-card">
+                    <a class="usat-video-card-link" href="/iv-sinop-sustentavel-abre-programacao-empaer-mt/">
+                        <div class="usat-video-card-media">
+                            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80" alt="Sinop Sustentável" />
+                            <div class="usat-video-play-center"><span class="play-icon-glow">▶</span></div>
+                            <span class="usat-video-badge-pill">TECNOLOGIA &amp; AGRO</span>
+                            <div class="usat-video-overlay-caption">
+                                <h3 class="video-card-title">IV Sinop Sustentável reúne tecnologia e agricultura familiar</h3>
+                                <div class="video-meta"><span>⏱️ 3 min</span> • <time>Hoje</time></div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            {{/foreach}}
+        {{/get}}
+    </div>
 </aside>

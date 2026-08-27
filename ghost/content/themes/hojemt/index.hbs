@@ -1,12 +1,13 @@
 {{!< default}}
 
-<div class="container archive">
-    <header class="archive-head">
-        <h1 class="archive-title">Últimas notícias</h1>
-        <p class="archive-sub">Cobertura de Cuiabá, Várzea Grande e todo o Mato Grosso.</p>
+<div class="container usat-archive-wrap">
+    <header class="usat-archive-head">
+        <span class="usat-kicker-lg">COBERTURA COMPLETA</span>
+        <h1 class="usat-archive-title">Todas as Notícias</h1>
+        <p class="usat-archive-desc">Acompanhe as reportagens, análises e acontecimentos de Mato Grosso e do Brasil.</p>
     </header>
 
-    <div class="archive-grid">
+    <div class="usat-section-grid">
         {{#foreach posts}}
             {{> article-card size="compact"}}
         {{/foreach}}

@@ -1,20 +1,38 @@
-{{!-- Curtinhas: notas curtas. Para TRAVAR uma nota aqui, marque-a com a tag
-      interna #curtinha no Ghost — elas vêm primeiro; o restante completa com as
-      mais recentes (2ª página, para não repetir "Mais lidas"). Limite: 6. --}}
-<aside class="curtinhas" aria-label="Curtinhas">
-    <h2 class="rail-title">Curtinhas</h2>
-    {{#get "posts" filter="tag:-hash-ad" limit="1" as |any|}}
-        {{#if any}}
-            <ul class="curtinhas-list">
-                {{#get "posts" filter="tag:hash-curtinha+tag:-hash-ad" limit="6" order="published_at desc" as |pin|}}
-                    {{#foreach pin}}<li><a href="{{url}}">{{#primary_tag}}<span class="curt-kicker">{{name}}</span>{{/primary_tag}}{{title}}</a></li>{{/foreach}}
-                {{/get}}
-                {{#get "posts" filter="tag:-hash-curtinha+tag:-hash-ad" limit="6" page="2" order="published_at desc" as |cur|}}
-                    {{#foreach cur}}<li><a href="{{url}}">{{#primary_tag}}<span class="curt-kicker">{{name}}</span>{{/primary_tag}}{{title}}</a></li>{{/foreach}}
-                {{/get}}
-            </ul>
-        {{else}}
-            <p class="rail-empty">Em breve mais notícias.</p>
-        {{/if}}
-    {{/get}}
+{{!-- Curtinhas & Giro Rápido no estilo USA TODAY: Bullet Points Rápidos de MT --}}
+<aside class="usat-rail-box usat-curtinhas" aria-label="Giro Rápido em MT">
+    <div class="usat-rail-header">
+        <h2 class="usat-rail-title"><span class="usat-dot-accent"></span> Giro Rápido</h2>
+        <span class="usat-rail-badge-live">TEMPO REAL</span>
+    </div>
+    <ul class="usat-curtinhas-list">
+        {{#get "posts" include="tags,authors" filter="tag:-hash-ad" limit="5" order="published_at desc" as |cur|}}
+            {{#foreach cur}}
+                <li class="curtinhas-item">
+                    {{#primary_tag}}<span class="curt-tag">{{name}}</span>{{else}}<span class="curt-tag">MT NEWS</span>{{/primary_tag}}
+                    <a class="curt-link" href="{{url}}">{{title}}</a>
+                </li>
+            {{else}}
+                <li class="curtinhas-item">
+                    <span class="curt-tag">CUIABÁ</span>
+                    <a class="curt-link" href="/obra-viaduto-imigrantes-altera-trafego-palmiro-paes-90-dias/">Obra de viaduto na Imigrantes altera tráfego na Palmiro Paes por 90 dias</a>
+                </li>
+                <li class="curtinhas-item">
+                    <span class="curt-tag">VÁRZEA GRANDE</span>
+                    <a class="curt-link" href="/comtur-vg-novo-ciclo-turismo-desenvolvimento/">COMTUR-VG inicia novo ciclo de investimentos no turismo regional</a>
+                </li>
+                <li class="curtinhas-item">
+                    <span class="curt-tag">SINOP</span>
+                    <a class="curt-link" href="/iv-sinop-sustentavel-abre-programacao-empaer-mt/">IV Sinop Sustentável abre programação com feiras e inovação</a>
+                </li>
+                <li class="curtinhas-item">
+                    <span class="curt-tag">RONDONÓPOLIS</span>
+                    <a class="curt-link" href="/rondonopolis-prorroga-prazo-atualizacao-cadastral/">Fazenda de Rondonópolis prorroga prazo para regularização predial</a>
+                </li>
+                <li class="curtinhas-item">
+                    <span class="curt-tag">GOVERNO MT</span>
+                    <a class="curt-link" href="/governo-mt-investe-infraestrutura-superavit/">Governo de MT consolida superávit de R$ 9 bilhões com obras históricas</a>
+                </li>
+            {{/foreach}}
+        {{/get}}
+    </ul>
 </aside>

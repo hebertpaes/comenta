@@ -1,13 +1,91 @@
-<nav class="main-nav" aria-label="Editorias">
-    <div class="container nav-inner">
-        <a class="nav-link active" href="{{@site.url}}/">Início</a>
-        <a class="nav-link" href="{{@site.url}}/gumesmomo">Gumesmomo Fit</a>
-        <a class="nav-link" href="{{@site.url}}/blog">Blog</a>
-        <a class="nav-link" href="{{@site.url}}/tag/cidades/">Brasil & Cidades</a>
-        <a class="nav-link" href="{{@site.url}}/tag/policia/">Política</a>
-        <a class="nav-link" href="{{@site.url}}/tag/economia/">Economia</a>
-        <a class="nav-link" href="{{@site.url}}/tag/agro/">Agrobusiness</a>
-        <a class="nav-link" href="{{@site.url}}/tag/esportes/">Esportes</a>
-        <a class="nav-link" href="{{@site.url}}/tag/tecnologia/">Tecnologia & IA</a>
+{{!-- Barra de navegação por editorias no estilo USA TODAY --}}
+<nav class="usat-nav" aria-label="Editorias Principais">
+    <div class="container usat-nav-container">
+        <!-- Barra de categorias horizontal (sempre visível e com rolagem suave no mobile) -->
+        <ul class="usat-nav-list" id="horizontalNav">
+            <li class="nav-item-active"><a href="{{@site.url}}/">Início</a></li>
+            <li><a href="{{@site.url}}/tag/politica/">Política</a></li>
+            <li><a href="{{@site.url}}/tag/cidades/">Cidades &amp; MT</a></li>
+            <li><a href="{{@site.url}}/tag/economia/">Economia</a></li>
+            <li><a href="{{@site.url}}/tag/agro/">Agronegócio</a></li>
+            <li><a href="{{@site.url}}/tag/policia/">Polícia</a></li>
+            <li><a href="{{@site.url}}/tag/esportes/">Esportes</a></li>
+            <li><a href="{{@site.url}}/tag/saude/">Saúde &amp; Fitness</a></li>
+            <li><a href="{{@site.url}}/tag/cultura/">Cultura &amp; Lazer</a></li>
+            <li><a href="{{@site.url}}/tag/opiniao/">Opinião</a></li>
+            <li><a href="{{@site.url}}/tag/video/" class="usat-nav-video"><span class="usat-nav-play-ico">▶</span> Vídeos</a></li>
+        </ul>
     </div>
 </nav>
+
+<!-- Menu Drawer Mobile Completo (Aberto pelo botão Hambúrguer ☰) -->
+<div class="usat-mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="usat-drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="usat-drawer-panel">
+        <div class="usat-drawer-header">
+            <div class="usat-drawer-title">
+                <span class="usat-circle-dot sm"></span>
+                <span>MENU HOJE MT</span>
+            </div>
+            <button class="usat-drawer-close" id="drawerClose" aria-label="Fechar Menu">✕</button>
+        </div>
+
+        <div class="usat-drawer-search">
+            <form action="{{@site.url}}/search/" method="get">
+                <input type="search" name="q" placeholder="Buscar no Hoje MT..." />
+                <button type="submit">🔍</button>
+            </form>
+        </div>
+
+        <div class="usat-drawer-section">
+            <h4 class="drawer-section-title">Editorias</h4>
+            <ul class="usat-drawer-nav">
+                <li><a href="{{@site.url}}/">🏠 Início / Capa</a></li>
+                <li><a href="{{@site.url}}/tag/politica/">🏛️ Política &amp; Poder</a></li>
+                <li><a href="{{@site.url}}/tag/cidades/">🏙️ Cidades &amp; Mato Grosso</a></li>
+                <li><a href="{{@site.url}}/tag/economia/">📈 Economia &amp; Finanças</a></li>
+                <li><a href="{{@site.url}}/tag/agro/">🌱 Agronegócio &amp; Campo</a></li>
+                <li><a href="{{@site.url}}/tag/policia/">🚨 Polícia &amp; Segurança</a></li>
+                <li><a href="{{@site.url}}/tag/esportes/">⚽ Esportes &amp; Competições</a></li>
+                <li><a href="{{@site.url}}/tag/saude/">💪 Saúde, Fitness &amp; Bem-Estar</a></li>
+                <li><a href="{{@site.url}}/tag/cultura/">🎭 Cultura &amp; Lazer</a></li>
+                <li><a href="{{@site.url}}/tag/opiniao/">✍️ Opinião &amp; Colunistas</a></li>
+                <li><a href="{{@site.url}}/tag/video/" class="drawer-video-link">▶ Vídeos &amp; Reportagens</a></li>
+            </ul>
+        </div>
+
+        <div class="usat-drawer-section">
+            <h4 class="drawer-section-title">Acesso &amp; Assinatura</h4>
+            <div class="usat-drawer-auth">
+                <a class="drawer-btn-login" href="#/portal/signin" data-portal="signin">Entrar na Conta</a>
+                <a class="drawer-btn-sub" href="#/portal/signup" data-portal="signup">Assinar Grátis</a>
+            </div>
+        </div>
+
+        <div class="usat-drawer-section">
+            <h4 class="drawer-section-title">Redação &amp; Redes</h4>
+            <div class="usat-drawer-social">
+                {{#if @custom.whatsapp_redacao}}
+                    <a href="https://wa.me/{{@custom.whatsapp_redacao}}" target="_blank" rel="noopener">💬 WhatsApp da Redação</a>
+                {{/if}}
+                {{#if @custom.insta_url}}
+                    <a href="{{@custom.insta_url}}" target="_blank" rel="noopener">📸 Instagram</a>
+                {{/if}}
+                {{#if @custom.yt_url}}
+                    <a href="{{@custom.yt_url}}" target="_blank" rel="noopener">▶ YouTube</a>
+                {{/if}}
+                {{#if @custom.x_url}}
+                    <a href="{{@custom.x_url}}" target="_blank" rel="noopener">𝕏 Twitter</a>
+                {{/if}}
+                {{#if @custom.face_url}}
+                    <a href="{{@custom.face_url}}" target="_blank" rel="noopener">👥 Facebook</a>
+                {{/if}}
+            </div>
+        </div>
+
+        <div class="usat-drawer-footer">
+            <span class="drawer-copy">© {{date format="YYYY"}} {{@site.title}}</span>
+            {{#if @custom.email_contato}}<span class="drawer-email">{{@custom.email_contato}}</span>{{/if}}
+        </div>
+    </div>
+</div>

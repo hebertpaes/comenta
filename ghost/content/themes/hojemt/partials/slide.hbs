@@ -1,12 +1,22 @@
-{{!-- Um slide do hero. Usado dentro de {{#foreach slides}}. --}}
-<article class="slide{{#if @first}} active{{/if}}" data-index="{{@index}}">
-    <a class="slide-media" href="{{url}}">
-        <span class="card-media-fallback big">{{@site.title}}</span>
-        {{#if feature_image}}<img src="{{img_url feature_image size="xl"}}" alt="{{title}}" onerror="this.remove()" />{{/if}}
+{{!-- Slide de destaque no estilo USA TODAY: Imagem Original 100% Visível --}}
+<article class="usat-slide{{#if @first}} active{{/if}}" data-index="{{@index}}">
+    <a class="usat-slide-media" href="{{url}}">
+        {{#if feature_image}}
+            <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" loading="{{#if @first}}eager{{else}}lazy{{/if}}" />
+        {{/if}}
+        <span class="usat-lead-badge">MANCHETE PRINCIPAL</span>
     </a>
-    <div class="slide-caption">
-        {{#primary_tag}}<a class="card-kicker big" href="{{url}}">{{name}}</a>{{/primary_tag}}
-        <h2 class="slide-title"><a href="{{url}}">{{title}}</a></h2>
-        <p class="slide-excerpt">{{excerpt words="26"}}</p>
+    <div class="usat-slide-caption">
+        {{#primary_tag}}
+            <a class="usat-kicker" href="{{url}}">{{name}}</a>
+        {{else}}
+            <span class="usat-kicker">NOTÍCIAS</span>
+        {{/primary_tag}}
+        <h2 class="usat-slide-title"><a href="{{url}}">{{title}}</a></h2>
+        <p class="usat-slide-excerpt">{{excerpt words="28"}}</p>
+        <div class="usat-card-meta">
+            {{#if primary_author}}<span class="meta-author">Por <strong>{{primary_author.name}}</strong></span>{{/if}}
+            <time class="meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD/MM/YYYY"}}</time>
+        </div>
     </div>
 </article>

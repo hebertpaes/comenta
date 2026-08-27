@@ -1,65 +1,91 @@
 {{!< default}}
 
 {{#post}}
-<div class="container article-wrap">
-    <article class="article">
-        <header class="article-head">
-            {{#primary_tag}}<a class="card-kicker big" href="{{url}}">{{name}}</a>{{/primary_tag}}
-            <h1 class="article-title">{{title}}</h1>
-            {{#if custom_excerpt}}<p class="article-sub">{{custom_excerpt}}</p>{{/if}}
+<div class="container usat-article-wrap">
+    <article class="usat-article">
+        <header class="usat-article-head">
+            <div class="usat-article-kicker-wrap">
+                {{#primary_tag}}
+                    <a class="usat-kicker-lg" href="{{url}}">{{name}}</a>
+                {{else}}
+                    <span class="usat-kicker-lg">NOTÍCIAS</span>
+                {{/primary_tag}}
+            </div>
+            
+            <h1 class="usat-article-title">{{title}}</h1>
+            
+            {{#if custom_excerpt}}
+                <p class="usat-article-sub">{{custom_excerpt}}</p>
+            {{/if}}
+            
             {{> byline}}
+
+            <div class="usat-article-share">
+                <span class="share-label">Compartilhe esta notícia:</span>
+                <div class="share-buttons">
+                    <a class="share-btn share-wa" href="https://wa.me/?text={{encode title}}%20{{url absolute="true"}}" target="_blank" rel="noopener">WhatsApp</a>
+                    <a class="share-btn share-x" href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute="true"}}" target="_blank" rel="noopener">𝕏 Twitter</a>
+                    <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" target="_blank" rel="noopener">Facebook</a>
+                    <button class="share-btn share-copy js-copy-url" data-url="{{url absolute="true"}}">Copiar link</button>
+                </div>
+            </div>
         </header>
 
         {{#if feature_image}}
-            <figure class="article-hero">
-                <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" loading="lazy" onerror="this.closest('.article-hero').remove()" />
-                {{#if feature_image_caption}}<figcaption class="fonte-credito">{{{feature_image_caption}}}</figcaption>{{/if}}
+            <figure class="usat-article-hero">
+                <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" loading="eager" onerror="this.closest('.usat-article-hero').remove()" />
+                {{#if feature_image_caption}}
+                    <figcaption class="usat-hero-caption">{{{feature_image_caption}}}</figcaption>
+                {{/if}}
             </figure>
         {{/if}}
 
-        <div class="gh-content">
+        <div class="gh-content usat-article-content">
             {{content}}
         </div>
 
         {{> leia-tambem}}
 
-        <div class="article-share">
-            <span>Compartilhar:</span>
-            <a href="https://wa.me/?text={{encode title}}%20{{url absolute="true"}}" target="_blank" rel="noopener">WhatsApp</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" target="_blank" rel="noopener">Facebook</a>
-            <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute="true"}}" target="_blank" rel="noopener">X</a>
-        </div>
-
         {{> ad zone="inarticle" filter="tag:hash-ad-inarticle" limit="6"}}
 
-        <section class="related">
-            <h2 class="rail-title">{{#if primary_tag}}Relacionadas{{else}}Mais notícias{{/if}}</h2>
-            <div class="section-grid">
+        {{!-- Matérias Relacionadas --}}
+        <section class="usat-related-section">
+            <div class="usat-section-head">
+                <div class="usat-section-title-wrap">
+                    <span class="usat-section-pill"></span>
+                    <h2 class="usat-section-title">{{#if primary_tag}}Mais em {{primary_tag.name}}{{else}}Leia Também{{/if}}</h2>
+                </div>
+            </div>
+            <div class="usat-section-grid">
                 {{#if primary_tag}}
                     {{#get "posts" filter="id:-{{id}}+tag:{{primary_tag.slug}}+tag:-hash-ad" limit="3" order="published_at desc" as |rel|}}
-                        {{#foreach rel}}{{> article-card size="compact"}}{{/foreach}}
+                        {{#foreach rel}}
+                            {{> article-card size="compact"}}
+                        {{/foreach}}
                     {{/get}}
                 {{else}}
                     {{#get "posts" filter="id:-{{id}}+tag:-hash-ad" limit="3" order="published_at desc" as |rel|}}
-                        {{#foreach rel}}{{> article-card size="compact"}}{{/foreach}}
+                        {{#foreach rel}}
+                            {{> article-card size="compact"}}
+                        {{/foreach}}
                     {{/get}}
                 {{/if}}
             </div>
         </section>
 
-        {{!-- Comentários nativos do Ghost (requer Membros ativos). --}}
+        {{!-- Comentários nativos Ghost --}}
         {{#if comments_enabled}}
-            <section class="article-comments">
-                <h2 class="rail-title">Comentários</h2>
+            <section class="usat-article-comments">
+                <h2 class="usat-rail-title">Comentários e Opiniões</h2>
                 {{comments}}
             </section>
         {{/if}}
     </article>
 
-    <aside class="article-rail">
-        {{> live}}
-        {{> videos}}
+    <aside class="usat-article-rail">
         {{> most-read}}
+        {{> curtinhas}}
+        {{> videos}}
         {{> ad zone="sidebar" filter="tag:hash-ad-sidebar" limit="6"}}
     </aside>
 </div>
