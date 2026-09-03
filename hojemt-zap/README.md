@@ -65,6 +65,39 @@ curl -s -X POST "http://localhost:3900/send?token=SEU_WEBHOOK_TOKEN" \
   -d '{"text":"Teste da ponte HojeMT ✅"}'
 ```
 
+## Instagram (@hoje.mt)
+
+Com `IG_USER_ID` e `IG_TOKEN` preenchidos no `/etc/hojemt-zap.env`, a ponte
+também publica **cada matéria com imagem de destaque como post no feed**
+(legenda = título + resumo + "link na bio" + hashtags). Para os **vídeos de
+cortes**, publique como Reel:
+
+```bash
+node post-reel.js "https://hojemt.com.br/content/media/corte1.mp4" "Legenda do corte"
+```
+
+O MP4 precisa estar numa URL pública (ex.: upload no próprio Ghost).
+
+### Como obter as credenciais (uma vez, no navegador)
+
+1. O perfil **@hoje.mt** precisa ser **profissional** (Business/Creator) e
+   estar **vinculado a uma Página do Facebook** (Instagram → Configurações →
+   Central de Contas).
+2. Em [developers.facebook.com](https://developers.facebook.com) crie um app
+   (tipo Business) e adicione o produto **Instagram Graph API**.
+3. No **Graph API Explorer**: selecione o app, gere um token de usuário com as
+   permissões `instagram_basic`, `instagram_content_publish`,
+   `pages_show_list` e `business_management`; troque por um **token de longa
+   duração** (60 dias) no botão de informações do token.
+4. Descubra o IG User ID: `GET me/accounts` → id da Página →
+   `GET {page-id}?fields=instagram_business_account` → o `id` retornado é o
+   `IG_USER_ID`.
+5. Preencha `IG_USER_ID` e `IG_TOKEN` no `/etc/hojemt-zap.env` e
+   `sudo systemctl restart hojemt-zap`.
+
+> O token de longa duração expira em ~60 dias — renove no mesmo Explorer (ou
+> configure um token de sistema no Business Manager para não expirar).
+
 ## Evolution API em vez de WAHA
 
 No `/etc/hojemt-zap.env`: `WA_PROVIDER=evolution`, `WA_URL` da Evolution,

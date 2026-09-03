@@ -3,6 +3,7 @@
 // para os grupos/canais configurados.
 
 const http = require('http')
+const ig = require('./instagram.js')
 
 const PORT = Number(process.env.PORT || 3900)
 const PROVIDER = (process.env.WA_PROVIDER || 'waha').toLowerCase() // waha | evolution
@@ -86,6 +87,18 @@ const server = http.createServer((req, res) => {
             console.error(`[erro] ${chat}: ${err.message}`)
           }
           await new Promise((r) => setTimeout(r, 3000 + Math.random() * 3000))
+        }
+        // Instagram: matéria com imagem de destaque vira post no feed.
+        if (ig.enabled() && post.feature_image) {
+          try {
+            const id = await ig.publishPhoto({
+              imageUrl: post.feature_image,
+              caption: ig.buildCaption(post),
+            })
+            console.log(`[ok] "${post.title}" -> instagram (${id})`)
+          } catch (err) {
+            console.error(`[erro] instagram: ${err.message}`)
+          }
         }
       } catch (err) {
         console.error('[erro] payload:', err.message)
