@@ -1,0 +1,12 @@
+[Unit]
+Description=hojemt-zap — ponte Ghost -> WhatsApp
+After=network-online.target
+
+[Service]
+EnvironmentFile=/etc/hojemt-zap.env
+ExecStart=/usr/bin/env node /opt/hojemt-zap/server.js
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
