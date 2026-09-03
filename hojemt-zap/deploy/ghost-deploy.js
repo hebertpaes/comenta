@@ -89,15 +89,23 @@ ${MARK_END}`
   await upload(path.join(dir, 'fakenews-rosto-voz-ia-1200x120.png'))
   await upload(path.join(dir, 'abacs-story-1080x1920.png'))
 
-  // code injection: preserva o conteúdo atual, substitui/insere só o nosso bloco
-  const settings = await api('GET', 'settings/')
-  const foot = settings.settings.find((s) => s.key === 'codeinjection_foot')
-  let value = (foot && foot.value) || ''
-  const re = new RegExp(`${MARK_START}[\\s\\S]*?${MARK_END}`)
+  // code injection: preserva o conteúdo atual, substitui/insere só o nosso bloco.
+  // Tokens de INTEGRAÇÃO não podem editar settings no Ghost 5/6 — nesse caso
+  // imprimimos o bloco para colar manualmente (ou use um Staff Access Token).
   const block = snippet(gifUrl)
-  value = re.test(value) ? value.replace(re, block) : (value ? value + '\n' : '') + block
-  await api('PUT', 'settings/', { settings: [{ key: 'codeinjection_foot', value }] })
-  console.log('code injection atualizado (banner ABACS nas matérias)')
+  try {
+    const settings = await api('GET', 'settings/')
+    const foot = settings.settings.find((s) => s.key === 'codeinjection_foot')
+    let value = (foot && foot.value) || ''
+    const re = new RegExp(`${MARK_START}[\\s\\S]*?${MARK_END}`)
+    value = re.test(value) ? value.replace(re, block) : (value ? value + '\n' : '') + block
+    await api('PUT', 'settings/', { settings: [{ key: 'codeinjection_foot', value }] })
+    console.log('code injection atualizado (banner ABACS nas matérias)')
+  } catch (err) {
+    console.log('\n>> Sem permissão para editar o code injection com este token.')
+    console.log('>> Cole o bloco abaixo em Settings -> Code injection -> Site footer:')
+    console.log('\n' + block + '\n')
+  }
 
   // webhook do hojemt-zap
   const token = crypto.randomBytes(24).toString('hex')
