@@ -83,7 +83,7 @@ ${MARK_END}`
   const site = await api('GET', 'site/')
   console.log('autenticado em:', site.site.title, '| Ghost', site.site.version)
 
-  const dir = '/home/user/comenta/hojemt-zap/banners'
+  const dir = path.join(__dirname, '..', 'banners')
   const gifUrl = await upload(path.join(dir, 'abacs-banner-artigo-1200x160.gif'))
   await upload(path.join(dir, 'abacs-retangulo-300x250.gif'))
   await upload(path.join(dir, 'fakenews-rosto-voz-ia-1200x120.png'))
