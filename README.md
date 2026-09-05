@@ -1,10 +1,34 @@
-# 🎬 Comenta — Editor de Vídeo e Música
+# 🎬 Comenta Studio — Clips IA e Editor de Vídeo
 
-Editor **web** que importa arquivos exportados de apps externos (ex.: vídeo do
-**CapCut**, música do **Suno**) e edita tudo **no navegador**, sem enviar nada
-para servidores. Todo o processamento roda localmente com **FFmpeg (WebAssembly)**.
+App **web** com dois modos, tudo rodando **no navegador** com
+**FFmpeg (WebAssembly)** — nenhum arquivo é enviado para servidores:
 
-## ✨ O que dá pra fazer (MVP)
+- **⚡ Clips IA** — transforma um vídeo longo (podcast, live, aula…) em
+  **clipes curtos** prontos para Reels, TikTok e Shorts, no espírito das
+  ferramentas de *repurposing* de vídeo (categoria do Vizard, Opus Clip etc.),
+  mas como um **protótipo independente**, com marca, textos, design e código
+  100% originais.
+- **🎛️ Editor** — importa arquivos exportados de apps externos (ex.: vídeo do
+  **CapCut**, música do **Suno**) e edita corte, mixagem e fades.
+
+## ⚡ Clips IA (protótipo)
+
+1. **Envie** um vídeo longo.
+2. O app **analisa o áudio localmente** (energia sonora por janelas) e sugere
+   até 5 clipes com **pontuação de potencial** e o motivo de cada sugestão
+   (muita fala/atividade, boa dinâmica, começo após pausa natural…).
+3. **Ajuste fino** de início/fim, **pré-visualize** o trecho e escolha a
+   **duração alvo** (~15s / ~30s / ~60s) e a **proporção**:
+   - `9:16` (vertical, com recorte central) para Reels/TikTok/Shorts;
+   - `1:1` (quadrado) para feed;
+   - `Original` (sem recorte).
+4. **Exporte** cada clipe em **MP4** e baixe.
+
+> A "IA" do protótipo é uma heurística local de energia de áudio
+> (`src/clipEngine.js`) — sem serviços externos, sem conta e sem upload.
+> Legendas automáticas e detecção de rostos são próximos passos naturais.
+
+## 🎛️ Editor (MVP)
 
 - **Importar** um vídeo (MP4, MOV…) e, opcionalmente, uma música (MP3, WAV…).
 - **Cortar / aparar** o vídeo (definindo início e fim).
@@ -55,12 +79,19 @@ credencial ou integração não oficial.
 ## 🗺️ Próximos passos (ideias)
 
 - Múltiplas trilhas de áudio e vídeo (timeline).
-- Legendas automáticas.
-- Cortes automáticos por IA (estilo Vizard) para gerar clipes curtos.
-- Presets de proporção (9:16 para Reels/TikTok, 1:1, 16:9).
+- Legendas automáticas nos clipes (reconhecimento de fala local).
+- Detecção de rosto para enquadrar o recorte 9:16 no assunto.
+- Exportação em lote de todos os clipes sugeridos.
 - Filtros e textos sobrepostos.
 
-## ⚠️ Direitos autorais
+## ⚠️ Direitos autorais e originalidade
 
-Use apenas conteúdo que você tenha direito de usar. O Comenta não hospeda nem
-distribui mídia — ele apenas edita arquivos que você mesmo fornece.
+- O modo **Clips IA** é um **protótipo independente** apenas inspirado na
+  *categoria* de ferramentas de repurposing de vídeo. Não usa nome, logotipo,
+  textos, imagens, código ou qualquer material do Vizard ou de terceiros —
+  ideias e funcionalidades não são protegidas por direito autoral; a expressão
+  (marca, design, código) aqui é toda própria. O projeto **não é afiliado,
+  endossado ou associado** ao Vizard.
+- Use apenas conteúdo que você tenha direito de usar. O Comenta Studio não
+  hospeda nem distribui mídia — ele apenas edita, localmente, arquivos que
+  você mesmo fornece.

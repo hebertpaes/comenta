@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { renderVideo } from './ffmpeg.js'
+import ClipsStudio from './ClipsStudio.jsx'
 
 const EXTERNAL_APPS = [
   { name: 'CapCut', tipo: 'vídeo', dica: 'Exporte como MP4 e importe aqui.' },
@@ -29,6 +30,7 @@ function secondsToLabel(s) {
 }
 
 export default function App() {
+  const [tab, setTab] = useState('clips')
   const [videoFile, setVideoFile] = useState(null)
   const [videoUrl, setVideoUrl] = useState(null)
   const [videoDuration, setVideoDuration] = useState(0)
@@ -136,24 +138,57 @@ export default function App() {
   return (
     <div className="app">
       <header className="hero">
-        <h1>🎬 Comenta <span>Editor</span></h1>
+        <h1>🎬 Comenta <span>Studio</span></h1>
         <p>
-          Edite vídeo e música que vieram de apps externos — como
-          <strong> CapCut</strong> e <strong>Suno</strong> — direto no navegador.
-          Nada é enviado para servidores: tudo acontece no seu computador.
+          {tab === 'clips' ? (
+            <>
+              Transforme <strong>vídeos longos em clipes curtos</strong> prontos
+              para Reels, TikTok e Shorts. A análise inteligente encontra os
+              melhores momentos — tudo no navegador, nada é enviado para
+              servidores.
+            </>
+          ) : (
+            <>
+              Edite vídeo e música que vieram de apps externos — como
+              <strong> CapCut</strong> e <strong>Suno</strong> — direto no
+              navegador. Nada é enviado para servidores: tudo acontece no seu
+              computador.
+            </>
+          )}
         </p>
       </header>
 
-      <div className="apps-row">
-        {EXTERNAL_APPS.map((a) => (
-          <div key={a.name} className="app-chip" title={a.dica}>
-            <strong>{a.name}</strong>
-            <span>{a.tipo}</span>
-          </div>
-        ))}
-      </div>
+      <nav className="tabs" aria-label="Modos do estúdio">
+        <button
+          type="button"
+          className={tab === 'clips' ? 'active' : ''}
+          onClick={() => setTab('clips')}
+        >
+          ⚡ Clips IA
+        </button>
+        <button
+          type="button"
+          className={tab === 'editor' ? 'active' : ''}
+          onClick={() => setTab('editor')}
+        >
+          🎛️ Editor
+        </button>
+      </nav>
 
-      <main className="grid">
+      {tab === 'clips' && <ClipsStudio />}
+
+      {tab === 'editor' && (
+        <div className="apps-row">
+          {EXTERNAL_APPS.map((a) => (
+            <div key={a.name} className="app-chip" title={a.dica}>
+              <strong>{a.name}</strong>
+              <span>{a.tipo}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <main className="grid" hidden={tab !== 'editor'}>
         <section className="panel">
           <h2>1. Importar</h2>
 

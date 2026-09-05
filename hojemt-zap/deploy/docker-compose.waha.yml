@@ -1,0 +1,20 @@
+# WAHA no servidor de produção (o WhatsApp precisa rodar onde o Ghost consegue
+# falar com ele — o WAHA do seu Mac serve para testes, não para produção).
+# Suba com: docker compose -f docker-compose.waha.yml up -d
+# Depois abra http://SEU_SERVIDOR:8080/dashboard (via túnel SSH) e escaneie o QR.
+services:
+  waha:
+    image: devlikeapro/waha:latest
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:3000"   # só localhost; acesse o dashboard por túnel SSH
+    environment:
+      - WAHA_API_KEY=${WA_API_KEY:?defina WA_API_KEY}
+      - WHATSAPP_API_KEY=${WA_API_KEY}
+      - WAHA_DASHBOARD_USERNAME=admin
+      - WAHA_DASHBOARD_PASSWORD=${WA_API_KEY}
+    volumes:
+      - waha-sessions:/app/.sessions
+
+volumes:
+  waha-sessions:
