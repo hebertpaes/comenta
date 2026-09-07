@@ -1,1500 +1,653 @@
-// A página inteira é interativa (useState em praticamente todo componente),
-// então é um Client Component. Antes vivia em pages/preview.tsx: o site tinha
-// os dois roteadores do Next ao mesmo tempo, e agora só o App Router.
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import {
+  MessageSquare,
+  Sparkles,
+  Zap,
+  Users,
+  BarChart3,
+  Bot,
+  Settings,
+  Send,
+  PhoneCall,
+  CheckCheck,
+  Search,
+  Plus,
+  Play,
+  Volume2,
+  TrendingUp,
+  Clock,
+  CheckCircle2,
+  ArrowRight,
+  ShieldCheck,
+  ChevronRight,
+  UserCheck,
+  Flame,
+  DollarSign,
+  Layers
+} from "lucide-react";
 
-// =============================================================
-// PREVIEW-ONLY FILE (safe to render here)
-// =============================================================
-// Este arquivo mostra uma PRÉVIA funcional do layout (Home + Auth + cards de blog)
-// sem dependências do Next.js. Os handlers apenas simulam requisições.
-// Ao final do arquivo há um BLOCO GRANDE comentado com os **arquivos reais**
-// prontos para copiar no seu projeto Next.js (App Router), incluindo SEO, feeds e robots.
-
-// ------------------------
-// Dados fictícios p/ prévia
-// ------------------------
-// IMPORTANTE: usamos **apenas** estas 3 URLs fixas (mesmo domínio/paths)
-// para conservar as permissões de imagens no preview.
-// Para evitar prompts de permissão no preview, geramos imagens inline (data URL)
-// Assim, o carregamento é "permitido" automaticamente (sem rede).
-const STABLE_IMAGES = {
-  hp1: `data:image/svg+xml;utf8,${encodeURIComponent(
-    `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'>
-       <defs><linearGradient id='g1' x1='0' x2='1'><stop offset='0%' stop-color='#a78bfa'/><stop offset='100%' stop-color='#60a5fa'/></linearGradient></defs>
-       <rect width='800' height='450' fill='url(#g1)'/>
-       <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial' font-size='28' fill='white' opacity='0.9'>HP • Banner 01</text>
-     </svg>`
-  )}`,
-  hp2: `data:image/svg+xml;utf8,${encodeURIComponent(
-    `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'>
-       <defs><linearGradient id='g2' x1='0' x2='1'><stop offset='0%' stop-color='#34d399'/><stop offset='100%' stop-color='#10b981'/></linearGradient></defs>
-       <rect width='800' height='450' fill='url(#g2)'/>
-       <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial' font-size='28' fill='white' opacity='0.9'>HP • Banner 02</text>
-     </svg>`
-  )}`,
-  hp3: `data:image/svg+xml;utf8,${encodeURIComponent(
-    `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'>
-       <defs><linearGradient id='g3' x1='0' x2='1'><stop offset='0%' stop-color='#f472b6'/><stop offset='100%' stop-color='#fb7185'/></linearGradient></defs>
-       <rect width='800' height='450' fill='url(#g3)'/>
-       <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial' font-size='28' fill='white' opacity='0.9'>HP • Banner 03</text>
-     </svg>`
-  )}`,
+export type Message = {
+  id: string;
+  sender: "user" | "ai" | "system";
+  text: string;
+  time: string;
+  leadTag?: string;
+  hasAudio?: boolean;
+  audioDuration?: string;
 };
 
-// Fallback local (sem rede) caso o preview negue acesso ou a imagem falhe
-const PLACEHOLDER_DATA_URL = `data:image/svg+xml;utf8,${encodeURIComponent(
-  `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'>
-     <defs><linearGradient id='g' x1='0' x2='1'><stop offset='0%' stop-color='#e2e8f0'/><stop offset='100%' stop-color='#f8fafc'/></linearGradient></defs>
-     <rect width='800' height='450' fill='url(#g)'/>
-     <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial' font-size='20' fill='#475569'>Prévia — imagem não carregada</text>
-   </svg>`
-)}`;
-
-// UID helper para prévia (fallback se randomUUID não existir)
-function uid() {
-  try {
-    if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
-      return crypto.randomUUID();
-    }
-  } catch {
-    // crypto.randomUUID exige contexto seguro; fora dele caímos no gerador
-    // manual logo abaixo.
-  }
-  return Math.random().toString(36).slice(2);
-}
-
-const samplePosts = [
-  {
-    slug: "hello-world",
-    title: "Hello World",
-    excerpt: "Boas-vindas ao blog!",
-    coverImage: STABLE_IMAGES.hp1,
-    publishedAt: new Date().toISOString(),
-  },
-  {
-    slug: "cloud-run-next",
-    title: "Cloud Run + Next.js",
-    excerpt: "Rodando Next no Google Cloud Run.",
-    coverImage: STABLE_IMAGES.hp2,
-    publishedAt: new Date().toISOString(),
-  },
-  {
-    slug: "auth-firestore",
-    title: "Auth + Firestore",
-    excerpt: "Sessões seguras, rate limit e auditoria.",
-    coverImage: STABLE_IMAGES.hp3,
-    publishedAt: new Date().toISOString(),
-  },
-];
-
-// =========================
-// PREVIEW: Home + Auth + Blog
-// =========================
-export default function PreviewHome() {
-  const [dark, setDark] = React.useState(false);
-  return (
-    <div
-      className={
-        dark
-          ? "dark-mode min-h-screen bg-slate-950 text-slate-100"
-          : "min-h-screen bg-gradient-to-b from-white to-slate-50"
-      }
-    >
-      <Header dark={dark} toggle={() => setDark((v) => !v)} />
-      <ContrastStyles />
-
-      {/* Custom Cache Loading Banner (prévia) */}
-      <CacheBanner />
-
-      <main className="container mx-auto px-4 max-w-6xl py-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-        <Hero />
-        <section id="acesso" className="w-full">
-          <AuthPanel />
-          <div className="mt-4">
-            <CacheControls />
-          </div>
-        </section>
-      </main>
-
-      <section className="container mx-auto px-4 max-w-6xl py-10">
-        <div className="flex items-end justify-between mb-6">
-          <h2 className="text-2xl font-bold">Últimos artigos</h2>
-          <a href="#" className="text-sm underline" onClick={(e) => e.preventDefault()}>
-            Ver todos
-          </a>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {samplePosts.map((p) => (
-            <PostCard key={p.slug} post={p} />
-          ))}
-        </div>
-      </section>
-
-      {/* ===== Chat AI (prévia) ===== */}
-      <section id="chat" className="container mx-auto px-4 max-w-6xl py-10">
-        <ChatPanel />
-      </section>
-
-      {/* ===== Administração (prévia) ===== */}
-      <section id="admin" className="container mx-auto px-4 max-w-6xl py-12">
-        <AdminPanel />
-      </section>
-
-      <Footer />
-    </div>
-  );
-}
-
-function Header({ dark, toggle }: { dark: boolean; toggle: () => void }) {
-  return (
-    <header
-      className={`sticky top-0 z-30 backdrop-blur border-b ${dark ? "bg-slate-900/70 border-slate-800" : "bg-white/70 border-slate-200/60"}`}
-    >
-      <div className="container mx-auto px-4 max-w-6xl h-14 flex items-center justify-between">
-        <a
-          href="#"
-          onClick={(e) => e.preventDefault()}
-          className="flex items-center gap-2 no-underline"
-        >
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-slate-900 text-white font-bold">
-            HP
-          </span>
-          <span className="font-semibold">Hebert Paes</span>
-        </a>
-        <nav className="hidden sm:flex items-center gap-6 text-sm">
-          <a href="#acesso" className="hover:opacity-80">
-            Entrar / Cadastrar
-          </a>
-          <a href="#" onClick={(e) => e.preventDefault()} className="hover:opacity-80">
-            Blog
-          </a>
-          <a href="#admin" className="hover:opacity-80">
-            Admin
-          </a>
-          <a href="#chat" className="hover:opacity-80">
-            Chat
-          </a>
-          <button onClick={toggle} className="ml-2 rounded-full border px-3 py-1 text-xs">
-            {dark ? "☀️ Claro" : "🌙 Escuro"}
-          </button>
-        </nav>
-      </div>
-    </header>
-  );
-}
-
-function ContrastStyles() {
-  return (
-    <style>{`
-      /* Text contrast */
-      .dark-mode{color:#E5E7EB}
-      .dark-mode .text-slate-600{color:#D6DEE9 !important}
-      .dark-mode .text-slate-500{color:#B8C4D2 !important}
-      .dark-mode .text-slate-400{color:#A7B4C3 !important}
-      .dark-mode a{color:#E2E8F0}
-
-      /* Cards & surfaces */
-      .dark-mode .bg-white, .dark-mode .bg-slate-50{background:#0f172a !important}
-      .dark-mode .bg-white\\/80{background:rgba(15,23,42,.80) !important}
-      .dark-mode .bg-white\\/90{background:rgba(15,23,42,.90) !important}
-      .dark-mode .border-slate-200{border-color:#334155 !important}
-      .dark-mode .border-slate-300{border-color:#475569 !important}
-
-      /* Inputs */
-      .dark-mode input, .dark-mode select, .dark-mode textarea{
-        background:#0b1220 !important;
-        color:#E5E7EB !important;
-        border-color:#475569 !important;
-      }
-      .dark-mode input::placeholder, .dark-mode textarea::placeholder{color:#9AA7B6 !important; opacity:1}
-
-      /* Chat assistant bubble */
-      .dark-mode .bg-white.border{background:#0f172a !important; border-color:#334155 !important}
-
-      /* Hover tweaks */
-      .dark-mode .hover\\:bg-slate-50:hover{background:#111827 !important}
-
-      /* Post date high-contrast */
-      .dark-mode .post-date{color:#C8D2DF !important}
-    `}</style>
-  );
-}
-
-function Hero() {
-  return (
-    <section className="space-y-6">
-      <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-        Plataforma pessoal{" "}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-sky-500">
-          Hebert Paes
-        </span>
-      </h1>
-      <p className="text-slate-600 max-w-prose">
-        Next.js no Cloud Run, com Firestore, autenticação segura e Blog otimizado para SEO e
-        crawlers de LLMs.
-      </p>
-
-      {/* Carrossel de notícias (prévia — dados fictícios; a versão real puxa o portal ao vivo) */}
-      <PreviewNewsSlider />
-
-      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-        {[
-          "Cloud Run + SSL gerenciado",
-          "Firestore (ADC)",
-          "CI/CD GitHub Actions",
-          "Cache via Cloudflare",
-        ].map((t) => (
-          <li
-            key={t}
-            className="flex items-center gap-2 rounded-xl border border-slate-200 px-3 py-2 bg-white/80"
-          >
-            <span className="inline-block h-2 w-2 rounded-full bg-emerald-500" /> {t}
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-}
-
-// Slider de notícias da prévia (autossuficiente, sem rede).
-// Reflete o carrossel real (app/components/NewsCarousel.tsx), que em
-// produção puxa as manchetes e imagens reais do portal via API REST.
-const previewNews = [
-  {
-    id: "n1",
-    title: "Mutirão de cirurgias atende 100 pacientes nesta semana",
-    cat: "Saúde",
-    urgent: true,
-    img: STABLE_IMAGES.hp1,
-  },
-  {
-    id: "n2",
-    title: "Cobertura regional atualizada minuto a minuto",
-    cat: "Cidades",
-    urgent: false,
-    img: STABLE_IMAGES.hp2,
-  },
-  {
-    id: "n3",
-    title: "Acompanhe as transmissões ao vivo da redação",
-    cat: "Ao vivo",
-    urgent: false,
-    img: STABLE_IMAGES.hp3,
-  },
-];
-
-function PreviewNewsSlider() {
-  const [i, setI] = React.useState(0);
-  const [playing, setPlaying] = React.useState(true);
-  const hover = React.useRef(false);
-  const n = previewNews.length;
-  React.useEffect(() => {
-    if (!playing) return;
-    const t = setInterval(() => {
-      if (!hover.current) setI((v) => (v + 1) % n);
-    }, 6000);
-    return () => clearInterval(t);
-  }, [playing, n]);
-  const cur = previewNews[i];
-  return (
-    <div
-      className="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-xl"
-      onMouseEnter={() => (hover.current = true)}
-      onMouseLeave={() => (hover.current = false)}
-    >
-      <div className="relative" style={{ aspectRatio: "16 / 10", background: "#0f172a" }}>
-        {previewNews.map((s, idx) => (
-          // As imagens desta prévia são data: URIs geradas em memória. O
-          // next/image não otimiza data: URI e ainda exigiria configurar
-          // remotePatterns por host — sem ganho aqui.
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            key={s.id}
-            src={s.img}
-            alt={s.title}
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
-            style={{ opacity: idx === i ? 1 : 0 }}
-          />
-        ))}
-        <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
-          {cur.urgent ? (
-            <span className="bg-slate-900 text-white text-[11px] font-extrabold tracking-wide px-2.5 py-1 rounded-md">
-              URGENTE
-            </span>
-          ) : (
-            <span />
-          )}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setPlaying((p) => !p)}
-              aria-label={playing ? "Pausar" : "Reproduzir"}
-              className="h-8 w-8 rounded-full text-white text-xs inline-flex items-center justify-center"
-              style={{ background: "rgba(15,23,42,.55)" }}
-            >
-              {playing ? "❚❚" : "►"}
-            </button>
-            <div className="flex items-center gap-2">
-              {previewNews.map((s, idx) => (
-                <button
-                  key={s.id}
-                  onClick={() => setI(idx)}
-                  aria-label={`Slide ${idx + 1}`}
-                  className="h-3 w-3 rounded-full border-2 border-white"
-                  style={{
-                    background: idx === i ? "#34d399" : "transparent",
-                    borderColor: idx === i ? "#34d399" : "#fff",
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-        <button
-          onClick={() => setI((v) => (v - 1 + n) % n)}
-          aria-label="Anterior"
-          className="absolute left-3 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full text-white text-2xl inline-flex items-center justify-center"
-          style={{ background: "rgba(15,23,42,.55)" }}
-        >
-          ‹
-        </button>
-        <button
-          onClick={() => setI((v) => (v + 1) % n)}
-          aria-label="Próxima"
-          className="absolute right-3 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full text-white text-2xl inline-flex items-center justify-center"
-          style={{ background: "rgba(15,23,42,.55)" }}
-        >
-          ›
-        </button>
-      </div>
-      <div className="p-4">
-        <span className="text-[11px] font-bold uppercase tracking-wide text-sky-600">
-          {cur.cat}
-        </span>
-        <h3
-          className="mt-1 font-bold leading-tight"
-          style={{
-            fontFamily: "Georgia, 'Times New Roman', serif",
-            fontSize: "clamp(18px,2vw,24px)",
-          }}
-        >
-          {cur.title}
-        </h3>
-        <p className="mt-2 text-xs text-slate-500">
-          Prévia — a versão publicada exibe as notícias e fotos reais do portal.
-        </p>
-      </div>
-    </div>
-  );
-}
-
-// ======= Cache UX (Prévia) =======
-const CacheContext = React.createContext<{
-  state: "miss" | "hit" | "refresh";
-  set: (s: "miss" | "hit" | "refresh") => void;
-}>({ state: "hit", set: () => {} });
-
-function CacheBanner() {
-  const [state, setState] = React.useState<"miss" | "hit" | "refresh">("hit");
-  // Simula SWR: carrega do cache -> atualiza em background -> pronto
-  React.useEffect(() => {
-    // inicia como hit (conteúdo do cache)
-    setState("hit");
-    const t1 = setTimeout(() => setState("refresh"), 800); // atualizando…
-    const t2 = setTimeout(() => setState("hit"), 1800); // atualizado
-    return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-    };
-  }, []);
-
-  return (
-    <CacheContext.Provider value={{ state, set: setState }}>
-      <div className="sticky top-14 z-20">
-        {state === "miss" && (
-          <div className="animate-pulse bg-amber-50 border-b border-amber-200 text-amber-800">
-            <div className="max-w-6xl mx-auto px-4 py-2 text-sm">
-              Carregando do servidor (cache MISS)…
-            </div>
-          </div>
-        )}
-        {state === "refresh" && (
-          <div className="bg-blue-50 border-b border-blue-200 text-blue-800">
-            <div className="max-w-6xl mx-auto px-4 py-2 text-sm">
-              ⚡ Conteúdo do cache exibido — atualizando em segundo plano…
-            </div>
-          </div>
-        )}
-        {state === "hit" && (
-          <div className="bg-emerald-50 border-b border-emerald-200 text-emerald-800">
-            <div className="max-w-6xl mx-auto px-4 py-2 text-sm">
-              ✅ Conteúdo atendido pelo cache (atualizado)
-            </div>
-          </div>
-        )}
-      </div>
-    </CacheContext.Provider>
-  );
-}
-
-function CacheControls() {
-  const ctx = React.useContext(CacheContext);
-  return (
-    <div className="rounded-xl border border-slate-200 bg-white/80 p-3 text-sm flex items-center gap-3">
-      <span className="font-medium">Simular cache:</span>
-      <button
-        onClick={() => ctx.set("miss")}
-        className={`px-2 py-1 rounded-md border ${ctx.state === "miss" ? "bg-amber-100 border-amber-300" : "border-slate-200"}`}
-      >
-        MISS
-      </button>
-      <button
-        onClick={() => ctx.set("refresh")}
-        className={`px-2 py-1 rounded-md border ${ctx.state === "refresh" ? "bg-blue-100 border-blue-300" : "border-slate-200"}`}
-      >
-        REFRESH
-      </button>
-      <button
-        onClick={() => ctx.set("hit")}
-        className={`px-2 py-1 rounded-md border ${ctx.state === "hit" ? "bg-emerald-100 border-emerald-300" : "border-slate-200"}`}
-      >
-        HIT
-      </button>
-      <span className="ml-auto opacity-70">(prévia)</span>
-    </div>
-  );
-}
-
-// ======= Admin (Prévia) =======
-// Simula CRUD em memória. Na seção "ARQUIVOS REAIS" há o código Next.js + Firestore.
-type AdminRole = "admin" | "editor" | "user";
-type AdminStatus = "draft" | "published";
-
-interface AdminUser {
-  id: string;
-  email: string;
-  role: string;
-  createdAt: string;
-}
-interface AdminTerm {
+export type Lead = {
   id: string;
   name: string;
-  slug: string;
-}
-interface AdminPost {
-  id: string;
-  title: string;
-  slug: string;
-  status: string;
-  categories: string[];
-  tags: string[];
-  publishedAt: string;
-}
-interface AdminPage {
-  id: string;
-  title: string;
-  slug: string;
-  status: string;
-}
+  phone: string;
+  status: "novo" | "qualificado" | "proposta" | "fechado";
+  interest: string;
+  intentScore: number;
+  value: number;
+  timeAgo: string;
+};
 
-const sampleUsersAdmin: AdminUser[] = [
-  { id: "u1", email: "admin@hebertpaes.com", role: "admin", createdAt: new Date().toISOString() },
-  { id: "u2", email: "user@hebertpaes.com", role: "user", createdAt: new Date().toISOString() },
-];
-const sampleCategoriesAdmin: AdminTerm[] = [
-  { id: "c1", name: "Cloud", slug: "cloud" },
-  { id: "c2", name: "Dev", slug: "dev" },
-];
-const sampleTagsAdmin: AdminTerm[] = [
-  { id: "t1", name: "gcp", slug: "gcp" },
-  { id: "t2", name: "nextjs", slug: "nextjs" },
-  { id: "t3", name: "firestore", slug: "firestore" },
-];
-const samplePagesAdmin: AdminPage[] = [
-  { id: "pg1", title: "Sobre", slug: "sobre", status: "published" },
-];
-const samplePostsAdmin: AdminPost[] = [
+const INITIAL_MESSAGES: Message[] = [
   {
-    id: "p1",
-    title: "Hello World",
-    slug: "hello-world",
-    status: "published",
-    categories: ["c2"],
-    tags: ["t2"],
-    publishedAt: new Date().toISOString(),
+    id: "m1",
+    sender: "system",
+    text: "🔒 Atendimento criptografado iniciado com Sofia AI — Atendente Virtual Comenta AI v2.0",
+    time: "14:30"
   },
   {
-    id: "p2",
-    title: "Cloud Run + Next.js",
-    slug: "cloud-run-next",
-    status: "published",
-    categories: ["c1"],
-    tags: ["t1", "t2"],
-    publishedAt: new Date().toISOString(),
-  },
+    id: "m2",
+    sender: "ai",
+    text: "Olá! Seja muito bem-vindo ao atendimento da Comenta AI ✦. Sou a Sofia, especialista em automação e vendas no WhatsApp. Como posso impulsionar seu negócio hoje?",
+    time: "14:30",
+    hasAudio: true,
+    audioDuration: "0:08"
+  }
 ];
 
-function AdminPanel() {
-  const [tab, setTab] = React.useState<
-    "users" | "posts" | "categories" | "tags" | "pages" | "blockchain"
-  >("users");
+const INITIAL_LEADS: Lead[] = [
+  {
+    id: "l1",
+    name: "Dr. Gabriel Santos",
+    phone: "+55 (65) 99842-1020",
+    status: "qualificado",
+    interest: "Plano Anual Enterprise + 5 Conexões",
+    intentScore: 98,
+    value: 4188,
+    timeAgo: "Há 3 min"
+  },
+  {
+    id: "l2",
+    name: "Mariana Oliveira",
+    phone: "+55 (11) 98765-4321",
+    status: "proposta",
+    interest: "Curso de Atendimento Automatizado",
+    intentScore: 85,
+    value: 1290,
+    timeAgo: "Há 12 min"
+  },
+  {
+    id: "l3",
+    name: "Lucas Alencar",
+    phone: "+55 (31) 99112-8877",
+    status: "fechado",
+    interest: "Comenta SaaS Pro",
+    intentScore: 100,
+    value: 3588,
+    timeAgo: "Há 25 min"
+  },
+  {
+    id: "l4",
+    name: "Dra. Camila Rocha",
+    phone: "+55 (41) 98822-3344",
+    status: "novo",
+    interest: "Integração Clínica Médica",
+    intentScore: 72,
+    value: 2400,
+    timeAgo: "Há 40 min"
+  }
+];
 
-  return (
-    <div className="relative rounded-3xl border border-slate-200 bg-white/90 shadow-xl overflow-hidden">
-      <div className="p-6 border-b border-slate-200 flex items-center gap-3 flex-wrap">
-        <h2 className="text-xl font-bold mr-auto">Administração</h2>
-        {(["users", "posts", "categories", "tags", "pages", "blockchain"] as const).map((k) => (
-          <button
-            key={k}
-            onClick={() => setTab(k)}
-            className={`px-3 py-1.5 rounded-full border text-sm ${tab === k ? "bg-slate-900 text-white border-slate-900" : "border-slate-200 bg-white"}`}
-          >
-            {k === "users"
-              ? "Usuários"
-              : k === "posts"
-                ? "Posts"
-                : k === "categories"
-                  ? "Categorias"
-                  : k === "tags"
-                    ? "Tags"
-                    : k === "pages"
-                      ? "Páginas"
-                      : "Blockchain"}
-          </button>
-        ))}
-        <span className="ml-2 text-xs text-slate-500">(prévia)</span>
-      </div>
-      <div className="p-6">
-        {tab === "users" && <UsersAdmin />}
-        {tab === "posts" && <PostsAdmin />}
-        {tab === "categories" && <CategoriesAdmin />}
-        {tab === "tags" && <TagsAdmin />}
-        {tab === "pages" && <PagesAdmin />}
-        {tab === "blockchain" && <BlockchainAdminPreview />}
-      </div>
-    </div>
+export default function ComentaAIPortalPage() {
+  const [activeTab, setActiveTab] = useState<"simulator" | "studio" | "crm" | "analytics">("simulator");
+  const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
+  const [inputText, setInputText] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+  const [leads, setLeads] = useState<Lead[]>(INITIAL_LEADS);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  
+  // Agent Studio Customization
+  const [agentName, setAgentName] = useState("Sofia 2.0");
+  const [agentTone, setAgentTone] = useState("Consultiva, Ágil e Persuasiva");
+  const [agentPrompt, setAgentPrompt] = useState(
+    "Você é a Sofia, atendente de IA de alto desempenho da Comenta. Seu objetivo é qualificar leads no WhatsApp em até 3 perguntas, apresentar os planos Pro/Enterprise e encaminhar propostas."
   );
-}
 
-function UsersAdmin() {
-  const [items, setItems] = React.useState<AdminUser[]>(sampleUsersAdmin);
-  const [email, setEmail] = React.useState("");
-  const [role, setRole] = React.useState<"admin" | "editor" | "user">("user");
-  function add(e: React.FormEvent) {
-    e.preventDefault();
-    if (!email) return;
-    setItems((prev) => [{ id: uid(), email, role, createdAt: new Date().toISOString() }, ...prev]);
-    setEmail("");
-    setRole("user");
-  }
-  function del(id: string) {
-    setItems((prev) => prev.filter((i) => i.id !== id));
-  }
-  return (
-    <div>
-      <h3 className="font-semibold mb-3">Usuários</h3>
-      <form onSubmit={add} className="flex flex-col sm:flex-row gap-2 mb-4">
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="email@exemplo.com"
-          className="flex-1 rounded-xl border px-3 py-2"
-        />
-        <select
-          value={role}
-          onChange={(e) => setRole(e.target.value as AdminRole)}
-          className="rounded-xl border px-3 py-2"
-        >
-          <option value="admin">admin</option>
-          <option value="editor">editor</option>
-          <option value="user">user</option>
-        </select>
-        <button className="rounded-xl bg-slate-900 text-white px-4">Adicionar</button>
-      </form>
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="text-left text-slate-500">
-              <th className="py-2 pr-4">E-mail</th>
-              <th className="py-2 pr-4">Função</th>
-              <th className="py-2 pr-4">Criado</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {items.map((u) => (
-              <tr key={u.id} className="border-t">
-                <td className="py-2 pr-4">{u.email}</td>
-                <td className="py-2 pr-4">{u.role}</td>
-                <td className="py-2 pr-4">{new Date(u.createdAt).toLocaleString()}</td>
-                <td className="py-2 text-right">
-                  <button onClick={() => del(u.id)} className="text-red-600 underline">
-                    remover
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-}
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
-function PostsAdmin() {
-  const [items, setItems] = React.useState<AdminPost[]>(samplePostsAdmin);
-  const [title, setTitle] = React.useState("");
-  const [slug, setSlug] = React.useState("");
-  const [status, setStatus] = React.useState<"draft" | "published">("draft");
-  const [cats, setCats] = React.useState("");
-  const [tags, setTags] = React.useState("");
-  function add(e: React.FormEvent) {
-    e.preventDefault();
-    if (!title || !slug) return;
-    setItems((prev) => [
-      {
-        id: uid(),
-        title,
-        slug,
-        status,
-        categories: cats
-          .split(",")
-          .map((s) => s.trim())
-          .filter(Boolean),
-        tags: tags
-          .split(",")
-          .map((s) => s.trim())
-          .filter(Boolean),
-        publishedAt: new Date().toISOString(),
-      },
-      ...prev,
-    ]);
-    setTitle("");
-    setSlug("");
-    setStatus("draft");
-    setCats("");
-    setTags("");
-  }
-  function del(id: string) {
-    setItems((prev) => prev.filter((i) => i.id !== id));
-  }
-  return (
-    <div>
-      <h3 className="font-semibold mb-3">Posts</h3>
-      <form onSubmit={add} className="grid grid-cols-1 sm:grid-cols-6 gap-2 mb-4">
-        <input
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Título"
-          className="rounded-xl border px-3 py-2 sm:col-span-2"
-        />
-        <input
-          value={slug}
-          onChange={(e) => setSlug(e.target.value)}
-          placeholder="slug-exemplo"
-          className="rounded-xl border px-3 py-2"
-        />
-        <select
-          value={status}
-          onChange={(e) => setStatus(e.target.value as AdminStatus)}
-          className="rounded-xl border px-3 py-2"
-        >
-          <option value="draft">draft</option>
-          <option value="published">published</option>
-        </select>
-        <input
-          value={cats}
-          onChange={(e) => setCats(e.target.value)}
-          placeholder="categorias (ids, vírgula)"
-          className="rounded-xl border px-3 py-2"
-        />
-        <input
-          value={tags}
-          onChange={(e) => setTags(e.target.value)}
-          placeholder="tags (ids, vírgula)"
-          className="rounded-xl border px-3 py-2"
-        />
-        <button className="rounded-xl bg-slate-900 text-white px-4 py-2 sm:col-span-6">
-          Adicionar
-        </button>
-      </form>
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="text-left text-slate-500">
-              <th className="py-2 pr-4">Título</th>
-              <th className="py-2 pr-4">Slug</th>
-              <th className="py-2 pr-4">Status</th>
-              <th className="py-2 pr-4">Categorias</th>
-              <th className="py-2 pr-4">Tags</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {items.map((p) => (
-              <tr key={p.id} className="border-t">
-                <td className="py-2 pr-4">{p.title}</td>
-                <td className="py-2 pr-4">{p.slug}</td>
-                <td className="py-2 pr-4">{p.status}</td>
-                <td className="py-2 pr-4">{(p.categories || []).join(", ")}</td>
-                <td className="py-2 pr-4">{(p.tags || []).join(", ")}</td>
-                <td className="py-2 text-right">
-                  <button onClick={() => del(p.id)} className="text-red-600 underline">
-                    remover
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-}
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
-function CategoriesAdmin() {
-  const [items, setItems] = React.useState<AdminTerm[]>(sampleCategoriesAdmin);
-  const [name, setName] = React.useState("");
-  const [slug, setSlug] = React.useState("");
-  function add(e: React.FormEvent) {
-    e.preventDefault();
-    if (!name || !slug) return;
-    setItems((prev) => [{ id: uid(), name, slug }, ...prev]);
-    setName("");
-    setSlug("");
-  }
-  function del(id: string) {
-    setItems((prev) => prev.filter((i) => i.id !== id));
-  }
-  return (
-    <div>
-      <h3 className="font-semibold mb-3">Categorias</h3>
-      <form onSubmit={add} className="flex flex-col sm:flex-row gap-2 mb-4">
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Nome"
-          className="rounded-xl border px-3 py-2"
-        />
-        <input
-          value={slug}
-          onChange={(e) => setSlug(e.target.value)}
-          placeholder="slug"
-          className="rounded-xl border px-3 py-2"
-        />
-        <button className="rounded-xl bg-slate-900 text-white px-4">Adicionar</button>
-      </form>
-      <ul className="divide-y">
-        {items.map((c) => (
-          <li key={c.id} className="py-2 flex items-center justify-between">
-            <span>
-              {c.name} <span className="text-slate-400">/ {c.slug}</span>
-            </span>
-            <button onClick={() => del(c.id)} className="text-red-600 underline">
-              remover
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, isTyping]);
 
-function TagsAdmin() {
-  const [items, setItems] = React.useState<AdminTerm[]>(sampleTagsAdmin);
-  const [name, setName] = React.useState("");
-  const [slug, setSlug] = React.useState("");
-  function add(e: React.FormEvent) {
-    e.preventDefault();
-    if (!name || !slug) return;
-    setItems((prev) => [{ id: uid(), name, slug }, ...prev]);
-    setName("");
-    setSlug("");
-  }
-  function del(id: string) {
-    setItems((prev) => prev.filter((i) => i.id !== id));
-  }
-  return (
-    <div>
-      <h3 className="font-semibold mb-3">Tags</h3>
-      <form onSubmit={add} className="flex flex-col sm:flex-row gap-2 mb-4">
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Nome"
-          className="rounded-xl border px-3 py-2"
-        />
-        <input
-          value={slug}
-          onChange={(e) => setSlug(e.target.value)}
-          placeholder="slug"
-          className="rounded-xl border px-3 py-2"
-        />
-        <button className="rounded-xl bg-slate-900 text-white px-4">Adicionar</button>
-      </form>
-      <ul className="divide-y">
-        {items.map((t) => (
-          <li key={t.id} className="py-2 flex items-center justify-between">
-            <span>
-              {t.name} <span className="text-slate-400">/ {t.slug}</span>
-            </span>
-            <button onClick={() => del(t.id)} className="text-red-600 underline">
-              remover
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+  const handleSendMessage = (customText?: string) => {
+    const textToSend = customText || inputText;
+    if (!textToSend.trim()) return;
 
-function PagesAdmin() {
-  const [items, setItems] = React.useState<AdminPage[]>(samplePagesAdmin);
-  const [title, setTitle] = React.useState("");
-  const [slug, setSlug] = React.useState("");
-  const [status, setStatus] = React.useState<"draft" | "published">("draft");
-  function add(e: React.FormEvent) {
-    e.preventDefault();
-    if (!title || !slug) return;
-    setItems((prev) => [{ id: uid(), title, slug, status }, ...prev]);
-    setTitle("");
-    setSlug("");
-    setStatus("draft");
-  }
-  function del(id: string) {
-    setItems((prev) => prev.filter((i) => i.id !== id));
-  }
-  return (
-    <div>
-      <h3 className="font-semibold mb-3">Páginas</h3>
-      <form onSubmit={add} className="grid grid-cols-1 sm:grid-cols-4 gap-2 mb-4">
-        <input
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Título"
-          className="rounded-xl border px-3 py-2"
-        />
-        <input
-          value={slug}
-          onChange={(e) => setSlug(e.target.value)}
-          placeholder="slug"
-          className="rounded-xl border px-3 py-2"
-        />
-        <select
-          value={status}
-          onChange={(e) => setStatus(e.target.value as AdminStatus)}
-          className="rounded-xl border px-3 py-2"
-        >
-          <option value="draft">draft</option>
-          <option value="published">published</option>
-        </select>
-        <button className="rounded-xl bg-slate-900 text-white px-4">Adicionar</button>
-      </form>
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="text-left text-slate-500">
-              <th className="py-2 pr-4">Título</th>
-              <th className="py-2 pr-4">Slug</th>
-              <th className="py-2 pr-4">Status</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {items.map((p) => (
-              <tr key={p.id} className="border-t">
-                <td className="py-2 pr-4">{p.title}</td>
-                <td className="py-2 pr-4">{p.slug}</td>
-                <td className="py-2 pr-4">{p.status}</td>
-                <td className="py-2 text-right">
-                  <button onClick={() => del(p.id)} className="text-red-600 underline">
-                    remover
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-}
-
-// ======= Blockchain (Prévia) =======
-interface PreviewTx {
-  id: string;
-  type: string;
-  payload: { slug: string; contentHash: string };
-  timestamp: number;
-}
-interface PreviewBlock {
-  height: number;
-  hash: string;
-  tx: PreviewTx[];
-  timestamp: number;
-}
-
-function BlockchainAdminPreview() {
-  const [pub, setPub] = React.useState<string | undefined>();
-  const [prv, setPrv] = React.useState<string | undefined>();
-  const [slug, setSlug] = React.useState("hello-world");
-  const [hash, setHash] = React.useState("sha256-do-conteudo");
-  const [mempool, setMempool] = React.useState<PreviewTx[]>([]);
-  const [blocks, setBlocks] = React.useState<PreviewBlock[]>([]);
-
-  function generateKeys() {
-    // PRÉVIA: apenas simula PEMs (não usar em produção)
-    setPub("-----BEGIN PUBLIC KEY-----\nPREVIEW-PUBLIC-KEY\n-----END PUBLIC KEY-----");
-    setPrv("-----BEGIN PRIVATE KEY-----\nPREVIEW-PRIVATE-KEY\n-----END PRIVATE KEY-----");
-  }
-  function addTx(e: React.FormEvent) {
-    e.preventDefault();
-    setMempool((prev) => [
-      {
-        id: Math.random().toString(36).slice(2),
-        type: "notarizePost",
-        payload: { slug, contentHash: hash },
-        timestamp: Date.now(),
-      },
-      ...prev,
-    ]);
-  }
-  function mine() {
-    if (mempool.length === 0) return;
-    const tx = mempool.slice(0, 5);
-    const block = {
-      height: blocks.length,
-      hash: Math.random().toString(16).slice(2),
-      tx,
-      timestamp: Date.now(),
+    const newMsg: Message = {
+      id: `usr_${Date.now()}`,
+      sender: "user",
+      text: textToSend,
+      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
     };
-    setBlocks((prev) => [block, ...prev]);
-    setMempool((prev) => prev.slice(tx.length));
-  }
 
-  return (
-    <div className="space-y-6">
-      <div className="rounded-2xl border p-4 bg-white/90">
-        <h3 className="font-semibold mb-2">Chave do proponente (prévia)</h3>
-        <p className="text-sm text-slate-600 mb-3">
-          Gere um par de chaves para assinar blocos (apenas demonstração — a versão real fica no
-          servidor).
-        </p>
-        <div className="flex gap-2 mb-3">
-          <button onClick={generateKeys} className="rounded-xl bg-slate-900 text-white px-4 py-2">
-            Gerar chaves
-          </button>
-          {pub && (
-            <button
-              onClick={() => navigator.clipboard.writeText(pub!)}
-              className="rounded-xl border px-3"
-            >
-              Copiar pública
-            </button>
-          )}
-          {prv && (
-            <button
-              onClick={() => navigator.clipboard.writeText(prv!)}
-              className="rounded-xl border px-3"
-            >
-              Copiar privada
-            </button>
-          )}
-        </div>
-        {pub && (
-          <pre className="text-xs whitespace-pre-wrap p-2 bg-slate-50 rounded border mb-2">
-            {pub}
-          </pre>
-        )}
-        {prv && (
-          <pre className="text-xs whitespace-pre-wrap p-2 bg-slate-50 rounded border">{prv}</pre>
-        )}
-      </div>
+    setMessages((prev) => [...prev, newMsg]);
+    setInputText("");
+    setIsTyping(true);
 
-      <div className="rounded-2xl border p-4 bg-white/90">
-        <h3 className="font-semibold mb-2">Enviar transação (notarizar post)</h3>
-        <form onSubmit={addTx} className="grid grid-cols-1 sm:grid-cols-4 gap-2">
-          <input
-            value={slug}
-            onChange={(e) => setSlug(e.target.value)}
-            placeholder="slug"
-            className="rounded-xl border px-3 py-2"
-          />
-          <input
-            value={hash}
-            onChange={(e) => setHash(e.target.value)}
-            placeholder="sha256 do conteúdo"
-            className="rounded-xl border px-3 py-2 sm:col-span-2"
-          />
-          <button className="rounded-xl bg-indigo-600 text-white px-4 py-2">Enviar</button>
-        </form>
-      </div>
+    // AI Intelligence Auto-Response Generator
+    setTimeout(() => {
+      let aiReply = "Perfeito! Entendi seu interesse. Nossa IA pode qualificar e responder 24/7 com tempo médio de resposta de apenas 1,2 segundo.";
+      let tag = "🔥 Qualificação Automática";
+      let audio = false;
 
-      <div className="rounded-2xl border p-4 bg-white/90">
-        <div className="flex items-center justify-between mb-2">
-          <h3 className="font-semibold">Mempool</h3>
-          <button onClick={mine} className="rounded-xl bg-emerald-600 text-white px-3 py-1.5">
-            Minerar bloco
-          </button>
-        </div>
-        <ul className="divide-y text-sm">
-          {mempool.map((m) => (
-            <li key={m.id} className="py-2 flex items-center justify-between">
-              <span>{m.payload.slug}</span>
-              <span className="text-slate-500">{new Date(m.timestamp).toLocaleTimeString()}</span>
-            </li>
-          ))}
-          {mempool.length === 0 && <li className="py-2 text-slate-500">(vazio)</li>}
-        </ul>
-      </div>
-
-      <div className="rounded-2xl border p-4 bg-white/90">
-        <h3 className="font-semibold mb-2">Blocos</h3>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="text-left text-slate-500">
-                <th className="py-2 pr-4">Altura</th>
-                <th className="py-2 pr-4">Hash</th>
-                <th className="py-2 pr-4">TX</th>
-                <th className="py-2 pr-4">Quando</th>
-              </tr>
-            </thead>
-            <tbody>
-              {blocks.map((b) => (
-                <tr key={b.hash} className="border-t">
-                  <td className="py-2 pr-4">{b.height}</td>
-                  <td className="py-2 pr-4 font-mono text-xs break-all">{b.hash}</td>
-                  <td className="py-2 pr-4">{b.tx?.length ?? 0}</td>
-                  <td className="py-2 pr-4">{new Date(b.timestamp).toLocaleString()}</td>
-                </tr>
-              ))}
-              {blocks.length === 0 && (
-                <tr>
-                  <td colSpan={4} className="py-2 text-slate-500">
-                    (nenhum bloco ainda)
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ======= Chat (Prévia) =======
-type ChatMsg = { id: string; role: "user" | "assistant"; content: string };
-type ChatModel = "gpt" | "gemini" | "meta" | "manus" | "deepseek" | "mistral";
-
-function ChatBubble({ msg }: { msg: ChatMsg }) {
-  const isUser = msg.role === "user";
-  return (
-    <div className={`flex ${isUser ? "justify-end" : ""}`}>
-      <div
-        className={`${isUser ? "bg-slate-900 text-white" : "bg-white border"} max-w-[85%] rounded-2xl px-3.5 py-2.5 text-sm whitespace-pre-wrap`}
-      >
-        {!isUser && (
-          <div className="text-[11px] uppercase tracking-wide text-slate-500 mb-1">assistant</div>
-        )}
-        {msg.content}
-      </div>
-    </div>
-  );
-}
-
-function ChatPanel() {
-  const [model, setModel] = React.useState<ChatModel>("gpt");
-  const [messages, setMessages] = React.useState<ChatMsg[]>([
-    { id: uid(), role: "assistant", content: "Olá! Sou seu agente de chat. Como posso ajudar?" },
-  ]);
-  const [input, setInput] = React.useState("");
-  const [streamingId, setStreamingId] = React.useState<string | undefined>();
-  const bottomRef = React.useRef<HTMLDivElement>(null);
-  React.useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, streamingId]);
-
-  // A resposta simulada é escrita letra a letra por uma cadeia de setTimeout.
-  // Sem guardar o handle, sair da página no meio da digitação deixaria os
-  // timers rodando e chamando setState num componente já desmontado.
-  const typingTimer = React.useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
-  React.useEffect(() => () => clearTimeout(typingTimer.current), []);
-
-  function send(text?: string) {
-    const content = (text ?? input).trim();
-    if (!content) return;
-    const um: ChatMsg = { id: uid(), role: "user", content };
-    setMessages((prev) => [...prev, um]);
-    setInput("");
-    // Simula resposta do modelo selecionado
-    const aid = uid();
-    setStreamingId(aid);
-    const target = `(${model.toUpperCase()}) Entendi: "${content}".
-
-Resumo:
-- Este é um chat de prévia local.
-- Nenhuma chamada externa é feita.
-
-Próximos passos:
-1) Conectar sua API real (Gemini/GPT/Meta/DeepSeek/etc).
-2) Proteger com autenticação.
-3) Registrar logs e latência.
-
-Dica: use o agente de busca integrado em /agente_busca_integrado.html para levantar fontes.`;
-    let i = 0;
-    const tick = () => {
-      i += Math.max(3, Math.floor(target.length / 40));
-      const partial = target.slice(0, i);
-      setMessages((prev) => {
-        const others = prev.filter((m) => m.id !== aid);
-        const current = prev.find((m) => m.id === aid);
-        const a: ChatMsg = current ?? { id: aid, role: "assistant", content: "" };
-        a.content = partial;
-        return [...others, a];
-      });
-      if (i < target.length) {
-        typingTimer.current = setTimeout(tick, 30);
-      } else {
-        setStreamingId(undefined);
+      if (textToSend.toLowerCase().includes("preço") || textToSend.toLowerCase().includes("plano") || textToSend.toLowerCase().includes("valor")) {
+        aiReply = "O Comenta AI oferece o Plano Pro (R$ 299/mês) e o Plano Enterprise com IA Generativa ilimitada e 5 conexões de WhatsApp por R$ 349/mês. Gostaria de garantir 7 dias grátis?";
+        tag = "💰 Lead de Alta Intenção (98%)";
+        audio = true;
+      } else if (textToSend.toLowerCase().includes("suporte") || textToSend.toLowerCase().includes("humano") || textToSend.toLowerCase().includes("atendente")) {
+        aiReply = "Entendido! Realizando o transbordo inteligente para o especialista humano em menos de 10 segundos. O histórico completo da conversa foi enviado ao CRM.";
+        tag = "🤝 Transbordo para Humano";
+      } else if (textToSend.toLowerCase().includes("curso") || textToSend.toLowerCase().includes("treinamento")) {
+        aiReply = "Excelente! O Curso de Automação de Atendimento do Comenta inclui 24 módulos práticos e certificados para treinar sua equipe.";
+        tag = "🎓 Interesse em Cursos";
       }
-    };
-    typingTimer.current = setTimeout(tick, 120);
-  }
 
-  function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    send();
-  }
-  function clear() {
-    setMessages([
-      { id: uid(), role: "assistant", content: "Conversa limpa. O que deseja saber agora?" },
-    ]);
-  }
+      const aiMsg: Message = {
+        id: `ai_${Date.now()}`,
+        sender: "ai",
+        text: aiReply,
+        time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+        leadTag: tag,
+        hasAudio: audio,
+        audioDuration: audio ? "0:12" : undefined
+      };
 
-  const quick = [
-    "Como publicar Next.js no Cloud Run?",
-    "O que é ISR e como cachear no Cloudflare?",
-    "Gere um robots.txt e sitemap para meu blog.",
-  ];
+      setMessages((prev) => [...prev, aiMsg]);
+      setIsTyping(false);
+
+      // Dynamically add a qualified lead to CRM
+      if (textToSend.length > 5) {
+        const newLead: Lead = {
+          id: `lead_${Date.now()}`,
+          name: "Novo Cliente WhatsApp",
+          phone: "+55 (65) 99911-2233",
+          status: "qualificado",
+          interest: textToSend,
+          intentScore: 94,
+          value: 3588,
+          timeAgo: "Agora"
+        };
+        setLeads((prev) => [newLead, ...prev]);
+      }
+    }, 1200);
+  };
 
   return (
-    <div className="rounded-3xl border border-slate-200 bg-white/90 shadow-xl overflow-hidden">
-      <div className="p-4 sm:p-6 border-b border-slate-200 flex items-center gap-2 flex-wrap">
-        <h2 className="text-lg font-semibold mr-auto">Chat AI (prévia)</h2>
-        <label className="text-sm">
-          Modelo:&nbsp;
-          <select
-            value={model}
-            onChange={(e) => setModel(e.target.value as ChatModel)}
-            className="border rounded-md px-2 py-1"
+    <div className="min-h-screen bg-[#0b0f19] text-[#f8fafc] flex flex-col font-sans antialiased selection:bg-[#0050ff] selection:text-white">
+      {/* 1. TOP BAR NAVBAR */}
+      <header className="h-16 border-b border-[#1e293b] bg-[#0b0f19]/90 backdrop-blur sticky top-0 z-50 flex items-center justify-between px-6">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0050ff] via-[#7c3aed] to-[#06b6d4] text-white flex items-center justify-center font-black text-xl shadow-lg shadow-[#0050ff]/20">
+            ✦
+          </div>
+          <div>
+            <span className="font-extrabold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-[#cbd5e1] to-[#94a3b8]">
+              Comenta AI <span className="text-xs px-2 py-0.5 rounded-full bg-[#0050ff]/20 text-[#38bdf8] font-bold border border-[#0050ff]/40">v2.0</span>
+            </span>
+            <p className="text-[11px] text-[#64748b]">Portal SaaS de Atendimento & Automação de WhatsApp</p>
+          </div>
+        </div>
+
+        {/* NAVIGATION TABS */}
+        <nav className="flex items-center gap-1 bg-[#141a29] p-1.5 rounded-2xl border border-[#1e293b]">
+          <button
+            onClick={() => setActiveTab("simulator")}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              activeTab === "simulator"
+                ? "bg-[#0050ff] text-white shadow-md shadow-[#0050ff]/30"
+                : "text-[#94a3b8] hover:text-white hover:bg-[#1e293b]"
+            }`}
           >
-            <option value="gpt">GPT</option>
-            <option value="gemini">Gemini</option>
-            <option value="meta">Meta</option>
-            <option value="deepseek">DeepSeek</option>
-            <option value="mistral">Mistral</option>
-            <option value="manus">Manus</option>
-          </select>
-        </label>
-        <button onClick={clear} className="text-sm border rounded-md px-3 py-1">
-          Limpar
-        </button>
-      </div>
+            <MessageSquare className="w-4 h-4" /> Simulador WhatsApp
+          </button>
 
-      <div className="p-4 sm:p-6 max-h-[60vh] overflow-auto space-y-3 bg-gradient-to-b from-white/60 to-white">
-        {messages.map((m) => (
-          <ChatBubble key={m.id} msg={m} />
-        ))}
-        <div ref={bottomRef} />
-      </div>
+          <button
+            onClick={() => setActiveTab("studio")}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              activeTab === "studio"
+                ? "bg-[#0050ff] text-white shadow-md shadow-[#0050ff]/30"
+                : "text-[#94a3b8] hover:text-white hover:bg-[#1e293b]"
+            }`}
+          >
+            <Bot className="w-4 h-4" /> Agent Studio
+          </button>
 
-      <div className="px-4 sm:px-6 pb-4">
-        <div className="flex gap-2 flex-wrap mb-2">
-          {quick.map((q) => (
-            <button
-              key={q}
-              onClick={() => send(q)}
-              className="text-xs px-2 py-1 rounded-full border hover:bg-slate-50"
-            >
-              {q}
-            </button>
-          ))}
-        </div>
-        <form onSubmit={onSubmit} className="flex gap-2">
-          <input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Pergunte algo (prévia, sem chamadas externas)…"
-            className="flex-1 rounded-xl border px-3 py-2"
-          />
-          <button className="rounded-xl bg-slate-900 text-white px-4">Enviar</button>
-        </form>
-        <p className="text-xs text-slate-500 mt-2">
-          Esta é uma simulação local de chat (sem rede). A versão real deve chamar suas APIs/LLMs.
-        </p>
-      </div>
-    </div>
-  );
-}
+          <button
+            onClick={() => setActiveTab("crm")}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              activeTab === "crm"
+                ? "bg-[#0050ff] text-white shadow-md shadow-[#0050ff]/30"
+                : "text-[#94a3b8] hover:text-white hover:bg-[#1e293b]"
+            }`}
+          >
+            <Layers className="w-4 h-4" /> Kanban CRM
+          </button>
 
-function Footer() {
-  return (
-    <footer className="border-t border-slate-200">
-      <div className="container mx-auto px-4 max-w-6xl py-8 text-sm text-slate-500 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <p>© {new Date().getFullYear()} Hebert Paes · Cloud Run · Firestore</p>
-        <div className="flex items-center gap-4">
-          <a href="#" onClick={(e) => e.preventDefault()}>
-            Sitemap
-          </a>
-          <a href="#" onClick={(e) => e.preventDefault()}>
-            Robots
-          </a>
-          <a href="#" onClick={(e) => e.preventDefault()}>
-            RSS
+          <button
+            onClick={() => setActiveTab("analytics")}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              activeTab === "analytics"
+                ? "bg-[#0050ff] text-white shadow-md shadow-[#0050ff]/30"
+                : "text-[#94a3b8] hover:text-white hover:bg-[#1e293b]"
+            }`}
+          >
+            <BarChart3 className="w-4 h-4" /> Métricas & BI
+          </button>
+        </nav>
+
+        <div className="flex items-center gap-3">
+          <a
+            href="https://hojemt.com.br"
+            target="_blank"
+            className="px-4 py-2 rounded-xl bg-[#1e293b] text-white hover:bg-[#334155] text-xs font-bold transition-colors flex items-center gap-1.5"
+          >
+            Ver Portal Hoje MT <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </div>
-      </div>
-    </footer>
-  );
-}
+      </header>
 
-function AuthPanel() {
-  const [mode, setMode] = useState<"login" | "register">("login");
-  return (
-    <div className="relative">
-      <div
-        className="absolute -inset-0.5 rounded-3xl bg-gradient-to-r from-indigo-500 to-sky-500 opacity-30 blur-xl"
-        aria-hidden
-      />
-      <div className="relative rounded-3xl border border-slate-200 bg-white/90 shadow-xl overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-5">
-          <div className="md:col-span-2 p-6 sm:p-8 border-b md:border-b-0 md:border-r border-slate-200/80 bg-gradient-to-br from-slate-50 to-white">
-            <h2 className="text-xl font-bold mb-2">Acesso</h2>
-            <p className="text-sm text-slate-600">
-              Entre com sua conta ou crie uma nova para acessar a área administrativa.
-            </p>
-            <div className="mt-6 inline-flex rounded-full bg-slate-100 p-1">
-              <button
-                onClick={() => setMode("login")}
-                className={`px-4 py-1 text-sm rounded-full transition ${mode === "login" ? "bg-white shadow" : "opacity-70"}`}
-              >
-                Entrar
-              </button>
-              <button
-                onClick={() => setMode("register")}
-                className={`px-4 py-1 text-sm rounded-full transition ${mode === "register" ? "bg-white shadow" : "opacity-70"}`}
-              >
-                Cadastrar
-              </button>
+      {/* MAIN CONTAINER */}
+      <main className="flex-1 max-w-7xl w-full mx-auto p-6 grid grid-cols-1 gap-6">
+        {/* ========================================================================= */}
+        {/* TAB 1: WHATSAPP SIMULATOR */}
+        {/* ========================================================================= */}
+        {activeTab === "simulator" && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            {/* LEFT CONTROL PANEL */}
+            <div className="lg:col-span-4 space-y-5">
+              {/* STATUS CARD */}
+              <div className="bg-[#141a29] border border-[#1e293b] rounded-3xl p-6 space-y-4 shadow-xl">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-extrabold uppercase tracking-wider text-[#38bdf8] flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#10b981] animate-ping" /> WhatsApp Conectado
+                  </span>
+                  <span className="text-xs font-mono text-[#94a3b8]">127.0.0.1:2368</span>
+                </div>
+
+                <div className="flex items-center gap-4 bg-[#0b0f19] p-4 rounded-2xl border border-[#1e293b]">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#10b981] to-[#059669] text-white flex items-center justify-center text-xl font-black flex-none shadow-md">
+                    S
+                  </div>
+                  <div>
+                    <h3 className="font-extrabold text-base text-white">{agentName}</h3>
+                    <p className="text-xs text-[#94a3b8]">Agente Virtual Ativo • Modelo Gemini 2.0</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 text-center">
+                  <div className="bg-[#0b0f19] p-3 rounded-xl border border-[#1e293b]">
+                    <span className="text-lg font-black text-[#10b981]">1,2s</span>
+                    <p className="text-[10px] text-[#64748b]">Tempo Médio Resposta</p>
+                  </div>
+                  <div className="bg-[#0b0f19] p-3 rounded-xl border border-[#1e293b]">
+                    <span className="text-lg font-black text-[#38bdf8]">98,4%</span>
+                    <p className="text-[10px] text-[#64748b]">Resolução pela IA</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* QUICK PROMPT TRIGGERS */}
+              <div className="bg-[#141a29] border border-[#1e293b] rounded-3xl p-6 space-y-3 shadow-xl">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#94a3b8]">⚡ Testar Gatilhos Rápidos</h4>
+                
+                <button
+                  onClick={() => handleSendMessage("Qual o preço dos planos do Comenta AI?")}
+                  className="w-full text-left p-3 rounded-2xl bg-[#0b0f19] hover:bg-[#1e293b] border border-[#1e293b] hover:border-[#0050ff] transition-all text-xs font-medium text-[#e2e8f0] flex items-center justify-between group"
+                >
+                  <span>💰 Perguntar Preço dos Planos</span>
+                  <ChevronRight className="w-4 h-4 text-[#64748b] group-hover:translate-x-1 transition-transform" />
+                </button>
+
+                <button
+                  onClick={() => handleSendMessage("Quero falar com um atendente humano")}
+                  className="w-full text-left p-3 rounded-2xl bg-[#0b0f19] hover:bg-[#1e293b] border border-[#1e293b] hover:border-[#0050ff] transition-all text-xs font-medium text-[#e2e8f0] flex items-center justify-between group"
+                >
+                  <span>🤝 Solicitar Transbordo Humano</span>
+                  <ChevronRight className="w-4 h-4 text-[#64748b] group-hover:translate-x-1 transition-transform" />
+                </button>
+
+                <button
+                  onClick={() => handleSendMessage("Como funciona o curso de atendimento por IA?")}
+                  className="w-full text-left p-3 rounded-2xl bg-[#0b0f19] hover:bg-[#1e293b] border border-[#1e293b] hover:border-[#0050ff] transition-all text-xs font-medium text-[#e2e8f0] flex items-center justify-between group"
+                >
+                  <span>🎓 Consultar Cursos e Treinamentos</span>
+                  <ChevronRight className="w-4 h-4 text-[#64748b] group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
             </div>
-            <ul className="mt-6 space-y-2 text-sm">
-              <li className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> Cookies seguros
-                (httpOnly)
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> Sessões com hash
-                SHA-256
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> Rate limiting &
-                auditoria
-              </li>
-            </ul>
+
+            {/* RIGHT MOCKUP: REALISTIC WHATSAPP CHAT */}
+            <div className="lg:col-span-8">
+              <div className="bg-[#0d141e] border border-[#1e293b] rounded-3xl overflow-hidden shadow-2xl flex flex-col h-[650px] relative">
+                {/* WHATSAPP CHAT HEADER */}
+                <div className="bg-[#1f2c34] px-6 py-3 border-b border-[#2a3942] flex items-center justify-between z-10">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-[#00a884] text-white flex items-center justify-center font-bold text-lg shadow">
+                      S
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-sm text-white flex items-center gap-2">
+                        {agentName} <span className="text-[10px] bg-[#00a884]/20 text-[#00a884] px-2 py-0.5 rounded-full font-extrabold border border-[#00a884]/40">VERIFICADO</span>
+                      </h4>
+                      <p className="text-[11px] text-[#8696a0]">online • Comenta AI WhatsApp Engine</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 text-[#8696a0]">
+                    <Search className="w-4 h-4 hover:text-white cursor-pointer" />
+                    <PhoneCall className="w-4 h-4 hover:text-white cursor-pointer" />
+                  </div>
+                </div>
+
+                {/* WHATSAPP CHAT MESSAGES BODY */}
+                <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-[radial-gradient(#1f2c34_1px,transparent_1px)] [background-size:16px_16px] bg-[#0b141a] scrollbar-thin">
+                  {messages.map((msg) => (
+                    <div
+                      key={msg.id}
+                      className={`flex flex-col ${
+                        msg.sender === "user"
+                          ? "items-end"
+                          : msg.sender === "ai"
+                          ? "items-start"
+                          : "items-center"
+                      }`}
+                    >
+                      {msg.sender === "system" ? (
+                        <div className="bg-[#182229] border border-[#2a3942] text-[#8696a0] text-[11px] px-4 py-1.5 rounded-full my-2 text-center max-w-md">
+                          {msg.text}
+                        </div>
+                      ) : (
+                        <div
+                          className={`max-w-md p-3.5 rounded-2xl text-xs sm:text-sm leading-relaxed space-y-2 shadow-md relative ${
+                            msg.sender === "user"
+                              ? "bg-[#005c4b] text-white rounded-tr-none"
+                              : "bg-[#202c33] text-[#e9edef] rounded-tl-none border border-[#2a3942]"
+                          }`}
+                        >
+                          <p className="whitespace-pre-wrap">{msg.text}</p>
+
+                          {/* AUDIO PLAYER SIMULATION */}
+                          {msg.hasAudio && (
+                            <div className="mt-2 bg-[#111b21] p-2.5 rounded-xl flex items-center gap-3 border border-[#2a3942]">
+                              <button
+                                onClick={() => setIsPlayingAudio(!isPlayingAudio)}
+                                className="w-8 h-8 rounded-full bg-[#00a884] text-white flex items-center justify-center flex-none hover:scale-105 transition-transform"
+                              >
+                                <Play className="w-4 h-4 fill-white ml-0.5" />
+                              </button>
+                              <div className="flex-1">
+                                <div className="h-1.5 bg-[#2a3942] rounded-full overflow-hidden">
+                                  <div className={`h-full bg-[#00a884] ${isPlayingAudio ? "w-3/4 animate-pulse" : "w-1/4"}`} />
+                                </div>
+                                <span className="text-[10px] text-[#8696a0] mt-1 block">Áudio da Sofia ({msg.audioDuration})</span>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* LEAD QUALIFICATION TAG */}
+                          {msg.leadTag && (
+                            <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#0050ff]/20 text-[#38bdf8] border border-[#0050ff]/40 text-[10px] font-bold">
+                              <Sparkles className="w-3 h-3" /> {msg.leadTag}
+                            </div>
+                          )}
+
+                          <div className="flex items-center justify-end gap-1 text-[10px] text-[#8696a0] mt-1">
+                            <span>{msg.time}</span>
+                            {msg.sender === "user" && <CheckCheck className="w-3.5 h-3.5 text-[#53bdeb]" />}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+
+                  {/* IS TYPING INDICATOR */}
+                  {isTyping && (
+                    <div className="flex items-center gap-2 bg-[#202c33] text-[#8696a0] px-4 py-2 rounded-2xl rounded-tl-none w-fit text-xs border border-[#2a3942]">
+                      <span className="font-semibold text-[#00a884]">{agentName}</span>
+                      <span>está digitando...</span>
+                      <span className="flex gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#00a884] animate-bounce" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#00a884] animate-bounce [animation-delay:0.2s]" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#00a884] animate-bounce [animation-delay:0.4s]" />
+                      </span>
+                    </div>
+                  )}
+
+                  <div ref={messagesEndRef} />
+                </div>
+
+                {/* WHATSAPP INPUT BAR */}
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    handleSendMessage();
+                  }}
+                  className="bg-[#202c33] p-3 border-t border-[#2a3942] flex items-center gap-3 z-10"
+                >
+                  <input
+                    type="text"
+                    placeholder="Digite uma mensagem ou comando..."
+                    value={inputText}
+                    onChange={(e) => setInputText(e.target.value)}
+                    className="flex-1 bg-[#2a3942] text-white text-xs sm:text-sm px-4 py-3 rounded-xl focus:outline-none placeholder-[#8696a0]"
+                  />
+                  <button
+                    type="submit"
+                    disabled={!inputText.trim()}
+                    className="w-11 h-11 rounded-xl bg-[#00a884] hover:bg-[#008f70] text-white flex items-center justify-center flex-none transition-colors disabled:opacity-40"
+                  >
+                    <Send className="w-5 h-5 ml-0.5" />
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
-          <div className="md:col-span-3 p-6 sm:p-8">
-            {mode === "login" ? <LoginForm /> : <RegisterForm />}
+        )}
+
+        {/* ========================================================================= */}
+        {/* TAB 2: AGENT STUDIO */}
+        {/* ========================================================================= */}
+        {activeTab === "studio" && (
+          <div className="bg-[#141a29] border border-[#1e293b] rounded-3xl p-8 space-y-6 shadow-2xl">
+            <div>
+              <h2 className="text-2xl font-extrabold text-white flex items-center gap-2">
+                <Bot className="w-6 h-6 text-[#0050ff]" /> Agent Studio — Personalização da IA
+              </h2>
+              <p className="text-sm text-[#94a3b8] mt-1">Configure o comportamento, o tom de voz e as regras de transbordo da sua atendente virtual.</p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-xs font-extrabold uppercase text-[#94a3b8] mb-2">Nome do Agente Virtual</label>
+                  <input
+                    type="text"
+                    value={agentName}
+                    onChange={(e) => setAgentName(e.target.value)}
+                    className="w-full bg-[#0b0f19] border border-[#1e293b] rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#0050ff]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-extrabold uppercase text-[#94a3b8] mb-2">Tom de Voz & Estilo</label>
+                  <input
+                    type="text"
+                    value={agentTone}
+                    onChange={(e) => setAgentTone(e.target.value)}
+                    className="w-full bg-[#0b0f19] border border-[#1e293b] rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#0050ff]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-extrabold uppercase text-[#94a3b8] mb-2">Prompt do Sistema (Instruções Principais)</label>
+                  <textarea
+                    rows={5}
+                    value={agentPrompt}
+                    onChange={(e) => setAgentPrompt(e.target.value)}
+                    className="w-full bg-[#0b0f19] border border-[#1e293b] rounded-xl p-4 text-sm text-white focus:outline-none focus:border-[#0050ff] leading-relaxed"
+                  />
+                </div>
+              </div>
+
+              <div className="bg-[#0b0f19] border border-[#1e293b] rounded-2xl p-6 space-y-4">
+                <h4 className="text-xs font-extrabold uppercase text-[#38bdf8] flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4" /> Regras Globais de Segurança & Qualificação
+                </h4>
+                
+                <div className="space-y-3 text-xs text-[#cbd5e1]">
+                  <label className="flex items-center gap-3 p-3 bg-[#141a29] rounded-xl border border-[#1e293b] cursor-pointer">
+                    <input type="checkbox" defaultChecked className="rounded accent-[#0050ff]" />
+                    <span>Qualificar lead antes de encaminhar proposta</span>
+                  </label>
+
+                  <label className="flex items-center gap-3 p-3 bg-[#141a29] rounded-xl border border-[#1e293b] cursor-pointer">
+                    <input type="checkbox" defaultChecked className="rounded accent-[#0050ff]" />
+                    <span>Enviar resumo da conversa para a equipe no WhatsApp</span>
+                  </label>
+
+                  <label className="flex items-center gap-3 p-3 bg-[#141a29] rounded-xl border border-[#1e293b] cursor-pointer">
+                    <input type="checkbox" defaultChecked className="rounded accent-[#0050ff]" />
+                    <span>Respeitar o horário comercial e enviar mensagem de ausência</span>
+                  </label>
+                </div>
+
+                <button
+                  onClick={() => alert("Configurações do Agente salvas com sucesso!")}
+                  className="w-full py-3 rounded-xl bg-gradient-to-r from-[#0050ff] to-[#7c3aed] text-white font-extrabold text-sm shadow-lg hover:opacity-90 transition-opacity"
+                >
+                  Salvar Configurações no Comenta AI
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        )}
+
+        {/* ========================================================================= */}
+        {/* TAB 3: KANBAN CRM */}
+        {/* ========================================================================= */}
+        {activeTab === "crm" && (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-2xl font-extrabold text-white flex items-center gap-2">
+                  <Layers className="w-6 h-6 text-[#10b981]" /> Funil de Vendas & CRM Inteligente
+                </h2>
+                <p className="text-sm text-[#94a3b8] mt-1">Leads qualificados automaticamente pela IA Sofia no WhatsApp.</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              {[
+                { title: "Novos Leads", status: "novo", color: "border-sky-500/50 bg-sky-500/10 text-sky-400" },
+                { title: "Qualificados pela IA", status: "qualificado", color: "border-emerald-500/50 bg-emerald-500/10 text-emerald-400" },
+                { title: "Proposta Enviada", status: "proposta", color: "border-purple-500/50 bg-purple-500/10 text-purple-400" },
+                { title: "Venda Concluída", status: "fechado", color: "border-amber-500/50 bg-amber-500/10 text-amber-400" }
+              ].map((col) => (
+                <div key={col.status} className="bg-[#141a29] border border-[#1e293b] rounded-2xl p-4 space-y-3 min-h-[450px]">
+                  <div className={`p-2.5 rounded-xl border font-extrabold text-xs flex items-center justify-between ${col.color}`}>
+                    <span>{col.title}</span>
+                    <span className="px-2 py-0.5 rounded-full bg-black/40 text-[10px]">
+                      {leads.filter((l) => l.status === col.status).length}
+                    </span>
+                  </div>
+
+                  <div className="space-y-3">
+                    {leads
+                      .filter((l) => l.status === col.status)
+                      .map((lead) => (
+                        <div key={lead.id} className="bg-[#0b0f19] border border-[#1e293b] hover:border-[#0050ff] p-4 rounded-xl space-y-2 transition-all shadow-md">
+                          <div className="flex items-center justify-between">
+                            <h4 className="font-bold text-sm text-white">{lead.name}</h4>
+                            <span className="text-[10px] font-bold text-[#10b981] flex items-center gap-1">
+                              <Flame className="w-3 h-3 fill-[#10b981]" /> {lead.intentScore}%
+                            </span>
+                          </div>
+                          <p className="text-xs text-[#94a3b8] line-clamp-2">{lead.interest}</p>
+                          <div className="flex items-center justify-between text-[11px] pt-2 border-t border-[#1e293b] text-[#64748b]">
+                            <span className="font-mono text-[#38bdf8] font-bold">R$ {lead.value.toLocaleString("pt-BR")}</span>
+                            <span>{lead.timeAgo}</span>
+                          </div>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* ========================================================================= */}
+        {/* TAB 4: ANALYTICS */}
+        {/* ========================================================================= */}
+        {activeTab === "analytics" && (
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+              <div className="bg-[#141a29] border border-[#1e293b] p-6 rounded-3xl space-y-2 shadow-xl">
+                <div className="flex items-center justify-between text-[#64748b]">
+                  <span className="text-xs font-bold uppercase">Atendimentos Hoje</span>
+                  <MessageSquare className="w-5 h-5 text-[#0050ff]" />
+                </div>
+                <span className="text-3xl font-black text-white">1.482</span>
+                <p className="text-[11px] text-[#10b981] font-bold flex items-center gap-1">
+                  <TrendingUp className="w-3 h-3" /> +28% vs dia anterior
+                </p>
+              </div>
+
+              <div className="bg-[#141a29] border border-[#1e293b] p-6 rounded-3xl space-y-2 shadow-xl">
+                <div className="flex items-center justify-between text-[#64748b]">
+                  <span className="text-xs font-bold uppercase">Taxa de Resolução IA</span>
+                  <Bot className="w-5 h-5 text-[#10b981]" />
+                </div>
+                <span className="text-3xl font-black text-white">91,4%</span>
+                <p className="text-[11px] text-[#38bdf8]">Sem necessidade de atendente humano</p>
+              </div>
+
+              <div className="bg-[#141a29] border border-[#1e293b] p-6 rounded-3xl space-y-2 shadow-xl">
+                <div className="flex items-center justify-between text-[#64748b]">
+                  <span className="text-xs font-bold uppercase">Tempo Médio de Resposta</span>
+                  <Clock className="w-5 h-5 text-[#7c3aed]" />
+                </div>
+                <span className="text-3xl font-black text-white">1,1s</span>
+                <p className="text-[11px] text-[#10b981] font-bold">Imediato no WhatsApp</p>
+              </div>
+
+              <div className="bg-[#141a29] border border-[#1e293b] p-6 rounded-3xl space-y-2 shadow-xl">
+                <div className="flex items-center justify-between text-[#64748b]">
+                  <span className="text-xs font-bold uppercase">Receita Gerada pela IA</span>
+                  <DollarSign className="w-5 h-5 text-[#f59e0b]" />
+                </div>
+                <span className="text-3xl font-black text-white">R$ 48.950</span>
+                <p className="text-[11px] text-[#10b981] font-bold">42 vendas este mês</p>
+              </div>
+            </div>
+          </div>
+        )}
+      </main>
     </div>
-  );
-}
-
-function RegisterForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState<string | null>(null);
-
-  async function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setMessage(null);
-    setLoading(true);
-    // PRÉVIA: apenas simula sucesso
-    await new Promise((r) => setTimeout(r, 500));
-    setMessage("Conta criada! (prévia)");
-    setEmail("");
-    setPassword("");
-    setLoading(false);
-  }
-
-  return (
-    <form onSubmit={onSubmit} className="space-y-4" aria-labelledby="cadastro-title">
-      <h3 id="cadastro-title" className="text-lg font-semibold">
-        Criar conta
-      </h3>
-      <div>
-        <label className="block text-sm mb-1" htmlFor="reg-email">
-          E-mail
-        </label>
-        <input
-          id="reg-email"
-          type="email"
-          required
-          autoComplete="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        />
-      </div>
-      <div>
-        <label className="block text-sm mb-1" htmlFor="reg-pass">
-          Senha (mín. 8)
-        </label>
-        <input
-          id="reg-pass"
-          type="password"
-          required
-          minLength={8}
-          autoComplete="new-password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        />
-      </div>
-      <button
-        disabled={loading}
-        className="w-full rounded-xl bg-indigo-600 text-white py-2.5 font-medium hover:bg-indigo-700 disabled:opacity-60"
-      >
-        {loading ? "Criando…" : "Cadastrar"}
-      </button>
-      <Status message={message} />
-    </form>
-  );
-}
-
-function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState<string | null>(null);
-
-  async function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setMessage(null);
-    setLoading(true);
-    // PRÉVIA: apenas simula sucesso
-    await new Promise((r) => setTimeout(r, 500));
-    setMessage("Login ok! (prévia)");
-    setLoading(false);
-  }
-
-  return (
-    <form onSubmit={onSubmit} className="space-y-4" aria-labelledby="login-title">
-      <h3 id="login-title" className="text-lg font-semibold">
-        Entrar
-      </h3>
-      <div>
-        <label className="block text-sm mb-1" htmlFor="login-email">
-          E-mail
-        </label>
-        <input
-          id="login-email"
-          type="email"
-          required
-          autoComplete="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        />
-      </div>
-      <div>
-        <label className="block text-sm mb-1" htmlFor="login-pass">
-          Senha
-        </label>
-        <input
-          id="login-pass"
-          type="password"
-          required
-          autoComplete="current-password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        />
-      </div>
-      <button
-        disabled={loading}
-        className="w-full rounded-xl bg-slate-900 text-white py-2.5 font-medium hover:bg-slate-800 disabled:opacity-60"
-      >
-        {loading ? "Entrando…" : "Entrar"}
-      </button>
-      <Status message={message} />
-    </form>
-  );
-}
-
-function Status({ message }: { message: string | null }) {
-  return (
-    <div role="status" aria-live="polite" className="min-h-[1.5rem] text-sm">
-      {message && (
-        <div className="mt-1 rounded-lg border border-slate-200 bg-white/80 px-3 py-2">
-          {message}
-        </div>
-      )}
-    </div>
-  );
-}
-
-function PostCard({
-  post,
-}: {
-  post: { slug: string; title: string; excerpt?: string; coverImage?: string; publishedAt: string };
-}) {
-  const dateStr = new Date(post.publishedAt).toLocaleDateString("pt-BR", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-  });
-  return (
-    <article className="rounded-2xl border border-slate-200 bg-white/90 overflow-hidden hover:shadow">
-      {post.coverImage ? (
-        <a
-          href="#"
-          onClick={(e) => e.preventDefault()}
-          className="block aspect-[16/9] bg-slate-100"
-        >
-          {/* Mesma razão do slider acima: origem arbitrária, com fallback
-              para uma data: URI quando a imagem não carrega. */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={post.coverImage}
-            alt={post.title}
-            loading="lazy"
-            decoding="async"
-            referrerPolicy="no-referrer"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).src = PLACEHOLDER_DATA_URL;
-            }}
-            className="w-full h-full object-cover"
-          />
-        </a>
-      ) : (
-        <div className="aspect-[16/9] bg-slate-100" />
-      )}
-      <div className="p-4">
-        <h3 className="font-semibold leading-snug">
-          <a href="#" onClick={(e) => e.preventDefault()} className="no-underline hover:underline">
-            {post.title}
-          </a>
-        </h3>
-        {post.excerpt && <p className="mt-2 text-sm text-slate-600">{post.excerpt}</p>}
-        <time className="post-date mt-3 block text-xs text-slate-500">{dateStr}</time>
-      </div>
-    </article>
   );
 }
