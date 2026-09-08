@@ -61,7 +61,7 @@ function traduzErroAnthropic(e: unknown): never {
 /** Executa a chamada à API do Google Gemini via REST HTTP */
 async function chamarGoogleGemini(prompt: string, systemPrompt?: string): Promise<string> {
   const googleKey = getGoogleApiKey();
-  const model = process.env.GOOGLE_AI_MODEL || "gemini-1.5-flash";
+  const model = process.env.GOOGLE_AI_MODEL || "gemini-2.0-flash";
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${googleKey}`;
 
   const fullPrompt = systemPrompt ? `${systemPrompt}\n\n${prompt}` : prompt;
@@ -160,9 +160,9 @@ async function chamarClaude(
   } as Anthropic.Message;
 }
 
-const MODEL_CLASSIFY = process.env.AI_MODEL_CLASSIFY ?? "gemini-1.5-flash";
-const MODEL_SUMMARIZE = process.env.AI_MODEL_SUMMARIZE ?? "gemini-1.5-flash";
-const MODEL_SUGGEST = process.env.AI_MODEL_SUGGEST ?? "gemini-1.5-flash";
+const MODEL_CLASSIFY = process.env.AI_MODEL_CLASSIFY ?? "gemini-2.0-flash";
+const MODEL_SUMMARIZE = process.env.AI_MODEL_SUMMARIZE ?? "gemini-2.0-flash";
+const MODEL_SUGGEST = process.env.AI_MODEL_SUGGEST ?? "gemini-2.0-flash";
 
 export type AiMessage = { direction: "in" | "out"; body: string };
 
@@ -251,7 +251,7 @@ export async function suggestReply(
 
 // ---- Autoatendimento por IA ------------------------------------------------
 
-const MODEL_AUTOREPLY = process.env.AI_MODEL_AUTOREPLY ?? "gemini-1.5-flash";
+const MODEL_AUTOREPLY = process.env.AI_MODEL_AUTOREPLY ?? "gemini-2.0-flash";
 
 export type AutoReply = { reply: string; needsHuman: boolean };
 
