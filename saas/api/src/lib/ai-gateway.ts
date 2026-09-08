@@ -21,19 +21,25 @@ export async function queryAIProvider(
 ): Promise<string> {
   const fullPrompt = systemPrompt ? `${systemPrompt}\n\n${prompt}` : prompt;
 
-  // 1. Google Gemini API
+  // 1. Google Gemini API (Gemini 2.0 Flash & Gemini 2.0 Pro)
   if (provider === "google") {
     const key = customConfig?.apiKey || process.env.GEMINI_API_KEY || process.env.GOOGLE_AI_API_KEY || "";
-    const model = customConfig?.model || process.env.GOOGLE_AI_MODEL || "gemini-1.5-flash";
+    const model = customConfig?.model || process.env.GOOGLE_AI_MODEL || "gemini-2.0-flash";
     if (!key) throw new ApiError(400, "Chave da API do Google Gemini não configurada.");
 
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`;
     const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ contents: [{ parts: [{ text: fullPrompt }] }] })
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: fullPrompt }] }],
+        generationConfig: {
+          temperature: 0.7,
+          maxOutputTokens: 2048
+        }
+      })
     });
-    if (!res.ok) throw new ApiError(502, `Erro na API do Google Gemini: ${res.statusText}`);
+    if (!res.ok) throw new ApiError(502, `Erro na API do Google Gemini (${model}): ${res.statusText}`);
     const data = (await res.json()) as any;
     return data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "";
   }

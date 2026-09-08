@@ -52,7 +52,7 @@ const AGENTES: Agent[] = [
     categoria: "clientes",
     avatar: "✦",
     cor: "from-[#4285f4] via-[#9b72cb] to-[#d96570]",
-    modelo: "Comenta AI Flash",
+    modelo: "Google Gemini 2.0 Flash ✦",
     descricao: "Qualifica clientes, envia propostas comerciais e tira dúvidas de planos no WhatsApp.",
     capacidades: ["Qualificação de Leads", "Envio de Preços", "Contorno de Objeções", "Agendamento"],
     promptInicial: "Olá, Hebert. Sou a Sofia, sua especialista comercial de IA do Comenta. Como posso impulsionar suas vendas hoje?",
@@ -297,9 +297,9 @@ export default function FullscreenComentaAIPage() {
                 onChange={(e) => setModeloAtivo(e.target.value)}
                 className="appearance-none bg-[#1e1f20] text-[#e3e3e3] text-xs font-semibold px-4 py-1.5 pr-8 rounded-full border border-[#2e2f31] focus:outline-none focus:ring-1 focus:ring-[#a8c7fa] cursor-pointer hover:bg-[#2e2f31] transition-colors"
               >
-                <option value="Comenta AI Flash">Comenta AI Flash ✦</option>
-                <option value="Comenta Pro Engine">Comenta Pro Engine ✦</option>
-                <option value="Comenta Imagen Studio">Comenta Imagen Studio (Mídia HD)</option>
+                <option value="Google Gemini 2.0 Flash ✦">Google Gemini 2.0 Flash ✦ (Ultra-Rápido)</option>
+                <option value="Google Gemini 2.0 Pro ✦">Google Gemini 2.0 Pro ✦ (Raciocínio & Visão)</option>
+                <option value="Google Imagen 3">Google Imagen 3 (Mídia HD)</option>
                 <option value="Claude Sonnet 3.7">Claude Sonnet 3.7 (Anthropic)</option>
               </select>
               <ChevronDown className="w-3 h-3 text-[#8e918f] absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
