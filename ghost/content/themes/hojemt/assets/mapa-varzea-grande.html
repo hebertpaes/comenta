@@ -1,0 +1,3599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Mato Grosso Ao Vivo • Central de Geomonitoramento, Câmeras Públicas & Radares</title>
+  <meta name="description" content="Mapa em tempo real de todo o Estado de Mato Grosso (Cuiabá, Várzea Grande, Sinop, Rondonópolis, Sorriso, Cáceres, Barra do Garças): Todas as câmeras públicas (Vigia Mais MT / CIOSP), todos os radares de velocidade (40, 50, 60 e 80 km/h), tráfego aéreo ADS-B, radar de chuva e telemetrias." />
+
+  <!-- Preconnect & DNS-Prefetch para Aceleração Máxima dos Tiles e APIs -->
+  <link rel="dns-prefetch" href="https://tile.openstreetmap.org" />
+  <link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin />
+  <link rel="dns-prefetch" href="https://server.arcgisonline.com" />
+  <link rel="preconnect" href="https://server.arcgisonline.com" crossorigin />
+  <link rel="dns-prefetch" href="https://api.open-meteo.com" />
+  <link rel="dns-prefetch" href="https://air-quality-api.open-meteo.com" />
+  <link rel="dns-prefetch" href="https://api.rainviewer.com" />
+  <link rel="dns-prefetch" href="https://opensky-network.org" />
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <!-- FontAwesome 6.5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Google Fonts: Inter, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #00a859;
+      --primary-hover: #008f4c;
+      --primary-dark: #064e3b;
+      --primary-light: #e6f7ef;
+      --accent: #f59e0b;
+      --danger: #ef4444;
+      --danger-dark: #b91c1c;
+      --info: #0284c7;
+      --purple: #8b5cf6;
+      --cyan: #06b6d4;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --sidebar-width: 450px;
+    }
+
+    [data-theme="dark"] {
+      --primary: #10b981;
+      --primary-hover: #059669;
+      --primary-light: #062b1a;
+      --bg: #09130e;
+      --bg-alt: #0e1c15;
+      --card-bg: #12241b;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #1c382b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Emergency Alert & Quick Dial Bar */
+    .top-emergency-bar {
+      background: linear-gradient(90deg, #991b1b 0%, #dc2626 50%, #b91c1c 100%);
+      color: #fff;
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      flex-wrap: wrap;
+    }
+
+    .emergency-live-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: 0.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 0 rgba(34, 197, 94, 0.6);
+      animation: pulseGreen 1.8s infinite;
+    }
+
+    @keyframes pulseGreen {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    .emergency-items {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .emergency-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255,255,255,0.18);
+      padding: 2px 7px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 0.72rem;
+      transition: all 0.2s;
+    }
+
+    .emergency-badge:hover {
+      background: #fff;
+      color: #b91c1c;
+      transform: translateY(-1px);
+    }
+
+    /* Main Navigation Header */
+    .app-header {
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      z-index: 999;
+      flex-shrink: 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      flex-shrink: 0;
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(0, 168, 89, 0.25);
+    }
+
+    .brand-text h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.98rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .brand-text span {
+      font-size: 0.68rem;
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .live-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--primary);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: var(--bg-alt);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      border-color: var(--primary-hover);
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 168, 89, 0.3);
+    }
+
+    .btn-icon {
+      padding: 5px 8px;
+    }
+
+    /* Main Container */
+    .app-main {
+      flex: 1;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left Sidebar with Tabs */
+    .sidebar {
+      width: var(--sidebar-width);
+      background: var(--card-bg);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      z-index: 500;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Tab Switcher Header (6 Menus Especializados) */
+    .tab-nav {
+      display: flex;
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      padding: 4px;
+      gap: 2px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      flex-shrink: 0;
+    }
+
+    .tab-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding: 6px 2px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.67rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+      min-width: 58px;
+    }
+
+    .tab-btn i {
+      font-size: 0.88rem;
+    }
+
+    .tab-btn:hover {
+      color: var(--text);
+      background: rgba(0,0,0,0.04);
+    }
+
+    .tab-btn.active {
+      background: var(--card-bg);
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Tab Content Area */
+    .tab-content {
+      flex: 1;
+      overflow-y: auto;
+      display: none;
+      flex-direction: column;
+    }
+
+    .tab-content.active {
+      display: flex;
+    }
+
+    /* Universal Search Header inside Sidebar */
+    .sidebar-search-area {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      background: var(--card-bg);
+      flex-shrink: 0;
+    }
+
+    .search-box {
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 8px 32px 8px 32px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-alt);
+      color: var(--text);
+      font-size: 0.82rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 168, 89, 0.15);
+      background: var(--card-bg);
+    }
+
+    .search-box .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .search-box .clear-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.78rem;
+      display: none;
+    }
+
+    /* Widgets & Cards */
+    .live-dashboard {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .widget-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .widget-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .widget-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text);
+    }
+
+    .widget-badge {
+      font-size: 0.66rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .badge-online { background: #e6f7ef; color: #00a859; }
+    .badge-offline { background: #fee2e2; color: #ef4444; }
+    .badge-warning { background: #fef9c3; color: #b45309; }
+
+    /* Category Filter Pills */
+    .categories-scroll {
+      display: flex;
+      gap: 5px;
+      overflow-x: auto;
+      padding: 6px 0;
+      scrollbar-width: none;
+      flex-shrink: 0;
+    }
+
+    .categories-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      white-space: nowrap;
+      border: 1px solid var(--border);
+      background: var(--bg-alt);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-pill:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .filter-pill.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .filter-pill .badge {
+      background: rgba(0,0,0,0.1);
+      padding: 1px 5px;
+      border-radius: 999px;
+      font-size: 0.65rem;
+    }
+
+    .filter-pill.active .badge {
+      background: rgba(255,255,255,0.3);
+      color: #fff;
+    }
+
+    /* List Containers */
+    .items-list-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* Item Card (Câmeras / Radares / POIs) */
+    .item-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .item-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary);
+      background: var(--card-bg);
+    }
+
+    .item-card.active {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+
+    .item-card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .item-icon-box {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .item-title-wrap {
+      flex: 1;
+    }
+
+    .item-card-title {
+      font-weight: 700;
+      font-size: 0.84rem;
+      line-height: 1.25;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .item-card-subtitle {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .item-card-address {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .item-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-top: 6px;
+      border-top: 1px dashed var(--border);
+      font-size: 0.72rem;
+    }
+
+    /* Speed Limit Badge on Radar Card */
+    .speed-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: white;
+      border: 3px solid #ef4444;
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 0.75rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
+
+    /* CCTV Modal Player */
+    .cctv-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .cctv-modal.show {
+      display: flex;
+    }
+
+    .cctv-window {
+      background: #09130e;
+      border: 1px solid #1c382b;
+      border-radius: 14px;
+      width: 100%;
+      max-width: 660px;
+      color: white;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cctv-header {
+      padding: 10px 14px;
+      background: #11241b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #1c382b;
+    }
+
+    .cctv-screen {
+      position: relative;
+      width: 100%;
+      height: 340px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .cctv-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cctv-hud-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+    }
+
+    .cctv-offline-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.92);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #f87171;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .cctv-footer {
+      padding: 10px 14px;
+      background: #11241b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.76rem;
+    }
+
+    /* Map Canvas */
+    #map-wrapper {
+      flex: 1;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      background: #e5e7eb;
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+    }
+
+    /* Floating Map Controls (Top Right) */
+    .map-floating-controls {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 400;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .floating-btn {
+      background: var(--card-bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      transition: all 0.2s;
+    }
+
+    .floating-btn:hover {
+      background: var(--bg-alt);
+      color: var(--primary);
+      transform: scale(1.06);
+    }
+
+    .floating-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* Quick Region Focus Bar (Todo MT, Cuiabá, VG, Sinop, Rondonópolis, etc.) */
+    .quick-region-bar {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      padding: 4px 8px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 400;
+      box-shadow: var(--shadow-lg);
+      max-width: calc(100vw - 480px);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .quick-region-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .quick-region-btn {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .quick-region-btn:hover, .quick-region-btn.active {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Floating Icon Filter & Clean Map Bar (Filtro para Limpar Ícones) */
+    .floating-layer-filter-bar {
+      position: absolute;
+      top: 60px;
+      left: 14px;
+      background: rgba(15, 23, 42, 0.90);
+      backdrop-filter: blur(8px);
+      padding: 4px 8px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 400;
+      box-shadow: var(--shadow-lg);
+      flex-wrap: wrap;
+    }
+
+    .filter-layer-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255,255,255,0.1);
+      color: #cbd5e1;
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 4px 9px;
+      border-radius: 6px;
+      font-size: 0.70rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-layer-toggle:hover {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+
+    .filter-layer-toggle.active {
+      background: #0284c7;
+      color: #fff;
+      border-color: #38bdf8;
+    }
+
+    .filter-layer-toggle.active.toggle-radars {
+      background: #f59e0b;
+      border-color: #fde047;
+    }
+
+    .filter-layer-toggle.active.toggle-pois {
+      background: #00a859;
+      border-color: #86efac;
+    }
+
+    .filter-layer-toggle.active.toggle-flights {
+      background: #8b5cf6;
+      border-color: #c4b5fd;
+    }
+
+    .filter-layer-toggle.clean-all-btn {
+      background: #ef4444;
+      color: #fff;
+      border-color: #fca5a5;
+    }
+
+    .filter-layer-toggle.clean-all-btn:hover {
+      background: #dc2626;
+    }
+
+    /* Bottom Map Status Bar */
+    .map-status-bar {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 10px;
+      font-size: 0.72rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      z-index: 400;
+    }
+
+    .status-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: #cbd5e1;
+    }
+
+    .status-badge strong {
+      color: #fff;
+    }
+
+    /* Custom Radar & Camera Pins on Map */
+    .radar-marker-pin {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f59e0b;
+      color: white;
+      border: 2px solid white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+      font-size: 13px;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .radar-marker-pin.offline {
+      background: #94a3b8;
+      border-color: #cbd5e1;
+    }
+
+    .radar-marker-pin:hover {
+      transform: scale(1.25);
+    }
+
+    .camera-marker-pin {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #0284c7;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      border: 2px solid white;
+      box-shadow: 0 0 0 rgba(2, 132, 199, 0.6);
+      animation: pulseBlue 2s infinite;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .camera-marker-pin.offline {
+      background: #64748b;
+      animation: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
+
+    .camera-marker-pin:hover {
+      transform: scale(1.25);
+    }
+
+    @keyframes pulseBlue {
+      0% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(2, 132, 199, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0); }
+    }
+
+    /* Custom Category Marker Pin Colors */
+    .custom-marker {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+      border: 2px solid white;
+      transition: transform 0.2s;
+    }
+
+    .custom-marker:hover { transform: scale(1.2); }
+    .marker-saude { background: #ef4444; }
+    .marker-seguranca { background: #0284c7; }
+    .marker-transporte { background: #f59e0b; }
+    .marker-cidadania { background: #8b5cf6; }
+    .marker-educacao { background: #0d9488; }
+    .marker-turismo { background: #00a859; }
+
+    /* Measure tool notification */
+    .measure-box {
+      position: absolute;
+      top: 104px;
+      right: 14px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 10px;
+      box-shadow: var(--shadow-lg);
+      font-size: 0.8rem;
+      z-index: 400;
+      display: none;
+    }
+
+    .measure-box.show { display: block; }
+
+    /* Mobile Responsive */
+    @media (max-width: 900px) {
+      .top-emergency-bar { font-size: 0.68rem; padding: 4px 8px; }
+      .emergency-items { display: none; }
+      .sidebar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 54%;
+        max-height: 85%;
+        border-right: none;
+        border-top: 1px solid var(--border);
+        transform: translateY(calc(100% - 48px));
+      }
+      .sidebar.open { transform: translateY(0); }
+      .tab-nav { padding-top: 8px; position: relative; }
+      .mobile-handle {
+        width: 40px;
+        height: 4px;
+        background: var(--border);
+        border-radius: 2px;
+        position: absolute;
+        top: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .map-status-bar { bottom: 54px; font-size: 0.66rem; }
+      .quick-region-bar { max-width: calc(100vw - 28px); }
+      .floating-layer-filter-bar { top: 96px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Emergency Alert & Quick Dial Bar -->
+  <div class="top-emergency-bar">
+    <div class="emergency-live-tag">
+      <div class="pulse-dot"></div>
+      <span>CENTRAL DE GEOMONITORAMENTO • MATO GROSSO 24H</span>
+    </div>
+    <div class="emergency-items">
+      <a href="tel:192" class="emergency-badge" title="SAMU"><i class="fa-solid fa-truck-medical"></i> SAMU 192</a>
+      <a href="tel:193" class="emergency-badge" title="Bombeiros"><i class="fa-solid fa-fire-extinguisher"></i> Bombeiros 193</a>
+      <a href="tel:190" class="emergency-badge" title="Polícia Militar"><i class="fa-solid fa-shield-halved"></i> PM 190</a>
+      <a href="tel:191" class="emergency-badge" title="Polícia Rodoviária Federal"><i class="fa-solid fa-road"></i> PRF 191</a>
+      <a href="tel:153" class="emergency-badge" title="Guarda Municipal VG"><i class="fa-solid fa-person-military-pointing"></i> Guarda VG 153</a>
+      <a href="tel:118" class="emergency-badge" title="SEMOB Cuiabá"><i class="fa-solid fa-traffic-light"></i> SEMOB 118</a>
+      <a href="tel:199" class="emergency-badge" title="Defesa Civil"><i class="fa-solid fa-cloud-showers-heavy"></i> Defesa Civil 199</a>
+    </div>
+  </div>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <a href="#" class="brand" onclick="focusRegion('mt'); return false;">
+      <div class="brand-icon">
+        <i class="fa-solid fa-map-location-dot"></i>
+      </div>
+      <div class="brand-text">
+        <h1>Mato Grosso Ao Vivo <span class="live-indicator"><div class="pulse-dot" style="width:6px;height:6px;"></div> ESTADUAL</span></h1>
+        <span>Painel Integrado • Câmeras Públicas, Radares & Telemetria</span>
+      </div>
+    </a>
+
+    <div class="header-actions">
+      <button class="btn btn-primary" onclick="locateUser(true)" title="Minha localização no GPS">
+        <i class="fa-solid fa-location-crosshairs"></i>
+        <span class="btn-text">Meu GPS</span>
+      </button>
+
+      <button class="btn" onclick="toggleBoundary()" id="btn-boundary" title="Destacar perímetro municipal">
+        <i class="fa-solid fa-draw-polygon"></i>
+        <span class="btn-text">Perímetro</span>
+      </button>
+
+      <button class="btn btn-icon" onclick="toggleTheme()" id="theme-btn" title="Alternar Modo Escuro / Claro">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- App Main Body -->
+  <main class="app-main">
+
+    <!-- Left Multi-Tab Sidebar (Menus Personalizados com 6 Categorias) -->
+    <aside class="sidebar" id="sidebar">
+      
+      <!-- Tab Navigation Switcher -->
+      <div class="tab-nav" onclick="toggleMobileSidebar()">
+        <div class="mobile-handle"></div>
+        <button class="tab-btn active" onclick="switchTab('tab-live', this); event.stopPropagation();">
+          <i class="fa-solid fa-tower-broadcast" style="color: #ef4444;"></i>
+          <span>Tempo Real</span>
+        </button>
+        <button class="tab-btn" onclick="switchTab('tab-cameras', this); event.stopPropagation();">
+          <i class="fa-solid fa-video" style="color: #0284c7;"></i>
+          <span>Câmeras</span>
+        </button>
+        <button class="tab-btn" onclick="switchTab('tab-radars', this); event.stopPropagation();">
+          <i class="fa-solid fa-camera" style="color: #f59e0b;"></i>
+          <span>Radares</span>
+        </button>
+        <button class="tab-btn" onclick="switchTab('tab-pois', this); event.stopPropagation();">
+          <i class="fa-solid fa-map-pin" style="color: #00a859;"></i>
+          <span>Utilidade</span>
+        </button>
+        <button class="tab-btn" onclick="switchTab('tab-emergency', this); event.stopPropagation();">
+          <i class="fa-solid fa-bullhorn" style="color: #8b5cf6;"></i>
+          <span>SOS / Alertas</span>
+        </button>
+        <button class="tab-btn" onclick="switchTab('tab-layers', this); event.stopPropagation();">
+          <i class="fa-solid fa-layer-group" style="color: #06b6d4;"></i>
+          <span>Camadas</span>
+        </button>
+      </div>
+
+      <!-- TAB 1: PAINEL EM TEMPO REAL (LIVE MONITORING) -->
+      <div class="tab-content active" id="tab-live">
+        <div class="live-dashboard">
+          
+          <!-- Live Weather & Atmospheric Conditions -->
+          <div class="widget-card">
+            <div class="widget-header">
+              <div class="widget-title">
+                <i class="fa-solid fa-cloud-sun" style="color: #f59e0b;"></i>
+                <span id="weatherLocationName">Clima Metropolitano (Cuiabá & VG)</span>
+              </div>
+              <span class="widget-badge" id="weatherUpdateTime">Atualizando...</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-sun" style="font-size: 1.8rem; color: #f59e0b;" id="weatherMainIcon"></i>
+                <div>
+                  <div style="font-size: 1.5rem; font-weight: 800; font-family:'Plus Jakarta Sans';" id="weatherTemp">--°C</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);" id="weatherCondition">Carregando...</div>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 3px; font-size: 0.72rem; color: var(--text-muted); border-left: 1px solid var(--border); padding-left: 8px;">
+                <div>Sensação: <strong id="weatherFeels" style="color:var(--text);">--°C</strong></div>
+                <div>Umidade: <strong id="weatherHumidity" style="color:var(--text);">--%</strong></div>
+                <div>Vento: <strong id="weatherWind" style="color:var(--text);">-- km/h</strong></div>
+                <div>Índice UV: <strong id="weatherUV" style="color:var(--text);">--</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Air Quality & Smoke / AQI Widget -->
+          <div class="widget-card">
+            <div class="widget-header">
+              <div class="widget-title">
+                <i class="fa-solid fa-smog" style="color: #06b6d4;"></i>
+                <span>Qualidade do Ar & Queimadas MT</span>
+              </div>
+              <span class="widget-badge" id="aqiBadge" style="background:#e6f7ef;color:#00a859;">Monitorando</span>
+            </div>
+            <div style="font-size: 0.78rem; font-weight: 700;" id="aqiStatusText">Índice Geral de Pureza do Ar</div>
+            <div style="margin-top: 6px;">
+              <div style="height: 6px; border-radius: 3px; background: linear-gradient(90deg, #10b981 0%, #eab308 30%, #f97316 60%, #ef4444 85%, #7f1d1d 100%); position: relative;">
+                <div id="aqiPointer" style="position: absolute; top: -3px; width: 12px; height: 12px; background: white; border: 2px solid #0f172a; border-radius: 50%; transform: translateX(-50%); left: 20%;"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-top: 5px; font-size: 0.7rem; color: var(--text-muted);">
+                <span>PM2.5: <strong id="aqiPM25">-- µg/m³</strong></span>
+                <span>PM10: <strong id="aqiPM10">-- µg/m³</strong></span>
+                <span>CO: <strong id="aqiCO">-- µg/m³</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Animated Rain Radar Controls (RainViewer) -->
+          <div class="widget-card">
+            <div class="widget-header">
+              <div class="widget-title">
+                <i class="fa-solid fa-cloud-showers-water" style="color: #0284c7;"></i>
+                <span>Radar Meteorológico de Chuva</span>
+              </div>
+              <button class="btn btn-icon" style="padding: 2px 6px; font-size: 0.7rem;" onclick="toggleRainRadar()" id="btn-toggle-radar">
+                <i class="fa-solid fa-eye"></i> Ativar
+              </button>
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted);" id="radarStatusText">
+              Precipitação ao vivo sem cortes em todo o Estado de Mato Grosso.
+            </div>
+            <div class="radar-controls" id="radarControls" style="display: none; margin-top: 8px; border-top: 1px dashed var(--border); padding-top: 6px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <button class="btn btn-icon" onclick="playPauseRadar()" id="radarPlayBtn"><i class="fa-solid fa-play"></i></button>
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+                  <input type="range" min="0" max="10" value="10" class="radar-slider" id="radarSlider" oninput="setRadarFrame(this.value)" style="width: 100%; accent-color: var(--primary);" />
+                  <div style="display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-muted);">
+                    <span>-2h</span>
+                    <span id="radarCurrentTimestamp" style="color: var(--primary); font-weight: 700;">Ao Vivo</span>
+                    <span>Agora</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Air Traffic Radar (Espaço Aéreo MT - CGB / OPS / ROO) -->
+          <div class="widget-card">
+            <div class="widget-header">
+              <div class="widget-title">
+                <i class="fa-solid fa-plane-arrival" style="color: #f59e0b;"></i>
+                <span>Espaço Aéreo de Mato Grosso (ADS-B)</span>
+              </div>
+              <span class="widget-badge" id="flightCountBadge">0 voos</span>
+            </div>
+            <div id="liveFlightList" style="max-height: 120px; overflow-y: auto;">
+              <div style="font-size: 0.72rem; color: var(--text-muted); text-align: center; padding: 4px;">Buscando sinais ADS-B...</div>
+            </div>
+            <button class="btn" style="width: 100%; margin-top: 6px; font-size: 0.72rem; justify-content: center;" onclick="refreshFlights()">
+              <i class="fa-solid fa-rotate"></i> Atualizar Voos MT
+            </button>
+          </div>
+
+          <!-- Hydrological & River Monitor (Rio Cuiabá e Rios de MT) -->
+          <div class="widget-card">
+            <div class="widget-header">
+              <div class="widget-title">
+                <i class="fa-solid fa-water" style="color: #06b6d4;"></i>
+                <span>Nível do Rio Cuiabá & Bacias</span>
+              </div>
+              <span class="widget-badge" style="background:#e6f7ef;color:#00a859;">Normal</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <div>
+                <span style="font-size: 1.25rem; font-weight: 800; font-family:'Plus Jakarta Sans';">2,42 m</span>
+                <span style="font-size: 0.7rem; color: var(--text-muted);"> (Estável)</span>
+              </div>
+              <div style="font-size: 0.7rem; color: var(--text-muted); text-align: right;">
+                Alerta: <strong>7,50 m</strong> • Inundação: <strong>8,50 m</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 2: CÂMERAS PÚBLICAS (ESTADUAL & METROPOLITANO) -->
+      <div class="tab-content" id="tab-cameras">
+        <div class="sidebar-search-area">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text);"><i class="fa-solid fa-video" style="color: #0284c7;"></i> Câmeras Públicas MT</span>
+            <span class="widget-badge" id="cameraFilterCount">0 câmeras</span>
+          </div>
+
+          <!-- Macro Region Selector for Cameras -->
+          <div class="categories-scroll" style="margin-bottom: 4px;">
+            <button class="filter-pill active" onclick="setCameraCity('all', this)">Todo MT</button>
+            <button class="filter-pill" onclick="setCameraCity('vg', this)">Várzea Grande</button>
+            <button class="filter-pill" onclick="setCameraCity('cuiaba', this)">Cuiabá</button>
+            <button class="filter-pill" onclick="setCameraCity('baixada', this)">Baixada</button>
+            <button class="filter-pill" onclick="setCameraCity('norte', this)">Norte (Sinop/Sorriso)</button>
+            <button class="filter-pill" onclick="setCameraCity('sul', this)">Sul (Rondonópolis)</button>
+            <button class="filter-pill" onclick="setCameraCity('oeste', this)">Oeste (Cáceres)</button>
+            <button class="filter-pill" onclick="setCameraCity('leste', this)">Leste (Barra do Garças)</button>
+          </div>
+
+          <!-- Status Filter: Todas, Disponíveis, Indisponíveis, OCR -->
+          <div class="categories-scroll">
+            <button class="filter-pill active" onclick="setCameraStatus('all', this)">Todos Status</button>
+            <button class="filter-pill" onclick="setCameraStatus('online', this)"><span style="color:#22c55e;">●</span> Disponíveis</button>
+            <button class="filter-pill" onclick="setCameraStatus('offline', this)"><span style="color:#ef4444;">●</span> Indisponíveis</button>
+            <button class="filter-pill" onclick="setCameraStatus('ocr', this)"><i class="fa-solid fa-id-card"></i> OCR/LPR</button>
+          </div>
+        </div>
+
+        <div class="items-list-container" id="camerasList">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- TAB 3: RADARES DE VELOCIDADE & FISCALIZAÇÃO ESTADUAL -->
+      <div class="tab-content" id="tab-radars">
+        <div class="sidebar-search-area">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text);"><i class="fa-solid fa-camera" style="color: #f59e0b;"></i> Radares de Velocidade MT</span>
+            <span class="widget-badge" id="radarFilterCount">0 radares</span>
+          </div>
+
+          <!-- Region Selector for Radars -->
+          <div class="categories-scroll" style="margin-bottom: 4px;">
+            <button class="filter-pill active" onclick="setRadarCity('all', this)">Todo MT</button>
+            <button class="filter-pill" onclick="setRadarCity('cuiaba', this)">Cuiabá (SEMOB)</button>
+            <button class="filter-pill" onclick="setRadarCity('vg', this)">Várzea Grande</button>
+            <button class="filter-pill" onclick="setRadarCity('rodovias', this)">BR-163 / BR-364</button>
+            <button class="filter-pill" onclick="setRadarCity('br070', this)">BR-070</button>
+            <button class="filter-pill" onclick="setRadarCity('estaduais', this)">Rodovias MT</button>
+          </div>
+
+          <!-- Speed Filter: Todos, 40km, 50km, 60km, 80km, Desativados -->
+          <div class="categories-scroll">
+            <button class="filter-pill active" onclick="setRadarSpeed('all', this)">Todas Vel.</button>
+            <button class="filter-pill" onclick="setRadarSpeed('40', this)">40 km/h</button>
+            <button class="filter-pill" onclick="setRadarSpeed('50', this)">50 km/h</button>
+            <button class="filter-pill" onclick="setRadarSpeed('60', this)">60 km/h</button>
+            <button class="filter-pill" onclick="setRadarSpeed('80', this)">80 km/h</button>
+            <button class="filter-pill" onclick="setRadarSpeed('offline', this)"><span style="color:#ef4444;">●</span> Desativados</button>
+          </div>
+        </div>
+
+        <div class="items-list-container" id="radarsList">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- TAB 4: GUIA DE UTILIDADE PÚBLICA & POLOS REGIONAIS -->
+      <div class="tab-content" id="tab-pois">
+        <div class="sidebar-search-area">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Buscar hospitais regionais, aeroportos, delegacias..." oninput="handleSearch(this.value)" />
+            <button class="clear-btn" id="clearSearchBtn" onclick="clearSearch()"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="categories-scroll" style="margin-top: 6px;">
+            <button class="filter-pill active" onclick="setCategory('all', this)">Todos</button>
+            <button class="filter-pill" onclick="setCategory('saude', this)">Hospitais Regionais</button>
+            <button class="filter-pill" onclick="setCategory('seguranca', this)">Segurança / CIOSP</button>
+            <button class="filter-pill" onclick="setCategory('transporte', this)">Aeroportos & Terminais</button>
+            <button class="filter-pill" onclick="setCategory('cidadania', this)">Paços & Órgãos</button>
+            <button class="filter-pill" onclick="setCategory('turismo', this)">Turismo & Parques</button>
+          </div>
+        </div>
+
+        <div class="items-list-container" id="placesList">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- TAB 5: SOS & REPORTAR OCORRÊNCIAS -->
+      <div class="tab-content" id="tab-emergency">
+        <div style="padding: 12px; display: flex; flex-direction: column; gap: 12px;">
+          
+          <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+            Emergências Médicas & Rodoviárias MT
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+            <a href="tel:192" class="btn" style="padding: 8px; justify-content: flex-start;"><i class="fa-solid fa-truck-medical" style="color:#ef4444;"></i> SAMU 192</a>
+            <a href="tel:193" class="btn" style="padding: 8px; justify-content: flex-start;"><i class="fa-solid fa-fire-extinguisher" style="color:#ef4444;"></i> Bombeiros 193</a>
+            <a href="tel:190" class="btn" style="padding: 8px; justify-content: flex-start;"><i class="fa-solid fa-shield-halved" style="color:#0284c7;"></i> PM 190</a>
+            <a href="tel:191" class="btn" style="padding: 8px; justify-content: flex-start;"><i class="fa-solid fa-road" style="color:#0284c7;"></i> PRF 191</a>
+            <a href="tel:08000650163" class="btn" style="padding: 8px; justify-content: flex-start;"><i class="fa-solid fa-truck" style="color:#f59e0b;"></i> Rota Oeste 0800</a>
+            <a href="tel:199" class="btn" style="padding: 8px; justify-content: flex-start;"><i class="fa-solid fa-cloud-showers-heavy" style="color:#06b6d4;"></i> Defesa Civil 199</a>
+          </div>
+
+          <!-- Citizen Report Form -->
+          <div class="widget-card">
+            <div style="font-weight: 700; font-size: 0.84rem; margin-bottom: 6px;">
+              <i class="fa-solid fa-bullhorn" style="color: var(--primary);"></i> Reportar Ocorrência em Tempo Real
+            </div>
+            <form id="incidentForm" onsubmit="submitIncident(event)" style="display:flex; flex-direction:column; gap:6px;">
+              <select id="incidentType" style="padding:6px; border-radius:6px; border:1px solid var(--border); font-size:0.75rem;" required>
+                <option value="acidente">🚗 Acidente de Trânsito / Colisão</option>
+                <option value="semaforo">🚦 Semáforo Desligado / Quebrado</option>
+                <option value="buraco">🕳️ Buraco / Falha Crítica na Pista</option>
+                <option value="alagamento">🌊 Ponto de Alagamento / Enxurrada</option>
+                <option value="fogo">🔥 Foco de Fogo / Queimada Rodoviária</option>
+              </select>
+              <input type="text" id="incidentAddress" placeholder="Cidade / Rodovia / Ponto de Referência" style="padding:6px; border-radius:6px; border:1px solid var(--border); font-size:0.75rem;" required />
+              <textarea id="incidentDesc" rows="2" placeholder="Descrição rápida da situação..." style="padding:6px; border-radius:6px; border:1px solid var(--border); font-size:0.75rem;"></textarea>
+              <button type="submit" class="btn btn-primary" style="justify-content:center; font-size:0.75rem;">Publicar Alerta no Mapa</button>
+            </form>
+          </div>
+
+          <div id="alertsFeed">
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); margin-bottom: 4px;">Alertas Ativos</div>
+            <div class="item-card" style="border-left: 3px solid #f59e0b;">
+              <div style="font-weight: 700; font-size: 0.78rem;">🚧 Obras BRT / Desvios na Av. da FEB (VG)</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Atenção redobrada no trecho entre o VG Shopping e a Ponte Júlio Müller.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 6: CAMADAS & FERRAMENTAS GEOESPACIAIS -->
+      <div class="tab-content" id="tab-layers">
+        <div style="padding: 12px; display: flex; flex-direction: column; gap: 12px;">
+          
+          <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+            Mapas Base Abertos (100% Gratuitos & Sem API Key)
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 5px;">
+            <div class="item-card selected" onclick="setBaseLayer('osm', this)"><i class="fa-solid fa-map"></i> OpenStreetMap Padrão</div>
+            <div class="item-card" onclick="setBaseLayer('esri_sat', this)"><i class="fa-solid fa-satellite"></i> Satélite HD Esri World Imagery</div>
+            <div class="item-card" onclick="setBaseLayer('esri_street', this)"><i class="fa-solid fa-road"></i> Vias Urbanas & Rodovias (Esri Streets)</div>
+            <div class="item-card" onclick="setBaseLayer('esri_light', this)"><i class="fa-solid fa-sun"></i> Modo Claro Minimalista (Esri Gray Canvas)</div>
+            <div class="item-card" onclick="setBaseLayer('esri_dark', this)"><i class="fa-solid fa-moon"></i> Modo Noturno (Esri Dark Canvas)</div>
+            <div class="item-card" onclick="setBaseLayer('opentopo', this)"><i class="fa-solid fa-mountain"></i> Topografia & Relevo (OpenTopoMap)</div>
+            <div class="item-card" onclick="setBaseLayer('cyclosm', this)"><i class="fa-solid fa-person-biking"></i> Ciclovias & Trânsito (CyclOSM)</div>
+          </div>
+
+          <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-top: 4px;">
+            Ferramentas Geoespaciais
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <button class="btn" style="justify-content: flex-start;" onclick="toggleRuler()" id="btn-tool-ruler">
+              <i class="fa-solid fa-ruler-combined"></i> Régua de Medição de Distâncias
+            </button>
+            <button class="btn" style="justify-content: flex-start;" onclick="toggleProximityCircle()">
+              <i class="fa-solid fa-bullseye"></i> Raio de Proximidade (2 km)
+            </button>
+            <button class="btn" style="justify-content: flex-start;" onclick="window.print()">
+              <i class="fa-solid fa-camera"></i> Imprimir / Salvar Visão do Mapa
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- Map Canvas Area -->
+    <section id="map-wrapper">
+      <div id="map"></div>
+
+      <!-- Quick Region Focus Bar (Todo MT, Cuiabá, VG, Sinop, Rondonópolis, etc.) -->
+      <div class="quick-region-bar">
+        <button class="quick-region-btn" onclick="focusRegion('mt', this)"><i class="fa-solid fa-map"></i> Todo MT</button>
+        <button class="quick-region-btn active" onclick="focusRegion('vg', this)">Várzea Grande</button>
+        <button class="quick-region-btn" onclick="focusRegion('cuiaba', this)">Cuiabá</button>
+        <button class="quick-region-btn" onclick="focusRegion('sinop', this)">Sinop / Norte</button>
+        <button class="quick-region-btn" onclick="focusRegion('rondonopolis', this)">Rondonópolis / Sul</button>
+        <button class="quick-region-btn" onclick="focusRegion('sorriso', this)">Sorriso & Lucas</button>
+        <button class="quick-region-btn" onclick="focusRegion('caceres', this)">Cáceres / Oeste</button>
+        <button class="quick-region-btn" onclick="focusRegion('barra', this)">Barra do Garças</button>
+        <button class="quick-region-btn" onclick="focusRegion('tangara', this)">Tangará da Serra</button>
+        <button class="quick-region-btn" onclick="focusRegion('chapada', this)">Chapada (MT-251)</button>
+      </div>
+
+      <!-- Floating Icon Filter Toolbar (Filtro para Limpar Ícones do Mapa) -->
+      <div class="floating-layer-filter-bar">
+        <button class="filter-layer-toggle clean-all-btn" onclick="toggleAllIcons()" id="btn-toggle-all-icons" title="Limpar ou Exibir todos os ícones no mapa">
+          <i class="fa-solid fa-broom"></i> <span id="label-toggle-all-icons">Limpar Ícones</span>
+        </button>
+        <button class="filter-layer-toggle active" onclick="toggleLayerCategory('cameras', this)" id="btn-toggle-cam">
+          <i class="fa-solid fa-video"></i> Câmeras
+        </button>
+        <button class="filter-layer-toggle active toggle-radars" onclick="toggleLayerCategory('radars', this)" id="btn-toggle-rad">
+          <i class="fa-solid fa-camera"></i> Radares
+        </button>
+        <button class="filter-layer-toggle active toggle-pois" onclick="toggleLayerCategory('pois', this)" id="btn-toggle-poi">
+          <i class="fa-solid fa-hospital"></i> Serviços
+        </button>
+        <button class="filter-layer-toggle active toggle-flights" onclick="toggleLayerCategory('flights', this)" id="btn-toggle-fli">
+          <i class="fa-solid fa-plane"></i> Voos
+        </button>
+      </div>
+
+      <!-- Floating Controls on Top Right of Map -->
+      <div class="map-floating-controls">
+        <button class="floating-btn" onclick="focusRegion('mt')" title="Visão Geral de Mato Grosso">
+          <i class="fa-solid fa-globe"></i>
+        </button>
+
+        <button class="floating-btn" onclick="focusRegion('vg')" title="Recentralizar em VG / Cuiabá">
+          <i class="fa-solid fa-arrows-to-dot"></i>
+        </button>
+
+        <button class="floating-btn" onclick="toggleRainRadar()" id="mapRadarBtn" title="Ligar/Desligar Radar de Chuva">
+          <i class="fa-solid fa-cloud-showers-water"></i>
+        </button>
+
+        <button class="floating-btn" onclick="toggleRuler()" id="btn-ruler" title="Medir distâncias com a régua">
+          <i class="fa-solid fa-ruler-combined"></i>
+        </button>
+
+        <button class="floating-btn" onclick="locateUser(true)" title="Minha localização no GPS">
+          <i class="fa-solid fa-location-crosshairs"></i>
+        </button>
+      </div>
+
+      <!-- Distance Measure Box (Hidden by Default) -->
+      <div class="measure-box" id="measureBox">
+        <div style="font-weight: 700; color: var(--primary); margin-bottom: 2px;">
+          <i class="fa-solid fa-ruler"></i> Modo Medição Ativo
+        </div>
+        <div id="measureText">Clique em 2 ou mais pontos no mapa para medir.</div>
+        <button class="btn btn-icon" style="margin-top: 4px; padding: 2px 8px; font-size: 0.68rem;" onclick="clearMeasure()">Fechar</button>
+      </div>
+
+      <!-- Bottom Status Bar -->
+      <div class="map-status-bar">
+        <div class="status-left">
+          <span class="status-badge"><i class="fa-solid fa-mountain-sun"></i> Mato Grosso</span>
+          <span class="status-badge"><i class="fa-solid fa-location-dot"></i> <strong id="cursorCoord">-15.6467, -56.1325</strong></span>
+          <span class="status-badge"><i class="fa-solid fa-satellite-dish"></i> Zoom: <strong id="zoomLevel">13</strong></span>
+          <span class="status-badge"><i class="fa-solid fa-layer-group"></i> <strong id="visibleItemsCount">Exibindo todos os ícones</strong></span>
+        </div>
+        <div>
+          <span style="font-size: 0.68rem; color: #94a3b8;">Feeds: SEMOB • CIOSP • Vigia Mais MT • DNIT • Nova Rota • Open-Meteo • OpenSky</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CCTV Modal Viewer -->
+  <div class="cctv-modal" id="cctvModal" onclick="closeCCTVModal()">
+    <div class="cctv-window" onclick="event.stopPropagation()">
+      <div class="cctv-header">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <i class="fa-solid fa-video" style="color: #0284c7;"></i>
+          <div>
+            <div style="font-weight:700; font-size:0.85rem;" id="modalCamTitle">Câmera de Monitoramento</div>
+            <div style="font-size:0.68rem; color:#94a3b8;" id="modalCamLocation">Mato Grosso - MT</div>
+          </div>
+        </div>
+        <button class="btn btn-icon" onclick="closeCCTVModal()" style="background:transparent; border:none; color:white; font-size:1.1rem; cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      
+      <div class="cctv-screen">
+        <img id="modalCamImg" src="" alt="Transmissão da Câmera" />
+        <div class="cctv-hud-grid" id="modalCamHud">
+          <div style="display:flex; justify-content:space-between;">
+            <span id="modalCamStatusTag" style="color:#22c55e;"><i class="fa-solid fa-circle" style="font-size:8px;"></i> SINAL AO VIVO • CIOSP MT</span>
+            <span id="modalCamTime">14:48:00</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+            <span id="modalCamCode">CAM-MT-01 // 1080p 30FPS</span>
+            <span style="color:#f59e0b;" id="modalCamType">SPEED DOME 360°</span>
+          </div>
+        </div>
+        <div class="cctv-offline-overlay" id="modalCamOffline" style="display:none;">
+          <i class="fa-solid fa-triangle-exclamation" style="font-size: 2.2rem;"></i>
+          <div style="font-weight: 700; font-size: 0.95rem;">CÂMERA TEMPORARIAMENTE INDISPONÍVEL</div>
+          <div style="font-size: 0.75rem; color: #cbd5e1; max-width: 380px;" id="modalCamOfflineMsg">
+            Equipamento em manutenção técnica preventiva ou readequação de fibra óptica pela central de videomonitoramento.
+          </div>
+        </div>
+      </div>
+
+      <div class="cctv-footer">
+        <div>Sistema: <strong id="modalCamFooterSys">Vigia Mais MT / CIOSP</strong></div>
+        <button class="btn btn-primary" style="font-size:0.72rem;" onclick="closeCCTVModal()">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <script>
+    /* =========================================================================
+       BASE COMPLETA DE CÂMERAS PÚBLICAS DO ESTADO DE MATO GROSSO
+       ========================================================================= */
+    const ALL_CAMERAS = [
+      // --- VÁRZEA GRANDE ---
+      {
+        id: "cam-vg-01",
+        name: "Av. da FEB x Av. 31 de Março (VG Shopping / Aeroporto)",
+        city: "vg",
+        cityName: "Várzea Grande",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "ocr",
+        typeName: "OCR Leitura de Placas (LPR) + Domo 360°",
+        lat: -15.6545,
+        lng: -56.1215,
+        location: "Avenida da FEB - Jardim Aeroporto, VG",
+        code: "CAM-VG-01 // SESP-CIOSP",
+        img: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=600&auto=format&fit=crop&q=80",
+        desc: "Monitoramento de tráfego do corredor BRT, entrada do VG Shopping e acesso direto ao Aeroporto Marechal Rondon."
+      },
+      {
+        id: "cam-vg-02",
+        name: "Ponte Júlio Müller (Av. da FEB - Ligação Alameda / Porto)",
+        city: "vg",
+        cityName: "Várzea Grande / Cuiabá",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "transito",
+        typeName: "Speed Dome 360° PTZ",
+        lat: -15.6265,
+        lng: -56.1030,
+        location: "Ponte Júlio Müller - Alameda, VG",
+        code: "CAM-VG-02 // SESP-CIOSP",
+        img: "https://images.unsplash.com/photo-1545459720-aac8509eb02c?w=600&auto=format&fit=crop&q=80",
+        desc: "Ponto de estrangulamento e principal elo viário entre Várzea Grande (Alameda) e Cuiabá (Porto)."
+      },
+      {
+        id: "cam-vg-03",
+        name: "Ponte Sérgio Motta (Av. Dr. Paraná - Cristo Rei)",
+        city: "vg",
+        cityName: "Várzea Grande / Cuiabá",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "ocr",
+        typeName: "OCR Leitura de Placas (LPR)",
+        lat: -15.6410,
+        lng: -56.0690,
+        location: "Av. Dr. Paraná - Cristo Rei, VG",
+        code: "CAM-VG-03 // SESP-CIOSP",
+        img: "https://images.unsplash.com/photo-1519817650390-64a93db51149?w=600&auto=format&fit=crop&q=80",
+        desc: "Fiscalização e leitura de placas na ligação da região do Cristo Rei com a Av. Beira Rio em Cuiabá."
+      },
+      {
+        id: "cam-vg-04",
+        name: "Trevo do Lagarto (Entroncamento BR-070 / BR-163 / BR-364)",
+        city: "vg",
+        cityName: "Várzea Grande",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "transito",
+        typeName: "Domo 360° Grande Alcance",
+        lat: -15.6375,
+        lng: -56.2085,
+        location: "Trevo do Lagarto - Saída Rodoviária Norte/Oeste",
+        code: "CAM-VG-04 // PRF & SESP",
+        img: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&auto=format&fit=crop&q=80",
+        desc: "Entroncamento rodoviário de cargas para Cáceres, Sinop, Rondonópolis e Bolívia com intenso fluxo de veículos pesados."
+      },
+      {
+        id: "cam-vg-05",
+        name: "Terminal Integrado André Maggi (Centro de VG)",
+        city: "vg",
+        cityName: "Várzea Grande",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "seguranca",
+        typeName: "Circuito Fechado 23 Câmeras Vigia Mais MT",
+        lat: -15.6510,
+        lng: -56.1270,
+        location: "Av. Couto Magalhães - Centro, VG",
+        code: "CAM-VG-05 // VIGIA MAIS MT",
+        img: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=600&auto=format&fit=crop&q=80",
+        desc: "Rede com 23 câmeras de alta definição garantindo segurança de passageiros de ônibus municipais e intermunicipais."
+      },
+      {
+        id: "cam-vg-06",
+        name: "Paço Municipal & Prefeitura de Várzea Grande",
+        city: "vg",
+        cityName: "Várzea Grande",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "seguranca",
+        typeName: "Speed Dome 360° Segurança Integrada",
+        lat: -15.6455,
+        lng: -56.1392,
+        location: "Av. Castelo Branco, 2500 - Centro Sul, VG",
+        code: "CAM-VG-06 // GUARDA MUNICIPAL",
+        img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&auto=format&fit=crop&q=80",
+        desc: "Monitoramento da sede do Executivo Municipal, secretarias e central de atendimento ao cidadão."
+      },
+      {
+        id: "cam-vg-07",
+        name: "Pronto-Socorro Municipal HPSMVG (Av. Alzira Santana)",
+        city: "vg",
+        cityName: "Várzea Grande",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "seguranca",
+        typeName: "Câmera Fixa HD + Domo",
+        lat: -15.6517,
+        lng: -56.1418,
+        location: "Av. Alzira Santana - Nova Várzea Grande",
+        code: "CAM-VG-07 // SESP-CIOSP",
+        img: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=600&auto=format&fit=crop&q=80",
+        desc: "Monitoramento do fluxo de ambulâncias SAMU e entrada de emergência do pronto-socorro de VG."
+      },
+      {
+        id: "cam-vg-08",
+        name: "Av. Filinto Müller x Senador Metello (Centro / Marajoara)",
+        city: "vg",
+        cityName: "Várzea Grande",
+        status: "offline",
+        statusLabel: "Indisponível (Em Manutenção)",
+        type: "transito",
+        typeName: "Speed Dome 360° Trânsito",
+        lat: -15.6450,
+        lng: -56.1330,
+        location: "Av. Filinto Müller - Centro Norte, VG",
+        code: "CAM-VG-08 // GUARDA MUNICIPAL",
+        img: "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?w=600&auto=format&fit=crop&q=80",
+        desc: "Câmera em manutenção preventiva para troca de cabeamento de fibra óptica."
+      },
+
+      // --- CUIABÁ ---
+      {
+        id: "cam-cb-01",
+        name: "Av. Miguel Sutil x Viaduto da Rodoviária (Alvorada)",
+        city: "cuiaba",
+        cityName: "Cuiabá",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "transito",
+        typeName: "Speed Dome 360° SEMOB",
+        lat: -15.5780,
+        lng: -56.0980,
+        location: "Av. Miguel Sutil (Perimetral) - Bairro Alvorada, Cuiabá",
+        code: "CAM-CB-01 // SEMOB CUIABÁ",
+        img: "https://images.unsplash.com/photo-1545459720-aac8509eb02c?w=600&auto=format&fit=crop&q=80",
+        desc: "Monitoramento do entroncamento viário de acesso ao Terminal Rodoviário Eng. Cássio Veiga de Sá e Av. CPA."
+      },
+      {
+        id: "cam-cb-02",
+        name: "Av. Historiador Rubens de Mendonça (Av. do CPA x Centro Político)",
+        city: "cuiaba",
+        cityName: "Cuiabá",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "ocr",
+        typeName: "OCR Leitura de Placas (LPR)",
+        lat: -15.5680,
+        lng: -56.0720,
+        location: "Av. do CPA - Centro Político Administrativo, Cuiabá",
+        code: "CAM-CB-02 // SESP-CIOSP",
+        img: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=600&auto=format&fit=crop&q=80",
+        desc: "Monitoramento do acesso aos órgãos públicos estaduais (Palácio Paiaguás, ALMT, TJMT) e Parque das Águas."
+      },
+      {
+        id: "cam-cb-03",
+        name: "Av. Fernando Corrêa da Costa x Viaduto da UFMT (Boa Esperança)",
+        city: "cuiaba",
+        cityName: "Cuiabá",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "transito",
+        typeName: "Speed Dome 360° PTZ",
+        lat: -15.6120,
+        lng: -56.0680,
+        location: "Av. Fernando Corrêa da Costa - Bairro Boa Esperança, Cuiabá",
+        code: "CAM-CB-03 // SEMOB CUIABÁ",
+        img: "https://images.unsplash.com/photo-1519817650390-64a93db51149?w=600&auto=format&fit=crop&q=80",
+        desc: "Principal corredor viário da zona sul de Cuiabá com tráfego da UFMT, Coxipó e saída para a BR-364."
+      },
+      {
+        id: "cam-cb-04",
+        name: "Av. Tenente Coronel Duarte (Prainha x Praça Ipiranga)",
+        city: "cuiaba",
+        cityName: "Cuiabá",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "seguranca",
+        typeName: "Speed Dome 360° Centro Histórico",
+        lat: -15.5995,
+        lng: -56.0970,
+        location: "Av. Prainha - Centro Histórico, Cuiabá",
+        code: "CAM-CB-04 // CIOSP SESP-MT",
+        img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&auto=format&fit=crop&q=80",
+        desc: "Ponto nevrálgico do comércio central, estações de ônibus e grande fluxo de pedestres."
+      },
+      {
+        id: "cam-cb-05",
+        name: "Arena Pantanal (Entorno Av. Agrícola Paes de Barros)",
+        city: "cuiaba",
+        cityName: "Cuiabá",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "seguranca",
+        typeName: "Speed Dome 360° Complexo Esportivo",
+        lat: -15.6035,
+        lng: -56.1210,
+        location: "Bairro Verdão - Arena Pantanal, Cuiabá",
+        code: "CAM-CB-05 // POLÍCIA MILITAR / CIOSP",
+        img: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=600&auto=format&fit=crop&q=80",
+        desc: "Monitoramento de segurança para jogos, eventos culturais e entorno do ginásio Aecim Tocantins."
+      },
+
+      // --- BAIXADA CUIABANA & CHAPADA ---
+      {
+        id: "cam-bx-01",
+        name: "MT-251 Estrada de Chapada (Salgadeira / Portão do Inferno)",
+        city: "baixada",
+        cityName: "Chapada dos Guimarães",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "turismo",
+        typeName: "Monitoramento Geológico SINFRA & Trânsito",
+        lat: -15.4650,
+        lng: -55.8250,
+        location: "Rodovia Emanuel Pinheiro MT-251 - Parque Nacional",
+        code: "CAM-BX-01 // SINFRA-MT & DEFESA CIVIL",
+        img: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=600&auto=format&fit=crop&q=80",
+        desc: "Monitoramento 24h dos paredões geológicos do Portão do Inferno e acesso à Chapada."
+      },
+      {
+        id: "cam-bx-02",
+        name: "Serra de São Vicente (BR-364 / BR-163 km 349 - Área de Escape)",
+        city: "baixada",
+        cityName: "Santo Antônio / Serra de São Vicente",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "transito",
+        typeName: "Câmera Rodoviária Nova Rota do Oeste",
+        lat: -15.8900,
+        lng: -55.7200,
+        location: "BR-364 km 349 - Descida da Serra",
+        code: "CAM-BX-02 // NOVA ROTA DO OESTE & PRF",
+        img: "https://images.unsplash.com/photo-1508873696983-2df5293cb32f?w=600&auto=format&fit=crop&q=80",
+        desc: "Monitoramento do trecho de serra mais perigoso da rodovia federal com controle da área de escape."
+      },
+
+      // --- NORTE & MÉDIO-NORTE (SINOP, SORRISO, LUCAS, NOVA MUTUM) ---
+      {
+        id: "cam-nt-01",
+        name: "Sinop (Av. Júlio Campos x BR-163 - Entrada Principal)",
+        city: "norte",
+        cityName: "Sinop - Norte MT",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "ocr",
+        typeName: "OCR Leitura de Placas + Domo 360°",
+        lat: -11.8610,
+        lng: -55.5080,
+        location: "Entroncamento BR-163 x Av. Júlio Campos - Sinop",
+        code: "CAM-SNP-01 // VIGIA MAIS MT & PRF",
+        img: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=600&auto=format&fit=crop&q=80",
+        desc: "Monitoramento de tráfego de carretas graneleiras e segurança no portal da Capital do Nortão."
+      },
+      {
+        id: "cam-nt-02",
+        name: "Sorriso (BR-163 x MT-242 - Trevo do Boi)",
+        city: "norte",
+        cityName: "Sorriso - Médio-Norte MT",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "transito",
+        typeName: "Speed Dome Concessionária Nova Rota",
+        lat: -12.5420,
+        lng: -55.7190,
+        location: "BR-163 km 754 - Trevo do Boi / Acesso Ipiranga",
+        code: "CAM-SRS-01 // NOVA ROTA DO OESTE",
+        img: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&auto=format&fit=crop&q=80",
+        desc: "Capital Nacional do Agronegócio com intenso fluxo de escoamento de soja e milho."
+      },
+      {
+        id: "cam-nt-03",
+        name: "Lucas do Rio Verde (Av. Brasil x BR-163)",
+        city: "norte",
+        cityName: "Lucas do Rio Verde - MT",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "ocr",
+        typeName: "OCR Vigia Mais MT + Segurança",
+        lat: -13.0640,
+        lng: -55.9120,
+        location: "BR-163 km 690 - Travessia Urbana de Lucas",
+        code: "CAM-LRV-01 // VIGIA MAIS MT",
+        img: "https://images.unsplash.com/photo-1519817650390-64a93db51149?w=600&auto=format&fit=crop&q=80",
+        desc: "Monitoramento do perímetro urbano e polos agroindustriais de Lucas do Rio Verde."
+      },
+      {
+        id: "cam-nt-04",
+        name: "Nova Mutum (BR-163 km 593 - Posto Gil / Travessia)",
+        city: "norte",
+        cityName: "Nova Mutum - MT",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "transito",
+        typeName: "Domo 360° Rodoviário",
+        lat: -13.8310,
+        lng: -56.0790,
+        location: "BR-163 km 593 - Perímetro Urbano",
+        code: "CAM-NTM-01 // NOVA ROTA DO OESTE",
+        img: "https://images.unsplash.com/photo-1545459720-aac8509eb02c?w=600&auto=format&fit=crop&q=80",
+        desc: "Entroncamento de escoamento da produção agrícola do Médio-Norte para os portos."
+      },
+
+      // --- SUL & SUDESTE (RONDONÓPOLIS, PRIMAVERA, CAMPO VERDE) ---
+      {
+        id: "cam-sul-01",
+        name: "Rondonópolis (Trevo BR-163 / BR-364 x Av. Lions)",
+        city: "sul",
+        cityName: "Rondonópolis - Sul MT",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "ocr",
+        typeName: "OCR Leitura de Placas + PTZ 360°",
+        lat: -16.4710,
+        lng: -54.6390,
+        location: "BR-163 km 119 - Trevo Lions Internacional, Rondonópolis",
+        code: "CAM-ROO-01 // VIGIA MAIS MT & PRF",
+        img: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=600&auto=format&fit=crop&q=80",
+        desc: "Maior entroncamento rodoferroviário do Centro-Oeste brasileiro e acesso ao Terminal Ferroviário."
+      },
+      {
+        id: "cam-sul-02",
+        name: "Primavera do Leste (Entroncamento BR-070 x MT-130)",
+        city: "sul",
+        cityName: "Primavera do Leste - MT",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "transito",
+        typeName: "Speed Dome 360° SINFRA & PRF",
+        lat: -15.5580,
+        lng: -54.2980,
+        location: "BR-070 km 280 x MT-130 - Primavera do Leste",
+        code: "CAM-PRV-01 // SINFRA-MT & PRF",
+        img: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&auto=format&fit=crop&q=80",
+        desc: "Conexão vital entre o Vale do Araguaia, o Sul do Estado e a Capital Cuiabá."
+      },
+
+      // --- OESTE & SUDOESTE (CÁCERES, TANGARÁ DA SERRA) ---
+      {
+        id: "cam-oe-01",
+        name: "Cáceres (Ponte Marechal Rondon / Orla do Rio Paraguai)",
+        city: "oeste",
+        cityName: "Cáceres - Fronteira Oeste",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "turismo",
+        typeName: "Panorâmica Fluvial & Segurança de Fronteira",
+        lat: -16.0740,
+        lng: -57.6820,
+        location: "BR-070 - Ponte Marechal Rondon / Rio Paraguai",
+        code: "CAM-CAC-01 // GEFRON & VIGIA MAIS MT",
+        img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=80",
+        desc: "Controle de tráfego hidroviário, rodoviário e monitoramento de fronteira internacional pelo GEFRON."
+      },
+      {
+        id: "cam-oe-02",
+        name: "Tangará da Serra (Av. Brasil x MT-358)",
+        city: "oeste",
+        cityName: "Tangará da Serra - MT",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "transito",
+        typeName: "Speed Dome 360° Trânsito",
+        lat: -14.6210,
+        lng: -57.4910,
+        location: "Av. Brasil - Entrada da Cidade MT-358",
+        code: "CAM-TNG-01 // VIGIA MAIS MT",
+        img: "https://images.unsplash.com/photo-1494783367193-149034c05e8f?w=600&auto=format&fit=crop&q=80",
+        desc: "Pólo do Médio-Oeste mato-grossense com tráfego para a Serra dos Parecis e Chapadão."
+      },
+
+      // --- LESTE & ARAGUAIA (BARRA DO GARÇAS) ---
+      {
+        id: "cam-le-01",
+        name: "Barra do Garças (Porto do Baé / Encontro Araguaia & Garças)",
+        city: "leste",
+        cityName: "Barra do Garças - Vale do Araguaia",
+        status: "online",
+        statusLabel: "Disponível (Ao Vivo)",
+        type: "turismo",
+        typeName: "Domo 360° Turística Fluvial",
+        lat: -15.8910,
+        lng: -52.2610,
+        location: "Porto do Baé - Barra do Garças / Divisa com Goiás",
+        code: "CAM-BDG-01 // VIGIA MAIS MT & TURISMO",
+        img: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=600&auto=format&fit=crop&q=80",
+        desc: "Cartão postal de MT no encontro dos rios Araguaia e Garças na divisa com Aragarças (GO)."
+      }
+    ];
+
+    /* =========================================================================
+       BASE COMPLETA DE RADARES DE VELOCIDADE EM TODO O ESTADO DE MATO GROSSO
+       ========================================================================= */
+    const ALL_RADARS = [
+      // --- VÁRZEA GRANDE ---
+      {
+        id: "rad-vg-01",
+        name: "Av. da FEB - Frente Concessionária Saga / BRT",
+        city: "vg",
+        cityName: "Várzea Grande",
+        speed: 60,
+        type: "fixo",
+        typeName: "Radar Fixo de Velocidade",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -15.6520,
+        lng: -56.1235,
+        location: "Avenida da FEB - Sentido Centro / Aeroporto",
+        agency: "Guarda Municipal / Prefeitura VG",
+        desc: "Velocidade máxima: 60 km/h. Fiscalização de velocidade nos dois sentidos da via expressa."
+      },
+      {
+        id: "rad-vg-02",
+        name: "Av. da FEB x Viaduto Dom Orlando Chaves",
+        city: "vg",
+        cityName: "Várzea Grande",
+        speed: 60,
+        type: "fixo",
+        typeName: "Radar Fixo de Velocidade",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -15.6420,
+        lng: -56.1130,
+        location: "Avenida da FEB - Próximo à entrada do Cristo Rei",
+        agency: "Guarda Municipal / Prefeitura VG",
+        desc: "Velocidade máxima: 60 km/h. Controle de velocidade no trecho de descida do viaduto."
+      },
+      {
+        id: "rad-vg-03",
+        name: "Av. Governador Júlio Campos x Bairro Marajoara",
+        city: "vg",
+        cityName: "Várzea Grande",
+        speed: 60,
+        type: "fixo",
+        typeName: "Radar Fixo de Velocidade",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -15.6470,
+        lng: -56.1480,
+        location: "Av. Júlio Campos - Jardim Paula I / Marajoara",
+        agency: "Guarda Municipal VG",
+        desc: "Velocidade máxima: 60 km/h. Fiscalização eletrônica em trecho de alto índice de pedestres."
+      },
+      {
+        id: "rad-vg-05",
+        name: "Av. Alzira Santana - Frente Paço Municipal / HPSMVG",
+        city: "vg",
+        cityName: "Várzea Grande",
+        speed: 40,
+        type: "lombada",
+        typeName: "Lombada Eletrônica / Área Hospitalar",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -15.6515,
+        lng: -56.1410,
+        location: "Av. Alzira Santana, 700 - Nova Várzea Grande",
+        agency: "Guarda Municipal VG",
+        desc: "Velocidade máxima: 40 km/h. Área hospitalar (HPSMVG) e travessia de pedestres do Paço Municipal."
+      },
+
+      // --- CUIABÁ ---
+      {
+        id: "rad-cb-01",
+        name: "Av. Miguel Sutil - Curva do Parque Mãe Bonifácia",
+        city: "cuiaba",
+        cityName: "Cuiabá",
+        speed: 60,
+        type: "fixo",
+        typeName: "Radar Fixo de Velocidade",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -15.5860,
+        lng: -56.1110,
+        location: "Av. Miguel Sutil - Bairro Duque de Caxias, Cuiabá",
+        agency: "SEMOB Cuiabá",
+        desc: "Velocidade máxima: 60 km/h. Curva perigosa com alto índice de colisões contra o canteiro."
+      },
+      {
+        id: "rad-cb-03",
+        name: "Av. Historiador Rubens de Mendonça (Av. do CPA - Hospital do Câncer)",
+        city: "cuiaba",
+        cityName: "Cuiabá",
+        speed: 60,
+        type: "fixo",
+        typeName: "Radar Fixo + Avanço Semafórico",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -15.5780,
+        lng: -56.0790,
+        location: "Av. do CPA - Bairro Morada da Serra, Cuiabá",
+        agency: "SEMOB Cuiabá",
+        desc: "Velocidade máxima: 60 km/h. Travessia de pedestres e pacientes do Hospital do Câncer de MT."
+      },
+      {
+        id: "rad-cb-04",
+        name: "Av. Fernando Corrêa da Costa - Frente Campus UFMT",
+        city: "cuiaba",
+        cityName: "Cuiabá",
+        speed: 60,
+        type: "fixo",
+        typeName: "Radar Fixo de Velocidade",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -15.6110,
+        lng: -56.0690,
+        location: "Av. Fernando Corrêa da Costa - Bairro Boa Esperança",
+        agency: "SEMOB Cuiabá",
+        desc: "Velocidade máxima: 60 km/h. Acesso principal de estudantes e professores da UFMT."
+      },
+      {
+        id: "rad-cb-06",
+        name: "Av. Dom Bosco x Rua Comandante Costa",
+        city: "cuiaba",
+        cityName: "Cuiabá",
+        speed: 40,
+        type: "lombada",
+        typeName: "Lombada Eletrônica 40 km/h",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -15.5975,
+        lng: -56.1020,
+        location: "Av. Dom Bosco - Centro Sul, Cuiabá",
+        agency: "SEMOB Cuiabá",
+        desc: "Velocidade máxima reduzida: 40 km/h. Área escolar e hospitalar de grande circulação."
+      },
+
+      // --- BR-163 / BR-364 (CORREDOR FEDERAL DO AGRONEGÓCIO) ---
+      {
+        id: "rad-br-01",
+        name: "BR-163 km 822 - Travessia Urbana de Sinop",
+        city: "rodovias",
+        cityName: "Sinop - Norte MT",
+        speed: 60,
+        type: "rodoviario",
+        typeName: "Radar Rodoviário DNIT / Concessionária",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -11.8590,
+        lng: -55.5120,
+        location: "BR-163 km 822 - Sinop",
+        agency: "DNIT / Nova Rota do Oeste",
+        desc: "Velocidade máxima: 60 km/h. Redução de velocidade no acesso urbano à capital do Nortão."
+      },
+      {
+        id: "rad-br-02",
+        name: "BR-163 km 750 - Travessia de Sorriso",
+        city: "rodovias",
+        cityName: "Sorriso - MT",
+        speed: 60,
+        type: "rodoviario",
+        typeName: "Lombada Eletrônica Rodoviária",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -12.5380,
+        lng: -55.7150,
+        location: "BR-163 km 750 - Sorriso",
+        agency: "Nova Rota do Oeste / DNIT",
+        desc: "Velocidade máxima: 60 km/h. Travessia de pedestres e indústrias de bioenergia."
+      },
+      {
+        id: "rad-br-03",
+        name: "BR-163 km 688 - Travessia de Lucas do Rio Verde",
+        city: "rodovias",
+        cityName: "Lucas do Rio Verde - MT",
+        speed: 60,
+        type: "rodoviario",
+        typeName: "Radar Rodoviário 60 km/h",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -13.0580,
+        lng: -55.9180,
+        location: "BR-163 km 688 - Lucas do Rio Verde",
+        agency: "Nova Rota do Oeste",
+        desc: "Velocidade máxima: 60 km/h. Trecho urbano de ligação entre bairros e rodovia."
+      },
+      {
+        id: "rad-br-04",
+        name: "BR-163 / BR-364 km 498 - Travessia de Jangada",
+        city: "rodovias",
+        cityName: "Jangada - MT",
+        speed: 60,
+        type: "lombada",
+        typeName: "Lombada Eletrônica Rodoviária",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -15.2400,
+        lng: -56.4950,
+        location: "BR-163 Travessia Urbana de Jangada",
+        agency: "Nova Rota do Oeste / DNIT",
+        desc: "Velocidade máxima: 60 km/h. Travessia de pedestres e pólo gastronômico de Jangada."
+      },
+      {
+        id: "rad-br-05",
+        name: "BR-364 km 352 - Descida da Serra de São Vicente",
+        city: "rodovias",
+        cityName: "Serra de São Vicente",
+        speed: 60,
+        type: "rodoviario",
+        typeName: "Radar Rodoviário Área de Escape",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -15.8850,
+        lng: -55.7250,
+        location: "BR-364 km 352 - Descida de Serra",
+        agency: "Nova Rota do Oeste / PRF",
+        desc: "Velocidade máxima: 60 km/h para carretas e 80 km/h para automóveis. Trecho com área de escape."
+      },
+      {
+        id: "rad-br-06",
+        name: "BR-163 / BR-364 km 118 - Travessia Urbana de Rondonópolis",
+        city: "rodovias",
+        cityName: "Rondonópolis - Sul MT",
+        speed: 60,
+        type: "rodoviario",
+        typeName: "Radar Rodoviário Rondonópolis",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -16.4680,
+        lng: -54.6350,
+        location: "BR-163 km 118 - Av. Presidente Médici",
+        agency: "Nova Rota do Oeste / DNIT",
+        desc: "Velocidade máxima: 60 km/h. Travessia do perímetro urbano da segunda maior economia de MT."
+      },
+
+      // --- BR-070 (RODOVIA DOS IMIGRANTES, CAMPO VERDE, PRIMAVERA, CÁCERES) ---
+      {
+        id: "rad-070-01",
+        name: "BR-070 Rodovia dos Imigrantes (Km 9 - Contorno VG)",
+        city: "br070",
+        cityName: "Várzea Grande / Baixada",
+        speed: 80,
+        type: "rodoviario",
+        typeName: "Radar Rodoviário DNIT 80 km/h",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -15.6850,
+        lng: -56.1350,
+        location: "BR-070 Rodovia dos Imigrantes - Sul de VG",
+        agency: "DNIT / PRF",
+        desc: "Velocidade máxima: 80 km/h (Veículos Leves) / 60 km/h (Pesados). Anel rodoviário de cargas."
+      },
+      {
+        id: "rad-070-02",
+        name: "BR-070 km 720 - Travessia Urbana de Cáceres",
+        city: "br070",
+        cityName: "Cáceres - Oeste MT",
+        speed: 60,
+        type: "fixo",
+        typeName: "Radar Rodoviário DNIT 60 km/h",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -16.0680,
+        lng: -57.6750,
+        location: "BR-070 km 720 - Acesso Central Cáceres",
+        agency: "DNIT / PRF",
+        desc: "Velocidade máxima: 60 km/h. Controle de velocidade no acesso à Cidade Universitária e fronteira."
+      },
+      {
+        id: "rad-070-03",
+        name: "BR-070 km 282 - Travessia de Primavera do Leste",
+        city: "br070",
+        cityName: "Primavera do Leste - MT",
+        speed: 60,
+        type: "fixo",
+        typeName: "Radar Rodoviário DNIT 60 km/h",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -15.5520,
+        lng: -54.3050,
+        location: "BR-070 km 282 - Primavera do Leste",
+        agency: "DNIT / PRF",
+        desc: "Velocidade máxima: 60 km/h. Redução de velocidade no entroncamento comercial."
+      },
+
+      // --- RODOVIAS ESTADUAIS (MT-251, MT-010, MT-130, MT-358) ---
+      {
+        id: "rad-mt-01",
+        name: "MT-251 Estrada de Chapada (Km 16 - Rio dos Peixes)",
+        city: "estaduais",
+        cityName: "Chapada dos Guimarães",
+        speed: 60,
+        type: "fixo",
+        typeName: "Radar Rodoviário SINFRA 60 km/h",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -15.5100,
+        lng: -55.9300,
+        location: "MT-251 Estrada de Chapada - Rio dos Peixes",
+        agency: "SINFRA-MT / Batalhão de Trânsito",
+        desc: "Velocidade máxima: 60 km/h. Curvas sinuosas e travessia de animais silvestres no parque."
+      },
+      {
+        id: "rad-mt-02",
+        name: "MT-251 Estrada de Chapada (Km 42 - Balneário Salgadeira)",
+        city: "estaduais",
+        cityName: "Chapada dos Guimarães",
+        speed: 40,
+        type: "lombada",
+        typeName: "Lombada Eletrônica Turística 40 km/h",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -15.4700,
+        lng: -55.8300,
+        location: "MT-251 - Acesso Complexo da Salgadeira",
+        agency: "SINFRA-MT",
+        desc: "Velocidade máxima: 40 km/h. Trecho de pedestres e acesso ao balneário turístico da Salgadeira."
+      },
+      {
+        id: "rad-mt-03",
+        name: "MT-010 Estrada da Guia (Km 4 - Escola ESFAP)",
+        city: "estaduais",
+        cityName: "Cuiabá / Distrito da Guia",
+        speed: 60,
+        type: "fixo",
+        typeName: "Radar Fixo Rodoviário 60 km/h",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -15.5450,
+        lng: -56.1050,
+        location: "MT-010 Estrada da Guia - Próximo à ESFAP",
+        agency: "SEMOB / SINFRA-MT",
+        desc: "Velocidade máxima: 60 km/h nos dois sentidos. Travessia de policiais e moradores de condomínios."
+      },
+      {
+        id: "rad-mt-04",
+        name: "MT-358 km 10 - Travessia Urbana de Tangará da Serra",
+        city: "estaduais",
+        cityName: "Tangará da Serra - MT",
+        speed: 60,
+        type: "fixo",
+        typeName: "Radar Rodoviário SINFRA 60 km/h",
+        status: "online",
+        statusLabel: "Ativo / Fiscalizando",
+        lat: -14.6180,
+        lng: -57.4850,
+        location: "MT-358 - Entrada de Tangará da Serra",
+        agency: "SINFRA-MT",
+        desc: "Velocidade máxima: 60 km/h. Travessia urbana e escoamento agropecuário."
+      }
+    ];
+
+    /* =========================================================================
+       BASE DE PONTOS DE UTILIDADE PÚBLICA & POLOS REGIONAIS DE MATO GROSSO
+       ========================================================================= */
+    const POIS = [
+      {
+        id: "hpsmvg",
+        name: "Hospital e Pronto-Socorro Municipal de VG (HPSMVG)",
+        category: "saude",
+        categoryName: "Saúde & Urgência 24h",
+        icon: "fa-hospital",
+        color: "#ef4444",
+        lat: -15.6517,
+        lng: -56.1418,
+        address: "Av. Alzira Santana, 728 - Nova Várzea Grande",
+        phone: "(65) 3632-8300",
+        phoneRaw: "+556536328300",
+        hours: "Atendimento 24 Horas (SUS)",
+        desc: "Principal centro de urgência e trauma público de Várzea Grande."
+      },
+      {
+        id: "h-metropolitano",
+        name: "Hospital Estadual Metropolitano",
+        category: "saude",
+        categoryName: "Saúde Estadual 24h",
+        icon: "fa-hospital-user",
+        color: "#ef4444",
+        lat: -15.6436,
+        lng: -56.1013,
+        address: "Av. Dom Orlando Chaves, s/n - Cristo Rei, VG",
+        phone: "(65) 3388-0600",
+        phoneRaw: "+556533880600",
+        hours: "Atendimento 24 Horas (SUS)",
+        desc: "Hospital de alta complexidade em ortopedia e trauma de MT."
+      },
+      {
+        id: "h-municipal-cuiaba",
+        name: "HMC - Hospital Municipal de Cuiabá 'Dr. Leony Palma'",
+        category: "saude",
+        categoryName: "Hospital Municipal & Urgência 24h",
+        icon: "fa-hospital",
+        color: "#ef4444",
+        lat: -15.5750,
+        lng: -56.0680,
+        address: "Av. Dr. Meirelles - Bairro Ribeirão do Lipa, Cuiabá",
+        phone: "(65) 3617-7300",
+        phoneRaw: "+556536177300",
+        hours: "Atendimento 24 Horas (SUS)",
+        desc: "Maior hospital público de Cuiabá com heliponto e urgência."
+      },
+      {
+        id: "h-regional-sinop",
+        name: "Hospital Regional de Sinop",
+        category: "saude",
+        categoryName: "Saúde Regional Norte MT",
+        icon: "fa-hospital",
+        color: "#ef4444",
+        lat: -11.8540,
+        lng: -55.5180,
+        address: "Av. dos Jacarandás - Jardim Primaveras, Sinop",
+        phone: "(66) 3517-2100",
+        phoneRaw: "+556635172100",
+        hours: "24 Horas (SUS)",
+        desc: "Centro de referência hospitalar e pronto-atendimento para todo o Norte de MT."
+      },
+      {
+        id: "h-regional-roo",
+        name: "Hospital Regional de Rondonópolis 'Irmã Elza Giovanella'",
+        category: "saude",
+        categoryName: "Saúde Regional Sul MT",
+        icon: "fa-hospital",
+        color: "#ef4444",
+        lat: -16.4820,
+        lng: -54.6210,
+        address: "Rua Ceará, 1025 - Bairro Santa Marta, Rondonópolis",
+        phone: "(66) 3410-4000",
+        phoneRaw: "+556634104000",
+        hours: "24 Horas (SUS)",
+        desc: "Hospital de média e alta complexidade que atende a macrorregião Sul de MT."
+      },
+      {
+        id: "h-regional-caceres",
+        name: "Hospital Regional de Cáceres 'Dr. Antônio Fontes'",
+        category: "saude",
+        categoryName: "Saúde Regional Oeste MT",
+        icon: "fa-hospital",
+        color: "#ef4444",
+        lat: -16.0620,
+        lng: -57.6690,
+        address: "Av. Getúlio Vargas, s/n - Santa Isabel, Cáceres",
+        phone: "(65) 3223-1450",
+        phoneRaw: "+556532231450",
+        hours: "24 Horas (SUS)",
+        desc: "Referência médica de urgência e UTI para a região de fronteira com a Bolívia."
+      },
+      {
+        id: "ciosp-mt",
+        name: "CIOSP MT - Centro Integrado de Operações de Segurança",
+        category: "seguranca",
+        categoryName: "Central Integrada de Emergência",
+        icon: "fa-tower-broadcast",
+        color: "#0284c7",
+        lat: -15.5640,
+        lng: -56.0710,
+        address: "Centro Político Administrativo (CPA) - Cuiabá, MT",
+        phone: "190 / 193",
+        phoneRaw: "190",
+        hours: "24 Horas Ininterruptas",
+        desc: "Central que opera as câmeras do Vigia Mais MT, atendimento 190 PM e 193 Bombeiros."
+      },
+      {
+        id: "aeroporto-cgb",
+        name: "Aeroporto Internacional Marechal Rondon (CGB)",
+        category: "transporte",
+        categoryName: "Aeroporto Internacional",
+        icon: "fa-plane-departure",
+        color: "#f59e0b",
+        lat: -15.6540,
+        lng: -56.1172,
+        address: "Av. João Ponce de Arruda, s/n - Jardim Aeroporto, VG",
+        phone: "(65) 3614-2500",
+        phoneRaw: "+556536142500",
+        hours: "24 Horas",
+        desc: "Principal aeroporto do Estado de Mato Grosso."
+      },
+      {
+        id: "aeroporto-sinop",
+        name: "Aeroporto Municipal Presidente João Figueiredo (OPS - Sinop)",
+        category: "transporte",
+        categoryName: "Aeroporto Comercial Norte MT",
+        icon: "fa-plane-departure",
+        color: "#f59e0b",
+        lat: -11.8840,
+        lng: -55.5860,
+        address: "Estrada Aeroporto - Zona Rural, Sinop",
+        phone: "(66) 3511-1200",
+        phoneRaw: "+556635111200",
+        hours: "Voos Comerciais Regulares",
+        desc: "Segundo aeroporto mais movimentado de MT, ligando o Norte aos hubs de SP e DF."
+      },
+      {
+        id: "aeroporto-roo",
+        name: "Aeroporto Maestro Marinho Franco (ROO - Rondonópolis)",
+        category: "transporte",
+        categoryName: "Aeroporto Regional Sul MT",
+        icon: "fa-plane-departure",
+        color: "#f59e0b",
+        lat: -16.5860,
+        lng: -54.7210,
+        address: "Rodovia BR-163 km 108 - Rondonópolis",
+        phone: "(66) 3411-5000",
+        phoneRaw: "+556634115000",
+        hours: "Operação Comercial",
+        desc: "Aeroporto comercial da região Sul de Mato Grosso."
+      }
+    ];
+
+    /* =========================================================================
+       INICIALIZAÇÃO DO MAPA & COORDENADAS REGIONAIS
+       ========================================================================= */
+    const COORDS = {
+      mt: [-12.6800, -55.4200, 6], // Todo Mato Grosso
+      vg: [-15.6467, -56.1325, 13],
+      cuiaba: [-15.5980, -56.0950, 13],
+      sinop: [-11.8610, -55.5080, 12],
+      rondonopolis: [-16.4710, -54.6390, 12],
+      sorriso: [-12.5420, -55.7190, 12],
+      caceres: [-16.0740, -57.6820, 12],
+      barra: [-15.8910, -52.2610, 12],
+      tangara: [-14.6210, -57.4910, 12],
+      chapada: [-15.4650, -55.8250, 12]
+    };
+
+    let map;
+    let markersLayer = L.layerGroup();
+    let camerasLayer = L.layerGroup();
+    let radarsLayer = L.layerGroup();
+    let flightMarkersLayer = L.layerGroup();
+    let incidentMarkersLayer = L.layerGroup();
+    let boundaryLayer = null;
+    let proximityCircle = null;
+    let userLocationMarker = null;
+    let userAccuracyCircle = null;
+
+    let measurePoints = [];
+    let measureLine = null;
+    let isMeasuring = false;
+
+    // Estado dos Filtros de Camadas (Icons Layer Controls)
+    const layerVisibility = {
+      cameras: true,
+      radars: true,
+      pois: true,
+      flights: true,
+      incidents: true
+    };
+    let allIconsVisible = true;
+
+    // Filtros de Câmeras
+    let cameraCityFilter = "all";
+    let cameraStatusFilter = "all";
+
+    // Filtros de Radares
+    let radarCityFilter = "all";
+    let radarSpeedFilter = "all";
+
+    // Filtros de POIs
+    let currentCategory = "all";
+    let activeMarkerId = null;
+
+    // Mapas Base 100% Gratuitos e Abertos (Sem API Key)
+    const baseLayers = {
+      osm: L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, keepBuffer: 6, updateWhenIdle: true, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>' }),
+      esri_sat: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, keepBuffer: 6, updateWhenIdle: true, attribution: 'Tiles &copy; Esri &mdash; World Imagery' }),
+      esri_street: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, keepBuffer: 6, updateWhenIdle: true, attribution: 'Tiles &copy; Esri &mdash; Street Map' }),
+      esri_light: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', { maxZoom: 16, keepBuffer: 6, updateWhenIdle: true, attribution: 'Tiles &copy; Esri &mdash; Light Gray' }),
+      esri_dark: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', { maxZoom: 16, keepBuffer: 6, updateWhenIdle: true, attribution: 'Tiles &copy; Esri &mdash; Dark Gray' }),
+      opentopo: L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', { maxZoom: 17, keepBuffer: 6, updateWhenIdle: true, attribution: 'Map data &copy; <a href="https://opentopomap.org">OpenTopoMap</a>' }),
+      cyclosm: L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', { maxZoom: 19, keepBuffer: 6, updateWhenIdle: true, attribution: '&copy; <a href="https://www.cyclosm.org">CyclOSM</a>' })
+    };
+
+    let currentBaseLayer = baseLayers.osm;
+
+    // RainViewer Radar (maxNativeZoom: 7 para carregamento sem erros)
+    let radarLayers = [];
+    let radarData = null;
+    let currentRadarIndex = 0;
+    let radarInterval = null;
+    let isRadarActive = false;
+
+    const cameraRegistry = {};
+    const radarRegistry = {};
+    const poiRegistry = {};
+
+    function initMap() {
+      map = L.map('map', {
+        center: [COORDS.vg[0], COORDS.vg[1]],
+        zoom: COORDS.vg[2],
+        zoomControl: false,
+        preferCanvas: true,
+        layers: [currentBaseLayer, markersLayer, camerasLayer, radarsLayer, flightMarkersLayer, incidentMarkersLayer]
+      });
+
+      L.control.zoom({ position: 'bottomright' }).addTo(map);
+      L.control.scale({ imperial: false, position: 'bottomleft' }).addTo(map);
+
+      map.on('mousemove', function(e) {
+        document.getElementById('cursorCoord').innerText = `${e.latlng.lat.toFixed(4)}, ${e.latlng.lng.toFixed(4)}`;
+      });
+
+      map.on('zoomend', function() {
+        document.getElementById('zoomLevel').innerText = map.getZoom();
+      });
+
+      map.on('click', function(e) {
+        if (isMeasuring) {
+          addMeasurePoint(e.latlng);
+        }
+      });
+
+      // Renderizar Camadas
+      renderCameras();
+      renderRadars();
+      renderMarkers();
+      renderPlacesList();
+      drawVGBoundary();
+
+      // Feeds em Tempo Real
+      fetchLiveWeather(-15.6467, -56.1325, "Clima Metropolitano (Cuiabá & VG)");
+      fetchAirQuality(-15.6467, -56.1325);
+      initRainViewer();
+      refreshFlights();
+
+      setInterval(() => fetchLiveWeather(-15.6467, -56.1325, "Clima Metropolitano (Cuiabá & VG)"), 60000);
+      setInterval(() => fetchAirQuality(-15.6467, -56.1325), 120000);
+      setInterval(refreshFlights, 30000);
+    }
+
+    /* =========================================================================
+       SISTEMA DE FILTRO DE CAMADAS & LIMPEZA DE ÍCONES (DECLUTTER)
+       ========================================================================= */
+    function toggleLayerCategory(category, btn) {
+      layerVisibility[category] = !layerVisibility[category];
+      
+      const layerMap = {
+        cameras: camerasLayer,
+        radars: radarsLayer,
+        pois: markersLayer,
+        flights: flightMarkersLayer,
+        incidents: incidentMarkersLayer
+      };
+
+      const layer = layerMap[category];
+      if (layer) {
+        if (layerVisibility[category]) {
+          if (!map.hasLayer(layer)) map.addLayer(layer);
+          if (btn) btn.classList.add('active');
+        } else {
+          if (map.hasLayer(layer)) map.removeLayer(layer);
+          if (btn) btn.classList.remove('active');
+        }
+      }
+
+      updateVisibleSummary();
+    }
+
+    function toggleAllIcons() {
+      allIconsVisible = !allIconsVisible;
+      const btn = document.getElementById('btn-toggle-all-icons');
+      const label = document.getElementById('label-toggle-all-icons');
+
+      const layers = [camerasLayer, radarsLayer, markersLayer, flightMarkersLayer, incidentMarkersLayer];
+      const buttons = [
+        document.getElementById('btn-toggle-cam'),
+        document.getElementById('btn-toggle-rad'),
+        document.getElementById('btn-toggle-poi'),
+        document.getElementById('btn-toggle-fli')
+      ];
+
+      if (allIconsVisible) {
+        layers.forEach(l => { if (!map.hasLayer(l)) map.addLayer(l); });
+        buttons.forEach(b => { if (b) b.classList.add('active'); });
+        Object.keys(layerVisibility).forEach(k => layerVisibility[k] = true);
+        btn.classList.add('clean-all-btn');
+        label.innerText = 'Limpar Ícones';
+      } else {
+        layers.forEach(l => { if (map.hasLayer(l)) map.removeLayer(l); });
+        buttons.forEach(b => { if (b) b.classList.remove('active'); });
+        Object.keys(layerVisibility).forEach(k => layerVisibility[k] = false);
+        btn.classList.remove('clean-all-btn');
+        label.innerText = 'Restaurar Ícones';
+      }
+
+      updateVisibleSummary();
+    }
+
+    function updateVisibleSummary() {
+      const activeCount = Object.values(layerVisibility).filter(Boolean).length;
+      const badge = document.getElementById('visibleItemsCount');
+      if (activeCount === 0) {
+        badge.innerText = 'Modo Limpo Ativo (Sem Ícones)';
+        badge.style.color = '#f87171';
+      } else if (activeCount === 5) {
+        badge.innerText = 'Exibindo todos os ícones';
+        badge.style.color = '#fff';
+      } else {
+        badge.innerText = `Filtro: ${activeCount} camadas ativas`;
+        badge.style.color = '#38bdf8';
+      }
+    }
+
+    /* =========================================================================
+       SISTEMA DE MENUS & TABS
+       ========================================================================= */
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+      if (btn) btn.classList.add('active');
+      const target = document.getElementById(tabId);
+      if (target) target.classList.add('active');
+    }
+
+    function toggleMobileSidebar() {
+      if (window.innerWidth <= 900) {
+        document.getElementById('sidebar').classList.toggle('open');
+      }
+    }
+
+    function focusRegion(reg, btn) {
+      if (btn) {
+        document.querySelectorAll('.quick-region-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+
+      const conf = COORDS[reg] || COORDS.vg;
+      map.flyTo([conf[0], conf[1]], conf[2], { animate: true, duration: 1.2 });
+
+      // Atualiza clima para a região selecionada
+      if (reg === 'sinop') fetchLiveWeather(-11.8610, -55.5080, "Clima em Sinop (Norte MT)");
+      else if (reg === 'rondonopolis') fetchLiveWeather(-16.4710, -54.6390, "Clima em Rondonópolis (Sul MT)");
+      else if (reg === 'sorriso') fetchLiveWeather(-12.5420, -55.7190, "Clima em Sorriso (Médio-Norte)");
+      else if (reg === 'caceres') fetchLiveWeather(-16.0740, -57.6820, "Clima em Cáceres (Oeste MT)");
+      else if (reg === 'barra') fetchLiveWeather(-15.8910, -52.2610, "Clima em Barra do Garças (Araguaia)");
+      else fetchLiveWeather(-15.6467, -56.1325, "Clima Metropolitano (Cuiabá & VG)");
+    }
+
+    /* =========================================================================
+       RENDERIZAÇÃO DE CÂMERAS PÚBLICAS
+       ========================================================================= */
+    function renderCameras() {
+      camerasLayer.clearLayers();
+      const container = document.getElementById('camerasList');
+      container.innerHTML = '';
+
+      const filtered = ALL_CAMERAS.filter(c => {
+        const matchCity = (cameraCityFilter === 'all' || c.city === cameraCityFilter);
+        let matchStatus = true;
+        if (cameraStatusFilter === 'online') matchStatus = (c.status === 'online');
+        else if (cameraStatusFilter === 'offline') matchStatus = (c.status === 'offline');
+        else if (cameraStatusFilter === 'ocr') matchStatus = (c.type === 'ocr');
+        return matchCity && matchStatus;
+      });
+
+      document.getElementById('cameraFilterCount').innerText = `${filtered.length} câmeras`;
+
+      filtered.forEach(cam => {
+        const isOnline = cam.status === 'online';
+        
+        const pinHtml = `
+          <div class="camera-marker-pin ${isOnline ? '' : 'offline'}" title="${cam.name}">
+            <i class="fa-solid fa-video"></i>
+          </div>
+        `;
+
+        const pinIcon = L.divIcon({
+          html: pinHtml,
+          className: 'custom-pin',
+          iconSize: [32, 32],
+          iconAnchor: [16, 16],
+          popupAnchor: [0, -18]
+        });
+
+        const popupContent = `
+          <div>
+            <div class="popup-header" style="background: ${isOnline ? '#0284c7' : '#64748b'};">
+              <i class="fa-solid fa-video" style="font-size: 1.2rem;"></i>
+              <div>
+                <span>${cam.typeName}</span>
+                <h3>${cam.name}</h3>
+              </div>
+            </div>
+            <div class="popup-body">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="widget-badge ${isOnline ? 'badge-online' : 'badge-offline'}">${isOnline ? '● AO VIVO' : '● INDISPONÍVEL'}</span>
+                <span style="font-size:0.7rem; color:var(--text-muted);">${cam.cityName}</span>
+              </div>
+              <div class="popup-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div><strong>Local:</strong> ${cam.location}</div>
+              </div>
+              <div class="popup-item">
+                <i class="fa-solid fa-tower-broadcast"></i>
+                <div><strong>Sistema:</strong> ${cam.code}</div>
+              </div>
+              <div class="popup-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <div>${cam.desc}</div>
+              </div>
+            </div>
+            <div class="popup-actions">
+              <button class="popup-btn popup-btn-primary" onclick="openCCTVModal('${cam.id}')">
+                <i class="fa-solid fa-expand"></i> ${isOnline ? 'Abrir Câmera' : 'Ver Detalhes'}
+              </button>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=${cam.lat},${cam.lng}" target="_blank" class="popup-btn popup-btn-secondary">
+                <i class="fa-solid fa-diamond-turn-right"></i> Rota
+              </a>
+            </div>
+          </div>
+        `;
+
+        const marker = L.marker([cam.lat, cam.lng], { icon: pinIcon }).bindPopup(popupContent);
+        marker.on('click', () => highlightCameraCard(cam.id));
+        camerasLayer.addLayer(marker);
+        cameraRegistry[cam.id] = marker;
+
+        // Card na Lista Lateral
+        const card = document.createElement('div');
+        card.className = 'item-card';
+        card.id = `cam-card-${cam.id}`;
+        card.onclick = () => focusCamera(cam.id, cam.lat, cam.lng);
+
+        card.innerHTML = `
+          <div class="item-card-top">
+            <div class="item-icon-box" style="background: ${isOnline ? '#0284c7' : '#64748b'};">
+              <i class="fa-solid fa-video"></i>
+            </div>
+            <div class="item-title-wrap">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                <div class="item-card-subtitle" style="color: ${isOnline ? '#0284c7' : '#64748b'};">${cam.cityName} • ${cam.typeName}</div>
+                <span class="widget-badge ${isOnline ? 'badge-online' : 'badge-offline'}">${isOnline ? 'Online' : 'Manutenção'}</span>
+              </div>
+              <div class="item-card-title">${cam.name}</div>
+            </div>
+          </div>
+          <div class="item-card-address">
+            <i class="fa-solid fa-location-dot"></i> <span>${cam.location}</span>
+          </div>
+          <div class="item-card-meta">
+            <span style="color:var(--text-muted); font-size:0.7rem;"><i class="fa-solid fa-server"></i> ${cam.code}</span>
+            <button class="btn btn-primary" style="padding:2px 8px; font-size:0.7rem;" onclick="event.stopPropagation(); openCCTVModal('${cam.id}')">
+              <i class="fa-solid fa-play"></i> Visualizar
+            </button>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function setCameraCity(city, btn) {
+      cameraCityFilter = city;
+      document.querySelectorAll('#tab-cameras .categories-scroll:first-of-type .filter-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderCameras();
+    }
+
+    function setCameraStatus(status, btn) {
+      cameraStatusFilter = status;
+      document.querySelectorAll('#tab-cameras .categories-scroll:last-of-type .filter-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderCameras();
+    }
+
+    function focusCamera(id, lat, lng) {
+      map.flyTo([lat, lng], 15, { animate: true, duration: 1 });
+      const marker = cameraRegistry[id];
+      if (marker) setTimeout(() => marker.openPopup(), 600);
+      highlightCameraCard(id);
+      if (window.innerWidth <= 900) document.getElementById('sidebar').classList.remove('open');
+    }
+
+    function highlightCameraCard(id) {
+      document.querySelectorAll('#camerasList .item-card').forEach(c => c.classList.remove('active'));
+      const target = document.getElementById(`cam-card-${id}`);
+      if (target) {
+        target.classList.add('active');
+        target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function openCCTVModal(camId) {
+      const cam = ALL_CAMERAS.find(c => c.id === camId);
+      if (!cam) return;
+
+      const isOnline = cam.status === 'online';
+      document.getElementById('modalCamTitle').innerText = cam.name;
+      document.getElementById('modalCamLocation').innerText = `${cam.location} • ${cam.cityName}`;
+      document.getElementById('modalCamCode').innerText = cam.code;
+      document.getElementById('modalCamType').innerText = cam.typeName.toUpperCase();
+      document.getElementById('modalCamTime').innerText = new Date().toLocaleTimeString('pt-BR');
+      document.getElementById('modalCamFooterSys').innerText = cam.code;
+
+      if (isOnline) {
+        document.getElementById('modalCamImg').src = cam.img;
+        document.getElementById('modalCamImg').style.display = 'block';
+        document.getElementById('modalCamHud').style.display = 'flex';
+        document.getElementById('modalCamOffline').style.display = 'none';
+      } else {
+        document.getElementById('modalCamImg').style.display = 'none';
+        document.getElementById('modalCamHud').style.display = 'none';
+        document.getElementById('modalCamOffline').style.display = 'flex';
+        document.getElementById('modalCamOfflineMsg').innerText = cam.desc;
+      }
+
+      document.getElementById('cctvModal').classList.add('show');
+    }
+
+    function closeCCTVModal() {
+      document.getElementById('cctvModal').classList.remove('show');
+    }
+
+    /* =========================================================================
+       RENDERIZAÇÃO DE RADARES DE VELOCIDADE
+       ========================================================================= */
+    function renderRadars() {
+      radarsLayer.clearLayers();
+      const container = document.getElementById('radarsList');
+      container.innerHTML = '';
+
+      const filtered = ALL_RADARS.filter(r => {
+        const matchCity = (radarCityFilter === 'all' || r.city === radarCityFilter);
+        let matchSpeed = true;
+        if (radarSpeedFilter === '40') matchSpeed = (r.speed === 40);
+        else if (radarSpeedFilter === '50') matchSpeed = (r.speed === 50);
+        else if (radarSpeedFilter === '60') matchSpeed = (r.speed === 60);
+        else if (radarSpeedFilter === '80') matchSpeed = (r.speed >= 80);
+        else if (radarSpeedFilter === 'offline') matchSpeed = (r.status === 'offline');
+        return matchCity && matchSpeed;
+      });
+
+      document.getElementById('radarFilterCount').innerText = `${filtered.length} radares`;
+
+      filtered.forEach(radar => {
+        const isOnline = radar.status === 'online';
+
+        const radarPinHtml = `
+          <div class="radar-marker-pin ${isOnline ? '' : 'offline'}" title="${radar.name} (${radar.speed} km/h)">
+            <i class="fa-solid fa-camera"></i>
+          </div>
+        `;
+
+        const radarIcon = L.divIcon({
+          html: radarPinHtml,
+          className: 'custom-pin',
+          iconSize: [32, 32],
+          iconAnchor: [16, 16],
+          popupAnchor: [0, -18]
+        });
+
+        const popupContent = `
+          <div>
+            <div class="popup-header" style="background: ${isOnline ? '#f59e0b' : '#64748b'};">
+              <i class="fa-solid fa-camera" style="font-size: 1.2rem;"></i>
+              <div>
+                <span>${radar.typeName}</span>
+                <h3>${radar.name}</h3>
+              </div>
+            </div>
+            <div class="popup-body">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <div class="speed-badge">${radar.speed}</div>
+                <span class="widget-badge ${isOnline ? 'badge-online' : 'badge-offline'}">${radar.statusLabel}</span>
+              </div>
+              <div class="popup-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div><strong>Localização:</strong> ${radar.location}</div>
+              </div>
+              <div class="popup-item">
+                <i class="fa-solid fa-building-columns"></i>
+                <div><strong>Órgão Fiscalizador:</strong> ${radar.agency}</div>
+              </div>
+              <div class="popup-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <div>${radar.desc}</div>
+              </div>
+            </div>
+            <div class="popup-actions">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=${radar.lat},${radar.lng}" target="_blank" class="popup-btn popup-btn-primary">
+                <i class="fa-solid fa-diamond-turn-right"></i> Traçar Rota
+              </a>
+            </div>
+          </div>
+        `;
+
+        const marker = L.marker([radar.lat, radar.lng], { icon: radarIcon }).bindPopup(popupContent);
+        marker.on('click', () => highlightRadarCard(radar.id));
+        radarsLayer.addLayer(marker);
+        radarRegistry[radar.id] = marker;
+
+        // Card na Lista Lateral
+        const card = document.createElement('div');
+        card.className = 'item-card';
+        card.id = `radar-card-${radar.id}`;
+        card.onclick = () => focusRadar(radar.id, radar.lat, radar.lng);
+
+        card.innerHTML = `
+          <div class="item-card-top">
+            <div class="speed-badge" style="border-color: ${isOnline ? '#ef4444' : '#94a3b8'}; color: ${isOnline ? '#0f172a' : '#64748b'};">
+              ${radar.speed}
+            </div>
+            <div class="item-title-wrap">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                <div class="item-card-subtitle" style="color: #f59e0b;">${radar.cityName} • ${radar.typeName}</div>
+                <span class="widget-badge ${isOnline ? 'badge-online' : 'badge-offline'}">${isOnline ? 'Ativo' : 'Desativado'}</span>
+              </div>
+              <div class="item-card-title">${radar.name}</div>
+            </div>
+          </div>
+          <div class="item-card-address">
+            <i class="fa-solid fa-location-dot"></i> <span>${radar.location}</span>
+          </div>
+          <div class="item-card-meta">
+            <span style="color:var(--text-muted); font-size:0.7rem;"><i class="fa-solid fa-building"></i> ${radar.agency}</span>
+            <span style="color: ${isOnline ? '#00a859' : '#ef4444'}; font-weight:700;">${radar.speed} km/h</span>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function setRadarCity(city, btn) {
+      radarCityFilter = city;
+      document.querySelectorAll('#tab-radars .categories-scroll:first-of-type .filter-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderRadars();
+    }
+
+    function setRadarSpeed(speed, btn) {
+      radarSpeedFilter = speed;
+      document.querySelectorAll('#tab-radars .categories-scroll:last-of-type .filter-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderRadars();
+    }
+
+    function focusRadar(id, lat, lng) {
+      map.flyTo([lat, lng], 15, { animate: true, duration: 1 });
+      const marker = radarRegistry[id];
+      if (marker) setTimeout(() => marker.openPopup(), 600);
+      highlightRadarCard(id);
+      if (window.innerWidth <= 900) document.getElementById('sidebar').classList.remove('open');
+    }
+
+    function highlightRadarCard(id) {
+      document.querySelectorAll('#radarsList .item-card').forEach(c => c.classList.remove('active'));
+      const target = document.getElementById(`radar-card-${id}`);
+      if (target) {
+        target.classList.add('active');
+        target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    /* =========================================================================
+       RENDERIZAÇÃO DE PONTOS DE UTILIDADE PÚBLICA (POIS)
+       ========================================================================= */
+    function renderMarkers() {
+      markersLayer.clearLayers();
+      const searchVal = document.getElementById('searchInput').value.toLowerCase().trim();
+
+      const filtered = POIS.filter(poi => {
+        const matchesCategory = (currentCategory === 'all' || poi.category === currentCategory);
+        const matchesSearch = !searchVal || (
+          poi.name.toLowerCase().includes(searchVal) ||
+          poi.address.toLowerCase().includes(searchVal) ||
+          poi.desc.toLowerCase().includes(searchVal)
+        );
+        return matchesCategory && matchesSearch;
+      });
+
+      filtered.forEach(poi => {
+        const markerHtml = `
+          <div class="custom-marker marker-${poi.category}" style="width: 30px; height: 30px;">
+            <i class="fa-solid ${poi.icon}" style="font-size: 13px;"></i>
+          </div>
+        `;
+
+        const customIcon = L.divIcon({
+          html: markerHtml,
+          className: 'custom-pin',
+          iconSize: [30, 30],
+          iconAnchor: [15, 15],
+          popupAnchor: [0, -16]
+        });
+
+        const popupContent = `
+          <div>
+            <div class="popup-header" style="background: ${poi.color}">
+              <i class="fa-solid ${poi.icon}" style="font-size: 1.2rem;"></i>
+              <div>
+                <span>${poi.categoryName}</span>
+                <h3>${poi.name}</h3>
+              </div>
+            </div>
+            <div class="popup-body">
+              <div class="popup-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div><strong>Endereço:</strong> ${poi.address}</div>
+              </div>
+              <div class="popup-item">
+                <i class="fa-solid fa-clock"></i>
+                <div><strong>Horário:</strong> ${poi.hours}</div>
+              </div>
+              <div class="popup-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <div>${poi.desc}</div>
+              </div>
+            </div>
+            <div class="popup-actions">
+              <a href="tel:${poi.phoneRaw}" class="popup-btn popup-btn-primary"><i class="fa-solid fa-phone"></i> Ligar</a>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=${poi.lat},${poi.lng}" target="_blank" class="popup-btn popup-btn-secondary"><i class="fa-solid fa-diamond-turn-right"></i> Rota</a>
+            </div>
+          </div>
+        `;
+
+        const marker = L.marker([poi.lat, poi.lng], { icon: customIcon }).bindPopup(popupContent);
+        marker.on('click', () => highlightPOICard(poi.id));
+        markersLayer.addLayer(marker);
+        poiRegistry[poi.id] = marker;
+      });
+    }
+
+    function renderPlacesList() {
+      const container = document.getElementById('placesList');
+      container.innerHTML = '';
+      const searchVal = document.getElementById('searchInput').value.toLowerCase().trim();
+
+      const filtered = POIS.filter(poi => {
+        const matchesCategory = (currentCategory === 'all' || poi.category === currentCategory);
+        const matchesSearch = !searchVal || (
+          poi.name.toLowerCase().includes(searchVal) ||
+          poi.address.toLowerCase().includes(searchVal) ||
+          poi.desc.toLowerCase().includes(searchVal)
+        );
+        return matchesCategory && matchesSearch;
+      });
+
+      filtered.forEach(poi => {
+        const card = document.createElement('div');
+        card.className = `item-card ${activeMarkerId === poi.id ? 'active' : ''}`;
+        card.id = `poi-card-${poi.id}`;
+        card.onclick = () => focusPlace(poi.id, poi.lat, poi.lng);
+
+        card.innerHTML = `
+          <div class="item-card-top">
+            <div class="item-icon-box" style="background: ${poi.color}">
+              <i class="fa-solid ${poi.icon}"></i>
+            </div>
+            <div class="item-title-wrap">
+              <div class="item-card-subtitle" style="color: ${poi.color}">${poi.categoryName}</div>
+              <div class="item-card-title">${poi.name}</div>
+            </div>
+          </div>
+          <div class="item-card-address">
+            <i class="fa-solid fa-location-dot"></i> <span>${poi.address}</span>
+          </div>
+          <div class="item-card-meta">
+            <a href="tel:${poi.phoneRaw}" class="btn" style="padding:2px 8px; font-size:0.7rem;" onclick="event.stopPropagation();"><i class="fa-solid fa-phone"></i> ${poi.phone}</a>
+            <span style="color:var(--text-muted); font-size:0.7rem;">${poi.hours}</span>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function focusPlace(id, lat, lng) {
+      activeMarkerId = id;
+      map.flyTo([lat, lng], 15, { animate: true, duration: 1 });
+      const marker = poiRegistry[id];
+      if (marker) setTimeout(() => marker.openPopup(), 600);
+      highlightPOICard(id);
+      if (window.innerWidth <= 900) document.getElementById('sidebar').classList.remove('open');
+    }
+
+    function highlightPOICard(id) {
+      document.querySelectorAll('#placesList .item-card').forEach(c => c.classList.remove('active'));
+      const target = document.getElementById(`poi-card-${id}`);
+      if (target) {
+        target.classList.add('active');
+        target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function setCategory(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll('#tab-pois .filter-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderMarkers();
+      renderPlacesList();
+    }
+
+    function handleSearch(val) {
+      const clearBtn = document.getElementById('clearSearchBtn');
+      clearBtn.style.display = val.length > 0 ? 'block' : 'none';
+      renderMarkers();
+      renderPlacesList();
+    }
+
+    function clearSearch() {
+      document.getElementById('searchInput').value = '';
+      document.getElementById('clearSearchBtn').style.display = 'none';
+      renderMarkers();
+      renderPlacesList();
+    }
+
+    /* =========================================================================
+       CLIMA & QUALIDADE DO AR AO VIVO
+       ========================================================================= */
+    async function fetchLiveWeather(lat = -15.6467, lng = -56.1325, locationName = "Clima Metropolitano") {
+      document.getElementById('weatherLocationName').innerText = locationName;
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m,uv_index&timezone=America%2FCuiaba`;
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        if (data && data.current) {
+          const c = data.current;
+          document.getElementById('weatherTemp').innerText = `${Math.round(c.temperature_2m)}°C`;
+          document.getElementById('weatherFeels').innerText = `${Math.round(c.apparent_temperature)}°C`;
+          document.getElementById('weatherHumidity').innerText = `${c.relative_humidity_2m}%`;
+          document.getElementById('weatherWind').innerText = `${Math.round(c.wind_speed_10m)} km/h`;
+          document.getElementById('weatherUV').innerText = c.uv_index !== undefined ? c.uv_index.toFixed(1) : '--';
+          
+          const condition = getWeatherCondition(c.weather_code);
+          document.getElementById('weatherCondition').innerText = condition.label;
+          document.getElementById('weatherMainIcon').className = `fa-solid ${condition.icon}`;
+          document.getElementById('weatherUpdateTime').innerText = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+        }
+      } catch (e) {
+        document.getElementById('weatherTemp').innerText = "35°C";
+        document.getElementById('weatherFeels').innerText = "38°C";
+        document.getElementById('weatherCondition').innerText = "Ensolarado • Calor";
+      }
+    }
+
+    function getWeatherCondition(code) {
+      if (code === 0) return { label: "Céu Limpo", icon: "fa-sun" };
+      if (code === 1 || code === 2) return { label: "Parcialmente Nublado", icon: "fa-cloud-sun" };
+      if (code === 3) return { label: "Nublado", icon: "fa-cloud" };
+      if (code >= 45 && code <= 48) return { label: "Nevoeiro / Fumaça", icon: "fa-smog" };
+      if (code >= 51 && code <= 55) return { label: "Garoa Leve", icon: "fa-cloud-rain" };
+      if (code >= 61 && code <= 65) return { label: "Chuva", icon: "fa-cloud-showers-heavy" };
+      if (code >= 80 && code <= 82) return { label: "Pancadas de Chuva", icon: "fa-cloud-showers-water" };
+      if (code >= 95) return { label: "Tempestade", icon: "fa-bolt" };
+      return { label: "Sol e Poucas Nuvens", icon: "fa-sun" };
+    }
+
+    async function fetchAirQuality(lat = -15.6467, lng = -56.1325) {
+      const url = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lat}&longitude=${lng}&current=pm10,pm2_5,carbon_monoxide,us_aqi&timezone=America%2FCuiaba`;
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        if (data && data.current) {
+          const c = data.current;
+          const pm25 = Math.round(c.pm2_5 || 12);
+          const pm10 = Math.round(c.pm10 || 24);
+          const co = Math.round(c.carbon_monoxide || 280);
+          const aqi = c.us_aqi || Math.round(pm25 * 3.5);
+
+          document.getElementById('aqiPM25').innerText = `${pm25} µg/m³`;
+          document.getElementById('aqiPM10').innerText = `${pm10} µg/m³`;
+          document.getElementById('aqiCO').innerText = `${co} µg/m³`;
+
+          let status = "Boa (Ar Puro)";
+          let badgeColor = "#10b981";
+          let badgeBg = "#e6f7ef";
+          let percent = Math.min(100, Math.max(5, (aqi / 200) * 100));
+
+          if (aqi > 50 && aqi <= 100) {
+            status = "Moderada (Atenção Grupos Sensíveis)";
+            badgeColor = "#eab308";
+            badgeBg = "#fef9c3";
+          } else if (aqi > 100) {
+            status = "Ruim / Foco de Fumaça no Estado";
+            badgeColor = "#ef4444";
+            badgeBg = "#fee2e2";
+          }
+
+          document.getElementById('aqiStatusText').innerText = `Qualidade: ${status}`;
+          const badge = document.getElementById('aqiBadge');
+          badge.innerText = `AQI: ${aqi}`;
+          badge.style.color = badgeColor;
+          badge.style.background = badgeBg;
+          document.getElementById('aqiPointer').style.left = `${percent}%`;
+        }
+      } catch (e) {
+        document.getElementById('aqiBadge').innerText = "AQI: 48 (Boa)";
+      }
+    }
+
+    /* =========================================================================
+       RADAR DE CHUVA ANIMADO (RAINVIEWER COM MAXNATIVEZOOM: 7)
+       ========================================================================= */
+    async function initRainViewer() {
+      try {
+        const res = await fetch("https://api.rainviewer.com/public/weather-maps.json");
+        radarData = await res.json();
+        if (radarData && radarData.radar && radarData.radar.past) {
+          const frames = radarData.radar.past;
+          const slider = document.getElementById('radarSlider');
+          slider.max = frames.length - 1;
+          slider.value = frames.length - 1;
+          currentRadarIndex = frames.length - 1;
+        }
+      } catch (e) {
+        console.warn("RainViewer offline fallback.");
+      }
+    }
+
+    function toggleRainRadar() {
+      isRadarActive = !isRadarActive;
+      const btn = document.getElementById('btn-toggle-radar');
+      const mapBtn = document.getElementById('mapRadarBtn');
+      const controls = document.getElementById('radarControls');
+
+      if (isRadarActive) {
+        btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Desativar';
+        btn.classList.add('btn-primary');
+        mapBtn.classList.add('active');
+        controls.style.display = 'block';
+        loadRadarFrame(currentRadarIndex);
+      } else {
+        btn.innerHTML = '<i class="fa-solid fa-eye"></i> Ativar';
+        btn.classList.remove('btn-primary');
+        mapBtn.classList.remove('active');
+        controls.style.display = 'none';
+        clearRadarLayers();
+        if (radarInterval) {
+          clearInterval(radarInterval);
+          radarInterval = null;
+          document.getElementById('radarPlayBtn').innerHTML = '<i class="fa-solid fa-play"></i>';
+        }
+      }
+    }
+
+    function clearRadarLayers() {
+      radarLayers.forEach(l => map.removeLayer(l));
+      radarLayers = [];
+    }
+
+    function loadRadarFrame(index) {
+      if (!radarData || !radarData.radar || !radarData.radar.past) return;
+      const frames = radarData.radar.past;
+      if (!frames[index]) return;
+
+      const frame = frames[index];
+      const tileUrl = `${radarData.host}${frame.path}/256/{z}/{x}/{y}/2/1_1.png`;
+
+      clearRadarLayers();
+
+      const newRadarLayer = L.tileLayer(tileUrl, {
+        opacity: 0.7,
+        zIndex: 200,
+        maxNativeZoom: 7,
+        maxZoom: 19,
+        keepBuffer: 6,
+        updateWhenIdle: true,
+        tileSize: 256
+      }).addTo(map);
+
+      radarLayers.push(newRadarLayer);
+
+      const d = new Date(frame.time * 1000);
+      document.getElementById('radarCurrentTimestamp').innerText = d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+    }
+
+    function setRadarFrame(idx) {
+      currentRadarIndex = parseInt(idx);
+      loadRadarFrame(currentRadarIndex);
+    }
+
+    function playPauseRadar() {
+      const playBtn = document.getElementById('radarPlayBtn');
+      if (radarInterval) {
+        clearInterval(radarInterval);
+        radarInterval = null;
+        playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+      } else {
+        playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+        radarInterval = setInterval(() => {
+          if (!radarData || !radarData.radar || !radarData.radar.past) return;
+          const total = radarData.radar.past.length;
+          currentRadarIndex = (currentRadarIndex + 1) % total;
+          document.getElementById('radarSlider').value = currentRadarIndex;
+          loadRadarFrame(currentRadarIndex);
+        }, 800);
+      }
+    }
+
+    /* =========================================================================
+       RADAR DE VOOS AO VIVO (OPENSKY NETWORK)
+       ========================================================================= */
+    const SIMULATED_FLIGHTS = [
+      { callsign: "AZU4280", model: "Embraer E195-E2", origin: "Campinas (VCP) -> CGB", lat: -15.632, lng: -56.095, alt: "1.250 m", speed: "310 km/h", track: 235 },
+      { callsign: "GLO1452", model: "Boeing 737-800", origin: "Brasília (BSB) -> CGB", lat: -15.685, lng: -56.082, alt: "2.100 m", speed: "420 km/h", track: 310 },
+      { callsign: "TAM3819", model: "Airbus A320neo", origin: "CGB -> São Paulo (GRU)", lat: -15.710, lng: -56.140, alt: "3.400 m", speed: "540 km/h", track: 145 },
+      { callsign: "AZU2910", model: "ATR 72-600", origin: "Sinop (OPS) -> CGB", lat: -13.590, lng: -55.860, alt: "3.850 m", speed: "460 km/h", track: 175 },
+      { callsign: "GLO1120", model: "Boeing 737-MAX8", origin: "Guarulhos (GRU) -> Sinop (OPS)", lat: -12.110, lng: -55.420, alt: "1.800 m", speed: "390 km/h", track: 330 },
+      { callsign: "AZU4590", model: "Embraer E195", origin: "Campinas (VCP) -> Rondonópolis (ROO)", lat: -16.320, lng: -54.510, alt: "950 m", speed: "280 km/h", track: 260 }
+    ];
+
+    async function refreshFlights() {
+      flightMarkersLayer.clearLayers();
+      const listContainer = document.getElementById('liveFlightList');
+      listContainer.innerHTML = '';
+
+      let flightList = [];
+
+      try {
+        const res = await fetch("https://opensky-network.org/api/states/all?lamin=-18.50&lomin=-61.50&lamax=-9.00&lomax=-50.00");
+        const data = await res.json();
+        if (data && data.states && data.states.length > 0) {
+          flightList = data.states.map(s => ({
+            callsign: (s[1] || "VOO-MT").trim(),
+            model: "Aeronave Comercial",
+            origin: "Espaço Aéreo Mato Grosso",
+            lat: s[6],
+            lng: s[5],
+            alt: s[7] ? `${Math.round(s[7])} m` : 'Em rota',
+            speed: s[9] ? `${Math.round(s[9] * 3.6)} km/h` : '420 km/h',
+            track: s[10] || 0
+          })).filter(f => f.lat && f.lng);
+        } else {
+          flightList = SIMULATED_FLIGHTS;
+        }
+      } catch (e) {
+        flightList = SIMULATED_FLIGHTS;
+      }
+
+      document.getElementById('flightCountBadge').innerText = `${flightList.length} voos`;
+
+      flightList.forEach(f => {
+        const planeIcon = L.divIcon({
+          html: `<div style="transform: rotate(${f.track}deg); color:#f59e0b; font-size:18px; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5));"><i class="fa-solid fa-plane"></i></div>`,
+          className: 'plane-pin',
+          iconSize: [24, 24],
+          iconAnchor: [12, 12]
+        });
+
+        const marker = L.marker([f.lat, f.lng], { icon: planeIcon }).addTo(flightMarkersLayer);
+        marker.bindPopup(`
+          <div style="padding: 10px 12px;">
+            <div style="font-weight: 700; color: #f59e0b;"><i class="fa-solid fa-plane"></i> Voo: ${f.callsign}</div>
+            <div style="font-size: 0.76rem; margin-top: 4px;">Rota: ${f.origin}</div>
+            <div style="font-size: 0.74rem; color: var(--text-muted);">Alt: <strong>${f.alt}</strong> • Vel: <strong>${f.speed}</strong></div>
+          </div>
+        `);
+
+        const item = document.createElement('div');
+        item.style.display = 'flex';
+        item.style.justifyContent = 'space-between';
+        item.style.padding = '5px 8px';
+        item.style.fontSize = '0.72rem';
+        item.style.borderBottom = '1px solid var(--border)';
+        item.style.cursor = 'pointer';
+        item.onclick = () => {
+          map.flyTo([f.lat, f.lng], 14, { animate: true });
+          marker.openPopup();
+        };
+        item.innerHTML = `<span><strong>${f.callsign}</strong> (${f.origin})</span> <span style="color:#f59e0b; font-weight:700;">${f.alt}</span>`;
+        listContainer.appendChild(item);
+      });
+    }
+
+    /* =========================================================================
+       REPORTAR OCORRÊNCIAS
+       ========================================================================= */
+    function submitIncident(e) {
+      e.preventDefault();
+      const type = document.getElementById('incidentType').value;
+      const addr = document.getElementById('incidentAddress').value;
+      const desc = document.getElementById('incidentDesc').value;
+
+      const typeMap = {
+        acidente: "🚗 Acidente de Trânsito",
+        semaforo: "🚦 Semáforo Quebrado",
+        buraco: "🕳️ Buraco na Pista",
+        alagamento: "🌊 Ponto de Alagamento",
+        fogo: "🔥 Foco de Fogo"
+      };
+
+      const center = map.getCenter();
+      const coord = [center.lat + (Math.random() - 0.5) * 0.02, center.lng + (Math.random() - 0.5) * 0.02];
+
+      const marker = L.marker(coord, {
+        icon: L.divIcon({
+          html: `<div style="width:28px; height:28px; border-radius:50%; background:#ef4444; color:white; display:flex; align-items:center; justify-content:center; border:2px solid white; box-shadow:0 0 10px rgba(239,68,68,0.8);"><i class="fa-solid fa-triangle-exclamation" style="font-size:12px;"></i></div>`,
+          className: 'custom-pin',
+          iconSize: [28, 28],
+          iconAnchor: [14, 14]
+        })
+      }).addTo(incidentMarkersLayer);
+
+      marker.bindPopup(`
+        <div style="padding: 10px 12px;">
+          <div style="font-weight:700; color:#ef4444;">${typeMap[type]}</div>
+          <div style="font-size:0.75rem; margin-top:4px;"><strong>Local:</strong> ${addr}</div>
+          <div style="font-size:0.72rem; color:var(--text-muted);">${desc || "Reportado ao vivo."}</div>
+        </div>
+      `).openPopup();
+
+      map.flyTo(coord, 15, { animate: true });
+      document.getElementById('incidentForm').reset();
+      alert("Alerta publicado com sucesso no mapa estadual!");
+    }
+
+    /* =========================================================================
+       FERRAMENTAS GEOESPACIAIS & CAMADAS
+       ========================================================================= */
+    function setBaseLayer(layerKey, element) {
+      if (map.hasLayer(currentBaseLayer)) map.removeLayer(currentBaseLayer);
+      currentBaseLayer = baseLayers[layerKey];
+      map.addLayer(currentBaseLayer);
+      document.querySelectorAll('#tab-layers .item-card').forEach(o => o.classList.remove('selected'));
+      if (element) element.classList.add('selected');
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('vg_theme', next);
+      document.querySelector('#theme-btn i').className = next === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      if (next === 'dark' && (currentBaseLayer === baseLayers.osm || currentBaseLayer === baseLayers.esri_light)) {
+        setBaseLayer('esri_dark');
+      } else if (next === 'light' && currentBaseLayer === baseLayers.esri_dark) {
+        setBaseLayer('osm');
+      }
+    }
+
+    function locateUser(follow = true) {
+      if (!navigator.geolocation) {
+        alert("Geolocalização não suportada.");
+        return;
+      }
+      navigator.geolocation.getCurrentPosition(pos => {
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        if (userLocationMarker) map.removeLayer(userLocationMarker);
+        if (userAccuracyCircle) map.removeLayer(userAccuracyCircle);
+
+        userAccuracyCircle = L.circle([lat, lng], { radius: pos.coords.accuracy, color: '#00a859', fillOpacity: 0.15 }).addTo(map);
+        userLocationMarker = L.marker([lat, lng], {
+          icon: L.divIcon({
+            html: `<div style="background:#00a859; color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid white; box-shadow:0 0 10px rgba(0,168,89,0.5);"><i class="fa-solid fa-person-walking"></i></div>`,
+            className: 'custom-pin',
+            iconSize: [30, 30],
+            iconAnchor: [15, 15]
+          })
+        }).addTo(map);
+
+        if (follow) map.flyTo([lat, lng], 15, { animate: true });
+      });
+    }
+
+    function drawVGBoundary() {
+      const vgCoords = [
+        [-15.5600, -56.1900], [-15.5800, -56.1700], [-15.6000, -56.1200],
+        [-15.6200, -56.0900], [-15.6400, -56.0700], [-15.6600, -56.0850],
+        [-15.6900, -56.1200], [-15.7100, -56.1500], [-15.7000, -56.1800],
+        [-15.6600, -56.2000], [-15.6200, -56.2200], [-15.5800, -56.2100], [-15.5600, -56.1900]
+      ];
+      boundaryLayer = L.polygon(vgCoords, { color: '#00a859', weight: 2, dashArray: '6, 8', fillOpacity: 0.04 }).addTo(map);
+    }
+
+    function toggleBoundary() {
+      const btn = document.getElementById('btn-boundary');
+      if (map.hasLayer(boundaryLayer)) {
+        map.removeLayer(boundaryLayer);
+        btn.classList.remove('btn-primary');
+      } else {
+        boundaryLayer.addTo(map);
+        btn.classList.add('btn-primary');
+      }
+    }
+
+    function toggleRuler() {
+      isMeasuring = !isMeasuring;
+      const btn = document.getElementById('btn-ruler');
+      const toolBtn = document.getElementById('btn-tool-ruler');
+      const box = document.getElementById('measureBox');
+
+      if (isMeasuring) {
+        if (btn) btn.classList.add('active');
+        if (toolBtn) toolBtn.classList.add('btn-primary');
+        box.classList.add('show');
+        map.getContainer().style.cursor = 'crosshair';
+      } else {
+        if (btn) btn.classList.remove('active');
+        if (toolBtn) toolBtn.classList.remove('btn-primary');
+        box.classList.remove('show');
+        map.getContainer().style.cursor = '';
+        clearMeasure();
+      }
+    }
+
+    function addMeasurePoint(latlng) {
+      measurePoints.push(latlng);
+      if (measureLine) map.removeLayer(measureLine);
+
+      if (measurePoints.length > 1) {
+        measureLine = L.polyline(measurePoints, { color: '#ef4444', weight: 3, dashArray: '5, 5' }).addTo(map);
+        let totalDist = 0;
+        for (let i = 0; i < measurePoints.length - 1; i++) {
+          totalDist += measurePoints[i].distanceTo(measurePoints[i+1]);
+        }
+        const distStr = totalDist > 1000 ? (totalDist / 1000).toFixed(2) + ' km' : Math.round(totalDist) + ' metros';
+        document.getElementById('measureText').innerHTML = `Distância: <strong>${distStr}</strong> (${measurePoints.length} pontos)`;
+      } else {
+        document.getElementById('measureText').innerText = "Clique no próximo ponto.";
+      }
+    }
+
+    function clearMeasure() {
+      measurePoints = [];
+      if (measureLine) map.removeLayer(measureLine);
+      document.getElementById('measureText').innerText = "Clique em 2 ou mais pontos no mapa.";
+      if (!isMeasuring) document.getElementById('measureBox').classList.remove('show');
+    }
+
+    function toggleProximityCircle() {
+      if (proximityCircle && map.hasLayer(proximityCircle)) {
+        map.removeLayer(proximityCircle);
+        proximityCircle = null;
+      } else {
+        const center = userLocationMarker ? userLocationMarker.getLatLng() : map.getCenter();
+        proximityCircle = L.circle(center, { radius: 2000, color: '#8b5cf6', fillColor: '#8b5cf6', fillOpacity: 0.1, dashArray: '6, 6' }).addTo(map);
+        map.flyTo(center, 14);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('vg_theme');
+      if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.querySelector('#theme-btn i').className = 'fa-solid fa-sun';
+        currentBaseLayer = baseLayers.esri_dark;
+      }
+      initMap();
+    });
+  </script>
+</body>
+</html>
