@@ -200,8 +200,10 @@ LAUNCH=$(oci compute instance launch \
   --display-name "$NAME" --hostname-label "$HOSTLABEL" \
   --metadata "$METADATA" \
   --wait-for-state RUNNING --wait-interval-seconds 10 \
-  --query 'data.{id: id, state: "lifecycle-state"}' --output json)
-NEW_ID=$(echo "$LAUNCH" | python3 -c 'import json,sys; print(json.load(sys.stdin)["id"])')
+  --query 'data.{id: id, state: "lifecycle-state"}' --output json) \
+  || die "o launch falhou ou a espera por RUNNING estourou. A instância pode ter sido criada mesmo assim — confira no console antes de rodar de novo (senão nascem duas)."
+NEW_ID=$(echo "$LAUNCH" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("id",""))' 2>/dev/null || true)
+[ -n "$NEW_ID" ] || die "não consegui ler o id da instância nova; confira no console."
 echo "  instância: $NEW_ID"
 
 log "5/5 IP público"
@@ -218,19 +220,21 @@ cat <<TXT
 ============================================================
  Instância $NAME criada: $NEW_IP  (mesma configuração de ghost-blog)
 
- Entrar (chave mac-intsoft ou ghost-oci):
+ Entrar daqui mesmo, do Cloud Shell, com a chave de deploy:
+   ssh -i $DEPLOY_KEY ubuntu@$NEW_IP
+ Ou do seu Mac, com a chave mac-intsoft:
    ssh -i ~/.ssh/intsoft_ghost ubuntu@$NEW_IP
 
  O site está sendo instalado pelo cloud-init (leva alguns minutos).
  Acompanhar:
-   ssh -i ~/.ssh/intsoft_ghost ubuntu@$NEW_IP "sudo tail -f /var/log/comenta-deploy.log"
+   ssh -i $DEPLOY_KEY ubuntu@$NEW_IP "sudo tail -f /var/log/comenta-deploy.log"
  Testar antes do DNS (responde pelo IP):
    curl -sS -o /dev/null -w '%{http_code}\n' http://$NEW_IP/health
 
  Depois, no Cloudflare (zona intsoft.com.br), aponte os registros A de
  "@" e "www" para $NEW_IP (nuvem cinza até o certificado sair) e emita o SSL:
-   ssh -i ~/.ssh/intsoft_ghost ubuntu@$NEW_IP \\
-     "curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/$BRANCH/deploy/deploy_site.sh | sudo BRANCH=$BRANCH EMAIL=seu@email bash"
+   ssh -i $DEPLOY_KEY ubuntu@$NEW_IP \\
+     "curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/$BRANCH/deploy/deploy_site.sh | sudo BRANCH=$BRANCH DOMAINS='$DOMAINS' EMAIL=seu@email bash"
 
  A VM ghost-blog continua intocada com o Ghost.
 

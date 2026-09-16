@@ -68,9 +68,15 @@ export DEBIAN_FRONTEND=noninteractive
 # `apt-get install` sem um `update` recente falha numa VM com o índice velho —
 # e isso acontecia justamente quando só faltava o certbot.
 APT_UPDATED=0
+# DPkg::Lock::Timeout: no primeiro boot de uma VM o unattended-upgrades ainda
+# segura o lock do dpkg, e sem esperar o apt falha na hora — o cloud-init
+# terminaria sem instalar nada.
+APT_OPTS="-o DPkg::Lock::Timeout=600"
 apt_install(){
-  if [ "$APT_UPDATED" != "1" ]; then apt-get update -y >/dev/null; APT_UPDATED=1; fi
-  apt-get install -y "$@"
+  # shellcheck disable=SC2086
+  if [ "$APT_UPDATED" != "1" ]; then apt-get $APT_OPTS update -y >/dev/null; APT_UPDATED=1; fi
+  # shellcheck disable=SC2086
+  apt-get $APT_OPTS install -y "$@"
 }
 
 log "1/5 Dependências (Node 22, PM2, Nginx, Certbot)"
