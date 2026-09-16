@@ -33,30 +33,42 @@ Nginx. Detalhes em [`RUNBOOK.md`](RUNBOOK.md#1-dns).
 ## Atenção: o que o servidor Oracle serve hoje
 
 Em 16/09/2026, `intsoft.com.br` e `www.intsoft.com.br` já apontam para
-`147.15.103.114`, e esse servidor responde com o portal Ghost "HOJE MT"
-(instalado pelo `deploy/install_ghost.sh`, que grava
-`/etc/nginx/sites-available/ghost.conf` com `intsoft.com.br`, `www`,
-`comenta.com.br` e `www.comenta.com.br` no `server_name`). O Nginx entrega o
-domínio ao primeiro bloco que casar, na ordem alfabética dos arquivos, e
-`ghost.conf` vem antes de `intsoft.com.br`. Ou seja: enquanto o Ghost ficar
-com esses nomes, o site do Comenta não será alcançado neles, mesmo com o
-deploy bem-sucedido. O `deploy_site.sh` detecta isso e imprime um aviso.
+`147.15.103.114`, e esse servidor responde com o portal Ghost "HOJE MT", com
+HTTPS e com o admin em uso em `intsoft.com.br/ghost/`. O Nginx entrega um
+domínio ao primeiro vhost que casar, então dois sites com o mesmo
+`server_name` não convivem: um deles some sem aviso.
 
-Antes do primeiro deploy, decida o destino do Ghost e ajuste `ghost.conf`
-no servidor, por exemplo movendo-o para `blog.intsoft.com.br` (crie o
-registro A e reemita o certificado):
+Por isso o `deploy_site.sh` **para antes de tocar no Nginx** quando outro
+vhost habilitado já declara um dos domínios, e mostra os dois caminhos:
 
-```bash
-sudo sed -i 's/server_name .*/server_name blog.intsoft.com.br;/' /etc/nginx/sites-available/ghost.conf
-sudo nginx -t && sudo systemctl reload nginx
-sudo certbot --nginx -d blog.intsoft.com.br
-```
+1. **Mover o Ghost para outro nome**, por exemplo `blog.intsoft.com.br`
+   (crie o registro A, troque o `server_name` no vhost do Ghost, reemita o
+   certificado) e repetir o deploy; ou
+2. **`TAKE_OVER=1`**: o site assume `intsoft.com.br`, o vhost do Ghost é
+   desabilitado (o arquivo continua em `sites-available`) e `/ghost/` e
+   `/content/` seguem para o Ghost na porta 2368. O admin continua em
+   `https://intsoft.com.br/ghost/`; o que deixa de aparecer é a página pública
+   do portal, até ele ganhar um nome próprio.
 
 `comenta.com.br` hoje é um CNAME no Cloudflare para um serviço no Google
 Cloud Run, então esse domínio só chega ao servidor Oracle depois de trocar o
-registro. Até lá, rode o deploy só com os domínios da IntSoft
-(`DEPLOY_DOMAINS="intsoft.com.br www.intsoft.com.br"`), senão o Certbot
-falha ao validar `comenta.com.br`.
+registro. Por isso o default do script cobre só `intsoft.com.br` e `www`;
+quando o DNS mudar, passe `DOMAINS="intsoft.com.br www.intsoft.com.br comenta.com.br www.comenta.com.br"`.
+
+### Deploy na mão, do seu Mac (sem GitHub)
+
+A chave que a instância aceita é `~/.ssh/intsoft_ghost` (usuário `ubuntu`);
+sem o `-i` o SSH responde "Permission denied (publickey)". O servidor já tem
+conta Let's Encrypt, então não precisa de `EMAIL`:
+
+```bash
+ssh -i ~/.ssh/intsoft_ghost ubuntu@147.15.103.114 \
+  "curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/main/deploy/deploy_site.sh | sudo TAKE_OVER=1 bash"
+```
+
+Troque `main` pelo ramo que quer publicar enquanto o PR não for mesclado, e
+tire `TAKE_OVER=1` se preferir só ver o aviso de conflito primeiro. Numa VM
+com 12 GB como essa, o build no próprio servidor leva alguns minutos.
 
 ## 2. Chave SSH para o GitHub entrar no servidor
 
@@ -81,16 +93,17 @@ Confira que entra sem senha: `ssh -i ~/.ssh/comenta_deploy ubuntu@147.15.103.114
 
 Em **github.com/hebertpaes/comenta → Settings → Secrets and variables → Actions**:
 
-| Tipo     | Nome                  | Valor                                                                                     |
-| -------- | --------------------- | ----------------------------------------------------------------------------------------- |
-| Secret   | `DEPLOY_HOST`         | `147.15.103.114` (ou `intsoft.com.br`, depois do DNS)                                     |
-| Secret   | `DEPLOY_USER`         | `ubuntu`                                                                                  |
-| Secret   | `DEPLOY_SSH_KEY`      | conteúdo **inteiro** de `~/.ssh/comenta_deploy` (a privada)                               |
-| Secret   | `DEPLOY_EMAIL`        | e-mail do Let's Encrypt (opcional; sem ele o SSL é pulado)                                |
-| Variable | `DEPLOY_DOMAINS`      | opcional — default: `intsoft.com.br www.intsoft.com.br comenta.com.br www.comenta.com.br` |
-| Variable | `NEXT_PUBLIC_APP_URL` | opcional — URL do painel embutida no build                                                |
-| Variable | `NEXT_PUBLIC_API_URL` | opcional — URL da API embutida no build                                                   |
-| Variable | `DEPLOY_ENABLED`      | opcional — `false` desliga o deploy sem apagar o workflow                                 |
+| Tipo     | Nome                  | Valor                                                                    |
+| -------- | --------------------- | ------------------------------------------------------------------------ |
+| Secret   | `DEPLOY_HOST`         | `147.15.103.114` (ou `intsoft.com.br`, depois do DNS)                    |
+| Secret   | `DEPLOY_USER`         | `ubuntu`                                                                 |
+| Secret   | `DEPLOY_SSH_KEY`      | conteúdo **inteiro** de `~/.ssh/comenta_deploy` (a privada)              |
+| Secret   | `DEPLOY_EMAIL`        | e-mail do Let's Encrypt (opcional; sem ele o SSL é pulado)               |
+| Variable | `DEPLOY_DOMAINS`      | opcional — default: `intsoft.com.br www.intsoft.com.br`                  |
+| Variable | `DEPLOY_TAKE_OVER`    | `1` para o site assumir um domínio que o Ghost já ocupa (veja "Atenção") |
+| Variable | `NEXT_PUBLIC_APP_URL` | opcional — URL do painel embutida no build                               |
+| Variable | `NEXT_PUBLIC_API_URL` | opcional — URL da API embutida no build                                  |
+| Variable | `DEPLOY_ENABLED`      | opcional — `false` desliga o deploy sem apagar o workflow                |
 
 A chave privada nunca sai do GitHub: o runner a usa para o `scp`/`ssh` e o
 job termina. Se um dia ela vazar, apague a linha correspondente do
@@ -117,17 +130,9 @@ ls -l /srv/comenta-site      # current -> releases/<commit>
 
 ## Sem GitHub (na mão, no servidor)
 
-O mesmo script clona o repositório e builda ali — serve para um servidor sem
-os segredos configurados, ou para testar um ramo:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/main/deploy/deploy_site.sh \
-  | sudo BRANCH=main EMAIL=voce@exemplo.com bash
-```
-
-Numa VM com menos de 2 GB de RAM o `npm ci` do monorepo pode ser morto por
-falta de memória; nesse caso prefira o caminho pelo GitHub, que não compila
-nada no servidor.
+Veja "Deploy na mão, do seu Mac" acima: o mesmo script clona o repositório e
+builda no servidor quando não recebe `RELEASE_TARBALL`. Variáveis úteis:
+`BRANCH`, `DOMAINS`, `EMAIL`, `SKIP_SSL=1`, `TAKE_OVER=1`.
 
 ## O que mudou em relação ao `oracle_setup.sh`
 

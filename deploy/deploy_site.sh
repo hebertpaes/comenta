@@ -20,10 +20,21 @@
 #   BRANCH           ramo do repo no modo 2 (default: main)
 #   BASE             pasta de instalação (default: /srv/comenta-site)
 #   DOMAINS          domínios do Nginx, separados por espaço
-#                    (default: intsoft.com.br www.intsoft.com.br comenta.com.br www.comenta.com.br)
+#                    (default: intsoft.com.br www.intsoft.com.br — comenta.com.br
+#                    ainda aponta para o Cloud Run; inclua quando o DNS mudar)
 #   PORT             porta do Next (default: 3000)
-#   EMAIL            e-mail do Let's Encrypt; sem ele o SSL é pulado
+#   EMAIL            e-mail do Let's Encrypt. Sem ele, o certbot só roda se o
+#                    servidor já tiver uma conta Let's Encrypt (é o caso de um
+#                    servidor que já emitiu certificado antes); senão o SSL é pulado.
 #   SKIP_SSL=1       pula o certbot (útil antes do DNS propagar)
+#   TAKE_OVER=1      se outro site do Nginx já responde por um dos DOMAINS (o
+#                    Ghost, por exemplo), o padrão é PARAR sem mexer no Nginx.
+#                    Com TAKE_OVER=1 o site assume o domínio: o vhost do outro
+#                    site é desabilitado (o arquivo fica em sites-available) e,
+#                    se houver algo na porta 2368, /ghost/ e /content/ continuam
+#                    indo para o Ghost — o admin segue em DOMINIO/ghost/.
+#   GHOST_UPSTREAM   destino de /ghost/ e /content/ no modo TAKE_OVER
+#                    (default: http://127.0.0.1:2368 se a porta estiver escutando)
 #   NEXT_PUBLIC_APP_URL / NEXT_PUBLIC_API_URL  URLs embutidas no build (modo 2)
 set -euo pipefail
 
@@ -31,10 +42,12 @@ RELEASE_TARBALL="${RELEASE_TARBALL:-}"
 REVISION="${REVISION:-}"
 BRANCH="${BRANCH:-main}"
 BASE="${BASE:-/srv/comenta-site}"
-DOMAINS="${DOMAINS:-intsoft.com.br www.intsoft.com.br comenta.com.br www.comenta.com.br}"
+DOMAINS="${DOMAINS:-intsoft.com.br www.intsoft.com.br}"
 PORT="${PORT:-3000}"
 EMAIL="${EMAIL:-}"
 SKIP_SSL="${SKIP_SSL:-0}"
+TAKE_OVER="${TAKE_OVER:-0}"
+GHOST_UPSTREAM="${GHOST_UPSTREAM:-}"
 REPO="https://github.com/hebertpaes/comenta.git"
 APP_NAME="comenta-site"
 
@@ -125,12 +138,71 @@ pm2 status "$APP_NAME" | tail -n +1
 ls -1dt "$BASE"/releases/* 2>/dev/null | tail -n +4 | xargs -r rm -rf
 
 log "4/5 Nginx ($DOMAINS)"
-# Mesmo arquivo que o deploy/oracle_setup.sh usava: substitui o servidor de
-# espera da porta 2368 pelo site de verdade.
 CONF="/etc/nginx/sites-available/intsoft.com.br"
-# Sem default_server nem catch-all: o bloco responde só pelos domínios da lista,
-# para conviver com outros sites do mesmo Nginx (o install_ghost.sh, por
-# exemplo, grava ghost.conf com default_server).
+ENABLED="/etc/nginx/sites-enabled/intsoft.com.br"
+
+# Outro site habilitado já responde por algum destes domínios? O Nginx entrega
+# o nome ao primeiro bloco que casar, na ordem alfabética dos arquivos — e em
+# qualquer ordem um dos dois sites some sem aviso. Por isso o padrão é parar
+# aqui, antes de tocar no Nginx, e deixar a decisão com quem opera o servidor.
+# TAKE_OVER=1 desabilita o outro vhost (o arquivo fica em sites-available) e
+# mantém /ghost/ e /content/ indo para o Ghost.
+CONFLICTS=""
+for d in $DOMAINS; do
+  for f in /etc/nginx/sites-enabled/*; do
+    [ -e "$f" ] || continue
+    [ "$f" = "$ENABLED" ] && continue
+    if grep -qE "^[[:space:]]*server_name[^;]*[[:space:]]$(printf '%s' "$d" | sed 's/\./\\./g')([[:space:]]|;)" "$f" 2>/dev/null; then
+      case " $CONFLICTS " in *" $f "*) ;; *) CONFLICTS="$CONFLICTS $f";; esac
+    fi
+  done
+done
+if [ -n "$CONFLICTS" ] && [ "$TAKE_OVER" != "1" ]; then
+  echo "  Estes vhosts já respondem por um dos domínios ($DOMAINS):"
+  for f in $CONFLICTS; do echo "    - $f ($(readlink -f "$f"))"; done
+  echo "  Nada foi alterado no Nginx. O app está no ar em http://127.0.0.1:$PORT."
+  echo "  Escolha um caminho e rode de novo:"
+  echo "    1) mover o outro site para outro nome (ex.: blog.intsoft.com.br) e repetir o deploy; ou"
+  echo "    2) TAKE_OVER=1 — o site assume o domínio, o outro vhost é desabilitado e"
+  echo "       /ghost/ e /content/ continuam no Ghost (admin em https://$(echo "$DOMAINS" | awk '{print $1}')/ghost/)."
+  die "conflito de server_name no Nginx (use TAKE_OVER=1 para assumir o domínio)."
+fi
+if [ -n "$CONFLICTS" ]; then
+  for f in $CONFLICTS; do
+    echo "  TAKE_OVER=1: desabilitando $f (arquivo mantido em $(readlink -f "$f"))"
+    rm -f "$f"
+  done
+fi
+
+# Ghost na mesma máquina? Mantém o admin e as mídias dele no domínio.
+if [ -z "$GHOST_UPSTREAM" ] && ss -ltn 2>/dev/null | grep -qE '[:.]2368[[:space:]]'; then
+  GHOST_UPSTREAM="http://127.0.0.1:2368"
+fi
+GHOST_LOCATIONS=""
+if [ -n "$GHOST_UPSTREAM" ]; then
+  echo "  /ghost/ e /content/ -> $GHOST_UPSTREAM"
+  GHOST_LOCATIONS="
+    # Ghost na mesma máquina: admin, API e mídias continuam no domínio.
+    location ^~ /ghost/ {
+        proxy_pass $GHOST_UPSTREAM;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade \$http_upgrade;
+        proxy_set_header Connection \"upgrade\";
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+        client_max_body_size 50M;
+    }
+    location ^~ /content/ {
+        proxy_pass $GHOST_UPSTREAM;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+"
+fi
+
+# Sem default_server nem catch-all: o bloco responde só pelos domínios da lista.
 cat > "$CONF" <<NGX
 server {
     listen 80;
@@ -138,7 +210,7 @@ server {
     server_name $DOMAINS;
 
     client_max_body_size 20M;
-
+$GHOST_LOCATIONS
     location / {
         proxy_pass http://127.0.0.1:$PORT;
         proxy_http_version 1.1;
@@ -151,32 +223,30 @@ server {
     }
 }
 NGX
-ln -sfn "$CONF" /etc/nginx/sites-enabled/intsoft.com.br
+ln -sfn "$CONF" "$ENABLED"
 rm -f /etc/nginx/sites-enabled/default
-# Outro site habilitado já responde por algum destes domínios? O Nginx usa o
-# primeiro bloco que casar (ordem alfabética dos arquivos), então o site ficaria
-# inalcançável sem aviso. Avisa e segue: decidir quem fica com o domínio é
-# de quem opera o servidor.
-for d in $DOMAINS; do
-  for f in /etc/nginx/sites-enabled/*; do
-    [ "$f" = "/etc/nginx/sites-enabled/intsoft.com.br" ] && continue
-    if grep -qE "server_name[^;]*(^|[[:space:]])$d([[:space:]]|;)" "$f" 2>/dev/null; then
-      echo "  AVISO: $f também declara server_name $d — ajuste o server_name lá (ex.: blog.$d) ou este site não será servido nesse domínio."
-    fi
-  done
-done
 nginx -t && systemctl reload nginx
 
 log "5/5 HTTPS (Let's Encrypt)"
 CERT_ARGS=""
 for d in $DOMAINS; do CERT_ARGS="$CERT_ARGS -d $d"; done
+# Conta Let's Encrypt já registrada neste servidor (um certificado emitido
+# antes, pelo Ghost por exemplo)? Então o certbot dispensa o -m.
+HAS_LE_ACCOUNT=0
+if [ -d /etc/letsencrypt/accounts ] && find /etc/letsencrypt/accounts -name regr.json 2>/dev/null | grep -q .; then
+  HAS_LE_ACCOUNT=1
+fi
 if [ "$SKIP_SSL" = "1" ]; then
   echo "  SKIP_SSL=1 — pulei o certbot. Depois: certbot --nginx$CERT_ARGS -m SEU@EMAIL --agree-tos"
-elif [ -z "$EMAIL" ]; then
-  echo "  EMAIL não definido — pulei o SSL. Rode: certbot --nginx$CERT_ARGS -m SEU@EMAIL --agree-tos"
+elif [ -z "$EMAIL" ] && [ "$HAS_LE_ACCOUNT" != "1" ]; then
+  echo "  EMAIL não definido e sem conta Let's Encrypt — pulei o SSL. Rode: certbot --nginx$CERT_ARGS -m SEU@EMAIL --agree-tos"
 else
+  EMAIL_ARGS=""
+  [ -n "$EMAIL" ] && EMAIL_ARGS="-m $EMAIL"
+  # --expand: se já existe certificado com parte destes nomes (o do Ghost),
+  # amplia em vez de falhar pedindo confirmação.
   # shellcheck disable=SC2086
-  certbot --nginx --non-interactive --agree-tos --redirect -m "$EMAIL" $CERT_ARGS \
+  certbot --nginx --non-interactive --agree-tos --redirect --expand $EMAIL_ARGS $CERT_ARGS \
     || echo "  certbot falhou (o DNS de todos os domínios já aponta para este servidor?). Reveja e rode manualmente."
 fi
 

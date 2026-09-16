@@ -12,6 +12,8 @@
 #   DEPLOY_EMAIL     (opcional) e-mail do Let's Encrypt; sem ele o SSL é pulado
 # Variáveis (mesma tela, aba Variables), todas opcionais:
 #   DEPLOY_DOMAINS        domínios do Nginx (default no deploy_site.sh)
+#   DEPLOY_TAKE_OVER      "1" para o site assumir um domínio que outro vhost
+#                         (o Ghost) já ocupa; sem isso o script para no conflito
 #   NEXT_PUBLIC_APP_URL   URL do painel embutida no build
 #   NEXT_PUBLIC_API_URL   URL da API embutida no build
 #
@@ -108,10 +110,11 @@ jobs:
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
           DEPLOY_EMAIL: ${{ secrets.DEPLOY_EMAIL }}
           DEPLOY_DOMAINS: ${{ vars.DEPLOY_DOMAINS }}
+          DEPLOY_TAKE_OVER: ${{ vars.DEPLOY_TAKE_OVER }}
         run: |
           ssh -i ~/.ssh/deploy_key "$DEPLOY_USER@$DEPLOY_HOST" \
             "sudo RELEASE_TARBALL=/tmp/site-release.tar.gz REVISION='${{ github.sha }}' \
-                  DOMAINS='$DEPLOY_DOMAINS' EMAIL='$DEPLOY_EMAIL' bash -s" \
+                  DOMAINS='$DEPLOY_DOMAINS' EMAIL='$DEPLOY_EMAIL' TAKE_OVER='$DEPLOY_TAKE_OVER' bash -s" \
             < deploy/deploy_site.sh
 
       - name: Verifica no ar
