@@ -1,0 +1,39 @@
+# Infra descartável para os testes de integração da API.
+#
+# Portas altas de propósito: não conflitam com o Postgres/Redis de
+# desenvolvimento que já podem estar rodando na máquina.
+#
+#   docker compose -f test/docker-compose.test.yml up -d
+#   TEST_DATABASE_URL=postgresql://comenta:comenta@localhost:55432/comenta_test \
+#   TEST_REDIS_URL=redis://localhost:56379 \
+#     npm test -w @comenta/api
+#   docker compose -f test/docker-compose.test.yml down -v
+
+services:
+  postgres-test:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: comenta
+      POSTGRES_PASSWORD: comenta
+      POSTGRES_DB: comenta_test
+    ports:
+      - "127.0.0.1:55432:5432"
+    # tmpfs: o banco vive só na memória e some com o container — testes não
+    # precisam de durabilidade e assim rodam bem mais rápido.
+    tmpfs:
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U comenta -d comenta_test"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+  redis-test:
+    image: redis:7-alpine
+    ports:
+      - "127.0.0.1:56379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 3s
+      retries: 20

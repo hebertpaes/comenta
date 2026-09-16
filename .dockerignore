@@ -1,0 +1,21 @@
+# Todos os Dockerfiles do repositório usam a RAIZ como contexto de build
+# (o lockfile é único desde a migração para npm workspaces), então este arquivo
+# vale para as imagens de api, site e content.
+**/node_modules
+**/dist
+**/.next
+**/public/ffmpeg
+.git
+.github
+.gitignore
+**/Dockerfile
+.dockerignore
+deploy
+saas/deploy
+projects
+**/npm-debug.log*
+**/.DS_Store
+**/*.md
+**/.env
+!**/.env.example
+**/dump.rdb

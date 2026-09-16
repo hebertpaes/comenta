@@ -1,0 +1,31 @@
+{{!< default}}
+
+<div class="container usat-article-wrap">
+    <div class="usat-archive-main">
+        <header class="usat-archive-head">
+            <span class="usat-kicker-lg">COBERTURA ESPECIAL</span>
+            <h1 class="usat-archive-title">{{#tag}}{{name}}{{/tag}}</h1>
+            {{#tag}}
+                {{#if description}}
+                    <p class="usat-archive-desc">{{description}}</p>
+                {{/if}}
+            {{/tag}}
+        </header>
+
+        <div class="usat-section-grid">
+            {{#foreach posts}}
+                {{> article-card size="compact"}}
+            {{else}}
+                <p class="usat-section-empty">Nenhuma matéria publicada nesta editoria ainda.</p>
+            {{/foreach}}
+        </div>
+
+        {{> pagination}}
+    </div>
+
+    <aside class="usat-article-rail">
+        {{> most-read}}
+        {{> curtinhas}}
+        {{> videos}}
+    </aside>
+</div>

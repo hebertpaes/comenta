@@ -1,0 +1,129 @@
+# Deploy do site (Next.js) no servidor via SSH.
+#
+# Dispara a cada push na `main` e também manualmente (Actions → Deploy → Run
+# workflow, escolhendo o ramo). O build roda aqui, no runner do GitHub, e só o
+# resultado (standalone do Next) vai para o servidor: uma VM pequena não
+# precisa compilar nada nem ter o node_modules do monorepo inteiro.
+#
+# Segredos (Settings → Secrets and variables → Actions):
+#   DEPLOY_HOST      IP ou domínio do servidor (ex.: 147.15.103.114)
+#   DEPLOY_USER      usuário SSH com sudo (ex.: ubuntu)
+#   DEPLOY_SSH_KEY   chave privada (a pública vai no authorized_keys do servidor)
+#   DEPLOY_EMAIL     (opcional) e-mail do Let's Encrypt; sem ele o SSL é pulado
+# Variáveis (mesma tela, aba Variables), todas opcionais:
+#   DEPLOY_DOMAINS        domínios do Nginx (default no deploy_site.sh)
+#   DEPLOY_TAKE_OVER      "1" para o site assumir um domínio que outro vhost
+#                         (o Ghost) já ocupa; sem isso o script para no conflito
+#   NEXT_PUBLIC_APP_URL   URL do painel embutida no build
+#   NEXT_PUBLIC_API_URL   URL da API embutida no build
+#
+# Passo a passo em deploy/GITHUB-DEPLOY.md.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-site
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: build + envio por SSH
+    runs-on: ubuntu-latest
+    # Sem os segredos o job não tem para onde ir: sai limpo em vez de falhar.
+    if: ${{ vars.DEPLOY_ENABLED != 'false' }}
+    env:
+      NEXT_TELEMETRY_DISABLED: 1
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Confere os segredos de acesso
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+        run: |
+          faltando=""
+          [ -n "$DEPLOY_HOST" ] || faltando="$faltando DEPLOY_HOST"
+          [ -n "$DEPLOY_USER" ] || faltando="$faltando DEPLOY_USER"
+          [ -n "$DEPLOY_SSH_KEY" ] || faltando="$faltando DEPLOY_SSH_KEY"
+          if [ -n "$faltando" ]; then
+            echo "::error::Segredos ausentes:$faltando — veja deploy/GITHUB-DEPLOY.md"
+            exit 1
+          fi
+
+      # --ignore-scripts pula o postinstall do editor (32 MB de FFmpeg) que o
+      # site não usa.
+      - name: Dependências
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Build do site
+        env:
+          NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL }}
+          NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
+        run: npm run build -w @comenta/site
+
+      # Mesma montagem do site/Dockerfile: o standalone do Next num monorepo
+      # sai como .next/standalone/site/server.js, e os estáticos e o public
+      # precisam ir para dentro dessa árvore.
+      - name: Empacota o release
+        run: |
+          rm -rf release && mkdir -p release
+          cp -a site/.next/standalone/. release/
+          mkdir -p release/site/.next
+          cp -a site/.next/static release/site/.next/static
+          cp -a site/public release/site/public
+          git rev-parse HEAD > release/REVISION
+          tar -czf site-release.tar.gz -C release .
+          du -h site-release.tar.gz
+
+      - name: Chave SSH
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Envia o release
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+        run: |
+          scp -i ~/.ssh/deploy_key site-release.tar.gz "$DEPLOY_USER@$DEPLOY_HOST:/tmp/site-release.tar.gz"
+
+      # O script vai pelo stdin do ssh: o servidor executa exatamente a versão
+      # do commit que está sendo publicado, sem depender de um clone lá.
+      - name: Instala no servidor
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_EMAIL: ${{ secrets.DEPLOY_EMAIL }}
+          DEPLOY_DOMAINS: ${{ vars.DEPLOY_DOMAINS }}
+          DEPLOY_TAKE_OVER: ${{ vars.DEPLOY_TAKE_OVER }}
+        run: |
+          ssh -i ~/.ssh/deploy_key "$DEPLOY_USER@$DEPLOY_HOST" \
+            "sudo RELEASE_TARBALL=/tmp/site-release.tar.gz REVISION='${{ github.sha }}' \
+                  DOMAINS='$DEPLOY_DOMAINS' EMAIL='$DEPLOY_EMAIL' TAKE_OVER='$DEPLOY_TAKE_OVER' bash -s" \
+            < deploy/deploy_site.sh
+
+      - name: Verifica no ar
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+        run: |
+          for i in $(seq 1 12); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 10 "http://$DEPLOY_HOST/health" || true)
+            [ "$code" = "200" ] && { echo "ok: http://$DEPLOY_HOST/health → 200"; exit 0; }
+            sleep 5
+          done
+          echo "::warning::/health não respondeu 200 em http://$DEPLOY_HOST — confira 'pm2 logs comenta-site' no servidor."

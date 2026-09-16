@@ -1,0 +1,17 @@
+{{!-- Byline no estilo USA TODAY: Avatar do Autor + Nome em Negrito + Data + Tempo de Leitura --}}
+<div class="usat-byline">
+    {{#if primary_author}}
+        <a class="usat-byline-author" href="{{primary_author.url}}">
+            {{#if primary_author.profile_image}}
+                <img class="byline-avatar" src="{{img_url primary_author.profile_image size="xs"}}" alt="{{primary_author.name}}" />
+            {{else}}
+                <span class="byline-avatar-placeholder">{{primary_author.name.[0]}}</span>
+            {{/if}}
+            <span class="byline-name">Por <strong>{{primary_author.name}}</strong></span>
+        </a>
+    {{/if}}
+    <span class="byline-dot">•</span>
+    <time class="byline-time" datetime="{{date format="YYYY-MM-DDTHH:mm:ss"}}">Publicado em {{date format="DD/MM/YYYY [às] HH:mm"}}</time>
+    <span class="byline-dot">•</span>
+    <span class="byline-rt"><span class="rt-icon">⏱️</span> {{reading_time minute="1 min de leitura" minutes="% min de leitura"}}</span>
+</div>

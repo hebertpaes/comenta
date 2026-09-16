@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 970 120" width="970" height="120" fill="none" role="img" aria-label="Anuncie no Hoje MT — Mídia Kit 2026">
+  <defs>
+    <!-- Gradiente de Fundo: Verde Floresta Profundo para Verde Esmeralda -->
+    <linearGradient id="bannerBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#041a10" />
+      <stop offset="45%" stop-color="#062b1a" />
+      <stop offset="100%" stop-color="#004d28" />
+    </linearGradient>
+
+    <!-- Gradiente do Botão CTA Dourado / Esmeralda -->
+    <linearGradient id="btnCtaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#facc15" />
+      <stop offset="100%" stop-color="#eab308" />
+    </linearGradient>
+
+    <radialGradient id="ambientGlow" cx="85%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Filtro de Sombra Suave -->
+    <filter id="cardShadow" x="-5%" y="-10%" width="110%" height="125%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Fundo do Banner com Cantos Arredondados e Borda Sutil -->
+  <rect x="2" y="2" width="966" height="116" rx="10" fill="url(#bannerBgGrad)" stroke="rgba(16, 185, 129, 0.35)" stroke-width="1.5" />
+  
+  <!-- Aura Luminosa Direita -->
+  <rect x="2" y="2" width="966" height="116" rx="10" fill="url(#ambientGlow)" />
+
+  <!-- Elementos Gráficos Geométricos Sutis de Fundo -->
+  <circle cx="920" cy="60" r="80" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" />
+  <circle cx="920" cy="60" r="50" fill="none" stroke="rgba(16,185,129,0.15)" stroke-width="1.5" />
+  <circle cx="920" cy="60" r="20" fill="none" stroke="rgba(250,204,21,0.2)" stroke-width="1.5" />
+
+  <!-- Ícone / Selo de Publicidade à Esquerda -->
+  <g transform="translate(28, 24)">
+    <rect x="0" y="0" width="72" height="72" rx="36" fill="rgba(255,255,255,0.08)" stroke="rgba(16,185,129,0.4)" stroke-width="1.5" />
+    <!-- Símbolo Megafone / Destaque -->
+    <path d="M24 38 L32 38 L42 46 L42 26 L32 34 L24 34 Z" fill="#10b981" />
+    <path d="M46 30 C49 33, 49 39, 46 42" stroke="#facc15" stroke-width="2.5" stroke-linecap="round" fill="none" />
+    <path d="M50 25 C55 31, 55 41, 50 47" stroke="#facc15" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  </g>
+
+  <!-- TEXTOS PRINCIPAIS -->
+  <g transform="translate(118, 22)">
+    <!-- Tag Superior -->
+    <rect x="0" y="4" width="138" height="18" rx="4" fill="rgba(16, 185, 129, 0.2)" />
+    <text x="8" y="17" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="9.5" font-weight="800" fill="#86efac" letter-spacing="1.4">ESPAÇO PUBLICITÁRIO</text>
+    
+    <!-- Título Principal -->
+    <text x="0" y="46" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="20" font-weight="900" fill="#ffffff" letter-spacing="-0.5">Sua marca em destaque para milhares de leitores em Mato Grosso</text>
+    
+    <!-- Subtítulo / Descrição -->
+    <text x="0" y="68" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="12.5" font-weight="500" fill="#a7f3d0">Alcance qualificado em Cuiabá, Várzea Grande e todo o Estado • Formatos Digitais e Publieditoriais</text>
+  </g>
+
+  <!-- BOTÃO CTA À DIREITA -->
+  <g transform="translate(785, 36)">
+    <rect x="0" y="0" width="155" height="48" rx="8" fill="url(#btnCtaGrad)" filter="url(#cardShadow)" />
+    <text x="26" y="29" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="13" font-weight="900" fill="#062b1a" letter-spacing="0.6">ANUNCIE AQUI</text>
+    <text x="128" y="29" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="14" font-weight="900" fill="#062b1a">→</text>
+  </g>
+</svg>

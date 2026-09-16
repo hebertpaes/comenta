@@ -1,0 +1,84 @@
+{
+  "id": "w_comenta_hotmart_abacs_01",
+  "name": "🤖 Comenta SaaS — Automação Hotmart, ABACS & WhatsApp IA",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "hotmart-abacs-webhook",
+        "options": {}
+      },
+      "name": "Webhook Hotmart & ABACS",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "comenta-hotmart-abacs-id"
+    },
+    {
+      "parameters": {
+        "url": "http://comenta-api:4000/webhooks/abacs/integracao/hotmart",
+        "method": "POST",
+        "jsonParameters": true,
+        "options": {}
+      },
+      "name": "Integrar com Comenta API & WhatsApp",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [500, 300]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "name": "Cron Diário (Treinamento da IA)",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [250, 500]
+    },
+    {
+      "parameters": {
+        "url": "http://comenta-api:4000/ai/sync-training",
+        "method": "POST",
+        "options": {}
+      },
+      "name": "Sincronizar Treinamento da IA Google Gemini",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [500, 500]
+    }
+  ],
+  "connections": {
+    "Webhook Hotmart & ABACS": {
+      "main": [
+        [
+          {
+            "node": "Integrar com Comenta API & WhatsApp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cron Diário (Treinamento da IA)": {
+      "main": [
+        [
+          {
+            "node": "Sincronizar Treinamento da IA Google Gemini",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "tags": []
+}

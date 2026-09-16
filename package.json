@@ -1,27 +1,58 @@
 {
-  "name": "comenta-editor",
+  "name": "comenta",
+  "version": "0.0.0",
   "private": true,
-  "version": "0.1.0",
   "type": "module",
-  "description": "Editor web de vídeo e música que importa arquivos de apps externos (Suno, CapCut, etc.) e edita tudo no navegador.",
-  "scripts": {
-    "copy-core": "node scripts/copy-core.mjs",
-    "postinstall": "node scripts/copy-core.mjs",
-    "predev": "node scripts/copy-core.mjs",
-    "dev": "vite",
-    "prebuild": "node scripts/copy-core.mjs",
-    "build": "vite build",
-    "preview": "vite preview"
+  "description": "Monorepo do Comenta — plataforma de atendimento multicanal (comenta.com.br)",
+  "engines": {
+    "node": ">=22"
   },
-  "dependencies": {
-    "@ffmpeg/core": "^0.12.6",
-    "@ffmpeg/ffmpeg": "^0.12.10",
-    "@ffmpeg/util": "^0.12.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "saas/api",
+    "saas/web",
+    "site",
+    "content"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run lint && npm run typecheck && npm run test",
+    "dev:api": "npm run dev -w @comenta/api",
+    "dev:web": "npm run dev -w @comenta/web",
+    "dev:site": "npm run dev -w @comenta/site",
+    "dev:editor": "npm run dev -w @comenta/editor"
+  },
+  "//overrides": [
+    "Uma única cópia do React em toda a árvore. Sem isto, o React 18 que chega",
+    "transitivamente (drizzle-orm, next) é içado para o node_modules da raiz, e",
+    "as libs também içadas — react-router, @tanstack/react-query — resolvem",
+    "`react` para essa cópia, enquanto o painel usa a 19 aninhada em saas/web.",
+    "Duas cópias no mesmo bundle fazem o React não reconhecer os próprios",
+    "elementos: 'Objects are not valid as a React child', e tela branca. Nada",
+    "acusa — build, typecheck e lint passam, porque empacotar dois Reacts não é",
+    "erro de compilação."
+  ],
+  "overrides": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^5.4.11"
+    "@eslint/js": "^10.0.1",
+    "@next/eslint-plugin-next": "^16.2.12",
+    "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.6",
+    "typescript-eslint": "^8.65.0",
+    "vitest": "^4.1.10"
   }
 }

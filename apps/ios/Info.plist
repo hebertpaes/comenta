@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>pt_BR</string>
+	<key>CFBundleDisplayName</key>
+	<string>Comenta</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>UILaunchScreen</key>
+	<dict/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+
+	<!-- A API do protótipo roda em HTTP simples no Mac da rede local. O iOS
+	     bloqueia cleartext por padrão (ATS); sem esta exceção toda chamada
+	     falharia com "cannot connect to server", sem pista do motivo.
+	     PROTÓTIPO APENAS: em produção a API fica atrás de HTTPS e isto sai. -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+
+	<!-- Desde o iOS 14, falar com um IP da rede local exige consentimento; o
+	     sistema mostra este texto no alerta. Sem a chave, o pedido é negado
+	     silenciosamente. -->
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>O Comenta precisa acessar o servidor que roda no seu Mac, na mesma rede Wi-Fi.</string>
+</dict>
+</plist>
