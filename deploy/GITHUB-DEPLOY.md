@@ -72,8 +72,17 @@ ssh -i ~/.ssh/intsoft_ghost ubuntu@147.15.103.114 \
   "curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/main/deploy/deploy_site.sh | sudo TAKE_OVER=1 bash"
 ```
 
-Troque `main` pelo ramo que quer publicar enquanto o PR não for mesclado, e
-tire `TAKE_OVER=1` se preferir só ver o aviso de conflito primeiro. Numa VM
+Para publicar outro ramo enquanto ele não for mesclado, troque o nome **nos
+dois lugares**: na URL (que escolhe a versão do script) e em `BRANCH=` (que
+escolhe o código que o servidor vai clonar e buildar) — só a URL não basta.
+
+```bash
+ramo=claude/exciting-thompson-4rhut2
+ssh -i ~/.ssh/intsoft_ghost ubuntu@147.15.103.114 \
+  "curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/$ramo/deploy/deploy_site.sh | sudo BRANCH=$ramo TAKE_OVER=1 bash"
+```
+
+Tire `TAKE_OVER=1` se preferir só ver o aviso de conflito primeiro. Numa VM
 com 12 GB como essa, o build no próprio servidor leva alguns minutos.
 
 ## 2. Chave SSH para o GitHub entrar no servidor

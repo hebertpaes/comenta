@@ -65,15 +65,25 @@ die(){ printf "\n\033[1;31mERRO: %s\033[0m\n" "$*" >&2; exit 1; }
 
 export DEBIAN_FRONTEND=noninteractive
 
+# `apt-get install` sem um `update` recente falha numa VM com o índice velho —
+# e isso acontecia justamente quando só faltava o certbot.
+APT_UPDATED=0
+apt_install(){
+  if [ "$APT_UPDATED" != "1" ]; then apt-get update -y >/dev/null; APT_UPDATED=1; fi
+  apt-get install -y "$@"
+}
+
 log "1/5 Dependências (Node 22, PM2, Nginx, Certbot)"
 if ! command -v node >/dev/null 2>&1 || [ "$(node -p 'process.versions.node.split(".")[0]')" -lt 22 ]; then
   curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
-  apt-get install -y nodejs
+  APT_UPDATED=1   # o script da NodeSource já roda o update
+  apt_install nodejs
 fi
 command -v pm2 >/dev/null 2>&1 || npm install -g pm2 --no-audit --no-fund
-command -v nginx >/dev/null 2>&1 || { apt-get update -y && apt-get install -y nginx; }
-command -v certbot >/dev/null 2>&1 || apt-get install -y certbot python3-certbot-nginx
-command -v git >/dev/null 2>&1 || apt-get install -y git
+command -v nginx >/dev/null 2>&1 || apt_install nginx
+command -v certbot >/dev/null 2>&1 || apt_install certbot python3-certbot-nginx
+command -v git >/dev/null 2>&1 || apt_install git
+command -v openssl >/dev/null 2>&1 || apt_install openssl
 echo "  node $(node -v) · pm2 $(pm2 -v) · nginx ok"
 
 mkdir -p "$BASE/releases"
@@ -96,6 +106,9 @@ if [ -n "$RELEASE_TARBALL" ]; then
   mkdir -p "$RELEASE_DIR"
   tar -xzf "$RELEASE_TARBALL" -C "$RELEASE_DIR"
   rm -f "$RELEASE_TARBALL"
+  # O tar restaura o mtime da pasta com a data do build no runner; a poda por
+  # `ls -t` usa esse mtime. Carimba com a hora do deploy.
+  touch "$RELEASE_DIR"
 else
   # ---------------------------------------------- modo 2: clona e builda aqui
   REPO_DIR="$BASE/repo"
@@ -121,6 +134,7 @@ else
   cp -a "$REPO_DIR/site/.next/static" "$RELEASE_DIR/site/.next/static"
   cp -a "$REPO_DIR/site/public" "$RELEASE_DIR/site/public"
   echo "$REV" > "$RELEASE_DIR/REVISION"
+  touch "$RELEASE_DIR"
 fi
 
 [ -f "$RELEASE_DIR/site/server.js" ] || die "release incompleto: falta site/server.js em $RELEASE_DIR"
@@ -189,6 +203,25 @@ if [ -n "$CONFLICTS" ] && [ "$TAKE_OVER" != "1" ]; then
   echo "       /ghost e /content/ continuam no Ghost (admin em https://$PRIMARY/ghost/)."
   die "conflito de server_name no Nginx (use TAKE_OVER=1 para assumir o domínio)."
 fi
+# Ghost na mesma máquina? Mantém o admin e as mídias dele no domínio. Precisa
+# vir ANTES de desabilitar os vhosts: o upstream de reserva sai de dentro deles.
+if [ -z "$GHOST_UPSTREAM" ] && ss -ltn 2>/dev/null | grep -qE '[:.]2368[[:space:]]'; then
+  GHOST_UPSTREAM="http://127.0.0.1:2368"
+fi
+if [ -n "$CONFLICTS" ] && [ -z "$GHOST_UPSTREAM" ]; then
+  # `ss` pode não existir, e o Ghost pode não estar na 2368: o proxy_pass do
+  # vhost que está saindo diz para onde o site dele ia.
+  for f in $CONFLICTS; do
+    GHOST_UPSTREAM="$(grep -hoE 'proxy_pass[[:space:]]+https?://[^;[:space:]]+' "$f" 2>/dev/null \
+      | head -n1 | awk '{print $2}' || true)"
+    [ -n "$GHOST_UPSTREAM" ] && { echo "  upstream herdado de $f: $GHOST_UPSTREAM"; break; }
+  done
+fi
+if [ -n "$CONFLICTS" ] && [ -z "$GHOST_UPSTREAM" ]; then
+  echo "  AVISO: não achei para onde o vhost que está saindo mandava o tráfego."
+  echo "  /ghost e /content/ NÃO serão preservados. Se o Ghost está nesta máquina,"
+  echo "  rode de novo com GHOST_UPSTREAM=http://127.0.0.1:2368 (ou a porta certa)."
+fi
 if [ -n "$CONFLICTS" ]; then
   for f in $CONFLICTS; do
     if [ -L "$f" ]; then
@@ -203,10 +236,6 @@ if [ -n "$CONFLICTS" ]; then
   done
 fi
 
-# Ghost na mesma máquina? Mantém o admin e as mídias dele no domínio.
-if [ -z "$GHOST_UPSTREAM" ] && ss -ltn 2>/dev/null | grep -qE '[:.]2368[[:space:]]'; then
-  GHOST_UPSTREAM="http://127.0.0.1:2368"
-fi
 GHOST_LOCATIONS=""
 if [ -n "$GHOST_UPSTREAM" ]; then
   echo "  /ghost e /content/ -> $GHOST_UPSTREAM"
@@ -252,26 +281,43 @@ NGX
 # Certificado que já cobre o domínio principal (pode ter sido emitido pelo
 # Ghost). Enquanto existir, o vhost gerado aqui já sai com o bloco 443 — é o
 # que impede o HTTPS de cair a cada deploy, antes de o certbot rodar.
-find_cert_dir(){
-  local d san
-  [ -d /etc/letsencrypt/live ] || return 0
+# Dois layouts convivem no mesmo servidor: o do certbot,
+# /etc/letsencrypt/live/<nome>/fullchain.pem, e o que o ghost-cli cria com o
+# acme.sh, /etc/letsencrypt/<domínio>/fullchain.cer.
+CERT_FULLCHAIN=""; CERT_KEY=""; CERT_NAME=""
+
+cert_tem_dominio(){
+  openssl x509 -in "$1" -noout -ext subjectAltName 2>/dev/null \
+    | grep -qE "DNS:$(printf '%s' "$2" | sed 's/\./\\./g')(,|$| )"
+}
+
+find_cert(){
+  CERT_FULLCHAIN=""; CERT_KEY=""; CERT_NAME=""
+  local d nome
   for d in /etc/letsencrypt/live/*/; do
+    d="${d%/}"
     [ -f "$d/fullchain.pem" ] && [ -f "$d/privkey.pem" ] || continue
-    san="$(openssl x509 -in "$d/fullchain.pem" -noout -ext subjectAltName 2>/dev/null || true)"
-    if printf '%s' "$san" | grep -qE "DNS:$(printf '%s' "$PRIMARY" | sed 's/\./\\./g')(,|$| )"; then
-      printf '%s' "${d%/}"
+    if cert_tem_dominio "$d/fullchain.pem" "$PRIMARY"; then
+      CERT_FULLCHAIN="$d/fullchain.pem"; CERT_KEY="$d/privkey.pem"
+      CERT_NAME="$(basename "$d")"       # nome da linhagem, para o --cert-name
       return 0
     fi
   done
+  for d in /etc/letsencrypt/*/; do
+    d="${d%/}"; nome="$(basename "$d")"
+    [ -f "$d/fullchain.cer" ] && [ -f "$d/$nome.key" ] || continue
+    if cert_tem_dominio "$d/fullchain.cer" "$PRIMARY"; then
+      CERT_FULLCHAIN="$d/fullchain.cer"; CERT_KEY="$d/$nome.key"
+      return 0                            # acme.sh: não é linhagem do certbot
+    fi
+  done
+  return 0
 }
 
-cert_covers_all(){
-  local dir="$1" san d
-  [ -n "$dir" ] || return 1
-  san="$(openssl x509 -in "$dir/fullchain.pem" -noout -ext subjectAltName 2>/dev/null || true)"
-  for d in $DOMAINS; do
-    printf '%s' "$san" | grep -qE "DNS:$(printf '%s' "$d" | sed 's/\./\\./g')(,|$| )" || return 1
-  done
+cert_cobre_todos(){
+  local d
+  [ -n "$CERT_FULLCHAIN" ] || return 1
+  for d in $DOMAINS; do cert_tem_dominio "$CERT_FULLCHAIN" "$d" || return 1; done
 }
 
 # Escreve o vhost (80, mais 443 quando há certificado), testa e recarrega.
@@ -279,7 +325,7 @@ cert_covers_all(){
 # uma lista &&, que o errexit ignora. Por isso o teste é explícito, com volta
 # para a configuração anterior se não passar.
 write_vhost(){
-  local cert_dir="${1:-}" backup=""
+  local backup=""
   [ -f "$CONF" ] && { backup="$(mktemp)"; cp -a "$CONF" "$backup"; }
 
   mkdir -p "$WEBROOT/.well-known/acme-challenge"
@@ -302,7 +348,7 @@ server {
         try_files \$uri =404;
     }
 NGX
-    if [ -n "$cert_dir" ]; then
+    if [ -n "$CERT_FULLCHAIN" ]; then
       cat <<NGX
 
     location / { return 301 https://\$host\$request_uri; }
@@ -313,8 +359,8 @@ server {
     listen [::]:443 ssl;
     server_name $DOMAINS;
 
-    ssl_certificate $cert_dir/fullchain.pem;
-    ssl_certificate_key $cert_dir/privkey.pem;
+    ssl_certificate $CERT_FULLCHAIN;
+    ssl_certificate_key $CERT_KEY;
 NGX
       # `http2 on;` só existe a partir do nginx 1.25.1; no 1.24 do Ubuntu 24.04
       # a diretiva é desconhecida e o `nginx -t` reprova a configuração inteira.
@@ -347,9 +393,9 @@ NGX
   systemctl reload nginx || die "systemctl reload nginx falhou."
 }
 
-CERT_DIR="$(find_cert_dir || true)"
-write_vhost "$CERT_DIR"
-[ -n "$CERT_DIR" ] && echo "  HTTPS mantido no ar com o certificado em $CERT_DIR"
+find_cert
+write_vhost
+[ -n "$CERT_FULLCHAIN" ] && echo "  HTTPS mantido no ar com o certificado $CERT_FULLCHAIN"
 
 # Imagens Ubuntu da Oracle Cloud sobem com iptables rejeitando tudo menos a 22
 # (além da security list da VCN). Abre 80/443 só se essa regra existir, e
@@ -371,7 +417,6 @@ fi
 log "5/5 HTTPS (Let's Encrypt)"
 CERT_ARGS=""
 for d in $DOMAINS; do CERT_ARGS="$CERT_ARGS -d $d"; done
-CERT_NAME="${CERT_DIR:+$(basename "$CERT_DIR")}"
 CERT_NAME="${CERT_NAME:-$PRIMARY}"
 # Conta Let's Encrypt já registrada neste servidor (um certificado emitido
 # antes, pelo Ghost por exemplo)? Então o certbot dispensa o -m.
@@ -381,7 +426,7 @@ if [ -d /etc/letsencrypt/accounts ] && find /etc/letsencrypt/accounts -name regr
 fi
 if [ "$SKIP_SSL" = "1" ]; then
   echo "  SKIP_SSL=1 — pulei o certbot. Depois: certbot certonly --webroot -w $WEBROOT$CERT_ARGS -m SEU@EMAIL --agree-tos && $0"
-elif cert_covers_all "$CERT_DIR"; then
+elif cert_cobre_todos; then
   echo "  certificado $CERT_NAME já cobre $DOMAINS — nada a emitir (a renovação é do systemd timer do certbot)."
 elif [ -z "$EMAIL" ] && [ "$HAS_LE_ACCOUNT" != "1" ]; then
   echo "  EMAIL não definido e sem conta Let's Encrypt — pulei o SSL."
@@ -395,9 +440,9 @@ else
   # shellcheck disable=SC2086
   if certbot certonly --webroot -w "$WEBROOT" --cert-name "$CERT_NAME" \
        --non-interactive --agree-tos --expand --keep-until-expiring $EMAIL_ARGS $CERT_ARGS; then
-    CERT_DIR="$(find_cert_dir || true)"
-    if [ -n "$CERT_DIR" ]; then
-      write_vhost "$CERT_DIR"
+    find_cert
+    if [ -n "$CERT_FULLCHAIN" ]; then
+      write_vhost
       echo "  HTTPS no ar: https://$PRIMARY"
     fi
   else
