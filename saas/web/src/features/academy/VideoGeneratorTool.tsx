@@ -8,7 +8,12 @@ interface VideoGeneratorToolProps {
   onClose?: () => void;
 }
 
-export function VideoGeneratorTool({ courseId, lessonId, onSuccess, onClose }: VideoGeneratorToolProps) {
+export function VideoGeneratorTool({
+  courseId,
+  lessonId,
+  onSuccess,
+  onClose,
+}: VideoGeneratorToolProps) {
   const [topic, setTopic] = useState("Formação Atendente IA & Vendas no WhatsApp");
   const [durationSeconds, setDurationSeconds] = useState(60);
   const [isGenerating, setIsGenerating] = useState(false);
@@ -80,7 +85,14 @@ export function VideoGeneratorTool({ courseId, lessonId, onSuccess, onClose }: V
         }}
       >
         {/* Header do Studio */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginBottom: 16,
+          }}
+        >
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             <div
               style={{
@@ -98,7 +110,9 @@ export function VideoGeneratorTool({ courseId, lessonId, onSuccess, onClose }: V
               🎬
             </div>
             <div>
-              <h3 style={{ margin: 0, fontSize: 18, fontWeight: 800 }}>Studio Gerador de Vídeos IA</h3>
+              <h3 style={{ margin: 0, fontSize: 18, fontWeight: 800 }}>
+                Studio Gerador de Vídeos IA
+              </h3>
               <div style={{ fontSize: 12, color: "#94a3b8" }}>
                 Crie narração em PT-BR e imagens photorealistas para aulas de 1 minuto
               </div>
@@ -128,7 +142,15 @@ export function VideoGeneratorTool({ courseId, lessonId, onSuccess, onClose }: V
         {/* Formulário do Gerador */}
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           <div>
-            <label style={{ fontSize: 12, fontWeight: 700, color: "#cbd5e1", marginBottom: 6, display: "block" }}>
+            <label
+              style={{
+                fontSize: 12,
+                fontWeight: 700,
+                color: "#cbd5e1",
+                marginBottom: 6,
+                display: "block",
+              }}
+            >
               Tema Principal da Aula
             </label>
             <input
@@ -150,7 +172,15 @@ export function VideoGeneratorTool({ courseId, lessonId, onSuccess, onClose }: V
           </div>
 
           <div>
-            <label style={{ fontSize: 12, fontWeight: 700, color: "#cbd5e1", marginBottom: 6, display: "block" }}>
+            <label
+              style={{
+                fontSize: 12,
+                fontWeight: 700,
+                color: "#cbd5e1",
+                marginBottom: 6,
+                display: "block",
+              }}
+            >
               Duração do Vídeo
             </label>
             <select
@@ -206,14 +236,30 @@ export function VideoGeneratorTool({ courseId, lessonId, onSuccess, onClose }: V
           )}
 
           {errorMsg && (
-            <div style={{ background: "rgba(220,38,38,0.2)", border: "1px solid #dc2626", color: "#fca5a5", padding: 12, borderRadius: 10, fontSize: 13 }}>
+            <div
+              style={{
+                background: "rgba(220,38,38,0.2)",
+                border: "1px solid #dc2626",
+                color: "#fca5a5",
+                padding: 12,
+                borderRadius: 10,
+                fontSize: 13,
+              }}
+            >
               ⚠️ {errorMsg}
             </div>
           )}
 
           {/* Resultado Gerado */}
           {generatedResult && (
-            <div style={{ background: "#1e2028", borderRadius: 14, padding: 14, border: "1px solid #334155" }}>
+            <div
+              style={{
+                background: "#1e2028",
+                borderRadius: 14,
+                padding: 14,
+                border: "1px solid #334155",
+              }}
+            >
               <div style={{ fontSize: 13, fontWeight: 800, color: "#10b981", marginBottom: 8 }}>
                 ✅ Vídeo Gerado com Sucesso!
               </div>
@@ -222,7 +268,17 @@ export function VideoGeneratorTool({ courseId, lessonId, onSuccess, onClose }: V
               </div>
 
               {/* Preview da Narração */}
-              <div style={{ fontSize: 11, background: "#0f172a", padding: 10, borderRadius: 8, color: "#cbd5e1", maxHeight: 120, overflowY: "auto" }}>
+              <div
+                style={{
+                  fontSize: 11,
+                  background: "#0f172a",
+                  padding: 10,
+                  borderRadius: 8,
+                  color: "#cbd5e1",
+                  maxHeight: 120,
+                  overflowY: "auto",
+                }}
+              >
                 <strong>🎙️ Roteiro da Narração em PT-BR:</strong>
                 {generatedResult.scriptNarracao?.map((s: any, idx: number) => (
                   <div key={idx} style={{ marginTop: 6 }}>

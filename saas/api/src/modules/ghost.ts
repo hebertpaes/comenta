@@ -38,7 +38,8 @@ const SEED_GHOST_POSTS: GhostPost[] = [
       <h3>2. Automação de Atendimento com IA Google Gemini</h3>
       <p>Integrar robôs de IA como a atendente virtual Sofia no WhatsApp permite qualificar leads de nutrição em menos de 10 segundos e responder dúvidas sobre dosagens 24 horas por dia.</p>
     `,
-    excerpt: "Descubra como a inovação em gomas de creatina aliada ao atendimento por IA no WhatsApp está revolucionando as vendas de suplementos no Brasil.",
+    excerpt:
+      "Descubra como a inovação em gomas de creatina aliada ao atendimento por IA no WhatsApp está revolucionando as vendas de suplementos no Brasil.",
     feature_image: "/images/gumesmomo_jar.jpg",
     featured: true,
     visibility: "public",
@@ -66,7 +67,8 @@ ghost install local</code></pre>
 
       <p>Após a instalação, o Ghost fica disponível no endereço local <code>http://localhost:2368</code> com o painel administrativo em <code>http://localhost:2368/ghost</code>.</p>
     `,
-    excerpt: "Aprenda a instalar o Ghost CMS na sua estrutura local e conectar a API de conteúdo Headless ao seu site Next.js.",
+    excerpt:
+      "Aprenda a instalar o Ghost CMS na sua estrutura local e conectar a API de conteúdo Headless ao seu site Next.js.",
     feature_image: "/images/gumesmomo_hand.jpg",
     featured: false,
     visibility: "public",

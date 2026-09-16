@@ -36,7 +36,12 @@ export async function conversationRoutes(app: FastifyInstance) {
       const [existing] = await db
         .select({ id: schema.conversations.id })
         .from(schema.conversations)
-        .where(and(eq(schema.conversations.companyId, p.companyId), eq(schema.conversations.contactId, c.id)))
+        .where(
+          and(
+            eq(schema.conversations.companyId, p.companyId),
+            eq(schema.conversations.contactId, c.id)
+          )
+        )
         .limit(1);
 
       if (!existing) {

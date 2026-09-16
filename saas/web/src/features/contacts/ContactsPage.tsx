@@ -8,7 +8,13 @@ import { Async, ErrorBox } from "../../components/Async";
 import { contactsToCsv, downloadCsv, parseContactsCsv } from "./csv";
 import type { ContactImportRow } from "./csv";
 
-const inputStyle = { padding: "9px 12px", borderRadius: 10, border: "1px solid var(--border)", background: "var(--panel2)", color: "var(--text)" } as const;
+const inputStyle = {
+  padding: "9px 12px",
+  borderRadius: 10,
+  border: "1px solid var(--border)",
+  background: "var(--panel2)",
+  color: "var(--text)",
+} as const;
 
 export function ContactsPage() {
   const queryClient = useQueryClient();
@@ -51,7 +57,9 @@ export function ContactsPage() {
   const importRows = useMutation({
     mutationFn: (rows: ContactImportRow[]) => contacts.import(rows),
     onSuccess: (r) => {
-      setImportNotice(`✓ Sincronizados com sucesso! Importados: ${r.imported} · Pulados: ${r.skipped}`);
+      setImportNotice(
+        `✓ Sincronizados com sucesso! Importados: ${r.imported} · Pulados: ${r.skipped}`
+      );
       void reload();
     },
   });
@@ -73,7 +81,10 @@ export function ContactsPage() {
 
         importRows.mutate(rows);
       } catch (err) {
-        console.warn("Contact Picker não suportado neste navegador, usando sincronização alternativa.", err);
+        console.warn(
+          "Contact Picker não suportado neste navegador, usando sincronização alternativa.",
+          err
+        );
         handleSimulatedDeviceSync();
       }
     } else {
@@ -86,11 +97,31 @@ export function ContactsPage() {
     setImportNotice("⚡ Extraindo e sincronizando agenda do dispositivo...");
 
     const sampleDeviceContacts: ContactImportRow[] = [
-      { name: "Carlos Eduardo (Cliente VIP)", phone: "11987654321", email: "carlos.eduardo@gmail.com" },
-      { name: "Mariana Silva (Lead Hotmart)", phone: "21998765432", email: "mariana.silva@hotmail.com" },
-      { name: "Roberto Alves (Comercial)", phone: "31976543210", email: "roberto.alves@empresa.com" },
-      { name: "Juliana Mendes (Aluna ABACS)", phone: "41988776655", email: "juliana.mendes@abacs.org.br" },
-      { name: "Fernando Costa (Suporte Tech)", phone: "51999887766", email: "fernando.costa@tech.com" }
+      {
+        name: "Carlos Eduardo (Cliente VIP)",
+        phone: "11987654321",
+        email: "carlos.eduardo@gmail.com",
+      },
+      {
+        name: "Mariana Silva (Lead Hotmart)",
+        phone: "21998765432",
+        email: "mariana.silva@hotmail.com",
+      },
+      {
+        name: "Roberto Alves (Comercial)",
+        phone: "31976543210",
+        email: "roberto.alves@empresa.com",
+      },
+      {
+        name: "Juliana Mendes (Aluna ABACS)",
+        phone: "41988776655",
+        email: "juliana.mendes@abacs.org.br",
+      },
+      {
+        name: "Fernando Costa (Suporte Tech)",
+        phone: "51999887766",
+        email: "fernando.costa@tech.com",
+      },
     ];
 
     setTimeout(() => {
@@ -107,7 +138,11 @@ export function ContactsPage() {
     const content = await file.text();
     let rows: ContactImportRow[] = [];
 
-    if (file.name.endsWith(".vcf") || file.name.endsWith(".vcard") || content.includes("BEGIN:VCARD")) {
+    if (
+      file.name.endsWith(".vcf") ||
+      file.name.endsWith(".vcard") ||
+      content.includes("BEGIN:VCARD")
+    ) {
       // Parser de vCard (.vcf)
       const cards = content.split("END:VCARD");
       for (const card of cards) {
@@ -122,7 +157,7 @@ export function ContactsPage() {
           rows.push({
             name: rawName,
             phone: rawPhone,
-            email: rawEmail
+            email: rawEmail,
           });
         }
       }
@@ -150,11 +185,19 @@ export function ContactsPage() {
 
   return (
     <div style={{ paddingBottom: 40 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 14,
+        }}
+      >
         <div>
           <h2>👥 Contatos & Agenda Sincronizada do Dispositivo</h2>
           <p className="muted" style={{ marginTop: -8 }}>
-            Sincronize contatos da agenda do seu celular/PC, arquivos VCF, CSV ou insira manualmente.
+            Sincronize contatos da agenda do seu celular/PC, arquivos VCF, CSV ou insira
+            manualmente.
           </p>
         </div>
       </div>
@@ -191,7 +234,14 @@ export function ContactsPage() {
           type="button"
           onClick={handleDeviceContactPicker}
           disabled={importRows.isPending}
-          style={{ background: "#25D366", color: "#fff", fontWeight: 700, display: "inline-flex", alignItems: "center", gap: 6 }}
+          style={{
+            background: "#25D366",
+            color: "#fff",
+            fontWeight: 700,
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 6,
+          }}
         >
           📲 Sincronizar Agenda do Dispositivo
         </button>
@@ -207,7 +257,7 @@ export function ContactsPage() {
             fontWeight: 700,
             display: "inline-flex",
             alignItems: "center",
-            gap: 6
+            gap: 6,
           }}
         >
           {importRows.isPending ? "Importando…" : "⬆️ Importar CSV / VCF (vCard)"}
@@ -230,7 +280,18 @@ export function ContactsPage() {
       </div>
 
       {importNotice && (
-        <div style={{ padding: "10px 14px", borderRadius: 8, background: "rgba(37, 211, 102, 0.12)", border: "1px solid #25D366", color: "#10b981", fontSize: 13, fontWeight: 700, marginBottom: 16 }}>
+        <div
+          style={{
+            padding: "10px 14px",
+            borderRadius: 8,
+            background: "rgba(37, 211, 102, 0.12)",
+            border: "1px solid #25D366",
+            color: "#10b981",
+            fontSize: 13,
+            fontWeight: 700,
+            marginBottom: 16,
+          }}
+        >
           {importNotice}
         </div>
       )}
@@ -296,12 +357,26 @@ export function ContactsPage() {
                     gap: 14,
                   }}
                 >
-                  <div style={{ width: 38, height: 38, borderRadius: "50%", background: "var(--accent)", color: "#fff", display: "grid", placeItems: "center", fontWeight: 800, fontSize: 16 }}>
+                  <div
+                    style={{
+                      width: 38,
+                      height: 38,
+                      borderRadius: "50%",
+                      background: "var(--accent)",
+                      color: "#fff",
+                      display: "grid",
+                      placeItems: "center",
+                      fontWeight: 800,
+                      fontSize: 16,
+                    }}
+                  >
                     {((c?.name ?? "C")[0] ?? "C").toUpperCase()}
                   </div>
 
                   <div style={{ flex: 1 }}>
-                    <div style={{ fontWeight: 700, fontSize: 14, color: "var(--text)" }}>{c.name}</div>
+                    <div style={{ fontWeight: 700, fontSize: 14, color: "var(--text)" }}>
+                      {c.name}
+                    </div>
                     <div className="muted" style={{ fontSize: 12, marginTop: 2 }}>
                       {c.phone ? `📱 ${c.phone}` : ""} {c.email ? `· ✉️ ${c.email}` : ""}
                     </div>
@@ -321,7 +396,7 @@ export function ContactsPage() {
                       border: "none",
                       display: "inline-flex",
                       alignItems: "center",
-                      gap: 4
+                      gap: 4,
                     }}
                   >
                     💬 Abrir Chat no App

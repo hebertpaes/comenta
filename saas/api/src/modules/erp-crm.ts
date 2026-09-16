@@ -1,8 +1,8 @@
 import type { FastifyInstance } from "fastify";
 import { z } from "zod";
-import { eq, desc, and, sql as dsql } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { db, schema } from "../db/client.js";
-import { authenticate, parse, ApiError } from "../lib/http.js";
+import { authenticate, parse } from "../lib/http.js";
 import { audit } from "../lib/audit.js";
 
 /**
@@ -12,16 +12,53 @@ import { audit } from "../lib/audit.js";
 
 export const DEFAULT_WHATSAPP_MENU_CONFIG = {
   headerTitle: "🤖 *MENU INTERATIVO - COMENTA AI & ABACS*",
-  greeting: "_Seja bem-vindo ao sistema de atendimento inteligente oficial!_\n\nPor favor, escolha uma opção digitando o número correspondente:",
+  greeting:
+    "_Seja bem-vindo ao sistema de atendimento inteligente oficial!_\n\nPor favor, escolha uma opção digitando o número correspondente:",
   footerText: "--- \n📱 *Comenta SaaS v2.0* · _https://abacs.org.br_",
   options: [
-    { key: "1️⃣", label: "🎓 *Cursos & Treinamentos ABACS*", subtitle: "Ver catálogo de 17 cursos, ementas e matricular-se", action: "courses_catalog", customResponse: "" },
-    { key: "2️⃣", label: "🛍️ *Loja Virtual & Produtos ERP*", subtitle: "Consultar catálogo de produtos, equipamentos e compra", action: "store_products", customResponse: "" },
-    { key: "3️⃣", label: "🧾 *Financeiro & 2ª Via de Faturas (ERP)*", subtitle: "Consultar extrato de mensalidade, faturas Hotmart e Pix", action: "financial_invoices", customResponse: "" },
-    { key: "4️⃣", label: "📊 *Status do Atendimento / Pedido (CRM)*", subtitle: "Acompanhar andamento da sua inscrição ou suporte", action: "crm_status", customResponse: "" },
-    { key: "5️⃣", label: "✨ *Falar com Sofia Gemini 2.0 IA Spark*", subtitle: "Tirar dúvidas por IA com respostas humanas em tempo real", action: "ai_spark", customResponse: "" },
-    { key: "6️⃣", label: "🧑‍💼 *Falar com um Atendente Humano*", subtitle: "Transferência imediata para a fila de suporte comercial", action: "human_agent", customResponse: "" }
-  ]
+    {
+      key: "1️⃣",
+      label: "🎓 *Cursos & Treinamentos ABACS*",
+      subtitle: "Ver catálogo de 17 cursos, ementas e matricular-se",
+      action: "courses_catalog",
+      customResponse: "",
+    },
+    {
+      key: "2️⃣",
+      label: "🛍️ *Loja Virtual & Produtos ERP*",
+      subtitle: "Consultar catálogo de produtos, equipamentos e compra",
+      action: "store_products",
+      customResponse: "",
+    },
+    {
+      key: "3️⃣",
+      label: "🧾 *Financeiro & 2ª Via de Faturas (ERP)*",
+      subtitle: "Consultar extrato de mensalidade, faturas Hotmart e Pix",
+      action: "financial_invoices",
+      customResponse: "",
+    },
+    {
+      key: "4️⃣",
+      label: "📊 *Status do Atendimento / Pedido (CRM)*",
+      subtitle: "Acompanhar andamento da sua inscrição ou suporte",
+      action: "crm_status",
+      customResponse: "",
+    },
+    {
+      key: "5️⃣",
+      label: "✨ *Falar com Sofia Gemini 2.0 IA Spark*",
+      subtitle: "Tirar dúvidas por IA com respostas humanas em tempo real",
+      action: "ai_spark",
+      customResponse: "",
+    },
+    {
+      key: "6️⃣",
+      label: "🧑‍💼 *Falar com um Atendente Humano*",
+      subtitle: "Transferência imediata para a fila de suporte comercial",
+      action: "human_agent",
+      customResponse: "",
+    },
+  ],
 };
 
 export function buildFormattedMenuText(config: typeof DEFAULT_WHATSAPP_MENU_CONFIG): string {
@@ -48,21 +85,94 @@ export async function erpCrmRoutes(app: FastifyInstance) {
     const settingsObj = (company?.settings as Record<string, any> | undefined) ?? {};
     const erpData = settingsObj.erpData || {
       transactions: [
-        { id: "tx_1", type: "receita", description: "Venda Curso Operador de Caixa (Hotmart)", amount: 99.00, date: "2026-08-13", category: "Cursos" },
-        { id: "tx_2", type: "receita", description: "Mensalidade Comenta SaaS Pro", amount: 349.00, date: "2026-08-13", category: "SaaS" },
-        { id: "tx_3", type: "despesa", description: "Servidores & Nuvem AWS / Gemini API", amount: 120.00, date: "2026-08-12", category: "Infraestrutura" },
-        { id: "tx_4", type: "receita", description: "Inscrição Engenharia de IA ABACS", amount: 149.00, date: "2026-08-12", category: "Cursos" },
+        {
+          id: "tx_1",
+          type: "receita",
+          description: "Venda Curso Operador de Caixa (Hotmart)",
+          amount: 99.0,
+          date: "2026-08-13",
+          category: "Cursos",
+        },
+        {
+          id: "tx_2",
+          type: "receita",
+          description: "Mensalidade Comenta SaaS Pro",
+          amount: 349.0,
+          date: "2026-08-13",
+          category: "SaaS",
+        },
+        {
+          id: "tx_3",
+          type: "despesa",
+          description: "Servidores & Nuvem AWS / Gemini API",
+          amount: 120.0,
+          date: "2026-08-12",
+          category: "Infraestrutura",
+        },
+        {
+          id: "tx_4",
+          type: "receita",
+          description: "Inscrição Engenharia de IA ABACS",
+          amount: 149.0,
+          date: "2026-08-12",
+          category: "Cursos",
+        },
       ],
       deals: [
-        { id: "deal_1", title: "Treinamento Corporativo Pacote Office", contactName: "Empresa ABC Ltda", stage: "proposta", amount: 2500.00, probability: 80 },
-        { id: "deal_2", title: "Licença SaaS 50 Atendentes", contactName: "Rede Farmácias Silva", stage: "negociacao", amount: 4900.00, probability: 90 },
-        { id: "deal_3", title: "Matrícula Combo Administrativo", contactName: "João Pedro", stage: "fechado", amount: 198.00, probability: 100 },
+        {
+          id: "deal_1",
+          title: "Treinamento Corporativo Pacote Office",
+          contactName: "Empresa ABC Ltda",
+          stage: "proposta",
+          amount: 2500.0,
+          probability: 80,
+        },
+        {
+          id: "deal_2",
+          title: "Licença SaaS 50 Atendentes",
+          contactName: "Rede Farmácias Silva",
+          stage: "negociacao",
+          amount: 4900.0,
+          probability: 90,
+        },
+        {
+          id: "deal_3",
+          title: "Matrícula Combo Administrativo",
+          contactName: "João Pedro",
+          stage: "fechado",
+          amount: 198.0,
+          probability: 100,
+        },
       ],
       products: [
-        { id: "prod_1", name: "Curso Operador de Caixa Completo", sku: "ABACS-077", costPrice: 20.00, sellPrice: 99.00, stock: 999, category: "Digital" },
-        { id: "prod_2", name: "Engenharia de Prompt & IA", sku: "ABACS-101", costPrice: 30.00, sellPrice: 149.00, stock: 999, category: "Digital" },
-        { id: "prod_3", name: "Headset Profissional USB Atendimento", sku: "EQP-002", costPrice: 65.00, sellPrice: 140.00, stock: 45, category: "Físico" }
-      ]
+        {
+          id: "prod_1",
+          name: "Curso Operador de Caixa Completo",
+          sku: "ABACS-077",
+          costPrice: 20.0,
+          sellPrice: 99.0,
+          stock: 999,
+          category: "Digital",
+        },
+        {
+          id: "prod_2",
+          name: "Engenharia de Prompt & IA",
+          sku: "ABACS-101",
+          costPrice: 30.0,
+          sellPrice: 149.0,
+          stock: 999,
+          category: "Digital",
+        },
+        {
+          id: "prod_3",
+          name: "Headset Profissional USB Atendimento",
+          sku: "EQP-002",
+          costPrice: 65.0,
+          sellPrice: 140.0,
+          stock: 45,
+          category: "Físico",
+        },
+      ],
     };
 
     const whatsappMenuConfig = settingsObj.whatsappMenuConfig || DEFAULT_WHATSAPP_MENU_CONFIG;
@@ -84,13 +194,13 @@ export async function erpCrmRoutes(app: FastifyInstance) {
         totalDespesas,
         pipelineValue,
         activeDealsCount: erpData.deals.length,
-        productsCount: erpData.products.length
+        productsCount: erpData.products.length,
       },
       transactions: erpData.transactions,
       deals: erpData.deals,
       products: erpData.products,
       whatsappMenuConfig,
-      whatsappMenuText: buildFormattedMenuText(whatsappMenuConfig)
+      whatsappMenuText: buildFormattedMenuText(whatsappMenuConfig),
     };
   });
 
@@ -107,9 +217,9 @@ export async function erpCrmRoutes(app: FastifyInstance) {
             label: z.string(),
             subtitle: z.string(),
             action: z.string(),
-            customResponse: z.string().optional().default("")
+            customResponse: z.string().optional().default(""),
           })
-        )
+        ),
       }),
       req.body
     );
@@ -127,13 +237,15 @@ export async function erpCrmRoutes(app: FastifyInstance) {
       .set({ settings: { ...settingsObj, whatsappMenuConfig: body } })
       .where(eq(schema.companies.id, p.companyId));
 
-    audit(p, "whatsapp.menu_updated", "settings", p.companyId, { optionsCount: body.options.length });
+    audit(p, "whatsapp.menu_updated", "settings", p.companyId, {
+      optionsCount: body.options.length,
+    });
 
     return reply.send({
       success: true,
       message: "Menu interativo do WhatsApp atualizado com sucesso!",
       menuConfig: body,
-      menuText: buildFormattedMenuText(body)
+      menuText: buildFormattedMenuText(body),
     });
   });
 
@@ -144,7 +256,7 @@ export async function erpCrmRoutes(app: FastifyInstance) {
         type: z.enum(["receita", "despesa"]),
         description: z.string().min(2),
         amount: z.number().positive(),
-        category: z.string().default("Geral")
+        category: z.string().default("Geral"),
       }),
       req.body
     );
@@ -164,12 +276,12 @@ export async function erpCrmRoutes(app: FastifyInstance) {
       description: body.description.trim(),
       amount: body.amount,
       category: body.category,
-      date: new Date().toISOString().split("T")[0]
+      date: new Date().toISOString().split("T")[0],
     };
 
     const updatedErp = {
       ...erpData,
-      transactions: [newTx, ...(erpData.transactions || [])]
+      transactions: [newTx, ...(erpData.transactions || [])],
     };
 
     await db
@@ -189,7 +301,9 @@ export async function erpCrmRoutes(app: FastifyInstance) {
         title: z.string().min(2),
         contactName: z.string().min(2),
         amount: z.number().nonnegative(),
-        stage: z.enum(["prospecao", "proposta", "negociacao", "fechado", "perdido"]).default("prospecao")
+        stage: z
+          .enum(["prospecao", "proposta", "negociacao", "fechado", "perdido"])
+          .default("prospecao"),
       }),
       req.body
     );
@@ -209,12 +323,12 @@ export async function erpCrmRoutes(app: FastifyInstance) {
       contactName: body.contactName.trim(),
       amount: body.amount,
       stage: body.stage,
-      probability: body.stage === "fechado" ? 100 : 50
+      probability: body.stage === "fechado" ? 100 : 50,
     };
 
     const updatedErp = {
       ...erpData,
-      deals: [newDeal, ...(erpData.deals || [])]
+      deals: [newDeal, ...(erpData.deals || [])],
     };
 
     await db
@@ -243,7 +357,7 @@ export async function erpCrmRoutes(app: FastifyInstance) {
       success: true,
       menuConfig: config,
       menuText: buildFormattedMenuText(config),
-      options: config.options
+      options: config.options,
     };
   });
 }

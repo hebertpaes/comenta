@@ -72,11 +72,19 @@ export function KanbanPage() {
 
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 16,
+        }}
+      >
         <div>
           <h2>📋 Quadro Kanban de Negociações — Arraste e Solte</h2>
           <p className="muted" style={{ marginTop: -8, maxWidth: 680 }}>
-            Arraste os cards entre as colunas para alterar o status da conversa e avançar nas etapas do funil.
+            Arraste os cards entre as colunas para alterar o status da conversa e avançar nas etapas
+            do funil.
           </p>
         </div>
       </div>
@@ -128,7 +136,10 @@ export function KanbanPage() {
               >
                 <span style={{ width: 12, height: 12, borderRadius: 999, background: col.color }} />
                 {col.label}
-                <span className="muted" style={{ marginLeft: "auto", fontSize: 12, fontWeight: 700 }}>
+                <span
+                  className="muted"
+                  style={{ marginLeft: "auto", fontSize: 12, fontWeight: 700 }}
+                >
                   {cards.length}
                 </span>
               </div>
@@ -170,7 +181,13 @@ export function KanbanPage() {
                         transition: "transform 0.1s ease, box-shadow 0.1s ease",
                       }}
                     >
-                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                        }}
+                      >
                         <div style={{ fontWeight: 700, fontSize: 14, color: "var(--text)" }}>
                           {c.contact.name || "Contato"}
                         </div>

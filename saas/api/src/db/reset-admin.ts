@@ -49,7 +49,12 @@ async function resetAdminCredentials() {
 
   // Lista todos os usuários cadastrados
   const allUsers = await db
-    .select({ id: schema.users.id, email: schema.users.email, role: schema.users.role, name: schema.users.name })
+    .select({
+      id: schema.users.id,
+      email: schema.users.email,
+      role: schema.users.role,
+      name: schema.users.name,
+    })
     .from(schema.users);
 
   console.log("\n📋 Usuários disponíveis para Login:");

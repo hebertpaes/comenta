@@ -1,6 +1,8 @@
 import postgres from "postgres";
 
-const DATABASE_URL = process.env.DATABASE_URL || "postgresql://comenta:3a24efa594604b1e10d2e2b2346e5dc9@localhost:5432/comenta_saas";
+const DATABASE_URL =
+  process.env.DATABASE_URL ||
+  "postgresql://comenta:3a24efa594604b1e10d2e2b2346e5dc9@localhost:5432/comenta_saas";
 
 console.log("=========================================================");
 console.log("  🚀 ATIVANDO TODOS OS RECURSOS & EXPANDINDO BASE DE IA");
@@ -66,16 +68,25 @@ Se o cliente solicitar falar com um atendente humano, a IA deve responder cordia
         config: {
           knowledge: masterKnowledge,
           tone: "cordial, objetivo e focado em entender o cliente e oferecer o plano ideal",
-          handoffKeywords: ["humano", "atendente", "falar com pessoa", "suporte", "financeiro", "ajuda"],
-          handoffMessage: "Certo! Estou transferindo seu atendimento para a nossa equipe humana. Um instante, por favor. 🙂"
-        }
+          handoffKeywords: [
+            "humano",
+            "atendente",
+            "falar com pessoa",
+            "suporte",
+            "financeiro",
+            "ajuda",
+          ],
+          handoffMessage:
+            "Certo! Estou transferindo seu atendimento para a nossa equipe humana. Um instante, por favor. 🙂",
+        },
       },
       {
         name: "👋 Boas-vindas Automáticas ao Novo Cliente",
         type: "welcome",
         config: {
-          message: "Olá! Seja muito bem-vindo ao atendimento do Comenta AI. Como posso te ajudar hoje?"
-        }
+          message:
+            "Olá! Seja muito bem-vindo ao atendimento do Comenta AI. Como posso te ajudar hoje?",
+        },
       },
       {
         name: "🌙 Aviso Fora do Horário Comercial",
@@ -84,24 +95,27 @@ Se o cliente solicitar falar com um atendente humano, a IA deve responder cordia
           days: [1, 2, 3, 4, 5],
           start: "08:00",
           end: "18:00",
-          message: "Nosso horário de atendimento humano é de segunda a sexta, das 08h às 18h. Deixe sua mensagem que a nossa IA ou um atendente responderá em breve!"
-        }
+          message:
+            "Nosso horário de atendimento humano é de segunda a sexta, das 08h às 18h. Deixe sua mensagem que a nossa IA ou um atendente responderá em breve!",
+        },
       },
       {
         name: "⚡ Resposta Rápida por Palavra-Chave (Planos e Valores)",
         type: "keyword",
         config: {
           keywords: ["preço", "preço", "valores", "quanto custa", "planos"],
-          reply: "Nossos planos começam em R$ 149/mês no Starter e R$ 349/mês no Pro com IA Google Gemini inclusa! Quer testar grátis?"
-        }
+          reply:
+            "Nossos planos começam em R$ 149/mês no Starter e R$ 349/mês no Pro com IA Google Gemini inclusa! Quer testar grátis?",
+        },
       },
       {
         name: "⭐ Pesquisa de Satisfação NPS Pós-Atendimento",
         type: "rating",
         config: {
-          message: "Como você avalia o atendimento recebido hoje? Digite uma nota de 1 a 5 estrelas. Obrigado pela sua opinião!"
-        }
-      }
+          message:
+            "Como você avalia o atendimento recebido hoje? Digite uma nota de 1 a 5 estrelas. Obrigado pela sua opinião!",
+        },
+      },
     ];
 
     for (const a of automationsData) {
@@ -119,7 +133,7 @@ Se o cliente solicitar falar com um atendente humano, a IA deve responder cordia
         { name: "Comercial & Vendas", color: "#10b981", orderIndex: 1 },
         { name: "Suporte Técnico", color: "#3b82f6", orderIndex: 2 },
         { name: "Financeiro & Faturamento", color: "#8b5cf6", orderIndex: 3 },
-        { name: "Triagem por IA Gemini", color: "#ec4899", orderIndex: 4 }
+        { name: "Triagem por IA Gemini", color: "#ec4899", orderIndex: 4 },
       ];
       for (const q of queuesData) {
         await sql`
@@ -132,12 +146,25 @@ Se o cliente solicitar falar com um atendente humano, a IA deve responder cordia
     }
 
     // 5) Garantir Respostas Rápidas (Quick Replies)
-    const existingQuickReplies = await sql`SELECT id FROM quick_replies WHERE company_id = ${companyId};`;
+    const existingQuickReplies =
+      await sql`SELECT id FROM quick_replies WHERE company_id = ${companyId};`;
     if (existingQuickReplies.length < 3) {
       const qrData = [
-        { shortcut: "planos", message: "Conheça nossos planos: Starter R$ 149/mês, Pro R$ 349/mês e Enterprise R$ 799/mês. Todos com suporte completo!" },
-        { shortcut: "pix", message: "Nossa chave Pix CNPJ é 12.345.678/0001-90 (Comenta Atendimento Inteligente Ltda)." },
-        { shortcut: "loja", message: "Acesse a nossa loja oficial de cursos e módulos extras em: http://localhost:3000/loja" }
+        {
+          shortcut: "planos",
+          message:
+            "Conheça nossos planos: Starter R$ 149/mês, Pro R$ 349/mês e Enterprise R$ 799/mês. Todos com suporte completo!",
+        },
+        {
+          shortcut: "pix",
+          message:
+            "Nossa chave Pix CNPJ é 12.345.678/0001-90 (Comenta Atendimento Inteligente Ltda).",
+        },
+        {
+          shortcut: "loja",
+          message:
+            "Acesse a nossa loja oficial de cursos e módulos extras em: http://localhost:3000/loja",
+        },
       ];
       for (const qr of qrData) {
         await sql`

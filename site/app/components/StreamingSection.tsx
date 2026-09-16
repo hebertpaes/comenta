@@ -24,9 +24,11 @@ const COURSES: CourseItem[] = [
     duration: "45 min",
     lessons: 3,
     badge: "🔥 CURSO DESTAQUE",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
     youtubeId: "dQw4w9WgXcQ",
-    synopsis: "Aprenda a criar e treinar robôs autônomos com Google Gemini para responder clientes 24/7 e vender no WhatsApp.",
+    synopsis:
+      "Aprenda a criar e treinar robôs autônomos com Google Gemini para responder clientes 24/7 e vender no WhatsApp.",
   },
   {
     id: "c2",
@@ -36,9 +38,11 @@ const COURSES: CourseItem[] = [
     duration: "30 min",
     lessons: 2,
     badge: "⚡ NOVO CONTEÚDO",
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
     youtubeId: "dQw4w9WgXcQ",
-    synopsis: "Conecte webhooks da Hotmart ao Comenta API para matricular alunos e disparar mensagens automáticas de boas-vindas.",
+    synopsis:
+      "Conecte webhooks da Hotmart ao Comenta API para matricular alunos e disparar mensagens automáticas de boas-vindas.",
   },
   {
     id: "c3",
@@ -48,9 +52,11 @@ const COURSES: CourseItem[] = [
     duration: "35 min",
     lessons: 2,
     badge: "✦ EXCLUSIVO COMENTA",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
     youtubeId: "dQw4w9WgXcQ",
-    synopsis: "Domine a caixa de entrada unificada do WhatsApp e Instagram, organize seu funil no Kanban e meça o NPS da equipe.",
+    synopsis:
+      "Domine a caixa de entrada unificada do WhatsApp e Instagram, organize seu funil no Kanban e meça o NPS da equipe.",
   },
 ];
 
@@ -60,7 +66,8 @@ export default function StreamingSection() {
 
   const categorias = ["Todos", "IA Generativa", "Automação", "Gestão & CRM"];
 
-  const filtrados = categoria === "Todos" ? COURSES : COURSES.filter((c) => c.category === categoria);
+  const filtrados =
+    categoria === "Todos" ? COURSES : COURSES.filter((c) => c.category === categoria);
 
   return (
     <section className="bg-slate-950 text-white py-16 px-4 md:px-8 border-t border-slate-800">
@@ -72,13 +79,16 @@ export default function StreamingSection() {
               <span className="bg-purple-600 text-white text-xs font-black px-2.5 py-0.5 rounded tracking-widest uppercase">
                 COMENTA PLAY
               </span>
-              <span className="text-slate-400 text-xs font-semibold">✦ ACADEMIA DE TREINAMENTO HD</span>
+              <span className="text-slate-400 text-xs font-semibold">
+                ✦ ACADEMIA DE TREINAMENTO HD
+              </span>
             </div>
             <h2 className="text-3xl md:text-5xl font-black mt-2 tracking-tight">
               Academia Comenta — <span className="text-purple-500">Formações & Aulas em Vídeo</span>
             </h2>
             <p className="text-slate-400 text-sm md:text-base mt-1">
-              Treine sua equipe com módulos e videoaulas de alta performance. Assista em qualquer dispositivo.
+              Treine sua equipe com módulos e videoaulas de alta performance. Assista em qualquer
+              dispositivo.
             </p>
           </div>
 
@@ -103,7 +113,10 @@ export default function StreamingSection() {
 
         {/* Hero Billboard Banner Comenta Play */}
         <div className="relative rounded-3xl overflow-hidden mb-12 bg-gradient-to-r from-slate-950 via-purple-950 to-indigo-950 border border-slate-800 shadow-2xl min-h-[380px] flex items-center p-8 md:p-12">
-          <div className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay" style={{ backgroundImage: `url(${COURSES[0].image})` }} />
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay"
+            style={{ backgroundImage: `url(${COURSES[0].image})` }}
+          />
           <div className="relative z-10 max-w-2xl">
             <span className="bg-purple-600/90 backdrop-blur text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">
               🔥 DESTAQUE DA SEMANA
@@ -156,7 +169,9 @@ export default function StreamingSection() {
                 </span>
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-slate-300 font-medium">
                   <span className="text-emerald-400 font-bold">{course.rating}</span>
-                  <span>{course.duration} · {course.lessons} aulas</span>
+                  <span>
+                    {course.duration} · {course.lessons} aulas
+                  </span>
                 </div>
               </div>
 
@@ -215,7 +230,9 @@ export default function StreamingSection() {
 
             <div className="p-6 bg-slate-900">
               <div className="flex items-center gap-3 mb-2">
-                <span className="text-emerald-400 font-extrabold text-sm">{selectedVideo.rating}</span>
+                <span className="text-emerald-400 font-extrabold text-sm">
+                  {selectedVideo.rating}
+                </span>
                 <span className="text-slate-400 text-xs">{selectedVideo.duration}</span>
                 <span className="bg-slate-800 text-slate-300 text-[10px] font-bold px-2 py-0.5 rounded">
                   {selectedVideo.category}

@@ -1,33 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  MessageSquare,
-  Sparkles,
-  Zap,
-  FileText,
-  Bot,
-  Kanban,
-  FolderGit2,
-  Clock,
-  Command,
-  Tag,
-  Megaphone,
-  Star,
-  Users,
-  GraduationCap,
-  Activity,
-  Webhook,
-  ShieldCheck,
-  Contact,
-  X,
-  ArrowRight,
-  ExternalLink,
-  CheckCircle2,
-  Search,
-  SlidersHorizontal,
-  Play
-} from "lucide-react";
+import { X, ArrowRight, ExternalLink, Search, Play } from "lucide-react";
 
 export type Feature = {
   id: string;
@@ -54,17 +28,23 @@ const FEATURES: Feature[] = [
     categoria: "operacao",
     color: "from-fuchsia-500 to-pink-500",
     detalhes: {
-      oQueFaz: "Centraliza todas as mensagens recebidas de múltiplos números de WhatsApp, páginas de Facebook, Instagram Direct e Webchat em um único painel unificado.",
-      beneficio: "Elimina a necessidade de trocar de celular ou aplicativo. Toda a equipe atende junto sem perder conversas.",
+      oQueFaz:
+        "Centraliza todas as mensagens recebidas de múltiplos números de WhatsApp, páginas de Facebook, Instagram Direct e Webchat em um único painel unificado.",
+      beneficio:
+        "Elimina a necessidade de trocar de celular ou aplicativo. Toda a equipe atende junto sem perder conversas.",
       simuladorTipo: "chat",
       exemplo: {
         mensagens: [
           { remetente: "Cliente", texto: "Olá! Vocês atendem aos sábados?", canal: "WhatsApp" },
-          { remetente: "Atendente (Ana)", texto: "Sim! Nosso horário no sábado é das 09h às 14h 😊", canal: "Painel" }
-        ]
-      }
+          {
+            remetente: "Atendente (Ana)",
+            texto: "Sim! Nosso horário no sábado é das 09h às 14h 😊",
+            canal: "Painel",
+          },
+        ],
+      },
     },
-    linkRecurso: "/recursos/whatsapp"
+    linkRecurso: "/recursos/whatsapp",
   },
   {
     id: "ia-classifica",
@@ -74,16 +54,18 @@ const FEATURES: Feature[] = [
     categoria: "ia",
     color: "from-violet-500 to-indigo-500",
     detalhes: {
-      oQueFaz: "Analisa o sentimento e a intenção da mensagem inicial para classificar a urgência (Alta, Média, Baixa) e marcar o tipo de solicitação.",
-      beneficio: "Casos graves ou clientes em potencial são atendidos imediatamente antes de dúvidas simples.",
+      oQueFaz:
+        "Analisa o sentimento e a intenção da mensagem inicial para classificar a urgência (Alta, Média, Baixa) e marcar o tipo de solicitação.",
+      beneficio:
+        "Casos graves ou clientes em potencial são atendidos imediatamente antes de dúvidas simples.",
       simuladorTipo: "ai",
       exemplo: {
         entrada: "Meu sistema está fora do ar e preciso emitir nota agora!",
         classificacao: "Urgente / Suporte Técnico",
-        prioridade: "Alta (Fura-fila automático)"
-      }
+        prioridade: "Alta (Fura-fila automático)",
+      },
     },
-    linkRecurso: "/recursos/robos-ia"
+    linkRecurso: "/recursos/robos-ia",
   },
   {
     id: "respostas-sugeridas",
@@ -93,15 +75,18 @@ const FEATURES: Feature[] = [
     categoria: "ia",
     color: "from-amber-500 to-orange-500",
     detalhes: {
-      oQueFaz: "Gera rascunhos de resposta personalizados com linguagem natural usando o modelo Claude Sonnet 3.7.",
-      beneficio: "Reduz o tempo médio de digitação de 3 minutos para 5 segundos com apenas 1 clique.",
+      oQueFaz:
+        "Gera rascunhos de resposta personalizados com linguagem natural usando o modelo Claude Sonnet 3.7.",
+      beneficio:
+        "Reduz o tempo médio de digitação de 3 minutos para 5 segundos com apenas 1 clique.",
       simuladorTipo: "ai",
       exemplo: {
         pergunta: "Qual o prazo de entrega para o CEP 78000-000?",
-        sugestao: "Para Cuiabá (CEP 78000-000), nosso prazo de entrega é de 2 dias úteis via transportadora expressa."
-      }
+        sugestao:
+          "Para Cuiabá (CEP 78000-000), nosso prazo de entrega é de 2 dias úteis via transportadora expressa.",
+      },
     },
-    linkRecurso: "/recursos/robos-ia"
+    linkRecurso: "/recursos/robos-ia",
   },
   {
     id: "resumo-conversas",
@@ -111,14 +96,17 @@ const FEATURES: Feature[] = [
     categoria: "ia",
     color: "from-emerald-500 to-teal-500",
     detalhes: {
-      oQueFaz: "Sintetiza conversas de 50+ mensagens em um boletim de 3 linhas apontando o problema, o que já foi tentado e a solução.",
-      beneficio: "Troca de turno perfeita: o novo atendente lê o resumo e continua sem perguntar tudo de novo ao cliente.",
+      oQueFaz:
+        "Sintetiza conversas de 50+ mensagens em um boletim de 3 linhas apontando o problema, o que já foi tentado e a solução.",
+      beneficio:
+        "Troca de turno perfeita: o novo atendente lê o resumo e continua sem perguntar tudo de novo ao cliente.",
       simuladorTipo: "ai",
       exemplo: {
-        resumo: "• Cliente relatou cobrança em duplicidade\n• Enviou comprovante bancário de R$ 150,00\n• Financeiro já autorizou estorno via Pix"
-      }
+        resumo:
+          "• Cliente relatou cobrança em duplicidade\n• Enviou comprovante bancário de R$ 150,00\n• Financeiro já autorizou estorno via Pix",
+      },
     },
-    linkRecurso: "/recursos/robos-ia"
+    linkRecurso: "/recursos/robos-ia",
   },
   {
     id: "autoatendimento-handoff",
@@ -128,15 +116,17 @@ const FEATURES: Feature[] = [
     categoria: "ia",
     color: "from-purple-500 to-fuchsia-500",
     detalhes: {
-      oQueFaz: "Responde dúvidas frequentes 24 horas por dia. Se o cliente pedir um humano ou demonstrar insatisfação, transfere na hora.",
-      beneficio: "Atendimento 24/7 sem deixar o cliente preso em menuzinhos ou árvores de robô travadas.",
+      oQueFaz:
+        "Responde dúvidas frequentes 24 horas por dia. Se o cliente pedir um humano ou demonstrar insatisfação, transfere na hora.",
+      beneficio:
+        "Atendimento 24/7 sem deixar o cliente preso em menuzinhos ou árvores de robô travadas.",
       simuladorTipo: "chat",
       exemplo: {
         bot: "Atendimento automático IA ativo.",
-        handoff: "Transferindo para equipe humana na fila 'Financeiro'..."
-      }
+        handoff: "Transferindo para equipe humana na fila 'Financeiro'...",
+      },
     },
-    linkRecurso: "/recursos/robos-ia"
+    linkRecurso: "/recursos/robos-ia",
   },
   {
     id: "kanban-atendimento",
@@ -146,14 +136,15 @@ const FEATURES: Feature[] = [
     categoria: "operacao",
     color: "from-blue-500 to-indigo-500",
     detalhes: {
-      oQueFaz: "Quadro visual em colunas estilo Trello/Jira para acompanhar cada atendimento por estágio de resolução.",
+      oQueFaz:
+        "Quadro visual em colunas estilo Trello/Jira para acompanhar cada atendimento por estágio de resolução.",
       beneficio: "Visão clara do gargalo da equipe e controle de produtividade em tempo real.",
       simuladorTipo: "kanban",
       exemplo: {
-        colunas: ["Aguardando (3)", "Em Atendimento (5)", "Resolvido (12)"]
-      }
+        colunas: ["Aguardando (3)", "Em Atendimento (5)", "Resolvido (12)"],
+      },
     },
-    linkRecurso: "/recursos/marketing"
+    linkRecurso: "/recursos/marketing",
   },
   {
     id: "filas-departamento",
@@ -163,14 +154,16 @@ const FEATURES: Feature[] = [
     categoria: "operacao",
     color: "from-teal-500 to-emerald-500",
     detalhes: {
-      oQueFaz: "Roteia conversas automaticamente para grupos especializados com base nas opções do cliente ou regras de negócio.",
-      beneficio: "Garante que perguntas financeiras vão para o Financeiro e compras vão direto para Vendas.",
+      oQueFaz:
+        "Roteia conversas automaticamente para grupos especializados com base nas opções do cliente ou regras de negócio.",
+      beneficio:
+        "Garante que perguntas financeiras vão para o Financeiro e compras vão direto para Vendas.",
       simuladorTipo: "kanban",
       exemplo: {
-        filas: ["Suporte Técnico", "Vendas & Planos", "Financeiro & Faturamento"]
-      }
+        filas: ["Suporte Técnico", "Vendas & Planos", "Financeiro & Faturamento"],
+      },
     },
-    linkRecurso: "/recursos/automacoes"
+    linkRecurso: "/recursos/automacoes",
   },
   {
     id: "horario-comercial",
@@ -180,14 +173,15 @@ const FEATURES: Feature[] = [
     categoria: "operacao",
     color: "from-slate-500 to-slate-700",
     detalhes: {
-      oQueFaz: "Dispara mensagem personalizada automática quando mensagens chegam fora do horário configurado por departamento.",
+      oQueFaz:
+        "Dispara mensagem personalizada automática quando mensagens chegam fora do horário configurado por departamento.",
       beneficio: "Define expectativas claras e evita notas baixas por demora no período noturno.",
       simuladorTipo: "chat",
       exemplo: {
-        aviso: "Nosso expediente encerrou às 18h. Retornaremos seu contato amanhã às 08h!"
-      }
+        aviso: "Nosso expediente encerrou às 18h. Retornaremos seu contato amanhã às 08h!",
+      },
     },
-    linkRecurso: "/recursos/automacoes"
+    linkRecurso: "/recursos/automacoes",
   },
   {
     id: "respostas-rapidas",
@@ -197,15 +191,16 @@ const FEATURES: Feature[] = [
     categoria: "operacao",
     color: "from-lime-500 to-green-500",
     detalhes: {
-      oQueFaz: "Permite cadastrar trechos de texto com variáveis. Digitando '/pix' o sistema insere a chave e instruções de pagamento.",
+      oQueFaz:
+        "Permite cadastrar trechos de texto com variáveis. Digitando '/pix' o sistema insere a chave e instruções de pagamento.",
       beneficio: "Elimina erros de digitação e padroniza as respostas de toda a equipe.",
       simuladorTipo: "chat",
       exemplo: {
         atalho: "/pix",
-        resultado: "Nossa chave Pix CNPJ é 00.000.000/0001-00 (Comenta Tecnologia)."
-      }
+        resultado: "Nossa chave Pix CNPJ é 00.000.000/0001-00 (Comenta Tecnologia).",
+      },
     },
-    linkRecurso: "/recursos/automacoes"
+    linkRecurso: "/recursos/automacoes",
   },
   {
     id: "tags-notas",
@@ -215,14 +210,16 @@ const FEATURES: Feature[] = [
     categoria: "operacao",
     color: "from-orange-500 to-amber-500",
     detalhes: {
-      oQueFaz: "Adiciona etiquetas coloridas aos contatos e insere notas secretas no histórico que não chegam no WhatsApp do cliente.",
-      beneficio: "Comunicação interna limpa entre atendentes e supervisores dentro do próprio atendimento.",
+      oQueFaz:
+        "Adiciona etiquetas coloridas aos contatos e insere notas secretas no histórico que não chegam no WhatsApp do cliente.",
+      beneficio:
+        "Comunicação interna limpa entre atendentes e supervisores dentro do próprio atendimento.",
       simuladorTipo: "chat",
       exemplo: {
-        nota: "🔒 Nota Interna: Cliente solicitou desconto de 10% aprovado pelo gerente João."
-      }
+        nota: "🔒 Nota Interna: Cliente solicitou desconto de 10% aprovado pelo gerente João.",
+      },
     },
-    linkRecurso: "/recursos/marketing"
+    linkRecurso: "/recursos/marketing",
   },
   {
     id: "campanhas-massa",
@@ -232,14 +229,16 @@ const FEATURES: Feature[] = [
     categoria: "disparos",
     color: "from-pink-500 to-rose-500",
     detalhes: {
-      oQueFaz: "Orquestra disparos em massa com atrasos randômicos entre mensagens (ex: 5 a 15s) e pausa entre lotes.",
-      beneficio: "Protege seus números do WhatsApp contra bloqueio por spam mantendo alta taxa de entrega.",
+      oQueFaz:
+        "Orquestra disparos em massa com atrasos randômicos entre mensagens (ex: 5 a 15s) e pausa entre lotes.",
+      beneficio:
+        "Protege seus números do WhatsApp contra bloqueio por spam mantendo alta taxa de entrega.",
       simuladorTipo: "campanha",
       exemplo: {
-        lote: "Lote 1: 50 mensagens enviadas (Pausa de 3 min antes do próximo lote)"
-      }
+        lote: "Lote 1: 50 mensagens enviadas (Pausa de 3 min antes do próximo lote)",
+      },
     },
-    linkRecurso: "/recursos/campanhas"
+    linkRecurso: "/recursos/campanhas",
   },
   {
     id: "avaliacao-nps",
@@ -249,15 +248,17 @@ const FEATURES: Feature[] = [
     categoria: "operacao",
     color: "from-yellow-500 to-amber-500",
     detalhes: {
-      oQueFaz: "Envia automaticamente uma mensagem no encerramento da conversa pedindo uma nota de 1 a 5 estrelas ou 0 a 10.",
-      beneficio: "Gera estatísticas de desempenho por atendente e identifica falhas no atendimento.",
+      oQueFaz:
+        "Envia automaticamente uma mensagem no encerramento da conversa pedindo uma nota de 1 a 5 estrelas ou 0 a 10.",
+      beneficio:
+        "Gera estatísticas de desempenho por atendente e identifica falhas no atendimento.",
       simuladorTipo: "nps",
       exemplo: {
         pergunta: "Como você avalia nosso atendimento hoje? (1 a 5)",
-        nota: "⭐⭐⭐⭐⭐ (Nota 5/5 recebida)"
-      }
+        nota: "⭐⭐⭐⭐⭐ (Nota 5/5 recebida)",
+      },
     },
-    linkRecurso: "/recursos/marketing"
+    linkRecurso: "/recursos/marketing",
   },
   {
     id: "chat-interno",
@@ -267,14 +268,16 @@ const FEATURES: Feature[] = [
     categoria: "operacao",
     color: "from-cyan-500 to-blue-500",
     detalhes: {
-      oQueFaz: "Canal de chat em tempo real entre membros da equipe e grupos de discussão internos.",
-      beneficio: "Sem necessidade de usar Telegram ou WhatsApp pessoal para alinhar dúvidas de trabalho.",
+      oQueFaz:
+        "Canal de chat em tempo real entre membros da equipe e grupos de discussão internos.",
+      beneficio:
+        "Sem necessidade de usar Telegram ou WhatsApp pessoal para alinhar dúvidas de trabalho.",
       simuladorTipo: "chat",
       exemplo: {
-        chat: "Carlos: @Ana você pode verificar a fatura do cliente #402?"
-      }
+        chat: "Carlos: @Ana você pode verificar a fatura do cliente #402?",
+      },
     },
-    linkRecurso: "/recursos/automacoes"
+    linkRecurso: "/recursos/automacoes",
   },
   {
     id: "webhooks-api",
@@ -284,17 +287,18 @@ const FEATURES: Feature[] = [
     categoria: "dev",
     color: "from-rose-500 to-red-500",
     detalhes: {
-      oQueFaz: "Dispara eventos HTTP JSON em tempo real para seu sistema quando uma conversa abre, fecha ou recebe mensagem.",
+      oQueFaz:
+        "Dispara eventos HTTP JSON em tempo real para seu sistema quando uma conversa abre, fecha ou recebe mensagem.",
       beneficio: "Integração total com N8N, Make, Zapier, Typebot e CRMs próprios.",
       simuladorTipo: "webhook",
       exemplo: {
         event: "message.created",
         signature: "sha256=a8f93b...",
-        status: "200 OK (Entregue)"
-      }
+        status: "200 OK (Entregue)",
+      },
     },
-    linkRecurso: "/recursos/automacoes"
-  }
+    linkRecurso: "/recursos/automacoes",
+  },
 ];
 
 export default function FeatureCards() {
@@ -320,7 +324,7 @@ export default function FeatureCards() {
             { id: "ia", label: "✨ Inteligência Artificial" },
             { id: "operacao", label: "💬 Operação & Chat" },
             { id: "disparos", label: "📣 Campanhas & Disparos" },
-            { id: "dev", label: "🔗 API & Webhooks" }
+            { id: "dev", label: "🔗 API & Webhooks" },
           ].map((cat) => (
             <button
               key={cat.id}

@@ -27,8 +27,8 @@ const DEFAULT_FLOWS: Flow[] = [
       { id: "2", type: "ai_agent", label: "Sofia Gemini IA (Qualifica Lead)", x: 340, y: 140 },
       { id: "3", type: "condition", label: "Lead É Qualificado?", x: 630, y: 140 },
       { id: "4", type: "action", label: "Transferir Fila Comercial", x: 920, y: 60 },
-      { id: "5", type: "whatsapp", label: "Enviar Link do Curso Hotmart", x: 920, y: 220 }
-    ]
+      { id: "5", type: "whatsapp", label: "Enviar Link do Curso Hotmart", x: 920, y: 220 },
+    ],
   },
   {
     id: "flow_hotmart_abacs_02",
@@ -39,9 +39,9 @@ const DEFAULT_FLOWS: Flow[] = [
       { id: "1", type: "start", label: "Webhook Hotmart Aprovado", x: 50, y: 140 },
       { id: "2", type: "action", label: "Cadastrar no CRM Kanban", x: 340, y: 140 },
       { id: "3", type: "action", label: "Sincronizar Login ABACS", x: 630, y: 140 },
-      { id: "4", type: "whatsapp", label: "Disparar Boas-Vindas no WhatsApp", x: 920, y: 140 }
-    ]
-  }
+      { id: "4", type: "whatsapp", label: "Disparar Boas-Vindas no WhatsApp", x: 920, y: 140 },
+    ],
+  },
 ];
 
 /** Construtor Visual de Fluxos de Automação de Atendimento com IA (FlowBuilder Arraste e Solte). */
@@ -55,7 +55,9 @@ export function FlowBuilderPage() {
   const [dragOffset, setDragOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const canvasRef = useRef<HTMLDivElement>(null);
 
-  const selectedFlow: Flow = (flows.find((f) => f.id === selectedFlowId) || flows[0] || DEFAULT_FLOWS[0]) as Flow;
+  const selectedFlow: Flow = (flows.find((f) => f.id === selectedFlowId) ||
+    flows[0] ||
+    DEFAULT_FLOWS[0]) as Flow;
 
   // Inicia o arrasto de um nó existente no Canvas
   const handleNodeMouseDown = (e: React.MouseEvent, nodeId: string) => {
@@ -68,7 +70,7 @@ export function FlowBuilderPage() {
       const canvasRect = canvasRef.current.getBoundingClientRect();
       setDragOffset({
         x: e.clientX - canvasRect.left - node.x,
-        y: e.clientY - canvasRect.top - node.y
+        y: e.clientY - canvasRect.top - node.y,
       });
     }
   };
@@ -88,7 +90,7 @@ export function FlowBuilderPage() {
           ...flow,
           nodes: flow.nodes.map((node) =>
             node.id === draggingNodeId ? { ...node, x: newX, y: newY } : node
-          )
+          ),
         };
       })
     );
@@ -113,14 +115,12 @@ export function FlowBuilderPage() {
       type,
       label,
       x: Math.max(20, e.clientX - canvasRect.left - 100),
-      y: Math.max(20, e.clientY - canvasRect.top - 25)
+      y: Math.max(20, e.clientY - canvasRect.top - 25),
     };
 
     setFlows((prev) =>
       prev.map((f) =>
-        f.id === selectedFlowId
-          ? { ...f, nodes: [...(f.nodes || []), newNode] }
-          : f
+        f.id === selectedFlowId ? { ...f, nodes: [...(f.nodes || []), newNode] } : f
       )
     );
     setActiveNodeId(newNode.id);
@@ -132,14 +132,12 @@ export function FlowBuilderPage() {
       type,
       label,
       x: 100 + (selectedFlow.nodes?.length || 0) * 140,
-      y: 150
+      y: 150,
     };
 
     setFlows((prev) =>
       prev.map((f) =>
-        f.id === selectedFlowId
-          ? { ...f, nodes: [...(f.nodes || []), newNode] }
-          : f
+        f.id === selectedFlowId ? { ...f, nodes: [...(f.nodes || []), newNode] } : f
       )
     );
     setActiveNodeId(newNode.id);
@@ -148,9 +146,7 @@ export function FlowBuilderPage() {
   const handleDeleteNode = (nodeId: string) => {
     setFlows((prev) =>
       prev.map((f) =>
-        f.id === selectedFlowId
-          ? { ...f, nodes: f.nodes.filter((n) => n.id !== nodeId) }
-          : f
+        f.id === selectedFlowId ? { ...f, nodes: f.nodes.filter((n) => n.id !== nodeId) } : f
       )
     );
     if (activeNodeId === nodeId) setActiveNodeId(null);
@@ -175,11 +171,19 @@ export function FlowBuilderPage() {
 
   return (
     <div style={{ paddingBottom: 40, userSelect: draggingNodeId ? "none" : "auto" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 16,
+        }}
+      >
         <div>
           <h2>⚡ FlowBuilder — Construtor Visual Arraste e Solte</h2>
           <p className="muted" style={{ marginTop: -8 }}>
-            Arraste os elementos para qualquer lugar no Canvas e monte fluxos de atendimento com IA Gemini e WhatsApp.
+            Arraste os elementos para qualquer lugar no Canvas e monte fluxos de atendimento com IA
+            Gemini e WhatsApp.
           </p>
         </div>
         <button
@@ -194,21 +198,31 @@ export function FlowBuilderPage() {
                 updatedAt: new Date().toLocaleTimeString(),
                 nodes: [
                   { id: "1", type: "start", label: "Início do Atendimento", x: 60, y: 140 },
-                  { id: "2", type: "ai_agent", label: "Atendimento IA Gemini", x: 340, y: 140 }
-                ]
+                  { id: "2", type: "ai_agent", label: "Atendimento IA Gemini", x: 340, y: 140 },
+                ],
               };
               setFlows([newF, ...flows]);
               setSelectedFlowId(newF.id);
             }
           }}
-          style={{ background: "#6d28d9", color: "#fff", border: 0, padding: "10px 18px", borderRadius: 8, fontWeight: 700, cursor: "pointer" }}
+          style={{
+            background: "#6d28d9",
+            color: "#fff",
+            border: 0,
+            padding: "10px 18px",
+            borderRadius: 8,
+            fontWeight: 700,
+            cursor: "pointer",
+          }}
         >
           + Novo Fluxo de Automação
         </button>
       </div>
 
       {/* Seletor de Fluxos */}
-      <div style={{ display: "flex", gap: 10, marginBottom: 16, overflowX: "auto", paddingBottom: 4 }}>
+      <div
+        style={{ display: "flex", gap: 10, marginBottom: 16, overflowX: "auto", paddingBottom: 4 }}
+      >
         {flows.map((f) => (
           <button
             key={f.id}
@@ -224,7 +238,7 @@ export function FlowBuilderPage() {
               background: selectedFlowId === f.id ? "rgba(109, 40, 217, 0.12)" : "var(--panel)",
               color: selectedFlowId === f.id ? "#6d28d9" : "var(--text)",
               fontWeight: selectedFlowId === f.id ? 700 : 500,
-              cursor: "pointer"
+              cursor: "pointer",
             }}
           >
             {f.name}
@@ -233,14 +247,26 @@ export function FlowBuilderPage() {
       </div>
 
       {/* Toolbar do Canvas de Arraste e Solte */}
-      <div className="card" style={{ padding: 12, marginBottom: 16, display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
-        <span style={{ fontSize: 13, fontWeight: 700, color: "var(--muted)" }}>✋ Arraste os elementos para o Canvas:</span>
+      <div
+        className="card"
+        style={{
+          padding: 12,
+          marginBottom: 16,
+          display: "flex",
+          gap: 12,
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}
+      >
+        <span style={{ fontSize: 13, fontWeight: 700, color: "var(--muted)" }}>
+          ✋ Arraste os elementos para o Canvas:
+        </span>
 
         {[
           { type: "ai_agent", label: "🤖 Robô Gemini IA", color: "#6d28d9" },
           { type: "condition", label: "🔀 Condição (Se/Senão)", color: "#f59e0b" },
           { type: "whatsapp", label: "💬 Enviar WhatsApp", color: "#25d366" },
-          { type: "action", label: "⚙️ Ação Fila/Tag", color: "#3b82f6" }
+          { type: "action", label: "⚙️ Ação Fila/Tag", color: "#3b82f6" },
         ].map((item) => (
           <div
             key={item.type}
@@ -261,7 +287,7 @@ export function FlowBuilderPage() {
               cursor: "grab",
               display: "flex",
               alignItems: "center",
-              gap: 6
+              gap: 6,
             }}
           >
             {item.label}
@@ -285,11 +311,20 @@ export function FlowBuilderPage() {
           overflow: "hidden",
           borderRadius: 14,
           padding: 20,
-          cursor: draggingNodeId ? "grabbing" : "default"
+          cursor: draggingNodeId ? "grabbing" : "default",
         }}
       >
         {/* Linhas Curvas (Bezier SVG) entre os Nós em Tempo Real */}
-        <svg style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none" }}>
+        <svg
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            pointerEvents: "none",
+          }}
+        >
           {(selectedFlow.nodes || []).map((node, index) => {
             const nextNode = selectedFlow.nodes?.[index + 1];
             if (!nextNode) return null;
@@ -330,14 +365,31 @@ export function FlowBuilderPage() {
               borderRadius: 10,
               background: "var(--panel)",
               border: `2px solid ${getNodeColor(node.type)}`,
-              boxShadow: activeNodeId === node.id ? "0 0 16px rgba(109, 40, 217, 0.5)" : "0 4px 10px rgba(0,0,0,0.12)",
+              boxShadow:
+                activeNodeId === node.id
+                  ? "0 0 16px rgba(109, 40, 217, 0.5)"
+                  : "0 4px 10px rgba(0,0,0,0.12)",
               cursor: draggingNodeId === node.id ? "grabbing" : "grab",
               zIndex: activeNodeId === node.id ? 10 : 2,
-              transition: draggingNodeId === node.id ? "none" : "box-shadow 0.15s ease"
+              transition: draggingNodeId === node.id ? "none" : "box-shadow 0.15s ease",
             }}
           >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
-              <span style={{ fontSize: 10, fontWeight: 700, color: getNodeColor(node.type), textTransform: "uppercase" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginBottom: 4,
+              }}
+            >
+              <span
+                style={{
+                  fontSize: 10,
+                  fontWeight: 700,
+                  color: getNodeColor(node.type),
+                  textTransform: "uppercase",
+                }}
+              >
                 {node.type}
               </span>
               <button
@@ -346,14 +398,19 @@ export function FlowBuilderPage() {
                   e.stopPropagation();
                   handleDeleteNode(node.id);
                 }}
-                style={{ background: "none", border: 0, color: "#ef4444", fontSize: 11, fontWeight: 700, cursor: "pointer" }}
+                style={{
+                  background: "none",
+                  border: 0,
+                  color: "#ef4444",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  cursor: "pointer",
+                }}
               >
                 ✕
               </button>
             </div>
-            <div style={{ fontSize: 13, fontWeight: 600, color: "var(--text)" }}>
-              {node.label}
-            </div>
+            <div style={{ fontSize: 13, fontWeight: 600, color: "var(--text)" }}>{node.label}</div>
 
             {/* Handle de Conexão */}
             <div
@@ -366,7 +423,7 @@ export function FlowBuilderPage() {
                 height: 12,
                 borderRadius: "50%",
                 background: getNodeColor(node.type),
-                border: "2px solid #fff"
+                border: "2px solid #fff",
               }}
             />
           </div>
@@ -376,11 +433,28 @@ export function FlowBuilderPage() {
       {/* Painel Lateral do Nó Selecionado */}
       {activeNode && (
         <div className="card" style={{ marginTop: 16, padding: 16 }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-            <div style={{ fontWeight: 700, fontSize: 14 }}>
-              ⚙️ Editar Nó: {activeNode.label}
-            </div>
-            <button type="button" onClick={() => handleDeleteNode(activeNode.id)} style={{ fontSize: 12, background: "#ef4444", color: "#fff", border: 0, padding: "4px 10px", borderRadius: 6, cursor: "pointer" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: 10,
+            }}
+          >
+            <div style={{ fontWeight: 700, fontSize: 14 }}>⚙️ Editar Nó: {activeNode.label}</div>
+            <button
+              type="button"
+              onClick={() => handleDeleteNode(activeNode.id)}
+              style={{
+                fontSize: 12,
+                background: "#ef4444",
+                color: "#fff",
+                border: 0,
+                padding: "4px 10px",
+                borderRadius: 6,
+                cursor: "pointer",
+              }}
+            >
               Excluir Nó
             </button>
           </div>
@@ -397,13 +471,23 @@ export function FlowBuilderPage() {
                     f.id === selectedFlowId
                       ? {
                           ...f,
-                          nodes: f.nodes.map((n) => (n.id === activeNode.id ? { ...n, label: newLabel } : n))
+                          nodes: f.nodes.map((n) =>
+                            n.id === activeNode.id ? { ...n, label: newLabel } : n
+                          ),
                         }
                       : f
                   )
                 );
               }}
-              style={{ flex: 1, padding: "8px 12px", borderRadius: 6, border: "1px solid var(--border)", background: "var(--panel2)", color: "var(--text)", fontSize: 13 }}
+              style={{
+                flex: 1,
+                padding: "8px 12px",
+                borderRadius: 6,
+                border: "1px solid var(--border)",
+                background: "var(--panel2)",
+                color: "var(--text)",
+                fontSize: 13,
+              }}
             />
           </div>
         </div>

@@ -19,6 +19,9 @@ export default tseslint.config(
       "**/public/ffmpeg/**",
       // Instalador bash de terceiros, fora dos workspaces.
       "projects/**",
+      // Tema do Ghost: scripts de navegador servidos pelo próprio Ghost, fora
+      // dos workspaces e sem build aqui.
+      "ghost/content/themes/**",
     ],
   },
 
@@ -49,6 +52,9 @@ export default tseslint.config(
       "content/**/*.mjs",
       "apps/editor/scripts/**/*.mjs",
       "saas/web/scripts/**/*.mjs",
+      // Scripts de seed/operação e o servidor local do Ghost: rodam em Node.
+      "scripts/**/*.mjs",
+      "ghost/server.js",
     ],
     languageOptions: {
       globals: globals.node,

@@ -65,35 +65,76 @@ export function AppLayout() {
       <aside className="side">
         <Logo />
 
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8, padding: "0 4px" }}>
-          <span style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", color: "var(--muted)" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: 8,
+            padding: "0 4px",
+          }}
+        >
+          <span
+            style={{
+              fontSize: 11,
+              fontWeight: 700,
+              textTransform: "uppercase",
+              color: "var(--muted)",
+            }}
+          >
             Menu Principal
           </span>
           <button
             type="button"
             onClick={() => setEditMenuModal(true)}
-            style={{ background: "none", border: 0, padding: 0, fontSize: 12, color: "var(--accent)", fontWeight: 700, cursor: "pointer" }}
+            style={{
+              background: "none",
+              border: 0,
+              padding: 0,
+              fontSize: 12,
+              color: "var(--accent)",
+              fontWeight: 700,
+              cursor: "pointer",
+            }}
           >
             ✏️ Editar
           </button>
         </div>
 
         <nav className="nav">
-          {items.filter((i) => !i.hidden).map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              {item.label}
-            </NavLink>
-          ))}
+          {items
+            .filter((i) => !i.hidden)
+            .map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                {item.label}
+              </NavLink>
+            ))}
         </nav>
 
-        <div style={{ marginTop: "auto", paddingTop: 16, borderTop: "1px solid var(--border)", fontSize: 13 }} className="muted">
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: 16,
+            borderTop: "1px solid var(--border)",
+            fontSize: 13,
+          }}
+          className="muted"
+        >
           {/* Seletor de Cores Editável do Tema */}
           <div style={{ marginBottom: 12 }}>
-            <span style={{ fontSize: 11, fontWeight: 700, color: "var(--muted)", display: "block", marginBottom: 6 }}>
+            <span
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                color: "var(--muted)",
+                display: "block",
+                marginBottom: 6,
+              }}
+            >
               🎨 Cor Principal da Marca:
             </span>
             <div style={{ display: "flex", gap: 6 }}>
@@ -111,7 +152,7 @@ export function AppLayout() {
                     border: accentColor === c.hex ? "2px solid #fff" : "none",
                     padding: 0,
                     cursor: "pointer",
-                    boxShadow: accentColor === c.hex ? "0 0 8px " + c.hex : "none"
+                    boxShadow: accentColor === c.hex ? "0 0 8px " + c.hex : "none",
                   }}
                 />
               ))}
@@ -129,8 +170,18 @@ export function AppLayout() {
             {theme === "dark" ? "☀️ Modo Claro" : "🌙 Modo Escuro"}
           </button>
 
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 10, padding: "0 4px" }}>
-            <span style={{ fontWeight: 600, fontSize: 12, color: "var(--text)" }}>{me?.company.name}</span>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginTop: 10,
+              padding: "0 4px",
+            }}
+          >
+            <span style={{ fontWeight: 600, fontSize: 12, color: "var(--text)" }}>
+              {me?.company.name}
+            </span>
             <button
               className="link"
               onClick={() => {
@@ -182,9 +233,23 @@ export function AppLayout() {
       {editMenuModal && (
         <div className="palette-backdrop" onClick={() => setEditMenuModal(false)}>
           <div className="palette" onClick={(e) => e.stopPropagation()} style={{ padding: 20 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
-              <h3 style={{ margin: 0, fontSize: 16, fontWeight: 700 }}>⚙️ Personalizar Menus do Painel</h3>
-              <button type="button" onClick={() => setEditMenuModal(false)} className="ghost" style={{ padding: "4px 10px" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginBottom: 14,
+              }}
+            >
+              <h3 style={{ margin: 0, fontSize: 16, fontWeight: 700 }}>
+                ⚙️ Personalizar Menus do Painel
+              </h3>
+              <button
+                type="button"
+                onClick={() => setEditMenuModal(false)}
+                className="ghost"
+                style={{ padding: "4px 10px" }}
+              >
                 ✕ Fechar
               </button>
             </div>
@@ -193,7 +258,16 @@ export function AppLayout() {
               Marque ou desmarque os itens para exibir ou ocultar do seu menu lateral.
             </p>
 
-            <div style={{ maxHeight: 320, overflowY: "auto", display: "flex", flexDirection: "column", gap: 8, margin: "14px 0" }}>
+            <div
+              style={{
+                maxHeight: 320,
+                overflowY: "auto",
+                display: "flex",
+                flexDirection: "column",
+                gap: 8,
+                margin: "14px 0",
+              }}
+            >
               {menuItems.map((item) => (
                 <label
                   key={item.to}
@@ -206,7 +280,7 @@ export function AppLayout() {
                     background: "var(--panel2)",
                     fontSize: 13,
                     fontWeight: 600,
-                    cursor: "pointer"
+                    cursor: "pointer",
                   }}
                 >
                   <input
@@ -224,7 +298,11 @@ export function AppLayout() {
               <button type="button" onClick={resetMenu} className="ghost" style={{ fontSize: 12 }}>
                 Restaurar Padrão
               </button>
-              <button type="button" onClick={() => setEditMenuModal(false)} style={{ fontSize: 12 }}>
+              <button
+                type="button"
+                onClick={() => setEditMenuModal(false)}
+                style={{ fontSize: 12 }}
+              >
                 Concluir
               </button>
             </div>

@@ -103,11 +103,19 @@ export function ConversationsPage() {
 
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 12,
+        }}
+      >
         <div>
           <h2>💬 Central WhatsApp Business API Oficial</h2>
           <p className="muted" style={{ marginTop: -8 }}>
-            Atendimento oficial via Meta Cloud API com suporte a áudio, mídias, catálogo de cursos, tags e IA Gemini.
+            Atendimento oficial via Meta Cloud API com suporte a áudio, mídias, catálogo de cursos,
+            tags e IA Gemini.
           </p>
         </div>
       </div>
@@ -177,8 +185,17 @@ export function ConversationsPage() {
                         className={`item ${selectedId === c.id ? "active" : ""}`}
                         onClick={() => navigate(`/conversas/${c.id}`)}
                       >
-                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                          <div className="name" style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                          }}
+                        >
+                          <div
+                            className="name"
+                            style={{ display: "flex", alignItems: "center", gap: 6 }}
+                          >
                             <span>{c.contact.name || "Contato"}</span>
                             <span style={{ fontSize: 12, color: "#25D366" }}>✓</span>
                           </div>
@@ -194,13 +211,16 @@ export function ConversationsPage() {
                             marginTop: 4,
                           }}
                         >
-                          <span>
-                            {c.contact.phone ?? ""}
-                          </span>
+                          <span>{c.contact.phone ?? ""}</span>
                           {q && (
                             <span
                               className="tag"
-                              style={{ background: q.color, color: "#fff", fontSize: 10, fontWeight: 700 }}
+                              style={{
+                                background: q.color,
+                                color: "#fff",
+                                fontSize: 10,
+                                fontWeight: 700,
+                              }}
                             >
                               {q.name}
                             </span>
@@ -209,7 +229,12 @@ export function ConversationsPage() {
                             <span
                               key={t.id}
                               className="tag"
-                              style={{ background: t.color, color: "#fff", fontSize: 10, fontWeight: 700 }}
+                              style={{
+                                background: t.color,
+                                color: "#fff",
+                                fontSize: 10,
+                                fontWeight: 700,
+                              }}
                             >
                               {t.name}
                             </span>
@@ -226,7 +251,11 @@ export function ConversationsPage() {
 
         {/* Janela de Atendimento Chat WhatsApp */}
         <div className="thread">
-          {!selectedId && <p className="muted" style={{ margin: "auto" }}>Selecione um atendimento para visualizar as mensagens.</p>}
+          {!selectedId && (
+            <p className="muted" style={{ margin: "auto" }}>
+              Selecione um atendimento para visualizar as mensagens.
+            </p>
+          )}
 
           {selectedId && detailQuery.error && (
             <ErrorBox error={detailQuery.error} onRetry={() => void detailQuery.refetch()} />
@@ -246,17 +275,43 @@ export function ConversationsPage() {
                   flexWrap: "wrap",
                 }}
               >
-                <div style={{ width: 42, height: 42, borderRadius: "50%", background: "linear-gradient(135deg, #25D366, #128C7E)", color: "#fff", display: "grid", placeItems: "center", fontWeight: 800, fontSize: 18 }}>
+                <div
+                  style={{
+                    width: 42,
+                    height: 42,
+                    borderRadius: "50%",
+                    background: "linear-gradient(135deg, #25D366, #128C7E)",
+                    color: "#fff",
+                    display: "grid",
+                    placeItems: "center",
+                    fontWeight: 800,
+                    fontSize: 18,
+                  }}
+                >
                   {((detail?.contact?.name ?? "C")[0] ?? "C").toUpperCase()}
                 </div>
                 <div>
-                  <div style={{ fontWeight: 800, fontSize: 15, display: "flex", alignItems: "center", gap: 6 }}>
+                  <div
+                    style={{
+                      fontWeight: 800,
+                      fontSize: 15,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 6,
+                    }}
+                  >
                     <span>{detail.contact?.name || "Contato"}</span>
-                    <span style={{ fontSize: 13, color: "#25D366" }} title="Conta Comercial Verificada">✓</span>
+                    <span
+                      style={{ fontSize: 13, color: "#25D366" }}
+                      title="Conta Comercial Verificada"
+                    >
+                      ✓
+                    </span>
                   </div>
                   {detail.contact?.phone && (
                     <div className="muted" style={{ fontSize: 12 }}>
-                      📱 {detail.contact.phone} · <span style={{ color: "#25D366", fontWeight: 700 }}>WhatsApp Oficial</span>
+                      📱 {detail.contact.phone} ·{" "}
+                      <span style={{ color: "#25D366", fontWeight: 700 }}>WhatsApp Oficial</span>
                     </div>
                   )}
                 </div>
@@ -293,7 +348,7 @@ export function ConversationsPage() {
                       fontWeight: 700,
                       display: "inline-flex",
                       alignItems: "center",
-                      gap: 6
+                      gap: 6,
                     }}
                   >
                     💬 Atendimento Integrado no App
@@ -304,7 +359,16 @@ export function ConversationsPage() {
               {/* Etiquetas WhatsApp Business */}
               {allTags.length > 0 && (
                 <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
-                  <span style={{ fontSize: 11, fontWeight: 700, color: "var(--muted)", alignSelf: "center" }}>Etiquetas:</span>
+                  <span
+                    style={{
+                      fontSize: 11,
+                      fontWeight: 700,
+                      color: "var(--muted)",
+                      alignSelf: "center",
+                    }}
+                  >
+                    Etiquetas:
+                  </span>
                   {allTags.map((t) => {
                     const on = activeTagIds.includes(t.id);
                     return (
@@ -337,7 +401,11 @@ export function ConversationsPage() {
               {/* Thread de Mensagens */}
               <div className="msgs">
                 {detail.messages.map((msg) => (
-                  <div key={msg.id} className={`bubble ${msg.direction}`} style={{ position: "relative" }}>
+                  <div
+                    key={msg.id}
+                    className={`bubble ${msg.direction}`}
+                    style={{ position: "relative" }}
+                  >
                     {msg.mediaUrl &&
                       (msg.contentType === "image" ? (
                         <a href={msg.mediaUrl} target="_blank" rel="noopener noreferrer">
@@ -357,7 +425,12 @@ export function ConversationsPage() {
                           href={msg.mediaUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ display: "inline-block", marginBottom: msg.body ? 6 : 0, color: "inherit", fontWeight: 700 }}
+                          style={{
+                            display: "inline-block",
+                            marginBottom: msg.body ? 6 : 0,
+                            color: "inherit",
+                            fontWeight: 700,
+                          }}
                         >
                           📎 Abrir Arquivo / Mídia
                         </a>
@@ -365,13 +438,30 @@ export function ConversationsPage() {
                     <div>{msg.body}</div>
 
                     {/* Reações e Checkmarks de Leitura Oficial WhatsApp */}
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 4, fontSize: 11, opacity: 0.85 }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        marginTop: 4,
+                        fontSize: 11,
+                        opacity: 0.85,
+                      }}
+                    >
                       <div style={{ display: "flex", gap: 4 }}>
                         {["👍", "❤️", "🔥"].map((emoji) => (
                           <span
                             key={emoji}
                             onClick={() => handleAddReaction(msg.id, emoji)}
-                            style={{ cursor: "pointer", padding: "1px 3px", borderRadius: 4, background: reactions[msg.id] === emoji ? "rgba(255,255,255,0.3)" : "transparent" }}
+                            style={{
+                              cursor: "pointer",
+                              padding: "1px 3px",
+                              borderRadius: 4,
+                              background:
+                                reactions[msg.id] === emoji
+                                  ? "rgba(255,255,255,0.3)"
+                                  : "transparent",
+                            }}
                           >
                             {emoji}
                           </span>
@@ -391,22 +481,47 @@ export function ConversationsPage() {
 
               {/* Modal / Painel de Catálogo de Cursos & Mídias */}
               {showCatalog && (
-                <div className="card" style={{ padding: 12, marginBottom: 10, background: "var(--panel2)" }}>
-                  <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 6 }}>🛍️ Catálogo de Cursos ABACS & Hotmart:</div>
+                <div
+                  className="card"
+                  style={{ padding: 12, marginBottom: 10, background: "var(--panel2)" }}
+                >
+                  <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 6 }}>
+                    🛍️ Catálogo de Cursos ABACS & Hotmart:
+                  </div>
                   <div style={{ display: "flex", gap: 8, overflowX: "auto", paddingBottom: 4 }}>
                     {[
-                      { name: "Operador de Caixa", price: "R$ 99,00", url: "https://abacs.org.br/integracao/hotmart/hotmart.php?token=89945.18284682318tokenavancada&curso=77" },
-                      { name: "Administrativo Completo", price: "R$ 99,00", url: "https://abacs.org.br/loja_virtual/vercombo.php?curso=Administrativo%20Completo" },
-                      { name: "Engenharia de IA", price: "R$ 149,00", url: "http://localhost:8080/cursos" }
+                      {
+                        name: "Operador de Caixa",
+                        price: "R$ 99,00",
+                        url: "https://abacs.org.br/integracao/hotmart/hotmart.php?token=89945.18284682318tokenavancada&curso=77",
+                      },
+                      {
+                        name: "Administrativo Completo",
+                        price: "R$ 99,00",
+                        url: "https://abacs.org.br/loja_virtual/vercombo.php?curso=Administrativo%20Completo",
+                      },
+                      {
+                        name: "Engenharia de IA",
+                        price: "R$ 149,00",
+                        url: "http://localhost:8080/cursos",
+                      },
                     ].map((item) => (
                       <button
                         key={item.name}
                         type="button"
                         onClick={() => {
-                          setDraft(`🎓 *${item.name}* (${item.price})\nInscrição imediata no link: ${item.url}`);
+                          setDraft(
+                            `🎓 *${item.name}* (${item.price})\nInscrição imediata no link: ${item.url}`
+                          );
                           setShowCatalog(false);
                         }}
-                        style={{ fontSize: 12, padding: "6px 10px", background: "var(--panel)", border: "1px solid var(--border)", color: "var(--text)" }}
+                        style={{
+                          fontSize: 12,
+                          padding: "6px 10px",
+                          background: "var(--panel)",
+                          border: "1px solid var(--border)",
+                          color: "var(--text)",
+                        }}
                       >
                         + Enviar Card {item.name}
                       </button>
@@ -417,7 +532,9 @@ export function ConversationsPage() {
 
               {showMediaModal && (
                 <div className="card" style={{ padding: 12, marginBottom: 10 }}>
-                  <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 6 }}>📷 Anexar Imagem ou Documento (URL):</div>
+                  <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 6 }}>
+                    📷 Anexar Imagem ou Documento (URL):
+                  </div>
                   <div style={{ display: "flex", gap: 8 }}>
                     <input
                       type="url"
@@ -426,7 +543,14 @@ export function ConversationsPage() {
                       onChange={(e) => setMediaUrlInput(e.target.value)}
                       style={{ fontSize: 13 }}
                     />
-                    <button type="button" onClick={() => setShowMediaModal(false)} className="ghost" style={{ fontSize: 12 }}>OK</button>
+                    <button
+                      type="button"
+                      onClick={() => setShowMediaModal(false)}
+                      className="ghost"
+                      style={{ fontSize: 12 }}
+                    >
+                      OK
+                    </button>
                   </div>
                 </div>
               )}
@@ -479,7 +603,12 @@ export function ConversationsPage() {
                     type="button"
                     title="Respostas Rápidas"
                     onClick={() => setShowQuick((s) => !s)}
-                    style={{ padding: "0 12px", background: "var(--panel2)", color: "var(--text)", border: "1px solid var(--border)" }}
+                    style={{
+                      padding: "0 12px",
+                      background: "var(--panel2)",
+                      color: "var(--text)",
+                      border: "1px solid var(--border)",
+                    }}
                   >
                     ⚡
                   </button>
@@ -488,7 +617,12 @@ export function ConversationsPage() {
                   type="button"
                   title="Anexar Imagem/Mídia"
                   onClick={() => setShowMediaModal((s) => !s)}
-                  style={{ padding: "0 12px", background: "var(--panel2)", color: "var(--text)", border: "1px solid var(--border)" }}
+                  style={{
+                    padding: "0 12px",
+                    background: "var(--panel2)",
+                    color: "var(--text)",
+                    border: "1px solid var(--border)",
+                  }}
                 >
                   📷
                 </button>
@@ -496,7 +630,12 @@ export function ConversationsPage() {
                   type="button"
                   title="Enviar Card do Catálogo"
                   onClick={() => setShowCatalog((s) => !s)}
-                  style={{ padding: "0 12px", background: "var(--panel2)", color: "var(--text)", border: "1px solid var(--border)" }}
+                  style={{
+                    padding: "0 12px",
+                    background: "var(--panel2)",
+                    color: "var(--text)",
+                    border: "1px solid var(--border)",
+                  }}
                 >
                   🛍️
                 </button>
@@ -509,7 +648,11 @@ export function ConversationsPage() {
                     if (e.key === "Enter") submitDraft();
                   }}
                 />
-                <button onClick={submitDraft} disabled={send.isPending} style={{ background: "#25D366", color: "#fff", fontWeight: 800 }}>
+                <button
+                  onClick={submitDraft}
+                  disabled={send.isPending}
+                  style={{ background: "#25D366", color: "#fff", fontWeight: 800 }}
+                >
                   {send.isPending ? "…" : "Enviar ✓"}
                 </button>
               </div>

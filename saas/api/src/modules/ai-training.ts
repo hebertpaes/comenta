@@ -35,10 +35,10 @@ export async function aiTrainingRoutes(app: FastifyInstance) {
     const novosAprendizados = [
       "Perguntas frequentes sobre o Plano Pro respondidas com sucesso.",
       "Atendimentos no horário noturno configurados para aviso automático.",
-      "Regra de handoff para atendentes humanos validada com 98% de precisão."
+      "Regra de handoff para atendentes humanos validada com 98% de precisão.",
     ];
 
-    const updatedKnowledge = `${currentKnowledge}\n\n# Atualização Diária Google Gemini (${new Date().toLocaleDateString('pt-BR')})\n${novosAprendizados.join('\n')}`;
+    const updatedKnowledge = `${currentKnowledge}\n\n# Atualização Diária Google Gemini (${new Date().toLocaleDateString("pt-BR")})\n${novosAprendizados.join("\n")}`;
 
     // 3) Atualiza no banco de dados para os agentes de IA consultarem em tempo real
     await db
@@ -52,7 +52,7 @@ export async function aiTrainingRoutes(app: FastifyInstance) {
       message: "Treinamento diário de IA sincronizado com sucesso!",
       lastSync: new Date().toISOString(),
       learnedTopicsCount: novosAprendizados.length,
-      nextScheduledSync: "Amanhã às 03:00 AM (Automação Diária Ativa)"
+      nextScheduledSync: "Amanhã às 03:00 AM (Automação Diária Ativa)",
     });
   });
 
@@ -74,7 +74,7 @@ export async function aiTrainingRoutes(app: FastifyInstance) {
       autoSyncActive: true,
       schedule: "Daily at 03:00 AM",
       knowledgeSizeChars: kb.length,
-      lastSync: new Date().toISOString()
+      lastSync: new Date().toISOString(),
     });
   });
 }

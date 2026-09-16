@@ -1,6 +1,8 @@
 import postgres from "postgres";
 
-const DATABASE_URL = process.env.DATABASE_URL || "postgresql://comenta:3a24efa594604b1e10d2e2b2346e5dc9@localhost:5432/comenta_saas";
+const DATABASE_URL =
+  process.env.DATABASE_URL ||
+  "postgresql://comenta:3a24efa594604b1e10d2e2b2346e5dc9@localhost:5432/comenta_saas";
 
 console.log("=========================================================");
 console.log("  🎓 CONECTANDO E CRIANDO CURSOS DA HOTMART NO BANCO");

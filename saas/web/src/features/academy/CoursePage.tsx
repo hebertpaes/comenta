@@ -149,7 +149,16 @@ export function CoursePage() {
         return (
           <div style={{ width: "100%", maxWidth: "100%", overflowX: "hidden" }}>
             {/* Header de Navegação do Curso */}
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12, flexWrap: "wrap", gap: 10 }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                marginBottom: 12,
+                flexWrap: "wrap",
+                gap: 10,
+              }}
+            >
               <Link className="link" to="/cursos" style={{ fontWeight: 600 }}>
                 ← Voltar aos cursos
               </Link>
@@ -177,7 +186,16 @@ export function CoursePage() {
                   🎬 Studio Gerador de Vídeos IA (1 Minuto)
                 </button>
 
-                <div style={{ display: "flex", gap: 6, background: "var(--panel2)", padding: 4, borderRadius: 20, border: "1px solid var(--border)" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 6,
+                    background: "var(--panel2)",
+                    padding: 4,
+                    borderRadius: 20,
+                    border: "1px solid var(--border)",
+                  }}
+                >
                   <button
                     type="button"
                     onClick={() => setAspectRatioMode("16/9")}
@@ -187,7 +205,10 @@ export function CoursePage() {
                       border: 0,
                       fontSize: 12,
                       fontWeight: 700,
-                      background: aspectRatioMode === "16/9" ? "linear-gradient(135deg, #6d28d9, #4285f4)" : "transparent",
+                      background:
+                        aspectRatioMode === "16/9"
+                          ? "linear-gradient(135deg, #6d28d9, #4285f4)"
+                          : "transparent",
                       color: aspectRatioMode === "16/9" ? "#fff" : "var(--muted)",
                       cursor: "pointer",
                       transition: "all 0.2s ease",
@@ -204,7 +225,10 @@ export function CoursePage() {
                       border: 0,
                       fontSize: 12,
                       fontWeight: 700,
-                      background: aspectRatioMode === "9/16" ? "linear-gradient(135deg, #ff7700, #ff0055)" : "transparent",
+                      background:
+                        aspectRatioMode === "9/16"
+                          ? "linear-gradient(135deg, #ff7700, #ff0055)"
+                          : "transparent",
                       color: aspectRatioMode === "9/16" ? "#fff" : "var(--muted)",
                       cursor: "pointer",
                       transition: "all 0.2s ease",
@@ -221,7 +245,10 @@ export function CoursePage() {
                       border: 0,
                       fontSize: 12,
                       fontWeight: 700,
-                      background: aspectRatioMode === "1/1" ? "linear-gradient(135deg, #10b981, #06b6d4)" : "transparent",
+                      background:
+                        aspectRatioMode === "1/1"
+                          ? "linear-gradient(135deg, #10b981, #06b6d4)"
+                          : "transparent",
                       color: aspectRatioMode === "1/1" ? "#fff" : "var(--muted)",
                       cursor: "pointer",
                       transition: "all 0.2s ease",
@@ -254,8 +281,17 @@ export function CoursePage() {
 
             {/* Barra de Progresso do Curso */}
             <div style={{ maxWidth: 720, marginBottom: 20 }}>
-              <div style={{ height: 8, background: "#eef0f4", borderRadius: 999, overflow: "hidden" }}>
-                <div style={{ width: `${pct}%`, height: "100%", background: "linear-gradient(90deg, #6d28d9, #4285f4)", transition: "width 0.3s ease" }} />
+              <div
+                style={{ height: 8, background: "#eef0f4", borderRadius: 999, overflow: "hidden" }}
+              >
+                <div
+                  style={{
+                    width: `${pct}%`,
+                    height: "100%",
+                    background: "linear-gradient(90deg, #6d28d9, #4285f4)",
+                    transition: "width 0.3s ease",
+                  }}
+                />
               </div>
               <div className="muted" style={{ fontSize: 12, marginTop: 6, fontWeight: 600 }}>
                 {done}/{total} aulas concluídas · {pct}% de progresso
@@ -267,16 +303,48 @@ export function CoursePage() {
             )}
 
             {/* LAYOUT PRINCIPAL RESPONSIVO 100% FLUIDO */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24, width: "100%", alignItems: "flex-start" }}>
-              
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+                gap: 24,
+                width: "100%",
+                alignItems: "flex-start",
+              }}
+            >
               {/* COLUNA ESQUERDA / CENTRAL: PLAYER DE VÍDEO RESPONSIVO */}
-              <div className="card" style={{ padding: 18, alignItems: "stretch", background: "var(--panel)", borderRadius: 20 }}>
+              <div
+                className="card"
+                style={{
+                  padding: 18,
+                  alignItems: "stretch",
+                  background: "var(--panel)",
+                  borderRadius: 20,
+                }}
+              >
                 {!lesson && <p className="muted">Selecione uma aula na lista</p>}
                 {lesson && (
                   <>
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10, marginBottom: 14, flexWrap: "wrap" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        gap: 10,
+                        marginBottom: 14,
+                        flexWrap: "wrap",
+                      }}
+                    >
                       <div>
-                        <span style={{ fontSize: 11, textTransform: "uppercase", fontWeight: 800, color: "#6d28d9", letterSpacing: 0.5 }}>
+                        <span
+                          style={{
+                            fontSize: 11,
+                            textTransform: "uppercase",
+                            fontWeight: 800,
+                            color: "#6d28d9",
+                            letterSpacing: 0.5,
+                          }}
+                        >
                           Aula {indexAtual + 1} de {lessons.length}
                         </span>
                         <h3 style={{ margin: 0, fontSize: 18, fontWeight: 800 }}>{lesson.title}</h3>
@@ -307,7 +375,18 @@ export function CoursePage() {
                     />
 
                     {/* CONTROLES E AÇÕES DA AULA */}
-                    <div style={{ marginTop: 16, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12, borderTop: "1px solid var(--border)", paddingTop: 14 }}>
+                    <div
+                      style={{
+                        marginTop: 16,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        flexWrap: "wrap",
+                        gap: 12,
+                        borderTop: "1px solid var(--border)",
+                        paddingTop: 14,
+                      }}
+                    >
                       <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
                         <button
                           type="button"
@@ -324,7 +403,9 @@ export function CoursePage() {
                             fontWeight: 700,
                             fontSize: 13,
                             cursor: "pointer",
-                            boxShadow: lessonDone ? "0 4px 12px rgba(34,197,94,0.3)" : "0 4px 12px rgba(109,40,217,0.3)",
+                            boxShadow: lessonDone
+                              ? "0 4px 12px rgba(34,197,94,0.3)"
+                              : "0 4px 12px rgba(109,40,217,0.3)",
                             transition: "all 0.2s ease",
                           }}
                         >
@@ -335,7 +416,9 @@ export function CoursePage() {
                           type="button"
                           onClick={() => alternarLike(lesson.id)}
                           style={{
-                            background: curtido[lesson.id] ? "rgba(239,68,68,0.15)" : "var(--panel2)",
+                            background: curtido[lesson.id]
+                              ? "rgba(239,68,68,0.15)"
+                              : "var(--panel2)",
                             color: curtido[lesson.id] ? "#ef4444" : "var(--text)",
                             border: "1px solid var(--border)",
                             padding: "8px 14px",
@@ -395,9 +478,27 @@ export function CoursePage() {
 
                     {/* Descrição / Conteúdo da Aula */}
                     {lesson.content && (
-                      <div style={{ marginTop: 16, background: "var(--panel2)", padding: 14, borderRadius: 12, border: "1px solid var(--border)" }}>
-                        <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 6 }}>📝 Resumo & Material de Apoio</div>
-                        <p style={{ margin: 0, whiteSpace: "pre-wrap", lineHeight: 1.6, fontSize: 13, color: "var(--text)" }}>
+                      <div
+                        style={{
+                          marginTop: 16,
+                          background: "var(--panel2)",
+                          padding: 14,
+                          borderRadius: 12,
+                          border: "1px solid var(--border)",
+                        }}
+                      >
+                        <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 6 }}>
+                          📝 Resumo & Material de Apoio
+                        </div>
+                        <p
+                          style={{
+                            margin: 0,
+                            whiteSpace: "pre-wrap",
+                            lineHeight: 1.6,
+                            fontSize: 13,
+                            color: "var(--text)",
+                          }}
+                        >
                           {lesson.content}
                         </p>
                       </div>
@@ -407,16 +508,53 @@ export function CoursePage() {
               </div>
 
               {/* COLUNA DIREITA: LISTA DE AULAS DO CURSO */}
-              <div className="card" style={{ padding: 18, alignItems: "stretch", background: "var(--panel)", borderRadius: 20 }}>
-                <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div
+                className="card"
+                style={{
+                  padding: 18,
+                  alignItems: "stretch",
+                  background: "var(--panel)",
+                  borderRadius: 20,
+                }}
+              >
+                <div
+                  style={{
+                    fontWeight: 800,
+                    fontSize: 16,
+                    marginBottom: 14,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
+                >
                   <span>📋 Aulas do Curso ({lessons.length})</span>
-                  <span style={{ fontSize: 11, background: "rgba(109, 40, 217, 0.15)", color: "#6d28d9", padding: "2px 8px", borderRadius: 10, fontWeight: 700 }}>
+                  <span
+                    style={{
+                      fontSize: 11,
+                      background: "rgba(109, 40, 217, 0.15)",
+                      color: "#6d28d9",
+                      padding: "2px 8px",
+                      borderRadius: 10,
+                      fontWeight: 700,
+                    }}
+                  >
                     {pct}% CONCLUÍDO
                   </span>
                 </div>
-                {lessons.length === 0 && <div className="item muted">Nenhuma aula cadastrada neste curso ainda.</div>}
-                
-                <div style={{ display: "flex", flexDirection: "column", gap: 8, maxHeight: 560, overflowY: "auto", paddingRight: 4 }}>
+                {lessons.length === 0 && (
+                  <div className="item muted">Nenhuma aula cadastrada neste curso ainda.</div>
+                )}
+
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 8,
+                    maxHeight: 560,
+                    overflowY: "auto",
+                    paddingRight: 4,
+                  }}
+                >
                   {lessons.map((l, i) => {
                     const isSelected = lesson?.id === l.id;
                     const isDone = isLessonDone(l.id);
@@ -427,7 +565,9 @@ export function CoursePage() {
                         style={{
                           padding: "12px 14px",
                           borderRadius: 14,
-                          background: isSelected ? "linear-gradient(135deg, rgba(109,40,217,0.12), rgba(66,133,244,0.12))" : "var(--panel2)",
+                          background: isSelected
+                            ? "linear-gradient(135deg, rgba(109,40,217,0.12), rgba(66,133,244,0.12))"
+                            : "var(--panel2)",
                           border: isSelected ? "2px solid #6d28d9" : "1px solid var(--border)",
                           cursor: "pointer",
                           display: "flex",
@@ -437,7 +577,13 @@ export function CoursePage() {
                         }}
                       >
                         <div>
-                          <div style={{ fontWeight: isSelected ? 800 : 600, fontSize: 13, color: isSelected ? "#6d28d9" : "var(--text)" }}>
+                          <div
+                            style={{
+                              fontWeight: isSelected ? 800 : 600,
+                              fontSize: 13,
+                              color: isSelected ? "#6d28d9" : "var(--text)",
+                            }}
+                          >
                             {isDone ? "✅ " : `${i + 1}. `}
                             {l.title}
                           </div>
@@ -446,7 +592,16 @@ export function CoursePage() {
                           </div>
                         </div>
                         {isSelected && (
-                          <span style={{ fontSize: 10, background: "#6d28d9", color: "#fff", padding: "3px 8px", borderRadius: 10, fontWeight: 800 }}>
+                          <span
+                            style={{
+                              fontSize: 10,
+                              background: "#6d28d9",
+                              color: "#fff",
+                              padding: "3px 8px",
+                              borderRadius: 10,
+                              fontWeight: 800,
+                            }}
+                          >
                             REPRODUZINDO
                           </span>
                         )}

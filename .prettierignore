@@ -6,3 +6,5 @@ package-lock.json
 **/public/ffmpeg
 projects
 *.tsbuildinfo
+# Tema do Ghost: Handlebars com partials, que o Prettier não analisa.
+ghost/content/themes

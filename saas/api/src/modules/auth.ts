@@ -33,11 +33,14 @@ const slugify = (v: string) =>
 export async function authRoutes(app: FastifyInstance) {
   // Autenticação com Google OAuth / WAScript Single Sign-On
   app.post("/auth/google", async (req, reply) => {
-    const body = parse(z.object({
-      email: z.string().email(),
-      name: z.string().optional(),
-      googleId: z.string().optional(),
-    }), req.body);
+    const body = parse(
+      z.object({
+        email: z.string().email(),
+        name: z.string().optional(),
+        googleId: z.string().optional(),
+      }),
+      req.body
+    );
 
     let [user] = await db.select().from(schema.users).where(eq(schema.users.email, body.email));
     let companyId: string;
@@ -67,7 +70,10 @@ export async function authRoutes(app: FastifyInstance) {
       companyId = user.companyId;
     }
 
-    const [company] = await db.select().from(schema.companies).where(eq(schema.companies.id, companyId));
+    const [company] = await db
+      .select()
+      .from(schema.companies)
+      .where(eq(schema.companies.id, companyId));
 
     const accessToken = signAccessToken({
       userId: user.id,

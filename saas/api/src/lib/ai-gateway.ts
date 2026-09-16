@@ -1,6 +1,7 @@
 import { ApiError } from "./http.js";
 
-export type AIProvider = "google" | "openai" | "anthropic" | "deepseek" | "groq" | "ollama" | "github" | "meta" | "manus";
+export type AIProvider =
+  "google" | "openai" | "anthropic" | "deepseek" | "groq" | "ollama" | "github" | "meta" | "manus";
 
 export type AIProviderConfig = {
   provider: AIProvider;
@@ -23,7 +24,8 @@ export async function queryAIProvider(
 
   // 1. Google Gemini API (Gemini 2.0 Flash & Gemini 2.0 Pro)
   if (provider === "google") {
-    const key = customConfig?.apiKey || process.env.GEMINI_API_KEY || process.env.GOOGLE_AI_API_KEY || "";
+    const key =
+      customConfig?.apiKey || process.env.GEMINI_API_KEY || process.env.GOOGLE_AI_API_KEY || "";
     const model = customConfig?.model || process.env.GOOGLE_AI_MODEL || "gemini-2.0-flash";
     if (!key) throw new ApiError(400, "Chave da API do Google Gemini não configurada.");
 
@@ -35,11 +37,12 @@ export async function queryAIProvider(
         contents: [{ parts: [{ text: fullPrompt }] }],
         generationConfig: {
           temperature: 0.7,
-          maxOutputTokens: 2048
-        }
-      })
+          maxOutputTokens: 2048,
+        },
+      }),
     });
-    if (!res.ok) throw new ApiError(502, `Erro na API do Google Gemini (${model}): ${res.statusText}`);
+    if (!res.ok)
+      throw new ApiError(502, `Erro na API do Google Gemini (${model}): ${res.statusText}`);
     const data = (await res.json()) as any;
     return data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "";
   }
@@ -57,9 +60,9 @@ export async function queryAIProvider(
         model,
         messages: [
           ...(systemPrompt ? [{ role: "system", content: systemPrompt }] : []),
-          { role: "user", content: prompt }
-        ]
-      })
+          { role: "user", content: prompt },
+        ],
+      }),
     });
     if (!res.ok) throw new ApiError(502, `Erro na API da OpenAI: ${res.statusText}`);
     const data = (await res.json()) as any;
@@ -79,9 +82,9 @@ export async function queryAIProvider(
         model,
         messages: [
           ...(systemPrompt ? [{ role: "system", content: systemPrompt }] : []),
-          { role: "user", content: prompt }
-        ]
-      })
+          { role: "user", content: prompt },
+        ],
+      }),
     });
     if (!res.ok) throw new ApiError(502, `Erro na API do DeepSeek: ${res.statusText}`);
     const data = (await res.json()) as any;
@@ -101,9 +104,9 @@ export async function queryAIProvider(
         model,
         messages: [
           ...(systemPrompt ? [{ role: "system", content: systemPrompt }] : []),
-          { role: "user", content: prompt }
-        ]
-      })
+          { role: "user", content: prompt },
+        ],
+      }),
     });
     if (!res.ok) throw new ApiError(502, `Erro na API da Groq: ${res.statusText}`);
     const data = (await res.json()) as any;
@@ -112,20 +115,24 @@ export async function queryAIProvider(
 
   // 5. Servidor Local Ollama (Local LLM sem dependência de nuvem)
   if (provider === "ollama") {
-    const baseUrl = customConfig?.baseUrl || process.env.OLLAMA_BASE_URL || "http://localhost:11434";
+    const baseUrl =
+      customConfig?.baseUrl || process.env.OLLAMA_BASE_URL || "http://localhost:11434";
     const model = customConfig?.model || "llama3";
 
     try {
       const res = await fetch(`${baseUrl}/api/generate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ model, prompt: fullPrompt, stream: false })
+        body: JSON.stringify({ model, prompt: fullPrompt, stream: false }),
       });
       if (!res.ok) throw new Error(res.statusText);
       const data = (await res.json()) as any;
       return data.response?.trim() || "";
     } catch {
-      throw new ApiError(502, `Servidor Local Ollama inacessível em ${baseUrl}. Inicie o 'ollama run llama3'.`);
+      throw new ApiError(
+        502,
+        `Servidor Local Ollama inacessível em ${baseUrl}. Inicie o 'ollama run llama3'.`
+      );
     }
   }
 
@@ -142,9 +149,9 @@ export async function queryAIProvider(
         model,
         messages: [
           ...(systemPrompt ? [{ role: "system", content: systemPrompt }] : []),
-          { role: "user", content: prompt }
-        ]
-      })
+          { role: "user", content: prompt },
+        ],
+      }),
     });
     if (!res.ok) throw new ApiError(502, `Erro na API do GitHub Models: ${res.statusText}`);
     const data = (await res.json()) as any;

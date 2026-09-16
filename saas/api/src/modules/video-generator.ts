@@ -31,10 +31,7 @@ export async function videoGeneratorRoutes(app: FastifyInstance) {
     }
 
     // Busca o curso existente
-    const [course] = await db
-      .select()
-      .from(schema.courses)
-      .where(eq(schema.courses.id, courseId));
+    const [course] = await db.select().from(schema.courses).where(eq(schema.courses.id, courseId));
 
     if (!course) {
       throw new ApiError(404, "Curso não encontrado");
@@ -52,19 +49,22 @@ export async function videoGeneratorRoutes(app: FastifyInstance) {
         timestamp: "00:15 - 00:35",
         cena: "Demonstração Prática da IA Sofia",
         imagemUrl: "/videos/images/cena2.jpg",
-        narracao: "Com o Comenta AI conectado, sua equipe ganha um assistente virtual 24h que qualifica leads, envia propostas e responde dúvidas em menos de 10 segundos.",
+        narracao:
+          "Com o Comenta AI conectado, sua equipe ganha um assistente virtual 24h que qualifica leads, envia propostas e responde dúvidas em menos de 10 segundos.",
       },
       {
         timestamp: "00:35 - 00:50",
         cena: "Caso Prático & Aumento de Vendas",
         imagemUrl: "/videos/images/cena3.jpg",
-        narracao: "Empresas que utilizam o autoatendimento por IA registram aumento de até 300% na taxa de conversão ao eliminar filas de espera no WhatsApp.",
+        narracao:
+          "Empresas que utilizam o autoatendimento por IA registram aumento de até 300% na taxa de conversão ao eliminar filas de espera no WhatsApp.",
       },
       {
         timestamp: "00:50 - 01:00",
         cena: "Conclusão & Prática no Painel",
         imagemUrl: "/videos/images/cena1.jpg",
-        narracao: "Pratique agora mesmo configurando suas regras de autoatendimento no painel do Comenta AI. Bons estudos!",
+        narracao:
+          "Pratique agora mesmo configurando suas regras de autoatendimento no painel do Comenta AI. Bons estudos!",
       },
     ];
 

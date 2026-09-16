@@ -1,5 +1,4 @@
 import type { FastifyInstance } from "fastify";
-import { z } from "zod";
 import { eq, ilike } from "drizzle-orm";
 import { db, schema } from "../db/client.js";
 import { emitToCompany } from "../realtime.js";
@@ -30,7 +29,8 @@ export async function abacsRoutes(app: FastifyInstance) {
 
     const buyerName = buyer.name || queryParams.name || "Aluno Operador de Caixa ABACS";
     const buyerEmail = buyer.email || queryParams.email || "aluno.caixa@abacs.org.br";
-    const buyerPhoneRaw = buyer.checkout_phone || buyer.phone || queryParams.phone || "5566999999999";
+    const buyerPhoneRaw =
+      buyer.checkout_phone || buyer.phone || queryParams.phone || "5566999999999";
     const buyerPhone = String(buyerPhoneRaw).replace(/\D/g, "");
 
     const productName = product.name || queryParams.product_name || "Operador de Caixa";
@@ -41,7 +41,9 @@ export async function abacsRoutes(app: FastifyInstance) {
     if (!company) return reply.status(404).send({ error: "Empresa não configurada." });
     const companyId = company.id;
 
-    console.log(`[ABACS Webhook Operador de Caixa] Token: ${token} | Curso ID: ${cursoIdParam} | Comprador: ${buyerName} (${buyerPhone})`);
+    console.log(
+      `[ABACS Webhook Operador de Caixa] Token: ${token} | Curso ID: ${cursoIdParam} | Comprador: ${buyerName} (${buyerPhone})`
+    );
 
     // 2. Busca ou insere o contato do Aluno
     let [contact] = await db
@@ -78,7 +80,9 @@ export async function abacsRoutes(app: FastifyInstance) {
     }
 
     const courseTitle = course ? course.title : productName;
-    const courseUrl = course ? `http://localhost:8080/cursos/${course.id}` : `http://localhost:3000/loja`;
+    const courseUrl = course
+      ? `http://localhost:8080/cursos/${course.id}`
+      : `http://localhost:3000/loja`;
 
     // 4. Garante conversa no CRM Kanban
     let [conv] = await db
@@ -120,7 +124,9 @@ export async function abacsRoutes(app: FastifyInstance) {
       .returning();
 
     emitToCompany(companyId, "message.created", { conversationId: conv.id, message: msg });
-    publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(() => {});
+    publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(
+      () => {}
+    );
     sendToContact(companyId, contact.id, whatsappMsg).catch(() => {});
 
     return reply.send({
@@ -135,7 +141,7 @@ export async function abacsRoutes(app: FastifyInstance) {
       buyerName,
       whatsappSent: true,
       accessUrl: courseUrl,
-      message: "Webhook ABACS Operador de Caixa recebido com sucesso!"
+      message: "Webhook ABACS Operador de Caixa recebido com sucesso!",
     });
   };
 
@@ -158,7 +164,8 @@ export async function abacsRoutes(app: FastifyInstance) {
       accessTokenCard: settings.accessTokenCard || "ACCESS_TOKEN_CARTAO_OCULTO",
       publicKey: settings.publicKey || "PUBLIC_KEY_OCULTO",
       collectorId: settings.collectorId || "COLLECTOR_ID_OCULTO",
-      webhookUrl: "https://abacs.org.br/integracao/hotmart/hotmart.php?token=89945.18284682318tokenavancada&curso=77",
+      webhookUrl:
+        "https://abacs.org.br/integracao/hotmart/hotmart.php?token=89945.18284682318tokenavancada&curso=77",
     });
   });
 
@@ -182,7 +189,10 @@ export async function abacsRoutes(app: FastifyInstance) {
       .set({ settings: updatedSettings })
       .where(eq(schema.companies.id, company.id));
 
-    return reply.send({ success: true, message: "Credenciais da ABACS e Operador de Caixa salvas com sucesso!" });
+    return reply.send({
+      success: true,
+      message: "Credenciais da ABACS e Operador de Caixa salvas com sucesso!",
+    });
   });
 
   // Teste de Sincronismo de Aluno Hotmart -> ABACS Portal (login.php)
@@ -203,14 +213,14 @@ export async function abacsRoutes(app: FastifyInstance) {
         abacsPortalUrl: "https://abacs.org.br/login.php",
         synced: true,
         status: abacsRes ? abacsRes.status : 200,
-        message: `Aluno ${usuario} (Operador de Caixa) sincronizado com a ABACS e Hotmart com sucesso!`
+        message: `Aluno ${usuario} (Operador de Caixa) sincronizado com a ABACS e Hotmart com sucesso!`,
       });
     } catch {
       return reply.send({
         success: true,
         abacsPortalUrl: "https://abacs.org.br/login.php",
         synced: true,
-        message: `Sincronismo ABACS simulado com sucesso.`
+        message: `Sincronismo ABACS simulado com sucesso.`,
       });
     }
   });

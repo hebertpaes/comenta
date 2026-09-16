@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Video, ArrowRight, Play, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Academia Comenta — Cursos & Treinamentos em Vídeo HD",
-  description: "Cursos de capacitação em Inteligência Artificial, Atendimento Multicanal, Automações e CRM no WhatsApp.",
+  description:
+    "Cursos de capacitação em Inteligência Artificial, Atendimento Multicanal, Automações e CRM no WhatsApp.",
 };
 
 export default function CursosRedirectPage() {
@@ -19,7 +20,8 @@ export default function CursosRedirectPage() {
       </h1>
 
       <p className="mt-4 text-slate-300 max-w-lg text-sm sm:text-base leading-relaxed">
-        Assista às videoaulas em HD de 1 Minuto com legendas em Português Brasileiro e Player Nativo de alta performance.
+        Assista às videoaulas em HD de 1 Minuto com legendas em Português Brasileiro e Player Nativo
+        de alta performance.
       </p>
 
       <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -27,7 +29,8 @@ export default function CursosRedirectPage() {
           href="http://localhost:8080/cursos"
           className="px-8 py-4 rounded-2xl bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 text-white font-black text-sm shadow-xl shadow-purple-600/30 hover:scale-105 transition-all flex items-center gap-2"
         >
-          <Play className="w-4 h-4 fill-white" /> Acessar Central de Cursos (Porta 8080) <ArrowRight className="w-4 h-4" />
+          <Play className="w-4 h-4 fill-white" /> Acessar Central de Cursos (Porta 8080){" "}
+          <ArrowRight className="w-4 h-4" />
         </a>
 
         <Link

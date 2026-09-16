@@ -49,18 +49,24 @@ export async function kiwifyRoutes(app: FastifyInstance) {
           .where(eq(schema.contacts.id, contact.id));
       }
 
-      audit({ companyId: comp.id, userId: null, role: "admin", name: "Kiwify Webhook" }, "kiwify.sale_approved", "contact", contact.id, {
-        productName,
-        email,
-        portalUrl: "https://curso.comenta.com.br/"
-      });
+      audit(
+        { companyId: comp.id, userId: null, role: "admin", name: "Kiwify Webhook" },
+        "kiwify.sale_approved",
+        "contact",
+        contact.id,
+        {
+          productName,
+          email,
+          portalUrl: "https://curso.comenta.com.br/",
+        }
+      );
     }
 
     return reply.send({
       status: "success",
       message: "Webhook Kiwify Comenta processado com sucesso!",
       portalUrl: "https://curso.comenta.com.br/",
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     });
   });
 }

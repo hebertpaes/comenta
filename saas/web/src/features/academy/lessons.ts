@@ -21,7 +21,8 @@ export function embedInfo(url: string | undefined | null): Embed | null {
   const vm = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
   if (vm?.[1]) return { type: "iframe", src: `https://player.vimeo.com/video/${vm[1]}` };
 
-  if (/\.(mp4|webm|ogg)(\?|$)/i.test(url) || url.startsWith("/videos/")) return { type: "video", src: url };
+  if (/\.(mp4|webm|ogg)(\?|$)/i.test(url) || url.startsWith("/videos/"))
+    return { type: "video", src: url };
   return { type: "video", src: url };
 }
 

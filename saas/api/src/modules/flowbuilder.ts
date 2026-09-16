@@ -1,6 +1,4 @@
 import type { FastifyInstance } from "fastify";
-import { z } from "zod";
-import { eq } from "drizzle-orm";
 import { db, schema } from "../db/client.js";
 
 /**
@@ -24,9 +22,9 @@ export async function flowbuilderRoutes(app: FastifyInstance) {
           { id: "2", type: "ai_agent", label: "Sofia Gemini IA (Classifica Lead)", x: 380, y: 150 },
           { id: "3", type: "condition", label: "Lead Qualificado?", x: 660, y: 150 },
           { id: "4", type: "action", label: "Transferir para Fila Comercial", x: 940, y: 100 },
-          { id: "5", type: "action", label: "Enviar Link do Curso Hotmart", x: 940, y: 220 }
+          { id: "5", type: "action", label: "Enviar Link do Curso Hotmart", x: 940, y: 220 },
         ],
-        updatedAt: new Date().toISOString()
+        updatedAt: new Date().toISOString(),
       },
       {
         id: "flow_hotmart_abacs_02",
@@ -36,10 +34,10 @@ export async function flowbuilderRoutes(app: FastifyInstance) {
           { id: "1", type: "start", label: "Webhook Hotmart Aprovado", x: 100, y: 150 },
           { id: "2", type: "action", label: "Cadastrar no CRM Kanban", x: 380, y: 150 },
           { id: "3", type: "action", label: "Sincronizar Login ABACS", x: 660, y: 150 },
-          { id: "4", type: "whatsapp", label: "Disparar Boas-Vindas no WhatsApp", x: 940, y: 150 }
+          { id: "4", type: "whatsapp", label: "Disparar Boas-Vindas no WhatsApp", x: 940, y: 150 },
         ],
-        updatedAt: new Date().toISOString()
-      }
+        updatedAt: new Date().toISOString(),
+      },
     ];
 
     return reply.send({ flows: defaultFlows });
@@ -56,12 +54,16 @@ export async function flowbuilderRoutes(app: FastifyInstance) {
       active: true,
       nodes: body.nodes || [
         { id: "1", type: "start", label: "Início do Atendimento", x: 100, y: 150 },
-        { id: "2", type: "ai_agent", label: "Agente IA Gemini", x: 350, y: 150 }
+        { id: "2", type: "ai_agent", label: "Agente IA Gemini", x: 350, y: 150 },
       ],
-      updatedAt: new Date().toISOString()
+      updatedAt: new Date().toISOString(),
     };
 
-    return reply.send({ success: true, flow: newFlow, message: "Fluxo de automação criado com sucesso!" });
+    return reply.send({
+      success: true,
+      flow: newFlow,
+      message: "Fluxo de automação criado com sucesso!",
+    });
   });
 
   // Exclui um fluxo de automação

@@ -28,7 +28,9 @@ export function ComentaCourseStudio({ onSuccess, onClose }: ComentaCourseStudioP
     setGeneratedCourse(null);
 
     try {
-      setStepText("🧠 [1/4] Analisando Desejo do Aluno e Instruções do Professor com IA Google Gemini...");
+      setStepText(
+        "🧠 [1/4] Analisando Desejo do Aluno e Instruções do Professor com IA Google Gemini..."
+      );
       await new Promise((r) => setTimeout(r, 1200));
 
       setStepText("📝 [2/4] Gerando Estrutura Didática & Roteiro de Vídeo para cada Aula...");
@@ -85,7 +87,14 @@ export function ComentaCourseStudio({ onSuccess, onClose }: ComentaCourseStudioP
         }}
       >
         {/* Header do Studio */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 18 }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginBottom: 18,
+          }}
+        >
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
             <div
               style={{
@@ -103,9 +112,12 @@ export function ComentaCourseStudio({ onSuccess, onClose }: ComentaCourseStudioP
               🎓
             </div>
             <div>
-              <h3 style={{ margin: 0, fontSize: 19, fontWeight: 800 }}>Studio Gerador de Cursos IA</h3>
+              <h3 style={{ margin: 0, fontSize: 19, fontWeight: 800 }}>
+                Studio Gerador de Cursos IA
+              </h3>
               <div style={{ fontSize: 12, color: "#94a3b8" }}>
-                Gere o curso completo com videoaulas de 1 minuto segundo a instrução do professor e o desejo do aluno
+                Gere o curso completo com videoaulas de 1 minuto segundo a instrução do professor e
+                o desejo do aluno
               </div>
             </div>
           </div>
@@ -133,7 +145,15 @@ export function ComentaCourseStudio({ onSuccess, onClose }: ComentaCourseStudioP
         {/* Formulário do Gerador */}
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           <div>
-            <label style={{ fontSize: 12, fontWeight: 700, color: "#cbd5e1", marginBottom: 6, display: "block" }}>
+            <label
+              style={{
+                fontSize: 12,
+                fontWeight: 700,
+                color: "#cbd5e1",
+                marginBottom: 6,
+                display: "block",
+              }}
+            >
               🎯 Desejo de Aprendizado do Aluno (O que ele quer aprender?)
             </label>
             <textarea
@@ -156,7 +176,15 @@ export function ComentaCourseStudio({ onSuccess, onClose }: ComentaCourseStudioP
           </div>
 
           <div>
-            <label style={{ fontSize: 12, fontWeight: 700, color: "#cbd5e1", marginBottom: 6, display: "block" }}>
+            <label
+              style={{
+                fontSize: 12,
+                fontWeight: 700,
+                color: "#cbd5e1",
+                marginBottom: 6,
+                display: "block",
+              }}
+            >
               📚 Instrução / Metodologia do Professor (Como o professor ensina?)
             </label>
             <textarea
@@ -180,7 +208,15 @@ export function ComentaCourseStudio({ onSuccess, onClose }: ComentaCourseStudioP
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
             <div>
-              <label style={{ fontSize: 12, fontWeight: 700, color: "#cbd5e1", marginBottom: 6, display: "block" }}>
+              <label
+                style={{
+                  fontSize: 12,
+                  fontWeight: 700,
+                  color: "#cbd5e1",
+                  marginBottom: 6,
+                  display: "block",
+                }}
+              >
                 Nível do Aluno
               </label>
               <select
@@ -204,7 +240,15 @@ export function ComentaCourseStudio({ onSuccess, onClose }: ComentaCourseStudioP
             </div>
 
             <div>
-              <label style={{ fontSize: 12, fontWeight: 700, color: "#cbd5e1", marginBottom: 6, display: "block" }}>
+              <label
+                style={{
+                  fontSize: 12,
+                  fontWeight: 700,
+                  color: "#cbd5e1",
+                  marginBottom: 6,
+                  display: "block",
+                }}
+              >
                 Qtd. de Aulas de 1 Minuto
               </label>
               <select
@@ -261,14 +305,30 @@ export function ComentaCourseStudio({ onSuccess, onClose }: ComentaCourseStudioP
           )}
 
           {errorMsg && (
-            <div style={{ background: "rgba(220,38,38,0.2)", border: "1px solid #dc2626", color: "#fca5a5", padding: 12, borderRadius: 10, fontSize: 13 }}>
+            <div
+              style={{
+                background: "rgba(220,38,38,0.2)",
+                border: "1px solid #dc2626",
+                color: "#fca5a5",
+                padding: 12,
+                borderRadius: 10,
+                fontSize: 13,
+              }}
+            >
               ⚠️ {errorMsg}
             </div>
           )}
 
           {/* Resultado do Curso Criado */}
           {generatedCourse && (
-            <div style={{ background: "#1e2028", borderRadius: 14, padding: 14, border: "1px solid #334155" }}>
+            <div
+              style={{
+                background: "#1e2028",
+                borderRadius: 14,
+                padding: 14,
+                border: "1px solid #334155",
+              }}
+            >
               <div style={{ fontSize: 14, fontWeight: 800, color: "#10b981", marginBottom: 6 }}>
                 🎉 {generatedCourse.message}
               </div>
@@ -276,7 +336,8 @@ export function ComentaCourseStudio({ onSuccess, onClose }: ComentaCourseStudioP
                 <strong>Curso:</strong> {generatedCourse.course?.title}
               </div>
               <div style={{ fontSize: 12, color: "#94a3b8", marginTop: 4 }}>
-                <strong>Aulas Geradas:</strong> {generatedCourse.lessons?.length} videoaulas com o Player Próprio Comenta.
+                <strong>Aulas Geradas:</strong> {generatedCourse.lessons?.length} videoaulas com o
+                Player Próprio Comenta.
               </div>
             </div>
           )}

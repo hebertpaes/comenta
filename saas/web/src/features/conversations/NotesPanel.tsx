@@ -55,8 +55,13 @@ export function NotesPanel({ conversationId }: { conversationId: string }) {
 
   return (
     <div style={{ marginTop: 8 }}>
-      <button className="link" onClick={() => setOpen((o) => !o)} style={{ fontSize: 12, fontWeight: 700 }}>
-        🗒️ Anotações CRM & Lembretes (Estilo WAScript) {open ? "▲" : "▼"} {notes.length ? `(${notes.length})` : ""}
+      <button
+        className="link"
+        onClick={() => setOpen((o) => !o)}
+        style={{ fontSize: 12, fontWeight: 700 }}
+      >
+        🗒️ Anotações CRM & Lembretes (Estilo WAScript) {open ? "▲" : "▼"}{" "}
+        {notes.length ? `(${notes.length})` : ""}
       </button>
 
       {open && (
@@ -71,12 +76,16 @@ export function NotesPanel({ conversationId }: { conversationId: string }) {
         >
           {/* Presets Rápidos estilo WAScript Overlay */}
           <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
-            <span style={{ fontSize: 11, fontWeight: 700, color: "var(--muted)", alignSelf: "center" }}>Atalhos:</span>
+            <span
+              style={{ fontSize: 11, fontWeight: 700, color: "var(--muted)", alignSelf: "center" }}
+            >
+              Atalhos:
+            </span>
             {[
               "Interessado no Curso Operador de Caixa",
               "Aguardando Pagamento Hotmart",
               "Solicitou retorno por telefone",
-              "Proposta comercial enviada"
+              "Proposta comercial enviada",
             ].map((preset) => (
               <button
                 key={preset}
@@ -98,7 +107,14 @@ export function NotesPanel({ conversationId }: { conversationId: string }) {
               onKeyDown={(e) => {
                 if (e.key === "Enter") submit();
               }}
-              style={{ padding: "8px 12px", borderRadius: 8, border: "1px solid var(--border)", fontSize: 13, background: "var(--panel)", color: "var(--text)" }}
+              style={{
+                padding: "8px 12px",
+                borderRadius: 8,
+                border: "1px solid var(--border)",
+                fontSize: 13,
+                background: "var(--panel)",
+                color: "var(--text)",
+              }}
             />
 
             <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
@@ -107,15 +123,35 @@ export function NotesPanel({ conversationId }: { conversationId: string }) {
                 value={dealValue}
                 onChange={(e) => setDealValue(e.target.value)}
                 placeholder="💰 Valor Negócio (ex: 149,00)"
-                style={{ flex: 1, padding: "6px 10px", borderRadius: 8, border: "1px solid var(--border)", fontSize: 12, background: "var(--panel)", color: "var(--text)" }}
+                style={{
+                  flex: 1,
+                  padding: "6px 10px",
+                  borderRadius: 8,
+                  border: "1px solid var(--border)",
+                  fontSize: 12,
+                  background: "var(--panel)",
+                  color: "var(--text)",
+                }}
               />
               <input
                 type="date"
                 value={reminderDate}
                 onChange={(e) => setReminderDate(e.target.value)}
-                style={{ flex: 1, padding: "6px 10px", borderRadius: 8, border: "1px solid var(--border)", fontSize: 12, background: "var(--panel)", color: "var(--text)" }}
+                style={{
+                  flex: 1,
+                  padding: "6px 10px",
+                  borderRadius: 8,
+                  border: "1px solid var(--border)",
+                  fontSize: 12,
+                  background: "var(--panel)",
+                  color: "var(--text)",
+                }}
               />
-              <button onClick={submit} disabled={add.isPending} style={{ fontWeight: 700, padding: "6px 14px" }}>
+              <button
+                onClick={submit}
+                disabled={add.isPending}
+                style={{ fontWeight: 700, padding: "6px 14px" }}
+              >
                 {add.isPending ? "…" : "Salvar Nota"}
               </button>
             </div>
@@ -127,10 +163,23 @@ export function NotesPanel({ conversationId }: { conversationId: string }) {
           {notes.map((n) => (
             <div
               key={n.id}
-              style={{ fontSize: 13, marginTop: 10, borderTop: "1px dashed var(--border)", paddingTop: 8 }}
+              style={{
+                fontSize: 13,
+                marginTop: 10,
+                borderTop: "1px dashed var(--border)",
+                paddingTop: 8,
+              }}
             >
               <div style={{ fontWeight: 600, color: "var(--text)" }}>{n.body}</div>
-              <div className="muted" style={{ fontSize: 11, display: "flex", justifyContent: "space-between", marginTop: 4 }}>
+              <div
+                className="muted"
+                style={{
+                  fontSize: 11,
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginTop: 4,
+                }}
+              >
                 <span>Por {n.author ?? "Atendente"}</span>
                 <button
                   className="link"

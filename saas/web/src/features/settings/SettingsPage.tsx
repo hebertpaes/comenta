@@ -15,7 +15,7 @@ export function SettingsPage() {
   const [copiedAbacs, setCopiedAbacs] = useState(false);
 
   // Form de Meios de Pagamento & ABACS
-  const [abacsToken, setAbacsToken] = useState("ABACS_TOKEN_EXEMPLO_2026");
+  const [abacsToken] = useState("ABACS_TOKEN_EXEMPLO_2026");
   const [apiKeyCartao, setApiKeyCartao] = useState("****************************");
   const [accessTokenCard, setAccessTokenCard] = useState("****************************");
   const [publicKey, setPublicKey] = useState("****************************");
@@ -54,22 +54,50 @@ export function SettingsPage() {
     <div style={{ maxWidth: 800, paddingBottom: 40 }}>
       <h2>⚙️ Central de Configurações & Integrações</h2>
       <p className="muted" style={{ marginTop: -8, marginBottom: 20 }}>
-        Gerencie a integração com ABACS / Escola Avançada, Hotmart, Chaves de Pagamento e Base da IA.
+        Gerencie a integração com ABACS / Escola Avançada, Hotmart, Chaves de Pagamento e Base da
+        IA.
       </p>
 
       {/* Card 0: Integração ABACS & Escola Avançada */}
       <div className="card" style={{ padding: 20, marginBottom: 20, alignItems: "stretch" }}>
-        <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div
+          style={{
+            fontWeight: 700,
+            fontSize: 16,
+            marginBottom: 8,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
           <span>🏛️ Integração ABACS & Escola Avançada (Hotmart API)</span>
-          <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 12, background: "rgba(109, 40, 217, 0.15)", color: "#6d28d9", fontWeight: 700 }}>
+          <span
+            style={{
+              fontSize: 11,
+              padding: "3px 10px",
+              borderRadius: 12,
+              background: "rgba(109, 40, 217, 0.15)",
+              color: "#6d28d9",
+              fontWeight: 700,
+            }}
+          >
             ⚡ TOKEN ATIVO
           </span>
         </div>
         <p className="muted" style={{ fontSize: 13, marginTop: 0 }}>
-          Link oficial para conectar os cursos da Hotmart à plataforma via API da Escola Avançada / ABACS.
+          Link oficial para conectar os cursos da Hotmart à plataforma via API da Escola Avançada /
+          ABACS.
         </p>
 
-        <div style={{ background: "var(--panel2)", borderRadius: 10, padding: 14, border: "1px solid var(--border)", marginBottom: 14 }}>
+        <div
+          style={{
+            background: "var(--panel2)",
+            borderRadius: 10,
+            padding: 14,
+            border: "1px solid var(--border)",
+            marginBottom: 14,
+          }}
+        >
           <div style={{ fontSize: 12, fontWeight: 700, color: "var(--muted)", marginBottom: 4 }}>
             Link de Integração Hotmart (Copie e cole na Hotmart):
           </div>
@@ -78,9 +106,22 @@ export function SettingsPage() {
               type="text"
               readOnly
               value={linkAbacsUrl}
-              style={{ flex: 1, padding: "8px 12px", borderRadius: 6, border: "1px solid var(--border)", background: "var(--panel)", color: "var(--text)", fontSize: 12, fontFamily: "monospace" }}
+              style={{
+                flex: 1,
+                padding: "8px 12px",
+                borderRadius: 6,
+                border: "1px solid var(--border)",
+                background: "var(--panel)",
+                color: "var(--text)",
+                fontSize: 12,
+                fontFamily: "monospace",
+              }}
             />
-            <button type="button" onClick={copiarLinkAbacs} style={{ fontSize: 12, padding: "8px 14px" }}>
+            <button
+              type="button"
+              onClick={copiarLinkAbacs}
+              style={{ fontSize: 12, padding: "8px 14px" }}
+            >
               {copiedAbacs ? "Copiado! ✓" : "Copiar Link"}
             </button>
           </div>
@@ -88,47 +129,89 @@ export function SettingsPage() {
 
         {/* Formulário de Meios de Pagamento & ABACS */}
         <div style={{ borderTop: "1px dashed var(--border)", paddingTop: 14, marginTop: 4 }}>
-          <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 10 }}>💳 Meios de Pagamentos & Chaves de API</div>
-          
+          <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 10 }}>
+            💳 Meios de Pagamentos & Chaves de API
+          </div>
+
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
             <div>
-              <label style={{ fontSize: 12, fontWeight: 600, display: "block", marginBottom: 4 }}>API KEY (Cartão e Boleto)</label>
+              <label style={{ fontSize: 12, fontWeight: 600, display: "block", marginBottom: 4 }}>
+                API KEY (Cartão e Boleto)
+              </label>
               <input
                 type="password"
                 value={apiKeyCartao}
                 onChange={(e) => setApiKeyCartao(e.target.value)}
                 placeholder="Insira a API Key"
-                style={{ width: "100%", padding: "8px 10px", borderRadius: 6, border: "1px solid var(--border)", background: "var(--panel2)", color: "var(--text)", fontSize: 12 }}
+                style={{
+                  width: "100%",
+                  padding: "8px 10px",
+                  borderRadius: 6,
+                  border: "1px solid var(--border)",
+                  background: "var(--panel2)",
+                  color: "var(--text)",
+                  fontSize: 12,
+                }}
               />
             </div>
             <div>
-              <label style={{ fontSize: 12, fontWeight: 600, display: "block", marginBottom: 4 }}>ACCESS TOKEN (Cartão)</label>
+              <label style={{ fontSize: 12, fontWeight: 600, display: "block", marginBottom: 4 }}>
+                ACCESS TOKEN (Cartão)
+              </label>
               <input
                 type="password"
                 value={accessTokenCard}
                 onChange={(e) => setAccessTokenCard(e.target.value)}
                 placeholder="Insira o Access Token"
-                style={{ width: "100%", padding: "8px 10px", borderRadius: 6, border: "1px solid var(--border)", background: "var(--panel2)", color: "var(--text)", fontSize: 12 }}
+                style={{
+                  width: "100%",
+                  padding: "8px 10px",
+                  borderRadius: 6,
+                  border: "1px solid var(--border)",
+                  background: "var(--panel2)",
+                  color: "var(--text)",
+                  fontSize: 12,
+                }}
               />
             </div>
             <div>
-              <label style={{ fontSize: 12, fontWeight: 600, display: "block", marginBottom: 4 }}>PUBLIC KEY</label>
+              <label style={{ fontSize: 12, fontWeight: 600, display: "block", marginBottom: 4 }}>
+                PUBLIC KEY
+              </label>
               <input
                 type="text"
                 value={publicKey}
                 onChange={(e) => setPublicKey(e.target.value)}
                 placeholder="Insira a Public Key"
-                style={{ width: "100%", padding: "8px 10px", borderRadius: 6, border: "1px solid var(--border)", background: "var(--panel2)", color: "var(--text)", fontSize: 12 }}
+                style={{
+                  width: "100%",
+                  padding: "8px 10px",
+                  borderRadius: 6,
+                  border: "1px solid var(--border)",
+                  background: "var(--panel2)",
+                  color: "var(--text)",
+                  fontSize: 12,
+                }}
               />
             </div>
             <div>
-              <label style={{ fontSize: 12, fontWeight: 600, display: "block", marginBottom: 4 }}>COLLECTOR ID</label>
+              <label style={{ fontSize: 12, fontWeight: 600, display: "block", marginBottom: 4 }}>
+                COLLECTOR ID
+              </label>
               <input
                 type="text"
                 value={collectorId}
                 onChange={(e) => setCollectorId(e.target.value)}
                 placeholder="Insira o Collector ID"
-                style={{ width: "100%", padding: "8px 10px", borderRadius: 6, border: "1px solid var(--border)", background: "var(--panel2)", color: "var(--text)", fontSize: 12 }}
+                style={{
+                  width: "100%",
+                  padding: "8px 10px",
+                  borderRadius: 6,
+                  border: "1px solid var(--border)",
+                  background: "var(--panel2)",
+                  color: "var(--text)",
+                  fontSize: 12,
+                }}
               />
             </div>
           </div>
@@ -140,42 +223,96 @@ export function SettingsPage() {
                 setAbacsSaved(true);
                 setTimeout(() => setAbacsSaved(false), 3000);
               }}
-              style={{ fontSize: 12, padding: "8px 14px", background: "#6d28d9", color: "#fff", border: 0, borderRadius: 6, fontWeight: 700, cursor: "pointer" }}
+              style={{
+                fontSize: 12,
+                padding: "8px 14px",
+                background: "#6d28d9",
+                color: "#fff",
+                border: 0,
+                borderRadius: 6,
+                fontWeight: 700,
+                cursor: "pointer",
+              }}
             >
               Salvar Credenciais ABACS
             </button>
-            {abacsSaved && <span style={{ fontSize: 12, color: "#10b981", fontWeight: 700 }}>Credenciais salvas com sucesso! ✓</span>}
+            {abacsSaved && (
+              <span style={{ fontSize: 12, color: "#10b981", fontWeight: 700 }}>
+                Credenciais salvas com sucesso! ✓
+              </span>
+            )}
           </div>
         </div>
       </div>
 
       {/* Card 1: Integração Oficial Hotmart */}
       <div className="card" style={{ padding: 20, marginBottom: 20, alignItems: "stretch" }}>
-        <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div
+          style={{
+            fontWeight: 700,
+            fontSize: 16,
+            marginBottom: 8,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
           <span>🛍️ Automação & Webhook da Hotmart</span>
           <a
             href="https://app.hotmart.com/tools/webhook"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ fontSize: 11, padding: "4px 12px", borderRadius: 12, background: "linear-gradient(135deg, #ff416c, #ff4b2b)", color: "#fff", fontWeight: 700, textDecoration: "none" }}
+            style={{
+              fontSize: 11,
+              padding: "4px 12px",
+              borderRadius: 12,
+              background: "linear-gradient(135deg, #ff416c, #ff4b2b)",
+              color: "#fff",
+              fontWeight: 700,
+              textDecoration: "none",
+            }}
           >
             ↗ Abrir Ferramentas Hotmart Webhook
           </a>
         </div>
         <p className="muted" style={{ fontSize: 13, marginTop: 0 }}>
-          Ao realizar vendas na Hotmart, este webhook cadastra o comprador automaticamente, envia a mensagem de boas-vindas no WhatsApp e libera o acesso aos cursos.
+          Ao realizar vendas na Hotmart, este webhook cadastra o comprador automaticamente, envia a
+          mensagem de boas-vindas no WhatsApp e libera o acesso aos cursos.
         </p>
 
-        <div style={{ background: "var(--panel2)", borderRadius: 10, padding: 14, border: "1px solid var(--border)", marginBottom: 12 }}>
-          <div style={{ fontSize: 12, fontWeight: 700, color: "var(--muted)", marginBottom: 4 }}>URL do Webhook para cadastrar na Hotmart:</div>
+        <div
+          style={{
+            background: "var(--panel2)",
+            borderRadius: 10,
+            padding: 14,
+            border: "1px solid var(--border)",
+            marginBottom: 12,
+          }}
+        >
+          <div style={{ fontSize: 12, fontWeight: 700, color: "var(--muted)", marginBottom: 4 }}>
+            URL do Webhook para cadastrar na Hotmart:
+          </div>
           <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
             <input
               type="text"
               readOnly
               value={webhookHotmartUrl}
-              style={{ flex: 1, padding: "8px 12px", borderRadius: 6, border: "1px solid var(--border)", background: "var(--panel)", color: "var(--text)", fontSize: 13, fontFamily: "monospace" }}
+              style={{
+                flex: 1,
+                padding: "8px 12px",
+                borderRadius: 6,
+                border: "1px solid var(--border)",
+                background: "var(--panel)",
+                color: "var(--text)",
+                fontSize: 13,
+                fontFamily: "monospace",
+              }}
             />
-            <button type="button" onClick={copiarWebhook} style={{ fontSize: 12, padding: "8px 14px" }}>
+            <button
+              type="button"
+              onClick={copiarWebhook}
+              style={{ fontSize: 12, padding: "8px 14px" }}
+            >
               {copiedWebhook ? "Copiado! ✓" : "Copiar URL"}
             </button>
           </div>
@@ -184,14 +321,33 @@ export function SettingsPage() {
 
       {/* Card 2: Status do Google Gemini AI */}
       <div className="card" style={{ padding: 20, marginBottom: 20, alignItems: "stretch" }}>
-        <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div
+          style={{
+            fontWeight: 700,
+            fontSize: 16,
+            marginBottom: 8,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
           <span>✦ Google Gemini AI Studio</span>
-          <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 12, background: "rgba(16, 185, 129, 0.15)", color: "#10b981", fontWeight: 700 }}>
+          <span
+            style={{
+              fontSize: 11,
+              padding: "3px 10px",
+              borderRadius: 12,
+              background: "rgba(16, 185, 129, 0.15)",
+              color: "#10b981",
+              fontWeight: 700,
+            }}
+          >
             🟢 CONECTADO E ATIVO
           </span>
         </div>
         <p className="muted" style={{ fontSize: 13, marginTop: 0 }}>
-          Sua chave de API do Google Gemini está configurada. O modelo generativo padrão ativo é o <b>Gemini 1.5 / 2.0 Flash</b>.
+          Sua chave de API do Google Gemini está configurada. O modelo generativo padrão ativo é o{" "}
+          <b>Gemini 1.5 / 2.0 Flash</b>.
         </p>
       </div>
 
@@ -201,7 +357,8 @@ export function SettingsPage() {
           🌐 Base de Conhecimento do Comenta AI
         </div>
         <p className="muted" style={{ fontSize: 13, marginTop: 0 }}>
-          O robô de autoatendimento responde seus clientes e visitantes usando as informações abaixo (preços, horários, perguntas frequentes e procedimentos).
+          O robô de autoatendimento responde seus clientes e visitantes usando as informações abaixo
+          (preços, horários, perguntas frequentes e procedimentos).
         </p>
 
         <Async {...query} onRetry={() => void query.refetch()}>
@@ -238,7 +395,10 @@ export function SettingsPage() {
                   {save.isPending ? "Salvando…" : "Salvar Configurações"}
                 </button>
                 {saved && !save.isPending && (
-                  <span className="muted" style={{ fontSize: 13, color: "#10b981", fontWeight: 700 }}>
+                  <span
+                    className="muted"
+                    style={{ fontSize: 13, color: "#10b981", fontWeight: 700 }}
+                  >
                     Configurações atualizadas com sucesso ✓
                   </span>
                 )}

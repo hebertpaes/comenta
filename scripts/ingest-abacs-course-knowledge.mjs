@@ -1,23 +1,32 @@
 import postgres from "postgres";
 
-const DATABASE_URL = process.env.DATABASE_URL || "postgresql://comenta:3a24efa594604b1e10d2e2b2346e5dc9@localhost:5432/comenta_saas";
+const DATABASE_URL =
+  process.env.DATABASE_URL ||
+  "postgresql://comenta:3a24efa594604b1e10d2e2b2346e5dc9@localhost:5432/comenta_saas";
 
 const KNOWLEDGE_DATA = [
   {
     course: "Operador de Caixa (Curso ID 77)",
     price: "R$ 99,00 à vista (ou parcelado)",
-    audience: "Pessoas que buscam o primeiro emprego no comércio, supermercados, lojas e farmácias.",
+    audience:
+      "Pessoas que buscam o primeiro emprego no comércio, supermercados, lojas e farmácias.",
     syllabus: [
       "Módulo 1: Introdução à Operação de Caixa e Postura Profissional",
       "Módulo 2: Abertura, Sangria e Fechamento de Caixa",
       "Módulo 3: Formas de Pagamento: Cartão de Crédito/Débito, Pix, Dinheiro e Cheque",
       "Módulo 4: Prevenção a Fraudes e Notas Falsas",
-      "Módulo 5: Atendimento ao Cliente e Resolução de Conflitos"
+      "Módulo 5: Atendimento ao Cliente e Resolução de Conflitos",
     ],
     faqs: [
-      { q: "O certificado é reconhecido?", a: "Sim! O certificado é emitido pela Escola Avançada ABACS e tem validade nacional para currículo e horas complementares." },
-      { q: "Como recebo o acesso?", a: "Após a aprovação do pagamento no Hotmart, o login no portal https://abacs.org.br/login.php e no WhatsApp é liberado imediatamente." }
-    ]
+      {
+        q: "O certificado é reconhecido?",
+        a: "Sim! O certificado é emitido pela Escola Avançada ABACS e tem validade nacional para currículo e horas complementares.",
+      },
+      {
+        q: "Como recebo o acesso?",
+        a: "Após a aprovação do pagamento no Hotmart, o login no portal https://abacs.org.br/login.php e no WhatsApp é liberado imediatamente.",
+      },
+    ],
   },
   {
     course: "Administrativo Completo",
@@ -27,11 +36,9 @@ const KNOWLEDGE_DATA = [
       "Rotinas Administrativas e Organização de Documentos",
       "Noções de Contabilidade e Faturamento",
       "Atendimento Telefônico e Corporativo",
-      "Redação Empresarial e E-mails Profissionais"
+      "Redação Empresarial e E-mails Profissionais",
     ],
-    faqs: [
-      { q: "Precisa de experiência prévia?", a: "Não, o curso vai do básico ao avançado." }
-    ]
+    faqs: [{ q: "Precisa de experiência prévia?", a: "Não, o curso vai do básico ao avançado." }],
   },
   {
     course: "Curso Preparatório ENEM",
@@ -41,11 +48,14 @@ const KNOWLEDGE_DATA = [
       "Redação Nota 1000: Estrutura, Repertório e Competências",
       "Matemática e Suas Tecnologias",
       "Ciências da Natureza (Física, Química e Biologia)",
-      "Ciências Humanas e Linguagens"
+      "Ciências Humanas e Linguagens",
     ],
     faqs: [
-      { q: "Tem simulados inclusos?", a: "Sim, acompanha simulados corrigidos por modelo oficial." }
-    ]
+      {
+        q: "Tem simulados inclusos?",
+        a: "Sim, acompanha simulados corrigidos por modelo oficial.",
+      },
+    ],
   },
   {
     course: "Criação de Game",
@@ -55,11 +65,14 @@ const KNOWLEDGE_DATA = [
       "Lógica de Programação para Games",
       "Design de Fases e Pixel Art",
       "Animações, Física e Colisões",
-      "Publicação do Jogo na Steam e Mobile"
+      "Publicação do Jogo na Steam e Mobile",
     ],
     faqs: [
-      { q: "Precisa de computador potente?", a: "Não, as ferramentas ensinadas rodam em computadores básicos." }
-    ]
+      {
+        q: "Precisa de computador potente?",
+        a: "Não, as ferramentas ensinadas rodam em computadores básicos.",
+      },
+    ],
   },
   {
     course: "Pacote Office Pro",
@@ -69,25 +82,32 @@ const KNOWLEDGE_DATA = [
       "Microsoft Word: Formatação ABNT e Documentos Corporativos",
       "Microsoft Excel: Fórmulas PROCV, SE, Tabela Dinâmica e Gráficos",
       "Microsoft PowerPoint: Apresentações de Alto Impacto",
-      "Produtividade e Atalhos Rápidos"
+      "Produtividade e Atalhos Rápidos",
     ],
     faqs: [
-      { q: "Ensina Excel Avançado?", a: "Sim, inclui fórmulas avançadas e automação de planilhas." }
-    ]
+      {
+        q: "Ensina Excel Avançado?",
+        a: "Sim, inclui fórmulas avançadas e automação de planilhas.",
+      },
+    ],
   },
   {
     course: "Design Gráfico",
     price: "R$ 99,00 à vista",
-    audience: "Pessoas interessadas em trabalhar como designers freelances ou em agências de marketing.",
+    audience:
+      "Pessoas interessadas em trabalhar como designers freelances ou em agências de marketing.",
     syllabus: [
       "Teoria das Cores, Tipografia e Composição Visual",
       "Adobe Photoshop: Tratamento de Fotos e Edição",
       "Adobe Illustrator: Vetorização e Criação de Logotipos",
-      "Criação de Identidade Visual Completa"
+      "Criação de Identidade Visual Completa",
     ],
     faqs: [
-      { q: "Recebo os programas para treinar?", a: "O curso ensina como baixar as versões de teste e alternativas gratuitas." }
-    ]
+      {
+        q: "Recebo os programas para treinar?",
+        a: "O curso ensina como baixar as versões de teste e alternativas gratuitas.",
+      },
+    ],
   },
   {
     course: "Marketing Digital",
@@ -97,11 +117,14 @@ const KNOWLEDGE_DATA = [
       "Estratégia de Conteúdo no Instagram e TikTok",
       "Tráfego Pago (Google Ads e Meta Ads)",
       "Copywriting e Técnicas de Persuasão",
-      "Funis de Venda e Automação de E-mails"
+      "Funis de Venda e Automação de E-mails",
     ],
     faqs: [
-      { q: "Consigo vender produtos próprios?", a: "Sim, ensina a vender produtos físicos, digitais e serviços." }
-    ]
+      {
+        q: "Consigo vender produtos próprios?",
+        a: "Sim, ensina a vender produtos físicos, digitais e serviços.",
+      },
+    ],
   },
   {
     course: "Curso Hardware",
@@ -111,25 +134,32 @@ const KNOWLEDGE_DATA = [
       "Arquitetura de Processadores, Memórias e Placas-Mãe",
       "Montagem Completa do Computador Passo a Passo",
       "Formatação, Instalação do Windows e Linux",
-      "Diagnóstico de Defeitos e Limpeza Preventiva"
+      "Diagnóstico de Defeitos e Limpeza Preventiva",
     ],
     faqs: [
-      { q: "Posso abrir minha própria assistência?", a: "Sim! O curso capacita você para prestar serviços autônomos." }
-    ]
+      {
+        q: "Posso abrir minha própria assistência?",
+        a: "Sim! O curso capacita você para prestar serviços autônomos.",
+      },
+    ],
   },
   {
     course: "Eletricista com NR-10",
     price: "R$ 99,00 à vista",
-    audience: "Pessoas que desejam atuar em instalações elétricas residenciais e prediais com segurança.",
+    audience:
+      "Pessoas que desejam atuar em instalações elétricas residenciais e prediais com segurança.",
     syllabus: [
       "Grandezas Elétricas: Tensão, Corrente e Potência",
       "Esquemas Elétricos e QDR (Quadro de Distribuição)",
       "Instalação de Tomadas, Interruptores e Disjuntores",
-      "Segurança em Instalações com Norma NR-10"
+      "Segurança em Instalações com Norma NR-10",
     ],
     faqs: [
-      { q: "O certificado tem NR-10 validado?", a: "Sim, cumpre todas as exigências técnicas da norma." }
-    ]
+      {
+        q: "O certificado tem NR-10 validado?",
+        a: "Sim, cumpre todas as exigências técnicas da norma.",
+      },
+    ],
   },
   {
     course: "Barbeiro Profissional",
@@ -139,11 +169,14 @@ const KNOWLEDGE_DATA = [
       "Cortes Modernos: Fade, Degradê, Pompadour e Social",
       "Design de Barba, Toalha Quente e Desenhados",
       "Biossegurança e Higienização de Lâminas",
-      "Gestão Financeira para Barbearias"
+      "Gestão Financeira para Barbearias",
     ],
     faqs: [
-      { q: "Preciso ter kit de tesouras antes?", a: "Não, nas primeiras aulas você aprende quais ferramentas comprar com o melhor custo-benefício." }
-    ]
+      {
+        q: "Preciso ter kit de tesouras antes?",
+        a: "Não, nas primeiras aulas você aprende quais ferramentas comprar com o melhor custo-benefício.",
+      },
+    ],
   },
   {
     course: "Ponte Rolante",
@@ -153,11 +186,11 @@ const KNOWLEDGE_DATA = [
       "Tipos e Componentes de Pontes Rolantes",
       "Inspeção Pré-Operacional e Cabos de Aço",
       "Sinalização Manual e Amarração de Cargas",
-      "Prevenção de Acidentes Industriais"
+      "Prevenção de Acidentes Industriais",
     ],
     faqs: [
-      { q: "Emite carteirinha de operador?", a: "Acompanha o certificado oficial homologado." }
-    ]
+      { q: "Emite carteirinha de operador?", a: "Acompanha o certificado oficial homologado." },
+    ],
   },
   {
     course: "Criação de App Android e iOS",
@@ -167,11 +200,14 @@ const KNOWLEDGE_DATA = [
       "Interface de Usuário (UI/UX) Mobile",
       "Desenvolvimento de Aplicativos Híbridos",
       "Conexão com Banco de Dados e APIs",
-      "Publicação na Google Play Store e Apple App Store"
+      "Publicação na Google Play Store e Apple App Store",
     ],
     faqs: [
-      { q: "Funciona para quem nunca programou?", a: "Sim, começa com conceitos básicos de lógica." }
-    ]
+      {
+        q: "Funciona para quem nunca programou?",
+        a: "Sim, começa com conceitos básicos de lógica.",
+      },
+    ],
   },
   {
     course: "Energia Solar",
@@ -181,25 +217,32 @@ const KNOWLEDGE_DATA = [
       "Princípio de Funcionamento de Painéis Fotovoltaicos",
       "Dimensionamento de Inversores e Baterias",
       "Instalação e Fixação no Telhado",
-      "Homologação Junto à Concessionária de Energia"
+      "Homologação Junto à Concessionária de Energia",
     ],
     faqs: [
-      { q: "O mercado de energia solar é promissor?", a: "É um dos setores com maior crescimento e contratação no Brasil." }
-    ]
+      {
+        q: "O mercado de energia solar é promissor?",
+        a: "É um dos setores com maior crescimento e contratação no Brasil.",
+      },
+    ],
   },
   {
     course: "JavaScript",
     price: "R$ 69,90 à vista",
-    audience: "Estudantes de tecnologia que desejam aprender a linguagem de programação mais popular da web.",
+    audience:
+      "Estudantes de tecnologia que desejam aprender a linguagem de programação mais popular da web.",
     syllabus: [
       "Variáveis, Funções e Estruturas de Repetição",
       "Manipulação de DOM e Eventos no Navegador",
       "Requisições HTTP com Fetch API e Async/Await",
-      "Introdução ao Node.js"
+      "Introdução ao Node.js",
     ],
     faqs: [
-      { q: "Dá direito a suporte a dúvidas?", a: "Sim, suporte 24h com a assistente de IA no portal e WhatsApp." }
-    ]
+      {
+        q: "Dá direito a suporte a dúvidas?",
+        a: "Sim, suporte 24h com a assistente de IA no portal e WhatsApp.",
+      },
+    ],
   },
   {
     course: "Interactive English",
@@ -209,11 +252,9 @@ const KNOWLEDGE_DATA = [
       "Inglês no Dia a Dia e Apresentação Pessoal",
       "Vocabulário para Entrevistas de Emprego",
       "Pronúncia Interativa e Escuta Ativa",
-      "Expressões Idiomáticas Corporativas"
+      "Expressões Idiomáticas Corporativas",
     ],
-    faqs: [
-      { q: "As aulas são em áudio e vídeo?", a: "Sim, videoaulas HD com áudios de nativos." }
-    ]
+    faqs: [{ q: "As aulas são em áudio e vídeo?", a: "Sim, videoaulas HD com áudios de nativos." }],
   },
   {
     course: "Dropshipping",
@@ -223,26 +264,33 @@ const KNOWLEDGE_DATA = [
       "Mineração de Produtos Vencedores",
       "Criação de Loja Virtual Profissional",
       "Fornecedores Nacionais e Internacionais",
-      "Anúncios para Vendas Diárias"
+      "Anúncios para Vendas Diárias",
     ],
     faqs: [
-      { q: "Preciso de dinheiro para comprar estoque?", a: "Não! No dropshipping o cliente compra e o fornecedor envia direto." }
-    ]
+      {
+        q: "Preciso de dinheiro para comprar estoque?",
+        a: "Não! No dropshipping o cliente compra e o fornecedor envia direto.",
+      },
+    ],
   },
   {
     course: "Canva",
     price: "R$ 69,90 à vista",
-    audience: "Criadores de conteúdo e empreendedores que precisam de artes profissionais rapidamente.",
+    audience:
+      "Criadores de conteúdo e empreendedores que precisam de artes profissionais rapidamente.",
     syllabus: [
       "Ferramentas e Atalhos do Canva",
       "Criação de Banners, Posts e Stories Animados",
       "Edição de Vídeo Rápida no Canva",
-      "Identidade de Marca e Paleta de Cores"
+      "Identidade de Marca e Paleta de Cores",
     ],
     faqs: [
-      { q: "Funciona na versão gratuita do Canva?", a: "Sim, todas as aulas usam recursos do Canva Grátis." }
-    ]
-  }
+      {
+        q: "Funciona na versão gratuita do Canva?",
+        a: "Sim, todas as aulas usam recursos do Canva Grátis.",
+      },
+    ],
+  },
 ];
 
 async function main() {
@@ -281,7 +329,7 @@ async function main() {
     const updatedSettings = {
       ...currentSettings,
       widgetKnowledge: kbContent,
-      aiSystemPrompt: `Você é a Sofia Gemini IA, assistente oficial da Escola Avançada ABACS e Comenta SaaS. Seu objetivo é ajudar alunos, tirar dúvidas sobre os 17 cursos da loja virtual (https://abacs.org.br/loja_virtual/index.php), apresentar preços, grades curriculares e direcionar para matricula em https://abacs.org.br/login.php. Seja sempre educada, prestativa e objetiva.`
+      aiSystemPrompt: `Você é a Sofia Gemini IA, assistente oficial da Escola Avançada ABACS e Comenta SaaS. Seu objetivo é ajudar alunos, tirar dúvidas sobre os 17 cursos da loja virtual (https://abacs.org.br/loja_virtual/index.php), apresentar preços, grades curriculares e direcionar para matricula em https://abacs.org.br/login.php. Seja sempre educada, prestativa e objetiva.`,
     };
 
     await sql`

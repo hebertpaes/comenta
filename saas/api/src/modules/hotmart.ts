@@ -1,12 +1,13 @@
 import type { FastifyInstance } from "fastify";
-import { z } from "zod";
 import { eq, ilike } from "drizzle-orm";
 import { db, schema } from "../db/client.js";
 import { emitToCompany } from "../realtime.js";
 import { publishEvent } from "../queues.js";
 import { sendToContact } from "../channels/whatsapp.js";
 
-const OFFICIAL_HOTTOK = process.env.HOTMART_HOTTOK || "i3PKT8y4IDZIJ6ZK5xEMraSXppomf12d610670-551e-497b-8f6c-3f32cb10f3bc";
+const OFFICIAL_HOTTOK =
+  process.env.HOTMART_HOTTOK ||
+  "i3PKT8y4IDZIJ6ZK5xEMraSXppomf12d610670-551e-497b-8f6c-3f32cb10f3bc";
 
 /**
  * Módulo de Integração Direta: Cursos Comenta Academy <-> Hotmart.
@@ -19,10 +20,7 @@ export async function hotmartRoutes(app: FastifyInstance) {
     const payload = (req.body as any) || {};
 
     const receivedHottok =
-      req.headers["hottok"] ||
-      payload.hottok ||
-      payload.token ||
-      OFFICIAL_HOTTOK;
+      req.headers["hottok"] || payload.hottok || payload.token || OFFICIAL_HOTTOK;
 
     const event = payload.event || payload.status || "PURCHASE_APPROVED";
     const data = payload.data || payload;
@@ -44,7 +42,9 @@ export async function hotmartRoutes(app: FastifyInstance) {
     if (!company) return reply.status(404).send({ error: "Empresa não encontrada." });
     const companyId = company.id;
 
-    console.log(`[Hotmart Webhook] Hottok: ${receivedHottok} | Evento: ${event} | Produto: ${productName} (${productIdHotmart}) | Aluno: ${buyerName}`);
+    console.log(
+      `[Hotmart Webhook] Hottok: ${receivedHottok} | Evento: ${event} | Produto: ${productName} (${productIdHotmart}) | Aluno: ${buyerName}`
+    );
 
     if (event === "PURCHASE_APPROVED" || event === "APPROVED") {
       // 2. Busca ou cadastra o contato do Aluno
@@ -83,7 +83,9 @@ export async function hotmartRoutes(app: FastifyInstance) {
       }
 
       const courseTitle = course ? course.title : productName;
-      const courseAccessUrl = course ? `http://localhost:8080/cursos/${course.id}` : `http://localhost:3000/loja`;
+      const courseAccessUrl = course
+        ? `http://localhost:8080/cursos/${course.id}`
+        : `http://localhost:3000/loja`;
 
       // 4. Cria ou atualiza a conversa no CRM
       let [conv] = await db
@@ -125,7 +127,9 @@ export async function hotmartRoutes(app: FastifyInstance) {
 
       // Transmite notificações em tempo real
       emitToCompany(companyId, "message.created", { conversationId: conv.id, message: msg });
-      publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(() => {});
+      publishEvent(companyId, "message.created", { conversationId: conv.id, message: msg }).catch(
+        () => {}
+      );
 
       // Dispara a mensagem no WhatsApp real do aluno
       sendToContact(companyId, contact.id, whatsappMessage).catch(() => {});
@@ -141,11 +145,16 @@ export async function hotmartRoutes(app: FastifyInstance) {
         buyerName,
         buyerEmail,
         whatsappSent: true,
-        message: `Curso "${courseTitle}" conectado com sucesso à Hotmart com Hottok verificado!`
+        message: `Curso "${courseTitle}" conectado com sucesso à Hotmart com Hottok verificado!`,
       });
     }
 
-    return reply.send({ success: true, hottokVerified: true, event, message: "Evento Hotmart processado com Hottok verificado." });
+    return reply.send({
+      success: true,
+      hottokVerified: true,
+      event,
+      message: "Evento Hotmart processado com Hottok verificado.",
+    });
   });
 
   // Teste de conexão de curso Hotmart com Hottok
@@ -157,22 +166,22 @@ export async function hotmartRoutes(app: FastifyInstance) {
         buyer: {
           name: "Hebert Paes (Aluno Conectado)",
           email: "hebert@comenta.com.br",
-          checkout_phone: "5566999999999"
+          checkout_phone: "5566999999999",
         },
         product: {
           id: 123456,
-          name: "Formação Atendente IA & Vendas no WhatsApp"
+          name: "Formação Atendente IA & Vendas no WhatsApp",
         },
         purchase: {
-          transaction: `HOT_COURSE_${Date.now()}`
-        }
-      }
+          transaction: `HOT_COURSE_${Date.now()}`,
+        },
+      },
     };
 
     const res = await app.inject({
       method: "POST",
       url: "/webhooks/hotmart",
-      payload: testPayload
+      payload: testPayload,
     });
 
     return reply.send(JSON.parse(res.payload));

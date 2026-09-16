@@ -5,29 +5,13 @@ import {
   Sparkles,
   Image as ImageIcon,
   Video,
-  Send,
-  Users,
-  Briefcase,
-  BarChart3,
-  Play,
   Download,
-  Copy,
-  Check,
-  Zap,
-  Wand2,
   RefreshCw,
   ArrowRight,
   Plus,
-  Paperclip,
-  Mic,
   ChevronDown,
   Menu,
-  X,
-  MessageSquare,
-  Compass,
-  History,
-  HelpCircle,
-  ExternalLink
+  ExternalLink,
 } from "lucide-react";
 
 export type Agent = {
@@ -53,14 +37,21 @@ const AGENTES: Agent[] = [
     avatar: "✦",
     cor: "from-[#4285f4] via-[#9b72cb] to-[#d96570]",
     modelo: "Google Gemini 2.0 Flash ✦",
-    descricao: "Qualifica clientes, envia propostas comerciais e tira dúvidas de planos no WhatsApp.",
-    capacidades: ["Qualificação de Leads", "Envio de Preços", "Contorno de Objeções", "Agendamento"],
-    promptInicial: "Olá, Hebert. Sou a Sofia, sua especialista comercial de IA do Comenta. Como posso impulsionar suas vendas hoje?",
+    descricao:
+      "Qualifica clientes, envia propostas comerciais e tira dúvidas de planos no WhatsApp.",
+    capacidades: [
+      "Qualificação de Leads",
+      "Envio de Preços",
+      "Contorno de Objeções",
+      "Agendamento",
+    ],
+    promptInicial:
+      "Olá, Hebert. Sou a Sofia, sua especialista comercial de IA do Comenta. Como posso impulsionar suas vendas hoje?",
     sugestoes: [
       "Como qualificar um cliente interessado no Plano Pro?",
       "Escreva um script de vendas de WhatsApp para clínica médica",
-      "Qual o retorno sobre investimento (ROI) do Comenta?"
-    ]
+      "Qual o retorno sobre investimento (ROI) do Comenta?",
+    ],
   },
   {
     id: "agente-imagens",
@@ -70,14 +61,21 @@ const AGENTES: Agent[] = [
     avatar: "🎨",
     cor: "from-[#ff7700] via-[#ff0055] to-[#9900ff]",
     modelo: "Comenta Imagen Studio",
-    descricao: "Gera ilustrações profissionais, banners para WhatsApp e artes publicitárias em alta resolução.",
-    capacidades: ["Banners 1:1 e 9:16", "Fotos de Produtos com Fundo", "Artes de Promoção", "HD Download"],
-    promptInicial: "Olá! Digite a imagem que deseja gerar (ex: 'Banner de promoção do WhatsApp para loja de roupas').",
+    descricao:
+      "Gera ilustrações profissionais, banners para WhatsApp e artes publicitárias em alta resolução.",
+    capacidades: [
+      "Banners 1:1 e 9:16",
+      "Fotos de Produtos com Fundo",
+      "Artes de Promoção",
+      "HD Download",
+    ],
+    promptInicial:
+      "Olá! Digite a imagem que deseja gerar (ex: 'Banner de promoção do WhatsApp para loja de roupas').",
     sugestoes: [
       "Criar banner de promoção de 50% OFF para WhatsApp",
       "Gerar foto de estúdio de um smartphone futurista",
-      "Criar ilustração no estilo 3D para anúncio de IA"
-    ]
+      "Criar ilustração no estilo 3D para anúncio de IA",
+    ],
   },
   {
     id: "agente-videos",
@@ -87,14 +85,21 @@ const AGENTES: Agent[] = [
     avatar: "🎬",
     cor: "from-[#a855f7] via-[#ec4899] to-[#ef4444]",
     modelo: "Comenta Veo Studio",
-    descricao: "Cria roteiros virais e renderiza animações e vídeos curtos prontos para publicação.",
-    capacidades: ["Roteiros de 15s e 30s", "Animações MP4", "Edição WASM", "Legendas & Call to Action"],
-    promptInicial: "Olá! Qual produto ou serviço vamos transformar em vídeo animado para Reels/TikTok hoje?",
+    descricao:
+      "Cria roteiros virais e renderiza animações e vídeos curtos prontos para publicação.",
+    capacidades: [
+      "Roteiros de 15s e 30s",
+      "Animações MP4",
+      "Edição WASM",
+      "Legendas & Call to Action",
+    ],
+    promptInicial:
+      "Olá! Qual produto ou serviço vamos transformar em vídeo animado para Reels/TikTok hoje?",
     sugestoes: [
       "Gerar vídeo de 15 segundos apresentando o Comenta",
       "Criar roteiro viral para TikTok sobre atendimento automatizado",
-      "Gerar animação promocional de lançamento de produto"
-    ]
+      "Gerar animação promocional de lançamento de produto",
+    ],
   },
   {
     id: "agente-rh-suporte",
@@ -104,14 +109,21 @@ const AGENTES: Agent[] = [
     avatar: "💼",
     cor: "from-[#10b981] via-[#06b6d4] to-[#3b82f6]",
     modelo: "Comenta Pro Engine",
-    descricao: "Auxilia sua equipe com manuais de trabalho, políticas internas e procedimentos operacionais.",
-    capacidades: ["Manual do Colaborador", "Procedimentos Operacionais", "Dúvidas de HR", "Boas-vindas"],
-    promptInicial: "Olá! Sou o Bruno do Suporte Interno. Em que posso ajudar você ou sua equipe hoje?",
+    descricao:
+      "Auxilia sua equipe com manuais de trabalho, políticas internas e procedimentos operacionais.",
+    capacidades: [
+      "Manual do Colaborador",
+      "Procedimentos Operacionais",
+      "Dúvidas de HR",
+      "Boas-vindas",
+    ],
+    promptInicial:
+      "Olá! Sou o Bruno do Suporte Interno. Em que posso ajudar você ou sua equipe hoje?",
     sugestoes: [
       "Quais os horários de atendimento padrão da equipe?",
       "Como realizar o transbordo de atendimento para o financeiro?",
-      "Passo a passo para cadastrar uma resposta rápida"
-    ]
+      "Passo a passo para cadastrar uma resposta rápida",
+    ],
   },
   {
     id: "agente-analista-bi",
@@ -121,24 +133,31 @@ const AGENTES: Agent[] = [
     avatar: "📊",
     cor: "from-[#3b82f6] via-[#6366f1] to-[#8b5cf6]",
     modelo: "Comenta Analytics",
-    descricao: "Sintetiza estatísticas de atendimento, tempo de resposta e volume de vendas em resumos executivos.",
-    capacidades: ["Métricas de Atendimento", "Análise de Churn", "Relatórios de Desempenho", "Insights de Crescimento"],
-    promptInicial: "Olá! Sou o Atlas, analista de dados. Digite 'gerar relatório' para ver os números da empresa.",
+    descricao:
+      "Sintetiza estatísticas de atendimento, tempo de resposta e volume de vendas em resumos executivos.",
+    capacidades: [
+      "Métricas de Atendimento",
+      "Análise de Churn",
+      "Relatórios de Desempenho",
+      "Insights de Crescimento",
+    ],
+    promptInicial:
+      "Olá! Sou o Atlas, analista de dados. Digite 'gerar relatório' para ver os números da empresa.",
     sugestoes: [
       "Gerar relatório executivo de atendimento da semana",
       "Qual a média do Tempo Médio de Resposta (TME)?",
-      "Análise de satisfação do cliente (NPS) por atendente"
-    ]
-  }
+      "Análise de satisfação do cliente (NPS) por atendente",
+    ],
+  },
 ];
 
 export default function FullscreenComentaAIPage() {
   const [sidebarAberta, setSidebarAberta] = useState<boolean>(true);
   const [agenteSelecionado, setAgenteSelecionado] = useState<Agent>(AGENTES[0]!);
   const [modeloAtivo, setModeloAtivo] = useState<string>("Comenta AI Flash");
-  const [mensagens, setMensagens] = useState<Array<{ remetente: "user" | "agent"; texto: string; imagemUrl?: string; videoUrl?: string }>>([
-    { remetente: "agent", texto: AGENTES[0]!.promptInicial }
-  ]);
+  const [mensagens, setMensagens] = useState<
+    Array<{ remetente: "user" | "agent"; texto: string; imagemUrl?: string; videoUrl?: string }>
+  >([{ remetente: "agent", texto: AGENTES[0]!.promptInicial }]);
   const [inputTexto, setInputTexto] = useState<string>("");
   const [carregando, setCarregando] = useState<boolean>(false);
   const [modoGeracao, setModoGeracao] = useState<"texto" | "imagem" | "video">("texto");
@@ -151,7 +170,9 @@ export default function FullscreenComentaAIPage() {
 
     setTimeout(() => {
       setTreinandoIA(false);
-      setMensagemStatusTreino("✦ Treinamento Diário Concluído! Agentes do Comenta AI atualizados com dados mais recentes.");
+      setMensagemStatusTreino(
+        "✦ Treinamento Diário Concluído! Agentes do Comenta AI atualizados com dados mais recentes."
+      );
       setTimeout(() => setMensagemStatusTreino(null), 5000);
     }, 1500);
   };
@@ -180,10 +201,12 @@ export default function FullscreenComentaAIPage() {
 
       if (agenteSelecionado.id === "agente-imagens" || modoGeracao === "imagem") {
         respostaTexto = `✨ **Imagem gerada com sucesso via Comenta Imagen**\nPrompt: *"${textoParaEnviar}"*`;
-        img = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80";
+        img =
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80";
       } else if (agenteSelecionado.id === "agente-videos" || modoGeracao === "video") {
         respostaTexto = `🎬 **Vídeo animado MP4 gerado com sucesso via Comenta Veo**\n\n• **Roteiro**: "Transforme seu atendimento com o Comenta AI."\n• **Duração**: 15 segundos\n• **Resolução**: 1080p HD`;
-        vid = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4";
+        vid =
+          "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4";
       } else if (agenteSelecionado.id === "agente-vendas") {
         respostaTexto = `Com certeza! Aqui está a recomendação de abordagem comercial baseada no **${modeloAtivo}**:\n\n"Olá! Seja bem-vindo ao Comenta SaaS. Nosso Plano Pro inclui 3 conexões de WhatsApp + IA generativa por apenas R$ 349/mês. Gostaria de ativar sua avaliação gratuita de 7 dias?"`;
       } else if (agenteSelecionado.id === "agente-analista-bi") {
@@ -192,7 +215,7 @@ export default function FullscreenComentaAIPage() {
 
       setMensagens((prev) => [
         ...prev,
-        { remetente: "agent", texto: respostaTexto, imagemUrl: img, videoUrl: vid }
+        { remetente: "agent", texto: respostaTexto, imagemUrl: img, videoUrl: vid },
       ]);
       setCarregando(false);
     }, 1000);
@@ -260,7 +283,9 @@ export default function FullscreenComentaAIPage() {
                 } ${!sidebarAberta && "justify-center p-2"}`}
                 title={a.nome}
               >
-                <div className={`w-7 h-7 rounded-lg bg-gradient-to-br ${a.cor} text-white flex items-center justify-center text-xs flex-none`}>
+                <div
+                  className={`w-7 h-7 rounded-lg bg-gradient-to-br ${a.cor} text-white flex items-center justify-center text-xs flex-none`}
+                >
                   {a.avatar}
                 </div>
                 {sidebarAberta && <span className="truncate">{a.nome}</span>}
@@ -297,8 +322,12 @@ export default function FullscreenComentaAIPage() {
                 onChange={(e) => setModeloAtivo(e.target.value)}
                 className="appearance-none bg-[#1e1f20] text-[#e3e3e3] text-xs font-semibold px-4 py-1.5 pr-8 rounded-full border border-[#2e2f31] focus:outline-none focus:ring-1 focus:ring-[#a8c7fa] cursor-pointer hover:bg-[#2e2f31] transition-colors"
               >
-                <option value="Google Gemini 2.0 Flash ✦">Google Gemini 2.0 Flash ✦ (Ultra-Rápido)</option>
-                <option value="Google Gemini 2.0 Pro ✦">Google Gemini 2.0 Pro ✦ (Raciocínio & Visão)</option>
+                <option value="Google Gemini 2.0 Flash ✦">
+                  Google Gemini 2.0 Flash ✦ (Ultra-Rápido)
+                </option>
+                <option value="Google Gemini 2.0 Pro ✦">
+                  Google Gemini 2.0 Pro ✦ (Raciocínio & Visão)
+                </option>
                 <option value="Google Imagen 3">Google Imagen 3 (Mídia HD)</option>
                 <option value="Claude Sonnet 3.7">Claude Sonnet 3.7 (Anthropic)</option>
               </select>
@@ -312,7 +341,9 @@ export default function FullscreenComentaAIPage() {
               disabled={treinandoIA}
               className="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#4285f4]/20 via-[#9b72cb]/20 to-[#d96570]/20 text-[#a8c7fa] border border-[#a8c7fa]/30 hover:border-[#a8c7fa] font-semibold transition-all flex items-center gap-1.5 text-xs disabled:opacity-50"
             >
-              <RefreshCw className={`w-3.5 h-3.5 ${treinandoIA ? "animate-spin text-white" : ""}`} />
+              <RefreshCw
+                className={`w-3.5 h-3.5 ${treinandoIA ? "animate-spin text-white" : ""}`}
+              />
               <span>{treinandoIA ? "Treinando IA..." : "Treinar IA Diariamente"}</span>
             </button>
 
@@ -400,7 +431,11 @@ export default function FullscreenComentaAIPage() {
                     {/* Imagem Gerada */}
                     {msg.imagemUrl && (
                       <div className="mt-3 rounded-2xl overflow-hidden border border-[#3c4043] bg-black">
-                        <img src={msg.imagemUrl} alt="Imagem IA Gerada" className="w-full h-64 object-cover" />
+                        <img
+                          src={msg.imagemUrl}
+                          alt="Imagem IA Gerada"
+                          className="w-full h-64 object-cover"
+                        />
                         <div className="p-3 bg-[#131314] text-white flex items-center justify-between text-xs">
                           <span className="font-semibold text-[#a8c7fa] flex items-center gap-1.5">
                             <ImageIcon className="w-4 h-4" /> Comenta Imagen HD
@@ -461,7 +496,9 @@ export default function FullscreenComentaAIPage() {
             <button
               onClick={() => setModoGeracao("texto")}
               className={`px-3 py-1 rounded-full text-[11px] font-semibold transition-colors ${
-                modoGeracao === "texto" ? "bg-[#4285f4] text-white" : "bg-[#1e1f20] text-[#c4c7c5] hover:bg-[#2e2f31]"
+                modoGeracao === "texto"
+                  ? "bg-[#4285f4] text-white"
+                  : "bg-[#1e1f20] text-[#c4c7c5] hover:bg-[#2e2f31]"
               }`}
             >
               💬 Texto
@@ -469,7 +506,9 @@ export default function FullscreenComentaAIPage() {
             <button
               onClick={() => setModoGeracao("imagem")}
               className={`px-3 py-1 rounded-full text-[11px] font-semibold transition-colors ${
-                modoGeracao === "imagem" ? "bg-[#ff7700] text-white" : "bg-[#1e1f20] text-[#c4c7c5] hover:bg-[#2e2f31]"
+                modoGeracao === "imagem"
+                  ? "bg-[#ff7700] text-white"
+                  : "bg-[#1e1f20] text-[#c4c7c5] hover:bg-[#2e2f31]"
               }`}
             >
               🎨 Gerar Imagem HD
@@ -477,7 +516,9 @@ export default function FullscreenComentaAIPage() {
             <button
               onClick={() => setModoGeracao("video")}
               className={`px-3 py-1 rounded-full text-[11px] font-semibold transition-colors ${
-                modoGeracao === "video" ? "bg-[#a855f7] text-white" : "bg-[#1e1f20] text-[#c4c7c5] hover:bg-[#2e2f31]"
+                modoGeracao === "video"
+                  ? "bg-[#a855f7] text-white"
+                  : "bg-[#1e1f20] text-[#c4c7c5] hover:bg-[#2e2f31]"
               }`}
             >
               🎬 Gerar Vídeo MP4
@@ -497,8 +538,8 @@ export default function FullscreenComentaAIPage() {
                 modoGeracao === "imagem"
                   ? "Descreva a imagem que deseja gerar..."
                   : modoGeracao === "video"
-                  ? "Descreva a cena do vídeo MP4..."
-                  : `Digite um comando para ${agenteSelecionado.nome}...`
+                    ? "Descreva a cena do vídeo MP4..."
+                    : `Digite um comando para ${agenteSelecionado.nome}...`
               }
               value={inputTexto}
               onChange={(e) => setInputTexto(e.target.value)}

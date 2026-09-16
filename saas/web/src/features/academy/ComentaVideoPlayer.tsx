@@ -19,22 +19,26 @@ const DEFAULT_SUBTITLES_PTBR: SubtitleItem[] = [
   {
     startSec: 0,
     endSec: 15,
-    textPtBr: "👋 Olá! Seja bem-vindo à aula! Hoje você vai aprender a multiplicar suas vendas no WhatsApp com IA Generativa.",
+    textPtBr:
+      "👋 Olá! Seja bem-vindo à aula! Hoje você vai aprender a multiplicar suas vendas no WhatsApp com IA Generativa.",
   },
   {
     startSec: 15,
     endSec: 35,
-    textPtBr: "🤖 A atendente Sofia qualifica seus leads, envia propostas comerciais e tira dúvidas em menos de 10 segundos.",
+    textPtBr:
+      "🤖 A atendente Sofia qualifica seus leads, envia propostas comerciais e tira dúvidas em menos de 10 segundos.",
   },
   {
     startSec: 35,
     endSec: 50,
-    textPtBr: "📈 Empresas que utilizam o Comenta AI registram aumento de até 300% na taxa de conversão sem filas de espera.",
+    textPtBr:
+      "📈 Empresas que utilizam o Comenta AI registram aumento de até 300% na taxa de conversão sem filas de espera.",
   },
   {
     startSec: 50,
     endSec: 60,
-    textPtBr: "🚀 Pratique agora mesmo no painel do Comenta AI e ative seu primeiro robô com a tecnologia Google Gemini!",
+    textPtBr:
+      "🚀 Pratique agora mesmo no painel do Comenta AI e ative seu primeiro robô com a tecnologia Google Gemini!",
   },
 ];
 
@@ -62,7 +66,8 @@ export function ComentaVideoPlayer({
   // Estados de Legenda em Português Brasileiro (pt-BR)
   const [showSubtitles, setShowSubtitles] = useState(true);
 
-  const subtitles = customSubtitles && customSubtitles.length > 0 ? customSubtitles : DEFAULT_SUBTITLES_PTBR;
+  const subtitles =
+    customSubtitles && customSubtitles.length > 0 ? customSubtitles : DEFAULT_SUBTITLES_PTBR;
 
   useEffect(() => {
     setCurrentAspect(aspectRatio);
@@ -302,7 +307,8 @@ export function ComentaVideoPlayer({
                 left: 0,
                 right: 0,
                 padding: "16px 16px 12px",
-                background: "linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4), transparent)",
+                background:
+                  "linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4), transparent)",
                 display: "flex",
                 flexDirection: "column",
                 gap: 8,
@@ -331,13 +337,29 @@ export function ComentaVideoPlayer({
               </div>
 
               {/* BARRA DE BOTÕES & RECURSOS */}
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, color: "#fff", fontSize: 13 }}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: 12,
+                  color: "#fff",
+                  fontSize: 13,
+                }}
+              >
                 {/* Controles de Play, Voltar 10s, Avançar 10s */}
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <button
                     type="button"
                     onClick={togglePlay}
-                    style={{ background: "none", border: 0, color: "#fff", fontSize: 16, cursor: "pointer", padding: 4 }}
+                    style={{
+                      background: "none",
+                      border: 0,
+                      color: "#fff",
+                      fontSize: 16,
+                      cursor: "pointer",
+                      padding: 4,
+                    }}
                     title={isPlaying ? "Pausar" : "Reproduzir"}
                   >
                     {isPlaying ? "⏸️" : "▶️"}
@@ -346,7 +368,13 @@ export function ComentaVideoPlayer({
                   <button
                     type="button"
                     onClick={() => skip(-10)}
-                    style={{ background: "none", border: 0, color: "rgba(255,255,255,0.8)", fontSize: 13, cursor: "pointer" }}
+                    style={{
+                      background: "none",
+                      border: 0,
+                      color: "rgba(255,255,255,0.8)",
+                      fontSize: 13,
+                      cursor: "pointer",
+                    }}
                     title="Voltar 10 segundos"
                   >
                     ↺ 10s
@@ -355,27 +383,41 @@ export function ComentaVideoPlayer({
                   <button
                     type="button"
                     onClick={() => skip(10)}
-                    style={{ background: "none", border: 0, color: "rgba(255,255,255,0.8)", fontSize: 13, cursor: "pointer" }}
+                    style={{
+                      background: "none",
+                      border: 0,
+                      color: "rgba(255,255,255,0.8)",
+                      fontSize: 13,
+                      cursor: "pointer",
+                    }}
                     title="Avançar 10 segundos"
                   >
                     ↻ 10s
                   </button>
 
                   {/* Tempo Decorrido / Total */}
-                  <span style={{ fontSize: 11, fontFamily: "monospace", color: "#eef0f4", marginLeft: 4 }}>
+                  <span
+                    style={{
+                      fontSize: 11,
+                      fontFamily: "monospace",
+                      color: "#eef0f4",
+                      marginLeft: 4,
+                    }}
+                  >
                     {formatTime(currentTime)} / {formatTime(duration)}
                   </span>
                 </div>
 
                 {/* Lado Direito: Legendas PT-BR, Volume, Velocidade & Tela Cheia */}
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginLeft: "auto" }}>
-
                   {/* Botão de Legendas PT-BR */}
                   <button
                     type="button"
                     onClick={() => setShowSubtitles(!showSubtitles)}
                     style={{
-                      background: showSubtitles ? "rgba(66, 133, 244, 0.4)" : "rgba(255,255,255,0.1)",
+                      background: showSubtitles
+                        ? "rgba(66, 133, 244, 0.4)"
+                        : "rgba(255,255,255,0.1)",
                       border: `1px solid ${showSubtitles ? "#4285f4" : "rgba(255,255,255,0.2)"}`,
                       color: "#fff",
                       borderRadius: 6,
@@ -394,7 +436,13 @@ export function ComentaVideoPlayer({
                     <button
                       type="button"
                       onClick={toggleMute}
-                      style={{ background: "none", border: 0, color: "#fff", cursor: "pointer", fontSize: 14 }}
+                      style={{
+                        background: "none",
+                        border: 0,
+                        color: "#fff",
+                        cursor: "pointer",
+                        fontSize: 14,
+                      }}
                     >
                       {isMuted || volume === 0 ? "🔇" : "🔊"}
                     </button>
@@ -424,18 +472,34 @@ export function ComentaVideoPlayer({
                       cursor: "pointer",
                     }}
                   >
-                    <option value={0.75} style={{ color: "#000" }}>0.75x</option>
-                    <option value={1} style={{ color: "#000" }}>1.0x Normal</option>
-                    <option value={1.25} style={{ color: "#000" }}>1.25x</option>
-                    <option value={1.5} style={{ color: "#000" }}>1.5x</option>
-                    <option value={2} style={{ color: "#000" }}>2.0x Rápido</option>
+                    <option value={0.75} style={{ color: "#000" }}>
+                      0.75x
+                    </option>
+                    <option value={1} style={{ color: "#000" }}>
+                      1.0x Normal
+                    </option>
+                    <option value={1.25} style={{ color: "#000" }}>
+                      1.25x
+                    </option>
+                    <option value={1.5} style={{ color: "#000" }}>
+                      1.5x
+                    </option>
+                    <option value={2} style={{ color: "#000" }}>
+                      2.0x Rápido
+                    </option>
                   </select>
 
                   {/* Tela Cheia */}
                   <button
                     type="button"
                     onClick={toggleFullscreen}
-                    style={{ background: "none", border: 0, color: "#fff", cursor: "pointer", fontSize: 14 }}
+                    style={{
+                      background: "none",
+                      border: 0,
+                      color: "#fff",
+                      cursor: "pointer",
+                      fontSize: 14,
+                    }}
                     title="Tela Cheia"
                   >
                     {isFullscreen ? "🗗" : "⛶"}
@@ -468,7 +532,15 @@ export function ComentaVideoPlayer({
           </span>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 6, maxHeight: 180, overflowY: "auto" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 6,
+            maxHeight: 180,
+            overflowY: "auto",
+          }}
+        >
           {subtitles.map((sub, idx) => {
             const isCurrent = currentSubtitleIndex === idx;
             return (
@@ -498,11 +570,26 @@ export function ComentaVideoPlayer({
                 >
                   {formatTime(sub.startSec)}
                 </span>
-                <span style={{ flex: 1, color: isCurrent ? "var(--text)" : "var(--muted)", fontWeight: isCurrent ? 700 : 400 }}>
+                <span
+                  style={{
+                    flex: 1,
+                    color: isCurrent ? "var(--text)" : "var(--muted)",
+                    fontWeight: isCurrent ? 700 : 400,
+                  }}
+                >
                   {sub.textPtBr}
                 </span>
                 {isCurrent && (
-                  <span style={{ fontSize: 10, background: "#6d28d9", color: "#fff", padding: "2px 6px", borderRadius: 8, fontWeight: 700 }}>
+                  <span
+                    style={{
+                      fontSize: 10,
+                      background: "#6d28d9",
+                      color: "#fff",
+                      padding: "2px 6px",
+                      borderRadius: 8,
+                      fontWeight: 700,
+                    }}
+                  >
                     FALANDO
                   </span>
                 )}

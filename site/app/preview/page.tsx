@@ -4,28 +4,21 @@ import React, { useState, useEffect, useRef } from "react";
 import {
   MessageSquare,
   Sparkles,
-  Zap,
-  Users,
   BarChart3,
   Bot,
-  Settings,
   Send,
   PhoneCall,
   CheckCheck,
   Search,
-  Plus,
   Play,
-  Volume2,
   TrendingUp,
   Clock,
-  CheckCircle2,
   ArrowRight,
   ShieldCheck,
   ChevronRight,
-  UserCheck,
   Flame,
   DollarSign,
-  Layers
+  Layers,
 } from "lucide-react";
 
 export type Message = {
@@ -54,7 +47,7 @@ const INITIAL_MESSAGES: Message[] = [
     id: "m1",
     sender: "system",
     text: "🔒 Atendimento criptografado iniciado com Sofia AI — Atendente Virtual Comenta AI v2.0",
-    time: "14:30"
+    time: "14:30",
   },
   {
     id: "m2",
@@ -62,8 +55,8 @@ const INITIAL_MESSAGES: Message[] = [
     text: "Olá! Seja muito bem-vindo ao atendimento da Comenta AI ✦. Sou a Sofia, especialista em automação e vendas no WhatsApp. Como posso impulsionar seu negócio hoje?",
     time: "14:30",
     hasAudio: true,
-    audioDuration: "0:08"
-  }
+    audioDuration: "0:08",
+  },
 ];
 
 const INITIAL_LEADS: Lead[] = [
@@ -75,7 +68,7 @@ const INITIAL_LEADS: Lead[] = [
     interest: "Plano Anual Enterprise + 5 Conexões",
     intentScore: 98,
     value: 4188,
-    timeAgo: "Há 3 min"
+    timeAgo: "Há 3 min",
   },
   {
     id: "l2",
@@ -85,7 +78,7 @@ const INITIAL_LEADS: Lead[] = [
     interest: "Curso de Atendimento Automatizado",
     intentScore: 85,
     value: 1290,
-    timeAgo: "Há 12 min"
+    timeAgo: "Há 12 min",
   },
   {
     id: "l3",
@@ -95,7 +88,7 @@ const INITIAL_LEADS: Lead[] = [
     interest: "Comenta SaaS Pro",
     intentScore: 100,
     value: 3588,
-    timeAgo: "Há 25 min"
+    timeAgo: "Há 25 min",
   },
   {
     id: "l4",
@@ -105,18 +98,20 @@ const INITIAL_LEADS: Lead[] = [
     interest: "Integração Clínica Médica",
     intentScore: 72,
     value: 2400,
-    timeAgo: "Há 40 min"
-  }
+    timeAgo: "Há 40 min",
+  },
 ];
 
 export default function ComentaAIPortalPage() {
-  const [activeTab, setActiveTab] = useState<"simulator" | "studio" | "crm" | "analytics">("simulator");
+  const [activeTab, setActiveTab] = useState<"simulator" | "studio" | "crm" | "analytics">(
+    "simulator"
+  );
   const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
   const [inputText, setInputText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [leads, setLeads] = useState<Lead[]>(INITIAL_LEADS);
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
-  
+
   // Agent Studio Customization
   const [agentName, setAgentName] = useState("Sofia 2.0");
   const [agentTone, setAgentTone] = useState("Consultiva, Ágil e Persuasiva");
@@ -142,7 +137,7 @@ export default function ComentaAIPortalPage() {
       id: `usr_${Date.now()}`,
       sender: "user",
       text: textToSend,
-      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
     };
 
     setMessages((prev) => [...prev, newMsg]);
@@ -151,19 +146,34 @@ export default function ComentaAIPortalPage() {
 
     // AI Intelligence Auto-Response Generator
     setTimeout(() => {
-      let aiReply = "Perfeito! Entendi seu interesse. Nossa IA pode qualificar e responder 24/7 com tempo médio de resposta de apenas 1,2 segundo.";
+      let aiReply =
+        "Perfeito! Entendi seu interesse. Nossa IA pode qualificar e responder 24/7 com tempo médio de resposta de apenas 1,2 segundo.";
       let tag = "🔥 Qualificação Automática";
       let audio = false;
 
-      if (textToSend.toLowerCase().includes("preço") || textToSend.toLowerCase().includes("plano") || textToSend.toLowerCase().includes("valor")) {
-        aiReply = "O Comenta AI oferece o Plano Pro (R$ 299/mês) e o Plano Enterprise com IA Generativa ilimitada e 5 conexões de WhatsApp por R$ 349/mês. Gostaria de garantir 7 dias grátis?";
+      if (
+        textToSend.toLowerCase().includes("preço") ||
+        textToSend.toLowerCase().includes("plano") ||
+        textToSend.toLowerCase().includes("valor")
+      ) {
+        aiReply =
+          "O Comenta AI oferece o Plano Pro (R$ 299/mês) e o Plano Enterprise com IA Generativa ilimitada e 5 conexões de WhatsApp por R$ 349/mês. Gostaria de garantir 7 dias grátis?";
         tag = "💰 Lead de Alta Intenção (98%)";
         audio = true;
-      } else if (textToSend.toLowerCase().includes("suporte") || textToSend.toLowerCase().includes("humano") || textToSend.toLowerCase().includes("atendente")) {
-        aiReply = "Entendido! Realizando o transbordo inteligente para o especialista humano em menos de 10 segundos. O histórico completo da conversa foi enviado ao CRM.";
+      } else if (
+        textToSend.toLowerCase().includes("suporte") ||
+        textToSend.toLowerCase().includes("humano") ||
+        textToSend.toLowerCase().includes("atendente")
+      ) {
+        aiReply =
+          "Entendido! Realizando o transbordo inteligente para o especialista humano em menos de 10 segundos. O histórico completo da conversa foi enviado ao CRM.";
         tag = "🤝 Transbordo para Humano";
-      } else if (textToSend.toLowerCase().includes("curso") || textToSend.toLowerCase().includes("treinamento")) {
-        aiReply = "Excelente! O Curso de Automação de Atendimento do Comenta inclui 24 módulos práticos e certificados para treinar sua equipe.";
+      } else if (
+        textToSend.toLowerCase().includes("curso") ||
+        textToSend.toLowerCase().includes("treinamento")
+      ) {
+        aiReply =
+          "Excelente! O Curso de Automação de Atendimento do Comenta inclui 24 módulos práticos e certificados para treinar sua equipe.";
         tag = "🎓 Interesse em Cursos";
       }
 
@@ -174,7 +184,7 @@ export default function ComentaAIPortalPage() {
         time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
         leadTag: tag,
         hasAudio: audio,
-        audioDuration: audio ? "0:12" : undefined
+        audioDuration: audio ? "0:12" : undefined,
       };
 
       setMessages((prev) => [...prev, aiMsg]);
@@ -190,7 +200,7 @@ export default function ComentaAIPortalPage() {
           interest: textToSend,
           intentScore: 94,
           value: 3588,
-          timeAgo: "Agora"
+          timeAgo: "Agora",
         };
         setLeads((prev) => [newLead, ...prev]);
       }
@@ -207,9 +217,14 @@ export default function ComentaAIPortalPage() {
           </div>
           <div>
             <span className="font-extrabold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-[#cbd5e1] to-[#94a3b8]">
-              Comenta AI <span className="text-xs px-2 py-0.5 rounded-full bg-[#0050ff]/20 text-[#38bdf8] font-bold border border-[#0050ff]/40">v2.0</span>
+              Comenta AI{" "}
+              <span className="text-xs px-2 py-0.5 rounded-full bg-[#0050ff]/20 text-[#38bdf8] font-bold border border-[#0050ff]/40">
+                v2.0
+              </span>
             </span>
-            <p className="text-[11px] text-[#64748b]">Portal SaaS de Atendimento & Automação de WhatsApp</p>
+            <p className="text-[11px] text-[#64748b]">
+              Portal SaaS de Atendimento & Automação de WhatsApp
+            </p>
           </div>
         </div>
 
@@ -284,7 +299,8 @@ export default function ComentaAIPortalPage() {
               <div className="bg-[#141a29] border border-[#1e293b] rounded-3xl p-6 space-y-4 shadow-xl">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-extrabold uppercase tracking-wider text-[#38bdf8] flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#10b981] animate-ping" /> WhatsApp Conectado
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#10b981] animate-ping" /> WhatsApp
+                    Conectado
                   </span>
                   <span className="text-xs font-mono text-[#94a3b8]">127.0.0.1:2368</span>
                 </div>
@@ -295,7 +311,9 @@ export default function ComentaAIPortalPage() {
                   </div>
                   <div>
                     <h3 className="font-extrabold text-base text-white">{agentName}</h3>
-                    <p className="text-xs text-[#94a3b8]">Agente Virtual Ativo • Modelo Gemini 2.0</p>
+                    <p className="text-xs text-[#94a3b8]">
+                      Agente Virtual Ativo • Modelo Gemini 2.0
+                    </p>
                   </div>
                 </div>
 
@@ -313,8 +331,10 @@ export default function ComentaAIPortalPage() {
 
               {/* QUICK PROMPT TRIGGERS */}
               <div className="bg-[#141a29] border border-[#1e293b] rounded-3xl p-6 space-y-3 shadow-xl">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#94a3b8]">⚡ Testar Gatilhos Rápidos</h4>
-                
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#94a3b8]">
+                  ⚡ Testar Gatilhos Rápidos
+                </h4>
+
                 <button
                   onClick={() => handleSendMessage("Qual o preço dos planos do Comenta AI?")}
                   className="w-full text-left p-3 rounded-2xl bg-[#0b0f19] hover:bg-[#1e293b] border border-[#1e293b] hover:border-[#0050ff] transition-all text-xs font-medium text-[#e2e8f0] flex items-center justify-between group"
@@ -352,9 +372,14 @@ export default function ComentaAIPortalPage() {
                     </div>
                     <div>
                       <h4 className="font-bold text-sm text-white flex items-center gap-2">
-                        {agentName} <span className="text-[10px] bg-[#00a884]/20 text-[#00a884] px-2 py-0.5 rounded-full font-extrabold border border-[#00a884]/40">VERIFICADO</span>
+                        {agentName}{" "}
+                        <span className="text-[10px] bg-[#00a884]/20 text-[#00a884] px-2 py-0.5 rounded-full font-extrabold border border-[#00a884]/40">
+                          VERIFICADO
+                        </span>
                       </h4>
-                      <p className="text-[11px] text-[#8696a0]">online • Comenta AI WhatsApp Engine</p>
+                      <p className="text-[11px] text-[#8696a0]">
+                        online • Comenta AI WhatsApp Engine
+                      </p>
                     </div>
                   </div>
 
@@ -373,8 +398,8 @@ export default function ComentaAIPortalPage() {
                         msg.sender === "user"
                           ? "items-end"
                           : msg.sender === "ai"
-                          ? "items-start"
-                          : "items-center"
+                            ? "items-start"
+                            : "items-center"
                       }`}
                     >
                       {msg.sender === "system" ? (
@@ -402,9 +427,13 @@ export default function ComentaAIPortalPage() {
                               </button>
                               <div className="flex-1">
                                 <div className="h-1.5 bg-[#2a3942] rounded-full overflow-hidden">
-                                  <div className={`h-full bg-[#00a884] ${isPlayingAudio ? "w-3/4 animate-pulse" : "w-1/4"}`} />
+                                  <div
+                                    className={`h-full bg-[#00a884] ${isPlayingAudio ? "w-3/4 animate-pulse" : "w-1/4"}`}
+                                  />
                                 </div>
-                                <span className="text-[10px] text-[#8696a0] mt-1 block">Áudio da Sofia ({msg.audioDuration})</span>
+                                <span className="text-[10px] text-[#8696a0] mt-1 block">
+                                  Áudio da Sofia ({msg.audioDuration})
+                                </span>
                               </div>
                             </div>
                           )}
@@ -418,7 +447,9 @@ export default function ComentaAIPortalPage() {
 
                           <div className="flex items-center justify-end gap-1 text-[10px] text-[#8696a0] mt-1">
                             <span>{msg.time}</span>
-                            {msg.sender === "user" && <CheckCheck className="w-3.5 h-3.5 text-[#53bdeb]" />}
+                            {msg.sender === "user" && (
+                              <CheckCheck className="w-3.5 h-3.5 text-[#53bdeb]" />
+                            )}
                           </div>
                         </div>
                       )}
@@ -478,13 +509,18 @@ export default function ComentaAIPortalPage() {
               <h2 className="text-2xl font-extrabold text-white flex items-center gap-2">
                 <Bot className="w-6 h-6 text-[#0050ff]" /> Agent Studio — Personalização da IA
               </h2>
-              <p className="text-sm text-[#94a3b8] mt-1">Configure o comportamento, o tom de voz e as regras de transbordo da sua atendente virtual.</p>
+              <p className="text-sm text-[#94a3b8] mt-1">
+                Configure o comportamento, o tom de voz e as regras de transbordo da sua atendente
+                virtual.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="space-y-4">
                 <div>
-                  <label className="block text-xs font-extrabold uppercase text-[#94a3b8] mb-2">Nome do Agente Virtual</label>
+                  <label className="block text-xs font-extrabold uppercase text-[#94a3b8] mb-2">
+                    Nome do Agente Virtual
+                  </label>
                   <input
                     type="text"
                     value={agentName}
@@ -494,7 +530,9 @@ export default function ComentaAIPortalPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-extrabold uppercase text-[#94a3b8] mb-2">Tom de Voz & Estilo</label>
+                  <label className="block text-xs font-extrabold uppercase text-[#94a3b8] mb-2">
+                    Tom de Voz & Estilo
+                  </label>
                   <input
                     type="text"
                     value={agentTone}
@@ -504,7 +542,9 @@ export default function ComentaAIPortalPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-extrabold uppercase text-[#94a3b8] mb-2">Prompt do Sistema (Instruções Principais)</label>
+                  <label className="block text-xs font-extrabold uppercase text-[#94a3b8] mb-2">
+                    Prompt do Sistema (Instruções Principais)
+                  </label>
                   <textarea
                     rows={5}
                     value={agentPrompt}
@@ -518,7 +558,7 @@ export default function ComentaAIPortalPage() {
                 <h4 className="text-xs font-extrabold uppercase text-[#38bdf8] flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4" /> Regras Globais de Segurança & Qualificação
                 </h4>
-                
+
                 <div className="space-y-3 text-xs text-[#cbd5e1]">
                   <label className="flex items-center gap-3 p-3 bg-[#141a29] rounded-xl border border-[#1e293b] cursor-pointer">
                     <input type="checkbox" defaultChecked className="rounded accent-[#0050ff]" />
@@ -557,19 +597,42 @@ export default function ComentaAIPortalPage() {
                 <h2 className="text-2xl font-extrabold text-white flex items-center gap-2">
                   <Layers className="w-6 h-6 text-[#10b981]" /> Funil de Vendas & CRM Inteligente
                 </h2>
-                <p className="text-sm text-[#94a3b8] mt-1">Leads qualificados automaticamente pela IA Sofia no WhatsApp.</p>
+                <p className="text-sm text-[#94a3b8] mt-1">
+                  Leads qualificados automaticamente pela IA Sofia no WhatsApp.
+                </p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {[
-                { title: "Novos Leads", status: "novo", color: "border-sky-500/50 bg-sky-500/10 text-sky-400" },
-                { title: "Qualificados pela IA", status: "qualificado", color: "border-emerald-500/50 bg-emerald-500/10 text-emerald-400" },
-                { title: "Proposta Enviada", status: "proposta", color: "border-purple-500/50 bg-purple-500/10 text-purple-400" },
-                { title: "Venda Concluída", status: "fechado", color: "border-amber-500/50 bg-amber-500/10 text-amber-400" }
+                {
+                  title: "Novos Leads",
+                  status: "novo",
+                  color: "border-sky-500/50 bg-sky-500/10 text-sky-400",
+                },
+                {
+                  title: "Qualificados pela IA",
+                  status: "qualificado",
+                  color: "border-emerald-500/50 bg-emerald-500/10 text-emerald-400",
+                },
+                {
+                  title: "Proposta Enviada",
+                  status: "proposta",
+                  color: "border-purple-500/50 bg-purple-500/10 text-purple-400",
+                },
+                {
+                  title: "Venda Concluída",
+                  status: "fechado",
+                  color: "border-amber-500/50 bg-amber-500/10 text-amber-400",
+                },
               ].map((col) => (
-                <div key={col.status} className="bg-[#141a29] border border-[#1e293b] rounded-2xl p-4 space-y-3 min-h-[450px]">
-                  <div className={`p-2.5 rounded-xl border font-extrabold text-xs flex items-center justify-between ${col.color}`}>
+                <div
+                  key={col.status}
+                  className="bg-[#141a29] border border-[#1e293b] rounded-2xl p-4 space-y-3 min-h-[450px]"
+                >
+                  <div
+                    className={`p-2.5 rounded-xl border font-extrabold text-xs flex items-center justify-between ${col.color}`}
+                  >
                     <span>{col.title}</span>
                     <span className="px-2 py-0.5 rounded-full bg-black/40 text-[10px]">
                       {leads.filter((l) => l.status === col.status).length}
@@ -580,7 +643,10 @@ export default function ComentaAIPortalPage() {
                     {leads
                       .filter((l) => l.status === col.status)
                       .map((lead) => (
-                        <div key={lead.id} className="bg-[#0b0f19] border border-[#1e293b] hover:border-[#0050ff] p-4 rounded-xl space-y-2 transition-all shadow-md">
+                        <div
+                          key={lead.id}
+                          className="bg-[#0b0f19] border border-[#1e293b] hover:border-[#0050ff] p-4 rounded-xl space-y-2 transition-all shadow-md"
+                        >
                           <div className="flex items-center justify-between">
                             <h4 className="font-bold text-sm text-white">{lead.name}</h4>
                             <span className="text-[10px] font-bold text-[#10b981] flex items-center gap-1">
@@ -589,7 +655,9 @@ export default function ComentaAIPortalPage() {
                           </div>
                           <p className="text-xs text-[#94a3b8] line-clamp-2">{lead.interest}</p>
                           <div className="flex items-center justify-between text-[11px] pt-2 border-t border-[#1e293b] text-[#64748b]">
-                            <span className="font-mono text-[#38bdf8] font-bold">R$ {lead.value.toLocaleString("pt-BR")}</span>
+                            <span className="font-mono text-[#38bdf8] font-bold">
+                              R$ {lead.value.toLocaleString("pt-BR")}
+                            </span>
                             <span>{lead.timeAgo}</span>
                           </div>
                         </div>

@@ -1,25 +1,118 @@
 import postgres from "postgres";
 
-const DATABASE_URL = process.env.DATABASE_URL || "postgresql://comenta:3a24efa594604b1e10d2e2b2346e5dc9@localhost:5432/comenta_saas";
+const DATABASE_URL =
+  process.env.DATABASE_URL ||
+  "postgresql://comenta:3a24efa594604b1e10d2e2b2346e5dc9@localhost:5432/comenta_saas";
 
 const LOJA_VIRTUAL_COURSES = [
-  { title: "Administrativo Completo", description: "Formação completa em rotinas administrativas, atendimento, faturamento e gestão comercial.", emoji: "💼", price: 99.00 },
-  { title: "Curso Preparatório ENEM", description: "Preparatório intensivo para o Exame Nacional do Ensino Médio com redação e simulados.", emoji: "🎓", price: 99.00 },
-  { title: "Criação de Game", description: "Desenvolvimento de jogos 2D e 3D do zero usando engines modernas.", emoji: "🎮", price: 99.00 },
-  { title: "Pacote Office Pro", description: "Dominando Word, Excel Avançado, PowerPoint e ferramentas corporativas.", emoji: "📊", price: 99.00 },
-  { title: "Design Gráfico", description: "Criação de marcas, peças publicitárias, Photoshop e Illustrator profissional.", emoji: "🎨", price: 99.00 },
-  { title: "Marketing Digital", description: "Tráfego pago, SEO, mídias sociais, copy e estratégias de vendas online.", emoji: "🚀", price: 99.00 },
-  { title: "Curso Hardware", description: "Montagem, manutenção, formatação de computadores e redes de computadores.", emoji: "💻", price: 99.00 },
-  { title: "Eletricista com NR-10", description: "Capacitação em instalações elétricas residenciais e industriais com norma de segurança NR-10.", emoji: "⚡", price: 99.00 },
-  { title: "Operador de Caixa", description: "Formação profissionalizante em operação de caixa, sangria, Pix e atendimento ao cliente.", emoji: "💳", price: 99.00 },
-  { title: "Barbeiro Profissional", description: "Técnicas modernas de corte masculino, barba, degradê e atendimento na barbearia.", emoji: "💈", price: 99.90 },
-  { title: "Ponte Rolante", description: "Operação segura de pontes rolantes e movimentação de cargas industriais.", emoji: "🏗️", price: 99.90 },
-  { title: "Criação de App Android e iOS", description: "Desenvolvimento de aplicativos mobile nativos e híbridos para smartphones.", emoji: "📱", price: 99.90 },
-  { title: "Energia Solar", description: "Dimensionamento e instalação de sistemas fotovoltaicos conectadas à rede.", emoji: "☀️", price: 99.90 },
-  { title: "JavaScript", description: "Programação moderna em JS ES6+, manipulação de DOM e lógica de programação.", emoji: "🌐", price: 69.90 },
-  { title: "Interactive English", description: "Curso interativo de inglês para conversação e ambiente de trabalho.", emoji: "🗣️", price: 99.90 },
-  { title: "Dropshipping", description: "Como criar lojas virtuais sem estoque e vender produtos nacionais e internacionais.", emoji: "📦", price: 69.90 },
-  { title: "Canva", description: "Criação de artes para redes sociais, apresentações e materiais gráficos rapidamente.", emoji: "✨", price: 69.90 }
+  {
+    title: "Administrativo Completo",
+    description:
+      "Formação completa em rotinas administrativas, atendimento, faturamento e gestão comercial.",
+    emoji: "💼",
+    price: 99.0,
+  },
+  {
+    title: "Curso Preparatório ENEM",
+    description:
+      "Preparatório intensivo para o Exame Nacional do Ensino Médio com redação e simulados.",
+    emoji: "🎓",
+    price: 99.0,
+  },
+  {
+    title: "Criação de Game",
+    description: "Desenvolvimento de jogos 2D e 3D do zero usando engines modernas.",
+    emoji: "🎮",
+    price: 99.0,
+  },
+  {
+    title: "Pacote Office Pro",
+    description: "Dominando Word, Excel Avançado, PowerPoint e ferramentas corporativas.",
+    emoji: "📊",
+    price: 99.0,
+  },
+  {
+    title: "Design Gráfico",
+    description: "Criação de marcas, peças publicitárias, Photoshop e Illustrator profissional.",
+    emoji: "🎨",
+    price: 99.0,
+  },
+  {
+    title: "Marketing Digital",
+    description: "Tráfego pago, SEO, mídias sociais, copy e estratégias de vendas online.",
+    emoji: "🚀",
+    price: 99.0,
+  },
+  {
+    title: "Curso Hardware",
+    description: "Montagem, manutenção, formatação de computadores e redes de computadores.",
+    emoji: "💻",
+    price: 99.0,
+  },
+  {
+    title: "Eletricista com NR-10",
+    description:
+      "Capacitação em instalações elétricas residenciais e industriais com norma de segurança NR-10.",
+    emoji: "⚡",
+    price: 99.0,
+  },
+  {
+    title: "Operador de Caixa",
+    description:
+      "Formação profissionalizante em operação de caixa, sangria, Pix e atendimento ao cliente.",
+    emoji: "💳",
+    price: 99.0,
+  },
+  {
+    title: "Barbeiro Profissional",
+    description: "Técnicas modernas de corte masculino, barba, degradê e atendimento na barbearia.",
+    emoji: "💈",
+    price: 99.9,
+  },
+  {
+    title: "Ponte Rolante",
+    description: "Operação segura de pontes rolantes e movimentação de cargas industriais.",
+    emoji: "🏗️",
+    price: 99.9,
+  },
+  {
+    title: "Criação de App Android e iOS",
+    description: "Desenvolvimento de aplicativos mobile nativos e híbridos para smartphones.",
+    emoji: "📱",
+    price: 99.9,
+  },
+  {
+    title: "Energia Solar",
+    description: "Dimensionamento e instalação de sistemas fotovoltaicos conectadas à rede.",
+    emoji: "☀️",
+    price: 99.9,
+  },
+  {
+    title: "JavaScript",
+    description: "Programação moderna em JS ES6+, manipulação de DOM e lógica de programação.",
+    emoji: "🌐",
+    price: 69.9,
+  },
+  {
+    title: "Interactive English",
+    description: "Curso interativo de inglês para conversação e ambiente de trabalho.",
+    emoji: "🗣️",
+    price: 99.9,
+  },
+  {
+    title: "Dropshipping",
+    description:
+      "Como criar lojas virtuais sem estoque e vender produtos nacionais e internacionais.",
+    emoji: "📦",
+    price: 69.9,
+  },
+  {
+    title: "Canva",
+    description:
+      "Criação de artes para redes sociais, apresentações e materiais gráficos rapidamente.",
+    emoji: "✨",
+    price: 69.9,
+  },
 ];
 
 async function main() {
@@ -40,7 +133,8 @@ async function main() {
 
     let count = 0;
     for (const c of LOJA_VIRTUAL_COURSES) {
-      const existing = await sql`SELECT id FROM courses WHERE title = ${c.title} AND company_id = ${companyId};`;
+      const existing =
+        await sql`SELECT id FROM courses WHERE title = ${c.title} AND company_id = ${companyId};`;
       if (!existing.length) {
         const [inserted] = await sql`
           INSERT INTO courses (company_id, title, description, emoji, level, is_published, position, created_at)

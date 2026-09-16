@@ -38,7 +38,9 @@ export function ConnectionsPage() {
         }
       }
       void reload();
-      setReconnectNotice("✓ WhatsApp, n8n, Metabase, Hotmart, ABACS, Kiwify e Meta API reconectados e sincronizados com sucesso!");
+      setReconnectNotice(
+        "✓ WhatsApp, n8n, Metabase, Hotmart, ABACS, Kiwify e Meta API reconectados e sincronizados com sucesso!"
+      );
     } catch (err: any) {
       setReconnectNotice("⚠️ Erro ao reconectar conexões. Tente novamente.");
     } finally {
@@ -49,11 +51,21 @@ export function ConnectionsPage() {
 
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, flexWrap: "wrap", gap: 12 }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 16,
+          flexWrap: "wrap",
+          gap: 12,
+        }}
+      >
         <div>
           <h2>Conexões & Integrações de Canais</h2>
           <p className="muted" style={{ marginTop: -8, marginBottom: 0, maxWidth: 680 }}>
-            Gerencie conexões do WhatsApp (QR Code / Baileys / Meta API) e integrações do ecossistema.
+            Gerencie conexões do WhatsApp (QR Code / Baileys / Meta API) e integrações do
+            ecossistema.
           </p>
         </div>
 
@@ -72,7 +84,7 @@ export function ConnectionsPage() {
               display: "flex",
               alignItems: "center",
               gap: 8,
-              boxShadow: "0 4px 14px rgba(37, 211, 102, 0.3)"
+              boxShadow: "0 4px 14px rgba(37, 211, 102, 0.3)",
             }}
           >
             {reconnecting ? "⏳ Reconectando tudo…" : "⚡ Reconectar WhatsApp & Aplicações"}
@@ -81,21 +93,48 @@ export function ConnectionsPage() {
       </div>
 
       {reconnectNotice && (
-        <div style={{ padding: "12px 16px", borderRadius: 10, background: "rgba(37, 211, 102, 0.15)", border: "1px solid #25D366", color: "#10b981", fontSize: 13, fontWeight: 700, marginBottom: 18 }}>
+        <div
+          style={{
+            padding: "12px 16px",
+            borderRadius: 10,
+            background: "rgba(37, 211, 102, 0.15)",
+            border: "1px solid #25D366",
+            color: "#10b981",
+            fontSize: 13,
+            fontWeight: 700,
+            marginBottom: 18,
+          }}
+        >
           {reconnectNotice}
         </div>
       )}
 
       {/* Cards de Status de Aplicações Integradas */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12, marginBottom: 20 }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+          gap: 12,
+          marginBottom: 20,
+        }}
+      >
         {[
-          { name: "WhatsApp Oficial & Baileys", status: "Sincronizado", icon: "💬", color: "#10b981" },
+          {
+            name: "WhatsApp Oficial & Baileys",
+            status: "Sincronizado",
+            icon: "💬",
+            color: "#10b981",
+          },
           { name: "Google Gemini 2.0 Spark IA", status: "Ativo", icon: "✨", color: "#10b981" },
           { name: "n8n Webhook Engine", status: "Conectado", icon: "🔗", color: "#10b981" },
           { name: "Metabase BI Reports", status: "Conectado", icon: "📊", color: "#10b981" },
-          { name: "Hotmart & ABACS Webhooks", status: "Operacional", icon: "🎓", color: "#10b981" }
+          { name: "Hotmart & ABACS Webhooks", status: "Operacional", icon: "🎓", color: "#10b981" },
         ].map((app) => (
-          <div key={app.name} className="card" style={{ padding: 12, display: "flex", alignItems: "center", gap: 10 }}>
+          <div
+            key={app.name}
+            className="card"
+            style={{ padding: 12, display: "flex", alignItems: "center", gap: 10 }}
+          >
             <span style={{ fontSize: 20 }}>{app.icon}</span>
             <div>
               <div style={{ fontWeight: 700, fontSize: 13 }}>{app.name}</div>
@@ -119,7 +158,9 @@ export function ConnectionsPage() {
                   maxWidth: 680,
                 }}
               >
-                <div style={{ fontWeight: 700, marginBottom: 10 }}>Adicionar nova conexão de canal</div>
+                <div style={{ fontWeight: 700, marginBottom: 10 }}>
+                  Adicionar nova conexão de canal
+                </div>
                 {add.error && <ErrorBox error={add.error} />}
                 <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
                   {catalog.map((c) => (

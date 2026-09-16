@@ -187,7 +187,8 @@ export function AutomationForm({ onCreate, isPending, error }: Props) {
           </div>
           <p className="muted" style={{ fontSize: 12 }}>
             A IA responde o cliente sozinha e transfere para um humano quando o cliente pede ou
-            quando o caso foge da base. Funciona nativamente via <b>Google AI Gemini 2.0 (GEMINI_API_KEY)</b> ou IA Local.
+            quando o caso foge da base. Funciona nativamente via{" "}
+            <b>Google AI Gemini 2.0 (GEMINI_API_KEY)</b> ou IA Local.
           </p>
         </>
       )}

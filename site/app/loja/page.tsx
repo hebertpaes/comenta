@@ -4,27 +4,15 @@ import React, { useState } from "react";
 import {
   ShoppingBag,
   Zap,
-  GraduationCap,
   Briefcase,
-  CheckCircle2,
-  Star,
   ShieldCheck,
   CreditCard,
   QrCode,
   ArrowRight,
-  Sparkles,
-  Filter,
   Check,
   X,
-  Plus,
   Copy,
-  BookOpen,
-  Lock,
-  BarChart3,
-  Bot,
   FileText,
-  FileCode,
-  PhoneCall
 } from "lucide-react";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
@@ -56,10 +44,10 @@ const PRODUTOS: Produto[] = [
       "Até 3 Atendentes Simultâneos",
       "Caixa de Entrada Única + Kanban",
       "Autoatendimento Básico",
-      "Suporte via E-mail e Chat"
+      "Suporte via E-mail e Chat",
     ],
     icone: "🟢",
-    cor: "from-emerald-500 to-teal-600"
+    cor: "from-emerald-500 to-teal-600",
   },
   {
     id: "plano-pro",
@@ -74,10 +62,10 @@ const PRODUTOS: Produto[] = [
       "Até 10 Atendentes na Equipe",
       "IA que Sugere Respostas & Classifica",
       "Campanhas & Disparos em Massa",
-      "Pesquisas NPS & Filas por Departamento"
+      "Pesquisas NPS & Filas por Departamento",
     ],
     icone: "✨",
-    cor: "from-fuchsia-600 to-indigo-600"
+    cor: "from-fuchsia-600 to-indigo-600",
   },
   {
     id: "plano-business",
@@ -91,10 +79,10 @@ const PRODUTOS: Produto[] = [
       "Atendentes Ilimitados",
       "Webhooks HMAC & API REST Completa",
       "Integração Nativa N8N e CRM",
-      "Gerente de Conta Dedicado"
+      "Gerente de Conta Dedicado",
     ],
     icone: "🚀",
-    cor: "from-purple-600 to-pink-600"
+    cor: "from-purple-600 to-pink-600",
   },
 
   // --- ADDONS E EXTENSÕES ---
@@ -109,10 +97,10 @@ const PRODUTOS: Produto[] = [
       "1 Conexão de WhatsApp Adicional",
       "Pareamento Instantâneo por QR Code",
       "Importação da Agenda de Contatos",
-      "Sem Contrato de Fidelidade"
+      "Sem Contrato de Fidelidade",
     ],
     icone: "📲",
-    cor: "from-teal-500 to-emerald-600"
+    cor: "from-teal-500 to-emerald-600",
   },
   {
     id: "addon-instagram-messenger",
@@ -126,10 +114,10 @@ const PRODUTOS: Produto[] = [
       "Integração Oficial Webhook Meta Graph API",
       "Caixa de Entrada Única Direct + Messenger",
       "Automação de Respostas Rápidas",
-      "Mesmas Filas e Kanban do WhatsApp"
+      "Mesmas Filas e Kanban do WhatsApp",
     ],
     icone: "📸",
-    cor: "from-pink-500 to-rose-600"
+    cor: "from-pink-500 to-rose-600",
   },
 
   // --- CURSOS & TREINAMENTOS ---
@@ -145,10 +133,10 @@ const PRODUTOS: Produto[] = [
       "24 Aulas em Vídeo HD Gravadas",
       "Modelos de Prompts de IA para Copiar e Colar",
       "Certificado Oficial de Conclusão",
-      "Acesso Vitalício + Atualizações"
+      "Acesso Vitalício + Atualizações",
     ],
     icone: "🎓",
-    cor: "from-amber-500 to-orange-600"
+    cor: "from-amber-500 to-orange-600",
   },
   {
     id: "curso-n8n-automacao",
@@ -161,10 +149,10 @@ const PRODUTOS: Produto[] = [
       "15 Templates Prontos de Workflows n8n",
       "Integração de Webhooks do Comenta",
       "Suporte a Dúvidas na Comunidade VIP",
-      "Material Didático em PDF"
+      "Material Didático em PDF",
     ],
     icone: "⚙️",
-    cor: "from-cyan-500 to-blue-600"
+    cor: "from-cyan-500 to-blue-600",
   },
   {
     id: "ebook-100-prompts",
@@ -172,14 +160,15 @@ const PRODUTOS: Produto[] = [
     categoria: "cursos",
     preco: "R$ 97",
     precoCentavos: 9700,
-    descricao: "Prompts validados para fechar contratos, quebrar objeções e contornar clientes difíceis.",
+    descricao:
+      "Prompts validados para fechar contratos, quebrar objeções e contornar clientes difíceis.",
     itens: [
       "100 Prompts Prontos para Claude e ChatGPT",
       "Scripts de Abordagem Fria e Reativa",
-      "Guia em PDF de Download Imediato"
+      "Guia em PDF de Download Imediato",
     ],
     icone: "📘",
-    cor: "from-indigo-500 to-blue-600"
+    cor: "from-indigo-500 to-blue-600",
   },
   {
     id: "mentoria-vip-vendas",
@@ -188,15 +177,16 @@ const PRODUTOS: Produto[] = [
     preco: "R$ 2.500",
     precoCentavos: 250000,
     badge: "Exclusivo 👑",
-    descricao: "Acompanhamento individualizado com nosso Head de Operações para estruturar seu funil.",
+    descricao:
+      "Acompanhamento individualizado com nosso Head de Operações para estruturar seu funil.",
     itens: [
       "4 Encontros Ao Vivo de 1h30min",
       "Análise de Desempenho do seu Time",
       "Desenho do Funil de Atendimento",
-      "Acesso Direto via WhatsApp Privado"
+      "Acesso Direto via WhatsApp Privado",
     ],
     icone: "👑",
-    cor: "from-amber-600 to-yellow-500"
+    cor: "from-amber-600 to-yellow-500",
   },
 
   // --- SERVIÇOS PROFISSIONAIS ---
@@ -212,10 +202,10 @@ const PRODUTOS: Produto[] = [
       "Configuração de Filas & Departamentos",
       "Conexão de Números de WhatsApp & Instagram",
       "Importação da sua Base de Clientes",
-      "Treinamento ao Vivo de 2h para o seu Time"
+      "Treinamento ao Vivo de 2h para o seu Time",
     ],
     icone: "🛠️",
-    cor: "from-rose-500 to-red-600"
+    cor: "from-rose-500 to-red-600",
   },
   {
     id: "servico-robo-sob-medida",
@@ -228,10 +218,10 @@ const PRODUTOS: Produto[] = [
       "Alimentação de Base de Dados Própria",
       "Ajuste Fino de Tom de Voz da Marca",
       "Testes Intensivos de Handoff para Humanos",
-      "Garantia de Funcionamento de 30 Dias"
+      "Garantia de Funcionamento de 30 Dias",
     ],
     icone: "🤖",
-    cor: "from-violet-600 to-purple-600"
+    cor: "from-violet-600 to-purple-600",
   },
   {
     id: "servico-auditoria-lgpd",
@@ -239,14 +229,15 @@ const PRODUTOS: Produto[] = [
     categoria: "servicos",
     preco: "R$ 1.500",
     precoCentavos: 150000,
-    descricao: "Avaliação técnica das suas rotinas de atendimento para conformidade legal e retenção.",
+    descricao:
+      "Avaliação técnica das suas rotinas de atendimento para conformidade legal e retenção.",
     itens: [
       "Relatório Completo de Vulnerabilidades",
       "Adequação de Políticas de Privacidade no Chat",
-      "Certificado de Conformidade LGPD Atendimento"
+      "Certificado de Conformidade LGPD Atendimento",
     ],
     icone: "🔒",
-    cor: "from-slate-700 to-slate-900"
+    cor: "from-slate-700 to-slate-900",
   },
   {
     id: "servico-dashboard-bi",
@@ -258,11 +249,11 @@ const PRODUTOS: Produto[] = [
     itens: [
       "Integração de Métricas do PostgreSQL com Metabase",
       "Gráficos de Tempo Médio de Espera (TME)",
-      "Rankings de Desempenho de Atendentes"
+      "Rankings de Desempenho de Atendentes",
     ],
     icone: "📊",
-    cor: "from-blue-600 to-indigo-700"
-  }
+    cor: "from-blue-600 to-indigo-700",
+  },
 ];
 
 export default function LojaPage() {
@@ -270,7 +261,7 @@ export default function LojaPage() {
   const [carrinho, setCarrinho] = useState<Produto[]>([]);
   const [modalCheckout, setModalCheckout] = useState<boolean>(false);
   const [metodoPagamento, setMetodoPagamento] = useState<"pix" | "cartao" | "boleto">("pix");
-  
+
   // Estado dos campos do formulário de pagamento
   const [cartaoNumero, setCartaoNumero] = useState<string>("");
   const [cartaoNome, setCartaoNome] = useState<string>("");
@@ -279,7 +270,7 @@ export default function LojaPage() {
   const [cupom, setCupom] = useState<string>("");
   const [descontoPerc, setDescontoPerc] = useState<number>(0);
   const [pixCopiado, setPixCopiado] = useState<boolean>(false);
-  
+
   const [processando, setProcessando] = useState<boolean>(false);
   const [sucessoCompra, setSucessoCompra] = useState<boolean>(false);
   const [erroPagamento, setErroPagamento] = useState<string>("");
@@ -317,7 +308,7 @@ export default function LojaPage() {
 
   const totalFormatado = (totalCentavos / 100).toLocaleString("pt-BR", {
     style: "currency",
-    currency: "BRL"
+    currency: "BRL",
   });
 
   const payloadPix = `00020126580014BR.GOV.BCB.PIX0136comenta-pagamentos-pix-ia-comenta520400005303986540${(totalCentavos / 100).toFixed(2)}5802BR5920Comenta Tecnologia6007CUIABA62070503***6304A8F9`;
@@ -391,7 +382,8 @@ export default function LojaPage() {
               Tudo para impulsionar suas <span className="text-gradient">Vendas & Atendimento</span>
             </h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-300">
-              Planos do software SaaS, formações práticas para sua equipe e serviços de implantação sob medida.
+              Planos do software SaaS, formações práticas para sua equipe e serviços de implantação
+              sob medida.
             </p>
           </div>
         </section>
@@ -405,7 +397,7 @@ export default function LojaPage() {
                 { id: "planos", label: "⚡ Planos SaaS" },
                 { id: "addons", label: "📲 Extensões & Conexões" },
                 { id: "cursos", label: "🎓 Cursos & Treinamentos" },
-                { id: "servicos", label: "🛠️ Serviços & Implantação" }
+                { id: "servicos", label: "🛠️ Serviços & Implantação" },
               ].map((cat) => (
                 <button
                   key={cat.id}
@@ -490,17 +482,23 @@ export default function LojaPage() {
             <div className="p-6 rounded-2xl bg-slate-50">
               <ShieldCheck className="w-10 h-10 text-fuchsia-600 mx-auto mb-3" />
               <h4 className="font-bold text-sm text-slate-900">Garantia de 7 Dias</h4>
-              <p className="mt-1 text-xs text-slate-500">Se não aprovar a plataforma, devolvemos 100% do seu valor.</p>
+              <p className="mt-1 text-xs text-slate-500">
+                Se não aprovar a plataforma, devolvemos 100% do seu valor.
+              </p>
             </div>
             <div className="p-6 rounded-2xl bg-slate-50">
               <Zap className="w-10 h-10 text-indigo-600 mx-auto mb-3" />
               <h4 className="font-bold text-sm text-slate-900">Liberação Imediata</h4>
-              <p className="mt-1 text-xs text-slate-500">Acesso instantâneo ao painel e cursos logo após o pagamento.</p>
+              <p className="mt-1 text-xs text-slate-500">
+                Acesso instantâneo ao painel e cursos logo após o pagamento.
+              </p>
             </div>
             <div className="p-6 rounded-2xl bg-slate-50">
               <Briefcase className="w-10 h-10 text-emerald-600 mx-auto mb-3" />
               <h4 className="font-bold text-sm text-slate-900">Suporte Dedicado VIP</h4>
-              <p className="mt-1 text-xs text-slate-500">Especialistas prontos para apoiar sua equipe no WhatsApp.</p>
+              <p className="mt-1 text-xs text-slate-500">
+                Especialistas prontos para apoiar sua equipe no WhatsApp.
+              </p>
             </div>
           </div>
         </section>
@@ -524,7 +522,8 @@ export default function LojaPage() {
                 </div>
                 <h3 className="text-2xl font-extrabold text-slate-900">Pagamento Confirmado!</h3>
                 <p className="text-xs text-slate-600 max-w-xs mx-auto">
-                  Seu pedido foi aprovado. Enviamos os dados de acesso e a chave da licença para seu e-mail e WhatsApp!
+                  Seu pedido foi aprovado. Enviamos os dados de acesso e a chave da licença para seu
+                  e-mail e WhatsApp!
                 </p>
                 <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-left text-xs font-mono space-y-1">
                   <div>Status: Aprovado (Pagamento Confirmado)</div>
@@ -546,7 +545,10 @@ export default function LojaPage() {
                   <div className="space-y-4">
                     <div className="max-h-40 overflow-y-auto space-y-2 pr-1">
                       {carrinho.map((item) => (
-                        <div key={item.id} className="flex items-center justify-between p-3 rounded-xl bg-slate-50 text-xs">
+                        <div
+                          key={item.id}
+                          className="flex items-center justify-between p-3 rounded-xl bg-slate-50 text-xs"
+                        >
                           <div>
                             <span className="font-bold text-slate-900 block">{item.nome}</span>
                             <span className="text-fuchsia-600 font-semibold">{item.preco}</span>
@@ -581,7 +583,13 @@ export default function LojaPage() {
                     {descontoPerc > 0 && (
                       <div className="text-xs text-emerald-600 font-bold flex items-center justify-between bg-emerald-50 p-2.5 rounded-xl">
                         <span>Cupom Aplicado ({descontoPerc}% OFF):</span>
-                        <span>-{(valorDesconto / 100).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>
+                        <span>
+                          -
+                          {(valorDesconto / 100).toLocaleString("pt-BR", {
+                            style: "currency",
+                            currency: "BRL",
+                          })}
+                        </span>
                       </div>
                     )}
 
@@ -592,7 +600,9 @@ export default function LojaPage() {
 
                     {/* Seleção do Método de Pagamento */}
                     <div className="pt-2">
-                      <label className="text-xs font-bold text-slate-700 block mb-2">Forma de Pagamento:</label>
+                      <label className="text-xs font-bold text-slate-700 block mb-2">
+                        Forma de Pagamento:
+                      </label>
                       <div className="grid grid-cols-3 gap-2">
                         <button
                           onClick={() => setMetodoPagamento("pix")}
@@ -710,7 +720,9 @@ export default function LojaPage() {
                         <div className="font-bold flex items-center gap-2">
                           <FileText className="w-4 h-4 text-amber-600" /> Boleto Registrado
                         </div>
-                        <p>O boleto expira em 3 dias úteis. A compensação ocorre em até 24 horas.</p>
+                        <p>
+                          O boleto expira em 3 dias úteis. A compensação ocorre em até 24 horas.
+                        </p>
                       </div>
                     )}
 

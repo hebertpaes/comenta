@@ -1,11 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Dumbbell, Zap, Flame, ShieldCheck, HeartPulse, Sparkles, CheckCircle2, ArrowRight, Star, ShoppingCart, Award, Truck, ChevronRight } from "lucide-react";
+import {
+  Dumbbell,
+  Zap,
+  Flame,
+  ShieldCheck,
+  HeartPulse,
+  Sparkles,
+  CheckCircle2,
+  ArrowRight,
+  ShoppingCart,
+  Award,
+  Truck,
+  ChevronRight,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Gumesmomo — Gomas de Creatina Pura para Saúde & Fitness | 100% Monohidratada",
-  description: "Gumesmomo (gumesmomo.com.br): A revolução da suplementação esportiva. Gomas de Creatina Monohidratada saborosas, sem açúcar, para ganho de força, hipertrofia e energia diária.",
+  description:
+    "Gumesmomo (gumesmomo.com.br): A revolução da suplementação esportiva. Gomas de Creatina Monohidratada saborosas, sem açúcar, para ganho de força, hipertrofia e energia diária.",
 };
 
 export default function GumesmomoFitnessPage() {
@@ -66,7 +80,8 @@ export default function GumesmomoFitnessPage() {
       {/* HERO SECTION */}
       <section className="relative pt-16 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-black mb-8 shadow-inner">
-          <Sparkles className="w-4 h-4 text-emerald-400" /> A Evolução da Suplementação Esportiva no Brasil
+          <Sparkles className="w-4 h-4 text-emerald-400" /> A Evolução da Suplementação Esportiva no
+          Brasil
         </div>
 
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-tight max-w-5xl mx-auto">
@@ -77,7 +92,9 @@ export default function GumesmomoFitnessPage() {
         </h1>
 
         <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-medium">
-          Diga adeus ao pó que empelota e ao copo d&apos;água. Desfrute de 3g de Creatina Monohidratada de altíssima pureza por dose em gomas deliciosas, sem açúcar e fáceis de levar para qualquer lugar!
+          Diga adeus ao pó que empelota e ao copo d&apos;água. Desfrute de 3g de Creatina
+          Monohidratada de altíssima pureza por dose em gomas deliciosas, sem açúcar e fáceis de
+          levar para qualquer lugar!
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -110,19 +127,31 @@ export default function GumesmomoFitnessPage() {
               <ul className="space-y-4 text-sm font-semibold text-slate-300">
                 <li className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                  <span><strong>3g de Creatina Pura por Dose:</strong> Exatamente o recomendado por nutricionistas esportivos.</span>
+                  <span>
+                    <strong>3g de Creatina Pura por Dose:</strong> Exatamente o recomendado por
+                    nutricionistas esportivos.
+                  </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                  <span><strong>Zero Açúcar & Baixas Calorias:</strong> Encaixa perfeitamente em dietas de cutting e bulking.</span>
+                  <span>
+                    <strong>Zero Açúcar & Baixas Calorias:</strong> Encaixa perfeitamente em dietas
+                    de cutting e bulking.
+                  </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                  <span><strong>Sem Necessidade de Água:</strong> Consuma no treino, no carro ou no escritório.</span>
+                  <span>
+                    <strong>Sem Necessidade de Água:</strong> Consuma no treino, no carro ou no
+                    escritório.
+                  </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                  <span><strong>Absorção Rápida & Deliciosa:</strong> Digestão leve sem inchaço gástrico.</span>
+                  <span>
+                    <strong>Absorção Rápida & Deliciosa:</strong> Digestão leve sem inchaço
+                    gástrico.
+                  </span>
                 </li>
               </ul>
             </div>
@@ -148,7 +177,10 @@ export default function GumesmomoFitnessPage() {
       </section>
 
       {/* GALERIA DE FOTOS EM ALTA DEFINIÇÃO */}
-      <section id="galeria" className="py-20 bg-slate-950/80 border-t border-slate-800/80 px-4 sm:px-6 lg:px-8">
+      <section
+        id="galeria"
+        className="py-20 bg-slate-950/80 border-t border-slate-800/80 px-4 sm:px-6 lg:px-8"
+      >
         <div className="max-w-7xl mx-auto text-center">
           <span className="text-xs font-black text-emerald-400 uppercase tracking-widest">
             Foto do Produto Real
@@ -167,8 +199,12 @@ export default function GumesmomoFitnessPage() {
                 className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
               />
               <div className="p-4 bg-slate-900 border-t border-slate-800 text-left text-xs">
-                <span className="font-bold text-white block">Sabor Frutas Vermelhas & Limão Cítrico</span>
-                <span className="text-slate-400">Gomas macias revestidas de cristais de creatina pura sem açúcar.</span>
+                <span className="font-bold text-white block">
+                  Sabor Frutas Vermelhas & Limão Cítrico
+                </span>
+                <span className="text-slate-400">
+                  Gomas macias revestidas de cristais de creatina pura sem açúcar.
+                </span>
               </div>
             </div>
 
@@ -181,8 +217,12 @@ export default function GumesmomoFitnessPage() {
                 className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
               />
               <div className="p-4 bg-slate-900 border-t border-slate-800 text-left text-xs">
-                <span className="font-bold text-white block">Pote Translucido de Alta Proteção UV</span>
-                <span className="text-slate-400">Mantém o sabor e a potência da creatina intactos por mais tempo.</span>
+                <span className="font-bold text-white block">
+                  Pote Translucido de Alta Proteção UV
+                </span>
+                <span className="text-slate-400">
+                  Mantém o sabor e a potência da creatina intactos por mais tempo.
+                </span>
               </div>
             </div>
           </div>
@@ -207,7 +247,8 @@ export default function GumesmomoFitnessPage() {
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Hipertrofia & Força Bruta</h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Aumenta os estoques de fosfocreatina muscular, permitindo mais cargas e mais repetições em cada treino de musculação ou crossfit.
+              Aumenta os estoques de fosfocreatina muscular, permitindo mais cargas e mais
+              repetições em cada treino de musculação ou crossfit.
             </p>
           </div>
 
@@ -217,7 +258,8 @@ export default function GumesmomoFitnessPage() {
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Explosão & Recuperação</h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Ressintetiza as moléculas de ATP em segundos, reduzindo a fadiga muscular e acelerando a recuperação entre os sets de exercícios.
+              Ressintetiza as moléculas de ATP em segundos, reduzindo a fadiga muscular e acelerando
+              a recuperação entre os sets de exercícios.
             </p>
           </div>
 
@@ -227,7 +269,8 @@ export default function GumesmomoFitnessPage() {
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Foco Mental & Cognição</h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              A creatina também alimenta os neurônios, fornecendo clareza mental, foco para trabalhar e estudar, além de proteger a saúde celular.
+              A creatina também alimenta os neurônios, fornecendo clareza mental, foco para
+              trabalhar e estudar, além de proteger a saúde celular.
             </p>
           </div>
         </div>
@@ -251,7 +294,9 @@ export default function GumesmomoFitnessPage() {
           {/* POTE INDIVIDUAL */}
           <div className="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 flex flex-col justify-between text-left hover:border-slate-700 transition-all">
             <div>
-              <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Tratamento 30 Dias</div>
+              <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                Tratamento 30 Dias
+              </div>
               <h3 className="text-2xl font-black text-white mt-1">1 Pote (60 Gomas)</h3>
               <div className="mt-4 flex items-baseline gap-2">
                 <span className="text-3xl font-black text-white">R$ 89,90</span>
@@ -260,9 +305,15 @@ export default function GumesmomoFitnessPage() {
               <p className="text-xs text-slate-400 mt-1">ou 3x de R$ 29,97 sem juros</p>
 
               <ul className="mt-6 space-y-3 text-xs font-semibold text-slate-300">
-                <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> 60 Gomas de 1.5g de Creatina</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Sabor Frutas Vermelhas</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Zero Açúcar</li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" /> 60 Gomas de 1.5g de Creatina
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Sabor Frutas Vermelhas
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Zero Açúcar
+                </li>
               </ul>
             </div>
 
@@ -283,19 +334,34 @@ export default function GumesmomoFitnessPage() {
             </div>
 
             <div>
-              <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider">Tratamento 60 Dias</div>
+              <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider">
+                Tratamento 60 Dias
+              </div>
               <h3 className="text-2xl font-black text-white mt-1">2 Potes (120 Gomas)</h3>
               <div className="mt-4 flex items-baseline gap-2">
                 <span className="text-4xl font-black text-emerald-400">R$ 159,90</span>
                 <span className="text-xs text-slate-400 line-through">R$ 239,80</span>
               </div>
-              <p className="text-xs text-emerald-300 font-bold mt-1">Frete Grátis + 10% OFF no PIX (R$ 143,91)</p>
+              <p className="text-xs text-emerald-300 font-bold mt-1">
+                Frete Grátis + 10% OFF no PIX (R$ 143,91)
+              </p>
 
               <ul className="mt-6 space-y-3 text-xs font-semibold text-slate-200">
-                <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> 120 Gomas de Creatina Pura</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Sabores Frutas Vermelhas & Limão</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> 🚚 Frete Grátis para todo o Brasil</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Guia Digital de Treino de Bônus</li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" /> 120 Gomas de Creatina Pura
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Sabores Frutas Vermelhas &
+                  Limão
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" /> 🚚 Frete Grátis para todo o
+                  Brasil
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Guia Digital de Treino de
+                  Bônus
+                </li>
               </ul>
             </div>
 
@@ -312,18 +378,28 @@ export default function GumesmomoFitnessPage() {
           {/* COMBO VIP 3 POTES */}
           <div className="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 flex flex-col justify-between text-left hover:border-slate-700 transition-all">
             <div>
-              <div className="text-xs font-bold text-cyan-400 uppercase tracking-wider">Tratamento 90 Dias</div>
+              <div className="text-xs font-bold text-cyan-400 uppercase tracking-wider">
+                Tratamento 90 Dias
+              </div>
               <h3 className="text-2xl font-black text-white mt-1">3 Potes (180 Gomas)</h3>
               <div className="mt-4 flex items-baseline gap-2">
                 <span className="text-3xl font-black text-white">R$ 219,90</span>
                 <span className="text-xs text-slate-500 line-through">R$ 359,70</span>
               </div>
-              <p className="text-xs text-slate-400 mt-1">Sai por R$ 73,30 cada pote + Frete Grátis</p>
+              <p className="text-xs text-slate-400 mt-1">
+                Sai por R$ 73,30 cada pote + Frete Grátis
+              </p>
 
               <ul className="mt-6 space-y-3 text-xs font-semibold text-slate-300">
-                <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-cyan-400" /> 180 Gomas de Creatina Pura</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-cyan-400" /> Máxima Economia da Linha</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-cyan-400" /> 🚚 Frete Grátis prioritário</li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400" /> 180 Gomas de Creatina Pura
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400" /> Máxima Economia da Linha
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400" /> 🚚 Frete Grátis prioritário
+                </li>
               </ul>
             </div>
 
@@ -342,10 +418,18 @@ export default function GumesmomoFitnessPage() {
       {/* CERTIFICAÇÕES DE QUALIDADE */}
       <section className="py-12 bg-slate-950 border-t border-b border-slate-800 px-4">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-around gap-8 text-center text-xs font-bold text-slate-400">
-          <div className="flex items-center gap-2"><ShieldCheck className="w-5 h-5 text-emerald-400" /> Aprovado pela ANVISA</div>
-          <div className="flex items-center gap-2"><Award className="w-5 h-5 text-teal-400" /> 100% Creatina Monohidratada</div>
-          <div className="flex items-center gap-2"><Flame className="w-5 h-5 text-amber-400" /> Zero Açúcar / Gluten-Free</div>
-          <div className="flex items-center gap-2"><Truck className="w-5 h-5 text-cyan-400" /> Envio Rápido em 24 Horas</div>
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-5 h-5 text-emerald-400" /> Aprovado pela ANVISA
+          </div>
+          <div className="flex items-center gap-2">
+            <Award className="w-5 h-5 text-teal-400" /> 100% Creatina Monohidratada
+          </div>
+          <div className="flex items-center gap-2">
+            <Flame className="w-5 h-5 text-amber-400" /> Zero Açúcar / Gluten-Free
+          </div>
+          <div className="flex items-center gap-2">
+            <Truck className="w-5 h-5 text-cyan-400" /> Envio Rápido em 24 Horas
+          </div>
         </div>
       </section>
 
@@ -359,8 +443,17 @@ export default function GumesmomoFitnessPage() {
           </div>
 
           <div className="flex items-center gap-6">
-            <Link href="/" className="hover:text-white transition-colors">Voltar ao Comenta</Link>
-            <a href="https://wa.me/5511999999999" target="_blank" rel="noreferrer" className="hover:text-emerald-400 transition-colors">Atendimento WhatsApp</a>
+            <Link href="/" className="hover:text-white transition-colors">
+              Voltar ao Comenta
+            </Link>
+            <a
+              href="https://wa.me/5511999999999"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-emerald-400 transition-colors"
+            >
+              Atendimento WhatsApp
+            </a>
           </div>
         </div>
       </footer>

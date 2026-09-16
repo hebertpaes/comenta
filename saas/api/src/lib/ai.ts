@@ -23,18 +23,25 @@ const client = new Anthropic({
 
 function getGoogleApiKey(): string {
   return (
-    process.env.GOOGLE_AI_API_KEY ||
-    process.env.GEMINI_API_KEY ||
-    process.env.GOOGLE_API_KEY ||
-    ""
+    process.env.GOOGLE_AI_API_KEY || process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || ""
   );
 }
 
 /**
- * A IA está realmente utilizável? Suporta Google Gemini 2.0 e Fallback Local por padrão.
+ * A IA está realmente utilizável?
+ *
+ * Aceita a chave da Anthropic (`sk-ant-…`, tamanho real) ou uma chave do Google
+ * AI (`AIza…`). Um `true` com chave placeholder é caro: o /health anuncia
+ * `ai: true`, o atendente clica em "sugerir resposta" e recebe um erro
+ * genérico — por isso o formato é conferido, não só a presença da variável.
  */
 export function aiEnabled(): boolean {
-  return true;
+  const anthropicKey = process.env.ANTHROPIC_API_KEY ?? "";
+  const anthropicOk = anthropicKey.startsWith("sk-ant-") && anthropicKey.length >= 40;
+  const googleKey = getGoogleApiKey();
+  const googleOk =
+    googleKey.startsWith("AIza") && googleKey.length >= 35 && !googleKey.includes("COLE_A_REAL");
+  return anthropicOk || googleOk;
 }
 
 function traduzErroAnthropic(e: unknown): never {
@@ -70,13 +77,17 @@ async function chamarGoogleGemini(prompt: string, systemPrompt?: string): Promis
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      contents: [{ parts: [{ text: fullPrompt }] }]
-    })
+      contents: [{ parts: [{ text: fullPrompt }] }],
+    }),
   });
 
   if (!res.ok) {
     const errText = await res.text();
-    throw new ApiError(502, `Erro na API do Google Gemini (${res.status}): ${errText}`, "ai_google_error");
+    throw new ApiError(
+      502,
+      `Erro na API do Google Gemini (${res.status}): ${errText}`,
+      "ai_google_error"
+    );
   }
 
   const data = (await res.json()) as any;
@@ -116,7 +127,7 @@ async function chamarClaude(
         model: "gemini-1.5-flash",
         stop_reason: "end_turn",
         stop_sequence: null,
-        usage: { input_tokens: 10, output_tokens: 20 }
+        usage: { input_tokens: 10, output_tokens: 20 },
       } as Anthropic.Message;
     } catch (e: any) {
       if (e instanceof ApiError) throw e;
@@ -131,20 +142,24 @@ async function chamarClaude(
 
   const systemStr = typeof params.system === "string" ? params.system : "";
 
-  if (userText.includes("Classifique esta conversa") || systemStr.includes("classifica conversas")) {
+  if (
+    userText.includes("Classifique esta conversa") ||
+    systemStr.includes("classifica conversas")
+  ) {
     mockResult = JSON.stringify({
       category: "vendas",
       intent: "Informações de atendimento e planos",
       sentiment: "positivo",
       urgency: "media",
-      summary: "Cliente interessado em planos e atendimento via WhatsApp."
+      summary: "Cliente interessado em planos e atendimento via WhatsApp.",
     });
   } else if (userText.includes("Resuma esta conversa") || systemStr.includes("resume conversas")) {
-    mockResult = "• Contexto: Atendimento iniciado via WhatsApp.\n• Solicitação: Cliente gostaria de informações sobre suporte.\n• Status: Atendimento ativo e acompanhado por IA.";
+    mockResult =
+      "• Contexto: Atendimento iniciado via WhatsApp.\n• Solicitação: Cliente gostaria de informações sobre suporte.\n• Status: Atendimento ativo e acompanhado por IA.";
   } else if (userText.includes("needsHuman") || systemStr.includes("needsHuman")) {
     mockResult = JSON.stringify({
       reply: "Olá! Recebemos sua mensagem. Vou verificar as informações para você!",
-      needsHuman: false
+      needsHuman: false,
     });
   }
 
@@ -156,7 +171,7 @@ async function chamarClaude(
     model: "gemini-flash-dev",
     stop_reason: "end_turn",
     stop_sequence: null,
-    usage: { input_tokens: 5, output_tokens: 10 }
+    usage: { input_tokens: 5, output_tokens: 10 },
   } as Anthropic.Message;
 }
 
@@ -295,8 +310,7 @@ export async function chatAssistant(
   const res = await chamarClaude({
     model: MODEL_CHAT,
     max_tokens: 700,
-    system:
-      `Você é o assistente virtual do ${company}. Fale em português do Brasil, de forma cordial e objetiva.${kb}`,
+    system: `Você é o assistente virtual do ${company}. Fale em português do Brasil, de forma cordial e objetiva.${kb}`,
     messages: history.slice(-20).map((t) => ({ role: t.role, content: t.content })),
   });
   return firstText(res).trim();
