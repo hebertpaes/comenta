@@ -126,14 +126,16 @@ ls -1dt "$BASE"/releases/* 2>/dev/null | tail -n +4 | xargs -r rm -rf
 
 log "4/5 Nginx ($DOMAINS)"
 # Mesmo arquivo que o deploy/oracle_setup.sh usava: substitui o servidor de
-# espera da porta 2368 pelo site de verdade, sem deixar dois blocos brigando
-# pelos mesmos server_name.
+# espera da porta 2368 pelo site de verdade.
 CONF="/etc/nginx/sites-available/intsoft.com.br"
+# Sem default_server nem catch-all: o bloco responde só pelos domínios da lista,
+# para conviver com outros sites do mesmo Nginx (o install_ghost.sh, por
+# exemplo, grava ghost.conf com default_server).
 cat > "$CONF" <<NGX
 server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    server_name $DOMAINS _;
+    listen 80;
+    listen [::]:80;
+    server_name $DOMAINS;
 
     client_max_body_size 20M;
 
@@ -151,6 +153,18 @@ server {
 NGX
 ln -sfn "$CONF" /etc/nginx/sites-enabled/intsoft.com.br
 rm -f /etc/nginx/sites-enabled/default
+# Outro site habilitado já responde por algum destes domínios? O Nginx usa o
+# primeiro bloco que casar (ordem alfabética dos arquivos), então o site ficaria
+# inalcançável sem aviso. Avisa e segue: decidir quem fica com o domínio é
+# de quem opera o servidor.
+for d in $DOMAINS; do
+  for f in /etc/nginx/sites-enabled/*; do
+    [ "$f" = "/etc/nginx/sites-enabled/intsoft.com.br" ] && continue
+    if grep -qE "server_name[^;]*(^|[[:space:]])$d([[:space:]]|;)" "$f" 2>/dev/null; then
+      echo "  AVISO: $f também declara server_name $d — ajuste o server_name lá (ex.: blog.$d) ou este site não será servido nesse domínio."
+    fi
+  done
+done
 nginx -t && systemctl reload nginx
 
 log "5/5 HTTPS (Let's Encrypt)"

@@ -30,6 +30,34 @@ Se a zona estiver no Cloudflare, deixe o proxy **desligado** (nuvem cinza) até
 o certificado sair — com o proxy ligado o desafio do Let's Encrypt não chega ao
 Nginx. Detalhes em [`RUNBOOK.md`](RUNBOOK.md#1-dns).
 
+## Atenção: o que o servidor Oracle serve hoje
+
+Em 16/09/2026, `intsoft.com.br` e `www.intsoft.com.br` já apontam para
+`147.15.103.114`, e esse servidor responde com o portal Ghost "HOJE MT"
+(instalado pelo `deploy/install_ghost.sh`, que grava
+`/etc/nginx/sites-available/ghost.conf` com `intsoft.com.br`, `www`,
+`comenta.com.br` e `www.comenta.com.br` no `server_name`). O Nginx entrega o
+domínio ao primeiro bloco que casar, na ordem alfabética dos arquivos, e
+`ghost.conf` vem antes de `intsoft.com.br`. Ou seja: enquanto o Ghost ficar
+com esses nomes, o site do Comenta não será alcançado neles, mesmo com o
+deploy bem-sucedido. O `deploy_site.sh` detecta isso e imprime um aviso.
+
+Antes do primeiro deploy, decida o destino do Ghost e ajuste `ghost.conf`
+no servidor, por exemplo movendo-o para `blog.intsoft.com.br` (crie o
+registro A e reemita o certificado):
+
+```bash
+sudo sed -i 's/server_name .*/server_name blog.intsoft.com.br;/' /etc/nginx/sites-available/ghost.conf
+sudo nginx -t && sudo systemctl reload nginx
+sudo certbot --nginx -d blog.intsoft.com.br
+```
+
+`comenta.com.br` hoje é um CNAME no Cloudflare para um serviço no Google
+Cloud Run, então esse domínio só chega ao servidor Oracle depois de trocar o
+registro. Até lá, rode o deploy só com os domínios da IntSoft
+(`DEPLOY_DOMAINS="intsoft.com.br www.intsoft.com.br"`), senão o Certbot
+falha ao validar `comenta.com.br`.
+
 ## 2. Chave SSH para o GitHub entrar no servidor
 
 No seu computador (não no servidor), gere um par só para o deploy:
