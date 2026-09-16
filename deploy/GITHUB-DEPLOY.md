@@ -30,6 +30,12 @@ Se a zona estiver no Cloudflare, deixe o proxy **desligado** (nuvem cinza) até
 o certificado sair — com o proxy ligado o desafio do Let's Encrypt não chega ao
 Nginx. Detalhes em [`RUNBOOK.md`](RUNBOOK.md#1-dns).
 
+Depois, se ligar o proxy (nuvem laranja), o modo SSL da zona precisa ser **Full**
+ou **Full (strict)**. Em **Flexible** o Cloudflare fala HTTP com o servidor, o
+servidor responde com o 301 para HTTPS, e o navegador entra em laço de
+redirecionamento (`ERR_TOO_MANY_REDIRECTS`). Com o certificado emitido aqui,
+**Full (strict)** funciona.
+
 ## Atenção: o que o servidor Oracle serve hoje
 
 Em 16/09/2026, `intsoft.com.br` e `www.intsoft.com.br` já apontam para
@@ -45,10 +51,10 @@ vhost habilitado já declara um dos domínios, e mostra os dois caminhos:
    (crie o registro A, troque o `server_name` no vhost do Ghost, reemita o
    certificado) e repetir o deploy; ou
 2. **`TAKE_OVER=1`**: o site assume `intsoft.com.br`, o vhost do Ghost é
-   desabilitado (o arquivo continua em `sites-available`) e `/ghost/` e
-   `/content/` seguem para o Ghost na porta 2368. O admin continua em
-   `https://intsoft.com.br/ghost/`; o que deixa de aparecer é a página pública
-   do portal, até ele ganhar um nome próprio.
+   desabilitado (se era um link em `sites-enabled`, o arquivo continua em
+   `sites-available`; se era arquivo de verdade, vira `.disabled` — nunca é
+   apagado) e `/ghost`, `/ghost/` e `/content/` seguem para o Ghost na porta 2368. O admin continua em `https://intsoft.com.br/ghost/`; o que deixa de
+   aparecer é a página pública do portal, até ele ganhar um nome próprio.
 
 `comenta.com.br` hoje é um CNAME no Cloudflare para um serviço no Google
 Cloud Run, então esse domínio só chega ao servidor Oracle depois de trocar o
@@ -118,7 +124,31 @@ Faça um push na `main` (ou **Actions → Deploy → Run workflow**). O job:
 3. entra por `ssh` e executa `deploy/deploy_site.sh` com `sudo`, que instala
    o que faltar, troca o symlink `/srv/comenta-site/current`, reinicia o
    processo `comenta-site` no PM2 (porta 3000), grava o Nginx e emite o SSL;
-4. chama `http://SERVIDOR/health` e espera um 200.
+4. chama `/health` (pelo primeiro domínio de `DEPLOY_DOMAINS`, resolvido para
+   o IP do servidor com `--resolve`, seguindo o redirecionamento para HTTPS) e
+   espera um 200. Falhar aqui só gera aviso, não derruba o job.
+
+O workflow **não espera o CI**: os dois disparam juntos no push. O `Build do
+site` dentro do próprio Deploy já barra código que não compila; um teste
+vermelho em outro pacote, não. Para publicar só depois do CI verde, use
+**Run workflow** na mão em vez do push automático (ou `DEPLOY_ENABLED=false`).
+
+### O vhost e o certificado
+
+O script reescreve `/etc/nginx/sites-available/intsoft.com.br` inteiro a cada
+deploy — inclusive o bloco `443`, quando já existe certificado cobrindo o
+domínio. É por isso que o HTTPS não cai entre a gravação do arquivo e o
+certbot: o bloco novo já sai com `ssl_certificate` apontando para a linhagem
+encontrada em `/etc/letsencrypt/live/`.
+
+O certbot roda em modo `certonly --webroot -w /var/www/html`, ou seja, **não
+edita o Nginx**: só emite/renova, e o script grava a configuração. O
+`location ^~ /.well-known/acme-challenge/` fica de fora do redirecionamento
+para HTTPS, então a renovação automática (timer do certbot) continua
+funcionando sem parar o serviço.
+
+Se o certificado já cobre todos os `DOMAINS`, o passo 5 não chama o certbot —
+nada de bater no limite de emissões do Let's Encrypt a cada push.
 
 No servidor, depois:
 

@@ -54,18 +54,39 @@ die(){ printf "\n\033[1;31mERRO: %s\033[0m\n" "$*" >&2; exit 1; }
 command -v oci >/dev/null || die "OCI CLI não encontrado. Rode dentro do Oracle Cloud Shell."
 command -v python3 >/dev/null || die "python3 não encontrado."
 
-log "1/4 Lendo a instância modelo"
-SRC=$(oci compute instance get --instance-id "$SOURCE_INSTANCE_ID" --query 'data' --raw-output 2>/dev/null) \
+log "1/5 Lendo a instância modelo"
+SRC_JSON="$(mktemp)"
+trap 'rm -f "$SRC_JSON"' EXIT
+oci compute instance get --instance-id "$SOURCE_INSTANCE_ID" --query 'data' > "$SRC_JSON" 2>/dev/null \
   || die "não consegui ler a instância $SOURCE_INSTANCE_ID (ela existe nesta região/tenancy?)."
-read -r COMP AD SHAPE IMAGE OCPUS MEM < <(python3 - "$SRC" <<'PY'
-import json, sys
-d = json.loads(sys.argv[1])
+# Um valor por linha, com aspas: um campo vazio (imagem ausente, por exemplo)
+# num `read` de campos separados por espaço desloca todos os seguintes — e o
+# número de OCPUs acabaria virando o id da imagem.
+eval "$(python3 - "$SRC_JSON" <<'PYSRC'
+import json, shlex, sys
+d = json.load(open(sys.argv[1]))
 sc = d.get("shape-config") or {}
-print(d["compartment-id"], d["availability-domain"], d["shape"], d.get("image-id") or (d.get("source-details") or {}).get("image-id",""),
-      sc.get("ocpus", 1), sc.get("memory-in-gbs", 12))
-PY
-)
+campos = {
+    "COMP": d.get("compartment-id", ""),
+    "AD": d.get("availability-domain", ""),
+    "SHAPE": d.get("shape", ""),
+    "IMAGE": d.get("image-id") or (d.get("source-details") or {}).get("image-id") or "",
+    "OCPUS": str(sc.get("ocpus") or ""),
+    "MEM": str(sc.get("memory-in-gbs") or ""),
+}
+for k, v in campos.items():
+    print(k + "=" + shlex.quote(v))
+PYSRC
+)"
 [ -n "$IMAGE" ] || die "a instância modelo não expõe image-id."
+[ -n "$COMP" ] && [ -n "$AD" ] && [ -n "$SHAPE" ] || die "a instância modelo veio sem compartment/AD/shape."
+
+# --shape-config só vale para shape flexível. Num shape fixo (VM.Standard.E2.1.Micro,
+# o do free tier) a Oracle recusa o launch inteiro por causa desse parâmetro.
+SHAPE_CONFIG=()
+case "$SHAPE" in
+  *.Flex) SHAPE_CONFIG=(--shape-config "{\"ocpus\": ${OCPUS:-1}, \"memoryInGBs\": ${MEM:-6}}") ;;
+esac
 SUBNET=$(oci compute instance list-vnics --instance-id "$SOURCE_INSTANCE_ID" --query 'data[0]."subnet-id"' --raw-output)
 BOOT_ATT=$(oci compute boot-volume-attachment list --compartment-id "$COMP" --availability-domain "$AD" \
   --instance-id "$SOURCE_INSTANCE_ID" --query 'data[0]."boot-volume-id"' --raw-output 2>/dev/null || true)
@@ -74,20 +95,33 @@ if [ -n "$BOOT_ATT" ] && [ "$BOOT_ATT" != "null" ]; then
   BOOT_GB=$(oci bv boot-volume get --boot-volume-id "$BOOT_ATT" --query 'data."size-in-gbs"' --raw-output 2>/dev/null || echo 50)
 fi
 echo "  compartment: $COMP"
-echo "  AD: $AD | shape: $SHAPE ($OCPUS OCPU, ${MEM} GB) | boot: ${BOOT_GB} GB"
+if [ ${#SHAPE_CONFIG[@]} -gt 0 ]; then
+  echo "  AD: $AD | shape: $SHAPE (${OCPUS:-1} OCPU, ${MEM:-6} GB) | boot: ${BOOT_GB} GB"
+else
+  echo "  AD: $AD | shape: $SHAPE (fixo, sem shape-config) | boot: ${BOOT_GB} GB"
+fi
 echo "  imagem: $IMAGE"
 echo "  sub-rede: $SUBNET"
 
-log "2/4 Conferindo 80/443 na security list da sub-rede"
-SL=$(oci network subnet get --subnet-id "$SUBNET" --query 'data."security-list-ids"[0]' --raw-output)
-oci network security-list get --security-list-id "$SL" --query 'data."ingress-security-rules"' > /tmp/ingress.json
-python3 - <<'PY'
+log "2/5 Conferindo 80/443 na security list da sub-rede"
+SL=$(oci network subnet get --subnet-id "$SUBNET" --query 'data."security-list-ids"[0]' --raw-output 2>/dev/null || true)
+if [ -z "$SL" ] || [ "$SL" = "null" ]; then
+  echo "  a sub-rede não usa security list (só NSG?) — libere 80/443 na mão, pelo console."
+else
+  oci network security-list get --security-list-id "$SL" --query 'data."ingress-security-rules"' > /tmp/ingress.json
+  python3 - <<'PY'
 import json, re
 rules = json.load(open('/tmp/ingress.json'))
 def has(port):
     for r in rules:
-        t = (r.get('tcp-options') or {}).get('destination-port-range') or {}
-        if r.get('protocol') == '6' and r.get('source') == '0.0.0.0/0' and t.get('min', 0) <= port <= t.get('max', 0):
+        if r.get('protocol') not in ('6', 'all') or r.get('source') != '0.0.0.0/0':
+            continue
+        tcp = r.get('tcp-options')
+        # Sem tcp-options, ou sem faixa de portas, a regra libera tudo: já cobre.
+        if not tcp or not tcp.get('destination-port-range'):
+            return True
+        t = tcp['destination-port-range']
+        if t.get('min', 0) <= port <= t.get('max', 0):
             return True
     return False
 added = []
@@ -105,12 +139,13 @@ def camel(o):
 json.dump(camel(rules), open('/tmp/ingress_new.json', 'w'))
 open('/tmp/ingress_added', 'w').write(' '.join(map(str, added)))
 PY
-ADDED=$(cat /tmp/ingress_added)
-if [ -n "$ADDED" ]; then
-  oci network security-list update --security-list-id "$SL" --ingress-security-rules file:///tmp/ingress_new.json --force >/dev/null
-  echo "  portas liberadas: $ADDED"
-else
-  echo "  80 e 443 já liberadas."
+  ADDED=$(cat /tmp/ingress_added)
+  if [ -n "$ADDED" ]; then
+    oci network security-list update --security-list-id "$SL" --ingress-security-rules file:///tmp/ingress_new.json --force >/dev/null
+    echo "  portas liberadas: $ADDED"
+  else
+    echo "  80 e 443 já liberadas."
+  fi
 fi
 
 log "3/5 Chave de deploy ($DEPLOY_KEY)"
@@ -127,6 +162,11 @@ PUBKEYS="$PUBKEYS
 $(cat "$DEPLOY_KEY.pub")"
 
 log "4/5 Lançando a instância $NAME (STACK=$STACK)"
+# hostname-label: minúsculas, só letras/dígitos/hífen, sem hífen nas pontas — e
+# único dentro da sub-rede. Se já existir um igual a Oracle recusa o launch;
+# nesse caso rode de novo com NAME=outro-nome.
+HOSTLABEL="$(printf '%s' "$NAME" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9' '-' | sed 's/^-*//; s/-*$//' | cut -c1-63)"
+[ -n "$HOSTLABEL" ] || HOSTLABEL="comenta"
 # cloud-init: roda como root no primeiro boot, com log em /var/log/comenta-deploy.log.
 USER_DATA=""
 if [ "$NO_DEPLOY" != "1" ]; then
@@ -154,10 +194,10 @@ PY
 )
 LAUNCH=$(oci compute instance launch \
   --compartment-id "$COMP" --availability-domain "$AD" \
-  --shape "$SHAPE" --shape-config "{\"ocpus\": $OCPUS, \"memoryInGBs\": $MEM}" \
+  --shape "$SHAPE" ${SHAPE_CONFIG[@]+"${SHAPE_CONFIG[@]}"} \
   --image-id "$IMAGE" --boot-volume-size-in-gbs "$BOOT_GB" \
   --subnet-id "$SUBNET" --assign-public-ip true \
-  --display-name "$NAME" --hostname-label "$(echo "$NAME" | tr -c 'a-zA-Z0-9\n' '-' | cut -c1-63)" \
+  --display-name "$NAME" --hostname-label "$HOSTLABEL" \
   --metadata "$METADATA" \
   --wait-for-state RUNNING --wait-interval-seconds 10 \
   --query 'data.{id: id, state: "lifecycle-state"}' --output json)
@@ -166,7 +206,7 @@ echo "  instância: $NEW_ID"
 
 log "5/5 IP público"
 NEW_IP=""
-for i in $(seq 1 30); do
+for _ in $(seq 1 30); do
   NEW_IP=$(oci compute instance list-vnics --instance-id "$NEW_ID" --query 'data[0]."public-ip"' --raw-output 2>/dev/null || true)
   [ -n "$NEW_IP" ] && [ "$NEW_IP" != "null" ] && break
   sleep 5

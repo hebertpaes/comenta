@@ -93,14 +93,22 @@ jobs:
           mkdir -p ~/.ssh && chmod 700 ~/.ssh
           printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          # Sem known_hosts o ssh não interativo recusa a conexão com uma
+          # mensagem obscura; melhor falhar aqui dizendo o que houve.
+          ssh-keyscan -H "$DEPLOY_HOST" > ~/.ssh/known_hosts 2>/dev/null || true
+          if [ ! -s ~/.ssh/known_hosts ]; then
+            echo "::error::não consegui ler a chave SSH de $DEPLOY_HOST (a porta 22 está aberta para a internet?)"
+            exit 1
+          fi
+          chmod 600 ~/.ssh/known_hosts
 
       - name: Envia o release
         env:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
         run: |
-          scp -i ~/.ssh/deploy_key site-release.tar.gz "$DEPLOY_USER@$DEPLOY_HOST:/tmp/site-release.tar.gz"
+          scp -i ~/.ssh/deploy_key -o BatchMode=yes -o ConnectTimeout=20 \
+            site-release.tar.gz "$DEPLOY_USER@$DEPLOY_HOST:/tmp/site-release.tar.gz"
 
       # O script vai pelo stdin do ssh: o servidor executa exatamente a versão
       # do commit que está sendo publicado, sem depender de um clone lá.
@@ -112,18 +120,31 @@ jobs:
           DEPLOY_DOMAINS: ${{ vars.DEPLOY_DOMAINS }}
           DEPLOY_TAKE_OVER: ${{ vars.DEPLOY_TAKE_OVER }}
         run: |
-          ssh -i ~/.ssh/deploy_key "$DEPLOY_USER@$DEPLOY_HOST" \
+          ssh -i ~/.ssh/deploy_key -o BatchMode=yes -o ConnectTimeout=20 "$DEPLOY_USER@$DEPLOY_HOST" \
             "sudo RELEASE_TARBALL=/tmp/site-release.tar.gz REVISION='${{ github.sha }}' \
                   DOMAINS='$DEPLOY_DOMAINS' EMAIL='$DEPLOY_EMAIL' TAKE_OVER='$DEPLOY_TAKE_OVER' bash -s" \
             < deploy/deploy_site.sh
 
+      # Checagem pelo IP, sem depender do DNS já apontar para cá. Quando há
+      # domínio configurado ele é usado com --resolve (o vhost responde por
+      # server_name, e com certificado a porta 80 devolve 301 para o HTTPS —
+      # por isso o -L; sem ele a checagem nunca veria um 200).
       - name: Verifica no ar
         env:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_DOMAINS: ${{ vars.DEPLOY_DOMAINS }}
         run: |
+          dominio="${DEPLOY_DOMAINS%% *}"
+          if [ -n "$dominio" ]; then
+            alvo="http://$dominio/health"
+            set -- --resolve "$dominio:80:$DEPLOY_HOST" --resolve "$dominio:443:$DEPLOY_HOST"
+          else
+            alvo="http://$DEPLOY_HOST/health"
+            set --
+          fi
           for i in $(seq 1 12); do
-            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 10 "http://$DEPLOY_HOST/health" || true)
-            [ "$code" = "200" ] && { echo "ok: http://$DEPLOY_HOST/health → 200"; exit 0; }
+            code=$(curl -skL -o /dev/null -w '%{http_code}' --max-time 10 "$@" "$alvo" || true)
+            [ "$code" = "200" ] && { echo "ok: $alvo → 200 (via $DEPLOY_HOST)"; exit 0; }
             sleep 5
           done
-          echo "::warning::/health não respondeu 200 em http://$DEPLOY_HOST — confira 'pm2 logs comenta-site' no servidor."
+          echo "::warning::/health não respondeu 200 em $alvo (último código: ${code:-sem resposta}) — confira 'pm2 logs comenta-site' no servidor."
