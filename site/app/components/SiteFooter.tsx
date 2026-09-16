@@ -18,6 +18,7 @@ const COLUNAS = [
     links: [
       { href: "/#planos", label: "Planos" },
       { href: "/contato", label: "Contato" },
+      { href: "/intsoft", label: "Sobre a IntSoft" },
       { href: "/#faq", label: "Perguntas frequentes" },
     ],
   },

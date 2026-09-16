@@ -49,6 +49,13 @@ npm run dev:editor
 Comandos em todos os workspaces de uma vez: `npm run build`, `npm run typecheck`,
 `npm test`.
 
+## Publicar pelo GitHub (intsoft.com.br e comenta.com.br)
+
+Push na `main` = site no ar. O workflow [`deploy.yml`](.github/workflows/deploy.yml)
+builda o site e o envia por SSH ao servidor, onde [`deploy/deploy_site.sh`](deploy/deploy_site.sh)
+publica com PM2 + Nginx + SSL. Configuração dos segredos e DNS em
+[`deploy/GITHUB-DEPLOY.md`](deploy/GITHUB-DEPLOY.md).
+
 ## Publicar em produção (VPS)
 
 Tudo sob `comenta.com.br` com um comando (Docker + Nginx + SSL). Veja

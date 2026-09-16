@@ -41,6 +41,21 @@ const nextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
+  // intsoft.com.br responde pelo mesmo deploy: na raiz desse domínio entra a
+  // página institucional da IntSoft (app/intsoft), e o resto do site continua
+  // acessível pelos caminhos normais. Precisa ser `beforeFiles`: `/` existe
+  // como página estática, e um rewrite comum (afterFiles) só é avaliado
+  // depois que o Next já casou a rota com a home.
+  async rewrites() {
+    const intsoft = ["intsoft.com.br", "www.intsoft.com.br"];
+    return {
+      beforeFiles: intsoft.map((host) => ({
+        source: "/",
+        has: [{ type: "host", value: host }],
+        destination: "/intsoft",
+      })),
+    };
+  },
 };
 
 module.exports = nextConfig;
