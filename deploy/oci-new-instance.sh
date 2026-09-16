@@ -1,0 +1,210 @@
+#!/usr/bin/env bash
+# =============================================================================
+#  Cria uma instância NOVA na Oracle Cloud com a mesma configuração de outra
+#  (shape, OCPUs, memória, imagem, sub-rede, tamanho do boot volume) e instala
+#  o site do Comenta nela no primeiro boot.
+#
+#  Rodar no ORACLE CLOUD SHELL (já autenticado como dono do tenancy):
+#
+#    curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/main/deploy/oci-new-instance.sh | bash
+#
+#  Variáveis opcionais:
+#    SOURCE_INSTANCE_ID  instância modelo (default: a "ghost-blog" em sa-saopaulo-1)
+#    NAME                nome da instância nova (default: comenta-site)
+#    PUBKEYS             chaves públicas autorizadas no usuário ubuntu, uma por
+#                        linha (default: as chaves mac-intsoft e ghost-oci)
+#    BRANCH              ramo do repositório a publicar (default: main)
+#    DOMAINS             domínios do Nginx (default: intsoft.com.br www.intsoft.com.br)
+#    STACK               site  = só o site Next.js (deploy_site.sh, PM2 + Nginx)
+#                        full  = sistema completo em Docker: site, painel, API,
+#                                Postgres, Redis e Ghost (deploy/bootstrap.sh;
+#                                precisa dos subdomínios app., api. e blog.)
+#                        (default: site)
+#    NO_DEPLOY=1         só cria a VM, sem instalar nada no primeiro boot
+#    DEPLOY_KEY          arquivo da chave de deploy gerada aqui no Cloud Shell
+#                        (default: ~/.ssh/comenta_deploy). A pública entra na VM;
+#                        a privada vai para o secret DEPLOY_SSH_KEY do GitHub,
+#                        e é por ela que o workflow "Deploy" (e o Claude, através
+#                        dele) entra no servidor.
+#
+#  O que acontece:
+#   1. Lê a instância modelo e lança outra igual, com IP público, na mesma
+#      sub-rede (que já tem 80/443 liberados pelo oci-bootstrap.sh; confere).
+#   2. Gera a chave de deploy (se não existir) e autoriza, na VM, essa chave
+#      mais as suas (mac-intsoft e ghost-oci).
+#   3. Passa um cloud-init que instala o site (ou o sistema completo) com
+#      SKIP_SSL=1 — o DNS ainda aponta para a VM antiga; o certificado vem depois.
+#   4. Espera ficar RUNNING e imprime IP, comandos e os secrets para o GitHub.
+# =============================================================================
+set -euo pipefail
+
+SOURCE_INSTANCE_ID="${SOURCE_INSTANCE_ID:-ocid1.instance.oc1.sa-saopaulo-1.antxeljry6y5mtqcbljfilfkt2houqrctxob6yxeuf66mgzxmqja4xca6pwq}"
+NAME="${NAME:-comenta-site}"
+BRANCH="${BRANCH:-main}"
+DOMAINS="${DOMAINS:-intsoft.com.br www.intsoft.com.br}"
+NO_DEPLOY="${NO_DEPLOY:-0}"
+STACK="${STACK:-site}"
+DEPLOY_KEY="${DEPLOY_KEY:-$HOME/.ssh/comenta_deploy}"
+PUBKEYS="${PUBKEYS:-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBnAMxEEjNz9WW32ieYln9jjyxFIj1zXuR/k8C0LTEAm mac-intsoft
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHifpcES/NUHc9sVlLTV//R7mv3/6fXCfLVABn+KsCZE ghost-oci}"
+case "$STACK" in site|full) ;; *) echo "STACK deve ser site ou full" >&2; exit 1;; esac
+
+log(){ printf "\n\033[1;36m==> %s\033[0m\n" "$*"; }
+die(){ printf "\n\033[1;31mERRO: %s\033[0m\n" "$*" >&2; exit 1; }
+command -v oci >/dev/null || die "OCI CLI não encontrado. Rode dentro do Oracle Cloud Shell."
+command -v python3 >/dev/null || die "python3 não encontrado."
+
+log "1/4 Lendo a instância modelo"
+SRC=$(oci compute instance get --instance-id "$SOURCE_INSTANCE_ID" --query 'data' --raw-output 2>/dev/null) \
+  || die "não consegui ler a instância $SOURCE_INSTANCE_ID (ela existe nesta região/tenancy?)."
+read -r COMP AD SHAPE IMAGE OCPUS MEM < <(python3 - "$SRC" <<'PY'
+import json, sys
+d = json.loads(sys.argv[1])
+sc = d.get("shape-config") or {}
+print(d["compartment-id"], d["availability-domain"], d["shape"], d.get("image-id") or (d.get("source-details") or {}).get("image-id",""),
+      sc.get("ocpus", 1), sc.get("memory-in-gbs", 12))
+PY
+)
+[ -n "$IMAGE" ] || die "a instância modelo não expõe image-id."
+SUBNET=$(oci compute instance list-vnics --instance-id "$SOURCE_INSTANCE_ID" --query 'data[0]."subnet-id"' --raw-output)
+BOOT_ATT=$(oci compute boot-volume-attachment list --compartment-id "$COMP" --availability-domain "$AD" \
+  --instance-id "$SOURCE_INSTANCE_ID" --query 'data[0]."boot-volume-id"' --raw-output 2>/dev/null || true)
+BOOT_GB=50
+if [ -n "$BOOT_ATT" ] && [ "$BOOT_ATT" != "null" ]; then
+  BOOT_GB=$(oci bv boot-volume get --boot-volume-id "$BOOT_ATT" --query 'data."size-in-gbs"' --raw-output 2>/dev/null || echo 50)
+fi
+echo "  compartment: $COMP"
+echo "  AD: $AD | shape: $SHAPE ($OCPUS OCPU, ${MEM} GB) | boot: ${BOOT_GB} GB"
+echo "  imagem: $IMAGE"
+echo "  sub-rede: $SUBNET"
+
+log "2/4 Conferindo 80/443 na security list da sub-rede"
+SL=$(oci network subnet get --subnet-id "$SUBNET" --query 'data."security-list-ids"[0]' --raw-output)
+oci network security-list get --security-list-id "$SL" --query 'data."ingress-security-rules"' > /tmp/ingress.json
+python3 - <<'PY'
+import json, re
+rules = json.load(open('/tmp/ingress.json'))
+def has(port):
+    for r in rules:
+        t = (r.get('tcp-options') or {}).get('destination-port-range') or {}
+        if r.get('protocol') == '6' and r.get('source') == '0.0.0.0/0' and t.get('min', 0) <= port <= t.get('max', 0):
+            return True
+    return False
+added = []
+for p in (80, 443):
+    if not has(p):
+        rules.append({"protocol": "6", "source": "0.0.0.0/0", "source-type": "CIDR_BLOCK", "is-stateless": False,
+                      "tcp-options": {"destination-port-range": {"min": p, "max": p}}, "description": "Comenta HTTP/HTTPS"})
+        added.append(p)
+def camel(o):
+    if isinstance(o, dict):
+        return {re.sub(r'-([a-z])', lambda m: m.group(1).upper(), k): camel(v) for k, v in o.items() if v is not None}
+    if isinstance(o, list):
+        return [camel(x) for x in o]
+    return o
+json.dump(camel(rules), open('/tmp/ingress_new.json', 'w'))
+open('/tmp/ingress_added', 'w').write(' '.join(map(str, added)))
+PY
+ADDED=$(cat /tmp/ingress_added)
+if [ -n "$ADDED" ]; then
+  oci network security-list update --security-list-id "$SL" --ingress-security-rules file:///tmp/ingress_new.json --force >/dev/null
+  echo "  portas liberadas: $ADDED"
+else
+  echo "  80 e 443 já liberadas."
+fi
+
+log "3/5 Chave de deploy ($DEPLOY_KEY)"
+# Chave só para automação: a pública vai para a VM, a privada para o secret do
+# GitHub. Fica no Cloud Shell (home persistente) para reaproveitar em outras VMs.
+if [ ! -f "$DEPLOY_KEY" ]; then
+  mkdir -p "$(dirname "$DEPLOY_KEY")"
+  ssh-keygen -t ed25519 -N "" -C "github-deploy comenta" -f "$DEPLOY_KEY" >/dev/null
+  echo "  gerada."
+else
+  echo "  já existia — reaproveitada."
+fi
+PUBKEYS="$PUBKEYS
+$(cat "$DEPLOY_KEY.pub")"
+
+log "4/5 Lançando a instância $NAME (STACK=$STACK)"
+# cloud-init: roda como root no primeiro boot, com log em /var/log/comenta-deploy.log.
+USER_DATA=""
+if [ "$NO_DEPLOY" != "1" ]; then
+  if [ "$STACK" = "full" ]; then
+    INSTALL_CMD="curl -fsSL \"https://raw.githubusercontent.com/hebertpaes/comenta/$BRANCH/deploy/bootstrap.sh\" | BRANCH=\"$BRANCH\" DOMAIN=\"$(echo "$DOMAINS" | awk '{print $1}')\" SKIP_SSL=1 bash"
+  else
+    INSTALL_CMD="curl -fsSL \"https://raw.githubusercontent.com/hebertpaes/comenta/$BRANCH/deploy/deploy_site.sh\" | BRANCH=\"$BRANCH\" DOMAINS=\"$DOMAINS\" SKIP_SSL=1 bash"
+  fi
+  USER_DATA=$(cat <<CI | base64 -w0
+#!/bin/bash
+exec > /var/log/comenta-deploy.log 2>&1
+echo "[cloud-init] instalando STACK=$STACK do Comenta (ramo $BRANCH)"
+$INSTALL_CMD
+echo "[cloud-init] fim: \$?"
+CI
+)
+fi
+METADATA=$(python3 - "$PUBKEYS" "$USER_DATA" <<'PY'
+import json, sys
+m = {"ssh_authorized_keys": sys.argv[1]}
+if sys.argv[2]:
+    m["user_data"] = sys.argv[2]
+print(json.dumps(m))
+PY
+)
+LAUNCH=$(oci compute instance launch \
+  --compartment-id "$COMP" --availability-domain "$AD" \
+  --shape "$SHAPE" --shape-config "{\"ocpus\": $OCPUS, \"memoryInGBs\": $MEM}" \
+  --image-id "$IMAGE" --boot-volume-size-in-gbs "$BOOT_GB" \
+  --subnet-id "$SUBNET" --assign-public-ip true \
+  --display-name "$NAME" --hostname-label "$(echo "$NAME" | tr -c 'a-zA-Z0-9\n' '-' | cut -c1-63)" \
+  --metadata "$METADATA" \
+  --wait-for-state RUNNING --wait-interval-seconds 10 \
+  --query 'data.{id: id, state: "lifecycle-state"}' --output json)
+NEW_ID=$(echo "$LAUNCH" | python3 -c 'import json,sys; print(json.load(sys.stdin)["id"])')
+echo "  instância: $NEW_ID"
+
+log "5/5 IP público"
+NEW_IP=""
+for i in $(seq 1 30); do
+  NEW_IP=$(oci compute instance list-vnics --instance-id "$NEW_ID" --query 'data[0]."public-ip"' --raw-output 2>/dev/null || true)
+  [ -n "$NEW_IP" ] && [ "$NEW_IP" != "null" ] && break
+  sleep 5
+done
+[ -n "$NEW_IP" ] && [ "$NEW_IP" != "null" ] || die "a instância subiu mas ainda não tem IP público; veja no console."
+
+cat <<TXT
+
+============================================================
+ Instância $NAME criada: $NEW_IP  (mesma configuração de ghost-blog)
+
+ Entrar (chave mac-intsoft ou ghost-oci):
+   ssh -i ~/.ssh/intsoft_ghost ubuntu@$NEW_IP
+
+ O site está sendo instalado pelo cloud-init (leva alguns minutos).
+ Acompanhar:
+   ssh -i ~/.ssh/intsoft_ghost ubuntu@$NEW_IP "sudo tail -f /var/log/comenta-deploy.log"
+ Testar antes do DNS (responde pelo IP):
+   curl -sS -o /dev/null -w '%{http_code}\n' http://$NEW_IP/health
+
+ Depois, no Cloudflare (zona intsoft.com.br), aponte os registros A de
+ "@" e "www" para $NEW_IP (nuvem cinza até o certificado sair) e emita o SSL:
+   ssh -i ~/.ssh/intsoft_ghost ubuntu@$NEW_IP \\
+     "curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/$BRANCH/deploy/deploy_site.sh | sudo BRANCH=$BRANCH EMAIL=seu@email bash"
+
+ A VM ghost-blog continua intocada com o Ghost.
+
+ ---- Conectar o GitHub (e o Claude, pelo workflow Deploy) a esta VM ----
+ Em github.com/hebertpaes/comenta > Settings > Secrets and variables > Actions:
+   DEPLOY_HOST    = $NEW_IP
+   DEPLOY_USER    = ubuntu
+   DEPLOY_SSH_KEY = o conteúdo INTEIRO do arquivo abaixo (chave privada):
+     cat $DEPLOY_KEY
+ Ou, do seu Mac com o gh autenticado, copiando a chave do Cloud Shell:
+   gh secret set DEPLOY_HOST --body $NEW_IP
+   gh secret set DEPLOY_USER --body ubuntu
+   gh secret set DEPLOY_SSH_KEY < comenta_deploy   # o arquivo privado copiado
+ Feito isso, cada push na main publica sozinho, e "Actions > Deploy > Run
+ workflow" publica qualquer ramo.
+============================================================
+TXT

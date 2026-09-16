@@ -128,6 +128,22 @@ pm2 logs comenta-site        # logs do Next
 ls -l /srv/comenta-site      # current -> releases/<commit>
 ```
 
+## Nova instância na Oracle só para o Comenta
+
+Se preferir não dividir a VM com o Ghost, o `deploy/oci-new-instance.sh`
+cria, pelo Oracle Cloud Shell, uma instância nova com a mesma configuração da
+`ghost-blog` (shape, OCPU, memória, imagem, sub-rede, disco), autoriza as suas
+chaves e uma chave de deploy gerada ali, e instala o site (ou o sistema
+completo, com `STACK=full`) no primeiro boot:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/main/deploy/oci-new-instance.sh | bash
+```
+
+Ao final ele imprime o IP, os comandos de acompanhamento e os três secrets
+(`DEPLOY_HOST`, `DEPLOY_USER`, `DEPLOY_SSH_KEY`) que ligam o workflow Deploy
+à VM nova. A `ghost-blog` não é tocada.
+
 ## Sem GitHub (na mão, no servidor)
 
 Veja "Deploy na mão, do seu Mac" acima: o mesmo script clona o repositório e

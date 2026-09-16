@@ -227,6 +227,18 @@ ln -sfn "$CONF" "$ENABLED"
 rm -f /etc/nginx/sites-enabled/default
 nginx -t && systemctl reload nginx
 
+# Imagens Ubuntu da Oracle Cloud sobem com iptables rejeitando tudo menos a 22
+# (além da security list da VCN). Abre 80/443 só se essa regra existir, e
+# persiste para sobreviver ao reboot.
+if command -v iptables >/dev/null 2>&1 && iptables -C INPUT -j REJECT --reject-with icmp-host-prohibited 2>/dev/null; then
+  for port in 80 443; do
+    iptables -C INPUT -p tcp -m state --state NEW -m tcp --dport "$port" -j ACCEPT 2>/dev/null \
+      || iptables -I INPUT 5 -p tcp -m state --state NEW -m tcp --dport "$port" -j ACCEPT
+  done
+  netfilter-persistent save >/dev/null 2>&1 || true
+  echo "  iptables: 80 e 443 liberadas."
+fi
+
 log "5/5 HTTPS (Let's Encrypt)"
 CERT_ARGS=""
 for d in $DOMAINS; do CERT_ARGS="$CERT_ARGS -d $d"; done
