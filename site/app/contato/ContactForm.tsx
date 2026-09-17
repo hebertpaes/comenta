@@ -14,7 +14,7 @@ import React from "react";
  * por ele que o contato é reconhecido quando voltar a escrever.
  */
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.comenta.com.br";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.intsoft.com.br";
 
 const TIMES = ["Vendas", "Suporte", "Financeiro"];
 

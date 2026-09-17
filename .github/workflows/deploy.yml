@@ -11,7 +11,11 @@
 #   DEPLOY_SSH_KEY   chave privada (a pública vai no authorized_keys do servidor)
 #   DEPLOY_EMAIL     (opcional) e-mail do Let's Encrypt; sem ele o SSL é pulado
 # Variáveis (mesma tela, aba Variables), todas opcionais:
-#   DEPLOY_DOMAINS        domínios do Nginx (default no deploy_site.sh)
+#   DEPLOY_STACK          "site" (default) = só o site, por tarball + PM2;
+#                         "full" = sistema completo (site, painel, API, banco,
+#                         Redis) em Docker, pelo deploy/bootstrap.sh
+#   DEPLOY_DOMAIN         domínio raiz do modo "full" (default: intsoft.com.br)
+#   DEPLOY_DOMAINS        domínios do Nginx no modo "site"
 #   DEPLOY_TAKE_OVER      "1" para o site assumir um domínio que outro vhost
 #                         (o Ghost) já ocupa; sem isso o script para no conflito
 #   NEXT_PUBLIC_APP_URL   URL do painel embutida no build
@@ -37,10 +41,14 @@ jobs:
     if: ${{ vars.DEPLOY_ENABLED != 'false' }}
     env:
       NEXT_TELEMETRY_DISABLED: 1
+      # "site" publica só o site (rápido, a cada push); "full" roda o
+      # bootstrap.sh e sobe o sistema inteiro em Docker.
+      DEPLOY_STACK: ${{ vars.DEPLOY_STACK || 'site' }}
 
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
+        if: env.DEPLOY_STACK != 'full'
         with:
           node-version: "22"
           cache: npm
@@ -63,9 +71,11 @@ jobs:
       # --ignore-scripts pula o postinstall do editor (32 MB de FFmpeg) que o
       # site não usa.
       - name: Dependências
+        if: env.DEPLOY_STACK != 'full'
         run: npm ci --ignore-scripts --no-audit --no-fund
 
       - name: Build do site
+        if: env.DEPLOY_STACK != 'full'
         env:
           NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL }}
           NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
@@ -75,6 +85,7 @@ jobs:
       # sai como .next/standalone/site/server.js, e os estáticos e o public
       # precisam ir para dentro dessa árvore.
       - name: Empacota o release
+        if: env.DEPLOY_STACK != 'full'
         run: |
           rm -rf release && mkdir -p release
           cp -a site/.next/standalone/. release/
@@ -103,6 +114,7 @@ jobs:
           chmod 600 ~/.ssh/known_hosts
 
       - name: Envia o release
+        if: env.DEPLOY_STACK != 'full'
         env:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
@@ -112,7 +124,8 @@ jobs:
 
       # O script vai pelo stdin do ssh: o servidor executa exatamente a versão
       # do commit que está sendo publicado, sem depender de um clone lá.
-      - name: Instala no servidor
+      - name: Instala no servidor (só o site)
+        if: env.DEPLOY_STACK != 'full'
         env:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
@@ -125,6 +138,22 @@ jobs:
                   DOMAINS='$DEPLOY_DOMAINS' EMAIL='$DEPLOY_EMAIL' TAKE_OVER='$DEPLOY_TAKE_OVER' bash -s" \
             < deploy/deploy_site.sh
 
+      # Sistema completo: o script é quem clona o repo e sobe os containers, e
+      # ele mesmo confere o DNS, o conflito de vhost e o Ghost que já existe.
+      - name: Instala no servidor (sistema completo)
+        if: env.DEPLOY_STACK == 'full'
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_EMAIL: ${{ secrets.DEPLOY_EMAIL }}
+          DEPLOY_DOMAIN: ${{ vars.DEPLOY_DOMAIN }}
+          DEPLOY_TAKE_OVER: ${{ vars.DEPLOY_TAKE_OVER }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -o BatchMode=yes -o ConnectTimeout=20 "$DEPLOY_USER@$DEPLOY_HOST" \
+            "sudo DOMAIN='${DEPLOY_DOMAIN:-intsoft.com.br}' BRANCH='${{ github.ref_name }}' \
+                  EMAIL='$DEPLOY_EMAIL' TAKE_OVER='$DEPLOY_TAKE_OVER' bash -s" \
+            < deploy/bootstrap.sh
+
       # Checagem pelo IP, sem depender do DNS já apontar para cá. Quando há
       # domínio configurado ele é usado com --resolve (o vhost responde por
       # server_name, e com certificado a porta 80 devolve 301 para o HTTPS —
@@ -133,8 +162,10 @@ jobs:
         env:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
           DEPLOY_DOMAINS: ${{ vars.DEPLOY_DOMAINS }}
+          DEPLOY_DOMAIN: ${{ vars.DEPLOY_DOMAIN }}
         run: |
           dominio="${DEPLOY_DOMAINS%% *}"
+          [ "$DEPLOY_STACK" = "full" ] && dominio="${DEPLOY_DOMAIN:-intsoft.com.br}"
           if [ -n "$dominio" ]; then
             alvo="http://$dominio/health"
             set -- --resolve "$dominio:80:$DEPLOY_HOST" --resolve "$dominio:443:$DEPLOY_HOST"

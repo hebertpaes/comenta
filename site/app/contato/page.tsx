@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Fale com o time do Comenta. Sua mensagem abre uma conversa real na plataforma — o mesmo caminho das mensagens dos seus clientes.",
 };
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.comenta.com.br";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.intsoft.com.br";
 
 export default function ContatoPage() {
   return (

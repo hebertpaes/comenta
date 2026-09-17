@@ -8,7 +8,7 @@ import React from "react";
  * viraria um clique que não faz nada.
  */
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.comenta.com.br";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.intsoft.com.br";
 
 const LINKS = [
   { href: "/#recursos", label: "Recursos" },

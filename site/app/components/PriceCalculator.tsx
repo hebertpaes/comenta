@@ -18,7 +18,7 @@ const PLANOS = [
   { nome: "Business", preco: 299, usuarios: Infinity, conversas: Infinity, canais: Infinity },
 ] as const;
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.comenta.com.br";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.intsoft.com.br";
 
 const brl = (v: number) => `R$${v.toLocaleString("pt-BR")}`;
 

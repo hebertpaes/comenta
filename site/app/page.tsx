@@ -15,7 +15,7 @@ import { RECURSOS } from "./recursos/dados";
 // URLs do app/painel e da API. Configuráveis por build arg
 // (NEXT_PUBLIC_APP_URL / NEXT_PUBLIC_API_URL) para apontar ao ambiente local
 // em testes; sem eles, caem no domínio de produção.
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.comenta.com.br";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.intsoft.com.br";
 
 /**
  * Canais, com o estado real de cada um.

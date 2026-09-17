@@ -9,8 +9,8 @@ import { PLANOS } from "../lib/plans";
  * opera o Comenta.
  *
  * Respondida em /intsoft, em /intsoft.com.br e, quando o host é intsoft.com.br,
- * também na raiz (rewrite em next.config.js): o mesmo deploy do site atende
- * comenta.com.br e intsoft.com.br.
+ * também na raiz (rewrite em next.config.js) — que é o domínio de produção do
+ * sistema inteiro: site aqui, painel em app., API em api. e blog em blog.
  *
  * O foco é o Comenta. A IntSoft aparece como quem faz o produto, e todos os
  * CTAs levam para o site ou para o painel do Comenta.
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
 };
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.comenta.com.br";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.intsoft.com.br";
 
 // Frentes de trabalho da IntSoft. Cada uma aponta onde aparece no Comenta —
 // a página é sobre a empresa, mas quem chega aqui quer saber o que ela entrega.

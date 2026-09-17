@@ -1,19 +1,34 @@
-# Deploy pelo GitHub → servidor (intsoft.com.br e comenta.com.br)
+# Deploy pelo GitHub → servidor (intsoft.com.br)
 
-Cada push na `main` publica o site (Next.js, pasta `site/`) no servidor, sem
-passo manual. O build roda no GitHub Actions; o servidor só recebe o resultado
-e reinicia o processo. Também dá para disparar na mão, de qualquer ramo, em
-**Actions → Deploy → Run workflow**.
+O sistema inteiro mora em **`intsoft.com.br`**, no servidor Oracle
+`147.15.103.114` — o mesmo que hoje serve o Ghost. `comenta.com.br` não resolve
+mais e deixou de ser o domínio de produção.
 
-| Peça               | Onde                           | O que faz                                                        |
-| ------------------ | ------------------------------ | ---------------------------------------------------------------- |
-| Workflow           | `.github/workflows/deploy.yml` | Builda o site, manda um tarball por SSH e roda o script          |
-| Script do servidor | `deploy/deploy_site.sh`        | Instala Node/PM2/Nginx/Certbot, publica o release, SSL           |
-| Página da IntSoft  | `site/app/intsoft/page.tsx`    | Servida em `/intsoft` e na raiz quando o host é `intsoft.com.br` |
+| Endereço              | O que responde        | Origem     | Porta interna |
+| --------------------- | --------------------- | ---------- | ------------- |
+| `intsoft.com.br`      | site + página IntSoft | `site/`    | 3000          |
+| `www.intsoft.com.br`  | idem                  | `site/`    | 3000          |
+| `app.intsoft.com.br`  | painel do atendente   | `saas/web` | 8080          |
+| `api.intsoft.com.br`  | API (+ WebSocket)     | `saas/api` | 4000          |
+| `blog.intsoft.com.br` | Ghost                 | ghost-cli  | 2368          |
 
-O mesmo processo responde pelos dois domínios: `intsoft.com.br` abre a página
-institucional da IntSoft e `comenta.com.br` abre a home do Comenta (rewrite por
-host em `site/next.config.js`).
+Dois caminhos de deploy, escolhidos pela variável `DEPLOY_STACK`:
+
+| `DEPLOY_STACK`  | Script                  | O que sobe                                                     |
+| --------------- | ----------------------- | -------------------------------------------------------------- |
+| `site` (padrão) | `deploy/deploy_site.sh` | Só o site, por tarball + PM2. Rápido, bom para cada push       |
+| `full`          | `deploy/bootstrap.sh`   | Sistema completo em Docker: site, painel, API, Postgres, Redis |
+
+Os dois usam a porta 3000 para o site, então **não convivem**: ao rodar o modo
+`full`, o `bootstrap.sh` derruba o processo `comenta-site` do PM2 antes de subir
+o container.
+
+| Peça              | Onde                           | O que faz                                                        |
+| ----------------- | ------------------------------ | ---------------------------------------------------------------- |
+| Workflow          | `.github/workflows/deploy.yml` | Builda, manda por SSH e roda o script do modo escolhido          |
+| Site (PM2)        | `deploy/deploy_site.sh`        | Node/PM2/Nginx/Certbot, release, SSL                             |
+| Sistema (Docker)  | `deploy/bootstrap.sh`          | Docker, compose, Nginx dos 5 domínios, SSL por domínio, Ghost    |
+| Página da IntSoft | `site/app/intsoft/page.tsx`    | Servida em `/intsoft` e na raiz quando o host é `intsoft.com.br` |
 
 ## 1. DNS
 
@@ -56,10 +71,44 @@ vhost habilitado já declara um dos domínios, e mostra os dois caminhos:
    apagado) e `/ghost`, `/ghost/` e `/content/` seguem para o Ghost na porta 2368. O admin continua em `https://intsoft.com.br/ghost/`; o que deixa de
    aparecer é a página pública do portal, até ele ganhar um nome próprio.
 
-`comenta.com.br` hoje é um CNAME no Cloudflare para um serviço no Google
-Cloud Run, então esse domínio só chega ao servidor Oracle depois de trocar o
-registro. Por isso o default do script cobre só `intsoft.com.br` e `www`;
-quando o DNS mudar, passe `DOMAINS="intsoft.com.br www.intsoft.com.br comenta.com.br www.comenta.com.br"`.
+`comenta.com.br` **não resolve mais** (em 17/09/2026 não há registro A nem
+CNAME; até 16/09 era um CNAME no Cloudflare para um serviço no Cloud Run). Todo
+o sistema passou a viver em `intsoft.com.br`, e é esse o default dos scripts.
+
+## Migrar o sistema completo para este servidor
+
+Ordem que funciona, sem derrubar o blog:
+
+1. **Crie os registros A** de `app`, `api` e `blog` apontando para
+   `147.15.103.114` (nuvem cinza no Cloudflare). O `@` e o `www` já apontam.
+   O `bootstrap.sh` imprime o estado de cada nome antes de mexer em qualquer
+   coisa, e pula o HTTPS dos que ainda não propagaram.
+2. **Suba o sistema**, assumindo os domínios que hoje são do Ghost:
+
+   ```bash
+   ssh -i ~/.ssh/intsoft_ghost ubuntu@147.15.103.114 \
+     "curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/main/deploy/bootstrap.sh \
+        | sudo DOMAIN=intsoft.com.br TAKE_OVER=1 bash"
+   ```
+
+   O Ghost que já está lá **não é tocado**: o script detecta a porta 2368 ocupada,
+   não sobe container de blog nenhum e passa a servi-lo em `blog.intsoft.com.br`.
+
+3. **Mova a `url` do Ghost** (ele ainda acha que mora no domínio raiz, e sem isso
+   manda o visitante do blog para o site novo). Só depois que `blog.intsoft.com.br`
+   estiver apontando para o servidor:
+
+   ```bash
+   ssh -i ~/.ssh/intsoft_ghost ubuntu@147.15.103.114 \
+     "sudo DOMAIN=intsoft.com.br TAKE_OVER=1 MOVE_GHOST=1 bash /srv/comenta/comenta/deploy/bootstrap.sh"
+   ```
+
+   Se o Cloudflare estiver com o proxy ligado (o DNS devolve IP do Cloudflare,
+   não o do servidor), acrescente `FORCE_GHOST_MOVE=1` — a checagem de DNS não
+   consegue enxergar através do proxy.
+
+Pelo GitHub, o mesmo caminho é a variável `DEPLOY_STACK=full` mais
+`DEPLOY_DOMAIN=intsoft.com.br` e `DEPLOY_TAKE_OVER=1`.
 
 ### Deploy na mão, do seu Mac (sem GitHub)
 
@@ -114,7 +163,9 @@ Em **github.com/hebertpaes/comenta → Settings → Secrets and variables → Ac
 | Secret   | `DEPLOY_USER`         | `ubuntu`                                                                 |
 | Secret   | `DEPLOY_SSH_KEY`      | conteúdo **inteiro** de `~/.ssh/comenta_deploy` (a privada)              |
 | Secret   | `DEPLOY_EMAIL`        | e-mail do Let's Encrypt (opcional; sem ele o SSL é pulado)               |
-| Variable | `DEPLOY_DOMAINS`      | opcional — default: `intsoft.com.br www.intsoft.com.br`                  |
+| Variable | `DEPLOY_STACK`        | `site` (default) ou `full` — ver a tabela no topo                        |
+| Variable | `DEPLOY_DOMAIN`       | domínio raiz do modo `full` (default: `intsoft.com.br`)                  |
+| Variable | `DEPLOY_DOMAINS`      | domínios do modo `site` — default: `intsoft.com.br www.intsoft.com.br`   |
 | Variable | `DEPLOY_TAKE_OVER`    | `1` para o site assumir um domínio que o Ghost já ocupa (veja "Atenção") |
 | Variable | `NEXT_PUBLIC_APP_URL` | opcional — URL do painel embutida no build                               |
 | Variable | `NEXT_PUBLIC_API_URL` | opcional — URL da API embutida no build                                  |

@@ -5,7 +5,7 @@ import SiteFooter from "../../components/SiteFooter";
 import SiteNav from "../../components/SiteNav";
 import { RECURSOS, bySlug } from "../dados";
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.comenta.com.br";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.intsoft.com.br";
 
 // Páginas estáticas: o conteúdo é fixo, então nada precisa rodar por requisição.
 export function generateStaticParams() {

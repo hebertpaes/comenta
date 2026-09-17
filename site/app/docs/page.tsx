@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     "Primeiros passos, conexão de canais, campanhas, automações, API REST e webhooks do Comenta.",
 };
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.comenta.com.br";
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.comenta.com.br";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.intsoft.com.br";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.intsoft.com.br";
 
 const SUMARIO = [
   { href: "#comecar", label: "Primeiros passos" },

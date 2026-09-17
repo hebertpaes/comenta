@@ -1,18 +1,24 @@
 # =============================================================
 # Deploy unificado — TODO o Comenta em um único VPS (monorepo)
 # =============================================================
-# Sobe: site (comenta.com.br) + API (api.comenta.com.br) + painel
-# (app.comenta.com.br) + Postgres + Redis. Tudo a partir deste repositório.
+# Sobe: site (DOMAIN) + API (api.DOMAIN) + painel (app.DOMAIN) + Postgres
+# + Redis. Tudo a partir deste repositório. O domínio vem de DOMAIN no .env
+# (default: intsoft.com.br) — nada de domínio cravado aqui dentro.
+#
+# O Ghost (blog) fica no profile "ghost" e NÃO sobe por padrão: no servidor
+# de produção já existe um Ghost instalado pelo ghost-cli na porta 2368, e
+# subir outro container na mesma porta quebraria os dois. Para um VPS novo,
+# sem Ghost nenhum:  docker compose --profile ghost up -d
 #
 # Rode a partir de deploy/ (na raiz do repo comenta):
-#   cp .env.example .env   # e preencha os segredos
+#   cp .env.example .env   # e preencha os segredos (inclusive DOMAIN)
 #   # build do painel (Vite) uma vez, a partir da raiz do monorepo:
 #   (cd .. && npm ci && npm run build -w @comenta/shared \
-#      && VITE_API_URL=https://api.comenta.com.br npm run build -w @comenta/web)
+#      && VITE_API_URL=https://api.intsoft.com.br npm run build -w @comenta/web)
 #   docker compose --env-file .env up -d --build
 #
 # As portas ficam expostas só em 127.0.0.1 — o Nginx do host (com TLS)
-# publica os domínios. Veja nginx/comenta.conf e o RUNBOOK.md.
+# publica os domínios — o vhost é gerado pelo bootstrap.sh. Veja o RUNBOOK.md.
 
 name: comenta
 
@@ -51,13 +57,13 @@ services:
     environment:
       NODE_ENV: production
       PORT: 4000
-      APP_URL: https://app.comenta.com.br
-      API_URL: https://api.comenta.com.br
+      APP_URL: https://app.${DOMAIN:-intsoft.com.br}
+      API_URL: https://api.${DOMAIN:-intsoft.com.br}
       DATABASE_URL: postgresql://comenta:${DB_PASSWORD}@postgres:5432/comenta_saas
       REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379
       JWT_SECRET: ${JWT_SECRET:?defina JWT_SECRET no .env}
       JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:?defina JWT_REFRESH_SECRET no .env}
-      CORS_ORIGINS: https://app.comenta.com.br,https://comenta.com.br,https://www.comenta.com.br
+      CORS_ORIGINS: https://app.${DOMAIN:-intsoft.com.br},https://${DOMAIN:-intsoft.com.br},https://www.${DOMAIN:-intsoft.com.br}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       AI_MODEL_CLASSIFY: ${AI_MODEL_CLASSIFY:-claude-haiku-4-5}
       AI_MODEL_SUMMARIZE: ${AI_MODEL_SUMMARIZE:-claude-haiku-4-5}
@@ -78,6 +84,12 @@ services:
     build:
       context: ..
       dockerfile: site/Dockerfile
+      # NEXT_PUBLIC_* entra no build, não em runtime: sem estes args o Next
+      # ficaria com as URLs de fallback do código em vez das deste domínio.
+      args:
+        NEXT_PUBLIC_APP_URL: https://app.${DOMAIN:-intsoft.com.br}
+        NEXT_PUBLIC_API_URL: https://api.${DOMAIN:-intsoft.com.br}
+        NEXT_PUBLIC_WHATSAPP: ${NEXT_PUBLIC_WHATSAPP:-5566999999999}
     restart: always
     environment:
       NODE_ENV: production
@@ -111,6 +123,7 @@ services:
   # a flag --default-authentication-plugin e aborta o boot.
   ghost-db:
     image: mysql:8.0
+    profiles: ["ghost"]
     restart: always
     # Flags enxutas para caber em VMs pequenas (buffer pool reduzido,
     # performance_schema desligado) e auth compatível com Ghost 5.
@@ -136,16 +149,19 @@ services:
       # demorar bastante em VM pequena — não conte esse tempo como falha.
       start_period: 120s
 
-  # Ghost (CMS/blog) — blog.comenta.com.br — porta 2368
+  # Ghost (CMS/blog) — blog.DOMAIN — porta 2368.
+  # Profile "ghost": só sobe quando pedido. No servidor de produção o Ghost já
+  # existe fora do Docker (ghost-cli) e é ele que continua atendendo a 2368.
   ghost:
     image: ghost:5-alpine
+    profiles: ["ghost"]
     restart: always
     depends_on:
       ghost-db:
         condition: service_healthy
     environment:
       NODE_ENV: production
-      url: ${GHOST_URL:-https://blog.comenta.com.br}
+      url: ${GHOST_URL:-https://blog.intsoft.com.br}
       database__client: mysql
       database__connection__host: ghost-db
       database__connection__user: ghost
@@ -168,10 +184,12 @@ services:
       dockerfile: content/Dockerfile
     profiles: ["bot"]
     restart: "no"
-    depends_on:
-      - ghost
+    # Sem depends_on: o Ghost pode ser o container (profile "ghost") ou o
+    # nativo do servidor, fora do Docker. Quem diz qual é GHOST_ADMIN_URL.
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     environment:
-      GHOST_ADMIN_URL: http://ghost:2368
+      GHOST_ADMIN_URL: ${GHOST_ADMIN_URL:-http://ghost:2368}
       GHOST_ADMIN_API_KEY: ${GHOST_ADMIN_API_KEY:-}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       BLOG_AUTOPUBLISH: ${BLOG_AUTOPUBLISH:-0}
