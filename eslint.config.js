@@ -54,6 +54,7 @@ export default tseslint.config(
       "saas/web/scripts/**/*.mjs",
       // Scripts de seed/operação e o servidor local do Ghost: rodam em Node.
       "scripts/**/*.mjs",
+      "deploy/**/*.mjs",
       "ghost/server.js",
     ],
     languageOptions: {

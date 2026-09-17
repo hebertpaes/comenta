@@ -110,6 +110,44 @@ Ordem que funciona, sem derrubar o blog:
 Pelo GitHub, o mesmo caminho é a variável `DEPLOY_STACK=full` mais
 `DEPLOY_DOMAIN=intsoft.com.br` e `DEPLOY_TAKE_OVER=1`.
 
+### 4. O tema e o conteúdo do Hoje MT, a partir do git
+
+O servidor antigo do portal era uma VM na Azure (`hmt`, `20.55.8.18`). Ela está
+parada e não inicia — o portal `hojemt.com.br` responde **522** no Cloudflare,
+que é o erro de origem fora do ar. O acervo de imagens dessa máquina está no
+disco dela, não aqui.
+
+O que **está** no git e pode ir para o Ghost da Oracle:
+
+| No repositório                                      | O que é                             |
+| --------------------------------------------------- | ----------------------------------- |
+| `ghost/content/themes/hojemt/`                      | tema Hoje MT (USA TODAY), v1.4.0    |
+| `ghost/content/themes/hojemt/content/noticias.json` | export do Ghost: 317 posts, 13 tags |
+
+```bash
+# tema (e backup do conteúdo atual antes de qualquer coisa)
+ssh -i ~/.ssh/intsoft_ghost ubuntu@147.15.103.114 \
+  "curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/main/deploy/ghost_restaurar_hojemt.sh \
+     | sudo GHOST_ADMIN_API_KEY=id:secret bash"
+
+# tema + os 317 posts
+... | sudo GHOST_ADMIN_API_KEY=id:secret IMPORTAR_CONTEUDO=1 bash
+```
+
+A chave sai em **Ghost → Settings → Integrations → Add custom integration**
+(campo "Admin API Key", formato `id:secret`).
+
+> **Sobre os 317 posts.** Desses, 300 usam as imagens de placeholder do próprio
+> tema (`/assets/img/ph-1..4.svg`) e 17 usam fotos de banco (Unsplash). Nenhum
+> traz foto de pauta nem crédito de fonte — é conteúdo de semente, não o acervo
+> fotografado do portal. Por isso a importação **não roda sozinha**: só com
+> `IMPORTAR_CONTEUDO=1`. O script sempre exporta o conteúdo atual para
+> `/var/backups/` antes de mexer.
+
+Para recuperar o acervo de verdade é preciso o disco da VM da Azure: destravar a
+assinatura e ligar a máquina, ou criar uma VM nova a partir do disco dela e
+puxar o MySQL do Ghost mais a pasta `content/images`.
+
 ### Deploy na mão, do seu Mac (sem GitHub)
 
 A chave que a instância aceita é `~/.ssh/intsoft_ghost` (usuário `ubuntu`);
