@@ -11,8 +11,12 @@
 #
 # 2) Na mão, direto no servidor (clona o repo e builda lá):
 #
-#   curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/main/deploy/deploy_site.sh \
-#     | sudo EMAIL=voce@exemplo.com bash
+#   O ramo vai duas vezes: na URL (escolhe a versão do script) e em BRANCH
+#   (escolhe o código que o servidor clona). Hoje este arquivo não está em
+#   main, então "main" na URL dá 404 e o comando falha calado.
+#   ramo=claude/exciting-thompson-4rhut2   # troque para main depois do merge
+#   curl -fsSL "https://raw.githubusercontent.com/hebertpaes/comenta/$ramo/deploy/deploy_site.sh" \
+#     | sudo BRANCH="$ramo" EMAIL=voce@exemplo.com bash
 #
 # Rodar de novo é seguro: o vhost é reescrito inteiro a cada deploy, já com o
 # bloco 443 quando existe certificado (o HTTPS não cai entre um deploy e o

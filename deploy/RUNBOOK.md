@@ -23,8 +23,9 @@ Os serviços escutam só em `127.0.0.1`; o **Nginx do host** (com TLS via Let's 
 Com o **DNS já apontando** para o VPS, rode como root:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/main/deploy/bootstrap.sh \
-  | sudo DOMAIN=intsoft.com.br TAKE_OVER=1 [email protected] bash
+ramo=claude/exciting-thompson-4rhut2   # troque para main depois do merge
+curl -fsSL "https://raw.githubusercontent.com/hebertpaes/comenta/$ramo/deploy/bootstrap.sh" \
+  | sudo BRANCH="$ramo" DOMAIN=intsoft.com.br TAKE_OVER=1 [email protected] bash
 ```
 
 O script confere o DNS de cada nome antes de agir, não sobrescreve vhost de

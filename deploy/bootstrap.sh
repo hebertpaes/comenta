@@ -7,8 +7,14 @@
 # coisa no ar (é o caso do 147.15.103.114, onde o Ghost atende intsoft.com.br):
 # nada é sobrescrito sem aviso e o blog continua funcionando.
 #
-#   curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/main/deploy/bootstrap.sh \
-#     | sudo DOMAIN=intsoft.com.br bash
+# Uso, no servidor (como root). O RAMO vai duas vezes: no endereço de onde o
+# script é baixado e em BRANCH, que é o ramo que ele clona no servidor. Se os
+# dois não baterem, ele baixa uma versão e roda outra. A versão em main ainda é
+# a antiga (aponta para comenta.com.br), então BRANCH é obrigatório até o merge:
+#
+#   ramo=claude/exciting-thompson-4rhut2   # troque para main depois do merge
+#   curl -fsSL "https://raw.githubusercontent.com/hebertpaes/comenta/$ramo/deploy/bootstrap.sh" \
+#     | sudo BRANCH="$ramo" DOMAIN=intsoft.com.br bash
 #
 # Endereços que o sistema passa a ocupar:
 #   DOMAIN            site (Next)            127.0.0.1:3000
@@ -19,7 +25,7 @@
 #
 # Variáveis (todas opcionais):
 #   DOMAIN       domínio raiz (default: intsoft.com.br)
-#   BRANCH       ramo do repositório (default: main)
+#   BRANCH       ramo do repositório (default: main, hoje desatualizado)
 #   BASE         diretório de instalação (default: /srv/comenta)
 #   EMAIL        e-mail do Let's Encrypt. Sem ele, o certbot só roda se o
 #                servidor já tiver uma conta registrada.
@@ -427,5 +433,5 @@ cat <<FIM
 
   Status ... cd $DEPLOY_DIR && docker compose ps
   Logs ..... cd $DEPLOY_DIR && docker compose logs -f api
-  Repetir .. sudo DOMAIN=$DOMAIN TAKE_OVER=$TAKE_OVER bash $DEPLOY_DIR/bootstrap.sh
+  Repetir .. sudo BRANCH=$BRANCH DOMAIN=$DOMAIN TAKE_OVER=$TAKE_OVER bash $DEPLOY_DIR/bootstrap.sh
 FIM

@@ -77,6 +77,18 @@ o sistema passou a viver em `intsoft.com.br`, e é esse o default dos scripts.
 
 ## Migrar o sistema completo para este servidor
 
+> **O ramo vai em dois lugares.** Nenhum dos comandos abaixo funciona com
+> `main` hoje: `deploy_site.sh`, `oci-new-instance.sh` e `ghost-api.mjs` não
+> existem lá, e `bootstrap.sh` está numa versão antiga apontada para
+> `comenta.com.br`. Como `curl -fsSL` sai com erro no 404 e o `bash` do outro
+> lado da pipe recebe entrada vazia, o comando **falha em silêncio**. Até o
+> merge, defina `ramo` e passe `BRANCH="$ramo"` junto — a URL escolhe a versão
+> do script, `BRANCH` escolhe o código que o servidor clona:
+>
+> ```bash
+> ramo=claude/exciting-thompson-4rhut2   # troque para main depois do merge
+> ```
+
 Ordem que funciona, sem derrubar o blog:
 
 1. **Crie os registros A** de `app`, `api` e `blog` apontando para
@@ -87,8 +99,8 @@ Ordem que funciona, sem derrubar o blog:
 
    ```bash
    ssh -i ~/.ssh/intsoft_ghost ubuntu@147.15.103.114 \
-     "curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/main/deploy/bootstrap.sh \
-        | sudo DOMAIN=intsoft.com.br TAKE_OVER=1 bash"
+     "curl -fsSL 'https://raw.githubusercontent.com/hebertpaes/comenta/$ramo/deploy/bootstrap.sh' \
+        | sudo BRANCH='$ramo' DOMAIN=intsoft.com.br TAKE_OVER=1 bash"
    ```
 
    O Ghost que já está lá **não é tocado**: o script detecta a porta 2368 ocupada,
@@ -127,11 +139,11 @@ O que **está** no git e pode ir para o Ghost da Oracle:
 ```bash
 # tema (e backup do conteúdo atual antes de qualquer coisa)
 ssh -i ~/.ssh/intsoft_ghost ubuntu@147.15.103.114 \
-  "curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/main/deploy/ghost_restaurar_hojemt.sh \
-     | sudo GHOST_ADMIN_API_KEY=id:secret bash"
+  "curl -fsSL 'https://raw.githubusercontent.com/hebertpaes/comenta/$ramo/deploy/ghost_restaurar_hojemt.sh' \
+     | sudo BRANCH='$ramo' GHOST_ADMIN_API_KEY='<id real>:<secret real>' bash"
 
 # tema + os 317 posts
-... | sudo GHOST_ADMIN_API_KEY=id:secret IMPORTAR_CONTEUDO=1 bash
+... | sudo BRANCH="$ramo" GHOST_ADMIN_API_KEY='<id real>:<secret real>' IMPORTAR_CONTEUDO=1 bash
 ```
 
 A chave sai em **Ghost → Settings → Integrations → Add custom integration**
@@ -156,7 +168,7 @@ conta Let's Encrypt, então não precisa de `EMAIL`:
 
 ```bash
 ssh -i ~/.ssh/intsoft_ghost ubuntu@147.15.103.114 \
-  "curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/main/deploy/deploy_site.sh | sudo TAKE_OVER=1 bash"
+  "curl -fsSL 'https://raw.githubusercontent.com/hebertpaes/comenta/$ramo/deploy/deploy_site.sh' | sudo BRANCH='$ramo' TAKE_OVER=1 bash"
 ```
 
 Para publicar outro ramo enquanto ele não for mesclado, troque o nome **nos
@@ -265,7 +277,7 @@ chaves e uma chave de deploy gerada ali, e instala o site (ou o sistema
 completo, com `STACK=full`) no primeiro boot:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/main/deploy/oci-new-instance.sh | bash
+curl -fsSL "https://raw.githubusercontent.com/hebertpaes/comenta/$ramo/deploy/oci-new-instance.sh" | bash
 ```
 
 Ao final ele imprime o IP, os comandos de acompanhamento e os três secrets

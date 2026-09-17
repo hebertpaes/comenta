@@ -6,7 +6,11 @@
 #
 #  Rodar no ORACLE CLOUD SHELL (já autenticado como dono do tenancy):
 #
-#    curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/main/deploy/oci-new-instance.sh | bash
+#    O ramo vai duas vezes: na URL (escolhe a versão do script) e em BRANCH
+#    (escolhe o código que o servidor clona). Hoje este arquivo não está em
+#    main, então "main" na URL dá 404 e o comando falha calado.
+#    ramo=claude/exciting-thompson-4rhut2   # troque para main depois do merge
+#    curl -fsSL "https://raw.githubusercontent.com/hebertpaes/comenta/$ramo/deploy/oci-new-instance.sh" | bash
 #
 #  Variáveis opcionais:
 #    SOURCE_INSTANCE_ID  instância modelo (default: a "ghost-blog" em sa-saopaulo-1)
