@@ -14,9 +14,14 @@
 # semente, não o acervo fotografado do portal — por isso a importação é opcional
 # e não roda sozinha.
 #
-# Uso, no servidor (como root):
-#   curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/main/deploy/ghost_restaurar_hojemt.sh \
-#     | sudo GHOST_ADMIN_API_KEY=id:secret bash
+# Uso, no servidor (como root). O RAMO aparece duas vezes de propósito: uma no
+# endereço de onde o script é baixado, outra em BRANCH, que é o ramo que ele
+# clona no servidor. Se os dois não baterem, o script baixa uma versão e usa
+# outra — por isso a variável vai junto no comando:
+#
+#   ramo=claude/exciting-thompson-4rhut2   # troque para main depois do merge
+#   curl -fsSL "https://raw.githubusercontent.com/hebertpaes/comenta/$ramo/deploy/ghost_restaurar_hojemt.sh" \
+#     | sudo BRANCH="$ramo" GHOST_ADMIN_API_KEY='<id real>:<secret real>' bash
 #
 # Variáveis:
 #   GHOST_ADMIN_API_KEY  id:secret (Ghost → Settings → Integrations → Add custom
@@ -27,7 +32,9 @@
 #   IMPORTAR_CONTEUDO=1  importa os 317 posts (o Ghost mescla por slug; posts
 #                        que já existem são ignorados, não duplicados)
 #   ATIVAR_TEMA=0        envia o tema mas não o ativa
-#   BRANCH / BASE        ramo e pasta do repositório (main, /srv/comenta)
+#   BRANCH / BASE        ramo e pasta do repositório (default main, /srv/comenta).
+#                        Hoje ghost-api.mjs só existe no ramo de trabalho, então
+#                        BRANCH é obrigatório até o merge em main.
 set -euo pipefail
 
 BRANCH="${BRANCH:-main}"
@@ -43,6 +50,13 @@ log(){ printf "\n\033[1;36m==> %s\033[0m\n" "$*"; }
 die(){ printf "\n\033[1;31mERRO: %s\033[0m\n" "$*" >&2; exit 1; }
 [ "$(id -u)" = "0" ] || die "rode como root (use sudo)."
 command -v node >/dev/null 2>&1 || die "node não encontrado (o Ghost precisa dele; rode o bootstrap.sh antes)."
+command -v zip >/dev/null 2>&1 || die "zip não encontrado — instale com: apt-get install -y zip"
+# "id:secret" é o texto de exemplo do cabeçalho. Colado como está, o Ghost
+# devolveria um 401 seco lá na frente, depois de já ter mexido no tema.
+case "$GHOST_ADMIN_API_KEY" in
+  id:secret|"<id real>:<secret real>")
+    die "GHOST_ADMIN_API_KEY=$GHOST_ADMIN_API_KEY é o exemplo do cabeçalho, não uma chave. Pegue a sua em Ghost → Settings → Integrations → Add custom integration (campo Admin API key)." ;;
+esac
 
 log "1/4 Repositório (ramo $BRANCH)"
 REPO_DIR="$BASE/comenta"
@@ -57,7 +71,8 @@ fi
 TEMA_DIR="$REPO_DIR/ghost/content/themes/hojemt"
 EXPORT_JSON="$TEMA_DIR/content/noticias.json"
 API="$REPO_DIR/deploy/ghost-api.mjs"
-[ -d "$TEMA_DIR" ] || die "tema não encontrado em $TEMA_DIR"
+[ -d "$TEMA_DIR" ] || die "tema não encontrado em $TEMA_DIR (ramo $BRANCH)"
+[ -f "$API" ] || die "deploy/ghost-api.mjs não existe no ramo $BRANCH. Ele ainda não foi para main — rode de novo com BRANCH=claude/exciting-thompson-4rhut2 (o mesmo ramo do endereço de onde você baixou este script)."
 echo "  commit: $(git -C "$REPO_DIR" rev-parse --short HEAD)"
 
 log "2/4 Ghost"
@@ -67,7 +82,8 @@ if [ -n "$GHOST_ADMIN_API_KEY" ]; then
   # é o caminho de volta (Ghost → Settings → Labs → Import content).
   BACKUP="/var/backups/ghost-antes-$(date +%Y%m%d%H%M%S).json"
   mkdir -p /var/backups
-  node "$API" export "$BACKUP" && chmod 600 "$BACKUP"
+  node "$API" export "$BACKUP" || die "não consegui exportar o conteúdo atual — parando aqui, para não mexer em nada sem caminho de volta."
+  chmod 600 "$BACKUP"
   echo "  backup do conteúdo atual: $BACKUP"
 else
   echo "  sem GHOST_ADMIN_API_KEY — sigo só com a cópia de arquivo do tema."
