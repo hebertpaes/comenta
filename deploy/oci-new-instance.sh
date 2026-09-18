@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # =============================================================================
 #  Cria uma instância NOVA na Oracle Cloud com a mesma configuração de outra
-#  (shape, OCPUs, memória, imagem, sub-rede, tamanho do boot volume) e instala
-#  o site do Comenta nela no primeiro boot.
+#  (shape, OCPUs, memória, imagem, sub-rede, tamanho do boot volume) e instala,
+#  no primeiro boot, o site do Comenta — ou um Ghost completo (STACK=ghost),
+#  como o de intsoft.com.br, para outro domínio (o caso de hojemt.com.br).
 #
 #  Rodar no ORACLE CLOUD SHELL (já autenticado como dono do tenancy):
 #
@@ -14,16 +15,28 @@
 #
 #  Variáveis opcionais:
 #    SOURCE_INSTANCE_ID  instância modelo (default: a "ghost-blog" em sa-saopaulo-1)
-#    NAME                nome da instância nova (default: comenta-site)
+#    NAME                nome da instância nova (default: comenta-site; hojemt
+#                        quando STACK=ghost)
+#    SHAPE / OCPUS / MEM sobrescrevem o que vem da instância modelo. Com SHAPE
+#                        diferente a imagem é escolhida de novo (o Ubuntu 24.04
+#                        mais recente compatível — um OCID x86 não sobe em A1).
+#                        Ex.: SHAPE=VM.Standard.A1.Flex OCPUS=2 MEM=4 (Always
+#                        Free, ARM) reproduz o tamanho da VM hmt da Azure.
 #    PUBKEYS             chaves públicas autorizadas no usuário ubuntu, uma por
 #                        linha (default: as chaves mac-intsoft e ghost-oci)
 #    BRANCH              ramo do repositório a publicar (default: main)
-#    DOMAINS             domínios do Nginx (default: intsoft.com.br www.intsoft.com.br)
+#    DOMAINS             domínios do Nginx (default: intsoft.com.br www.intsoft.com.br;
+#                        hojemt.com.br quando STACK=ghost)
 #    STACK               site  = só o site Next.js (deploy_site.sh, PM2 + Nginx)
 #                        full  = sistema completo em Docker: site, painel, API,
 #                                Postgres, Redis e Ghost (deploy/bootstrap.sh;
 #                                precisa dos subdomínios app., api. e blog.)
+#                        ghost = só o Ghost (MySQL + Nginx + systemd, tema
+#                                hojemt, HTTPS automático quando o DNS apontar)
+#                                pelo deploy/oci-cloud-init-ghost.sh
 #                        (default: site)
+#    EMAIL               e-mail do Let's Encrypt (STACK=ghost). Sem ele o
+#                        certificado fica pendente até editar /etc/ghost-ssl.env
 #    NO_DEPLOY=1         só cria a VM, sem instalar nada no primeiro boot
 #    DEPLOY_KEY          arquivo da chave de deploy gerada aqui no Cloud Shell
 #                        (default: ~/.ssh/comenta_deploy). A pública entra na VM;
@@ -38,20 +51,29 @@
 #      mais as suas (mac-intsoft e ghost-oci).
 #   3. Passa um cloud-init que instala o site (ou o sistema completo) com
 #      SKIP_SSL=1 — o DNS ainda aponta para a VM antiga; o certificado vem depois.
+#      No STACK=ghost o próprio cloud-init arma um cron que emite o certificado
+#      sozinho assim que o DNS resolver para a VM nova.
 #   4. Espera ficar RUNNING e imprime IP, comandos e os secrets para o GitHub.
 # =============================================================================
 set -euo pipefail
 
 SOURCE_INSTANCE_ID="${SOURCE_INSTANCE_ID:-ocid1.instance.oc1.sa-saopaulo-1.antxeljry6y5mtqcbljfilfkt2houqrctxob6yxeuf66mgzxmqja4xca6pwq}"
-NAME="${NAME:-comenta-site}"
 BRANCH="${BRANCH:-main}"
-DOMAINS="${DOMAINS:-intsoft.com.br www.intsoft.com.br}"
 NO_DEPLOY="${NO_DEPLOY:-0}"
 STACK="${STACK:-site}"
+EMAIL="${EMAIL:-}"
+SHAPE_OVERRIDE="${SHAPE:-}"; OCPUS_OVERRIDE="${OCPUS:-}"; MEM_OVERRIDE="${MEM:-}"
+if [ "$STACK" = "ghost" ]; then
+  NAME="${NAME:-hojemt}"
+  DOMAINS="${DOMAINS:-hojemt.com.br www.hojemt.com.br}"
+else
+  NAME="${NAME:-comenta-site}"
+  DOMAINS="${DOMAINS:-intsoft.com.br www.intsoft.com.br}"
+fi
 DEPLOY_KEY="${DEPLOY_KEY:-$HOME/.ssh/comenta_deploy}"
 PUBKEYS="${PUBKEYS:-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBnAMxEEjNz9WW32ieYln9jjyxFIj1zXuR/k8C0LTEAm mac-intsoft
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHifpcES/NUHc9sVlLTV//R7mv3/6fXCfLVABn+KsCZE ghost-oci}"
-case "$STACK" in site|full) ;; *) echo "STACK deve ser site ou full" >&2; exit 1;; esac
+case "$STACK" in site|full|ghost) ;; *) echo "STACK deve ser site, full ou ghost" >&2; exit 1;; esac
 
 log(){ printf "\n\033[1;36m==> %s\033[0m\n" "$*"; }
 die(){ printf "\n\033[1;31mERRO: %s\033[0m\n" "$*" >&2; exit 1; }
@@ -82,8 +104,21 @@ for k, v in campos.items():
     print(k + "=" + shlex.quote(v))
 PYSRC
 )"
-[ -n "$IMAGE" ] || die "a instância modelo não expõe image-id."
 [ -n "$COMP" ] && [ -n "$AD" ] && [ -n "$SHAPE" ] || die "a instância modelo veio sem compartment/AD/shape."
+[ -n "$OCPUS_OVERRIDE" ] && OCPUS="$OCPUS_OVERRIDE"
+[ -n "$MEM_OVERRIDE" ] && MEM="$MEM_OVERRIDE"
+if [ -n "$SHAPE_OVERRIDE" ] && [ "$SHAPE_OVERRIDE" != "$SHAPE" ]; then
+  # Shape diferente pode ser outra arquitetura (A1 = ARM): a imagem da modelo
+  # não serve. Pega o Ubuntu 24.04 mais recente que a Oracle lista como
+  # compatível com o shape pedido.
+  SHAPE="$SHAPE_OVERRIDE"
+  IMAGE="$(oci compute image list --compartment-id "$COMP" --shape "$SHAPE" \
+      --operating-system "Canonical Ubuntu" --operating-system-version "24.04" \
+      --sort-by TIMECREATED --sort-order DESC --query 'data[0].id' --raw-output 2>/dev/null || true)"
+  [ -n "$IMAGE" ] && [ "$IMAGE" != "null" ] || die "não achei imagem Ubuntu 24.04 para o shape $SHAPE nesta região."
+  echo "  shape sobrescrito: $SHAPE (imagem escolhida de novo)"
+fi
+[ -n "$IMAGE" ] || die "a instância modelo não expõe image-id."
 
 # --shape-config só vale para shape flexível. Num shape fixo (VM.Standard.E2.1.Micro,
 # o do free tier) a Oracle recusa o launch inteiro por causa desse parâmetro.
@@ -174,7 +209,10 @@ HOSTLABEL="$(printf '%s' "$NAME" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9' '
 # cloud-init: roda como root no primeiro boot, com log em /var/log/comenta-deploy.log.
 USER_DATA=""
 if [ "$NO_DEPLOY" != "1" ]; then
-  if [ "$STACK" = "full" ]; then
+  if [ "$STACK" = "ghost" ]; then
+    # DOMAIN é o primeiro nome; o próprio cloud-init cuida do www.
+    INSTALL_CMD="curl -fsSL \"https://raw.githubusercontent.com/hebertpaes/comenta/$BRANCH/deploy/oci-cloud-init-ghost.sh\" | BRANCH=\"$BRANCH\" DOMAIN=\"$(echo "$DOMAINS" | awk '{print $1}')\" EMAIL=\"$EMAIL\" bash"
+  elif [ "$STACK" = "full" ]; then
     INSTALL_CMD="curl -fsSL \"https://raw.githubusercontent.com/hebertpaes/comenta/$BRANCH/deploy/bootstrap.sh\" | BRANCH=\"$BRANCH\" DOMAIN=\"$(echo "$DOMAINS" | awk '{print $1}')\" SKIP_SSL=1 bash"
   else
     INSTALL_CMD="curl -fsSL \"https://raw.githubusercontent.com/hebertpaes/comenta/$BRANCH/deploy/deploy_site.sh\" | BRANCH=\"$BRANCH\" DOMAINS=\"$DOMAINS\" SKIP_SSL=1 bash"
@@ -218,6 +256,31 @@ for _ in $(seq 1 30); do
   sleep 5
 done
 [ -n "$NEW_IP" ] && [ "$NEW_IP" != "null" ] || die "a instância subiu mas ainda não tem IP público; veja no console."
+
+if [ "$STACK" = "ghost" ]; then
+  DOM="$(echo "$DOMAINS" | awk '{print $1}')"
+  cat <<TXT
+
+============================================================
+ Instância $NAME criada: $NEW_IP  — Ghost para $DOM
+
+ O cloud-init está instalando (MySQL, Nginx, Ghost, tema hojemt): 10–20 min.
+ Acompanhar:
+   ssh -i $DEPLOY_KEY ubuntu@$NEW_IP "sudo tail -f /var/log/ghost-install.log"
+ Ou do seu Mac:
+   ssh -i ~/.ssh/intsoft_ghost ubuntu@$NEW_IP
+
+ Quando o log disser "Concluído", no Cloudflare (zona $DOM):
+   A  @    $NEW_IP   nuvem CINZA
+   A  www  $NEW_IP   nuvem CINZA
+ O certificado sai sozinho em até 5 min depois que o DNS propagar
+ (EMAIL=${EMAIL:-VAZIO — sem e-mail não há certificado; edite /etc/ghost-ssl.env na VM}).
+ Depois: https://$DOM/ghost/ para criar a conta do dono, e o
+ /root/LEIA-ghost.txt da VM explica como importar os 317 posts.
+============================================================
+TXT
+  exit 0
+fi
 
 cat <<TXT
 

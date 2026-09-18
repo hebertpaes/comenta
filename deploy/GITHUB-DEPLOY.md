@@ -284,6 +284,45 @@ Ao final ele imprime o IP, os comandos de acompanhamento e os três secrets
 (`DEPLOY_HOST`, `DEPLOY_USER`, `DEPLOY_SSH_KEY`) que ligam o workflow Deploy
 à VM nova. A `ghost-blog` não é tocada.
 
+## hojemt.com.br numa VM nova na Oracle (Ghost igual ao de intsoft.com.br)
+
+O mesmo `deploy/oci-new-instance.sh`, com `STACK=ghost`, cria a VM e instala
+no primeiro boot um Ghost completo — MySQL, Nginx, systemd via ghost-cli, o
+tema `hojemt` do repositório, título/descrição/idioma/fuso do portal — e arma
+um cron que emite o certificado sozinho assim que o DNS apontar para a VM
+nova (`deploy/oci-cloud-init-ghost.sh`). No **Oracle Cloud Shell** (ícone
+`>_` no topo do console, região Brazil East):
+
+```bash
+ramo=claude/exciting-thompson-4rhut2   # troque para main depois do merge
+curl -fsSL "https://raw.githubusercontent.com/hebertpaes/comenta/$ramo/deploy/oci-new-instance.sh" \
+  | STACK=ghost BRANCH="$ramo" EMAIL=voce@exemplo.com bash
+```
+
+Por padrão clona o shape da `ghost-blog`. Para o tamanho da VM `hmt` da Azure
+(2 vCPU / 4 GiB) dentro do Always Free, acrescente
+`SHAPE=VM.Standard.A1.Flex OCPUS=2 MEM=4` (ARM; a imagem Ubuntu 24.04 é
+escolhida de novo para o shape). `NAME` muda o nome (default `hojemt`) e
+`DOMAINS` o domínio (default `hojemt.com.br www.hojemt.com.br`).
+
+Depois que o log da VM (`/var/log/ghost-install.log`) disser "Concluído":
+
+1. **Cloudflare, zona hojemt.com.br**: registros A `@` e `www` → IP da VM,
+   **nuvem cinza**. Hoje eles apontam (com proxy) para a VM da Azure, que está
+   parada — enquanto o proxy estiver ligado o cron nunca vê o IP certo e o
+   certificado não sai. Laranja só depois, com SSL/TLS "Full (strict)".
+2. `https://hojemt.com.br/ghost/` → conta do dono.
+3. Conteúdo, um dos dois caminhos:
+   - **Acervo real, da VM da Azure** (se ela ligar): na VM nova,
+     `sudo ORIGEM=hmt@20.55.8.18 bash /srv/comenta/comenta/deploy/ghost_migrar_de_outro_servidor.sh`
+     — clona o banco inteiro e o `content/` (fotos, temas, usuários e senhas
+     vêm junto). Pede a senha da origem uma vez; guarda o banco local anterior
+     em `/var/backups/` antes de trocar e recusa migrar se a origem tiver um
+     Ghost mais novo que o local.
+   - **Semente do repositório** (317 posts, 300 com imagem de placeholder):
+     `/root/LEIA-ghost.txt` na VM tem o comando do
+     `ghost_restaurar_hojemt.sh` com a Admin API key.
+
 ## Sem GitHub (na mão, no servidor)
 
 Veja "Deploy na mão, do seu Mac" acima: o mesmo script clona o repositório e
