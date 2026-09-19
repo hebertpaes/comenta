@@ -322,6 +322,12 @@ Depois que o log da VM (`/var/log/ghost-install.log`) disser "Concluído":
    - **Semente do repositório** (317 posts, 300 com imagem de placeholder):
      `/root/LEIA-ghost.txt` na VM tem o comando do
      `ghost_restaurar_hojemt.sh` com a Admin API key.
+   - **Só o conteúdo, sem SSH** (posts, tags, páginas, configurações): com uma
+     Admin API key de cada Ghost, `deploy/ghost_migrar_api.sh` exporta de um e
+     importa no outro pela Admin API — roda de qualquer lugar que alcance os
+     dois domínios. Não leva os arquivos de imagem (as URLs seguem apontando
+     para a origem), então serve quando as fotos são de banco/placeholder, não
+     para o acervo com fotos próprias.
 
 ## Sem GitHub (na mão, no servidor)
 
