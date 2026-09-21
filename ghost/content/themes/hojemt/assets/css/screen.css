@@ -3046,3 +3046,170 @@ body.drawer-active {
   font-size: 9px;
   color: #22c55e;
 }
+
+
+/* ===========================================================================
+   RESPONSIVO — CARDS, HERO, GRADE E ANÚNCIO
+   Camada final, mobile-first. Vem por último de propósito: sobrepõe os blocos
+   "correção definitiva" acima pela ordem da cascata, sem !important.
+   =========================================================================== */
+
+/* Grade fluida: quantas colunas de >=260px couberem (1 no celular, 2 no
+   tablet, 3 no notebook), e 4 fixas só na largura cheia. */
+.usat-section-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: clamp(12px, 2vw, 20px);
+}
+
+@media (min-width: 1101px) {
+  .usat-section-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tipografia que escala com a tela em vez de px fixo; palavra comprida
+   (nome de programa, URL) quebra em vez de vazar do card. */
+.usat-slide-title {
+  font-size: clamp(20px, 2.6vw + 8px, 30px);
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.usat-slide-excerpt {
+  font-size: clamp(14px, 0.4vw + 12px, 15.5px);
+}
+
+.usat-card-title {
+  font-size: clamp(15px, 0.5vw + 12px, 17px);
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.usat-card-excerpt {
+  font-size: clamp(13px, 0.3vw + 12px, 14px);
+}
+
+/* Autor + data: quando não cabem na mesma linha, quebram em vez de vazar. */
+.usat-card-meta {
+  flex-wrap: wrap;
+  row-gap: 4px;
+}
+
+.usat-section-head {
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+/* Zoom no hover só onde há mouse: no toque ele "gruda" depois do tap, e com
+   reduce-motion incomoda. */
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .usat-card:hover,
+  .usat-card:hover .usat-card-media img,
+  .usat-slide-media:hover img {
+    transform: none;
+  }
+}
+
+/* Pontos do slider: bolinha de 10px, mas área de toque de 24px. */
+.usat-slider-dot {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+}
+
+.usat-slider-dot::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border-radius: 999px;
+  background: var(--usat-border);
+  transition: background 0.2s ease, inset 0.2s ease;
+}
+
+.usat-slider-dot.active {
+  width: 34px;
+  border-radius: 0;
+  background: transparent;
+}
+
+.usat-slider-dot.active::before {
+  inset: 7px 0;
+  background: var(--usat-green);
+}
+
+.usat-slider-dot:focus-visible::before {
+  outline: 2px solid var(--usat-green);
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .usat-hero-container {
+    gap: 16px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
+  /* A foto da manchete continua 16:9, mas nunca toma mais que ~55% da tela. */
+  .usat-slide-media {
+    max-height: clamp(180px, 55vh, 420px);
+  }
+
+  .usat-slide-caption {
+    padding: 16px;
+  }
+
+  .usat-slider-controls {
+    padding: 0 16px 14px;
+  }
+
+  /* Setas no meio da FOTO (não do card), menores, longe do selo. O centro da
+     foto 16:9 num container de 100vw-32px fica em ~26vw. */
+  .usat-slider-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+    top: clamp(70px, 26vw, 190px);
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  .usat-slider-arrow.prev {
+    left: 8px;
+  }
+
+  .usat-slider-arrow.next {
+    right: 8px;
+  }
+
+  .usat-lead-badge {
+    top: 10px;
+    left: 10px;
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  .usat-card-body {
+    padding: 14px;
+  }
+
+  .usat-rail-box,
+  .usat-hero-side .usat-most-read {
+    padding: 16px;
+  }
+
+  /* Banner do topo: largura toda, altura proporcional ao criativo. Um criativo
+     quadrado continua com sobra dos lados — é o formato dele, não o CSS. */
+  .ad-leaderboard {
+    padding: 0 12px;
+    margin: 12px auto;
+  }
+
+  .ad-leaderboard .ad-banner {
+    max-height: clamp(90px, 48vw, 250px);
+  }
+
+  .ad-leaderboard img {
+    width: auto;
+    max-height: inherit;
+  }
+}
