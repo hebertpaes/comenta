@@ -6,10 +6,10 @@
 #
 #   1. o TEMA  — ghost/content/themes/hojemt (Hoje MT, USA TODAY design)
 #   2. o CONTEÚDO — ghost/content/themes/hojemt/content/noticias.json,
-#      um export do Ghost com 317 posts e 13 tags
+#      um export do Ghost com 183 posts e 13 tags
 #
-# LEIA ANTES DE IMPORTAR O CONTEÚDO: desses 317 posts, 300 usam as imagens de
-# placeholder do próprio tema (/assets/img/ph-1..4.svg) e 17 usam fotos de banco
+# LEIA ANTES DE IMPORTAR O CONTEÚDO: desses 183 posts, 300 usam as imagens de
+# placeholder do próprio tema (/assets/img/ph-1..4.svg) e 13 usam fotos de banco
 # (Unsplash). Nenhum traz foto de pauta nem crédito de fonte. É conteúdo de
 # semente, não o acervo fotografado do portal — por isso a importação é opcional
 # e não roda sozinha.
@@ -29,7 +29,7 @@
 #                        cópia de arquivo, mas a ativação e a importação de
 #                        conteúdo têm de ser feitas pelo admin.
 #   GHOST_ADMIN_URL      default http://127.0.0.1:2368
-#   IMPORTAR_CONTEUDO=1  importa os 317 posts (o Ghost mescla por slug; posts
+#   IMPORTAR_CONTEUDO=1  importa os 183 posts (o Ghost mescla por slug; posts
 #                        que já existem são ignorados, não duplicados)
 #   ATIVAR_TEMA=0        envia o tema mas não o ativa
 #   BRANCH / BASE        ramo e pasta do repositório (default main, /srv/comenta).
@@ -119,8 +119,8 @@ log "4/4 Conteúdo"
 if [ ! -f "$EXPORT_JSON" ]; then
   echo "  $EXPORT_JSON não existe — nada a importar."
 elif [ "$IMPORTAR_CONTEUDO" != "1" ]; then
-  echo "  Pulado. Os 317 posts do export NÃO foram importados."
-  echo "  São conteúdo de semente: 300 deles usam as imagens de placeholder do"
+  echo "  Pulado. Os 183 posts do export NÃO foram importados."
+  echo "  São conteúdo de semente: 170 deles usam as imagens de placeholder do"
   echo "  tema e nenhum tem crédito de fonte. Se é isso mesmo que você quer no ar,"
   echo "  rode de novo com IMPORTAR_CONTEUDO=1."
 elif [ -z "$GHOST_ADMIN_API_KEY" ]; then

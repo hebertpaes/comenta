@@ -134,7 +134,7 @@ O que **está** no git e pode ir para o Ghost da Oracle:
 | No repositório                                      | O que é                             |
 | --------------------------------------------------- | ----------------------------------- |
 | `ghost/content/themes/hojemt/`                      | tema Hoje MT (USA TODAY), v1.4.0    |
-| `ghost/content/themes/hojemt/content/noticias.json` | export do Ghost: 317 posts, 13 tags |
+| `ghost/content/themes/hojemt/content/noticias.json` | export do Ghost: 183 posts, 13 tags |
 
 ```bash
 # tema (e backup do conteúdo atual antes de qualquer coisa)
@@ -142,15 +142,15 @@ ssh -i ~/.ssh/intsoft_ghost ubuntu@147.15.103.114 \
   "curl -fsSL 'https://raw.githubusercontent.com/hebertpaes/comenta/$ramo/deploy/ghost_restaurar_hojemt.sh' \
      | sudo BRANCH='$ramo' GHOST_ADMIN_API_KEY='<id real>:<secret real>' bash"
 
-# tema + os 317 posts
+# tema + os 183 posts
 ... | sudo BRANCH="$ramo" GHOST_ADMIN_API_KEY='<id real>:<secret real>' IMPORTAR_CONTEUDO=1 bash
 ```
 
 A chave sai em **Ghost → Settings → Integrations → Add custom integration**
 (campo "Admin API Key", formato `id:secret`).
 
-> **Sobre os 317 posts.** Desses, 300 usam as imagens de placeholder do próprio
-> tema (`/assets/img/ph-1..4.svg`) e 17 usam fotos de banco (Unsplash). Nenhum
+> **Sobre os 183 posts.** Desses, 170 usam as imagens de placeholder do próprio
+> tema (`/assets/img/ph-1..4.svg`) e 13 usam fotos de banco (Unsplash). Nenhum
 > traz foto de pauta nem crédito de fonte — é conteúdo de semente, não o acervo
 > fotografado do portal. Por isso a importação **não roda sozinha**: só com
 > `IMPORTAR_CONTEUDO=1`. O script sempre exporta o conteúdo atual para
@@ -284,6 +284,25 @@ Ao final ele imprime o IP, os comandos de acompanhamento e os três secrets
 (`DEPLOY_HOST`, `DEPLOY_USER`, `DEPLOY_SSH_KEY`) que ligam o workflow Deploy
 à VM nova. A `ghost-blog` não é tocada.
 
+## Tirar posts duplicados de um Ghost no ar
+
+O portal apareceu com a mesma matéria repetida (mesmo título e imagem, slugs
+diferentes) — não é bug do tema: são posts duplicados no banco, criados por um
+gerador que repetia título/imagem. O `deploy/ghost-api.mjs` tem um comando que
+acha e remove essas cópias pela Admin API, mantendo a **mais antiga** de cada
+título. Roda de qualquer lugar que alcance o domínio; primeiro em seco:
+
+```bash
+GHOST_ADMIN_URL=https://hojemt.com.br GHOST_ADMIN_API_KEY='<id:secret>' \
+  node deploy/ghost-api.mjs dedupe            # só lista o que apagaria
+GHOST_ADMIN_URL=https://hojemt.com.br GHOST_ADMIN_API_KEY='<id:secret>' \
+  node deploy/ghost-api.mjs dedupe --apagar   # apaga de fato
+```
+
+A chave sai em Ghost → Settings → Integrations → Add custom integration. O
+seed do repositório (`noticias.json`) já foi deduplicado (era 317 posts com
+134 repetições; ficou 183), então uma importação nova não recria o problema.
+
 ## hojemt.com.br numa VM nova na Oracle (Ghost igual ao de intsoft.com.br)
 
 O mesmo `deploy/oci-new-instance.sh`, com `STACK=ghost`, cria a VM e instala
@@ -319,7 +338,7 @@ Depois que o log da VM (`/var/log/ghost-install.log`) disser "Concluído":
      vêm junto). Pede a senha da origem uma vez; guarda o banco local anterior
      em `/var/backups/` antes de trocar e recusa migrar se a origem tiver um
      Ghost mais novo que o local.
-   - **Semente do repositório** (317 posts, 300 com imagem de placeholder):
+   - **Semente do repositório** (183 posts, 170 com imagem de placeholder):
      `/root/LEIA-ghost.txt` na VM tem o comando do
      `ghost_restaurar_hojemt.sh` com a Admin API key.
    - **Só o conteúdo, sem SSH** (posts, tags, páginas, configurações): com uma

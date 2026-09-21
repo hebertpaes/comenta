@@ -10,6 +10,9 @@
 //   node ghost-api.mjs upload-theme <tema.zip>    envia o tema
 //   node ghost-api.mjs activate-theme <nome>      ativa o tema
 //   node ghost-api.mjs info                       site, versão e nº de posts
+//   node ghost-api.mjs dedupe [--apagar]          lista (ou apaga, com --apagar)
+//                                                 posts repetidos: mesmo título,
+//                                                 mantém o mais antigo
 //
 // Variáveis:
 //   GHOST_ADMIN_URL       default http://127.0.0.1:2368
@@ -127,6 +130,64 @@ switch (comando) {
       console.log(`  - ${a.rule || a.message || JSON.stringify(a).slice(0, 120)}`);
     break;
   }
+  case "dedupe": {
+    // Posts com o MESMO título normalizado são duplicata (o gerador porco criou
+    // vários com título/imagem iguais e slugs diferentes). Mantém o mais antigo
+    // de cada título e lista o resto; só apaga com --apagar (ou APAGAR=1).
+    const apaga = process.argv.includes("--apagar") || process.env.APAGAR === "1";
+    const norm = (t) => (t || "").replace(/\s+/g, " ").trim().toLowerCase();
+    let pagina = 1;
+    const todos = [];
+    // Paginação manual: não confio em limit=all em base grande.
+    for (;;) {
+      const r = JSON.parse(
+        await chama(
+          `posts/?limit=100&page=${pagina}&fields=id,title,slug,status,published_at,created_at`
+        )
+      );
+      todos.push(...(r.posts || []));
+      const p = r.meta?.pagination;
+      if (!p || !p.next) break;
+      pagina = p.next;
+    }
+    const grupos = new Map();
+    for (const p of todos) {
+      const k = norm(p.title);
+      if (!k) continue;
+      (grupos.get(k) || grupos.set(k, []).get(k)).push(p);
+    }
+    const quando = (p) => p.published_at || p.created_at || "";
+    let apagados = 0,
+      gruposDup = 0;
+    for (const [, lista] of grupos) {
+      if (lista.length < 2) continue;
+      gruposDup++;
+      // mais antigo primeiro: é o que fica
+      lista.sort((a, b) => String(quando(a)).localeCompare(String(quando(b))));
+      const [fica, ...sobra] = lista;
+      console.log(
+        `\n"${fica.title?.slice(0, 60)}" — ${lista.length} cópias, mantenho ${fica.slug}`
+      );
+      for (const p of sobra) {
+        if (apaga) {
+          await chama(`posts/${p.id}/`, { method: "DELETE" });
+          apagados++;
+          console.log(`  apagado: ${p.slug}`);
+        } else {
+          console.log(`  apagaria: ${p.slug} (${quando(p).slice(0, 10)})`);
+        }
+      }
+    }
+    const aRemover = todos.length - grupos.size;
+    if (!gruposDup) console.log("nenhum título repetido — nada a fazer.");
+    else if (apaga)
+      console.log(`\n${apagados} post(s) duplicado(s) apagado(s) em ${gruposDup} título(s).`);
+    else
+      console.log(
+        `\n${gruposDup} título(s) repetido(s), ${aRemover} post(s) a remover. Rode nova com --apagar para apagar.`
+      );
+    break;
+  }
   case "activate-theme": {
     if (!argumento) morre("uso: activate-theme <nome>");
     await chama(`themes/${encodeURIComponent(argumento)}/activate/`, { method: "PUT" });
@@ -135,7 +196,7 @@ switch (comando) {
   }
   default:
     console.log(
-      "uso: ghost-api.mjs info | export <f> | import <f> | upload-theme <zip> | activate-theme <nome>"
+      "uso: ghost-api.mjs info | export <f> | import <f> | upload-theme <zip> | activate-theme <nome> | dedupe [--apagar]"
     );
     process.exit(comando ? 1 : 0);
 }

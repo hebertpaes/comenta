@@ -276,7 +276,7 @@ if [ "$STACK" = "ghost" ]; then
  O certificado sai sozinho em até 5 min depois que o DNS propagar
  (EMAIL=${EMAIL:-VAZIO — sem e-mail não há certificado; edite /etc/ghost-ssl.env na VM}).
  Depois: https://$DOM/ghost/ para criar a conta do dono, e o
- /root/LEIA-ghost.txt da VM explica como importar os 317 posts.
+ /root/LEIA-ghost.txt da VM explica como importar os 183 posts.
 ============================================================
 TXT
   exit 0

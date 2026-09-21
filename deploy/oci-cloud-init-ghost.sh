@@ -26,7 +26,7 @@
 #                que deploy/ghost_restaurar_hojemt.sh usa depois)
 #
 #  Log em /var/log/ghost-install.log. No fim, /root/LEIA-ghost.txt lista o que
-#  ainda é manual: DNS, conta do dono e importação dos 317 posts.
+#  ainda é manual: DNS, conta do dono e importação dos 183 posts.
 # =============================================================================
 set -euo pipefail
 
@@ -222,11 +222,11 @@ Falta, nesta ordem:
    com SSL/TLS em "Full (strict)".
 2. Conta do dono: https://$DOMAIN/ghost/ (antes do DNS o painel não carrega
    pelo IP, porque ele busca os assets pela url configurada).
-3. Os 317 posts e as 13 tags do repositório: no painel, Settings → Integrations
+3. Os 183 posts e as 13 tags do repositório: no painel, Settings → Integrations
    → Add custom integration → copie a Admin API key e rode aqui:
      sudo BRANCH=$BRANCH BASE=$BASE GHOST_ADMIN_API_KEY='<id>:<secret>' \\
           IMPORTAR_CONTEUDO=1 bash $BASE/comenta/deploy/ghost_restaurar_hojemt.sh
-   (300 dos 317 posts usam as imagens de placeholder do tema; as fotos do
+   (170 dos 183 usam as imagens de placeholder do tema; as fotos do
    acervo não estão no repositório.)
 TXT
 log "Concluído — leia /root/LEIA-ghost.txt"
