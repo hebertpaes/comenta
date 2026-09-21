@@ -10,9 +10,11 @@
 //   node ghost-api.mjs upload-theme <tema.zip>    envia o tema
 //   node ghost-api.mjs activate-theme <nome>      ativa o tema
 //   node ghost-api.mjs info                       site, versão e nº de posts
-//   node ghost-api.mjs dedupe [--apagar]          lista (ou apaga, com --apagar)
-//                                                 posts repetidos: mesmo título,
-//                                                 mantém o mais antigo
+//   node ghost-api.mjs dedupe                     lista SUSPEITOS de duplicata
+//                                                 (mesmo título) com foto e resumo
+//   node ghost-api.mjs dedupe --apagar            apaga só CLONES (título, resumo e
+//                                                 foto iguais), mantendo o mais antigo
+//   node ghost-api.mjs dedupe --slugs=a,b         apaga exatamente estes slugs
 //
 // Variáveis:
 //   GHOST_ADMIN_URL       default http://127.0.0.1:2368
@@ -131,60 +133,92 @@ switch (comando) {
     break;
   }
   case "dedupe": {
-    // Posts com o MESMO título normalizado são duplicata (o gerador porco criou
-    // vários com título/imagem iguais e slugs diferentes). Mantém o mais antigo
-    // de cada título e lista o resto; só apaga com --apagar (ou APAGAR=1).
-    const apaga = process.argv.includes("--apagar") || process.env.APAGAR === "1";
+    // Mesmo título NÃO prova duplicata: em hojemt.com.br duas matérias
+    // diferentes saíram com a manchete "Feira em Fortaleza…" (fotos e resumos
+    // distintos). Então: título igual = SUSPEITO, só listado. Clone de verdade
+    // = título, resumo e foto iguais — esse sai com --apagar (fica o mais
+    // antigo). Para apagar um suspeito, o humano decide: --slugs=a,b.
+    const flags = process.argv.slice(3);
+    const apaga = flags.includes("--apagar") || process.env.APAGAR === "1";
+    const slugsArg = flags.find((f) => f.startsWith("--slugs="));
     const norm = (t) => (t || "").replace(/\s+/g, " ").trim().toLowerCase();
-    let pagina = 1;
+    // Mesma foto, com ou sem o caminho de redimensionamento do Ghost
+    // (/content/images/size/w720/format/webp/2026/09/x.webp → 2026/09/x.webp).
+    const foto = (p) =>
+      (p.feature_image || "")
+        .replace(/^.*\/content\/images\//, "")
+        .replace(/^(size\/w\d+\/|format\/\w+\/)+/, "")
+        .replace(/\?.*$/, "");
+    const quando = (p) => p.published_at || p.created_at || "";
     const todos = [];
-    // Paginação manual: não confio em limit=all em base grande.
-    for (;;) {
+    for (let pagina = 1; ;) {
       const r = JSON.parse(
         await chama(
-          `posts/?limit=100&page=${pagina}&fields=id,title,slug,status,published_at,created_at`
+          `posts/?limit=100&page=${pagina}&fields=id,title,slug,status,published_at,created_at,custom_excerpt,plaintext,feature_image`
         )
       );
       todos.push(...(r.posts || []));
-      const p = r.meta?.pagination;
-      if (!p || !p.next) break;
-      pagina = p.next;
+      const pg = r.meta?.pagination;
+      if (!pg || !pg.next) break;
+      pagina = pg.next;
+    }
+    if (slugsArg) {
+      const alvo = new Set(
+        slugsArg
+          .slice(8)
+          .split(",")
+          .map((x) => x.trim())
+          .filter(Boolean)
+      );
+      let n = 0;
+      for (const p of todos) {
+        if (!alvo.has(p.slug)) continue;
+        await chama(`posts/${p.id}/`, { method: "DELETE" });
+        console.log(`apagado: ${p.slug} — "${p.title?.slice(0, 60)}"`);
+        n++;
+      }
+      console.log(`${n} de ${alvo.size} slug(s) apagado(s).`);
+      break;
     }
     const grupos = new Map();
     for (const p of todos) {
       const k = norm(p.title);
-      if (!k) continue;
-      (grupos.get(k) || grupos.set(k, []).get(k)).push(p);
+      if (k) (grupos.get(k) || grupos.set(k, []).get(k)).push(p);
     }
-    const quando = (p) => p.published_at || p.created_at || "";
-    let apagados = 0,
-      gruposDup = 0;
+    let clones = 0,
+      suspeitos = 0,
+      apagados = 0;
     for (const [, lista] of grupos) {
       if (lista.length < 2) continue;
-      gruposDup++;
-      // mais antigo primeiro: é o que fica
       lista.sort((a, b) => String(quando(a)).localeCompare(String(quando(b))));
-      const [fica, ...sobra] = lista;
-      console.log(
-        `\n"${fica.title?.slice(0, 60)}" — ${lista.length} cópias, mantenho ${fica.slug}`
-      );
-      for (const p of sobra) {
-        if (apaga) {
-          await chama(`posts/${p.id}/`, { method: "DELETE" });
-          apagados++;
-          console.log(`  apagado: ${p.slug}`);
+      const [fica, ...resto] = lista;
+      const resumo = (p) => norm(p.custom_excerpt || (p.plaintext || "").slice(0, 200));
+      for (const p of resto) {
+        const clone = resumo(p) === resumo(fica) && foto(p) === foto(fica);
+        if (clone) {
+          clones++;
+          console.log(`\nCLONE  "${p.title?.slice(0, 60)}"`);
+          console.log(`  fica : ${fica.slug} (${quando(fica).slice(0, 10)})`);
+          if (apaga) {
+            await chama(`posts/${p.id}/`, { method: "DELETE" });
+            apagados++;
+            console.log(`  apagado: ${p.slug}`);
+          } else console.log(`  sairia: ${p.slug} (${quando(p).slice(0, 10)})`);
         } else {
-          console.log(`  apagaria: ${p.slug} (${quando(p).slice(0, 10)})`);
+          suspeitos++;
+          console.log(`\nSUSPEITO (mesmo título, conteúdo diferente) "${p.title?.slice(0, 60)}"`);
+          for (const q of [fica, p])
+            console.log(
+              `  ${q.slug} (${quando(q).slice(0, 10)}) foto=${foto(q) || "—"}\n     resumo: ${resumo(q).slice(0, 90) || "—"}`
+            );
+          console.log(`  decida você: --slugs=<o que sai>`);
         }
       }
     }
-    const aRemover = todos.length - grupos.size;
-    if (!gruposDup) console.log("nenhum título repetido — nada a fazer.");
-    else if (apaga)
-      console.log(`\n${apagados} post(s) duplicado(s) apagado(s) em ${gruposDup} título(s).`);
+    if (!clones && !suspeitos) console.log("nenhum título repetido — nada a fazer.");
     else
       console.log(
-        `\n${gruposDup} título(s) repetido(s), ${aRemover} post(s) a remover. Rode nova com --apagar para apagar.`
+        `\n${clones} clone(s)${apaga ? `, ${apagados} apagado(s)` : " (rode com --apagar para apagar)"}; ${suspeitos} suspeito(s) só listados.`
       );
     break;
   }
@@ -196,7 +230,7 @@ switch (comando) {
   }
   default:
     console.log(
-      "uso: ghost-api.mjs info | export <f> | import <f> | upload-theme <zip> | activate-theme <nome> | dedupe [--apagar]"
+      "uso: ghost-api.mjs info | export <f> | import <f> | upload-theme <zip> | activate-theme <nome> | dedupe [--apagar | --slugs=a,b]"
     );
     process.exit(comando ? 1 : 0);
 }

@@ -2,6 +2,63 @@
  * HOJE MT NEWS — Script Principal (USA TODAY Design System)
  */
 
+/**
+ * 0. Capa sem matéria repetida.
+ * Cada bloco da capa (hero, "Últimas", editorias, rankings) vem do seu próprio
+ * {{#get}}, e o Handlebars do Ghost não consegue excluir de um os ids de outro —
+ * então os mais recentes aparecem em vários. A limpeza é feita aqui, por URL
+ * (nunca por título: duas matérias diferentes podem ter a mesma manchete). A
+ * primeira ocorrência fica, em camadas: hero (nunca sai) → rankings/opinião/
+ * giro → grades das editorias → demais cards. Depois cada grade é cortada em
+ * data-max (4 por padrão; o section-block busca 12 justamente para sobrar
+ * depois da limpeza) e a seção que ficou com menos de 2 cards some. Mesma
+ * lógica que está em produção desde 2026-09-09. Só na capa.
+ */
+(() => {
+  if (!document.body.classList.contains("home-template")) return;
+  const chaveDe = (el) => {
+    for (const a of el.querySelectorAll("a[href]")) {
+      let caminho;
+      try {
+        caminho = new URL(a.getAttribute("href"), location.href).pathname;
+      } catch {
+        continue;
+      }
+      if (caminho === "/" || /^\/(tag|author)\//.test(caminho)) continue;
+      return caminho.replace(/\/+$/, "");
+    }
+    return null;
+  };
+  const camada = (el) => {
+    if (el.classList.contains("usat-slide")) return 0;
+    if (el.closest(".usat-section-grid")) return 2;
+    if (el.classList.contains("usat-card")) return 3;
+    return 1;
+  };
+  const todos = [
+    ...document.querySelectorAll(
+      "article.usat-slide, article.usat-card, article.usat-opinion-card, li.usat-ranked-item, li.curtinhas-item"
+    ),
+  ];
+  const vistos = new Set();
+  for (const el of todos) if (camada(el) === 0) vistos.add(chaveDe(el));
+  for (const nivel of [1, 2, 3]) {
+    for (const el of todos) {
+      if (camada(el) !== nivel) continue;
+      const chave = chaveDe(el);
+      if (!chave) continue;
+      if (vistos.has(chave)) el.remove();
+      else vistos.add(chave);
+    }
+  }
+  document.querySelectorAll(".usat-section-grid").forEach((grade) => {
+    const max = parseInt(grade.getAttribute("data-max") || "4", 10);
+    [...grade.querySelectorAll("article")].slice(max).forEach((c) => c.remove());
+    if (grade.querySelectorAll("article").length < 2)
+      grade.closest(".usat-section-block")?.remove();
+  });
+})();
+
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Data em Português Brasileiro no Topbar
   const topDate = document.getElementById("topDate");
@@ -125,9 +182,22 @@ document.addEventListener("DOMContentLoaded", () => {
       }, interval);
     };
 
-    if (prevBtn) prevBtn.addEventListener("click", () => { showSlide(currentIndex - 1); startAutoplay(); });
-    if (nextBtn) nextBtn.addEventListener("click", () => { showSlide(currentIndex + 1); startAutoplay(); });
-    dots.forEach((dot, idx) => dot.addEventListener("click", () => { showSlide(idx); startAutoplay(); }));
+    if (prevBtn)
+      prevBtn.addEventListener("click", () => {
+        showSlide(currentIndex - 1);
+        startAutoplay();
+      });
+    if (nextBtn)
+      nextBtn.addEventListener("click", () => {
+        showSlide(currentIndex + 1);
+        startAutoplay();
+      });
+    dots.forEach((dot, idx) =>
+      dot.addEventListener("click", () => {
+        showSlide(idx);
+        startAutoplay();
+      })
+    );
 
     if (pauseBtn) {
       pauseBtn.addEventListener("click", () => {
@@ -149,7 +219,9 @@ document.addEventListener("DOMContentLoaded", () => {
         navigator.clipboard.writeText(url).then(() => {
           const orig = btn.textContent;
           btn.textContent = "✓ Copiado!";
-          setTimeout(() => { btn.textContent = orig; }, 2500);
+          setTimeout(() => {
+            btn.textContent = orig;
+          }, 2500);
         });
       });
     });
@@ -173,14 +245,14 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="container usat-article-wrap">
               <article class="usat-article">
                   <header class="usat-article-head">
-                      <span class="usat-kicker-lg">${article.tag || 'CUIABÁ & MATO GROSSO'}</span>
+                      <span class="usat-kicker-lg">${article.tag || "CUIABÁ & MATO GROSSO"}</span>
                       <h1 class="usat-article-title">${article.title}</h1>
-                      ${article.excerpt ? `<p class="usat-article-sub">${article.excerpt}</p>` : ''}
+                      ${article.excerpt ? `<p class="usat-article-sub">${article.excerpt}</p>` : ""}
                       
                       <div class="usat-byline">
                           <span class="byline-name">Por <strong>Redação Hoje MT / Assessoria</strong></span>
                           <span class="byline-dot">•</span>
-                          <time class="byline-time">${article.date || 'Hoje'}</time>
+                          <time class="byline-time">${article.date || "Hoje"}</time>
                           <span class="byline-dot">•</span>
                           <span class="byline-rt">⏱️ 3 min de leitura</span>
                       </div>
@@ -188,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
                       <div class="usat-article-share">
                           <span class="share-label">Compartilhe:</span>
                           <div class="share-buttons">
-                              <a class="share-btn share-wa" href="https://wa.me/?text=${encodeURIComponent(article.title + ' ' + window.location.href)}" target="_blank" rel="noopener">WhatsApp</a>
+                              <a class="share-btn share-wa" href="https://wa.me/?text=${encodeURIComponent(article.title + " " + window.location.href)}" target="_blank" rel="noopener">WhatsApp</a>
                               <a class="share-btn share-x" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}&url=${encodeURIComponent(window.location.href)}" target="_blank" rel="noopener">𝕏 Twitter</a>
                               <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}" target="_blank" rel="noopener">Facebook</a>
                               <button class="share-btn share-copy js-copy-url" data-url="${window.location.href}">Copiar link</button>
@@ -198,7 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                   <figure class="usat-article-hero">
                       <img src="${article.image}" alt="${article.title}" />
-                      <figcaption class="usat-hero-caption">${article.caption || 'Foto: Assessoria / Prefeitura de Cuiabá'}</figcaption>
+                      <figcaption class="usat-hero-caption">${article.caption || "Foto: Assessoria / Prefeitura de Cuiabá"}</figcaption>
                   </figure>
 
                   <div class="gh-content usat-article-content">

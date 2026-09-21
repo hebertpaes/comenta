@@ -8,9 +8,11 @@
         <a class="usat-section-more" href="{{@site.url}}/tag/{{slug}}/">Ver mais em {{titulo}} →</a>
     </div>
 
-    {{#get "posts" include="tags,authors" filter=filter limit="4" order="published_at desc" as |items|}}
+    {{!-- Busca 12 e mostra 4 (data-max): o antirrepetição do main.js tira daqui o
+         que já apareceu no hero e em "Últimas", e ainda sobra para encher a grade. --}}
+    {{#get "posts" include="tags,authors" filter=filter limit="12" order="published_at desc" as |items|}}
         {{#if items}}
-            <div class="usat-section-grid">
+            <div class="usat-section-grid" data-max="4">
                 {{#foreach items}}
                     {{> article-card size="compact"}}
                 {{/foreach}}

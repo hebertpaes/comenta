@@ -286,22 +286,30 @@ Ao final ele imprime o IP, os comandos de acompanhamento e os três secrets
 
 ## Tirar posts duplicados de um Ghost no ar
 
-O portal apareceu com a mesma matéria repetida (mesmo título e imagem, slugs
-diferentes) — não é bug do tema: são posts duplicados no banco, criados por um
-gerador que repetia título/imagem. O `deploy/ghost-api.mjs` tem um comando que
-acha e remove essas cópias pela Admin API, mantendo a **mais antiga** de cada
-título. Roda de qualquer lugar que alcance o domínio; primeiro em seco:
+Cuidado com "mesmo título = duplicado": em hojemt.com.br duas matérias
+diferentes saíram com a manchete "Feira em Fortaleza…" (fotos e resumos
+distintos, slug `-2`). Por isso o `deploy/ghost-api.mjs dedupe` separa:
+
+- **clone** — título, resumo e foto iguais → sai com `--apagar` (fica o mais
+  antigo);
+- **suspeito** — só o título igual → é listado com foto e resumo dos dois, e
+  quem decide é você: `--slugs=<slug-que-sai>`.
 
 ```bash
 GHOST_ADMIN_URL=https://hojemt.com.br GHOST_ADMIN_API_KEY='<id:secret>' \
-  node deploy/ghost-api.mjs dedupe            # só lista o que apagaria
+  node deploy/ghost-api.mjs dedupe                 # só lista clones e suspeitos
 GHOST_ADMIN_URL=https://hojemt.com.br GHOST_ADMIN_API_KEY='<id:secret>' \
-  node deploy/ghost-api.mjs dedupe --apagar   # apaga de fato
+  node deploy/ghost-api.mjs dedupe --apagar        # apaga só os clones
+GHOST_ADMIN_URL=https://hojemt.com.br GHOST_ADMIN_API_KEY='<id:secret>' \
+  node deploy/ghost-api.mjs dedupe --slugs=feira-em-fortaleza-...-2   # um suspeito, por decisão sua
 ```
 
-A chave sai em Ghost → Settings → Integrations → Add custom integration. O
-seed do repositório (`noticias.json`) já foi deduplicado (era 317 posts com
-134 repetições; ficou 183), então uma importação nova não recria o problema.
+Já a matéria que aparece **duas vezes na capa com a mesma URL** (a manchete do
+hero de novo em "Últimas", a de "Últimas" de novo na editoria) não é problema
+do banco: é o `home.hbs`, que monta cada bloco com o seu próprio `{{#get}}` e
+os mais recentes se repetem. O `assets/js/main.js` do tema remove, na capa, a
+segunda ocorrência de cada URL (a primeira fica). Entra no ar quando o tema
+for reenviado.
 
 ## hojemt.com.br numa VM nova na Oracle (Ghost igual ao de intsoft.com.br)
 

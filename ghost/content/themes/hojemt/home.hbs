@@ -83,7 +83,7 @@
             </div>
             <span class="usat-section-badge-live">COBERTURA 24H</span>
         </div>
-        <div class="usat-section-grid">
+        <div class="usat-section-grid" data-max="12">
             {{#get "posts" include="tags,authors" filter="tag:-hash-ad" limit="12" order="featured desc, published_at desc" as |recent|}}
                 {{#foreach recent}}
                     {{> article-card size="compact"}}
@@ -98,6 +98,7 @@
 
 {{!-- ===== TODAS AS EDITORIAS DE MATO GROSSO ===== --}}
 <div class="container usat-sections-container">
+    {{> section-block slug="eleicoes" titulo="Eleições 2026" filter="tag:eleicoes+tag:-hash-ad"}}
     {{> section-block slug="politica" titulo="Política &amp; Poder" filter="tag:politica+tag:-hash-ad"}}
     {{> section-block slug="cidades" titulo="Cidades &amp; Mato Grosso" filter="tag:cidades+tag:-hash-ad"}}
     {{> section-block slug="economia" titulo="Economia &amp; Negócios" filter="tag:economia+tag:-hash-ad"}}
@@ -106,4 +107,5 @@
     {{> section-block slug="esportes" titulo="Esportes &amp; Competições" filter="tag:esportes+tag:-hash-ad"}}
     {{> section-block slug="saude" titulo="Saúde, Fitness &amp; Bem-Estar" filter="tag:saude+tag:-hash-ad"}}
     {{> section-block slug="cultura" titulo="Cultura, Lazer &amp; Turismo" filter="tag:cultura+tag:-hash-ad"}}
+    {{> section-block slug="mundo" titulo="Brasil &amp; Mundo" filter="tag:mundo+tag:-hash-ad"}}
 </div>
