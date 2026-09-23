@@ -1,113 +1,145 @@
 ---
-titulo: "Rubio só entrou no plenário da ONU depois do discurso de Lula — e não conseguiu falar com ele na saída"
+titulo: "Agenda oficial dos EUA: Rubio seguia Trump durante a abertura da ONU por Lula"
 tags: [mundo, politica, onu, eleicoes]
 status: draft
-origem: "Reel do @diario360 (22/09/2026), que cita a GloboNews"
+origem: "Reel do @diario360 (22/09/2026) sobre a ausência de Rubio no plenário; apuração refeita só com agências internacionais e documentos oficiais"
 destino: "Instagram do HOJE MT (card + legenda abaixo) e, se aprovado, post no portal"
 ---
 
+> **Método.** Esta versão descarta as matérias brasileiras que reproduziam o
+> vídeo viral e se apoia em três camadas: (1) documentos oficiais — agenda
+> pública do Departamento de Estado, registro da ONU (UN News, UN Web TV);
+> (2) agências — AP, AFP e Reuters (via Al Jazeera e France 24), EFE (via
+> Infobae), Bloomberg (título/lide); (3) o que as agências **não**
+> reportaram, checado uma a uma. O HOJE MT é a fonte do cruzamento.
+
 ## O que está documentado
 
-**Lula abriu o debate geral.** Em **22 de setembro de 2026**, o presidente Luiz
-Inácio Lula da Silva foi o primeiro chefe de Estado a discursar na 81ª
-Assembleia Geral da ONU, em Nova York — tradição brasileira desde 1955. Falou
-antes de Donald Trump. (CNN Brasil, O Tempo; íntegra oficial no site da ONU.)
+**1. Lula abriu o Debate Geral; Trump falou em seguida.** Em 22 de setembro
+de 2026, Lula foi o primeiro chefe de Estado a discursar na 81ª Assembleia
+Geral, em Nova York — tradição brasileira desde 1955 —, e os EUA, país-sede,
+falam logo depois. O discurso durou **22min57s** (registro oficial do UN Web
+TV). A UN News registra o tom institucional: a ONU precisa voltar a ser um
+"templo da paz"; "somos todos reféns da inação do Conselho de Segurança";
+"ninguém está acima da lei".
 
-**Rubio não acompanhou o discurso.** O secretário de Estado dos EUA, Marco
-Rubio, **não estava no plenário durante a fala de Lula** e entrou depois do
-encerramento. A informação é do relato da GloboNews reproduzido pelo
-@diario360; o Terra registra, em texto próprio: "O secretário norte-americano
-não acompanhou a fala de Lula na abertura da Assembleia Geral da ONU."
+**2. O recado contra interferência, nas agências.** A AP (Nayara Batschke,
+Nova York) registra: _"We will not allow the enemies of democracy, whether
+domestic or foreign, to undermine popular will"_; _"We are once again
+witnessing external interference in electoral processes"_; _"Brazil is
+nobody's backyard"_; e que, "apesar das tarifas maciças", o país baterá
+recorde de exportações. AFP e Reuters (via Al Jazeera): _"Brazilian democracy
+belongs to Brazilians"_, _"Brazil will remain a sovereign country"_, _"We do
+not need aircraft carriers watching our waters"_, _"The feeling that moves me
+today is indignation"_. A EFE: _"La democracia brasileña pertenece a los
+brasileños. Brasil continuará siendo un país soberano"_; _"Nadie, nadie nos
+alejará de ese camino"_; eleição como escolha entre "democracia e
+negacionismo"; defesa do Pix. Lula **não citou Trump nem os EUA pelo nome**
+(Al Jazeera/Reuters).
 
-**A tentativa de aproximação, na saída.** Depois dos discursos de Lula e de
-Trump, um vídeo gravado dentro do plenário mostra Rubio tentando se aproximar
-de Lula, que deixava o local acompanhado do chanceler **Mauro Vieira** e do
-assessor-chefe **Celso Amorim**. Segundo o Correio Braziliense, "o secretário
-de Estado chegou a acelerar o passo para alcançar o petista, mas não conseguiu
-abordar diretamente o chefe do Executivo brasileiro. Na sequência, dirigiu-se
-ao chanceler." O Terra descreve que Lula "olha para trás mas não corresponde"
-e segue em direção contrária. O NC News, com base em relatos de pessoas que
-acompanhavam as delegações, diz que Lula cumprimentou outra pessoa e que a
-comitiva não interrompeu o deslocamento; **nenhum encontro formal ocorreu**.
+**3. Onde Rubio estava, pela versão oficial.** A **agenda pública do
+Departamento de Estado de 22/09** diz, textualmente: _"Secretary Rubio is on
+travel to New York… Secretary Rubio follows President Trump's schedule in New
+York City, New York."_ O único compromisso próprio listado é às **14h**:
+reunião com chefes de Estado e chanceleres do "Escudo das Américas". Ou seja:
+pela agenda oficial, na manhã do discurso de Lula o secretário **acompanhava a
+programação do presidente Trump** — que era o orador seguinte.
 
-**O que Lula disse.** No discurso, sem citar os EUA nominalmente, criticou
-"tentativas de interferência externa nas eleições brasileiras", mencionou o
-"tarifaço" (sobretaxas de 25% e 12,5% sobre produtos brasileiros) e afirmou
-que o país baterá recorde de exportações mesmo assim. A frase que virou
-manchete: **"O Brasil não cabe no quintal de ninguém."** Fora do discurso,
-sobre Rubio, disse: "Agora ele tem um cidadão que não gosta do Brasil, não
-gosta da América Latina." (Terra)
+**4. Contexto, pelas agências.** AFP (17/09, Brasília): Lula disse que iria à
+ONU "conversar com Trump e dizer: não se meta nas eleições do Brasil"; duas
+rodadas de tarifas em **julho de 2026**, depois da primeira rodada de 2025,
+imposta em retaliação ao julgamento de Jair Bolsonaro; nenhum encontro
+bilateral Lula–Trump agendado. AP: Bolsonaro cumpre pena de **27 anos** por
+tentativa de golpe; o governo Trump o apoiou publicamente e designou dois
+grupos criminosos brasileiros como organizações terroristas, o que Lula
+rejeitou. Al Jazeera/Reuters: eleição em **4 de outubro**; principal rival,
+o senador Flávio Bolsonaro; trechos do discurso de Trump divulgados pela Casa
+Branca falavam em usar o "poderio militar incomparável" dos EUA para proteger
+interesses americanos no Hemisfério Ocidental. Bloomberg (título): "Lula
+warns against meddling at UN as Trump looms over vote".
 
-**Contexto.** O episódio ocorre a **12 dias do primeiro turno** das eleições
-brasileiras e em meio a tensão entre os governos: tarifas, críticas de Rubio à
-gestão Lula, e acusações do governo brasileiro de interferência dos EUA em
-assuntos internos. (Correio Braziliense, Terra, O Tempo.)
+## O que as agências NÃO reportaram — e isso é notícia
 
-## O que é interpretação — e não está provado
-
-- **"Distanciamento diplomático"** e **"deixou no vácuo"** são leituras dos
-  veículos e das redes, não fatos. Não há registro de que a ausência de Rubio
-  durante o discurso tenha sido deliberada.
-- A agenda de Rubio naquele dia incluía, à tarde, reunir os países da
-  iniciativa "Escudo das Américas" (NPR, AS/COA) — isso **não** explica a
-  ausência durante a fala de Lula, que foi de manhã, e nenhum veículo a apresenta
-  como explicação. Fica só como contexto de agenda.
+- **Nenhuma** das agências consultadas (AP, AFP, Reuters, EFE) nem a UN News
+  menciona a ausência de Rubio no plenário ou a cena do corredor em que ele
+  se aproxima de Lula na saída e não é atendido. A cena existe em vídeo e
+  circulou em veículos brasileiros e nas redes (origem: relato da GloboNews
+  reproduzido pelo @diario360), mas **não entrou no noticiário
+  internacional** do dia, dominado por Trump, Irã, Groenlândia e Cuba.
+- "Deixou no vácuo" e "distanciamento diplomático" são leituras, não fatos.
+  O único documento que fala do paradeiro de Rubio — a agenda oficial —
+  aponta para o contrário de um gesto deliberado: ele seguia o presidente.
 
 ## O outro lado
 
-- **Departamento de Estado:** até o fechamento desta pauta **não localizamos
-  explicação oficial** sobre a ausência de Rubio no plenário nem sobre a
-  tentativa de aproximação. Um resumo automático de busca atribuiu uma fala a
-  uma "porta-voz Amanda Roberson"; **nenhuma das seis matérias consultadas
-  contém essa declaração** — por isso ela não entra no texto.
-- **Itamaraty / Planalto:** sem manifestação oficial sobre o episódio nas
-  fontes consultadas; só a fala de Lula sobre Rubio citada acima.
+- **Departamento de Estado:** a agenda pública é a única manifestação oficial
+  localizada; não há nota ou briefing sobre o episódio. (Uma fala atribuída
+  por um resumo de busca a uma "porta-voz Amanda Roberson" não existe em
+  nenhuma fonte consultada e **não entra**.)
+- **Casa Branca / Trump:** nos trechos oficiais do discurso de 22/09/2026
+  divulgados pela Casa Branca ("While Others Have Talked, I Have Acted"),
+  **nenhuma menção ao Brasil**; os temas são Irã, cartéis, Cuba, Venezuela,
+  imigração, IA. **Armadilha checada:** a frase "Brazil now faces major
+  tariffs… I was walking in and the leader of Brazil was walking out" que
+  circula em transcrições é do discurso de **23/09/2025** (Rev), não deste.
+- **Planalto / Itamaraty:** sem nota oficial sobre a cena do corredor nas
+  fontes internacionais.
 
-## Por que isso importa
+## Por que isso importa para Mato Grosso
 
-É a imagem mais concreta, até agora, do estado da relação entre os dois
-governos às vésperas da eleição: o chefe da diplomacia americana não assistiu
-ao discurso do presidente brasileiro e, quando procurou contato, não foi
-atendido. Para o leitor de Mato Grosso, o pano de fundo é econômico — o
-"tarifaço" atinge diretamente as exportações do estado.
+O pano de fundo é econômico: as duas rodadas de tarifas de julho atingem
+exportações que saem daqui — soja, carne, algodão. A leitura "Rubio esnobou
+Lula" vende; a leitura documentada é mais seca e mais útil: o governo
+americano manteve o secretário colado ao presidente, falou em "poderio
+militar" no hemisfério e não abriu bilateral. É esse o estado da relação a
+12 dias da eleição.
 
 ### Fontes
 
-- Reel do @diario360, 22/09/2026 (texto: @jornalista.rodolfo.oliveira; vídeo: Sam Pancher), citando a GloboNews — https://www.instagram.com/reel/DdmbUKNpizX/
-- Correio Braziliense, "Presidente Lula deixa Marco Rubio 'no vácuo' após discurso na ONU", 22/09/2026, 14h20, Armando Holanda — https://www.correiobraziliense.com.br/politica/2026/09/7505880-presidente-lula-deixa-marco-rubio-no-vacuo-apos-discurso-na-onu.html
-- Terra, "Marco Rubio, secretário de Estado dos EUA, tenta se aproximar de Lula na Assembleia da ONU", 22/09/2026, 16h18 — https://www.terra.com.br/noticias/mundo/marco-rubio-secretario-de-estado-dos-eua-tenta-se-aproximar-de-lula-na-assembleia-da-onu,0a5def8f5aa5b6bc03b8650ade678cb64m5mqgau.html
-- Metrópoles, "Lula e Rubio se aproximam na ONU, mas não se cumprimentam" — https://www.metropoles.com/mundo/lula-e-rubio-se-aproximam-na-onu-mas-nao-se-cumprimentam
-- NC News, 22/09/2026, 18h58 — https://ncnews.com.br/2026/09/22/marco-rubio-tenta-gesto-lula-onu-barrado-chanceler/
-- O Tempo, "'Brasil não cabe no quintal de ninguém': veja os principais recados de Lula na ONU" — https://www.otempo.com.br/eleicoes/2026/presidentes/2026/9/22/brasil-nao-cabe-no-quintal-de-ninguem-veja-os-principais-recados-de-lula-na-onu
-- CNN Brasil, "Lula discursa na Assembleia da ONU, defende Pix e critica guerras" — https://www.cnnbrasil.com.br/internacional/lula-discurso-assembleia-geral-onu-2026/
-- Íntegra do discurso (ONU) — https://gadebate.un.org/sites/default/files/gastatements/80/br_pt.pdf
-- NPR, "What to know as world leaders converge at the United Nations this week" (agenda de Rubio) — https://www.npr.org/2026/09/21/nx-s1-5971262/united-nations-general-assembly
+- Departamento de Estado dos EUA, _Public Schedule – September 22, 2026_ — https://www.state.gov/releases/office-of-the-spokesman/2026/09/public-schedule-september-22-2026/
+- UN Web TV, _Brazil – General Debate, 81st Session_ (22/09/2026, 22min57s) — https://webtv.un.org/en/asset/k17/k17a6dcz8r
+- UN News, _Diplomacy is the way to address global challenges, Brazil tells General Assembly_ — https://news.un.org/en/story/2026/09/1168395
+- AP (Nayara Batschke), _Brazil's Lula warns against foreign interference in elections…_, via PBS — https://www.pbs.org/newshour/world/brazils-lula-warns-against-foreign-interference-in-elections-urges-leaders-to-respond-to-global-conflicts
+- Al Jazeera, com AFP e Reuters, _Lula warns against foreign interference in Brazil election at UN_ — https://www.aljazeera.com/news/2026/9/22/lula-warns-against-foreign-interference-defends-brazils-sovereignty-at-un
+- AFP via France 24 (17/09), _Lula says he will go to UN to tell Trump to 'stay out'…_ — https://www.france24.com/en/live-news/20260917-lula-says-he-will-go-to-un-to-tell-trump-to-stay-out-of-brazil-s-elections
+- EFE via Infobae, _Lula convierte la Asamblea de la ONU en una trinchera electoral…_ — https://www.infobae.com/america/agencias/2026/09/22/lula-convierte-la-asamblea-de-la-onu-en-una-trinchera-electoral-por-la-soberania-de-brasil/
+- Bloomberg, _Brazil Election: Lula Warns Against Meddling at UN as Trump Looms Over Vote_ (título/lide; paywall) — https://www.bloomberg.com/news/articles/2026-09-22/brazil-election-lula-warns-against-meddling-at-un-as-trump-looms-over-vote
+- Origem da pauta: reel do @diario360 (22/09/2026), citando a GloboNews — https://www.instagram.com/reel/DdmbUKNpizX/
+
+> Removidas desta versão: Correio Braziliense, Terra, Metrópoles, NC News,
+> O Tempo, CNN Brasil (usadas na 1ª apuração; derivavam do vídeo viral).
+> Corrigido: a "íntegra do discurso" citada antes (`gastatements/80/br_pt.pdf`)
+> é o discurso de **2025**; a ONU ainda não publicou o PDF da sessão 81.
 
 ### Card do Instagram
 
-Gerado no Canva, tipográfico (sem imagem de pessoas), 1080×1350, com kicker
-"Mundo · Assembleia Geral da ONU", a manchete, o subtítulo e o rodapé de fontes.
-Design: `DAHWBZcDYsU` — https://www.canva.com/d/eshxxeKRseYg2ac
+Canva `DAHWBZcDYsU`, 1080×1350 — https://www.canva.com/d/eshxxeKRseYg2ac
+Kicker "Mundo · Assembleia Geral da ONU"; manchete "Agenda oficial dos EUA: Rubio
+seguia Trump"; subtítulo e rodapé de fontes conforme a legenda.
 
 ### Legenda para o Instagram (≤ 2.200 caracteres)
 
-Rubio só entrou no plenário da ONU depois do discurso de Lula.
+Agenda oficial dos EUA: Rubio seguia Trump.
 
-O secretário de Estado dos EUA, Marco Rubio, não acompanhou a fala do presidente brasileiro na abertura da Assembleia Geral, nesta terça (22), em Nova York — entrou no plenário depois do encerramento, segundo relato da GloboNews.
+Viralizou a cena de Marco Rubio, secretário de Estado dos EUA, fora do plenário durante o discurso de Lula na abertura da Assembleia Geral da ONU, nesta terça (22), e depois tentando se aproximar do presidente na saída. O HOJE MT foi aos documentos e às agências.
 
-Mais tarde, na saída, um vídeo gravado dentro do plenário mostra Rubio tentando se aproximar de Lula, que caminhava com o chanceler Mauro Vieira e o assessor Celso Amorim. Rubio acelerou o passo, mas não conseguiu abordar o presidente e se dirigiu ao chanceler. Não houve encontro.
+📄 A agenda pública do Departamento de Estado de 22/09 diz, textualmente, que Rubio "segue a programação do presidente Trump em Nova York". Trump era o orador seguinte a Lula. O único compromisso próprio de Rubio no dia foi às 14h.
 
-No discurso, Lula criticou "tentativas de interferência externa nas eleições brasileiras" e o "tarifaço" sobre produtos do país: "O Brasil não cabe no quintal de ninguém."
+🎙️ Lula abriu o debate geral (22min57s, registro da ONU) e, sem citar Trump pelo nome, avisou: "não permitiremos que inimigos da democracia, internos ou externos, minem a vontade popular"; "o Brasil não é quintal de ninguém" (AP, AFP/Reuters, EFE).
 
-Até a publicação, não havia explicação oficial do Departamento de Estado sobre a ausência.
+🌐 Nenhuma agência internacional — AP, AFP, Reuters, EFE — nem a UN News registrou o "vácuo". O noticiário do dia foi Trump, Irã, Groenlândia e Cuba.
 
-Fontes: GloboNews, Correio Braziliense, Terra, Metrópoles.
+🇺🇸 Nos trechos do discurso de Trump divulgados pela Casa Branca, nenhuma menção ao Brasil.
 
-#HojeMT #ONU #Lula #Rubio #Política #Brasil #EstadosUnidos #MatoGrosso
+📌 Contexto: duas rodadas de tarifas dos EUA em julho, eleição em 4 de outubro, nenhum encontro bilateral Lula–Trump agendado (AFP).
+
+Fontes: Departamento de Estado dos EUA · ONU (UN Web TV, UN News) · AP · AFP/Reuters · EFE. Apuração: HOJE MT.
+
+#HojeMT #ONU #Lula #Rubio #Trump #Política #Brasil #EstadosUnidos #MatoGrosso
 
 ### Checagem pendente antes de publicar
 
-- [ ] Localizar o trecho original da GloboNews (vídeo ou texto no g1) que diz que Rubio entrou só após o discurso — hoje a base é o relato do @diario360 e a frase do Terra.
-- [ ] Procurar manifestação oficial do Departamento de Estado (briefing de 22 ou 23/09) — se houver, incluir; se não, manter "não houve explicação oficial até a publicação".
-- [ ] Confirmar o horário do discurso de Lula (manhã) versus a reunião do "Escudo das Américas" (tarde), antes de qualquer menção à agenda.
-- [ ] Revisar a frase de Lula sobre Rubio ("um cidadão que não gosta do Brasil") — o Terra a traz; confirmar contexto (entrevista? quando?).
+- [ ] Transcrição integral do discurso de Trump de 2026 (a Casa Branca publicou só trechos): confirmar que não há menção ao Brasil fora dos trechos.
+- [ ] Confirmar no vídeo do UN Web TV (Brasil, 22min57s) se as cadeiras da delegação dos EUA aparecem vazias ou ocupadas — hoje a ausência de Rubio vem do relato da GloboNews e da agenda oficial, não de imagem verificada por nós.
+- [ ] PDF oficial da sessão 81 (gadebate.un.org) quando a ONU publicar; substituir as citações via agências pela íntegra em português.
+- [ ] Reação do Itamaraty/Planalto à cena do corredor, se vier nota oficial.
