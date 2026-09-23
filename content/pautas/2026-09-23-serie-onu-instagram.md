@@ -226,6 +226,30 @@ Fontes: EFE · UN News · UN Web TV. Apuração: HOJE MT.
 
 Conta `instagramPageId 17841460614185827` (HojeMT), via Zapier. Cards 1080×1350 exportados do Canva (jpg, q92). Os textos dos cards e as legendas acima são os publicados.
 
+### Padrão dos cards: retrato em círculo (a partir de 23/09)
+
+Quando houver foto licenciada da pessoa central da matéria, o card leva um
+retrato redondo (220 px, anel verde `#06a14e`) no canto superior direito, sem
+tocar no chapéu nem na manchete, e o crédito da foto vai na segunda linha do
+rodapé. Sem foto disponível (caso do embaixador Greer no card 1), o card sai
+sem retrato. Fontes de retrato com licença de uso: Agência Brasil/PR (CC BY),
+Agência Senado e Agência Câmara (atribuição), Casa Branca e Departamento de
+Estado dos EUA (domínio público), Wikimedia Commons (conferir a licença de
+cada arquivo).
+
+| Card                  | Retrato                 | Crédito / licença                                             |
+| --------------------- | ----------------------- | ------------------------------------------------------------- |
+| 2 Trump na ONU        | Donald Trump            | Daniel Torok/Casa Branca, domínio público                     |
+| 3 Escudo das Américas | Donald Trump            | Daniel Torok/Casa Branca, domínio público                     |
+| 4 PCC e CV            | Marco Rubio             | Departamento de Estado dos EUA, domínio público               |
+| 5 Pesquisas           | Lula e Flávio Bolsonaro | Ricardo Stuckert/PR (CC BY 2.0) · Agência Senado (atribuição) |
+| 6 Lula na ONU         | Lula                    | Ricardo Stuckert/PR (CC BY 2.0)                               |
+
+Os designs no Canva (mesmos ids da tabela acima) já estão na versão com
+retrato. Os posts publicados às 14h31–14h33 UTC continuam com a versão sem
+foto: a API do Instagram não permite trocar a imagem nem apagar um post, então
+a substituição exige apagar no app e republicar.
+
 ### Fontes
 
 - USTR, _Section 301 Action on Brazil's Unreasonable Acts, Policies, and Practices_ (15/07/2026) — https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/ustr-section-301-action-brazils-unreasonable-acts-policies-and-practices
