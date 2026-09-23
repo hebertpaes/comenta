@@ -70,14 +70,29 @@ rodar várias vezes não duplica posts.
 As charges da seção **Curtas & Bastidores** eram desenhos vetoriais (bonecos
 geométricos). `ilustrar.mjs` troca cada uma por uma cena realista:
 
-1. `gemini-2.5-flash` lê a matéria e descreve **uma cena** (sem gente real, sem
-   texto na imagem) e escreve a frase curta da charge;
-2. `gemini-2.5-flash-image` pinta a cena em 16:9 no estilo de pintura editorial
-   realista (ou foto documental, com `--tipo=ilustracao`);
-3. o `sharp` compõe por código a frase (faixa inferior) e o selo — texto em
+1. `gemini-2.5-flash` lê a matéria e descreve **uma cena** (sem texto na
+   imagem), escreve a frase curta da charge e lista os **personagens**: as
+   figuras públicas citadas (prefeito, deputado, ministro…), no máximo 3;
+2. para cada personagem, `lib/imagens.mjs` procura a **foto real com licença**
+   (Wikimedia Commons: Câmara, Senado, TSE, Planalto, Agência Brasil) e a
+   entrega ao modelo de imagem como referência;
+3. `gemini-2.5-flash-image` desenha a cena em 16:9 no estilo de charge de
+   jornal (caricatura reconhecível a partir da foto, traço de desenho, nunca
+   aparência de foto) — ou, com `--tipo=ilustracao`, uma cena com aparência de
+   foto **sem** nenhuma pessoa real reconhecível;
+4. o `sharp` compõe por código a frase (faixa inferior) e o selo — texto em
    português com acento não passa pelo modelo de imagem, então sai certo;
-4. com `--publicar`, envia o WebP 1600×900 ao Ghost e troca a `feature_image`
-   do post (a antiga fica registrada em `saida/<slug>.json`).
+5. com `--publicar`, envia o WebP 1600×900 ao Ghost e troca a `feature_image`
+   do post (a antiga, a cena, os personagens e o crédito/licença de cada foto
+   de referência ficam registrados em `saida/<slug>.json`).
+
+Controle dos personagens: `--personagens="Abilio Brunini (prefeito de Cuiabá)"`
+fixa a lista; `--referencias="Abilio Brunini=fotos/abilio.jpg"` usa fotos já
+escolhidas (baixe com `imagens.mjs`); `--sem-personagens` desenha todo mundo
+genérico. Regras fixas no prompt: só quem tem foto de referência pode ser
+reconhecível; etnia, idade e gênero como na foto; nada de crime, violência,
+humilhação ou nudez atribuídos ao personagem; sem texto, logos ou bandeiras
+de partido; selo CHARGE sempre queimado na imagem.
 
 ```bash
 cd content && npm install

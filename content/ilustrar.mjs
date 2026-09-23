@@ -15,10 +15,17 @@
 //   --saida=dir          pasta dos arquivos gerados (default: ./saida)
 //   --limite=N           com --curtas, no máximo N posts (default: todos)
 //
+// Personagens (só charge): a IA lista as figuras públicas da matéria, o script
+// procura a foto real com licença de cada uma (Wikimedia Commons) e o modelo
+// de imagem as desenha reconhecíveis (caricatura). Para controlar:
+//   --personagens="Abilio Brunini (prefeito de Cuiabá);Fulano (vereador)"  lista fixa
+//   --referencias="Abilio Brunini=fotos/abilio.jpg,Fulano=fotos/fulano.png" fotos já escolhidas
+//   --sem-personagens    todo mundo genérico (de costas/perfil), como antes
+//
 // Env: GHOST_ADMIN_URL, GHOST_ADMIN_API_KEY (id:secret), GEMINI_API_KEY.
 // Sem --publicar nada muda no site: revise o arquivo antes.
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { join } from "node:path";
+import { extname, join } from "node:path";
 import { ghostClient } from "./lib/ghost.mjs";
 import { ilustrar } from "./lib/ilustrar.mjs";
 
@@ -50,6 +57,44 @@ async function lerPost(api, slug) {
   return p;
 }
 
+/** "Nome (cargo);Nome 2" → [{ nome, cargo }] */
+function lerPersonagens(valor) {
+  if (typeof valor !== "string" || !valor.trim()) return undefined;
+  return valor
+    .split(";")
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .map((s) => {
+      const m = s.match(/^(.*?)\s*\((.*)\)\s*$/);
+      return m ? { nome: m[1].trim(), cargo: m[2].trim() } : { nome: s };
+    });
+}
+
+const MIME = {
+  ".png": "image/png",
+  ".webp": "image/webp",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+};
+
+/** "Nome=arquivo.jpg,Nome 2=arquivo.png" → [{ nome, imagem, mime, credito }] */
+async function lerReferencias(valor) {
+  if (typeof valor !== "string" || !valor.trim()) return undefined;
+  const refs = [];
+  for (const par of valor.split(",")) {
+    const [nome, arquivo] = par.split("=").map((s) => s.trim());
+    if (!nome || !arquivo) throw new Error(`--referencias: use Nome=arquivo (recebi "${par}")`);
+    refs.push({
+      nome,
+      imagem: await readFile(arquivo),
+      mime: MIME[extname(arquivo).toLowerCase()] || "image/jpeg",
+      credito: `arquivo local: ${arquivo}`,
+      pagina: arquivo,
+    });
+  }
+  return refs;
+}
+
 async function processa(api, post) {
   const imagemPronta = args.imagem ? await readFile(String(args.imagem)) : undefined;
   const r = await ilustrar({
@@ -59,6 +104,9 @@ async function processa(api, post) {
     tipo: TIPO,
     frase: typeof args.frase === "string" ? args.frase : undefined,
     imagemPronta,
+    personagens: lerPersonagens(args.personagens),
+    referencias: await lerReferencias(args.referencias),
+    semPersonagens: args["sem-personagens"] === true,
   });
 
   await mkdir(SAIDA, { recursive: true });
@@ -71,6 +119,7 @@ async function processa(api, post) {
         slug: post.slug,
         cena: r.cena,
         legenda: r.legenda,
+        personagens: r.personagens,
         prompt: r.prompt,
         antes: post.feature_image,
       },
@@ -80,6 +129,10 @@ async function processa(api, post) {
   );
   console.log(`  ✓ ${post.slug}`);
   console.log(`    legenda: ${r.legenda || "(sem)"}`);
+  if (r.personagens?.length)
+    console.log(
+      `    personagens: ${r.personagens.map((p) => `${p.nome} (${p.credito})`).join("; ")}`
+    );
   console.log(`    arquivo: ${arquivo}`);
 
   if (!PUBLICAR) return { slug: post.slug, arquivo, publicado: false };
