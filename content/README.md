@@ -92,3 +92,42 @@ node ilustrar.mjs --slug=x --imagem=arte.png --frase="Frase da charge."   # arte
 
 Sem `--publicar` nada muda no site. Se o Gemini recusar a cena (bloqueio de
 segurança), o post é pulado com o motivo no log; rode de novo ou use `--imagem`.
+
+## Kit da redação (pauta → foto → card → Instagram → backup)
+
+Ferramentas de linha de comando, todas em `content/`, para operar a redação sem
+depender de Canva ou de edição manual:
+
+| Comando                                                        | O que faz                                                                                                                                                                                                                                                                                                                                            |
+| -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `node imagens.mjs "termo" [--bancos=…] [--baixar=I --circulo]` | Procura **fotos reais com licença** (Openverse, Wikimedia Commons; Pexels, Pixabay e Unsplash com chave grátis). Só devolve CC BY / BY-SA / CC0 / domínio público / licenças dos bancos, já com a linha de crédito. `--baixar` grava a foto, o `.json` com licença e página de origem, e `--circulo` recorta o retrato redondo (220 px, anel verde). |
+| `node card.mjs pauta.json`                                     | Gera o card 1080×1350 no padrão HOJE MT (chapéu, manchete em Anton, sublinha, fontes, crédito) com 0, 1 ou 2 retratos em círculo no canto superior direito. `--exemplo` imprime o JSON modelo.                                                                                                                                                       |
+| `node instagram.mjs --imagem=card.jpg --legenda=legenda.txt`   | Sobe a imagem no Ghost (URL pública) e publica no @hoje.mt pela Graph API; `--dry-run` só mostra; `--permalink=<id>` dá o link de um post.                                                                                                                                                                                                           |
+| `node ilustrar.mjs --slug=… [--publicar]`                      | Ilustração realista (Gemini + sharp) para Curtas/charges sem foto.                                                                                                                                                                                                                                                                                   |
+| `deploy/backup-redacao.sh`                                     | `tar.gz` da redação + `git bundle` do repositório em `backups/`, push para o GitHub e, com `RCLONE_REMOTE`, cópia para o Google Drive.                                                                                                                                                                                                               |
+
+Fluxo de uma matéria:
+
+```bash
+cd content && npm install
+# 1. apure e escreva a pauta em content/pautas/AAAA-MM-DD-assunto.md (regras no README de lá)
+# 2. foto real licenciada da pessoa/lugar central
+node imagens.mjs "Santiago Peña" --bancos=wikimedia --baixar=1 --nome=pena --saida=fotos --circulo
+# 3. card (o JSON leva chapéu, manchete, sublinha, fontes, crédito e as fotos)
+node card.mjs --exemplo > pautas/2026-09-23-assunto.json   # edite
+node card.mjs pautas/2026-09-23-assunto.json --saida=saida/assunto.jpg
+# 4. legenda (≤ 2.200 caracteres, fontes no fim) e publicação
+node instagram.mjs --imagem=saida/assunto.jpg --legenda=pautas/2026-09-23-assunto.legenda.txt --dry-run
+node instagram.mjs --imagem=saida/assunto.jpg --legenda=pautas/2026-09-23-assunto.legenda.txt
+# 5. registre o permalink na pauta e faça o backup
+../deploy/backup-redacao.sh
+```
+
+Variáveis extras: `PEXELS_API_KEY`, `PIXABAY_API_KEY`, `UNSPLASH_ACCESS_KEY`
+(bancos opcionais), `IG_USER_ID` e `IG_ACCESS_TOKEN` (Graph API do Instagram),
+`RCLONE_REMOTE` (Drive). As fontes Anton e Roboto Condensed (licença OFL) estão
+em `content/assets/fonts`.
+
+Regra das imagens: foto de banco **ilustra** e leva crédito e licença no
+rodapé do card; retrato de pessoa real só de fonte oficial ou banco com
+licença; nunca imagem gerada por IA se passando por foto.

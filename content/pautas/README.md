@@ -21,3 +21,16 @@ rascunho — some quando a matéria for publicada.
 Para publicar: copie o corpo para um post novo no Ghost (`/ghost/#/editor/post`),
 aplique as tags do cabeçalho e revise a checagem. O `publish.mjs` não lê esta
 pasta: ele é só do fluxo de RSS.
+
+## Imagens e cards
+
+- Toda foto vem de fonte oficial (Agência Brasil/PR, Senado, Câmara, Casa
+  Branca, Departamento de Estado) ou de banco com licença explícita (Wikimedia
+  Commons, Openverse, Pexels, Pixabay, Unsplash). `node ../imagens.mjs "termo"`
+  já filtra o que pode ser usado e escreve a linha de crédito.
+- O crédito e a licença vão no rodapé do card e na pauta (autor, fonte, página).
+- Card no padrão HOJE MT: `node ../card.mjs pauta.json`. Quando houver foto da
+  pessoa ou do lugar central, entra o retrato em círculo no canto superior
+  direito; sem foto licenciada, o card sai só tipográfico.
+- Os cards publicados ficam em `content/pautas/cards/`, com o mesmo nome da
+  pauta, para backup.

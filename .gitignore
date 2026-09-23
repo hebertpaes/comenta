@@ -32,3 +32,6 @@ xcuserdata/
 data/
 scratch/
 
+
+# backups locais (deploy/backup-redacao.sh)
+backups/
