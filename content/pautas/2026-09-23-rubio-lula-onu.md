@@ -83,6 +83,12 @@ atendido. Para o leitor de Mato Grosso, o pano de fundo é econômico — o
 - Íntegra do discurso (ONU) — https://gadebate.un.org/sites/default/files/gastatements/80/br_pt.pdf
 - NPR, "What to know as world leaders converge at the United Nations this week" (agenda de Rubio) — https://www.npr.org/2026/09/21/nx-s1-5971262/united-nations-general-assembly
 
+### Card do Instagram
+
+Gerado no Canva, tipográfico (sem imagem de pessoas), 1080×1350, com kicker
+"Mundo · Assembleia Geral da ONU", a manchete, o subtítulo e o rodapé de fontes.
+Design: `DAHWBZcDYsU` — https://www.canva.com/d/eshxxeKRseYg2ac
+
 ### Legenda para o Instagram (≤ 2.200 caracteres)
 
 Rubio só entrou no plenário da ONU depois do discurso de Lula.
