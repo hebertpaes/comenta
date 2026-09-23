@@ -104,6 +104,7 @@ depender de Canva ou de edição manual:
 | `node card.mjs pauta.json`                                     | Gera o card 1080×1350 no padrão HOJE MT (chapéu, manchete em Anton, sublinha, fontes, crédito) com 0, 1 ou 2 retratos em círculo no canto superior direito. `--exemplo` imprime o JSON modelo.                                                                                                                                                       |
 | `node instagram.mjs --imagem=card.jpg --legenda=legenda.txt`   | Sobe a imagem no Ghost (URL pública) e publica no @hoje.mt pela Graph API; `--dry-run` só mostra; `--permalink=<id>` dá o link de um post.                                                                                                                                                                                                           |
 | `node ilustrar.mjs --slug=… [--publicar]`                      | Ilustração realista (Gemini + sharp) para Curtas/charges sem foto.                                                                                                                                                                                                                                                                                   |
+| `node video.mjs <url\|arquivo.mp4> [--saida=…]`                | Baixa um vídeo (reel, tweet, YouTube; via yt-dlp) e aplica a **marca d'água** do HOJE MT com ffmpeg (`assets/marca-dagua.png`, gerada da logo do tema, sem o slogan). Opções: `--opacidade=0.55`, `--largura=0.32` (fração da largura do vídeo), `--posicao=inferior-direita`, `--margem=34`, `--so-baixar`. Saída H.264/AAC pronta para o Instagram. |
 | `deploy/backup-redacao.sh`                                     | `tar.gz` da redação + `git bundle` do repositório em `backups/`, push para o GitHub e, com `RCLONE_REMOTE`, cópia para o Google Drive.                                                                                                                                                                                                               |
 
 Fluxo de uma matéria:
@@ -122,6 +123,11 @@ node instagram.mjs --imagem=saida/assunto.jpg --legenda=pautas/2026-09-23-assunt
 # 5. registre o permalink na pauta e faça o backup
 ../deploy/backup-redacao.sh
 ```
+
+Vídeo: `pip install yt-dlp imageio-ffmpeg` (ou ffmpeg no PATH / `FFMPEG_BIN`). O
+Instagram limita downloads anônimos (HTTP 429): espere alguns minutos e repita.
+Vídeo de terceiros só com crédito visível ao autor e, quando não for material
+oficial ou de agência, com autorização.
 
 Variáveis extras: `PEXELS_API_KEY`, `PIXABAY_API_KEY`, `UNSPLASH_ACCESS_KEY`
 (bancos opcionais), `IG_USER_ID` e `IG_ACCESS_TOKEN` (Graph API do Instagram),

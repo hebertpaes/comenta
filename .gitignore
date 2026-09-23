@@ -35,3 +35,6 @@ scratch/
 
 # backups locais (deploy/backup-redacao.sh)
 backups/
+
+# downloads de vídeo (content/video.mjs)
+content/videos/
