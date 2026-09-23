@@ -249,3 +249,27 @@ PROJETO-HMT/
 ---
 
 *Hoje MT News Theme — Documentação gerada e mantida para Ghost CMS.*
+
+## Links internos automáticos (v1.5.0)
+
+Dentro do corpo da matéria, termos que correspondem a outras matérias do site
+viram links sublinhados em verde (ex.: "inteligência artificial" → matéria
+sobre o ChatVote do TSE). Como funciona:
+
+1. `partials/links-internos.hbs` (incluído em `post.hbs` e nos templates
+   `custom-artigo`, `custom-curtinha` e `custom-opiniao`) imprime uma lista
+   escondida com até 30 matérias que compartilham tags com a atual: url,
+   título e tags. Sem tags, usa as 12 mais recentes.
+2. `assets/js/links-internos.js` procura no texto a primeira ocorrência de
+   frases do título dessas matérias (2 a 4 palavras) e de tags específicas
+   (mínimo 5 letras; tags de seção como Política, Cidades e Mato Grosso são
+   ignoradas) e cria o link. Limites: 6 links por matéria, 1 por parágrafo,
+   uma matéria por termo; nunca dentro de link, título, citação, figura,
+   código ou anúncio. Acentos e maiúsculas não atrapalham.
+3. Estilo em `assets/css/screen.css` (`.hmt-link-interno`): sublinhado verde,
+   texto na cor do parágrafo; ao passar o mouse, verde com fundo suave.
+
+Ajustes: `MAX_LINKS`, `MIN_TERMO` e `TAGS_GENERICAS` no topo do script. Para
+desligar numa matéria, basta não ter tags públicas e apagar o partial do
+template, ou remover a classe via CSS.
+

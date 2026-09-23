@@ -1,0 +1,24 @@
+{{!--
+  Lista escondida com as matérias relacionadas (mesmas tags) que o
+  assets/js/links-internos.js usa para sublinhar termos do texto com links
+  internos. Atributos HTML (não JSON) para o escape do Handlebars sair certo.
+  O {{#get}} resolve {{tags[*].slug}} como "a,b,c" (jsonpath do helper).
+  Uso: dentro de {{#post}}, logo depois de {{content}}.
+--}}
+{{#if tags}}
+{{#get "posts" filter="id:-{{id}}+tag:-hash-ad+tag:-hash-ad-inarticle+tag:-hash-ad-sidebar+tags:[{{tags[*].slug}}]" limit="30" order="published_at desc" include="tags" as |relacionadas|}}
+<ul id="hmt-links-internos" hidden aria-hidden="true">
+{{#foreach relacionadas}}
+    <li data-url="{{url}}" data-titulo="{{title}}" data-tags="{{#foreach tags visibility="public"}}{{name}}|{{/foreach}}"></li>
+{{/foreach}}
+</ul>
+{{/get}}
+{{else}}
+{{#get "posts" filter="id:-{{id}}+tag:-hash-ad+tag:-hash-ad-inarticle+tag:-hash-ad-sidebar" limit="12" order="published_at desc" include="tags" as |relacionadas|}}
+<ul id="hmt-links-internos" hidden aria-hidden="true">
+{{#foreach relacionadas}}
+    <li data-url="{{url}}" data-titulo="{{title}}" data-tags="{{#foreach tags visibility="public"}}{{name}}|{{/foreach}}"></li>
+{{/foreach}}
+</ul>
+{{/get}}
+{{/if}}

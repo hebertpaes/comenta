@@ -3213,3 +3213,29 @@ body.drawer-active {
     max-height: inherit;
   }
 }
+
+/* ============================================================
+   LINKS INTERNOS — termos do texto ligados a outras matérias
+   (assets/js/links-internos.js + partials/links-internos.hbs)
+   ============================================================ */
+.usat-article-content a.hmt-link-interno {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: #00a859;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+.usat-article-content a.hmt-link-interno:hover,
+.usat-article-content a.hmt-link-interno:focus-visible {
+  color: #00a859;
+  background: rgba(0, 168, 89, 0.08);
+  text-decoration-thickness: 3px;
+}
+html[data-theme="dark"] .usat-article-content a.hmt-link-interno:hover {
+  color: #3ddc97;
+  background: rgba(61, 220, 151, 0.12);
+}
+#hmt-links-internos { display: none !important; }
+

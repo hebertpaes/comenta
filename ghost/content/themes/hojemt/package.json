@@ -1,7 +1,7 @@
 {
   "name": "hojemt",
   "description": "Hoje MT — Portal de Notícias de Mato Grosso (USA TODAY Design System com Verde Predominante).",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "engines": {
     "ghost": ">=5.0.0"
   },
