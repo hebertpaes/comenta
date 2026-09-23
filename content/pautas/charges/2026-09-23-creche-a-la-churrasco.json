@@ -1,18 +1,27 @@
 {
   "slug": "creche-a-la-churrasco",
   "materia": "https://hojemt.com.br/creche-a-la-churrasco/",
+  "formato": "charge com foto real (fotomontagem), montada inteiramente no Canva",
   "legenda": "Cardápio da creche agora tem ponto da carne e ponto de vista.",
+  "balao": "“Não houve nada ilegal.” (fala do prefeito em coletiva, citada na matéria)",
   "selo": "CHARGE · HOJE MT",
-  "gerada_por": "Canva generate-image (amostra), com a foto de referência; o pipeline oficial é content/ilustrar.mjs (Gemini), que precisa de GEMINI_API_KEY válida",
+  "canva": {
+    "design_final": "DAHWD_V52HI",
+    "modelo_reutilizavel": "DAHWD5FB_nw",
+    "cena_ilustrada_sem_pessoas": "MAHWD-wQKeE",
+    "foto_original": "MAHWDtzNHSM",
+    "foto_recortada": "MAHWD83E7jk",
+    "chapeu_cozinheiro": "MAHWD_27cIw"
+  },
   "personagens": [
     {
       "nome": "Abilio Brunini",
       "cargo": "prefeito de Cuiabá",
+      "imagem": "foto real, fundo removido no Canva",
       "credito": "Foto: Câmara dos Deputados/Wikimedia Commons (CC BY)",
       "pagina": "https://commons.wikimedia.org/wiki/File:Deputado_Abilio_Brunini_(cropped).jpg",
       "licenca": "CC BY"
     }
   ],
-  "cena": "Mayor Abilio Brunini, bald with a short goatee, in a navy suit, grills skewers on an improvised barbecue in the courtyard of a municipal daycare in Cuiabá at noon; small children in uniforms watch from behind a fence; a cook in an apron holds a tray; heat haze and a big tree.",
-  "status": "amostra para aprovação editorial · não publicada no site"
+  "status": "para aprovação editorial · não publicada no site"
 }

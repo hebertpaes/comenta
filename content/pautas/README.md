@@ -34,9 +34,11 @@ pasta: ele é só do fluxo de RSS.
   direito; sem foto licenciada, o card sai só tipográfico.
 - Os cards publicados ficam em `content/pautas/cards/`, com o mesmo nome da
   pauta, para backup.
-- Charges e ilustrações (`node ../ilustrar.mjs`): os personagens públicos da
-  matéria são **desenhados** (caricatura) a partir da foto real com licença,
-  que o script busca no Commons — nunca com aparência de foto, sempre com o
-  selo CHARGE e sem cena de crime, violência ou humilhação. Em peça com
-  aparência de foto (`--tipo=ilustracao`) não entra pessoa real reconhecível.
-  O crédito da foto de referência fica no `saida/<slug>.json`.
+- Charges: montadas no Canva com a **foto real com licença** do personagem
+  (fundo removido) sobre uma cena ilustrada, balão só com fala real citada na
+  matéria, legenda e selo CHARGE (passo a passo em `content/README.md`).
+  Arquivo e créditos em `content/pautas/charges/`. Sem cena de crime,
+  violência ou humilhação; sem logos nem bandeiras de partido. O gerador por
+  Gemini (`node ../ilustrar.mjs`) é alternativa: desenha caricatura a partir
+  da mesma foto licenciada; em peça com aparência de foto
+  (`--tipo=ilustracao`) não entra pessoa real reconhecível.
