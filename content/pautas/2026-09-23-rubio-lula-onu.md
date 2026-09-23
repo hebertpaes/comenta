@@ -1,7 +1,7 @@
 ---
 titulo: "Agenda oficial dos EUA: Rubio seguia Trump durante a abertura da ONU por Lula"
 tags: [mundo, politica, onu, eleicoes]
-status: draft
+status: draft (site) · publicado no Instagram
 origem: "Reel do @diario360 (22/09/2026) sobre a ausência de Rubio no plenário; apuração refeita só com agências internacionais e documentos oficiais"
 destino: "Instagram do HOJE MT (card + legenda abaixo) e, se aprovado, post no portal"
 ---
@@ -116,6 +116,12 @@ militar" no hemisfério e não abriu bilateral. É esse o estado da relação a
 Canva `DAHWBZcDYsU`, 1080×1350 — https://www.canva.com/d/eshxxeKRseYg2ac
 Kicker "Mundo · Assembleia Geral da ONU"; manchete "Agenda oficial dos EUA: Rubio
 seguia Trump"; subtítulo e rodapé de fontes conforme a legenda.
+
+### Publicado no Instagram
+
+Conta **@hoje.mt** — https://www.instagram.com/p/DdofF4JDEpw/ — 23/09/2026 14:06 UTC
+(11:06 em Cuiabá), imagem única 1080×1350, legenda abaixo (1.356 caracteres).
+ID da mídia: `18153693652516820`. Publicado via Zapier (Instagram for Business).
 
 ### Legenda para o Instagram (≤ 2.200 caracteres)
 
