@@ -14,7 +14,8 @@
     "versao_anterior_fotomontagem": {
       "design": "DAHWD_V52HI",
       "arquivo": "2026-09-23-creche-a-la-churrasco-v1-fotomontagem.webp"
-    }
+    },
+    "modelo_retrato_instagram": "DAHWEJf2P1U"
   },
   "personagens": [
     {
@@ -27,9 +28,20 @@
     }
   ],
   "instagram": {
-    "permalink": "https://www.instagram.com/p/DdpitpIjWc_/",
-    "id": "17903587863578577",
-    "publicado_em": "2026-09-23T23:57:27Z"
+    "formato_paisagem_16x9": {
+      "permalink": "https://www.instagram.com/p/DdpitpIjWc_/",
+      "id": "17903587863578577",
+      "publicado_em": "2026-09-23T23:57:27Z",
+      "obs": "substituído pelo retrato; apagar no app se quiser"
+    },
+    "formato_retrato_4x5": {
+      "permalink": "https://www.instagram.com/p/DdpnO0WDEe2/",
+      "id": "18025095017861198",
+      "publicado_em": "2026-09-24T00:36:56Z",
+      "arquivo": "2026-09-23-creche-a-la-churrasco-instagram-retrato.jpg",
+      "canva_design": "DAHWEOoUnfg",
+      "arte_retrato": "MAHWED0k_a0"
+    }
   },
   "site": "pendente: precisa da chave da Admin API do Ghost para trocar a feature_image da curta"
 }
