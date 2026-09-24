@@ -333,3 +333,11 @@ nomes na transcrição, trechos do corte, itens do "E depois?" com fonte na paut
 agenda do Instagram (`formato: video`). Regras: nunca cortar a fala de forma
 que mude o sentido; manter o outro lado quando ele aparece no vídeo; crédito da
 emissora/autor sempre; nada de trilha sem licença (o áudio é o original).
+
+## Monitor de Tecnologia (IA na prática)
+
+Routine em dias úteis às 06:00 de Cuiabá: procura novidade com fonte primária
+sobre IA na indústria, no agro de Mato Grosso e em medição de resultados, e
+quando encontra escreve a matéria (rascunho no Ghost, tag Tecnologia), gera a
+ilustração no Canva, o card e a entrada na agenda do Instagram. Palavras-chave,
+fontes e registro em `pautas/monitor-tecnologia.md`.
