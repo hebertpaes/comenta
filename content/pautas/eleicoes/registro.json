@@ -1,0 +1,104 @@
+{
+ "atualizado_em": "2026-09-24",
+ "regra": "Matérias de eleições sobre Mato Grosso: capa com fotos oficiais do TSE (montagem/ficha feita no Canva), nunca rosto gerado por IA. Dados e ids dos assets em 2026-mt-candidatos.json.",
+ "artes": [
+  {
+   "nome": "Candidatos ao Governo de MT (16:9)",
+   "design": "DAHWHzo4H18",
+   "arquivo": "pautas/eleicoes/2026-09-24-candidatos-governo-mt.jpg",
+   "hospedado_em": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-candidatos-governo-mt.jpg",
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-candidatos-governo-mt-1.jpg",
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-candidatos-governo-mt-2.jpg"
+   ],
+   "layout": "grade 4×2 de 400×450, tira preta 62% com nome · partido, bloco-título 800×450 (#0F4A37) com ELEIÇÕES 2026 / Governo de Mato Grosso / crédito"
+  },
+  {
+   "nome": "Candidatos ao Governo de MT (Instagram 4:5)",
+   "design": "DAHWH4_Mmww",
+   "arquivo": "pautas/eleicoes/2026-09-24-candidatos-governo-mt-instagram-retrato.jpg",
+   "hospedado_em": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-candidatos-governo-mt-instagram-retrato.jpg"
+   ],
+   "agenda_instagram": "23",
+   "layout": "cabeçalho 150 px + grade 2×3 de 540×400 (crop top -30), tiras com nome · partido"
+  },
+  {
+   "nome": "Candidatos ao Senado por MT (16:9)",
+   "design": "DAHWH1j1gbI",
+   "arquivo": "pautas/eleicoes/2026-09-24-candidatos-senado-mt.jpg",
+   "hospedado_em": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-candidatos-senado-mt.jpg"
+   ],
+   "layout": "cabeçalho 100 px + grade 5×2 de 320×400, tiras de 60 px",
+   "uso": "reservada para matérias sobre a disputa ao Senado (nenhuma publicada até 24/09)"
+  },
+  {
+   "nome": "Capa · Pivetta promete devolver R$ 100 milhões",
+   "design": "DAHWH3jRQss",
+   "arquivo": "pautas/eleicoes/2026-09-24-capa-pivetta-promete-devolver.jpg",
+   "hospedado_em": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-capa-pivetta-promete-devolver.jpg"
+   ],
+   "layout": "painel 600 px (#0F4A37) com foto 440×615 + nome; título 60 px à direita"
+  },
+  {
+   "nome": "Capa · Pivetta e Wellington em debate",
+   "design": "DAHWH_wMHgw",
+   "arquivo": "pautas/eleicoes/2026-09-24-capa-pivetta-wellington-debate.jpg",
+   "hospedado_em": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-capa-pivetta-wellington-debate.jpg"
+   ],
+   "layout": "painel 900 px com duas fotos 380×531 + nomes; título 48 px à direita"
+  }
+ ],
+ "posts_atualizados": [
+  {
+   "slug": "especialistas-destacam-prioridades-para-as-eleicoes-2026-em-mt",
+   "antes": "hmt-ccdd59e147874618.webp (Agência Câmara, urna genérica)",
+   "depois": "candidatos-governo-mt.jpg"
+  },
+  {
+   "slug": "sigilo-virou-panfleto-urna-virou-alvo-o-recado-da-semana-ao-eleitor-de-mt",
+   "antes": "capa-st-… (arte genérica HOJE MT)",
+   "depois": "candidatos-governo-mt-1.jpg"
+  },
+  {
+   "slug": "eleicoes-2026-o-que-marcou-a-semana-a-29-dias-do-primeiro-turno",
+   "antes": "capa-st-… (arte genérica HOJE MT)",
+   "depois": "candidatos-governo-mt-2.jpg"
+  },
+  {
+   "slug": "pivetta-promete-devolver-r-100-milhoes-a-servidores-por-juros-abusivos",
+   "antes": "capa-pivetta-… (arte só com título)",
+   "depois": "capa-pivetta-promete-devolver.jpg"
+  },
+  {
+   "slug": "pivetta-e-wellington-protagonizam-embate-tenso-em-debate-eleitoral",
+   "antes": "capa-pivetta-e-wellington-… (arte só com título)",
+   "depois": "capa-pivetta-wellington-debate.jpg"
+  }
+ ],
+ "mantidos": [
+  {
+   "slug": "audio-atribuido-a-diretor-cita-suposta-meta-de-votos-para-alan-porto-em-mt",
+   "motivo": "matéria de acusação/áudio não confirmado; não colocar foto oficial do candidato como capa (separar fato de acusação)"
+  },
+  {
+   "slug": "como-escolher-o-candidato-certo-nas-eleicoes-de-2026",
+   "motivo": "serviço geral, sem candidato específico"
+  },
+  {
+   "slug": "tse-define-ordem-dos-votos-na-urna-eletronica-para-2026",
+   "motivo": "procedimento; arte da Agência Senado é legítima"
+  },
+  {
+   "slug": "eleicoes-2026-entenda-como-funciona-o-sistema-de-voto-proporcional",
+   "motivo": "procedimento"
+  },
+  {
+   "slug": "candidata-a-presidencia-grava-podcasts-em-cuiaba-e-varzea-grande / agenda dos presidenciáveis",
+   "motivo": "presidenciáveis: fora do foco MT por ora; fotos TSE dos presidenciáveis existem no Commons (CC BY 4.0) para uma próxima etapa"
+  }
+ ]
+}

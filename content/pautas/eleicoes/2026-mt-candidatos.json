@@ -1,0 +1,48 @@
+{
+  "atualizado_em": "2026-09-24",
+  "fonte_lista": [
+    "TSE/DivulgaCand (registros deferidos), via páginas de candidatos do ND Mais e Gazeta do Povo (dados TSE)",
+    "CNN Brasil — Quem são os candidatos ao governo do Mato Grosso em 2026 (atualizado 31/08/2026): https://www.cnnbrasil.com.br/eleicoes/quem-sao-os-candidatos-a-governador-de-mato-grosso-em-2026/",
+    "Senado Notícias — Candidatos 2026, Mato Grosso (Senado): https://www12.senado.leg.br/noticias/candidatos-2026/mato-grosso",
+    "TRE-MT — Eleições 2026: candidatos ao cargo de Governador(a): https://www.tre-mt.jus.br/comunicacao/noticias/2026/Setembro/eleicoes-2026-candidatos-ao-cargo-de-governador-a"
+  ],
+  "fotos": {
+    "origem": "Fotos oficiais do registro de candidatura (TSE), arquivos FMT<SQ_CANDIDATO>_div.jpg do pacote de dados abertos do TSE, obtidos pelo espelho público https://static.ndmais.com.br/eleicoes/2026/mt/ (o cdn.tse.jus.br bloqueia acesso de fora do Brasil)",
+    "credito_publico": "Fotos: TSE/Divulgação",
+    "tamanho": "161×225 px (resolução original do TSE)",
+    "regra": "Só fotos reais e oficiais; nunca retrato gerado por IA em matéria de notícia. A foto do Commons de Rafaell Milas (autor 'Gemini', IA) foi descartada."
+  },
+  "governador": {
+    "ordem": "alfabética pelo nome de urna",
+    "primeiro_turno": "2026-10-04",
+    "candidatos": [
+      {"nome_urna": "Doutora Natasha", "nome": "Natasha Slhessarenko Fraife Barreto", "numero": 55, "partido": "PSD", "coligacao": "Mato Grosso para Todos", "vice": "Diogo Botelho (PDT)", "situacao": "deferido", "sq_tse": "110002544985", "canva_media": "MAHWH7_xSAk", "arquivo": "gov/natasha.jpg"},
+      {"nome_urna": "Maurício Coelho", "nome": "Maurício Coelho de Souza Junior", "numero": 33, "partido": "Mobiliza", "coligacao": "chapa isolada", "vice": "Dr. Wagner Malheiros (Mobiliza)", "situacao": "deferido", "sq_tse": "110002553058", "canva_media": "MAHWH8yK2xg", "arquivo": "gov/mauricio-coelho.jpg"},
+      {"nome_urna": "Otaviano Pivetta", "nome": "Otaviano Olavo Pivetta", "numero": 10, "partido": "Republicanos", "coligacao": "Mato Grosso Não Pode Parar", "vice": "Gisela Simona (União)", "situacao": "deferido", "sq_tse": "110002551480", "canva_media": "MAHWH0J-3js", "arquivo": "gov/pivetta.jpg"},
+      {"nome_urna": "Rafaell Milas", "nome": "Rafaell Milas de Oliveira", "numero": 14, "partido": "Missão", "coligacao": "chapa isolada", "vice": "Thales Sartorelo (Missão)", "situacao": "deferido", "sq_tse": "110002543953", "canva_media": "MAHWH1PJ1nU", "arquivo": "gov/rafaell-milas.jpg"},
+      {"nome_urna": "Sargento Laudicério", "nome": "Laudicério Aguiar Machado", "numero": 36, "partido": "Agir", "coligacao": "chapa isolada", "vice": "Alex Pucineli (Agir)", "situacao": "registro reconhecido pelo TRE-MT (primeiro pedido, SQ 110002553937, consta como indeferido; segundo pedido, SQ 110002554073, em análise/deferido — checagem pendente)", "sq_tse": "110002554073", "canva_media": "MAHWH5BFzJc", "arquivo": "gov/laudicerio.jpg"},
+      {"nome_urna": "Wellington Fagundes", "nome": "Wellington Antonio Fagundes", "numero": 22, "partido": "PL", "coligacao": "Coração da Gente", "vice": "Reinaldo Gomes de Morais (Novo)", "situacao": "deferido", "sq_tse": "110002551737", "canva_media": "MAHWH-KaOvA", "arquivo": "gov/wellington.jpg"}
+    ]
+  },
+  "senador": {
+    "vagas": 2,
+    "ordem": "alfabética pelo nome de urna",
+    "candidatos": [
+      {"nome_urna": "Beny Godoy", "numero": 365, "partido": "Agir", "situacao": "pendente (ND Mais); listado pelo Senado Notícias", "sq_tse": "110002553706", "canva_media": "MAHWH-boEF8"},
+      {"nome_urna": "Coronel Darwin", "numero": 351, "partido": "Democrata", "situacao": "deferido", "sq_tse": "110002548042", "canva_media": "MAHWHy4RM6w"},
+      {"nome_urna": "Fávaro", "nome": "Carlos Fávaro", "numero": 555, "partido": "PSD", "situacao": "deferido", "sq_tse": "110002544986", "canva_media": "MAHWH915g9Q"},
+      {"nome_urna": "Galvan", "nome": "Antônio Galvan", "numero": 700, "partido": "Avante", "situacao": "deferido", "sq_tse": "110002540403", "canva_media": "MAHWHzp2Kjs"},
+      {"nome_urna": "Janaina Riva", "numero": 150, "partido": "MDB", "situacao": "deferido", "sq_tse": "110002552698", "canva_media": "MAHWH6BBj6A"},
+      {"nome_urna": "Margareth Buzetti", "numero": 111, "partido": "PP", "situacao": "deferido", "sq_tse": "110002551967", "canva_media": "MAHWHz00VGQ"},
+      {"nome_urna": "Mauro Mendes", "numero": 444, "partido": "União", "situacao": "deferido", "sq_tse": "110002551966", "canva_media": "MAHWHyLCtr0"},
+      {"nome_urna": "Pedro Taques", "numero": 400, "partido": "PSB", "situacao": "deferido", "sq_tse": "110002544988", "canva_media": "MAHWH6VqZ_I"},
+      {"nome_urna": "Professor Nelson Ferreira", "numero": 360, "partido": "Agir", "situacao": "deferido", "sq_tse": "110002553701", "canva_media": "MAHWH4zyBe4"},
+      {"nome_urna": "Zé Medeiros", "nome": "José Medeiros", "numero": 222, "partido": "PL", "situacao": "deferido", "sq_tse": "110002552693", "canva_media": "MAHWH8VUd4M"}
+    ]
+  },
+  "checagem_pendente": [
+    "Confirmar no DivulgaCand (acesso só do Brasil) a situação final do registro de Sargento Laudicério (dois pedidos: 110002553937 indeferido; 110002554073).",
+    "Confirmar situação de Beny Godoy (Senado), que aparece como 'pendente' no espelho do ND Mais.",
+    "Vices e coligações conferidos em CNN Brasil (31/08) e Wikipédia; conferir na resolução de registro do TRE-MT."
+  ]
+}

@@ -1,351 +1,366 @@
 {
-  "_como_funciona": "Agenda do @hoje.mt com formatos intercalados (card → charge → carrossel/vídeo → charge). Horários em Cuiabá (UTC-4). Uma Routine desta sessão dispara 4x por dia (07:30, 11:30, 15:30, 19:30) e publica o item mais antigo com status \"agendado\" cujo horário já passou; depois grava permalink/publicado_em e faz commit. Mídia hospedada no Ghost (URL estável). A API do Instagram não agenda nem edita posts.",
-  "conta": {
-    "instagram_page_id": "17841460614185827",
-    "usuario": "hoje.mt"
+ "_como_funciona": "Agenda do @hoje.mt com formatos intercalados (card → charge → carrossel/vídeo → charge). Horários em Cuiabá (UTC-4). Uma Routine desta sessão dispara 4x por dia (07:30, 11:30, 15:30, 19:30) e publica o item mais antigo com status \"agendado\" cujo horário já passou; depois grava permalink/publicado_em e faz commit. Mídia hospedada no Ghost (URL estável). A API do Instagram não agenda nem edita posts.",
+ "conta": {
+  "instagram_page_id": "17841460614185827",
+  "usuario": "hoje.mt"
+ },
+ "publicacao": {
+  "imagem_ou_carrossel": "Zapier → InstagramBusinessCLIAPI publish_media_v2 (media: lista de URLs, 2–10 = carrossel)",
+  "video": "Zapier → InstagramBusinessCLIAPI publish_video (video: URL do .mp4, Reel 9:16)",
+  "permalink": "GET graph.facebook.com/v21.0/<id>?fields=permalink,timestamp"
+ },
+ "itens": [
+  {
+   "id": "01",
+   "status": "publicado",
+   "permalink": "https://www.instagram.com/p/Ddqy3U5jDhN/",
+   "publicado_em": "2026-09-24T11:37:50Z",
+   "quando": "2026-09-24T07:30:00-04:00",
+   "formato": "card",
+   "titulo": "Agressões a candidatas crescem 11 vezes, dizem entidades ao TSE",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-tse-agressoes-candidatas.jpg"
+   ],
+   "legenda": "Agressões a candidatas crescem 11 vezes, dizem entidades ao TSE\n\nOrganizações sociais entregaram ao TSE um relatório que documenta o aumento de 11 vezes nos processos por violência política de gênero entre 2022 e 2024. Pesquisa do Instituto Marielle Franco (77 casos, 2021–2025): 87% das vítimas são mulheres negras.\n\nMatéria completa: hojemt.com.br/entidades-denunciam-ao-tse-aumento-de-11x-em-agressoes-a-candidatas\n\n#eleicoes2026 #violenciapolitica #mulheresnapolitica #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/entidades-denunciam-ao-tse-aumento-de-11x-em-agressoes-a-candidatas/",
+   "instagram_id": "18463471423141526"
   },
-  "publicacao": {
-    "imagem_ou_carrossel": "Zapier → InstagramBusinessCLIAPI publish_media_v2 (media: lista de URLs, 2–10 = carrossel)",
-    "video": "Zapier → InstagramBusinessCLIAPI publish_video (video: URL do .mp4, Reel 9:16)",
-    "permalink": "GET graph.facebook.com/v21.0/<id>?fields=permalink,timestamp"
+  {
+   "id": "02",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-24T11:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Pivetta Contra o Discurso Fácil",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-23-velha-politica-a-moda-pivetta-instagram-retrato-2.jpg"
+   ],
+   "legenda": "CHARGE · Pivetta Contra o Discurso Fácil\n\nPivetta apaga a fornalha da velha política com água de coco.\n\nEm entrevista à imprensa de MT, o governador chamou o “discurso fácil” de ilusão que vende a alma para ganhar eleição.\n\nLeia a curta completa: hojemt.com.br/velha-politica-a-moda-pivetta\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/velha-politica-a-moda-pivetta/",
+   "charge_json": "pautas/charges/2026-09-23-velha-politica-a-moda-pivetta.json"
   },
-  "itens": [
-    {
-      "id": "01",
-      "status": "publicado",
-      "permalink": "https://www.instagram.com/p/Ddqy3U5jDhN/",
-      "publicado_em": "2026-09-24T11:37:50Z",
-      "quando": "2026-09-24T07:30:00-04:00",
-      "formato": "card",
-      "titulo": "Agressões a candidatas crescem 11 vezes, dizem entidades ao TSE",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-tse-agressoes-candidatas.jpg"
-      ],
-      "legenda": "Agressões a candidatas crescem 11 vezes, dizem entidades ao TSE\n\nOrganizações sociais entregaram ao TSE um relatório que documenta o aumento de 11 vezes nos processos por violência política de gênero entre 2022 e 2024. Pesquisa do Instituto Marielle Franco (77 casos, 2021–2025): 87% das vítimas são mulheres negras.\n\nMatéria completa: hojemt.com.br/entidades-denunciam-ao-tse-aumento-de-11x-em-agressoes-a-candidatas\n\n#eleicoes2026 #violenciapolitica #mulheresnapolitica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/entidades-denunciam-ao-tse-aumento-de-11x-em-agressoes-a-candidatas/",
-      "instagram_id": "18463471423141526"
-    },
-    {
-      "id": "02",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-24T11:30:00-04:00",
-      "formato": "charge",
-      "titulo": "Pivetta Contra o Discurso Fácil",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-23-velha-politica-a-moda-pivetta-instagram-retrato-2.jpg"
-      ],
-      "legenda": "CHARGE · Pivetta Contra o Discurso Fácil\n\nPivetta apaga a fornalha da velha política com água de coco.\n\nEm entrevista à imprensa de MT, o governador chamou o “discurso fácil” de ilusão que vende a alma para ganhar eleição.\n\nLeia a curta completa: hojemt.com.br/velha-politica-a-moda-pivetta\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/velha-politica-a-moda-pivetta/",
-      "charge_json": "pautas/charges/2026-09-23-velha-politica-a-moda-pivetta.json"
-    },
-    {
-      "id": "03",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-24T15:30:00-04:00",
-      "formato": "carrossel",
-      "titulo": "5 notícias para começar o dia (24/09)",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-1-capa.jpg",
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-2-cenipa.jpg",
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-3-cripto.jpg",
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-4-neuropediatria.jpg",
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-5-iluminacao.jpg",
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-6-museu.jpg"
-      ],
-      "legenda": "5 notícias para começar a quinta-feira (24/09) 👉 arrasta pro lado\n\n1️⃣ Cenipa recupera caixa-preta de helicóptero que caiu em Santa Catarina\n2️⃣ BC exige notificação ao Coaf para transferências de cripto acima de US$ 10\n3️⃣ Várzea Grande inicia atendimento de 180 pacientes de neuropediatria\n4️⃣ Cuiabá abre auditoria sobre iluminação irregular em condomínios\n5️⃣ Museu da Caixa d’Água Velha ganha nova estrutura em Cuiabá\n\nMatérias completas em hojemt.com.br\n\n#noticias #resumododia #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/"
-    },
-    {
-      "id": "13",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-24T19:30:00-04:00",
-      "formato": "video",
-      "titulo": "Arquivo HOJE MT · Jô Soares responde ao advogado de Lula (2016)",
-      "midia": [
-        "https://hojemt.com.br/content/media/2026/09/2026-09-24-jo-soares-zanin-dallagnol-corte-2.mp4"
-      ],
-      "legenda": "ARQUIVO HOJE MT · O dia em que Jô Soares respondeu ao advogado de Lula no ar\n\nAgosto de 2016, Programa do Jô. Um dia depois de entrevistar o procurador Deltan Dallagnol, Jô Soares leu no ar um e-mail de Cristiano Zanin, então advogado de Lula, que contestava a divulgação dos grampos e chamava de \"pessoa sem credibilidade\" o delator da acusação por obstrução. E respondeu: \"por que sem credibilidade ele conseguiu passar tanto tempo como líder do governo?\"\n\nE depois?\n• Delcídio do Amaral já tinha sido cassado pelo Senado (74 a 0) em 10/5/2016\n• Lula teve as condenações da Lava Jato anuladas pelo STF em 2021 e foi eleito em 2022\n• Cristiano Zanin tomou posse no STF em 3/8/2023\n• Deltan Dallagnol teve o mandato cassado pelo TSE, por unanimidade, em 16/5/2023\n• Jô Soares morreu em 5/8/2022, aos 84 anos\n\nFontes: Senado Federal, STF, TSE, Agência Brasil. Reprodução: Programa do Jô/TV Globo, via @deltandallagnol.\n\n#arquivo #josoares #lavajato #politica #matogrosso #hojemt",
-      "materia": "https://hojemt.com.br/",
-      "pauta": "pautas/2026-09-24-arquivo-jo-soares-zanin-dallagnol.md",
-      "obs": "formato Arquivo HOJE MT (reel-arquivo.mjs); corte de 1:41; versão completa 3:03 em pautas/videos"
-    },
-    {
-      "id": "05",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-25T07:30:00-04:00",
-      "formato": "card",
-      "titulo": "Anvisa alerta para tirzepatida em pó vendida nas redes sociais",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-anvisa-tirzepatida-1.jpg"
-      ],
-      "legenda": "Anvisa alerta para tirzepatida em pó vendida nas redes sociais\n\nA agência adverte: o preparo caseiro, sem ambiente estéril, pode causar infecções graves, e não há garantia de que o pó contenha o princípio ativo na dose certa. No Brasil, o medicamento (Mounjaro) só é vendido em farmácia, com prescrição.\n\nMatéria completa: hojemt.com.br/anvisa-alerta-sobre-venda-de-tirzepatida-em-po-nas-redes-sociais\n\n#saude #anvisa #tirzepatida #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/anvisa-alerta-sobre-venda-de-tirzepatida-em-po-nas-redes-sociais/"
-    },
-    {
-      "id": "06",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-25T11:30:00-04:00",
-      "formato": "charge",
-      "titulo": "Fila Vazia, Mato Grosso",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-23-fila-vazia-mato-grosso-instagram-retrato.jpg"
-      ],
-      "legenda": "CHARGE · Fila Vazia, Mato Grosso\n\nWellington promete zerar a fila do SUS: churrasco sem carvão, só esperança.\n\nLeia a curta completa: hojemt.com.br/fila-vazia-mato-grosso\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/fila-vazia-mato-grosso/",
-      "charge_json": "pautas/charges/2026-09-23-fila-vazia-mato-grosso.json"
-    },
-    {
-      "id": "04",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-25T15:30:00-04:00",
-      "formato": "video",
-      "titulo": "Charge em movimento · Rua Livre, Amigo",
-      "midia": [
-        "https://hojemt.com.br/content/media/2026/09/2026-09-23-rua-livre-amigo-reel-1.mp4"
-      ],
-      "legenda": "CHARGE EM MOVIMENTO · Rua Livre, Amigo\n\nNo CPA, até o fervor precisa saber fazer fila.\n\nLeia a curta completa: hojemt.com.br/rua-livre-amigo\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #reels #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/rua-livre-amigo/",
-      "charge_json": "pautas/charges/2026-09-23-rua-livre-amigo.json"
-    },
-    {
-      "id": "08",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-25T19:30:00-04:00",
-      "formato": "charge",
-      "titulo": "Ventiada no Nortão",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-23-ventiada-no-nortao-instagram-retrato.jpg"
-      ],
-      "legenda": "CHARGE · Ventiada no Nortão\n\nGisela escuta o Nortão e não promete cura do mal.\n\nLeia a curta completa: hojemt.com.br/ventiada-no-nortao\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/ventiada-no-nortao/",
-      "charge_json": "pautas/charges/2026-09-23-ventiada-no-nortao.json"
-    },
-    {
-      "id": "09",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-26T07:30:00-04:00",
-      "formato": "charge",
-      "titulo": "Alta Floresta, Clínica de Sonhos",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-23-alta-floresta-clinica-de-sonhos-instagram-retrato.jpg"
-      ],
-      "legenda": "CHARGE · Alta Floresta, Clínica de Sonhos\n\nEm Alta Floresta, Janaina promete plantar médicos como soja.\n\nLeia a curta completa: hojemt.com.br/alta-floresta-clinica-de-sonhos\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/alta-floresta-clinica-de-sonhos/",
-      "charge_json": "pautas/charges/2026-09-23-alta-floresta-clinica-de-sonhos.json"
-    },
-    {
-      "id": "10",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-26T11:30:00-04:00",
-      "formato": "carrossel",
-      "titulo": "As charges da semana",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-23-filtro-ideologico-em-cuiaba-instagram-retrato-1.jpg",
-        "https://hojemt.com.br/content/images/2026/09/2026-09-23-onda-nao-quebra-abilio-instagram-retrato-1.jpg",
-        "https://hojemt.com.br/content/images/2026/09/2026-09-23-mare-na-assembleia-instagram-retrato.jpg",
-        "https://hojemt.com.br/content/images/2026/09/2026-09-23-creche-a-la-churrasco-instagram-retrato-1.jpg",
-        "https://hojemt.com.br/content/images/2026/09/2026-09-23-rua-livre-amigo-instagram-retrato-1.jpg"
-      ],
-      "legenda": "As charges da semana no HOJE MT 👉 arrasta pro lado\n\n1️⃣ Filtro ideológico em Cuiabá — Com lupa e vara, o prefeito vai pescar livros em 2027.\n2️⃣ Onda não quebra Abilio — Maré alta na Câmara, e o prefeito segue no remo.\n3️⃣ Maré na Assembleia — Dez mil na fila: esse barco de serviços já passou da boia.\n4️⃣ Creche à la Churrasco — Cardápio da creche agora tem ponto da carne e ponto de vista.\n5️⃣ Rua Livre, Amigo — No CPA, até o fervor precisa saber fazer fila.\n\nTodas as curtas em hojemt.com.br\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/tag/curtas-bastidores/"
-    },
-    {
-      "id": "11",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-26T15:30:00-04:00",
-      "formato": "charge",
-      "titulo": "Janela só abre pro céu",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-23-janela-so-abre-pro-ceu-instagram-retrato.jpg"
-      ],
-      "legenda": "CHARGE · Janela só abre pro céu\n\nA janela dos ônibus segue fechada; só a lua não pede autorização.\n\nLeia a curta completa: hojemt.com.br/janela-so-abre-pro-ceu\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/janela-so-abre-pro-ceu/",
-      "charge_json": "pautas/charges/2026-09-23-janela-so-abre-pro-ceu.json"
-    },
-    {
-      "id": "07",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-26T19:30:00-04:00",
-      "formato": "video",
-      "titulo": "Charge em movimento · Quintal Nada, Moleque",
-      "midia": [
-        "https://hojemt.com.br/content/media/2026/09/2026-09-23-quintal-nada-moleque-reel-1.mp4"
-      ],
-      "legenda": "CHARGE EM MOVIMENTO · Quintal Nada, Moleque\n\nO quintal é nosso, o destino também.\n\nLeia a curta completa: hojemt.com.br/quintal-nada-moleque\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #reels #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/quintal-nada-moleque/",
-      "charge_json": "pautas/charges/2026-09-23-quintal-nada-moleque.json"
-    },
-    {
-      "id": "17",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-28T07:30:00-04:00",
-      "formato": "card",
-      "titulo": "IA na fábrica: uso mais que dobra em dois anos",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-ia-na-industria.jpg"
-      ],
-      "legenda": "IA na fábrica: uso mais que dobra em dois anos e já rende resultado medido\n\nEntre 2022 e 2024, a fatia de empresas industriais com IA passou de 16,9% para 41,9% (IBGE). WEG, Tupy, Bosch e Petrobras contam ganhos em reais, horas e taxa de erro. Mas 58% das empresas ainda não conseguem tirar os pilotos do laboratório (Deloitte).\n\nMatéria completa: hojemt.com.br/ia-na-industria-onde-ja-da-resultado\n\n#inteligenciaartificial #industria #tecnologia #matogrosso #hojemt",
-      "materia": "https://hojemt.com.br/ia-na-industria-onde-ja-da-resultado/",
-      "obs": "publicar só depois que a matéria (rascunho no Ghost) for publicada; se ainda estiver em rascunho no horário, pular e avisar"
-    },
-    {
-      "id": "12",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-28T11:30:00-04:00",
-      "formato": "charge",
-      "titulo": "Salário no ponto, sem tropeço",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-23-salario-no-ponto-sem-tropeco-instagram-retrato.jpg"
-      ],
-      "legenda": "CHARGE · Salário no ponto, sem tropeço\n\nNa rede da prefeita, o salário cai antes do peixe.\n\nLeia a curta completa: hojemt.com.br/salario-no-ponto-sem-tropeco\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/salario-no-ponto-sem-tropeco/",
-      "charge_json": "pautas/charges/2026-09-23-salario-no-ponto-sem-tropeco.json"
-    },
-    {
-      "id": "14",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-28T15:30:00-04:00",
-      "formato": "charge",
-      "titulo": "Parlamento Visita a Escola",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-parlamento-visita-a-escola-instagram-retrato.jpg"
-      ],
-      "legenda": "CHARGE · Parlamento Visita a Escola\n\nNa UFMT, a Assembleia colhe talentos com troféu de isca.\n\nA Secretaria de Comunicação da ALMT foi à UFMT apresentar a 2ª edição do Prêmio ALMT de Jornalismo, com categoria universitária.\n\nLeia a curta completa: hojemt.com.br/parlamento-visita-a-escola\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/parlamento-visita-a-escola/",
-      "charge_json": "pautas/charges/2026-09-24-parlamento-visita-a-escola.json"
-    },
-    {
-      "id": "15",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-28T19:30:00-04:00",
-      "formato": "charge",
-      "titulo": "Luz Que Não Brilha",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-luz-que-nao-brilha-instagram-retrato-1.jpg"
-      ],
-      "legenda": "CHARGE · Luz Que Não Brilha\n\nAbilio desliga a luz do condomínio e dá as costas ao holofote eleitoral.\n\nO prefeito mantém o corte do custeio da iluminação interna dos condomínios de Cuiabá, mesmo em ano eleitoral.\n\nLeia a curta completa: hojemt.com.br/luz-que-nao-brilha\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/luz-que-nao-brilha/",
-      "charge_json": "pautas/charges/2026-09-24-luz-que-nao-brilha.json"
-    },
-    {
-      "id": "16",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-29T07:30:00-04:00",
-      "formato": "charge",
-      "titulo": "Inferno Pantaneiro Cáceres em Fogo",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-inferno-pantaneiro-caceres-em-fogo-instagram-retrato.jpg"
-      ],
-      "legenda": "CHARGE · Inferno Pantaneiro\n\nMilas acende a churrasqueira de promessas: IA no SUS, cadeira a menos e cadeia a mais.\n\nNo podcast Política de Primeira, o candidato ao governo Rafaell Milas defendeu IA no SUS, corte de 30% dos cargos comissionados e um presídio de segurança máxima que batizou de “Inferno Pantaneiro”.\n\nLeia a curta completa: hojemt.com.br/inferno-pantaneiro-caceres-em-fogo\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #eleicoes2026 #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/inferno-pantaneiro-caceres-em-fogo/",
-      "charge_json": "pautas/charges/2026-09-24-inferno-pantaneiro-caceres-em-fogo.json"
-    },
-    {
-      "id": "18",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-29T11:30:00-04:00",
-      "formato": "charge",
-      "titulo": "Luz no Quintal Alheio",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-luz-no-quintal-alheio-instagram-retrato-1.jpg"
-      ],
-      "legenda": "CHARGE · Luz no Quintal Alheio\n\nAbilio põe a lupa em cinco anos de luz paga no quintal alheio.\n\nA Prefeitura de Cuiabá levanta o que pagou à Energisa, nos últimos cinco anos, pela iluminação de vias internas de condomínios fechados. A cobrança será da distribuidora, e o caso vai ao Ministério Público.\n\nLeia a curta completa: hojemt.com.br/luz-no-quintal-alheio\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/luz-no-quintal-alheio/",
-      "charge_json": "pautas/charges/2026-09-24-luz-no-quintal-alheio.json"
-    },
-    {
-      "id": "19",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-29T15:30:00-04:00",
-      "formato": "charge",
-      "titulo": "BR-163: da Morte à Esperança",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-br-163-da-morte-a-esperanca-instagram-retrato.jpg"
-      ],
-      "legenda": "CHARGE · BR-163: da Morte à Esperança\n\nFávaro tempera a BR-163 com 5,5 bi e uma pitada de sal.\n\nO senador Carlos Fávaro diz que a duplicação da BR-163, com R$ 5,5 bilhões da União e do Estado, transforma a “estrada da morte” em corredor de segurança e desenvolvimento.\n\nLeia a curta completa: hojemt.com.br/br-163-da-morte-a-esperanca\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #br163 #hojemt",
-      "materia": "https://hojemt.com.br/br-163-da-morte-a-esperanca/",
-      "charge_json": "pautas/charges/2026-09-24-br-163-da-morte-a-esperanca.json"
-    },
-    {
-      "id": "20",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-29T19:30:00-04:00",
-      "formato": "charge",
-      "titulo": "Poste Não É Presente",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-poste-nao-e-presente-instagram-retrato-1.jpg"
-      ],
-      "legenda": "CHARGE · Poste Não É Presente\n\nPoste de presente: o síndico ganha a luz, e a conta vem no laço.\n\nO prefeito Abilio Brunini reuniu síndicos e Energisa: a conta da iluminação das áreas internas dos condomínios de Cuiabá passa aos próprios condomínios, com base em resoluções da ANEEL.\n\nLeia a curta completa: hojemt.com.br/poste-nao-e-presente\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/poste-nao-e-presente/",
-      "charge_json": "pautas/charges/2026-09-24-poste-nao-e-presente.json"
-    },
-    {
-      "id": "21",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-30T07:30:00-04:00",
-      "formato": "charge",
-      "titulo": "Iluminação à Conta dos Muros",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-iluminacao-a-conta-dos-muros-instagram-retrato-1.jpg"
-      ],
-      "legenda": "CHARGE · Iluminação à Conta dos Muros\n\nA luz da viela é do condomínio; a conta, também.\n\nEm coletiva com a Limpurb, Abilio Brunini chamou de “distorção histórica” o custeio municipal da iluminação das vias internas de condomínios e passou a conta aos condomínios.\n\nLeia a curta completa: hojemt.com.br/iluminacao-a-conta-dos-muros\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/iluminacao-a-conta-dos-muros/",
-      "charge_json": "pautas/charges/2026-09-24-iluminacao-a-conta-dos-muros.json"
-    },
-    {
-      "id": "22",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
-      "quando": "2026-09-30T11:30:00-04:00",
-      "formato": "charge",
-      "titulo": "Aliança contra a fome",
-      "midia": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-24-alianca-contra-a-fome-instagram-retrato.jpg"
-      ],
-      "legenda": "CHARGE · Aliança contra a fome\n\nGuerra e seca lotam a fila; Brasil e Espanha correm com a panela.\n\nA FAO calcula cerca de 770 milhões de pessoas em insegurança alimentar no mundo, 40 milhões a mais por causa de guerras e eventos climáticos extremos. Brasil e Espanha anunciaram uma aliança para levar assistência alimentar a regiões em conflito.\n\nLeia a curta completa: hojemt.com.br/alianca-contra-a-fome\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #fome #fao #brasil #espanha #hojemt",
-      "materia": "https://hojemt.com.br/alianca-contra-a-fome/",
-      "charge_json": "pautas/charges/2026-09-24-alianca-contra-a-fome.json"
-    }
-  ]
+  {
+   "id": "03",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-24T15:30:00-04:00",
+   "formato": "carrossel",
+   "titulo": "5 notícias para começar o dia (24/09)",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-1-capa.jpg",
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-2-cenipa.jpg",
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-3-cripto.jpg",
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-4-neuropediatria.jpg",
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-5-iluminacao.jpg",
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-6-museu.jpg"
+   ],
+   "legenda": "5 notícias para começar a quinta-feira (24/09) 👉 arrasta pro lado\n\n1️⃣ Cenipa recupera caixa-preta de helicóptero que caiu em Santa Catarina\n2️⃣ BC exige notificação ao Coaf para transferências de cripto acima de US$ 10\n3️⃣ Várzea Grande inicia atendimento de 180 pacientes de neuropediatria\n4️⃣ Cuiabá abre auditoria sobre iluminação irregular em condomínios\n5️⃣ Museu da Caixa d’Água Velha ganha nova estrutura em Cuiabá\n\nMatérias completas em hojemt.com.br\n\n#noticias #resumododia #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/"
+  },
+  {
+   "id": "13",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-24T19:30:00-04:00",
+   "formato": "video",
+   "titulo": "Arquivo HOJE MT · Jô Soares responde ao advogado de Lula (2016)",
+   "midia": [
+    "https://hojemt.com.br/content/media/2026/09/2026-09-24-jo-soares-zanin-dallagnol-corte-2.mp4"
+   ],
+   "legenda": "ARQUIVO HOJE MT · O dia em que Jô Soares respondeu ao advogado de Lula no ar\n\nAgosto de 2016, Programa do Jô. Um dia depois de entrevistar o procurador Deltan Dallagnol, Jô Soares leu no ar um e-mail de Cristiano Zanin, então advogado de Lula, que contestava a divulgação dos grampos e chamava de \"pessoa sem credibilidade\" o delator da acusação por obstrução. E respondeu: \"por que sem credibilidade ele conseguiu passar tanto tempo como líder do governo?\"\n\nE depois?\n• Delcídio do Amaral já tinha sido cassado pelo Senado (74 a 0) em 10/5/2016\n• Lula teve as condenações da Lava Jato anuladas pelo STF em 2021 e foi eleito em 2022\n• Cristiano Zanin tomou posse no STF em 3/8/2023\n• Deltan Dallagnol teve o mandato cassado pelo TSE, por unanimidade, em 16/5/2023\n• Jô Soares morreu em 5/8/2022, aos 84 anos\n\nFontes: Senado Federal, STF, TSE, Agência Brasil. Reprodução: Programa do Jô/TV Globo, via @deltandallagnol.\n\n#arquivo #josoares #lavajato #politica #matogrosso #hojemt",
+   "materia": "https://hojemt.com.br/",
+   "pauta": "pautas/2026-09-24-arquivo-jo-soares-zanin-dallagnol.md",
+   "obs": "formato Arquivo HOJE MT (reel-arquivo.mjs); corte de 1:41; versão completa 3:03 em pautas/videos"
+  },
+  {
+   "id": "05",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-25T07:30:00-04:00",
+   "formato": "card",
+   "titulo": "Anvisa alerta para tirzepatida em pó vendida nas redes sociais",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-anvisa-tirzepatida-1.jpg"
+   ],
+   "legenda": "Anvisa alerta para tirzepatida em pó vendida nas redes sociais\n\nA agência adverte: o preparo caseiro, sem ambiente estéril, pode causar infecções graves, e não há garantia de que o pó contenha o princípio ativo na dose certa. No Brasil, o medicamento (Mounjaro) só é vendido em farmácia, com prescrição.\n\nMatéria completa: hojemt.com.br/anvisa-alerta-sobre-venda-de-tirzepatida-em-po-nas-redes-sociais\n\n#saude #anvisa #tirzepatida #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/anvisa-alerta-sobre-venda-de-tirzepatida-em-po-nas-redes-sociais/"
+  },
+  {
+   "id": "06",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-25T11:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Fila Vazia, Mato Grosso",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-23-fila-vazia-mato-grosso-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Fila Vazia, Mato Grosso\n\nWellington promete zerar a fila do SUS: churrasco sem carvão, só esperança.\n\nLeia a curta completa: hojemt.com.br/fila-vazia-mato-grosso\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/fila-vazia-mato-grosso/",
+   "charge_json": "pautas/charges/2026-09-23-fila-vazia-mato-grosso.json"
+  },
+  {
+   "id": "04",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-25T15:30:00-04:00",
+   "formato": "video",
+   "titulo": "Charge em movimento · Rua Livre, Amigo",
+   "midia": [
+    "https://hojemt.com.br/content/media/2026/09/2026-09-23-rua-livre-amigo-reel-1.mp4"
+   ],
+   "legenda": "CHARGE EM MOVIMENTO · Rua Livre, Amigo\n\nNo CPA, até o fervor precisa saber fazer fila.\n\nLeia a curta completa: hojemt.com.br/rua-livre-amigo\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #reels #politica #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/rua-livre-amigo/",
+   "charge_json": "pautas/charges/2026-09-23-rua-livre-amigo.json"
+  },
+  {
+   "id": "08",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-25T19:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Ventiada no Nortão",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-23-ventiada-no-nortao-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Ventiada no Nortão\n\nGisela escuta o Nortão e não promete cura do mal.\n\nLeia a curta completa: hojemt.com.br/ventiada-no-nortao\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/ventiada-no-nortao/",
+   "charge_json": "pautas/charges/2026-09-23-ventiada-no-nortao.json"
+  },
+  {
+   "id": "09",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-26T07:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Alta Floresta, Clínica de Sonhos",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-23-alta-floresta-clinica-de-sonhos-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Alta Floresta, Clínica de Sonhos\n\nEm Alta Floresta, Janaina promete plantar médicos como soja.\n\nLeia a curta completa: hojemt.com.br/alta-floresta-clinica-de-sonhos\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/alta-floresta-clinica-de-sonhos/",
+   "charge_json": "pautas/charges/2026-09-23-alta-floresta-clinica-de-sonhos.json"
+  },
+  {
+   "id": "10",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-26T11:30:00-04:00",
+   "formato": "carrossel",
+   "titulo": "As charges da semana",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-23-filtro-ideologico-em-cuiaba-instagram-retrato-1.jpg",
+    "https://hojemt.com.br/content/images/2026/09/2026-09-23-onda-nao-quebra-abilio-instagram-retrato-1.jpg",
+    "https://hojemt.com.br/content/images/2026/09/2026-09-23-mare-na-assembleia-instagram-retrato.jpg",
+    "https://hojemt.com.br/content/images/2026/09/2026-09-23-creche-a-la-churrasco-instagram-retrato-1.jpg",
+    "https://hojemt.com.br/content/images/2026/09/2026-09-23-rua-livre-amigo-instagram-retrato-1.jpg"
+   ],
+   "legenda": "As charges da semana no HOJE MT 👉 arrasta pro lado\n\n1️⃣ Filtro ideológico em Cuiabá — Com lupa e vara, o prefeito vai pescar livros em 2027.\n2️⃣ Onda não quebra Abilio — Maré alta na Câmara, e o prefeito segue no remo.\n3️⃣ Maré na Assembleia — Dez mil na fila: esse barco de serviços já passou da boia.\n4️⃣ Creche à la Churrasco — Cardápio da creche agora tem ponto da carne e ponto de vista.\n5️⃣ Rua Livre, Amigo — No CPA, até o fervor precisa saber fazer fila.\n\nTodas as curtas em hojemt.com.br\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/tag/curtas-bastidores/"
+  },
+  {
+   "id": "11",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-26T15:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Janela só abre pro céu",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-23-janela-so-abre-pro-ceu-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Janela só abre pro céu\n\nA janela dos ônibus segue fechada; só a lua não pede autorização.\n\nLeia a curta completa: hojemt.com.br/janela-so-abre-pro-ceu\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/janela-so-abre-pro-ceu/",
+   "charge_json": "pautas/charges/2026-09-23-janela-so-abre-pro-ceu.json"
+  },
+  {
+   "id": "07",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-26T19:30:00-04:00",
+   "formato": "video",
+   "titulo": "Charge em movimento · Quintal Nada, Moleque",
+   "midia": [
+    "https://hojemt.com.br/content/media/2026/09/2026-09-23-quintal-nada-moleque-reel-1.mp4"
+   ],
+   "legenda": "CHARGE EM MOVIMENTO · Quintal Nada, Moleque\n\nO quintal é nosso, o destino também.\n\nLeia a curta completa: hojemt.com.br/quintal-nada-moleque\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #reels #politica #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/quintal-nada-moleque/",
+   "charge_json": "pautas/charges/2026-09-23-quintal-nada-moleque.json"
+  },
+  {
+   "id": "17",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-28T07:30:00-04:00",
+   "formato": "card",
+   "titulo": "IA na fábrica: uso mais que dobra em dois anos",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-ia-na-industria.jpg"
+   ],
+   "legenda": "IA na fábrica: uso mais que dobra em dois anos e já rende resultado medido\n\nEntre 2022 e 2024, a fatia de empresas industriais com IA passou de 16,9% para 41,9% (IBGE). WEG, Tupy, Bosch e Petrobras contam ganhos em reais, horas e taxa de erro. Mas 58% das empresas ainda não conseguem tirar os pilotos do laboratório (Deloitte).\n\nMatéria completa: hojemt.com.br/ia-na-industria-onde-ja-da-resultado\n\n#inteligenciaartificial #industria #tecnologia #matogrosso #hojemt",
+   "materia": "https://hojemt.com.br/ia-na-industria-onde-ja-da-resultado/",
+   "obs": "publicar só depois que a matéria (rascunho no Ghost) for publicada; se ainda estiver em rascunho no horário, pular e avisar"
+  },
+  {
+   "id": "12",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-28T11:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Salário no ponto, sem tropeço",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-23-salario-no-ponto-sem-tropeco-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Salário no ponto, sem tropeço\n\nNa rede da prefeita, o salário cai antes do peixe.\n\nLeia a curta completa: hojemt.com.br/salario-no-ponto-sem-tropeco\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/salario-no-ponto-sem-tropeco/",
+   "charge_json": "pautas/charges/2026-09-23-salario-no-ponto-sem-tropeco.json"
+  },
+  {
+   "id": "14",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-28T15:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Parlamento Visita a Escola",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-parlamento-visita-a-escola-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Parlamento Visita a Escola\n\nNa UFMT, a Assembleia colhe talentos com troféu de isca.\n\nA Secretaria de Comunicação da ALMT foi à UFMT apresentar a 2ª edição do Prêmio ALMT de Jornalismo, com categoria universitária.\n\nLeia a curta completa: hojemt.com.br/parlamento-visita-a-escola\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/parlamento-visita-a-escola/",
+   "charge_json": "pautas/charges/2026-09-24-parlamento-visita-a-escola.json"
+  },
+  {
+   "id": "15",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-28T19:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Luz Que Não Brilha",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-luz-que-nao-brilha-instagram-retrato-1.jpg"
+   ],
+   "legenda": "CHARGE · Luz Que Não Brilha\n\nAbilio desliga a luz do condomínio e dá as costas ao holofote eleitoral.\n\nO prefeito mantém o corte do custeio da iluminação interna dos condomínios de Cuiabá, mesmo em ano eleitoral.\n\nLeia a curta completa: hojemt.com.br/luz-que-nao-brilha\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/luz-que-nao-brilha/",
+   "charge_json": "pautas/charges/2026-09-24-luz-que-nao-brilha.json"
+  },
+  {
+   "id": "16",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-29T07:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Inferno Pantaneiro Cáceres em Fogo",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-inferno-pantaneiro-caceres-em-fogo-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Inferno Pantaneiro\n\nMilas acende a churrasqueira de promessas: IA no SUS, cadeira a menos e cadeia a mais.\n\nNo podcast Política de Primeira, o candidato ao governo Rafaell Milas defendeu IA no SUS, corte de 30% dos cargos comissionados e um presídio de segurança máxima que batizou de “Inferno Pantaneiro”.\n\nLeia a curta completa: hojemt.com.br/inferno-pantaneiro-caceres-em-fogo\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #eleicoes2026 #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/inferno-pantaneiro-caceres-em-fogo/",
+   "charge_json": "pautas/charges/2026-09-24-inferno-pantaneiro-caceres-em-fogo.json"
+  },
+  {
+   "id": "18",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-29T11:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Luz no Quintal Alheio",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-luz-no-quintal-alheio-instagram-retrato-1.jpg"
+   ],
+   "legenda": "CHARGE · Luz no Quintal Alheio\n\nAbilio põe a lupa em cinco anos de luz paga no quintal alheio.\n\nA Prefeitura de Cuiabá levanta o que pagou à Energisa, nos últimos cinco anos, pela iluminação de vias internas de condomínios fechados. A cobrança será da distribuidora, e o caso vai ao Ministério Público.\n\nLeia a curta completa: hojemt.com.br/luz-no-quintal-alheio\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/luz-no-quintal-alheio/",
+   "charge_json": "pautas/charges/2026-09-24-luz-no-quintal-alheio.json"
+  },
+  {
+   "id": "19",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-29T15:30:00-04:00",
+   "formato": "charge",
+   "titulo": "BR-163: da Morte à Esperança",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-br-163-da-morte-a-esperanca-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · BR-163: da Morte à Esperança\n\nFávaro tempera a BR-163 com 5,5 bi e uma pitada de sal.\n\nO senador Carlos Fávaro diz que a duplicação da BR-163, com R$ 5,5 bilhões da União e do Estado, transforma a “estrada da morte” em corredor de segurança e desenvolvimento.\n\nLeia a curta completa: hojemt.com.br/br-163-da-morte-a-esperanca\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #br163 #hojemt",
+   "materia": "https://hojemt.com.br/br-163-da-morte-a-esperanca/",
+   "charge_json": "pautas/charges/2026-09-24-br-163-da-morte-a-esperanca.json"
+  },
+  {
+   "id": "20",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-29T19:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Poste Não É Presente",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-poste-nao-e-presente-instagram-retrato-1.jpg"
+   ],
+   "legenda": "CHARGE · Poste Não É Presente\n\nPoste de presente: o síndico ganha a luz, e a conta vem no laço.\n\nO prefeito Abilio Brunini reuniu síndicos e Energisa: a conta da iluminação das áreas internas dos condomínios de Cuiabá passa aos próprios condomínios, com base em resoluções da ANEEL.\n\nLeia a curta completa: hojemt.com.br/poste-nao-e-presente\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/poste-nao-e-presente/",
+   "charge_json": "pautas/charges/2026-09-24-poste-nao-e-presente.json"
+  },
+  {
+   "id": "21",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-30T07:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Iluminação à Conta dos Muros",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-iluminacao-a-conta-dos-muros-instagram-retrato-1.jpg"
+   ],
+   "legenda": "CHARGE · Iluminação à Conta dos Muros\n\nA luz da viela é do condomínio; a conta, também.\n\nEm coletiva com a Limpurb, Abilio Brunini chamou de “distorção histórica” o custeio municipal da iluminação das vias internas de condomínios e passou a conta aos condomínios.\n\nLeia a curta completa: hojemt.com.br/iluminacao-a-conta-dos-muros\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/iluminacao-a-conta-dos-muros/",
+   "charge_json": "pautas/charges/2026-09-24-iluminacao-a-conta-dos-muros.json"
+  },
+  {
+   "id": "22",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-30T11:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Aliança contra a fome",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-alianca-contra-a-fome-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Aliança contra a fome\n\nGuerra e seca lotam a fila; Brasil e Espanha correm com a panela.\n\nA FAO calcula cerca de 770 milhões de pessoas em insegurança alimentar no mundo, 40 milhões a mais por causa de guerras e eventos climáticos extremos. Brasil e Espanha anunciaram uma aliança para levar assistência alimentar a regiões em conflito.\n\nLeia a curta completa: hojemt.com.br/alianca-contra-a-fome\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #fome #fao #brasil #espanha #hojemt",
+   "materia": "https://hojemt.com.br/alianca-contra-a-fome/",
+   "charge_json": "pautas/charges/2026-09-24-alianca-contra-a-fome.json"
+  },
+  {
+   "id": "23",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-30T15:30:00-04:00",
+   "formato": "post",
+   "titulo": "Governo de Mato Grosso: os seis candidatos",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-candidatos-governo-mt-instagram-retrato.jpg"
+   ],
+   "legenda": "ELEIÇÕES 2026 · Governo de Mato Grosso\n\nSeis nomes estão na urna para o Governo de MT no 1º turno, em 4 de outubro (ordem alfabética):\n\n55 Doutora Natasha (PSD) · vice Diogo Botelho\n33 Maurício Coelho (Mobiliza) · vice Dr. Wagner Malheiros\n10 Otaviano Pivetta (Republicanos) · vice Gisela Simona\n14 Rafaell Milas (Missão) · vice Thales Sartorelo\n36 Sargento Laudicério (Agir) · vice Alex Pucineli\n22 Wellington Fagundes (PL) · vice Reinaldo Morais\n\nFotos: TSE/Divulgação (registro oficial das candidaturas)\n\nCobertura completa em hojemt.com.br/tag/eleicoes\n\n#eleicoes2026 #matogrosso #cuiaba #governomt #hojemt",
+   "materia": "https://hojemt.com.br/tag/eleicoes/",
+   "origem": "pautas/eleicoes/2026-mt-candidatos.json"
+  }
+ ]
 }

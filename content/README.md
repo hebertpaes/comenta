@@ -440,3 +440,38 @@ o backup do sistema no GitHub."**
   `backup/pacotes-drive.json`.
 - **Rotina diária** — 03:00 (Cuiabá): backup do conteúdo + commit + push.
   Nada de segredos no repositório.
+
+## Candidatos com foto oficial do TSE (matérias de eleições)
+
+Regra do editor (24/09/2026): matérias de eleições podem ilustrar os candidatos, com **foco em Mato Grosso** — e só com **foto real e oficial**. Em notícia, nunca rosto gerado por IA; a charge fica nas Curtas.
+
+- **Fonte das fotos:** foto oficial do registro de candidatura no TSE (arquivo `FMT<SQ_CANDIDATO>_div.jpg` do pacote de dados abertos, 161×225 px). O `cdn.tse.jus.br` e o DivulgaCand bloqueiam acesso de fora do Brasil; use o espelho público do ND Mais (`https://static.ndmais.com.br/eleicoes/2026/mt/FMT<SQ>_div.jpg`, lista em `https://ndmais.com.br/eleicoes/2026/candidatos/mt/governador/` e `/senador/`) ou a página do Senado Notícias (`https://www12.senado.leg.br/noticias/candidatos-2026/mato-grosso`, crédito "Foto: TSE"). Importe no Canva com `upload-asset-from-url`.
+- **Dados e ids:** `pautas/eleicoes/2026-mt-candidatos.json` (nome de urna, número, partido, vice, situação, SQ do TSE, `canva_media`). Cópias das fotos em `pautas/eleicoes/fotos-tse/`. Artes e posts trocados em `pautas/eleicoes/registro.json`.
+- **Crédito público:** `Fotos: TSE/Divulgação · Arte: HOJE MT` (legenda) e alt com nomes e partidos.
+- **Tratamento igual:** nas montagens, todos os candidatos registrados, em ordem alfabética pelo nome de urna, mesmo tamanho; nada de destacar número ou partido de um só.
+
+### Artes prontas (Canva)
+
+| Arte | Design | Arquivo | Uso |
+|---|---|---|---|
+| Governo de MT, 6 candidatos (16:9) | `DAHWHzo4H18` | `pautas/eleicoes/2026-09-24-candidatos-governo-mt.jpg` | capa de matérias sobre a disputa em geral (balanço, prioridades, pesquisas com todos) |
+| Governo de MT, Instagram 4:5 | `DAHWH4_Mmww` | `…-instagram-retrato.jpg` | post "Governo de Mato Grosso: os seis candidatos" (agenda 23) |
+| Senado por MT, 10 candidatos (16:9) | `DAHWH1j1gbI` | `pautas/eleicoes/2026-09-24-candidatos-senado-mt.jpg` | matérias sobre a disputa ao Senado |
+| Capa de um candidato | `DAHWH3jRQss` (Pivetta promete…) | `…-capa-pivetta-promete-devolver.jpg` | modelo para matéria sobre um candidato (proposta, agenda, entrevista) |
+| Capa de dois candidatos | `DAHWH_wMHgw` (debate) | `…-capa-pivetta-wellington-debate.jpg` | modelo para debate/embate entre dois |
+
+### Receita das capas (Canva MCP)
+
+1. `copy-design` do modelo 16:9 `DAHWDzwR5c0`; `read-design open_transaction`; apague todos os elementos do modelo de charge (faixa, balão, legenda, selo, assinatura, rodapé).
+2. `insert_shape` retângulo 1600×900 `#0B3B2C` (fundo) e painel `#0F4A37` (600×900 para um candidato; 900×900 para dois; montagem: bloco 800×450 em 400/450).
+3. `insert_fill` com o `canva_media` do candidato: um → 440×615 em left 80 / top 90; dois → 380×531 em left 60 e 460 / top 110; montagem 6 → grade 4×2 de 400×450 com tiras pretas (opacidade 0,62) de 56 px e nome · partido em 26 px bold branco centralizado; Senado → cabeçalho 100 px + grade 5×2 de 320×400. Retratos 4:5 (Instagram): cabeçalho 150 px + grade 2×3 de 540×400 com `crop_media` top −30.
+4. Textos com `add_text` (nasce 16 px preto) e depois `format_text`: kicker `ELEIÇÕES 2026 · GOVERNO DE MT` 26 px bold `#2EDC8A`; título exato da matéria 60 px bold branco (48 px com duas fotos); linha `Primeiro turno em 4 de outubro` 26 px; rodapé `Foto: TSE/Divulgação · Arte: HOJE MT · hojemt.com.br` 18 px `#CFE9DC` em top 842. Barra `#00A859` de 8 px sob a foto.
+5. `edit-design finalize: commit` → `export-design {type: jpg, quality: 92}` → salvar em `pautas/eleicoes/<data>-capa-<slug-curto>.jpg` → `imagem-post.mjs --legenda="Foto: TSE/Divulgação · Arte: HOJE MT" --alt="<nomes e partidos>"` → `og-whatsapp.mjs --slug --da-destaque` → registrar em `pautas/eleicoes/registro.json`.
+
+### Quando NÃO usar a foto oficial
+
+Matéria de acusação, denúncia, áudio não confirmado ou investigação envolvendo o candidato: manter a arte atual ou fazer ilustração sem rosto (seção "Artes dos artigos no Canva"). Separar fato documentado de acusação (regra de `pautas/README.md`).
+
+### Presidenciáveis (próxima etapa, se o editor pedir)
+
+As fotos oficiais do TSE dos candidatos a presidente estão no Wikimedia Commons (`File:2026 <NOME> CANDIDATO PRESIDENTE TSE (<id>).jpg`, CC BY 4.0); os 23 posts de "Agenda dos presidenciáveis" usam duas artes genéricas da Agência Brasil e podem receber montagem no mesmo padrão.
