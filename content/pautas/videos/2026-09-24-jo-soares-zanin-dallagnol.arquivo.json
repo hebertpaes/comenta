@@ -1,0 +1,131 @@
+{
+  "entrada": "videos/tiktok-7688751485009595656.mp4",
+  "origem": "https://www.tiktok.com/@brasil_livre2026/video/7688751485009595656 (repost de @deltandallagnol); programa exibido pela TV Globo em 2 e 3/8/2016",
+  "recorte": {
+    "x": 0,
+    "y": 284,
+    "w": 576,
+    "h": 439
+  },
+  "etiqueta": "ARQUIVO HOJE MT · AGOSTO DE 2016",
+  "gancho": [
+    "O dia em que Jô Soares",
+    "respondeu ao advogado",
+    "de Lula no ar"
+  ],
+  "credito": "Reprodução: Programa do Jô/TV Globo (3/8/2016) · via @deltandallagnol",
+  "transcricao": "pautas/videos/2026-09-24-jo-soares-zanin-dallagnol-transcricao.json",
+  "correcoes": [
+    [
+      "Dalinol|Delanyol",
+      "Dallagnol"
+    ],
+    [
+      "grampiada",
+      "grampeada"
+    ],
+    [
+      "levada ao Arno",
+      "levada ao ar no"
+    ],
+    [
+      "Luisa Lula",
+      "Luiz Inácio Lula"
+    ],
+    [
+      "presente afastada de uma alcef",
+      "presidente afastada Dilma Rousseff"
+    ],
+    [
+      "e, então, o presidente da República",
+      "e a então presidente da República,"
+    ],
+    [
+      "hoje representa a República em exercício Dilma Rousseff",
+      "Dilma Rousseff"
+    ],
+    [
+      "crime à divulgação",
+      "crime a divulgação"
+    ],
+    [
+      "dirigida à Lula",
+      "dirigida a Lula"
+    ],
+    [
+      "2-8-16",
+      "2/8/16"
+    ]
+  ],
+  "trechos": [
+    [
+      0,
+      13.5
+    ],
+    [
+      58.5,
+      70.1
+    ],
+    [
+      82,
+      112.5
+    ],
+    [
+      124.8,
+      149.7
+    ],
+    [
+      162.8,
+      173.7
+    ]
+  ],
+  "abertura": {
+    "chip": "ARQUIVO HOJE MT",
+    "sub": "Programa do Jô · TV Globo · 2016",
+    "chamada": "Assista até o fim: o que aconteceu com cada um depois."
+  },
+  "fechamento": {
+    "titulo": "E depois?",
+    "itens": [
+      [
+        "Delcídio do Amaral",
+        "já tinha sido cassado pelo Senado (74 a 0) em 10/5/2016"
+      ],
+      [
+        "Lula",
+        "teve as condenações da Lava Jato anuladas pelo STF em 2021 e foi eleito presidente em 2022"
+      ],
+      [
+        "Cristiano Zanin",
+        "tomou posse como ministro do STF em 3/8/2023"
+      ],
+      [
+        "Deltan Dallagnol",
+        "teve o mandato de deputado cassado pelo TSE, por unanimidade, em 16/5/2023"
+      ],
+      [
+        "Jô Soares",
+        "morreu em 5/8/2022, aos 84 anos"
+      ]
+    ],
+    "fontes": "Fontes: Senado Federal, STF, TSE, Agência Brasil"
+  },
+  "duracoes": {
+    "abertura": 2.5,
+    "fechamento": 7
+  },
+  "saidas": {
+    "completo": "pautas/videos/2026-09-24-jo-soares-zanin-dallagnol-completo.mp4",
+    "corte": "pautas/videos/2026-09-24-jo-soares-zanin-dallagnol-corte.mp4"
+  },
+  "hospedado_em": {
+    "corte": "https://hojemt.com.br/content/media/2026/09/2026-09-24-jo-soares-zanin-dallagnol-corte.mp4",
+    "completo": "https://hojemt.com.br/content/media/2026/09/2026-09-24-jo-soares-zanin-dallagnol-completo.mp4",
+    "capa_site": "pautas/videos/2026-09-24-jo-soares-zanin-dallagnol-capa.jpg"
+  },
+  "site": {
+    "rascunho": "https://hojemt.com.br/ghost/#/editor/post/6ab48f6d834d62060cb1d00a",
+    "slug": "arquivo-jo-soares-responde-ao-advogado-de-lula-2016",
+    "status": "draft (publicar após revisão)"
+  }
+}

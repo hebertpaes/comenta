@@ -161,6 +161,7 @@ depender de Canva ou de edição manual:
 | `node ilustrar.mjs --slug=… [--publicar]`                      | Ilustração realista (Gemini + sharp) para Curtas/charges sem foto.                                                                                                                                                                                                                                                                                   |
 | `node video.mjs <url\|arquivo.mp4> [--saida=…]`                | Baixa um vídeo (reel, tweet, YouTube; via yt-dlp) e aplica a **marca d'água** do HOJE MT com ffmpeg (`assets/marca-dagua.png`, gerada da logo do tema, sem o slogan). Opções: `--opacidade=0.55`, `--largura=0.32` (fração da largura do vídeo), `--posicao=inferior-direita`, `--margem=34`, `--so-baixar`. Saída H.264/AAC pronta para o Instagram. |
 | `node reel.mjs <imagem> [--duracao=12] [--zoom=1.12]` | Transforma uma charge ou card (4:5 ou 16:9) num **Reel 9:16** (1080×1920): movimento lento de câmera, fundo desfocado, marca-d'água e faixa de áudio silenciosa (o Instagram exige áudio). Saída em `pautas/videos/<nome>-reel.mp4`; hospede com `upload-ghost.mjs` e publique com `publish_video`. |
+| `node reel-arquivo.mjs <spec.json> [--so=corte\|completo]` | Formato **Arquivo HOJE MT**: vídeo antigo (TV, redes) vira Reel 9:16 com etiqueta, gancho, legendas queimadas (transcrição do faster-whisper + correções), crédito da origem, moldura e cartela final "E depois?" com fatos datados; gera versão completa e corte por trechos. Spec em `pautas/videos/<nome>.arquivo.json`. |
 | `node upload-ghost.mjs [--json] arquivo…` | Sobe imagem (`images.upload`) ou vídeo (`media.upload`) para o Ghost e imprime a URL pública estável — é o endereço usado nos posts do Instagram (as exportações do Canva expiram em horas). |
 | `node imagem-post.mjs --slug=… --imagem=… [--legenda="Charge: HOJE MT"] [--alt=…]` | Troca a imagem de destaque de um post do Ghost pela charge/card local (registra a imagem antiga na saída). |
 | `node ghost-settings.mjs [--get=chave] [--set chave=valor|@arquivo]` | Lê as configurações de marca do Ghost (título, logo, ícone, capa, cores…). O `--set` sobe o arquivo e tenta gravar, mas a Admin API Key **não tem permissão** para `settings`: capa, logo e ícone se trocam no painel (Settings → Design & branding). |
@@ -298,3 +299,23 @@ Já rodou para todos os posts que apontavam para WebP e para as 12 charges.
 Para testar depois da correção: o WhatsApp guarda a prévia por URL durante
 dias; mande o link com um sufixo novo (`?v=2`) ou use o depurador do Facebook
 (developers.facebook.com/tools/debug → "Buscar novamente").
+
+## Arquivo HOJE MT (vídeos antigos que voltam a viralizar)
+
+Formato fixo para resgatar vídeos antigos (entrevistas, discursos, TV) que estão
+circulando de novo: Reel 9:16 em fundo verde HOJE MT com etiqueta
+"ARQUIVO HOJE MT · <mês/ano>", gancho em 3 linhas (factual, sem adjetivo),
+o vídeo original recortado e emoldurado, **legendas queimadas** (o áudio antigo
+costuma ser ruim), crédito da origem na tela e uma cartela final "E depois?"
+com o que aconteceu com cada personagem, sempre com data e fonte na pauta.
+
+Passo a passo: 1) baixar o vídeo (`yt-dlp`; para TikTok, o script lê a
+página e baixa o `playAddr`, ver pauta de 24/09); 2) transcrever com
+faster-whisper (`pip install faster-whisper`, modelo `small`, pt) e salvar
+o JSON em `pautas/videos/`; 3) medir a região do vídeo dentro do quadro
+(`recorte`); 4) escrever o `<nome>.arquivo.json` (gancho, correções de
+nomes na transcrição, trechos do corte, itens do "E depois?" com fonte na pauta
+.md); 5) `node reel-arquivo.mjs spec.json`; 6) `upload-ghost.mjs` e entrada na
+agenda do Instagram (`formato: video`). Regras: nunca cortar a fala de forma
+que mude o sentido; manter o outro lado quando ele aparece no vídeo; crédito da
+emissora/autor sempre; nada de trilha sem licença (o áudio é o original).

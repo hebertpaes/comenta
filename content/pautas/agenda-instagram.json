@@ -59,19 +59,20 @@
       "materia": "https://hojemt.com.br/"
     },
     {
-      "id": "04",
+      "id": "13",
       "status": "agendado",
       "permalink": null,
       "publicado_em": null,
       "quando": "2026-09-24T19:30:00-04:00",
       "formato": "video",
-      "titulo": "Charge em movimento · Rua Livre, Amigo",
+      "titulo": "Arquivo HOJE MT · Jô Soares responde ao advogado de Lula (2016)",
       "midia": [
-        "https://hojemt.com.br/content/media/2026/09/2026-09-23-rua-livre-amigo-reel.mp4"
+        "https://hojemt.com.br/content/media/2026/09/2026-09-24-jo-soares-zanin-dallagnol-corte.mp4"
       ],
-      "legenda": "CHARGE EM MOVIMENTO · Rua Livre, Amigo\n\nNo CPA, até o fervor precisa saber fazer fila.\n\nLeia a curta completa: hojemt.com.br/rua-livre-amigo\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #reels #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/rua-livre-amigo/",
-      "charge_json": "pautas/charges/2026-09-23-rua-livre-amigo.json"
+      "legenda": "ARQUIVO HOJE MT · O dia em que Jô Soares respondeu ao advogado de Lula no ar\n\nAgosto de 2016, Programa do Jô. Um dia depois de entrevistar o procurador Deltan Dallagnol, Jô Soares leu no ar um e-mail de Cristiano Zanin, então advogado de Lula, que contestava a divulgação dos grampos e chamava de \"pessoa sem credibilidade\" o delator da acusação por obstrução. E respondeu: \"por que sem credibilidade ele conseguiu passar tanto tempo como líder do governo?\"\n\nE depois?\n• Delcídio do Amaral já tinha sido cassado pelo Senado (74 a 0) em 10/5/2016\n• Lula teve as condenações da Lava Jato anuladas pelo STF em 2021 e foi eleito em 2022\n• Cristiano Zanin tomou posse no STF em 3/8/2023\n• Deltan Dallagnol teve o mandato cassado pelo TSE, por unanimidade, em 16/5/2023\n• Jô Soares morreu em 5/8/2022, aos 84 anos\n\nFontes: Senado Federal, STF, TSE, Agência Brasil. Reprodução: Programa do Jô/TV Globo, via @deltandallagnol.\n\n#arquivo #josoares #lavajato #politica #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/",
+      "pauta": "pautas/2026-09-24-arquivo-jo-soares-zanin-dallagnol.md",
+      "obs": "formato Arquivo HOJE MT (reel-arquivo.mjs); corte de 1:41; versão completa 3:03 em pautas/videos"
     },
     {
       "id": "05",
@@ -103,19 +104,19 @@
       "charge_json": "pautas/charges/2026-09-23-fila-vazia-mato-grosso.json"
     },
     {
-      "id": "07",
+      "id": "04",
       "status": "agendado",
       "permalink": null,
       "publicado_em": null,
       "quando": "2026-09-25T15:30:00-04:00",
       "formato": "video",
-      "titulo": "Charge em movimento · Quintal Nada, Moleque",
+      "titulo": "Charge em movimento · Rua Livre, Amigo",
       "midia": [
-        "https://hojemt.com.br/content/media/2026/09/2026-09-23-quintal-nada-moleque-reel.mp4"
+        "https://hojemt.com.br/content/media/2026/09/2026-09-23-rua-livre-amigo-reel.mp4"
       ],
-      "legenda": "CHARGE EM MOVIMENTO · Quintal Nada, Moleque\n\nO quintal é nosso, o destino também.\n\nLeia a curta completa: hojemt.com.br/quintal-nada-moleque\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #reels #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/quintal-nada-moleque/",
-      "charge_json": "pautas/charges/2026-09-23-quintal-nada-moleque.json"
+      "legenda": "CHARGE EM MOVIMENTO · Rua Livre, Amigo\n\nNo CPA, até o fervor precisa saber fazer fila.\n\nLeia a curta completa: hojemt.com.br/rua-livre-amigo\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #reels #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/rua-livre-amigo/",
+      "charge_json": "pautas/charges/2026-09-23-rua-livre-amigo.json"
     },
     {
       "id": "08",
@@ -181,11 +182,26 @@
       "charge_json": "pautas/charges/2026-09-23-janela-so-abre-pro-ceu.json"
     },
     {
-      "id": "12",
+      "id": "07",
       "status": "agendado",
       "permalink": null,
       "publicado_em": null,
       "quando": "2026-09-26T19:30:00-04:00",
+      "formato": "video",
+      "titulo": "Charge em movimento · Quintal Nada, Moleque",
+      "midia": [
+        "https://hojemt.com.br/content/media/2026/09/2026-09-23-quintal-nada-moleque-reel.mp4"
+      ],
+      "legenda": "CHARGE EM MOVIMENTO · Quintal Nada, Moleque\n\nO quintal é nosso, o destino também.\n\nLeia a curta completa: hojemt.com.br/quintal-nada-moleque\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #reels #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/quintal-nada-moleque/",
+      "charge_json": "pautas/charges/2026-09-23-quintal-nada-moleque.json"
+    },
+    {
+      "id": "12",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-28T11:30:00-04:00",
       "formato": "charge",
       "titulo": "Salário no ponto, sem tropeço",
       "midia": [

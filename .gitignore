@@ -38,3 +38,7 @@ backups/
 
 # downloads de vídeo (content/video.mjs)
 content/videos/
+
+# saídas grandes do reel-arquivo.mjs (hospedadas no Ghost; reproduzíveis pelo .arquivo.json)
+content/pautas/videos/*-completo.mp4
+content/pautas/videos/*-corte.mp4
