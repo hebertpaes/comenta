@@ -565,6 +565,22 @@
    "legenda": "CHARGE · Fila Zero, Promessa de Chapa\n\nFila zero na placa; na porta, nem tanto.\n\nNa sabatina de entidades da saúde em Cuiabá (22/09), o candidato ao Governo Wellington Fagundes (PL) prometeu: \"Nosso objetivo não é criar meta para diminuir a fila. Nosso objetivo é zerar a fila do SUS.\" Ele citou mutirões, parcerias com municípios e prestadores privados e telemedicina.\n\nLeia a curta completa: hojemt.com.br/fila-zero-promessa-de-chapa\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #saude #matogrosso #hojemt",
    "materia": "https://hojemt.com.br/fila-zero-promessa-de-chapa/",
    "charge_json": "pautas/charges/2026-09-24-fila-zero-promessa-de-chapa.json"
+  },
+  {
+   "id": "35",
+   "status": "aguardando_materia",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": null,
+   "formato": "charge",
+   "titulo": "Dúvida no Rótulo (Medeiros assume a frase do detergente)",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-medeiros-assume-frase-do-detergente-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Dúvida no Rótulo\n\n\"Eu disse e sou homem para reconhecer.\" Em Reel desta quinta (24), Zé Medeiros (PL), candidato ao Senado, assumiu a frase do áudio enviado ao prefeito de Diamantino, Chico Mendes, em que diz que o eleitor dele \"ora pra alienígena e bebe detergente\". Chamou de piada, falou em áudio editado sem apresentar prova e disse que não vai pedir desculpas. Não localizamos manifestação de Chico Mendes.\n\nFontes: Reel @zemedeiros.222, CartaCapital, Metrópoles e Estadão Conteúdo. Leia a curta completa: hojemt.com.br/medeiros-assume-frase-do-detergente\n\nCharge: HOJE MT · hojemt.com.br\n\n#HojeMT #Eleicoes2026 #MatoGrosso #Senado",
+   "materia": "https://hojemt.com.br/medeiros-assume-frase-do-detergente/",
+   "charge_json": "pautas/charges/2026-09-24-medeiros-assume-frase-do-detergente.json",
+   "obs": "só agendar depois que o editor publicar a curta (rascunho 6ab5a368834d62060cb1d320)"
   }
  ]
 }

@@ -1,0 +1,57 @@
+{
+  "slug": "medeiros-assume-frase-do-detergente",
+  "materia": "https://hojemt.com.br/medeiros-assume-frase-do-detergente/",
+  "status_materia": "rascunho (id 6ab5a368834d62060cb1d320)",
+  "titulo": "Dúvida no Rótulo (curta: Medeiros assume a frase do detergente e não pede desculpas)",
+  "formato": "charge de jornal montada inteira no Canva",
+  "balao": {
+    "texto": "Eu disse e sou homem para reconhecer.",
+    "autor": "José Medeiros (PL), candidato ao Senado por MT",
+    "fontes": [
+      "https://www.instagram.com/zemedeiros.222/reel/DdqxaT6uP6i/",
+      "https://www.olhardireto.com.br/noticias/apos-audio-sobre-alienigenas-e-detergente-medeiros-diz-que-nao-vai-pedir-desculpas-faco-piada-o-tempo-todo",
+      "https://minutomt.com.br/espia-ai/medeiros-assume-piada-ironiza-polemica-e-nao-vai-se-desculpar/"
+    ],
+    "obs": "fala do Reel oficial (letreiro e áudio, ~66–75 s), também transcrita por Olhar Direto e Minuto MT"
+  },
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "A piada vazou e voltou em forma de comercial.",
+    "instagram_4x5": "A piada virou comercial."
+  },
+  "regras_da_cena": "frasco genérico sem marca (rótulo só com '?'); ninguém bebe nada; nenhum eleitor na cena; sem Chico Mendes, Gilmar Mendes ou adversários; sem logos, número de urna ou símbolo de partido",
+  "personagens": [
+    {
+      "nome": "José Medeiros",
+      "cargo": "deputado federal, candidato ao Senado por MT (PL)",
+      "canva_fotos_referencia": [
+        "MAHWH8VUd4M"
+      ],
+      "data_foto": "2026-08 (registro de candidatura)",
+      "credito": "TSE/Divulgação (foto oficial do registro de candidatura 2026, SQ 110002552693)",
+      "licenca": "foto oficial do TSE; só referência de desenho",
+      "obs": "não usado quadro do Reel (vídeo de terceiro não reproduzido)"
+    }
+  ],
+  "instagram": {
+    "status": "aguardando_materia em pautas/agenda-instagram.json (item 35)"
+  },
+  "canva": {
+    "design_site_16x9": "DAHWJkIrh8c",
+    "arte_16x9": "MAHWJuSDSY8",
+    "design_instagram_4x5": "DAHWJqsvpjQ",
+    "arte_4x5": "MAHWJlboDEg",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-24-medeiros-assume-frase-do-detergente.jpg",
+    "instagram_4x5": "2026-09-24-medeiros-assume-frase-do-detergente-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-24-medeiros-assume-frase-do-detergente.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-24-medeiros-assume-frase-do-detergente-og.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-24-medeiros-assume-frase-do-detergente-instagram-retrato.jpg"
+  }
+}
