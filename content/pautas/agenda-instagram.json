@@ -241,6 +241,21 @@
       "legenda": "CHARGE · Luz Que Não Brilha\n\nAbilio desliga a luz do condomínio e dá as costas ao holofote eleitoral.\n\nO prefeito mantém o corte do custeio da iluminação interna dos condomínios de Cuiabá, mesmo em ano eleitoral.\n\nLeia a curta completa: hojemt.com.br/luz-que-nao-brilha\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/luz-que-nao-brilha/",
       "charge_json": "pautas/charges/2026-09-24-luz-que-nao-brilha.json"
+    },
+    {
+      "id": "16",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-29T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Inferno Pantaneiro Cáceres em Fogo",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-24-inferno-pantaneiro-caceres-em-fogo-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Inferno Pantaneiro\n\nMilas acende a churrasqueira de promessas: IA no SUS, cadeira a menos e cadeia a mais.\n\nNo podcast Política de Primeira, o candidato ao governo Rafaell Milas defendeu IA no SUS, corte de 30% dos cargos comissionados e um presídio de segurança máxima que batizou de “Inferno Pantaneiro”.\n\nLeia a curta completa: hojemt.com.br/inferno-pantaneiro-caceres-em-fogo\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #eleicoes2026 #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/inferno-pantaneiro-caceres-em-fogo/",
+      "charge_json": "pautas/charges/2026-09-24-inferno-pantaneiro-caceres-em-fogo.json"
     }
   ]
 }

@@ -1,0 +1,32 @@
+{
+  "slug": "inferno-pantaneiro-caceres-em-fogo",
+  "materia": "https://hojemt.com.br/inferno-pantaneiro-caceres-em-fogo/",
+  "titulo": "Inferno Pantaneiro Cáceres em Fogo",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática de bonecos do publicador)",
+  "legenda": "Milas assa promessas: IA no SUS, cadeira a menos e cadeia a mais.",
+  "legenda_instagram_4x5": "Milas acende a churrasqueira de promessas: IA no SUS, cadeira a menos e cadeia a mais.",
+  "balao": null,
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "canva": {
+    "design_site_16x9": "DAHWHLyJE_s",
+    "arte_16x9": "MAHWHMDEngw",
+    "design_instagram_4x5": "DAHWHKWUN3U",
+    "arte_4x5": "MAHWHONXevw",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "personagens": [],
+  "obs": "Rafaell Milas desenhado como personagem genérico, sem semelhança: a única imagem no Commons (Rafaell_Milas.png, CC0) tem autor \"Gemini\", ou seja, é gerada por IA e não vale como foto de referência; imagens.mjs agora descarta esse tipo de resultado",
+  "arquivos": {
+    "site_16x9": "2026-09-24-inferno-pantaneiro-caceres-em-fogo.jpg",
+    "instagram_4x5": "2026-09-24-inferno-pantaneiro-caceres-em-fogo-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-24-inferno-pantaneiro-caceres-em-fogo-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 24/09/2026 (antes: charge automática .webp)",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json"
+  }
+}

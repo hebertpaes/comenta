@@ -203,6 +203,10 @@ export function credito(img) {
  * descarta licenças que não permitem uso, remove duplicatas.
  * Devolve { imagens, avisos }.
  */
+/** Imagem gerada por IA não vale como foto de referência (autor "Gemini", "DALL·E", "Midjourney"…). */
+const IA_RE = /\b(gemini|midjourney|dall[\s-]?e|stable ?diffusion|chatgpt|openai|grok|ideogram|leonardo\.?ai|flux|ai[\s-]generated|gerad[ao]s? (por|com) ia|imagem de ia)\b/i;
+const naoIA = (img) => !IA_RE.test(`${img.autor || ""} ${img.titulo || ""}`);
+
 export async function buscar(q, { n = 8, bancos = Object.keys(BANCOS) } = {}) {
   const avisos = [];
   const lotes = await Promise.allSettled(
@@ -226,7 +230,7 @@ export async function buscar(q, { n = 8, bancos = Object.keys(BANCOS) } = {}) {
       imagens.push({ ...img, credito: credito(img) });
     }
   });
-  return { imagens, avisos };
+  return { imagens: imagens.filter(naoIA), avisos };
 }
 
 /** Baixa a imagem para `arquivo` (e avisa a Unsplash, como a API dela exige). */
