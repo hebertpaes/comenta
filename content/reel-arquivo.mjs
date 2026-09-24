@@ -58,7 +58,7 @@ async function png(svgCorpo, arquivo, { fundo = true, logo = true } = {}) {
   if (logo) {
     const marca = await sharp(MARCA).resize({ width: 300 }).png().toBuffer();
     const m = await sharp(marca).metadata();
-    img = sharp(await img.toBuffer()).composite([{ input: marca, left: W - 250 - 44, top: H - m.height - 96 }]).png();
+    img = sharp(await img.toBuffer()).composite([{ input: marca, left: W - m.width - 44, top: H - m.height - 96 }]).png();
   }
   await img.toFile(arquivo); return arquivo;
 }
