@@ -420,7 +420,8 @@ o backup do sistema no GitHub."**
   autores (sem e-mail), configurações (sem chaves/segredos), newsletters e
   dados do site para `backup/ghost/latest/` (JSON), mais `imagens.txt` com
   todas as mídias referenciadas. Com `--baixar=<pasta>` baixa também todas as
-  mídias. O histórico fica no git (tag `backup/<data>` a cada rodada). A chave
+  mídias. O histórico é a sequência de commits no branch (o proxy do GitHub
+  desta sessão não aceita push de tags). A chave
   de integração não acessa `db/` (export completo do Ghost) nem `themes/`; o
   tema está versionado em `ghost/content/themes/hojemt`.
 - **Automações** — `backup/rotinas.json` guarda id, horário e resumo das
@@ -437,5 +438,5 @@ o backup do sistema no GitHub."**
   Google Drive do Claude só aceita conteúdo em texto/base64, inviável para
   centenas de MB). A lista de URLs de cada rodada fica em
   `backup/pacotes-drive.json`.
-- **Rotina diária** — 03:00 (Cuiabá): backup do conteúdo + commit + tag +
-  push. Nada de segredos no repositório.
+- **Rotina diária** — 03:00 (Cuiabá): backup do conteúdo + commit + push.
+  Nada de segredos no repositório.

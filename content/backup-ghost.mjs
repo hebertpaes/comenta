@@ -5,7 +5,7 @@
 // mais a lista de todas as imagens/mídias referenciadas (manifesto).
 // =============================================================
 //
-//   node backup-ghost.mjs                     grava em ../backup/ghost/latest/ (histórico = git + tag backup/<data>)
+//   node backup-ghost.mjs                     grava em ../backup/ghost/latest/ (histórico = commits no branch)
 //   node backup-ghost.mjs --saida=dir         outra pasta
 //   node backup-ghost.mjs --baixar=dir        também baixa as imagens/mídias do manifesto para dir/
 //
@@ -21,7 +21,7 @@ import { adminJson } from "./lib/ghost-admin.mjs";
 
 const args = Object.fromEntries(process.argv.slice(2).map((a) => { const m = a.match(/^--([^=]+)(?:=(.*))?$/); return m ? [m[1], m[2] ?? true] : [a, true]; }));
 const hoje = new Date().toISOString().slice(0, 10);
-const SAIDA = String(args.saida || join("..", "backup", "ghost", "latest")); // versão datada = tag git backup/<data>
+const SAIDA = String(args.saida || join("..", "backup", "ghost", "latest")); // histórico = commits no branch
 await mkdir(SAIDA, { recursive: true });
 
 async function tudo(recurso, extra = "") {
