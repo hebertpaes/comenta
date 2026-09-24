@@ -504,6 +504,21 @@
    "materia": "https://hojemt.com.br/coligacao-pela-metade/",
    "charge_json": "pautas/charges/2026-09-24-coligacao-pela-metade.json",
    "obs": "Curta está em rascunho no Ghost. Quando o editor publicar: trocar status para agendado e definir quando no próximo horário livre de charge."
+  },
+  {
+   "id": "31",
+   "status": "aguardando_materia",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": null,
+   "formato": "card",
+   "titulo": "O último show de Rick foi em Sorriso",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-ultimo-show-de-rick-instagram-retrato.jpg"
+   ],
+   "legenda": "O último show de Rick foi em Mato Grosso.\n\nNo sábado (19), Rick & Renner entraram de surpresa numa festa de 15 anos em Sorriso cantando \"Filha\". Era uma promessa feita em 2023: \"Se for da vontade de Deus, logo, logo estaremos juntos\". Dois dias depois, o helicóptero em que Rick viajava caiu na Serra Catarinense. A dupla tinha show marcado em Cuiabá em 17/10.\n\nMatéria completa: hojemt.com.br/ultimo-show-de-rick-foi-em-sorriso-numa-promessa-de-tres-anos\n\nFontes: RepórterMT, Nortão MT, Jovem Pan, Agência Brasil, ND Mais. Ilustração: HOJE MT (IA; cena de ficção).\n\n#RickeRenner #Sorriso #MatoGrosso #Cuiaba #HojeMT",
+   "materia": "https://hojemt.com.br/ultimo-show-de-rick-foi-em-sorriso-numa-promessa-de-tres-anos/",
+   "obs": "Publicar só depois que a matéria (rascunho no Ghost) for publicada: aí trocar status para agendado e definir quando no próximo horário livre."
   }
  ]
 }
