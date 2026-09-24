@@ -2,17 +2,21 @@
   "slug": "velha-politica-a-moda-pivetta",
   "materia": "https://hojemt.com.br/velha-politica-a-moda-pivetta/",
   "formato": "charge de jornal: caricatura desenhada a partir da foto real com licença, montada inteira no Canva",
-  "legenda": "Pivetta aponta a velha política enquanto a alimenta.",
-  "balao": "Discurso fácil. (expressão citada na matéria)",
+  "legenda": "Pivetta apaga a fornalha da velha política com água de coco.",
+  "balao": "“Discurso fácil” é ilusão. (termo e sentido citados na curta: entrevista à imprensa de MT)",
   "selo": "CHARGE · HOJE MT",
   "referencia_publica": "Charge: HOJE MT (única referência na imagem e nas legendas; a licença da foto abaixo é registro interno)",
   "canva": {
     "design_site_16x9": "DAHWEUsBMU0",
-    "arte_16x9": "MAHWET8vxPw",
+    "arte_16x9": "MAHWEnvIu_c",
     "design_instagram_4x5": "DAHWEfVl1Xs",
-    "arte_4x5": "MAHWEbSCado",
+    "arte_4x5": "MAHWEmzhn_Q",
     "modelo_16x9": "DAHWDzwR5c0",
-    "modelo_retrato": "DAHWEJf2P1U"
+    "modelo_retrato": "DAHWEJf2P1U",
+    "artes_descartadas": {
+      "arte_16x9": "MAHWET8vxPw",
+      "arte_4x5": "MAHWEbSCado"
+    }
   },
   "personagens": [
     {
@@ -31,11 +35,13 @@
     "instagram_4x5": "2026-09-23-velha-politica-a-moda-pivetta-instagram-retrato.jpg"
   },
   "hospedado_em": {
-    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-23-velha-politica-a-moda-pivetta.jpg",
-    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-23-velha-politica-a-moda-pivetta-instagram-retrato.jpg"
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-23-velha-politica-a-moda-pivetta-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-23-velha-politica-a-moda-pivetta-instagram-retrato-1.jpg"
   },
-  "site": "feature_image trocada em 24/09/2026 via imagem-post.mjs (legenda: Charge: HOJE MT)",
+  "site": "feature_image trocada em 24/09/2026 (versão favorável); texto da curta: proposta de reescrita em pautas/2026-09-24-pivetta-contra-o-discurso-facil.md",
   "instagram": {
     "status": "agendado em pautas/agenda-instagram.json"
-  }
+  },
+  "titulo": "Pivetta Contra o Discurso Fácil",
+  "linha_editorial": "a favor de Pivetta (orientação da redação, 24/09): a charge mostra o governador apagando a fornalha da velha política; a versão anterior (ele alimentando a máquina) foi descartada"
 }
