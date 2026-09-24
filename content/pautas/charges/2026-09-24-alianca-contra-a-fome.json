@@ -1,0 +1,31 @@
+{
+  "slug": "alianca-contra-a-fome",
+  "materia": "https://hojemt.com.br/alianca-contra-a-fome/",
+  "titulo": "Aliança contra a fome",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "legenda": "Guerra e seca lotam a fila; Brasil e Espanha correm com a panela.",
+  "balao": null,
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "canva": {
+    "design_site_16x9": "DAHWHXdiVEM",
+    "arte_16x9": "MAHWHfG8OIQ",
+    "design_instagram_4x5": "DAHWHRvIjAo",
+    "arte_4x5": "MAHWHnnPJ0s",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "personagens": [],
+  "obs": "Tema internacional (FAO: 770 milhões em insegurança alimentar; aliança Brasil–Espanha). Personagens genéricos, sem retrato de pessoa real e sem bandeiras.",
+  "arquivos": {
+    "site_16x9": "2026-09-24-alianca-contra-a-fome.jpg",
+    "instagram_4x5": "2026-09-24-alianca-contra-a-fome-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-24-alianca-contra-a-fome-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 24/09/2026 (antes: charge automática charge-dia .webp)",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json"
+  }
+}

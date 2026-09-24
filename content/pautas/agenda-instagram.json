@@ -331,6 +331,21 @@
       "legenda": "CHARGE · Iluminação à Conta dos Muros\n\nA luz da viela é do condomínio; a conta, também.\n\nEm coletiva com a Limpurb, Abilio Brunini chamou de “distorção histórica” o custeio municipal da iluminação das vias internas de condomínios e passou a conta aos condomínios.\n\nLeia a curta completa: hojemt.com.br/iluminacao-a-conta-dos-muros\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/iluminacao-a-conta-dos-muros/",
       "charge_json": "pautas/charges/2026-09-24-iluminacao-a-conta-dos-muros.json"
+    },
+    {
+      "id": "22",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-30T11:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Aliança contra a fome",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-24-alianca-contra-a-fome-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Aliança contra a fome\n\nGuerra e seca lotam a fila; Brasil e Espanha correm com a panela.\n\nA FAO calcula cerca de 770 milhões de pessoas em insegurança alimentar no mundo, 40 milhões a mais por causa de guerras e eventos climáticos extremos. Brasil e Espanha anunciaram uma aliança para levar assistência alimentar a regiões em conflito.\n\nLeia a curta completa: hojemt.com.br/alianca-contra-a-fome\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #fome #fao #brasil #espanha #hojemt",
+      "materia": "https://hojemt.com.br/alianca-contra-a-fome/",
+      "charge_json": "pautas/charges/2026-09-24-alianca-contra-a-fome.json"
     }
   ]
 }
