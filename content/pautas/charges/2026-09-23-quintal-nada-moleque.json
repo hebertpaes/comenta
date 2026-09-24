@@ -1,0 +1,25 @@
+{
+  "slug": "quintal-nada-moleque",
+  "materia": "https://hojemt.com.br/quintal-nada-moleque/",
+  "formato": "charge de jornal: caricatura desenhada a partir da foto real com licença, montada inteira no Canva",
+  "legenda": "O quintal é nosso, o destino também.",
+  "balao": null,
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT (única referência na imagem e nas legendas; a licença da foto abaixo é registro interno)",
+  "canva": {
+    "obs": "personagens genéricos (produtor com chimarrão e o vizinho de terno); sem foto de referência de pessoa real"
+  },
+  "personagens": [],
+  "arquivos": {
+    "site_16x9": "2026-09-23-quintal-nada-moleque.jpg",
+    "instagram_4x5": "2026-09-23-quintal-nada-moleque-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-23-quintal-nada-moleque.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-23-quintal-nada-moleque-instagram-retrato.jpg"
+  },
+  "site": "feature_image trocada em 24/09/2026 via imagem-post.mjs (legenda: Charge: HOJE MT)",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "janela-so-abre-pro-ceu",
+  "materia": "https://hojemt.com.br/janela-so-abre-pro-ceu/",
+  "formato": "charge de jornal: caricatura desenhada a partir da foto real com licença, montada inteira no Canva",
+  "legenda": "A janela dos ônibus segue fechada; só a lua não pede autorização.",
+  "balao": null,
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT (única referência na imagem e nas legendas; a licença da foto abaixo é registro interno)",
+  "canva": {
+    "design_site_16x9": "DAHWEWmGUC8",
+    "arte_16x9": "MAHWEYpILds",
+    "design_instagram_4x5": "DAHWEa_x4vo",
+    "arte_4x5": "MAHWEZwBt2E",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "personagens": [
+    {
+      "nome": "José Medeiros",
+      "cargo": "deputado federal por Mato Grosso",
+      "imagem": "caricatura gerada a partir da foto oficial (referência de imagem no Canva)",
+      "canva_foto_referencia": "MAHWEd7edLk",
+      "credito": "Foto: Tribunal Superior Eleitoral (TSE)/Wikimedia Commons (CC BY)",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Medeiros_-_Foto_Oficial_do_Registro_da_Candidatura_para_a_elei%C3%A7%C3%A3o_de_Senador_por_Mato_Grosso_em_2026.jpg",
+      "licenca": "CC BY",
+      "licenca_url": "https://creativecommons.org/licenses/by/4.0"
+    }
+  ],
+  "arquivos": {
+    "site_16x9": "2026-09-23-janela-so-abre-pro-ceu.jpg",
+    "instagram_4x5": "2026-09-23-janela-so-abre-pro-ceu-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-23-janela-so-abre-pro-ceu.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-23-janela-so-abre-pro-ceu-instagram-retrato.jpg"
+  },
+  "site": "feature_image trocada em 24/09/2026 via imagem-post.mjs (legenda: Charge: HOJE MT)",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json"
+  }
+}

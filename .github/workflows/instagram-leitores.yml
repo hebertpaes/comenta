@@ -1,0 +1,60 @@
+# Interação com leitores pelo Direct do Instagram
+#
+# Roda a cada 15 minutos e responde, pelo Direct, a quem procurou o HOJE MT:
+#   - comentários novos pedindo a matéria ("link", "manda", "quero"…) recebem o
+#     link por mensagem privada (private reply) e um "te enviamos no Direct";
+#   - conversas em que a última mensagem é do leitor recebem a matéria pedida
+#     ou as 3 últimas manchetes.
+# Só responde a quem falou primeiro (regra da Meta: janela de 24 h). Não faz
+# envio em massa nem prospecção de seguidores de outras contas — a API recusa
+# e a conta pode ser bloqueada.
+#
+# Segredos (Settings → Secrets and variables → Actions):
+#   IG_USER_ID       id da conta profissional (17841460614185827 para @hoje.mt)
+#   IG_ACCESS_TOKEN  token de longa duração com instagram_basic,
+#                    instagram_manage_comments e instagram_manage_messages
+#                    (Meta for Developers → app → Instagram → Gerar token).
+# Para testar sem enviar: rode manualmente com dry_run = true.
+name: Instagram — responder leitores
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Só mostrar o que seria enviado"
+        type: boolean
+        default: true
+      todos:
+        description: "Responder todo comentário novo (não só quem pede o link)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: instagram-leitores
+  cancel-in-progress: false
+
+jobs:
+  responder:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Responder comentários e directs
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USERNAME: hoje.mt
+          SITE_URL: https://hojemt.com.br
+        run: |
+          set -euo pipefail
+          FLAGS="--responder-comentarios --responder-directs --janela=20"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            [ "${{ inputs.dry_run }}" = "true" ] && FLAGS="$FLAGS --dry-run"
+            [ "${{ inputs.todos }}" = "true" ] && FLAGS="$FLAGS --todos"
+          fi
+          node content/instagram-dm.mjs $FLAGS

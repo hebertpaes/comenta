@@ -1,0 +1,41 @@
+{
+  "slug": "ventiada-no-nortao",
+  "materia": "https://hojemt.com.br/ventiada-no-nortao/",
+  "formato": "charge de jornal: caricatura desenhada a partir da foto real com licença, montada inteira no Canva",
+  "legenda": "Gisela escuta o Nortão e não promete cura do mal.",
+  "balao": null,
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT (única referência na imagem e nas legendas; a licença da foto abaixo é registro interno)",
+  "canva": {
+    "design_site_16x9": "DAHWES3xjow",
+    "arte_16x9": "MAHWEZyPA2A",
+    "design_instagram_4x5": "DAHWEdLZkNM",
+    "arte_4x5": "MAHWEWUwyhQ",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "personagens": [
+    {
+      "nome": "Gisela Simona",
+      "cargo": "deputada federal por Mato Grosso",
+      "imagem": "caricatura gerada a partir da foto oficial (referência de imagem no Canva)",
+      "canva_foto_referencia": "MAHWEUCuhl0",
+      "credito": "Foto: Portal da Câmara dos Deputados (Brazil)/Wikimedia Commons (CC BY)",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Gisela_Simona.jpg",
+      "licenca": "CC BY",
+      "licenca_url": "https://creativecommons.org/licenses/by/3.0"
+    }
+  ],
+  "arquivos": {
+    "site_16x9": "2026-09-23-ventiada-no-nortao.jpg",
+    "instagram_4x5": "2026-09-23-ventiada-no-nortao-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-23-ventiada-no-nortao.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-23-ventiada-no-nortao-instagram-retrato.jpg"
+  },
+  "site": "feature_image trocada em 24/09/2026 via imagem-post.mjs (legenda: Charge: HOJE MT)",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json"
+  }
+}

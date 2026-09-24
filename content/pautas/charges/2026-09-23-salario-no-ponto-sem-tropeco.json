@@ -1,0 +1,41 @@
+{
+  "slug": "salario-no-ponto-sem-tropeco",
+  "materia": "https://hojemt.com.br/salario-no-ponto-sem-tropeco/",
+  "formato": "charge de jornal: caricatura desenhada a partir da foto real com licença, montada inteira no Canva",
+  "legenda": "Na rede da prefeita, o salário cai antes do peixe.",
+  "balao": null,
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT (única referência na imagem e nas legendas; a licença da foto abaixo é registro interno)",
+  "canva": {
+    "design_site_16x9": "DAHWEbx5Ffo",
+    "arte_16x9": "MAHWESyMwc0",
+    "design_instagram_4x5": "DAHWEWMfj6Q",
+    "arte_4x5": "MAHWESA26XQ",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "personagens": [
+    {
+      "nome": "Flávia Moretti",
+      "cargo": "prefeita de Várzea Grande",
+      "imagem": "caricatura gerada a partir da foto oficial (referência de imagem no Canva)",
+      "canva_foto_referencia": "MAHWEXj-FW4",
+      "credito": "Foto: Portal de Dados Abertos do Tribunal Superior Eleitoral do Brasil (TSE)/Wikimedia Commons (CC BY)",
+      "pagina": "https://commons.wikimedia.org/wiki/File:2024_FL%C3%81VIA_MORETTI_CANDIDATO_PREFEITO_MT_VARZEA_GRANDE_TSE_(110002125932).jpg",
+      "licenca": "CC BY",
+      "licenca_url": "https://creativecommons.org/licenses/by/4.0"
+    }
+  ],
+  "arquivos": {
+    "site_16x9": "2026-09-23-salario-no-ponto-sem-tropeco.jpg",
+    "instagram_4x5": "2026-09-23-salario-no-ponto-sem-tropeco-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-23-salario-no-ponto-sem-tropeco.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-23-salario-no-ponto-sem-tropeco-instagram-retrato.jpg"
+  },
+  "site": "feature_image trocada em 24/09/2026 via imagem-post.mjs (legenda: Charge: HOJE MT)",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json"
+  }
+}

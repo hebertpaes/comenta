@@ -1,0 +1,41 @@
+{
+  "slug": "alta-floresta-clinica-de-sonhos",
+  "materia": "https://hojemt.com.br/alta-floresta-clinica-de-sonhos/",
+  "formato": "charge de jornal: caricatura desenhada a partir da foto real com licença, montada inteira no Canva",
+  "legenda": "Em Alta Floresta, Janaina promete plantar médicos como soja.",
+  "balao": null,
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT (única referência na imagem e nas legendas; a licença da foto abaixo é registro interno)",
+  "canva": {
+    "design_site_16x9": "DAHWEbXo6ps",
+    "arte_16x9": "MAHWET7Z7tI",
+    "design_instagram_4x5": "DAHWEYKYPbo",
+    "arte_4x5": "MAHWEW6HENw",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "personagens": [
+    {
+      "nome": "Janaina Riva",
+      "cargo": "deputada estadual por Mato Grosso",
+      "imagem": "caricatura gerada a partir da foto oficial (referência de imagem no Canva)",
+      "canva_foto_referencia": "MAHWESV-xec",
+      "credito": "Foto: Divulgação de Candidaturas e Contas Eleitorais - Tribunal Superior Eleitoral/Wikimedia Commons (CC BY)",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Jana%C3%ADna_Riva_-_Foto_Oficial_do_Registro_da_Candidatura_para_a_elei%C3%A7%C3%A3o_de_Deputados_Estadual_por_Mato_Grosso_em_2022.jpg",
+      "licenca": "CC BY",
+      "licenca_url": "https://creativecommons.org/licenses/by/4.0"
+    }
+  ],
+  "arquivos": {
+    "site_16x9": "2026-09-23-alta-floresta-clinica-de-sonhos.jpg",
+    "instagram_4x5": "2026-09-23-alta-floresta-clinica-de-sonhos-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-23-alta-floresta-clinica-de-sonhos.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-23-alta-floresta-clinica-de-sonhos-instagram-retrato.jpg"
+  },
+  "site": "feature_image trocada em 24/09/2026 via imagem-post.mjs (legenda: Charge: HOJE MT)",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json"
+  }
+}

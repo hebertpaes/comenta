@@ -1,0 +1,41 @@
+{
+  "slug": "velha-politica-a-moda-pivetta",
+  "materia": "https://hojemt.com.br/velha-politica-a-moda-pivetta/",
+  "formato": "charge de jornal: caricatura desenhada a partir da foto real com licença, montada inteira no Canva",
+  "legenda": "Pivetta aponta a velha política enquanto a alimenta.",
+  "balao": "Discurso fácil. (expressão citada na matéria)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT (única referência na imagem e nas legendas; a licença da foto abaixo é registro interno)",
+  "canva": {
+    "design_site_16x9": "DAHWEUsBMU0",
+    "arte_16x9": "MAHWET8vxPw",
+    "design_instagram_4x5": "DAHWEfVl1Xs",
+    "arte_4x5": "MAHWEbSCado",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "personagens": [
+    {
+      "nome": "Otaviano Pivetta",
+      "cargo": "governador de Mato Grosso",
+      "imagem": "caricatura gerada a partir da foto oficial (referência de imagem no Canva)",
+      "canva_foto_referencia": "MAHWEbbOGVM",
+      "credito": "Foto: Banco de Dados Abertos do Tribunal Superior Eleitoral (TSE)/Wikimedia Commons (CC BY)",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Otaviano_Pivetta_out_2022.jpg",
+      "licenca": "CC BY",
+      "licenca_url": "https://creativecommons.org/licenses/by/4.0"
+    }
+  ],
+  "arquivos": {
+    "site_16x9": "2026-09-23-velha-politica-a-moda-pivetta.jpg",
+    "instagram_4x5": "2026-09-23-velha-politica-a-moda-pivetta-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-23-velha-politica-a-moda-pivetta.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-23-velha-politica-a-moda-pivetta-instagram-retrato.jpg"
+  },
+  "site": "feature_image trocada em 24/09/2026 via imagem-post.mjs (legenda: Charge: HOJE MT)",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json"
+  }
+}

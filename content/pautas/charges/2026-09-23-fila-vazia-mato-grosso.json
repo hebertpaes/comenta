@@ -1,0 +1,41 @@
+{
+  "slug": "fila-vazia-mato-grosso",
+  "materia": "https://hojemt.com.br/fila-vazia-mato-grosso/",
+  "formato": "charge de jornal: caricatura desenhada a partir da foto real com licença, montada inteira no Canva",
+  "legenda": "Wellington promete zerar a fila do SUS: churrasco sem carvão, só esperança.",
+  "balao": null,
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT (única referência na imagem e nas legendas; a licença da foto abaixo é registro interno)",
+  "canva": {
+    "design_site_16x9": "DAHWEQJciNc",
+    "arte_16x9": "MAHWEVrH5_Y",
+    "design_instagram_4x5": "DAHWEeDNcsI",
+    "arte_4x5": "MAHWEZH3H7w",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "personagens": [
+    {
+      "nome": "Wellington Fagundes",
+      "cargo": "senador por Mato Grosso",
+      "imagem": "caricatura gerada a partir da foto oficial (referência de imagem no Canva)",
+      "canva_foto_referencia": "MAHWEb8Q-qQ",
+      "credito": "Foto: Senado Federal/Wikimedia Commons (Atribuição)",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Foto_oficial_de_Wellington_Fagundes.jpg",
+      "licenca": "Atribuição",
+      "licenca_url": ""
+    }
+  ],
+  "arquivos": {
+    "site_16x9": "2026-09-23-fila-vazia-mato-grosso.jpg",
+    "instagram_4x5": "2026-09-23-fila-vazia-mato-grosso-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-23-fila-vazia-mato-grosso.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-23-fila-vazia-mato-grosso-instagram-retrato.jpg"
+  },
+  "site": "feature_image trocada em 24/09/2026 via imagem-post.mjs (legenda: Charge: HOJE MT)",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json"
+  }
+}

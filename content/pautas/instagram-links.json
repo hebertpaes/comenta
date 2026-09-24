@@ -1,0 +1,11 @@
+{
+  "_comentario": "Mapa permalink do Instagram → matéria no site, usado por content/instagram-dm.mjs para mandar o link certo no Direct. Sem entrada, o script procura URL na legenda, depois manchete parecida no RSS, depois manda o site.",
+  "https://www.instagram.com/p/DdppZO6jMQ0/": "https://hojemt.com.br/creche-a-la-churrasco/",
+  "https://www.instagram.com/p/DdpnO0WDEe2/": "https://hojemt.com.br/creche-a-la-churrasco/",
+  "https://www.instagram.com/p/DdpitpIjWc_/": "https://hojemt.com.br/creche-a-la-churrasco/",
+  "https://www.instagram.com/p/DdpLDsVDFBD/": "https://hojemt.com.br/",
+  "https://www.instagram.com/p/DdpJvCrDA3X/": "https://hojemt.com.br/",
+  "https://www.instagram.com/p/DdpHx0xDbsz/": "https://hojemt.com.br/",
+  "https://www.instagram.com/p/DdpG6D0jNXM/": "https://hojemt.com.br/",
+  "https://www.instagram.com/p/Ddo-x_9DOuc/": "https://hojemt.com.br/"
+}

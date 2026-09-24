@@ -1,0 +1,199 @@
+{
+  "_como_funciona": "Agenda do @hoje.mt com formatos intercalados (card → charge → carrossel/vídeo → charge). Horários em Cuiabá (UTC-4). Uma Routine desta sessão dispara 4x por dia (07:30, 11:30, 15:30, 19:30) e publica o item mais antigo com status \"agendado\" cujo horário já passou; depois grava permalink/publicado_em e faz commit. Mídia hospedada no Ghost (URL estável). A API do Instagram não agenda nem edita posts.",
+  "conta": {
+    "instagram_page_id": "17841460614185827",
+    "usuario": "hoje.mt"
+  },
+  "publicacao": {
+    "imagem_ou_carrossel": "Zapier → InstagramBusinessCLIAPI publish_media_v2 (media: lista de URLs, 2–10 = carrossel)",
+    "video": "Zapier → InstagramBusinessCLIAPI publish_video (video: URL do .mp4, Reel 9:16)",
+    "permalink": "GET graph.facebook.com/v21.0/<id>?fields=permalink,timestamp"
+  },
+  "itens": [
+    {
+      "id": "01",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-24T07:30:00-04:00",
+      "formato": "card",
+      "titulo": "Agressões a candidatas crescem 11 vezes, dizem entidades ao TSE",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-24-tse-agressoes-candidatas.jpg"
+      ],
+      "legenda": "Agressões a candidatas crescem 11 vezes, dizem entidades ao TSE\n\nOrganizações sociais entregaram ao TSE um relatório que documenta o aumento de 11 vezes nos processos por violência política de gênero entre 2022 e 2024. Pesquisa do Instituto Marielle Franco (77 casos, 2021–2025): 87% das vítimas são mulheres negras.\n\nMatéria completa: hojemt.com.br/entidades-denunciam-ao-tse-aumento-de-11x-em-agressoes-a-candidatas\n\n#eleicoes2026 #violenciapolitica #mulheresnapolitica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/entidades-denunciam-ao-tse-aumento-de-11x-em-agressoes-a-candidatas/"
+    },
+    {
+      "id": "02",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-24T11:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Velha Política à Moda Pivetta",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-23-velha-politica-a-moda-pivetta-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Velha Política à Moda Pivetta\n\nPivetta aponta a velha política enquanto a alimenta.\n\nLeia a curta completa: hojemt.com.br/velha-politica-a-moda-pivetta\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/velha-politica-a-moda-pivetta/",
+      "charge_json": "pautas/charges/2026-09-23-velha-politica-a-moda-pivetta.json"
+    },
+    {
+      "id": "03",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-24T15:30:00-04:00",
+      "formato": "carrossel",
+      "titulo": "5 notícias para começar o dia (24/09)",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-1-capa.jpg",
+        "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-2-cenipa.jpg",
+        "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-3-cripto.jpg",
+        "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-4-neuropediatria.jpg",
+        "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-5-iluminacao.jpg",
+        "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-6-museu.jpg"
+      ],
+      "legenda": "5 notícias para começar a quinta-feira (24/09) 👉 arrasta pro lado\n\n1️⃣ Cenipa recupera caixa-preta de helicóptero que caiu em Santa Catarina\n2️⃣ BC exige notificação ao Coaf para transferências de cripto acima de US$ 10\n3️⃣ Várzea Grande inicia atendimento de 180 pacientes de neuropediatria\n4️⃣ Cuiabá abre auditoria sobre iluminação irregular em condomínios\n5️⃣ Museu da Caixa d’Água Velha ganha nova estrutura em Cuiabá\n\nMatérias completas em hojemt.com.br\n\n#noticias #resumododia #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/"
+    },
+    {
+      "id": "04",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-24T19:30:00-04:00",
+      "formato": "video",
+      "titulo": "Charge em movimento · Rua Livre, Amigo",
+      "midia": [
+        "https://hojemt.com.br/content/media/2026/09/2026-09-23-rua-livre-amigo-reel.mp4"
+      ],
+      "legenda": "CHARGE EM MOVIMENTO · Rua Livre, Amigo\n\nNo CPA, até o fervor precisa saber fazer fila.\n\nLeia a curta completa: hojemt.com.br/rua-livre-amigo\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #reels #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/rua-livre-amigo/",
+      "charge_json": "pautas/charges/2026-09-23-rua-livre-amigo.json"
+    },
+    {
+      "id": "05",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-25T07:30:00-04:00",
+      "formato": "card",
+      "titulo": "Anvisa alerta para tirzepatida em pó vendida nas redes sociais",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-24-anvisa-tirzepatida-1.jpg"
+      ],
+      "legenda": "Anvisa alerta para tirzepatida em pó vendida nas redes sociais\n\nA agência adverte: o preparo caseiro, sem ambiente estéril, pode causar infecções graves, e não há garantia de que o pó contenha o princípio ativo na dose certa. No Brasil, o medicamento (Mounjaro) só é vendido em farmácia, com prescrição.\n\nMatéria completa: hojemt.com.br/anvisa-alerta-sobre-venda-de-tirzepatida-em-po-nas-redes-sociais\n\n#saude #anvisa #tirzepatida #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/anvisa-alerta-sobre-venda-de-tirzepatida-em-po-nas-redes-sociais/"
+    },
+    {
+      "id": "06",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-25T11:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Fila Vazia, Mato Grosso",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-23-fila-vazia-mato-grosso-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Fila Vazia, Mato Grosso\n\nWellington promete zerar a fila do SUS: churrasco sem carvão, só esperança.\n\nLeia a curta completa: hojemt.com.br/fila-vazia-mato-grosso\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/fila-vazia-mato-grosso/",
+      "charge_json": "pautas/charges/2026-09-23-fila-vazia-mato-grosso.json"
+    },
+    {
+      "id": "07",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-25T15:30:00-04:00",
+      "formato": "video",
+      "titulo": "Charge em movimento · Quintal Nada, Moleque",
+      "midia": [
+        "https://hojemt.com.br/content/media/2026/09/2026-09-23-quintal-nada-moleque-reel.mp4"
+      ],
+      "legenda": "CHARGE EM MOVIMENTO · Quintal Nada, Moleque\n\nO quintal é nosso, o destino também.\n\nLeia a curta completa: hojemt.com.br/quintal-nada-moleque\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #reels #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/quintal-nada-moleque/",
+      "charge_json": "pautas/charges/2026-09-23-quintal-nada-moleque.json"
+    },
+    {
+      "id": "08",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-25T19:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Ventiada no Nortão",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-23-ventiada-no-nortao-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Ventiada no Nortão\n\nGisela escuta o Nortão e não promete cura do mal.\n\nLeia a curta completa: hojemt.com.br/ventiada-no-nortao\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/ventiada-no-nortao/",
+      "charge_json": "pautas/charges/2026-09-23-ventiada-no-nortao.json"
+    },
+    {
+      "id": "09",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-26T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Alta Floresta, Clínica de Sonhos",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-23-alta-floresta-clinica-de-sonhos-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Alta Floresta, Clínica de Sonhos\n\nEm Alta Floresta, Janaina promete plantar médicos como soja.\n\nLeia a curta completa: hojemt.com.br/alta-floresta-clinica-de-sonhos\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/alta-floresta-clinica-de-sonhos/",
+      "charge_json": "pautas/charges/2026-09-23-alta-floresta-clinica-de-sonhos.json"
+    },
+    {
+      "id": "10",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-26T11:30:00-04:00",
+      "formato": "carrossel",
+      "titulo": "As charges da semana",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-23-filtro-ideologico-em-cuiaba-instagram-retrato.jpg",
+        "https://hojemt.com.br/content/images/2026/09/2026-09-23-onda-nao-quebra-abilio-instagram-retrato.jpg",
+        "https://hojemt.com.br/content/images/2026/09/2026-09-23-mare-na-assembleia-instagram-retrato.jpg",
+        "https://hojemt.com.br/content/images/2026/09/2026-09-23-creche-a-la-churrasco-instagram-retrato.jpg",
+        "https://hojemt.com.br/content/images/2026/09/2026-09-23-rua-livre-amigo-instagram-retrato.jpg"
+      ],
+      "legenda": "As charges da semana no HOJE MT 👉 arrasta pro lado\n\n1️⃣ Filtro ideológico em Cuiabá — Com lupa e vara, o prefeito vai pescar livros em 2027.\n2️⃣ Onda não quebra Abilio — Maré alta na Câmara, e o prefeito segue no remo.\n3️⃣ Maré na Assembleia — Dez mil na fila: esse barco de serviços já passou da boia.\n4️⃣ Creche à la Churrasco — Cardápio da creche agora tem ponto da carne e ponto de vista.\n5️⃣ Rua Livre, Amigo — No CPA, até o fervor precisa saber fazer fila.\n\nTodas as curtas em hojemt.com.br\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/tag/curtas-bastidores/"
+    },
+    {
+      "id": "11",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-26T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Janela só abre pro céu",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-23-janela-so-abre-pro-ceu-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Janela só abre pro céu\n\nA janela dos ônibus segue fechada; só a lua não pede autorização.\n\nLeia a curta completa: hojemt.com.br/janela-so-abre-pro-ceu\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/janela-so-abre-pro-ceu/",
+      "charge_json": "pautas/charges/2026-09-23-janela-so-abre-pro-ceu.json"
+    },
+    {
+      "id": "12",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-26T19:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Salário no ponto, sem tropeço",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-23-salario-no-ponto-sem-tropeco-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Salário no ponto, sem tropeço\n\nNa rede da prefeita, o salário cai antes do peixe.\n\nLeia a curta completa: hojemt.com.br/salario-no-ponto-sem-tropeco\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/salario-no-ponto-sem-tropeco/",
+      "charge_json": "pautas/charges/2026-09-23-salario-no-ponto-sem-tropeco.json"
+    }
+  ]
+}

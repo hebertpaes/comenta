@@ -160,6 +160,11 @@ depender de Canva ou de edição manual:
 | `node instagram.mjs --imagem=card.jpg --legenda=legenda.txt`   | Sobe a imagem no Ghost (URL pública) e publica no @hoje.mt pela Graph API; `--dry-run` só mostra; `--permalink=<id>` dá o link de um post.                                                                                                                                                                                                           |
 | `node ilustrar.mjs --slug=… [--publicar]`                      | Ilustração realista (Gemini + sharp) para Curtas/charges sem foto.                                                                                                                                                                                                                                                                                   |
 | `node video.mjs <url\|arquivo.mp4> [--saida=…]`                | Baixa um vídeo (reel, tweet, YouTube; via yt-dlp) e aplica a **marca d'água** do HOJE MT com ffmpeg (`assets/marca-dagua.png`, gerada da logo do tema, sem o slogan). Opções: `--opacidade=0.55`, `--largura=0.32` (fração da largura do vídeo), `--posicao=inferior-direita`, `--margem=34`, `--so-baixar`. Saída H.264/AAC pronta para o Instagram. |
+| `node reel.mjs <imagem> [--duracao=12] [--zoom=1.12]` | Transforma uma charge ou card (4:5 ou 16:9) num **Reel 9:16** (1080×1920): movimento lento de câmera, fundo desfocado, marca-d'água e faixa de áudio silenciosa (o Instagram exige áudio). Saída em `pautas/videos/<nome>-reel.mp4`; hospede com `upload-ghost.mjs` e publique com `publish_video`. |
+| `node upload-ghost.mjs [--json] arquivo…` | Sobe imagem (`images.upload`) ou vídeo (`media.upload`) para o Ghost e imprime a URL pública estável — é o endereço usado nos posts do Instagram (as exportações do Canva expiram em horas). |
+| `node imagem-post.mjs --slug=… --imagem=… [--legenda="Charge: HOJE MT"] [--alt=…]` | Troca a imagem de destaque de um post do Ghost pela charge/card local (registra a imagem antiga na saída). |
+| `node ghost-settings.mjs [--get=chave] [--set chave=valor|@arquivo]` | Lê as configurações de marca do Ghost (título, logo, ícone, capa, cores…). O `--set` sobe o arquivo e tenta gravar, mas a Admin API Key **não tem permissão** para `settings`: capa, logo e ícone se trocam no painel (Settings → Design & branding). |
+| `node instagram-dm.mjs --responder-comentarios [--todos] --responder-directs [--janela=20] [--dry-run]` | Responde leitores pelo Direct: quem comenta pedindo a matéria recebe o link em mensagem privada; quem manda Direct recebe a matéria pedida ou as 3 últimas manchetes. Roda sozinho no GitHub Actions a cada 15 min (`.github/workflows/instagram-leitores.yml`). |
 | `deploy/backup-redacao.sh`                                     | `tar.gz` da redação + `git bundle` do repositório em `backups/`, push para o GitHub e, com `RCLONE_REMOTE`, cópia para o Google Drive.                                                                                                                                                                                                               |
 
 Fluxo de uma matéria:
@@ -192,3 +197,82 @@ em `content/assets/fonts`.
 Regra das imagens: foto de banco **ilustra** e leva crédito e licença no
 rodapé do card; retrato de pessoa real só de fonte oficial ou banco com
 licença; nunca imagem gerada por IA se passando por foto.
+
+## Instagram: agenda intercalada e agendamento
+
+Para engajar melhor, o feed do @hoje.mt **intercala formatos**: card de
+notícia → charge → carrossel ou vídeo → charge, em quatro horários por dia
+(07:30, 11:30, 15:30 e 19:30, hora de Cuiabá). A fila fica em
+`pautas/agenda-instagram.json`: cada item tem `quando` (ISO com `-04:00`),
+`formato` (`card`, `charge`, `carrossel`, `video`), `midia` (URLs estáveis
+no Ghost), `legenda` (≤ 2.200 caracteres), `status`, `permalink` e
+`publicado_em`.
+
+- **Agendamento** — a API do Instagram não agenda nem edita posts. Uma
+  Routine da sessão do Claude (cron `30 11,15,19,23 * * *`, UTC) publica o
+  item mais antigo com `status: "agendado"` cujo horário já passou, busca o
+  permalink na Graph API, grava `publicado`/`permalink`/`publicado_em`,
+  atualiza `instagram-links.json` (para o Direct) e faz commit. Para
+  reprogramar um item, mude `quando`; para tirar da fila, `status:
+  "cancelado"`; para acrescentar, copie um item e hospede a mídia com
+  `upload-ghost.mjs`.
+- **Como publica** — imagem e carrossel: Zapier → Instagram for Business →
+  `publish_media_v2` (`media` com 2–10 URLs vira carrossel); vídeo (Reel
+  9:16): `publish_video` com a URL do `.mp4` em `/content/media/`.
+- **Materiais** — card: `card.mjs` (JSON em `pautas/cards/`); carrossel:
+  vários cards 1080×1350 (capa + 1 slide por notícia, chapéu numerado);
+  vídeo: `reel.mjs` a partir da charge em retrato; charge: seção "Charges no
+  Canva" acima (sempre 4:5 no Instagram).
+
+## Direct do Instagram: compartilhar e responder leitores
+
+**Compartilhar uma matéria no Direct (manual)** — no app, abra o post do
+@hoje.mt → toque no **avião de papel** (Compartilhar) → escolha as pessoas
+ou grupos → **Enviar**; ou toque em **⋯ → Copiar link** e cole na conversa.
+Para uma matéria do site sem post, mande a URL `hojemt.com.br/<slug>` na
+conversa (o Instagram gera a prévia). Nos Stories: **Adicionar post ao seu
+story** + figurinha de **link** apontando para a matéria. No desktop
+(instagram.com): ícone de avião embaixo do post → Send.
+
+**Automação (`instagram-dm.mjs` + `.github/workflows/instagram-leitores.yml`)**
+— a cada 15 min o GitHub Actions responde, dentro do que a Meta permite:
+
+- comentário novo pedindo a matéria ("link", "manda", "quero", "fonte",
+  "onde leio"…) → o leitor recebe **no Direct** o link da matéria (private
+  reply) e um "te enviamos no Direct 📩" no post; com `todos = true`, todo
+  comentário novo recebe o link;
+- Direct em que a **última mensagem é do leitor** (janela de 24 h) → recebe
+  a matéria pedida (procura o tema nas manchetes do RSS) ou as 3 últimas
+  manchetes com link.
+
+Segredos em Settings → Secrets and variables → Actions: `IG_USER_ID`
+(17841460614185827) e `IG_ACCESS_TOKEN` (token de longa duração com
+`instagram_basic`, `instagram_manage_comments`, `instagram_manage_messages`;
+gerado no app do Meta for Developers com a conta @hoje.mt conectada; no
+app do Instagram, ative em Configurações → Mensagens → **Permitir acesso a
+mensagens** para ferramentas conectadas). Teste sem enviar: Actions →
+"Instagram — responder leitores" → Run workflow com `dry_run = true`. O mapa
+`pautas/instagram-links.json` (permalink → matéria) garante o link certo; sem
+entrada, o script procura a URL na legenda e depois manchete parecida.
+
+**O que a automação não faz (e por quê)** — não manda mensagem a quem nunca
+falou com a conta, não envia em massa e não usa lista de seguidores de
+outras contas: a API do Instagram só permite responder a quem escreveu
+primeiro (comentário ou Direct, janela de 24 h) e não expõe seguidores de
+terceiros; raspar essa lista viola os Termos da Meta e derruba a conta.
+Para alcançar o público das concorrentes, os caminhos legítimos são: anúncios
+no Meta Ads com público por interesse (notícias de MT, política, agro) e
+público semelhante ao dos seguidores do @hoje.mt; posts em **Collab** com
+perfis parceiros; chamada nos posts ("comente LINK que mandamos no Direct" —
+o bot responde); Stories com figurinha de link; e Reels, que o algoritmo
+distribui para quem não segue.
+
+## Capa da publicação (Ghost → Design → Publication cover)
+
+Design no Canva `DAHWEeS_MbI` (2400×1200): panorama de Mato Grosso
+(Pantanal, Chapada, lavoura, horizonte de Cuiabá) com a **logo oficial do
+site** (`assets/hojemt-logo-site.svg`, a mesma do cabeçalho) num painel
+branco e o slogan "O jornal de Mato Grosso e do Brasil". Arquivo:
+`assets/capa-publicacao.jpg`. A Admin API Key não grava `settings`, então a
+capa entra pelo painel: Settings → Design & branding → **Publication cover →
+Upload cover** → Save.
