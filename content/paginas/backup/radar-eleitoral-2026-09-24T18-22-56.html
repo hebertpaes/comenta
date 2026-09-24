@@ -1,0 +1,72 @@
+<style>
+#hmt-radar{--rv:#00a859;--rv2:#0a2e1f;--rp:#c62828;--rs:#1565c0;--bg:#fff;--card:#f6f8f7;--tx:#111;--mu:#5f6b66;--bd:#dfe6e2;font-family:inherit;color:var(--tx)}
+@media (prefers-color-scheme:dark){#hmt-radar{--bg:#0f1512;--card:#17201b;--tx:#eef3f0;--mu:#9fb0a8;--bd:#2a3630}}
+[data-theme="dark"] #hmt-radar,html.dark #hmt-radar,body.dark #hmt-radar,body.dark-mode #hmt-radar{--bg:#0f1512;--card:#17201b;--tx:#eef3f0;--mu:#9fb0a8;--bd:#2a3630}
+#hmt-radar *{box-sizing:border-box}
+#hmt-radar .r-intro{background:linear-gradient(135deg,var(--rv2),#0f4a33);color:#fff;border-radius:16px;padding:22px 24px;margin:0 0 18px}
+#hmt-radar .r-intro h2{margin:0 0 6px;font-size:1.35rem;color:#fff}
+#hmt-radar .r-intro p{margin:0;color:#cfe8dc;font-size:.95rem;line-height:1.5}
+#hmt-radar .r-legenda{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}
+#hmt-radar .r-legenda span{background:rgba(255,255,255,.12);border-radius:999px;padding:5px 12px;font-size:.82rem}
+#hmt-radar .r-filtros{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 18px}
+#hmt-radar .r-filtros button{border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;padding:7px 14px;font-size:.85rem;cursor:pointer}
+#hmt-radar .r-filtros button.on{background:var(--rv);border-color:var(--rv);color:#fff;font-weight:700}
+#hmt-radar .r-filtros input{flex:1 1 180px;min-width:160px;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:10px;padding:8px 12px;font-size:.9rem}
+#hmt-radar h3.r-cargo{font-size:1.05rem;margin:26px 0 12px;padding-left:12px;border-left:5px solid var(--rv);text-transform:uppercase;letter-spacing:.04em}
+#hmt-radar .r-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:16px}
+#hmt-radar .r-card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px 18px;min-width:0}
+#hmt-radar .r-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+#hmt-radar .r-nome{font-size:1.15rem;font-weight:800;margin:0;line-height:1.2}
+#hmt-radar .r-sub{color:var(--mu);font-size:.82rem;margin-top:3px}
+#hmt-radar .r-partido{background:var(--rv2);color:#fff;border-radius:6px;padding:2px 8px;font-size:.72rem;font-weight:700;letter-spacing:.03em;white-space:nowrap}
+#hmt-radar .r-cont{display:flex;gap:8px;margin:10px 0 12px;flex-wrap:wrap}
+#hmt-radar .r-cont b{border-radius:8px;padding:4px 10px;font-size:.78rem;font-weight:700}
+#hmt-radar .r-cont .p{background:#fdecec;color:var(--rp)}#hmt-radar .r-cont .s{background:#e8f1fc;color:var(--rs)}#hmt-radar .r-cont .n{background:var(--bd);color:var(--mu)}
+[data-theme="dark"] #hmt-radar .r-cont .p,html.dark #hmt-radar .r-cont .p{background:#3a1b1b}[data-theme="dark"] #hmt-radar .r-cont .s,html.dark #hmt-radar .r-cont .s{background:#17283d}
+#hmt-radar .r-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:560px){#hmt-radar .r-cols{grid-template-columns:1fr}}
+#hmt-radar .r-col h4{margin:0 0 8px;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
+#hmt-radar .r-col.p h4{color:var(--rp)}#hmt-radar .r-col.s h4{color:var(--rs)}
+#hmt-radar .r-col ul{list-style:none;margin:0;padding:0}
+#hmt-radar .r-col li{font-size:.86rem;line-height:1.35;padding:7px 0;border-top:1px dashed var(--bd)}
+#hmt-radar .r-col li:first-child{border-top:0;padding-top:0}
+#hmt-radar .r-col li small{color:var(--mu);display:block;font-size:.74rem;margin-top:2px}
+#hmt-radar .r-col li a{color:var(--rv);font-weight:600;text-decoration:none}
+#hmt-radar .r-vazio{color:var(--mu);font-size:.84rem;font-style:italic}
+#hmt-radar .r-links{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap;font-size:.82rem}
+#hmt-radar .r-links a{color:var(--rv);font-weight:700;text-decoration:none}
+#hmt-radar .r-rodape{margin-top:26px;padding:14px 16px;border:1px solid var(--bd);border-radius:12px;font-size:.8rem;color:var(--mu);line-height:1.5}
+#hmt-radar .r-carregando{padding:30px;text-align:center;color:var(--mu)}
+</style>
+<div id="hmt-radar">
+ <div class="r-intro">
+  <h2>🎯 Radar Eleitoral 2026 — Polêmicas &amp; Soluções</h2>
+  <p>Acompanhamento contínuo do que a imprensa e as fontes oficiais publicam sobre candidatos e autoridades de Mato Grosso nos últimos 7 dias. Cada manchete é classificada automaticamente: <b>polêmica</b> (fato questionado, contestado ou sob apuração) ou <b>solução</b> (proposta, projeto, entrega, compromisso). Todos os nomes do mesmo cargo aparecem em ordem alfabética, com o mesmo tratamento.</p>
+  <div class="r-legenda"><span>⚠️ Polêmica = fato em questionamento, não veredito</span><span>💡 Solução = proposta ou entrega anunciada</span><span>🔄 Atualiza a cada 30 min</span></div>
+ </div>
+ <div class="r-filtros" id="r-filtros"><input id="r-busca" type="search" placeholder="Buscar candidato…" aria-label="Buscar candidato"></div>
+ <div id="r-conteudo" class="r-carregando">Carregando o radar…</div>
+ <div class="r-rodape"><b>Como funciona.</b> O radar lê manchetes públicas (Google Notícias, veículos de Mato Grosso e a cobertura do HOJE MT) e classifica por palavras-chave. "Polêmica" indica que o fato foi questionado ou está sob apuração <i>segundo a cobertura</i> — não é juízo do HOJE MT; vale a presunção de inocência. A lista segue a isonomia da Lei 9.504/97: candidatos ao mesmo cargo recebem o mesmo espaço. Sugestões de nomes: <a href="mailto:contato@hojemt.com.br">contato@hojemt.com.br</a>. <span id="r-gerado"></span></div>
+</div>
+<script>
+(function(){
+ var C=document.getElementById('r-conteudo'),F=document.getElementById('r-filtros'),B=document.getElementById('r-busca'),dados=null,cargo='todos';
+ function esc(s){return String(s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+ function item(x){var t=esc(x.titulo);if(x.url)t='<a href="'+esc(x.url)+'">'+t+'</a>';return '<li>'+t+'<small>'+(x.data?x.data+' · ':'')+esc(x.fonte)+'</small></li>'}
+ function card(c){var sub=c.candidato===false?(c.cidade?'Prefeitura de '+esc(c.cidade):'Autoridade monitorada'):('Candidato(a) · '+esc(dados.cargos[c.cargo]||c.cargo))+(c.confirmar?' · <i>a confirmar</i>':'');
+  var ig=c.instagram?'<a href="https://www.instagram.com/'+esc(c.instagram)+'/" rel="nofollow noopener" target="_blank">📸 @'+esc(c.instagram)+'</a>':'';
+  return '<div class="r-card"><div class="r-top"><div><h4 class="r-nome">'+esc(c.nome)+'</h4><div class="r-sub">'+sub+'</div></div>'+(c.partido?'<span class="r-partido">'+esc(c.partido)+'</span>':'')+'</div>'
+  +'<div class="r-cont"><b class="p">⚠️ '+c.polemicas.length+' polêmica'+(c.polemicas.length==1?'':'s')+'</b><b class="s">💡 '+c.solucoes.length+' solu'+(c.solucoes.length==1?'ção':'ções')+'</b><b class="n">'+c.neutras+' agenda</b></div>'
+  +'<div class="r-cols"><div class="r-col p"><h4>Polêmicas</h4>'+(c.polemicas.length?'<ul>'+c.polemicas.map(item).join('')+'</ul>':'<div class="r-vazio">Nada registrado na semana.</div>')+'</div>'
+  +'<div class="r-col s"><h4>Soluções &amp; propostas</h4>'+(c.solucoes.length?'<ul>'+c.solucoes.map(item).join('')+'</ul>':'<div class="r-vazio">Nada registrado na semana.</div>')+'</div></div>'
+  +'<div class="r-links"><a href="/search/?q='+encodeURIComponent(c.nome)+'">📰 Cobertura no HOJE MT</a>'+ig+'</div></div>'}
+ function render(){if(!dados)return;var q=(B.value||'').toLowerCase(),grupos={},ordem=Object.keys(dados.cargos);
+  dados.candidatos.forEach(function(c){if(cargo!=='todos'&&c.cargo!==cargo)return;if(q&&c.nome.toLowerCase().indexOf(q)<0)return;(grupos[c.cargo]=grupos[c.cargo]||[]).push(c)});
+  var h='';ordem.forEach(function(k){if(!grupos[k])return;h+='<h3 class="r-cargo">'+esc(dados.cargos[k])+'</h3><div class="r-grid">'+grupos[k].map(card).join('')+'</div>'});
+  C.className='';C.innerHTML=h||'<div class="r-carregando">Nenhum nome encontrado.</div>'}
+ function filtros(){var h='<button data-c="todos" class="on">Todos</button>';Object.keys(dados.cargos).forEach(function(k){if(dados.candidatos.some(function(c){return c.cargo===k}))h+='<button data-c="'+k+'">'+esc(dados.cargos[k].replace(/ \(MT\)| de Mato Grosso| de MT/g,''))+'</button>'});
+  F.insertAdjacentHTML('afterbegin',h);F.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){F.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');cargo=b.getAttribute('data-c');render()})})}
+ B.addEventListener('input',render);
+ fetch('/content/media/apuracao/radar-candidatos.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){dados=d;filtros();render();var g=document.getElementById('r-gerado');if(g)g.textContent='Última atualização: '+(d.gerado_em||'').replace('T',' ').slice(0,16)+'.'}).catch(function(){C.innerHTML='<div class="r-carregando">Radar temporariamente indisponível. Tente novamente em instantes.</div>'});
+})();
+</script>
