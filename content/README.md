@@ -313,6 +313,23 @@ no Ghost), `legenda` (≤ 2.200 caracteres), `status`, `permalink` e
   vídeo: `reel.mjs` a partir da charge em retrato; charge: seção "Charges no
   Canva" acima (sempre 4:5 no Instagram).
 
+## Instagram: crescimento com perfil zero
+
+Plano completo em `pautas/instagram-crescimento.md`: diagnóstico da conta,
+as 6 respostas da Regra Zero (nicho "Mato Grosso explicado"), regras de
+produção e a sequência de 10 posts (alcance → retenção → prova → CTA leve).
+Em resumo:
+
+- Reels de 15 a 35 s e carrosséis de 6 a 8 slides, sempre no Canva, com
+  gancho no 1º quadro (número, horário ou pergunta sobre MT), uma ideia por
+  quadro e último quadro pedindo para salvar e compartilhar.
+- Legenda de até 600 caracteres; o texto longo vai para a matéria.
+- Posts da sequência ficam no horário das 19:30; os itens da agenda levam
+  `"sequencia": "perfil-zero #N (fase)"`.
+- Medição toda segunda: a Routine lê seguidores, curtidas e comentários pela
+  API e grava em `pautas/instagram-metricas.json`; alcance, salvamentos e
+  retenção só existem no app (Insights) e entram à mão.
+
 ## Direct do Instagram: compartilhar e responder leitores
 
 **Compartilhar uma matéria no Direct (manual)** — no app, abra o post do

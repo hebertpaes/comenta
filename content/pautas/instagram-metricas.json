@@ -1,0 +1,25 @@
+{
+ "_como_funciona": "Fotografia semanal do @hoje.mt para o projeto perfil zero (ver instagram-crescimento.md). A API liberada no Zapier dá seguidores, curtidas e comentários; alcance, salvamentos, compartilhamentos e retenção só aparecem no app (Insights) e entram aqui à mão, em 'insights_manual'.",
+ "conta": "hoje.mt",
+ "leituras": [
+  {
+   "data": "2026-09-24",
+   "fonte": "Graph API via Zapier (GET /17841460614185827?fields=followers_count,follows_count,media_count,media{...})",
+   "seguidores": 53,
+   "seguindo": 66,
+   "posts": 20,
+   "ultimos_20": {
+    "curtidas": 6,
+    "comentarios": 0,
+    "posts_com_curtida": 6,
+    "formatos": {"IMAGE": 15, "VIDEO": 3, "CAROUSEL_ALBUM": 2}
+   },
+   "observacoes": [
+    "Legendas longas (várias com 1.500 a 2.000 caracteres) e sem gancho visual na primeira linha.",
+    "3 Reels antigos eram repost de vídeo de terceiros (0 a 1 curtida).",
+    "Nenhum post pede salvar ou compartilhar; nenhum tem cara de guia útil."
+   ],
+   "insights_manual": null
+  }
+ ]
+}

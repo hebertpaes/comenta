@@ -36,12 +36,22 @@
    "cron_utc": "0 22 * * 1-5",
    "fonte": "content/pautas/tce/monitor.json e content/README.md (\"Artes dos artigos no Canva\")",
    "resumo": "Lê o RSS do canal oficial do TCE-MT no YouTube (lives das sessões do Pleno às terças e vídeos de decisões) e a imprensa de MT; até 2 pautas por dia viram rascunho no Ghost com fonte, outro lado e checagem pendente; arte sempre montagem ilustrativa própria no Canva (nunca frame da transmissão ou de TikTok de terceiros); card 4:5 do Instagram fica \"aguardando_materia\"."
+  },
+  {
+   "id": "trig_01NHdwe3fFgHHA8PsA4Jtx3M",
+   "nome": "Instagram perfil zero — medição semanal e próximos posts (segunda, 09:00 Cuiabá)",
+   "cron_utc": "0 13 * * 1",
+   "fonte": "content/pautas/instagram-crescimento.md e content/pautas/instagram-metricas.json",
+   "resumo": "Lê seguidores, curtidas e comentários pela Graph API (Zapier), grava a leitura semanal, atualiza a tabela da sequência de 10 posts e produz no Canva os 2 próximos posts \"A fazer\" (Reel 9:16 ou carrossel 4:5), só com fatos de fonte oficial conferida; hospeda no Ghost e agenda no horário das 19:30 (quem publica é a Routine do Instagram)."
   }
  ],
  "modelos_canva": {
   "charge_16x9": "DAHWDzwR5c0",
   "charge_4x5": "DAHWEJf2P1U",
-  "capa_publicacao": "DAHWEeS_MbI"
+  "capa_publicacao": "DAHWEeS_MbI",
+  "reel_9x16_perfil_zero": "DAHWIHvIE3U",
+  "carrossel_4x5_perfil_zero": "DAHWIEnYeBU",
+  "card_4x5_ilustracao": "DAHWHxXxNqw"
  },
  "ghost": {
   "url": "https://hojemt.com.br",
