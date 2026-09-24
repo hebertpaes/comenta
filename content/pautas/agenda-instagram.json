@@ -519,6 +519,21 @@
    "legenda": "O último show de Rick foi em Mato Grosso.\n\nNo sábado (19), Rick & Renner entraram de surpresa numa festa de 15 anos em Sorriso cantando \"Filha\". Era uma promessa feita em 2023: \"Se for da vontade de Deus, logo, logo estaremos juntos\". Dois dias depois, o helicóptero em que Rick viajava caiu na Serra Catarinense. A dupla tinha show marcado em Cuiabá em 17/10.\n\nMatéria completa: hojemt.com.br/ultimo-show-de-rick-foi-em-sorriso-numa-promessa-de-tres-anos\n\nFontes: RepórterMT, Nortão MT, Jovem Pan, Agência Brasil, ND Mais. Ilustração: HOJE MT (IA; cena de ficção).\n\n#RickeRenner #Sorriso #MatoGrosso #Cuiaba #HojeMT",
    "materia": "https://hojemt.com.br/ultimo-show-de-rick-foi-em-sorriso-numa-promessa-de-tres-anos/",
    "obs": "Publicar só depois que a matéria (rascunho no Ghost) for publicada: aí trocar status para agendado e definir quando no próximo horário livre."
+  },
+  {
+   "id": "32",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-10-01T15:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Fome em tempos de guerra",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-fome-em-tempos-de-guerra-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Fome em tempos de guerra\n\nGuerra e seca à mesa: prato vazio.\n\nSegundo a FAO, conflitos e eventos climáticos extremos somaram 40 milhões de pessoas à insegurança alimentar no mundo. Brasil e Espanha anunciaram uma aliança contra a fome.\n\nLeia a curta completa: hojemt.com.br/fome-em-tempos-de-guerra\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #fome #FAO #matogrosso #hojemt",
+   "materia": "https://hojemt.com.br/fome-em-tempos-de-guerra/",
+   "charge_json": "pautas/charges/2026-09-24-fome-em-tempos-de-guerra.json"
   }
  ]
 }

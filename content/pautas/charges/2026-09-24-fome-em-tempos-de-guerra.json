@@ -1,0 +1,36 @@
+{
+  "slug": "fome-em-tempos-de-guerra",
+  "materia": "https://hojemt.com.br/fome-em-tempos-de-guerra/",
+  "titulo": "Fome em tempos de guerra",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "balao": null,
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Guerra e seca sentaram à mesa; o prato chegou vazio.",
+    "instagram_4x5": "Guerra e seca à mesa: prato vazio."
+  },
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json (item 32)"
+  },
+  "canva": {
+    "design_site_16x9": "DAHWIrz9P64",
+    "arte_16x9": "MAHWIlcUBSM",
+    "design_instagram_4x5": "DAHWIuOnULI",
+    "arte_4x5": "MAHWIuGohqA",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "personagens": [],
+  "obs": "Curta sobre relatório da FAO (conflitos + clima = 40 milhões a mais em insegurança alimentar) e aliança Brasil–Espanha contra a fome. Sem pessoa real citada: personagens simbólicos (capacete vazio = guerra; sol = seca) e figurantes genéricos (agricultor e diplomata trazendo grãos). A charge automática trazia balão com frase inventada; o balão saiu (regra: só fala real).",
+  "arquivos": {
+    "site_16x9": "2026-09-24-fome-em-tempos-de-guerra.jpg",
+    "instagram_4x5": "2026-09-24-fome-em-tempos-de-guerra-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-24-fome-em-tempos-de-guerra.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-24-fome-em-tempos-de-guerra-og.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-24-fome-em-tempos-de-guerra-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 24/09/2026 (antes: charge automática charge-dia-1790273441.webp)"
+}

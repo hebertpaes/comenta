@@ -162,7 +162,7 @@ segurança), o post é pulado com o motivo no log; rode de novo ou use `--imagem
 Orientação do editor (24/09/2026): **sempre crie as charges no Canva**. A charge
 "de bonecos" que o publicador automático das Curtas gera (arquivo
 `charge-<timestamp>.webp`) é provisória e deve ser substituída por uma charge
-deste fluxo. Uma Routine da sessão do Claude roda de hora em hora: acha os posts das últimas 3 h com `feature_image` contendo
+deste fluxo. Uma Routine da sessão do Claude roda de hora em hora, no minuto 25 (o publicador solta as curtas com charge por volta de :10 e :21, então a troca sai em até ~20 min): acha os posts das últimas 3 h com `feature_image` contendo
 `/charge-`, faz a charge no Canva (16:9 + 4:5), troca a imagem de destaque e a
 og:image, hospeda o 4:5 e o coloca na agenda do Instagram; quando não há post
 novo, refaz até 2 antigos às 11h e às 17h (Cuiabá). Foto de referência: só foto
