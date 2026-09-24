@@ -1,0 +1,185 @@
+{
+  "_como_funciona": "Ilustrações editoriais feitas no Canva para artigos com capa genérica (opiniao-*.webp / capa-*.webp). Receita em content/README.md, seção 'Artes dos artigos no Canva'. Legenda no site: 'Ilustração: HOJE MT (gerada com IA)'.",
+  "itens": [
+    {
+      "slug": "o-cnpj-como-salvo-conduto-a-formalizacao-que-muda-a-vida",
+      "titulo": "O CNPJ como salvo-conduto: a formalização que muda a vida",
+      "materia": "https://hojemt.com.br/o-cnpj-como-salvo-conduto-a-formalizacao-que-muda-a-vida/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHWHliI-E4",
+        "arte": "MAHWHsFNIcg",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "empreendedora de avental na porta da loja com um documento em forma de chave que abre portas de banco, nota fiscal e negócios",
+      "arquivo": "2026-09-24-o-cnpj-como-salvo-conduto.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-24-o-cnpj-como-salvo-conduto.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-24-o-cnpj-como-salvo-conduto-og.jpg",
+      "capa_anterior": "opiniao-1790251524.webp",
+      "legenda": "Ilustração: HOJE MT (gerada com IA)",
+      "feito_em": "2026-09-24"
+    },
+    {
+      "slug": "lula-e-a-onu-o-que-o-discurso-muda-no-bolso-do-mato-grossense",
+      "titulo": "Lula e a ONU: o que o discurso muda no bolso do mato-grossense",
+      "materia": "https://hojemt.com.br/lula-e-a-onu-o-que-o-discurso-muda-no-bolso-do-mato-grossense/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHWHjjRHpI",
+        "arte": "MAHWHiSCpDo",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "orador genérico de costas numa tribuna internacional; estrada até uma lavoura de soja de MT com família",
+      "arquivo": "2026-09-23-lula-e-a-onu-discurso-bolso.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-23-lula-e-a-onu-discurso-bolso.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-23-lula-e-a-onu-discurso-bolso-og.jpg",
+      "capa_anterior": "opiniao-1790165144.webp",
+      "legenda": "Ilustração: HOJE MT (gerada com IA)",
+      "feito_em": "2026-09-24"
+    },
+    {
+      "slug": "lula-na-onu-o-que-a-diplomacia-significa-para-o-mato-grossense",
+      "titulo": "Lula na ONU: o que a diplomacia significa para o mato-grossense",
+      "materia": "https://hojemt.com.br/lula-na-onu-o-que-a-diplomacia-significa-para-o-mato-grossense/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHWHiE3BYg",
+        "arte": "MAHWHmMk7xs",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "mesa redonda de negociação com vagem de soja gigante; grãos rolam até cidade de MT; balança com martelo e grãos",
+      "arquivo": "2026-09-22-lula-na-onu-diplomacia.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-22-lula-na-onu-diplomacia.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-22-lula-na-onu-diplomacia-og.jpg",
+      "capa_anterior": "opiniao-1790078777.webp",
+      "legenda": "Ilustração: HOJE MT (gerada com IA)",
+      "feito_em": "2026-09-24"
+    },
+    {
+      "slug": "voo-de-teste-em-mt-a-fragilidade-da-manutencao-aerea-no-interior",
+      "titulo": "Voo de teste em MT: a fragilidade da manutenção aérea no interior",
+      "materia": "https://hojemt.com.br/voo-de-teste-em-mt-a-fragilidade-da-manutencao-aerea-no-interior/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHWHhjL6U0",
+        "arte": "MAHWHlGOG3c",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "monomotor diante de hangar em pista de terra no cerrado; mecânico de costas examina o motor (sem cena de acidente)",
+      "arquivo": "2026-09-21-voo-de-teste-em-mt.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-21-voo-de-teste-em-mt.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-21-voo-de-teste-em-mt-og.jpg",
+      "capa_anterior": "opiniao-1789992301.webp",
+      "legenda": "Ilustração: HOJE MT (gerada com IA)",
+      "feito_em": "2026-09-24"
+    },
+    {
+      "slug": "lula-em-ny-o-peso-da-diplomacia-para-o-bolso-do-mato-grossense",
+      "titulo": "Lula em NY: o peso da diplomacia para o bolso do mato-grossense",
+      "materia": "https://hojemt.com.br/lula-em-ny-o-peso-da-diplomacia-para-o-bolso-do-mato-grossense/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHWHtHqXdA",
+        "arte": "MAHWHt52mQA",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "skyline de NY com cargueiro; carteira aberta vira estrada até porto seco com contêineres e silos de MT",
+      "arquivo": "2026-09-20-lula-em-ny-diplomacia-bolso.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-20-lula-em-ny-diplomacia-bolso.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-20-lula-em-ny-diplomacia-bolso-og.jpg",
+      "capa_anterior": "opiniao-1789905853.webp",
+      "legenda": "Ilustração: HOJE MT (gerada com IA)",
+      "feito_em": "2026-09-24"
+    },
+    {
+      "slug": "brasil-soberano-3-o-credito-que-muda-o-jogo-para-a-industria",
+      "titulo": "Brasil Soberano 3: o crédito que muda o jogo para a indústria",
+      "materia": "https://hojemt.com.br/brasil-soberano-3-o-credito-que-muda-o-jogo-para-a-industria/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHWHt1lqks",
+        "arte": "MAHWHqae3r8",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "fábrica sob escudo verde contra setas de tarifas; moedas saem do banco e viram engrenagens",
+      "arquivo": "2026-09-19-brasil-soberano-3.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-19-brasil-soberano-3.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-19-brasil-soberano-3-og.jpg",
+      "capa_anterior": "opiniao-1789819505.webp",
+      "legenda": "Ilustração: HOJE MT (gerada com IA)",
+      "feito_em": "2026-09-24"
+    },
+    {
+      "slug": "caos-no-stf-o-que-a-briga-por-moraes-e-mendonca-significa-para-voce",
+      "titulo": "Caos no STF: o que a briga por Moraes e Mendonça significa para você",
+      "materia": "https://hojemt.com.br/caos-no-stf-o-que-a-briga-por-moraes-e-mendonca-significa-para-voce/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHWHhQ_5uQ",
+        "arte": "MAHWHlwFcZw",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "plenário com cadeiras vazias viradas, martelo preso no ar, relógios parados, rachadura até fila de cidadãos",
+      "arquivo": "2026-09-16-caos-no-stf.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-16-caos-no-stf.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-16-caos-no-stf-og.jpg",
+      "capa_anterior": "opiniao-1789560262.webp",
+      "legenda": "Ilustração: HOJE MT (gerada com IA)",
+      "feito_em": "2026-09-24"
+    },
+    {
+      "slug": "a-sessao-de-hoje-define-a-credibilidade-do-stf-para-o-brasil",
+      "titulo": "A sessão de hoje define a credibilidade do STF para o Brasil",
+      "materia": "https://hojemt.com.br/a-sessao-de-hoje-define-a-credibilidade-do-stf-para-o-brasil/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHWHpy-9N0",
+        "arte": "MAHWHhw_omE",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "balança da justiça com celular de mensagens e livro de leis, sob uma lupa, diante de multidão de costas",
+      "arquivo": "2026-09-15-sessao-de-hoje-stf.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-15-sessao-de-hoje-stf.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-15-sessao-de-hoje-stf-og.jpg",
+      "capa_anterior": "opiniao-1789474020.webp",
+      "legenda": "Ilustração: HOJE MT (gerada com IA)",
+      "feito_em": "2026-09-24"
+    },
+    {
+      "slug": "o-compasso-de-espera-do-senado-e-o-impacto-real-no-cotidiano-de-mato-grosso",
+      "titulo": "O compasso de espera do Senado e o impacto real no cotidiano de Mato Grosso",
+      "materia": "https://hojemt.com.br/o-compasso-de-espera-do-senado-e-o-impacto-real-no-cotidiano-de-mato-grosso/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHWHgLZxew",
+        "arte": "MAHWHmnlcjw",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "ampulheta gigante diante do Congresso com calendários, cédulas e capacetes caindo; trabalhadores esperando",
+      "arquivo": "2026-09-03-compasso-de-espera-do-senado.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-03-compasso-de-espera-do-senado.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-03-compasso-de-espera-do-senado-og.jpg",
+      "capa_anterior": "opiniao-1788436926.webp",
+      "legenda": "Ilustração: HOJE MT (gerada com IA)",
+      "feito_em": "2026-09-24"
+    },
+    {
+      "slug": "o-limite-das-relacoes-e-o-impacto-institucional-para-mato-grosso",
+      "titulo": "O limite das relações e o impacto institucional para Mato Grosso",
+      "materia": "https://hojemt.com.br/o-limite-das-relacoes-e-o-impacto-institucional-para-mato-grosso/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHWHi9RKtc",
+        "arte": "MAHWHqQ4dBI",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "tribunal e banco frente a frente, ponte de papel que se rompe sobre um celular de mensagens; cidadãos de costas",
+      "arquivo": "2026-09-01-o-limite-das-relacoes.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-01-o-limite-das-relacoes.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-01-o-limite-das-relacoes-og.jpg",
+      "capa_anterior": "opiniao-vorcaro.webp",
+      "legenda": "Ilustração: HOJE MT (gerada com IA)",
+      "feito_em": "2026-09-24"
+    }
+  ]
+}

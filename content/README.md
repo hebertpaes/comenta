@@ -65,6 +65,46 @@ GHOST_ADMIN_URL=http://localhost:2368 GHOST_ADMIN_API_KEY=... node publish.mjs -
 Idempotente: cada matéria vira um `slug` estável derivado da URL da fonte, então
 rodar várias vezes não duplica posts.
 
+## Artes dos artigos no Canva (capas genéricas → ilustração editorial)
+
+Orientação do editor (24/09/2026): **"Crie artes dos artigos com Canva."** Os
+artigos de Opinião (e algumas notícias) saem do publicador com uma capa
+genérica (quadro verde com ícone: arquivos `opiniao-*.webp` e `capa-*.webp`).
+Toda capa genérica deve ser trocada por uma **ilustração editorial feita no
+Canva**, marcada como ilustração (nunca uma imagem de IA passando por foto).
+
+Receita (a mesma do artigo "IA sai do PowerPoint…"):
+
+1. Ler o artigo (Admin API, `formats: plaintext`) e descrever **uma cena**
+   simbólica que conte a tese do texto, ligando Brasília/mundo ao cotidiano
+   de Mato Grosso quando couber (soja, silos, caminhão, cidade do interior).
+2. `generate-image` em `LANDSCAPE_16_9` com o prompt-base: *"Ilustração
+   editorial vetorial, estilo flat moderno com texturas leves de grão, paleta
+   do jornal (verde-escuro profundo, verde vivo, creme e toques de amarelo):
+   [cena]. Nenhuma pessoa reconhecível, sem letras, sem números, sem logos,
+   sem bandeiras. Composição horizontal 16:9, área central limpa."*
+   Pessoas públicas (presidente, ministros) **nunca** aparecem reconhecíveis:
+   figura genérica de costas, ou só os símbolos (tribuna, martelo, balança).
+   Tragédias com vítimas: cena sóbria, sem acidente.
+3. `copy-design` do modelo `DAHWDzwR5c0`; `read-design open_transaction`;
+   `update_fill` no retângulo `LBkRvGTgDLdqhT2c` (+ `crop_media` 0/0/1600/900);
+   apagar faixa, balão, legenda, assinatura e rodapé (`LBTbHX2cc1t8MXwC`,
+   `LBWHl9zsPzJVjjKc`, `LBr3TrrQqfFvwklc`, `LB9dKGN7nn5gsKLK`,
+   `LB8PDqL12zfvm60b`, `LBnGqkBwd82SzW7P`); manter o selo e trocar o texto
+   para **ILUSTRAÇÃO · HOJE MT** (shape `LBpQx8DX7cyRdZDh` e texto
+   `LBlVKyTHh3yfBnjq` com largura 330 e left 1230); commit; `export-design` jpg.
+4. Salvar em `pautas/ilustracoes/<data>-<slug-curto>.jpg`; publicar com
+   `imagem-post.mjs --legenda="Ilustração: HOJE MT (gerada com IA)"` e
+   `og-whatsapp.mjs --slug=<slug> --da-destaque`; registrar em
+   `pautas/ilustracoes/registro.json` (design, arte, alt, arquivo, URL).
+
+Feitas em 24/09/2026: as 10 de Opinião com `opiniao-*.webp` (CNPJ, Lula e a
+ONU ×3, Voo de teste, Brasil Soberano 3, STF ×2, Senado, Limite das
+relações). A rotina horária das charges também procura capas `opiniao-*` e
+`capa-*` e faz até 2 ilustrações por disparo. Restam ~28 notícias com
+`capa-*.webp` (Alta Floresta, Primavera do Leste etc.): nelas, preferir a
+**foto real da fonte** quando existir; ilustração só na falta de foto.
+
 ## Ilustrações realistas (Curtas, charges e matérias sem foto)
 
 As charges da seção **Curtas & Bastidores** eram desenhos vetoriais (bonecos
