@@ -1,0 +1,75 @@
+{
+  "slug": "coligacao-pela-metade",
+  "materia": "https://hojemt.com.br/coligacao-pela-metade/",
+  "titulo": "Coligação Pela Metade",
+  "pauta": "pautas/2026-09-24-coligacao-pela-metade.md",
+  "pedido": "Editor (24/09/2026): \"Cheque em várias fontes e crie a sátira na charge\" (link do Olhar Direto)",
+  "formato": "charge de jornal montada inteira no Canva; curta criada como rascunho com a charge de capa",
+  "balao": null,
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Na coligação, o combinado saiu pela metade.",
+    "instagram_4x5": "O combinado saiu pela metade."
+  },
+  "instagram": {
+    "status": "aguardando_materia em pautas/agenda-instagram.json (item 30); entra na fila quando a curta for publicada"
+  },
+  "canva": {
+    "design_site_16x9": "DAHWIUfshE4",
+    "arte_16x9": "MAHWIYrF-cc",
+    "design_instagram_4x5": "DAHWIQPeetM",
+    "arte_4x5": "MAHWIZ23yMY",
+    "descartadas": [
+      "MAHWIVas1iw",
+      "MAHWITS3g6I"
+    ],
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "personagens": [
+    {
+      "nome": "Wellington Fagundes",
+      "cargo": "senador, candidato ao governo de MT (PL)",
+      "canva_fotos_referencia": [
+        "MAHWH-KaOvA"
+      ],
+      "data_foto": "2026-08",
+      "credito": "Foto: TSE/Divulgação (registro de candidatura 2026)",
+      "licenca": "foto oficial do registro de candidatura (dados abertos do TSE); só referência de desenho",
+      "referencia_anterior": "MAHWEb8Q-qQ (Senado/Commons)"
+    },
+    {
+      "nome": "Reinaldo Gomes de Morais (Reinaldo Morais, \"Rei do Porco\")",
+      "cargo": "candidato a vice-governador (Novo) na chapa de Wellington",
+      "canva_fotos_referencia": [
+        "MAHWIYt0V-E"
+      ],
+      "data_foto": "2026-08",
+      "credito": "Foto: TSE/Divulgação (registro de candidatura 2026, FMT110002551736_div.jpg)",
+      "licenca": "foto oficial do registro de candidatura; só referência de desenho",
+      "obs": "coroa: continuação da charge O Cofrinho do Rei do Porco"
+    },
+    {
+      "nome": "Otaviano Pivetta",
+      "cargo": "governador, candidato à reeleição (Republicanos)",
+      "canva_fotos_referencia": [
+        "MAHWH0J-3js"
+      ],
+      "data_foto": "2026-08",
+      "credito": "Foto: TSE/Divulgação (registro de candidatura 2026)",
+      "licenca": "foto oficial do registro de candidatura"
+    }
+  ],
+  "obs": "Sem balão: as falas reais são de Rafael Iacovacci (Novo) e Ananias Filho (PL), sem foto oficial para caricatura. Candidatos da fila são genéricos. Sem cédulas ou dinheiro em espécie: repasse entre partidos coligados não é apresentado como irregular. Pivetta ao fundo com cadeira vazia: candidatos pediram liberação para apoiar outros nomes, incluindo o governador (Gazeta Digital, RDM). Linha editorial: a favor de Pivetta.",
+  "arquivos": {
+    "site_16x9": "2026-09-24-coligacao-pela-metade.jpg",
+    "instagram_4x5": "2026-09-24-coligacao-pela-metade-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-24-coligacao-pela-metade.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-24-coligacao-pela-metade-og.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-24-coligacao-pela-metade-instagram-retrato.jpg"
+  },
+  "site": "rascunho no Ghost (id 6ab55f16834d62060cb1d246, tag Curtas & Bastidores), criado em 24/09/2026 com a charge como feature_image e og_image"
+}

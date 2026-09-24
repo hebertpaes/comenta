@@ -488,6 +488,22 @@
    "materia": "https://hojemt.com.br/o-cofrinho-do-rei-do-porco/",
    "charge_json": "pautas/charges/2026-09-24-o-cofrinho-do-rei-do-porco.json",
    "obs": "Curta está em rascunho no Ghost. Quando o editor publicar: trocar status para agendado e definir quando no próximo horário livre de charge."
+  },
+  {
+   "id": "30",
+   "status": "aguardando_materia",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": null,
+   "formato": "charge",
+   "titulo": "Coligação Pela Metade",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-coligacao-pela-metade-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Coligação Pela Metade\n\nO combinado saiu pela metade.\n\nO presidente do Novo-MT, Rafael Iacovacci, diz que o PL repassou só metade dos R$ 2 milhões a R$ 2,5 milhões combinados para as campanhas de deputado do partido. O Novo, que tem o vice de Wellington Fagundes, fica na aliança e espera o resto até segunda (28). O PL promete \"honrar todos os compromissos assumidos\".\n\nLeia a curta completa: hojemt.com.br/coligacao-pela-metade\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/coligacao-pela-metade/",
+   "charge_json": "pautas/charges/2026-09-24-coligacao-pela-metade.json",
+   "obs": "Curta está em rascunho no Ghost. Quando o editor publicar: trocar status para agendado e definir quando no próximo horário livre de charge."
   }
  ]
 }
