@@ -1,0 +1,53 @@
+{{!-- Modal de vídeo (YouTube/Vimeo) para os cards "article.usat-video-card".
+     Fica no FIM do <body>: markup dentro do <head> quebra a prévia do WhatsApp,
+     porque o parser HTML fecha o <head> ao encontrar um <div> e as tags og:*
+     do {{ghost_head}} passam a ser lidas como corpo da página. --}}
+<div id="hmt-vm"
+     style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(8,20,14,.86);align-items:center;justify-content:center;padding:18px">
+  <div style="width:min(920px,96vw);background:#0d2b1d;border-radius:14px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.55)">
+    <div style="display:flex;justify-content:flex-end">
+      <button id="hmt-vm-x" aria-label="Fechar"
+        style="border:0;background:none;color:#cfe9db;font-size:26px;padding:6px 14px;cursor:pointer">×</button>
+    </div>
+    <div id="hmt-vm-corpo" style="position:relative;padding-top:56.25%"></div>
+    <a id="hmt-vm-link" href="#"
+       style="display:block;text-align:center;color:#8fd6b4;font-weight:700;padding:12px">Ler a matéria completa →</a>
+  </div>
+</div>
+<script>
+(function () {
+  var vm = document.getElementById("hmt-vm");
+  var corpo = document.getElementById("hmt-vm-corpo");
+  var link = document.getElementById("hmt-vm-link");
+  function fechar() {
+    corpo.innerHTML = ""; vm.style.display = "none";
+    document.documentElement.style.overflow = "";
+  }
+  function abrir(url) {
+    fetch(url).then(function (r) { return r.text(); }).then(function (html) {
+      var m = html.match(/<iframe[^>]+src="(https:[^"]+)"[^>]*>/i);
+      if (!m || !/youtube|youtu\.be|vimeo/.test(m[1])) {
+        location.href = url; return;     // só YouTube/Vimeo rende em modal
+      }
+      var src = m[1] + (m[1].indexOf("?") > -1 ? "&" : "?") + "autoplay=1";
+      corpo.innerHTML = '<iframe src="' + src + '" allow="autoplay; ' +
+        'picture-in-picture; fullscreen; encrypted-media" allowfullscreen ' +
+        'style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>';
+      link.href = url; vm.style.display = "flex";
+      document.documentElement.style.overflow = "hidden";
+    }).catch(function () { location.href = url; });
+  }
+  document.addEventListener("click", function (ev) {
+    var a = ev.target.closest && ev.target.closest("article.usat-video-card a[href]");
+    if (!a) return;
+    if (a.pathname.replace(/\/+$/, "") === location.pathname.replace(/\/+$/, "")) return;
+    ev.preventDefault();
+    abrir(a.href);
+  });
+  document.getElementById("hmt-vm-x").addEventListener("click", fechar);
+  vm.addEventListener("click", function (ev) { if (ev.target === vm) fechar(); });
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape" && vm.style.display !== "none") fechar();
+  });
+})();
+</script>

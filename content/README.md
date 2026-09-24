@@ -276,3 +276,25 @@ branco e o slogan "O jornal de Mato Grosso e do Brasil". Arquivo:
 `assets/capa-publicacao.jpg`. A Admin API Key não grava `settings`, então a
 capa entra pelo painel: Settings → Design & branding → **Publication cover →
 Upload cover** → Save.
+
+## Prévia no WhatsApp (título sem imagem)
+
+**Causa encontrada (24/09):** o tema em produção tem o modal de vídeo
+(`<div id="hmt-vm">` + `<script>`) dentro do `<head>`, antes de
+`{{ghost_head}}`. Pelo padrão HTML, um `<div>` no `<head>` fecha o head; os
+parsers estritos (o do WhatsApp) passam a ler as tags `og:*` como corpo e
+montam a prévia só com o `<title>`: sem descrição e sem imagem. O Facebook
+tolera, o WhatsApp não. A chave da Admin API não tem permissão para temas, então
+a correção vai pelo servidor: `deploy/corrigir-head-tema.sh` (move o bloco para
+o fim do `<body>` e reinicia o Ghost). No tema do repositório o modal já está
+no lugar certo (`partials/video-modal.hbs`, incluído antes de `{{ghost_foot}}`).
+
+**Segunda causa:** imagens de compartilhamento em WebP e em retrato
+(1080×1350). O WhatsApp não renderiza WebP e mostra retrato só como miniatura.
+`og-whatsapp.mjs` gera um JPEG 1200×630 (< 300 KB) a partir da `og_image` (ou
+da `feature_image`, com `--da-destaque`) e grava em `og_image`/`twitter_image`.
+Já rodou para todos os posts que apontavam para WebP e para as 12 charges.
+
+Para testar depois da correção: o WhatsApp guarda a prévia por URL durante
+dias; mande o link com um sufixo novo (`?v=2`) ou use o depurador do Facebook
+(developers.facebook.com/tools/debug → "Buscar novamente").
