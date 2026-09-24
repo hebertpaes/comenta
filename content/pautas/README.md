@@ -34,9 +34,10 @@ pasta: ele é só do fluxo de RSS.
   direito; sem foto licenciada, o card sai só tipográfico.
 - Os cards publicados ficam em `content/pautas/cards/`, com o mesmo nome da
   pauta, para backup.
-- Charges: montadas no Canva com a **foto real com licença** do personagem
-  (fundo removido) sobre uma cena ilustrada, balão só com fala real citada na
-  matéria, legenda e selo CHARGE (passo a passo em `content/README.md`).
+- Charges: feitas no Canva como um chargista de jornal — caricatura
+  desenhada a partir da **foto real com licença** do personagem, balão só
+  com fala real citada na matéria, legenda, selo CHARGE e crédito da foto
+  (passo a passo em `content/README.md`).
   Arquivo e créditos em `content/pautas/charges/`. Sem cena de crime,
   violência ou humilhação; sem logos nem bandeiras de partido. O gerador por
   Gemini (`node ../ilustrar.mjs`) é alternativa: desenha caricatura a partir

@@ -1,27 +1,35 @@
 {
   "slug": "creche-a-la-churrasco",
   "materia": "https://hojemt.com.br/creche-a-la-churrasco/",
-  "formato": "charge com foto real (fotomontagem), montada inteiramente no Canva",
+  "formato": "charge de jornal: caricatura desenhada a partir da foto real com licença, montada inteira no Canva (v2, aprovada)",
   "legenda": "Cardápio da creche agora tem ponto da carne e ponto de vista.",
-  "balao": "“Não houve nada ilegal.” (fala do prefeito em coletiva, citada na matéria)",
+  "balao": "Não houve nada ilegal. (fala do prefeito em coletiva, citada na matéria)",
   "selo": "CHARGE · HOJE MT",
   "canva": {
-    "design_final": "DAHWD_V52HI",
-    "modelo_reutilizavel": "DAHWD5FB_nw",
-    "cena_ilustrada_sem_pessoas": "MAHWD-wQKeE",
-    "foto_original": "MAHWDtzNHSM",
-    "foto_recortada": "MAHWD83E7jk",
-    "chapeu_cozinheiro": "MAHWD_27cIw"
+    "design_final": "DAHWD25Xi8c",
+    "modelo_reutilizavel": "DAHWDzwR5c0",
+    "arte_escolhida_variacao_A": "MAHWD6N8_R0",
+    "arte_variacao_B": "MAHWD0_j3CI",
+    "foto_de_referencia": "MAHWDtzNHSM",
+    "versao_anterior_fotomontagem": {
+      "design": "DAHWD_V52HI",
+      "arquivo": "2026-09-23-creche-a-la-churrasco-v1-fotomontagem.webp"
+    }
   },
   "personagens": [
     {
       "nome": "Abilio Brunini",
       "cargo": "prefeito de Cuiabá",
-      "imagem": "foto real, fundo removido no Canva",
+      "imagem": "caricatura gerada a partir da foto oficial (referência de imagem no Canva)",
       "credito": "Foto: Câmara dos Deputados/Wikimedia Commons (CC BY)",
       "pagina": "https://commons.wikimedia.org/wiki/File:Deputado_Abilio_Brunini_(cropped).jpg",
       "licenca": "CC BY"
     }
   ],
-  "status": "para aprovação editorial · não publicada no site"
+  "instagram": {
+    "permalink": "https://www.instagram.com/p/DdpitpIjWc_/",
+    "id": "17903587863578577",
+    "publicado_em": "2026-09-23T23:57:27Z"
+  },
+  "site": "pendente: precisa da chave da Admin API do Ghost para trocar a feature_image da curta"
 }

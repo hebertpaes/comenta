@@ -108,31 +108,34 @@ node ilustrar.mjs --slug=x --imagem=arte.png --frase="Frase da charge."   # arte
 Sem `--publicar` nada muda no site. Se o Gemini recusar a cena (bloqueio de
 segurança), o post é pulado com o motivo no log; rode de novo ou use `--imagem`.
 
-## Charges no Canva (padrão atual: foto real do personagem sobre cena ilustrada)
+## Charges no Canva (padrão atual: caricatura a partir da foto real, montada no Canva)
 
-A charge é montada **inteira no Canva**, pelo conector, em 1600×900:
+A charge é feita **inteira no Canva**, pelo conector, em 1600×900, como um
+chargista de jornal: o personagem é desenhado a partir da foto real e
+licenciada, a cena conta a história, e balão, legenda, selo e assinatura são
+elementos do design (fontes Anton e Roboto Condensed do modelo).
 
-1. **Cena sem pessoas** — `generate-image` com a descrição do lugar e dos
-   objetos que contam a história (estilo aquarela/nanquim de charge), 16:9,
-   pedindo espaço livre onde o personagem vai entrar.
-2. **Foto real com licença** — `node imagens.mjs "Nome" --bancos=wikimedia
-   --baixar=N` (Câmara, Senado, TSE, Planalto, Agência Brasil), enviada ao
-   Canva (`create-upload-url`) e recortada com `remove-background`.
-3. **Adereços** — o que der graça (chapéu de cozinheiro, capacete, guarda-chuva…)
-   gerado como "sticker em fundo branco" e recortado com `remove-background`.
-4. **Montagem** — copiar o modelo `DAHWD5FB_nw` ("Charge HOJE MT", 1600×900),
-   abrir transação e trocar: cena (`update_fill`), recorte do personagem
-   (`update_fill` + `position_element`/`resize_element`), adereço, texto do
-   balão (fala REAL do personagem, citada na matéria, entre aspas), legenda da
-   faixa inferior e, se mudar, o selo. Commit e `export-design` PNG 1600×900.
-5. **Arquivo** — `content/pautas/charges/<data>-<slug>.webp` + `.json` com os
-   ids do Canva, o crédito/licença da foto e a fala usada no balão.
+1. **Foto real com licença** — `node imagens.mjs "Nome" --bancos=wikimedia
+   --baixar=N` (Câmara, Senado, TSE, Planalto, Agência Brasil); enviar ao
+   Canva com `create-upload-url`.
+2. **Arte** — `generate-image` com a foto como `imageReferences` e um prompt de
+   charge de jornal (nanquim + aquarela, caricatura fiel mas exagerada, cena
+   com os objetos e figurantes que contam a história, área de céu livre para
+   o balão, sem texto). Gerar 2 variações e escolher.
+3. **Montagem** — copiar o modelo `DAHWDzwR5c0` ("Charge HOJE MT v2"), abrir
+   transação e trocar: a arte (`update_fill` no retângulo de fundo), o texto
+   do balão (fala REAL da pessoa, citada na matéria), a legenda (Anton, faixa
+   inferior) e a linha de crédito. Commit e `export-design` JPG/PNG 1600×900.
+4. **Arquivo** — `content/pautas/charges/<data>-<slug>.webp` + `.json` com os
+   ids do Canva, o crédito/licença da foto de referência, a fala do balão e o
+   permalink do Instagram.
 
 Regras: só foto com licença explícita; o balão só traz frase que a pessoa
-disse de fato (com fonte na pauta); selo CHARGE sempre visível; nada de crime,
-violência ou humilhação atribuídos ao personagem; sem logos nem bandeiras de
-partido. O gerador por Gemini (`ilustrar.mjs`, abaixo) fica como alternativa
-para quando não houver Canva.
+disse de fato (com fonte na pauta); selo CHARGE e crédito da foto sempre
+visíveis; nada de crime, violência ou humilhação atribuídos ao personagem;
+sem logos nem bandeiras de partido; a arte tem de parecer desenho, nunca foto.
+Fotomontagem (foto recortada sobre cena) fica só como recurso eventual. O
+gerador por Gemini (`ilustrar.mjs`, abaixo) é alternativa sem Canva.
 
 ## Kit da redação (pauta → foto → card → Instagram → backup)
 
