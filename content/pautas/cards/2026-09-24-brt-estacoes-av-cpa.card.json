@@ -1,0 +1,35 @@
+{
+  "slug": "brt-estacoes-avenida-do-cpa-como-estao-e-o-que-falta",
+  "materia": "https://hojemt.com.br/brt-estacoes-avenida-do-cpa-como-estao-e-o-que-falta/",
+  "status_materia": "rascunho (id 6ab5ab13834d62060cb1d335)",
+  "canva": {
+    "design_card_4x5": "DAHWJvxQVA8",
+    "foto_canva": "MAHWJq0-GfU",
+    "modelo": "DAHWHxXxNqw"
+  },
+  "textos": {
+    "kicker": "BRT NA AV. DO CPA",
+    "manchete": "Estação do BRT quase pronta; contrato tinha 16,5% feito em setembro",
+    "apoio": "Terminais previstos para fev/2027; frota não licitada. Pivetta diz esperar entregar o 1º trecho até dezembro.",
+    "selo": "FOTO DE ARQUIVO · 11/06",
+    "rodape": "Foto: Tonico Pinheiro/Secom-MT (11/06/2026) · hojemt.com.br"
+  },
+  "foto": {
+    "url_imagem": "https://www.secom.mt.gov.br/documents/21013/79934292/BRT+na+Avenida+do+CPA+terminais+de+%C3%B4nibus+Complexo+Leblon+na+trincheira+do+Jardim+Leblon-81.jpg/624d4aac-e3de-1399-a3fd-5c3868286be7",
+    "pagina": "https://www.secom.mt.gov.br/w/obras-do-brt-na-avenida-do-cpa-com-terminais-de-%C3%B4nibus-e-do-complexo-leblon-na-trincheira-do-jardim-leblon",
+    "credito": "Tonico Pinheiro/Secom-MT",
+    "descricao": "Estrutura de estação do BRT em obras na Av. do CPA, perto da Sefaz, em 11/6/2026 (foto de arquivo). Foto: Tonico Pinheiro/Secom-MT",
+    "legenda": "Estrutura de estação do BRT em obras na Av. do CPA, perto da Sefaz, em 11/6/2026 (foto de arquivo). Foto: Tonico Pinheiro/Secom-MT"
+  },
+  "foto_obs": "foto oficial de divulgação da Secom-MT, com crédito; recorte 16:9 (site) e 4:5 (card); mostra a estrutura em junho, não a estação quase pronta — por isso o selo 'foto de arquivo' e a data",
+  "arquivos": {
+    "capa_site": "pautas/fotos/2026-09-24-brt-estacao-av-cpa.jpg",
+    "card": "pautas/cards/2026-09-24-brt-estacoes-av-cpa-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "capa_site": "https://hojemt.com.br/content/images/2026/09/2026-09-24-brt-estacao-av-cpa.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-24-brt-estacao-av-cpa-og.jpg",
+    "card": "https://hojemt.com.br/content/images/2026/09/2026-09-24-brt-estacoes-av-cpa-instagram-retrato.jpg"
+  },
+  "instagram": "agenda item 36 (aguardando_materia)"
+}

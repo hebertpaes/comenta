@@ -581,6 +581,21 @@
    "materia": "https://hojemt.com.br/medeiros-assume-frase-do-detergente/",
    "charge_json": "pautas/charges/2026-09-24-medeiros-assume-frase-do-detergente.json",
    "obs": "só agendar depois que o editor publicar a curta (rascunho 6ab5a368834d62060cb1d320)"
+  },
+  {
+   "id": "36",
+   "status": "aguardando_materia",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": null,
+   "formato": "card",
+   "titulo": "BRT na Av. do CPA: estação quase pronta, contrato com 16,5%",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-brt-estacoes-av-cpa-instagram-retrato.jpg"
+   ],
+   "legenda": "A estação do BRT em frente ao Pantanal Shopping está quase pronta. E o resto da obra?\nSegundo a Sinfra, 16 dos 23 locais de estação tiveram obra iniciada, e o contrato das estações tinha 16,51% dos serviços executados em setembro. Os terminais estão em fase de projeto, com entrega prevista para fevereiro de 2027, e os ônibus elétricos ainda não foram licitados. O governador Pivetta, candidato à reeleição, diz esperar entregar o primeiro trecho até dezembro.\nLeia a matéria completa: hojemt.com.br/brt-estacoes-avenida-do-cpa-como-estao-e-o-que-falta\nFontes: Olhar Direto, VGN, MidiaNews, RDNews, Sinfra e Diário Oficial de MT.\n#BRT #Cuiabá #VárzeaGrande #MatoGrosso",
+   "materia": "https://hojemt.com.br/brt-estacoes-avenida-do-cpa-como-estao-e-o-que-falta/",
+   "obs": "só agendar depois que o editor publicar a matéria (rascunho 6ab5ab13834d62060cb1d335) e fechar o outro lado"
   }
  ]
 }
