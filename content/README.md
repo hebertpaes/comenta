@@ -410,3 +410,32 @@ sobre IA na indústria, no agro de Mato Grosso e em medição de resultados, e
 quando encontra escreve a matéria (rascunho no Ghost, tag Tecnologia), gera a
 ilustração no Canva, o card e a entrada na agenda do Instagram. Palavras-chave,
 fontes e registro em `pautas/monitor-tecnologia.md`.
+
+## Backup do sistema (GitHub + Google Drive)
+
+Pedido do editor (24/09/2026): **"Salve todas as imagens, baixe no Drive e faça
+o backup do sistema no GitHub."**
+
+- **Conteúdo do site** — `node backup-ghost.mjs` exporta posts, páginas, tags,
+  autores (sem e-mail), configurações (sem chaves/segredos), newsletters e
+  dados do site para `backup/ghost/latest/` (JSON), mais `imagens.txt` com
+  todas as mídias referenciadas. Com `--baixar=<pasta>` baixa também todas as
+  mídias. O histórico fica no git (tag `backup/<data>` a cada rodada). A chave
+  de integração não acessa `db/` (export completo do Ghost) nem `themes/`; o
+  tema está versionado em `ghost/content/themes/hojemt`.
+- **Automações** — `backup/rotinas.json` guarda id, horário e resumo das
+  Routines do Claude (Instagram, charges/artes, monitor de tecnologia, backup)
+  para recriação em caso de perda da sessão.
+- **Imagens e vídeos produzidos** — versionados neste repositório
+  (`pautas/charges`, `pautas/ilustracoes`, `pautas/cards`, `assets`; vídeos
+  grandes ficam fora do git e hospedados no Ghost em `content/media`).
+- **Google Drive** — pasta "HOJE MT — Backup de imagens e conteúdo" com
+  subpastas `artes-hojemt`, `site-imagens` e `conteudo`. Os pacotes .zip
+  (artes, vídeos e todas as mídias do site em partes de até 44 MB) são
+  hospedados no Ghost em `content/files/` e puxados para o Drive pela ação
+  "Google Drive: Upload File" do Zapier a partir dessas URLs (o conector
+  Google Drive do Claude só aceita conteúdo em texto/base64, inviável para
+  centenas de MB). A lista de URLs de cada rodada fica em
+  `backup/pacotes-drive.json`.
+- **Rotina diária** — 03:00 (Cuiabá): backup do conteúdo + commit + tag +
+  push. Nada de segredos no repositório.

@@ -1,0 +1,442 @@
+[
+  {
+    "key": "title",
+    "value": "Hoje MT"
+  },
+  {
+    "key": "description",
+    "value": "Portal de notícias de Mato Grosso: política, economia, agronegócio, cidades, esportes e grandes reportagens em tempo real."
+  },
+  {
+    "key": "heading_font",
+    "value": ""
+  },
+  {
+    "key": "body_font",
+    "value": ""
+  },
+  {
+    "key": "logo",
+    "value": "https://hojemt.com.br/content/images/2026/09/hojemt.svg"
+  },
+  {
+    "key": "cover_image",
+    "value": null
+  },
+  {
+    "key": "icon",
+    "value": "https://hojemt.com.br/content/images/size/w256h256/2026/09/favicon-hojemt_o.png"
+  },
+  {
+    "key": "accent_color",
+    "value": "#00a859"
+  },
+  {
+    "key": "locale",
+    "value": "pt-br"
+  },
+  {
+    "key": "timezone",
+    "value": "America/Santiago"
+  },
+  {
+    "key": "codeinjection_head",
+    "value": "<!-- Google Analytics 4 (G-FKD65M01H9) com Consent Mode v2 — só mede depois do aceite LGPD -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-FKD65M01H9\"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n  // por padrão nada é medido: respeita a LGPD até o leitor decidir\n  gtag('consent', 'default', {\n    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',\n    analytics_storage: 'denied', wait_for_update: 500\n  });\n  gtag('config', 'G-FKD65M01H9', { anonymize_ip: true });\n  (function () {\n    function liberar() {\n      gtag('consent', 'update', {\n        analytics_storage: 'granted', ad_storage: 'granted',\n        ad_user_data: 'granted', ad_personalization: 'granted'\n      });\n    }\n    try {\n      if (localStorage.getItem('hmt_cookies') === 'todos') liberar();\n    } catch (e) {}\n    // o banner grava a escolha; ouvimos o clique para liberar na hora\n    document.addEventListener('click', function (ev) {\n      var b = ev.target && ev.target.closest && ev.target.closest('#hmt-ck-aceitar');\n      if (b) setTimeout(liberar, 60);\n    }, true);\n  })();\n</script>\n"
+  },
+  {
+    "key": "codeinjection_foot",
+    "value": ""
+  },
+  {
+    "key": "facebook",
+    "value": null
+  },
+  {
+    "key": "twitter",
+    "value": "@HojeMT"
+  },
+  {
+    "key": "threads",
+    "value": null
+  },
+  {
+    "key": "bluesky",
+    "value": null
+  },
+  {
+    "key": "mastodon",
+    "value": null
+  },
+  {
+    "key": "tiktok",
+    "value": null
+  },
+  {
+    "key": "youtube",
+    "value": null
+  },
+  {
+    "key": "instagram",
+    "value": null
+  },
+  {
+    "key": "linkedin",
+    "value": null
+  },
+  {
+    "key": "navigation",
+    "value": "[{\"label\":\"Início\",\"url\":\"/\"},{\"label\":\"Política\",\"url\":\"/tag/politica/\"},{\"label\":\"Cidades & MT\",\"url\":\"/tag/cidades/\"},{\"label\":\"Economia\",\"url\":\"/tag/economia/\"},{\"label\":\"Agronegócio\",\"url\":\"/tag/agro/\"},{\"label\":\"Polícia\",\"url\":\"/tag/policia/\"},{\"label\":\"Esportes\",\"url\":\"/tag/esportes/\"},{\"label\":\"Saúde & Fitness\",\"url\":\"/tag/saude/\"},{\"label\":\"Cultura & Lazer\",\"url\":\"/tag/cultura/\"},{\"label\":\"Opinião\",\"url\":\"/tag/opiniao/\"},{\"label\":\"Vídeos\",\"url\":\"/tag/video/\"}]"
+  },
+  {
+    "key": "secondary_navigation",
+    "value": "[{\"label\":\"Sobre o Hoje MT\",\"url\":\"/sobre/\"},{\"label\":\"Anuncie\",\"url\":\"/anuncie/\"},{\"label\":\"Código de Ética\",\"url\":\"/codigo-de-etica/\"},{\"label\":\"Termos de Uso\",\"url\":\"/termos/\"},{\"label\":\"Privacidade\",\"url\":\"/privacidade/\"}]"
+  },
+  {
+    "key": "llms_enabled",
+    "value": true
+  },
+  {
+    "key": "machine_payments_enabled",
+    "value": false
+  },
+  {
+    "key": "machine_payments_currency",
+    "value": null
+  },
+  {
+    "key": "machine_payments_amount",
+    "value": "100"
+  },
+  {
+    "key": "machine_payments_stripe_profile_id",
+    "value": null
+  },
+  {
+    "key": "meta_title",
+    "value": "HOJE MT — Portal de Notícias de Mato Grosso"
+  },
+  {
+    "key": "meta_description",
+    "value": "Notícias de Mato Grosso em tempo real: política, eleições 2026, economia, agronegócio, cidades, polícia, esportes e cultura. HOJE MT, o portal do mato-grossense."
+  },
+  {
+    "key": "og_image",
+    "value": "https://hojemt.com.br/content/images/2026/09/card-padrao-site-1789403284.jpg"
+  },
+  {
+    "key": "og_title",
+    "value": "HOJE MT — Portal de Notícias de Mato Grosso"
+  },
+  {
+    "key": "og_description",
+    "value": "Notícias de Mato Grosso em tempo real: política, eleições 2026, economia, agronegócio, cidades, polícia, esportes e cultura. HOJE MT, o portal do mato-grossense."
+  },
+  {
+    "key": "twitter_image",
+    "value": "https://hojemt.com.br/content/images/2026/09/card-padrao-site-1789403284.jpg"
+  },
+  {
+    "key": "twitter_title",
+    "value": "HOJE MT — Portal de Notícias de Mato Grosso"
+  },
+  {
+    "key": "twitter_description",
+    "value": "Notícias de Mato Grosso em tempo real: política, eleições 2026, economia, agronegócio, cidades, polícia, esportes e cultura. HOJE MT, o portal do mato-grossense."
+  },
+  {
+    "key": "active_theme",
+    "value": "hojemt-usatoday"
+  },
+  {
+    "key": "is_private",
+    "value": false
+  },
+  {
+    "key": "public_hash",
+    "value": "915132729f161642be6b071ab75ddf"
+  },
+  {
+    "key": "default_content_visibility",
+    "value": "public"
+  },
+  {
+    "key": "default_content_visibility_tiers",
+    "value": "[]"
+  },
+  {
+    "key": "members_signup_access",
+    "value": "all"
+  },
+  {
+    "key": "members_support_address",
+    "value": "noreply"
+  },
+  {
+    "key": "stripe_billing_portal_configuration_id",
+    "value": null
+  },
+  {
+    "key": "stripe_plans",
+    "value": "[]"
+  },
+  {
+    "key": "stripe_connect_livemode",
+    "value": null
+  },
+  {
+    "key": "stripe_connect_display_name",
+    "value": null
+  },
+  {
+    "key": "stripe_connect_account_id",
+    "value": null
+  },
+  {
+    "key": "members_monthly_price_id",
+    "value": null
+  },
+  {
+    "key": "members_yearly_price_id",
+    "value": null
+  },
+  {
+    "key": "members_track_sources",
+    "value": true
+  },
+  {
+    "key": "blocked_email_domains",
+    "value": "[]"
+  },
+  {
+    "key": "portal_name",
+    "value": true
+  },
+  {
+    "key": "portal_button",
+    "value": false
+  },
+  {
+    "key": "portal_plans",
+    "value": "[\"free\"]"
+  },
+  {
+    "key": "portal_default_plan",
+    "value": "yearly"
+  },
+  {
+    "key": "portal_products",
+    "value": "[]"
+  },
+  {
+    "key": "portal_button_style",
+    "value": "icon-and-text"
+  },
+  {
+    "key": "portal_button_icon",
+    "value": null
+  },
+  {
+    "key": "portal_button_signup_text",
+    "value": "Subscribe"
+  },
+  {
+    "key": "portal_signup_terms_html",
+    "value": null
+  },
+  {
+    "key": "portal_signup_checkbox_required",
+    "value": false
+  },
+  {
+    "key": "portal_signup_gift_promotion",
+    "value": true
+  },
+  {
+    "key": "portal_account_gift_promotion",
+    "value": true
+  },
+  {
+    "key": "email_track_opens",
+    "value": true
+  },
+  {
+    "key": "email_track_clicks",
+    "value": true
+  },
+  {
+    "key": "email_verification_required",
+    "value": false
+  },
+  {
+    "key": "firstpromoter",
+    "value": false
+  },
+  {
+    "key": "firstpromoter_id",
+    "value": null
+  },
+  {
+    "key": "labs",
+    "value": "{\"automationAnalytics\":true,\"giftSubCustomization\":true,\"members\":true}"
+  },
+  {
+    "key": "slack_url",
+    "value": ""
+  },
+  {
+    "key": "slack_username",
+    "value": "Ghost"
+  },
+  {
+    "key": "unsplash",
+    "value": true
+  },
+  {
+    "key": "transistor",
+    "value": false
+  },
+  {
+    "key": "transistor_portal_enabled",
+    "value": true
+  },
+  {
+    "key": "transistor_portal_heading",
+    "value": "Podcasts"
+  },
+  {
+    "key": "transistor_portal_description",
+    "value": "Access your private podcast feed"
+  },
+  {
+    "key": "transistor_portal_button_text",
+    "value": "View"
+  },
+  {
+    "key": "transistor_portal_url_template",
+    "value": "https://partner.transistor.fm/ghost/{memberUuid}"
+  },
+  {
+    "key": "shared_views",
+    "value": "[]"
+  },
+  {
+    "key": "editor_default_email_recipients",
+    "value": "visibility"
+  },
+  {
+    "key": "editor_default_email_recipients_filter",
+    "value": "all"
+  },
+  {
+    "key": "announcement_content",
+    "value": null
+  },
+  {
+    "key": "announcement_visibility",
+    "value": "[]"
+  },
+  {
+    "key": "announcement_background",
+    "value": "dark"
+  },
+  {
+    "key": "comments_enabled",
+    "value": "all"
+  },
+  {
+    "key": "outbound_link_tagging",
+    "value": true
+  },
+  {
+    "key": "web_analytics",
+    "value": true
+  },
+  {
+    "key": "pintura",
+    "value": true
+  },
+  {
+    "key": "pintura_js_url",
+    "value": null
+  },
+  {
+    "key": "pintura_css_url",
+    "value": null
+  },
+  {
+    "key": "donations_currency",
+    "value": "USD"
+  },
+  {
+    "key": "donations_suggested_amount",
+    "value": "500"
+  },
+  {
+    "key": "recommendations_enabled",
+    "value": false
+  },
+  {
+    "key": "require_email_mfa",
+    "value": false
+  },
+  {
+    "key": "social_web",
+    "value": true
+  },
+  {
+    "key": "explore_ping",
+    "value": true
+  },
+  {
+    "key": "explore_ping_growth",
+    "value": false
+  },
+  {
+    "key": "members_enabled",
+    "value": true
+  },
+  {
+    "key": "members_invite_only",
+    "value": false
+  },
+  {
+    "key": "allow_self_signup",
+    "value": true
+  },
+  {
+    "key": "paid_members_enabled",
+    "value": false
+  },
+  {
+    "key": "firstpromoter_account",
+    "value": null
+  },
+  {
+    "key": "donations_enabled",
+    "value": false
+  },
+  {
+    "key": "default_email_address",
+    "value": "hebertpaes@gmail.com"
+  },
+  {
+    "key": "support_email_address",
+    "value": "noreply@hojemt.com.br"
+  },
+  {
+    "key": "all_blocked_email_domains",
+    "value": []
+  },
+  {
+    "key": "social_web_enabled",
+    "value": true
+  },
+  {
+    "key": "web_analytics_enabled",
+    "value": false
+  },
+  {
+    "key": "web_analytics_configured",
+    "value": false
+  }
+]

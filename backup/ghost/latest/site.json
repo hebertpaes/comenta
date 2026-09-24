@@ -1,0 +1,14 @@
+{
+  "title": "Hoje MT",
+  "description": "Portal de notícias de Mato Grosso: política, economia, agronegócio, cidades, esportes e grandes reportagens em tempo real.",
+  "logo": "https://hojemt.com.br/content/images/2026/09/hojemt.svg",
+  "icon": "https://hojemt.com.br/content/images/2026/09/favicon-hojemt_o.png",
+  "cover_image": null,
+  "accent_color": "#00a859",
+  "locale": "pt-br",
+  "timezone": "America/Santiago",
+  "url": "https://hojemt.com.br/",
+  "version": "6.61",
+  "allow_external_signup": true,
+  "site_uuid": "f1dc88b5-4b30-4255-abba-4e3da03b3631"
+}
