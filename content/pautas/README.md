@@ -36,8 +36,10 @@ pasta: ele é só do fluxo de RSS.
   pauta, para backup.
 - Charges: feitas no Canva como um chargista de jornal — caricatura
   desenhada a partir da **foto real com licença** do personagem, balão só
-  com fala real citada na matéria, legenda, selo CHARGE e crédito da foto
-  (passo a passo em `content/README.md`).
+  com fala real citada na matéria, legenda e selo CHARGE. A referência
+  pública é só "Charge: HOJE MT" (sem crédito de foto na imagem nem nas
+  legendas; a licença fica no `.json` da pauta). Passo a passo em
+  `content/README.md`.
   Arquivo e créditos em `content/pautas/charges/`. Sem cena de crime,
   violência ou humilhação; sem logos nem bandeiras de partido. O gerador por
   Gemini (`node ../ilustrar.mjs`) é alternativa: desenha caricatura a partir

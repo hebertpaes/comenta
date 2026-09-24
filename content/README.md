@@ -124,8 +124,9 @@ elementos do design (fontes Anton e Roboto Condensed do modelo).
    o balão, sem texto). Gerar 2 variações e escolher.
 3. **Montagem** — copiar o modelo `DAHWDzwR5c0` ("Charge HOJE MT v2"), abrir
    transação e trocar: a arte (`update_fill` no retângulo de fundo), o texto
-   do balão (fala REAL da pessoa, citada na matéria), a legenda (Anton, faixa
-   inferior) e a linha de crédito. Commit e `export-design` JPG/PNG 1600×900.
+   do balão (fala REAL da pessoa, citada na matéria) e a legenda (Anton, faixa
+   inferior). A linha de rodapé é fixa: "Charge: HOJE MT · hojemt.com.br".
+   Commit e `export-design` JPG/PNG 1600×900.
 4. **Instagram em retrato** — post de feed sai em **4:5 (1080×1350)**, nunca
    em 16:9: gerar a arte de novo com `aspectRatio: PORTRAIT_4_5` (mesmo
    prompt e mesma foto de referência, pedindo céu livre no topo para o balão
@@ -136,10 +137,14 @@ elementos do design (fontes Anton e Roboto Condensed do modelo).
    crédito/licença da foto de referência, a fala do balão e o permalink do
    Instagram.
 
-Regras: só foto com licença explícita; o balão só traz frase que a pessoa
-disse de fato (com fonte na pauta); selo CHARGE e crédito da foto sempre
-visíveis; nada de crime, violência ou humilhação atribuídos ao personagem;
-sem logos nem bandeiras de partido; a arte tem de parecer desenho, nunca foto.
+Regras: só foto com licença explícita como referência; o balão só traz frase
+que a pessoa disse de fato (com fonte na pauta); selo CHARGE sempre visível;
+**a única referência pública é "Charge: HOJE MT"** — na imagem, na legenda do
+Instagram e na legenda do site não entra crédito de foto nem de banco de
+imagens (a origem e a licença da foto de referência ficam só no `.json` da
+pauta, para consulta interna); nada de crime, violência ou humilhação
+atribuídos ao personagem; sem logos nem bandeiras de partido; a arte tem de
+parecer desenho, nunca foto.
 Fotomontagem (foto recortada sobre cena) fica só como recurso eventual. O
 gerador por Gemini (`ilustrar.mjs`, abaixo) é alternativa sem Canva.
 

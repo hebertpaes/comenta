@@ -40,8 +40,16 @@
       "publicado_em": "2026-09-24T00:36:56Z",
       "arquivo": "2026-09-23-creche-a-la-churrasco-instagram-retrato.jpg",
       "canva_design": "DAHWEOoUnfg",
-      "arte_retrato": "MAHWED0k_a0"
+      "arte_retrato": "MAHWED0k_a0",
+      "obs": "v2 com linha de crédito da foto; substituído pela v3"
+    },
+    "formato_retrato_4x5_v3_referencia_hojemt": {
+      "id": "18628374895051550",
+      "publicado_em": "2026-09-24",
+      "arquivo": "2026-09-23-creche-a-la-churrasco-instagram-retrato.jpg",
+      "legenda_rodape": "Charge: HOJE MT · hojemt.com.br"
     }
   },
-  "site": "pendente: precisa da chave da Admin API do Ghost para trocar a feature_image da curta"
+  "site": "pendente: precisa da chave da Admin API do Ghost para trocar a feature_image da curta",
+  "referencia_publica": "Charge: HOJE MT (única referência na imagem e nas legendas; a licença da foto abaixo é registro interno)"
 }
