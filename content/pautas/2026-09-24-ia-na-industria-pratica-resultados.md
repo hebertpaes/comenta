@@ -47,3 +47,5 @@ O próximo passo, segundo a Deloitte, são os agentes: sistemas que não só rec
 **Fontes:** IBGE (Pintec Semestral 2024), Cetic.br (TIC Empresas 2025), Deloitte (State of AI 2026), Agência de Notícias da Indústria/CNI, Itatiaia, TN Petróleo, SEC (Petrobras 20-F 2025), Senai MT, Sindpd-MT, Sindpd, CNI.
 
 **Checagem pendente:** o post do Instagram indicado pelo editor (instagram.com/p/DdRDqkziLxq) não pôde ser lido (exige login; o oEmbed da Meta exige aprovação do app). Se trouxer dado ou caso específico, incluir com fonte. A cifra da WEG (R$ 1 bi) vem de reportagem de 17/09/2026 baseada em informações da empresa; confirmar em release oficial da WEG antes de destaque em título.
+
+**Arte:** ilustração editorial gerada no Canva (`pautas/ilustracoes/2026-09-24-ia-na-industria.jpg`, design DAHWHT5BIW4, arte MAHWHe-6P3o), com legenda "Ilustração: HOJE MT (gerada com IA)" para não passar por foto. Card 4:5 em `pautas/cards/2026-09-24-ia-na-industria.jpg`, agendado no Instagram (item 17, 28/09 07:30) condicionado à publicação da matéria. Rascunho no Ghost: slug `ia-na-industria-onde-ja-da-resultado`.
