@@ -10,10 +10,11 @@
 |---|---|---|
 | 03/06/2026 | Sérgio Ricardo anuncia que vai exigir a reconstrução de 50 km da MT-170 (obra de R$ 130 mi); asfalto executado com 5 cm, não 7,5 cm | Portal Mato Grosso (com informações do TCE-MT) |
 | 04/09/2026 | Presidente cobra urgência na recuperação da MT-170 e defende atuação do Exército em obras | Muvuca Popular, Jornal de MT |
+| 15/09/2026 | Na abertura da 13ª sessão, o Pleno homologa por unanimidade a decisão que deferiu férias ao conselheiro Campos Neto de 17/09 a 26/09 (processo 2818710/2026); presentes: Antonio Joaquim, Waldir Teis, Campos Neto, Guilherme Maluf e Alisson Alencar | Transmissão oficial do TCE-MT (YouTube NVujAcJDkRU, 00:40 e 02:36), transcrição OpusClip do trecho 0–10 min |
 | 15/09/2026 | 13ª sessão ordinária do Plenário presencial: divergência entre Sérgio Ricardo e Waldir Teis sobre manter a empreiteira; "Eu sugiro que o senhor venha conhecer o processo" | Coluna de Adriana Mendes (Eh Fonte, 23/09) e trecho divulgado no TikTok @ehfonte; vídeo oficial: youtube.com/watch?v=NVujAcJDkRU |
 | 21/09/2026 | Dois atos: revoga a designação de Teis como supervisor da Escola Superior de Contas (vigência prevista fev/2026–dez/2027) e designa o próprio presidente | Fatos de Mato Grosso, HiperNotícias |
 | 21–22/09/2026 | Nota de Antonio Joaquim, Guilherme Maluf e Alisson Alencar: "Em um Tribunal de natureza colegiada, a divergência de entendimentos é legítima, necessária e inerente ao exercício da função de conselheiro"; pedem reconsideração | Momento MT, Fatos de MT |
-| 22/09/2026 | Sessão sem quórum; Teis, Joaquim, Maluf e Alencar tinham confirmado presença e não foram; Novelli por videoconferência; Campos Neto de licença; 10 processos adiados (Primavera do Leste, Salto do Céu) | HiperNotícias, Veja Bem MT, O Documento |
+| 22/09/2026 | Sessão sem quórum; Teis, Joaquim, Maluf e Alencar tinham confirmado presença e não foram; Novelli por videoconferência; Campos Neto de férias (ver 15/09); 10 processos adiados (Primavera do Leste, Salto do Céu) | HiperNotícias, Veja Bem MT, O Documento |
 | 22/09/2026 | Vídeo de Sérgio Ricardo no plenário: "Conselheiro tem que trabalhar. Conselheiro, terça-feira é dia de sessão..."; "Temos conselheiros que não cumprem as suas funções, que ganham, recebem e não vêm trabalhar" | O Documento |
 
 ## Outro lado
@@ -21,7 +22,7 @@
 - Não localizada manifestação pública dos conselheiros ausentes sobre a falta nem justificativa da Presidência para os atos de 21/09.
 
 ## Checagem pendente
-- Conferir no vídeo oficial da 13ª sessão (15/09) a íntegra do diálogo sobre a MT-170 (o trecho citado vem do Eh Fonte). Não usar a frase sobre "botou no bolso" (acusação contra empresa não nomeada, sem confirmação).
+- Conferir no vídeo oficial da 13ª sessão (15/09) a íntegra do diálogo sobre a MT-170 (o trecho citado vem do Eh Fonte). A transcrição feita até agora cobre só os 10 primeiros minutos (abertura, férias de Campos Neto, contas de Mirassol D'Oeste); o debate da MT-170 vem depois. Não usar a frase sobre "botou no bolso" (acusação contra empresa não nomeada, sem confirmação).
 - Número e data de publicação dos atos de 21/09 no Diário Oficial de Contas.
 - Posição dos conselheiros ausentes e da Presidência.
 

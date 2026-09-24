@@ -35,5 +35,29 @@
    "instagram": "agenda 26 (aguardando_materia)",
    "origem": "link do editor: TikTok @ehfonte 7688775065416076552"
   }
+ ],
+ "transcricoes": [
+  {
+   "video": "NVujAcJDkRU",
+   "sessao": "13ª ordinária, 15/09/2026",
+   "trecho": "0–600 s",
+   "ferramenta": "OpusClip P3092415dgTU",
+   "lido_em": "2026-09-24",
+   "achados": [
+    "Presentes: Antonio Joaquim, Waldir Teis, Campos Neto, Guilherme Maluf, Alisson Alencar; procurador-geral interino do MPC William de Almeida",
+    "Pleno homologa férias de Campos Neto de 17/09 a 26/09 (processo 2818710/2026), 02:36",
+    "Contas de governo 2025 de Mirassol D'Oeste (relator Antonio Joaquim): MPC opina por parecer favorável com ressalvas; IGFM 0,71 (conceito B); transparência nível básico (41,9%)"
+   ],
+   "falta": "debate da MT-170 (depois dos 10 min)"
+  },
+  {
+   "video": "NVujAcJDkRU",
+   "sessao": "13ª ordinária, 15/09/2026",
+   "trecho": "600–4200 s",
+   "ferramenta": "OpusClip P3092416nUc5",
+   "enviado_em": "2026-09-24T16:49Z",
+   "situacao": "na fila",
+   "objetivo": "achar e conferir o diálogo sobre a MT-170 citado pelo Eh Fonte; ler com opusclip_get_transcript quando o stage for COMPLETE"
+  }
  ]
 }
