@@ -472,6 +472,22 @@
     ]
    },
    "arquivo": "pautas/instagram/2026-09-24-governo-mt-6-candidatos/"
+  },
+  {
+   "id": "29",
+   "status": "aguardando_materia",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": null,
+   "formato": "charge",
+   "titulo": "O Cofrinho do Rei do Porco",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-o-cofrinho-do-rei-do-porco-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · O Cofrinho do Rei do Porco\n\nA coroa fica; 6% do cofrinho vai pra Justiça.\n\nA 3ª Vara Cível de Cuiabá mandou reter 6% do que a Suinobras, de Reinaldo Morais (Novo), vice na chapa de Wellington Fagundes (PL), tem a receber da BRF e da Cooasgo, para pagar R$ 3,48 milhões de ração à Poli-Nutri. A defesa fala em \"questões empresariais antigas\" em tratamento na Justiça.\n\nLeia a curta completa: hojemt.com.br/o-cofrinho-do-rei-do-porco\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #matogrosso #cuiaba #hojemt",
+   "materia": "https://hojemt.com.br/o-cofrinho-do-rei-do-porco/",
+   "charge_json": "pautas/charges/2026-09-24-o-cofrinho-do-rei-do-porco.json",
+   "obs": "Curta está em rascunho no Ghost. Quando o editor publicar: trocar status para agendado e definir quando no próximo horário livre de charge."
   }
  ]
 }

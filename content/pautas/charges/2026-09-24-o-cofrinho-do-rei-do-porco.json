@@ -1,0 +1,50 @@
+{
+  "slug": "o-cofrinho-do-rei-do-porco",
+  "materia": "https://hojemt.com.br/o-cofrinho-do-rei-do-porco/",
+  "titulo": "O Cofrinho do Rei do Porco",
+  "pauta": "pautas/2026-09-24-o-cofrinho-do-rei-do-porco.md",
+  "pedido": "Editor (24/09/2026): \"Cheque a informação e crie uma sátira na charge\" (link do MidiaNews)",
+  "formato": "charge de jornal montada inteira no Canva; curta criada como rascunho com a charge de capa",
+  "balao": null,
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "A coroa fica; 6% do cofrinho vai pra Justiça.",
+    "instagram_4x5": "6% do cofrinho vai pra Justiça."
+  },
+  "instagram": {
+    "status": "aguardando_materia em pautas/agenda-instagram.json (item 29); entra na fila quando a curta for publicada"
+  },
+  "canva": {
+    "design_site_16x9": "DAHWIUamrdo",
+    "arte_16x9": "MAHWIeyiO7w",
+    "design_instagram_4x5": "DAHWIXWPRt8",
+    "arte_4x5": "MAHWIX4ICGs",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "personagens": [
+    {
+      "nome": "Reinaldo Gomes de Morais (Reinaldo Morais, \"Rei do Porco\")",
+      "cargo": "empresário (Suinobras), candidato a vice-governador na chapa de Wellington Fagundes (PL) — Novo",
+      "canva_fotos_referencia": [
+        "MAHWIYt0V-E"
+      ],
+      "data_foto": "2026-08",
+      "credito": "Foto: TSE/Divulgação (registro de candidatura 2026, arquivo FMT110002551736_div.jpg, espelho público static.ndmais.com.br)",
+      "licenca": "foto oficial do registro de candidatura (dados abertos do TSE); usada só como referência de desenho",
+      "nao_usada": "foto de imprensa do MidiaNews (Victor Ostetti), sem licença"
+    }
+  ],
+  "obs": "Sem balão: nenhuma fala direta de Reinaldo Morais nas matérias (a nota é da assessoria). Cena: o rei de coroa torta e capa sobre a polo verde, num trono de sacos de ração, saco vazio na mão; cofrinho de porquinho com fatia recortada; a Justiça leva a fatia na balança; porcos assistem. Cobrança civil de dívida (ação monitória), não crime: nada de cadeia, algemas ou humilhação. Linha editorial: a favor de Pivetta.",
+  "arquivos": {
+    "site_16x9": "2026-09-24-o-cofrinho-do-rei-do-porco.jpg",
+    "instagram_4x5": "2026-09-24-o-cofrinho-do-rei-do-porco-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-24-o-cofrinho-do-rei-do-porco.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-24-o-cofrinho-do-rei-do-porco-og.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-24-o-cofrinho-do-rei-do-porco-instagram-retrato.jpg"
+  },
+  "site": "rascunho no Ghost (id 6ab55ba3834d62060cb1d238, tag Curtas & Bastidores), criado em 24/09/2026 com a charge como feature_image e og_image"
+}
