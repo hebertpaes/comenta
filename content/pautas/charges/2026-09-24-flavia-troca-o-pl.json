@@ -1,0 +1,63 @@
+{
+  "slug": "flavia-troca-o-pl",
+  "materia": "https://hojemt.com.br/flavia-troca-o-pl/",
+  "titulo": "Flávia Troca o PL?",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "balao": null,
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json"
+  },
+  "legenda": "Um lado oferece a cadeira; o outro, o muro.",
+  "canva": {
+    "design_site_16x9": "DAHWIBthTFc",
+    "arte_16x9": "MAHWIGJHgJQ",
+    "design_instagram_4x5": "DAHWIJT4mwU",
+    "arte_4x5": "MAHWINNoLjk",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "personagens": [
+    {
+      "nome": "Flávia Moretti",
+      "cargo": "prefeita de Várzea Grande",
+      "canva_fotos_referencia": [
+        "MAHWIE_abVw",
+        "MAHWIMIJ4SM"
+      ],
+      "data_foto": "2026-09-19",
+      "evento": "Festival Paralímpico Loterias Caixa, Ginásio Fiotão (Várzea Grande)",
+      "credito": "Foto: Andre Luis/Secom-VG (galeria oficial da Prefeitura de Várzea Grande)",
+      "pagina": "https://www.varzeagrande.mt.gov.br/flavia-moretti-participa-de-festival-paralimpico-e-reforca-compromisso-de-varzea-grande-com-inclusao-pelo-esporte",
+      "originais": [
+        "https://www.varzeagrande.mt.gov.br/storage/imagem/17d42cbb8f3c898c003a291aa88d1c64.jpg",
+        "https://www.varzeagrande.mt.gov.br/storage/imagem/13ce1375e4f464759d26e70c9a8c3da4.jpg"
+      ],
+      "recortes": "scratchpad (não versionado; regra do README: referências ficam só no Canva)",
+      "licenca": "foto de divulgação oficial sem licença CC declarada; usada só como referência de desenho (a charge não reproduz a foto)",
+      "referencia_anterior": "MAHWEXj-FW4 (foto TSE 2024)"
+    },
+    {
+      "nome": "Otaviano Pivetta",
+      "cargo": "governador, candidato à reeleição (Republicanos)",
+      "canva_fotos_referencia": [
+        "MAHWH0J-3js"
+      ],
+      "data_foto": "2026-08",
+      "credito": "Foto: TSE/Divulgação (registro de candidatura 2026)",
+      "licenca": "foto oficial do registro de candidatura (dados abertos do TSE)",
+      "referencia_anterior": "MAHWEbbOGVM"
+    }
+  ],
+  "obs": "Curta sem fala direta entre aspas: sem balão. Cena: Flávia com o celular tocando e a mala ao lado; Pivetta oferece uma cadeira à sombra de uma mangueira; ao fundo, o muro fechado (a direção estadual do PL, sem logos). Linha editorial: a favor de Pivetta.",
+  "arquivos": {
+    "site_16x9": "2026-09-24-flavia-troca-o-pl.jpg",
+    "instagram_4x5": "2026-09-24-flavia-troca-o-pl-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-24-flavia-troca-o-pl.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-24-flavia-troca-o-pl-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 24/09/2026 (antes: charge automática charge-1790263350.webp)"
+}

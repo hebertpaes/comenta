@@ -14,7 +14,7 @@
    "nome": "Charges e artes no Canva — trocar charges automáticas e capas genéricas (de hora em hora)",
    "cron_utc": "41 * * * *",
    "fonte": "content/README.md (seções \"Charges no Canva\", \"Referências de imagem por personagem\", \"Artes dos artigos no Canva\" e \"Candidatos com foto oficial do TSE\")",
-   "resumo": "Parte A: posts das últimas 3 h com feature_image contendo /charge- ganham charge no Canva (16:9 + 4:5) a partir de foto licenciada/oficial do personagem (Abilio: MAHWHiDa8C0 + MAHWHkYuCOg, visual atual de camiseta cinza), troca feature_image e og, hospeda 4:5 e agenda no Instagram; às 15 e 21 UTC refaz até 2 antigas; máx. 3 por disparo. Parte B: posts com capa genérica (/opiniao- ou /capa-) ganham ilustração realista de ficção (personagens reais sempre de costas/silhueta, sem rosto), selo ILUSTRAÇÃO · HOJE MT, legenda 'Ilustração: HOJE MT (gerada com IA; cena de ficção)', registro em pautas/ilustracoes/registro.json; máx. 2 por disparo. Commit + push. Parte C: matérias com tag eleicoes que citam candidatos ao Governo/Senado de MT e têm capa genérica ganham capa com foto oficial do TSE (montagem pronta para a disputa em geral; capa de um ou dois candidatos para proposta/agenda/debate; nunca em matéria de acusação), dados em content/pautas/eleicoes/2026-mt-candidatos.json; máx. 2 por disparo."
+   "resumo": "Parte A: posts das últimas 3 h com feature_image contendo /charge- ganham charge no Canva (16:9 + 4:5) a partir de foto licenciada/oficial do personagem (Abilio: MAHWHiDa8C0 + MAHWHkYuCOg, visual atual de camiseta cinza), troca feature_image e og, hospeda 4:5 e agenda no Instagram; às 15 e 21 UTC refaz até 2 antigas; máx. 3 por disparo. Parte B: posts com capa genérica (/opiniao- ou /capa-) ganham ilustração realista de ficção (personagens reais sempre de costas/silhueta, sem rosto), selo ILUSTRAÇÃO · HOJE MT, legenda 'Ilustração: HOJE MT (gerada com IA; cena de ficção)', registro em pautas/ilustracoes/registro.json; máx. 2 por disparo. Commit + push. Parte C: matérias com tag eleicoes que citam candidatos ao Governo/Senado de MT e têm capa genérica ganham capa com foto oficial do TSE (montagem pronta para a disputa em geral; capa de um ou dois candidatos para proposta/agenda/debate; nunca em matéria de acusação), dados em content/pautas/eleicoes/2026-mt-candidatos.json; máx. 2 por disparo. Regra de 24/09: sempre buscar a foto oficial mais recente do personagem antes de gerar (Flávia Moretti MAHWIE_abVw/MAHWIMIJ4SM, Pivetta TSE 2026 MAHWH0J-3js)."
   },
   {
    "id": "trig_01UkLYDrfmgR5Y5VCXX9ydEW",
@@ -29,6 +29,13 @@
    "cron_utc": "0 7 * * *",
    "fonte": "content/backup-ghost.mjs",
    "resumo": "Roda node content/backup-ghost.mjs (posts, páginas, tags, autores sem e-mail, configurações sem segredos, newsletters, site, manifesto de mídias) em backup/ghost/latest, commit e push (sem tags: o proxy do GitHub não aceita refs/tags) para claude/exciting-thompson-4rhut2."
+  },
+  {
+   "id": "trig_017n6KdPrLbPFabBGSuEjD7n",
+   "nome": "TCE-MT — monitorar sessões e decisões (dias úteis, 18:00 Cuiabá)",
+   "cron_utc": "0 22 * * 1-5",
+   "fonte": "content/pautas/tce/monitor.json e content/README.md (\"Artes dos artigos no Canva\")",
+   "resumo": "Lê o RSS do canal oficial do TCE-MT no YouTube (lives das sessões do Pleno às terças e vídeos de decisões) e a imprensa de MT; até 2 pautas por dia viram rascunho no Ghost com fonte, outro lado e checagem pendente; arte sempre montagem ilustrativa própria no Canva (nunca frame da transmissão ou de TikTok de terceiros); card 4:5 do Instagram fica \"aguardando_materia\"."
   }
  ],
  "modelos_canva": {

@@ -174,7 +174,9 @@ automática.
 ### Referências de imagem por personagem (usar sempre a mais recente)
 
 Orientação do editor (24/09/2026): **"Deixa o Abílio mais atual com referências
-de imagens atuais"**. A caricatura tem de parecer com a pessoa **hoje**, não com
+de imagens atuais"** e **"Sempre busque imagens recentes para fazer a montagem da arte"**:
+antes de cada charge, procurar a foto oficial mais recente do personagem (galeria da
+prefeitura/governo/órgão do mês corrente, foto do TSE 2026) e só então gerar a arte. A caricatura tem de parecer com a pessoa **hoje**, não com
 a foto de posse. Antes de gerar a arte, conferir a referência mais recente
 abaixo (e atualizar esta tabela quando trocar). As fotos de referência não vão
 para o repositório nem para o site: ficam só no Canva, e o `.json` da charge
@@ -183,6 +185,9 @@ registra origem, data e crédito.
 | Personagem | Visual atual | Referência no Canva | Origem / crédito |
 |---|---|---|---|
 | Abilio Brunini (prefeito de Cuiabá) | cabeça raspada, sem barba, magro/atlético, **camiseta cinza-escura lisa** (nunca terno e gravata) | `MAHWHiDa8C0` (frontal, 21/09/2026), `MAHWHhg33Yw` (sorrindo, 21/09/2026), `MAHWHkYuCOg` (três quartos, 03/09/2026) | Galeria oficial do prefeito, Prefeitura de Cuiabá (`cuiaba.mt.gov.br/galeria-de-fotos/prefeito-abilio-brunini-fotos`), Foto: Rennan Oliveira/Secom. Divulgação para imprensa, sem licença CC declarada: só como referência de desenho. A antiga (`MAHWDtzNHSM`, Câmara 2023, CC BY) está desatualizada. |
+| Flávia Moretti (prefeita de Várzea Grande) | cabelos lisos castanho-claros aloirados na altura do peito, pele clara, sorriso largo | `MAHWIE_abVw` (rosto, 19/09/2026), `MAHWIMIJ4SM` (com microfone, 19/09/2026) | Galeria oficial da Prefeitura de Várzea Grande (Festival Paralímpico, 19/09/2026), Foto: Andre Luis/Secom-VG. Só referência de desenho. A antiga (`MAHWEXj-FW4`, TSE 2024) está desatualizada. |
+| Otaviano Pivetta (governador) | careca, óculos redondos de armação escura grossa, sorriso largo, camisa polo azul-marinho | `MAHWH0J-3js` (foto oficial do registro de candidatura, TSE, ago/2026) | TSE/Divulgação. A antiga (`MAHWEbbOGVM`) fica como segunda opção. |
+| Candidatos de MT 2026 (governo e Senado) | ver foto oficial | ids em `pautas/eleicoes/2026-mt-candidatos.json` | TSE/Divulgação (registro 2026) |
 | Ludio Cabral / Carlos Fávaro / demais | conferir foto do ano corrente antes de gerar | ver `.json` da última charge de cada um | Commons/Agência Brasil/Câmara/Senado (CC BY) ou galeria oficial do órgão |
 
 No prompt da arte, descrever o visual atual em palavras além de passar as fotos

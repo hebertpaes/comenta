@@ -1,205 +1,218 @@
 {
-  "_como_funciona": "Ilustrações editoriais feitas no Canva para artigos com capa genérica (opiniao-*.webp / capa-*.webp). Receita em content/README.md, seção 'Artes dos artigos no Canva'. Legenda no site: 'Ilustração: HOJE MT (gerada com IA)'.",
-  "itens": [
-    {
-      "slug": "o-cnpj-como-salvo-conduto-a-formalizacao-que-muda-a-vida",
-      "titulo": "O CNPJ como salvo-conduto: a formalização que muda a vida",
-      "materia": "https://hojemt.com.br/o-cnpj-como-salvo-conduto-a-formalizacao-que-muda-a-vida/",
-      "tag": "Opinião",
-      "canva": {
-        "design": "DAHWHliI-E4",
-        "arte": "MAHWHtlR_kc",
-        "modelo": "DAHWDzwR5c0",
-        "arte_v1_flat": "MAHWHsFNIcg"
-      },
-      "cena": "empreendedora de costas na porta da loja; banco iluminado, caminhão de grãos e silos",
-      "arquivo": "2026-09-24-o-cnpj-como-salvo-conduto.jpg",
-      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-24-o-cnpj-como-salvo-conduto-1.jpg",
-      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-24-o-cnpj-como-salvo-conduto-1-og.jpg",
-      "capa_anterior": "opiniao-1790251524.webp",
-      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
-      "feito_em": "2026-09-24",
-      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
-    },
-    {
-      "slug": "lula-e-a-onu-o-que-o-discurso-muda-no-bolso-do-mato-grossense",
-      "titulo": "Lula e a ONU: o que o discurso muda no bolso do mato-grossense",
-      "materia": "https://hojemt.com.br/lula-e-a-onu-o-que-o-discurso-muda-no-bolso-do-mato-grossense/",
-      "tag": "Opinião",
-      "canva": {
-        "design": "DAHWHjjRHpI",
-        "arte": "MAHWHlam93Y",
-        "modelo": "DAHWDzwR5c0",
-        "arte_v1_flat": "MAHWHiSCpDo"
-      },
-      "cena": "presidente (de costas, sem rosto) na tribuna da ONU; ao fundo a lavoura de soja de MT",
-      "arquivo": "2026-09-23-lula-e-a-onu-discurso-bolso.jpg",
-      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-23-lula-e-a-onu-discurso-bolso-1.jpg",
-      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-23-lula-e-a-onu-discurso-bolso-1-og.jpg",
-      "capa_anterior": "opiniao-1790165144.webp",
-      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
-      "feito_em": "2026-09-24",
-      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
-    },
-    {
-      "slug": "lula-na-onu-o-que-a-diplomacia-significa-para-o-mato-grossense",
-      "titulo": "Lula na ONU: o que a diplomacia significa para o mato-grossense",
-      "materia": "https://hojemt.com.br/lula-na-onu-o-que-a-diplomacia-significa-para-o-mato-grossense/",
-      "tag": "Opinião",
-      "canva": {
-        "design": "DAHWHiE3BYg",
-        "arte": "MAHWHqPTMu0",
-        "modelo": "DAHWDzwR5c0",
-        "arte_v1_flat": "MAHWHmMk7xs"
-      },
-      "cena": "presidente (de costas) cumprimenta diplomata no corredor da ONU; mapa de MT e soja",
-      "arquivo": "2026-09-22-lula-na-onu-diplomacia.jpg",
-      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-22-lula-na-onu-diplomacia-1.jpg",
-      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-22-lula-na-onu-diplomacia-1-og.jpg",
-      "capa_anterior": "opiniao-1790078777.webp",
-      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
-      "feito_em": "2026-09-24",
-      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
-    },
-    {
-      "slug": "voo-de-teste-em-mt-a-fragilidade-da-manutencao-aerea-no-interior",
-      "titulo": "Voo de teste em MT: a fragilidade da manutenção aérea no interior",
-      "materia": "https://hojemt.com.br/voo-de-teste-em-mt-a-fragilidade-da-manutencao-aerea-no-interior/",
-      "tag": "Opinião",
-      "canva": {
-        "design": "DAHWHhjL6U0",
-        "arte": "MAHWHisIlZ4",
-        "modelo": "DAHWDzwR5c0",
-        "arte_v1_flat": "MAHWHlGOG3c"
-      },
-      "cena": "mecânico de costas examina o motor do monomotor no hangar; fones de piloto na asa (sem acidente)",
-      "arquivo": "2026-09-21-voo-de-teste-em-mt.jpg",
-      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-21-voo-de-teste-em-mt-1.jpg",
-      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-21-voo-de-teste-em-mt-1-og.jpg",
-      "capa_anterior": "opiniao-1789992301.webp",
-      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
-      "feito_em": "2026-09-24",
-      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
-    },
-    {
-      "slug": "lula-em-ny-o-peso-da-diplomacia-para-o-bolso-do-mato-grossense",
-      "titulo": "Lula em NY: o peso da diplomacia para o bolso do mato-grossense",
-      "materia": "https://hojemt.com.br/lula-em-ny-o-peso-da-diplomacia-para-o-bolso-do-mato-grossense/",
-      "tag": "Opinião",
-      "canva": {
-        "design": "DAHWHtHqXdA",
-        "arte": "MAHWHmhWGHY",
-        "modelo": "DAHWDzwR5c0",
-        "arte_v1_flat": "MAHWHt52mQA"
-      },
-      "cena": "presidente e prefeito de NY (de costas) num terraço; sede da ONU, cargueiro, carteira e soja",
-      "arquivo": "2026-09-20-lula-em-ny-diplomacia-bolso.jpg",
-      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-20-lula-em-ny-diplomacia-bolso-1.jpg",
-      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-20-lula-em-ny-diplomacia-bolso-1-og.jpg",
-      "capa_anterior": "opiniao-1789905853.webp",
-      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
-      "feito_em": "2026-09-24",
-      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
-    },
-    {
-      "slug": "brasil-soberano-3-o-credito-que-muda-o-jogo-para-a-industria",
-      "titulo": "Brasil Soberano 3: o crédito que muda o jogo para a indústria",
-      "materia": "https://hojemt.com.br/brasil-soberano-3-o-credito-que-muda-o-jogo-para-a-industria/",
-      "tag": "Opinião",
-      "canva": {
-        "design": "DAHWHt1lqks",
-        "arte": "MAHWHs8FNHc",
-        "modelo": "DAHWDzwR5c0",
-        "arte_v1_flat": "MAHWHqae3r8"
-      },
-      "cena": "presidente (de costas, capacete) caminha pela fábrica com ministra; linha de produção volta a girar",
-      "arquivo": "2026-09-19-brasil-soberano-3.jpg",
-      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-19-brasil-soberano-3-1.jpg",
-      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-19-brasil-soberano-3-1-og.jpg",
-      "capa_anterior": "opiniao-1789819505.webp",
-      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
-      "feito_em": "2026-09-24",
-      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
-    },
-    {
-      "slug": "caos-no-stf-o-que-a-briga-por-moraes-e-mendonca-significa-para-voce",
-      "titulo": "Caos no STF: o que a briga por Moraes e Mendonça significa para você",
-      "materia": "https://hojemt.com.br/caos-no-stf-o-que-a-briga-por-moraes-e-mendonca-significa-para-voce/",
-      "tag": "Opinião",
-      "canva": {
-        "design": "DAHWHhQ_5uQ",
-        "arte": "MAHWHhFWW7M",
-        "modelo": "DAHWDzwR5c0",
-        "arte_v1_flat": "MAHWHlwFcZw"
-      },
-      "cena": "três ministros de toga de costas, afastados no plenário; rachadura no piso; galeria",
-      "arquivo": "2026-09-16-caos-no-stf.jpg",
-      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-16-caos-no-stf-1.jpg",
-      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-16-caos-no-stf-1-og.jpg",
-      "capa_anterior": "opiniao-1789560262.webp",
-      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
-      "feito_em": "2026-09-24",
-      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
-    },
-    {
-      "slug": "a-sessao-de-hoje-define-a-credibilidade-do-stf-para-o-brasil",
-      "titulo": "A sessão de hoje define a credibilidade do STF para o Brasil",
-      "materia": "https://hojemt.com.br/a-sessao-de-hoje-define-a-credibilidade-do-stf-para-o-brasil/",
-      "tag": "Opinião",
-      "canva": {
-        "design": "DAHWHpy-9N0",
-        "arte": "MAHWHqylPUo",
-        "modelo": "DAHWDzwR5c0",
-        "arte_v1_flat": "MAHWHhw_omE"
-      },
-      "cena": "ministro careca de toga, de costas, diante do celular sobre relatórios; galeria e câmeras",
-      "arquivo": "2026-09-15-sessao-de-hoje-stf.jpg",
-      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-15-sessao-de-hoje-stf-1.jpg",
-      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-15-sessao-de-hoje-stf-1-og.jpg",
-      "capa_anterior": "opiniao-1789474020.webp",
-      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
-      "feito_em": "2026-09-24",
-      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
-    },
-    {
-      "slug": "o-compasso-de-espera-do-senado-e-o-impacto-real-no-cotidiano-de-mato-grosso",
-      "titulo": "O compasso de espera do Senado e o impacto real no cotidiano de Mato Grosso",
-      "materia": "https://hojemt.com.br/o-compasso-de-espera-do-senado-e-o-impacto-real-no-cotidiano-de-mato-grosso/",
-      "tag": "Opinião",
-      "canva": {
-        "design": "DAHWHgLZxew",
-        "arte": "MAHWHszsVn8",
-        "modelo": "DAHWDzwR5c0",
-        "arte_v1_flat": "MAHWHmnlcjw"
-      },
-      "cena": "senadores de costas no plenário ao entardecer, ampulheta parada; trabalhadores esperando pela janela",
-      "arquivo": "2026-09-03-compasso-de-espera-do-senado.jpg",
-      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-03-compasso-de-espera-do-senado-1.jpg",
-      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-03-compasso-de-espera-do-senado-1-og.jpg",
-      "capa_anterior": "opiniao-1788436926.webp",
-      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
-      "feito_em": "2026-09-24",
-      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
-    },
-    {
-      "slug": "o-limite-das-relacoes-e-o-impacto-institucional-para-mato-grosso",
-      "titulo": "O limite das relações e o impacto institucional para Mato Grosso",
-      "materia": "https://hojemt.com.br/o-limite-das-relacoes-e-o-impacto-institucional-para-mato-grosso/",
-      "tag": "Opinião",
-      "canva": {
-        "design": "DAHWHi9RKtc",
-        "arte": "MAHWHgK4iuw",
-        "modelo": "DAHWDzwR5c0",
-        "arte_v1_flat": "MAHWHqQ4dBI"
-      },
-      "cena": "ministro (toga) e banqueiro (terno) em silhueta frente a frente, celular entre eles; cidadãos atrás do vidro",
-      "arquivo": "2026-09-01-o-limite-das-relacoes.jpg",
-      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-01-o-limite-das-relacoes-1.jpg",
-      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-01-o-limite-das-relacoes-1-og.jpg",
-      "capa_anterior": "opiniao-vorcaro.webp",
-      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
-      "feito_em": "2026-09-24",
-      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
-    }
-  ]
+ "_como_funciona": "Ilustrações editoriais feitas no Canva para artigos com capa genérica (opiniao-*.webp / capa-*.webp). Receita em content/README.md, seção 'Artes dos artigos no Canva'. Legenda no site: 'Ilustração: HOJE MT (gerada com IA)'.",
+ "itens": [
+  {
+   "slug": "o-cnpj-como-salvo-conduto-a-formalizacao-que-muda-a-vida",
+   "titulo": "O CNPJ como salvo-conduto: a formalização que muda a vida",
+   "materia": "https://hojemt.com.br/o-cnpj-como-salvo-conduto-a-formalizacao-que-muda-a-vida/",
+   "tag": "Opinião",
+   "canva": {
+    "design": "DAHWHliI-E4",
+    "arte": "MAHWHtlR_kc",
+    "modelo": "DAHWDzwR5c0",
+    "arte_v1_flat": "MAHWHsFNIcg"
+   },
+   "cena": "empreendedora de costas na porta da loja; banco iluminado, caminhão de grãos e silos",
+   "arquivo": "2026-09-24-o-cnpj-como-salvo-conduto.jpg",
+   "url": "https://hojemt.com.br/content/images/2026/09/2026-09-24-o-cnpj-como-salvo-conduto-1.jpg",
+   "og": "https://hojemt.com.br/content/images/2026/09/2026-09-24-o-cnpj-como-salvo-conduto-1-og.jpg",
+   "capa_anterior": "opiniao-1790251524.webp",
+   "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+   "feito_em": "2026-09-24",
+   "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
+  },
+  {
+   "slug": "lula-e-a-onu-o-que-o-discurso-muda-no-bolso-do-mato-grossense",
+   "titulo": "Lula e a ONU: o que o discurso muda no bolso do mato-grossense",
+   "materia": "https://hojemt.com.br/lula-e-a-onu-o-que-o-discurso-muda-no-bolso-do-mato-grossense/",
+   "tag": "Opinião",
+   "canva": {
+    "design": "DAHWHjjRHpI",
+    "arte": "MAHWHlam93Y",
+    "modelo": "DAHWDzwR5c0",
+    "arte_v1_flat": "MAHWHiSCpDo"
+   },
+   "cena": "presidente (de costas, sem rosto) na tribuna da ONU; ao fundo a lavoura de soja de MT",
+   "arquivo": "2026-09-23-lula-e-a-onu-discurso-bolso.jpg",
+   "url": "https://hojemt.com.br/content/images/2026/09/2026-09-23-lula-e-a-onu-discurso-bolso-1.jpg",
+   "og": "https://hojemt.com.br/content/images/2026/09/2026-09-23-lula-e-a-onu-discurso-bolso-1-og.jpg",
+   "capa_anterior": "opiniao-1790165144.webp",
+   "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+   "feito_em": "2026-09-24",
+   "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
+  },
+  {
+   "slug": "lula-na-onu-o-que-a-diplomacia-significa-para-o-mato-grossense",
+   "titulo": "Lula na ONU: o que a diplomacia significa para o mato-grossense",
+   "materia": "https://hojemt.com.br/lula-na-onu-o-que-a-diplomacia-significa-para-o-mato-grossense/",
+   "tag": "Opinião",
+   "canva": {
+    "design": "DAHWHiE3BYg",
+    "arte": "MAHWHqPTMu0",
+    "modelo": "DAHWDzwR5c0",
+    "arte_v1_flat": "MAHWHmMk7xs"
+   },
+   "cena": "presidente (de costas) cumprimenta diplomata no corredor da ONU; mapa de MT e soja",
+   "arquivo": "2026-09-22-lula-na-onu-diplomacia.jpg",
+   "url": "https://hojemt.com.br/content/images/2026/09/2026-09-22-lula-na-onu-diplomacia-1.jpg",
+   "og": "https://hojemt.com.br/content/images/2026/09/2026-09-22-lula-na-onu-diplomacia-1-og.jpg",
+   "capa_anterior": "opiniao-1790078777.webp",
+   "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+   "feito_em": "2026-09-24",
+   "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
+  },
+  {
+   "slug": "voo-de-teste-em-mt-a-fragilidade-da-manutencao-aerea-no-interior",
+   "titulo": "Voo de teste em MT: a fragilidade da manutenção aérea no interior",
+   "materia": "https://hojemt.com.br/voo-de-teste-em-mt-a-fragilidade-da-manutencao-aerea-no-interior/",
+   "tag": "Opinião",
+   "canva": {
+    "design": "DAHWHhjL6U0",
+    "arte": "MAHWHisIlZ4",
+    "modelo": "DAHWDzwR5c0",
+    "arte_v1_flat": "MAHWHlGOG3c"
+   },
+   "cena": "mecânico de costas examina o motor do monomotor no hangar; fones de piloto na asa (sem acidente)",
+   "arquivo": "2026-09-21-voo-de-teste-em-mt.jpg",
+   "url": "https://hojemt.com.br/content/images/2026/09/2026-09-21-voo-de-teste-em-mt-1.jpg",
+   "og": "https://hojemt.com.br/content/images/2026/09/2026-09-21-voo-de-teste-em-mt-1-og.jpg",
+   "capa_anterior": "opiniao-1789992301.webp",
+   "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+   "feito_em": "2026-09-24",
+   "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
+  },
+  {
+   "slug": "lula-em-ny-o-peso-da-diplomacia-para-o-bolso-do-mato-grossense",
+   "titulo": "Lula em NY: o peso da diplomacia para o bolso do mato-grossense",
+   "materia": "https://hojemt.com.br/lula-em-ny-o-peso-da-diplomacia-para-o-bolso-do-mato-grossense/",
+   "tag": "Opinião",
+   "canva": {
+    "design": "DAHWHtHqXdA",
+    "arte": "MAHWHmhWGHY",
+    "modelo": "DAHWDzwR5c0",
+    "arte_v1_flat": "MAHWHt52mQA"
+   },
+   "cena": "presidente e prefeito de NY (de costas) num terraço; sede da ONU, cargueiro, carteira e soja",
+   "arquivo": "2026-09-20-lula-em-ny-diplomacia-bolso.jpg",
+   "url": "https://hojemt.com.br/content/images/2026/09/2026-09-20-lula-em-ny-diplomacia-bolso-1.jpg",
+   "og": "https://hojemt.com.br/content/images/2026/09/2026-09-20-lula-em-ny-diplomacia-bolso-1-og.jpg",
+   "capa_anterior": "opiniao-1789905853.webp",
+   "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+   "feito_em": "2026-09-24",
+   "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
+  },
+  {
+   "slug": "brasil-soberano-3-o-credito-que-muda-o-jogo-para-a-industria",
+   "titulo": "Brasil Soberano 3: o crédito que muda o jogo para a indústria",
+   "materia": "https://hojemt.com.br/brasil-soberano-3-o-credito-que-muda-o-jogo-para-a-industria/",
+   "tag": "Opinião",
+   "canva": {
+    "design": "DAHWHt1lqks",
+    "arte": "MAHWHs8FNHc",
+    "modelo": "DAHWDzwR5c0",
+    "arte_v1_flat": "MAHWHqae3r8"
+   },
+   "cena": "presidente (de costas, capacete) caminha pela fábrica com ministra; linha de produção volta a girar",
+   "arquivo": "2026-09-19-brasil-soberano-3.jpg",
+   "url": "https://hojemt.com.br/content/images/2026/09/2026-09-19-brasil-soberano-3-1.jpg",
+   "og": "https://hojemt.com.br/content/images/2026/09/2026-09-19-brasil-soberano-3-1-og.jpg",
+   "capa_anterior": "opiniao-1789819505.webp",
+   "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+   "feito_em": "2026-09-24",
+   "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
+  },
+  {
+   "slug": "caos-no-stf-o-que-a-briga-por-moraes-e-mendonca-significa-para-voce",
+   "titulo": "Caos no STF: o que a briga por Moraes e Mendonça significa para você",
+   "materia": "https://hojemt.com.br/caos-no-stf-o-que-a-briga-por-moraes-e-mendonca-significa-para-voce/",
+   "tag": "Opinião",
+   "canva": {
+    "design": "DAHWHhQ_5uQ",
+    "arte": "MAHWHhFWW7M",
+    "modelo": "DAHWDzwR5c0",
+    "arte_v1_flat": "MAHWHlwFcZw"
+   },
+   "cena": "três ministros de toga de costas, afastados no plenário; rachadura no piso; galeria",
+   "arquivo": "2026-09-16-caos-no-stf.jpg",
+   "url": "https://hojemt.com.br/content/images/2026/09/2026-09-16-caos-no-stf-1.jpg",
+   "og": "https://hojemt.com.br/content/images/2026/09/2026-09-16-caos-no-stf-1-og.jpg",
+   "capa_anterior": "opiniao-1789560262.webp",
+   "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+   "feito_em": "2026-09-24",
+   "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
+  },
+  {
+   "slug": "a-sessao-de-hoje-define-a-credibilidade-do-stf-para-o-brasil",
+   "titulo": "A sessão de hoje define a credibilidade do STF para o Brasil",
+   "materia": "https://hojemt.com.br/a-sessao-de-hoje-define-a-credibilidade-do-stf-para-o-brasil/",
+   "tag": "Opinião",
+   "canva": {
+    "design": "DAHWHpy-9N0",
+    "arte": "MAHWHqylPUo",
+    "modelo": "DAHWDzwR5c0",
+    "arte_v1_flat": "MAHWHhw_omE"
+   },
+   "cena": "ministro careca de toga, de costas, diante do celular sobre relatórios; galeria e câmeras",
+   "arquivo": "2026-09-15-sessao-de-hoje-stf.jpg",
+   "url": "https://hojemt.com.br/content/images/2026/09/2026-09-15-sessao-de-hoje-stf-1.jpg",
+   "og": "https://hojemt.com.br/content/images/2026/09/2026-09-15-sessao-de-hoje-stf-1-og.jpg",
+   "capa_anterior": "opiniao-1789474020.webp",
+   "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+   "feito_em": "2026-09-24",
+   "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
+  },
+  {
+   "slug": "o-compasso-de-espera-do-senado-e-o-impacto-real-no-cotidiano-de-mato-grosso",
+   "titulo": "O compasso de espera do Senado e o impacto real no cotidiano de Mato Grosso",
+   "materia": "https://hojemt.com.br/o-compasso-de-espera-do-senado-e-o-impacto-real-no-cotidiano-de-mato-grosso/",
+   "tag": "Opinião",
+   "canva": {
+    "design": "DAHWHgLZxew",
+    "arte": "MAHWHszsVn8",
+    "modelo": "DAHWDzwR5c0",
+    "arte_v1_flat": "MAHWHmnlcjw"
+   },
+   "cena": "senadores de costas no plenário ao entardecer, ampulheta parada; trabalhadores esperando pela janela",
+   "arquivo": "2026-09-03-compasso-de-espera-do-senado.jpg",
+   "url": "https://hojemt.com.br/content/images/2026/09/2026-09-03-compasso-de-espera-do-senado-1.jpg",
+   "og": "https://hojemt.com.br/content/images/2026/09/2026-09-03-compasso-de-espera-do-senado-1-og.jpg",
+   "capa_anterior": "opiniao-1788436926.webp",
+   "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+   "feito_em": "2026-09-24",
+   "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
+  },
+  {
+   "slug": "o-limite-das-relacoes-e-o-impacto-institucional-para-mato-grosso",
+   "titulo": "O limite das relações e o impacto institucional para Mato Grosso",
+   "materia": "https://hojemt.com.br/o-limite-das-relacoes-e-o-impacto-institucional-para-mato-grosso/",
+   "tag": "Opinião",
+   "canva": {
+    "design": "DAHWHi9RKtc",
+    "arte": "MAHWHgK4iuw",
+    "modelo": "DAHWDzwR5c0",
+    "arte_v1_flat": "MAHWHqQ4dBI"
+   },
+   "cena": "ministro (toga) e banqueiro (terno) em silhueta frente a frente, celular entre eles; cidadãos atrás do vidro",
+   "arquivo": "2026-09-01-o-limite-das-relacoes.jpg",
+   "url": "https://hojemt.com.br/content/images/2026/09/2026-09-01-o-limite-das-relacoes-1.jpg",
+   "og": "https://hojemt.com.br/content/images/2026/09/2026-09-01-o-limite-das-relacoes-1-og.jpg",
+   "capa_anterior": "opiniao-vorcaro.webp",
+   "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+   "feito_em": "2026-09-24",
+   "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto"
+  },
+  {
+   "slug": "crise-no-tce-mt-presidente-afasta-vice-e-sessao-cai-sem-quorum",
+   "titulo": "Crise no TCE-MT: presidente afasta vice da Escola de Contas e sessão cai sem quórum",
+   "status_post": "rascunho",
+   "design": "DAHWH4pmUkA",
+   "arte": "MAHWH2_tmEM",
+   "design_instagram_4x5": "DAHWHxXxNqw",
+   "arte_4x5": "MAHWH4hwu-0",
+   "cena": "plenário de tribunal de contas com cadeiras vazias; um homem de terno, de costas, sozinho diante dos processos; ao fundo, painel com rodovia de asfalto rachado (MT-170)",
+   "arquivo": "pautas/ilustracoes/2026-09-24-crise-no-tce-mt.jpg",
+   "url": "https://hojemt.com.br/content/images/2026/09/2026-09-24-crise-no-tce-mt.jpg",
+   "estilo": "realista cinematográfico, sem rostos (montagem ilustrativa para evitar uso de trechos da transmissão e do TikTok de terceiros)"
+  }
+ ]
 }

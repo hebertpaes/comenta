@@ -361,6 +361,51 @@
    "legenda": "ELEIÇÕES 2026 · Governo de Mato Grosso\n\nSeis nomes estão na urna para o Governo de MT no 1º turno, em 4 de outubro (ordem alfabética):\n\n55 Doutora Natasha (PSD) · vice Diogo Botelho\n33 Maurício Coelho (Mobiliza) · vice Dr. Wagner Malheiros\n10 Otaviano Pivetta (Republicanos) · vice Gisela Simona\n14 Rafaell Milas (Missão) · vice Thales Sartorelo\n36 Sargento Laudicério (Agir) · vice Alex Pucineli\n22 Wellington Fagundes (PL) · vice Reinaldo Morais\n\nFotos: TSE/Divulgação (registro oficial das candidaturas)\n\nCobertura completa em hojemt.com.br/tag/eleicoes\n\n#eleicoes2026 #matogrosso #cuiaba #governomt #hojemt",
    "materia": "https://hojemt.com.br/tag/eleicoes/",
    "origem": "pautas/eleicoes/2026-mt-candidatos.json"
+  },
+  {
+   "id": "24",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-09-30T19:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Flávia Troca o PL?",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-flavia-troca-o-pl-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Flávia Troca o PL?\n\nUm lado oferece a cadeira; o outro, o muro.\n\nA prefeita de Várzea Grande, Flávia Moretti, admitiu que pode deixar o PL e confirmou o convite do Republicanos, partido do governador Otaviano Pivetta.\n\nLeia a curta completa: hojemt.com.br/flavia-troca-o-pl\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #varzeagrande #matogrosso #hojemt",
+   "materia": "https://hojemt.com.br/flavia-troca-o-pl/",
+   "charge_json": "pautas/charges/2026-09-24-flavia-troca-o-pl.json"
+  },
+  {
+   "id": "25",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-10-01T07:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Cartilha? Mais Ideologia que Churrasco!",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-cartilha-mais-ideologia-que-churrasco-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Cartilha? Mais Ideologia que Churrasco!\n\nNa gaveta da Prefeitura, cartilha só passa se disser “mãe”.\n\nO prefeito Abilio Brunini citou uma cartilha que troca “mãe” por “pessoa que gesta” e prometeu controle rígido sobre o material distribuído em Cuiabá.\n\nLeia a curta completa: hojemt.com.br/cartilha-mais-ideologia-que-churrasco\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #cuiaba #matogrosso #hojemt",
+   "materia": "https://hojemt.com.br/cartilha-mais-ideologia-que-churrasco/",
+   "charge_json": "pautas/charges/2026-09-24-cartilha-mais-ideologia-que-churrasco.json"
+  },
+  {
+   "id": "26",
+   "status": "aguardando_materia",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": null,
+   "formato": "card",
+   "titulo": "Crise no TCE-MT",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-crise-no-tce-mt-instagram-retrato.jpg"
+   ],
+   "legenda": "TRIBUNAL DE CONTAS DE MT · Conselheiros faltam, sessão cai sem quórum e crise no TCE-MT fica exposta.\n\n📌 15/09: na sessão do Pleno, o presidente Sérgio Ricardo e o vice Waldir Teis divergem sobre a obra da MT-170.\n📌 21/09: Sérgio Ricardo revoga a designação de Teis como supervisor da Escola Superior de Contas e assume a função.\n📌 21–22/09: Antonio Joaquim, Guilherme Maluf e Alisson Alencar divulgam nota de solidariedade a Teis: “a divergência de entendimentos é legítima, necessária e inerente ao exercício da função de conselheiro”.\n📌 22/09: sessão sem quórum; dez processos adiados. Sérgio Ricardo: “Conselheiro tem que trabalhar”.\n\nA assessoria do TCE-MT não comentou a nota. O espaço segue aberto aos conselheiros.\n\nMatéria completa: hojemt.com.br/crise-no-tce-mt-presidente-afasta-vice-e-sessao-cai-sem-quorum\n\nFontes: Eh Fonte, HiperNotícias, O Documento, Veja Bem MT, Fatos de MT, Momento MT. Ilustração: HOJE MT (IA; cena de ficção).\n\n#TCEMT #MatoGrosso #Cuiaba #TribunalDeContas #HojeMT",
+   "materia": "https://hojemt.com.br/crise-no-tce-mt-presidente-afasta-vice-e-sessao-cai-sem-quorum/",
+   "obs": "Publicar só depois que a matéria (rascunho no Ghost) for publicada: aí trocar status para agendado e definir quando no próximo horário livre."
   }
  ]
 }

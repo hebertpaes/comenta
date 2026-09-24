@@ -1,0 +1,39 @@
+{
+ "_comentario": "Monitor das sessões e decisões do TCE-MT (rotina trig: ver backup/rotinas.json). Guarda o último vídeo visto no canal oficial para não repetir pauta.",
+ "canal_youtube": {
+  "nome": "TCE Mato Grosso",
+  "channel_id": "UCBfh0XMJFExxL9qLC7JZtfg",
+  "rss": "https://www.youtube.com/feeds/videos.xml?channel_id=UCBfh0XMJFExxL9qLC7JZtfg",
+  "lives": "https://www.youtube.com/@tcematogrosso/streams"
+ },
+ "sessoes": {
+  "plenario_presencial": "terças-feiras, 14h30 (Cuiabá), TV Contas canal 30.2 + YouTube",
+  "plenario_virtual": "semanal, de segunda a sexta"
+ },
+ "outras_fontes": [
+  "https://www.tiktok.com/@ehfonte",
+  "https://ehfonte.com.br/colunas/",
+  "https://www.hnt.com.br/politica",
+  "https://portalmatogrosso.com.br/?s=TCE",
+  "https://www.olhardireto.com.br"
+ ],
+ "ultimo_video_visto": {
+  "id": "Olgww1jsu-U",
+  "titulo": "TCE-MT entrega Carta de Compromissos pela Primeira Infância e Educação aos candidatos ao Governo",
+  "publicado": "2026-09-24T13:51"
+ },
+ "ultima_sessao_vista": {
+  "id": "NVujAcJDkRU",
+  "titulo": "TCE-MT – 13ª SESSÃO ORDINÁRIA DO PLENÁRIO PRESENCIAL - 15 DE SETEMBRO DE 2026"
+ },
+ "pautas": [
+  {
+   "data": "2026-09-24",
+   "slug": "crise-no-tce-mt-presidente-afasta-vice-e-sessao-cai-sem-quorum",
+   "status": "rascunho",
+   "arte": "pautas/ilustracoes/2026-09-24-crise-no-tce-mt.jpg",
+   "instagram": "agenda 26 (aguardando_materia)",
+   "origem": "link do editor: TikTok @ehfonte 7688775065416076552"
+  }
+ ]
+}
