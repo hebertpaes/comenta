@@ -110,6 +110,18 @@ segurança), o post é pulado com o motivo no log; rode de novo ou use `--imagem
 
 ## Charges no Canva (padrão atual: caricatura a partir da foto real, montada no Canva)
 
+### Regra: toda charge sai do Canva
+
+Orientação do editor (24/09/2026): **sempre crie as charges no Canva**. A charge
+"de bonecos" que o publicador automático das Curtas gera (arquivo
+`charge-<timestamp>.webp`) é provisória e deve ser substituída por uma charge
+deste fluxo. Uma Routine da sessão do Claude roda 3x por dia (07:00, 12:00 e
+17:00 de Cuiabá): acha os posts das últimas 12 h com `feature_image` contendo
+`/charge-`, faz a charge no Canva (16:9 + 4:5), troca a imagem de destaque e a
+og:image, hospeda o 4:5 e o coloca na agenda do Instagram; quando não há post
+novo, refaz até 2 antigos. Backlog em 24/09: cerca de 30 curtas com charge
+automática.
+
 A charge é feita **inteira no Canva**, pelo conector, em 1600×900, como um
 chargista de jornal: o personagem é desenhado a partir da foto real e
 licenciada, a cena conta a história, e balão, legenda, selo e assinatura são

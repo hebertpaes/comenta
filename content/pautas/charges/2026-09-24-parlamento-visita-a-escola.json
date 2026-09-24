@@ -1,0 +1,31 @@
+{
+  "slug": "parlamento-visita-a-escola",
+  "materia": "https://hojemt.com.br/parlamento-visita-a-escola/",
+  "titulo": "Parlamento Visita a Escola",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática de bonecos do publicador)",
+  "legenda": "Na UFMT, a Assembleia colhe talentos com troféu de isca.",
+  "balao": null,
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "canva": {
+    "design_site_16x9": "DAHWG7Hsgv8",
+    "arte_16x9": "MAHWG05S3dg",
+    "design_instagram_4x5": "DAHWG7qcJ7o",
+    "arte_4x5": "MAHWGxOWwFE",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "personagens": [],
+  "obs": "personagens genéricos (assessor da Assembleia e estudantes); sem pessoa real",
+  "arquivos": {
+    "site_16x9": "2026-09-24-parlamento-visita-a-escola.jpg",
+    "instagram_4x5": "2026-09-24-parlamento-visita-a-escola-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-24-parlamento-visita-a-escola-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 24/09/2026 (antes: charge-1790241798.webp, automática)",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json"
+  }
+}

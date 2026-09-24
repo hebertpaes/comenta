@@ -1,0 +1,41 @@
+{
+  "slug": "luz-que-nao-brilha",
+  "materia": "https://hojemt.com.br/luz-que-nao-brilha/",
+  "titulo": "Luz Que Não Brilha",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática de bonecos do publicador)",
+  "legenda": "Abilio desliga a luz do condomínio e dá as costas ao holofote eleitoral.",
+  "balao": null,
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "canva": {
+    "design_site_16x9": "DAHWGyYB8F0",
+    "arte_16x9": "MAHWG938vYY",
+    "design_instagram_4x5": "DAHWG-lsYFY",
+    "arte_4x5": "MAHWG2YU74Q",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "personagens": [
+    {
+      "nome": "Abilio Brunini",
+      "cargo": "prefeito de Cuiabá",
+      "imagem": "caricatura gerada a partir da foto oficial (referência de imagem no Canva)",
+      "canva_foto_referencia": "MAHWDtzNHSM",
+      "credito": "Foto: Câmara dos Deputados/Wikimedia Commons (CC BY)",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Deputado_Abilio_Brunini_(cropped).jpg",
+      "licenca": "CC BY",
+      "licenca_url": "https://creativecommons.org/licenses/by/3.0"
+    }
+  ],
+  "arquivos": {
+    "site_16x9": "2026-09-24-luz-que-nao-brilha.jpg",
+    "instagram_4x5": "2026-09-24-luz-que-nao-brilha-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-24-luz-que-nao-brilha-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 24/09/2026 (antes: charge automática .webp)",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json"
+  }
+}

@@ -210,6 +210,36 @@
       "legenda": "CHARGE · Salário no ponto, sem tropeço\n\nNa rede da prefeita, o salário cai antes do peixe.\n\nLeia a curta completa: hojemt.com.br/salario-no-ponto-sem-tropeco\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/salario-no-ponto-sem-tropeco/",
       "charge_json": "pautas/charges/2026-09-23-salario-no-ponto-sem-tropeco.json"
+    },
+    {
+      "id": "14",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-28T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Parlamento Visita a Escola",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-24-parlamento-visita-a-escola-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Parlamento Visita a Escola\n\nNa UFMT, a Assembleia colhe talentos com troféu de isca.\n\nA Secretaria de Comunicação da ALMT foi à UFMT apresentar a 2ª edição do Prêmio ALMT de Jornalismo, com categoria universitária.\n\nLeia a curta completa: hojemt.com.br/parlamento-visita-a-escola\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/parlamento-visita-a-escola/",
+      "charge_json": "pautas/charges/2026-09-24-parlamento-visita-a-escola.json"
+    },
+    {
+      "id": "15",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-28T19:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Luz Que Não Brilha",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-24-luz-que-nao-brilha-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Luz Que Não Brilha\n\nAbilio desliga a luz do condomínio e dá as costas ao holofote eleitoral.\n\nO prefeito mantém o corte do custeio da iluminação interna dos condomínios de Cuiabá, mesmo em ano eleitoral.\n\nLeia a curta completa: hojemt.com.br/luz-que-nao-brilha\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/luz-que-nao-brilha/",
+      "charge_json": "pautas/charges/2026-09-24-luz-que-nao-brilha.json"
     }
   ]
 }
