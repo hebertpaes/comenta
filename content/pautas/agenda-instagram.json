@@ -12,9 +12,9 @@
   "itens": [
     {
       "id": "01",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
+      "status": "publicado",
+      "permalink": "https://www.instagram.com/p/Ddqy3U5jDhN/",
+      "publicado_em": "2026-09-24T11:37:50Z",
       "quando": "2026-09-24T07:30:00-04:00",
       "formato": "card",
       "titulo": "Agressões a candidatas crescem 11 vezes, dizem entidades ao TSE",
@@ -22,7 +22,8 @@
         "https://hojemt.com.br/content/images/2026/09/2026-09-24-tse-agressoes-candidatas.jpg"
       ],
       "legenda": "Agressões a candidatas crescem 11 vezes, dizem entidades ao TSE\n\nOrganizações sociais entregaram ao TSE um relatório que documenta o aumento de 11 vezes nos processos por violência política de gênero entre 2022 e 2024. Pesquisa do Instituto Marielle Franco (77 casos, 2021–2025): 87% das vítimas são mulheres negras.\n\nMatéria completa: hojemt.com.br/entidades-denunciam-ao-tse-aumento-de-11x-em-agressoes-a-candidatas\n\n#eleicoes2026 #violenciapolitica #mulheresnapolitica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/entidades-denunciam-ao-tse-aumento-de-11x-em-agressoes-a-candidatas/"
+      "materia": "https://hojemt.com.br/entidades-denunciam-ao-tse-aumento-de-11x-em-agressoes-a-candidatas/",
+      "instagram_id": "18463471423141526"
     },
     {
       "id": "02",
