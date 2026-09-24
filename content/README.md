@@ -78,14 +78,21 @@ Receita (a mesma do artigo "IA sai do PowerPoint…"):
 1. Ler o artigo (Admin API, `formats: plaintext`) e descrever **uma cena**
    simbólica que conte a tese do texto, ligando Brasília/mundo ao cotidiano
    de Mato Grosso quando couber (soja, silos, caminhão, cidade do interior).
-2. `generate-image` em `LANDSCAPE_16_9` com o prompt-base: *"Ilustração
-   editorial vetorial, estilo flat moderno com texturas leves de grão, paleta
-   do jornal (verde-escuro profundo, verde vivo, creme e toques de amarelo):
-   [cena]. Nenhuma pessoa reconhecível, sem letras, sem números, sem logos,
-   sem bandeiras. Composição horizontal 16:9, área central limpa."*
-   Pessoas públicas (presidente, ministros) **nunca** aparecem reconhecíveis:
-   figura genérica de costas, ou só os símbolos (tribuna, martelo, balança).
-   Tragédias com vítimas: cena sóbria, sem acidente.
+2. `generate-image` em `LANDSCAPE_16_9` com o prompt-base (orientação do
+   editor, 24/09/2026: **"deixa mais realistas; insira os personagens reais,
+   como ficção, sem mostrar os rostos"**): *"Ilustração realista em pintura
+   digital cinematográfica (não é foto): luz natural dramática, texturas de
+   tecido, pele e materiais, profundidade de campo, cores naturais com
+   predominância de verdes. Cena de ficção inspirada na notícia: [cena com os
+   personagens reais descritos por traços, ex.: 'homem idoso de cabelo e
+   barba brancos, terno escuro', 'ministro careca de toga']. Os personagens
+   aparecem SEMPRE de costas, de perfil em silhueta ou com o rosto fora de
+   quadro — nenhum rosto visível. Sem letras legíveis, sem números, sem logos,
+   sem bandeiras identificáveis. Composição horizontal 16:9."*
+   Regras: nenhum rosto de pessoa real (nem por foto de referência); a cena é
+   ficção e a legenda diz isso; tragédias com vítimas: cena sóbria, sem
+   acidente e sem representar as vítimas. O estilo flat/vetorial anterior
+   (v1) fica como alternativa para temas abstratos.
 3. `copy-design` do modelo `DAHWDzwR5c0`; `read-design open_transaction`;
    `update_fill` no retângulo `LBkRvGTgDLdqhT2c` (+ `crop_media` 0/0/1600/900);
    apagar faixa, balão, legenda, assinatura e rodapé (`LBTbHX2cc1t8MXwC`,
@@ -94,7 +101,7 @@ Receita (a mesma do artigo "IA sai do PowerPoint…"):
    para **ILUSTRAÇÃO · HOJE MT** (shape `LBpQx8DX7cyRdZDh` e texto
    `LBlVKyTHh3yfBnjq` com largura 330 e left 1230); commit; `export-design` jpg.
 4. Salvar em `pautas/ilustracoes/<data>-<slug-curto>.jpg`; publicar com
-   `imagem-post.mjs --legenda="Ilustração: HOJE MT (gerada com IA)"` e
+   `imagem-post.mjs --legenda="Ilustração: HOJE MT (gerada com IA; cena de ficção)"` e
    `og-whatsapp.mjs --slug=<slug> --da-destaque`; registrar em
    `pautas/ilustracoes/registro.json` (design, arte, alt, arquivo, URL).
 
