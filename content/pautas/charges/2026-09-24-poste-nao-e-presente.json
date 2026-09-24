@@ -9,22 +9,56 @@
   "referencia_publica": "Charge: HOJE MT",
   "canva": {
     "design_site_16x9": "DAHWHb7Skwc",
-    "arte_16x9": "MAHWHVu6VwE",
+    "arte_16x9": "MAHWHrBZyvM",
     "design_instagram_4x5": "DAHWHckf1iM",
-    "arte_4x5": "MAHWHY5nUxY",
+    "arte_4x5": "MAHWHoiptzA",
     "modelo_16x9": "DAHWDzwR5c0",
-    "modelo_retrato": "DAHWEJf2P1U"
+    "modelo_retrato": "DAHWEJf2P1U",
+    "arte_16x9_v1": "MAHWHVu6VwE",
+    "arte_4x5_v1": "MAHWHY5nUxY"
   },
   "personagens": [
     {
       "nome": "Abilio Brunini",
       "cargo": "prefeito de Cuiabá",
-      "imagem": "caricatura gerada a partir da foto oficial (referência de imagem no Canva)",
-      "canva_foto_referencia": "MAHWDtzNHSM",
-      "credito": "Foto: Câmara dos Deputados/Wikimedia Commons (CC BY)",
-      "pagina": "https://commons.wikimedia.org/wiki/File:Deputado_Abilio_Brunini_(cropped).jpg",
-      "licenca": "CC BY",
-      "licenca_url": "https://creativecommons.org/licenses/by/3.0"
+      "imagem": "caricatura gerada a partir de fotos oficiais recentes (referência de imagem no Canva); visual atual: cabeça raspada, sem barba, magro, camiseta cinza-escura lisa, sem terno",
+      "canva_foto_referencia": "MAHWHiDa8C0",
+      "canva_fotos_referencia": [
+        "MAHWHiDa8C0",
+        "MAHWHhg33Yw",
+        "MAHWHkYuCOg"
+      ],
+      "credito": "Foto: Rennan Oliveira/Secom Prefeitura de Cuiabá (galeria oficial do prefeito, set/2026)",
+      "pagina": "https://www.cuiaba.mt.gov.br/galeria-de-fotos/prefeito-abilio-brunini-fotos",
+      "fotos": [
+        {
+          "canva": "MAHWHiDa8C0",
+          "data": "2026-09-21",
+          "arquivo": "foto1576",
+          "url": "https://www.cuiaba.mt.gov.br/storage/webdisco/2026/09/21/800x600/2026-09-21-18-32-foto1576-6ab1b085374d6.jpg",
+          "descricao": "frontal, coletiva, camiseta cinza"
+        },
+        {
+          "canva": "MAHWHhg33Yw",
+          "data": "2026-09-21",
+          "arquivo": "foto1650",
+          "url": "https://www.cuiaba.mt.gov.br/storage/webdisco/2026/09/21/800x600/2026-09-21-18-32-foto1650-6ab1b08e70d10.jpg",
+          "descricao": "frontal sorrindo, fundo da Prefeitura"
+        },
+        {
+          "canva": "MAHWHkYuCOg",
+          "data": "2026-09-03",
+          "arquivo": "foto8081",
+          "url": "https://www.cuiaba.mt.gov.br/storage/webdisco/2026/09/03/800x600/2026-09-03-11-36-foto8081-6a999406be08d.jpg",
+          "descricao": "três quartos, luz do dia"
+        }
+      ],
+      "licenca": "divulgação oficial da Prefeitura de Cuiabá (galeria para imprensa, com crédito); sem licença CC declarada no site — usada só como referência de desenho, nunca publicada",
+      "referencia_anterior": {
+        "canva_foto_referencia": "MAHWDtzNHSM",
+        "credito": "Foto: Câmara dos Deputados/Wikimedia Commons (CC BY), 2023",
+        "obs": "substituída em 24/09/2026 por estar desatualizada (terno, rosto mais cheio)"
+      }
     }
   ],
   "arquivos": {
@@ -32,10 +66,12 @@
     "instagram_4x5": "2026-09-24-poste-nao-e-presente-instagram-retrato.jpg"
   },
   "hospedado_em": {
-    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-24-poste-nao-e-presente-instagram-retrato.jpg"
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-24-poste-nao-e-presente-instagram-retrato-1.jpg",
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-24-poste-nao-e-presente-1.jpg"
   },
-  "site": "feature_image e og_image trocadas em 24/09/2026 (antes: charge automática .webp)",
+  "site": "feature_image e og_image trocadas em 24/09/2026 pela v2 (Abilio atual)",
   "instagram": {
     "status": "agendado em pautas/agenda-instagram.json"
-  }
+  },
+  "versao": "v2 (24/09/2026): caricatura refeita com fotos oficiais recentes do prefeito (camiseta cinza, cabeça raspada, sem terno), a pedido do editor: \"Deixa o Abílio mais atual\". Legenda, balão e layout mantidos."
 }

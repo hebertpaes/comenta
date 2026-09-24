@@ -8,23 +8,60 @@
   "canva": {
     "design_final": "DAHWD25Xi8c",
     "modelo_reutilizavel": "DAHWDzwR5c0",
-    "arte_escolhida_variacao_A": "MAHWD6N8_R0",
     "arte_variacao_B": "MAHWD0_j3CI",
-    "foto_de_referencia": "MAHWDtzNHSM",
     "versao_anterior_fotomontagem": {
       "design": "DAHWD_V52HI",
       "arquivo": "2026-09-23-creche-a-la-churrasco-v1-fotomontagem.webp"
     },
-    "modelo_retrato_instagram": "DAHWEJf2P1U"
+    "modelo_retrato_instagram": "DAHWEJf2P1U",
+    "arte_v1_16x9_antiga": "MAHWD6N8_R0",
+    "design_site_16x9": "DAHWD25Xi8c",
+    "design_instagram_4x5": "DAHWEOoUnfg",
+    "arte_16x9": "MAHWHgYZ4pk",
+    "arte_4x5": "MAHWHmOeJlk"
   },
   "personagens": [
     {
       "nome": "Abilio Brunini",
       "cargo": "prefeito de Cuiabá",
-      "imagem": "caricatura gerada a partir da foto oficial (referência de imagem no Canva)",
-      "credito": "Foto: Câmara dos Deputados/Wikimedia Commons (CC BY)",
-      "pagina": "https://commons.wikimedia.org/wiki/File:Deputado_Abilio_Brunini_(cropped).jpg",
-      "licenca": "CC BY"
+      "imagem": "caricatura gerada a partir de fotos oficiais recentes (referência de imagem no Canva); visual atual: cabeça raspada, sem barba, magro, camiseta cinza-escura lisa, sem terno",
+      "canva_foto_referencia": "MAHWHiDa8C0",
+      "canva_fotos_referencia": [
+        "MAHWHiDa8C0",
+        "MAHWHhg33Yw",
+        "MAHWHkYuCOg"
+      ],
+      "credito": "Foto: Rennan Oliveira/Secom Prefeitura de Cuiabá (galeria oficial do prefeito, set/2026)",
+      "pagina": "https://www.cuiaba.mt.gov.br/galeria-de-fotos/prefeito-abilio-brunini-fotos",
+      "fotos": [
+        {
+          "canva": "MAHWHiDa8C0",
+          "data": "2026-09-21",
+          "arquivo": "foto1576",
+          "url": "https://www.cuiaba.mt.gov.br/storage/webdisco/2026/09/21/800x600/2026-09-21-18-32-foto1576-6ab1b085374d6.jpg",
+          "descricao": "frontal, coletiva, camiseta cinza"
+        },
+        {
+          "canva": "MAHWHhg33Yw",
+          "data": "2026-09-21",
+          "arquivo": "foto1650",
+          "url": "https://www.cuiaba.mt.gov.br/storage/webdisco/2026/09/21/800x600/2026-09-21-18-32-foto1650-6ab1b08e70d10.jpg",
+          "descricao": "frontal sorrindo, fundo da Prefeitura"
+        },
+        {
+          "canva": "MAHWHkYuCOg",
+          "data": "2026-09-03",
+          "arquivo": "foto8081",
+          "url": "https://www.cuiaba.mt.gov.br/storage/webdisco/2026/09/03/800x600/2026-09-03-11-36-foto8081-6a999406be08d.jpg",
+          "descricao": "três quartos, luz do dia"
+        }
+      ],
+      "licenca": "divulgação oficial da Prefeitura de Cuiabá (galeria para imprensa, com crédito); sem licença CC declarada no site — usada só como referência de desenho, nunca publicada",
+      "referencia_anterior": {
+        "canva_foto_referencia": "MAHWDtzNHSM",
+        "credito": "Foto: Câmara dos Deputados/Wikimedia Commons (CC BY), 2023",
+        "obs": "substituída em 24/09/2026 por estar desatualizada (terno, rosto mais cheio)"
+      }
     }
   ],
   "instagram": {
@@ -48,8 +85,14 @@
       "publicado_em": "2026-09-24",
       "arquivo": "2026-09-23-creche-a-la-churrasco-instagram-retrato.jpg",
       "legenda_rodape": "Charge: HOJE MT · hojemt.com.br"
-    }
+    },
+    "obs_v2": "posts já publicados no Instagram ficam com a v1; a v2 vale para o site e para o carrossel agendado (item 10)"
   },
-  "site": "pendente: precisa da chave da Admin API do Ghost para trocar a feature_image da curta",
-  "referencia_publica": "Charge: HOJE MT (única referência na imagem e nas legendas; a licença da foto abaixo é registro interno)"
+  "site": "feature_image e og_image trocadas em 24/09/2026 pela v2 (Abilio atual)",
+  "referencia_publica": "Charge: HOJE MT (única referência na imagem e nas legendas; a licença da foto abaixo é registro interno)",
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-23-creche-a-la-churrasco-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-23-creche-a-la-churrasco-instagram-retrato-1.jpg"
+  },
+  "versao": "v2 (24/09/2026): caricatura refeita com fotos oficiais recentes do prefeito (camiseta cinza, cabeça raspada, sem terno), a pedido do editor: \"Deixa o Abílio mais atual\". Legenda, balão e layout mantidos."
 }

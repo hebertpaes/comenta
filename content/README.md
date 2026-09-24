@@ -124,6 +124,28 @@ real com licença; `imagens.mjs` descarta imagens de autor "Gemini", "DALL·E",
 Milas. Backlog em 24/09: cerca de 30 curtas com charge
 automática.
 
+### Referências de imagem por personagem (usar sempre a mais recente)
+
+Orientação do editor (24/09/2026): **"Deixa o Abílio mais atual com referências
+de imagens atuais"**. A caricatura tem de parecer com a pessoa **hoje**, não com
+a foto de posse. Antes de gerar a arte, conferir a referência mais recente
+abaixo (e atualizar esta tabela quando trocar). As fotos de referência não vão
+para o repositório nem para o site: ficam só no Canva, e o `.json` da charge
+registra origem, data e crédito.
+
+| Personagem | Visual atual | Referência no Canva | Origem / crédito |
+|---|---|---|---|
+| Abilio Brunini (prefeito de Cuiabá) | cabeça raspada, sem barba, magro/atlético, **camiseta cinza-escura lisa** (nunca terno e gravata) | `MAHWHiDa8C0` (frontal, 21/09/2026), `MAHWHhg33Yw` (sorrindo, 21/09/2026), `MAHWHkYuCOg` (três quartos, 03/09/2026) | Galeria oficial do prefeito, Prefeitura de Cuiabá (`cuiaba.mt.gov.br/galeria-de-fotos/prefeito-abilio-brunini-fotos`), Foto: Rennan Oliveira/Secom. Divulgação para imprensa, sem licença CC declarada: só como referência de desenho. A antiga (`MAHWDtzNHSM`, Câmara 2023, CC BY) está desatualizada. |
+| Ludio Cabral / Carlos Fávaro / demais | conferir foto do ano corrente antes de gerar | ver `.json` da última charge de cada um | Commons/Agência Brasil/Câmara/Senado (CC BY) ou galeria oficial do órgão |
+
+No prompt da arte, descrever o visual atual em palavras além de passar as fotos
+(`imageReferences` com 2 fotos: frontal + três quartos): "cabeça raspada,
+careca, sem barba, rosto anguloso e magro, camiseta cinza-escura lisa de gola
+redonda, sem terno e sem gravata". Em 24/09/2026 as 8 charges do Abilio
+(creche, filtro, onda, rua-livre, luz-que-nao-brilha, luz-no-quintal-alheio,
+poste-nao-e-presente, iluminacao-a-conta-dos-muros) foram refeitas com essas
+referências (v2), trocadas no site e na agenda do Instagram.
+
 A charge é feita **inteira no Canva**, pelo conector, em 1600×900, como um
 chargista de jornal: o personagem é desenhado a partir da foto real e
 licenciada, a cena conta a história, e balão, legenda, selo e assinatura são
