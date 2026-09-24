@@ -49,7 +49,7 @@ if (!enviado?.url) throw new Error("upload não devolveu url");
 const editado = await api.posts.edit({
   id: post.id,
   feature_image: enviado.url,
-  feature_image_alt: typeof args.alt === "string" ? args.alt : post.feature_image_alt || post.title,
+  feature_image_alt: (typeof args.alt === "string" ? args.alt : post.feature_image_alt || post.title).slice(0, 190), // limite do Ghost: 191
   feature_image_caption:
     typeof args.legenda === "string"
       ? args.legenda
