@@ -42,9 +42,9 @@
   },
   {
    "id": "03",
-   "status": "agendado",
-   "permalink": null,
-   "publicado_em": null,
+   "status": "publicado",
+   "permalink": "https://www.instagram.com/p/Ddr2SvUDKfP/",
+   "publicado_em": "2026-09-24T21:27:01Z",
    "quando": "2026-09-24T15:30:00-04:00",
    "formato": "carrossel",
    "titulo": "5 notícias para começar o dia (24/09)",
@@ -57,7 +57,8 @@
     "https://hojemt.com.br/content/images/2026/09/2026-09-24-carrossel-6-museu.jpg"
    ],
    "legenda": "5 notícias para começar a quinta-feira (24/09) 👉 arrasta pro lado\n\n1️⃣ Cenipa recupera caixa-preta de helicóptero que caiu em Santa Catarina\n2️⃣ BC exige notificação ao Coaf para transferências de cripto acima de US$ 10\n3️⃣ Várzea Grande inicia atendimento de 180 pacientes de neuropediatria\n4️⃣ Cuiabá abre auditoria sobre iluminação irregular em condomínios\n5️⃣ Museu da Caixa d’Água Velha ganha nova estrutura em Cuiabá\n\nMatérias completas em hojemt.com.br\n\n#noticias #resumododia #matogrosso #cuiaba #hojemt",
-   "materia": "https://hojemt.com.br/"
+   "materia": "https://hojemt.com.br/",
+   "obs": "publicado com atraso (15h30 → 17h27 de Cuiabá): 1ª tentativa estourou o tempo no Zapier; conferido que não tinha saído antes de repetir"
   },
   {
    "id": "13",
