@@ -1,0 +1,57 @@
+{
+  "slug": "luz-que-nao-brilha-2",
+  "materia": "https://hojemt.com.br/luz-que-nao-brilha-2/",
+  "titulo": "Luz Que Não Brilha (curta sobre Abilio e a reeleição de Paula Calil na Câmara)",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "balao": {
+    "texto": "Não jogo a toalha.",
+    "autor": "Abilio Brunini",
+    "fontes": [
+      "https://odocumento.com.br/nao-jogo-a-toalha-garante-abilio-ao-reafirmar-apoio-a-reeleicao-de-paula-calil-na-camara/",
+      "https://www.muvucapopular.com.br/2026/09/22/nao-jogo-a-toalha-diz-abilio-ao-manter-apoio-a-reeleicao-de-paula-calil/",
+      "https://www.noveen.com.br/politica/politica-mt/nao-jogo-toalha-diz-abilio-ao-defender-reeleicao-de-paula/47070"
+    ]
+  },
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "A toalha fica na mão; faltam cinco votos.",
+    "instagram_4x5": "A toalha fica; faltam cinco votos."
+  },
+  "contexto_legenda": "Abilio diz que Paula Calil tem 13 votos (\"12+1\"); a mudança do Regimento exige 2/3 da Câmara, 18 de 27 vereadores (24 Horas MT, VIP MT, Leiagora).",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini",
+      "cargo": "prefeito de Cuiabá (PL)",
+      "canva_fotos_referencia": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "data_foto": "2026-09-21 e 2026-09-03",
+      "credito": "Foto: Rennan Oliveira/Secom (galeria oficial do prefeito, Prefeitura de Cuiabá)",
+      "licenca": "divulgação oficial; só referência de desenho"
+    }
+  ],
+  "obs": "Paula Calil não aparece desenhada (sem foto licenciada no acervo); o canto do ringue tem só a luva e o balde. O título da curta repete o de outra curta da manhã (\"Luz Que Não Brilha\", sobre iluminação de condomínios); não é duplicata: fatos diferentes.",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json (item 33)"
+  },
+  "canva": {
+    "design_site_16x9": "DAHWItYmUbg",
+    "arte_16x9": "MAHWIs82LOk",
+    "design_instagram_4x5": "DAHWItkYYrI",
+    "arte_4x5": "MAHWIqLcB1I",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-24-luz-que-nao-brilha-2.jpg",
+    "instagram_4x5": "2026-09-24-luz-que-nao-brilha-2-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-24-luz-que-nao-brilha-2.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-24-luz-que-nao-brilha-2-og.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-24-luz-que-nao-brilha-2-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 24/09/2026 (antes: charge automática charge-1790274121.webp)"
+}

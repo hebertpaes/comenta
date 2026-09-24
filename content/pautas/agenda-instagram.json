@@ -534,6 +534,21 @@
    "legenda": "CHARGE · Fome em tempos de guerra\n\nGuerra e seca à mesa: prato vazio.\n\nSegundo a FAO, conflitos e eventos climáticos extremos somaram 40 milhões de pessoas à insegurança alimentar no mundo. Brasil e Espanha anunciaram uma aliança contra a fome.\n\nLeia a curta completa: hojemt.com.br/fome-em-tempos-de-guerra\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #fome #FAO #matogrosso #hojemt",
    "materia": "https://hojemt.com.br/fome-em-tempos-de-guerra/",
    "charge_json": "pautas/charges/2026-09-24-fome-em-tempos-de-guerra.json"
+  },
+  {
+   "id": "33",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-10-01T19:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Não jogo a toalha (Abilio e a reeleição de Paula Calil)",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-luz-que-nao-brilha-2-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · \"Não jogo a toalha\"\n\nA toalha fica; faltam cinco votos.\n\nO prefeito Abilio Brunini mantém o apoio à reeleição de Paula Calil na presidência da Câmara de Cuiabá e diz que ela tem \"12+1\" votos. Para mudar o Regimento e permitir a reeleição, são precisos 18 dos 27 vereadores.\n\nLeia a curta completa: hojemt.com.br/luz-que-nao-brilha-2\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #cuiaba #camaradecuiaba #matogrosso #hojemt",
+   "materia": "https://hojemt.com.br/luz-que-nao-brilha-2/",
+   "charge_json": "pautas/charges/2026-09-24-luz-que-nao-brilha-2.json"
   }
  ]
 }
