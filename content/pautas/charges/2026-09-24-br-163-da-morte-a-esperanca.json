@@ -1,0 +1,41 @@
+{
+  "slug": "br-163-da-morte-a-esperanca",
+  "materia": "https://hojemt.com.br/br-163-da-morte-a-esperanca/",
+  "titulo": "BR-163: da Morte à Esperança",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática de bonecos do publicador)",
+  "legenda": "Fávaro tempera a BR-163 com 5,5 bi e uma pitada de sal.",
+  "balao": null,
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "canva": {
+    "design_site_16x9": "DAHWHVrQ-jg",
+    "arte_16x9": "MAHWHdKzUy0",
+    "design_instagram_4x5": "DAHWHXybPFA",
+    "arte_4x5": "MAHWHedzCK8",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "personagens": [
+    {
+      "nome": "Carlos Fávaro",
+      "cargo": "senador por Mato Grosso (citado na curta como senador)",
+      "imagem": "caricatura gerada a partir da foto oficial (referência de imagem no Canva)",
+      "canva_foto_referencia": "MAHWHRSQAPw",
+      "credito": "Foto: Wilson Dias/Agência Brasil/Wikimedia Commons (CC BY)",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Carlos_F%C3%A1varo_(cropped).jpg",
+      "licenca": "CC BY 3.0 BR",
+      "licenca_url": "https://creativecommons.org/licenses/by/3.0/br/deed.pt_BR"
+    }
+  ],
+  "arquivos": {
+    "site_16x9": "2026-09-24-br-163-da-morte-a-esperanca.jpg",
+    "instagram_4x5": "2026-09-24-br-163-da-morte-a-esperanca-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-24-br-163-da-morte-a-esperanca-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 24/09/2026 (antes: charge automática .webp)",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json"
+  }
+}

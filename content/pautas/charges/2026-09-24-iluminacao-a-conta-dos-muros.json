@@ -1,0 +1,42 @@
+{
+  "slug": "iluminacao-a-conta-dos-muros",
+  "materia": "https://hojemt.com.br/iluminacao-a-conta-dos-muros/",
+  "titulo": "Iluminação à Conta dos Muros",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática de bonecos do publicador)",
+  "legenda": "A luz da viela é do condomínio; a conta, também.",
+  "balao": "“Distorção histórica.”",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "canva": {
+    "design_site_16x9": "DAHWHca0R5s",
+    "arte_16x9": "MAHWHUMNXtU",
+    "design_instagram_4x5": "DAHWHStFad8",
+    "arte_4x5": "MAHWHT3PNG4",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "personagens": [
+    {
+      "nome": "Abilio Brunini",
+      "cargo": "prefeito de Cuiabá",
+      "imagem": "caricatura gerada a partir da foto oficial (referência de imagem no Canva)",
+      "canva_foto_referencia": "MAHWDtzNHSM",
+      "credito": "Foto: Câmara dos Deputados/Wikimedia Commons (CC BY)",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Deputado_Abilio_Brunini_(cropped).jpg",
+      "licenca": "CC BY",
+      "licenca_url": "https://creativecommons.org/licenses/by/3.0"
+    }
+  ],
+  "obs": "Balão com a expressão que a curta atribui ao prefeito na coletiva com a Limpurb (a curta grafa “distorsão”; no balão vai a grafia correta). O balão já vem desenhado na arte; só o texto foi inserido no Canva.",
+  "arquivos": {
+    "site_16x9": "2026-09-24-iluminacao-a-conta-dos-muros.jpg",
+    "instagram_4x5": "2026-09-24-iluminacao-a-conta-dos-muros-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-24-iluminacao-a-conta-dos-muros-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 24/09/2026 (antes: charge automática .webp)",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json"
+  }
+}

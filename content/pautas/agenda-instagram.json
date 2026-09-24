@@ -271,6 +271,66 @@
       "legenda": "CHARGE · Inferno Pantaneiro\n\nMilas acende a churrasqueira de promessas: IA no SUS, cadeira a menos e cadeia a mais.\n\nNo podcast Política de Primeira, o candidato ao governo Rafaell Milas defendeu IA no SUS, corte de 30% dos cargos comissionados e um presídio de segurança máxima que batizou de “Inferno Pantaneiro”.\n\nLeia a curta completa: hojemt.com.br/inferno-pantaneiro-caceres-em-fogo\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #eleicoes2026 #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/inferno-pantaneiro-caceres-em-fogo/",
       "charge_json": "pautas/charges/2026-09-24-inferno-pantaneiro-caceres-em-fogo.json"
+    },
+    {
+      "id": "18",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-29T11:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Luz no Quintal Alheio",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-24-luz-no-quintal-alheio-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Luz no Quintal Alheio\n\nAbilio põe a lupa em cinco anos de luz paga no quintal alheio.\n\nA Prefeitura de Cuiabá levanta o que pagou à Energisa, nos últimos cinco anos, pela iluminação de vias internas de condomínios fechados. A cobrança será da distribuidora, e o caso vai ao Ministério Público.\n\nLeia a curta completa: hojemt.com.br/luz-no-quintal-alheio\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/luz-no-quintal-alheio/",
+      "charge_json": "pautas/charges/2026-09-24-luz-no-quintal-alheio.json"
+    },
+    {
+      "id": "19",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-29T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "BR-163: da Morte à Esperança",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-24-br-163-da-morte-a-esperanca-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · BR-163: da Morte à Esperança\n\nFávaro tempera a BR-163 com 5,5 bi e uma pitada de sal.\n\nO senador Carlos Fávaro diz que a duplicação da BR-163, com R$ 5,5 bilhões da União e do Estado, transforma a “estrada da morte” em corredor de segurança e desenvolvimento.\n\nLeia a curta completa: hojemt.com.br/br-163-da-morte-a-esperanca\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #br163 #hojemt",
+      "materia": "https://hojemt.com.br/br-163-da-morte-a-esperanca/",
+      "charge_json": "pautas/charges/2026-09-24-br-163-da-morte-a-esperanca.json"
+    },
+    {
+      "id": "20",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-29T19:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Poste Não É Presente",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-24-poste-nao-e-presente-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Poste Não É Presente\n\nPoste de presente: o síndico ganha a luz, e a conta vem no laço.\n\nO prefeito Abilio Brunini reuniu síndicos e Energisa: a conta da iluminação das áreas internas dos condomínios de Cuiabá passa aos próprios condomínios, com base em resoluções da ANEEL.\n\nLeia a curta completa: hojemt.com.br/poste-nao-e-presente\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/poste-nao-e-presente/",
+      "charge_json": "pautas/charges/2026-09-24-poste-nao-e-presente.json"
+    },
+    {
+      "id": "21",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-30T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Iluminação à Conta dos Muros",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-24-iluminacao-a-conta-dos-muros-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Iluminação à Conta dos Muros\n\nA luz da viela é do condomínio; a conta, também.\n\nEm coletiva com a Limpurb, Abilio Brunini chamou de “distorção histórica” o custeio municipal da iluminação das vias internas de condomínios e passou a conta aos condomínios.\n\nLeia a curta completa: hojemt.com.br/iluminacao-a-conta-dos-muros\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/iluminacao-a-conta-dos-muros/",
+      "charge_json": "pautas/charges/2026-09-24-iluminacao-a-conta-dos-muros.json"
     }
   ]
 }
