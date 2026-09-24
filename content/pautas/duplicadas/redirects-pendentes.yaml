@@ -1,0 +1,35 @@
+# Redirecionamentos 301 das cópias despublicadas (desde 24/09/2026) para a versão mantida. A rotina de duplicadas acrescenta linhas aqui.
+# A integração da API não tem permissão para redirects: suba no Ghost Admin → Settings → Labs → Redirects.
+# ATENÇÃO: o upload SUBSTITUI o arquivo atual. Baixe o atual antes ('Download current redirects') e junte as linhas abaixo.
+301:
+  /cuiaba-amplia-passe-livre-estudantil-para-o-dia-inteiro-com-novo-cartao/: /cuiaba-lanca-novo-cartao-que-garante-passe-livre-o-dia-todo-para-estudantes/
+  /varzea-grande-instala-pocos-em-escolas-para-eliminar-caminhoes-pipa/: /varzea-grande-instala-pocos-artesianos-para-abastecer-escolas-e-bairros/
+  /caceres-abre-oficialmente-a-semana-da-patria-com-o-fogo-simbolico/: /caceres-abre-oficialmente-a-semana-da-patria-com-fogo-simbolico/
+  /caceres-define-regras-rigidas-de-privacidade-e-seguranca-em-portal-oficial/: /caceres-define-regras-de-privacidade-e-seguranca-para-uso-de-site-oficial/
+  /caceres-adota-regras-rigidas-de-privacidade-e-seguranca-em-portal-oficial/: /caceres-define-regras-de-privacidade-e-seguranca-para-uso-de-site-oficial/
+  /governo-projeta-arrecadar-r-636-bilhoes-com-nova-cbs-a-partir-de-2027/: /governo-projeta-arrecadar-r-636-bilhoes-com-nova-cbs-em-2027/
+  /brasileiro-de-19-anos-conquista-ouro-no-mundial-de-bocha-em-seul/: /jose-antonio-santos-conquista-ouro-no-mundial-de-bocha-em-seul/
+  /anvisa-aprova-novo-medicamento-para-tratar-cancer-colorretal-metastatico/: /anvisa-aprova-novo-medicamento-para-tratamento-de-cancer-colorretal/
+  /festival-de-gastronomia-de-tiradentes-celebra-legado-culinario-luso-mineiro/: /festival-de-gastronomia-de-tiradentes-celebra-lacos-entre-brasil-e-portugal/
+  /brasil-contesta-tarifas-dos-eua-e-aponta-tratamento-discriminatorio-2/: /brasil-contesta-tarifas-dos-eua-e-aponta-tratamento-discriminatorio/
+  /candidatos-a-presidencia-intensificam-agenda-de-campanha-pelo-pais-nesta-ter/: /candidatos-a-presidencia-intensificam-agenda-de-campanha-pelo-pais/
+  /primavera-do-leste-sedia-car-digital-2-0-para-regularizacao-ambiental-rural/: /primavera-do-leste-sedia-evento-para-agilizar-regularizacao-ambiental-rural/
+  /mendonca-solicita-que-plenario-do-stf-analise-conversas-de-vorcaro-e-moraes/: /mendonca-quer-levar-ao-plenario-conversas-atribuidas-a-moraes-e-vorcaro/
+  /primavera-do-leste-cria-comite-para-elaborar-politica-de-alfabetizacao/: /primavera-do-leste-cria-comite-para-elaborar-plano-de-alfabetizacao/
+  /caceres-inaugura-nova-emei-no-bairro-junco-em-homenagem-a-educadora/: /caceres-inaugura-nova-creche-e-pre-escola-professora-izabel-da-cruz-pinheiro/
+  /pacheco-indicado-ao-tcu/: /senado-aprova-indicacao-de-rodrigo-pacheco-para-ministro-do-tcu/
+  /festival-de-praia-em-sinop-tem-onibus-gratuito-e-show-de-xanddy-harmonia/: /festival-de-praia-em-sinop-tera-show-de-xanddy-harmonia-e-onibus-gratis/
+  /primavera-do-leste-convoca-audiencia-publica-sobre-zoneamento-urbano-2/: /primavera-do-leste-convoca-audiencia-publica-sobre-zoneamento-urbano/
+  /primavera-do-leste-anuncia-creche-de-r-11-5-mi-no-jardim-europa-2/: /primavera-do-leste-anuncia-creche-de-r-11-5-mi-no-jardim-europa/
+  /wifs-ebc-apoia-encontro-que-impulsiona-futebol-feminino-no-brasil/: /ebc-apoia-cupula-internacional-sobre-futuro-do-futebol-feminino/
+  /pesquisa-revela-alta-taxa-de-depressao-entre-jornalistas-no-brasil/: /pesquisa-aponta-que-50-dos-jornalistas-no-brasil-tem-depressao/
+  /primavera-do-leste-sedia-decisao-do-judo-estadual-em-outubro/: /primavera-do-leste-sera-sede-da-final-do-judo-estadual-em-outubro/
+  /fachin-pausa-sessao-do-stf-sobre-moraes-e-vorcaro-reabre-as-14h/: /stf-pausa-julgamento-sobre-moraes-sessao-volta-as-15h/
+  /ficco-bloqueia-r-508-mi-em-acao-contra-faccoes-em-19-estados/: /ficco-bloqueia-r-508-mi-em-operacao-contra-faccoes-em-19-estados/
+  /filme-feito-pipa-representa-brasil-na-disputa-pelo-oscar-2027/: /feito-pipa-representa-brasil-no-oscar-2027/
+  /primavera-do-leste-abre-noite-de-musica-e-arte-no-bairro-sao-jose/: /primavera-do-leste-apresenta-primavera-in-concert-noite-de-musica/
+  /primavera-do-leste-entra-no-conselho-fiscal-do-conasems-em-brasilia/: /primavera-do-leste-tem-secretaria-no-conselho-fiscal-do-conasems/
+  /feira-em-fortaleza-liga-voto-2026-a-politicas-de-drogas-e-justica-social-2/: /feira-em-fortaleza-liga-voto-2026-a-politicas-de-drogas-e-justica-social/
+  /primavera-do-leste-remarca-prova-de-agentes-de-endemias-para-11-10/: /primavera-do-leste-reaplica-prova-de-agente-de-combate-as-endemias/
+  /primavera-do-leste-e-poxoreu-avancam-na-recuperacao-de-ponte-rural/: /primavera-do-leste-recupera-ponte-rural-em-parceria-com-poxoreu/
+  /ancelotti-lidera-primeiro-treino-com-todos-os-26-convocados/: /ancelotti-conduz-1o-treino-completo-da-selecao-em-brisbane/

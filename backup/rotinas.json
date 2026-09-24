@@ -43,6 +43,13 @@
    "cron_utc": "0 13 * * 1",
    "fonte": "content/pautas/instagram-crescimento.md e content/pautas/instagram-metricas.json",
    "resumo": "Lê seguidores, curtidas e comentários pela Graph API (Zapier), grava a leitura semanal, atualiza a tabela da sequência de 10 posts e produz no Canva os 2 próximos posts \"A fazer\" (Reel 9:16 ou carrossel 4:5), só com fatos de fonte oficial conferida; hospeda no Ghost e agenda no horário das 19:30 (quem publica é a Routine do Instagram)."
+  },
+  {
+   "id": "trig_01QZF4hTmH3JH6MPVxLyjibY",
+   "nome": "Duplicadas no site — achar e despublicar cópias (a cada 3 h)",
+   "cron_utc": "20 */3 * * *",
+   "fonte": "content/duplicadas.mjs e content/pautas/duplicadas/",
+   "resumo": "Roda duplicadas.mjs nos posts dos últimos 2 dias (texto, foto por dHash e link da fonte), lê os pares candidatos e despublica (volta para rascunho) só a cópia de uma mesma notícia, mantendo a versão mais antiga; registra em pautas/duplicadas/registro.json e acrescenta o redirecionamento 301 em redirects-pendentes.yaml para o editor subir no Ghost Admin."
   }
  ],
  "modelos_canva": {

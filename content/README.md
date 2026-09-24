@@ -330,6 +330,31 @@ Em resumo:
   API e grava em `pautas/instagram-metricas.json`; alcance, salvamentos e
   retenção só existem no app (Insights) e entram à mão.
 
+## Notícias duplicadas (mesma matéria publicada duas vezes)
+
+O publicador automático, que roda fora deste repositório, às vezes processa a
+mesma matéria da fonte duas vezes e publica com títulos e slugs diferentes
+(ex.: "Ancelotti conduz 1º treino completo da Seleção em Brisbane" e
+"Ancelotti lidera primeiro treino com todos os 26 convocados", com a mesma
+foto). Em 24/09/2026 foram despublicadas 31 cópias de 30 notícias
+(`pautas/duplicadas/registro.json`).
+
+- `node duplicadas.mjs --dias=3` lista pares candidatos pelo conteúdo: texto
+  (sobreposição de palavras), foto de destaque (dHash, ignorando as imagens
+  genéricas do publicador) e link da fonte na legenda. **Não despublica
+  sozinho**: agenda diária, sorteios diferentes da Mega-Sena, parcelas do
+  Bolsa Família em dias diferentes, estados diferentes e matérias de
+  continuação parecem duplicata e não são.
+- `node duplicadas.mjs --despublicar=copia:mantido` volta a cópia para
+  rascunho (nada é apagado) e registra. Mantém a versão mais antiga, salvo se
+  ela estiver sem foto ou com erro; em cobertura ao vivo, a atualização.
+- Redirecionamentos: a chave da integração não tem permissão para
+  `redirects`. As linhas 301 ficam em `pautas/duplicadas/redirects-pendentes.yaml`;
+  o editor sobe no Ghost Admin → Settings → Labs → Redirects (o upload
+  substitui o arquivo atual: baixe o atual e junte antes).
+- Uma Routine roda a cada 3 horas, lê os candidatos e despublica só as
+  cópias confirmadas.
+
 ## Direct do Instagram: compartilhar e responder leitores
 
 **Compartilhar uma matéria no Direct (manual)** — no app, abra o post do
