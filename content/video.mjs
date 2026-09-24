@@ -9,7 +9,7 @@
 //   node video.mjs URL --marca=outra.png --opacidade=0.4 --largura=0.28
 //   node video.mjs URL --posicao=superior-direita --margem=30
 //
-// Opções: --saida=arquivo.mp4  --marca=png (padrão assets/marca-dagua.png)
+// Opções: --saida=arquivo.mp4  --marca=png (padrão assets/hojemt-logo-site-branca.png, a logo oficial do site em branco)
 //         --opacidade=0.55  --largura=0.32 (fração da largura do vídeo)
 //         --posicao=inferior-direita|inferior-esquerda|superior-direita|superior-esquerda
 //         --margem=34  --crf=20  --so-baixar
@@ -159,7 +159,7 @@ if (!existsSync(arquivo)) {
 console.log(`vídeo: ${arquivo}`);
 if (args["so-baixar"]) process.exit(0);
 
-const marca = resolve(String(args.marca || join(AQUI, "assets", "marca-dagua.png")));
+const marca = resolve(String(args.marca || join(AQUI, "assets", "hojemt-logo-site-branca.png")));
 if (!existsSync(marca)) {
   console.error(`ERRO: marca d'água não encontrada: ${marca}`);
   process.exit(1);

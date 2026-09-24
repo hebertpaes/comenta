@@ -25,7 +25,7 @@ import { fileURLToPath } from "node:url";
 
 const aqui = dirname(fileURLToPath(import.meta.url));
 const FONTES = join(aqui, "assets", "fonts");
-const MARCA = join(aqui, "assets", "marca-dagua.png");
+const MARCA = join(aqui, "assets", "hojemt-logo-site-branca.png"); // logo oficial do site, em branco, fundo transparente
 const W = 1080, H = 1920, FPS = 30;
 const ANTON = "Anton", ROBOTO = "Roboto Condensed";
 const VERDE = "#00a859";
@@ -56,7 +56,7 @@ async function png(svgCorpo, arquivo, { fundo = true, logo = true } = {}) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">${fundo ? fundoSvg : ""}${svgCorpo}</svg>`;
   let img = sharp(Buffer.from(svg)).png();
   if (logo) {
-    const marca = await sharp(MARCA).resize({ width: 250 }).png().toBuffer();
+    const marca = await sharp(MARCA).resize({ width: 300 }).png().toBuffer();
     const m = await sharp(marca).metadata();
     img = sharp(await img.toBuffer()).composite([{ input: marca, left: W - 250 - 44, top: H - m.height - 96 }]).png();
   }

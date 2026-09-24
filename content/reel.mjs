@@ -52,7 +52,7 @@ function acharFfmpeg() {
   throw new Error("ffmpeg não encontrado (defina FFMPEG=/caminho/ffmpeg)");
 }
 const ffmpeg = acharFfmpeg();
-const marca = resolve(aqui, "assets", "marca-dagua.png");
+const marca = resolve(aqui, "assets", "hojemt-logo-site-branca.png"); // logo oficial do site (branca, transparente)
 const frames = DUR * FPS;
 const passo = ((ZOOM - 1) / frames).toFixed(6);
 
@@ -64,7 +64,7 @@ const filtros = [
 ];
 let ultimo = "[base]";
 if (args["sem-marca"] !== true) {
-  filtros.push(`[1:v]scale=300:-1,format=rgba,colorchannelmixer=aa=0.75[wm]`);
+  filtros.push(`[1:v]scale=330:-1,format=rgba,colorchannelmixer=aa=0.9[wm]`);
   filtros.push(`[base][wm]overlay=W-w-48:H-h-140[v]`);
   ultimo = "[v]";
 }
