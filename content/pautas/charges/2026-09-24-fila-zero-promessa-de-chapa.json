@@ -1,0 +1,58 @@
+{
+  "slug": "fila-zero-promessa-de-chapa",
+  "materia": "https://hojemt.com.br/fila-zero-promessa-de-chapa/",
+  "titulo": "Fila Zero, Promessa de Chapa (curta sobre a promessa de Wellington Fagundes de zerar a fila do SUS)",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas. A frase real está nas fontes abaixo e vai só na legenda do Instagram.",
+  "fala_real": {
+    "texto": "Nosso objetivo não é criar meta para diminuir a fila. Nosso objetivo é zerar a fila do SUS.",
+    "autor": "Wellington Fagundes (PL), candidato ao Governo de MT",
+    "ocasiao": "sabatina promovida por entidades da saúde, Cuiabá, 22/09/2026",
+    "fontes": [
+      "https://odocumento.com.br/nosso-objetivo-e-zerar-a-fila-do-sus-afirma-wellington-durante-sabatina-da-saude/",
+      "https://www.olhardireto.com.br/noticias/nosso-objetivo-e-zerar-a-fila-do-sus-afirma-wellington-durante-sabatina-da-saude",
+      "https://www.rdnews.com.br/eleicoes-2026/nosso-objetivo-e-zerar-a-fila-do-sus-afirma-wellington-durante-sabatina-da-saude/249459"
+    ]
+  },
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Na placa, fila zero. No corredor, a fila de sempre.",
+    "instagram_4x5": "Fila zero na placa; na porta, nem tanto."
+  },
+  "personagens": [
+    {
+      "nome": "Wellington Fagundes",
+      "cargo": "candidato ao Governo de MT (PL)",
+      "canva_fotos_referencia": [
+        "MAHWH-KaOvA"
+      ],
+      "data_foto": "2026-08 (registro de candidatura)",
+      "credito": "TSE/Divulgação (foto oficial do registro de candidatura 2026, SQ 110002551737)",
+      "licenca": "foto oficial do TSE; só referência de desenho",
+      "obs": "foto do TSE 2026 é mais recente que a da tabela do README (MAHWEb8Q-qQ)"
+    }
+  ],
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json (item 34)"
+  },
+  "canva": {
+    "design_site_16x9": "DAHWJalTJZU",
+    "arte_16x9": "MAHWJWGd05U",
+    "design_instagram_4x5": "DAHWJWT3nyo",
+    "arte_4x5": "MAHWJcC3BsY",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-24-fila-zero-promessa-de-chapa.jpg",
+    "instagram_4x5": "2026-09-24-fila-zero-promessa-de-chapa-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-24-fila-zero-promessa-de-chapa.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-24-fila-zero-promessa-de-chapa-og.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-24-fila-zero-promessa-de-chapa-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 24/09/2026 (antes: charge automática charge-1790284916.webp)"
+}

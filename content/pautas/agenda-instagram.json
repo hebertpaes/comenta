@@ -550,6 +550,21 @@
    "legenda": "CHARGE · \"Não jogo a toalha\"\n\nA toalha fica; faltam cinco votos.\n\nO prefeito Abilio Brunini mantém o apoio à reeleição de Paula Calil na presidência da Câmara de Cuiabá e diz que ela tem \"12+1\" votos. Para mudar o Regimento e permitir a reeleição, são precisos 18 dos 27 vereadores.\n\nLeia a curta completa: hojemt.com.br/luz-que-nao-brilha-2\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #cuiaba #camaradecuiaba #matogrosso #hojemt",
    "materia": "https://hojemt.com.br/luz-que-nao-brilha-2/",
    "charge_json": "pautas/charges/2026-09-24-luz-que-nao-brilha-2.json"
+  },
+  {
+   "id": "34",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-10-02T07:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Fila Zero, Promessa de Chapa (Wellington e a fila do SUS)",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-24-fila-zero-promessa-de-chapa-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Fila Zero, Promessa de Chapa\n\nFila zero na placa; na porta, nem tanto.\n\nNa sabatina de entidades da saúde em Cuiabá (22/09), o candidato ao Governo Wellington Fagundes (PL) prometeu: \"Nosso objetivo não é criar meta para diminuir a fila. Nosso objetivo é zerar a fila do SUS.\" Ele citou mutirões, parcerias com municípios e prestadores privados e telemedicina.\n\nLeia a curta completa: hojemt.com.br/fila-zero-promessa-de-chapa\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #saude #matogrosso #hojemt",
+   "materia": "https://hojemt.com.br/fila-zero-promessa-de-chapa/",
+   "charge_json": "pautas/charges/2026-09-24-fila-zero-promessa-de-chapa.json"
   }
  ]
 }
