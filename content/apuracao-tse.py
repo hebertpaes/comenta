@@ -17,15 +17,21 @@ do TSE só responde nas janelas de teste), --cache DIR, --conexoes N (máx. 8), 
 De onde vem cada dado (URLs relativas a https://resultados.tse.jus.br/<ambiente>/):
   comum/config/ele-c.json                                   ciclo corrente, pleitos, eleições, cargos
   ele<ano>/<ele>/config/mun-e<ele6>-cm.json                 municípios por UF (código TSE, nome, capital, zonas)
-  ele<ano>/<ele>/dados/<uf>/<uf><mun>-c<cargo>-e<ele6>-v.json      totais variáveis (votos por número)
+  ele<ano>/<ele>/dados/<uf>/<uf><mun>[-z<zona>]-c<cargo>-e<ele6>-u.json   UNIFICADO (formato de 2024 e, pelo
+        que o TSE regerou para 2022 em 18/09/2026, o provável de 2026): totais + candidatos com nomes. Preferido.
+  ele<ano>/<ele>/dados/<uf>/<uf><mun>-c<cargo>-e<ele6>-v.json      totais variáveis (formato original de 2022)
   ele<ano>/<ele>/dados/<uf>/<nadf>.json  (nadf vem no -v)          arquivo fixo -f: nomes, partidos, vices
   ele<ano>/<ele>/dados-simplificados/<uf>/<uf>-c<cargo>-e<ele6>-r.json   resultado consolidado da UF (ou br)
   ele<ano>/arquivo-urna/<pleito>/config/<uf>/<uf>-p<pl6>-cs.json  zonas e seções (ns; nsa = agregadas; nsp = principal)
   ele<ano>/arquivo-urna/<pleito>/dados/<uf>/<mun>/<zona>/<secao>/p<pl6>-<uf>-m<mun>-z<zona>-s<secao>-aux.json
         situação da seção ("st") e hashes[].arq[] (bu, imgbu, rdv, log...); o BU fica em .../<secao>/<hash>/<nome do arq>
-O BU (.bu em 2022, -bu.dat em 2024) é ASN.1/DER (spec pública do TSE "bu.asn1", ModuloBU, IMPLICIT TAGS):
-EntidadeEnvelopeGenerico.conteudo -> EntidadeBoletimUrna -> resultadosVotacaoPorEleicao. O decodificador
-abaixo lê essas estruturas por tag, sem dependências.
+O BU (.bu em 2022, -bu.dat em 2024; o nome vem sempre do aux) é ASN.1/DER (spec pública do TSE "bu.asn1",
+ModuloBU, IMPLICIT TAGS): EntidadeEnvelopeGenerico.conteudo -> EntidadeBoletimUrna -> resultadosVotacaoPorEleicao.
+O decodificador abaixo lê as duas versões da spec (v1 de 2022; v2 de 2024, com resultados sem tag de contexto,
+aptos da seção/TTE e hash por votável) por estrutura, sem dependências. O "local" do BU é o local ORIGINAL da
+seção (NR_LOCAL_VOTACAO_ORIGINAL no cadastro do TSE), mesmo quando ela vota num local temporário.
+Contagem como o TSE: número fora do arquivo fixo = nulo técnico; dvt "Anulado"/"sub judice" = anulado;
+legenda de partido só em agremiação marcada "**" = nulo técnico; seção agregada (nsp) não conta à parte.
 """
 import argparse
 import base64
@@ -579,7 +585,8 @@ def cmd_locais(a):
         # O BU traz o local ORIGINAL da seção; o cadastro traz em NR_LOCAL_VOTACAO onde ela vota agora
         # (local temporário, p.ex. escola em reforma). Agrupa pelo número que aparece no BU.
         atual = int(row['NR_LOCAL_VOTACAO'])
-        orig = int(row.get('NR_LOCAL_VOTACAO_ORIGINAL') or atual or 0) or atual
+        o = (row.get('NR_LOCAL_VOTACAO_ORIGINAL') or '').strip()
+        orig = int(o) if o.isdigit() and int(o) > 0 else atual  # '-1' / '#NULO#' = sem local original
         k = (int(row['NR_ZONA']), orig)
         g = grupos.setdefault(k, {'row': None, 'row_temp': None, 'atuais': set(), 'principais': set(),
                                   'agregadas': set(), 'eleitores': 0})
@@ -950,7 +957,7 @@ def novo_grupo():
 def soma_secao(g, r, ele, cargo, com_secoes=False):
     g['secoes'] += 1
     item = {'s': r['secao'], 'z': r['zona'], 'st': r['status']}
-    if r['status'] == 'totalizada':
+    if r['status'] in ('totalizada', 'recebida'):  # 'recebida' só existe com --incluir-recebidas
         e = r['bu']['eleicoes'].get(str(ele))
         if e is not None:
             g['secoes_totalizadas'] += 1
@@ -1238,7 +1245,7 @@ def cmd_pagina(a, cli):
     for cargo in cargos:
         ele = ele_de(cargo)
         abr, placar = [], []
-        alvos = (['br'] + ufs) if cargo == '0001' else ufs
+        alvos = (['br'] + ufs + (['zz'] if a.ufs == 'todas' else [])) if cargo == '0001' else ufs
         res = dict(cli.mapa(lambda u: resultado_uf(cli, tse, ele, u, cargo), alvos))
         for u in alvos:
             x = res.get(u)
@@ -1249,7 +1256,7 @@ def cmd_pagina(a, cli):
             grava_json(os.path.join(out, f'{u}-c{cargo}.json'), d)
             n_arq += 1
             abr.append(u)
-            if u != 'br':
+            if u not in ('br', 'zz'):
                 c = d['candidatos']
                 placar.append({'uf': u, 'pct_apurado': d['secoes_totalizadas_pct'], 'lider': c[0]['nm'], 'n': c[0]['n'],
                                'cc': c[0]['cc'], 'pvap': c[0]['pvap'], 'st': c[0]['st'], 'e': c[0]['e'],
