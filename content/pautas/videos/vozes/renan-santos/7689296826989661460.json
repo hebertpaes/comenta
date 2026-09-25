@@ -1,0 +1,202 @@
+{
+  "candidato": "Renan Santos",
+  "id_candidato": "renan-santos",
+  "cargo": "presidente",
+  "esfera": "nacional",
+  "partido": "Missão",
+  "numero": 14,
+  "id": "7689296826989661460",
+  "url": "https://www.tiktok.com/@renansantosmbl/video/7689296826989661460",
+  "rede": "tiktok",
+  "perfil": "@renansantosmbl",
+  "perfil_url": "https://www.tiktok.com/@renansantosmbl",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@renansantosmbl); uploader do vídeo = renansantosmbl / Renan Santos | VOTE 14",
+  "data": "2026-09-25",
+  "duracao_s": 104,
+  "titulo": "#renansantos #mbl",
+  "descricao": "#renansantos #mbl",
+  "tipo": "fala direta à câmera (comentando notícia), com prints e imagens de eventos",
+  "fala_do_candidato": true,
+  "resumo": "Diz que Lula e Flávio pediram sua saída do debate da Globo; ataca ambos; afirma crescer entre os jovens.",
+  "temas": [
+    "debate",
+    "imprensa",
+    "ataque a adversário"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 5.4,
+      "text": "Ah, e olha a notícia aí, é impressionante, estava demorando, estava demorando.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 5.4,
+      "end": 10.9,
+      "text": "O que motivou a Globo me tirar dos debates foi pedido do Sr. Lula, não só dele, Lula e Flávio Bolsonaro.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 10.9,
+      "end": 12.9,
+      "text": "Essa é uma apuração que a imprensa toda está fazendo.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 12.9,
+      "end": 16.0,
+      "text": "Toda imprensa já levantou isso, fontes minhas já confirmaram essa informação",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 16.0,
+      "end": 19.4,
+      "text": "e agora o antagonista que também foi apurar, trouxe a público essa notícia.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 19.4,
+      "end": 26.9,
+      "text": "O desconvite ao Renan Santos ter uma ligação direta com manifestações das campanhas do Flávio e do Lula, tá?",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 26.9,
+      "end": 30.6,
+      "text": "As duas campanhas não querem o Renan Santos no embate, ali no debate.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 30.6,
+      "end": 34.2,
+      "text": "O Flávio e o Lula não me querem no debate porque eu falo melhor do que eles, eu sou mais inteligente,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 34.2,
+      "end": 38.5,
+      "text": "eu tenho passado limpo, eu não estou na lista telefônica do Vorcaro, eu não estou no escândalo do INSS",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 38.5,
+      "end": 42.6,
+      "text": "e eu vou questioná-los de maneira muito educada sobre os crimes que eles e suas famílias cometeram.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 42.6,
+      "end": 47.6,
+      "text": "O que a gente percebe é que quando a corda aperta, o PT e o bolsonarismo se juntam, ambos para se defender.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 47.6,
+      "end": 52.2,
+      "text": "Até porque se forem por segundo turno, Lula e Flávio vão começar a debater, é porque um não tem medo do outro.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 52.2,
+      "end": 55.2,
+      "text": "As suas respectivas seitas, elas funcionam de maneira fechada.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 55.2,
+      "end": 59.1,
+      "text": "Aí um vai chamar o outro de ladrão, outro vai falar que ele é ladrão, ela vai falar eu roubei 100 milhões,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 59.1,
+      "end": 64.1,
+      "text": "mas você roubou mais, tudo bem, mas eu roubei de um jeito patriota e enquanto isso nosso país vai pro buraco.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 64.1,
+      "end": 68.4,
+      "text": "Eu estou indignado, eu vou até a frente da Rede Globo e nós vamos construir a nossa participação no debate,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 68.4,
+      "end": 71.9,
+      "text": "até porque eu acho sinceramente que esses caras são tão covarde, tão covarde que eles não vão.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 71.9,
+      "end": 76.5,
+      "text": "Há algo de muito perigoso no que eu falo, no que eu faço, a ponto de todas essas figuras",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 76.5,
+      "end": 81.7,
+      "text": "tentarem negar a minha existência, sufocar a minha voz, destruir minha candidatura como o Toffoli fez",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 81.7,
+      "end": 83.9,
+      "text": "e tentarem me tirar dos debates como estão fazendo.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 84.0,
+      "end": 88.8,
+      "text": "Se eu sou um sujeito tão irrelevante porque eles têm tanto medo, as imagens que você está vendo mostram o contrário.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 88.8,
+      "end": 90.8,
+      "text": "Nós estamos crescendo e muito entre os mais jovens.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 90.8,
+      "end": 94.7,
+      "text": "Nós derrotamos o STF de Dias Toffoli e nós tornaremos o país uma potência,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 94.7,
+      "end": 99.1,
+      "text": "por si só, sem puxar saco de Estados Unidos como faz o Flávio ou da China como faz o Lula.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 99.1,
+      "end": 101.6,
+      "text": "Mantenha o fé no futuro e enfrentem os vagabundos.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 101.6,
+      "end": 104.4,
+      "text": "Meu nome é Renan Santos e eu sou seu candidato à presidência da República.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 84.0,
+      "fim": 90.8,
+      "texto": "Se eu sou um sujeito tão irrelevante porque eles têm tanto medo, as imagens que você está vendo mostram o contrário. Nós estamos crescendo e muito entre os mais jovens.",
+      "tema": "campanha/jovens"
+    },
+    {
+      "inicio": 101.6,
+      "fim": 104.4,
+      "texto": "Meu nome é Renan Santos e eu sou seu candidato à presidência da República.",
+      "tema": "apresentação"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Renan Santos, TikTok @renansantosmbl, 2026-09-25",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/renan-santos/7689296826989661460.mp3 (não versionado)",
+  "obs": "Voz do candidato do início ao fim (conferido em quadros aos 3, 50 e 102 s). Quase todo o vídeo é ATAQUE a Lula e Flávio Bolsonaro (\"roubei de um jeito patriota\", \"vagabundos\") — evitar. Trechos neutros: 84,0–90,8 s (crescimento entre jovens) e o fecho 101,6–104,4 s."
+}

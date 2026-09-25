@@ -1,0 +1,82 @@
+{
+  "candidato": "Zema (Romeu Zema Neto)",
+  "id_candidato": "zema",
+  "cargo": "presidente",
+  "esfera": "nacional",
+  "partido": "Novo",
+  "numero": 30,
+  "id": "7688895243458039060",
+  "url": "https://www.tiktok.com/@romeuzemaoficial/video/7688895243458039060",
+  "rede": "tiktok",
+  "perfil": "@romeuzemaoficial",
+  "perfil_url": "https://www.tiktok.com/@romeuzemaoficial",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@romeuzemaoficial); uploader do vídeo = romeuzemaoficial / Romeu Zema",
+  "data": "2026-09-24",
+  "duracao_s": 36,
+  "titulo": "OS INTOCÁVEIS TEM MEDO. COMPARTILHE 🚨",
+  "descricao": "OS INTOCÁVEIS TEM MEDO. COMPARTILHE 🚨",
+  "tipo": "corte de podcast com imagens de operação policial, arte \"Zema 30\" (\"Os intocáveis têm medo\")",
+  "fala_do_candidato": true,
+  "resumo": "Cita a ação policial de Varginha (2021) e diz que o \"novo cangaço\" caiu mais de 99% em Minas.",
+  "temas": [
+    "segurança",
+    "novo cangaço",
+    "balanço de gestão (MG)"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 5.44,
+      "text": "Em 2021, na cidade de Varginha, a Polícia Militar de Minas Gerais,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 5.44,
+      "end": 10.36,
+      "text": "foram lá fazer uma averiguação e foram recebidos a bala.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 10.36,
+      "end": 15.76,
+      "text": "Teve um confronto e 28 criminosos foram mortos.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 15.76,
+      "end": 22.2,
+      "text": "Depois dessa ação em Minas Gerais, nós tivemos uma redução superior",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 22.2,
+      "end": 27.12,
+      "text": "a 99% em ações do novo cangaço no Estado.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 27.12,
+      "end": 29.32,
+      "text": "O recado foi claríssimo.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 29.32,
+      "end": 36.12,
+      "text": "Explodir caixas e agências bancárias em Minas pode custar muito caro.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 15.8,
+      "fim": 29.3,
+      "texto": "Depois dessa ação em Minas Gerais, nós tivemos uma redução superior a 99% em ações do novo cangaço no Estado. O recado foi claríssimo.",
+      "tema": "segurança"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Zema, TikTok @romeuzemaoficial, 2026-09-24",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/zema/7688895243458039060.v.mp4 (não versionado)",
+  "obs": "A voz é a do candidato: aos 30 s ele aparece falando ao microfone com a mesma voz; de 0 a ~27 s a mesma voz segue em off sobre imagens de operação policial (quadros aos 3 e 15 s). ATENÇÃO: conteúdo sensível (confronto com 28 mortos em Varginha, 2021) — tema de violência policial; avaliar antes de usar em sátira."
+}

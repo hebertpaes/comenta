@@ -1,0 +1,94 @@
+{
+  "candidato": "Zema (Romeu Zema Neto)",
+  "id_candidato": "zema",
+  "cargo": "presidente",
+  "esfera": "nacional",
+  "partido": "Novo",
+  "numero": 30,
+  "id": "7688509113776590101",
+  "url": "https://www.tiktok.com/@romeuzemaoficial/video/7688509113776590101",
+  "rede": "tiktok",
+  "perfil": "@romeuzemaoficial",
+  "perfil_url": "https://www.tiktok.com/@romeuzemaoficial",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@romeuzemaoficial); uploader do vídeo = romeuzemaoficial / Romeu Zema",
+  "data": "2026-09-22",
+  "duracao_s": 73,
+  "titulo": "Não gosto muito de entrar nesse assunto, mas é por isso que eu entend...",
+  "descricao": "Não gosto muito de entrar nesse assunto, mas é por isso que eu entendo tanto as dores das mães solo.",
+  "tipo": "corte de podcast (ele ao microfone) com fotos de família, legenda \"Poucos sabem dessa história...\"",
+  "fala_do_candidato": true,
+  "resumo": "Conta que foi \"pai e mãe\" e propõe CRAS + Defensoria Pública acompanhando mães solo para garantir pensão e direitos.",
+  "temas": [
+    "assistência social",
+    "mães solo",
+    "família"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 6.0,
+      "text": "Eu sei falar muito bem desse tema porque eu já fui durante um bom período da minha vida pai e mãe",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 6.0,
+      "end": 18.0,
+      "text": "e sei como fica sobrecarregado assumir essas duas tarefas, que é cuidar da casa, dos filhos e ainda ter de levar alimento, colocar comida dentro de casa",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 18.0,
+      "end": 27.0,
+      "text": "Então entendo perfeitamente, nós temos de estruturar, e a minha proposta é esta, uma área de assistência social para essas mães",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 27.0,
+      "end": 37.0,
+      "text": "que eu sei muitas vezes não tem ideia do direito que elas têm, pessoas que às vezes são muito humildes, que não tiveram o devido esclarecimento",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 37.0,
+      "end": 47.0,
+      "text": "e que muitas vezes arcam sozinhas com essa responsabilidade que não é só da mulher, ou que muitas vezes, como eu já vi, que eu lidei com gente muito humilde",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 47.0,
+      "end": 53.0,
+      "text": "durante toda minha vida, aceitam receber um valor irrisório como se aquilo fosse suficiente",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 53.0,
+      "end": 64.0,
+      "text": "Então os nossos CRAS, os centros de referência em assistência social, juntamente com a defensoria pública, precisam estar acompanhando essas mães",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 64.0,
+      "end": 73.0,
+      "text": "que muitas vezes têm essa grande sobrecarga, de ganhar a vida delas e dos filhos e ficam totalmente desamparadas do genitor",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 0.0,
+      "fim": 6.0,
+      "texto": "Eu sei falar muito bem desse tema porque eu já fui durante um bom período da minha vida pai e mãe",
+      "tema": "mães solo/família"
+    },
+    {
+      "inicio": 18.0,
+      "fim": 27.0,
+      "texto": "Então entendo perfeitamente, nós temos de estruturar, e a minha proposta é esta, uma área de assistência social para essas mães",
+      "tema": "assistência social"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Zema, TikTok @romeuzemaoficial, 2026-09-22",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/zema/7688509113776590101.v.mp4 (não versionado)",
+  "obs": "Voz do candidato do início ao fim (conferido em quadros aos 3, 30 e 60 s: ele ao microfone; fotos antigas dele com os filhos). Relato pessoal (foi \"pai e mãe\") e proposta para mães solo via CRAS e Defensoria. Sem ataque."
+}

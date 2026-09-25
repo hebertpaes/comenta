@@ -1,0 +1,100 @@
+{
+  "candidato": "Escritor Augusto Cury (Augusto Jorge Cury)",
+  "id_candidato": "augusto-cury",
+  "cargo": "presidente",
+  "esfera": "nacional",
+  "partido": "Avante",
+  "numero": 70,
+  "id": "7688345469189246229",
+  "url": "https://www.tiktok.com/@augustocuryoficial/video/7688345469189246229",
+  "rede": "tiktok",
+  "perfil": "@augustocuryoficial",
+  "perfil_url": "https://www.tiktok.com/@augustocuryoficial",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@augustocuryoficial); uploader do vídeo = augustocuryoficial / Augusto Cury",
+  "data": "2026-09-22",
+  "duracao_s": 51,
+  "titulo": "SE A ESCOLA PÚBLICA FALHA, QUEM PAGA A CONTA É O FUTURO DO JOVEM. Eu ...",
+  "descricao": "SE A ESCOLA PÚBLICA FALHA, QUEM PAGA A CONTA É O FUTURO DO JOVEM. Eu não aceito que a qualidade da educação dependa do CEP ou da renda da família. Quero uma escola que ensine o aluno a pensar, se expressar, lidar com dinheiro, descobrir talentos e sair do ensino médio com caminhos reais para a vida profissional. Educação pública precisa voltar a ser motivo de orgulho. Quem estudou em escola pública, completa nos comentários: “Minha vida teria sido diferente se a escola tivesse me ensinado ______.” 👇 Créditos: Flow Augusto Cury Presidente 7️⃣0️⃣ Vice Júlio Delgado CNPJ 68.581.887/0001-92 - ELEIÇÕES 2026 AUGUSTO CURY - AVANTE #augustocury #cury70 #educacao #escolapublica #juventude #eleicoes2026",
+  "tipo": "corte de podcast (ele ao microfone) com arte \"Augusto Cury 70\", respondendo a fala de Zema",
+  "fala_do_candidato": true,
+  "resumo": "Rebate Zema sobre escola particular x pública; propõe educação financeira, empreendedorismo, teatro/oratória e mais ensino técnico.",
+  "temas": [
+    "educação",
+    "escola pública",
+    "ensino técnico"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 4.88,
+      "text": "Zema, você falou que a escola particular é melhor que a escola pública, sinceramente",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 4.88,
+      "end": 10.2,
+      "text": "eu fiquei muito desconfortável com isso, porque para mim a escola pública ela tem",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 10.2,
+      "end": 15.12,
+      "text": "que ser resgatada, a educação precisa ser repaginada completamente, temos que ter",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 15.12,
+      "end": 20.88,
+      "text": "uma educação tão revolucionária que deve haver gestão financeira, deve haver empreendedorismo",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 20.88,
+      "end": 26.24,
+      "text": "e deve haver aulas de teatro e oratória, e além disso ensino médio tem que passar",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 26.24,
+      "end": 33.48,
+      "text": "completamente também para uma reformulação, nós temos cerca de 7.3 milhões de jovens no ensino",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 33.48,
+      "end": 40.92,
+      "text": "médio, mas por incrível que pareça apenas 21% faz ensino técnico, um país que não",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 40.92,
+      "end": 46.68,
+      "text": "valoriza os seus jovens é um país irresponsável, nós vamos revolucionar a",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 46.68,
+      "end": 50.84,
+      "text": "escola pública de fato como nunca ocorreu",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 4.9,
+      "fim": 15.1,
+      "texto": "eu fiquei muito desconfortável com isso, porque para mim a escola pública ela tem que ser resgatada, a educação precisa ser repaginada completamente,",
+      "tema": "educação/escola pública"
+    },
+    {
+      "inicio": 40.9,
+      "fim": 50.8,
+      "texto": "valoriza os seus jovens é um país irresponsável, nós vamos revolucionar a escola pública de fato como nunca ocorreu",
+      "tema": "educação/escola pública"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Escritor Augusto Cury, TikTok @augustocuryoficial, 2026-09-22",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/augusto-cury/7688345469189246229.v.mp4 (não versionado)",
+  "obs": "Voz do candidato do início ao fim (conferido em quadros aos 2, 15, 30 e 45 s: ele ao microfone). Começa respondendo a Zema (\"você falou que a escola particular é melhor\") — discordância de ideia, sem ofensa; o resto é proposta de educação."
+}

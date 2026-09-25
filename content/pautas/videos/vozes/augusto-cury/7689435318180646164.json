@@ -1,0 +1,118 @@
+{
+  "candidato": "Escritor Augusto Cury (Augusto Jorge Cury)",
+  "id_candidato": "augusto-cury",
+  "cargo": "presidente",
+  "esfera": "nacional",
+  "partido": "Avante",
+  "numero": 70,
+  "id": "7689435318180646164",
+  "url": "https://www.tiktok.com/@augustocuryoficial/video/7689435318180646164",
+  "rede": "tiktok",
+  "perfil": "@augustocuryoficial",
+  "perfil_url": "https://www.tiktok.com/@augustocuryoficial",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@augustocuryoficial); uploader do vídeo = augustocuryoficial / Augusto Cury",
+  "data": "2026-09-25",
+  "duracao_s": 54,
+  "titulo": "12 ANOS DE ESCOLA NÃO PODEM TERMINAR NUM “E AGORA?” Eu quero que o jo...",
+  "descricao": "12 ANOS DE ESCOLA NÃO PODEM TERMINAR NUM “E AGORA?” Eu quero que o jovem saia do ensino médio sabendo fazer alguma coisa com o que aprendeu, com uma profissão no horizonte e mais preparado para cuidar do dinheiro e da própria mente. Por isso, minha proposta junta ensino técnico ao médio, amplia o tempo integral com educação financeira, empreendedorismo e gestão da emoção, e cria o Programa Acolher para reforço entre alunos e acompanhamento de estudantes com autismo, TDAH e dislexia. Educação precisa entregar futuro, não só certificado. PRA QUEM TEM FILHO NA ESCOLA: qual dessas mudanças faria mais diferença na vida dele? 👇🤍 Augusto Cury Presidente 7️⃣0️⃣ Vice Júlio Delgado CNPJ 68.581.887/0001-92 - ELEIÇÕES 2026 AUGUSTO CURY - AVANTE #augustocury #cury70 #educacao #juventude #ensinotecnico eleicoes2026",
+  "tipo": "spot de proposta: voz sobre imagens (ensino técnico, Programa Acolher) e fecho com o candidato à câmera",
+  "fala_do_candidato": true,
+  "resumo": "Três propostas para o ensino médio: técnico integrado, tempo integral com gestão da emoção/educação financeira e Programa Acolher (monitoria, autismo, TDAH, dislexia).",
+  "temas": [
+    "educação",
+    "ensino técnico",
+    "saúde mental"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.14,
+      "end": 8.14,
+      "text": "Doze anos de escola e o jovem sai sem profissão, sem saber lidar com dinheiro e sem saber lidar",
+      "voz": "voz em off (provavelmente o candidato; não confirmado em quadro)"
+    },
+    {
+      "start": 8.14,
+      "end": 11.54,
+      "text": "com a própria mente, promessa todo mundo faz.",
+      "voz": "voz em off (provavelmente o candidato; não confirmado em quadro)"
+    },
+    {
+      "start": 11.54,
+      "end": 13.9,
+      "text": "Aqui está o como.",
+      "voz": "voz em off (provavelmente o candidato; não confirmado em quadro)"
+    },
+    {
+      "start": 13.9,
+      "end": 17.9,
+      "text": "Primeiro, ensino técnico junto com o ensino médio.",
+      "voz": "voz em off (provavelmente o candidato; não confirmado em quadro)"
+    },
+    {
+      "start": 17.9,
+      "end": 20.58,
+      "text": "O aluno sai com diploma e com profissão.",
+      "voz": "voz em off (provavelmente o candidato; não confirmado em quadro)"
+    },
+    {
+      "start": 20.58,
+      "end": 26.5,
+      "text": "Segundo, tempo integral com gestão da emoção, educação financeira e empreendedorismo",
+      "voz": "voz em off (provavelmente o candidato; não confirmado em quadro)"
+    },
+    {
+      "start": 26.5,
+      "end": 27.5,
+      "text": "no currículo.",
+      "voz": "voz em off (provavelmente o candidato; não confirmado em quadro)"
+    },
+    {
+      "start": 27.5,
+      "end": 29.86,
+      "text": "Terceiro, o programa Acolher.",
+      "voz": "voz em off (provavelmente o candidato; não confirmado em quadro)"
+    },
+    {
+      "start": 30.22,
+      "end": 36.02,
+      "text": "O aluno que vai bem recebe bolsa para dar reforço ao colega que ficou para trás e toda",
+      "voz": "voz em off (provavelmente o candidato; não confirmado em quadro)"
+    },
+    {
+      "start": 36.02,
+      "end": 42.82,
+      "text": "criança com autismo, TDAH ou dislexia, vai ser identificada e acompanhada por professor",
+      "voz": "voz em off (provavelmente o candidato; não confirmado em quadro)"
+    },
+    {
+      "start": 42.82,
+      "end": 43.82,
+      "text": "preparado.",
+      "voz": "voz em off (provavelmente o candidato; não confirmado em quadro)"
+    },
+    {
+      "start": 43.82,
+      "end": 49.14,
+      "text": "Um forte abraço de Augusto Cury, o Brasil tem cura, vote 70.",
+      "voz": "candidato (confirmado em quadro aos 46 s)"
+    },
+    {
+      "start": 49.14,
+      "end": 53.1,
+      "text": "Compartilha, comenta, cura e vota 70.",
+      "voz": "candidato (confirmado em quadro aos 46 s)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 43.8,
+      "fim": 49.1,
+      "texto": "Um forte abraço de Augusto Cury, o Brasil tem cura, vote 70.",
+      "tema": "bordão/pedido de voto"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Escritor Augusto Cury, TikTok @augustocuryoficial, 2026-09-25",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/augusto-cury/7689435318180646164.mp3 (não versionado)",
+  "obs": "De 0 a 43,8 s a voz está em off sobre imagens ilustrativas (quadros aos 3, 20 e 35 s) — provavelmente o próprio candidato (fala em primeira pessoa de proposta e o timbre segue no fecho), mas NÃO confirmado por imagem; de 43,8 s em diante ele aparece falando à câmera (quadro aos 46 s). Para uso seguro, preferir o fecho ou o vídeo 7688345469189246229."
+}

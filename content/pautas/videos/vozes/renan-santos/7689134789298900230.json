@@ -1,0 +1,316 @@
+{
+  "candidato": "Renan Santos",
+  "id_candidato": "renan-santos",
+  "cargo": "presidente",
+  "esfera": "nacional",
+  "partido": "Missão",
+  "numero": 14,
+  "id": "7689134789298900230",
+  "url": "https://www.tiktok.com/@renansantosmbl/video/7689134789298900230",
+  "rede": "tiktok",
+  "perfil": "@renansantosmbl",
+  "perfil_url": "https://www.tiktok.com/@renansantosmbl",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@renansantosmbl); uploader do vídeo = renansantosmbl / Renan Santos | VOTE 14",
+  "data": "2026-09-24",
+  "duracao_s": 117,
+  "titulo": "A Globo quer boicotar minha campanha. Então vamos para a guerra. Vejo...",
+  "descricao": "A Globo quer boicotar minha campanha. Então vamos para a guerra. Vejo vocês na frente do PROJAC. #renansantos #mbl ",
+  "tipo": "\"nota oficial da campanha\" gravada pelo candidato, fala direta à câmera (dentro de ônibus/van)",
+  "fala_do_candidato": true,
+  "resumo": "Nota da campanha contra a retirada dele do debate da Globo; convoca ato no Rio; \"eu represento um Brasil honesto que destrói o crime organizado\".",
+  "temas": [
+    "debate",
+    "imprensa",
+    "ataque a adversário"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 3.8,
+      "text": "A Globo me retirou o debate e essa aqui é uma convocação de guerra para todos vocês.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 3.8,
+      "end": 6.0,
+      "text": "Essa é uma nota oficial da minha campanha.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 6.0,
+      "end": 11.2,
+      "text": "Eu preciso que você preste atenção, se você acredita que dá para construir um Brasil diferente, sem ladrão no poder.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 11.2,
+      "end": 13.2,
+      "text": "Eu soubesse as razões da minha retirada.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 13.2,
+      "end": 16.8,
+      "text": "Naturalmente, na última eleição, sete candidatos participam do debate.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 16.8,
+      "end": 18.8,
+      "text": "Dessas vezes, restringiram a quatro.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 18.8,
+      "end": 24.2,
+      "text": "O objetivo, naturalmente, é tornar o ambiente confortável para que Lula e Flávio Bolsonaro possam ir lá,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 24.2,
+      "end": 29.4,
+      "text": "falam suas besteiras, Flávio e Lula não são questionados por sua participação no escândalo do Banco Master,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 29.4,
+      "end": 30.6,
+      "text": "e a Globo tem audiência.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 30.6,
+      "end": 32.4,
+      "text": "Vocês perceberem duas sabatinas?",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 32.4,
+      "end": 34.6,
+      "text": "Eu fui o único que foi realmente sabatinado.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 34.6,
+      "end": 38.4,
+      "text": "Tanto no jornal nacional quanto na Globo News, quanto na sabatinas do O Globo,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 38.4,
+      "end": 42.0,
+      "text": "eu fui o único realmente apertado, questionado, atacado.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 42.0,
+      "end": 44.0,
+      "text": "O que te chamaram disso? [trecho incerto].",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 44.0,
+      "end": 46.4,
+      "text": "Os ataques foram pesados? Isso é um fato.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 46.4,
+      "end": 48.4,
+      "text": "Mas eu fico capaz de dar resposta para tudo.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 48.4,
+      "end": 50.2,
+      "text": "Calar a boca do jornalismo militante.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 50.2,
+      "end": 52.2,
+      "text": "E isso, meus amigos, é muito perigoso.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 52.2,
+      "end": 56.2,
+      "text": "Eu represento a ideia de um Brasil honesto, sincero, que tem proposta,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 56.2,
+      "end": 59.2,
+      "text": "que destrói o crime organizado, que não tem compromisso com ele.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 59.2,
+      "end": 60.6,
+      "text": "Eu represento o teu Brasil.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 60.6,
+      "end": 63.0,
+      "text": "Agora esse Brasil tem que ficar quieto e calar a boca.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 63.0,
+      "end": 65.5,
+      "text": "Ele tem que se resignar a votar no ladrão de ocasião.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 65.5,
+      "end": 67.1,
+      "text": "Não aceite isso.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 67.1,
+      "end": 70.2,
+      "text": "Eu vou comunicar para vocês hoje em coletiva de imprensa,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 70.2,
+      "end": 72.7,
+      "text": "horário local para o nosso ato no Rio de Janeiro,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 72.7,
+      "end": 75.6,
+      "text": "contra a Rede Globo, contra a sabotagem das eleições,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 75.6,
+      "end": 78.6,
+      "text": "avisando que estarem no debate, seja lá dentro do estúdio,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 78.6,
+      "end": 82.1,
+      "text": "seja lá fora, na porta, para que a vergonha, a mentira,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 82.1,
+      "end": 84.2,
+      "text": "a miséria intelectual jamais vença.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 84.2,
+      "end": 86.2,
+      "text": "E eu preciso que você faça a sua parte.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 86.2,
+      "end": 89.6,
+      "text": "Se você acredita na minha candidatura, por favor, crie conteúdo e poste,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 89.6,
+      "end": 92.1,
+      "text": "tornando público a mentirada que a Globo está fazendo,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 92.1,
+      "end": 94.7,
+      "text": "a sacanagem que eles estão fazendo por debate no Brasil.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 94.7,
+      "end": 97.6,
+      "text": "A Globo foi a única emissora a me desconvidar.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 97.6,
+      "end": 99.2,
+      "text": "Todas as outras não tiveram convite.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 99.2,
+      "end": 101.4,
+      "text": "Crie o seu conteúdo, divulgue, me marque,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 101.4,
+      "end": 102.9,
+      "text": "eu vou compartilhar os meus stories,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 102.9,
+      "end": 105.3,
+      "text": "vou recompartir nas redes, vou fazer o diálogo.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 105.3,
+      "end": 106.4,
+      "text": "É hora de vencer esse jogo.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 106.4,
+      "end": 108.7,
+      "text": "E se vocês acham que eu vou desanimar, uma ova.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 108.7,
+      "end": 110.7,
+      "text": "Eu estou na estrada, vou rodar a todos os lugares,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 110.7,
+      "end": 112.6,
+      "text": "nós vamos tornar isso aí, dar o cima no turno,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 112.6,
+      "end": 114.3,
+      "text": "a história mais épica que você já viu.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 114.3,
+      "end": 115.3,
+      "text": "Meu nome é Renan Santos,",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 52.2,
+      "fim": 60.6,
+      "texto": "Eu represento a ideia de um Brasil honesto, sincero, que tem proposta, que destrói o crime organizado, que não tem compromisso com ele. Eu represento o teu Brasil.",
+      "tema": "autodefinição"
+    },
+    {
+      "inicio": 106.4,
+      "fim": 112.6,
+      "texto": "E se vocês acham que eu vou desanimar, uma ova. Eu estou na estrada, vou rodar a todos os lugares,",
+      "tema": "campanha"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Renan Santos, TikTok @renansantosmbl, 2026-09-24",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/renan-santos/7689134789298900230.v.mp4 (não versionado)",
+  "obs": "Voz do candidato do início ao fim (conferido em quadros aos 3, 55 e 114 s: ele fala à câmera). Conteúdo de CONFRONTO com a TV Globo (retirada do debate) e ataques a Lula e Flávio Bolsonaro (\"ladrão de ocasião\") — evitar esses trechos. Trecho neutro de autodefinição em 52,2–59,2 s. Vários erros de ASR corrigidos; \"O brador para baixo\" (42–44 s) é incerto."
+}
