@@ -103,9 +103,9 @@
     },
     {
       "id": "06",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
+      "status": "publicado",
+      "permalink": "https://www.instagram.com/p/DdufbiJjKLY/",
+      "publicado_em": "2026-09-25T22:04:57Z",
       "quando": "2026-09-25T15:30:00-04:00",
       "formato": "charge",
       "titulo": "Fila Vazia, Mato Grosso",
@@ -122,7 +122,8 @@
           "em": "2026-09-25T21:32:00Z",
           "erro": "Zapier: limite de tarefas do plano atingido (lote de todas as charges aguardando liberação)"
         }
-      ]
+      ],
+      "media_id": "18633226135049442"
     },
     {
       "id": "04",
@@ -975,7 +976,7 @@
       "midia": [
         "https://hojemt.com.br/content/images/2026/09/2026-09-25-onca-fala-cuiaba-ouve-instagram-retrato.jpg"
       ],
-      "legenda": "CHARGE · Onça fala, Cuiabá ouve\n\nNa Toca da Onça, até o giz ruge.\n\nA candidata ao Senado Janaina Riva (MDB) se reuniu em Cuiabá com profissionais da educação, criticou a terceirização e os contratos temporários no ensino e a sobrecarga dos professores, e depois falou para mais de 500 pessoas do movimento comunitário na Toca da Onça.\n\nLeia a curta completa: hojemt.com.br/onca-fala-cuiaba-ouve\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #matogrosso #cuiaba #educacao #hojemt",
+      "legenda": "CHARGE · Onça fala, Cuiabá ouve\n\nNa Toca da Onça, até o giz ruge.\n\nA candidata ao Senado Janaina Riva (MDB) se reuniu em Cuiabá com profissionais da educação, criticou a terceirização e os contratos temporários no ensino e a sobrecarga dos professores, e depois falou para mais de 500 pessoas do movimento comunitário na Toca da Onça.\n\nLeia a curta completa: hojemt.com.br/onca-fala-cuiaba-ouve\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/onca-fala-cuiaba-ouve/",
       "charge_json": "pautas/charges/2026-09-25-onca-fala-cuiaba-ouve.json",
       "obs": "assunto eleitoral (Janaina Riva, candidata ao Senado): o próximo horário livre de charge cai depois do 1º turno (04/10), mas o item entra no lote todas-as-charges-2026-09-25 pedido pelo editor e deve sair antes, pelo lote; se o lote não sair até 03/10, trocar para aguardando_decisao e consultar o editor",
