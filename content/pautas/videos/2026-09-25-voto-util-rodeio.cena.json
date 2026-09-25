@@ -1,0 +1,115 @@
+{
+  "slug": "voto-util-rodeio",
+  "titulo": "Quem monta o voto útil?",
+  "materia": "https://hojemt.com.br/novo-apoio-flavio-primeiro-turno/",
+  "materia_rascunho": "Ghost draft 6ab6b35b834d62060cb1d6b7 (pautas/2026-09-25-novo-apoio-flavio-primeiro-turno.md) — conferir o slug final antes de renderizar",
+  "charge_json": null,
+  "estilo": "3d",
+  "universo": "Rodeio das Urnas: arena de rodeio do interior de Mato Grosso (cerca de tábuas, terra batida, arquibancada de madeira, bandeirolas lisas de festa sem símbolos, refletores, cerrado e soja no horizonte), do fim de tarde (cenas 1 a 5) ao amanhecer (cena 6). O touro nelore cinza-claro é o 'voto útil' (personagem-metáfora, sempre simpático e manso; ninguém é derrubado). O locutor da arena é o narrador (voz fictícia, não aparece). Figurino único e igual para os três presidenciáveis e para os figurantes: camisa xadrez bege e marrom, jeans, bota marrom, chapéu de palha claro (sem cores de partido: nada de laranja, vermelho ou verde-amarelo). Tom: festa de rodeio, disputa esportiva amistosa.",
+  "obs": "Roteiro, 1ª versão (25/09). NÃO gerado nem renderizado: imagens e vídeo ficam para depois (canva_media null em todas as cenas; design de cenas a criar). Fatos só da matéria 'Com aval de Zema, candidatos do Novo aderem a Flávio no 1º turno; em MT, vice do partido já pedia voto no senador' (rascunho Ghost 6ab6b35b834d62060cb1d6b7) e das fontes dela; cada cena traz o campo 'fonte'. Sem áudio real de nenhum personagem: só o narrador fala (voz.personagem null; Res. TSE 23.610/2019, art. 9º-C). A única citação é lida pelo narrador em 3ª pessoa, com data, entre aspas na legenda (cena 3): Zema, 22/06/2026, evento da CNI em Brasília, 'quem quiser andar, sair e apoiar o Flávio, está liberado' (ND Mais; mesma redação no Foco Nacional, que cita o Poder360). A fala de Zema de 24/09 ('Quem estiver contra o PT terá o meu apoio') ficou de fora de propósito: é frase 'contra' alguém, e a linha do episódio é 'Não ataque ninguém'. As frases de Marina Helena e o relato de Sebastião Coelho não entram: os dois não têm foto oficial cadastrada (não são desenhados) e só aparecem como 'candidatos do Novo' na cena 2; na imagem da cena 2 os peões são genéricos e vistos de costas para não sugerir que sejam eles. O post de origem (@farialimanews) dizia 'Partido Novo autoriza' e 'Datafolha desta sexta (25/09)': nenhum dos dois se confirmou; por isso a cena 2 fala em 'aval de Zema' e a legenda da cena 4 data o Datafolha em 24/09. Tratamento igual: Zema (cena 3), Flávio e Lula (cena 4) com o mesmo figurino, a mesma escala e expressões positivas; na cena 4 os dois ficam na mesma altura, em composição simétrica, com Flávio à esquerda e Lula à direita pela ordem alfabética do nome de urna (a mesma da arte 'Candidatos à Presidência'); as pilhas de feno 'quase da mesma altura' traduzem o 40 x 36 sem números na imagem e sem apontar vencedor (a diferença está no limite da margem de erro, segundo a Folha). Nenhum personagem é derrubado do touro, vaiado ou ridicularizado; o humor é a arena, o touro e a contagem. Gancho estadual: cena 5 (pesquisas de MT e o vice do Novo na chapa do PL, Reinaldo Morais, que pediu voto em Flávio, Wellington e Medeiros, segundo o Olhar Direto) e a eleitora genérica de MT (pessoa fictícia) das cenas 5 e 6. Candidatos ao governo de MT não são desenhados: Pivetta e Wellington declaram voto em Flávio e Natasha é o palanque de Lula; mostrar só parte deles quebraria o tratamento igual entre candidatos do mesmo cargo. Reinaldo Morais tem foto do TSE (MAHWIYt0V-E), mas também fica só citado, pelo mesmo motivo. Fotos de referência (TSE, arte 'Candidatos à Presidência' em pautas/eleicoes/registro.json): Zema MAHWNQq_kt4, Flávio Bolsonaro MAHWNRk-aYo, Lula MAHWNewot14. Descrição física tirada das fotos oficiais; o chapéu panamá da foto de Lula foi trocado pelo chapéu de palha igual ao de todos, e a camisa da foto de Zema pelo figurino comum. Gancho medido com o algoritmo do motor: 'QUEM MONTA O VOTO ÚTIL?' cabe em Anton 150 px, 2 linhas; a cena 6 responde ao gancho e volta ao brete da cena 1. Narração: 84 palavras. Durações medidas no Piper (faber, velocidade 1): c1 3,18 s; c2 3,90 s; c3 6,11 s; c4 5,41 s; c5 4,41 s; c6 2,91 s; com folga e cartelas, cerca de 34,1 s (perto do teto de 35 s: se o texto mudar, medir de novo). Checagem pendente antes de gerar/renderizar: publicar a matéria e conferir o slug; confirmar que o 'outro lado' foi ouvido na matéria; confirmar em vídeo a fala de junho de Zema, se houver gravação da CNI.",
+  "voz": {
+    "motor": "piper",
+    "narrador": "pt_BR-faber-medium",
+    "personagem": null,
+    "velocidade": 1
+  },
+  "abertura": {
+    "chip": "CHARGE EM CENA",
+    "gancho": "QUEM MONTA O VOTO ÚTIL?",
+    "sub": "Reta final do 1º turno · Rodeio das Urnas"
+  },
+  "cenas": [
+    {
+      "n": 1,
+      "quem": "narrador",
+      "fala": "Atenção, arena: sai do brete o touro do voto útil!",
+      "legenda": "Atenção, arena: sai do brete o touro do voto útil!",
+      "imagem": "pautas/videos/cenas/2026-09-25-voto-util-rodeio-01.jpg",
+      "canva_media": null,
+      "prompt": "Animação 3D estilo filme de animação (render cinematográfico, iluminação suave, profundidade de campo, texturas de tecido e pele estilizadas), um touro caricato da raça nelore, pelagem cinza-clara, cupim alto, chifres curtos e arredondados, expressão brincalhona e simpática, saindo aos pulos, alegre, pelo portão de madeira aberto do brete, numa nuvem de poeira dourada, numa arena de rodeio do interior de Mato Grosso, com cerca de tábuas de madeira, chão de terra batida, arquibancada de madeira, cordões de bandeirolas triangulares lisas e coloridas de festa, sem estampas nem símbolos, refletores altos e céu alaranjado de fim de tarde do cerrado, público genérico caricato e desfocado vibrando na arquibancada, uma cabine de locutor de madeira no alto, vazia. Sem pessoas reconhecíveis. Enquadramento vertical 9:16, plano geral com a arena inteira e o touro no centro. Sem texto, sem letras, sem números, sem logos, sem bandeiras.",
+      "referencias": [],
+      "movimento": "zoom-in",
+      "fonte": "metáfora do episódio (reta final do 1º turno; Folha, 24/09: pressão das duas candidaturas líderes pelo voto útil)"
+    },
+    {
+      "n": 2,
+      "quem": "narrador",
+      "fala": "Com aval de Zema, candidatos do Novo já vão de Flávio no primeiro turno.",
+      "legenda": "Com aval de Zema, candidatos do Novo declaram voto em Flávio no 1º turno.",
+      "imagem": "pautas/videos/cenas/2026-09-25-voto-util-rodeio-02.jpg",
+      "canva_media": null,
+      "prompt": "Animação 3D estilo filme de animação (render cinematográfico, iluminação suave, profundidade de campo, texturas de tecido e pele estilizadas), três peões genéricos caricatos, vistos de costas, com o rosto fora de vista, de chapéu de palha claro, camisa xadrez em tons de bege e marrom, calça jeans e bota de couro marrom, atravessando animados, em fila, a porteira de madeira escancarada que liga o curral à arena, rumo a um touro caricato da raça nelore, pelagem cinza-clara, cupim alto, chifres curtos e arredondados, expressão brincalhona e simpática que espera tranquilo ao fundo, numa arena de rodeio do interior de Mato Grosso, com cerca de tábuas de madeira, chão de terra batida, arquibancada de madeira, cordões de bandeirolas triangulares lisas e coloridas de festa, sem estampas nem símbolos, refletores altos e céu alaranjado de fim de tarde do cerrado. Sem pessoas reconhecíveis. Enquadramento vertical 9:16, plano médio da porteira, visto por trás dos peões, com a arena ao fundo. Sem texto, sem letras, sem números, sem logos, sem bandeiras.",
+      "referencias": [],
+      "movimento": "pan-dir",
+      "fonte": "CNN Brasil 24/09 (apuração: aval de Zema); Metrópoles 25/09 e Crusoé 24/09 (Marina Helena); Itatiaia 25/09 (Sebastião Coelho)"
+    },
+    {
+      "n": 3,
+      "quem": "narrador",
+      "citacao_lida_pelo_narrador": true,
+      "citacao_de": "Romeu Zema (22/06/2026, evento da CNI em Brasília)",
+      "fala": "Zema segue candidato. Em junho, já dizia: “quem quiser andar, sair e apoiar o Flávio, está liberado”.",
+      "legenda": "Zema segue candidato. Em junho: “quem quiser andar, sair e apoiar o Flávio, está liberado”",
+      "imagem": "pautas/videos/cenas/2026-09-25-voto-util-rodeio-03.jpg",
+      "canva_media": null,
+      "prompt": "Animação 3D estilo filme de animação (render cinematográfico, iluminação suave, profundidade de campo, texturas de tecido e pele estilizadas), personagem caricato de cabeça grande e expressão serena e simpática, sorriso leve de canto, homem magro de rosto fino e alongado, cabelo grisalho curto e cheio penteado para trás, óculos de armação escura retangular e grossa, sem barba, vestido de camisa xadrez em tons de bege e marrom, calça jeans e bota de couro marrom, com um chapéu de palha claro na mão, de pé ao lado da porteira de madeira aberta da arena, com a outra mão apoiada na trava da porteira, como quem acabou de abri-la, olhando tranquilo para dentro da arena, onde um touro caricato da raça nelore, pelagem cinza-clara, cupim alto, chifres curtos e arredondados, expressão brincalhona e simpática passeia ao fundo, numa arena de rodeio do interior de Mato Grosso, com cerca de tábuas de madeira, chão de terra batida, arquibancada de madeira, cordões de bandeirolas triangulares lisas e coloridas de festa, sem estampas nem símbolos, refletores altos e céu alaranjado de fim de tarde do cerrado. Sozinho em primeiro plano, sem outras pessoas reconhecíveis. Enquadramento vertical 9:16, plano médio, da cintura para cima, com a porteira aberta ao lado. Sem texto, sem letras, sem números, sem logos, sem bandeiras.",
+      "referencias": [
+        "MAHWNQq_kt4"
+      ],
+      "movimento": "zoom-in",
+      "fonte": "ND Mais 22/06 (frase literal, conferida também no Foco Nacional/Poder360); candidatura mantida: Datafolha 24/09 e Estadão Conteúdo 24/09"
+    },
+    {
+      "n": 4,
+      "quem": "narrador",
+      "fala": "Datafolha: Lula tem quarenta por cento; Flávio, trinta e seis. Os dois disputam esse touro.",
+      "legenda": "Datafolha (24/09): Lula 40%, Flávio 36%. Os dois disputam esse touro.",
+      "imagem": "pautas/videos/cenas/2026-09-25-voto-util-rodeio-04.jpg",
+      "canva_media": null,
+      "prompt": "Animação 3D estilo filme de animação (render cinematográfico, iluminação suave, profundidade de campo, texturas de tecido e pele estilizadas), dois personagens caricatos de cabeça grande, lado a lado, na mesma altura e do mesmo tamanho, com o mesmo figurino: camisa xadrez em tons de bege e marrom, calça jeans e bota de couro marrom e chapéu de palha claro; à esquerda, homem de meia-idade de cabelo castanho-escuro curto e volumoso penteado para o lado, rosto oval, sobrancelhas marcadas, sem barba, sorriso largo e confiante; à direita, homem idoso de barba branca cheia e bem aparada, bigode branco, cabelo branco, rosto largo e sorridente; cada um segura uma corda de laço enrolada na mão, sem lançar, e os dois olham com expressão determinada e bem-humorada para um touro caricato da raça nelore, pelagem cinza-clara, cupim alto, chifres curtos e arredondados, expressão brincalhona e simpática, parado no centro da arena, entre eles e um pouco ao fundo; atrás de cada personagem, uma pilha de fardos de feno, as duas quase da mesma altura; clima de disputa esportiva amistosa, sem contato físico, numa arena de rodeio do interior de Mato Grosso, com cerca de tábuas de madeira, chão de terra batida, arquibancada de madeira, cordões de bandeirolas triangulares lisas e coloridas de festa, sem estampas nem símbolos, refletores altos e céu alaranjado de fim de tarde do cerrado. Enquadramento vertical 9:16, plano geral de frente, composição simétrica. Sem texto, sem letras, sem números, sem logos, sem bandeiras.",
+      "referencias": [
+        "MAHWNRk-aYo",
+        "MAHWNewot14"
+      ],
+      "movimento": "zoom-out",
+      "fonte": "Folha de S.Paulo 24/09 (Datafolha BR-00304/2026, 22 e 23/09, 2.002 entrevistas, margem 2 pp; 'pressão das duas candidaturas líderes pelo voto útil já no primeiro turno'); CNN 24/09"
+    },
+    {
+      "n": 5,
+      "quem": "narrador",
+      "fala": "Em Mato Grosso, Flávio lidera as pesquisas, e o vice do Novo já pedia voto nele.",
+      "legenda": "Em MT, Flávio lidera as pesquisas, e o vice do Novo já pedia voto nele.",
+      "imagem": "pautas/videos/cenas/2026-09-25-voto-util-rodeio-05.jpg",
+      "canva_media": null,
+      "prompt": "Animação 3D estilo filme de animação (render cinematográfico, iluminação suave, profundidade de campo, texturas de tecido e pele estilizadas), personagem genérico caricato de cabeça grande (pessoa fictícia, não é pessoa real), uma eleitora de Mato Grosso de meia-idade, pele morena, cabelo preso, chapéu de palha claro, camiseta lisa sem estampa, sentada na arquibancada de madeira da arena, com uma guampa de tereré com bomba de metal na mão e uma garrafa térmica lisa ao lado, olhando atenta e curiosa para a arena, onde um touro caricato da raça nelore, pelagem cinza-clara, cupim alto, chifres curtos e arredondados, expressão brincalhona e simpática passeia; no horizonte, além da arena, plantações de soja, silos de grãos e o cerrado sob o pôr do sol alaranjado; cordões de bandeirolas lisas sem símbolos; público genérico desfocado ao redor. Sem pessoas reconhecíveis. Enquadramento vertical 9:16, plano médio, da cintura para cima, com a arena ao fundo. Sem texto, sem letras, sem números, sem logos, sem bandeiras.",
+      "referencias": [],
+      "movimento": "pan-esq",
+      "fonte": "MidiaNews 25/09 (Veritá, BR-02939/2026: Flávio 57,6%, Lula 29,6%); Cenário MT 11/09 (AtlasIntel, MT-02766/2026: 53,8% x 31,2%); Olhar Direto 21/09 (Reinaldo Morais, Novo, vice de Wellington Fagundes, pediu votos para Flávio, Wellington e Medeiros)"
+    },
+    {
+      "n": 6,
+      "quem": "narrador",
+      "fala": "Mas quem monta o touro é o eleitor, em quatro de outubro.",
+      "legenda": "Mas quem monta o touro é o eleitor, em 4 de outubro.",
+      "imagem": "pautas/videos/cenas/2026-09-25-voto-util-rodeio-06.jpg",
+      "canva_media": null,
+      "prompt": "Animação 3D estilo filme de animação (render cinematográfico, iluminação suave, profundidade de campo, texturas de tecido e pele estilizadas), o mesmo brete de madeira da primeira cena, agora ao amanhecer, com luz dourada suave e a poeira baixando; um touro caricato da raça nelore, pelagem cinza-clara, cupim alto, chifres curtos e arredondados, expressão brincalhona e simpática, manso e sorridente, parado no centro da arena de terra batida; a mesma eleitora genérica caricata da cena anterior (pessoa fictícia, não é pessoa real), de chapéu de palha claro e camiseta lisa sem estampa, de pé ao lado do touro, segurando com calma a corda do animal, pronta para montar, com sorriso confiante, e o touro olhando para ela com simpatia; arquibancada vazia ao fundo, cordões de bandeirolas lisas sem símbolos. Sem pessoas reconhecíveis, ninguém cai. Enquadramento vertical 9:16, plano geral com o brete ao fundo, remetendo à primeira cena. Sem texto, sem letras, sem números, sem logos, sem bandeiras.",
+      "referencias": [],
+      "movimento": "zoom-in",
+      "fonte": "data do 1º turno (TSE; 2026-mt-candidatos.json: primeiro_turno 2026-10-04)"
+    }
+  ],
+  "fechamento": {
+    "linha1": "Charge: HOJE MT · hojemt.com.br",
+    "leia": "hojemt.com.br/novo-apoio-flavio-primeiro-turno",
+    "fontes": [
+      "cnnbrasil.com.br",
+      "ndmais.com.br",
+      "folha.uol.com.br",
+      "olhardireto.com.br",
+      "midianews.com.br"
+    ],
+    "aviso": "Sátira. Caricaturas de pessoas públicas; falas de personagens só com citação real. Cenas de ficção geradas com IA."
+  },
+  "saida": "pautas/videos/2026-09-25-voto-util-rodeio-cena.mp4"
+}
