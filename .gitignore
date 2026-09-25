@@ -43,3 +43,7 @@ content/videos/
 content/pautas/videos/*-completo.mp4
 content/pautas/videos/*-corte.mp4
 content/assets/fonts/.uuid
+
+# bytecode do Python
+__pycache__/
+*.pyc
