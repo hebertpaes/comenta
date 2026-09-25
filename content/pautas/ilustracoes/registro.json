@@ -602,6 +602,30 @@
         "motivo": "revisão: figuras (inclusive crianças) de perfil iluminado com olho, nariz e boca; acabamento fotográfico e uniforme parecido com o real; legenda sem o crédito da fonte"
       },
       "estilo": "v2 realista (pintura digital cinematográfica, pinceladas visíveis); sem rostos visíveis"
+    },
+    {
+      "slug": "saude-de-primavera-do-leste-apura-obito-de-bebe-com-gripe",
+      "titulo": "Saúde de Primavera do Leste apura óbito de bebê com gripe",
+      "materia": "https://hojemt.com.br/saude-de-primavera-do-leste-apura-obito-de-bebe-com-gripe/",
+      "tag": "Saúde & Fitness",
+      "status_post": "publicado (mantido)",
+      "ghost_id": "6ab6fd69834d62060cb1d78f",
+      "canva": {
+        "design": "DAHWP0kuJ7w",
+        "arte": "MAHWP1ooDDw",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "fim de tarde na sala da secretaria municipal de saúde de uma cidade do interior de MT: na mesa, pastas de prontuário fechadas e amarradas, estetoscópio e caixa térmica de vacinas aberta com frascos e seringas lacradas; médica de jaleco branco, de costas, olha pela janela a cidade plana com caixa-d'água, ipês roxos e silos ao entardecer; sem bebê, sem família, sem paciente, sem emergência",
+      "alt": "Ilustração (ficção): médica de costas diante da janela ao entardecer; na mesa, prontuários fechados, estetoscópio e caixa térmica de vacinas",
+      "arquivo": "pautas/ilustracoes/2026-09-25-primavera-apura-obito-bebe.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-25-primavera-apura-obito-bebe.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-primavera-apura-obito-bebe-og.jpg",
+      "capa_anterior": "capa-8f8ee0cead34ddaa.webp",
+      "obs": "Parte B: a fonte (nota oficial da Prefeitura de Primavera do Leste) só traz o cartaz genérico 'NOTA OFICIAL' como imagem, sem foto real; tragédia com vítima (bebê): cena sóbria, sem representar a criança nem a família, ligada à apuração (prontuários) e ao apelo por vacinação; única figura de costas, nenhum rosto visível (conferido em recorte ampliado); sem letras legíveis",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção) · Com informações da <a href=\"https://www.primaveradoleste.mt.gov.br/Imprensa/Noticias/Nota-oficial-secretaria-municipal-de-saude-esclarece-atendimento-e-informa-providencias-apos-falecimento-de-crianca-12033\" rel=\"nofollow noopener\">Prefeitura de Primavera do Leste</a>",
+      "credito_fonte": "mantido na legenda: 'Com informações da Prefeitura de Primavera do Leste' (link da nota original), que estava na capa genérica",
+      "feito_em": "2026-09-25",
+      "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
     }
   ]
 }
