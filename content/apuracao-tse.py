@@ -186,6 +186,11 @@ class Cliente:
                     self._fecha()
                     erro = f'{type(e).__name__}: {e}'
                     status = None
+                    if i == 0 and isinstance(e, (http.client.RemoteDisconnected, ConnectionResetError,
+                                                 BrokenPipeError, http.client.CannotSendRequest)):
+                        with self._lock:  # servidor fechou a conexão keep-alive ociosa: reconecta já
+                            self.st['reconexoes'] += 1
+                        continue
                 else:
                     status = r.status
                     dur = time.monotonic() - t0
@@ -393,26 +398,55 @@ def decodifica_bu(raw):
     mz = _filhos(ident[0][1])
     out['municipio'], out['zona'] = _int(mz[0][1]), _int(mz[1][1])
     out['local'], out['secao'] = _int(ident[1][1]), _int(ident[2][1])
-    out['emissao'] = next((v.decode('latin-1') for t, v in f if t == 0x1B), None)
-    for t, v in f:
-        if t == 0xA0:
-            ds = [x.decode('latin-1') for tt, x in _filhos(v) if tt == 0x1B]
-            out['abertura'], out['encerramento'] = (ds + [None, None])[:2]
-        elif t == 0xA1:
-            out['apuracao_sa'] = [_int(x) for tt, x in _filhos(v) if tt == 0x02]
-        elif t == 0x81:
-            out['lib_codigo'] = _int(v)
-        elif t == 0x82:
-            out['biometria'] = _int(v)
+    # Duas versões da spec: v1 (2022: [1] libCodigo, [2] biometria, [3] resultados, ..., OCTET chave)
+    # e v2 (2024+: qtdEleitoresCompareceram INTEGER, [1] detalhamentoComparecimento, resultados SEQUENCE OF
+    # sem tag, historicoCodigosCarga, ...). dadosSecaoSA é sempre o elemento logo após dataHoraEmissao.
+    i_em = next(k for k, (t, _) in enumerate(f) if t == 0x1B)
+    out['emissao'] = f[i_em][1].decode('latin-1')
+    t_sa, v_sa = f[i_em + 1]
+    if t_sa == 0xA0:
+        ds = [x.decode('latin-1') for tt, x in _filhos(v_sa) if tt == 0x1B]
+        out['abertura'], out['encerramento'] = (ds + [None, None])[:2]
+    elif t_sa == 0xA1:
+        out['apuracao_sa'] = [_int(x) for tt, x in _filhos(v_sa) if tt == 0x02]
+    resto = f[i_em + 2:]
+    if any(t == 0xA3 for t, _ in resto):  # v1
+        out['spec'] = 'v1'
+        for t, v in resto:
+            if t == 0x81:
+                out['lib_codigo'] = _int(v)
+            elif t == 0x82:
+                out['biometria'] = _int(v)
+        blocos = [v for t, v in resto if t == 0xA3][:1]
+    else:  # v2
+        out['spec'] = 'v2'
+        for t, v in resto:
+            if t == 0x02 and 'compareceram' not in out:
+                out['compareceram'] = _int(v)
+            elif t == 0xA1:
+                det = [_int(x) for tt, x in _filhos(v) if tt == 0x02]
+                out['sem_biometria'], out['biometria'], out['biografia'] = (det + [None] * 3)[:3]
+
+        def _eh_resultados(v):
+            try:
+                ch = _filhos(v)
+                return bool(ch) and all(t == 0x30 for t, _ in ch) and \
+                    [t for t, _ in _filhos(ch[0][1])][:2] == [0x02, 0x02]
+            except (ValueError, IndexError):
+                return False
+        blocos = [v for t, v in resto if t == 0x30 and _eh_resultados(v)][:1]
     eleicoes = {}
-    for t, v in f:
-        if t != 0xA3:
-            continue
+    for v in blocos:
         for _, rpe in _filhos(v):
             ch = _filhos(rpe)
-            ele, aptos = _int(ch[0][1]), _int(ch[1][1])
+            k30 = next(k for k, (t, _) in enumerate(ch) if t == 0x30)
+            ints = [_int(x) for t, x in ch[:k30] if t == 0x02]
+            ele, aptos = ints[0], ints[1]
+            extra = {}
+            if len(ints) >= 4:  # v2: aptos da seção e aptos em trânsito (TTE)
+                extra = {'aptos_secao': ints[2], 'aptos_tte': ints[3]}
             cargos = {}
-            for _, rv in _filhos(ch[2][1]):
+            for _, rv in _filhos(ch[k30][1]):
                 rc = _filhos(rv)
                 tipo = TIPO_CARGO.get(_int(rc[0][1]), '?')
                 comp = _int(rc[1][1])
@@ -443,7 +477,7 @@ def decodifica_bu(raw):
                         elif tipo_voto == 5:
                             c['sem_candidato'] += qtd
                     cargos[cargo] = c
-            eleicoes[str(ele)] = {'aptos': aptos, 'cargos': cargos}
+            eleicoes[str(ele)] = {'aptos': aptos, **extra, 'cargos': cargos}
     out['eleicoes'] = eleicoes
     return out
 
@@ -618,17 +652,25 @@ def cmd_config(a, cli):
 
 
 # ----------------------------------------------------------------------------- resultado por abrangência
+def _u(s):
+    return html.unescape(s) if isinstance(s, str) else s
+
+
 def indice_fixo(f):
     """Arquivo fixo -f -> {numero: {nm, nome, sg, partido, coligacao, composicao, vice, dvt}}."""
-    out = {}
+    out, partidos = {}, {}
     carg = (f or {}).get('carg', {})
     for agr in carg.get('agr', []):
+        agr_ok = not (agr.get('com') or '').rstrip().endswith('**')  # '**' = agremiação sem registro válido
         for par in agr.get('par', []):
+            partidos[par['n']] = partidos.get(par['n'], False) or agr_ok
             for c in par.get('cand', []):
                 vs = c.get('vs') or []
-                out[c['n']] = {'nm': c.get('nmu') or c.get('nm'), 'nome': c.get('nm'), 'sg': par.get('sg'),
-                               'coligacao': agr.get('nm'), 'composicao': agr.get('com'), 'tp_agr': agr.get('tp'),
-                               'vice': vs[0].get('nmu') if vs else None, 'dvt': c.get('dvt')}
+                out[c['n']] = {'nm': _u(c.get('nmu') or c.get('nm')), 'nome': _u(c.get('nm')), 'sg': par.get('sg'),
+                               'coligacao': _u(agr.get('nm')), 'composicao': _u(agr.get('com')), 'tp_agr': agr.get('tp'),
+                               'vice': _u(vs[0].get('nmu')) if vs else None, 'dvt': c.get('dvt')}
+    if out:
+        out['_partidos'] = partidos
     return out
 
 
@@ -651,7 +693,7 @@ def resultado_r(r, municipio=None):
         'comparecimento_pct': r.get('pc'), 'abstencao': r.get('a'), 'abstencao_pct': r.get('pa'),
         'votos_validos': r.get('vv'), 'brancos': r.get('vb'), 'brancos_pct': r.get('pvb'),
         'nulos': r.get('tvn'), 'nulos_pct': r.get('ptvn'),
-        'candidatos': [{'n': c.get('n'), 'nm': c.get('nm'), 'cc': c.get('cc'), 'nv': c.get('nv'),
+        'candidatos': [{'n': c.get('n'), 'nm': _u(c.get('nm')), 'cc': _u(c.get('cc')), 'nv': _u(c.get('nv')),
                         'st': c.get('st'), 'e': (c.get('e') or 'n').lower(), 'vap': c.get('vap'),
                         'pvap': c.get('pvap')} for c in cands],
         'total_candidatos': len(cands), **({'municipio': municipio} if municipio else {}),
@@ -667,8 +709,8 @@ def resultado_v(v, fixo, cc_por_numero=None, municipio=None):
     for c in sorted(ab.get('cand', []), key=lambda c: (-int(c.get('vap') or 0), int(c.get('seq') or 999))):
         info = fixo.get(c['n'], {})
         cands.append({'n': c['n'], 'nm': info.get('nm') or f"Nº {c['n']}",
-                      'cc': cc_por_numero.get(c['n'], {}).get('cc') or cc_de(info),
-                      'nv': cc_por_numero.get(c['n'], {}).get('nv') or info.get('vice'),
+                      'cc': _u(cc_por_numero.get(c['n'], {}).get('cc')) or cc_de(info),
+                      'nv': _u(cc_por_numero.get(c['n'], {}).get('nv')) or info.get('vice'),
                       'st': c.get('st'), 'e': (c.get('e') or 'n').lower(), 'vap': c.get('vap'), 'pvap': c.get('pvap')})
     return {
         'atualizado': f"{ab.get('dt', '')} {ab.get('ht', '')}".strip(), 'turno': v.get('t'), 'abr': ab.get('cdabr'),
@@ -814,7 +856,7 @@ def varre(cli, tse, pleito, uf, mun, limite=None, incluir_recebidas=False, progr
 # ----------------------------------------------------------------------------- agregação
 def novo_grupo():
     return {'secoes': 0, 'secoes_totalizadas': 0, 'eleitorado': 0, 'comparecimento': 0, 'brancos': 0, 'nulos': 0,
-            'legenda': 0, 'votos': collections.Counter(), 'lista_secoes': []}
+            'legenda': 0, 'leg': collections.Counter(), 'votos': collections.Counter(), 'lista_secoes': []}
 
 
 def soma_secao(g, r, ele, cargo, com_secoes=False):
@@ -832,19 +874,55 @@ def soma_secao(g, r, ele, cargo, com_secoes=False):
                 g['brancos'] += c['brancos']
                 g['nulos'] += c['nulos']
                 g['legenda'] += sum(c['legenda'].values())
+                g['leg'].update(c['legenda'])
                 g['votos'].update(c['nominais'])
                 item.update(c=c['comparecimento'], b=c['brancos'], nl=c['nulos'], v=c['nominais'])
     if com_secoes:
         g['lista_secoes'].append(item)
 
 
+def classifica(votos, fixo, legenda=None):
+    """Votos do BU -> (válidos por número, anulados, anulados sub judice, nulos técnicos, legenda válida), como o TSE:
+    número fora do arquivo fixo (registro indeferido antes da carga da urna) = nulo técnico (vnt);
+    dvt 'Anulado' = van; dvt '... sub judice' = vansj; legenda de partido só em agremiação '**' (ou fora do
+    fixo) = nulo técnico. Sem arquivo fixo, tudo conta como válido."""
+    val, van, vansj, vnt, legv = {}, 0, 0, 0, 0
+    partidos = (fixo or {}).get('_partidos')
+    for n, q in (legenda or {}).items():
+        if partidos is None or partidos.get(n):
+            legv += q
+        else:
+            vnt += q
+    for n, q in votos.items():
+        if not fixo:
+            val[n] = q
+            continue
+        info = fixo.get(n)
+        if info is None:
+            vnt += q
+            continue
+        d = sem_acento(info.get('dvt') or 'Valido').lower()
+        if d.startswith('valid'):
+            val[n] = q
+        elif 'sub judice' in d:
+            vansj += q
+        elif d.startswith('anulad'):
+            van += q
+        elif d.startswith('nul'):
+            vnt += q
+        else:
+            val[n] = q
+    return val, van, vansj, vnt, legv
+
+
 def fecha_grupo(g, nomes, fixo=None, top=None):
     """Grupo somado -> mesmo formato do arquivo de município da página (+ campos do grupo)."""
-    fixo = fixo or {}
-    anulados = sum(q for n, q in g['votos'].items() if n in fixo and not (fixo[n].get('dvt') or 'Válido').startswith('Válido'))
-    validos = sum(g['votos'].values()) - anulados + g['legenda']
-    total = validos + anulados + g['brancos'] + g['nulos']
-    cands = sorted(g['votos'].items(), key=lambda kv: (-kv[1], int(kv[0])))
+    val, van, vansj, vnt, legv = classifica(g['votos'], fixo or {}, g['leg'])
+    anulados = van + vansj
+    validos = sum(val.values()) + legv
+    nulos = g['nulos'] + vnt
+    total = validos + anulados + g['brancos'] + nulos
+    cands = sorted(val.items(), key=lambda kv: (-kv[1], int(kv[0])))
     if top:
         cands = cands[:top]
     lista = []
@@ -859,8 +937,8 @@ def fecha_grupo(g, nomes, fixo=None, top=None):
         'abstencao': str(g['eleitorado'] - g['comparecimento']),
         'abstencao_pct': pct(g['eleitorado'] - g['comparecimento'], g['eleitorado']),
         'votos_validos': str(validos), 'brancos': str(g['brancos']), 'brancos_pct': pct(g['brancos'], total),
-        'nulos': str(g['nulos']), 'nulos_pct': pct(g['nulos'], total), 'legenda': str(g['legenda']),
-        'anulados': str(anulados), 'candidatos': lista, 'total_candidatos': len(g['votos']),
+        'nulos': str(nulos), 'nulos_pct': pct(nulos, total), 'nulos_tecnicos': str(vnt), 'legenda': str(legv),
+        'anulados': str(anulados), 'candidatos': lista, 'total_candidatos': len(val),
         'lider': lista[0]['n'] if lista and int(lista[0]['vap']) > 0 else None,
     }
 
@@ -879,15 +957,22 @@ def agrega_detalhe(regs, ele, cargo, mapa_locais, mapa_secoes, nomes, fixo=None,
     for r in regs:
         z, l, origem = local_da_secao(r, mapa_secoes)
         info = mapa_locais.get((z, l)) if l is not None else None
+        aprox = False
+        if l is not None and info is None:
+            # local do BU não está no cadastro (numeração mudou entre eleições): tenta pela seção
+            l2 = mapa_secoes.get((z, int(r['secao'])))
+            if l2 is not None and (z, l2) in mapa_locais:
+                info, aprox = mapa_locais[(z, l2)], True
         if l is None:
             chave_l, bairro = (z, 0), 'LOCAL DESCONHECIDO'
             cobertura['sem_local'] += 1
         else:
             chave_l = (z, l)
             bairro = (info or {}).get('bairro') or 'LOCAL FORA DO MAPA'
-            cobertura['com_bairro' if info else 'local_fora_do_mapa'] += 1
+            cobertura['bairro_pela_secao' if aprox else 'com_bairro' if info else 'local_fora_do_mapa'] += 1
         gl = locais.setdefault(chave_l, novo_grupo())
-        gl['info'], gl['bairro'] = info, bairro
+        if 'info' not in gl or (gl['info'] is None and info is not None):
+            gl['info'], gl['bairro'], gl['aprox'] = info, bairro, aprox
         soma_secao(gl, r, ele, cargo, com_secoes=True)
         gb = bairros.setdefault(chave_bairro(bairro), novo_grupo())
         gb['nome'] = bairro
@@ -899,8 +984,12 @@ def agrega_detalhe(regs, ele, cargo, mapa_locais, mapa_secoes, nomes, fixo=None,
     for (z, l), g in sorted(locais.items()):
         info = g['info'] or {}
         d = fecha_grupo(g, nomes, fixo, top)
-        d.update(id=f'{z4(z)}-{z4(l)}', zona=z4(z), local=z4(l), nm=info.get('nome') or ('?' if l else 'seções sem local'),
-                 bairro=g['bairro'], endereco=info.get('endereco', ''), cep=info.get('cep', ''),
+        aprox = g.get('aprox')
+        nm = info.get('nome') or ('?' if l else 'seções sem local')
+        if aprox:  # nome/endereço do local que hoje recebe a mesma seção — referência, não o local da eleição
+            nm = f'LOCAL {z4(l)} (cadastro atual: {info.get("nome")})'
+        d.update(id=f'{z4(z)}-{z4(l)}', zona=z4(z), local=z4(l), nm=nm, bairro=g['bairro'], aproximado=bool(aprox),
+                 endereco=info.get('endereco', ''), cep=info.get('cep', ''),
                  lat=float(info['lat']) if info.get('lat') else None, lon=float(info['lon']) if info.get('lon') else None)
         d['por_secao'] = [{k: v for k, v in s.items() if k != 'z'} for s in g['lista_secoes']]
         saida_l.append(d)
@@ -923,7 +1012,8 @@ def compacta_secao(r, mun, uf):
     bu = r.get('bu')
     if bu:
         out['bu'] = {k: bu.get(k) for k in ('fase', 'tipo_urna', 'tipo_arquivo', 'versao', 'emissao', 'abertura',
-                                            'encerramento', 'lib_codigo', 'biometria')}
+                                            'encerramento', 'spec', 'lib_codigo', 'biometria', 'compareceram', 'sem_biometria', 'biografia',
+                                            'apuracao_sa') if bu.get(k) is not None}
         out['eleicoes'] = bu['eleicoes']
     return out
 
@@ -938,18 +1028,16 @@ def valida(regs, v, fixo, ele, cargo):
     for c in sorted(ab.get('cand', []), key=lambda c: -int(c['vap'])):
         s = g['votos'].get(c['n'], 0)
         linhas.append((f"{c['n']} {(fixo.get(c['n'], {}).get('nm') or '')}".strip(), s, int(c['vap'])))
-    extra = set(g['votos']) - {c['n'] for c in ab.get('cand', [])}
-    for n in sorted(extra):
-        linhas.append((f'{n} (fora do -v)', g['votos'][n], 0))
-    anul_of = int(ab.get('van') or 0) + int(ab.get('vansj') or 0)
-    anul = sum(q for n, q in g['votos'].items()
-               if n in fixo and not (fixo[n].get('dvt') or 'Válido').startswith('Válido'))
-    validos = sum(g['votos'].values()) - anul + g['legenda']
+    val, van, vansj, vnt, legv = classifica(g['votos'], fixo, g['leg'])
+    validos = sum(val.values()) + legv
     linhas += [('Votos válidos', validos, int(ab['vv'])),
-               ('Legenda (válidos - nominais)', g['legenda'], int(ab['vv']) - int(ab['vnom'])),
+               ('Legenda válida (vv - vnom)', legv, int(ab['vv']) - int(ab['vnom'])),
                ('Brancos', g['brancos'], int(ab['vb'])),
-               ('Nulos (vn)', g['nulos'], int(ab['vn'])), ('Nulos total (tvn)', g['nulos'], int(ab['tvn'])),
-               ('Anulados (van+vansj)', anul, anul_of),
+               ('Nulos (vn)', g['nulos'], int(ab['vn'])),
+               ('Nulos técnicos (vnt)', vnt, int(ab.get('vnt') or 0)),
+               ('Nulos total (tvn)', g['nulos'] + vnt, int(ab['tvn'])),
+               ('Anulados (van)', van, int(ab.get('van') or 0)),
+               ('Anulados sub judice (vansj)', vansj, int(ab.get('vansj') or 0)),
                ('Comparecimento', g['comparecimento'], int(ab['c'])), ('Eleitorado apto', g['eleitorado'], int(ab['e'])),
                ('Abstenção', g['eleitorado'] - g['comparecimento'], int(ab['a'])),
                ('Seções totalizadas', g['secoes_totalizadas'], int(ab['st']))]
@@ -1008,9 +1096,11 @@ def cmd_secoes(a, cli):
                 imprime_validacao(f'{mun_nome} {CARGOS.get(cargo, cargo)} (eleição {ele})', linhas, ok)
                 resumo['validacao'][cargo] = {'ok': ok, 'linhas': linhas}
             uf_r = cli.json(tse.r(ele, 'br' if cargo == '0001' else uf, cargo)) or {}
-            nomes = {c['n']: {'nm': c.get('nm'), 'cc': c.get('cc'), 'st': c.get('st'), 'e': (c.get('e') or 'n').lower()}
+            nomes = {c['n']: {'nm': _u(c.get('nm')), 'cc': _u(c.get('cc')), 'st': c.get('st'), 'e': (c.get('e') or 'n').lower()}
                      for c in uf_r.get('cand', [])}
             for n, info in fixo.items():
+                if n.startswith('_'):
+                    continue
                 nomes.setdefault(n, {'nm': info['nm'], 'cc': cc_de(info), 'st': '', 'e': 'n'})
             top = None if cargo in MAJORITARIOS else a.top
             dl, db, cob = agrega_detalhe(regs, ele, cargo, mapa_locais, mapa_secoes, nomes, fixo, top, mun_nome, uf, mun)
@@ -1100,7 +1190,7 @@ def cmd_pagina(a, cli):
                 v, fixo, _ = busca_municipio(cli, tse, ele, uf, mun, cargo, fixos)
                 muns = nomes_municipios(cli, tse, ele, uf)
                 uf_r = cli.json(tse.r(ele, 'br' if cargo == '0001' else uf, cargo)) or {}
-                nomes = {c['n']: {'nm': c.get('nm'), 'cc': c.get('cc'), 'st': c.get('st'),
+                nomes = {c['n']: {'nm': _u(c.get('nm')), 'cc': _u(c.get('cc')), 'st': c.get('st'),
                                   'e': (c.get('e') or 'n').lower()} for c in uf_r.get('cand', [])}
                 top = None if cargo in MAJORITARIOS else a.top
                 dl, db, cob = agrega_detalhe(regs, ele, cargo, mapa_locais, mapa_secoes, nomes, fixo, top,
