@@ -44,6 +44,18 @@
 //   `audio_real` é ERRO (`citacao: true` não basta mais); sem trecho real, a
 //   frase vai para o narrador em 3ª pessoa. `voz.personagem` não é mais usado.
 //
+// Trilha: `trilha` no roteiro = {id, volume?} (faixa de assets/trilhas/
+// trilhas.json; volume = nível sob a narração, padrão 0,12) ou "nenhuma". Sem o
+// campo, casa `universo` com os `universos` das faixas; sem casamento, usa a
+// faixa `padrao` do catálogo ("comedia"). Sem catálogo/arquivo: sai sem música,
+// com aviso. Mix: faixa normalizada a −16 LUFS, em loop e cortada no total,
+// fade in 0,5 s / out 2 s, ducking por envelope (≈ 0,3 nas cartelas, 0,12 sob
+// a narração, metade disso sob áudio real), loudnorm final −16 LUFS. O crédito
+// ("Música: …", CC BY) vai no fechamento e em `credito_musica` no <saida>.json
+// (copiar para a legenda do post).
+//
+// Duração: abertura + cenas + fechamento ≤ 120 s (ver --cortar-ate-120).
+//
 // Dependências (nada novo): Node 22 + sharp (node_modules do repo); ffmpeg
 // (mesma detecção de reel.mjs: FFMPEG, binário do imageio-ffmpeg ou PATH;
 // precisa de libass + zoompan + loudnorm; NÃO usa drawtext); Piper TTS
@@ -73,7 +85,7 @@ const FOLGA_CENA = 0.45; // silêncio depois da fala
 const DUR_MIN_CENA = 2.5;
 const MAX_AUDIO_REAL = 12; // s: trecho real mais longo aceito (ESPEC)
 const MAX_TOTAL = 120; // s: nenhum Reel passa de 2 min (regra do editor; cortar cenas, nunca acelerar voz)
-const TRILHAS_JSON = join(aqui, "assets", "trilhas", "trilhas.json");
+const TRILHAS_JSON = process.env.HOJEMT_TRILHAS || join(aqui, "assets", "trilhas", "trilhas.json"); // catálogo (env só para teste)
 const TRILHA_VOLUME = 0.12; // música sob a narração (multiplicador, com a faixa normalizada a −16 LUFS)
 const TRILHA_CARTELAS = 2.5; // × volume nas cartelas (≈ 0,3)
 const TRILHA_AUDIO_REAL = 0.5; // × volume sob trecho de áudio real (≈ 0,06)
@@ -311,7 +323,7 @@ async function cartelaFechamento(
 
   if (musica) {
     // crédito obrigatório da trilha (CC BY): Roboto Condensed 30 px, branco 85%
-    const musicaLinhas = (await quebrar(`Música: ${musica}`, 900, { fonte: ROBOTO, tamanho: 30 })).slice(0, 4);
+    const musicaLinhas = (await quebrar(`Música: ${musica}`, 980, { fonte: ROBOTO, tamanho: 30 })).slice(0, 4);
     t = linhasSvg(musicaLinhas, { y: t.fim + 30, tamanho: 30, fonte: ROBOTO, opacidade: 0.85, entrelinha: 1.2 });
     partes.push(t.svg);
   }
@@ -478,8 +490,11 @@ async function escolherTrilha(spec) {
   };
   if (!existsSync(TRILHAS_JSON)) return semMusica(`catálogo de trilhas não existe (${relative(aqui, TRILHAS_JSON)})`);
   let faixas;
+  let padrao = TRILHA_PADRAO;
   try {
-    faixas = JSON.parse(await readFile(TRILHAS_JSON, "utf8")).faixas;
+    const catalogo = JSON.parse(await readFile(TRILHAS_JSON, "utf8"));
+    faixas = catalogo.faixas;
+    if (catalogo.padrao) padrao = String(catalogo.padrao);
   } catch (e) {
     return semMusica(`catálogo de trilhas ilegível (${e.message})`);
   }
@@ -505,18 +520,20 @@ async function escolherTrilha(spec) {
       faixa = melhor.f;
       escolha = "universo";
     } else {
-      const reserva = (lista) => (lista || []).some((x) => semAcento(x) === TRILHA_PADRAO);
-      faixa = faixas.find((f) => f.id === TRILHA_PADRAO) || faixas.find((f) => reserva(f.universos)) || faixas.find((f) => reserva(f.temas));
-      escolha = "reserva";
-      if (!faixa) return semMusica(`nenhuma trilha casa com o universo e não há faixa "${TRILHA_PADRAO}"`);
+      const reserva = (lista) => (lista || []).some((x) => semAcento(x) === semAcento(padrao));
+      faixa = faixas.find((f) => f.id === padrao) || faixas.find((f) => reserva(f.universos)) || faixas.find((f) => reserva(f.temas));
+      escolha = "padrao";
+      if (!faixa) return semMusica(`nenhuma trilha casa com o universo e não há faixa "${padrao}"`);
     }
   }
   const arquivo = caminho(faixa.arquivo);
   if (!faixa.arquivo || !existsSync(arquivo)) return semMusica(`arquivo da trilha "${faixa.id}" não existe (${faixa.arquivo})`);
   if (!String(faixa.credito || "").trim()) return semMusica(`trilha "${faixa.id}" sem \`credito\` (obrigatório: licença CC BY)`);
   const volume = Number(pedido?.volume) > 0 ? Math.min(1, Number(pedido.volume)) : TRILHA_VOLUME;
-  console.log(`trilha: ${faixa.id} (${escolha}) · volume ${volume} · Música: ${faixa.credito}`);
-  return { id: faixa.id, titulo: faixa.titulo || faixa.id, arquivo, credito: String(faixa.credito).trim(), volume, escolha };
+  // crédito sempre começando por "Música:" (o catálogo já traz; não duplicar)
+  const credito = String(faixa.credito).trim().replace(/^m[úu]sica:\s*/i, "");
+  console.log(`trilha: ${faixa.id} (${escolha}) · volume ${volume} · Música: ${credito}`);
+  return { id: faixa.id, titulo: faixa.titulo || faixa.id, arquivo, credito, volume, escolha, licenca: faixa.licenca || null, credito_oficial: faixa.credito_oficial || null };
 }
 
 /** Ganho (dB) para levar a faixa a −16 LUFS integrados (medido com loudnorm). */
@@ -886,7 +903,9 @@ async function principal() {
           escolha: trilha.escolha,
           volume: trilha.volume,
           ganho_db: trilha.ganho_db,
-          credito: trilha.credito,
+          licenca: trilha.licenca,
+          credito: `Música: ${trilha.credito}`,
+          credito_oficial: trilha.credito_oficial,
         }
       : null,
     credito_musica: trilha ? `Música: ${trilha.credito}` : null,

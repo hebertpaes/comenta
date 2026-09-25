@@ -1,15 +1,30 @@
 {
   "spec": "/home/user/comenta/content/pautas/videos/2026-09-25-paula-em-13-votos.cena.json",
   "saida": "/home/user/comenta/content/pautas/videos/2026-09-25-paula-em-13-votos-cena.mp4",
-  "gerado_em": "2026-09-25T17:31:57.563Z",
-  "duracao": 32.44,
+  "gerado_em": "2026-09-25T18:11:04.490Z",
+  "duracao": 32.68,
+  "duracao_total": 32.68,
+  "limite_duracao": 120,
   "resolucao": "1080x1920",
   "fps": 25,
+  "universo": "Pantanal em Cena: margem de rio, chalana e deck de madeira sobre a água, com o prédio estilizado da Câmara de Cuiabá ao fundo; tuiuiús, vitórias-régias, entardecer. Tom calmo (combina com 'mantém o apoio'). Figurino único: camiseta cinza-escura. Cenas 5 e 6 são a pescaria da própria curta (plenário-rio, metáfora da charge).",
+  "trilha": {
+    "id": "pantanal",
+    "titulo": "Windswept",
+    "arquivo": "assets/trilhas/pantanal.m4a",
+    "escolha": "universo",
+    "volume": 0.12,
+    "ganho_db": 4.04,
+    "licenca": "CC BY 4.0",
+    "credito": "Música: \"Windswept\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
+    "credito_oficial": "\"Windswept\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/"
+  },
+  "credito_musica": "Música: \"Windswept\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
   "voz": {
     "motor": "piper",
     "narrador": "pt_BR-faber-medium",
-    "personagem": null,
-    "velocidade": 1
+    "velocidade": 1,
+    "personagem": null
   },
   "abertura": {
     "duracao": 2.5
@@ -18,54 +33,60 @@
     {
       "n": 1,
       "quem": "narrador",
+      "voz": "sintetica",
       "movimento": "zoom-in",
       "inicio": 2.5,
-      "duracao_audio": 4.64,
-      "duracao": 5.09
+      "duracao_audio": 4.81,
+      "duracao": 5.26
     },
     {
       "n": 2,
       "quem": "narrador",
+      "voz": "sintetica",
       "movimento": "pan-dir",
-      "inicio": 7.59,
-      "duracao_audio": 3.5,
-      "duracao": 3.95
+      "inicio": 7.76,
+      "duracao_audio": 3.55,
+      "duracao": 4
     },
     {
       "n": 3,
       "quem": "narrador",
+      "voz": "sintetica",
       "movimento": "zoom-in",
-      "inicio": 11.54,
-      "duracao_audio": 4.17,
-      "duracao": 4.62
+      "inicio": 11.76,
+      "duracao_audio": 4.31,
+      "duracao": 4.76
     },
     {
       "n": 4,
       "quem": "narrador",
+      "voz": "sintetica",
       "movimento": "pan-esq",
-      "inicio": 16.16,
-      "duracao_audio": 4.63,
-      "duracao": 5.08
+      "inicio": 16.52,
+      "duracao_audio": 4.41,
+      "duracao": 4.86
     },
     {
       "n": 5,
       "quem": "narrador",
+      "voz": "sintetica",
       "movimento": "zoom-out",
-      "inicio": 21.24,
-      "duracao_audio": 3.87,
-      "duracao": 4.32
+      "inicio": 21.38,
+      "duracao_audio": 3.93,
+      "duracao": 4.38
     },
     {
       "n": 6,
       "quem": "narrador",
+      "voz": "sintetica",
       "movimento": "zoom-in",
-      "inicio": 25.56,
-      "duracao_audio": 3.39,
-      "duracao": 3.84
+      "inicio": 25.76,
+      "duracao_audio": 3.37,
+      "duracao": 3.82
     }
   ],
   "fechamento": {
-    "inicio": 29.4,
+    "inicio": 29.58,
     "duracao": 3
   }
 }

@@ -21,6 +21,7 @@
     "custom_template": null,
     "canonical_url": null,
     "show_title_and_feature_image": true,
+    "tags": [],
     "authors": [
       {
         "id": "6a9626edf48fb5919796e75b",
@@ -61,7 +62,6 @@
         "url": "https://hojemt.com.br/author/redacao/"
       }
     ],
-    "tags": [],
     "primary_author": {
       "id": "6a9626edf48fb5919796e75b",
       "name": "Redação",
@@ -138,6 +138,7 @@
     "custom_template": null,
     "canonical_url": null,
     "show_title_and_feature_image": true,
+    "tags": [],
     "authors": [
       {
         "id": "6a9626edf48fb5919796e75b",
@@ -178,7 +179,6 @@
         "url": "https://hojemt.com.br/author/redacao/"
       }
     ],
-    "tags": [],
     "primary_author": {
       "id": "6a9626edf48fb5919796e75b",
       "name": "Redação",
@@ -255,6 +255,7 @@
     "custom_template": null,
     "canonical_url": null,
     "show_title_and_feature_image": true,
+    "tags": [],
     "authors": [
       {
         "id": "6a9626edf48fb5919796e75b",
@@ -295,7 +296,6 @@
         "url": "https://hojemt.com.br/author/redacao/"
       }
     ],
-    "tags": [],
     "primary_author": {
       "id": "6a9626edf48fb5919796e75b",
       "name": "Redação",
@@ -372,6 +372,7 @@
     "custom_template": null,
     "canonical_url": null,
     "show_title_and_feature_image": true,
+    "tags": [],
     "authors": [
       {
         "id": "6a9626edf48fb5919796e75b",
@@ -412,7 +413,6 @@
         "url": "https://hojemt.com.br/author/redacao/"
       }
     ],
-    "tags": [],
     "primary_author": {
       "id": "6a9626edf48fb5919796e75b",
       "name": "Redação",
@@ -489,6 +489,7 @@
     "custom_template": null,
     "canonical_url": null,
     "show_title_and_feature_image": true,
+    "tags": [],
     "authors": [
       {
         "id": "6a9626edf48fb5919796e75b",
@@ -529,7 +530,6 @@
         "url": "https://hojemt.com.br/author/redacao/"
       }
     ],
-    "tags": [],
     "primary_author": {
       "id": "6a9626edf48fb5919796e75b",
       "name": "Redação",
@@ -606,6 +606,7 @@
     "custom_template": null,
     "canonical_url": null,
     "show_title_and_feature_image": true,
+    "tags": [],
     "authors": [
       {
         "id": "6a9626edf48fb5919796e75b",
@@ -646,7 +647,6 @@
         "url": "https://hojemt.com.br/author/redacao/"
       }
     ],
-    "tags": [],
     "primary_author": {
       "id": "6a9626edf48fb5919796e75b",
       "name": "Redação",
@@ -723,6 +723,7 @@
     "custom_template": null,
     "canonical_url": null,
     "show_title_and_feature_image": true,
+    "tags": [],
     "authors": [
       {
         "id": "6a9626edf48fb5919796e75b",
@@ -763,7 +764,6 @@
         "url": "https://hojemt.com.br/author/redacao/"
       }
     ],
-    "tags": [],
     "primary_author": {
       "id": "6a9626edf48fb5919796e75b",
       "name": "Redação",
@@ -840,6 +840,7 @@
     "custom_template": null,
     "canonical_url": null,
     "show_title_and_feature_image": true,
+    "tags": [],
     "authors": [
       {
         "id": "6a9626edf48fb5919796e75b",
@@ -880,7 +881,6 @@
         "url": "https://hojemt.com.br/author/redacao/"
       }
     ],
-    "tags": [],
     "primary_author": {
       "id": "6a9626edf48fb5919796e75b",
       "name": "Redação",
