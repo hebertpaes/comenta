@@ -348,6 +348,47 @@
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
       "feito_em": "2026-09-25",
       "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
+    },
+    {
+      "slug": "sorriso-abre-audiencia-publica-para-apresentar-balanco-da-saude",
+      "titulo": "Sorriso abre audiência pública para apresentar balanço da saúde",
+      "materia": "https://hojemt.com.br/sorriso-abre-audiencia-publica-para-apresentar-balanco-da-saude/",
+      "tag": "Cidades",
+      "canva": {
+        "design": "DAHWMs91vCg",
+        "arte": "MAHWMtWderY",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "gestora da saúde de costas apresenta gráficos (sem números legíveis) num telão para plateia de costas no plenário da Câmara",
+      "por_que_ilustracao": "a fonte (Prefeitura de Sorriso) só publicou cartaz-convite com texto e logos",
+      "arquivo": "2026-09-25-sorriso-audiencia-saude.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-25-sorriso-audiencia-saude.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-sorriso-audiencia-saude-og.jpg",
+      "capa_anterior": "capa-d82381722689a805.webp",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "feito_em": "2026-09-25",
+      "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
+    },
+    {
+      "slug": "caixa-paga-bolsa-familia-de-setembro-a-nis-final-7-nesta-sexta",
+      "titulo": "Caixa paga Bolsa Família de setembro a NIS final 7 nesta sexta",
+      "materia": "https://hojemt.com.br/caixa-paga-bolsa-familia-de-setembro-a-nis-final-7-nesta-sexta/",
+      "tag": "Economia",
+      "canva": {
+        "design": "DAHWMi7lmvo",
+        "arte": "MAHWMooVVVw",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "mãe e filha de costas numa fila curta à sombra diante de uma lotérica sem letreiro, rua de terra vermelha e ipê florido",
+      "por_que_ilustracao": "a fonte (Agência Brasil) usou arte de calendário, sem foto",
+      "reutilizavel": "serve para as próximas parcelas do Bolsa Família (cena genérica, sem data nem número)",
+      "arquivo": "2026-09-25-bolsa-familia-pagamento.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-25-bolsa-familia-pagamento.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-bolsa-familia-pagamento-og.jpg",
+      "capa_anterior": "capa-c1ed38309768cd69.webp",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "feito_em": "2026-09-25",
+      "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
     }
   ]
 }
