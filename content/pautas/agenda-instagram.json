@@ -89,7 +89,13 @@
         "https://hojemt.com.br/content/images/2026/09/2026-09-24-anvisa-tirzepatida-1.jpg"
       ],
       "legenda": "Anvisa alerta para tirzepatida em pó vendida nas redes sociais\n\nA agência adverte: o preparo caseiro, sem ambiente estéril, pode causar infecções graves, e não há garantia de que o pó contenha o princípio ativo na dose certa. No Brasil, o medicamento (Mounjaro) só é vendido em farmácia, com prescrição.\n\nMatéria completa: hojemt.com.br/anvisa-alerta-sobre-venda-de-tirzepatida-em-po-nas-redes-sociais\n\n#saude #anvisa #tirzepatida #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/anvisa-alerta-sobre-venda-de-tirzepatida-em-po-nas-redes-sociais/"
+      "materia": "https://hojemt.com.br/anvisa-alerta-sobre-venda-de-tirzepatida-em-po-nas-redes-sociais/",
+      "tentativas": [
+        {
+          "em": "2026-09-25T17:28:00Z",
+          "erro": "Zapier: limite de tarefas do plano atingido (task limit for the current billing period); item continua agendado e sai no próximo disparo depois que o plano for liberado"
+        }
+      ]
     },
     {
       "id": "06",
