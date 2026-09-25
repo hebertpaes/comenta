@@ -847,6 +847,22 @@
       "materia": "https://hojemt.com.br/ia-salario-e-bala/",
       "charge_json": "pautas/charges/2026-09-25-ia-salario-e-bala.json",
       "obs": "decisão de 25/09 (editor pediu \"Dirige\"): entrou no horário da charge Fome em tempos de guerra (assunto eleitoral precisa sair antes de 04/10)"
+    },
+    {
+      "id": "51",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-05T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Fortuna caiu em Cuiabá",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-fortuna-caiu-em-cuiaba-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Fortuna caiu em Cuiabá\n\nChoveu emenda. Agora é ver o que brota.\n\nA deputada federal Coronel Fernanda (PL) diz ter destinado R$ 43,2 milhões em emendas a Cuiabá: R$ 36,1 milhões direto para a Prefeitura, na gestão de Abilio Brunini (PL), e o restante para instituições da cidade, com foco em saúde.\n\nLeia a curta completa: hojemt.com.br/fortuna-caiu-em-cuiaba\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
+      "materia": "https://hojemt.com.br/fortuna-caiu-em-cuiaba/",
+      "charge_json": "pautas/charges/2026-09-25-fortuna-caiu-em-cuiaba.json",
+      "obs": "assunto não eleitoral (emendas), sem prazo: próximo horário livre depois do último item agendado (32, 05/10 11:30)"
     }
   ]
 }

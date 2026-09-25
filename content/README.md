@@ -191,6 +191,7 @@ registra origem, data e crédito.
 | Fábio Garcia (deputado federal, União) | cabelo escuro curto e cheio, rosto fino, terno azul-marinho | `MAHWK8zhW5A` (foto oficial da Câmara, legislatura atual) | Câmara dos Deputados (bandep/178905). Só referência de desenho. |
 | Elizeu Nascimento (deputado estadual, Novo) | cabelo grisalho bem curto, pele morena, sorriso largo, terno escuro | `MAHWK3X7SaM` (foto oficial da ALMT, recortada no rosto, sem logotipos) | Assembleia Legislativa de MT (perfil 377). Só referência de desenho. |
 | Max Russi (deputado estadual, Podemos; presidente da ALMT) | cabelo claro curto e ralo no alto, rosto largo e corado, terno azul | `MAHWLrtMkZs` (foto oficial da ALMT, recortada no rosto, sem logotipos) | Assembleia Legislativa de MT. Só referência de desenho. |
+| Coronel Fernanda (deputada federal, PL) | cabelo castanho liso em chanel na altura do queixo, risca lateral, óculos de armação fina e clara, pele clara, blusa verde (sem farda) | `MAHWOROoZBk` (foto oficial do registro de candidatura, TSE, ago/2026, recortada no rosto), `MAHWOVj5hSQ` (foto oficial da Câmara, set/2025, cabelo mais curto: segunda opção) | TSE/Divulgação (FMT110002538411_div.jpg, via espelho ND Mais) e Câmara dos Deputados (bandep/220595). Só referência de desenho. |
 | Ludio Cabral / Carlos Fávaro / demais | conferir foto do ano corrente antes de gerar | ver `.json` da última charge de cada um | Commons/Agência Brasil/Câmara/Senado (CC BY) ou galeria oficial do órgão |
 
 No prompt da arte, descrever o visual atual em palavras além de passar as fotos

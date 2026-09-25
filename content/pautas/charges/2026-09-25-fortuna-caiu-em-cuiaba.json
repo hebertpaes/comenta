@@ -1,0 +1,70 @@
+{
+  "slug": "fortuna-caiu-em-cuiaba",
+  "titulo": "Fortuna caiu em Cuiabá (curta: Coronel Fernanda anuncia R$ 43,2 milhões em emendas para Cuiabá, R$ 36,1 milhões para a Prefeitura)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas (as falas da deputada estão só na fonte, não na curta)",
+  "legenda": {
+    "site_16x9": "Choveu emenda em Cuiabá. Agora é ver o que brota do chão.",
+    "instagram_4x5": "Choveu emenda. Agora é ver o que brota. (40 px, uma linha)"
+  },
+  "contexto": "A deputada federal Coronel Fernanda (PL-MT) diz ter destinado R$ 43.278.343,45 a Cuiabá: R$ 36.145.217 direto para a Prefeitura, na gestão de Abilio Brunini (PL), em três repasses (R$ 10,5 mi, R$ 23,6 mi e R$ 2 mi), e R$ 7,1 milhões para instituições, órgãos e projetos da cidade; foco em saúde (cerca de R$ 39,2 mi) e regularização fundiária.",
+  "fontes": [
+    "https://www.olhardireto.com.br/noticias/mais-de-r-43-milhoes-coronel-fernanda-destaca-recursos-destinados-a-cuiaba",
+    "https://www.folhamax.com/politica/coronel-fernanda-lidera-envio-emendas-do-pl-para-cuiaba/574102"
+  ],
+  "regras_da_cena": "humor sobre a situação (chuva de emendas, regador, colheita que ainda vai brotar): Coronel Fernanda rega Cuiabá de uma nuvem, Abilio apara as moedas com guarda-chuva virado, brotos e uma mini unidade de saúde no chão; sem acusação, sem texto na arte, sem logos nem bandeiras",
+  "personagens": [
+    {
+      "nome": "Coronel Fernanda",
+      "cargo": "deputada federal (PL-MT), candidata à reeleição em 2026 (nº 2222)",
+      "canva_fotos_referencia": [
+        "MAHWOROoZBk"
+      ],
+      "canva_fotos_extra": [
+        "MAHWOVj5hSQ"
+      ],
+      "origem": "https://static.ndmais.com.br/eleicoes/2026/mt/FMT110002538411_div.jpg (foto do registro de candidatura TSE 2026, espelho ND Mais); extra: https://www.camara.leg.br/internet/deputado/bandep/220595.jpg (API dadosabertos.camara.leg.br, urlFoto)",
+      "data_foto": "TSE: registro de candidatura, ago/2026; Câmara: arquivo de 09/09/2025",
+      "credito": "Foto: TSE/Divulgação; extra: Câmara dos Deputados",
+      "licenca": "fotos oficiais de divulgação, recortadas no rosto; só referência de desenho",
+      "obs": "primeira referência cadastrada dela (linha nova na tabela do README); usada só a do TSE 2026 (mais recente: cabelo em chanel na altura do queixo); a da Câmara tem cabelo mais curto"
+    },
+    {
+      "nome": "Abilio Brunini",
+      "cargo": "prefeito de Cuiabá (PL)",
+      "canva_fotos_referencia": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "data_foto": "2026-09-21 e 2026-09-03",
+      "credito": "Foto: Rennan Oliveira/Secom (galeria oficial do prefeito, Prefeitura de Cuiabá)",
+      "licenca": "divulgação oficial; só referência de desenho",
+      "obs": "referências da tabela do README (set/2026); prompt: cabeça raspada, careca, sem barba, rosto anguloso e magro, orelhas marcadas, físico atlético, camiseta cinza-escura lisa de gola redonda, sem terno e sem gravata"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHWOe1cx1k",
+    "arte_16x9": "MAHWOR2V8Ro",
+    "design_instagram_4x5": "DAHWOZ9twAY",
+    "arte_4x5": "MAHWOTWaZaY",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "materia": "https://hojemt.com.br/fortuna-caiu-em-cuiaba/",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json (item 51, 2026-10-05T15:30:00-04:00)"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-25-fortuna-caiu-em-cuiaba.jpg",
+    "instagram_4x5": "2026-09-25-fortuna-caiu-em-cuiaba-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-25-fortuna-caiu-em-cuiaba.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-fortuna-caiu-em-cuiaba-og.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-25-fortuna-caiu-em-cuiaba-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 25/09/2026 (antes: charge automática charge-1790349687.webp)",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT"
+}
