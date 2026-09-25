@@ -488,7 +488,7 @@ async function escolherTrilha(spec) {
     console.warn(`AVISO: ${motivo} — vídeo sem música`);
     return null;
   };
-  if (!existsSync(TRILHAS_JSON)) return semMusica(`catálogo de trilhas não existe (${relative(aqui, TRILHAS_JSON)})`);
+  if (!existsSync(TRILHAS_JSON)) return semMusica(`catálogo de trilhas não existe (${TRILHAS_JSON.startsWith(aqui + "/") ? relative(aqui, TRILHAS_JSON) : TRILHAS_JSON})`);
   let faixas;
   let padrao = TRILHA_PADRAO;
   try {

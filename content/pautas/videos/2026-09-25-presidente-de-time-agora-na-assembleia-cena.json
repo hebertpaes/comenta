@@ -1,0 +1,83 @@
+{
+  "spec": "/home/user/comenta/content/pautas/videos/2026-09-25-presidente-de-time-agora-na-assembleia.cena.json",
+  "saida": "/home/user/comenta/content/pautas/videos/2026-09-25-presidente-de-time-agora-na-assembleia-cena.mp4",
+  "gerado_em": "2026-09-25T18:26:26.956Z",
+  "duracao": 33.2,
+  "duracao_total": 33.2,
+  "limite_duracao": 120,
+  "resolucao": "1080x1920",
+  "fps": 25,
+  "universo": "UNIVERSO PRÓPRIO, fora da lista de cinco do ESPEC (PRECISA DE OK DO EDITOR): \"Arena de Cuiabá\" — arena esportiva de Cuiabá com arquibancada (cenas 1 a 3), campo society iluminado do interior (cena 4) e plenário da ALMT (cena 5). Figurino: terno azul. Tom: o locutor da arena é o narrador (mesmo papel do Rodeio das Urnas). Se o editor não aprovar, refazer dentro de Rodeio das Urnas: arena de rodeio com bandeirolas sem logos, cada verba um touro a ser montado.",
+  "trilha": {
+    "id": "comedia",
+    "titulo": "March of the Spoons",
+    "arquivo": "assets/trilhas/comedia.m4a",
+    "escolha": "roteiro",
+    "volume": 0.12,
+    "ganho_db": 4.06,
+    "licenca": "CC BY 4.0",
+    "credito": "Música: \"March of the Spoons\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
+    "credito_oficial": "\"March of the Spoons\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/"
+  },
+  "credito_musica": "Música: \"March of the Spoons\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "voz": {
+    "motor": "piper",
+    "narrador": "pt_BR-faber-medium",
+    "velocidade": 1,
+    "personagem": null
+  },
+  "abertura": {
+    "duracao": 2.5
+  },
+  "cenas": [
+    {
+      "n": 1,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 2.5,
+      "duracao_audio": 6.06,
+      "duracao": 6.51
+    },
+    {
+      "n": 2,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 9.01,
+      "duracao_audio": 4.36,
+      "duracao": 4.81
+    },
+    {
+      "n": 3,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "pan-dir",
+      "inicio": 13.82,
+      "duracao_audio": 6.62,
+      "duracao": 7.07
+    },
+    {
+      "n": 4,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 20.89,
+      "duracao_audio": 5.8,
+      "duracao": 6.25
+    },
+    {
+      "n": 5,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 27.14,
+      "duracao_audio": 2.55,
+      "duracao": 3
+    }
+  ],
+  "fechamento": {
+    "inicio": 30.14,
+    "duracao": 3
+  }
+}
