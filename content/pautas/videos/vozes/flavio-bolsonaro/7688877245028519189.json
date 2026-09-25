@@ -1,0 +1,99 @@
+{
+  "candidato": "Flávio Bolsonaro",
+  "id_candidato": "flavio-bolsonaro",
+  "cargo": "presidente",
+  "esfera": "nacional",
+  "partido": "PL",
+  "numero": 22,
+  "id": "7688877245028519189",
+  "url": "https://www.tiktok.com/@flaviobolsonaro/video/7688877245028519189",
+  "rede": "tiktok",
+  "perfil": "@flaviobolsonaro",
+  "perfil_url": "https://www.tiktok.com/@flaviobolsonaro",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@flaviobolsonaro); uploader do vídeo = flaviobolsonaro / Flávio Bolsonaro",
+  "data": "2026-09-23",
+  "duracao_s": 51,
+  "titulo": "Soberania começa pela segurança  Vote 2️⃣2️⃣🇧🇷 #fy #bolsonaro #forapt...",
+  "descricao": "Soberania começa pela segurança  Vote 2️⃣2️⃣🇧🇷 #fy #bolsonaro #forapt #flaviobolsonaro ",
+  "tipo": "corte de fala do candidato (bancada/estúdio com arte \"22\")",
+  "fala_do_candidato": true,
+  "resumo": "\"Soberania da segurança pública\": retomar cada metro, rua, bairro e cidade do crime; segunda metade ataca Lula (evitar).",
+  "temas": [
+    "segurança",
+    "ataque a adversário"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 7.4,
+      "text": "E eu vou trabalhar todos os dias para reconquistar a maior de todas as soberanias, que é a soberania da Segurança Pública.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 7.4,
+      "end": 14.0,
+      "text": "Cada metro quadrado, que eles tomaram do povo brasileiro, nós vamos retomar.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 14.0,
+      "end": 22.0,
+      "text": "Cada metro quadrado, depois cada rua, depois cada bairro, depois cada cidade, nós vamos retomar para o domínio do governo,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 22.0,
+      "end": 25.0,
+      "text": "para garantir o mínimo para você que é a Segurança Pública.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 25.0,
+      "end": 32.0,
+      "text": "Então, essa primeira parte, Lula, seu fracassado, você que é ídolo dentro dos presídios,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 32.0,
+      "end": 39.0,
+      "text": "a escória da nação brasileira aqui cometer o crime mais bárbaro, está lá te aplaudindo, torcendo pela sua reeleição.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 39.0,
+      "end": 45.0,
+      "text": "Eu tenho uma triste notícia para eles e para você, no dia 4 de outubro não vai ter comemoração dentro das cadeias",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 45.0,
+      "end": 47.0,
+      "text": "porque o presidente eleito vai ser Flávio Bolsonaro.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 47.0,
+      "end": 51.0,
+      "text": "Vamos livrar o Brasil dessa máfia do PT.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 0.0,
+      "fim": 7.4,
+      "texto": "E eu vou trabalhar todos os dias para reconquistar a maior de todas as soberanias, que é a soberania da Segurança Pública.",
+      "tema": "segurança"
+    },
+    {
+      "inicio": 14.0,
+      "fim": 25.0,
+      "texto": "Cada metro quadrado, depois cada rua, depois cada bairro, depois cada cidade, nós vamos retomar para o domínio do governo, para garantir o mínimo para você que é a Segurança Pública.",
+      "tema": "segurança"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Flávio Bolsonaro, TikTok @flaviobolsonaro, 2026-09-23",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/flavio-bolsonaro/7688877245028519189.v.mp4 (não versionado)",
+  "obs": "Voz do candidato (conferido em quadros aos 3, 20 e 40 s: ele fala ao microfone). ATENÇÃO: 25–51 s é ATAQUE a Lula (\"seu fracassado\", \"máfia do PT\") — pela regra de não atacar ninguém, usar só 0–25 s (proposta de segurança)."
+}

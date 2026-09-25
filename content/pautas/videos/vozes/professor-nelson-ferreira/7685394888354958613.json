@@ -1,0 +1,115 @@
+{
+  "candidato": "Professor Nelson Ferreira (Nelson Carlos Ferreira Junior)",
+  "id_candidato": "professor-nelson-ferreira",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "Agir",
+  "numero": 360,
+  "id": "7685394888354958613",
+  "url": "https://www.tiktok.com/@nelsonferreiraju/video/7685394888354958613",
+  "rede": "tiktok",
+  "perfil": "@nelsonferreiraju",
+  "perfil_url": "https://www.tiktok.com/@nelsonferreiraju",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@nelsonferreiraju); uploader do vídeo = nelsonferreiraju / Professor Nelson Ferreira",
+  "data": "2026-09-14",
+  "duracao_s": 90,
+  "titulo": "TikTok video #7685394888354958613",
+  "descricao": "",
+  "tipo": "imagem fixa de campanha (\"Professor Nelson Ferreira na liderança para o Senado 360\") com jingle",
+  "fala_do_candidato": false,
+  "resumo": "Arte fixa com jingle, sem fala.",
+  "temas": [
+    "campanha"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 11.7,
+      "end": 13.7,
+      "text": "Muda o Brasil!",
+      "voz": "jingle (não é o candidato)"
+    },
+    {
+      "start": 13.7,
+      "end": 31.86,
+      "text": "Muda de verdade!",
+      "voz": "jingle (não é o candidato)"
+    },
+    {
+      "start": 31.86,
+      "end": 33.86,
+      "text": "Tu tem esperança no olhar",
+      "voz": "jingle (não é o candidato)"
+    },
+    {
+      "start": 33.86,
+      "end": 35.86,
+      "text": "Um Brasil que quer mudança",
+      "voz": "jingle (não é o candidato)"
+    },
+    {
+      "start": 35.86,
+      "end": 37.86,
+      "text": "Um Brasil que quer avançar",
+      "voz": "jingle (não é o candidato)"
+    },
+    {
+      "start": 37.86,
+      "end": 39.86,
+      "text": "Chega do mais do mesmo",
+      "voz": "jingle (não é o candidato)"
+    },
+    {
+      "start": 39.86,
+      "end": 41.86,
+      "text": "É tempo de acreditar",
+      "voz": "jingle (não é o candidato)"
+    },
+    {
+      "start": 41.86,
+      "end": 43.86,
+      "text": "Com coragem e união a hora",
+      "voz": "jingle (não é o candidato)"
+    },
+    {
+      "start": 43.86,
+      "end": 45.86,
+      "text": "E agora vamos mudar",
+      "voz": "jingle (não é o candidato)"
+    },
+    {
+      "start": 45.86,
+      "end": 47.86,
+      "text": "Uma nova constituição",
+      "voz": "jingle (não é o candidato)"
+    },
+    {
+      "start": 47.86,
+      "end": 49.86,
+      "text": "Pensada para o cidadão",
+      "voz": "jingle (não é o candidato)"
+    },
+    {
+      "start": 49.86,
+      "end": 57.36,
+      "text": "Com justiça e liberdade",
+      "voz": "jingle (não é o candidato)"
+    },
+    {
+      "start": 57.36,
+      "end": 59.36,
+      "text": "Respeita e partive",
+      "voz": "jingle (não é o candidato)"
+    },
+    {
+      "start": 59.36,
+      "end": 61.36,
+      "text": "A história na saúde",
+      "voz": "jingle (não é o candidato)"
+    }
+  ],
+  "trechos_sugeridos": [],
+  "credito": "Áudio: propaganda eleitoral de Professor Nelson Ferreira, TikTok @nelsonferreiraju, 2026-09-14",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/professor-nelson-ferreira/7685394888354958613.v.mp4 (não versionado)",
+  "obs": "SEM fala do candidato: o áudio é jingle (\"Muda o Brasil...\"); o vídeo é imagem fixa (conferido aos 5, 40 e 80 s). Não serve como fonte de voz."
+}

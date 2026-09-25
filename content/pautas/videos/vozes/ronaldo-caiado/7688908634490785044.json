@@ -1,0 +1,87 @@
+{
+  "candidato": "Ronaldo Caiado",
+  "id_candidato": "ronaldo-caiado",
+  "cargo": "presidente",
+  "esfera": "nacional",
+  "partido": "PSD",
+  "numero": 55,
+  "id": "7688908634490785044",
+  "url": "https://www.tiktok.com/@ronaldocaiado/video/7688908634490785044",
+  "rede": "tiktok",
+  "perfil": "@ronaldocaiado",
+  "perfil_url": "https://www.tiktok.com/@ronaldocaiado",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@ronaldocaiado); uploader do vídeo = ronaldocaiado / Ronaldo Caiado",
+  "data": "2026-09-24",
+  "duracao_s": 35,
+  "titulo": "Eu vou pra cima da bandidagem! Pode ter certeza de que eu vou resolve...",
+  "descricao": "Eu vou pra cima da bandidagem! Pode ter certeza de que eu vou resolver o problema da segurança pública no Brasil.  Vote 5️⃣5️⃣!  #Caiado55",
+  "tipo": "corte de entrevista/fala do candidato (microfone de lapela/headset), arte \"Caiado 55\"",
+  "fala_do_candidato": true,
+  "resumo": "Promete \"despachar\" de dentro das áreas mais violentas (Complexo do Alemão, Penha, Salvador, Ceará): \"o Estado não se ajoelha para bandido\".",
+  "temas": [
+    "segurança",
+    "crime organizado"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 4.68,
+      "text": "Eu quero entrar, é dentro daquilo que as pessoas vivem sequestrada, como você disse.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 4.68,
+      "end": 8.36,
+      "text": "Eu visitei o Complexo do Alemão e também o Complexo da Penha.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 8.36,
+      "end": 11.24,
+      "text": "Eu, despachando no Rio de Janeiro, eu vou despachar lá de dentro.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 11.24,
+      "end": 16.76,
+      "text": "Eu vou despachar lá de dentro, eu vou despachar no bairro mais violento da Bahia, de Salvador, lá no Ceará.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 16.76,
+      "end": 22.08,
+      "text": "É para mostrar que o Estado não se ajoelha para bandido, não me ajoelha para bandido.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 22.08,
+      "end": 27.72,
+      "text": "E vou para dentro do local onde vocês se acham donos, para poder destruí-los, derrotá-los",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 27.72,
+      "end": 30.88,
+      "text": "e devolver o Brasil aos brasileiros de pé.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 16.8,
+      "fim": 30.9,
+      "texto": "É para mostrar que o Estado não se ajoelha para bandido, não me ajoelha para bandido. E vou para dentro do local onde vocês se acham donos, para poder destruí-los, derrotá-los e devolver o Brasil aos brasileiros de pé.",
+      "tema": "segurança"
+    },
+    {
+      "inicio": 4.7,
+      "fim": 11.2,
+      "texto": "Eu visitei o Complexo do Alemão e também o Complexo da Penha. Eu, despachando no Rio de Janeiro, eu vou despachar lá de dentro.",
+      "tema": "segurança"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Ronaldo Caiado, TikTok @ronaldocaiado, 2026-09-24",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/ronaldo-caiado/7688908634490785044.mp3 (não versionado)",
+  "obs": "Voz do candidato do início ao fim (conferido em quadros aos 2, 15 e 28 s: ele fala à câmera com microfone de cabeça). Começa respondendo a alguém (\"como você disse\"), mas só a voz dele aparece. Discurso duro contra o crime organizado, sem adversário nominal."
+}

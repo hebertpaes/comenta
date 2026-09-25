@@ -1,0 +1,88 @@
+{
+  "candidato": "Zé Medeiros (José Antonio Medeiros)",
+  "id_candidato": "ze-medeiros",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "PL",
+  "numero": 222,
+  "id": "7679784111648689415",
+  "url": "https://www.tiktok.com/@josemedeirosmt/video/7679784111648689415",
+  "rede": "tiktok",
+  "perfil": "@josemedeirosmt",
+  "perfil_url": "https://www.tiktok.com/@josemedeirosmt",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@josemedeirosmt); uploader do vídeo = josemedeirosmt / Zé Medeiros",
+  "data": "2026-08-30",
+  "duracao_s": 25,
+  "titulo": "Sobre Lula, Moraes e Bolsonaro! ",
+  "descricao": "Sobre Lula, Moraes e Bolsonaro! ",
+  "tipo": "fala direta à câmera (três perguntas ao eleitor), com fotos com Bolsonaro",
+  "fala_do_candidato": true,
+  "resumo": "Três perguntas ao eleitor (Lula fora do poder, Bolsonaro fora da cadeia, Moraes na cadeia) e se apresenta como o escolhido de Bolsonaro para o Senado.",
+  "temas": [
+    "Senado",
+    "polarização",
+    "ataque a adversário"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 1.4,
+      "text": "Você, eleitor do Mato Grosso?",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 1.4,
+      "end": 2.9,
+      "text": "Eu tenho três perguntas pra te fazer.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 2.9,
+      "end": 5.3,
+      "text": "Você quer o Lula e o PT fora do poder?",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 5.3,
+      "end": 7.6,
+      "text": "Você quer Jair Bolsonaro fora da cadeia?",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 7.6,
+      "end": 11.2,
+      "text": "Você quer Alexandre de Moraes dentro da cadeia?",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 11.2,
+      "end": 15.2,
+      "text": "Se você respondeu sim a essas três perguntas o seu é Medeiros,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 15.2,
+      "end": 17.8,
+      "text": "o candidato escolhido pelo capitão Jair Bolsonaro",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 17.8,
+      "end": 20.4,
+      "text": "para ser o seu senador pelo estado de Mato Grosso.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 0.0,
+      "fim": 2.9,
+      "texto": "Você, eleitor do Mato Grosso? Eu tenho três perguntas pra te fazer.",
+      "tema": "abertura/pedido de voto"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Zé Medeiros, TikTok @josemedeirosmt, 2026-08-30",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/ze-medeiros/7679784111648689415.v.mp4 (não versionado)",
+  "obs": "Voz do candidato (conferido em quadros aos 3 e 10 s: ele fala à câmera; aos 18 s fotos dele com Bolsonaro, voz segue em off). Conteúdo polarizado (\"Lula e o PT fora do poder\", \"Bolsonaro fora da cadeia\", \"Moraes dentro da cadeia\") — pela regra de não atacar ninguém, usar só a abertura neutra. \"o seu é Medeiros\" (11–15 s) é reconstrução do ASR (\"dos seus emedeiros\")."
+}

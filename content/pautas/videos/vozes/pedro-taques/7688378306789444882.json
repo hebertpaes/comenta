@@ -1,0 +1,136 @@
+{
+  "candidato": "Pedro Taques",
+  "id_candidato": "pedro-taques",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "PSB",
+  "numero": 400,
+  "id": "7688378306789444882",
+  "url": "https://www.tiktok.com/@pedrotaquesoficial/video/7688378306789444882",
+  "rede": "tiktok",
+  "perfil": "@pedrotaquesoficial",
+  "perfil_url": "https://www.tiktok.com/@pedrotaquesoficial",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@pedrotaquesoficial); uploader do vídeo = pedrotaquesoficial / pedrotaques",
+  "data": "2026-09-22",
+  "duracao_s": 81,
+  "titulo": "Você sabia que é o Senado que aprova a entrada de ministro do Supremo...",
+  "descricao": "Você sabia que é o Senado que aprova a entrada de ministro do Supremo? Pois é. E candidato com rabo preso não vai sabatinar ninguém, vai passar a mão na cabeça. Quando fui senador, eu perguntei na cara: quem convidou o senhor para ser ministro? Qual dispositivo da Constituição desobriga o senhor de responder a um senador da República? Como a senhora vê a corrupção dentro do Judiciário? Agente político responde por improbidade administrativa? A sabatina é um dos momentos mais importantes daquela casa, e o Senado não pode virar puxadinho do Executivo. Para peitar o Supremo com coragem, justiça e conhecimento da lei, é preciso não dever favor a ninguém. Na urna, digite 400 e confirme. Me manda um \"Oi, Pedro\" no WhatsApp: (65) 99988-5869. #STF #Sabatina #Senado2026 #MatoGrosso #PedroTaques400",
+  "tipo": "vídeo de campanha: locutor + imagens de arquivo das sabatinas de ministros do STF em que ele (então senador) pergunta",
+  "fala_do_candidato": true,
+  "resumo": "Locutor lembra que o Senado aprova ministros do STF; arquivo mostra Taques sabatinando indicados (\"não podemos virar puxadinho do Executivo\").",
+  "temas": [
+    "Senado",
+    "STF",
+    "sabatina"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 5.6,
+      "text": "Você sabia que é o senado que aprova a entrada de ministro do STF? Pois é.",
+      "voz": "locutor"
+    },
+    {
+      "start": 5.6,
+      "end": 9.2,
+      "text": "E você acha que candidata e candidato com rabo preso",
+      "voz": "locutor"
+    },
+    {
+      "start": 9.2,
+      "end": 12.2,
+      "text": "vai aprovar coisa boa? Nunca.",
+      "voz": "locutor"
+    },
+    {
+      "start": 12.2,
+      "end": 17.8,
+      "text": "Para peitar o Supremo com coragem, justiça e conhecimento, só Pedro Taques.",
+      "voz": "locutor"
+    },
+    {
+      "start": 17.8,
+      "end": 22.2,
+      "text": "O senhor conversou com quem para chegar a este momento?",
+      "voz": "candidato (arquivo: sabatinas no Senado)"
+    },
+    {
+      "start": 22.2,
+      "end": 26.5,
+      "text": "Que ele convidou para ser ministro do Supremo Tribunal Federal.",
+      "voz": "candidato (arquivo: sabatinas no Senado)"
+    },
+    {
+      "start": 26.5,
+      "end": 33.5,
+      "text": "Qual dispositivo constitucional ou legal lhe desobriga de responder a um senador da República sobre determinados temas?",
+      "voz": "candidato (arquivo: sabatinas no Senado)"
+    },
+    {
+      "start": 33.5,
+      "end": 39.5,
+      "text": "Qual é o papel do senado na sabatina de um indicado para o Supremo Tribunal Federal?",
+      "voz": "candidato (arquivo: sabatinas no Senado)"
+    },
+    {
+      "start": 41.5,
+      "end": 49.5,
+      "text": "Como o senhor avalia a corrupção no Poder Judiciário, diante do relatório revelado pela ministra Eliana Calmon,",
+      "voz": "candidato (arquivo: sabatinas no Senado)"
+    },
+    {
+      "start": 49.5,
+      "end": 55.5,
+      "text": "o levantamento que ela fez de magistrados envolvidos em corrupção.",
+      "voz": "candidato (arquivo: sabatinas no Senado)"
+    },
+    {
+      "start": 55.5,
+      "end": 59.5,
+      "text": "Vossa Excelência entende da existência de responsabilidade civil do Estado",
+      "voz": "candidato (arquivo: sabatinas no Senado)"
+    },
+    {
+      "start": 59.5,
+      "end": 64.5,
+      "text": "em face da omissão do Poder Público na opinião de Vossa Excelência.",
+      "voz": "candidato (arquivo: sabatinas no Senado)"
+    },
+    {
+      "start": 64.5,
+      "end": 68.5,
+      "text": "Agente político pode responder por improbidade administrativa?",
+      "voz": "candidato (arquivo: sabatinas no Senado)"
+    },
+    {
+      "start": 68.5,
+      "end": 72.5,
+      "text": "Porque a sabatina é um dos momentos mais importantes desta casa.",
+      "voz": "candidato (arquivo: sabatinas no Senado)"
+    },
+    {
+      "start": 72.5,
+      "end": 77.5,
+      "text": "Não podemos nos tornar um puxadinho do Poder Executivo.",
+      "voz": "candidato (arquivo: sabatinas no Senado)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 68.5,
+      "fim": 77.5,
+      "texto": "Porque a sabatina é um dos momentos mais importantes desta casa. Não podemos nos tornar um puxadinho do Poder Executivo.",
+      "tema": "Senado/STF"
+    },
+    {
+      "inicio": 33.5,
+      "fim": 39.5,
+      "texto": "Qual é o papel do Senado na sabatina de um indicado para o Supremo Tribunal Federal?",
+      "tema": "Senado/STF"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Pedro Taques, TikTok @pedrotaquesoficial, 2026-09-22",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/pedro-taques/7688378306789444882.v.mp4 (não versionado)",
+  "obs": "0–17,8 s é LOCUTOR (fala de Pedro Taques na terceira pessoa, \"só Pedro Taques\") — NÃO usar. De 17,8 s em diante são imagens de ARQUIVO das sabatinas no Senado (quadros aos 20, 45 e 70 s: ele, então senador, pergunta a indicados ao STF, com tarjas \"Sabatina: Ministro STF Barroso / Ministra Rosa Weber\"); a voz é dele, mas a gravação original é da TV Senado, reusada pela campanha. O trecho 22,2–26,5 s parece incompleto (corte de edição). Crítica genérica a \"candidato com rabo preso\" no locutor."
+}

@@ -1,0 +1,88 @@
+{
+  "candidato": "Flávio Bolsonaro",
+  "id_candidato": "flavio-bolsonaro",
+  "cargo": "presidente",
+  "esfera": "nacional",
+  "partido": "PL",
+  "numero": 22,
+  "id": "7686580263350193429",
+  "url": "https://www.tiktok.com/@flaviobolsonaro/video/7686580263350193429",
+  "rede": "tiktok",
+  "perfil": "@flaviobolsonaro",
+  "perfil_url": "https://www.tiktok.com/@flaviobolsonaro",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@flaviobolsonaro); uploader do vídeo = flaviobolsonaro / Flávio Bolsonaro",
+  "data": "2026-09-17",
+  "duracao_s": 41,
+  "titulo": "O resgate do Brasil é também para garantir um futuro melhor aos nosso...",
+  "descricao": "O resgate do Brasil é também para garantir um futuro melhor aos nossos filhos, para que possam sonhar, crescer e construir a própria vida com segurança e em paz. O resgate do Brasil é 22 na urna! #fy #bolsonaro #flaviobolsonaro #forapt  PARTIDO LIBERAL - CNPJ 68.581.907/0001-25 - PROPAGANDA ELEITORAL",
+  "tipo": "fala em comício, dirigida a uma criança no palco (Mariah)",
+  "fala_do_candidato": true,
+  "resumo": "No palco, promete a uma criança um Brasil melhor, com estudo de qualidade e empreendedorismo.",
+  "temas": [
+    "futuro",
+    "educação",
+    "família"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.43,
+      "end": 7.43,
+      "text": "Mariah, o tio Flávio vai deixar o Brasil muito melhor pra você, tá, e pra sua geração.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 7.43,
+      "end": 11.43,
+      "text": "Você vai ter estudo de qualidade.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 11.43,
+      "end": 16.43,
+      "text": "Você vai dar muito orgulho pro seu pai e pra sua mãe, tá?",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 16.43,
+      "end": 19.43,
+      "text": "Você vai ser uma mulher empreendedora.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 19.43,
+      "end": 23.43,
+      "text": "Você vai ser uma mulher [trecho incerto].",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 23.43,
+      "end": 25.43,
+      "text": "Você vai ser uma mulher de fé.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 25.43,
+      "end": 29.43,
+      "text": "Uma mulher feliz, sua mulher é sempre pra todo o Brasil, mano Jesus.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 29.43,
+      "end": 33.8,
+      "text": "Desculpe.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 0.4,
+      "fim": 11.4,
+      "texto": "Mariah, o tio Flávio vai deixar o Brasil muito melhor pra você, tá, e pra sua geração. Você vai ter estudo de qualidade.",
+      "tema": "futuro/educação"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Flávio Bolsonaro, TikTok @flaviobolsonaro, 2026-09-17",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/flavio-bolsonaro/7686580263350193429.mp3 (não versionado)",
+  "obs": "Voz do candidato ao microfone em comício (conferido em quadros aos 3, 15 e 28 s: ele no palco com a criança; legenda \"Mariah, o tio Flávio vai\"). Tem ruído de público; trechos 19–33 s com palavras incertas no ASR (\"quemente adeus\", \"mano Jesus\"). Cuidado: envolve criança — evitar usar a imagem; o áudio do início é utilizável."
+}

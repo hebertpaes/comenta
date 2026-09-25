@@ -1,0 +1,100 @@
+{
+  "candidato": "Pedro Taques",
+  "id_candidato": "pedro-taques",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "PSB",
+  "numero": 400,
+  "id": "7687679001812323604",
+  "url": "https://www.tiktok.com/@pedrotaquesoficial/video/7687679001812323604",
+  "rede": "tiktok",
+  "perfil": "@pedrotaquesoficial",
+  "perfil_url": "https://www.tiktok.com/@pedrotaquesoficial",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@pedrotaquesoficial); uploader do vídeo = pedrotaquesoficial / pedrotaques",
+  "data": "2026-09-20",
+  "duracao_s": 53,
+  "titulo": "Bandido não pode ter regalia em cadeia enquanto o trabalhador tem med...",
+  "descricao": "Bandido não pode ter regalia em cadeia enquanto o trabalhador tem medo de voltar para casa. Chefe de facção comandando o crime de dentro do presídio é falência do Estado, não é fatalidade. Minhas propostas no Senado são duras e sem meio-termo: isolamento total dos chefes de facção, fim de qualquer privilégio atrás das grades; os bens apreendidos do crime custeando a própria segurança pública, porque o dinheiro do tráfico tem que voltar em viatura, policial e equipamento; e a Lei Fronteira Blindada, integrando as polícias na fronteira, com mais recursos e pena pesada para quem financia o tráfico. Eu não falo de cadeira. Passei a vida inteira prendendo criminoso e corrupto, e não vou parar agora. Peço o seu voto, um voto de justiça e coragem. Na urna, digite 400 e confirme. Me manda um \"Oi, Pedro\" no WhatsApp: (65) 99988-5869. #SegurançaPública #FronteiraBlindada #Facções #MatoGrosso #PedroTaques400",
+  "tipo": "vídeo de proposta, fala direta à câmera com inserts gráficos (\"Lei Fronteira Blindada\"), arte \"400\"",
+  "fala_do_candidato": true,
+  "resumo": "Propostas de segurança para o Senado: isolar chefes de facção, usar bens apreendidos do crime na segurança, lei \"Fronteira Blindada\".",
+  "temas": [
+    "segurança",
+    "facções",
+    "fronteira"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 3.84,
+      "text": "Tá cansado de bandidagem? Eu também.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 3.84,
+      "end": 9.44,
+      "text": "Lá no Senado tenho propostas duras para acabar com as facções criminosas.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 9.44,
+      "end": 17.76,
+      "text": "Vou acabar com os privilégios dos criminosos, isolando de vez os chefes de facções na cadeia.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 17.76,
+      "end": 23.84,
+      "text": "Vou utilizar os bens apreendidos do crime para custear a própria segurança.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 23.84,
+      "end": 30.96,
+      "text": "Vou criar a lei Fronteira Blindada para integrar as polícias nas fronteiras,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 30.96,
+      "end": 37.04,
+      "text": "aumentando recursos e endurecendo penas para quem financia o tráfico e o crime.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 37.04,
+      "end": 41.2,
+      "text": "Passei a minha vida inteira prendendo criminoso e corrupto,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 41.2,
+      "end": 44.0,
+      "text": "e vou continuar a fazer isso lá no Senado.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 44.0,
+      "end": 48.72,
+      "text": "Eu peço o seu voto, um voto de justiça e coragem.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 0.0,
+      "fim": 9.4,
+      "texto": "Tá cansado de bandidagem? Eu também. Lá no Senado tenho propostas duras para acabar com as facções criminosas.",
+      "tema": "segurança"
+    },
+    {
+      "inicio": 37.0,
+      "fim": 48.7,
+      "texto": "Passei a minha vida inteira prendendo criminoso e corrupto, e vou continuar a fazer isso lá no Senado. Eu peço o seu voto, um voto de justiça e coragem.",
+      "tema": "segurança/pedido de voto"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Pedro Taques, TikTok @pedrotaquesoficial, 2026-09-20",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/pedro-taques/7687679001812323604.v.mp4 (não versionado)",
+  "obs": "Voz do candidato do início ao fim (conferido em quadros aos 5 e 45 s: ele fala à câmera; aos 25 s a voz dele segue em off sobre a arte \"Lei Fronteira Blindada\"). Proposta de segurança, sem ataque nominal. ASR corrigido (criminosos, apreendidos, custear)."
+}

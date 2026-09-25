@@ -1,0 +1,194 @@
+{
+  "candidato": "Zé Medeiros (José Antonio Medeiros)",
+  "id_candidato": "ze-medeiros",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "PL",
+  "numero": 222,
+  "id": "7689224084063866130",
+  "url": "https://www.tiktok.com/@josemedeirosmt/video/7689224084063866130",
+  "rede": "tiktok",
+  "perfil": "@josemedeirosmt",
+  "perfil_url": "https://www.tiktok.com/@josemedeirosmt",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@josemedeirosmt); uploader do vídeo = josemedeirosmt / Zé Medeiros",
+  "data": "2026-09-24",
+  "duracao_s": 116,
+  "titulo": "Sobre o Senado em MATO GROSSO",
+  "descricao": "Sobre o Senado em MATO GROSSO",
+  "tipo": "vídeo de comentarista/influenciador (outro homem, com cartas sobre a mesa) repostado no perfil do candidato",
+  "fala_do_candidato": false,
+  "resumo": "Comentarista (não é o candidato) explica a disputa ao Senado em MT, ataca Janaina Riva e pede voto em Zé Medeiros 222.",
+  "temas": [
+    "Senado MT",
+    "ataque a adversário"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.82,
+      "end": 6.24,
+      "text": "No Mato Grosso, a eleição para o Senado está assim. O PL só tem um candidato ao Senado.",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 6.24,
+      "end": 11.7,
+      "text": "Zé Medeiros foi a indicação pessoal do presidente Bolsonaro e o número dele é 2-2-2.",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 11.7,
+      "end": 16.82,
+      "text": "Zé é conhecido como um dos políticos mais perseguidos pelo Alexandre de Moraes.",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 16.82,
+      "end": 20.34,
+      "text": "Ele já fez cinco pedidos de impeachment em um pedido de prisão para o chandão.",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 20.34,
+      "end": 25.66,
+      "text": "Moraes odeia tanto o Zé que, nessa campanha, ele tirou 1.500 minutos da propaganda do PL",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 25.66,
+      "end": 29.86,
+      "text": "para dar para a Janaína Riva, que é candidato ao Senado pelo UMDB.",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 30.02,
+      "end": 34.58,
+      "text": "O UMDB no Mato Grosso é a esquerda e a Janaína é a amiga da Manuela Davila,",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 34.58,
+      "end": 39.78,
+      "text": "apoiadora do movimento LGBT e Janaína também é filha de José Riva.",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 39.78,
+      "end": 45.34,
+      "text": "Para quem não conhece José Riva, é só pesquisar no Google o maior ficha suja do Brasil",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 45.34,
+      "end": 47.14,
+      "text": "que o papai da Janaína parece.",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 47.14,
+      "end": 51.94,
+      "text": "Ele só não parece mesmo na campanha, mas todo mundo sabe que se ela for eleita",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 51.94,
+      "end": 55.26,
+      "text": "quem vai mandar no gabinete lá em Brasília é o papai.",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 55.26,
+      "end": 58.38,
+      "text": "Dizem lá no Mato Grosso que a Janaína é a candidata do STF",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 58.38,
+      "end": 62.94,
+      "text": "porque ela vive tirando foto com Gilmar Mendes e recebeu essa ajudinha que eu falei do chandão.",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 62.94,
+      "end": 65.86,
+      "text": "O ex-governador Mauro Mendes também é candidato ao Senado.",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 65.86,
+      "end": 70.3,
+      "text": "Ele fez um bom trabalho como governador e deve ter uma boa votação junto com o Zé.",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 70.3,
+      "end": 74.14,
+      "text": "Pela esquerda, além da Janaína, o Mato Grosso tem mais dois candidatos,",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 74.14,
+      "end": 77.66,
+      "text": "o Pedro Tax, que foi governador, e o Carlos Fávaro.",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 77.66,
+      "end": 81.82,
+      "text": "O Fávaro foi eleito com os votos do Bolsonaro, mas depois pulou no colo do Lula",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 81.82,
+      "end": 83.74,
+      "text": "e foi ministro da Agricultura.",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 83.74,
+      "end": 87.86,
+      "text": "Como ministro da Agricultura, ele trabalhou muito pelo MST.",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 88.14,
+      "end": 92.02,
+      "text": "Para completar tem a Margarete Busete, que é do Centrão,",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 92.02,
+      "end": 95.06,
+      "text": "e o Antônio Galvão, um legítimo bolsonarista.",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 95.06,
+      "end": 99.82,
+      "text": "O cenário então fica assim, Zé Medeiros, Mauro Mendes e Galvão pela direita,",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 99.82,
+      "end": 104.3,
+      "text": "Fávaro, Tax e Janaína pela esquerda e Margarete no centro.",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 104.3,
+      "end": 108.06,
+      "text": "Para você que vota no Flávio Bolsonário,",
+      "voz": "outra pessoa (não é o candidato)"
+    },
+    {
+      "start": 108.06,
+      "end": 114.94,
+      "text": "o candidato dele no Mato Grosso é o Zé Medeiros, que tem o número 222.",
+      "voz": "outra pessoa (não é o candidato)"
+    }
+  ],
+  "trechos_sugeridos": [],
+  "credito": "Áudio: propaganda eleitoral de Zé Medeiros, TikTok @josemedeirosmt, 2026-09-24",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/ze-medeiros/7689224084063866130.mp3 (não versionado)",
+  "obs": "NÃO é a voz de Zé Medeiros: quem fala é outro homem (moreno, barba, camisa preta, explicando com cartas; conferido em quadros aos 3, 30 e 70 s) e fala do candidato na terceira pessoa. Além disso, é conteúdo de ATAQUE a Janaina Riva e ao pai dela, e rotula outros candidatos. Não serve como fonte de voz do candidato."
+}

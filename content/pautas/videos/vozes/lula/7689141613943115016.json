@@ -1,0 +1,99 @@
+{
+  "candidato": "Lula (Luiz Inácio Lula da Silva)",
+  "id_candidato": "lula",
+  "cargo": "presidente",
+  "esfera": "nacional",
+  "partido": "PT",
+  "numero": 13,
+  "id": "7689141613943115016",
+  "url": "https://www.tiktok.com/@lulaoficial/video/7689141613943115016",
+  "rede": "tiktok",
+  "perfil": "@lulaoficial",
+  "perfil_url": "https://www.tiktok.com/@lulaoficial",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@lulaoficial); uploader do vídeo = lulaoficial / Presidente Lula",
+  "data": "2026-09-24",
+  "duracao_s": 46,
+  "titulo": "A Alícia, uma jovem trabalhadora CLT, me perguntou sobre o fim da esc...",
+  "descricao": "A Alícia, uma jovem trabalhadora CLT, me perguntou sobre o fim da escala 6x1. Vamos aprovar o fim da 6x1 para garantir dois dias de folga para todas e todos os trabalhadores brasileiros. Será um avanço histórico, fundamental para garantir mais tempo para a família e para o descanso.  Flávio Bolsonaro trabalhou contra essa mudança no Senado. Mas vocês sabem: eles podem deter uma, duas ou três rosas, mas jamais poderão impedir a chegada da primavera. _ Propaganda eleitoral - Coligação Brasil pronto pra mais: PSB/PDT/Federação Fé Brasil(PT/PCdoB/PV)/Federação PSOL-REDE (PSOL/REDE). CNPJ: 68.475.818/0001-02.",
+  "tipo": "vídeo de campanha: pergunta de eleitora (Alícia, CLT) e resposta do candidato à câmera",
+  "fala_do_candidato": true,
+  "resumo": "Responde a uma trabalhadora CLT: fim da escala 6x1 para ter dois dias de folga, com aprovação no Congresso e sanção.",
+  "temas": [
+    "trabalho",
+    "escala 6x1"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.4,
+      "end": 6.12,
+      "text": "Olá, presidente, me chamo Alícia, sou CLT e gostaria de saber sobre o fim da escala 6 por 1.",
+      "voz": "eleitora (Alícia)"
+    },
+    {
+      "start": 6.12,
+      "end": 13.2,
+      "text": "O fim da escala 6 por 1 é para dar mais conforto para o povo trabalhador, para as trabalhadoras.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 13.2,
+      "end": 18.68,
+      "text": "Ou seja, não é justo você trabalhar 6 dias por semana e ficar só um dia em casa para fazer",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 18.68,
+      "end": 21.48,
+      "text": "todos o que tem que fazer, homens e mulheres.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 21.48,
+      "end": 26.04,
+      "text": "Então, quando a gente conseguir aprovar no Congresso Nacional, e eu sancionar, você",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 26.04,
+      "end": 31.24,
+      "text": "vai poder ficar dois dias em casa, um dia para descansar, para relaxar, para brincar com",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 31.24,
+      "end": 35.44,
+      "text": "a nossa família, para visitar os seus parentes e viver mais feliz, porque você vai ter",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 35.44,
+      "end": 37.44,
+      "text": "mais tempo, inclusive, para estudar.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 37.44,
+      "end": 42.64,
+      "text": "É isso, significa o fim da escala 6 por 1, mais conforto para vocês.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 6.1,
+      "fim": 13.2,
+      "texto": "O fim da escala 6 por 1 é para dar mais conforto para o povo trabalhador, para as trabalhadoras.",
+      "tema": "trabalho/escala 6x1"
+    },
+    {
+      "inicio": 37.4,
+      "fim": 42.6,
+      "texto": "É isso, significa o fim da escala 6 por 1, mais conforto para vocês.",
+      "tema": "trabalho/escala 6x1"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Lula, TikTok @lulaoficial, 2026-09-24",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/lula/7689141613943115016.mp3 (não versionado)",
+  "obs": "0–6,1 s é a ELEITORA (Alícia) fazendo a pergunta — NÃO usar. De 6,1 s em diante é Lula falando à câmera (conferido em quadros aos 10, 25 e 40 s; legenda \"E eu sanciono\"). ASR corrigido (\"em casa\", \"e eu sancionar\"); \"brindar as suas parentes\" (31–35 s) é incerto (provável \"visitar os seus parentes\")."
+}
