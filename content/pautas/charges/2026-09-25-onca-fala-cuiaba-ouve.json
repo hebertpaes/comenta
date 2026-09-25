@@ -1,0 +1,54 @@
+{
+ "slug": "onca-fala-cuiaba-ouve",
+ "titulo": "Onça fala, Cuiabá ouve (curta: Janaina Riva reúne profissionais da educação e o movimento comunitário na Toca da Onça, em Cuiabá)",
+ "pedido": "rotina das charges (Parte A): refazer no Canva a charge automática de bonecos (charge-1790101312.webp) da curta publicada em 22/09/2026 18:21 UTC",
+ "imagem_antiga": "https://hojemt.com.br/content/images/2026/09/charge-1790101312.webp",
+ "balao": null,
+ "balao_obs": "sem balão: a curta não traz fala literal de Janaina entre aspas (só paráfrases, como 'prometeu representar o coletivo no Senado'); balão e texto do balão apagados nos dois formatos",
+ "legenda": {
+  "site_16x9": "Na Toca da Onça, até o giz ruge.",
+  "instagram_4x5": "Na Toca da Onça, até o giz ruge."
+ },
+ "contexto": "Janaina Riva (MDB, 150), deputada estadual e candidata ao Senado por MT, teve na noite de quinta-feira, 17/09/2026, em Cuiabá, um encontro com profissionais da educação (criticou a terceirização, os contratos temporários e a sobrecarga dos professores) e outro com lideranças e moradores do movimento comunitário, com mais de 500 pessoas, na Toca da Onça. 'Onça' é o apelido de campanha dela.",
+ "fontes": [
+  "https://hojemt.com.br/onca-fala-cuiaba-ouve/",
+  "https://odocumento.com.br/janaina-reforca-compromisso-com-educacao-e-o-movimento-comunitario-vou-representar-voces-no-senado/",
+  "https://www.estadaomatogrosso.com.br/geral/janaina-reforca-compromisso-com-educacao-e-o-movimento-comunitario-vou-representar-voces-no-senado/146326"
+ ],
+ "regras_da_cena": "Janaina de pé num palquinho de madeira, braços abertos, falando para a plateia num galpão comunitário decorado como toca de onça (arco de pedra, pintas de onça nas paredes, varal de lâmpadas); professores cansados na primeira fila erguem cadernos, livros e gizes como quem pede a palavra, ao lado de uma pilha de provas; uma onça-pintada cartunesca e simpática ruge alegre ao lado dela. Humor leve, ninguém ridicularizado; sem texto, números, logos ou bandeiras de partido",
+ "personagens": [
+  {
+   "nome": "Janaina Riva",
+   "cargo": "deputada estadual, candidata ao Senado por MT (MDB, 150)",
+   "canva_fotos_referencia": ["MAHWH6BBj6A"],
+   "descrita_no_prompt": "cabelos longos, lisos e castanho-escuros quase pretos, repartidos ao meio, abaixo dos ombros; pele clara; sobrancelhas escuras marcadas; sorriso largo; camisa branca social; colar fino com pingente",
+   "data_foto": "2026-08 (registro de candidatura)",
+   "evento": "foto oficial do registro de candidatura 2026",
+   "credito": "TSE/Divulgação (SQ 110002552698)",
+   "licenca": "foto oficial do TSE; só referência de desenho",
+   "busca_foto_recente": "25/09/2026: procurada foto oficial mais nova (galeria da ALMT, set/2026) e não achada com data e crédito; a do TSE 2026 é a mais recente. A antiga MAHWESV-xec (TSE 2022, Commons CC BY) não foi usada"
+  }
+ ],
+ "canva": {
+  "design_site_16x9": "DAHWPbIsJgY",
+  "arte_16x9": "MAHWPQfHOvE",
+  "design_instagram_4x5": "DAHWPYTeHIQ",
+  "arte_4x5": "MAHWPQu8oMA",
+  "modelo_16x9": "DAHWDzwR5c0",
+  "modelo_retrato": "DAHWEJf2P1U"
+ },
+ "materia": "https://hojemt.com.br/onca-fala-cuiaba-ouve/",
+ "status_materia": "publicada (22/09/2026); só a imagem de destaque, a legenda e o alt foram trocados",
+ "instagram": {
+  "status": "agendado (item 54 da agenda, lote todas-as-charges-2026-09-25, ordem 32)"
+ },
+ "arquivos": {
+  "site_16x9": "2026-09-25-onca-fala-cuiaba-ouve.jpg",
+  "instagram_4x5": "2026-09-25-onca-fala-cuiaba-ouve-instagram-retrato.jpg"
+ },
+ "hospedado_em": {
+  "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-25-onca-fala-cuiaba-ouve.jpg",
+  "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-onca-fala-cuiaba-ouve-og.jpg",
+  "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-25-onca-fala-cuiaba-ouve-instagram-retrato.jpg"
+ }
+}
