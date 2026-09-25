@@ -19,6 +19,18 @@ html[data-theme="dark"] #hmt-radar,html.dark #hmt-radar,body.dark-mode #hmt-rada
 #hmt-radar .rd-status .rd-cd{background:#7ff0b8;color:#06301d;font-weight:800}
 @media (max-width:600px){#hmt-radar .rd-topo{padding:18px 16px 14px}#hmt-radar .rd-topo h2{font-size:1.3rem}#hmt-radar .rd-topo p{font-size:.9rem}#hmt-radar .rd-status .rd-opc{display:none}#hmt-radar .rd-grupo button{padding:6px 10px;font-size:.84rem;min-height:34px}#hmt-radar .rd-filtros{padding:12px;gap:10px}#hmt-radar .rd-rot{min-width:0;width:100%}}
 #hmt-radar .rd-novas{margin-top:10px;font-size:.86rem;color:#eafff4}
+#hmt-radar .rd-vivo{display:inline-flex;align-items:center;gap:6px;font-weight:700}
+#hmt-radar .rd-vivo i{width:8px;height:8px;border-radius:50%;background:#7ff0b8;box-shadow:0 0 0 0 rgba(127,240,184,.7)}
+#hmt-radar .rd-vivo.off i{background:#b9c6bf}
+@media (prefers-reduced-motion:no-preference){#hmt-radar .rd-vivo:not(.off) i{animation:rd-pulso 2s infinite}#hmt-radar li.rd-chegou{animation:rd-chega 4s ease-out}}
+@keyframes rd-pulso{0%{box-shadow:0 0 0 0 rgba(127,240,184,.7)}70%{box-shadow:0 0 0 8px rgba(127,240,184,0)}100%{box-shadow:0 0 0 0 rgba(127,240,184,0)}}
+@keyframes rd-chega{0%{background:rgba(0,168,89,.22)}100%{background:transparent}}
+#hmt-radar .rd-toast{position:fixed;z-index:50;right:16px;bottom:16px;max-width:min(420px,calc(100vw - 32px));display:flex;align-items:center;gap:10px;background:var(--verde-esc);color:#fff;border-radius:14px;padding:10px 10px 10px 14px;font-size:.88rem;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+#hmt-radar .rd-toast[hidden]{display:none}
+#hmt-radar .rd-toast span{flex:1;min-width:0}
+#hmt-radar .rd-toast button{border:0;border-radius:999px;background:#7ff0b8;color:#06301d;font-weight:800;padding:6px 14px;cursor:pointer;min-height:34px}
+#hmt-radar .rd-toast .rd-x{background:transparent;color:#fff;font-size:1.2rem;padding:4px 8px;font-weight:400}
+@media (max-width:600px){#hmt-radar .rd-toast{left:16px;right:16px;max-width:none}}
 #hmt-radar .rd-novas b{background:#fff;color:#0a2e1f;border-radius:999px;padding:1px 8px;margin-right:4px}
 /* Filtros */
 #hmt-radar .rd-filtros{border:1px solid var(--bd);border-radius:14px;background:var(--card);padding:14px;margin:0 0 12px;display:grid;gap:12px;scroll-margin-top:96px}
@@ -223,7 +235,7 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
    <li><a href="/apuracao-2026/">Apuração 2026 no HOJE MT</a> (resultados oficiais do TSE a partir de 4/10)</li>
   </ul>
   <h4>Como o radar funciona</h4>
-  <p>O radar lê manchetes públicas (Google Notícias, veículos de Mato Grosso e a cobertura do HOJE MT) a cada 30 minutos e classifica cada uma por palavras-chave. A classificação é automática e pode errar; "polêmica" indica que o fato foi questionado ou está sob apuração <i>segundo a cobertura</i>, não é juízo do HOJE MT, e vale a presunção de inocência. Notícias de rotina (eventos, entrevistas) só são contadas, no rodapé de cada nome, e não aparecem nas listas. Os temas também são atribuídos por palavras-chave. Quando a manchete não traz o endereço original, o link abre a busca dela no Google Notícias.</p>
+  <p>O radar lê manchetes públicas (Google Notícias, veículos de Mato Grosso e a cobertura do HOJE MT) a cada 30 minutos e classifica cada uma por palavras-chave. A classificação é automática e pode errar; "polêmica" indica que o fato foi questionado ou está sob apuração <i>segundo a cobertura</i>, não é juízo do HOJE MT, e vale a presunção de inocência. Notícias de rotina (eventos, entrevistas) só são contadas, no rodapé de cada nome, e não aparecem nas listas. Os temas também são atribuídos por palavras-chave. Quando a manchete não traz o endereço original, o link abre a busca dela no Google Notícias. Esta página confere a cada minuto se há dados novos e se atualiza sozinha, sem recarregar e sem mudar os filtros escolhidos; o que chegou enquanto você lia ganha a marca NOVO.</p>
   <p>Isonomia (Lei 9.504/97): candidatos ao mesmo cargo aparecem em ordem alfabética, com o mesmo espaço, e nenhum filtro ou gráfico muda essa ordem. Manchetes repetidas em vários veículos aparecem uma vez, com todas as fontes.</p>
   <p>Viu uma manchete no lugar errado ou falta um nome? Escreva para <a href="mailto:contato@hojemt.com.br">contato@hojemt.com.br</a>.</p>
  </details>
@@ -234,13 +246,14 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
  var raiz=document.getElementById('hmt-radar');if(!raiz)return;
  var $=function(id){return document.getElementById(id)};
  var C=$('rd-conteudo'),Q=$('rd-q'),P=$('rd-partido'),TM=$('rd-tema'),PER=$('rd-periodo'),LIMPAR=$('rd-limpar'),COMP=$('rd-comp'),CONT=$('rd-contagem'),CARGOS=$('rd-cargos'),TIPOS=$('rd-tipos'),F=raiz.querySelector('.rd-filtros'),VOLTA=raiz.querySelector('.rd-volta'),TIP=$('rd-tip');
- var dados=null,hoje=null,estado,vistos=null,novasTotal=0;zera();
+ var dados=null,hoje=null,estado,vistos=null,novasTotal=0,chegou={};zera();
  var ALIAS={prefeita:'prefeito',governadora:'governador',senadora:'senador','deputada-federal':'deputado-federal','deputada-estadual':'deputado-estadual'};
  var CURTO={governador:'Governo',senador:'Senado','deputado-federal':'Câmara Federal','deputado-estadual':'Assembleia',prefeito:'Autoridades',outros:'Outros'};
  var PERIODO={'7':'na semana','3':'nos últimos 3 dias','2':'hoje e ontem'},PERTXT={'3':'últimos 3 dias','2':'hoje e ontem'};
  var RADAR=/(^|&)(cargo|mostrar|partido|dias|q|tema)=/;
  var VISIVEIS=window.matchMedia&&matchMedia('(max-width:600px)').matches?2:3;
- var ELEICAO=new Date(2026,9,4);
+ // 1º turno: domingo, 4/10/2026, votação das 7h às 16h em MT (8h às 17h de Brasília), segundo TSE e TRE-MT
+ var ABRE=Date.UTC(2026,9,4,11,0),FECHA=Date.UTC(2026,9,4,20,0),URL_DADOS='/content/media/apuracao/radar-candidatos.json?t=';
  // Dados oficiais (TSE/DivulgaCand conferido com TRE-MT, Senado Notícias e CNN Brasil em 24/09/2026): cargo, nome de urna, nome no radar, número, partido, coligação, vice, deferido(1)/checagem pendente(0)
  var OFICIAL=[["governador","Doutora Natasha","Natasha Slhessarenko",55,"PSD","Mato Grosso para Todos","Diogo Botelho (PDT)",1],["governador","Maurício Coelho","Maurício Coelho",33,"Mobiliza","chapa isolada","Dr. Wagner Malheiros (Mobiliza)",1],["governador","Otaviano Pivetta","Otaviano Pivetta",10,"Republicanos","Mato Grosso Não Pode Parar","Gisela Simona (União)",1],["governador","Rafaell Milas","Rafaell Milas",14,"Missão","chapa isolada","Thales Sartorelo (Missão)",1],["governador","Sargento Laudicério","Sargento Laudicério",36,"Agir","chapa isolada","Alex Pucineli (Agir)",0],["governador","Wellington Fagundes","Wellington Fagundes",22,"PL","Coração da Gente","Reinaldo Gomes de Morais (Novo)",1],["senador","Beny Godoy","Beny Godoy",365,"Agir","","",0],["senador","Coronel Darwin","Coronel Darwin",351,"Democrata","","",1],["senador","Fávaro","Carlos Fávaro",555,"PSD","","",1],["senador","Galvan","",700,"Avante","","",1],["senador","Janaina Riva","Janaina Riva",150,"MDB","","",1],["senador","Margareth Buzetti","Margareth Buzetti",111,"PP","","",1],["senador","Mauro Mendes","Mauro Mendes",444,"União","","",1],["senador","Pedro Taques","Pedro Taques",400,"PSB","","",1],["senador","Professor Nelson Ferreira","",360,"Agir","","",1],["senador","Zé Medeiros","Zé Medeiros",222,"PL","","",1]];
  // Temas por palavras (até 3 letras: palavra inteira; mais longas: começo de palavra)
@@ -267,7 +280,7 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
  function casa(t,w){return t.indexOf(' '+w+(w.length<=3?' ':''))>=0}
  function slug(s){return norm(s).replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
  function hash(s){var h=5381,i;for(i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))|0;return (h>>>0).toString(36)}
- function iniciais(n){var p=String(n).replace(/^(doutora?|dr\.?|dra\.?|professora?|prof\.?|sargento|coronel|delegad[oa]|pastor[a]?)\s+/i,'').split(/\s+/).filter(function(w){return w.length>2||/^[A-ZÁÉÍÓÚ]/.test(w)});if(!p.length)p=String(n).split(/\s+/);return ((p[0]||'').charAt(0)+(p.length>1?p[p.length-1].charAt(0):'')).toUpperCase()}
+ function iniciais(n){var p=String(n).replace(/^(doutora?|dr\.?|dra\.?|professora?|prof\.?|sargento|coronel|delegad[oa]|pastor[a]?)\s+/i,'').split(/\s+/).filter(function(w){return w.length>2||/^[A-ZÁÉÍÓÚ]/.test(w)});if(p.length<2)p=String(n).split(/\s+/);return ((p[0]||'').charAt(0)+(p.length>1?p[p.length-1].charAt(0):'')).toUpperCase()}
  function limpaTitulo(t,f){t=String(t==null?'':t).normalize('NFC').trim();var i=t.lastIndexOf(' - ');if(i>20){var suf=t.slice(i+3);if(!f||norm(suf)===norm(f)||suf.length<=40)t=t.slice(0,i)}return t}
  // Dia de hoje no calendário de Cuiabá (UTC-4, sem horário de verão desde 2019)
  function diaMT(u){var y,mo,da;try{new Intl.DateTimeFormat('en-US',{timeZone:'America/Cuiaba',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(u).forEach(function(p){if(p.type==='year')y=+p.value;if(p.type==='month')mo=+p.value;if(p.type==='day')da=+p.value})}catch(e){}if(!y||!mo||!da){var t=new Date(u.getTime()-4*36e5);y=t.getUTCFullYear();mo=t.getUTCMonth()+1;da=t.getUTCDate()}return new Date(y,mo-1,da)}
@@ -282,7 +295,7 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
    d.candidatos.push({nome:o[1],cargo:o[0],cargoN:o[0],partido:o[4],candidato:true,neutras:0,pol:[],sol:[],of:of,semRadar:true,instagram:''})})}
  function prepara(d){if(!d||typeof d!=='object'||!Array.isArray(d.candidatos))throw new Error('JSON sem candidatos');
   if(!d.cargos||typeof d.cargos!=='object'||Array.isArray(d.cargos))d.cargos={};
-  var h=/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(d.gerado_em||'');hoje=diaMT(h?new Date(Date.UTC(+h[1],+h[2]-1,+h[3],+h[4]+4,+h[5])):new Date());
+  var gu=geradoUTC(d.gerado_em);hoje=diaMT(isNaN(gu)?new Date():new Date(gu));
   d.candidatos=d.candidatos.filter(function(c){return c&&typeof c==='object'&&typeof c.nome==='string'&&c.nome.trim()});
   d.candidatos.forEach(function(c){c.nome=c.nome.trim().replace(/\s+/g,' ').normalize('NFC');c.partido=c.partido==null?'':String(c.partido).trim();
    var k=norm(c.cargo).trim().replace(/[\s_]+/g,'-');if(tem(ALIAS,k))k=ALIAS[k];if(!/^[a-z0-9-]{1,40}$/.test(k))k='outros';c.cargoN=k;
@@ -291,8 +304,10 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
   d.candidatos.forEach(function(c){var k=c.cargoN;if(!tem(d.cargos,k)||typeof d.cargos[k]!=='string'||!d.cargos[k].trim())d.cargos[k]=k==='outros'?'Outros nomes monitorados':k.charAt(0).toUpperCase()+k.slice(1).replace(/-/g,' ');
    c.bn=txt(c.nome+(c.of&&c.of.urna!==c.nome?' '+c.of.urna:''));c.busca=txt(c.partido+' '+(c.cidade==null?'':c.cidade)+' '+k.replace(/-/g,' ')+' '+norm(c.cargo)+(c.of?' '+c.of.numero+' '+c.of.coligacao:''));c.id='rd-c-'+slug(c.nome)});
   d.candidatos.sort(function(a,b){return a.nome.localeCompare(b.nome,'pt-BR')});return d}
- // O gerado_em vem no horário de Cuiabá (UTC-4) sem fuso; converte para UTC antes de formatar
- function atualizadoEm(g){var m=/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(g||'');if(!m)return'';return m[3]+'/'+m[2]+' às '+m[4]+':'+m[5]}
+ // O gerado_em vem em UTC sem fuso (conferido em 25/09/2026 com o Last-Modified do arquivo); se um dia vier com fuso, respeita
+ function geradoUTC(g){g=String(g||'');if(/(Z|[+-]\d{2}:?\d{2})$/.test(g))return Date.parse(g);var m=/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2}))?/.exec(g);return m?Date.UTC(+m[1],+m[2]-1,+m[3],+m[4],+m[5],+(m[6]||0)):NaN}
+ // Mostra no horário de MT (UTC-4, sem horário de verão)
+ function atualizadoEm(g){var u=geradoUTC(g);if(isNaN(u))return'';var t=new Date(u-4*36e5),z=function(n){return ('0'+n).slice(-2)};return z(t.getUTCDate())+'/'+z(t.getUTCMonth()+1)+' às '+z(t.getUTCHours())+':'+z(t.getUTCMinutes())}
  function destaca(t,ts,pref){t=String(t==null?'':t);if(!ts||!ts.length)return esc(t);var n='',pos=[],i,j,s;for(i=0;i<t.length;i++){s=norm(t.charAt(i));for(j=0;j<s.length;j++){n+=s.charAt(j);pos.push(i)}}pos.push(t.length);
   var iv=[];ts.forEach(function(w){var re=new RegExp('(^|[^a-z0-9])('+w+')'+(w.length<=3&&!pref?'(?![a-z0-9])':''),'g'),m;while((m=re.exec(n))){var a=m.index+m[1].length;iv.push([pos[a],pos[a+w.length]])}});
   if(!iv.length)return esc(t);iv.sort(function(a,b){return a[0]-b[0]||b[1]-a[1]});var r='',p=0;iv.forEach(function(v){if(v[0]<p)return;r+=esc(t.slice(p,v[0]))+'<mark>'+esc(t.slice(v[0],v[1]))+'</mark>';p=v[1]});return r+esc(t.slice(p))}
@@ -301,7 +316,7 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
  function linkDe(x){return seguro(x.url)||('https://news.google.com/search?q='+encodeURIComponent(x.titulo)+'&hl=pt-BR&gl=BR&ceid=BR:pt-419')}
  function eNovo(x){return !!vistos&&!vistos[x.k]}
  function item(x,ts,i){var nf=x.fontes.length,fx=nf?'<details class="rd-fx"><summary>'+pl(nf,'fonte')+'</summary><p>'+esc(x.fontes.join(' · '))+'</p></details>':'';
-  return '<li'+(i>=VISIVEIS?' hidden':'')+'><a href="'+esc(linkDe(x))+'" target="_blank" rel="nofollow noopener">'+destaca(x.titulo,ts)+' <span aria-hidden="true">↗</span><span class="rd-sr"> (abre em nova aba'+(seguro(x.url)?'':', busca no Google Notícias')+')</span></a><div class="rd-meta">'+(eNovo(x)?'<span class="rd-novo">NOVO</span>':'')+(x.data?'<span>'+esc(x.data)+'</span>':'')+fx+'</div></li>'}
+  return '<li'+(i>=VISIVEIS?' hidden':'')+(chegou[x.k]?' class="rd-chegou"':'')+'><a href="'+esc(linkDe(x))+'" target="_blank" rel="nofollow noopener">'+destaca(x.titulo,ts)+' <span aria-hidden="true">↗</span><span class="rd-sr"> (abre em nova aba'+(seguro(x.url)?'':', busca no Google Notícias')+')</span></a><div class="rd-meta">'+(eNovo(x)?'<span class="rd-novo">NOVO</span>':'')+(x.data?'<span>'+esc(x.data)+'</span>':'')+fx+'</div></li>'}
  function coluna(c,cls,titulo,lista,ts,vazio){var h='<div class="rd-col '+cls+'"><h5 class="rd-col-tit">'+titulo+'</h5>';if(!lista.length)return h+'<div class="rd-vazio">'+vazio+'</div></div>';h+='<ul>'+lista.map(function(x,i){return item(x,ts,i)}).join('')+'</ul>';
   if(lista.length>VISIVEIS){var n=lista.length-VISIVEIS,tp=cls==='p'?'polêmica':'proposta',rot='Ver mais '+n+' '+tp+(n===1?'':'s');h+='<button type="button" class="rd-mais" aria-expanded="false" data-rot="'+rot+'" data-tp="'+tp+'s" data-nome="'+esc(c.nome)+'"><span class="rd-mais-tx">'+rot+'</span><span class="rd-sr"> de '+esc(c.nome)+'</span></button>'}return h+'</div>'}
  function conta(n,t,pal){return n+(t>n?' de '+t:'')+' '+pal+(t===1?'':'s')}
@@ -398,9 +413,10 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
  function marca(grupo,attr,val){grupo.querySelectorAll('button').forEach(function(b){var on=b.getAttribute(attr)===val;b.setAttribute('aria-checked',String(on));b.tabIndex=on?0:-1})}
  function setas(g){g.addEventListener('keydown',function(e){var a=document.activeElement,bs=[].filter.call(g.querySelectorAll('button'),function(b){return b===a||b.getAttribute('aria-disabled')!=='true'}),i=bs.indexOf(a),k=e.key,j=k==='ArrowRight'||k==='ArrowDown'?i+1:k==='ArrowLeft'||k==='ArrowUp'?i-1:k==='Home'?0:k==='End'?bs.length-1:null;if(i<0||j===null)return;e.preventDefault();j=(j+bs.length)%bs.length;bs[j].focus();bs[j].click()})}
  function montaFiltros(){var cont=Object.create(null),partidos=[];dados.candidatos.forEach(function(c){cont[c.cargoN]=1;if(c.partido&&partidos.indexOf(c.partido)<0)partidos.push(c.partido)});
-  var h='<button type="button" role="radio" data-cargo="todos">Todos <small></small></button>';Object.keys(dados.cargos).forEach(function(k){if(cont[k])h+='<button type="button" role="radio" data-cargo="'+esc(k)+'">'+esc(CURTO[k]||dados.cargos[k])+' <small></small></button>'});CARGOS.innerHTML=h;marca(CARGOS,'data-cargo',estado.cargo);
-  partidos.sort(function(a,b){return a.localeCompare(b,'pt-BR')});P.insertAdjacentHTML('beforeend',partidos.map(function(p){return '<option value="'+esc(p)+'">'+esc(p)+'</option>'}).join(''));
-  TM.insertAdjacentHTML('beforeend',TEMAS.slice().sort(function(a,b){return a[1].localeCompare(b[1],'pt-BR')}).map(function(t){return '<option value="'+t[0]+'">'+esc(t[1])+'</option>'}).join(''))}
+  var h='<button type="button" role="radio" data-cargo="todos">Todos <small></small></button>';Object.keys(dados.cargos).forEach(function(k){if(cont[k])h+='<button type="button" role="radio" data-cargo="'+esc(k)+'">'+esc(CURTO[k]||dados.cargos[k])+' <small></small></button>'});if(CARGOS.getAttribute('data-h')!==h){CARGOS.innerHTML=h;CARGOS.setAttribute('data-h',h)}marca(CARGOS,'data-cargo',estado.cargo);
+  partidos.sort(function(a,b){return a.localeCompare(b,'pt-BR')});var op='<option value="">Todos</option>'+partidos.map(function(p){return '<option value="'+esc(p)+'">'+esc(p)+'</option>'}).join('');if(P.getAttribute('data-h')!==op){P.innerHTML=op;P.setAttribute('data-h',op)}
+  if(partidos.indexOf(estado.partido)<0)estado.partido='';P.value=estado.partido;
+  if(TM.options.length<2)TM.insertAdjacentHTML('beforeend',TEMAS.slice().sort(function(a,b){return a[1].localeCompare(b[1],'pt-BR')}).map(function(t){return '<option value="'+t[0]+'">'+esc(t[1])+'</option>'}).join(''))}
  function params(){var p=[];if(estado.cargo!=='todos')p.push('cargo='+encodeURIComponent(estado.cargo));if(estado.tipo!=='todos')p.push('mostrar='+estado.tipo);if(estado.partido)p.push('partido='+encodeURIComponent(estado.partido));if(estado.tema)p.push('tema='+estado.tema);if(estado.periodo!=='7')p.push('dias='+estado.periodo);if(estado.q)p.push('q='+encodeURIComponent(estado.q));return p}
  function salvaHash(){var p=params();if(!p.length&&location.hash&&!RADAR.test(location.hash.slice(1)))return;var h=p.length?'#'+p.join('&'):'';if(location.hash!==h){try{history.replaceState(null,'',location.pathname+location.search+h)}catch(e){}}}
  function leHash(){location.hash.replace(/^#/,'').split('&').forEach(function(kv){var i=kv.indexOf('=');if(i<0)return;var k=kv.slice(0,i),v;try{v=decodeURIComponent(kv.slice(i+1).replace(/\+/g,' ')).trim()}catch(e){return}
@@ -424,8 +440,9 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
   function ok(m){COMP.textContent=m;setTimeout(function(){COMP.textContent='Compartilhar este recorte'},2200)}
   if(navigator.share){navigator.share({title:tt,url:url}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){ok('Link copiado ✓')},function(){ok('Copie o endereço da página')})}else ok('Copie o endereço da página')});
  C.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;if(b.hasAttribute('data-limpar')){limpa();return}
-  if(b.classList.contains('rd-mais')){var ul=b.previousElementSibling,aberto=b.getAttribute('aria-expanded')==='true';ul.querySelectorAll('li').forEach(function(li,i){if(i>=VISIVEIS)li.hidden=aberto});b.setAttribute('aria-expanded',String(!aberto));
-   b.querySelector('.rd-mais-tx').textContent=aberto?b.getAttribute('data-rot'):'Ver menos';b.querySelector('.rd-sr').textContent=(aberto?'':' '+b.getAttribute('data-tp'))+' de '+b.getAttribute('data-nome');var li=ul.children[VISIVEIS];if(!aberto&&li)li.querySelector('a').focus()}});
+  if(b.classList.contains('rd-mais'))expande(b,true)});
+ function expande(b,foco){var ul=b.previousElementSibling,aberto=b.getAttribute('aria-expanded')==='true';ul.querySelectorAll('li').forEach(function(li,i){if(i>=VISIVEIS)li.hidden=aberto});b.setAttribute('aria-expanded',String(!aberto));
+  b.querySelector('.rd-mais-tx').textContent=aberto?b.getAttribute('data-rot'):'Ver menos';b.querySelector('.rd-sr').textContent=(aberto?'':' '+b.getAttribute('data-tp'))+' de '+b.getAttribute('data-nome');var li=ul.children[VISIVEIS];if(foco&&!aberto&&li)li.querySelector('a').focus()}
  // Tabelas dos gráficos
  raiz.addEventListener('click',function(e){var b=e.target.closest('.rd-bt-tab');if(!b)return;var t=$(b.getAttribute('aria-controls')),ab=b.getAttribute('aria-expanded')==='true';t.hidden=ab;b.setAttribute('aria-expanded',String(!ab));b.textContent=ab?'Ver como tabela':'Esconder tabela'});
  // Dica (tooltip) nas marcas, por mouse, toque ou teclado; o texto entra por textContent
@@ -451,16 +468,65 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.target===F)acima=!e.isIntersecting&&e.boundingClientRect.top<0;else dentro=e.isIntersecting});VOLTA.hidden=!(acima&&dentro)});io.observe(F);io.observe(C)}
  VOLTA.addEventListener('click',function(){var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;F.scrollIntoView({behavior:r?'auto':'smooth',block:'start'});var b=CARGOS.querySelector('[aria-checked="true"]');if(b)b.focus({preventScroll:true})});
  // Novidades desde a última visita: só neste navegador; sem armazenamento, o radar funciona igual
- function carregaVistos(d){var chave='hmt-radar-vistos',ant=null,todos={};d.candidatos.forEach(function(c){c.pol.concat(c.sol).forEach(function(x){todos[x.k]=1})});
-  try{var s=localStorage.getItem(chave);if(s){s=JSON.parse(s);if(s&&s.k&&typeof s.k==='object')ant=s}}catch(e){}
+ var CHAVE='hmt-radar-vistos';
+ function chaves(d){var t={};d.candidatos.forEach(function(c){c.pol.concat(c.sol).forEach(function(x){t[x.k]=1})});return t}
+ function guardaVistos(d){try{localStorage.setItem(CHAVE,JSON.stringify({g:d.gerado_em,k:chaves(d),v:vistos}))}catch(e){}}
+ function carregaVistos(d){var ant=null,todos=chaves(d);
+  try{var s=localStorage.getItem(CHAVE);if(s){s=JSON.parse(s);if(s&&s.k&&typeof s.k==='object')ant=s}}catch(e){}
   if(ant&&ant.g!==d.gerado_em){vistos=ant.k}else if(ant){vistos=ant.v||null}
-  try{localStorage.setItem(chave,JSON.stringify({g:d.gerado_em,k:todos,v:vistos}))}catch(e){}
+  guardaVistos(d);
   if(vistos){Object.keys(todos).forEach(function(k){if(!vistos[k])novasTotal++});var nv=$('rd-novas');if(novasTotal){nv.innerHTML='<b>'+novasTotal+'</b> '+(novasTotal===1?'manchete nova':'manchetes novas')+' desde a sua última visita (marcadas com NOVO).';nv.hidden=false}}}
- function inicia(d){dados=d;montaFiltros();try{carregaVistos(d)}catch(e){}try{leHash()}catch(e){}
-  var n=0,jd=parseInt(d.janela_dias,10),at=atualizadoEm(d.gerado_em),falta=Math.round((ELEICAO-hoje)/864e5);d.candidatos.forEach(function(c){n+=c.pol.length+c.sol.length});
-  $('rd-status').innerHTML=(falta>0?'<span class="rd-cd">Faltam '+pl(falta,'dia')+' para o 1º turno (4/10)</span>':falta===0?'<span class="rd-cd">Hoje é dia de eleição</span>':'')+(at?'<span>Atualizado '+esc(at)+' (horário de MT)</span>':'')+'<span>'+d.candidatos.length+' nomes · '+fmt(n)+' manchetes</span><span class="rd-opc">Janela de '+(jd>0?jd:7)+' dias · atualiza a cada 30 min</span>';render()}
- function falha(){var a=C.querySelector('.rd-aviso[role="status"]'),m='Radar temporariamente indisponível. Tente novamente em instantes.';if(a)a.textContent=m;else C.innerHTML='<div class="rd-aviso" role="status">'+m+'</div>';$('rd-status').innerHTML='<span>Dados indisponíveis no momento</span>';F.hidden=true;raiz.querySelector('.rd-painel').hidden=true}
- fetch('/content/media/apuracao/radar-candidatos.json?t='+Math.floor(Date.now()/6e4),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(prepara).then(inicia,falha)
-  .catch(function(e){C.innerHTML='<div class="rd-aviso" role="status">Não foi possível exibir o radar. Recarregue a página.</div>';if(window.console)console.error(e)});
+ // ---------- Ao vivo ----------
+ function ha(min){if(min<1)return 'agora há pouco';if(min<60)return 'há '+min+' min';var h=Math.floor(min/60);if(h>=48)return 'há '+Math.floor(h/24)+' dias';return 'há '+h+' h'+(min%60&&h<3?' '+(min%60)+' min':'')}
+ function contagem(agora){if(agora<ABRE){var s=Math.ceil((ABRE-agora)/6e4),d=Math.floor(s/1440),h=Math.floor(s%1440/60),m=s%60;
+   return '<span class="rd-cd" title="Abertura da votação: domingo, 4/10, às 7h em MT (8h de Brasília)">Faltam '+(d?d+' d ':'')+(d||h?h+' h ':'')+m+' min para a votação <span class="rd-opc">(4/10, 7h em MT)</span></span>'}
+  if(agora<FECHA)return '<span class="rd-cd">Votação aberta até 16h (MT)</span>';
+  return '<span class="rd-cd"><a href="/apuracao-2026/" style="color:inherit">Votação encerrada · acompanhe a apuração ↗</a></span>'}
+ var falhas=0,ultimaBusca=0,tPoll=null;
+ function pintaStatus(){if(!dados)return;var agora=Date.now(),g=geradoUTC(dados.gerado_em),min=isNaN(g)?NaN:Math.max(0,Math.floor((agora-g)/6e4)),n=0,jd=parseInt(dados.janela_dias,10),at=atualizadoEm(dados.gerado_em);
+  dados.candidatos.forEach(function(c){n+=c.pol.length+c.sol.length});
+  var fresco=!isNaN(min)&&min<=45,vivo=falhas>=3?'<span class="rd-vivo off">Sem conexão · tentando de novo</span>':'<span class="rd-vivo'+(fresco?'':' off')+'" title="A página confere os dados a cada minuto e se atualiza sozinha"><i aria-hidden="true"></i>'+(fresco?'Ao vivo':'Aguardando dados novos')+(isNaN(min)?'':' · atualizado '+ha(min))+'</span>';
+  $('rd-status').innerHTML=contagem(agora)+vivo+(at?'<span class="rd-opc">Dados de '+esc(at)+' (horário de MT)</span>':'')+'<span>'+dados.candidatos.length+' nomes · '+fmt(n)+' manchetes</span><span class="rd-opc">Janela de '+(jd>0?jd:7)+' dias · dados novos a cada 30 min</span>'}
+ // Guarda o que o leitor está vendo para a atualização não mexer na leitura
+ // Âncora: o primeiro card ou manchete cujo topo está na tela (é o que a pessoa está lendo)
+ function chaveDe(e){var c=e.closest('.rd-card');if(!c)return null;if(e===c)return {id:c.id};var a=e.querySelector('a');return a?{id:c.id,href:a.getAttribute('href')}:null}
+ function acha(k){var c=document.getElementById(k.id);if(!c||!k.href)return c;var ls=c.querySelectorAll('.rd-col li'),i;for(i=0;i<ls.length;i++){var a=ls[i].querySelector('a');if(a&&a.getAttribute('href')===k.href&&!ls[i].hidden)return ls[i]}return c}
+ function foto(){var es=C.querySelectorAll('.rd-card,.rd-col li:not([hidden])'),i,r,a=null;for(i=0;i<es.length;i++){r=es[i].getBoundingClientRect();if(r.top>=0&&r.top<innerHeight*.9){var k=chaveDe(es[i]);if(k){k.top=r.top;a=k;break}}}
+  return {ancora:a,abertos:[].map.call(C.querySelectorAll('.rd-mais[aria-expanded="true"]'),function(b){return [b.closest('.rd-card').id,b.closest('.rd-col').classList.contains('p')?'p':'s']}),
+   fx:[].map.call(C.querySelectorAll('details.rd-fx[open]'),function(d){var li=d.closest('li'),a=li&&li.querySelector('a');return a?a.getAttribute('href'):''})}}
+ function volta(f){f.abertos.forEach(function(a){var c=document.getElementById(a[0]),b=c&&c.querySelector('.rd-col.'+a[1]+' .rd-mais');if(b&&b.getAttribute('aria-expanded')!=='true')expande(b,false)});
+  if(f.fx.length)C.querySelectorAll('details.rd-fx').forEach(function(d){var a=d.closest('li').querySelector('a');if(a&&f.fx.indexOf(a.getAttribute('href'))>=0)d.open=true});
+  if(f.ancora){var e=acha(f.ancora);if(e){var dy=e.getBoundingClientRect().top-f.ancora.top;if(Math.abs(dy)>1)window.scrollBy(0,dy)}}}
+ var TOAST=null,tToast;
+ function avisa(n,nomes){if(!TOAST){TOAST=document.createElement('div');TOAST.className='rd-toast';TOAST.setAttribute('role','status');raiz.appendChild(TOAST)}
+  TOAST.textContent='';var t=document.createElement('span');t.textContent=pl(n,'manchete nova','manchetes novas')+(nomes.length?': '+nomes.slice(0,3).join(', ')+(nomes.length>3?' e outros':''):'');TOAST.appendChild(t);
+  var b=document.createElement('button');b.type='button';b.textContent='Ver';b.onclick=function(){var li=C.querySelector('.rd-chegou');TOAST.hidden=true;if(!li)return;if(li.hidden){var bt=li.closest('.rd-col').querySelector('.rd-mais');if(bt)expande(bt,false)}
+   var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;li.scrollIntoView({behavior:r?'auto':'smooth',block:'center'});var a=li.querySelector('a');if(a)a.focus({preventScroll:true})};TOAST.appendChild(b);
+  var x=document.createElement('button');x.type='button';x.className='rd-x';x.setAttribute('aria-label','Fechar aviso');x.textContent='×';x.onclick=function(){TOAST.hidden=true};TOAST.appendChild(x);
+  TOAST.hidden=false;clearTimeout(tToast);tToast=setTimeout(function(){TOAST.hidden=true},12000)}
+ var pendente=null;
+ function aplica(d){var antes=chaves(dados),agora=chaves(d),nov=[],nomes=[];
+  Object.keys(agora).forEach(function(k){if(!antes[k])nov.push(k)});
+  if(!vistos)vistos=antes;chegou={};nov.forEach(function(k){chegou[k]=1});
+  d.candidatos.forEach(function(c){if(c.pol.concat(c.sol).some(function(x){return chegou[x.k]}))nomes.push(c.nome)});
+  var f=foto();escondeTip();dados=d;montaFiltros();render();volta(f);pintaStatus();guardaVistos(d);
+  if(nov.length){novasTotal+=nov.length;var nv=$('rd-novas');nv.innerHTML='<b>'+novasTotal+'</b> '+(novasTotal===1?'manchete nova':'manchetes novas')+' desde que você chegou ou desde a última visita (marcadas com NOVO).';nv.hidden=false;avisa(nov.length,nomes)}}
+ // Com o foco do teclado dentro das listas, espera o leitor sair para não tirar o lugar dele
+ function lendoTeclado(){var a=document.activeElement;if(!a||a===C||!C.contains(a))return false;try{return a.matches(':focus-visible')}catch(e){return true}}
+ C.addEventListener('focusout',function(){setTimeout(function(){if(pendente&&!C.contains(document.activeElement)){var j=pendente;pendente=null;try{aplica(prepara(j))}catch(e){}}},0)});
+ function confere(){ultimaBusca=Date.now();
+  fetch(URL_DADOS+Math.floor(Date.now()/6e4),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(function(j){
+   falhas=0;if(!dados||!j||j.gerado_em===dados.gerado_em){pintaStatus();return}
+   if(lendoTeclado())pendente=j;else aplica(prepara(j))})
+  .catch(function(){falhas++;pintaStatus()})}
+ function agenda(){clearTimeout(tPoll);tPoll=setTimeout(function(){if(document.visibilityState!=='hidden')confere();agenda()},6e4)}
+ document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'&&dados&&Date.now()-ultimaBusca>3e4){confere();agenda()}});
+ setInterval(function(){if(dados&&document.visibilityState!=='hidden')pintaStatus()},3e4);
+ function inicia(d){dados=d;montaFiltros();try{carregaVistos(d)}catch(e){}try{leHash()}catch(e){}pintaStatus();render();ultimaBusca=Date.now();agenda()}
+ function falha(){var a=C.querySelector('.rd-aviso[role="status"]'),m='Radar temporariamente indisponível. Tentando de novo…';if(a)a.textContent=m;else C.innerHTML='<div class="rd-aviso" role="status">'+m+'</div>';$('rd-status').innerHTML='<span>Dados indisponíveis no momento</span>';F.hidden=true;raiz.querySelector('.rd-painel').hidden=true;
+  setTimeout(primeira,6e4)}
+ function primeira(){fetch(URL_DADOS+Math.floor(Date.now()/6e4),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(prepara).then(function(d){F.hidden=false;raiz.querySelector('.rd-painel').hidden=false;inicia(d)},falha)
+  .catch(function(e){C.innerHTML='<div class="rd-aviso" role="status">Não foi possível exibir o radar. Recarregue a página.</div>';if(window.console)console.error(e)})}
+ primeira();
 })();
 </script>
