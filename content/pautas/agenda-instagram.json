@@ -94,6 +94,10 @@
         {
           "em": "2026-09-25T17:28:00Z",
           "erro": "Zapier: limite de tarefas do plano atingido (task limit for the current billing period); item continua agendado e sai no próximo disparo depois que o plano for liberado"
+        },
+        {
+          "em": "2026-09-25T19:38:00Z",
+          "erro": "Zapier: limite de tarefas do plano ainda atingido; item continua agendado (e o 06, charge das 15:30, também está vencido na fila)"
         }
       ]
     },
