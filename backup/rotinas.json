@@ -14,7 +14,7 @@
    "nome": "Charges e artes no Canva — trocar charges automáticas e capas genéricas (de hora em hora)",
    "cron_utc": "25 * * * *",
    "fonte": "content/README.md (seções \"Charges no Canva\", \"Referências de imagem por personagem\", \"Artes dos artigos no Canva\" e \"Candidatos com foto oficial do TSE\")",
-   "resumo": "Parte A: posts das últimas 3 h com feature_image contendo /charge- ganham charge no Canva (16:9 + 4:5) a partir de foto licenciada/oficial do personagem (Abilio: MAHWHiDa8C0 + MAHWHkYuCOg, visual atual de camiseta cinza), troca feature_image e og, hospeda 4:5 e agenda no Instagram; às 15 e 21 UTC refaz até 2 antigas; máx. 3 por disparo. Parte B: posts com capa genérica (/opiniao- ou /capa-) ganham ilustração realista de ficção (personagens reais sempre de costas/silhueta, sem rosto), selo ILUSTRAÇÃO · HOJE MT, legenda 'Ilustração: HOJE MT (gerada com IA; cena de ficção)', registro em pautas/ilustracoes/registro.json; máx. 2 por disparo. Commit + push. Parte C: matérias com tag eleicoes que citam candidatos ao Governo/Senado de MT e têm capa genérica ganham capa com foto oficial do TSE (montagem pronta para a disputa em geral; capa de um ou dois candidatos para proposta/agenda/debate; nunca em matéria de acusação), dados em content/pautas/eleicoes/2026-mt-candidatos.json; máx. 2 por disparo. Regra de 24/09: sempre buscar a foto oficial mais recente do personagem antes de gerar (Flávia Moretti MAHWIE_abVw/MAHWIMIJ4SM, Pivetta TSE 2026 MAHWH0J-3js)."
+   "resumo": "Parte A: posts das últimas 3 h com feature_image contendo /charge- ganham charge no Canva (16:9 + 4:5) a partir de foto licenciada/oficial do personagem (Abilio: MAHWHiDa8C0 + MAHWHkYuCOg, visual atual de camiseta cinza), troca feature_image e og, hospeda 4:5 e agenda no Instagram; às 15 e 21 UTC refaz até 2 antigas; máx. 3 por disparo. Parte B: posts com capa genérica (/opiniao- ou /capa-) ganham ilustração realista de ficção (personagens reais sempre de costas/silhueta, sem rosto), selo ILUSTRAÇÃO · HOJE MT, legenda 'Ilustração: HOJE MT (gerada com IA; cena de ficção)', registro em pautas/ilustracoes/registro.json; máx. 2 por disparo. Commit + push. Parte C: matérias com tag eleicoes que citam candidatos ao Governo/Senado de MT e têm capa genérica ganham capa com foto oficial do TSE (montagem pronta para a disputa em geral; capa de um ou dois candidatos para proposta/agenda/debate; nunca em matéria de acusação), dados em content/pautas/eleicoes/2026-mt-candidatos.json; máx. 2 por disparo. Regra de 24/09: sempre buscar a foto oficial mais recente do personagem antes de gerar (Flávia Moretti MAHWIE_abVw/MAHWIMIJ4SM, Pivetta TSE 2026 MAHWH0J-3js). Parte C 5b (25/09): matérias com tag eleicoes sobre a disputa pelo governo/Senado de outros estados ou pela Presidência ganham montagem com as fotos oficiais de registro (DivulgaCand/TSE, via espelho ND Mais) de todos os candidatos em ordem alfabética, sem indeferidos/renúncias, com content/candidatos-tse.py e o modelo DAHWH1j1gbI; crédito 'Fotos: TSE/Divulgação · Arte: HOJE MT'; máx. 4 por disparo."
   },
   {
    "id": "trig_01UkLYDrfmgR5Y5VCXX9ydEW",
@@ -25,10 +25,10 @@
   },
   {
    "id": "trig_017Hsqviu4hME7Kd93eucPWL",
-   "nome": "Backup do sistema no GitHub (diário, 03:00 Cuiabá)",
-   "cron_utc": "0 7 * * *",
+   "nome": "Backup do sistema no GitHub (a cada 6 h)",
+   "cron_utc": "0 */6 * * *",
    "fonte": "content/backup-ghost.mjs",
-   "resumo": "Roda node content/backup-ghost.mjs (posts, páginas, tags, autores sem e-mail, configurações sem segredos, newsletters, site, manifesto de mídias) em backup/ghost/latest, commit e push (sem tags: o proxy do GitHub não aceita refs/tags) para claude/exciting-thompson-4rhut2."
+   "resumo": "Roda node content/backup-ghost.mjs (posts, páginas, tags, autores sem e-mail, configurações sem segredos, newsletters, site, manifesto de mídias) em backup/ghost/latest; inclui no mesmo commit o trabalho ainda não enviado em content/ e backup/ (nunca .env nem chaves); commit e push (sem tags: o proxy do GitHub não aceita refs/tags) para claude/exciting-thompson-4rhut2. Pedido do editor de 25/09: \"faça o backup e mantenha enviando para GitHub\"."
   },
   {
    "id": "trig_017n6KdPrLbPFabBGSuEjD7n",
