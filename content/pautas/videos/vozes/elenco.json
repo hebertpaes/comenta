@@ -1,0 +1,806 @@
+{
+  "atualizado_em": "2026-09-25",
+  "proposito": "Elenco do banco de vozes reais (ESPEC.md, 'Vozes reais, nunca clonadas'): perfis OFICIAIS de cada personagem, de onde podem sair trechos reais (≤ 12 s) de propaganda eleitoral/vídeos de campanha publicados pelo próprio candidato. Nunca vídeo de imprensa ou de terceiros; nunca voz sintética de pessoa real.",
+  "fontes": [
+    "Redes declaradas ao TSE no registro de candidatura, lidas nos espelhos tmc.com.br/eleicoes/candidato/<slug>/ e candidatos.nexojornal.com.br (o divulgacandcontas.tse.jus.br bloqueia acesso de fora do Brasil: HTTP 403)",
+    "Existência e título dos canais de YouTube conferidos por curl (handle inexistente devolve 404); TikTok não pôde ser conferido por curl (devolve 200 para qualquer handle), então a confirmação de TikTok é a declaração ao TSE",
+    "Abilio Brunini e Flávia Moretti não são candidatos em 2026: perfis confirmados por busca (bio com o cargo, seguidores) e curl (YouTube)",
+    "ND Mais (páginas de candidato) não exibe redes sociais — descartado como fonte"
+  ],
+  "regras": [
+    "Só entra no vídeo quem a curta/matéria cita e tem foto oficial cadastrada; tratamento igual entre candidatos do mesmo cargo.",
+    "Perfis marcados 'NÃO declarado ao TSE' precisam de conferência manual (conteúdo de campanha 2026) antes de virar fonte de áudio.",
+    "Sem trecho real confiável, o personagem não fala: o narrador conta."
+  ],
+  "candidatos": [
+    {
+      "id": "doutora-natasha",
+      "nome": "Doutora Natasha (Natasha Slhessarenko Fraife Barreto)",
+      "cargo": "governador",
+      "esfera": "estadual",
+      "partido": "PSD",
+      "numero": 55,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/dranatashamt",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); bio 'Candidata ao Governo de Mato Grosso', 36 mil seguidores (resultado de busca)"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@dranatashamt-u4o",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); canal existe, título 'Dra Natasha MT' (curl)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@dranatashamt",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); mesmo handle do Instagram/YouTube"
+        },
+        {
+          "rede": "site",
+          "url": "https://www.dranatashamt.com.br",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); site oficial de campanha"
+        }
+      ]
+    },
+    {
+      "id": "mauricio-coelho",
+      "nome": "Maurício Coelho (Maurício Coelho de Souza Junior)",
+      "cargo": "governador",
+      "esfera": "estadual",
+      "partido": "Mobiliza",
+      "numero": 33,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/soumauriciocoelho/",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); handle citado por O Tempo/Gazeta como perfil do candidato"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@soumauriciocoelho",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); canal existe, título 'Maurício Coelho' (curl)"
+        },
+        {
+          "rede": "site",
+          "url": "https://soumauriciocoelho.com/",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        }
+      ],
+      "obs": "Não declarou TikTok."
+    },
+    {
+      "id": "pivetta",
+      "nome": "Otaviano Pivetta (Otaviano Olavo Pivetta)",
+      "cargo": "governador",
+      "esfera": "estadual",
+      "partido": "Republicanos",
+      "numero": 10,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/otavianopivetta",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); handle @otavianopivetta citado em posts de imprensa sobre o candidato"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@PivettaOtavianoMT10",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); canal existe, título 'PIVETTA 10 Governador de Mato Grosso' (curl) — número de urna no nome"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@otaviano.pivetta",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        },
+        {
+          "rede": "site",
+          "url": "https://www.pivetta10.com.br",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); site de campanha com o número 10; também declarou otavianopivetta.com"
+        }
+      ]
+    },
+    {
+      "id": "rafaell-milas",
+      "nome": "Rafaell Milas (Rafaell Milas de Oliveira)",
+      "cargo": "governador",
+      "esfera": "estadual",
+      "partido": "Missão",
+      "numero": 14,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/rafaellmilas",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); handle @rafaellmilas citado no site quemerafaellmilas.com.br"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@rafaellmilasmt",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); canal existe, título 'Rafaell Milas' (curl)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@rafaellmilasmt",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        },
+        {
+          "rede": "site",
+          "url": "https://quemerafaellmilas.com.br",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        }
+      ]
+    },
+    {
+      "id": "sargento-laudicerio",
+      "nome": "Sargento Laudicério (Laudicério Aguiar Machado)",
+      "cargo": "governador",
+      "esfera": "estadual",
+      "partido": "Agir",
+      "numero": 36,
+      "perfis": [
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@sargentolau",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); único perfil de vídeo declarado (além do X @drlaudicerio); não pôde ser aberto para checar bio (TikTok bloqueia acesso sem navegador)"
+        }
+      ],
+      "obs": "Não declarou Instagram nem YouTube; busca não achou perfil confiável. Registro: primeiro pedido indeferido, segundo pedido em análise (ver 2026-mt-candidatos.json). Sem trecho real confiável, o personagem não fala: o narrador conta."
+    },
+    {
+      "id": "wellington-fagundes",
+      "nome": "Wellington Fagundes (Wellington Antonio Fagundes)",
+      "cargo": "governador",
+      "esfera": "estadual",
+      "partido": "PL",
+      "numero": 22,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/wellingtonfagundesmt",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@wellingtonfagundesmt",
+          "confirmacao": "NÃO declarado ao TSE; canal existe com título 'Wellington Fagundes' e mesmo handle do Instagram declarado (curl). Existem também @senadorwellingtonfagundes e @wellingtonfagundes ('Senador Wellington Fagundes', canais do mandato). Conferir qual traz a propaganda de 2026 antes de recortar áudio."
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@senwellingtonfagundes",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        },
+        {
+          "rede": "site",
+          "url": "https://senadorwellingtonfagundes.com.br/senador/",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); site do mandato de senador (não de campanha)"
+        }
+      ]
+    },
+    {
+      "id": "beny-godoy",
+      "nome": "Beny Godoy (Benival Alves da Silva)",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "Agir",
+      "numero": 365,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/benygodoysenador",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); handle com o cargo disputado; citado em matéria do Cidadão Consumidor"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@benygodoysenador",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); canal existe, título 'Beny Godoy Senador' (curl)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://vm.tiktok.com/ZS9kDtJbwyekh-aGXmT/",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); link curto declarado; handle não resolvido (TikTok bloqueia sem navegador) — resolver antes de usar"
+        }
+      ],
+      "obs": "Situação do registro 'pendente' no ND Mais; 'Concorrendo' no TMC."
+    },
+    {
+      "id": "coronel-darwin",
+      "nome": "Coronel Darwin (Darwin Salgado Germano)",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "Democrata",
+      "numero": 351,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/coronel_darwin_oficial",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); único perfil declarado"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@coronel_darwin_oficial",
+          "confirmacao": "NÃO declarado ao TSE; canal existe com título 'Darwin Salgado Germano' (nome civil) e mesmo handle do Instagram declarado (curl). Conferir conteúdo de campanha antes de usar."
+        }
+      ],
+      "obs": "Não declarou TikTok."
+    },
+    {
+      "id": "favaro",
+      "nome": "Fávaro (Carlos Henrique Baqueta Fávaro)",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "PSD",
+      "numero": 555,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/carloshbfavaro",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); bio 'Senador de Mato Grosso, ex-ministro da Agricultura', 69 mil seguidores (busca)"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@carlosfavaro3720",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); canal existe, título 'Carlos Fávaro' (curl)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@carloshbfavaro",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); mesmo handle do Instagram; declarou também @carlosfavaromt"
+        },
+        {
+          "rede": "site",
+          "url": "https://carlosfavaro.com.br",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        }
+      ]
+    },
+    {
+      "id": "galvan",
+      "nome": "Galvan (Antônio Galvan)",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "Avante",
+      "numero": 700,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/antoniogalvan.mt/",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); TRE-MT mandou retirar publicações de campanha deste Instagram (VIP MT), o que confirma ser o perfil de campanha"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@antonio.galvan.mt",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        },
+        {
+          "rede": "site",
+          "url": "https://galvan700.com.br",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); site com o número 700; também senadorgalvan.com.br"
+        }
+      ],
+      "obs": "Não declarou YouTube; handles prováveis (@antoniogalvan, @galvan700) não existem."
+    },
+    {
+      "id": "janaina-riva",
+      "nome": "Janaina Riva (Janaina Greyce Riva Fagundes)",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "MDB",
+      "numero": 150,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/janainariva",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); bio 'candidata a senadora por MT', 238 mil seguidores (busca)"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@JanainaRivamt",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); canal existe, título 'Janaina Riva' (curl)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@janainarivamt",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        }
+      ]
+    },
+    {
+      "id": "margareth-buzetti",
+      "nome": "Margareth Buzetti",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "PP",
+      "numero": 111,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/margarethbuzetti",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@SenadoraMargarethBuzetti",
+          "confirmacao": "NÃO declarado ao TSE; canal existe, título 'Senadora Margareth Buzetti' (curl e busca) — canal do mandato; conferir se traz propaganda 2026"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@margarethbuzetti",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); mesmo handle do Instagram"
+        }
+      ]
+    },
+    {
+      "id": "mauro-mendes",
+      "nome": "Mauro Mendes",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "União",
+      "numero": 444,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/mauromendesoficial",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@mauromendesoficial",
+          "confirmacao": "NÃO declarado ao TSE; canal existe, título 'Mauro Mendes', mesmo handle do Instagram/TikTok declarados (curl)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@mauromendesoficial",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        }
+      ]
+    },
+    {
+      "id": "pedro-taques",
+      "nome": "Pedro Taques",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "PSB",
+      "numero": 400,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/pedrotaques/",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); 40 mil seguidores, 906 posts (busca)"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@TVTAQUES",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); canal existe, título 'Pedro Taques' (curl)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@pedrotaquesoficial",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        },
+        {
+          "rede": "site",
+          "url": "https://pedrotaques.com.br",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); também voudetaques.com.br"
+        }
+      ]
+    },
+    {
+      "id": "professor-nelson-ferreira",
+      "nome": "Professor Nelson Ferreira (Nelson Carlos Ferreira Junior)",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "Agir",
+      "numero": 360,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/nelsonferreiraju",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); perfil pessoal (não foi possível abrir para checar conteúdo de campanha)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@nelsonferreiraju",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); mesmo handle do Instagram"
+        }
+      ],
+      "obs": "Não declarou YouTube (handle @nelsonferreiraju não existe). Perfis pequenos; conferir se há propaganda gravada antes de escalar."
+    },
+    {
+      "id": "ze-medeiros",
+      "nome": "Zé Medeiros (José Antonio Medeiros)",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "PL",
+      "numero": 222,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/senadorzemedeiros222",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); handle com número de urna 222"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@josemedeiros222",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); canal existe, título 'Zé Medeiros #MT *ProjetoSenado…' (curl)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@josemedeirosmt",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        },
+        {
+          "rede": "site",
+          "url": "http://www.zemedeiros.com.br",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        }
+      ]
+    },
+    {
+      "id": "abilio-brunini",
+      "nome": "Abilio Brunini (Abilio Jacques Brunini Moumer)",
+      "cargo": "prefeito de Cuiabá",
+      "esfera": "municipal",
+      "partido": "PL",
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/abiliobrunini/",
+          "confirmacao": "não é candidato em 2026 (sem declaração ao TSE); perfil @abiliobrunini com 2 milhões de seguidores e bio 'Prefeito de Cuiabá' (busca); Poder360 cita seus perfis como os de maior engajamento entre prefeitos"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@AbilioBrunini",
+          "confirmacao": "canal existe, título 'Abilio Brunini' (curl); aparece na busca como canal oficial (youtube.com/c/AbilioBrunini)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@abiliobrunini",
+          "confirmacao": "perfil @abiliobrunini com 175 mil seguidores, bio 'Deputado Federal' (busca — bio antiga, do mandato anterior), vídeos em primeira pessoa"
+        }
+      ],
+      "obs": "Só material do próprio perfil; nada de TikTok de imprensa (@vgnoticias, @metropolesoficial)."
+    },
+    {
+      "id": "flavia-moretti",
+      "nome": "Flávia Moretti",
+      "cargo": "prefeita de Várzea Grande",
+      "esfera": "municipal",
+      "partido": "PL",
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/flaviamorettioficial/",
+          "confirmacao": "não é candidata em 2026 (sem declaração ao TSE); perfil com 74 mil seguidores e bio 'Prefeita de Várzea Grande' (busca)"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@FlaviaMorettioficial",
+          "confirmacao": "canal existe, título 'Flávia Moretti' (curl), mesmo handle 'oficial' do Instagram/Facebook"
+        }
+      ],
+      "obs": "TikTok não confirmado (busca não achou handle; @flaviamorettioficial/@flaviamoretti não puderam ser checados sem navegador) — deixado de fora."
+    },
+    {
+      "id": "lula",
+      "nome": "Lula (Luiz Inácio Lula da Silva)",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "PT",
+      "numero": 13,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/lulaoficial",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); 15 milhões de seguidores (busca)"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@lulaoficial",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); canal existe, título 'Lula' (curl)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@lulaoficial",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); 5,8 milhões de seguidores (busca)"
+        },
+        {
+          "rede": "site",
+          "url": "https://lula.com.br",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        }
+      ],
+      "obs": "Declarou também canais da campanha (@brasilcomlula no YouTube/Instagram/TikTok etc.); usar só o perfil principal ou a campanha oficial, nunca perfis de apoiadores."
+    },
+    {
+      "id": "flavio-bolsonaro",
+      "nome": "Flávio Bolsonaro",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "PL",
+      "numero": 22,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/flaviobolsonaro/",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@flaviobolsonaro",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); canal existe, título 'TV Celular Flavio Bolsonaro' (curl)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@flaviobolsonaro",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        },
+        {
+          "rede": "site",
+          "url": "https://flaviobolsonaro.com.br",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        }
+      ]
+    },
+    {
+      "id": "ronaldo-caiado",
+      "nome": "Ronaldo Caiado",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "PSD",
+      "numero": 55,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/ronaldocaiado/",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); 2,3 milhões de seguidores declarados ao TSE (busca)"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@ronaldocaiado55",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); canal existe, título 'Ronaldo Caiado' (curl) — número de urna no handle"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@ronaldocaiado",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        },
+        {
+          "rede": "site",
+          "url": "https://ronaldocaiado.com.br/",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        }
+      ]
+    },
+    {
+      "id": "renan-santos",
+      "nome": "Renan Santos",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "Missão",
+      "numero": 14,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/renansantosmbl/",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); declarou também @renanvote14 (perfil de campanha)"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@RenanSantosMBL",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); canal existe, título 'Renan Santos | VOTE 14' (curl)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@renansantosmbl",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        },
+        {
+          "rede": "site",
+          "url": "https://renanpresidente.com.br",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); site oficial de campanha (busca)"
+        }
+      ],
+      "obs": "Declarou também perfis de conteúdo do MBL (@oncaviral, @multiversoamarelo, @jaguatiricahub…): usar só onde é o próprio Renan falando."
+    },
+    {
+      "id": "augusto-cury",
+      "nome": "Escritor Augusto Cury (Augusto Jorge Cury)",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "Avante",
+      "numero": 70,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/augustocury",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); 9,9 milhões de seguidores (Vox Radar, via busca)"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@AugustoCury",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); declarado como canal UC3F2e1Lob9X8awYULlURyJg (ID declarado em maiúsculas não resolve; o correto, sensível a maiúsculas, é este) — título 'Augusto Cury' (curl)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@augustocuryoficial",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        },
+        {
+          "rede": "site",
+          "url": "https://augustocurypresidente.com.br/",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        }
+      ]
+    },
+    {
+      "id": "zema",
+      "nome": "Zema (Romeu Zema Neto)",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "Novo",
+      "numero": 30,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/romeuzemaoficial",
+          "confirmacao": "declarado ao TSE (espelho candidatos.nexojornal.com.br)"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@romeuzemaoficial",
+          "confirmacao": "declarado ao TSE (Nexo); canal existe, título 'Romeu Zema' (curl)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@romeuzemaoficial",
+          "confirmacao": "declarado ao TSE (Nexo)"
+        },
+        {
+          "rede": "site",
+          "url": "https://www.zema30.com.br/",
+          "confirmacao": "declarado ao TSE (Nexo); site de campanha com o número 30"
+        }
+      ]
+    },
+    {
+      "id": "clariana-barao",
+      "nome": "Clariana Barão",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "DC",
+      "numero": 27,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/clarianabarao",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); declarou também @clarianabarao27"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@ClarianaBar%C3%A3oo",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); canal existe, título 'Clariana Barão' (curl)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@clarianabr",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        }
+      ]
+    },
+    {
+      "id": "edmilson-costa",
+      "nome": "Edmilson Costa",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "PCB",
+      "numero": 21,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/edpcb/",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); perfil pessoal; os demais declarados são do partido (@pcbpartidao, @jornalopoderpopular)"
+        }
+      ],
+      "obs": "Não declarou YouTube nem TikTok próprios."
+    },
+    {
+      "id": "hertz-dias",
+      "nome": "Hertz Dias",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "PSTU",
+      "numero": 16,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/hertzdiaspstu",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@canaldohertz",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); canal existe, título 'Hertz Dias' (curl)"
+        }
+      ],
+      "obs": "Não declarou TikTok."
+    },
+    {
+      "id": "leonardo-avalanche",
+      "nome": "Leonardo Avalanche",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "PRTB",
+      "numero": 28,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/leonardoavalanche/",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); único perfil declarado"
+        }
+      ],
+      "obs": "Registro.json anota checagem pendente (Pablo Marçal com o mesmo número 28)."
+    },
+    {
+      "id": "rui-costa-pimenta",
+      "nome": "Rui Costa Pimenta",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "PCO",
+      "numero": 29,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/ruicpimenta/",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@rcp29",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); canal existe, título 'Rui Costa Pimenta' (curl)"
+        }
+      ],
+      "obs": "Não declarou TikTok."
+    },
+    {
+      "id": "samara",
+      "nome": "Samara (Samara Martins)",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "UP",
+      "numero": 80,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/samaramartinsup",
+          "confirmacao": "declarado ao TSE (Nexo); bio 'candidata à Presidência', 52 mil seguidores (busca)"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@samara.martinsup",
+          "confirmacao": "declarado ao TSE (Nexo)"
+        }
+      ],
+      "obs": "Não declarou YouTube."
+    },
+    {
+      "id": "wilson-grassi",
+      "nome": "Veterinário Wilson Grassi",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "Democrata",
+      "numero": 35,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/veterinariowilsongrassioficial/",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); perfil 'oficial' entre vários declarados (os outros são de páginas temáticas de animais)"
+        },
+        {
+          "rede": "site",
+          "url": "https://veterinariowilsongrassi.com.br",
+          "confirmacao": "declarado ao TSE no registro de candidatura (espelho tmc.com.br/eleicoes/candidato/); "
+        }
+      ],
+      "obs": "Não declarou YouTube nem TikTok."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+ "candidato": "Maurício Coelho (Maurício Coelho de Souza Junior)",
+ "candidato_id": "mauricio-coelho",
+ "cargo": "governador",
+ "esfera": "estadual",
+ "partido": "Mobiliza",
+ "numero": 33,
+ "url": "https://www.instagram.com/reel/DdEwLo5RL13/",
+ "rede": "instagram",
+ "perfil": "@soumauriciocoelho",
+ "dono_do_post": "soumauriciocoelho",
+ "coautores": [],
+ "data": "2026-09-09",
+ "upload_date": "20260909",
+ "duracao_s": 73.31,
+ "titulo": "As renúncias fiscais desnecessárias e os interesses econômicos por trás dela já se tornaram o tema mais importante desta",
+ "descricao": "As renúncias fiscais desnecessárias e os interesses econômicos por trás dela já se tornaram o tema mais importante desta eleição.\n\nTrouxe o debate para a mesa e estou pronto para ser o governador que vai mudar a realidade econômica do povo mato-grossense. Venha comigo, para mudarmos Mato Grosso.\n\nMaurício Coelho 33.\n\n#agazeta #matogrosso #mauriciocoelho #renunciasfiscais",
+ "tipo": "vídeo de campanha/proposta (renúncias fiscais), fala direta à câmera",
+ "segmentos": [
+  {
+   "start": 0.0,
+   "end": 7.0,
+   "text": "Olha a capa da gazeta de noite. Você que me acompanha sabe, eu tenho insistentemente,"
+  },
+  {
+   "start": 7.0,
+   "end": 14.0,
+   "text": "em todas as entrevistas, desde a pré-campanha, trazido o importante tema das renúncias fiscais."
+  },
+  {
+   "start": 14.0,
+   "end": 18.0,
+   "text": "Mostrado os números, mostrado como reverter, mostrado o que fazer."
+  },
+  {
+   "start": 18.0,
+   "end": 24.0,
+   "text": "Muitos diziam que isso não iria se tornar assunto dessa eleição e eu dizia,"
+  },
+  {
+   "start": 24.0,
+   "end": 27.0,
+   "text": "vou mostrar a si mesmo, o povo vai entender."
+  },
+  {
+   "start": 27.0,
+   "end": 32.0,
+   "text": "Na hora que ver os números, o tamanho do que está acontecendo, e quando o povo começou a entender,"
+  },
+  {
+   "start": 32.0,
+   "end": 39.0,
+   "text": "o que eles fizeram? Criaram um discurso de que se tirasse as renúncias, iria acabar com o emprego em Mato Grosso."
+  },
+  {
+   "start": 39.0,
+   "end": 46.0,
+   "text": "Eu mostrava que era mentira, porque as renúncias eram desnecessárias e estavam muito acima do necessário."
+  },
+  {
+   "start": 46.0,
+   "end": 52.0,
+   "text": "Agora, capa da Gazeta, o jornal impresso mais importante do estado, mostrando que uma família,"
+  },
+  {
+   "start": 52.0,
+   "end": 58.0,
+   "text": "que teve em suas empresas um aumento muito grande dessas renúncias fiscais,"
+  },
+  {
+   "start": 58.0,
+   "end": 65.0,
+   "text": "é também uma grande doadora de campanhas do mesmo grupo político que comanda o estado de Mato Grosso."
+  },
+  {
+   "start": 65.0,
+   "end": 70.0,
+   "text": "Gente, quem acredita no papo deles para manter essas renúncias fiscais?"
+  },
+  {
+   "start": 70.0,
+   "end": 73.0,
+   "text": "Está acreditando em conversa para boi dormir."
+  }
+ ],
+ "fala_do_candidato": true,
+ "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+ "obs": "Voz do candidato em primeira pessoa, comentando capa do jornal A Gazeta sobre renúncias fiscais (tema central do plano dele). Correções manuais de nomes/expressões listadas em 'correcoes' (original do whisper: 'Mato de Nosso', 'Queiaram', 'dessa leição', 'que comando', 'Boidormia'). O trecho 46–65 s critica um grupo político/doadores: para uso sem ataque, preferir 0–18 s ('...trazido o importante tema das renúncias fiscais. Mostrado os números, mostrado como reverter, mostrado o que fazer').",
+ "credito_sugerido": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-09",
+ "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/mauricio-coelho/DdEwLo5RL13.mp4 (fora do repositório)"
+}

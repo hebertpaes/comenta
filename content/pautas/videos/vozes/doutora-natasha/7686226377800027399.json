@@ -1,0 +1,117 @@
+{
+  "candidato": "Doutora Natasha (Natasha Slhessarenko Fraife Barreto)",
+  "id_candidato": "doutora-natasha",
+  "cargo": "governador",
+  "esfera": "estadual",
+  "partido": "PSD",
+  "numero": 55,
+  "id": "7686226377800027399",
+  "url": "https://www.tiktok.com/@dranatashamt/video/7686226377800027399",
+  "rede": "tiktok",
+  "perfil": "@dranatashamt",
+  "perfil_url": "https://www.tiktok.com/@dranatashamt",
+  "confirmacao_perfil": "perfil declarado ao TSE (elenco.json); uploader do vídeo = dranatashamt / Natasha Slhessarenko",
+  "data": "2026-09-16",
+  "duracao_s": 49,
+  "titulo": "No meu governo, vou regularizar os RGAs atrasados e garantir que nenh...",
+  "descricao": "No meu governo, vou regularizar os RGAs atrasados e garantir que nenhum servidor passe mais por esse tipo de desrespeito! Quem trabalha merece receber em dia, e pra mudar esse cenário, vote diferente: vote Dra. Natasha 5️⃣5️⃣✊🏻",
+  "fala_do_candidato": true,
+  "transcricao_metodo": "faster-whisper small (cpu/int8, pt, vad_filter) sobre wav 16 kHz mono; revisão leve de grafia (Natasha, mato-grossenses)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 5.0,
+      "text": "Quero aqui reforçar a importância do pagamento dos RGAs atrasados.",
+      "voz": "candidata"
+    },
+    {
+      "start": 5.0,
+      "end": 10.3,
+      "text": "Vocês têm aqui o meu compromisso de pagar o RGA atrasado.",
+      "voz": "candidata"
+    },
+    {
+      "start": 10.3,
+      "end": 12.7,
+      "text": "Também sou servidora pública.",
+      "voz": "candidata"
+    },
+    {
+      "start": 12.7,
+      "end": 15.8,
+      "text": "Trabalho na Universidade Federal de Mato Grosso como professora",
+      "voz": "candidata"
+    },
+    {
+      "start": 15.8,
+      "end": 18.6,
+      "text": "há 24 anos do Departamento de Pediatria.",
+      "voz": "candidata"
+    },
+    {
+      "start": 18.6,
+      "end": 21.1,
+      "text": "A importância da educação na vida das pessoas",
+      "voz": "candidata"
+    },
+    {
+      "start": 21.1,
+      "end": 26.1,
+      "text": "é a única e mais poderosa ferramenta de transformação social.",
+      "voz": "candidata"
+    },
+    {
+      "start": 26.1,
+      "end": 29.1,
+      "text": "É só assim que a gente vai conseguir realmente ter um país",
+      "voz": "candidata"
+    },
+    {
+      "start": 29.1,
+      "end": 33.1,
+      "text": "mais justo, mais humano, mais democrático e mais soberano.",
+      "voz": "candidata"
+    },
+    {
+      "start": 33.1,
+      "end": 36.6,
+      "text": "Então nós vamos pagar esses RGAs e vamos ter aí a garantia.",
+      "voz": "candidata"
+    },
+    {
+      "start": 36.6,
+      "end": 40.6,
+      "text": "Vocês tenham a garantia do pagamento dos RGAs anualmente",
+      "voz": "candidata"
+    },
+    {
+      "start": 40.6,
+      "end": 43.6,
+      "text": "como é devido, como é constitucional.",
+      "voz": "candidata"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 0.0,
+      "fim": 10.3,
+      "texto": "Quero aqui reforçar a importância do pagamento dos RGAs atrasados. Vocês têm aqui o meu compromisso de pagar o RGA atrasado.",
+      "tema": "servidores/RGA"
+    },
+    {
+      "inicio": 33.1,
+      "fim": 43.6,
+      "texto": "Então nós vamos pagar esses RGAs e vamos ter aí a garantia. Vocês tenham a garantia do pagamento dos RGAs anualmente como é devido, como é constitucional.",
+      "tema": "servidores/RGA"
+    },
+    {
+      "inicio": 18.6,
+      "fim": 26.1,
+      "texto": "A importância da educação na vida das pessoas é a única e mais poderosa ferramenta de transformação social.",
+      "tema": "educação"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Doutora Natasha, TikTok @dranatashamt, 2026-09-16",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/doutora-natasha/tt_7686226377800027399.mp3 (não versionado)",
+  "obs": "Fala em evento com servidores (discurso ao microfone, ela na tela com placa \"Natasha Slhessarenko\"; conferido em quadros aos 5 s e 25 s). Primeira pessoa, compromisso de campanha (pagamento de RGAs atrasados), sem ataques nominais. Áudio de evento (microfone de mão), qualidade menor que os spots de estúdio. Correção sobre o ASR: \"servidor à pública\"/\"professor\" -> \"servidora pública\"/\"professora\" (ela fala de si). O ASR não capta o eventual \"ê\" inicial de algumas frases."
+}

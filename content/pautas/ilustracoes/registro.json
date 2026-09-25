@@ -535,6 +535,26 @@
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
       "feito_em": "2026-09-25",
       "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
+    },
+    {
+      "slug": "unidade-de-saude-do-manaira-opera-sem-internet-apos-rompimento-de-fibra",
+      "titulo": "Unidade de Saúde do Manaíra opera sem internet após rompimento de fibra",
+      "materia": "https://hojemt.com.br/unidade-de-saude-do-manaira-opera-sem-internet-apos-rompimento-de-fibra/",
+      "tag": "Saúde & Fitness",
+      "canva": {
+        "design": "DAHWORdZnjo",
+        "arte": "MAHWOUYACo4",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "recepção de unidade básica de saúde de bairro com o monitor apagado; servidora de costas anotando atendimentos à mão; pacientes de costas nas cadeiras; pela janela, técnico de costas mexendo em cabos num poste",
+      "arquivo": "2026-09-25-manaira-vg-sem-internet.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-25-manaira-vg-sem-internet.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-manaira-vg-sem-internet-og.jpg",
+      "capa_anterior": "capa-e66cd3b48ce378b8.webp",
+      "obs": "a página da Prefeitura de Várzea Grande (SECOM/VG) só traz o cartaz genérico 'COMUNICADO / SECOM VG' como og:image e única foto da galeria; sem foto real do local",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "feito_em": "2026-09-25",
+      "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
     }
   ]
 }

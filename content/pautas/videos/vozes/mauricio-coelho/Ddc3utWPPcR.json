@@ -1,0 +1,56 @@
+{
+ "candidato": "Maurício Coelho (Maurício Coelho de Souza Junior)",
+ "candidato_id": "mauricio-coelho",
+ "cargo": "governador",
+ "esfera": "estadual",
+ "partido": "Mobiliza",
+ "numero": 33,
+ "url": "https://www.instagram.com/reel/Ddc3utWPPcR/",
+ "rede": "instagram",
+ "perfil": "@soumauriciocoelho",
+ "dono_do_post": "soumauriciocoelho",
+ "coautores": [],
+ "data": "2026-09-19",
+ "upload_date": "20260919",
+ "duracao_s": 38.24,
+ "titulo": "Na próxima terça, vamos adesivar o seu carro também. Bora?",
+ "descricao": "Na próxima terça, vamos adesivar o seu carro também. Bora?\n\n#matogrosso #mauriciocoelho #eleições2026",
+ "tipo": "fala direta à câmera (convite para adesivaço, Várzea Grande)",
+ "segmentos": [
+  {
+   "start": 1.78,
+   "end": 8.5,
+   "text": "9h30 de sexta-feira terminamos uma reunião aqui em Várzea Grande, Turma Boa"
+  },
+  {
+   "start": 8.5,
+   "end": 14.36,
+   "text": "e aí aproveitamos a reunião para colar os adesivos de carros, adesivos perfurados"
+  },
+  {
+   "start": 14.36,
+   "end": 20.08,
+   "text": "os carros que vieram para a reunião. Se você também quiser ser adesivo, na terça-feira"
+  },
+  {
+   "start": 20.08,
+   "end": 25.38,
+   "text": "a gente vai fazer um adesivaço na frente do partido, eu vou colocar aí o endereço depois"
+  },
+  {
+   "start": 25.38,
+   "end": 31.22,
+   "text": "para vocês verem, terça-feira a partir das 5h30 da tarde, tá, das 5h30 da tarde até a hora que você quiser"
+  },
+  {
+   "start": 31.22,
+   "end": 38.22,
+   "text": "passa lá, eu vou adesivar seu carro e ó, já lavo seu vidro, tá, lavo seu vidro, adesivo seu carro, vem com a gente"
+  }
+ ],
+ "fala_do_candidato": true,
+ "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+ "obs": "Voz do candidato em primeira pessoa. Correção manual: 'Varsia Grande' -> 'Várzea Grande'. Mobilização, sem proposta.",
+ "credito_sugerido": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-19",
+ "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/mauricio-coelho/Ddc3utWPPcR.mp4 (fora do repositório)"
+}

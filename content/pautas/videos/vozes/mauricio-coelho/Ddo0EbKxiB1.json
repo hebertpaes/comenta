@@ -1,0 +1,41 @@
+{
+ "candidato": "Maurício Coelho (Maurício Coelho de Souza Junior)",
+ "candidato_id": "mauricio-coelho",
+ "cargo": "governador",
+ "esfera": "estadual",
+ "partido": "Mobiliza",
+ "numero": 33,
+ "url": "https://www.instagram.com/reel/Ddo0EbKxiB1/",
+ "rede": "instagram",
+ "perfil": "@soumauriciocoelho",
+ "dono_do_post": "soumauriciocoelho",
+ "coautores": [],
+ "data": "2026-09-23",
+ "upload_date": "20260923",
+ "duracao_s": 18.04,
+ "titulo": "Durante a pré-campanha, tive a oportunidade de conversar com uma dúzia de Câmaras de Dirigentes Lojistas espalhadas por ",
+ "descricao": "Durante a pré-campanha, tive a oportunidade de conversar com uma dúzia de Câmaras de Dirigentes Lojistas espalhadas por todo o estado.\n\nAs minhas pautas de campanha sempre foram centradas em renda, acesso ao crédito e ampliação do poder de compra e estas também são as pautas do comércio e dos lojistas, representados pelas CDLs.\n\nEm razão dessa igualdade de luta pelo retorno do poder de compra e pelo reaquecimento do mercado de consumo, foi uma honra atender ao convite da CDL Cuiabá e assinar, na manhã de hoje, esta carta compromisso.\n\n#matogrosso #cdl #comercio #mauriciocoelho",
+ "tipo": "montagem com música (reunião com CDLs)",
+ "segmentos": [
+  {
+   "start": 0.66,
+   "end": 6.66,
+   "text": "Você não sente nem ver, mas eu não posso deixar de dizer, meu amigo,"
+  },
+  {
+   "start": 7.66,
+   "end": 12.66,
+   "text": "Que uma nova mudança em breve vai acontecer."
+  },
+  {
+   "start": 15.03,
+   "end": 18.03,
+   "text": "E o que há algum tempo era jovem novo."
+  }
+ ],
+ "fala_do_candidato": false,
+ "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+ "obs": "NÃO é a voz do candidato: a transcrição é a letra da música de fundo (trilha). Legenda em primeira pessoa, mas sem fala. Não usar como áudio real.",
+ "credito_sugerido": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-23",
+ "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/mauricio-coelho/Ddo0EbKxiB1.mp4 (fora do repositório)"
+}

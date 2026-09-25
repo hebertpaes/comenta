@@ -1,0 +1,71 @@
+{
+  "spec": "/home/user/comenta/content/pautas/videos/2026-09-25-paula-em-13-votos.cena.json",
+  "saida": "/home/user/comenta/content/pautas/videos/2026-09-25-paula-em-13-votos-cena.mp4",
+  "gerado_em": "2026-09-25T17:31:57.563Z",
+  "duracao": 32.44,
+  "resolucao": "1080x1920",
+  "fps": 25,
+  "voz": {
+    "motor": "piper",
+    "narrador": "pt_BR-faber-medium",
+    "personagem": null,
+    "velocidade": 1
+  },
+  "abertura": {
+    "duracao": 2.5
+  },
+  "cenas": [
+    {
+      "n": 1,
+      "quem": "narrador",
+      "movimento": "zoom-in",
+      "inicio": 2.5,
+      "duracao_audio": 4.64,
+      "duracao": 5.09
+    },
+    {
+      "n": 2,
+      "quem": "narrador",
+      "movimento": "pan-dir",
+      "inicio": 7.59,
+      "duracao_audio": 3.5,
+      "duracao": 3.95
+    },
+    {
+      "n": 3,
+      "quem": "narrador",
+      "movimento": "zoom-in",
+      "inicio": 11.54,
+      "duracao_audio": 4.17,
+      "duracao": 4.62
+    },
+    {
+      "n": 4,
+      "quem": "narrador",
+      "movimento": "pan-esq",
+      "inicio": 16.16,
+      "duracao_audio": 4.63,
+      "duracao": 5.08
+    },
+    {
+      "n": 5,
+      "quem": "narrador",
+      "movimento": "zoom-out",
+      "inicio": 21.24,
+      "duracao_audio": 3.87,
+      "duracao": 4.32
+    },
+    {
+      "n": 6,
+      "quem": "narrador",
+      "movimento": "zoom-in",
+      "inicio": 25.56,
+      "duracao_audio": 3.39,
+      "duracao": 3.84
+    }
+  ],
+  "fechamento": {
+    "inicio": 29.4,
+    "duracao": 3
+  }
+}

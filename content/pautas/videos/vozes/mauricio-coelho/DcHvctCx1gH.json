@@ -1,0 +1,106 @@
+{
+ "candidato": "Maurício Coelho (Maurício Coelho de Souza Junior)",
+ "candidato_id": "mauricio-coelho",
+ "cargo": "governador",
+ "esfera": "estadual",
+ "partido": "Mobiliza",
+ "numero": 33,
+ "url": "https://www.instagram.com/reel/DcHvctCx1gH/",
+ "rede": "instagram",
+ "perfil": "@soumauriciocoelho",
+ "dono_do_post": "soumauriciocoelho",
+ "coautores": [],
+ "data": "2026-08-17",
+ "upload_date": "20260817",
+ "duracao_s": 54.68,
+ "titulo": "Está na hora de enfrentar os velhos interesses e fazer grande quem hoje é pequeno.",
+ "descricao": "Está na hora de enfrentar os velhos interesses e fazer grande quem hoje é pequeno.\n\nO fim do IPVA para carros flex é apenas uma das muitas mudanças que faremos para aumentar o dinheiro que sobra no bolso das famílias.\n\nMudar Mato Grosso agora está nas suas mãos. Vote Maurício Coelho e compartilhe com os seus amigos!\n\n#ipva #matogrosso #mauriciocoelho",
+ "tipo": "vídeo de proposta (fim do IPVA para carros flex), formato pergunta-e-resposta",
+ "segmentos": [
+  {
+   "start": 0.0,
+   "end": 2.8,
+   "text": "Quem mora em Mato Grosso poderá não pagar o IPVA em 2027?"
+  },
+  {
+   "start": 2.8,
+   "end": 7.0,
+   "text": "Se o seu carro for flex e os mato-grossenses votar em Maurício Coelho..."
+  },
+  {
+   "start": 7.0,
+   "end": 8.0,
+   "text": "Sim."
+  },
+  {
+   "start": 8.0,
+   "end": 9.3,
+   "text": "Como que isso será feito?"
+  },
+  {
+   "start": 9.3,
+   "end": 13.0,
+   "text": "O Estado entrega 15 bilhões em renúncias fiscais aos barões."
+  },
+  {
+   "start": 13.0,
+   "end": 18.3,
+   "text": "Maurício Coelho vai tirar essas isenções e trocá-las por renúncias que cheguem ao cidadão."
+  },
+  {
+   "start": 18.3,
+   "end": 20.8,
+   "text": "Mas quanto custa para o Estado remover o IPVA?"
+  },
+  {
+   "start": 20.8,
+   "end": 27.3,
+   "text": "1,8 bilhão e parte disso ainda retorna ao Estado por meio do ICMS no consumo das famílias."
+  },
+  {
+   "start": 27.3,
+   "end": 29.0,
+   "text": "E por que ele vai fazer isso?"
+  },
+  {
+   "start": 29.0,
+   "end": 33.2,
+   "text": "Porque dos cinco candidatos ele é o único que não tem foto puxando o saco de barão"
+  },
+  {
+   "start": 33.2,
+   "end": 37.2,
+   "text": "e que ainda tem um plano para diversificar a economia de Mato Grosso"
+  },
+  {
+   "start": 37.2,
+   "end": 40.0,
+   "text": "fazendo grande os que hoje são pequenos."
+  },
+  {
+   "start": 40.0,
+   "end": 41.5,
+   "text": "E o que eu preciso fazer agora?"
+  },
+  {
+   "start": 41.5,
+   "end": 46.0,
+   "text": "Declarar voto em mim, Maurício Coelho e compartilhar esse vídeo com todo mundo."
+  },
+  {
+   "start": 46.0,
+   "end": 48.7,
+   "text": "Olha gente, eu ainda sou pouco conhecido."
+  },
+  {
+   "start": 48.7,
+   "end": 53.0,
+   "text": "Mas ninguém está querendo votar nesses dinossauros que estão concorrendo por aí."
+  }
+ ],
+ "fala_do_candidato": true,
+ "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+ "obs": "Formato pergunta-e-resposta: as perguntas em terceira pessoa ('Como que isso será feito?', 'E por que ele vai fazer isso?') podem ser de uma SEGUNDA voz/locução — não foi possível confirmar por embedding de locutor (sem biblioteca no ambiente); as respostas em primeira pessoa ('Declarar voto em mim, Maurício Coelho', 'Olha gente, eu ainda sou pouco conhecido') são dele. Correções manuais: 'Maldício Coelho' -> 'Maurício Coelho'. Contém frases de ataque genérico ('puxando o saco de barão', 'dinossauros', 29–53 s): evitar. Trecho sugerido (≤12 s), se confirmada a voz dele: 9.3–18.3 s ('O Estado entrega 15 bilhões em renúncias fiscais... trocá-las por renúncias que cheguem ao cidadão').",
+ "credito_sugerido": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-08-17",
+ "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/mauricio-coelho/DcHvctCx1gH.mp4 (fora do repositório)"
+}

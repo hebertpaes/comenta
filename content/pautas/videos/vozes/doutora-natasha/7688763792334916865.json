@@ -1,0 +1,321 @@
+{
+  "candidato": "Doutora Natasha (Natasha Slhessarenko Fraife Barreto)",
+  "id_candidato": "doutora-natasha",
+  "cargo": "governador",
+  "esfera": "estadual",
+  "partido": "PSD",
+  "numero": 55,
+  "id": "7688763792334916865",
+  "url": "https://www.tiktok.com/@dranatashamt/video/7688763792334916865",
+  "rede": "tiktok",
+  "perfil": "@dranatashamt",
+  "perfil_url": "https://www.tiktok.com/@dranatashamt",
+  "confirmacao_perfil": "perfil declarado ao TSE (elenco.json); uploader do vídeo = dranatashamt / Natasha Slhessarenko",
+  "data": "2026-09-23",
+  "duracao_s": 183,
+  "titulo": "TER UMA CASA PARA MORAR COM A FAMÍLIA NÃO PODE SER PRIVILÉGIO! Pratic...",
+  "descricao": "TER UMA CASA PARA MORAR COM A FAMÍLIA NÃO PODE SER PRIVILÉGIO! Praticamente 1 a cada 3 mato-grossenses não tem casa própria e quem aluga compromete quase metade da renda para ter onde morar, por isso vamos ampliar a regularização fundiária e levar infraestrutura, saneamento e dignidade para quem mais precisa. Por isso, no dia 4 de outubro, vote diferente, vote em quem cuida de gente: vote Dra. Natasha 5️⃣5️⃣!",
+  "fala_do_candidato": true,
+  "transcricao_metodo": "faster-whisper small (cpu/int8, pt, vad_filter) sobre wav 16 kHz mono; revisão leve de grafia (Natasha, mato-grossenses)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 3.4,
+      "text": "Agora pra morar melhor, agora a doutora Natasha.",
+      "voz": "locutor"
+    },
+    {
+      "start": 4.2,
+      "end": 13.62,
+      "text": "Ter um teto pra morar com a família não deveria ser um privilégio,",
+      "voz": "candidata"
+    },
+    {
+      "start": 13.62,
+      "end": 17.12,
+      "text": "mas em Mato Grosso, infelizmente, é.",
+      "voz": "candidata"
+    },
+    {
+      "start": 18.62,
+      "end": 23.32,
+      "text": "Praticamente um em cada três mato-grossenses não tem casa própria,",
+      "voz": "candidata"
+    },
+    {
+      "start": 23.32,
+      "end": 28.82,
+      "text": "e a maioria que aluga compromete quase metade da sua renda só pra ter onde morar.",
+      "voz": "candidata"
+    },
+    {
+      "start": 30.02,
+      "end": 33.12,
+      "text": "Mato Grosso é um dos estados brasileiros",
+      "voz": "candidata"
+    },
+    {
+      "start": 33.12,
+      "end": 36.22,
+      "text": "em que se tem mais gente nessa situação.",
+      "voz": "candidata"
+    },
+    {
+      "start": 37.32,
+      "end": 39.42,
+      "text": "A minha casa não tem resistência.",
+      "voz": "depoimento"
+    },
+    {
+      "start": 39.42,
+      "end": 42.32,
+      "text": "Eu sonho com a moradia própria para os meus filhos.",
+      "voz": "depoimento"
+    },
+    {
+      "start": 42.32,
+      "end": 44.82,
+      "text": "A gente precisa sair do aluguel.",
+      "voz": "depoimento"
+    },
+    {
+      "start": 44.82,
+      "end": 50.82,
+      "text": "Como médica, praticamente todos os dias eu vejo as consequências de morar mal.",
+      "voz": "candidata"
+    },
+    {
+      "start": 51.52,
+      "end": 54.72,
+      "text": "Vermes por causa da falta de saneamento básico,",
+      "voz": "candidata"
+    },
+    {
+      "start": 54.72,
+      "end": 59.72,
+      "text": "problemas respiratórios, principalmente em crianças e idosos por causa do mofo,",
+      "voz": "candidata"
+    },
+    {
+      "start": 59.72,
+      "end": 61.82,
+      "text": "muita gente no mesmo cômodo,",
+      "voz": "candidata"
+    },
+    {
+      "start": 61.82,
+      "end": 64.32,
+      "text": "uma gripe pega em todo mundo,",
+      "voz": "candidata"
+    },
+    {
+      "start": 64.32,
+      "end": 68.02,
+      "text": "falta lugar para as famílias crescerem com dignidade.",
+      "voz": "candidata"
+    },
+    {
+      "start": 68.02,
+      "end": 70.52,
+      "text": "Morar mal adoece.",
+      "voz": "candidata"
+    },
+    {
+      "start": 71.52,
+      "end": 73.12,
+      "text": "Temos que fazer diferente.",
+      "voz": "candidata"
+    },
+    {
+      "start": 73.12,
+      "end": 77.62,
+      "text": "Cuidar das pessoas também é garantir onde elas vão dormir à noite.",
+      "voz": "candidata"
+    },
+    {
+      "start": 78.32,
+      "end": 84.42,
+      "text": "Por isso eu vou fazer o maior programa de moradia da história de Mato Grosso.",
+      "voz": "candidata"
+    },
+    {
+      "start": 84.42,
+      "end": 90.92,
+      "text": "Vamos começar a mudar a ser realidade com a construção de 55 mil novas moradias",
+      "voz": "candidata"
+    },
+    {
+      "start": 90.92,
+      "end": 92.72,
+      "text": "em parceria com o governo federal,",
+      "voz": "candidata"
+    },
+    {
+      "start": 92.72,
+      "end": 96.72,
+      "text": "além de uma política habitacional própria do nosso estado.",
+      "voz": "candidata"
+    },
+    {
+      "start": 96.72,
+      "end": 100.12,
+      "text": "Aí sim, é doutora Natasha para fazer o diferente.",
+      "voz": "locutor"
+    },
+    {
+      "start": 100.12,
+      "end": 104.72,
+      "text": "Para quem já mora em casa própria e não tem o papel na mão,",
+      "voz": "candidata"
+    },
+    {
+      "start": 104.72,
+      "end": 111.42,
+      "text": "nós vamos fazer o mutirão de regularização fundiária na cidade, no campo, nas periferias.",
+      "voz": "candidata"
+    },
+    {
+      "start": 111.42,
+      "end": 116.92,
+      "text": "Porque casa própria com papel na mão garante muito mais do que um teto,",
+      "voz": "candidata"
+    },
+    {
+      "start": 116.92,
+      "end": 118.72,
+      "text": "garante um patrimônio.",
+      "voz": "candidata"
+    },
+    {
+      "start": 118.72,
+      "end": 119.92,
+      "text": "E tem mais.",
+      "voz": "candidata"
+    },
+    {
+      "start": 119.92,
+      "end": 124.92,
+      "text": "Para as pessoas morarem com dignidade, o bairro não pode ser esquecido.",
+      "voz": "candidata"
+    },
+    {
+      "start": 124.92,
+      "end": 133.72,
+      "text": "Vamos levar, junto com as moradias, ruas pavimentadas, saneamento básico, iluminação e acesso decente.",
+      "voz": "candidata ou vice (não confirmado)"
+    },
+    {
+      "start": 133.72,
+      "end": 136.62,
+      "text": "Porque desenvolvimento não é apenas construção.",
+      "voz": "candidata ou vice (não confirmado)"
+    },
+    {
+      "start": 136.62,
+      "end": 141.92,
+      "text": "É a garantia de que todas as famílias Mato Grosso podem morar com dignidade,",
+      "voz": "candidata ou vice (não confirmado)"
+    },
+    {
+      "start": 141.92,
+      "end": 144.52,
+      "text": "segurança, poder sonhar com o futuro.",
+      "voz": "candidata ou vice (não confirmado)"
+    },
+    {
+      "start": 144.52,
+      "end": 146.22,
+      "text": "Vamos fazer diferente.",
+      "voz": "candidata ou vice (não confirmado)"
+    },
+    {
+      "start": 146.22,
+      "end": 148.72,
+      "text": "Vamos juntos cuidar de gente.",
+      "voz": "candidata ou vice (não confirmado)"
+    },
+    {
+      "start": 152.72,
+      "end": 157.72,
+      "text": "Para mudar Mato Grosso, doutora Natasha, cinco, cinco.",
+      "voz": "jingle/apoiadores"
+    },
+    {
+      "start": 157.72,
+      "end": 160.22,
+      "text": "É a chance do Mato Grosso ter uma mulher no governo.",
+      "voz": "jingle/apoiadores"
+    },
+    {
+      "start": 160.22,
+      "end": 164.22,
+      "text": "Para mudar Mato Grosso, doutora Natasha, cinco, cinco.",
+      "voz": "jingle/apoiadores"
+    },
+    {
+      "start": 164.22,
+      "end": 167.22,
+      "text": "Vamos, doutora Natasha, cinco, cinco.",
+      "voz": "jingle/apoiadores"
+    },
+    {
+      "start": 170.72,
+      "end": 172.72,
+      "text": "Cinco, cinco, doutora Natasha.",
+      "voz": "jingle/apoiadores"
+    },
+    {
+      "start": 173.72,
+      "end": 176.72,
+      "text": "Ela é a facetada, gente, doutora Natasha.",
+      "voz": "jingle/apoiadores"
+    },
+    {
+      "start": 176.72,
+      "end": 179.72,
+      "text": "Estou com a doutora Natasha, cinco, cinco.",
+      "voz": "jingle/apoiadores"
+    },
+    {
+      "start": 179.72,
+      "end": 181.22,
+      "text": "Vamos fazer diferente.",
+      "voz": "jingle/apoiadores"
+    },
+    {
+      "start": 181.22,
+      "end": 183.22,
+      "text": "Vote cinco, cinco.",
+      "voz": "jingle/apoiadores"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 78.3,
+      "fim": 84.4,
+      "texto": "Por isso eu vou fazer o maior programa de moradia da história de Mato Grosso.",
+      "tema": "moradia"
+    },
+    {
+      "inicio": 84.4,
+      "fim": 96.7,
+      "texto": "Vamos começar a mudar a ser realidade com a construção de 55 mil novas moradias em parceria com o governo federal, além de uma política habitacional própria do nosso estado.",
+      "tema": "moradia"
+    },
+    {
+      "inicio": 100.1,
+      "fim": 111.4,
+      "texto": "Para quem já mora em casa própria e não tem o papel na mão, nós vamos fazer o mutirão de regularização fundiária na cidade, no campo, nas periferias.",
+      "tema": "regularização fundiária"
+    },
+    {
+      "inicio": 68.0,
+      "fim": 77.6,
+      "texto": "Morar mal adoece. Temos que fazer diferente. Cuidar das pessoas também é garantir onde elas vão dormir à noite.",
+      "tema": "moradia/saúde"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Doutora Natasha, TikTok @dranatashamt, 2026-09-23",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/doutora-natasha/tt_7688763792334916865.mp3 (não versionado)",
+  "obs": "Programa eleitoral (bloco de ~3 min, \"Moradia e Regularização Fundiária\"; mesmo conteúdo do PROGRAMA 11 no YouTube pPwCDYayvhs, 2026-09-23). A candidata fala à câmera em primeira pessoa nos segmentos voz=candidata (conferido em quadros: 8 s, 30 s, 100 s, 120 s). Segmentos voz=locutor (abertura e 96,7–100,1 s), voz=depoimento (moradora, 37,3–44,8 s; conferido aos 40 s) e voz=jingle/apoiadores (152,7 s em diante) NÃO são a voz dela. Entre 124,9 e 148,7 s ela aparece ao lado do candidato a vice em cena externa (quadro aos 140 s) e não dá para garantir quem fala em cada frase — não usar sem conferir o vídeo. Sem ataques a adversários; conteúdo de proposta. Os trechos_sugeridos ficam todos dentro de segmentos confirmados."
+}

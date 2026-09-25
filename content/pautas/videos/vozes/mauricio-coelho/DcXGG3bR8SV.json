@@ -1,0 +1,121 @@
+{
+ "candidato": "Maurício Coelho (Maurício Coelho de Souza Junior)",
+ "candidato_id": "mauricio-coelho",
+ "cargo": "governador",
+ "esfera": "estadual",
+ "partido": "Mobiliza",
+ "numero": 33,
+ "url": "https://www.instagram.com/reel/DcXGG3bR8SV/",
+ "rede": "instagram",
+ "perfil": "@soumauriciocoelho",
+ "dono_do_post": "soumauriciocoelho",
+ "coautores": [],
+ "data": "2026-08-22",
+ "upload_date": "20260822",
+ "duracao_s": 43.26,
+ "titulo": "Apoie esta mensagem. Compartilhe este vídeo.",
+ "descricao": "Apoie esta mensagem. Compartilhe este vídeo.\n\nMeu nome é Maurício Coelho e quero ser o seu governador. O governador que governará para você, porque Mato Grosso não pode ser um estado próspero apenas para meia dúzia de barões.\n\nE o primeiro encontro com os candidatos mostrou que enquanto Pivetta, Fagundes, Natasha e Rafaell liam respostas prontas, eu mostrava como resolver os seus problemas.\n\n#matogrosso #mauriciocoelho #governador #pivetta #wellingtonfagundes",
+ "tipo": "trecho de fala do candidato em encontro/sabatina com candidatos (proposta de segurança: roubo de carga), repostado no perfil dele",
+ "segmentos": [
+  {
+   "start": 0.0,
+   "end": 10.13,
+   "text": "pega na colinha"
+  },
+  {
+   "start": 10.13,
+   "end": 11.13,
+   "text": "o roubo de carga moderno"
+  },
+  {
+   "start": 11.13,
+   "end": 13.13,
+   "text": "ele não é mais o roubo da década de 80"
+  },
+  {
+   "start": 13.13,
+   "end": 14.13,
+   "text": "que era um roubo de oportunidade"
+  },
+  {
+   "start": 14.13,
+   "end": 16.13,
+   "text": "a pessoa achou uma oportunidade boa"
+  },
+  {
+   "start": 16.13,
+   "end": 18.13,
+   "text": "um caminhão passando e roubava, não"
+  },
+  {
+   "start": 18.13,
+   "end": 19.13,
+   "text": "hoje o roubo é um projeto"
+  },
+  {
+   "start": 19.13,
+   "end": 21.13,
+   "text": "um projeto com financiadores"
+  },
+  {
+   "start": 21.13,
+   "end": 23.13,
+   "text": "com equipe estipulada"
+  },
+  {
+   "start": 23.13,
+   "end": 24.13,
+   "text": "que vai lá, rouba"
+  },
+  {
+   "start": 24.13,
+   "end": 26.13,
+   "text": "depois já sabe para quem vai vender aquela carga"
+  },
+  {
+   "start": 26.13,
+   "end": 28.13,
+   "text": "então existe já o receptador pronto para aquilo"
+  },
+  {
+   "start": 28.13,
+   "end": 30.13,
+   "text": "e você não vai resolver isso"
+  },
+  {
+   "start": 30.13,
+   "end": 33.13,
+   "text": "só tratando como se fosse ainda o roubo de oportunidade"
+  },
+  {
+   "start": 33.13,
+   "end": 34.13,
+   "text": "só olhando a rodovia"
+  },
+  {
+   "start": 34.13,
+   "end": 36.13,
+   "text": "a gente tem que começar a investigar o conjunto"
+  },
+  {
+   "start": 36.13,
+   "end": 38.13,
+   "text": "o caminho desse dinheiro"
+  },
+  {
+   "start": 38.13,
+   "end": 40.13,
+   "text": "ou seja, é preciso investigar com inteligência"
+  },
+  {
+   "start": 40.13,
+   "end": 42.13,
+   "text": "o caminho, o trânsito do dinheiro"
+  }
+ ],
+ "fala_do_candidato": true,
+ "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+ "obs": "Voz do candidato (fala em evento com os candidatos; imagem provavelmente captada no evento, mas publicada pelo próprio perfil com legenda própria). O início (0–10 s, 'pega na colinha') é provocação a adversários: NÃO usar. De 10.1 s em diante é proposta de segurança pública sem ataque. Trecho sugerido (≤12 s): 28.1–40.1 s ('e você não vai resolver isso só tratando como se fosse ainda o roubo de oportunidade... é preciso investigar com inteligência'). Universo sugerido: Estrada da Soja (BR-163).",
+ "credito_sugerido": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-08-22",
+ "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/mauricio-coelho/DcXGG3bR8SV.mp4 (fora do repositório)"
+}

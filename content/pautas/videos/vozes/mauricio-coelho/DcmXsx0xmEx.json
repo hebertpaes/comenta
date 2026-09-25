@@ -1,0 +1,71 @@
+{
+ "candidato": "Maurício Coelho (Maurício Coelho de Souza Junior)",
+ "candidato_id": "mauricio-coelho",
+ "cargo": "governador",
+ "esfera": "estadual",
+ "partido": "Mobiliza",
+ "numero": 33,
+ "url": "https://www.instagram.com/reel/DcmXsx0xmEx/",
+ "rede": "instagram",
+ "perfil": "@soumauriciocoelho",
+ "dono_do_post": "soumauriciocoelho",
+ "coautores": [],
+ "data": "2026-08-28",
+ "upload_date": "20260828",
+ "duracao_s": 31.56,
+ "titulo": "Apoie esta mensagem compartilhando com os seus amigos.",
+ "descricao": "Apoie esta mensagem compartilhando com os seus amigos.\n\nVocê já percebeu para quem o Estado trabalha?\nChega de governos que ignoram a sua renda familiar para garantir o aumento do lucro dos mesmos barões de sempre.\n\nVamos devolver o Estado para o cidadão e fazer a economia girar na base. Quem me acompanha já percebeu que tenho projetos claros para mudar isso.\n\nAgora, está nas suas mãos fazer essa mensagem chegar aos seus amigos.\n\nMaurício Coelho — 33\n\n#matogrosso #MauricioCoelho #pivetta #custodevida",
+ "tipo": "trecho de entrevista (responde a 'Paula', entrevistadora) repostado no perfil do candidato com legenda própria",
+ "segmentos": [
+  {
+   "start": 0.0,
+   "end": 6.16,
+   "text": "Quando a gente tem, Paula, uma elite política, que é também uma elite exportadora, você tem um problema das decisões."
+  },
+  {
+   "start": 6.16,
+   "end": 11.0,
+   "text": "Se o empresário, quando ele tem um comércio, quando ele tem uma porta de loja, ele quer abrir uma porta de loja em um lugar que sinta próspero."
+  },
+  {
+   "start": 11.0,
+   "end": 14.52,
+   "text": "Ele quer abrir uma porta de loja em um lugar que as pessoas tenham renda para consumir."
+  },
+  {
+   "start": 14.52,
+   "end": 17.16,
+   "text": "Agora, quem é exportador só se preocupa com duas coisas."
+  },
+  {
+   "start": 17.16,
+   "end": 19.08,
+   "text": "Custo de produção e infraestrutura."
+  },
+  {
+   "start": 19.08,
+   "end": 22.52,
+   "text": "Não importa tanto a renda das pessoas que vivem naquele lugar."
+  },
+  {
+   "start": 22.52,
+   "end": 26.4,
+   "text": "Isso faz com que o Estado hoje só tenha duas pautas."
+  },
+  {
+   "start": 26.4,
+   "end": 28.96,
+   "text": "Custo de produção e infraestrutura."
+  },
+  {
+   "start": 28.96,
+   "end": 30.96,
+   "text": "Só que o Estado precisa ter mais pautas do que essas."
+  }
+ ],
+ "fala_do_candidato": true,
+ "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+ "obs": "Voz do candidato, sem ataque nominal, argumento econômico (elite exportadora x renda das pessoas; Estado precisa ter mais pautas que custo de produção e infraestrutura). ATENÇÃO: é excerto de ENTREVISTA (chama a entrevistadora de 'Paula'), provavelmente gravada por veículo de imprensa; foi publicado pelo próprio candidato, mas por precaução (regra 'nunca vídeo de veículo de imprensa') preferir os vídeos produzidos pela campanha. Trecho sugerido (≤12 s), se aceito: 22.5–31.0 s.",
+ "credito_sugerido": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-08-28",
+ "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/mauricio-coelho/DcmXsx0xmEx.mp4 (fora do repositório)"
+}

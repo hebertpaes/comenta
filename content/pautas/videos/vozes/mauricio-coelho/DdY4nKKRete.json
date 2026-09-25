@@ -1,0 +1,66 @@
+{
+ "candidato": "Maurício Coelho (Maurício Coelho de Souza Junior)",
+ "candidato_id": "mauricio-coelho",
+ "cargo": "governador",
+ "esfera": "estadual",
+ "partido": "Mobiliza",
+ "numero": 33,
+ "url": "https://www.instagram.com/reel/DdY4nKKRete/",
+ "rede": "instagram",
+ "perfil": "@soumauriciocoelho",
+ "dono_do_post": "soumauriciocoelho",
+ "coautores": [],
+ "data": "2026-09-17",
+ "upload_date": "20260917",
+ "duracao_s": 28.17,
+ "titulo": "Hoje o dia é de visita à Tangará da Serra.",
+ "descricao": "Hoje o dia é de visita à Tangará da Serra.\n\nIndo às rádios, concedendo entrevistas, mas — principalmente — andando pelas ruas e conversando com as pessoas, para levar as propostas que vão mudar Mato Grosso.\n\nSe você é de Tangará, me envie mensagem e venha bater um papo comigo.\n\n#tangaradaserra #matogrosso #mauriciocoelho #governo",
+ "tipo": "fala direta à câmera (agenda de campanha em Tangará da Serra, menciona propostas)",
+ "segmentos": [
+  {
+   "start": 0.0,
+   "end": 3.8,
+   "text": "Bom dia, meus amigos. Eu estou aqui em Tangará da Serra."
+  },
+  {
+   "start": 3.8,
+   "end": 7.2,
+   "text": "Estamos aqui, entregando Santinho para as pessoas, conversando na rua."
+  },
+  {
+   "start": 7.2,
+   "end": 13.2,
+   "text": "Já passei em duas rádios, a Rádio Serra FM, a Rádio Band FM também,"
+  },
+  {
+   "start": 13.2,
+   "end": 15.7,
+   "text": "que transmite para toda a região."
+  },
+  {
+   "start": 15.7,
+   "end": 19.2,
+   "text": "E vamos continuar a andança por aqui, conversando com as pessoas,"
+  },
+  {
+   "start": 19.2,
+   "end": 22.1,
+   "text": "olhando nos olhos e trazendo propostas,"
+  },
+  {
+   "start": 22.1,
+   "end": 26.9,
+   "text": "principalmente para colocar os trabalhadores urbanos também na pauta do estado,"
+  },
+  {
+   "start": 26.9,
+   "end": 28.1,
+   "text": "porque precisa."
+  }
+ ],
+ "fala_do_candidato": true,
+ "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+ "obs": "Voz do candidato em primeira pessoa, selfie na rua. Correção manual: 'Tengarada, Serra' -> 'Tangará da Serra'. Trecho sugerido (≤12 s): 15.7–26.9 s ('E vamos continuar a andança... trabalhadores urbanos também na pauta do estado').",
+ "credito_sugerido": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-17",
+ "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/mauricio-coelho/DdY4nKKRete.mp4 (fora do repositório)"
+}

@@ -1,0 +1,61 @@
+{
+ "candidato": "Maurício Coelho (Maurício Coelho de Souza Junior)",
+ "candidato_id": "mauricio-coelho",
+ "cargo": "governador",
+ "esfera": "estadual",
+ "partido": "Mobiliza",
+ "numero": 33,
+ "url": "https://www.instagram.com/reel/Ddr_WK1Rakd/",
+ "rede": "instagram",
+ "perfil": "@soumauriciocoelho",
+ "dono_do_post": "soumauriciocoelho",
+ "coautores": [],
+ "data": "2026-09-24",
+ "upload_date": "20260924",
+ "duracao_s": 34.85,
+ "titulo": "Adesivaço em Rondonópolis, após as agendas de imprensa do dia.",
+ "descricao": "Adesivaço em Rondonópolis, após as agendas de imprensa do dia.\n\n#matogrosso #mauriciocoelho #rondonopolis",
+ "tipo": "fala direta à câmera (agenda de campanha em Rondonópolis, adesivaço)",
+ "segmentos": [
+  {
+   "start": 0.0,
+   "end": 5.0,
+   "text": "Boa noite amigos, estamos aqui em Rondonópolis, na esquina da Fernando Correia com a Lyons."
+  },
+  {
+   "start": 5.0,
+   "end": 8.7,
+   "text": "A gente vai colar alguns adesivos aqui, vamos fazer uma mobilização."
+  },
+  {
+   "start": 8.7,
+   "end": 14.9,
+   "text": "Hoje o dia foi muito bom, fizemos quatro rádios, três programas de televisão,"
+  },
+  {
+   "start": 14.9,
+   "end": 20.1,
+   "text": "dois sites, agenda cheia o dia inteiro e agora a gente vai conversar com a cidade."
+  },
+  {
+   "start": 20.1,
+   "end": 26.1,
+   "text": "Já entregamos alguns panfletos aqui, a Globo veio cobrir e vamos agora fazer um adesivo."
+  },
+  {
+   "start": 26.1,
+   "end": 29.1,
+   "text": "Vai começar daqui a pouco e vamos para isso."
+  },
+  {
+   "start": 29.1,
+   "end": 34.7,
+   "text": "Se você estiver em Rondonópolis e quiser ver para cá, me chama e aparece aqui, eu estou aqui."
+  }
+ ],
+ "fala_do_candidato": true,
+ "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+ "obs": "Voz do candidato em primeira pessoa, à noite, na rua; ruído de trânsito. Menciona 'a Globo veio cobrir' (relato dele, não é vídeo de imprensa). Trecho sugerido (≤12 s): 8.7–20.1 s.",
+ "credito_sugerido": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-24",
+ "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/mauricio-coelho/Ddr_WK1Rakd.mp4 (fora do repositório)"
+}

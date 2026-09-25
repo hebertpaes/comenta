@@ -1,0 +1,151 @@
+{
+ "candidato": "Maurício Coelho (Maurício Coelho de Souza Junior)",
+ "candidato_id": "mauricio-coelho",
+ "cargo": "governador",
+ "esfera": "estadual",
+ "partido": "Mobiliza",
+ "numero": 33,
+ "url": "https://www.instagram.com/reel/Dc1lOxBN7xc/",
+ "rede": "instagram",
+ "perfil": "@soumauriciocoelho",
+ "dono_do_post": "soumauriciocoelho",
+ "coautores": [],
+ "data": "2026-09-03",
+ "upload_date": "20260903",
+ "duracao_s": 79.25,
+ "titulo": "Sou Maurício Coelho, candidato ao governo do estado e estou ao seu lado.",
+ "descricao": "Sou Maurício Coelho, candidato ao governo do estado e estou ao seu lado.\n\nMato Grosso entregou a chave do cofre para um beneficiário das renúncias fiscais, que já são a maior fatia do orçamento do estado. Não dá para achar normal — é raposa vigiando o galinheiro.\n\nMato Grosso precisa e merece competência a favor das pessoas e não de meia dúzia de barões.\n\n#matogrosso #renunciasfiscais #pivetta #mauriciocoelho",
+ "tipo": "comentário do candidato sobre trecho de debate (TV) com o governador Pivetta",
+ "segmentos": [
+  {
+   "start": 0.0,
+   "end": 4.7,
+   "text": "Pivetta, vamos voltar para Mato Grosso e voltar para o que importa na vida das pessoas."
+  },
+  {
+   "start": 5.2,
+   "end": 10.1,
+   "text": "O maior fatia do orçamento são as renúncias fiscais, Pivetta."
+  },
+  {
+   "start": 10.5,
+   "end": 14.8,
+   "text": "Eu gostaria que você respondesse de forma clara e objetiva para o eleitor"
+  },
+  {
+   "start": 15.0,
+   "end": 19.8,
+   "text": "se alguma empresa sua tem incentivo fiscal, tem renúncia fiscal e quanto."
+  },
+  {
+   "start": 20.0,
+   "end": 23.5,
+   "text": "Cresivato, este tema eu posso falar com muita facilidade."
+  },
+  {
+   "start": 23.9,
+   "end": 26.5,
+   "text": "Nós concebemos as notícias fiscais para empresas que vêm para Mato Grosso"
+  },
+  {
+   "start": 26.5,
+   "end": 29.1,
+   "text": "fazer investimentos importantes para mudar o perfil socioeconômico no nosso estado."
+  },
+  {
+   "start": 29.1,
+   "end": 32.1,
+   "text": "Isso sempre existiu e nós recebemos nenhum compromisso com ele."
+  },
+  {
+   "start": 32.1,
+   "end": 35.1,
+   "text": "Isso é aprovado pela finalizativa, é operacionalizado pela nossa equipe"
+  },
+  {
+   "start": 35.1,
+   "end": 37.1,
+   "text": "de planejamento e planejamento para tudo o orçamento."
+  },
+  {
+   "start": 37.1,
+   "end": 40.6,
+   "text": "E só se dá o incentivo fiscal para quem vêm investir na indústria, na árvore indústria."
+  },
+  {
+   "start": 40.6,
+   "end": 42.1,
+   "text": "Nós queremos fazer a indústria para baixar o problema."
+  },
+  {
+   "start": 42.1,
+   "end": 45.1,
+   "text": "Os produtores responsam, seus produtos e produtos de explicação que sabem"
+  },
+  {
+   "start": 45.1,
+   "end": 46.1,
+   "text": "que é o incentivo que o homem quer dizer."
+  },
+  {
+   "start": 46.1,
+   "end": 48.1,
+   "text": "Então na nossa parte não há benefício para ninguém."
+  },
+  {
+   "start": 48.1,
+   "end": 50.1,
+   "text": "Eu pago R$150 milhões e posso forá-lo."
+  },
+  {
+   "start": 50.1,
+   "end": 53.1,
+   "text": "Olha gente, vocês viram ele, ele não quis responder."
+  },
+  {
+   "start": 53.1,
+   "end": 58.1,
+   "text": "Não quis responder certamente porque recebe incentivo fiscal do próprio estado que ele dirige."
+  },
+  {
+   "start": 58.1,
+   "end": 60.1,
+   "text": "Isso é a maior fatia do orçamento."
+  },
+  {
+   "start": 60.1,
+   "end": 62.1,
+   "text": "A gente vai reduzir isso gente."
+  },
+  {
+   "start": 62.1,
+   "end": 67.1,
+   "text": "Isso saiu em 2020, as renúncias fiscais eram R$4 bilhões."
+  },
+  {
+   "start": 67.1,
+   "end": 69.1,
+   "text": "Agora são R$15 bilhões."
+  },
+  {
+   "start": 69.1,
+   "end": 73.1,
+   "text": "A gente vai reduzir isso para te dar o dinheiro na conta de luz."
+  },
+  {
+   "start": 73.1,
+   "end": 76.1,
+   "text": "A gente vai cortar o ICMS e a gente também vai cortar o IPVA"
+  },
+  {
+   "start": 76.1,
+   "end": 79.1,
+   "text": "ao invés de mandar o dinheiro para as empresas do Pivetta."
+  }
+ ],
+ "fala_do_candidato": true,
+ "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+ "obs": "A voz do candidato aparece em 0–19.8 s e 50.1–79.2 s; o trecho 20.0–50.1 s é a resposta de OUTRA pessoa (Otaviano Pivetta, em excerto de debate de TV) — NÃO é a voz de Maurício Coelho e é material de terceiro/emissora. Vídeo de confronto direto com adversário: evitar para uso com a regra 'não ataque ninguém'. Correção manual: 'Piveta' -> 'Pivetta'. Se usar, só o trecho 62.1–76.1 s (proposta: reduzir renúncias, cortar ICMS da conta de luz e IPVA), sem a frase final sobre 'empresas do Pivetta'.",
+ "credito_sugerido": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-03",
+ "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/mauricio-coelho/Dc1lOxBN7xc.mp4 (fora do repositório)"
+}

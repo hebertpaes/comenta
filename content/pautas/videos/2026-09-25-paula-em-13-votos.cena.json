@@ -1,0 +1,112 @@
+{
+  "slug": "paula-em-13-votos",
+  "titulo": "Paula em 13 votos",
+  "materia": "https://hojemt.com.br/paula-em-13-votos/",
+  "charge_json": "pautas/charges/2026-09-25-paula-em-13-votos.json",
+  "estilo": "3d",
+  "universo": "Pantanal em Cena: margem de rio, chalana e deck de madeira sobre a água, com o prédio estilizado da Câmara de Cuiabá ao fundo; tuiuiús, vitórias-régias, entardecer. Tom calmo (combina com 'mantém o apoio'). Figurino único: camiseta cinza-escura. Cenas 5 e 6 são a pescaria da própria curta (plenário-rio, metáfora da charge).",
+  "obs": "Piloto, 2ª versão (revisão de 25/09). Sem citação real na curta: só o narrador fala; voz.personagem fica null de propósito (regra de 25/09: proibida fala sintética de pessoa real, Res. TSE 23.610 art. 9º-C). Se um dia houver trecho real de áudio de Abilio, usar o campo audio_real, nunca voz sintética. Paula Calil não tem foto cadastrada: citada só na narração, nunca desenhada; por isso todos os prompts trazem 'Sozinho na cena, sem outras pessoas, sem público, sem figurantes'. Universo único do primeiro ao último quadro (campo 'universo' ainda não previsto na ESPEC; sugestão ao editor: incluir o campo no formato). Fatos e metáforas (sol de Cuiabá, milhar de bezerro, chuva, tereré, pescaria no Pantanal) vêm da curta; os 18 votos (dois terços) para mudar o Regimento Interno vêm do contexto e da fonte leiagora.com.br do JSON da charge. Cronologia: a decisão do TJMT (julgamento virtual de 14/09, leiagora 15/09) é ANTERIOR à contagem dos 13 votos (24horasmt 22/09, olivre 24/09); por isso a cena 3 é concessiva ('Mesmo com a chuva'), como a curta, e não 'aí veio'. Cena 1 em discurso indireto ('garante que'), porque a frase não é citação literal; a citação real ('Hoje, a Paula tem 13 votos de apoio a ela. 12 mais um, eu diria', 24horasmt) não entra por falta de áudio real. Gancho explicita de quem são os votos (medido com o algoritmo do motor: Anton 136 px, 2 linhas). Humor só sobre a circunstância (chuva lá fora, rede ainda na água), nunca sobre a pessoa: ninguém molhado, ninguém derrotado; resultado da pescaria incerto, como na curta ('não sabe se vai pegar'). 'Cenário aberto' saiu da fala da cena 4 e ficou só na imagem (céu aberto). Durações medidas no piper (faber): c1 4,64 s; c2 3,60 s; c3 4,14 s; c4 4,41 s (antes 5,55 s).",
+  "voz": {
+    "motor": "piper",
+    "narrador": "pt_BR-faber-medium",
+    "personagem": null,
+    "velocidade": 1
+  },
+  "abertura": {
+    "chip": "CHARGE EM CENA",
+    "gancho": "ABILIO CONTA 13 VOTOS PARA PAULA",
+    "sub": "Câmara de Cuiabá"
+  },
+  "cenas": [
+    {
+      "n": 1,
+      "quem": "narrador",
+      "fala": "Sob o sol de Cuiabá, Abilio Brunini garante que Paula Calil tem 13 votos de apoio.",
+      "imagem": "pautas/videos/cenas/2026-09-25-paula-em-13-votos-01.jpg",
+      "canva_media": "MAHWNuQaRhg",
+      "prompt": "Animação 3D estilo filme de animação (render cinematográfico, iluminação suave, profundidade de campo, texturas de tecido e pele estilizadas), personagem caricato de cabeça grande e expressão confiante, com sorriso de canto, homem de cabeça raspada, careca, sem barba, rosto anguloso e magro, orelhas marcadas, físico atlético, vestido de camiseta cinza-escura lisa de gola redonda, sem terno e sem gravata, de pé na margem de um rio do Pantanal, com aguapés e vitórias-régias na água e um tuiuiú ao longe, e o prédio estilizado da Câmara Municipal, com colunas e portas altas, no alto do barranco ao fundo, sob um sol escaldante e céu azul intenso de Cuiabá, ondas de calor no ar, contando nos dedos de uma das mãos, como quem faz uma conta de cabeça, a outra mão relaxada ao lado do corpo, uma gota de suor na testa. Sozinho na cena, sem outras pessoas, sem público, sem figurantes. Enquadramento vertical 9:16, plano geral com o rio, o prédio ao fundo e o personagem em pé no centro. Sem texto, sem letras, sem números, sem logos, sem bandeiras.",
+      "referencias": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "movimento": "zoom-in"
+    },
+    {
+      "n": 2,
+      "quem": "narrador",
+      "fala": "Treze não é milhar de bezerro, mas dá suspense de sobra na Câmara.",
+      "imagem": "pautas/videos/cenas/2026-09-25-paula-em-13-votos-02.jpg",
+      "canva_media": "MAHWN1xsrC4",
+      "prompt": "Animação 3D estilo filme de animação (render cinematográfico, iluminação suave, profundidade de campo, texturas de tecido e pele estilizadas), personagem caricato de cabeça grande e expressão de suspense, sobrancelhas erguidas e boca apertada, homem de cabeça raspada, careca, sem barba, rosto anguloso e magro, orelhas marcadas, físico atlético, vestido de camiseta cinza-escura lisa de gola redonda, sem terno e sem gravata, sentado numa bancada de madeira escura dentro de uma chalana do Pantanal, um barco largo de madeira com bancadas e cadeiras estofadas verdes arrumadas como um pequeno plenário flutuante, vazio, o rio calmo e a mata ciliar ao redor, contando nos dedos de uma das mãos, enquanto um bezerrinho pequeno e curioso, caricato e fofo, espia por cima da bancada ao lado dele. Sozinho na cena, sem outras pessoas, sem público, sem figurantes. Enquadramento vertical 9:16, plano médio, da cintura para cima, com o bezerrinho ao lado. Sem texto, sem letras, sem números, sem logos, sem bandeiras.",
+      "referencias": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "movimento": "pan-dir"
+    },
+    {
+      "n": 3,
+      "quem": "narrador",
+      "fala": "Mesmo com a chuva: a Justiça manteve os dezoito votos para mudar o regimento.",
+      "imagem": "pautas/videos/cenas/2026-09-25-paula-em-13-votos-03.jpg",
+      "canva_media": "MAHWNiJuNw8",
+      "prompt": "Animação 3D estilo filme de animação (render cinematográfico, iluminação suave, profundidade de campo, texturas de tecido e pele estilizadas), personagem caricato de cabeça grande e expressão surpresa, olhos arregalados, homem de cabeça raspada, careca, sem barba, rosto anguloso e magro, orelhas marcadas, físico atlético, vestido de camiseta cinza-escura lisa de gola redonda, sem terno e sem gravata, na varanda coberta de um deck de madeira sobre a água, em frente ao prédio estilizado da Câmara, seco, olhando surpreso a chuva torrencial que cai lá fora sobre o rio e a praça, nuvens pesadas e escuras, gotas grossas escorrendo pelo beiral do telhado, luz fria de dia de chuva. Sozinho na cena, sem outras pessoas, sem público, sem figurantes. Enquadramento vertical 9:16, close no rosto e nos ombros, o beiral com a água escorrendo no alto do quadro e a chuva ao fundo. Sem texto, sem letras, sem números, sem logos, sem bandeiras.",
+      "referencias": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "movimento": "zoom-in"
+    },
+    {
+      "n": 4,
+      "quem": "narrador",
+      "fala": "Abilio mantém o apoio: para ele, nenhum concorrente tem votos suficientes.",
+      "imagem": "pautas/videos/cenas/2026-09-25-paula-em-13-votos-04.jpg",
+      "canva_media": "MAHWNv4PAFw",
+      "prompt": "Animação 3D estilo filme de animação (render cinematográfico, iluminação suave, profundidade de campo, texturas de tecido e pele estilizadas), personagem caricato de cabeça grande e expressão serena e confiante, sorriso tranquilo, homem de cabeça raspada, careca, sem barba, rosto anguloso e magro, orelhas marcadas, físico atlético, vestido de camiseta cinza-escura lisa de gola redonda, sem terno e sem gravata, no mesmo deck de madeira sobre a água, logo depois da chuva, tábuas ainda molhadas refletindo a luz, céu de Cuiabá completamente aberto e azul, com uma cuia de tereré com bomba de metal e uma garrafa térmica na mão, encostado no corrimão do deck, olhando o horizonte do rio, um tuiuiú pousado ao longe. Sozinho na cena, sem outras pessoas, sem público, sem figurantes. Enquadramento vertical 9:16, plano médio, da cintura para cima, céu aberto ocupando o terço de cima. Sem texto, sem letras, sem números, sem logos, sem bandeiras.",
+      "referencias": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "movimento": "pan-esq"
+    },
+    {
+      "n": 5,
+      "quem": "narrador",
+      "fala": "Virou pescaria no Pantanal: lança a rede e espera o peixinho aparecer.",
+      "imagem": "pautas/videos/cenas/2026-09-25-paula-em-13-votos-05.jpg",
+      "canva_media": "MAHWNmXQBU0",
+      "prompt": "Animação 3D estilo filme de animação (render cinematográfico, iluminação suave, profundidade de campo, texturas de tecido e pele estilizadas), personagem caricato de cabeça grande e expressão atenta e esperançosa, homem de cabeça raspada, careca, sem barba, rosto anguloso e magro, orelhas marcadas, físico atlético, vestido de camiseta cinza-escura lisa de gola redonda, sem terno e sem gravata, em um plenário de câmara municipal inundado como um rio do Pantanal, água esverdeada e calma entre as bancadas de madeira, vitórias-régias e aguapés, um tuiuiú e garças ao fundo, de pé numa canoa de madeira lançando uma rede de pesca redonda que se abre no ar sobre a água, luz dourada de fim de tarde. Sozinho na cena, sem outras pessoas, sem público, sem figurantes. Enquadramento vertical 9:16, plano geral mostrando o plenário-rio inteiro com a canoa no centro. Sem texto, sem letras, sem números, sem logos, sem bandeiras.",
+      "referencias": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "movimento": "zoom-out"
+    },
+    {
+      "n": 6,
+      "quem": "narrador",
+      "fala": "Na Câmara, Abilio já conta os peixes antes de puxar a rede.",
+      "imagem": "pautas/videos/cenas/2026-09-25-paula-em-13-votos-06.jpg",
+      "canva_media": "MAHWNg27VWo",
+      "prompt": "Animação 3D estilo filme de animação (render cinematográfico, iluminação suave, profundidade de campo, texturas de tecido e pele estilizadas), personagem caricato de cabeça grande e expressão confiante e bem-humorada, sorriso tranquilo, homem de cabeça raspada, careca, sem barba, rosto anguloso e magro, orelhas marcadas, físico atlético, vestido de camiseta cinza-escura lisa de gola redonda, sem terno e sem gravata, sentado numa canoa de madeira dentro de um plenário de câmara municipal inundado como um rio do Pantanal, bancadas de madeira ao fundo, contando nos dedos de uma das mãos, com a rede de pesca ainda mergulhada na água ao lado, sem mostrar o que há dentro, com alguns peixinhos caricatos nadando em volta da canoa, luz dourada de fim de tarde. Sozinho na cena, sem outras pessoas, sem público, sem figurantes. Enquadramento vertical 9:16, plano médio fechado, do peito para cima, com a rede na água e os peixinhos no canto de baixo. Sem texto, sem letras, sem números, sem logos, sem bandeiras.",
+      "referencias": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "movimento": "zoom-in"
+    }
+  ],
+  "fechamento": {
+    "linha1": "Charge: HOJE MT · hojemt.com.br",
+    "leia": "hojemt.com.br/paula-em-13-votos",
+    "fontes": [
+      "24horasmt.com.br",
+      "olivre.com.br",
+      "leiagora.com.br"
+    ],
+    "aviso": "Sátira. Caricaturas de pessoas públicas; falas de personagens só com citação real. Cenas de ficção geradas com IA."
+  },
+  "saida": "pautas/videos/2026-09-25-paula-em-13-votos-cena.mp4",
+  "canva_design_cenas": "DAHWNhO0ZXQ"
+}

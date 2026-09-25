@@ -1,0 +1,207 @@
+{
+  "candidato": "Doutora Natasha (Natasha Slhessarenko Fraife Barreto)",
+  "id_candidato": "doutora-natasha",
+  "cargo": "governador",
+  "esfera": "estadual",
+  "partido": "PSD",
+  "numero": 55,
+  "id": "7688484266472115474",
+  "url": "https://www.tiktok.com/@dranatashamt/video/7688484266472115474",
+  "rede": "tiktok",
+  "perfil": "@dranatashamt",
+  "perfil_url": "https://www.tiktok.com/@dranatashamt",
+  "confirmacao_perfil": "perfil declarado ao TSE (elenco.json); uploader do vídeo = dranatashamt / Natasha Slhessarenko",
+  "data": "2026-09-22",
+  "duracao_s": 105,
+  "titulo": "865 MIL MATO-GROSSENSES ESPERANDO PARA SER ATENDIDOS: ATÉ QUANDO? Com...",
+  "descricao": "865 MIL MATO-GROSSENSES ESPERANDO PARA SER ATENDIDOS: ATÉ QUANDO? Como médica, não aceito que um paciente espere meses ou anos por uma consulta, exame ou cirurgia. Como governadora, vou mudar essa realidade com mais médicos, especialistas perto de casa, mutirões e tecnologia para acompanhar a fila e facilitar o acesso à saúde. Se você quer uma saúde diferente, vote em quem entende de cuidar de gente: vote Dra. Natasha 5️⃣5️⃣!",
+  "fala_do_candidato": true,
+  "transcricao_metodo": "faster-whisper small (cpu/int8, pt, vad_filter) sobre wav 16 kHz mono; revisão leve de grafia (Natasha, mato-grossenses)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 5.92,
+      "text": "Ur, gente, saiu o número da fila da vergonha em Mato Grosso.",
+      "voz": "candidata"
+    },
+    {
+      "start": 5.92,
+      "end": 9.82,
+      "text": "São mais de 865 mil mato-grossenses",
+      "voz": "candidata"
+    },
+    {
+      "start": 9.82,
+      "end": 12.76,
+      "text": "aguardando por exames, consultas ou cirurgias.",
+      "voz": "candidata"
+    },
+    {
+      "start": 12.76,
+      "end": 16.3,
+      "text": "A Gazeta fez um levantamento e o tempo médio",
+      "voz": "candidata"
+    },
+    {
+      "start": 16.3,
+      "end": 19.36,
+      "text": "de espera por uma consulta com médico especialista",
+      "voz": "candidata"
+    },
+    {
+      "start": 19.36,
+      "end": 25.3,
+      "text": "aqui em Mato Grosso, para exames 427 dias de espera.",
+      "voz": "candidata"
+    },
+    {
+      "start": 25.3,
+      "end": 28.04,
+      "text": "Aliás, tem gente aqui no nosso estado",
+      "voz": "candidata"
+    },
+    {
+      "start": 28.04,
+      "end": 31.8,
+      "text": "esperando há 13 anos para fazer uma dosagem de lítio,",
+      "voz": "candidata"
+    },
+    {
+      "start": 31.8,
+      "end": 37.24,
+      "text": "pacientes aguardando 7 anos por uma consulta com oncologia e iodoterapia.",
+      "voz": "candidata"
+    },
+    {
+      "start": 37.24,
+      "end": 42.0,
+      "text": "São 333 mil pessoas aguardando na fila para consultas,",
+      "voz": "candidata"
+    },
+    {
+      "start": 42.0,
+      "end": 46.0,
+      "text": "mais de 420 mil pessoas aguardando exames",
+      "voz": "candidata"
+    },
+    {
+      "start": 46.0,
+      "end": 49.1,
+      "text": "e mais de 100 mil pessoas aguardando internação.",
+      "voz": "candidata"
+    },
+    {
+      "start": 49.1,
+      "end": 53.64,
+      "text": "Você, algum parente ou algum conhecido certamente está nessa fila,",
+      "voz": "candidata"
+    },
+    {
+      "start": 53.64,
+      "end": 57.5,
+      "text": "não se sabe a ordem nem se sabe quando será atendido.",
+      "voz": "candidata"
+    },
+    {
+      "start": 57.5,
+      "end": 62.6,
+      "text": "Como médica sinto vergonha do que esse governo fez com o nosso estado.",
+      "voz": "candidata"
+    },
+    {
+      "start": 62.6,
+      "end": 65.26,
+      "text": "Como governadora, eu vou mudar isso.",
+      "voz": "candidata"
+    },
+    {
+      "start": 65.26,
+      "end": 69.06,
+      "text": "Sou a única que pode acabar com essa fila da morte.",
+      "voz": "candidata"
+    },
+    {
+      "start": 69.06,
+      "end": 71.3,
+      "text": "Vamos fazer concurso para os médicos,",
+      "voz": "candidata"
+    },
+    {
+      "start": 71.3,
+      "end": 75.66,
+      "text": "ter médicos especialistas no posto de saúde perto da sua casa",
+      "voz": "candidata"
+    },
+    {
+      "start": 75.66,
+      "end": 80.2,
+      "text": "e mais mutirões de exames e cirurgias na sua cidade.",
+      "voz": "candidata"
+    },
+    {
+      "start": 80.2,
+      "end": 84.26,
+      "text": "Além disso, vai ter um aplicativo para você ter na palma da sua mão",
+      "voz": "candidata"
+    },
+    {
+      "start": 84.26,
+      "end": 88.32,
+      "text": "com a sua ordem nessa fila, para você marcar consultas e exames",
+      "voz": "candidata"
+    },
+    {
+      "start": 88.32,
+      "end": 92.36,
+      "text": "e também fazer teleconsultas on-line, sem precisar pegar estrada.",
+      "voz": "candidata"
+    },
+    {
+      "start": 92.36,
+      "end": 95.66,
+      "text": "Se você está nessa fila da morte, nessa fila da vergonha,",
+      "voz": "candidata"
+    },
+    {
+      "start": 95.66,
+      "end": 98.92,
+      "text": "eu peço seu voto no dia 4 de outubro.",
+      "voz": "candidata"
+    },
+    {
+      "start": 98.92,
+      "end": 102.82,
+      "text": "Vote na única médica candidata governadora do estado,",
+      "voz": "candidata"
+    },
+    {
+      "start": 102.82,
+      "end": 104.92,
+      "text": "doutora Natasha 5-5.",
+      "voz": "candidata"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 69.1,
+      "fim": 80.2,
+      "texto": "Vamos fazer concurso para os médicos, ter médicos especialistas no posto de saúde perto da sua casa e mais mutirões de exames e cirurgias na sua cidade.",
+      "tema": "saúde/fila"
+    },
+    {
+      "inicio": 80.2,
+      "fim": 92.4,
+      "texto": "Além disso, vai ter um aplicativo para você ter na palma da sua mão com a sua ordem nessa fila, para você marcar consultas e exames e também fazer teleconsultas on-line, sem precisar pegar estrada.",
+      "tema": "saúde/tecnologia"
+    },
+    {
+      "inicio": 5.9,
+      "fim": 12.8,
+      "texto": "São mais de 865 mil mato-grossenses aguardando por exames, consultas ou cirurgias.",
+      "tema": "saúde/fila (dado)"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Doutora Natasha, TikTok @dranatashamt, 2026-09-22",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/doutora-natasha/tt_7688484266472115474.mp3 (não versionado)",
+  "obs": "Vídeo de proposta, fala direta à câmera em primeira pessoa (jaleco, cenário de corredor hospitalar; conferido em quadro aos 60 s). Voz da candidata do início ao fim. ATENÇÃO (regra \"não ataque ninguém\"): o trecho 57,5–62,6 s (\"sinto vergonha do que esse governo fez\") critica o governo atual — evitar; usar os trechos de proposta (69–92 s). \"Ur, gente\" no início é ruído de ASR (interjeição)."
+}

@@ -1,0 +1,56 @@
+{
+ "candidato": "Maurício Coelho (Maurício Coelho de Souza Junior)",
+ "candidato_id": "mauricio-coelho",
+ "cargo": "governador",
+ "esfera": "estadual",
+ "partido": "Mobiliza",
+ "numero": 33,
+ "url": "https://www.instagram.com/reel/DdmrjDcSc7-/",
+ "rede": "instagram",
+ "perfil": "@soumauriciocoelho",
+ "dono_do_post": "soumauriciocoelho",
+ "coautores": [],
+ "data": "2026-09-22",
+ "upload_date": "20260922",
+ "duracao_s": 36.9,
+ "titulo": "O nosso adesivaço é hoje! Bora?",
+ "descricao": "O nosso adesivaço é hoje! Bora?\nEstou esperando você.\n\n#matogrosso #mauriciocoelho",
+ "tipo": "fala direta à câmera (convite para adesivaço, Cuiabá)",
+ "segmentos": [
+  {
+   "start": 0.0,
+   "end": 7.22,
+   "text": "Meus amigos estão indo agora para o nosso adesivaço, em frente ali o Impório Celeta, no bairro Duque de Caxias, aqui em Cuiabá"
+  },
+  {
+   "start": 7.22,
+   "end": 10.94,
+   "text": "O que é coisa, joga no Google, Impório Celeta, é fácil de chegar"
+  },
+  {
+   "start": 10.94,
+   "end": 16.68,
+   "text": "E aí a gente vai estar lá em frente, eu vou estar na rua, se quiser me avisa aqui no Instagram que está indo"
+  },
+  {
+   "start": 16.68,
+   "end": 24.4,
+   "text": "Eu adesivo o seu carro rapidinho, a gente tira uma foto juntos e você fica livre para seguir à noite"
+  },
+  {
+   "start": 24.4,
+   "end": 31.32,
+   "text": "Ou se quiser ficar lá também, não tem problema, você quem manda, começa assim que meia, mas vai até o horário que você quiser"
+  },
+  {
+   "start": 31.32,
+   "end": 36.68,
+   "text": "Se quiser só me avisar aqui no Instagram, estou te esperando, não deixa de ir, tá bom? Um abraço"
+  }
+ ],
+ "fala_do_candidato": true,
+ "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+ "obs": "Voz do candidato em primeira pessoa. Nome do local ('Impório Celeta') e 'começa assim que meia' são transcrições incertas do whisper (provavelmente o local do adesivaço e 'cinco e meia'). Mobilização, sem proposta.",
+ "credito_sugerido": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-22",
+ "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/mauricio-coelho/DdmrjDcSc7-.mp4 (fora do repositório)"
+}

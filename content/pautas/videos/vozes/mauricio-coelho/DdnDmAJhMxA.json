@@ -1,0 +1,46 @@
+{
+ "candidato": "Maurício Coelho (Maurício Coelho de Souza Junior)",
+ "candidato_id": "mauricio-coelho",
+ "cargo": "governador",
+ "esfera": "estadual",
+ "partido": "Mobiliza",
+ "numero": 33,
+ "url": "https://www.instagram.com/reel/DdnDmAJhMxA/",
+ "rede": "instagram",
+ "perfil": "@soumauriciocoelho",
+ "dono_do_post": "soumauriciocoelho",
+ "coautores": [],
+ "data": "2026-09-23",
+ "upload_date": "20260923",
+ "duracao_s": 21.39,
+ "titulo": "Terminamos o adesivaço!",
+ "descricao": "Terminamos o adesivaço!\n\nUm muito obrigado a todos que vieram e também a você que quis vir, mas não pôde desta vez.\n\nVamos em frente, rumo à mudança.\n\n#matogrosso #mauriciocoelho #33",
+ "tipo": "fala à câmera com apoiadores (fim do adesivaço, chuva)",
+ "segmentos": [
+  {
+   "start": 0.05,
+   "end": 5.45,
+   "text": "pessoal estamos terminando o adesivaço a chuva ganhou da gente mas em debaixo de"
+  },
+  {
+   "start": 5.45,
+   "end": 12.75,
+   "text": "chuva adesivamos dezenas de carro aqui turma daqui animada"
+  },
+  {
+   "start": 12.75,
+   "end": 15.75,
+   "text": "3 pre governador"
+  },
+  {
+   "start": 19.12,
+   "end": 22.62,
+   "text": "é isso aí vamos pra cima"
+  }
+ ],
+ "fala_do_candidato": true,
+ "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+ "obs": "Voz do candidato com vozes de apoiadores ao fundo e chuva; áudio ruidoso, '3 pre governador' é transcrição incerta (provável '33 pra governador'). Pouco útil como trecho.",
+ "credito_sugerido": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-23",
+ "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/mauricio-coelho/DdnDmAJhMxA.mp4 (fora do repositório)"
+}
