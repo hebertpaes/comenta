@@ -114,7 +114,15 @@
       ],
       "legenda": "CHARGE · Fila Vazia, Mato Grosso\n\nWellington promete zerar a fila do SUS: churrasco sem carvão, só esperança.\n\nLeia a curta completa: hojemt.com.br/fila-vazia-mato-grosso\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/fila-vazia-mato-grosso/",
-      "charge_json": "pautas/charges/2026-09-23-fila-vazia-mato-grosso.json"
+      "charge_json": "pautas/charges/2026-09-23-fila-vazia-mato-grosso.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 1,
+      "tentativas": [
+        {
+          "em": "2026-09-25T21:32:00Z",
+          "erro": "Zapier: limite de tarefas do plano atingido (lote de todas as charges aguardando liberação)"
+        }
+      ]
     },
     {
       "id": "04",
@@ -129,7 +137,9 @@
       ],
       "legenda": "CHARGE EM MOVIMENTO · Rua Livre, Amigo\n\nNo CPA, até o fervor precisa saber fazer fila.\n\nLeia a curta completa: hojemt.com.br/rua-livre-amigo\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #reels #politica #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/rua-livre-amigo/",
-      "charge_json": "pautas/charges/2026-09-23-rua-livre-amigo.json"
+      "charge_json": "pautas/charges/2026-09-23-rua-livre-amigo.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 2
     },
     {
       "id": "08",
@@ -144,7 +154,9 @@
       ],
       "legenda": "CHARGE · Ventiada no Nortão\n\nGisela escuta o Nortão e não promete cura do mal.\n\nLeia a curta completa: hojemt.com.br/ventiada-no-nortao\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/ventiada-no-nortao/",
-      "charge_json": "pautas/charges/2026-09-23-ventiada-no-nortao.json"
+      "charge_json": "pautas/charges/2026-09-23-ventiada-no-nortao.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 3
     },
     {
       "id": "09",
@@ -159,7 +171,9 @@
       ],
       "legenda": "CHARGE · Alta Floresta, Clínica de Sonhos\n\nEm Alta Floresta, Janaina promete plantar médicos como soja.\n\nLeia a curta completa: hojemt.com.br/alta-floresta-clinica-de-sonhos\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/alta-floresta-clinica-de-sonhos/",
-      "charge_json": "pautas/charges/2026-09-23-alta-floresta-clinica-de-sonhos.json"
+      "charge_json": "pautas/charges/2026-09-23-alta-floresta-clinica-de-sonhos.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 4
     },
     {
       "id": "10",
@@ -177,7 +191,9 @@
         "https://hojemt.com.br/content/images/2026/09/2026-09-23-rua-livre-amigo-instagram-retrato-1.jpg"
       ],
       "legenda": "As charges da semana no HOJE MT 👉 arrasta pro lado\n\n1️⃣ Filtro ideológico em Cuiabá — Com lupa e vara, o prefeito vai pescar livros em 2027.\n2️⃣ Onda não quebra Abilio — Maré alta na Câmara, e o prefeito segue no remo.\n3️⃣ Maré na Assembleia — Dez mil na fila: esse barco de serviços já passou da boia.\n4️⃣ Creche à la Churrasco — Cardápio da creche agora tem ponto da carne e ponto de vista.\n5️⃣ Rua Livre, Amigo — No CPA, até o fervor precisa saber fazer fila.\n\nTodas as curtas em hojemt.com.br\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
-      "materia": "https://hojemt.com.br/tag/curtas-bastidores/"
+      "materia": "https://hojemt.com.br/tag/curtas-bastidores/",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 5
     },
     {
       "id": "11",
@@ -192,7 +208,9 @@
       ],
       "legenda": "CHARGE · Janela só abre pro céu\n\nA janela dos ônibus segue fechada; só a lua não pede autorização.\n\nLeia a curta completa: hojemt.com.br/janela-so-abre-pro-ceu\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/janela-so-abre-pro-ceu/",
-      "charge_json": "pautas/charges/2026-09-23-janela-so-abre-pro-ceu.json"
+      "charge_json": "pautas/charges/2026-09-23-janela-so-abre-pro-ceu.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 6
     },
     {
       "id": "07",
@@ -207,7 +225,9 @@
       ],
       "legenda": "CHARGE EM MOVIMENTO · Quintal Nada, Moleque\n\nO quintal é nosso, o destino também.\n\nLeia a curta completa: hojemt.com.br/quintal-nada-moleque\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #reels #politica #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/quintal-nada-moleque/",
-      "charge_json": "pautas/charges/2026-09-23-quintal-nada-moleque.json"
+      "charge_json": "pautas/charges/2026-09-23-quintal-nada-moleque.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 7
     },
     {
       "id": "17",
@@ -237,7 +257,9 @@
       ],
       "legenda": "CHARGE · Salário no ponto, sem tropeço\n\nNa rede da prefeita, o salário cai antes do peixe.\n\nLeia a curta completa: hojemt.com.br/salario-no-ponto-sem-tropeco\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/salario-no-ponto-sem-tropeco/",
-      "charge_json": "pautas/charges/2026-09-23-salario-no-ponto-sem-tropeco.json"
+      "charge_json": "pautas/charges/2026-09-23-salario-no-ponto-sem-tropeco.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 8
     },
     {
       "id": "14",
@@ -252,7 +274,9 @@
       ],
       "legenda": "CHARGE · Parlamento Visita a Escola\n\nNa UFMT, a Assembleia colhe talentos com troféu de isca.\n\nA Secretaria de Comunicação da ALMT foi à UFMT apresentar a 2ª edição do Prêmio ALMT de Jornalismo, com categoria universitária.\n\nLeia a curta completa: hojemt.com.br/parlamento-visita-a-escola\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/parlamento-visita-a-escola/",
-      "charge_json": "pautas/charges/2026-09-24-parlamento-visita-a-escola.json"
+      "charge_json": "pautas/charges/2026-09-24-parlamento-visita-a-escola.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 9
     },
     {
       "id": "15",
@@ -267,7 +291,9 @@
       ],
       "legenda": "CHARGE · Luz Que Não Brilha\n\nAbilio desliga a luz do condomínio e dá as costas ao holofote eleitoral.\n\nO prefeito mantém o corte do custeio da iluminação interna dos condomínios de Cuiabá, mesmo em ano eleitoral.\n\nLeia a curta completa: hojemt.com.br/luz-que-nao-brilha\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/luz-que-nao-brilha/",
-      "charge_json": "pautas/charges/2026-09-24-luz-que-nao-brilha.json"
+      "charge_json": "pautas/charges/2026-09-24-luz-que-nao-brilha.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 10
     },
     {
       "id": "16",
@@ -282,7 +308,9 @@
       ],
       "legenda": "CHARGE · Inferno Pantaneiro\n\nMilas acende a churrasqueira de promessas: IA no SUS, cadeira a menos e cadeia a mais.\n\nNo podcast Política de Primeira, o candidato ao governo Rafaell Milas defendeu IA no SUS, corte de 30% dos cargos comissionados e um presídio de segurança máxima que batizou de “Inferno Pantaneiro”.\n\nLeia a curta completa: hojemt.com.br/inferno-pantaneiro-caceres-em-fogo\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #eleicoes2026 #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/inferno-pantaneiro-caceres-em-fogo/",
-      "charge_json": "pautas/charges/2026-09-24-inferno-pantaneiro-caceres-em-fogo.json"
+      "charge_json": "pautas/charges/2026-09-24-inferno-pantaneiro-caceres-em-fogo.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 11
     },
     {
       "id": "18",
@@ -297,7 +325,9 @@
       ],
       "legenda": "CHARGE · Luz no Quintal Alheio\n\nAbilio põe a lupa em cinco anos de luz paga no quintal alheio.\n\nA Prefeitura de Cuiabá levanta o que pagou à Energisa, nos últimos cinco anos, pela iluminação de vias internas de condomínios fechados. A cobrança será da distribuidora, e o caso vai ao Ministério Público.\n\nLeia a curta completa: hojemt.com.br/luz-no-quintal-alheio\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/luz-no-quintal-alheio/",
-      "charge_json": "pautas/charges/2026-09-24-luz-no-quintal-alheio.json"
+      "charge_json": "pautas/charges/2026-09-24-luz-no-quintal-alheio.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 12
     },
     {
       "id": "19",
@@ -312,7 +342,9 @@
       ],
       "legenda": "CHARGE · BR-163: da Morte à Esperança\n\nFávaro tempera a BR-163 com 5,5 bi e uma pitada de sal.\n\nO senador Carlos Fávaro diz que a duplicação da BR-163, com R$ 5,5 bilhões da União e do Estado, transforma a “estrada da morte” em corredor de segurança e desenvolvimento.\n\nLeia a curta completa: hojemt.com.br/br-163-da-morte-a-esperanca\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #br163 #hojemt",
       "materia": "https://hojemt.com.br/br-163-da-morte-a-esperanca/",
-      "charge_json": "pautas/charges/2026-09-24-br-163-da-morte-a-esperanca.json"
+      "charge_json": "pautas/charges/2026-09-24-br-163-da-morte-a-esperanca.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 13
     },
     {
       "id": "20",
@@ -327,7 +359,9 @@
       ],
       "legenda": "CHARGE · Poste Não É Presente\n\nPoste de presente: o síndico ganha a luz, e a conta vem no laço.\n\nO prefeito Abilio Brunini reuniu síndicos e Energisa: a conta da iluminação das áreas internas dos condomínios de Cuiabá passa aos próprios condomínios, com base em resoluções da ANEEL.\n\nLeia a curta completa: hojemt.com.br/poste-nao-e-presente\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/poste-nao-e-presente/",
-      "charge_json": "pautas/charges/2026-09-24-poste-nao-e-presente.json"
+      "charge_json": "pautas/charges/2026-09-24-poste-nao-e-presente.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 14
     },
     {
       "id": "21",
@@ -342,7 +376,9 @@
       ],
       "legenda": "CHARGE · Iluminação à Conta dos Muros\n\nA luz da viela é do condomínio; a conta, também.\n\nEm coletiva com a Limpurb, Abilio Brunini chamou de “distorção histórica” o custeio municipal da iluminação das vias internas de condomínios e passou a conta aos condomínios.\n\nLeia a curta completa: hojemt.com.br/iluminacao-a-conta-dos-muros\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/iluminacao-a-conta-dos-muros/",
-      "charge_json": "pautas/charges/2026-09-24-iluminacao-a-conta-dos-muros.json"
+      "charge_json": "pautas/charges/2026-09-24-iluminacao-a-conta-dos-muros.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 15
     },
     {
       "id": "22",
@@ -357,7 +393,9 @@
       ],
       "legenda": "CHARGE · Aliança contra a fome\n\nGuerra e seca lotam a fila; Brasil e Espanha correm com a panela.\n\nA FAO calcula cerca de 770 milhões de pessoas em insegurança alimentar no mundo, 40 milhões a mais por causa de guerras e eventos climáticos extremos. Brasil e Espanha anunciaram uma aliança para levar assistência alimentar a regiões em conflito.\n\nLeia a curta completa: hojemt.com.br/alianca-contra-a-fome\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #fome #fao #brasil #espanha #hojemt",
       "materia": "https://hojemt.com.br/alianca-contra-a-fome/",
-      "charge_json": "pautas/charges/2026-09-24-alianca-contra-a-fome.json"
+      "charge_json": "pautas/charges/2026-09-24-alianca-contra-a-fome.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 16
     },
     {
       "id": "23",
@@ -388,7 +426,9 @@
       ],
       "legenda": "CHARGE · Flávia Troca o PL?\n\nUm lado oferece a cadeira; o outro, o muro.\n\nA prefeita de Várzea Grande, Flávia Moretti, admitiu que pode deixar o PL e confirmou o convite do Republicanos, partido do governador Otaviano Pivetta.\n\nLeia a curta completa: hojemt.com.br/flavia-troca-o-pl\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #varzeagrande #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/flavia-troca-o-pl/",
-      "charge_json": "pautas/charges/2026-09-24-flavia-troca-o-pl.json"
+      "charge_json": "pautas/charges/2026-09-24-flavia-troca-o-pl.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 17
     },
     {
       "id": "25",
@@ -403,7 +443,9 @@
       ],
       "legenda": "CHARGE · Cartilha? Mais Ideologia que Churrasco!\n\nNa gaveta da Prefeitura, cartilha só passa se disser “mãe”.\n\nO prefeito Abilio Brunini citou uma cartilha que troca “mãe” por “pessoa que gesta” e prometeu controle rígido sobre o material distribuído em Cuiabá.\n\nLeia a curta completa: hojemt.com.br/cartilha-mais-ideologia-que-churrasco\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #cuiaba #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/cartilha-mais-ideologia-que-churrasco/",
-      "charge_json": "pautas/charges/2026-09-24-cartilha-mais-ideologia-que-churrasco.json"
+      "charge_json": "pautas/charges/2026-09-24-cartilha-mais-ideologia-que-churrasco.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 18
     },
     {
       "id": "26",
@@ -546,7 +588,9 @@
       "legenda": "CHARGE · Fome em tempos de guerra\n\nGuerra e seca à mesa: prato vazio.\n\nSegundo a FAO, conflitos e eventos climáticos extremos somaram 40 milhões de pessoas à insegurança alimentar no mundo. Brasil e Espanha anunciaram uma aliança contra a fome.\n\nLeia a curta completa: hojemt.com.br/fome-em-tempos-de-guerra\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #fome #FAO #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/fome-em-tempos-de-guerra/",
       "charge_json": "pautas/charges/2026-09-24-fome-em-tempos-de-guerra.json",
-      "obs": "decisão de 25/09 (editor pediu \"Dirige\"): adiada para depois do 1º turno: repete o assunto da charge Aliança contra a fome (30/09 19:30), então vai para 05/10"
+      "obs": "decisão de 25/09 (editor pediu \"Dirige\"): adiada para depois do 1º turno: repete o assunto da charge Aliança contra a fome (30/09 19:30), então vai para 05/10",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 30
     },
     {
       "id": "33",
@@ -561,7 +605,9 @@
       ],
       "legenda": "CHARGE · \"Não jogo a toalha\"\n\nA toalha fica; faltam cinco votos.\n\nO prefeito Abilio Brunini mantém o apoio à reeleição de Paula Calil na presidência da Câmara de Cuiabá e diz que ela tem \"12+1\" votos. Para mudar o Regimento e permitir a reeleição, são precisos 18 dos 27 vereadores.\n\nLeia a curta completa: hojemt.com.br/luz-que-nao-brilha-2\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #cuiaba #camaradecuiaba #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/luz-que-nao-brilha-2/",
-      "charge_json": "pautas/charges/2026-09-24-luz-que-nao-brilha-2.json"
+      "charge_json": "pautas/charges/2026-09-24-luz-que-nao-brilha-2.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 20
     },
     {
       "id": "34",
@@ -576,7 +622,9 @@
       ],
       "legenda": "CHARGE · Fila Zero, Promessa de Chapa\n\nFila zero na placa; na porta, nem tanto.\n\nNa sabatina de entidades da saúde em Cuiabá (22/09), o candidato ao Governo Wellington Fagundes (PL) prometeu: \"Nosso objetivo não é criar meta para diminuir a fila. Nosso objetivo é zerar a fila do SUS.\" Ele citou mutirões, parcerias com municípios e prestadores privados e telemedicina.\n\nLeia a curta completa: hojemt.com.br/fila-zero-promessa-de-chapa\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #saude #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/fila-zero-promessa-de-chapa/",
-      "charge_json": "pautas/charges/2026-09-24-fila-zero-promessa-de-chapa.json"
+      "charge_json": "pautas/charges/2026-09-24-fila-zero-promessa-de-chapa.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 21
     },
     {
       "id": "35",
@@ -727,7 +775,9 @@
       ],
       "legenda": "CHARGE · Asfalto sob medida\n\nPrimeiro a foto; o asfalto depois.\n\nNa quarta (23), no bairro Planalto, o deputado estadual Elizeu Nascimento, ao lado do federal Fábio Garcia, destacou a articulação com o Governo do Estado por asfalto em 11 bairros de Cuiabá.\n\nLeia a curta completa: hojemt.com.br/asfalto-sob-medida\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #cuiaba #asfalto #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/asfalto-sob-medida/",
-      "charge_json": "pautas/charges/2026-09-25-asfalto-sob-medida.json"
+      "charge_json": "pautas/charges/2026-09-25-asfalto-sob-medida.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 22
     },
     {
       "id": "43",
@@ -742,7 +792,9 @@
       ],
       "legenda": "CHARGE · Sinop vira ringue\n\nPanfletagem com juiz e cronômetro.\n\nUma panfletagem na Av. Júlio Campos, em Sinop, terminou em confusão entre cabos eleitorais da campanha de Natasha Slhessarenko (PSD) e integrantes do grupo de Vilmar Rigo, o \"Bolsonaro da Shopee\" (Novo), e a PM precisou intervir. Cada lado diz que foi atacado primeiro.\n\nLeia a curta completa: hojemt.com.br/sinop-vira-ringue\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #sinop #eleicoes2026 #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/sinop-vira-ringue/",
-      "charge_json": "pautas/charges/2026-09-25-sinop-vira-ringue.json"
+      "charge_json": "pautas/charges/2026-09-25-sinop-vira-ringue.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 23
     },
     {
       "id": "44",
@@ -757,7 +809,9 @@
       ],
       "legenda": "CHARGE · Presidente de time, agora na Assembleia\n\n\"Já fui presidente de time e já fui comentarista.\"\n\nEm encontro em Cuiabá (23/09), o presidente da Assembleia, Max Russi (Podemos), relembrou a trajetória no futebol e no rádio e destacou recursos para o esporte em municípios de MT.\n\nLeia a curta completa: hojemt.com.br/presidente-de-time-agora-na-assembleia\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #esporte #almt #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/presidente-de-time-agora-na-assembleia/",
-      "charge_json": "pautas/charges/2026-09-25-presidente-de-time-agora-na-assembleia.json"
+      "charge_json": "pautas/charges/2026-09-25-presidente-de-time-agora-na-assembleia.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 24
     },
     {
       "id": "45",
@@ -772,7 +826,9 @@
       ],
       "legenda": "CHARGE · Dados na calamidade\n\nCaixa em calamidade, contrato em banda larga.\n\nEm calamidade financeira desde julho, Várzea Grande assinou em 3/09 um contrato de R$ 23,1 milhões, por 12 meses, com a A F C Engenharia para instalar e manter redes de dados e voz em secretarias da prefeitura.\n\nLeia a curta completa: hojemt.com.br/dados-na-calamidade\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #varzeagrande #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/dados-na-calamidade/",
-      "charge_json": "pautas/charges/2026-09-25-dados-na-calamidade.json"
+      "charge_json": "pautas/charges/2026-09-25-dados-na-calamidade.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 25
     },
     {
       "id": "46",
@@ -788,7 +844,9 @@
       "legenda": "CHARGE · Marés que engolem ilhas\n\nMar em alta recorde, metas na maré baixa.\n\nEm 2024, o nível médio global do mar subiu 5,9 mm, acima dos 4,3 mm previstos, segundo análise da NASA com dados de satélite. Ilhas baixas e deltas densamente povoados estão entre as áreas mais expostas.\n\nLeia a curta completa: hojemt.com.br/mares-que-engolem-ilhas\n\nFonte do dado: NASA (sealevel.nasa.gov)\nCharge: HOJE MT · hojemt.com.br\n\n#charge #clima #niveldomar #hojemt",
       "materia": "https://hojemt.com.br/mares-que-engolem-ilhas/",
       "charge_json": "pautas/charges/2026-09-25-mares-que-engolem-ilhas.json",
-      "obs": "decisão de 25/09 (editor pediu \"Dirige\"): adiada para depois do 1º turno para abrir espaço à charge eleitoral Placar eletrônico (assunto não perde validade)"
+      "obs": "decisão de 25/09 (editor pediu \"Dirige\"): adiada para depois do 1º turno para abrir espaço à charge eleitoral Placar eletrônico (assunto não perde validade)",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 29
     },
     {
       "id": "47",
@@ -803,7 +861,9 @@
       ],
       "legenda": "CHARGE · Plenitude atrás das grades\n\nA paz interior depende do sinal.\n\nEm 12 de setembro, cerca de 200 mulheres de unidades prisionais e socioeducativas de Mato Grosso, entre reeducandas, adolescentes, servidoras e policiais penais, assistiram on-line à Conferência de Mulheres Plenitude. A ação foi da Procuradoria Especial da Mulher e da Escola do Legislativo da ALMT, com a Sejus e a Febracis Cuiabá.\n\nLeia a curta completa: hojemt.com.br/plenitude-atras-das-grades\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #matogrosso #almt #hojemt",
       "materia": "https://hojemt.com.br/plenitude-atras-das-grades/",
-      "charge_json": "pautas/charges/2026-09-25-plenitude-atras-das-grades.json"
+      "charge_json": "pautas/charges/2026-09-25-plenitude-atras-das-grades.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 27
     },
     {
       "id": "48",
@@ -818,7 +878,9 @@
       ],
       "legenda": "CHARGE · Paula em 13 votos\n\nAbilio conta os peixes antes de puxar a rede.\n\nO prefeito Abilio Brunini (PL) diz que a vereadora Paula Calil (PL) tem 13 votos para seguir na presidência da Câmara de Cuiabá. O TJMT negou o pedido do prefeito para suspender a regra que exige 18 votos para mudar o Regimento Interno, o que dificulta a reeleição.\n\nLeia a curta completa: hojemt.com.br/paula-em-13-votos\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #cuiaba #camaradecuiaba #hojemt",
       "materia": "https://hojemt.com.br/paula-em-13-votos/",
-      "charge_json": "pautas/charges/2026-09-25-paula-em-13-votos.json"
+      "charge_json": "pautas/charges/2026-09-25-paula-em-13-votos.json",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 28
     },
     {
       "id": "49",
@@ -834,7 +896,9 @@
       "legenda": "CHARGE · Placar eletrônico na Casa\n\nO boato vai ter concorrência.\n\nA TV Assembleia e o TRE-MT renovaram a parceria para transmitir a apuração das Eleições 2026 direto da sede da Justiça Eleitoral, no domingo, 4 de outubro, a partir das 15h45 (horário de Mato Grosso): canal 30.1 em Cuiabá e Várzea Grande, 9.2 ou 10.2 no interior e YouTube da TV Assembleia.\n\nLeia a curta completa: hojemt.com.br/placar-eletronico-na-casa\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/placar-eletronico-na-casa/",
       "charge_json": "pautas/charges/2026-09-25-placar-eletronico-na-casa.json",
-      "obs": "decisão de 25/09 (editor pediu \"Dirige\"): entrou no horário da charge Marés (assunto eleitoral precisa sair antes do 1º turno de 04/10)"
+      "obs": "decisão de 25/09 (editor pediu \"Dirige\"): entrou no horário da charge Marés (assunto eleitoral precisa sair antes do 1º turno de 04/10)",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 26
     },
     {
       "id": "50",
@@ -850,7 +914,9 @@
       "legenda": "CHARGE · IA, salário e bala\n\nAté o robô entra na folha.\n\nO candidato ao governo Sargento Laudicério (Agir) propõe recompor o efetivo policial, pagar RGA de 18,38% aos servidores (condicionado a análise técnica, legal e fiscal, segundo o plano) e usar inteligência artificial na administração estadual.\n\nLeia a curta completa: hojemt.com.br/ia-salario-e-bala\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/ia-salario-e-bala/",
       "charge_json": "pautas/charges/2026-09-25-ia-salario-e-bala.json",
-      "obs": "decisão de 25/09 (editor pediu \"Dirige\"): entrou no horário da charge Fome em tempos de guerra (assunto eleitoral precisa sair antes de 04/10)"
+      "obs": "decisão de 25/09 (editor pediu \"Dirige\"): entrou no horário da charge Fome em tempos de guerra (assunto eleitoral precisa sair antes de 04/10)",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 19
     },
     {
       "id": "51",
@@ -866,7 +932,9 @@
       "legenda": "CHARGE · Fortuna caiu em Cuiabá\n\nChoveu emenda. Agora é ver o que brota.\n\nA deputada federal Coronel Fernanda (PL) diz ter destinado R$ 43,2 milhões em emendas a Cuiabá: R$ 36,1 milhões direto para a Prefeitura, na gestão de Abilio Brunini (PL), e o restante para instituições da cidade, com foco em saúde.\n\nLeia a curta completa: hojemt.com.br/fortuna-caiu-em-cuiaba\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #cuiaba #hojemt",
       "materia": "https://hojemt.com.br/fortuna-caiu-em-cuiaba/",
       "charge_json": "pautas/charges/2026-09-25-fortuna-caiu-em-cuiaba.json",
-      "obs": "assunto não eleitoral (emendas), sem prazo: próximo horário livre depois do último item agendado (32, 05/10 11:30)"
+      "obs": "assunto não eleitoral (emendas), sem prazo: próximo horário livre depois do último item agendado (32, 05/10 11:30)",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 31
     },
     {
       "id": "52",
