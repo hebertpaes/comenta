@@ -13,6 +13,21 @@ fornecedor usada para baixar o código privado do Atendechat.
   HOJE MT, site "Intsoft".
 - `app.intsoft.com.br` e `api.intsoft.com.br` ainda não existem.
 
+## Acesso SSH ao servidor (recuperado em 25/09)
+
+A chave original da VM se perdeu. O acesso sai do Oracle Cloud Shell:
+
+1. Criar uma sessão gerenciada no Bastion `ghostbastion` com a chave
+   `~/.ssh/ghostkey.pub` (dura 3 h). Enquanto ela está ativa, o plugin
+   Bastion da VM coloca essa chave em `authorized_keys` do usuário `ubuntu`.
+2. O túnel pelo próprio Bastion fecha a conexão ("kex_exchange_identification");
+   em vez dele, entrar direto no IP público com a `ghostkey` durante a sessão.
+3. Nessa janela, instalar uma chave permanente `~/.ssh/intsoft_admin`
+   (RSA 4096: o Cloud Shell roda em modo FIPS e recusa ed25519) e o atalho
+   `ssh intsoft` em `~/.ssh/config`.
+4. Guardar cópia da chave privada `intsoft_admin` num gerenciador de senhas.
+   Nunca no repositório nem em conversa.
+
 ## O que o instalador faz no servidor (atenção)
 
 Roda como root e, em ordem: `apt update/upgrade`; instala **Node 20 pelo
