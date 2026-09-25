@@ -1,0 +1,65 @@
+{
+  "slug": "asfalto-sob-medida",
+  "titulo": "Asfalto sob medida (curta: deputados anunciam asfalto do Estado em 11 bairros de Cuiabá)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas",
+  "legenda": {
+    "site_16x9": "Primeiro a foto; o asfalto vem no próximo discurso.",
+    "instagram_4x5": "Primeiro a foto; o asfalto depois."
+  },
+  "contexto": "Em 23/09 (quarta), no bairro Planalto, o deputado estadual Elizeu Nascimento, ao lado do federal Fábio Garcia, destacou a articulação com o Governo do Estado por asfalto em 11 bairros de Cuiabá (Estadão MT; Olhar Direto). A curta publicada diz 'terça-feira' (divergência de data; texto publicado não editado).",
+  "fontes": [
+    "https://www.estadaomatogrosso.com.br/geral/ao-lado-de-fabio-garcia-elizeu-nascimento-destaca-articulacao-por-asfalto-em-11-bairros-de-cuiaba/146706",
+    "https://www.olhardireto.com.br/noticias/elizeu-destaca-articulacao-por-asfalto-em-11-bairros-de-cuiaba-ao-lado-de-fabio-garcia"
+  ],
+  "personagens": [
+    {
+      "nome": "Fábio Garcia",
+      "cargo": "deputado federal (União-MT)",
+      "canva_fotos_referencia": [
+        "MAHWK8zhW5A"
+      ],
+      "origem": "https://www.camara.leg.br/internet/deputado/bandep/178905.jpg",
+      "credito": "Foto oficial: Câmara dos Deputados",
+      "licenca": "foto oficial da Câmara; só referência de desenho",
+      "data_foto": "legislatura atual"
+    },
+    {
+      "nome": "Elizeu Nascimento",
+      "cargo": "deputado estadual (Novo-MT)",
+      "canva_fotos_referencia": [
+        "MAHWK3X7SaM"
+      ],
+      "origem": "https://storage.al.mt.gov.br/api/v1/download/image/641748",
+      "credito": "Foto oficial: Assembleia Legislativa de MT (biênio 2023–2025)",
+      "licenca": "foto oficial da ALMT, recortada no rosto (sem logotipos); só referência de desenho",
+      "data_foto": "perfil oficial ALMT"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHWKwzHIz8",
+    "arte_16x9": "MAHWK4Knb90",
+    "design_instagram_4x5": "DAHWK-bDbGg",
+    "arte_4x5": "MAHWK67OkkM",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "antes": "charge-1790306567.webp",
+  "materia": "https://hojemt.com.br/asfalto-sob-medida/",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json (item 42, 2026-10-02T11:30:00-04:00)"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-25-asfalto-sob-medida.jpg",
+    "instagram_4x5": "2026-09-25-asfalto-sob-medida-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-25-asfalto-sob-medida.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-asfalto-sob-medida-og.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-25-asfalto-sob-medida-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 25/09/2026 (antes: charge automática charge-1790306567.webp)"
+}

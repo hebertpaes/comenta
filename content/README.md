@@ -188,6 +188,8 @@ registra origem, data e crédito.
 | Flávia Moretti (prefeita de Várzea Grande) | cabelos lisos castanho-claros aloirados na altura do peito, pele clara, sorriso largo | `MAHWIE_abVw` (rosto, 19/09/2026), `MAHWIMIJ4SM` (com microfone, 19/09/2026) | Galeria oficial da Prefeitura de Várzea Grande (Festival Paralímpico, 19/09/2026), Foto: Andre Luis/Secom-VG. Só referência de desenho. A antiga (`MAHWEXj-FW4`, TSE 2024) está desatualizada. |
 | Otaviano Pivetta (governador) | careca, óculos redondos de armação escura grossa, sorriso largo, camisa polo azul-marinho | `MAHWH0J-3js` (foto oficial do registro de candidatura, TSE, ago/2026) | TSE/Divulgação. A antiga (`MAHWEbbOGVM`) fica como segunda opção. |
 | Candidatos de MT 2026 (governo e Senado) | ver foto oficial | ids em `pautas/eleicoes/2026-mt-candidatos.json` | TSE/Divulgação (registro 2026) |
+| Fábio Garcia (deputado federal, União) | cabelo escuro curto e cheio, rosto fino, terno azul-marinho | `MAHWK8zhW5A` (foto oficial da Câmara, legislatura atual) | Câmara dos Deputados (bandep/178905). Só referência de desenho. |
+| Elizeu Nascimento (deputado estadual, Novo) | cabelo grisalho bem curto, pele morena, sorriso largo, terno escuro | `MAHWK3X7SaM` (foto oficial da ALMT, recortada no rosto, sem logotipos) | Assembleia Legislativa de MT (perfil 377). Só referência de desenho. |
 | Ludio Cabral / Carlos Fávaro / demais | conferir foto do ano corrente antes de gerar | ver `.json` da última charge de cada um | Commons/Agência Brasil/Câmara/Senado (CC BY) ou galeria oficial do órgão |
 
 No prompt da arte, descrever o visual atual em palavras além de passar as fotos

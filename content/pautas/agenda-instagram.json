@@ -701,6 +701,36 @@
     "manchete": "TCE-MT trava contratações e vê indício de sobrepreço de R$ 100,6 mi",
     "apoio": "Energia solar, creche e hospital: decisões de setembro atingem consórcio de municípios, 4 cidades e a Sefaz."
    }
+  },
+  {
+   "id": "42",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-10-02T11:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Asfalto sob medida",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-25-asfalto-sob-medida-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Asfalto sob medida\n\nPrimeiro a foto; o asfalto depois.\n\nNa quarta (23), no bairro Planalto, o deputado estadual Elizeu Nascimento, ao lado do federal Fábio Garcia, destacou a articulação com o Governo do Estado por asfalto em 11 bairros de Cuiabá.\n\nLeia a curta completa: hojemt.com.br/asfalto-sob-medida\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #cuiaba #asfalto #matogrosso #hojemt",
+   "materia": "https://hojemt.com.br/asfalto-sob-medida/",
+   "charge_json": "pautas/charges/2026-09-25-asfalto-sob-medida.json"
+  },
+  {
+   "id": "43",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-10-02T15:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Sinop vira ringue",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-25-sinop-vira-ringue-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Sinop vira ringue\n\nPanfletagem com juiz e cronômetro.\n\nUma panfletagem na Av. Júlio Campos, em Sinop, terminou em confusão entre cabos eleitorais da campanha de Natasha Slhessarenko (PSD) e integrantes do grupo de Vilmar Rigo, o \"Bolsonaro da Shopee\" (Novo), e a PM precisou intervir. Cada lado diz que foi atacado primeiro.\n\nLeia a curta completa: hojemt.com.br/sinop-vira-ringue\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #sinop #eleicoes2026 #matogrosso #hojemt",
+   "materia": "https://hojemt.com.br/sinop-vira-ringue/",
+   "charge_json": "pautas/charges/2026-09-25-sinop-vira-ringue.json"
   }
  ]
 }

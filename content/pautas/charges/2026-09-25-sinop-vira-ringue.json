@@ -1,0 +1,50 @@
+{
+  "slug": "sinop-vira-ringue",
+  "titulo": "Sinop vira ringue (curta: confusão entre cabos eleitorais em Sinop)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas",
+  "legenda": {
+    "site_16x9": "Em Sinop, a panfletagem ganhou juiz, corda e cronômetro.",
+    "instagram_4x5": "Panfletagem com juiz e cronômetro."
+  },
+  "contexto": "Panfletagem na Av. Júlio Campos, em Sinop, terminou em agressões entre cabos eleitorais da campanha de Natasha Slhessarenko (PSD) e integrantes do grupo de Vilmar Rigo, o 'Bolsonaro da Shopee' (Novo); a PM interveio. Há versões diferentes sobre quem começou (Muvuca Popular, LeiAgora, Única News, Nortão MT).",
+  "regras_da_cena": "personagens genéricos (nenhum candidato ou pessoa real desenhada), sem socos nem agressão: o PM separa os grupos como juiz de ringue; sem cores/símbolos de partido",
+  "fontes": [
+    "https://www.muvucapopular.com.br/2026/09/24/cabos-de-natasha-e-apoiadores-do-bolsonaro-da-shopee-trocam-agressoes-fisicas-em-sinop/",
+    "https://www.muvucapopular.com.br/2026/09/24/apos-confusao-de-apoiadores-bolsonaro-da-shopee-diz-que-equipe-foi-atacada-pelos-esquerdistas/",
+    "https://www.muvucapopular.com.br/2026/09/24/apos-pancadaria-entre-seus-cabos-eleitorais-e-militantes-do-pl-natasha-diz-que-violencia-nao-vai-nos-calar/",
+    "https://leiagora.com.br/briga-entre-apoiadores-interrompe-caminhada-de-natasha-mulher-e-puxada-pelo-cabelo/"
+  ],
+  "personagens": [
+    {
+      "nome": "personagens genéricos",
+      "obs": "sem foto de referência; nenhuma pessoa real reconhecível"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHWK3UbQXQ",
+    "arte_16x9": "MAHWK4bBaZs",
+    "design_instagram_4x5": "DAHWK3JnkZs",
+    "arte_4x5": "MAHWK-K7P2k",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "antes": "charge-1790306528.webp",
+  "materia": "https://hojemt.com.br/sinop-vira-ringue/",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json (item 43, 2026-10-02T15:30:00-04:00)"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-25-sinop-vira-ringue.jpg",
+    "instagram_4x5": "2026-09-25-sinop-vira-ringue-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-25-sinop-vira-ringue.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-sinop-vira-ringue-og.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-25-sinop-vira-ringue-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 25/09/2026 (antes: charge automática charge-1790306528.webp)"
+}
