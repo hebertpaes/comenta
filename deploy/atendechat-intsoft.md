@@ -61,9 +61,13 @@ sudo fallocate -l 4G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapf
   && sudo swapon /swapfile && echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 ```
 
-O instalador instala o Node 20 (NodeSource). O Ghost 6 aceita Node 20.11+ ou
-22.13+; se o `node -v` de antes era 22, o Ghost continua funcionando com o 20,
-mas confira no passo DEPOIS.
+**Atenção ao Node.** O instalador do fornecedor tenta pôr o Node 20 (NodeSource)
+no sistema. O Ghost 6.63 do intsoft exige Node `^22.23.1 || ^24.20.0` (conferido
+no registro npm em 25/09) e hoje roda com o 22.23.2. Por isso, no servidor do
+Ghost, usar só a versão corrigida do instalador (`instalador-intsoft`), que não
+mexe no Node do sistema. Situação verificada em 25/09: Ubuntu 24.04.5, 11 GB de
+RAM, sem swap, 40 GB livres, sem Docker, Postgres ou PM2; `app` e `api` ainda
+sem registro no DNS.
 
 ```bash
 # DEPOIS da instalação
