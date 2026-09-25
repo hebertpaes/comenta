@@ -1032,6 +1032,22 @@
         "manchete": "TCE mantém suspensa licitação de Itanhangá por regra de atestado",
         "apoio": "Relator viu contradição: o aviso só aceitava atestado de ente público; o termo de referência, também de empresa privada."
       }
+    },
+    {
+      "id": "57",
+      "status": "aguardando_materia",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Coração no PL, Palanque com Pivetta",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-coracao-no-pl-palanque-com-pivetta-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Coração no PL, Palanque com Pivetta\n\nO partido espera; a água, não.\n\nNa quinta (24), no ato de Pivetta em Cuiabá, a prefeita de Várzea Grande, Flávia Moretti, disse que só deixa o PL se for expulsa: \"O PL é o meu partido de coração\". Pivetta desconversou sobre levá-la ao Republicanos: \"A Flávia não está precisando de partido\" (Olhar Direto e Esportes & Notícias).\n\nLeia a curta completa: hojemt.com.br/coracao-no-pl-palanque-com-pivetta\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #matogrosso #varzeagrande #hojemt",
+      "materia": "https://hojemt.com.br/coracao-no-pl-palanque-com-pivetta/",
+      "charge_json": "pautas/charges/2026-09-25-coracao-no-pl-palanque-com-pivetta.json",
+      "obs": "curta em rascunho (id 6ab7025e834d62060cb1d7a2, https://hojemt.com.br/p/07dce690-31c2-43fe-aacb-1778218f2a96/): quando o editor publicar, trocar status para agendado e definir 'quando' ANTES do 1º turno (04/10), pois o assunto é eleitoral. Se o editor mudar o slug, atualizar 'materia' e o link da legenda. A legenda não cita a dança (fonte única, Estadão MT)."
     }
   ]
 }

@@ -1,0 +1,100 @@
+{
+  "slug": "coracao-no-pl-palanque-com-pivetta",
+  "titulo": "Coração no PL, Palanque com Pivetta (curta: Flávia Moretti diz que só deixa o PL se for expulsa; Pivetta diz que ela 'não está precisando de partido')",
+  "pedido": "curta nova em rascunho + charge no Canva sobre o desdobramento Flávia Moretti x PL x Pivetta (atualiza a curta publicada flavia-troca-o-pl, de 24/09, que não foi editada)",
+  "materia": "https://hojemt.com.br/coracao-no-pl-palanque-com-pivetta/",
+  "rascunho": {
+    "id": "6ab7025e834d62060cb1d7a2",
+    "uuid": "07dce690-31c2-43fe-aacb-1778218f2a96",
+    "previa": "https://hojemt.com.br/p/07dce690-31c2-43fe-aacb-1778218f2a96/",
+    "editor": "https://hojemt.com.br/ghost/#/editor/post/6ab7025e834d62060cb1d7a2",
+    "tag": "Curtas & Bastidores (slug curtas)"
+  },
+  "status_materia": "rascunho (draft) criado em 25/09/2026; não publicado",
+  "antecedente": "https://hojemt.com.br/flavia-troca-o-pl/",
+  "balao": {
+    "texto": "A Flávia não está precisando de partido.",
+    "quem_fala": "Otaviano Pivetta",
+    "quando": "24/09/2026, ato de campanha 'Arrancada da Vitória', CPA II, Cuiabá",
+    "fontes": [
+      "https://www.olhardireto.com.br/noticias/pivetta-desconversa-sobre-levar-flavia-ao-republicanos-e-diz-que-prefeita-nao-esta-precisando-de-partido",
+      "https://www.infoverus.com.br/politica/pivetta-desconversa-sobre-levar-flavia-moretti-ao-republicanos-e-prefeita-diz-que-nao-deixa-o-pl/35509",
+      "https://en.com.br/pivetta-desconversa-sobre-flavia-no-republicanos-ela-nao-esta-precisando-de-partido/"
+    ],
+    "obs": "redação idêntica nos três veículos ('A Flávia não está precisando de partido. Ela está precisando de um governo que ajude Várzea Grande a resolver seus problemas'); o título do Esportes & Notícias usa 'Ela não está...', mas a citação no corpo é 'A Flávia não está...'. Ponta do balão aponta para Pivetta nos dois formatos (16:9: ponta para baixo e à direita, na direção da cabeça dele; 4:5: forma trocada com replace_shape, ponta para baixo sobre a cabeça dele)"
+  },
+  "legenda": {
+    "site_16x9": "Em Várzea Grande, o partido espera; a água, não.",
+    "instagram_4x5": "O partido espera; a água, não. (40 px, uma linha)"
+  },
+  "contexto": "Em 21/09, Flávia Moretti (PL), prefeita de Várzea Grande, admitiu que poderia deixar o PL. Em 24/09, no ato de Pivetta (Republicanos) em Cuiabá, disse que só sai se for expulsa ('Não saio do PL. O PL é o meu partido de coração, é o partido da minha ideologia'). Pivetta desconversou sobre levá-la ao Republicanos e disse que ela precisa de um governo que ajude Várzea Grande, citando a água (parceria de até R$ 60 milhões). Segundo o Estadão MT (fonte única), ela apareceu dançando ao som do jingle 'Bora Pivetar'. A direção estadual do PL (Ananias Filho) abriu análise da conduta dos prefeitos pró-Pivetta no começo de setembro e depois recuou da expulsão imediata; nenhuma manifestação do PL-MT sobre as falas de 24/09 foi localizada até 25/09, 23h UTC.",
+  "fontes": [
+    "https://www.olhardireto.com.br/noticias/pivetta-desconversa-sobre-levar-flavia-ao-republicanos-e-diz-que-prefeita-nao-esta-precisando-de-partido (25/09/2026, 08h44)",
+    "https://www.olhardireto.com.br/noticias/apesar-de-abertura-em-outros-partidos-flavia-moretti-afirma-que-so-deixa-pl-se-for-expulsa-e-a-minha-ideologia (25/09/2026)",
+    "https://www.infoverus.com.br/politica/pivetta-desconversa-sobre-levar-flavia-moretti-ao-republicanos-e-prefeita-diz-que-nao-deixa-o-pl/35509 (25/09/2026, 11h30)",
+    "https://en.com.br/pivetta-desconversa-sobre-flavia-no-republicanos-ela-nao-esta-precisando-de-partido/ (25/09/2026, 16h)",
+    "https://en.com.br/apos-declarar-apoio-a-pivetta-flavia-moretti-afirma-que-so-deixara-o-pl-se-for-expulsa/ (25/09/2026, 13h)",
+    "https://www.muvucapopular.com.br/2026/09/25/flavia-diz-que-nao-deixa-pl-mesmo-apoiando-pivetta-e-meu-partido-de-coracao-e-da-minha-ideologia/ (25/09/2026, 18h08)",
+    "https://24horasmt.com.br/politica-mt/eu-nao-saio-do-pl-flavia-moretti-diz-que-so-deixa-partido-se-for-expulsa/ (25/09/2026)",
+    "https://olivre.com.br/flavia-moretti-diz-que-nao-pedira-para-sair-do-pl-apos-a-campanha-eleitoral-ao-governo/ (25/09/2026)",
+    "https://www.instagram.com/estadaomt/reel/DdsMFrNKp2I/ (24/09/2026; só a legenda do post foi lida, o vídeo não foi baixado nem recortado; fonte única da dança)",
+    "https://www.blogdovaldemir.com.br/politica/flavia-moretti-desafia-crise-no-pl-mantem-filiacao-e-consolida-apoio-a-pivetta/ (25/09/2026; repete a dança, sem imagem própria)",
+    "https://24horasmt.com.br/politica-mt/pessoa-infiel-mostra-o-carater-ananias-mira-prefeitos-que-aderiram-a-pivetta-e-vai-pedir-expulsao-do-pl/ (02/09/2026; outro lado, PL-MT)",
+    "https://matogrossoeconomico.com.br/politica-mato-grosso/eleicoes/ananias-bate-o-pe-e-comissao-de-etica-do-pl-abre-processo-contra-prefeitos-rebeldes/ (03/09/2026; outro lado, PL-MT)"
+  ],
+  "regras_da_cena": "palanque de campanha ao ar livre com piso de madeira, caixa d'água ao fundo, multidão com bandeiras lisas coloridas (sem sigla, texto ou logo); Pivetta abre uma torneira grande ligada a um cano azul e enche um balde de água (a fala dele sobre a água de Várzea Grande); Flávia dança feliz com os braços para cima e notas musicais (segundo o Estadão MT, dançou ao som do jingle); no bolso da camisa, sobre o coração, um cartão de filiação em branco com um coraçãozinho vermelho, sem letras ('partido de coração'). Humor leve, ninguém ridicularizado; sem texto, números, logos ou bandeiras de partido na arte",
+  "personagens": [
+    {
+      "nome": "Flávia Moretti",
+      "cargo": "prefeita de Várzea Grande (PL)",
+      "canva_fotos_referencia": ["MAHWPwnDBSs", "MAHWP4_6AXk"],
+      "data_foto": "2026-09-25",
+      "evento": "solenidade dos 40 anos do 2º Batalhão do Corpo de Bombeiros em Várzea Grande",
+      "credito": "Foto: Andre Luis/Secom-VG (galeria oficial da Prefeitura de Várzea Grande)",
+      "pagina": "https://www.varzeagrande.mt.gov.br/conteudo/25553/flavia-moretti-participa-de-solenidade-que-celebra-40-anos-do-corpo-de-bombeiros-em-varzea-grande",
+      "originais": [
+        "https://www.varzeagrande.mt.gov.br/storage/imagem/a8049bed815b670e30dec0462ffaf2c2.jpg",
+        "https://www.varzeagrande.mt.gov.br/storage/imagem/4bc5d021b4fea43c9f0a5e73fe02fdfc.jpg"
+      ],
+      "visual_atual": "cabelos castanho-claros aloirados presos em rabo de cavalo, pele clara, sorriso largo, camisa social azul-clara",
+      "recortes": "scratchpad (não versionado; regra do README: referências ficam só no Canva). MAHWPwnDBSs = três quartos com microfone; MAHWP4_6AXk = rindo com microfone",
+      "licenca": "foto de divulgação oficial sem licença CC declarada; usada só como referência de desenho (a charge não reproduz a foto)",
+      "referencia_anterior": "MAHWIE_abVw e MAHWIMIJ4SM (19/09/2026)"
+    },
+    {
+      "nome": "Otaviano Pivetta",
+      "cargo": "governador, candidato à reeleição (Republicanos)",
+      "canva_fotos_referencia": ["MAHWH0J-3js"],
+      "data_foto": "2026-08",
+      "credito": "Foto: TSE/Divulgação (registro de candidatura 2026)",
+      "licenca": "foto oficial do registro de candidatura (dados abertos do TSE)",
+      "busca_foto_recente": "25/09/2026: a Secom-MT (secom.mt.gov.br) não publica notícias do governador desde 03/07/2026 (período eleitoral); a foto do TSE segue a mais recente oficial"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHWP2Lj2so",
+    "arte_16x9": "MAHWP25vbkY",
+    "design_instagram_4x5": "DAHWP_6YL5E",
+    "arte_4x5": "MAHWP4UD9_0",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "conferencia_visual": "exportações conferidas em 25/09: traço de nanquim e aquarela (parece desenho), rostos reconhecíveis e sem deformação, sem texto gerado na arte (o cartão do bolso só tem um coraçãozinho), bandeiras lisas, balão apontando para Pivetta nos dois formatos",
+  "instagram": {
+    "status": "aguardando_materia (item 57 da agenda); agendar só depois que o editor publicar a curta, antes do 1º turno (04/10)",
+    "legenda": "ver item 57 em pautas/agenda-instagram.json (537 caracteres, 5 hashtags; não cita a dança, que tem fonte única)"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-25-coracao-no-pl-palanque-com-pivetta.jpg",
+    "instagram_4x5": "2026-09-25-coracao-no-pl-palanque-com-pivetta-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-25-coracao-no-pl-palanque-com-pivetta.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-coracao-no-pl-palanque-com-pivetta-og.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-25-coracao-no-pl-palanque-com-pivetta-instagram-retrato.jpg"
+  },
+  "site": "feature_image, legenda 'Charge: HOJE MT', alt e og/twitter_image gravados no rascunho em 25/09/2026 (status continua draft)",
+  "formato": "charge de jornal montada inteira no Canva",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT"
+}
