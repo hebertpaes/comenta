@@ -1,0 +1,312 @@
+{
+  "candidato": "Coronel Darwin (Darwin Salgado Germano)",
+  "id_candidato": "coronel-darwin",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "Democrata",
+  "numero": 351,
+  "id": "KytD7Rgvoak",
+  "url": "https://www.youtube.com/watch?v=KytD7Rgvoak",
+  "rede": "youtube",
+  "perfil": "@coronel_darwin_oficial",
+  "perfil_url": "https://www.youtube.com/@coronel_darwin_oficial",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.youtube.com/@coronel_darwin_oficial); uploader do vídeo = coronel_darwin_oficial / Darwin Salgado Germano",
+  "data": "2026-09-01",
+  "duracao_s": 111,
+  "titulo": "Tecnologia Segurança e Previdência",
+  "descricao": "O futuro esta mais próximo do que nos imaginamos ...\n@coronel_darwin_oficial",
+  "tipo": "vídeo de campanha: abre com trechos de telejornal (imprensa) e segue com o candidato falando à câmera",
+  "fala_do_candidato": true,
+  "resumo": "Fala aos policiais militares: tecnologia vai substituí-los e reforma da previdência aumenta tempo para a reserva; pede voto 351.",
+  "temas": [
+    "segurança",
+    "previdência militar",
+    "policiais"
+  ],
+  "transcricao_metodo": "legenda automática do YouTube (pt, json3) — o download de áudio/vídeo do YouTube é barrado nesta máquina (HTTP 403 no googlevideo mesmo com PO Token); vozes identificadas pelo storyboard (miniaturas ~1/s) do próprio YouTube",
+  "segmentos": [
+    {
+      "start": 0.16,
+      "end": 2.32,
+      "text": "Esse robô se chama Arcanjo. Vai trabalhar",
+      "voz": "telejornal/imprensa (CNN Brasil) — NÃO usar"
+    },
+    {
+      "start": 2.32,
+      "end": 4.52,
+      "text": "para a Secretaria de Segurança da Bahia.",
+      "voz": "telejornal/imprensa (CNN Brasil) — NÃO usar"
+    },
+    {
+      "start": 4.52,
+      "end": 6.92,
+      "text": "Identifica quem tá armado, marca objeto",
+      "voz": "telejornal/imprensa (CNN Brasil) — NÃO usar"
+    },
+    {
+      "start": 6.92,
+      "end": 9.72,
+      "text": "abandonado. Ele lê rosto e placa e joga",
+      "voz": "telejornal/imprensa (CNN Brasil) — NÃO usar"
+    },
+    {
+      "start": 9.72,
+      "end": 11.92,
+      "text": "imagem em tempo real pra central da",
+      "voz": "telejornal/imprensa (CNN Brasil) — NÃO usar"
+    },
+    {
+      "start": 11.92,
+      "end": 12.88,
+      "text": "secretaria.",
+      "voz": "telejornal/imprensa (CNN Brasil) — NÃO usar"
+    },
+    {
+      "start": 12.88,
+      "end": 14.76,
+      "text": "E o governo federal enviou o projeto de",
+      "voz": "telejornal/imprensa (CNN Brasil) — NÃO usar"
+    },
+    {
+      "start": 14.76,
+      "end": 16.32,
+      "text": "lei que altera regras para a",
+      "voz": "telejornal/imprensa (CNN Brasil) — NÃO usar"
+    },
+    {
+      "start": 16.32,
+      "end": 18.68,
+      "text": "aposentadoria de militares ao Congresso",
+      "voz": "telejornal/imprensa (CNN Brasil) — NÃO usar"
+    },
+    {
+      "start": 18.68,
+      "end": 21.28,
+      "text": "Nacional. A gente preparou uma tela para",
+      "voz": "telejornal/imprensa (CNN Brasil) — NÃO usar"
+    },
+    {
+      "start": 21.28,
+      "end": 23.12,
+      "text": "explicar as principais mudanças",
+      "voz": "telejornal/imprensa (CNN Brasil) — NÃO usar"
+    },
+    {
+      "start": 23.12,
+      "end": 26.4,
+      "text": "propostas. Vamos ver. Hoje não existe",
+      "voz": "telejornal/imprensa (CNN Brasil) — NÃO usar"
+    },
+    {
+      "start": 26.4,
+      "end": 28.68,
+      "text": "idade mínima para os militares passarem",
+      "voz": "telejornal/imprensa (CNN Brasil) — NÃO usar"
+    },
+    {
+      "start": 28.68,
+      "end": 31.24,
+      "text": "para a reserva. pela proposta. Essa",
+      "voz": "telejornal/imprensa (CNN Brasil) — NÃO usar"
+    },
+    {
+      "start": 31.24,
+      "end": 34.56,
+      "text": "idade mínima seria de 55 anos. O tempo",
+      "voz": "telejornal/imprensa (CNN Brasil) — NÃO usar"
+    },
+    {
+      "start": 34.56,
+      "end": 34.88,
+      "text": "de",
+      "voz": "telejornal/imprensa (CNN Brasil) — NÃO usar"
+    },
+    {
+      "start": 34.88,
+      "end": 38.16,
+      "text": "Olá, meu irmão policial militar.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 38.16,
+      "end": 40.68,
+      "text": "As notícias que acabamos de ver",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 40.68,
+      "end": 44.08,
+      "text": "demonstram claramente que em breve nós",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 44.08,
+      "end": 46.32,
+      "text": "seremos substituídos por máquinas, não",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 46.32,
+      "end": 49.76,
+      "text": "só na Bahia, mas em todo o país. E o",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 49.76,
+      "end": 52.0,
+      "text": "pior, uma reforma da previdência se",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 52.0,
+      "end": 56.32,
+      "text": "aproxima e prevê um aumento no tempo",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 56.32,
+      "end": 57.92,
+      "text": "para que você possa ingressar na",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 57.92,
+      "end": 60.92,
+      "text": "reserva.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 61.0,
+      "end": 63.32,
+      "text": "O problema é que a nossa expectativa de",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 63.32,
+      "end": 66.32,
+      "text": "vida é de apenas e tão somente 58 anos",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 66.32,
+      "end": 68.0,
+      "text": "de idade.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 68.0,
+      "end": 71.0,
+      "text": "E agora aumenta-se o tempo necessário",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 71.0,
+      "end": 72.84,
+      "text": "para que você possa ingressar na reserva",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 72.84,
+      "end": 75.4,
+      "text": "remunerada. Uma falta de respeito com",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 75.4,
+      "end": 78.16,
+      "text": "aquele que doa a sua vida pela",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 78.16,
+      "end": 80.16,
+      "text": "sociedade. Está na hora de termos",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 80.16,
+      "end": 83.36,
+      "text": "representantes lá no Congresso Nacional",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 83.36,
+      "end": 86.0,
+      "text": "que vão lutar pelos nossos direitos. A",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 86.0,
+      "end": 88.24,
+      "text": "situação alarmante.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 88.24,
+      "end": 90.2,
+      "text": "Além de aumentar a nossa idade, ainda",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 90.2,
+      "end": 93.12,
+      "text": "querem nos substituir por máquinas. Chegou a hora",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 93.12,
+      "end": 95.96,
+      "text": "de fazermos a diferença. Faça uma",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 95.96,
+      "end": 99.2,
+      "text": "escolha segura e responsável. Coloque",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 99.2,
+      "end": 101.96,
+      "text": "pessoas que vão representá-los lá no",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 101.96,
+      "end": 104.08,
+      "text": "Congresso Nacional. As eleições se",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 104.08,
+      "end": 107.4,
+      "text": "aproximam. Vote 351 Coronel Darwin para",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 107.4,
+      "end": 112.08,
+      "text": "senador Mato Grosso. ",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 34.9,
+      "fim": 46.3,
+      "texto": "Olá, meu irmão policial militar. As notícias que acabamos de ver demonstram claramente que em breve nós seremos substituídos por máquinas,",
+      "tema": "segurança/previdência militar"
+    },
+    {
+      "inicio": 61.0,
+      "fim": 68.0,
+      "texto": "O problema é que a nossa expectativa de vida é de apenas e tão somente 58 anos de idade.",
+      "tema": "previdência militar"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Coronel Darwin, YouTube @coronel_darwin_oficial, 2026-09-01",
+  "arquivo_local_temporario": null,
+  "obs": "SEM ÁUDIO LOCAL (ver \"pendente\"). 0–34,9 s são TRECHOS DE TELEJORNAL (robô da Segurança da Bahia; reforma da previdência dos militares — tarja CNN Brasil no storyboard) — material de IMPRENSA, proibido. De 34,9 s em diante é o candidato falando à câmera diante da bandeira (storyboard 40–105 s), dirigindo-se aos policiais militares. Crítica à reforma da previdência dos militares (governo federal), sem nome.",
+  "audio_baixado": false,
+  "pendente": "baixar o áudio em outra máquina (yt-dlp) e conferir os cortes; a transcrição e os tempos vêm da legenda automática, que tem erros e defasagem de ~0,5 s"
+}

@@ -1,0 +1,233 @@
+{
+  "candidato": "Coronel Darwin (Darwin Salgado Germano)",
+  "id_candidato": "coronel-darwin",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "Democrata",
+  "numero": 351,
+  "id": "TTzHOw-W-YA",
+  "url": "https://www.youtube.com/watch?v=TTzHOw-W-YA",
+  "rede": "youtube",
+  "perfil": "@coronel_darwin_oficial",
+  "perfil_url": "https://www.youtube.com/@coronel_darwin_oficial",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.youtube.com/@coronel_darwin_oficial); uploader do vídeo = coronel_darwin_oficial / Darwin Salgado Germano",
+  "data": "2026-09-04",
+  "duracao_s": 86,
+  "titulo": "Porque  o Coronel Darwin deve ser Senador",
+  "descricao": "Novas escolhas, novos resultados\n#direitamt\n#cuiabrasa \n#sinopcidade \n#rondoopolis",
+  "tipo": "corte de podcast (\"Papo de Polícia\") com arte \"Darwin 351\", postado no canal do candidato",
+  "fala_do_candidato": true,
+  "resumo": "\"Não é o Mato Grosso, é o Brasil\": critica políticos de carreira e pede \"escolha inteligente\", voto 351.",
+  "temas": [
+    "representação política",
+    "pedido de voto"
+  ],
+  "transcricao_metodo": "legenda automática do YouTube (pt, json3) — o download de áudio/vídeo do YouTube é barrado nesta máquina (HTTP 403 no googlevideo mesmo com PO Token); vozes identificadas pelo storyboard (miniaturas ~1/s) do próprio YouTube",
+  "segmentos": [
+    {
+      "start": 0.16,
+      "end": 1.92,
+      "text": "Por que que o senhor acredita que Mato",
+      "voz": "entrevistador"
+    },
+    {
+      "start": 1.92,
+      "end": 3.76,
+      "text": "Grosso precisa do coronel Darwin no",
+      "voz": "entrevistador"
+    },
+    {
+      "start": 3.76,
+      "end": 6.44,
+      "text": "Senado Federal?",
+      "voz": "entrevistador"
+    },
+    {
+      "start": 6.44,
+      "end": 9.44,
+      "text": "Não é o Mato Grosso, é o Brasil.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 9.44,
+      "end": 12.36,
+      "text": "Nós estamos vivendo aí tempos difíceis,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 12.36,
+      "end": 14.72,
+      "text": "né? Pessoas que estão ali em Brasília",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 14.72,
+      "end": 16.92,
+      "text": "não nos representam.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 16.92,
+      "end": 20.24,
+      "text": "Nós temos, infelizmente, né, um grupo de",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 20.24,
+      "end": 23.28,
+      "text": "pessoas que são famílias, né, que passa",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 23.28,
+      "end": 26.12,
+      "text": "de geração em geração. O tal do político",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 26.12,
+      "end": 28.96,
+      "text": "profissional, se você reparar, né, os",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 28.96,
+      "end": 32.36,
+      "text": "representantes estão aí, estão há 20, 25",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 32.36,
+      "end": 34.76,
+      "text": "anos no poder.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 34.76,
+      "end": 37.8,
+      "text": "Agora, projeto, né, ou melhor,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 37.8,
+      "end": 41.32,
+      "text": "legislações que são aplicáveis, que que",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 41.32,
+      "end": 43.44,
+      "text": "falam a língua do povo. Essa nós não",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 43.44,
+      "end": 45.96,
+      "text": "vemos. Então, quando eu apresentei o meu",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 45.96,
+      "end": 48.24,
+      "text": "nome, eu apresentei para a população uma",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 48.24,
+      "end": 50.44,
+      "text": "oportunidade, uma oportunidade de mudar,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 50.44,
+      "end": 53.48,
+      "text": "né? Eu sempre falo sobre questão de",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 53.48,
+      "end": 56.68,
+      "text": "escolhas, né? De você",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 56.68,
+      "end": 59.24,
+      "text": "ter a necessidade de fazer uma escolha.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 59.24,
+      "end": 61.44,
+      "text": "Então você que olha e me assiste hoje,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 61.44,
+      "end": 64.6,
+      "text": "né, você tem a oportunidade de fazer uma",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 64.6,
+      "end": 67.4,
+      "text": "escolha inteligente.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 67.4,
+      "end": 70.4,
+      "text": "Se você quer um resultado diferente na",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 70.4,
+      "end": 74.56,
+      "text": "sua vida e na política, preste atenção,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 74.56,
+      "end": 79.0,
+      "text": "faça uma escolha inteligente. Vote 351",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 79.0,
+      "end": 81.44,
+      "text": "Coronel Darwin para senador. Essa é uma",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 81.44,
+      "end": 84.24,
+      "text": "escolha inteligente. As mesmas escolhas",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 84.24,
+      "end": 88.36,
+      "text": "geram sempre os mesmos resultados.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 6.4,
+      "fim": 16.9,
+      "texto": "Não é o Mato Grosso, é o Brasil. Nós estamos vivendo aí tempos difíceis, né? Pessoas que estão ali em Brasília não nos representam.",
+      "tema": "representação política"
+    },
+    {
+      "inicio": 67.4,
+      "fim": 79.0,
+      "texto": "Se você quer um resultado diferente na sua vida e na política, preste atenção, faça uma escolha inteligente. Vote 351",
+      "tema": "pedido de voto"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Coronel Darwin, YouTube @coronel_darwin_oficial, 2026-09-04",
+  "arquivo_local_temporario": null,
+  "obs": "SEM ÁUDIO LOCAL (ver \"pendente\"). 0–6,4 s é a pergunta do ENTREVISTADOR (outro homem no quadro de 0 s) — NÃO usar. De 6,4 s em diante é o candidato ao microfone (storyboard 5–81 s). Crítica genérica a \"políticos profissionais\", sem nome. Canal do YouTube não declarado ao TSE (ver elenco.json), título com o nome civil \"Darwin Salgado Germano\".",
+  "audio_baixado": false,
+  "pendente": "baixar o áudio em outra máquina (yt-dlp) e conferir os cortes; a transcrição e os tempos vêm da legenda automática, que tem erros e defasagem de ~0,5 s"
+}

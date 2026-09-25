@@ -1,0 +1,234 @@
+{
+  "candidato": "Fávaro (Carlos Henrique Baqueta Fávaro)",
+  "id_candidato": "favaro",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "PSD",
+  "numero": 555,
+  "id": "KJ1labmVMhA",
+  "url": "https://www.youtube.com/watch?v=KJ1labmVMhA",
+  "rede": "youtube",
+  "perfil": "@carlosfavaro3720",
+  "perfil_url": "https://www.youtube.com/@carlosfavaro3720",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.youtube.com/@carlosfavaro3720); uploader do vídeo = carlosfavaro3720 / Carlos Fávaro",
+  "data": "2026-09-12",
+  "duracao_s": 67,
+  "titulo": "Eu defendo o fim da escala 6x1",
+  "descricao": "Eu sou o senador dos 142 municípios de Mato Grosso e tenho orgulho de olhar para cada canto do nosso estado e enxergar trabalho realizado.\n\nSão mais de R$ 4 bilhões em obras e ações, com avanços na BR-163, na BR-158, no Hospital Universitário Júlio Müller, na Embrapa e em programas sociais que mudam de verdade a vida das pessoas. E sigo trabalhando por mais. \n\nNo Senado, defendo o fim da escala 6x1 porque acredito que desenvolvimento também é garantir dignidade, descanso e tempo para viver ao lado de quem se ama.\n\nSou Fávaro, o senador dos 142 municípios. No dia 4 de Outubro vote 555!\n\nPROPAGANDA ELEITORAL • COLIGAÇÃO MATO GROSSO PARA TODOS • PSD, PSB, PDT, FEDERAÇÃO BRASIL ESPERANÇA (PT, PV E PC do B), FEDERAÇÃO REDE PSOL (REDE, PSOL) • CNPJ: 68.499.928/0001-04",
+  "tipo": "programa eleitoral (bloco de ~1 min): locutor, candidato à câmera, depoimentos de trabalhadores, fecho do candidato",
+  "fala_do_candidato": true,
+  "resumo": "Programa: locutor lista obras (R$ 4 bi, 44 mil casas, BR-163, Hospital Júlio Müller); Fávaro promete votar pelo fim da escala 6x1.",
+  "temas": [
+    "trabalho",
+    "escala 6x1",
+    "obras"
+  ],
+  "transcricao_metodo": "legenda automática do YouTube (pt, json3) — o download de áudio/vídeo do YouTube é barrado nesta máquina (HTTP 403 no googlevideo mesmo com PO Token); vozes identificadas pelo storyboard (miniaturas ~1/s) do próprio YouTube",
+  "segmentos": [
+    {
+      "start": 0.16,
+      "end": 3.0,
+      "text": "Fávaro, o senador das 142 cidades,",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 3.0,
+      "end": 4.6,
+      "text": "trouxe 4 bilhões em obras e",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 4.6,
+      "end": 7.08,
+      "text": "ações. 44.000 casas do Minha Casa Minha",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 7.08,
+      "end": 8.68,
+      "text": "Vida, Embrapa, duplicação da ",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 8.68,
+      "end": 11.84,
+      "text": "163, pavimentação da 158 e construção do",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 11.84,
+      "end": 14.68,
+      "text": "Hospital Júlio Müller.",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 14.68,
+      "end": 17.48,
+      "text": "No Senado, vou votar pelo fim da escala",
+      "voz": "candidato (à câmera aos 16 s; em off sobre imagens até 32 s)"
+    },
+    {
+      "start": 17.48,
+      "end": 19.28,
+      "text": "6x1.",
+      "voz": "candidato (à câmera aos 16 s; em off sobre imagens até 32 s)"
+    },
+    {
+      "start": 19.28,
+      "end": 21.76,
+      "text": "É uma injustiça para quem trabalha ter",
+      "voz": "candidato (à câmera aos 16 s; em off sobre imagens até 32 s)"
+    },
+    {
+      "start": 21.76,
+      "end": 24.6,
+      "text": "apenas um dia livre na semana e ainda",
+      "voz": "candidato (à câmera aos 16 s; em off sobre imagens até 32 s)"
+    },
+    {
+      "start": 24.6,
+      "end": 26.68,
+      "text": "mais cruel com as mulheres. No dia",
+      "voz": "candidato (à câmera aos 16 s; em off sobre imagens até 32 s)"
+    },
+    {
+      "start": 26.68,
+      "end": 29.2,
+      "text": "livre, elas acabam cuidando da família e",
+      "voz": "candidato (à câmera aos 16 s; em off sobre imagens até 32 s)"
+    },
+    {
+      "start": 29.2,
+      "end": 31.28,
+      "text": "da casa. e ficam sem lazer e sem",
+      "voz": "candidato (à câmera aos 16 s; em off sobre imagens até 32 s)"
+    },
+    {
+      "start": 31.28,
+      "end": 32.76,
+      "text": "descanso.",
+      "voz": "candidato (à câmera aos 16 s; em off sobre imagens até 32 s)"
+    },
+    {
+      "start": 32.76,
+      "end": 35.12,
+      "text": "Limpa a casa, lava roupa, organiza",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 35.12,
+      "end": 37.68,
+      "text": "coisa. Quem trabalha seis por",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 37.68,
+      "end": 40.6,
+      "text": "um e se viesse outras folhas. Eu",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 40.6,
+      "end": 42.58,
+      "text": "gostaria de ter duas folgas por semana.",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 42.58,
+      "end": 43.12,
+      "text": "",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 43.12,
+      "end": 43.48,
+      "text": "Se",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 43.48,
+      "end": 46.08,
+      "text": "um dia mais de descanso daria para mim",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 46.08,
+      "end": 47.6,
+      "text": "ter mais tempo pra minha família, para os",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 47.6,
+      "end": 48.36,
+      "text": "meus filhos.",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 48.36,
+      "end": 50.64,
+      "text": "É uma loucura. Não, o de fato e",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 50.64,
+      "end": 52.0,
+      "text": "descansar não acontece.",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 52.0,
+      "end": 54.52,
+      "text": "Eu acredito que seria o justo a escala 5",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 54.52,
+      "end": 57.2,
+      "text": "por2. Com as bênçãos de Deus e o seu",
+      "voz": "candidato (à câmera aos 55–59 s)"
+    },
+    {
+      "start": 57.2,
+      "end": 59.44,
+      "text": "voto, vou seguir trabalhando para",
+      "voz": "candidato (à câmera aos 55–59 s)"
+    },
+    {
+      "start": 59.44,
+      "end": 61.36,
+      "text": "melhorar a sua vida.",
+      "voz": "candidato (à câmera aos 55–59 s)"
+    },
+    {
+      "start": 61.36,
+      "end": 62.23,
+      "text": "Fávaro.",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    },
+    {
+      "start": 62.23,
+      "end": 64.25,
+      "text": "",
+      "voz": "locutor/depoimento/jingle (não é o candidato)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 14.7,
+      "fim": 24.6,
+      "texto": "No Senado, vou votar pelo fim da escala 6x1. É uma injustiça para quem trabalha ter apenas um dia livre na semana",
+      "tema": "trabalho/escala 6x1"
+    },
+    {
+      "inicio": 54.5,
+      "fim": 61.4,
+      "texto": "Com as bênçãos de Deus e o seu voto, vou seguir trabalhando para melhorar a sua vida.",
+      "tema": "pedido de voto"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Fávaro, YouTube @carlosfavaro3720, 2026-09-12",
+  "arquivo_local_temporario": null,
+  "obs": "SEM ÁUDIO LOCAL (ver \"pendente\"). Vozes pelo storyboard: 0–14,7 s LOCUTOR (\"Fávaro, o senador das 142 cidades\"); 14,7–32,8 s o CANDIDATO (aparece à câmera aos 16 s, segue em off sobre imagens de uma trabalhadora); 32,8–54,5 s DEPOIMENTOS de trabalhadores; 54,5–61,4 s o CANDIDATO à câmera; depois arte \"555 Fávaro\" com música. Tem janela de Libras. Proposta (fim da escala 6x1), sem ataque.",
+  "audio_baixado": false,
+  "pendente": "baixar o áudio em outra máquina (yt-dlp) e conferir os cortes; a transcrição e os tempos vêm da legenda automática, que tem erros e defasagem de ~0,5 s"
+}
