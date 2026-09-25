@@ -581,20 +581,27 @@
       "materia": "https://hojemt.com.br/escola-duque-de-caxias-realiza-acao-de-valorizacao-da-vida-em-caceres/",
       "tag": "Cidades & Mato Grosso",
       "canva": {
-        "design": "DAHWPpvbM6U",
-        "arte": "MAHWPpmDohk",
+        "design": "DAHWPrBtUXM",
+        "arte": "MAHWPk8RdC4",
         "modelo": "DAHWDzwR5c0"
       },
-      "cena": "pátio de escola antiga de fachada branca e janelas azuis sob mangueiras; estudantes de uniforme azul e amarelo, de costas, sentados em roda com balões amarelos ouvem professor de costas ao violão; professora de perfil; fitas e laço amarelos no portão; clima sereno e acolhedor",
-      "alt": "Ilustração (ficção): estudantes de costas com balões amarelos ouvem professor ao violão no pátio de escola em Cáceres",
-      "arquivo": "2026-09-25-caceres-valorizacao-da-vida.jpg",
-      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-25-caceres-valorizacao-da-vida.jpg",
-      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-caceres-valorizacao-da-vida-og.jpg",
+      "cena": "câmera atrás do grupo: professora e seis crianças caminham de mãos dadas para longe do observador por trilha de terra sob mangueiras com fitas amarelas, rumo a escola simples de telhado cerâmico e muro branco; balões amarelos; todas as pessoas de costas, nenhum perfil nem rosto visível; camisetas brancas lisas genéricas (sem o uniforme real da escola); clima sereno e acolhedor",
+      "alt": "Ilustração (ficção): professora e crianças de costas, de mãos dadas, caminham sob mangueiras com fitas e balões amarelos",
+      "arquivo": "2026-09-25-caceres-valorizacao-da-vida-v2.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-25-caceres-valorizacao-da-vida-v2.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-caceres-valorizacao-da-vida-v2-og.jpg",
       "capa_anterior": "capa-6e91ddd7749997a9.webp",
-      "obs": "Parte B: as fotos da fonte (Prefeitura de Cáceres/SME, 21/09/2026) mostram alunos menores de idade identificáveis e têm menos de 500 px; ilustração sóbria de Setembro Amarelo sem sofrimento, crise ou método, sem rostos visíveis",
-      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "obs": "Parte B: as fotos da fonte (Prefeitura de Cáceres/SME, 21/09/2026) mostram alunos menores de idade identificáveis e têm menos de 500 px; ilustração sóbria de Setembro Amarelo sem sofrimento, crise ou método; todas as figuras de costas, nenhum rosto visível (conferido em recorte ampliado); menores não identificáveis",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção) · Com informações da <a href=\"https://www.caceres.mt.gov.br/Noticias/Escola-duque-de-caxias-promove-acao-de-valorizacao-da-vida-no-setembro-amarelo-11346/\" rel=\"nofollow noopener\">Prefeitura de Cáceres</a>",
+      "credito_fonte": "mantido na legenda: 'Com informações da Prefeitura de Cáceres' (link da notícia original), que estava na capa genérica",
       "feito_em": "2026-09-25",
-      "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
+      "refeito_em": "2026-09-25",
+      "versao_anterior": {
+        "design": "DAHWPpvbM6U",
+        "arte": "MAHWPpmDohk",
+        "motivo": "revisão: figuras (inclusive crianças) de perfil iluminado com olho, nariz e boca; acabamento fotográfico e uniforme parecido com o real; legenda sem o crédito da fonte"
+      },
+      "estilo": "v2 realista (pintura digital cinematográfica, pinceladas visíveis); sem rostos visíveis"
     }
   ]
 }
