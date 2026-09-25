@@ -189,10 +189,11 @@
       "tema": "saúde/fila"
     },
     {
-      "inicio": 80.2,
-      "fim": 92.4,
+      "inicio": 80.3,
+      "fim": 92.3,
       "texto": "Além disso, vai ter um aplicativo para você ter na palma da sua mão com a sua ordem nessa fila, para você marcar consultas e exames e também fazer teleconsultas on-line, sem precisar pegar estrada.",
-      "tema": "saúde/tecnologia"
+      "tema": "saúde/tecnologia",
+      "obs_corte": "aparado em décimos para caber em 12 s — conferir no áudio se a última sílaba não é cortada"
     },
     {
       "inicio": 5.9,

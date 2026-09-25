@@ -297,10 +297,11 @@
       "tema": "moradia"
     },
     {
-      "inicio": 84.4,
-      "fim": 96.7,
+      "inicio": 84.5,
+      "fim": 96.5,
       "texto": "Vamos começar a mudar a ser realidade com a construção de 55 mil novas moradias em parceria com o governo federal, além de uma política habitacional própria do nosso estado.",
-      "tema": "moradia"
+      "tema": "moradia",
+      "obs_corte": "aparado em décimos para caber em 12 s — conferir no áudio se a última sílaba não é cortada"
     },
     {
       "inicio": 100.1,

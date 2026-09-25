@@ -1,0 +1,160 @@
+{
+  "candidato": "Abilio Brunini (Abilio Jacques Brunini Moumer)",
+  "id_candidato": "abilio-brunini",
+  "cargo": "prefeito de Cuiabá",
+  "esfera": "municipal",
+  "partido": "PL",
+  "numero": null,
+  "id": "7681843933592259860",
+  "url": "https://www.tiktok.com/@abiliobrunini/video/7681843933592259860",
+  "rede": "tiktok",
+  "perfil": "@abiliobrunini",
+  "perfil_url": "https://www.tiktok.com/@abiliobrunini",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@abiliobrunini); uploader do vídeo = abiliobrunini / abiliobrunini",
+  "data": "2026-09-05",
+  "duracao_s": 81,
+  "titulo": "Transporte público livre para o estudante e para o trabalhador que op...",
+  "descricao": "Transporte público livre para o estudante e para o trabalhador que optar pelo Cuiabá Card 🔰 O cabeça de ovo aqui fica feliz de encerrar o expediente com bons resultados para os usuários do transporte público🙏🚌",
+  "tipo": "selfie saindo da prefeitura (anúncio de medida: passe estudantil livre, Cuiabá Card)",
+  "fala_do_candidato": true,
+  "resumo": "Anuncia passe estudantil livre (uso ilimitado) e Cuiabá Card para trabalhador; tarifa zero no 7 de Setembro.",
+  "temas": [
+    "transporte público",
+    "estudantes",
+    "tarifa zero"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 5.16,
+      "text": "É isso aí pessoal, sexta-feira, último compromisso de hoje, 8 horas da noite aqui saindo da",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 5.16,
+      "end": 10.52,
+      "text": "prefeitura numa sexta-feira, mas com alegria no coração, a partir de hoje os estudantes",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 10.52,
+      "end": 15.08,
+      "text": "já podem usar o transporte público a qualquer hora do dia a vontade, a quantas vezes você",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 15.08,
+      "end": 19.48,
+      "text": "quiser estudante, então aproveite que o Passe Estudante agora é livre para você",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 19.48,
+      "end": 25.2,
+      "text": "usar a cidade, aproveite esse vale transporte livre e vá conhecer os nossos lugares de",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 25.2,
+      "end": 29.8,
+      "text": "ensino, esporte, prática, visite nossas escolas, visite universidade para saber",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 29.8,
+      "end": 33.24,
+      "text": "o que você vai fazer no futuro aí, qual universidade você vai escolher, vá procurar",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 33.24,
+      "end": 38.88,
+      "text": "emprego no primeiro emprego, seu estágio de qualquer lugar, faça bom uso do transporte",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 38.88,
+      "end": 42.96,
+      "text": "público gratuito à vontade para o estudante no município de Cuiabá, o trabalhador",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 42.96,
+      "end": 46.92,
+      "text": "também tem direito a esse vale transporte gratuito à vontade, não tão gratuito porque é",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 46.92,
+      "end": 51.48,
+      "text": "pago pelo empregador, mas o vale transporte aqui no município de Cuiabá você pode",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 51.48,
+      "end": 54.76,
+      "text": "escolher a opção do Cuiabá Card e se você escolher a opção do Cuiabá Card o",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 54.76,
+      "end": 59.4,
+      "text": "trabalhador também poderá usar o ônibus à vontade no nosso município e todo",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 59.44,
+      "end": 63.84,
+      "text": "mundo, independente de ser o trabalhador, independente de ser estudante, poderá usar a",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 63.84,
+      "end": 67.76,
+      "text": "vontade do transporte público no dia 7 de setembro, assim como todo domingo é feriado,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 67.76,
+      "end": 71.4,
+      "text": "7 de setembro está liberado o transporte público para todo mundo, tá bom?",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 71.4,
+      "end": 75.08,
+      "text": "Tarifa zero e para você estudante de trabalhador, Cuiabá Card, Cuiabá Card",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 75.08,
+      "end": 79.72,
+      "text": "estudantil, Cuiabá Card é trabalhador, tá valendo, tá bom? Assinado. bom fim de",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 79.72,
+      "end": 81.56,
+      "text": "semana e boa semana pra gente, valeu.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 10.5,
+      "fim": 19.5,
+      "texto": "já podem usar o transporte público a qualquer hora do dia à vontade, quantas vezes você quiser, estudante, então aproveite que o Passe Estudante agora é livre para você",
+      "tema": "transporte/estudantes"
+    },
+    {
+      "inicio": 67.8,
+      "fim": 75.1,
+      "texto": "7 de setembro está liberado o transporte público para todo mundo, tá bom? Tarifa zero e para você estudante e trabalhador, Cuiabá Card,",
+      "tema": "transporte/tarifa zero"
+    }
+  ],
+  "credito": "Áudio: vídeo publicado de Abilio Brunini, TikTok @abiliobrunini, 2026-09-05",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/abilio-brunini/7681843933592259860.v.mp4 (não versionado)",
+  "obs": "Abilio Brunini NÃO é candidato em 2026 (prefeito de Cuiabá): crédito \"vídeo publicado por\". Voz dele do início ao fim (selfie conferida em quadros aos 5, 40 e 75 s). \"último documento de hoje\" (0–5 s) pode ser \"último compromisso\" — incerto. Anúncio de gestão, sem ataque."
+}

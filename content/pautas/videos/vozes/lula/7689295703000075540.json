@@ -1,0 +1,68 @@
+{
+  "candidato": "Lula (Luiz Inácio Lula da Silva)",
+  "id_candidato": "lula",
+  "cargo": "presidente",
+  "esfera": "nacional",
+  "partido": "PT",
+  "numero": 13,
+  "id": "7689295703000075540",
+  "url": "https://www.tiktok.com/@lulaoficial/video/7689295703000075540",
+  "rede": "tiktok",
+  "perfil": "@lulaoficial",
+  "perfil_url": "https://www.tiktok.com/@lulaoficial",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@lulaoficial); uploader do vídeo = lulaoficial / Presidente Lula",
+  "data": "2026-09-25",
+  "duracao_s": 47,
+  "titulo": "Eu e o Alckmin já estivemos em lados opostos na política, mas aprende...",
+  "descricao": "Eu e o Alckmin já estivemos em lados opostos na política, mas aprendemos que a democracia se faz conversando com todos.  A nossa experiência nos ensinou que governar é cuidar das pessoas, unir o país e trabalhar com responsabilidade para que cada brasileira e brasileiro volte a ter oportunidades, dignidade e esperança! 🇧🇷✨ _ Propaganda eleitoral - Coligação Brasil pronto pra mais: PSB/PDT/Federação Fé Brasil(PT/PCdoB/PV)/Federação PSOL-REDE (PSOL/REDE). CNPJ: 68.475.818/0001-02.",
+  "tipo": "vídeo de campanha com fala do candidato a vice (Geraldo Alckmin) à câmera",
+  "fala_do_candidato": false,
+  "resumo": "Alckmin explica a aliança com Lula (\"do mesmo lado, o lado do Brasil\").",
+  "temas": [
+    "aliança",
+    "conciliação"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.69,
+      "end": 7.53,
+      "text": "Lula e eu somos diferentes. Temos histórias diferentes. Pensamos diferente em muitas coisas,",
+      "voz": "Geraldo Alckmin (vice), não é o candidato"
+    },
+    {
+      "start": 7.53,
+      "end": 14.05,
+      "text": "mas quando o assunto é o Brasil, pensamos igual. O Brasil não precisa de radicalismo,",
+      "voz": "Geraldo Alckmin (vice), não é o candidato"
+    },
+    {
+      "start": 14.05,
+      "end": 21.05,
+      "text": "nem de direita, nem de esquerda. Precisa de conciliação. E para conciliar, é preciso",
+      "voz": "Geraldo Alckmin (vice), não é o candidato"
+    },
+    {
+      "start": 21.05,
+      "end": 27.07,
+      "text": "experiência. Eu governei o maior estado do Brasil por quatro vezes. Lula está",
+      "voz": "Geraldo Alckmin (vice), não é o candidato"
+    },
+    {
+      "start": 27.07,
+      "end": 33.51,
+      "text": "indo para o seu quarto mandato também como presidente. Nós já estivemos em lados opostos,",
+      "voz": "Geraldo Alckmin (vice), não é o candidato"
+    },
+    {
+      "start": 33.51,
+      "end": 42.99,
+      "text": "e por isso aprendemos a conversar com todos. Hoje Lula e eu estamos do mesmo lado, o lado do Brasil.",
+      "voz": "Geraldo Alckmin (vice), não é o candidato"
+    }
+  ],
+  "trechos_sugeridos": [],
+  "credito": "Áudio: propaganda eleitoral de Lula, TikTok @lulaoficial, 2026-09-25",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/lula/7689295703000075540.v.mp4 (não versionado)",
+  "obs": "NÃO é a voz de Lula: quem fala é Geraldo Alckmin (conferido em quadros aos 3, 20 e 40 s; tarja \"Alckmin vice-presidente\"). Não usar como voz do Lula."
+}

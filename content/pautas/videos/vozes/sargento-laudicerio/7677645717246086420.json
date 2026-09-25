@@ -1,0 +1,87 @@
+{
+  "candidato": "Sargento Laudicério (Laudicério Aguiar Machado)",
+  "id_candidato": "sargento-laudicerio",
+  "cargo": "governador",
+  "esfera": "estadual",
+  "partido": "Agir",
+  "numero": 36,
+  "id": "7677645717246086420",
+  "url": "https://www.tiktok.com/@sargentolau/video/7677645717246086420",
+  "rede": "tiktok",
+  "perfil": "@sargentolau",
+  "perfil_url": "https://www.tiktok.com/@sargentolau",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@sargentolau); uploader do vídeo = sargentolau / sargentolau",
+  "data": "2026-08-24",
+  "duracao_s": 34,
+  "titulo": "Mato Grosso precisa de um governador que conheça as necessidades reai...",
+  "descricao": "Mato Grosso precisa de um governador que conheça as necessidades reais da população e tenha coragem para enfrentar os problemas. Governar não é falar apenas o que todos querem ouvir. É agir com responsabilidade, apresentar soluções e trabalhar para que nosso estado prospere, garantindo mais oportunidades e qualidade de vida para todos. Estamos preparados para construir um Mato Grosso que cuide das pessoas, valorize quem trabalha e produza resultados de verdade. Sargento Laudicério (Lau) – Governador 36 #Lau36 #TôComLau #AGIR36 #MatoGrosso #ProteçãoTrabalhoEProdução",
+  "tipo": "trecho de entrevista na TV (TV Vila Real/Record) repostado no perfil do candidato",
+  "fala_do_candidato": true,
+  "resumo": "Diz que ser governador \"não é sonho, é necessidade\" e que conhece a realidade do povo: faz hora extra, anda de Uber e ônibus.",
+  "temas": [
+    "custo de vida",
+    "perfil do candidato"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 7.32,
+      "text": "O Laudicério, ele precisa estar como governador, não é questão de sonho, é uma necessidade",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 7.32,
+      "end": 13.36,
+      "text": "para atender a situação da população mato-grossense para que venha prosperar.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 13.36,
+      "end": 18.42,
+      "text": "A realidade que nós, como população mato-grossense, vivemos, difere muitas vezes dos que já",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 18.42,
+      "end": 19.42,
+      "text": "estão.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 19.42,
+      "end": 24.4,
+      "text": "Não estou falando criticando os outros, mas estou falando da realidade de fato, porque eu tenho",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 24.4,
+      "end": 30.6,
+      "text": "em fazer jornais extraordinárias para complementar, pagar o meu cartão, eu pego Uber, eu pego ônibus,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 30.6,
+      "end": 34.32,
+      "text": "diferente de pessoas que não vão compreender essa real necessidade.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 19.4,
+      "fim": 30.6,
+      "texto": "Não estou falando criticando os outros, mas estou falando da realidade de fato, porque eu tenho que fazer jornadas extraordinárias para complementar, pagar o meu cartão, eu pego Uber, eu pego ônibus,",
+      "tema": "custo de vida/perfil"
+    },
+    {
+      "inicio": 0.0,
+      "fim": 7.3,
+      "texto": "O Laudicério, ele precisa estar como governador, não é questão de sonho, é uma necessidade",
+      "tema": "candidatura"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Sargento Laudicério, TikTok @sargentolau, 2026-08-24",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/sargento-laudicerio/7677645717246086420.v.mp4 (não versionado)",
+  "obs": "Voz do candidato do início ao fim (conferido em quadros aos 3, 15 e 28 s; mostra o cartão aos 28 s). Trecho de ENTREVISTA DE TV repostado por ele. Tom pessoal (\"eu pego Uber, eu pego ônibus\", faz hora extra para pagar o cartão) — bom para personagem \"gente como a gente\". Sem ataque nominal."
+}

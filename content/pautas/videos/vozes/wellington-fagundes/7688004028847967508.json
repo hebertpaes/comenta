@@ -1,0 +1,126 @@
+{
+  "candidato": "Wellington Fagundes (Wellington Antonio Fagundes)",
+  "id_candidato": "wellington-fagundes",
+  "cargo": "governador",
+  "esfera": "estadual",
+  "partido": "PL",
+  "numero": 22,
+  "id": "7688004028847967508",
+  "url": "https://www.tiktok.com/@senwellingtonfagundes/video/7688004028847967508",
+  "rede": "tiktok",
+  "perfil": "@senwellingtonfagundes",
+  "perfil_url": "https://www.tiktok.com/@senwellingtonfagundes",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@senwellingtonfagundes); uploader do vídeo = senwellingtonfagundes / Wellington Fagundes",
+  "data": "2026-09-21",
+  "duracao_s": 62,
+  "titulo": "A população escolhe o dia em que vai precisar de atendimento? Quem es...",
+  "descricao": "A população escolhe o dia em que vai precisar de atendimento? Quem está com dor pode esperar até segunda-feira? É preciso recorrer à Justiça para conseguir ser atendido? Saúde é direito de todos e precisa funcionar quando as pessoas precisam. Queremos uma saúde com estrutura, atendimento digno e bons profissionais, respeitados e valorizados para cuidar da nossa população. Governo humano é isso: entender que saúde não pode esperar. É cuidar de gente. 💚",
+  "tipo": "vídeo de proposta gravado em frente ao Hospital Estadual Metropolitano (Várzea Grande), fala direta à câmera",
+  "fala_do_candidato": true,
+  "resumo": "Em frente ao Hospital Metropolitano de Várzea Grande, promete porta de emergência 24 h em todos os hospitais e \"governo dos mutirões\" para zerar a fila.",
+  "temas": [
+    "saúde",
+    "urgência e emergência",
+    "fila de cirurgias"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 4.52,
+      "text": "Estou aqui, em frente ao Hospital Estadual Metropolitano de Várzea Grande.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 4.52,
+      "end": 8.6,
+      "text": "E esta imagem representa uma reclamação justa da população.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 8.6,
+      "end": 13.84,
+      "text": "Quem chega aqui, sem encaminhamento, não encontra uma porta de urgência e emergência aberta",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 13.84,
+      "end": 15.24,
+      "text": "para ser acolhido.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 15.24,
+      "end": 18.6,
+      "text": "O acesso depende principalmente da regulação.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 18.6,
+      "end": 23.16,
+      "text": "Ninguém deveria precisar recorrer à justiça para conseguir um atendimento.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 23.16,
+      "end": 28.64,
+      "text": "Saúde é direito de todos e precisa funcionar com regulação transparente.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 28.64,
+      "end": 33.04,
+      "text": "Critérios clínicos claros e prioridade para quem mais precisa.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 33.04,
+      "end": 38.72,
+      "text": "No meu governo, vamos ampliar e estruturar este e todos os hospitais para ter uma porta",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 38.72,
+      "end": 45.6,
+      "text": "de emergência aberta 24 horas com médicos, exames, leitos e toda a retaguarda necessária.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 45.6,
+      "end": 50.76,
+      "text": "Com o governo dos mutirões, vamos ampliar as cirurgias e os procedimentos, zerar a",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 50.76,
+      "end": 57.67,
+      "text": "fila acumulada e reduzir de forma permanente o tempo de espera.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 57.67,
+      "end": 60.83,
+      "text": "Esse estado precisa de você como governador.",
+      "voz": "outra pessoa (homem ao microfone em evento) — NÃO usar"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 33.0,
+      "fim": 45.0,
+      "texto": "No meu governo, vamos ampliar e estruturar este e todos os hospitais para ter uma porta de emergência aberta 24 horas com médicos, exames, leitos e toda a retaguarda necessária.",
+      "tema": "saúde/urgência",
+      "obs_corte": "aparado em décimos para caber em 12 s — conferir no áudio se a última sílaba não é cortada"
+    },
+    {
+      "inicio": 45.7,
+      "fim": 57.7,
+      "texto": "Com o governo dos mutirões, vamos ampliar as cirurgias e os procedimentos, zerar a fila acumulada e reduzir de forma permanente o tempo de espera.",
+      "tema": "saúde/fila",
+      "obs_corte": "aparado em décimos para caber em 12 s — conferir no áudio se a última sílaba não é cortada"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Wellington Fagundes, TikTok @senwellingtonfagundes, 2026-09-21",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/wellington-fagundes/7688004028847967508.mp3 (não versionado)",
+  "obs": "Voz do candidato de 0 a 57,7 s (quadros aos 20, 40 e 52 s: ele fala à câmera; aos 3 s a voz dele segue sobre a fachada do hospital). 57,7–60,8 s (\"Esse estado precisa de você como governador\") é OUTRA pessoa ao microfone em evento (quadro aos 59 s) — NÃO usar. Crítica implícita à regulação atual, sem nome; bloco final é proposta (\"governo dos mutirões\")."
+}

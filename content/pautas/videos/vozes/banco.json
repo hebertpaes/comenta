@@ -1,0 +1,2316 @@
+{
+  "_como_funciona": "Banco de vozes REAIS para o formato \"Charge em cena\" (ESPEC.md, \"Vozes reais, nunca clonadas\"). Cada vídeo foi publicado no perfil oficial do próprio candidato/campanha listado em elenco.json (nunca imprensa ou terceiros). Uso: só trechos de segmentos com a voz do candidato (fala_do_candidato=true E segmento com voz=candidato — confira o campo \"voz\" de cada segmento no transcricao_json; locutor, entrevistador, depoimento, jingle, apoiador e adversário NÃO valem), no máximo 12 s, sem corte que mude o sentido, com crédito obrigatório na tela e na legenda ('Áudio: propaganda eleitoral de <nome>, <rede> @perfil, <data>'; para quem não é candidato, 'Áudio: vídeo publicado por <nome>, ...'). NUNCA clonar nem sintetizar a voz de pessoa real (Res. TSE 23.610/2019, art. 9º-C); sem trecho real, o personagem não fala e o narrador conta. Evitar trechos de ataque a adversários (marcados em obs/pendencias). Tratamento igual entre candidatos do mesmo cargo. Vídeos/áudios completos ficam FORA do repositório (scratchpad, não versionado); no repositório entram só estes JSON e os recortes usados (≤ 12 s). Transcrição: faster-whisper small (cpu/int8, pt, vad_filter) sobre wav 16 kHz mono, revisada à mão só em nomes próprios — conferir o áudio antes de usar a legenda. audio_baixado=false: só a legenda automática do YouTube (download de mídia do YouTube barrado nesta máquina); baixar o áudio em outra máquina antes de cortar. Quem fala em cada trecho foi conferido por quadros do vídeo (ou storyboard do YouTube), registrados no obs de cada JSON.",
+  "atualizado_em": "2026-09-25",
+  "fontes_de_coleta": [
+    "TikTok: lista de vídeos recentes pelo embed público do perfil (tiktok.com/embed/@perfil) e download individual com yt-dlp (só áudio).",
+    "YouTube: listagem por yt-dlp --flat-playlist; download de áudio barrado (403/anti-robô) — só legenda automática e storyboard.",
+    "Instagram: bloqueado nesta máquina (HTTP 429/401 \"aguarde\") — só os vídeos de Maurício Coelho, coletados antes."
+  ],
+  "candidatos": [
+    {
+      "id": "doutora-natasha",
+      "nome": "Doutora Natasha (Natasha Slhessarenko Fraife Barreto)",
+      "cargo": "governador",
+      "esfera": "estadual",
+      "partido": "PSD",
+      "numero": 55,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/dranatashamt"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@dranatashamt-u4o"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@dranatashamt"
+        },
+        {
+          "rede": "site",
+          "url": "https://www.dranatashamt.com.br"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@dranatashamt/video/7688763792334916865",
+          "rede": "tiktok",
+          "perfil": "@dranatashamt",
+          "data": "2026-09-23",
+          "duracao_s": 183,
+          "transcricao_json": "pautas/videos/vozes/doutora-natasha/7688763792334916865.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": null,
+          "resumo": "TER UMA CASA PARA MORAR COM A FAMÍLIA NÃO PODE SER PRIVILÉGIO! Pratic...",
+          "temas": [
+            "moradia",
+            "regularização fundiária",
+            "saúde"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Doutora Natasha, TikTok @dranatashamt, 2026-09-23",
+          "trechos_sugeridos": [
+            {
+              "inicio": 78.3,
+              "fim": 84.4,
+              "texto": "Por isso eu vou fazer o maior programa de moradia da história de Mato Grosso."
+            },
+            {
+              "inicio": 84.5,
+              "fim": 96.5,
+              "texto": "Vamos começar a mudar a ser realidade com a construção de 55 mil novas moradias em parceria com o governo federal, além de uma política habitacional própria do nosso estado."
+            },
+            {
+              "inicio": 100.1,
+              "fim": 111.4,
+              "texto": "Para quem já mora em casa própria e não tem o papel na mão, nós vamos fazer o mutirão de regularização fundiária na cidade, no campo, nas periferias."
+            },
+            {
+              "inicio": 68.0,
+              "fim": 77.6,
+              "texto": "Morar mal adoece. Temos que fazer diferente. Cuidar das pessoas também é garantir onde elas vão dormir à noite."
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@dranatashamt/video/7688484266472115474",
+          "rede": "tiktok",
+          "perfil": "@dranatashamt",
+          "data": "2026-09-22",
+          "duracao_s": 105,
+          "transcricao_json": "pautas/videos/vozes/doutora-natasha/7688484266472115474.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": null,
+          "resumo": "865 MIL MATO-GROSSENSES ESPERANDO PARA SER ATENDIDOS: ATÉ QUANDO? Com...",
+          "temas": [
+            "saúde",
+            "fila",
+            "tecnologia"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Doutora Natasha, TikTok @dranatashamt, 2026-09-22",
+          "trechos_sugeridos": [
+            {
+              "inicio": 69.1,
+              "fim": 80.2,
+              "texto": "Vamos fazer concurso para os médicos, ter médicos especialistas no posto de saúde perto da sua casa e mais mutirões de exames e cirurgias na sua cidade."
+            },
+            {
+              "inicio": 80.3,
+              "fim": 92.3,
+              "texto": "Além disso, vai ter um aplicativo para você ter na palma da sua mão com a sua ordem nessa fila, para você marcar consultas e exames e também fazer teleconsultas on-line, sem precisar pegar estrada."
+            },
+            {
+              "inicio": 5.9,
+              "fim": 12.8,
+              "texto": "São mais de 865 mil mato-grossenses aguardando por exames, consultas ou cirurgias."
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@dranatashamt/video/7686226377800027399",
+          "rede": "tiktok",
+          "perfil": "@dranatashamt",
+          "data": "2026-09-16",
+          "duracao_s": 49,
+          "transcricao_json": "pautas/videos/vozes/doutora-natasha/7686226377800027399.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": null,
+          "resumo": "No meu governo, vou regularizar os RGAs atrasados e garantir que nenh...",
+          "temas": [
+            "servidores",
+            "RGA",
+            "educação"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Doutora Natasha, TikTok @dranatashamt, 2026-09-16",
+          "trechos_sugeridos": [
+            {
+              "inicio": 0.0,
+              "fim": 10.3,
+              "texto": "Quero aqui reforçar a importância do pagamento dos RGAs atrasados. Vocês têm aqui o meu compromisso de pagar o RGA atrasado."
+            },
+            {
+              "inicio": 33.1,
+              "fim": 43.6,
+              "texto": "Então nós vamos pagar esses RGAs e vamos ter aí a garantia. Vocês tenham a garantia do pagamento dos RGAs anualmente como é devido, como é constitucional."
+            },
+            {
+              "inicio": 18.6,
+              "fim": 26.1,
+              "texto": "A importância da educação na vida das pessoas é a única e mais poderosa ferramenta de transformação social."
+            }
+          ]
+        }
+      ],
+      "pendencias": [
+        "Outros vídeos do TikTok já foram transcritos na rodada anterior (fora do repositório) e não viraram JSON; ampliar se preciso."
+      ]
+    },
+    {
+      "id": "mauricio-coelho",
+      "nome": "Maurício Coelho (Maurício Coelho de Souza Junior)",
+      "cargo": "governador",
+      "esfera": "estadual",
+      "partido": "Mobiliza",
+      "numero": 33,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/soumauriciocoelho/"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@soumauriciocoelho"
+        },
+        {
+          "rede": "site",
+          "url": "https://soumauriciocoelho.com/"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.instagram.com/reel/Ddr_WK1Rakd/",
+          "rede": "instagram",
+          "perfil": "@soumauriciocoelho",
+          "data": "2026-09-24",
+          "duracao_s": 34.85,
+          "transcricao_json": "pautas/videos/vozes/mauricio-coelho/Ddr_WK1Rakd.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "fala direta à câmera (agenda de campanha em Rondonópolis, adesivaço)",
+          "resumo": "fala direta à câmera (agenda de campanha em Rondonópolis, adesivaço)",
+          "temas": [],
+          "credito": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-24",
+          "trechos_sugeridos": []
+        },
+        {
+          "url": "https://www.instagram.com/reel/DdnDmAJhMxA/",
+          "rede": "instagram",
+          "perfil": "@soumauriciocoelho",
+          "data": "2026-09-23",
+          "duracao_s": 21.39,
+          "transcricao_json": "pautas/videos/vozes/mauricio-coelho/DdnDmAJhMxA.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "fala à câmera com apoiadores (fim do adesivaço, chuva)",
+          "resumo": "fala à câmera com apoiadores (fim do adesivaço, chuva)",
+          "temas": [],
+          "credito": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-23",
+          "trechos_sugeridos": []
+        },
+        {
+          "url": "https://www.instagram.com/reel/DdmrjDcSc7-/",
+          "rede": "instagram",
+          "perfil": "@soumauriciocoelho",
+          "data": "2026-09-22",
+          "duracao_s": 36.9,
+          "transcricao_json": "pautas/videos/vozes/mauricio-coelho/DdmrjDcSc7-.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "fala direta à câmera (convite para adesivaço, Cuiabá)",
+          "resumo": "fala direta à câmera (convite para adesivaço, Cuiabá)",
+          "temas": [],
+          "credito": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-22",
+          "trechos_sugeridos": []
+        },
+        {
+          "url": "https://www.instagram.com/reel/Ddc3utWPPcR/",
+          "rede": "instagram",
+          "perfil": "@soumauriciocoelho",
+          "data": "2026-09-19",
+          "duracao_s": 38.24,
+          "transcricao_json": "pautas/videos/vozes/mauricio-coelho/Ddc3utWPPcR.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "fala direta à câmera (convite para adesivaço, Várzea Grande)",
+          "resumo": "fala direta à câmera (convite para adesivaço, Várzea Grande)",
+          "temas": [],
+          "credito": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-19",
+          "trechos_sugeridos": []
+        },
+        {
+          "url": "https://www.instagram.com/reel/DdY4nKKRete/",
+          "rede": "instagram",
+          "perfil": "@soumauriciocoelho",
+          "data": "2026-09-17",
+          "duracao_s": 28.17,
+          "transcricao_json": "pautas/videos/vozes/mauricio-coelho/DdY4nKKRete.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "fala direta à câmera (agenda de campanha em Tangará da Serra, menciona propostas)",
+          "resumo": "fala direta à câmera (agenda de campanha em Tangará da Serra, menciona propostas)",
+          "temas": [],
+          "credito": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-17",
+          "trechos_sugeridos": []
+        },
+        {
+          "url": "https://www.instagram.com/reel/DdEwLo5RL13/",
+          "rede": "instagram",
+          "perfil": "@soumauriciocoelho",
+          "data": "2026-09-09",
+          "duracao_s": 73.31,
+          "transcricao_json": "pautas/videos/vozes/mauricio-coelho/DdEwLo5RL13.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "vídeo de campanha/proposta (renúncias fiscais), fala direta à câmera",
+          "resumo": "vídeo de campanha/proposta (renúncias fiscais), fala direta à câmera",
+          "temas": [],
+          "credito": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-09",
+          "trechos_sugeridos": []
+        },
+        {
+          "url": "https://www.instagram.com/reel/Dc3-1WLR0tE/",
+          "rede": "instagram",
+          "perfil": "@soumauriciocoelho",
+          "data": "2026-09-04",
+          "duracao_s": 120.07,
+          "transcricao_json": "pautas/videos/vozes/mauricio-coelho/Dc3-1WLR0tE.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "fala direta à câmera (pausa de um dia na campanha; tema renúncias fiscais e custo de vida)",
+          "resumo": "fala direta à câmera (pausa de um dia na campanha; tema renúncias fiscais e custo de vida)",
+          "temas": [],
+          "credito": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-04",
+          "trechos_sugeridos": []
+        },
+        {
+          "url": "https://www.instagram.com/reel/Dc1lOxBN7xc/",
+          "rede": "instagram",
+          "perfil": "@soumauriciocoelho",
+          "data": "2026-09-03",
+          "duracao_s": 79.25,
+          "transcricao_json": "pautas/videos/vozes/mauricio-coelho/Dc1lOxBN7xc.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "comentário do candidato sobre trecho de debate (TV) com o governador Pivetta",
+          "resumo": "comentário do candidato sobre trecho de debate (TV) com o governador Pivetta",
+          "temas": [],
+          "credito": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-03",
+          "trechos_sugeridos": []
+        },
+        {
+          "url": "https://www.instagram.com/reel/DcmXsx0xmEx/",
+          "rede": "instagram",
+          "perfil": "@soumauriciocoelho",
+          "data": "2026-08-28",
+          "duracao_s": 31.56,
+          "transcricao_json": "pautas/videos/vozes/mauricio-coelho/DcmXsx0xmEx.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "trecho de entrevista (responde a 'Paula', entrevistadora) repostado no perfil do candidato com legenda própria",
+          "resumo": "trecho de entrevista (responde a 'Paula', entrevistadora) repostado no perfil do candidato com legenda própria",
+          "temas": [],
+          "credito": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-08-28",
+          "trechos_sugeridos": []
+        },
+        {
+          "url": "https://www.instagram.com/reel/DcXGG3bR8SV/",
+          "rede": "instagram",
+          "perfil": "@soumauriciocoelho",
+          "data": "2026-08-22",
+          "duracao_s": 43.26,
+          "transcricao_json": "pautas/videos/vozes/mauricio-coelho/DcXGG3bR8SV.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "trecho de fala do candidato em encontro/sabatina com candidatos (proposta de segurança: roubo de carga), repostado no perfil dele",
+          "resumo": "trecho de fala do candidato em encontro/sabatina com candidatos (proposta de segurança: roubo de carga), repostado no perfil dele",
+          "temas": [],
+          "credito": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-08-22",
+          "trechos_sugeridos": []
+        },
+        {
+          "url": "https://www.instagram.com/reel/DcPNHGZx3ia/",
+          "rede": "instagram",
+          "perfil": "@soumauriciocoelho",
+          "data": "2026-08-19",
+          "duracao_s": 57.1,
+          "transcricao_json": "pautas/videos/vozes/mauricio-coelho/DcPNHGZx3ia.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "vídeo de proposta/propósito de campanha, fala direta à câmera (história da senhora na farmácia; resgatar a capacidade de consumir)",
+          "resumo": "vídeo de proposta/propósito de campanha, fala direta à câmera (história da senhora na farmácia; resgatar a capacidade de consumir)",
+          "temas": [],
+          "credito": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-08-19",
+          "trechos_sugeridos": []
+        },
+        {
+          "url": "https://www.instagram.com/reel/DcHvctCx1gH/",
+          "rede": "instagram",
+          "perfil": "@soumauriciocoelho",
+          "data": "2026-08-17",
+          "duracao_s": 54.68,
+          "transcricao_json": "pautas/videos/vozes/mauricio-coelho/DcHvctCx1gH.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "vídeo de proposta (fim do IPVA para carros flex), formato pergunta-e-resposta",
+          "resumo": "vídeo de proposta (fim do IPVA para carros flex), formato pergunta-e-resposta",
+          "temas": [],
+          "credito": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-08-17",
+          "trechos_sugeridos": []
+        },
+        {
+          "url": "https://www.instagram.com/reel/Ddo0EbKxiB1/",
+          "rede": "instagram",
+          "perfil": "@soumauriciocoelho",
+          "data": "2026-09-23",
+          "duracao_s": 18.04,
+          "transcricao_json": "pautas/videos/vozes/mauricio-coelho/Ddo0EbKxiB1.json",
+          "fala_do_candidato": false,
+          "audio_baixado": true,
+          "tipo": "montagem com música (reunião com CDLs)",
+          "resumo": "montagem com música (reunião com CDLs)",
+          "temas": [],
+          "credito": "Áudio: vídeo de campanha de Maurício Coelho, Instagram @soumauriciocoelho, 2026-09-23",
+          "trechos_sugeridos": []
+        }
+      ],
+      "pendencias": [
+        "Vídeo Ddo0EbKxiB1 é só trilha musical (fala_do_candidato=false). Vídeos do Instagram: a coleta foi feita antes do bloqueio (HTTP 429) desta máquina."
+      ]
+    },
+    {
+      "id": "pivetta",
+      "nome": "Otaviano Pivetta (Otaviano Olavo Pivetta)",
+      "cargo": "governador",
+      "esfera": "estadual",
+      "partido": "Republicanos",
+      "numero": 10,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/otavianopivetta"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@PivettaOtavianoMT10"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@otaviano.pivetta"
+        },
+        {
+          "rede": "site",
+          "url": "https://www.pivetta10.com.br"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@otaviano.pivetta/video/7688705859957902612",
+          "rede": "tiktok",
+          "perfil": "@otaviano.pivetta",
+          "data": "2026-09-23",
+          "duracao_s": 28,
+          "transcricao_json": "pautas/videos/vozes/pivetta/7688705859957902612.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "vídeo de campanha, fala direta à câmera (estúdio), com legenda e marca \"Pivetta 10\"",
+          "resumo": "Estrada boa é para as famílias, não só para o caminhão; \"fizemos muito nesses sete anos e meio, faremos mais\".",
+          "temas": [
+            "infraestrutura",
+            "estradas",
+            "continuidade"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Otaviano Pivetta, TikTok @otaviano.pivetta, 2026-09-23",
+          "trechos_sugeridos": [
+            {
+              "inicio": 0.0,
+              "fim": 9.4,
+              "texto": "Estrada boa não é só para caminhão transportar carga. Estrada boa é para as famílias, é para o cidadão trabalhador poder se locomover,"
+            },
+            {
+              "inicio": 16.8,
+              "fim": 25.0,
+              "texto": "Fizemos muito nesses sete anos e meio. Com o seu voto faremos muito mais e melhor nesses próximos quatro anos."
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@otaviano.pivetta/video/7688706423835856148",
+          "rede": "tiktok",
+          "perfil": "@otaviano.pivetta",
+          "data": "2026-09-23",
+          "duracao_s": 58,
+          "transcricao_json": "pautas/videos/vozes/pivetta/7688706423835856148.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "corte de entrevista/podcast (ele ao microfone) postado no perfil do candidato com arte de campanha \"Pivetta 10\" e imagens de hospitais",
+          "resumo": "Hospital Central (34 anos parado) virou \"o melhor hospital público do Brasil\", gestão do Einstein; novos hospitais regionais.",
+          "temas": [
+            "saúde",
+            "hospitais",
+            "Hospital Central"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Otaviano Pivetta, TikTok @otaviano.pivetta, 2026-09-23",
+          "trechos_sugeridos": [
+            {
+              "inicio": 0.0,
+              "fim": 4.6,
+              "texto": "Chega de hospital bom só para quem pode pagar e para quem tem bons planos de saúde."
+            },
+            {
+              "inicio": 42.0,
+              "fim": 48.9,
+              "texto": "Esse esqueleto que sobreviveu 34 anos aí virou o melhor hospital público do Brasil e está funcionando."
+            }
+          ]
+        }
+      ],
+      "pendencias": [
+        "O canal oficial do YouTube (@PivettaOtavianoMT10) tem os programas eleitorais #01–#12 e spots de 30 s, mas o download de áudio do YouTube é barrado nesta máquina (HTTP 403 no googlevideo mesmo com PO Token) — baixar em outra máquina se quiser a voz dos programas. Instagram: HTTP 429.",
+        "Um 3º TikTok (7687972289148783892, \"velha política\", 2026-09-21) foi transcrito mas não virou JSON (crítica genérica; sem conferência de quadros)."
+      ]
+    },
+    {
+      "id": "rafaell-milas",
+      "nome": "Rafaell Milas (Rafaell Milas de Oliveira)",
+      "cargo": "governador",
+      "esfera": "estadual",
+      "partido": "Missão",
+      "numero": 14,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/rafaellmilas"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@rafaellmilasmt"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@rafaellmilasmt"
+        },
+        {
+          "rede": "site",
+          "url": "https://quemerafaellmilas.com.br"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@rafaellmilasmt/video/7689448043569007879",
+          "rede": "tiktok",
+          "perfil": "@rafaellmilasmt",
+          "data": "2026-09-25",
+          "duracao_s": 62,
+          "transcricao_json": "pautas/videos/vozes/rafaell-milas/7689448043569007879.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "corte de podcast com arte de campanha (\"14 Rafaell\", \"SUS do MT com Inteligência Artificial\"), postado no perfil do candidato",
+          "resumo": "Digitalizar a saúde: banco de dados único com o DataSUS e IA para organizar a fila do SUS em ordem cronológica, sem interferência política.",
+          "temas": [
+            "saúde",
+            "tecnologia",
+            "fila do SUS"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Rafaell Milas, TikTok @rafaellmilasmt, 2026-09-25",
+          "trechos_sugeridos": [
+            {
+              "inicio": 19.4,
+              "fim": 24.0,
+              "texto": "todos os usuários do SUS no Mato Grosso. Com isso vai virar um aplicativo na palma da mão,"
+            },
+            {
+              "inicio": 49.6,
+              "fim": 56.1,
+              "texto": "A fila vai ser cronológica certinha e ninguém vai se interferir nela. Isso por si só, já traz mais justiça para quem é o usuário do SUS,"
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@rafaellmilasmt/video/7689508447720656135",
+          "rede": "tiktok",
+          "perfil": "@rafaellmilasmt",
+          "data": "2026-09-25",
+          "duracao_s": 70,
+          "transcricao_json": "pautas/videos/vozes/rafaell-milas/7689508447720656135.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "corte de entrevista/podcast marcado como \"Propaganda eleitoral | Rafaell Milas\", postado no perfil do candidato",
+          "resumo": "Três medidas contra feminicídio: patrulha Maria da Penha/botão do pânico, protocolo Mulher Viva e acolhimento social da vítima.",
+          "temas": [
+            "segurança",
+            "mulheres",
+            "feminicídio"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Rafaell Milas, TikTok @rafaellmilasmt, 2026-09-25",
+          "trechos_sugeridos": [
+            {
+              "inicio": 1.8,
+              "fim": 5.2,
+              "texto": "Não vou inventar a roda, Diego. Eu acredito que o que já tem aí é para funcionar."
+            },
+            {
+              "inicio": 17.8,
+              "fim": 28.1,
+              "texto": "Só que isso também tem o protocolo Mulher Viva, que é a mulher atendida na delegacia. Daí ela vai para a UPA fazer o exame dela, os necessários. E também o terceiro ponto é o acolhimento social dessa mulher."
+            }
+          ]
+        }
+      ],
+      "pendencias": [
+        "Os dois vídeos são cortes de podcast/entrevista marcados como \"Propaganda eleitoral\". O YouTube @rafaellmilasmt tem vídeos de proposta (Prontuário Único, SUS com IA, Meio Ambiente, Industrialização) — download barrado nesta máquina (403)."
+      ]
+    },
+    {
+      "id": "sargento-laudicerio",
+      "nome": "Sargento Laudicério (Laudicério Aguiar Machado)",
+      "cargo": "governador",
+      "esfera": "estadual",
+      "partido": "Agir",
+      "numero": 36,
+      "perfis": [
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@sargentolau"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@sargentolau/video/7678137299942591765",
+          "rede": "tiktok",
+          "perfil": "@sargentolau",
+          "data": "2026-08-26",
+          "duracao_s": 36,
+          "transcricao_json": "pautas/videos/vozes/sargento-laudicerio/7678137299942591765.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "trecho de entrevista na TV (TV Vila Real/Record, \"Entrevistas: candidato ao governo\") repostado no perfil do candidato",
+          "resumo": "Diz que o servidor público vai apoiá-lo e que, como governador, vai \"homologar\" as reivindicações dos servidores.",
+          "temas": [
+            "servidores públicos"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Sargento Laudicério, TikTok @sargentolau, 2026-08-26",
+          "trechos_sugeridos": [
+            {
+              "inicio": 19.0,
+              "fim": 30.4,
+              "texto": "para reivindicar a necessidade, então o Laudicério como governador vai homologar a necessidade da população mato-grossense do servidor público e principalmente"
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@sargentolau/video/7678144640587009300",
+          "rede": "tiktok",
+          "perfil": "@sargentolau",
+          "data": "2026-08-26",
+          "duracao_s": 76,
+          "transcricao_json": "pautas/videos/vozes/sargento-laudicerio/7678144640587009300.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "trecho de entrevista na TV (TV Vila Real, \"Rodada de entrevistas\") repostado no perfil do candidato",
+          "resumo": "Conciliar agro e preservação: agenda com Aprosoja, Famato, Acrimat e entidades ambientais; atenção aos pequenos e médios produtores.",
+          "temas": [
+            "agro",
+            "meio ambiente"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Sargento Laudicério, TikTok @sargentolau, 2026-08-26",
+          "trechos_sugeridos": [
+            {
+              "inicio": 40.9,
+              "fim": 52.0,
+              "texto": "só que nós temos pequenos médios produtores que muitas vezes estão desassistidos, então temos que se convocar às associações, a Aprosoja, o Famato,"
+            },
+            {
+              "inicio": 66.0,
+              "fim": 77.0,
+              "texto": "Não estou falando que não será assistido, mas temos que trabalhar todos em equipe para uma situação melhor para todos nós quanto população Mato Grosso."
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@sargentolau/video/7677645717246086420",
+          "rede": "tiktok",
+          "perfil": "@sargentolau",
+          "data": "2026-08-24",
+          "duracao_s": 34,
+          "transcricao_json": "pautas/videos/vozes/sargento-laudicerio/7677645717246086420.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "trecho de entrevista na TV (TV Vila Real/Record) repostado no perfil do candidato",
+          "resumo": "Diz que ser governador \"não é sonho, é necessidade\" e que conhece a realidade do povo: faz hora extra, anda de Uber e ônibus.",
+          "temas": [
+            "custo de vida",
+            "perfil do candidato"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Sargento Laudicério, TikTok @sargentolau, 2026-08-24",
+          "trechos_sugeridos": [
+            {
+              "inicio": 19.4,
+              "fim": 30.6,
+              "texto": "Não estou falando criticando os outros, mas estou falando da realidade de fato, porque eu tenho que fazer jornadas extraordinárias para complementar, pagar o meu cartão, eu pego Uber, eu pego ônibus,"
+            },
+            {
+              "inicio": 0.0,
+              "fim": 7.3,
+              "texto": "O Laudicério, ele precisa estar como governador, não é questão de sonho, é uma necessidade"
+            }
+          ]
+        }
+      ],
+      "pendencias": [
+        "Só declarou TikTok. Os 3 vídeos obtidos são trechos de ENTREVISTA NA TV (TV Vila Real) repostados por ele — nenhum spot próprio entre os baixados; spots a conferir: 7674926821678386453 (início da campanha, 2026-08-17) e 7677395821809175828 (gestão técnica, 2026-08-24).",
+        "Registro de candidatura: primeiro pedido indeferido, segundo em análise (ver 2026-mt-candidatos.json) — confirmar situação antes de usar."
+      ]
+    },
+    {
+      "id": "wellington-fagundes",
+      "nome": "Wellington Fagundes (Wellington Antonio Fagundes)",
+      "cargo": "governador",
+      "esfera": "estadual",
+      "partido": "PL",
+      "numero": 22,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/wellingtonfagundesmt"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@wellingtonfagundesmt"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@senwellingtonfagundes"
+        },
+        {
+          "rede": "site",
+          "url": "https://senadorwellingtonfagundes.com.br/senador/"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@senwellingtonfagundes/video/7688004028847967508",
+          "rede": "tiktok",
+          "perfil": "@senwellingtonfagundes",
+          "data": "2026-09-21",
+          "duracao_s": 62,
+          "transcricao_json": "pautas/videos/vozes/wellington-fagundes/7688004028847967508.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "vídeo de proposta gravado em frente ao Hospital Estadual Metropolitano (Várzea Grande), fala direta à câmera",
+          "resumo": "Em frente ao Hospital Metropolitano de Várzea Grande, promete porta de emergência 24 h em todos os hospitais e \"governo dos mutirões\" para zerar a fila.",
+          "temas": [
+            "saúde",
+            "urgência e emergência",
+            "fila de cirurgias"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Wellington Fagundes, TikTok @senwellingtonfagundes, 2026-09-21",
+          "trechos_sugeridos": [
+            {
+              "inicio": 33.0,
+              "fim": 45.0,
+              "texto": "No meu governo, vamos ampliar e estruturar este e todos os hospitais para ter uma porta de emergência aberta 24 horas com médicos, exames, leitos e toda a retaguarda necessária."
+            },
+            {
+              "inicio": 45.7,
+              "fim": 57.7,
+              "texto": "Com o governo dos mutirões, vamos ampliar as cirurgias e os procedimentos, zerar a fila acumulada e reduzir de forma permanente o tempo de espera."
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@senwellingtonfagundes/video/7687752467580390677",
+          "rede": "tiktok",
+          "perfil": "@senwellingtonfagundes",
+          "data": "2026-09-20",
+          "duracao_s": 76,
+          "transcricao_json": "pautas/videos/vozes/wellington-fagundes/7687752467580390677.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "vídeo de campanha à beira do rio Cuiabá: exibe vídeo de adversário no celular e apresenta proposta própria",
+          "resumo": "Critica proposta de \"praia\" no rio Cuiabá e propõe ligar o Cais do Porto à ponte, passarela, concluir o BRT e revitalizar o centro.",
+          "temas": [
+            "urbanismo",
+            "rio Cuiabá",
+            "BRT",
+            "mobilidade"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Wellington Fagundes, TikTok @senwellingtonfagundes, 2026-09-20",
+          "trechos_sugeridos": [
+            {
+              "inicio": 32.8,
+              "fim": 41.0,
+              "texto": "O meu projeto é interligar o cais do porto com a ponte. Pense como esta que eu trouxe aqui junto com o Dante, só pra pedestre, essa ponte."
+            },
+            {
+              "inicio": 48.4,
+              "fim": 60.0,
+              "texto": "revitalizando, construindo estacionamentos e também concluindo o BRT, que até hoje eles não terminaram e faziam a linha expressa ao centro comercial, revitalizando o nosso comércio e também o centro histórico,"
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@senwellingtonfagundes/video/7685829267053137173",
+          "rede": "tiktok",
+          "perfil": "@senwellingtonfagundes",
+          "data": "2026-09-15",
+          "duracao_s": 52,
+          "transcricao_json": "pautas/videos/vozes/wellington-fagundes/7685829267053137173.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "trecho de entrevista na TV (programa de entrevistas \"Eleições\") repostado no perfil do candidato com legenda e chamada \"comente QUERO VER\"",
+          "resumo": "Diz que a riqueza de MT fica com poucos e acusa incentivo fiscal de R$ 500 milhões à empresa do governador (ataque; evitar).",
+          "temas": [
+            "economia",
+            "incentivos fiscais",
+            "ataque a adversário"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Wellington Fagundes, TikTok @senwellingtonfagundes, 2026-09-15",
+          "trechos_sugeridos": [
+            {
+              "inicio": 0.0,
+              "fim": 4.6,
+              "texto": "Mato Grosso, esse estado tão rico está servindo só para poucos."
+            }
+          ]
+        }
+      ],
+      "pendencias": [
+        "7685829267053137173 é entrevista de TV com ataque ao governador — preferir 7688004028847967508 (saúde) e 7687752467580390677 (Cais do Porto; atenção: 0–17,6 s é o áudio do ADVERSÁRIO).",
+        "YouTube @wellingtonfagundesmt não declarado ao TSE e não baixável aqui (403)."
+      ]
+    },
+    {
+      "id": "beny-godoy",
+      "nome": "Beny Godoy (Benival Alves da Silva)",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "Agir",
+      "numero": 365,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/benygodoysenador"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@benygodoysenador"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://vm.tiktok.com/ZS9kDtJbwyekh-aGXmT/"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@user8616808410619/video/7687462196196019472",
+          "rede": "tiktok",
+          "perfil": "@user8616808410619",
+          "data": "2026-09-20",
+          "duracao_s": 40,
+          "transcricao_json": "pautas/videos/vozes/beny-godoy/7687462196196019472.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "fala direta à câmera em evento esportivo (Vila Buriti, Confresa), com arte \"Senador Beny Godoy 365\"",
+          "resumo": "Pede voto em evento esportivo no Araguaia: \"Beny Godoy será o seu primeiro voto ao Senado, 365\".",
+          "temas": [
+            "pedido de voto",
+            "interior/Araguaia"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Beny Godoy, TikTok @user8616808410619, 2026-09-20",
+          "trechos_sugeridos": [
+            {
+              "inicio": 29.8,
+              "fim": 38.8,
+              "texto": "Você tem direito a votar em dois candidatos ao Senado. Beny Godoy será o seu primeiro voto ao Senado. 365. Beny Godoy para o Senado."
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@user8616808410619/video/7687462471812123920",
+          "rede": "tiktok",
+          "perfil": "@user8616808410619",
+          "data": "2026-09-20",
+          "duracao_s": 27,
+          "transcricao_json": "pautas/videos/vozes/beny-godoy/7687462471812123920.json",
+          "fala_do_candidato": false,
+          "audio_baixado": true,
+          "tipo": "vídeo de evento (torneio esportivo) só com imagens/música",
+          "resumo": "Imagens do torneio esportivo, sem fala.",
+          "temas": [
+            "agenda"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Beny Godoy, TikTok @user8616808410619, 2026-09-20",
+          "trechos_sugeridos": []
+        }
+      ],
+      "pendencias": [
+        "Só 1 vídeo com fala (áudio ao ar livre, ASR ruim — usar só o final, 29,8–38,8 s). YouTube @benygodoysenador não baixável aqui (403); Instagram 429. TikTok declarado é link curto que abre @user8616808410619 (\"BENY GODOY SENADOR\", 33 seguidores)."
+      ]
+    },
+    {
+      "id": "coronel-darwin",
+      "nome": "Coronel Darwin (Darwin Salgado Germano)",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "Democrata",
+      "numero": 351,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/coronel_darwin_oficial"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@coronel_darwin_oficial"
+        }
+      ],
+      "tem_voz_real": false,
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=TTzHOw-W-YA",
+          "rede": "youtube",
+          "perfil": "@coronel_darwin_oficial",
+          "data": "2026-09-04",
+          "duracao_s": 86,
+          "transcricao_json": "pautas/videos/vozes/coronel-darwin/TTzHOw-W-YA.json",
+          "fala_do_candidato": true,
+          "audio_baixado": false,
+          "tipo": "corte de podcast (\"Papo de Polícia\") com arte \"Darwin 351\", postado no canal do candidato",
+          "resumo": "\"Não é o Mato Grosso, é o Brasil\": critica políticos de carreira e pede \"escolha inteligente\", voto 351.",
+          "temas": [
+            "representação política",
+            "pedido de voto"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Coronel Darwin, YouTube @coronel_darwin_oficial, 2026-09-04",
+          "trechos_sugeridos": [
+            {
+              "inicio": 6.4,
+              "fim": 16.9,
+              "texto": "Não é o Mato Grosso, é o Brasil. Nós estamos vivendo aí tempos difíceis, né? Pessoas que estão ali em Brasília não nos representam."
+            },
+            {
+              "inicio": 67.4,
+              "fim": 79.0,
+              "texto": "Se você quer um resultado diferente na sua vida e na política, preste atenção, faça uma escolha inteligente. Vote 351"
+            }
+          ]
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=KytD7Rgvoak",
+          "rede": "youtube",
+          "perfil": "@coronel_darwin_oficial",
+          "data": "2026-09-01",
+          "duracao_s": 111,
+          "transcricao_json": "pautas/videos/vozes/coronel-darwin/KytD7Rgvoak.json",
+          "fala_do_candidato": true,
+          "audio_baixado": false,
+          "tipo": "vídeo de campanha: abre com trechos de telejornal (imprensa) e segue com o candidato falando à câmera",
+          "resumo": "Fala aos policiais militares: tecnologia vai substituí-los e reforma da previdência aumenta tempo para a reserva; pede voto 351.",
+          "temas": [
+            "segurança",
+            "previdência militar",
+            "policiais"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Coronel Darwin, YouTube @coronel_darwin_oficial, 2026-09-01",
+          "trechos_sugeridos": [
+            {
+              "inicio": 34.9,
+              "fim": 46.3,
+              "texto": "Olá, meu irmão policial militar. As notícias que acabamos de ver demonstram claramente que em breve nós seremos substituídos por máquinas,"
+            },
+            {
+              "inicio": 61.0,
+              "fim": 68.0,
+              "texto": "O problema é que a nossa expectativa de vida é de apenas e tão somente 58 anos de idade."
+            }
+          ]
+        }
+      ],
+      "pendencias": [
+        "SEM ÁUDIO LOCAL: não declarou TikTok; Instagram 429; YouTube (canal não declarado ao TSE, nome civil) só deu legenda automática + storyboard. Baixar o áudio em outra máquina antes de cortar; os tempos vêm da legenda (±0,5 s).",
+        "KytD7Rgvoak: 0–34,9 s é telejornal (imprensa) — proibido."
+      ]
+    },
+    {
+      "id": "favaro",
+      "nome": "Fávaro (Carlos Henrique Baqueta Fávaro)",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "PSD",
+      "numero": 555,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/carloshbfavaro"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@carlosfavaro3720"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@carloshbfavaro"
+        },
+        {
+          "rede": "site",
+          "url": "https://carlosfavaro.com.br"
+        }
+      ],
+      "tem_voz_real": false,
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=KJ1labmVMhA",
+          "rede": "youtube",
+          "perfil": "@carlosfavaro3720",
+          "data": "2026-09-12",
+          "duracao_s": 67,
+          "transcricao_json": "pautas/videos/vozes/favaro/KJ1labmVMhA.json",
+          "fala_do_candidato": true,
+          "audio_baixado": false,
+          "tipo": "programa eleitoral (bloco de ~1 min): locutor, candidato à câmera, depoimentos de trabalhadores, fecho do candidato",
+          "resumo": "Programa: locutor lista obras (R$ 4 bi, 44 mil casas, BR-163, Hospital Júlio Müller); Fávaro promete votar pelo fim da escala 6x1.",
+          "temas": [
+            "trabalho",
+            "escala 6x1",
+            "obras"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Fávaro, YouTube @carlosfavaro3720, 2026-09-12",
+          "trechos_sugeridos": [
+            {
+              "inicio": 14.7,
+              "fim": 24.6,
+              "texto": "No Senado, vou votar pelo fim da escala 6x1. É uma injustiça para quem trabalha ter apenas um dia livre na semana"
+            },
+            {
+              "inicio": 54.5,
+              "fim": 61.4,
+              "texto": "Com as bênçãos de Deus e o seu voto, vou seguir trabalhando para melhorar a sua vida."
+            }
+          ]
+        }
+      ],
+      "pendencias": [
+        "SEM ÁUDIO LOCAL: TikTok @carloshbfavaro parado desde out/2025; Instagram 429; YouTube só legenda automática + storyboard (download 403). Baixar o áudio em outra máquina.",
+        "Outros vídeos de campanha no YouTube: an5PQM07AXw (duplicação da BR-163, 2026-09-11; legenda não baixou — HTTP 429), izXvkRhsSbk (Hospital Júlio Müller), m10VFszVXTU (Shopping Popular)."
+      ]
+    },
+    {
+      "id": "galvan",
+      "nome": "Galvan (Antônio Galvan)",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "Avante",
+      "numero": 700,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/antoniogalvan.mt/"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@antonio.galvan.mt"
+        },
+        {
+          "rede": "site",
+          "url": "https://galvan700.com.br"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@antonio.galvan.mt/video/7675154879806999828",
+          "rede": "tiktok",
+          "perfil": "@antonio.galvan.mt",
+          "data": "2026-08-18",
+          "duracao_s": 100,
+          "transcricao_json": "pautas/videos/vozes/galvan/7675154879806999828.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "corte de podcast/entrevista (ele ao microfone) com arte de campanha \"700\", postado no perfil do candidato",
+          "resumo": "Defende que a maioria dos professores é \"do bem\" e vítima do sistema; cita escola cívico-militar como modelo de disciplina.",
+          "temas": [
+            "educação",
+            "professores",
+            "escola cívico-militar"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Galvan, TikTok @antonio.galvan.mt, 2026-08-18",
+          "trechos_sugeridos": [
+            {
+              "inicio": 28.1,
+              "fim": 39.6,
+              "texto": "porque eu tenho na minha concepção que a grande maioria dos professores são professores do bem, não são professores aí que tanto você fala que a maioria é ligada com a esquerda, eu não concordo,"
+            },
+            {
+              "inicio": 17.8,
+              "fim": 28.1,
+              "texto": "professores não gostaria que fosse desse jeito. A grande maioria dos professores acaba virando vítima desse sistema que está sendo dentro da aula por ter deixado a política entrar lá dentro,"
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@antonio.galvan.mt/video/7675355929717574920",
+          "rede": "tiktok",
+          "perfil": "@antonio.galvan.mt",
+          "data": "2026-08-18",
+          "duracao_s": 69,
+          "transcricao_json": "pautas/videos/vozes/galvan/7675355929717574920.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "corte de entrevista em rádio/podcast com arte \"700\" e imagens do Senado, postado no perfil do candidato",
+          "resumo": "Diz que voltou a disputar o Senado para enfrentar ministros do STF e o presidente do Congresso (ataques; evitar); cita Bolsonaro como inspiração.",
+          "temas": [
+            "Senado",
+            "STF",
+            "ataque a adversário"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Galvan, TikTok @antonio.galvan.mt, 2026-08-18",
+          "trechos_sugeridos": [
+            {
+              "inicio": 0.0,
+              "fim": 6.5,
+              "texto": "isso que me trouxe de volta a disputar uma eleição ao Senado por um pedido, porque é lá que precisa,"
+            }
+          ]
+        }
+      ],
+      "pendencias": [
+        "7675355929717574920 é ataque (\"vagabundo\" ao presidente do Congresso, STF) — usar só 0–6,5 s. Não declarou YouTube."
+      ]
+    },
+    {
+      "id": "janaina-riva",
+      "nome": "Janaina Riva (Janaina Greyce Riva Fagundes)",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "MDB",
+      "numero": 150,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/janainariva"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@JanainaRivamt"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@janainarivamt"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@janainarivamt/video/7689458698065972501",
+          "rede": "tiktok",
+          "perfil": "@janainarivamt",
+          "data": "2026-09-25",
+          "duracao_s": 64,
+          "transcricao_json": "pautas/videos/vozes/janaina-riva/7689458698065972501.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "vídeo de proposta, fala direta à câmera (estúdio escuro), com legenda",
+          "resumo": "Proposta \"Sem segunda chance\": prisão perpétua, castração química para criminosos sexuais e fim das brechas que reduzem pena.",
+          "temas": [
+            "segurança",
+            "violência contra mulher e criança",
+            "penas"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Janaina Riva, TikTok @janainarivamt, 2026-09-25",
+          "trechos_sugeridos": [
+            {
+              "inicio": 22.9,
+              "fim": 33.4,
+              "texto": "Por isso, eu quero levar ao Senado a proposta sem segunda chance. Eu vou lutar pela prisão perpétua, pela castração química para criminosos sexuais"
+            },
+            {
+              "inicio": 41.9,
+              "fim": 48.1,
+              "texto": "Este papel pode até ser aberto novamente, mas nunca volta a ser como antes."
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@janainarivamt/video/7689092843641556276",
+          "rede": "tiktok",
+          "perfil": "@janainarivamt",
+          "data": "2026-09-24",
+          "duracao_s": 74,
+          "transcricao_json": "pautas/videos/vozes/janaina-riva/7689092843641556276.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "vídeo de proposta, fala direta à câmera intercalada com imagens de cobertura",
+          "resumo": "Ampliar cursos técnicos nos institutos federais conforme a vocação de cada região (agro, mineração, saúde, tecnologia) para o jovem ficar no interior.",
+          "temas": [
+            "educação",
+            "cursos técnicos",
+            "emprego",
+            "interior"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Janaina Riva, TikTok @janainarivamt, 2026-09-24",
+          "trechos_sugeridos": [
+            {
+              "inicio": 0.3,
+              "fim": 9.3,
+              "texto": "Tem jovens em Mato Grosso que vão embora de casa, não porque querem, mas porque a oportunidade não chegou na cidade deles."
+            },
+            {
+              "inicio": 59.5,
+              "fim": 71.2,
+              "texto": "Quero que nossos jovens possam trabalhar perto da família e construir o futuro na própria cidade, porque a oportunidade de verdade não obriga ninguém a abandonar as suas raízes."
+            }
+          ]
+        }
+      ],
+      "pendencias": []
+    },
+    {
+      "id": "margareth-buzetti",
+      "nome": "Margareth Buzetti",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "PP",
+      "numero": 111,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/margarethbuzetti"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@SenadoraMargarethBuzetti"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@margarethbuzetti"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@margarethbuzetti/video/7689484845461835029",
+          "rede": "tiktok",
+          "perfil": "@margarethbuzetti",
+          "data": "2026-09-25",
+          "duracao_s": 59,
+          "transcricao_json": "pautas/videos/vozes/margareth-buzetti/7689484845461835029.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "corte de entrevista em rádio/podcast (Agora FM?) postado no perfil da candidata",
+          "resumo": "\"Senador fica oito anos: se for bom é pouco, se for ruim é muito\" — pede que o eleitor pense em quem vai \"contratar\".",
+          "temas": [
+            "Senado",
+            "voto"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Margareth Buzetti, TikTok @margarethbuzetti, 2026-09-25",
+          "trechos_sugeridos": [
+            {
+              "inicio": 6.6,
+              "fim": 13.6,
+              "texto": "Porque o senador vai ficar no cargo de oito anos. Ele for bom, é pouco, né? Mas se ele for ruim, é muito."
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@margarethbuzetti/video/7689206503986695445",
+          "rede": "tiktok",
+          "perfil": "@margarethbuzetti",
+          "data": "2026-09-24",
+          "duracao_s": 59,
+          "transcricao_json": "pautas/videos/vozes/margareth-buzetti/7689206503986695445.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "corte de podcast (ela ao microfone) com arte de campanha \"11\", postado no perfil da candidata",
+          "resumo": "Empresária há quase 40 anos em MT, reclama da carga tributária e de um governo que \"só atrapalha o empresário\".",
+          "temas": [
+            "economia",
+            "impostos",
+            "empreendedorismo"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Margareth Buzetti, TikTok @margarethbuzetti, 2026-09-24",
+          "trechos_sugeridos": [
+            {
+              "inicio": 21.2,
+              "fim": 32.3,
+              "texto": "temos a mesma empresa com o mesmo CNPJ, está quase 40 anos, não é fácil se manter nesse país cheio de impostos na carga tributária absurda."
+            },
+            {
+              "inicio": 45.2,
+              "fim": 53.2,
+              "texto": "quem que vai pagar a folha de pagamento desse governo, quem que vai pagar a saúde, quem que vai pagar a educação?"
+            }
+          ]
+        }
+      ],
+      "pendencias": [
+        "7689484845461835029: falas prováveis do entrevistador em 30,6–32,6 s e 34,6–36,6 s — não usar."
+      ]
+    },
+    {
+      "id": "mauro-mendes",
+      "nome": "Mauro Mendes",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "União",
+      "numero": 444,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/mauromendesoficial"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@mauromendesoficial"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@mauromendesoficial"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@mauromendesoficial/video/7689147879201541428",
+          "rede": "tiktok",
+          "perfil": "@mauromendesoficial",
+          "data": "2026-09-24",
+          "duracao_s": 73,
+          "transcricao_json": "pautas/videos/vozes/mauro-mendes/7689147879201541428.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "programa eleitoral (montagem): depoimento, apoio de Tarcísio de Freitas, locutor, fala do candidato e jingle",
+          "resumo": "Programa sobre escolas: Mauro fala das \"mais de 100 escolas\" com tecnologia, material e uniforme; tem apoio gravado de Tarcísio de Freitas.",
+          "temas": [
+            "educação",
+            "escolas",
+            "balanço de gestão"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Mauro Mendes, TikTok @mauromendesoficial, 2026-09-24",
+          "trechos_sugeridos": [
+            {
+              "inicio": 37.3,
+              "fim": 48.9,
+              "texto": "Fizemos esses últimos anos mais de uma centena de escolas, com alto padrão de qualidade, tecnologia em sala de aula, material didático, uniforme, muitos investimentos para melhorar o ensino"
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@mauromendesoficial/video/7689433819249659142",
+          "rede": "tiktok",
+          "perfil": "@mauromendesoficial",
+          "data": "2026-09-25",
+          "duracao_s": 58,
+          "transcricao_json": "pautas/videos/vozes/mauro-mendes/7689433819249659142.json",
+          "fala_do_candidato": false,
+          "audio_baixado": true,
+          "tipo": "vídeo com jingle/música (evento \"Arrancada da Vitória\")",
+          "resumo": "Imagens de campanha com jingle, sem fala.",
+          "temas": [
+            "campanha"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Mauro Mendes, TikTok @mauromendesoficial, 2026-09-25",
+          "trechos_sugeridos": []
+        }
+      ],
+      "pendencias": [
+        "Só ~15 s da voz dele (37,3–51,9 s do programa 7689147879201541428). 7689433819249659142 e 7688465894263098631 só têm jingle/música; 7688466327975021832 é post de fotos (sem vídeo). YouTube @mauromendesoficial (não declarado ao TSE) não baixável aqui."
+      ]
+    },
+    {
+      "id": "pedro-taques",
+      "nome": "Pedro Taques",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "PSB",
+      "numero": 400,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/pedrotaques/"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@TVTAQUES"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@pedrotaquesoficial"
+        },
+        {
+          "rede": "site",
+          "url": "https://pedrotaques.com.br"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@pedrotaquesoficial/video/7688378306789444882",
+          "rede": "tiktok",
+          "perfil": "@pedrotaquesoficial",
+          "data": "2026-09-22",
+          "duracao_s": 81,
+          "transcricao_json": "pautas/videos/vozes/pedro-taques/7688378306789444882.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "vídeo de campanha: locutor + imagens de arquivo das sabatinas de ministros do STF em que ele (então senador) pergunta",
+          "resumo": "Locutor lembra que o Senado aprova ministros do STF; arquivo mostra Taques sabatinando indicados (\"não podemos virar puxadinho do Executivo\").",
+          "temas": [
+            "Senado",
+            "STF",
+            "sabatina"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Pedro Taques, TikTok @pedrotaquesoficial, 2026-09-22",
+          "trechos_sugeridos": [
+            {
+              "inicio": 68.5,
+              "fim": 77.5,
+              "texto": "Porque a sabatina é um dos momentos mais importantes desta casa. Não podemos nos tornar um puxadinho do Poder Executivo."
+            },
+            {
+              "inicio": 33.5,
+              "fim": 39.5,
+              "texto": "Qual é o papel do Senado na sabatina de um indicado para o Supremo Tribunal Federal?"
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@pedrotaquesoficial/video/7687679001812323604",
+          "rede": "tiktok",
+          "perfil": "@pedrotaquesoficial",
+          "data": "2026-09-20",
+          "duracao_s": 53,
+          "transcricao_json": "pautas/videos/vozes/pedro-taques/7687679001812323604.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "vídeo de proposta, fala direta à câmera com inserts gráficos (\"Lei Fronteira Blindada\"), arte \"400\"",
+          "resumo": "Propostas de segurança para o Senado: isolar chefes de facção, usar bens apreendidos do crime na segurança, lei \"Fronteira Blindada\".",
+          "temas": [
+            "segurança",
+            "facções",
+            "fronteira"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Pedro Taques, TikTok @pedrotaquesoficial, 2026-09-20",
+          "trechos_sugeridos": [
+            {
+              "inicio": 0.0,
+              "fim": 9.4,
+              "texto": "Tá cansado de bandidagem? Eu também. Lá no Senado tenho propostas duras para acabar com as facções criminosas."
+            },
+            {
+              "inicio": 37.0,
+              "fim": 48.7,
+              "texto": "Passei a minha vida inteira prendendo criminoso e corrupto, e vou continuar a fazer isso lá no Senado. Eu peço o seu voto, um voto de justiça e coragem."
+            }
+          ]
+        }
+      ],
+      "pendencias": [
+        "7688378306789444882: 0–17,8 s é locutor; o restante é arquivo da TV Senado (sabatinas) reusado pela campanha — a voz é dele, mas avaliar se o arquivo institucional serve ao formato."
+      ]
+    },
+    {
+      "id": "professor-nelson-ferreira",
+      "nome": "Professor Nelson Ferreira (Nelson Carlos Ferreira Junior)",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "Agir",
+      "numero": 360,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/nelsonferreiraju"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@nelsonferreiraju"
+        }
+      ],
+      "tem_voz_real": false,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@nelsonferreiraju/video/7685394888354958613",
+          "rede": "tiktok",
+          "perfil": "@nelsonferreiraju",
+          "data": "2026-09-14",
+          "duracao_s": 90,
+          "transcricao_json": "pautas/videos/vozes/professor-nelson-ferreira/7685394888354958613.json",
+          "fala_do_candidato": false,
+          "audio_baixado": true,
+          "tipo": "imagem fixa de campanha (\"Professor Nelson Ferreira na liderança para o Senado 360\") com jingle",
+          "resumo": "Arte fixa com jingle, sem fala.",
+          "temas": [
+            "campanha"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Professor Nelson Ferreira, TikTok @nelsonferreiraju, 2026-09-14",
+          "trechos_sugeridos": []
+        }
+      ],
+      "pendencias": [
+        "NENHUMA fala do candidato encontrada: 5 vídeos recentes do TikTok @nelsonferreiraju são jingle, música gospel, narração motivacional ou imagem fixa (7685394888354958613, 7681728181350567189, 7676174264948755733, 7672184175293713685, 7668166644870417685). Não tem YouTube; Instagram 429. Sem trecho real: o narrador conta."
+      ]
+    },
+    {
+      "id": "ze-medeiros",
+      "nome": "Zé Medeiros (José Antonio Medeiros)",
+      "cargo": "senador",
+      "esfera": "estadual",
+      "partido": "PL",
+      "numero": 222,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/senadorzemedeiros222"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@josemedeiros222"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@josemedeirosmt"
+        },
+        {
+          "rede": "site",
+          "url": "http://www.zemedeiros.com.br"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@josemedeirosmt/video/7679784111648689415",
+          "rede": "tiktok",
+          "perfil": "@josemedeirosmt",
+          "data": "2026-08-30",
+          "duracao_s": 25,
+          "transcricao_json": "pautas/videos/vozes/ze-medeiros/7679784111648689415.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "fala direta à câmera (três perguntas ao eleitor), com fotos com Bolsonaro",
+          "resumo": "Três perguntas ao eleitor (Lula fora do poder, Bolsonaro fora da cadeia, Moraes na cadeia) e se apresenta como o escolhido de Bolsonaro para o Senado.",
+          "temas": [
+            "Senado",
+            "polarização",
+            "ataque a adversário"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Zé Medeiros, TikTok @josemedeirosmt, 2026-08-30",
+          "trechos_sugeridos": [
+            {
+              "inicio": 0.0,
+              "fim": 2.9,
+              "texto": "Você, eleitor do Mato Grosso? Eu tenho três perguntas pra te fazer."
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@josemedeirosmt/video/7689224084063866130",
+          "rede": "tiktok",
+          "perfil": "@josemedeirosmt",
+          "data": "2026-09-24",
+          "duracao_s": 116,
+          "transcricao_json": "pautas/videos/vozes/ze-medeiros/7689224084063866130.json",
+          "fala_do_candidato": false,
+          "audio_baixado": true,
+          "tipo": "vídeo de comentarista/influenciador (outro homem, com cartas sobre a mesa) repostado no perfil do candidato",
+          "resumo": "Comentarista (não é o candidato) explica a disputa ao Senado em MT, ataca Janaina Riva e pede voto em Zé Medeiros 222.",
+          "temas": [
+            "Senado MT",
+            "ataque a adversário"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Zé Medeiros, TikTok @josemedeirosmt, 2026-09-24",
+          "trechos_sugeridos": []
+        }
+      ],
+      "pendencias": [
+        "Único vídeo com a voz dele (7679784111648689415) é polarizado — usar só a abertura (0–2,9 s). 7689224084063866130 NÃO é a voz dele (comentarista). YouTube @josemedeiros222 não baixável aqui; procurar spot de proposta na próxima rodada."
+      ]
+    },
+    {
+      "id": "abilio-brunini",
+      "nome": "Abilio Brunini (Abilio Jacques Brunini Moumer)",
+      "cargo": "prefeito de Cuiabá",
+      "esfera": "municipal",
+      "partido": "PL",
+      "numero": null,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/abiliobrunini/"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@AbilioBrunini"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@abiliobrunini"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@abiliobrunini/video/7688874061903990036",
+          "rede": "tiktok",
+          "perfil": "@abiliobrunini",
+          "data": "2026-09-23",
+          "duracao_s": 150,
+          "transcricao_json": "pautas/videos/vozes/abilio-brunini/7688874061903990036.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "fala direta à câmera no gabinete (prefeito explica decisão administrativa)",
+          "resumo": "Explica por que a Prefeitura de Cuiabá deixou de pagar a iluminação interna de condomínios fechados (\"não posso autorizar ilegalidade\", mesmo em período eleitoral).",
+          "temas": [
+            "gestão municipal",
+            "iluminação pública",
+            "condomínios"
+          ],
+          "credito": "Áudio: vídeo publicado de Abilio Brunini, TikTok @abiliobrunini, 2026-09-23",
+          "trechos_sugeridos": [
+            {
+              "inicio": 4.5,
+              "fim": 11.7,
+              "texto": "Eu não posso fazer isso. Não posso fazer isso. Porque cada dia que eu autorizo o pagamento de uma ilegalidade, eu estou sendo responsável por ela."
+            },
+            {
+              "inicio": 27.5,
+              "fim": 36.0,
+              "texto": "A gente só está dizendo o seguinte, a lei não permite o município pagar com dinheiro público a iluminação interna de condomínios fechados."
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@abiliobrunini/video/7681843933592259860",
+          "rede": "tiktok",
+          "perfil": "@abiliobrunini",
+          "data": "2026-09-05",
+          "duracao_s": 81,
+          "transcricao_json": "pautas/videos/vozes/abilio-brunini/7681843933592259860.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "selfie saindo da prefeitura (anúncio de medida: passe estudantil livre, Cuiabá Card)",
+          "resumo": "Anuncia passe estudantil livre (uso ilimitado) e Cuiabá Card para trabalhador; tarifa zero no 7 de Setembro.",
+          "temas": [
+            "transporte público",
+            "estudantes",
+            "tarifa zero"
+          ],
+          "credito": "Áudio: vídeo publicado de Abilio Brunini, TikTok @abiliobrunini, 2026-09-05",
+          "trechos_sugeridos": [
+            {
+              "inicio": 10.5,
+              "fim": 19.5,
+              "texto": "já podem usar o transporte público a qualquer hora do dia à vontade, quantas vezes você quiser, estudante, então aproveite que o Passe Estudante agora é livre para você"
+            },
+            {
+              "inicio": 67.8,
+              "fim": 75.1,
+              "texto": "7 de setembro está liberado o transporte público para todo mundo, tá bom? Tarifa zero e para você estudante e trabalhador, Cuiabá Card,"
+            }
+          ]
+        }
+      ],
+      "pendencias": [
+        "Não é candidato em 2026: crédito \"Áudio: vídeo publicado por Abilio Brunini, TikTok @abiliobrunini, <data>\" (não \"propaganda eleitoral\"). Só perfil próprio; nada de TikTok de imprensa."
+      ]
+    },
+    {
+      "id": "flavia-moretti",
+      "nome": "Flávia Moretti",
+      "cargo": "prefeita de Várzea Grande",
+      "esfera": "municipal",
+      "partido": "PL",
+      "numero": null,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/flaviamorettioficial/"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@FlaviaMorettioficial"
+        }
+      ],
+      "tem_voz_real": false,
+      "videos": [],
+      "pendencias": [
+        "SEM VÍDEO: TikTok não confirmado; Instagram @flaviamorettioficial bloqueado nesta máquina (HTTP 429/401 \"aguarde\"); YouTube @FlaviaMorettioficial só tem material de 2024 (campanha municipal), fora da janela de 60 dias, e download do YouTube é barrado aqui (403). Tentar o Instagram de outra máquina. Sem trecho real: o narrador conta."
+      ]
+    },
+    {
+      "id": "lula",
+      "nome": "Lula (Luiz Inácio Lula da Silva)",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "PT",
+      "numero": 13,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/lulaoficial"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@lulaoficial"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@lulaoficial"
+        },
+        {
+          "rede": "site",
+          "url": "https://lula.com.br"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@lulaoficial/video/7689141613943115016",
+          "rede": "tiktok",
+          "perfil": "@lulaoficial",
+          "data": "2026-09-24",
+          "duracao_s": 46,
+          "transcricao_json": "pautas/videos/vozes/lula/7689141613943115016.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "vídeo de campanha: pergunta de eleitora (Alícia, CLT) e resposta do candidato à câmera",
+          "resumo": "Responde a uma trabalhadora CLT: fim da escala 6x1 para ter dois dias de folga, com aprovação no Congresso e sanção.",
+          "temas": [
+            "trabalho",
+            "escala 6x1"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Lula, TikTok @lulaoficial, 2026-09-24",
+          "trechos_sugeridos": [
+            {
+              "inicio": 6.1,
+              "fim": 13.2,
+              "texto": "O fim da escala 6 por 1 é para dar mais conforto para o povo trabalhador, para as trabalhadoras."
+            },
+            {
+              "inicio": 37.4,
+              "fim": 42.6,
+              "texto": "É isso, significa o fim da escala 6 por 1, mais conforto para vocês."
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@lulaoficial/video/7689295703000075540",
+          "rede": "tiktok",
+          "perfil": "@lulaoficial",
+          "data": "2026-09-25",
+          "duracao_s": 47,
+          "transcricao_json": "pautas/videos/vozes/lula/7689295703000075540.json",
+          "fala_do_candidato": false,
+          "audio_baixado": true,
+          "tipo": "vídeo de campanha com fala do candidato a vice (Geraldo Alckmin) à câmera",
+          "resumo": "Alckmin explica a aliança com Lula (\"do mesmo lado, o lado do Brasil\").",
+          "temas": [
+            "aliança",
+            "conciliação"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Lula, TikTok @lulaoficial, 2026-09-25",
+          "trechos_sugeridos": []
+        }
+      ],
+      "pendencias": [
+        "Só 1 vídeo com a voz dele. 7689299201720651028 é post sem vídeo; 7689295703000075540 é Alckmin (fala_do_candidato=false). Candidatos a próxima rodada: 7689183063095512338 (ludopatia), 7689095771391626504."
+      ]
+    },
+    {
+      "id": "flavio-bolsonaro",
+      "nome": "Flávio Bolsonaro",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "PL",
+      "numero": 22,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/flaviobolsonaro/"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@flaviobolsonaro"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@flaviobolsonaro"
+        },
+        {
+          "rede": "site",
+          "url": "https://flaviobolsonaro.com.br"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@flaviobolsonaro/video/7688877245028519189",
+          "rede": "tiktok",
+          "perfil": "@flaviobolsonaro",
+          "data": "2026-09-23",
+          "duracao_s": 51,
+          "transcricao_json": "pautas/videos/vozes/flavio-bolsonaro/7688877245028519189.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "corte de fala do candidato (bancada/estúdio com arte \"22\")",
+          "resumo": "\"Soberania da segurança pública\": retomar cada metro, rua, bairro e cidade do crime; segunda metade ataca Lula (evitar).",
+          "temas": [
+            "segurança",
+            "ataque a adversário"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Flávio Bolsonaro, TikTok @flaviobolsonaro, 2026-09-23",
+          "trechos_sugeridos": [
+            {
+              "inicio": 0.0,
+              "fim": 7.4,
+              "texto": "E eu vou trabalhar todos os dias para reconquistar a maior de todas as soberanias, que é a soberania da Segurança Pública."
+            },
+            {
+              "inicio": 14.0,
+              "fim": 25.0,
+              "texto": "Cada metro quadrado, depois cada rua, depois cada bairro, depois cada cidade, nós vamos retomar para o domínio do governo, para garantir o mínimo para você que é a Segurança Pública."
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@flaviobolsonaro/video/7686580263350193429",
+          "rede": "tiktok",
+          "perfil": "@flaviobolsonaro",
+          "data": "2026-09-17",
+          "duracao_s": 41,
+          "transcricao_json": "pautas/videos/vozes/flavio-bolsonaro/7686580263350193429.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "fala em comício, dirigida a uma criança no palco (Mariah)",
+          "resumo": "No palco, promete a uma criança um Brasil melhor, com estudo de qualidade e empreendedorismo.",
+          "temas": [
+            "futuro",
+            "educação",
+            "família"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Flávio Bolsonaro, TikTok @flaviobolsonaro, 2026-09-17",
+          "trechos_sugeridos": [
+            {
+              "inicio": 0.4,
+              "fim": 11.4,
+              "texto": "Mariah, o tio Flávio vai deixar o Brasil muito melhor pra você, tá, e pra sua geração. Você vai ter estudo de qualidade."
+            }
+          ]
+        }
+      ],
+      "pendencias": [
+        "7688877245028519189: 25–51 s é ataque a Lula (usar 0–25 s). 7686580263350193429 envolve criança no palco — usar só o áudio, nunca a imagem."
+      ]
+    },
+    {
+      "id": "ronaldo-caiado",
+      "nome": "Ronaldo Caiado",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "PSD",
+      "numero": 55,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/ronaldocaiado/"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@ronaldocaiado55"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@ronaldocaiado"
+        },
+        {
+          "rede": "site",
+          "url": "https://ronaldocaiado.com.br/"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@ronaldocaiado/video/7688908634490785044",
+          "rede": "tiktok",
+          "perfil": "@ronaldocaiado",
+          "data": "2026-09-24",
+          "duracao_s": 35,
+          "transcricao_json": "pautas/videos/vozes/ronaldo-caiado/7688908634490785044.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "corte de entrevista/fala do candidato (microfone de lapela/headset), arte \"Caiado 55\"",
+          "resumo": "Promete \"despachar\" de dentro das áreas mais violentas (Complexo do Alemão, Penha, Salvador, Ceará): \"o Estado não se ajoelha para bandido\".",
+          "temas": [
+            "segurança",
+            "crime organizado"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Ronaldo Caiado, TikTok @ronaldocaiado, 2026-09-24",
+          "trechos_sugeridos": [
+            {
+              "inicio": 16.8,
+              "fim": 22.1,
+              "texto": "É para mostrar que o Estado não se ajoelha para bandido, não me ajoelha para bandido."
+            },
+            {
+              "inicio": 4.7,
+              "fim": 11.2,
+              "texto": "Eu visitei o Complexo do Alemão e também o Complexo da Penha. Eu, despachando no Rio de Janeiro, eu vou despachar lá de dentro."
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@ronaldocaiado/video/7689240547499740437",
+          "rede": "tiktok",
+          "perfil": "@ronaldocaiado",
+          "data": "2026-09-24",
+          "duracao_s": 36,
+          "transcricao_json": "pautas/videos/vozes/ronaldo-caiado/7689240547499740437.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "spot de campanha, fala direta à câmera",
+          "resumo": "\"Não te peço que mude de lado\": pede ao eleitor de outro lado uma chance, citando que governou Goiás para todos.",
+          "temas": [
+            "conciliação",
+            "polarização",
+            "pedido de voto"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Ronaldo Caiado, TikTok @ronaldocaiado, 2026-09-24",
+          "trechos_sugeridos": [
+            {
+              "inicio": 0.0,
+              "fim": 6.7,
+              "texto": "Eu sei que você tem lado, eu também tenho e nunca escondi. Não te peço que mude de lado."
+            },
+            {
+              "inicio": 21.0,
+              "fim": 32.8,
+              "texto": "O Brasil já brigou demais. Agora precisa viver, recuperar o tempo perdido. Te peço uma oportunidade para fazer pelo Brasil o que já fiz por Goiás."
+            }
+          ]
+        }
+      ],
+      "pendencias": []
+    },
+    {
+      "id": "renan-santos",
+      "nome": "Renan Santos",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "Missão",
+      "numero": 14,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/renansantosmbl/"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@RenanSantosMBL"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@renansantosmbl"
+        },
+        {
+          "rede": "site",
+          "url": "https://renanpresidente.com.br"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@renansantosmbl/video/7689296826989661460",
+          "rede": "tiktok",
+          "perfil": "@renansantosmbl",
+          "data": "2026-09-25",
+          "duracao_s": 104,
+          "transcricao_json": "pautas/videos/vozes/renan-santos/7689296826989661460.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "fala direta à câmera (comentando notícia), com prints e imagens de eventos",
+          "resumo": "Diz que Lula e Flávio pediram sua saída do debate da Globo; ataca ambos; afirma crescer entre os jovens.",
+          "temas": [
+            "debate",
+            "imprensa",
+            "ataque a adversário"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Renan Santos, TikTok @renansantosmbl, 2026-09-25",
+          "trechos_sugeridos": [
+            {
+              "inicio": 84.0,
+              "fim": 90.8,
+              "texto": "Se eu sou um sujeito tão irrelevante porque eles têm tanto medo, as imagens que você está vendo mostram o contrário. Nós estamos crescendo e muito entre os mais jovens."
+            },
+            {
+              "inicio": 101.6,
+              "fim": 104.4,
+              "texto": "Meu nome é Renan Santos e eu sou seu candidato à presidência da República."
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@renansantosmbl/video/7689134789298900230",
+          "rede": "tiktok",
+          "perfil": "@renansantosmbl",
+          "data": "2026-09-24",
+          "duracao_s": 117,
+          "transcricao_json": "pautas/videos/vozes/renan-santos/7689134789298900230.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "\"nota oficial da campanha\" gravada pelo candidato, fala direta à câmera (dentro de ônibus/van)",
+          "resumo": "Nota da campanha contra a retirada dele do debate da Globo; convoca ato no Rio; \"eu represento um Brasil honesto que destrói o crime organizado\".",
+          "temas": [
+            "debate",
+            "imprensa",
+            "ataque a adversário"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Renan Santos, TikTok @renansantosmbl, 2026-09-24",
+          "trechos_sugeridos": [
+            {
+              "inicio": 52.2,
+              "fim": 60.6,
+              "texto": "Eu represento a ideia de um Brasil honesto, sincero, que tem proposta, que destrói o crime organizado, que não tem compromisso com ele. Eu represento o teu Brasil."
+            },
+            {
+              "inicio": 106.4,
+              "fim": 112.6,
+              "texto": "E se vocês acham que eu vou desanimar, uma ova. Eu estou na estrada, vou rodar a todos os lugares,"
+            }
+          ]
+        }
+      ],
+      "pendencias": [
+        "Os dois vídeos são majoritariamente confronto com a Globo e ataques a Lula/Flávio; poucos trechos neutros (ver trechos_sugeridos). Buscar vídeo de proposta na próxima rodada."
+      ]
+    },
+    {
+      "id": "augusto-cury",
+      "nome": "Escritor Augusto Cury (Augusto Jorge Cury)",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "Avante",
+      "numero": 70,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/augustocury"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@AugustoCury"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@augustocuryoficial"
+        },
+        {
+          "rede": "site",
+          "url": "https://augustocurypresidente.com.br/"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@augustocuryoficial/video/7689435318180646164",
+          "rede": "tiktok",
+          "perfil": "@augustocuryoficial",
+          "data": "2026-09-25",
+          "duracao_s": 54,
+          "transcricao_json": "pautas/videos/vozes/augusto-cury/7689435318180646164.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "spot de proposta: voz sobre imagens (ensino técnico, Programa Acolher) e fecho com o candidato à câmera",
+          "resumo": "Três propostas para o ensino médio: técnico integrado, tempo integral com gestão da emoção/educação financeira e Programa Acolher (monitoria, autismo, TDAH, dislexia).",
+          "temas": [
+            "educação",
+            "ensino técnico",
+            "saúde mental"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Escritor Augusto Cury, TikTok @augustocuryoficial, 2026-09-25",
+          "trechos_sugeridos": [
+            {
+              "inicio": 43.8,
+              "fim": 49.1,
+              "texto": "Um forte abraço de Augusto Cury, o Brasil tem cura, vote 70."
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@augustocuryoficial/video/7688345469189246229",
+          "rede": "tiktok",
+          "perfil": "@augustocuryoficial",
+          "data": "2026-09-22",
+          "duracao_s": 51,
+          "transcricao_json": "pautas/videos/vozes/augusto-cury/7688345469189246229.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "corte de podcast (ele ao microfone) com arte \"Augusto Cury 70\", respondendo a fala de Zema",
+          "resumo": "Rebate Zema sobre escola particular x pública; propõe educação financeira, empreendedorismo, teatro/oratória e mais ensino técnico.",
+          "temas": [
+            "educação",
+            "escola pública",
+            "ensino técnico"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Escritor Augusto Cury, TikTok @augustocuryoficial, 2026-09-22",
+          "trechos_sugeridos": [
+            {
+              "inicio": 4.9,
+              "fim": 15.1,
+              "texto": "eu fiquei muito desconfortável com isso, porque para mim a escola pública ela tem que ser resgatada, a educação precisa ser repaginada completamente,"
+            },
+            {
+              "inicio": 40.9,
+              "fim": 50.8,
+              "texto": "valoriza os seus jovens é um país irresponsável, nós vamos revolucionar a escola pública de fato como nunca ocorreu"
+            }
+          ]
+        }
+      ],
+      "pendencias": [
+        "7689435318180646164: 0–43,8 s é voz em off NÃO confirmada por imagem (provavelmente ele) — preferir o fecho ou 7688345469189246229."
+      ]
+    },
+    {
+      "id": "zema",
+      "nome": "Zema (Romeu Zema Neto)",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "Novo",
+      "numero": 30,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/romeuzemaoficial"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@romeuzemaoficial"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@romeuzemaoficial"
+        },
+        {
+          "rede": "site",
+          "url": "https://www.zema30.com.br/"
+        }
+      ],
+      "tem_voz_real": true,
+      "videos": [
+        {
+          "url": "https://www.tiktok.com/@romeuzemaoficial/video/7688895243458039060",
+          "rede": "tiktok",
+          "perfil": "@romeuzemaoficial",
+          "data": "2026-09-24",
+          "duracao_s": 36,
+          "transcricao_json": "pautas/videos/vozes/zema/7688895243458039060.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "corte de podcast com imagens de operação policial, arte \"Zema 30\" (\"Os intocáveis têm medo\")",
+          "resumo": "Cita a ação policial de Varginha (2021) e diz que o \"novo cangaço\" caiu mais de 99% em Minas.",
+          "temas": [
+            "segurança",
+            "novo cangaço",
+            "balanço de gestão (MG)"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Zema, TikTok @romeuzemaoficial, 2026-09-24",
+          "trechos_sugeridos": [
+            {
+              "inicio": 15.8,
+              "fim": 27.1,
+              "texto": "Depois dessa ação em Minas Gerais, nós tivemos uma redução superior a 99% em ações do novo cangaço no Estado."
+            }
+          ]
+        },
+        {
+          "url": "https://www.tiktok.com/@romeuzemaoficial/video/7688509113776590101",
+          "rede": "tiktok",
+          "perfil": "@romeuzemaoficial",
+          "data": "2026-09-22",
+          "duracao_s": 73,
+          "transcricao_json": "pautas/videos/vozes/zema/7688509113776590101.json",
+          "fala_do_candidato": true,
+          "audio_baixado": true,
+          "tipo": "corte de podcast (ele ao microfone) com fotos de família, legenda \"Poucos sabem dessa história...\"",
+          "resumo": "Conta que foi \"pai e mãe\" e propõe CRAS + Defensoria Pública acompanhando mães solo para garantir pensão e direitos.",
+          "temas": [
+            "assistência social",
+            "mães solo",
+            "família"
+          ],
+          "credito": "Áudio: propaganda eleitoral de Zema, TikTok @romeuzemaoficial, 2026-09-22",
+          "trechos_sugeridos": [
+            {
+              "inicio": 0.0,
+              "fim": 6.0,
+              "texto": "Eu sei falar muito bem desse tema porque eu já fui durante um bom período da minha vida pai e mãe"
+            },
+            {
+              "inicio": 18.0,
+              "fim": 27.0,
+              "texto": "Então entendo perfeitamente, nós temos de estruturar, e a minha proposta é esta, uma área de assistência social para essas mães"
+            }
+          ]
+        }
+      ],
+      "pendencias": [
+        "7688895243458039060: tema sensível (confronto policial com 28 mortos em Varginha) — avaliar antes de usar em sátira."
+      ]
+    },
+    {
+      "id": "clariana-barao",
+      "nome": "Clariana Barão",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "DC",
+      "numero": 27,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/clarianabarao"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@ClarianaBar%C3%A3oo"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@clarianabr"
+        }
+      ],
+      "tem_voz_real": false,
+      "videos": [],
+      "pendencias": [
+        "Fora da lista de prioridade desta rodada — não pesquisado. O TikTok @clarianabr lista vídeos recentes pelo embed (ex.: 7683637895332203794, feminicídio, 2026-09-09) — dá para baixar na próxima rodada."
+      ]
+    },
+    {
+      "id": "edmilson-costa",
+      "nome": "Edmilson Costa",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "PCB",
+      "numero": 21,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/edpcb/"
+        }
+      ],
+      "tem_voz_real": false,
+      "videos": [],
+      "pendencias": [
+        "Fora da lista de prioridade desta rodada — não pesquisado. Só Instagram declarado (bloqueado nesta máquina, HTTP 429)."
+      ]
+    },
+    {
+      "id": "hertz-dias",
+      "nome": "Hertz Dias",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "PSTU",
+      "numero": 16,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/hertzdiaspstu"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@canaldohertz"
+        }
+      ],
+      "tem_voz_real": false,
+      "videos": [],
+      "pendencias": [
+        "Fora da lista de prioridade desta rodada — não pesquisado. Instagram (429) e YouTube @canaldohertz (download barrado, 403)."
+      ]
+    },
+    {
+      "id": "leonardo-avalanche",
+      "nome": "Leonardo Avalanche",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "PRTB",
+      "numero": 28,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/leonardoavalanche/"
+        }
+      ],
+      "tem_voz_real": false,
+      "videos": [],
+      "pendencias": [
+        "Fora da lista de prioridade desta rodada — não pesquisado. Só Instagram declarado (bloqueado nesta máquina, HTTP 429)."
+      ]
+    },
+    {
+      "id": "rui-costa-pimenta",
+      "nome": "Rui Costa Pimenta",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "PCO",
+      "numero": 29,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/ruicpimenta/"
+        },
+        {
+          "rede": "youtube",
+          "url": "https://www.youtube.com/@rcp29"
+        }
+      ],
+      "tem_voz_real": false,
+      "videos": [],
+      "pendencias": [
+        "Fora da lista de prioridade desta rodada — não pesquisado. Instagram (429) e YouTube @rcp29 (download barrado, 403)."
+      ]
+    },
+    {
+      "id": "samara",
+      "nome": "Samara (Samara Martins)",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "UP",
+      "numero": 80,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/samaramartinsup"
+        },
+        {
+          "rede": "tiktok",
+          "url": "https://www.tiktok.com/@samara.martinsup"
+        }
+      ],
+      "tem_voz_real": false,
+      "videos": [],
+      "pendencias": [
+        "Fora da lista de prioridade desta rodada — não pesquisado. O TikTok @samara.martinsup lista vídeos recentes pelo embed (ex.: 7687038854762745108, 2026-09-19)."
+      ]
+    },
+    {
+      "id": "wilson-grassi",
+      "nome": "Veterinário Wilson Grassi",
+      "cargo": "presidente",
+      "esfera": "nacional",
+      "partido": "Democrata",
+      "numero": 35,
+      "perfis": [
+        {
+          "rede": "instagram",
+          "url": "https://www.instagram.com/veterinariowilsongrassioficial/"
+        },
+        {
+          "rede": "site",
+          "url": "https://veterinariowilsongrassi.com.br"
+        }
+      ],
+      "tem_voz_real": false,
+      "videos": [],
+      "pendencias": [
+        "Fora da lista de prioridade desta rodada — não pesquisado. Só Instagram/site declarados (Instagram bloqueado nesta máquina, HTTP 429)."
+      ]
+    }
+  ]
+}

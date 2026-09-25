@@ -1,0 +1,80 @@
+{
+  "candidato": "Sargento Laudicério (Laudicério Aguiar Machado)",
+  "id_candidato": "sargento-laudicerio",
+  "cargo": "governador",
+  "esfera": "estadual",
+  "partido": "Agir",
+  "numero": 36,
+  "id": "7678137299942591765",
+  "url": "https://www.tiktok.com/@sargentolau/video/7678137299942591765",
+  "rede": "tiktok",
+  "perfil": "@sargentolau",
+  "perfil_url": "https://www.tiktok.com/@sargentolau",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@sargentolau); uploader do vídeo = sargentolau / sargentolau",
+  "data": "2026-08-26",
+  "duracao_s": 36,
+  "titulo": "O servidor público precisa ser respeitado e valorizado. Direitos não ...",
+  "descricao": "O servidor público precisa ser respeitado e valorizado. Direitos não são favores! A partir de 2027, vamos construir um movimento forte, organizado e unido para defender carreiras, remuneração digna e melhores condições de trabalho. Quem cuida da população também merece ser cuidado pelo Estado. Servidor valorizado significa serviço público de qualidade para todos os mato-grossenses. Sargento Laudicério (Lau) – 36 Candidato a Governador de Mato Grosso #ServidorPúblico #ValorizaçãoDoServidor #MatoGrosso #SargentoLau #Lau36  ",
+  "tipo": "trecho de entrevista na TV (TV Vila Real/Record, \"Entrevistas: candidato ao governo\") repostado no perfil do candidato",
+  "fala_do_candidato": true,
+  "resumo": "Diz que o servidor público vai apoiá-lo e que, como governador, vai \"homologar\" as reivindicações dos servidores.",
+  "temas": [
+    "servidores públicos"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 6.24,
+      "text": "Relacionado ao servidor público, eu quero dizer o seguinte, não há como ele não nos apoiar,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 6.24,
+      "end": 12.8,
+      "text": "não nos apoiarmos, e por conta da seguinte forma, para em 2027, 2028, está todos fazendo",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 12.8,
+      "end": 19.0,
+      "text": "movimento para fazer manifesto, ou chamada de ordem, em frente aos órgãos públicos",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 19.0,
+      "end": 23.92,
+      "text": "para reivindicar a necessidade, então o Laudicério como governador vai homologar",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 23.92,
+      "end": 30.4,
+      "text": "a necessidade da população mato-grossense do servidor público e principalmente",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 30.4,
+      "end": 35.88,
+      "text": "das pessoas que trazem serviço, bens e serviços para a nossa comunidade e nossa",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 35.88,
+      "end": 36.92,
+      "text": "população mato-grossense.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 19.0,
+      "fim": 30.4,
+      "texto": "para reivindicar a necessidade, então o Laudicério como governador vai homologar a necessidade da população mato-grossense do servidor público e principalmente",
+      "tema": "servidores"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Sargento Laudicério, TikTok @sargentolau, 2026-08-26",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/sargento-laudicerio/7678137299942591765.mp4 (não versionado)",
+  "obs": "Voz do candidato do início ao fim (conferido em quadros aos 3, 20 e 33 s: ele fala; tarja \"Entrevistas: candidato ao governo ... Laudicério Machado\"). É trecho de ENTREVISTA DE TV repostado por ele, não spot. Fala de si na 3ª pessoa (\"o Laudicério como governador\"). Frases truncadas; ASR com \"mato-grossense\" corrigido."
+}

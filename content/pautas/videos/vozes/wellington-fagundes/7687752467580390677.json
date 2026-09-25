@@ -1,0 +1,173 @@
+{
+  "candidato": "Wellington Fagundes (Wellington Antonio Fagundes)",
+  "id_candidato": "wellington-fagundes",
+  "cargo": "governador",
+  "esfera": "estadual",
+  "partido": "PL",
+  "numero": 22,
+  "id": "7687752467580390677",
+  "url": "https://www.tiktok.com/@senwellingtonfagundes/video/7687752467580390677",
+  "rede": "tiktok",
+  "perfil": "@senwellingtonfagundes",
+  "perfil_url": "https://www.tiktok.com/@senwellingtonfagundes",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@senwellingtonfagundes); uploader do vídeo = senwellingtonfagundes / Wellington Fagundes",
+  "data": "2026-09-20",
+  "duracao_s": 76,
+  "titulo": "Cuiabá merece planejamento, não improviso. Antes de apresentar qualqu...",
+  "descricao": "Cuiabá merece planejamento, não improviso. Antes de apresentar qualquer proposta como governador, é preciso estudar, conhecer a realidade e entender se aquilo realmente pode ser feito. Não dá para simplesmente sugerir. Eu ajudei a articular e trabalhei para que a Ponte Sérgio Motta se tornasse realidade. Por isso, conheço a importância de pensar Cuiabá e Várzea Grande com planejamento e responsabilidade. Quando ouço algumas declarações do atual governador sobre a Orla do Porto, vejo que esse debate precisa ir muito além das palavras. Eu tenho um projeto para a Orla do Porto. Um projeto estudado, viável e pensado para transformar de verdade essa região, valorizando sua história, o turismo, o comércio e, principalmente, as pessoas.",
+  "tipo": "vídeo de campanha à beira do rio Cuiabá: exibe vídeo de adversário no celular e apresenta proposta própria",
+  "fala_do_candidato": true,
+  "resumo": "Critica proposta de \"praia\" no rio Cuiabá e propõe ligar o Cais do Porto à ponte, passarela, concluir o BRT e revitalizar o centro.",
+  "temas": [
+    "urbanismo",
+    "rio Cuiabá",
+    "BRT",
+    "mobilidade"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 5.4,
+      "text": "Tem coragem de fazer alguma coisa ousada, porque hoje o Cuiabá tá de costas pro rio.",
+      "voz": "ADVERSÁRIO (Pivetta, vídeo exibido no celular) — NÃO usar"
+    },
+    {
+      "start": 5.4,
+      "end": 10.6,
+      "text": "O que tu vê aqui é como se o povo só usa isso, é só pra calhar aqui.",
+      "voz": "ADVERSÁRIO (Pivetta, vídeo exibido no celular) — NÃO usar"
+    },
+    {
+      "start": 10.6,
+      "end": 12.4,
+      "text": "E botar areia aqui, ó.",
+      "voz": "ADVERSÁRIO (Pivetta, vídeo exibido no celular) — NÃO usar"
+    },
+    {
+      "start": 12.4,
+      "end": 17.6,
+      "text": "Fazer uma praia aqui, areia e grama, areia e grama, faixa de grama e areia.",
+      "voz": "ADVERSÁRIO (Pivetta, vídeo exibido no celular) — NÃO usar"
+    },
+    {
+      "start": 18.8,
+      "end": 20.4,
+      "text": "Que absurdo!",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 20.4,
+      "end": 26.6,
+      "text": "O candidato governador propôs invadir as matas ciliares do rio Cuiabá,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 26.8,
+      "end": 31.4,
+      "text": "fazer praia, jogar areia, que isso aqui só serve para...",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 31.4,
+      "end": 32.8,
+      "text": "que eu não tenho o coragem de falar.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 32.8,
+      "end": 36.4,
+      "text": "O meu projeto é interligar o cais do porto com a ponte.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 36.4,
+      "end": 39.4,
+      "text": "Pense como esta que eu trouxe aqui junto com o Dante,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 39.4,
+      "end": 41.0,
+      "text": "só pra pedestre, essa ponte.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 41.0,
+      "end": 44.2,
+      "text": "valorizando a margem direita do rio Cuiabá, em Várzea Grande,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 44.2,
+      "end": 48.4,
+      "text": "interligando com a passarela ao parque de exposição [nome incerto],",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 48.4,
+      "end": 51.2,
+      "text": "revitalizando, construindo estacionamentos",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 51.2,
+      "end": 54.2,
+      "text": "e também concluindo o BRT, que até hoje eles não terminaram",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 54.2,
+      "end": 57.0,
+      "text": "e faziam a linha expressa ao centro comercial,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 57.0,
+      "end": 60.0,
+      "text": "revitalizando o nosso comércio e também o centro histórico,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 60.0,
+      "end": 63.8,
+      "text": "será que eles querem fazer a mesma agressão no Morro de Santo Antônio?",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 63.8,
+      "end": 66.8,
+      "text": "O governo humano é o Wellington Fagundes,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 66.8,
+      "end": 70.28,
+      "text": "o Wellington 22.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 70.28,
+      "end": 72.88,
+      "text": "É o Wellington Fagundes, nosso governador.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 32.8,
+      "fim": 41.0,
+      "texto": "O meu projeto é interligar o cais do porto com a ponte. Pense como esta que eu trouxe aqui junto com o Dante, só pra pedestre, essa ponte.",
+      "tema": "urbanismo/rio Cuiabá"
+    },
+    {
+      "inicio": 48.4,
+      "fim": 60.0,
+      "texto": "revitalizando, construindo estacionamentos e também concluindo o BRT, que até hoje eles não terminaram e faziam a linha expressa ao centro comercial, revitalizando o nosso comércio e também o centro histórico,",
+      "tema": "mobilidade/BRT"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Wellington Fagundes, TikTok @senwellingtonfagundes, 2026-09-20",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/wellington-fagundes/7687752467580390677.mp3 (não versionado)",
+  "obs": "0–17,6 s é o ÁUDIO DO ADVERSÁRIO (Pivetta falando em vídeo exibido no celular; quadros aos 3 e 12 s) — NUNCA usar como voz de Wellington. De 18,8 s em diante é Wellington à beira do rio (quadros aos 22, 35 e 50 s). 18,8–32,8 s é crítica à proposta do adversário (evitar); 32,8–60 s é proposta própria (Cais do Porto–ponte, passarela, BRT, centro histórico). Nomes próprios incertos no ASR (\"Dante\", \"Jonas I\"). O fecho 63,8 s em diante parece locutor/jingle (\"Wellington 22\"; quadro aos 68 s é arte) — não confirmado."
+}
