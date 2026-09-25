@@ -50,7 +50,7 @@ Pedido do editor (24/09): "buscar conteúdo tce mt e novas polêmicas" (Reel do 
 - Número de famílias: 145 segundo o release e três veículos, 'quase 200' segundo o MidiaNews. Não está claro se a base dos 90,3% são as 145 famílias. Os dados são preliminares.
 - O nome oficial do Campi diverge entre 'Centro de Acolhimento Social' e 'Centro de Atividades Multidisciplinar de Apoio Pedagógico Inclusivo'.
 - O valor de 'R$ 980 mil por mês' do contrato estadual aparece no condicional nas fontes e não foi usado.
-- Transcrever os vídeos oficiais UItHpk4c7bQ e FOuGzDoNH_k; até agora, só o título e a data foram conferidos. Não há vídeo oficial da reunião de 24/09 no feed. O link da Muvuca está na lista de fontes, mas não no texto; manter ou tirar.
+- Transcrever os vídeos oficiais UItHpk4c7bQ e FOuGzDoNH_k; até agora, só o título e a data foram conferidos. O vídeo oficial da reunião de 24/09 saiu no feed em 25/09 (DlKj0rqJ8x0, 'Sérgio Ricardo recebe famílias atípicas que denunciam problemas no atendimento da rede estadual', 17h40 UTC); só título e data conferidos, falta transcrever (pode servir de segunda fonte para o trecho Alan Porto/TRE-MT). O link da Muvuca está na lista de fontes, mas não no texto; manter ou tirar.
 
 **Fontes:**
 
@@ -64,6 +64,7 @@ Pedido do editor (24/09): "buscar conteúdo tce mt e novas polêmicas" (Reel do 
 - https://www.vgnoticias.com.br/cidades/prefeitura-admite-atraso-apos-campi-suspender-atendimento-a-criancas-atipicas-em-vg/151874
 - https://www.midianews.com.br/politica/tce-alerta-para-risco-de-fechamento-do-campi-em-varzea-grande/529178
 - https://www.youtube.com/watch?v=UItHpk4c7bQ
+- https://www.youtube.com/watch?v=DlKj0rqJ8x0 (vídeo oficial do TCE-MT de 25/09 sobre o encontro de 24/09 com as famílias atípicas, que já estava coberto no rascunho)
 
 ## Rondonópolis: TCE-MT manteve em 8/9 o veto ao sorteio de carros para professores
 
@@ -136,7 +137,7 @@ Pedido do editor (24/09): "buscar conteúdo tce mt e novas polêmicas" (Reel do 
 - Água Boa: não está claro se a decisão foi singular ou colegiada (o Jornal Advogado fala em 'colegiado' e 'medida cautelar'; o Infoverus atribui a decisão ao conselheiro). Uma fala do prefeito em junho (Informa Araguaia, 23/06: 'apresentará todas as planilhas e documentos exigidos') pode complementar o outro lado. Não há manifestação dele sobre a multa.
 - Contexto do Cidesat: a concorrência foi suspensa em junho, e a suspensão foi revogada depois de recurso e de reduções de preço (de cerca de R$ 236 mi para R$ 202,1 mi). A representação foi da concorrente Elétrica Radiante. A multa de 10 UPFs recai sobre Jadilson Alves de Souza (prefeito de Curvelândia) e Dariu Antonio Carniel, só em caso de descumprimento.
 - Ouvir o Cidesat, a Vetor Energia e Logística, a Sefaz, as prefeituras de Tangará da Serra, Aripuanã e Pontes e Lacerda e o prefeito de Água Boa.
-- Não foi achada, com duas fontes, nenhuma conta de prefeitura reprovada em setembro. A licitação de Itanhangá, mantida suspensa em 15/09, tem uma fonte só (Muvuca).
+- Não foi achada, com duas fontes, nenhuma conta de prefeitura reprovada em setembro. A licitação de Itanhangá, mantida suspensa em 15/09, tinha uma fonte só (Muvuca); em 25/09 ganhou vídeo oficial e virou pauta própria (seção Itanhangá, abaixo).
 
 **Fontes:**
 
@@ -152,3 +153,31 @@ Pedido do editor (24/09): "buscar conteúdo tce mt e novas polêmicas" (Reel do 
 - https://ftnbrasil.com.br/contrato-de-r-31-8-milhoes-para-hospital-e-suspenso-pelo-tribunal-de-contas-de-mato-grosso/
 - https://www.sonoticias.com.br/politica/tribunal-de-contas-mantem-suspensos-pregoes-de-r-172-milhoes-de-prefeitura-em-mato-grosso/
 - https://rdmonline.com.br/tce-suspende-licitacoes-de-r-172-milhoes-em-mt/
+
+## Itanhangá: TCE-MT mantém suspensa licitação que só aceitava atestado do setor público
+
+- Rascunho: https://hojemt.com.br/p/2e3328bc-776d-48b9-98b0-f281530cac41/ (id 6ab6f66b834d62060cb1d763, tag Cidades & Mato Grosso)
+- Sutiã: O relator, Alisson Alencar, achou razoável a inabilitação da empresa que recorreu, mas viu contradição nas regras: o aviso só aceitava atestado de ente público; o termo de referência, também de empresa privada
+- Arte: pautas/ilustracoes/2026-09-25-tce-itanhanga-licitacao.jpg (Canva DAHWPky7-ww) · card pautas/cards/2026-09-25-tce-itanhanga-licitacao-instagram-retrato.jpg (Canva DAHWPsGrutA) · agenda do Instagram item 56 (aguardando_materia)
+- Origem: monitor do TCE-MT, vídeo oficial DhShurxPhis (25/09, 13h50 UTC)
+
+**Checagem pendente:**
+
+- REVISÃO DO EDITOR: a pauta dava a "exigência cumulativa de experiência em e-social ou gestão de pessoal" como motivo da suspensão. Pelo texto do TCE, isso é alegação da empresa representante; o relator achou razoável a justificativa da prefeitura nesse ponto e manteve a cautelar pela exigência de atestado só de pessoa jurídica de direito público, sem justificativa técnica, e pela contradição entre o aviso e o termo de referência.
+- Vídeo oficial DhShurxPhis: só título e data conferidos (oEmbed e RSS do canal); o YouTube bloqueou legenda e download ("Sign in to confirm you're not a bot"). A descrição do vídeo traz, por erro, texto de outro assunto ("Tribunal realiza Painel de Referência sobre auditoria do Fundo Nacional de Segurança Pública"). Ouvir o vídeo e achar o item de Itanhangá na 13ª sessão ordinária de 15/09 (NVujAcJDkRU) para conferir a votação unânime e a frase entre aspas.
+- Os quatro veículos reproduzem o mesmo texto da assessoria do TCE (o Ponto na Curva credita a assessoria; o Só Notícias não nomeia a empresa). Não são fontes independentes; a frase entre aspas tem uma só origem. O Isso É Notícia também publicou (bloqueado por Cloudflare, não lido).
+- A ligação com a Dispensa de Licitação Eletrônica nº 15/2026 (PNCP 07209225000100-1-000034/2026) foi feita pelo HOJE MT: mesmo objeto (eSocial, DCTFWeb e EFD-Reinf; Secretaria de Administração), e o aviso (item 5.3.4.1) pede atestado de "pessoa jurídica de direito público" com "e-Social ou gestão de pessoal no Setor Público", enquanto o termo de referência (item 9.5) aceita "direito público ou privado". Confirmar o número do processo no TCE.
+- PNCP: valor estimado R$ 32.248,08; resultado em 31/07; contrato nº 57 assinado em 03/08/2026 (vigência até 03/08/2027), R$ 22.999,92, com SINEX Contabilidade de Gestão Governamental Ltda. (CNPJ 05.604.230/0001-83). O nome da vencedora ficou fora do texto porque o TCE não a cita; se entrar, ouvir a empresa, já que a representante falou em "indícios de direcionamento" (o texto do TCE não diz como o voto tratou esse ponto). Verificar se a cautelar suspendeu o contrato.
+- Conferir no Diário Oficial de Contas a data da decisão singular e o número do processo (site do TCE inacessível: conexão recusada).
+- Ouvir a Prefeitura de Itanhangá (licitacao@itanhanga.mt.gov.br, (66) 98149-0250, contatos do aviso), a DRP Medicina e Gestão Ocupacional Ltda. e a assessoria do TCE-MT.
+
+**Fontes:**
+
+- https://www.youtube.com/watch?v=DhShurxPhis
+- https://www.pontonacurva.com.br/executivo/licitacao-e-suspensa-por-indicios-de-restricao-a-competitividade-em-mt/35035
+- https://www.muvucapopular.com.br/2026/09/16/tce-mantem-suspensao-de-licitacao-de-prefeitura-para-assessoria-administrativa/
+- https://cidadaoconsumidor.com.br/tce-mt-mantem-suspensa-licitacao-de-itanhanga-por-possivel-restricao-a-competitividade/
+- https://www.sonoticias.com.br/politica/tce-mantem-suspensa-licitacao-da-prefeitura-no-nortao-por-possivel-restricao-a-concorrencia/
+- https://pncp.gov.br/app/editais/07209225000100/2026/34
+- https://pncp.gov.br/pncp-api/v1/orgaos/07209225000100/compras/2026/34/arquivos/3
+- https://pncp.gov.br/app/contratos/07209225000100/2026/48

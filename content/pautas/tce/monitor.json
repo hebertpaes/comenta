@@ -18,9 +18,9 @@
   "https://www.olhardireto.com.br"
  ],
  "ultimo_video_visto": {
-  "id": "Olgww1jsu-U",
-  "titulo": "TCE-MT entrega Carta de Compromissos pela Primeira Infância e Educação aos candidatos ao Governo",
-  "publicado": "2026-09-24T13:51"
+  "id": "DlKj0rqJ8x0",
+  "titulo": "Sérgio Ricardo recebe famílias atípicas que denunciam problemas no atendimento da rede estadual",
+  "publicado": "2026-09-25T17:40"
  },
  "ultima_sessao_vista": {
   "id": "NVujAcJDkRU",
@@ -80,6 +80,16 @@
    "arte": "pautas/ilustracoes/2026-09-25-tce-contratacoes-sobrepreco.jpg",
    "instagram": "agenda 41 (aguardando_materia)",
    "origem": "apuração em várias fontes (workflow de 24/09) + canal oficial do TCE-MT"
+  },
+  {
+   "data": "2026-09-25",
+   "slug": "itanhanga-tce-mt-mantem-suspensa-licitacao-que-so-aceitava-atestado-do-setor-publico",
+   "status": "rascunho",
+   "ghost_id": "6ab6f66b834d62060cb1d763",
+   "rascunho": "https://hojemt.com.br/p/2e3328bc-776d-48b9-98b0-f281530cac41/",
+   "arte": "pautas/ilustracoes/2026-09-25-tce-itanhanga-licitacao.jpg",
+   "instagram": "agenda 56 (aguardando_materia)",
+   "origem": "vídeo oficial DhShurxPhis (25/09) + texto do TCE reproduzido por 4 veículos (16/09) + PNCP (Dispensa Eletrônica 15/2026 de Itanhangá)"
   }
  ],
  "transcricoes": [
@@ -107,8 +117,8 @@
   }
  ],
  "ultima_verificacao": {
-  "data": "2026-09-25T02:40Z",
-  "rss": "sem vídeo novo desde Olgww1jsu-U (24/09 13:51)",
+  "data": "2026-09-25T22:47Z",
+  "rss": "vídeos novos desde Olgww1jsu-U: kSNRkkPaDcU (Me Conta, prazos processuais), DhShurxPhis (Itanhangá: virou pauta), BJh_ICPqsnw (MBA Gestão de Cidades, módulo 20), DlKj0rqJ8x0 (famílias atípicas: já coberto no rascunho das terapias; vídeo acrescentado como fonte). Nenhuma sessão plenária nova no feed.",
   "proxima_sessao": "2026-09-29 (terça), presidente promete convocar auditores substitutos se houver ausências"
  }
 }
