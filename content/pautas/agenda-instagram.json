@@ -731,6 +731,36 @@
    "legenda": "CHARGE · Sinop vira ringue\n\nPanfletagem com juiz e cronômetro.\n\nUma panfletagem na Av. Júlio Campos, em Sinop, terminou em confusão entre cabos eleitorais da campanha de Natasha Slhessarenko (PSD) e integrantes do grupo de Vilmar Rigo, o \"Bolsonaro da Shopee\" (Novo), e a PM precisou intervir. Cada lado diz que foi atacado primeiro.\n\nLeia a curta completa: hojemt.com.br/sinop-vira-ringue\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #sinop #eleicoes2026 #matogrosso #hojemt",
    "materia": "https://hojemt.com.br/sinop-vira-ringue/",
    "charge_json": "pautas/charges/2026-09-25-sinop-vira-ringue.json"
+  },
+  {
+   "id": "44",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-10-02T19:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Presidente de time, agora na Assembleia",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-25-presidente-de-time-agora-na-assembleia-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Presidente de time, agora na Assembleia\n\n\"Já fui presidente de time e já fui comentarista.\"\n\nEm encontro em Cuiabá (23/09), o presidente da Assembleia, Max Russi (Podemos), relembrou a trajetória no futebol e no rádio e destacou recursos para o esporte em municípios de MT.\n\nLeia a curta completa: hojemt.com.br/presidente-de-time-agora-na-assembleia\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #esporte #almt #matogrosso #hojemt",
+   "materia": "https://hojemt.com.br/presidente-de-time-agora-na-assembleia/",
+   "charge_json": "pautas/charges/2026-09-25-presidente-de-time-agora-na-assembleia.json"
+  },
+  {
+   "id": "45",
+   "status": "agendado",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": "2026-10-03T07:30:00-04:00",
+   "formato": "charge",
+   "titulo": "Dados na calamidade",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-25-dados-na-calamidade-instagram-retrato.jpg"
+   ],
+   "legenda": "CHARGE · Dados na calamidade\n\nCaixa em calamidade, contrato em banda larga.\n\nEm calamidade financeira desde julho, Várzea Grande assinou em 3/09 um contrato de R$ 23,1 milhões, por 12 meses, com a A F C Engenharia para instalar e manter redes de dados e voz em secretarias da prefeitura.\n\nLeia a curta completa: hojemt.com.br/dados-na-calamidade\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #varzeagrande #matogrosso #hojemt",
+   "materia": "https://hojemt.com.br/dados-na-calamidade/",
+   "charge_json": "pautas/charges/2026-09-25-dados-na-calamidade.json"
   }
  ]
 }

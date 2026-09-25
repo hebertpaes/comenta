@@ -190,6 +190,7 @@ registra origem, data e crédito.
 | Candidatos de MT 2026 (governo e Senado) | ver foto oficial | ids em `pautas/eleicoes/2026-mt-candidatos.json` | TSE/Divulgação (registro 2026) |
 | Fábio Garcia (deputado federal, União) | cabelo escuro curto e cheio, rosto fino, terno azul-marinho | `MAHWK8zhW5A` (foto oficial da Câmara, legislatura atual) | Câmara dos Deputados (bandep/178905). Só referência de desenho. |
 | Elizeu Nascimento (deputado estadual, Novo) | cabelo grisalho bem curto, pele morena, sorriso largo, terno escuro | `MAHWK3X7SaM` (foto oficial da ALMT, recortada no rosto, sem logotipos) | Assembleia Legislativa de MT (perfil 377). Só referência de desenho. |
+| Max Russi (deputado estadual, Podemos; presidente da ALMT) | cabelo claro curto e ralo no alto, rosto largo e corado, terno azul | `MAHWLrtMkZs` (foto oficial da ALMT, recortada no rosto, sem logotipos) | Assembleia Legislativa de MT. Só referência de desenho. |
 | Ludio Cabral / Carlos Fávaro / demais | conferir foto do ano corrente antes de gerar | ver `.json` da última charge de cada um | Commons/Agência Brasil/Câmara/Senado (CC BY) ou galeria oficial do órgão |
 
 No prompt da arte, descrever o visual atual em palavras além de passar as fotos

@@ -1,0 +1,46 @@
+{
+  "slug": "dados-na-calamidade",
+  "titulo": "Dados na calamidade (curta: contrato de R$ 23,1 milhões para rede de dados em Várzea Grande)",
+  "balao": null,
+  "balao_obs": "sem balão: a aspa da curta ('precisa de conexão') não foi localizada em fonte; não usada",
+  "legenda": {
+    "site_16x9": "Caixa em calamidade, contrato de R$ 23 milhões em banda larga.",
+    "instagram_4x5": "Caixa em calamidade, contrato em banda larga."
+  },
+  "contexto": "Contrato de R$ 23.135.643 com a A F C Engenharia e Construções Ltda., assinado em 3/09, por 12 meses, para implantação e manutenção de redes de dados e voz, na vigência do Decreto 68/2026 (calamidade financeira por 180 dias desde 16/07) (RepórterMT).",
+  "fontes": [
+    "https://www.reportermt.com/politica/alvo-de-operacoes-sobre-desvios-em-informatica-e-fiscal-de-contrato-de-r-23-milhoes-para-rede-de-dados-em-varzea-grande/244091"
+  ],
+  "regras_da_cena": "personagens genéricos (nenhuma autoridade desenhada); sem acusação: a charge trata do contraste calamidade x contrato, não de irregularidade",
+  "personagens": [
+    {
+      "nome": "personagens genéricos",
+      "obs": "sem foto de referência"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHWLh6t_SE",
+    "arte_16x9": "MAHWLnCCytk",
+    "design_instagram_4x5": "DAHWLmPTUTY",
+    "arte_4x5": "MAHWLpFXdO4",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "materia": "https://hojemt.com.br/dados-na-calamidade/",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json (item 45, 2026-10-03T07:30:00-04:00)"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-25-dados-na-calamidade.jpg",
+    "instagram_4x5": "2026-09-25-dados-na-calamidade-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-25-dados-na-calamidade.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-dados-na-calamidade-og.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-25-dados-na-calamidade-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 25/09/2026 (antes: charge automática charge-1790317298.webp)"
+}

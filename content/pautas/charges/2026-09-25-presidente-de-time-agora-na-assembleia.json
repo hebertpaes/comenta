@@ -1,0 +1,55 @@
+{
+  "slug": "presidente-de-time-agora-na-assembleia",
+  "titulo": "Presidente de time, agora na Assembleia (curta: Max Russi e os investimentos no esporte)",
+  "balao": {
+    "texto": "Já fui presidente de time e já fui comentarista.",
+    "autor": "Max Russi (Podemos), deputado estadual e presidente da ALMT",
+    "fontes": [
+      "https://odocumento.com.br/de-comentarista-a-apoiador-do-esporte-max-destaca-investimentos-no-setor/",
+      "https://www.hnt.com.br/politica/ja-fui-presidente-de-time-e-comentarista-relembra-max-russi-ao-falar-de-esporte/577105"
+    ],
+    "obs": "O Documento (23/09): \"Eu já fui presidente de time e já fui comentarista\"; HiperNotícias traz a frase no título. A segunda aspa da curta (\"A experiência na rádio me ensinou a falar bem...\") não bate com as fontes (\"A oportunidade na rádio foi muito importante e me ajudou, inclusive, a me comunicar melhor\") — não usada."
+  },
+  "legenda": {
+    "site_16x9": "Na Assembleia, o locutor agora narra a verba.",
+    "instagram_4x5": "O locutor agora narra a verba."
+  },
+  "personagens": [
+    {
+      "nome": "Max Russi",
+      "cargo": "deputado estadual (Podemos), presidente da ALMT",
+      "canva_fotos_referencia": [
+        "MAHWLrtMkZs"
+      ],
+      "origem": "https://storage.al.mt.gov.br/api/v1/download/image/558717",
+      "credito": "Foto oficial: Assembleia Legislativa de MT",
+      "licenca": "foto oficial da ALMT, recortada no rosto (sem logotipos); só referência de desenho",
+      "data_foto": "perfil oficial ALMT (biênio 2023–2025)"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHWLjlh074",
+    "arte_16x9": "MAHWLjxRfE0",
+    "design_instagram_4x5": "DAHWLprRzGM",
+    "arte_4x5": "MAHWLikgb1Q",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "materia": "https://hojemt.com.br/presidente-de-time-agora-na-assembleia/",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json (item 44, 2026-10-02T19:30:00-04:00)"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-25-presidente-de-time-agora-na-assembleia.jpg",
+    "instagram_4x5": "2026-09-25-presidente-de-time-agora-na-assembleia-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-25-presidente-de-time-agora-na-assembleia.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-presidente-de-time-agora-na-assembleia-og.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-25-presidente-de-time-agora-na-assembleia-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 25/09/2026 (antes: charge automática charge-1790317306.webp)"
+}
