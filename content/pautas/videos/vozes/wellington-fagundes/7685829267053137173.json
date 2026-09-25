@@ -1,0 +1,112 @@
+{
+  "candidato": "Wellington Fagundes (Wellington Antonio Fagundes)",
+  "id_candidato": "wellington-fagundes",
+  "cargo": "governador",
+  "esfera": "estadual",
+  "partido": "PL",
+  "numero": 22,
+  "id": "7685829267053137173",
+  "url": "https://www.tiktok.com/@senwellingtonfagundes/video/7685829267053137173",
+  "rede": "tiktok",
+  "perfil": "@senwellingtonfagundes",
+  "perfil_url": "https://www.tiktok.com/@senwellingtonfagundes",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@senwellingtonfagundes); uploader do vídeo = senwellingtonfagundes / Wellington Fagundes",
+  "data": "2026-09-15",
+  "duracao_s": 52,
+  "titulo": "Mato Grosso é um estado muito rico. O problema é que essa riqueza est...",
+  "descricao": "Mato Grosso é um estado muito rico. O problema é que essa riqueza está ficando nas mãos de poucos.",
+  "tipo": "trecho de entrevista na TV (programa de entrevistas \"Eleições\") repostado no perfil do candidato com legenda e chamada \"comente QUERO VER\"",
+  "fala_do_candidato": true,
+  "resumo": "Diz que a riqueza de MT fica com poucos e acusa incentivo fiscal de R$ 500 milhões à empresa do governador (ataque; evitar).",
+  "temas": [
+    "economia",
+    "incentivos fiscais",
+    "ataque a adversário"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 4.62,
+      "text": "Mato Grosso, esse estado tão rico está servindo só para poucos.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 4.62,
+      "end": 13.26,
+      "text": "A empresa do atual governador recebeu meio bilhão, 500 milhões de incentivos fiscal,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 13.26,
+      "end": 20.72,
+      "text": "de isenção de imposto enquanto o pequeno produtor, o comerciante está na sobrecarga",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 20.72,
+      "end": 22.22,
+      "text": "de impostos.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 22.22,
+      "end": 25.24,
+      "text": "Você acha justo um estado tão rico como esse?",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 25.24,
+      "end": 29.36,
+      "text": "Candidato, o senhor tem provas disso, o senhor vai fazer alguma denúncia, se",
+      "voz": "entrevistador"
+    },
+    {
+      "start": 29.36,
+      "end": 30.96,
+      "text": "encontrar algum tipo de irregularidade?",
+      "voz": "entrevistador"
+    },
+    {
+      "start": 30.96,
+      "end": 34.76,
+      "text": "Está na minha página, eu fiz questão de antes de vir aqui pro programa,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 34.76,
+      "end": 40.76,
+      "text": "postar, isso faz parte da transparência Brasil, é só ir lá, isso só dá os",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 40.76,
+      "end": 41.76,
+      "text": "oficiais.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 41.76,
+      "end": 46.08,
+      "text": "E olha, eu quero dizer o seguinte, um político que mentir tem que ser",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 46.08,
+      "end": 48.68,
+      "text": "caçado, pegue esses dados, confirme.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 0.0,
+      "fim": 4.6,
+      "texto": "Mato Grosso, esse estado tão rico está servindo só para poucos.",
+      "tema": "economia/desigualdade"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Wellington Fagundes, TikTok @senwellingtonfagundes, 2026-09-15",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/wellington-fagundes/7685829267053137173.v.mp4 (não versionado)",
+  "obs": "ATENÇÃO: trecho de ENTREVISTA DE TV repostado pelo candidato (quadros aos 5 e 15 s: ele em estúdio; aos 27 s aparece o entrevistador na bancada; aos 40 s, tela com dados). Pergunta do entrevistador em 25,2–31,0 s — NÃO usar. Conteúdo é ATAQUE ao governador adversário (incentivo fiscal à empresa dele) — pela regra de não atacar ninguém, evitar como fala de personagem; preferir o vídeo 7688004028847967508 (proposta de saúde)."
+}

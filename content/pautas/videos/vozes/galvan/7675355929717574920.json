@@ -1,0 +1,124 @@
+{
+  "candidato": "Galvan (Antônio Galvan)",
+  "id_candidato": "galvan",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "Avante",
+  "numero": 700,
+  "id": "7675355929717574920",
+  "url": "https://www.tiktok.com/@antonio.galvan.mt/video/7675355929717574920",
+  "rede": "tiktok",
+  "perfil": "@antonio.galvan.mt",
+  "perfil_url": "https://www.tiktok.com/@antonio.galvan.mt",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@antonio.galvan.mt); uploader do vídeo = antonio.galvan.mt / Antônio Galvan",
+  "data": "2026-08-18",
+  "duracao_s": 69,
+  "titulo": "A vaga para o Senado é a mais importante nessa eleição. 😉 Precisamos ...",
+  "descricao": "A vaga para o Senado é a mais importante nessa eleição. 😉 Precisamos de Senadores de CORAGEM. Por isso, PRECISO DO SEU VOTO. #galvané700 #candidatoaosenado #direitaraiz #matogrosso",
+  "tipo": "corte de entrevista em rádio/podcast com arte \"700\" e imagens do Senado, postado no perfil do candidato",
+  "fala_do_candidato": true,
+  "resumo": "Diz que voltou a disputar o Senado para enfrentar ministros do STF e o presidente do Congresso (ataques; evitar); cita Bolsonaro como inspiração.",
+  "temas": [
+    "Senado",
+    "STF",
+    "ataque a adversário"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 6.48,
+      "text": "isso que me trouxe de volta a disputar uma eleição ao Senado por um pedido, porque é lá que precisa,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 6.48,
+      "end": 10.7,
+      "text": "porque não dá para manter mais aqueles ministros que estão lá, uma vergonha, e quantos tem",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 10.7,
+      "end": 16.0,
+      "text": "coragem de ir lá, eu vou impedir mais sim, me perguntaram já, você vai fazer um impeachment,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 16.0,
+      "end": 19.0,
+      "text": "mas mais um pedido de impeachment, mas não, falei, pedido para quê?",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 19.0,
+      "end": 23.36,
+      "text": "Eu acho que uns mil já lá dentro, ao que nós temos que fazer, botar na mesa,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 23.36,
+      "end": 27.64,
+      "text": "fazer botar, tirar aquele vagabundo, para não dizer outra palavra, que está lá o",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 27.64,
+      "end": 32.84,
+      "text": "presidente do Congresso Nacional e do Senado, que deve estar enrolado até o pescoço",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 32.84,
+      "end": 36.58,
+      "text": "como os outros, porque eu já se divulgou, e não deixa botar, não deixa fazer a CPI do",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 36.58,
+      "end": 42.24,
+      "text": "Banco Master, ah, o Flávio deve, o Monte, mas está lá pedindo para quem que não faz a",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 42.24,
+      "end": 47.8,
+      "text": "CPI, mas deixa pura tudo, não é igual encerrar aquela do INSS, e votar contra o",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 47.8,
+      "end": 51.92,
+      "text": "relatório, porque daí ia pegar o monte de ladrão, até o filho do Lula, e",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 51.92,
+      "end": 56.68,
+      "text": "aparecer ele também, então não tem, se alguém disser pode falar o que quiser,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 56.68,
+      "end": 61.48,
+      "text": "inspiração, quiser de ser dado nessa idade, e gestar de comprometimento,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 61.48,
+      "end": 64.48,
+      "text": "chama-se Jair Messias Bolsonaro.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 0.0,
+      "fim": 6.5,
+      "texto": "isso que me trouxe de volta a disputar uma eleição ao Senado por um pedido, porque é lá que precisa,",
+      "tema": "Senado/candidatura"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Galvan, TikTok @antonio.galvan.mt, 2026-08-18",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/galvan/7675355929717574920.v.mp4 (não versionado)",
+  "obs": "Voz do candidato (conferido em quadros aos 5, 30 e 60 s: ele ao microfone). ATENÇÃO: conteúdo de ATAQUE — chama o presidente do Congresso de \"vagabundo\" (23,4–27,6 s), fala de ministros do STF, \"monte de ladrão\", filho do Lula. Pela regra de não atacar ninguém, NÃO usar esses trechos. Transcrição com muitos trechos incertos (36–61 s). Único trecho neutro: o início (motivo da candidatura)."
+}

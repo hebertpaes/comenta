@@ -1,0 +1,37 @@
+{
+  "candidato": "Mauro Mendes",
+  "id_candidato": "mauro-mendes",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "União",
+  "numero": 444,
+  "id": "7689433819249659142",
+  "url": "https://www.tiktok.com/@mauromendesoficial/video/7689433819249659142",
+  "rede": "tiktok",
+  "perfil": "@mauromendesoficial",
+  "perfil_url": "https://www.tiktok.com/@mauromendesoficial",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@mauromendesoficial); uploader do vídeo = mauromendesoficial / Mauro Mendes",
+  "data": "2026-09-25",
+  "duracao_s": 58,
+  "titulo": "Pegamos Mato Grosso cheio de problemas e fomos resolvendo um por um. ...",
+  "descricao": "Pegamos Mato Grosso cheio de problemas e fomos resolvendo um por um. Teve coisa que ficou décadas esperando e a gente foi lá e fez. E ainda tem muita coisa pra fazer! Qual dessas entregas mais marcou a sua cidade? Conta aqui! 👇",
+  "tipo": "vídeo com jingle/música (evento \"Arrancada da Vitória\")",
+  "fala_do_candidato": false,
+  "resumo": "Imagens de campanha com jingle, sem fala.",
+  "temas": [
+    "campanha"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 13.26,
+      "text": "E por fiveta!",
+      "voz": "não é o candidato"
+    }
+  ],
+  "trechos_sugeridos": [],
+  "credito": "Áudio: propaganda eleitoral de Mauro Mendes, TikTok @mauromendesoficial, 2026-09-25",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/mauro-mendes/7689433819249659142.mp3 (não versionado)",
+  "obs": "SEM fala do candidato: o VAD só pegou um trecho do jingle (\"E por fiveta!\", 0–13 s). Não serve como fonte de voz."
+}

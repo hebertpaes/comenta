@@ -1,0 +1,130 @@
+{
+  "candidato": "Janaina Riva (Janaina Greyce Riva Fagundes)",
+  "id_candidato": "janaina-riva",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "MDB",
+  "numero": 150,
+  "id": "7689458698065972501",
+  "url": "https://www.tiktok.com/@janainarivamt/video/7689458698065972501",
+  "rede": "tiktok",
+  "perfil": "@janainarivamt",
+  "perfil_url": "https://www.tiktok.com/@janainarivamt",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@janainarivamt); uploader do vídeo = janainarivamt / Janaina Riva",
+  "data": "2026-09-25",
+  "duracao_s": 64,
+  "titulo": "A criança carrega o trauma pela vida inteira, mas a pena do agressor ...",
+  "descricao": "A criança carrega o trauma pela vida inteira, mas a pena do agressor acaba muito antes. Pena máxima cumprida do primeiro ao último dia, exame criminológico antes de qualquer saída e fim da progressão automática para crime hediondo contra criança. É isso, sem meio-termo. Quem abusa de uma criança não merece segunda chance. Merece prisão perpétua! Senadora Janaina Riva, 150. 🐆💜 #janainariva",
+  "tipo": "vídeo de proposta, fala direta à câmera (estúdio escuro), com legenda",
+  "fala_do_candidato": true,
+  "resumo": "Proposta \"Sem segunda chance\": prisão perpétua, castração química para criminosos sexuais e fim das brechas que reduzem pena.",
+  "temas": [
+    "segurança",
+    "violência contra mulher e criança",
+    "penas"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.11,
+      "end": 4.41,
+      "text": "Um feminicida, um estuprador, ou alguém que abusa de crianças",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 4.41,
+      "end": 9.41,
+      "text": "pode cumprir parte da pena e voltar normalmente em sociedade.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 9.41,
+      "end": 11.51,
+      "text": "Para mim, isso não é justiça.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 11.51,
+      "end": 15.31,
+      "text": "Hoje, a Constituição não permite prisão perpétua",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 15.31,
+      "end": 18.81,
+      "text": "e criminosos perigosos podem voltar às ruas.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 18.81,
+      "end": 22.91,
+      "text": "Quando isso acontece, ninguém sabe quem será a próxima vítima.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 22.91,
+      "end": 27.81,
+      "text": "Por isso, eu quero levar ao Senado a proposta sem segunda chance.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 27.81,
+      "end": 33.41,
+      "text": "Eu vou lutar pela prisão perpétua, pela castração química para criminosos sexuais",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 33.41,
+      "end": 41.87,
+      "text": "e pelo fim das brechas que reduzem o tempo na prisão.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 41.87,
+      "end": 45.07,
+      "text": "Este papel pode até ser aberto novamente,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 45.07,
+      "end": 48.07,
+      "text": "mas nunca volta a ser como antes.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 48.07,
+      "end": 53.87,
+      "text": "A violência também deixa marcas que uma vítima e sua família carregam para sempre.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 53.87,
+      "end": 57.27,
+      "text": "Nenhuma mulher, nenhuma criança e nenhuma família",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 57.27,
+      "end": 61.07,
+      "text": "merece sofrer assim por negligência do nosso Estado.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 22.9,
+      "fim": 33.4,
+      "texto": "Por isso, eu quero levar ao Senado a proposta sem segunda chance. Eu vou lutar pela prisão perpétua, pela castração química para criminosos sexuais",
+      "tema": "segurança/penas"
+    },
+    {
+      "inicio": 41.9,
+      "fim": 48.1,
+      "texto": "Este papel pode até ser aberto novamente, mas nunca volta a ser como antes.",
+      "tema": "violência/vítimas"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Janaina Riva, TikTok @janainarivamt, 2026-09-25",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/janaina-riva/7689458698065972501.mp3 (não versionado)",
+  "obs": "Voz da candidata do início ao fim (conferido em quadros aos 5, 25, 43 e 55 s: ela fala à câmera; aos 43 s amassa um papel como metáfora). Proposta \"Sem segunda chance\" (prisão perpétua, castração química para criminosos sexuais) — tema penal sensível; sem ataque a adversário. ASR corrigido (\"estuprador\", \"abusa de crianças\"); \"sofrer assador\" (57–61 s) é incerto (provável \"sofrer assim\")."
+}

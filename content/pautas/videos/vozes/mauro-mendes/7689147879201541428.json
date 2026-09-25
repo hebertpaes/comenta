@@ -1,0 +1,190 @@
+{
+  "candidato": "Mauro Mendes",
+  "id_candidato": "mauro-mendes",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "União",
+  "numero": 444,
+  "id": "7689147879201541428",
+  "url": "https://www.tiktok.com/@mauromendesoficial/video/7689147879201541428",
+  "rede": "tiktok",
+  "perfil": "@mauromendesoficial",
+  "perfil_url": "https://www.tiktok.com/@mauromendesoficial",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@mauromendesoficial); uploader do vídeo = mauromendesoficial / Mauro Mendes",
+  "data": "2026-09-24",
+  "duracao_s": 73,
+  "titulo": "Disseram que não dava! A gente foi lá e fez! 👊 Escola nova, estrutura...",
+  "descricao": "Disseram que não dava! A gente foi lá e fez! 👊 Escola nova, estrutura de primeira e mais condições para nossos professores ensinarem e nossos alunos aprenderem. É esse tipo de resultado que me dá orgulho! Agradeço também ao meu amigo Tarcísio pelas palavras e a todos os mato-grossenses pelo carinho e pelo reconhecimento nas pesquisas! Quero chegar ao Senado com a mesma coragem para enfrentar os problemas do nosso país e defender Mato Grosso em Brasília. Assista ao nosso programa e me conta qual entrega mais marcou você! 👇",
+  "tipo": "programa eleitoral (montagem): depoimento, apoio de Tarcísio de Freitas, locutor, fala do candidato e jingle",
+  "fala_do_candidato": true,
+  "resumo": "Programa sobre escolas: Mauro fala das \"mais de 100 escolas\" com tecnologia, material e uniforme; tem apoio gravado de Tarcísio de Freitas.",
+  "temas": [
+    "educação",
+    "escolas",
+    "balanço de gestão"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 2.8,
+      "text": "Mauro Mendes foi um bom prefeito, foi um bom lugar a ver.",
+      "voz": "depoimento (eleitor)"
+    },
+    {
+      "start": 2.8,
+      "end": 4.6,
+      "text": "Vai ser um bom governador.",
+      "voz": "locutor/jingle/depoimento (não é o candidato)"
+    },
+    {
+      "start": 4.6,
+      "end": 6.4,
+      "text": "Fala pessoal, querido do Mato Grosso,",
+      "voz": "apoiador: Tarcísio de Freitas (governador de SP)"
+    },
+    {
+      "start": 6.4,
+      "end": 9.6,
+      "text": "esse estado que eu conheço bem e eu conheço bem Mauro Mendes.",
+      "voz": "apoiador: Tarcísio de Freitas (governador de SP)"
+    },
+    {
+      "start": 9.6,
+      "end": 13.1,
+      "text": "Um gestor que eu aprendi a admirar quando era ministro da infraestrutura.",
+      "voz": "apoiador: Tarcísio de Freitas (governador de SP)"
+    },
+    {
+      "start": 13.1,
+      "end": 15.6,
+      "text": "E quem foi um bom prefeito, quem foi um bom governador,",
+      "voz": "apoiador: Tarcísio de Freitas (governador de SP)"
+    },
+    {
+      "start": 15.6,
+      "end": 16.8,
+      "text": "vai ser um bom senador.",
+      "voz": "apoiador: Tarcísio de Freitas (governador de SP)"
+    },
+    {
+      "start": 16.8,
+      "end": 18.8,
+      "text": "Meu candidato pra senado aí no Mato Grosso,",
+      "voz": "apoiador: Tarcísio de Freitas (governador de SP)"
+    },
+    {
+      "start": 18.8,
+      "end": 20.6,
+      "text": "Mauro Mendes, 444.",
+      "voz": "apoiador: Tarcísio de Freitas (governador de SP)"
+    },
+    {
+      "start": 20.6,
+      "end": 24.9,
+      "text": "Acharam impossível ele foi lá e fez",
+      "voz": "locutor/jingle/depoimento (não é o candidato)"
+    },
+    {
+      "start": 24.9,
+      "end": 29.0,
+      "text": "Escola em Mato Grosso, no Brasil é top 6.",
+      "voz": "locutor/jingle/depoimento (não é o candidato)"
+    },
+    {
+      "start": 29.0,
+      "end": 32.8,
+      "text": "Nós ficamos nos em uma sala com mais de 40 alunos, mudou.",
+      "voz": "locutor/jingle/depoimento (não é o candidato)"
+    },
+    {
+      "start": 32.8,
+      "end": 35.7,
+      "text": "Hoje a gente consegue já projetar melhor esse futuro pra ele.",
+      "voz": "locutor/jingle/depoimento (não é o candidato)"
+    },
+    {
+      "start": 35.7,
+      "end": 37.3,
+      "text": "Quem fez esse falo foi o Mauro.",
+      "voz": "locutor/jingle/depoimento (não é o candidato)"
+    },
+    {
+      "start": 37.3,
+      "end": 40.9,
+      "text": "Fizemos esses últimos anos mais de uma centena de escolas,",
+      "voz": "candidato (Mauro Mendes)"
+    },
+    {
+      "start": 40.9,
+      "end": 42.5,
+      "text": "com alto padrão de qualidade,",
+      "voz": "candidato (Mauro Mendes)"
+    },
+    {
+      "start": 42.5,
+      "end": 44.2,
+      "text": "tecnologia em sala de aula,",
+      "voz": "candidato (Mauro Mendes)"
+    },
+    {
+      "start": 44.2,
+      "end": 46.1,
+      "text": "material didático, uniforme,",
+      "voz": "candidato (Mauro Mendes)"
+    },
+    {
+      "start": 46.1,
+      "end": 48.9,
+      "text": "muitos investimentos para melhorar o ensino",
+      "voz": "candidato (Mauro Mendes)"
+    },
+    {
+      "start": 48.9,
+      "end": 51.9,
+      "text": "e o ambiente para os nossos profissionais da educação.",
+      "voz": "candidato (Mauro Mendes)"
+    },
+    {
+      "start": 51.9,
+      "end": 55.7,
+      "text": "Mauro Mendes segue o líder isolado da nova Paraná Pesquisas.",
+      "voz": "locutor/jingle/depoimento (não é o candidato)"
+    },
+    {
+      "start": 55.7,
+      "end": 58.9,
+      "text": "Mauro Mendes chega a 52,3%.",
+      "voz": "locutor/jingle/depoimento (não é o candidato)"
+    },
+    {
+      "start": 58.9,
+      "end": 62.4,
+      "text": "Força e coragem pra lutar.",
+      "voz": "locutor/jingle/depoimento (não é o candidato)"
+    },
+    {
+      "start": 62.4,
+      "end": 70.6,
+      "text": "Mauro Mendes, Senador, 444.",
+      "voz": "locutor/jingle/depoimento (não é o candidato)"
+    },
+    {
+      "start": 70.6,
+      "end": 73.1,
+      "text": "Governador Pivetta 10.",
+      "voz": "locutor/jingle/depoimento (não é o candidato)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 37.3,
+      "fim": 48.9,
+      "texto": "Fizemos esses últimos anos mais de uma centena de escolas, com alto padrão de qualidade, tecnologia em sala de aula, material didático, uniforme, muitos investimentos para melhorar o ensino",
+      "tema": "educação/escolas"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Mauro Mendes, TikTok @mauromendesoficial, 2026-09-24",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/mauro-mendes/7689147879201541428.v.mp4 (não versionado)",
+  "obs": "SÓ o intervalo 37,3–51,9 s é a voz de Mauro Mendes (conferido: aos 50 s ele fala à câmera de capacete; aos 39 e 45 s a mesma voz segue em off sobre imagens de escolas). 0–2,8 s é depoimento de eleitor; 4,6–20,6 s é Tarcísio de Freitas (legenda na tela aos 8 s); 20,6–35,7 s e 51,9 s em diante são locutor/depoimentos/jingle. Os demais segmentos NÃO são a voz do candidato."
+}

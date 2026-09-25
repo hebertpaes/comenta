@@ -1,0 +1,238 @@
+{
+  "candidato": "Rafaell Milas (Rafaell Milas de Oliveira)",
+  "id_candidato": "rafaell-milas",
+  "cargo": "governador",
+  "esfera": "estadual",
+  "partido": "Missão",
+  "numero": 14,
+  "id": "7689448043569007879",
+  "url": "https://www.tiktok.com/@rafaellmilasmt/video/7689448043569007879",
+  "rede": "tiktok",
+  "perfil": "@rafaellmilasmt",
+  "perfil_url": "https://www.tiktok.com/@rafaellmilasmt",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@rafaellmilasmt); uploader do vídeo = rafaellmilasmt / Rafaell Milas",
+  "data": "2026-09-25",
+  "duracao_s": 62,
+  "titulo": "Vamos organizar a fila do SUS com Inteligência Artificial. Isso aumen...",
+  "descricao": "Vamos organizar a fila do SUS com Inteligência Artificial. Isso aumentará exponencialmente a agilidade, eficiência, cronograma e ainda vetará influência política para furar fila do SUS. Gostou das proposta? Então, vote em Rafaell Milas 14 para Governador e Renan Santos 14 para Presidente. #matogrosso #eleições2026 #politica #saude ",
+  "tipo": "corte de podcast com arte de campanha (\"14 Rafaell\", \"SUS do MT com Inteligência Artificial\"), postado no perfil do candidato",
+  "fala_do_candidato": true,
+  "resumo": "Digitalizar a saúde: banco de dados único com o DataSUS e IA para organizar a fila do SUS em ordem cronológica, sem interferência política.",
+  "temas": [
+    "saúde",
+    "tecnologia",
+    "fila do SUS"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 2.44,
+      "text": "que é trazer a inteligência artificial para a saúde,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 2.44,
+      "end": 4.16,
+      "text": "digitalizar a saúde literalmente,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 4.16,
+      "end": 5.12,
+      "text": "que hoje acontece.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 5.12,
+      "end": 6.64,
+      "text": "De fato, eu não vou trazer mais médico,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 6.64,
+      "end": 9.4,
+      "text": "não vai nascer médicos novos só porque eu digitalizei a saúde,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 9.4,
+      "end": 11.44,
+      "text": "mas a partir do momento que eu vou pegar o banco de dados,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 11.44,
+      "end": 13.48,
+      "text": "que aí ia pegar esse banco de dados no Mato Grosso inteiro,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 13.48,
+      "end": 15.56,
+      "text": "e também com o DataSUS, a base do SUS junto,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 15.56,
+      "end": 19.4,
+      "text": "num sistema só, logo a IA vai saber",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 19.4,
+      "end": 21.72,
+      "text": "todos os usuários do SUS no Mato Grosso.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 21.72,
+      "end": 24.0,
+      "text": "Com isso vai virar um aplicativo na palma da mão,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 24.0,
+      "end": 26.96,
+      "text": "tanto dos gestores quanto do pagador de posto do usuário",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 26.96,
+      "end": 29.88,
+      "text": "que usa o sistema público, que regulação de exame,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 29.88,
+      "end": 32.08,
+      "text": "marcação de exame, regulação de cirurgia,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 32.08,
+      "end": 35.84,
+      "text": "marcação de for, da saúde vai ser feita através desse sistema.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 35.84,
+      "end": 38.52,
+      "text": "Logo, quem usa o SUS hoje vai ficar refém de vereador",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 38.52,
+      "end": 39.32,
+      "text": "e isso acontece.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 39.32,
+      "end": 41.48,
+      "text": "Para pedir, olha só, eu preciso marcar uma cirurgia.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 41.48,
+      "end": 42.76,
+      "text": "Olha, estou esperando a cirurgia,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 42.76,
+      "end": 44.6,
+      "text": "tantos anos eu já saí o vereador,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 44.6,
+      "end": 46.08,
+      "text": "fura aquela para mim lá e se vai acabar",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 46.08,
+      "end": 47.76,
+      "text": "para não ficar mais controlado por um ser humano,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 47.76,
+      "end": 49.56,
+      "text": "por um político que vai poder interferir.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 49.56,
+      "end": 51.4,
+      "text": "A fila vai ser cronológica certinha",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 51.4,
+      "end": 52.6,
+      "text": "e ninguém vai se interferir nela.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 52.6,
+      "end": 54.68,
+      "text": "Isso por si só, já traz mais justiça",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 54.68,
+      "end": 56.12,
+      "text": "para quem é o usuário do SUS,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 56.16,
+      "end": 57.28,
+      "text": "ele vai passar a saúde por outros anos",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 57.28,
+      "end": 58.24,
+      "text": "e vai fazer com que também",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 58.24,
+      "end": 60.36,
+      "text": "a gente faça economia de recurso puro da saúde, por exemplo.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 60.36,
+      "end": 61.84,
+      "text": "Isso vai organizar, tem muito.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 61.84,
+      "end": 62.48,
+      "text": "E eu vou falar.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 21.7,
+      "fim": 32.1,
+      "texto": "Com isso vai virar um aplicativo na palma da mão, tanto dos gestores quanto do [...] usuário que usa o sistema público, que regulação de exame, marcação de exame, regulação de cirurgia,",
+      "tema": "saúde/tecnologia"
+    },
+    {
+      "inicio": 49.6,
+      "fim": 56.1,
+      "texto": "A fila vai ser cronológica certinha e ninguém vai se interferir nela. Isso por si só, já traz mais justiça para quem é o usuário do SUS,",
+      "tema": "saúde/fila"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Rafaell Milas, TikTok @rafaellmilasmt, 2026-09-25",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/rafaell-milas/7689448043569007879.v.mp4 (não versionado)",
+  "obs": "Voz do candidato do início ao fim (conferido em quadros aos 5, 20, 40 e 55 s: ele ao microfone, legenda acompanha). O vídeo começa no meio da frase (\"que é trazer a inteligência artificial...\"). ASR corrigido (banco de dados, DataSUS, SUS, IA, cronológica, médicos); \"pagador de posto\" (24–27 s) e \"marcação de for\" (32 s) são incertos — evitar. Crítica genérica a vereadores que \"furam fila\", sem nome."
+}

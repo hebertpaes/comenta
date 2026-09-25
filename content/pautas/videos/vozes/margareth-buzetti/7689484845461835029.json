@@ -1,0 +1,129 @@
+{
+  "candidato": "Margareth Buzetti",
+  "id_candidato": "margareth-buzetti",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "PP",
+  "numero": 111,
+  "id": "7689484845461835029",
+  "url": "https://www.tiktok.com/@margarethbuzetti/video/7689484845461835029",
+  "rede": "tiktok",
+  "perfil": "@margarethbuzetti",
+  "perfil_url": "https://www.tiktok.com/@margarethbuzetti",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@margarethbuzetti); uploader do vídeo = margarethbuzetti / Margareth Buzetti",
+  "data": "2026-09-25",
+  "duracao_s": 59,
+  "titulo": "Senador fica oito anos no cargo. Pense bem em quem você vai contratar...",
+  "descricao": "Senador fica oito anos no cargo. Pense bem em quem você vai contratar pra te representar.  Precisamos de um Congresso forte pra resgatar o Brasil. 🇧🇷  Pra cuidar das nossas vidas, Margareth Buzetti, 1️⃣1️⃣1️⃣✅",
+  "tipo": "corte de entrevista em rádio/podcast (Agora FM?) postado no perfil da candidata",
+  "fala_do_candidato": true,
+  "resumo": "\"Senador fica oito anos: se for bom é pouco, se for ruim é muito\" — pede que o eleitor pense em quem vai \"contratar\".",
+  "temas": [
+    "Senado",
+    "voto"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 6.64,
+      "text": "Então, eu penso que está na hora da população pensar quem ela quer contratar para representá-lo.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 6.64,
+      "end": 10.72,
+      "text": "Porque o senador vai ficar no cargo de oito anos.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 10.72,
+      "end": 13.6,
+      "text": "Ele for bom, é pouco, né? Mas se ele for ruim, é muito.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 13.6,
+      "end": 15.68,
+      "text": "É muito, é muito.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 15.68,
+      "end": 20.56,
+      "text": "O ano pode não parecer nada, mas a depender do que aconteça, o reflexo já é.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 20.56,
+      "end": 26.56,
+      "text": "Eu tive um senador, é, eu tive um senador, não interessa dizer o nome,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 26.64,
+      "end": 30.64,
+      "text": "que ele apareceu nos três anos, eu vi ele duas vezes.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 30.64,
+      "end": 32.64,
+      "text": "Ah, mas eu queria saber.",
+      "voz": "provável entrevistador (fora de quadro)"
+    },
+    {
+      "start": 32.64,
+      "end": 34.64,
+      "text": "Duas vezes, duas vezes.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 34.64,
+      "end": 36.64,
+      "text": "Eu vou ter que descobrir quem é esse.",
+      "voz": "provável entrevistador (fora de quadro)"
+    },
+    {
+      "start": 36.64,
+      "end": 40.64,
+      "text": "É um absurdo, é um absurdo, é um absurdo, eu ficava indignada, sabe?",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 40.64,
+      "end": 46.64,
+      "text": "Porque ele só veio quando a pauta estava interessando ele.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 46.64,
+      "end": 48.64,
+      "text": "Ele, ele.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 48.64,
+      "end": 50.64,
+      "text": "Que poderia prejudicar.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 50.64,
+      "end": 52.64,
+      "text": "Poderia prejudicar ou beneficiá-lo, entendeu?",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 0.0,
+      "fim": 13.6,
+      "texto": "Então, eu penso que está na hora da população pensar quem ela quer contratar para representá-lo. Porque o senador vai ficar no cargo de oito anos. Ele for bom, é pouco, né? Mas se ele for ruim, é muito.",
+      "tema": "Senado/voto consciente"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Margareth Buzetti, TikTok @margarethbuzetti, 2026-09-25",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/margareth-buzetti/7689484845461835029.v.mp4 (não versionado)",
+  "obs": "Voz da candidata na maior parte (conferido em quadros aos 3, 12, 31 e 35 s: close dela ao microfone). As falas \"Ah, mas eu queria saber\" (30,6–32,6 s) e \"Eu vou ter que descobrir quem é esse\" (34,6–36,6 s) parecem do entrevistador fora de quadro — NÃO usar. Critica um ex-senador SEM dizer o nome (evitar esse trecho)."
+}

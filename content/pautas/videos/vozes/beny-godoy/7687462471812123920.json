@@ -1,0 +1,30 @@
+{
+  "candidato": "Beny Godoy (Benival Alves da Silva)",
+  "id_candidato": "beny-godoy",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "Agir",
+  "numero": 365,
+  "id": "7687462471812123920",
+  "url": "https://www.tiktok.com/@user8616808410619/video/7687462471812123920",
+  "rede": "tiktok",
+  "perfil": "@user8616808410619",
+  "perfil_url": "https://vm.tiktok.com/ZS9kDtJbwyekh-aGXmT/",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://vm.tiktok.com/ZS9kDtJbwyekh-aGXmT/); uploader do vídeo = user8616808410619 / BENY GODOY SENADOR",
+  "data": "2026-09-20",
+  "duracao_s": 27,
+  "titulo": "TikTok video #7687462471812123920",
+  "descricao": "",
+  "tipo": "vídeo de evento (torneio esportivo) só com imagens/música",
+  "fala_do_candidato": false,
+  "resumo": "Imagens do torneio esportivo, sem fala.",
+  "temas": [
+    "agenda"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [],
+  "trechos_sugeridos": [],
+  "credito": "Áudio: propaganda eleitoral de Beny Godoy, TikTok @user8616808410619, 2026-09-20",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/beny-godoy/7687462471812123920.mp3 (não versionado)",
+  "obs": "SEM fala: nenhum segmento de voz detectado (VAD); quadros aos 5, 15 e 25 s mostram o evento esportivo com a arte \"Senador Beny Godoy 365\". Não serve como fonte de voz."
+}

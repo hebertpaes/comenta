@@ -1,0 +1,154 @@
+{
+  "candidato": "Galvan (Antônio Galvan)",
+  "id_candidato": "galvan",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "Avante",
+  "numero": 700,
+  "id": "7675154879806999828",
+  "url": "https://www.tiktok.com/@antonio.galvan.mt/video/7675154879806999828",
+  "rede": "tiktok",
+  "perfil": "@antonio.galvan.mt",
+  "perfil_url": "https://www.tiktok.com/@antonio.galvan.mt",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@antonio.galvan.mt); uploader do vídeo = antonio.galvan.mt / Antônio Galvan",
+  "data": "2026-08-18",
+  "duracao_s": 100,
+  "titulo": "Precisamos devolver a eles o respeito e a autoridade para ensinar. 📚⚖...",
+  "descricao": "Precisamos devolver a eles o respeito e a autoridade para ensinar. 📚⚖️ #galvané700 #candidatoaosenado #direitaraiz #matogrosso",
+  "tipo": "corte de podcast/entrevista (ele ao microfone) com arte de campanha \"700\", postado no perfil do candidato",
+  "fala_do_candidato": true,
+  "resumo": "Defende que a maioria dos professores é \"do bem\" e vítima do sistema; cita escola cívico-militar como modelo de disciplina.",
+  "temas": [
+    "educação",
+    "professores",
+    "escola cívico-militar"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 6.24,
+      "text": "alguma pesquisa fala aí que 5% aprendem o básico e a grande maioria sai de lá não tem o mínimo do",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 6.24,
+      "end": 10.88,
+      "text": "que que é o básico, de um jeito que nossas escolas estão, isso é muito preocupante.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 10.88,
+      "end": 17.76,
+      "text": "A culpa é de quem? É do professor, é do aluno, é da escola? Eu tenho certeza que a grande maioria dos",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 17.76,
+      "end": 22.8,
+      "text": "professores não gostaria que fosse desse jeito. A grande maioria dos professores acaba virando",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 22.8,
+      "end": 28.08,
+      "text": "vítima desse sistema que está sendo dentro da aula por ter deixado a política entrar lá dentro,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 28.08,
+      "end": 33.84,
+      "text": "porque eu tenho na minha concepção que a grande maioria dos professores são professores do bem,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 33.84,
+      "end": 39.6,
+      "text": "não são professores aí que tanto você fala que a maioria é ligada com a esquerda, eu não concordo,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 39.6,
+      "end": 45.04,
+      "text": "não concordo, tenho certeza que a grande maioria não é esquerda ou não é direita, ele está na sala",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 45.04,
+      "end": 51.28,
+      "text": "de aula para lecionar, para ele ensinar, mas infelizmente o sistema que está impregnado acaba",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 51.28,
+      "end": 56.24,
+      "text": "deixando ele refém e eles não conseguem passar e a vontade de passar o conhecimento",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 56.24,
+      "end": 62.64,
+      "text": "ao aluno, tenho certeza que é grande. Estão sendo vítima também do processo, que como falei aí,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 62.64,
+      "end": 67.44,
+      "text": "a escola cívico militar, por que que todos os professores lá dentro da sala de aula são",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 67.44,
+      "end": 72.24,
+      "text": "respeitadas? Com raras exceções que acontece, por que que todos os alunos têm comportamento,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 72.24,
+      "end": 76.56,
+      "text": "com raras exceções e já na hora é chamada a atenção e já tiro ele da escola também,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 76.56,
+      "end": 81.04,
+      "text": "se ele não se comportar? Então pode ter certeza que a grande maioria dos professores são",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 81.04,
+      "end": 86.0,
+      "text": "muito bem, querem realmente passar esse conhecimento, mas um sistema implantado dentro",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 86.0,
+      "end": 91.44,
+      "text": "das nossas escolas é que não deixa, era aquele sistema lá atrás que o Karl Marx falava,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 91.44,
+      "end": 92.8,
+      "text": "vamos tomar conta das escolas.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 28.1,
+      "fim": 39.6,
+      "texto": "porque eu tenho na minha concepção que a grande maioria dos professores são professores do bem, não são professores aí que tanto você fala que a maioria é ligada com a esquerda, eu não concordo,",
+      "tema": "educação/professores"
+    },
+    {
+      "inicio": 17.8,
+      "fim": 28.1,
+      "texto": "professores não gostaria que fosse desse jeito. A grande maioria dos professores acaba virando vítima desse sistema que está sendo dentro da aula por ter deixado a política entrar lá dentro,",
+      "tema": "educação/professores"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Galvan, TikTok @antonio.galvan.mt, 2026-08-18",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/galvan/7675154879806999828.mp3 (não versionado)",
+  "obs": "Voz do candidato do início ao fim (conferido em quadros aos 5, 40 e 80 s: ele ao microfone de podcast, arte \"700\", legenda acompanha). Começa no meio de uma resposta. Defende professores e escola cívico-militar; menciona \"esquerda\"/\"Karl Marx\" de forma genérica, sem ataque nominal. ASR corrigido (lecionar, Karl Marx); o trecho 62,6–81 s tem concordância confusa."
+}

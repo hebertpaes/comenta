@@ -1,0 +1,184 @@
+{
+  "candidato": "Rafaell Milas (Rafaell Milas de Oliveira)",
+  "id_candidato": "rafaell-milas",
+  "cargo": "governador",
+  "esfera": "estadual",
+  "partido": "Missão",
+  "numero": 14,
+  "id": "7689508447720656135",
+  "url": "https://www.tiktok.com/@rafaellmilasmt/video/7689508447720656135",
+  "rede": "tiktok",
+  "perfil": "@rafaellmilasmt",
+  "perfil_url": "https://www.tiktok.com/@rafaellmilasmt",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@rafaellmilasmt); uploader do vídeo = rafaellmilasmt / Rafaell Milas",
+  "data": "2026-09-25",
+  "duracao_s": 70,
+  "titulo": "Adotaremos 3 medidas para Combater o Feminicídio no Mato Grosso. Não ...",
+  "descricao": "Adotaremos 3 medidas para Combater o Feminicídio no Mato Grosso. Não podemos tolerar violência contra a mulher no nosso estado. E no dia 04 de Outubro, vote Rafaell Milas 14 para Governador e Renan Santos 14 para Presidente. #matogrosso #eleições2026 #politica ",
+  "tipo": "corte de entrevista/podcast marcado como \"Propaganda eleitoral | Rafaell Milas\", postado no perfil do candidato",
+  "fala_do_candidato": true,
+  "resumo": "Três medidas contra feminicídio: patrulha Maria da Penha/botão do pânico, protocolo Mulher Viva e acolhimento social da vítima.",
+  "temas": [
+    "segurança",
+    "mulheres",
+    "feminicídio"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 1.84,
+      "text": "E para combater o feminicídio de Mato Grosso?",
+      "voz": "entrevistador (Diego)"
+    },
+    {
+      "start": 1.84,
+      "end": 5.24,
+      "text": "Não vou inventar a roda, Diego. Eu acredito que o que já tem aí é para funcionar.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 5.24,
+      "end": 9.72,
+      "text": "O botão do pânico, a patrulha Maria da Penha, a minha ideia, o do Piauí, o Vinicius esse ano,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 9.72,
+      "end": 14.24,
+      "text": "56% do número de feminicídio reduziu só com patrulha e com patrulha e com patrulha do pânico.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 14.24,
+      "end": 17.84,
+      "text": "É porque ela foi efetiva, ela foi concreta, ela foi efetivada, ela foi trabalhada.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 17.84,
+      "end": 22.64,
+      "text": "Só que isso também tem o protocolo Mulher Viva, que é a mulher atendida na delegacia.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 22.64,
+      "end": 25.4,
+      "text": "Daí ela vai para a UPA fazer o exame dela, os necessários.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 25.4,
+      "end": 28.08,
+      "text": "E também o terceiro ponto é o acolhimento social dessa mulher.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 28.08,
+      "end": 31.08,
+      "text": "Por que? Eu tenho certeza que esse número é muito maior do que é o dito,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 31.08,
+      "end": 34.36,
+      "text": "porque deve haver uma subnotificação, porque muitas mulheres têm medo da denúncia.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 34.36,
+      "end": 37.08,
+      "text": "Porque, ou dependendo financeiramente do homem, ou tem medo da violência mesmo.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 37.08,
+      "end": 40.36,
+      "text": "Então quando a mulher souber que há um governador ao Estado, que está acolhendo ela,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 40.36,
+      "end": 43.56,
+      "text": "então financeiramente, quando proteger ela desse vagabundo,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 43.56,
+      "end": 45.16,
+      "text": "a mulher vai ter mais coragem de denunciar.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 45.16,
+      "end": 47.84,
+      "text": "Então tem que haver o acolhimento social para que o mulher perceba que está.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 47.84,
+      "end": 51.76,
+      "text": "Ah, o Vinicius tem uma vizinha minha, denunciou e foi acolhido, então eu também posso denunciar.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 51.76,
+      "end": 54.16,
+      "text": "Também seria acolhida. A gente passa essa mensagem para as mulheres,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 54.16,
+      "end": 57.76,
+      "text": "porque muitas delas estão enfrentando esse inferno, porque elas têm medo",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 57.76,
+      "end": 61.4,
+      "text": "da falta de recursos financeiros, por causa do filho, quando a questão da violência.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 61.4,
+      "end": 63.16,
+      "text": "Então não quer souber, não o Estado vai me acolher.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 63.16,
+      "end": 65.92,
+      "text": "É ser protegido financeiramente e também da violência.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 65.92,
+      "end": 66.84,
+      "text": "Ela vai denunciar mais.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 66.84,
+      "end": 70.4,
+      "text": "Então é juntar a patrulha, a Maria da Penha, o botão do pânico, o acolhimento social.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 1.8,
+      "fim": 5.2,
+      "texto": "Não vou inventar a roda, Diego. Eu acredito que o que já tem aí é para funcionar.",
+      "tema": "segurança/mulheres"
+    },
+    {
+      "inicio": 17.8,
+      "fim": 28.1,
+      "texto": "Só que isso também tem o protocolo Mulher Viva, que é a mulher atendida na delegacia. Daí ela vai para a UPA fazer o exame dela, os necessários. E também o terceiro ponto é o acolhimento social dessa mulher.",
+      "tema": "segurança/mulheres"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Rafaell Milas, TikTok @rafaellmilasmt, 2026-09-25",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/rafaell-milas/7689508447720656135.mp3 (não versionado)",
+  "obs": "Pergunta do entrevistador em 0–1,8 s (voz=entrevistador, NÃO usar). Do 1,8 s em diante é o candidato (conferido em quadros aos 3, 30 e 60 s: ele fala ao microfone, legenda queimada acompanha). Tarja do vídeo: \"PROPOSTA: As 3 Medidas para ACABAR com Feminicídio no MT\" e \"Propaganda eleitoral\". ASR com vários erros corrigidos (Maria da Penha, botão do pânico, subnotificação); \"o do Piauí, o Vinicius esse ano\" (5–10 s) e \"Ah, o Vinicius tem uma vizinha\" (47,8 s) são trechos incertos — evitar. \"Vagabundo\" (40,4–43,6 s) refere-se ao agressor."
+}

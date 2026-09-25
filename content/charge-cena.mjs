@@ -2,7 +2,8 @@
 // =============================================================
 // charge-cena.mjs — "Charge em cena": monta um Reel 9:16 (1080×1920, 25 fps)
 // a partir de um roteiro .cena.json: cartela de abertura com gancho, uma
-// cena por ideia (imagem + narração sintetizada + movimento de câmera),
+// cena por ideia (imagem + narração sintetizada ou trecho de áudio real +
+// movimento de câmera),
 // legendas queimadas em amarelo (estilo Capivara Play), marca d'água do
 // HOJE MT e cartela de fechamento com link, fontes e aviso de sátira/IA.
 // =============================================================
@@ -10,13 +11,34 @@
 //   node charge-cena.mjs pautas/videos/2026-09-25-paula-em-13-votos.cena.json
 //   node charge-cena.mjs <spec.cena.json> --so-audio     só sintetiza as vozes
 //   node charge-cena.mjs <spec.cena.json> --sem-marca    sem marca d'água
+//   node charge-cena.mjs <spec.cena.json> --manter-tmp   guarda os temporários
 //
-// Roteiro (.cena.json): { titulo, materia, voz:{motor,narrador,personagem,
+// Roteiro (.cena.json): { titulo, materia, universo?, voz:{motor,narrador,
 // velocidade}, abertura:{chip,gancho,sub}, cenas:[{n,quem,fala,legenda?,
-// imagem,movimento,citacao?}], fechamento:{linha1,leia,fontes,aviso}, saida }.
-// `quem` = "narrador" ou nome do personagem (este só fala com `citacao: true`,
-// frase exatamente como está na curta). Caminhos relativos são relativos a
-// content/. Regras editoriais: README.md e pautas/README.md.
+// imagem,movimento,citacao?,audio_real?}], fechamento:{linha1,leia,fontes,
+// aviso}, saida }. `universo` (cenário + figurinos + tom do episódio) é só
+// registro: vai para o <saida>.json. Caminhos relativos são relativos a
+// content/. Regras editoriais: README.md, pautas/README.md e a ESPEC do formato
+// ("Não ataque ninguém"; "Vozes reais, nunca clonadas").
+//
+// Quem fala em cada cena:
+// - `quem: "narrador"` → `fala` sintetizada com a voz do narrador (personagem
+//   fictício). O narrador pode LER uma citação real em 3ª pessoa ("Ele
+//   lembrou: “…”"); com `citacao: true` (ou `citacao_lida_pelo_narrador:
+//   true`) o motor exige a frase entre aspas na legenda.
+// - `quem: "<pessoa real>"` → SÓ com `audio_real`: trecho real publicado pela
+//   própria pessoa, { arquivo, origem_url, rede, perfil, data (AAAA-MM-DD),
+//   inicio, fim (s no vídeo original; no máximo 12 s), transcricao, credito }.
+//   `arquivo` pode ser o recorte já feito (pautas/videos/vozes/<pessoa>/
+//   <id>-<ini>-<fim>.wav, duração = fim − inicio) ou o áudio inteiro (o motor
+//   recorta de inicio a fim). O trecho é normalizado (mede com loudnorm,
+//   ganho linear até −16 LUFS + limitador de pico) e entra no lugar da voz
+//   sintética; a legenda queimada mostra a `transcricao` entre aspas e a linha
+//   de `credito` (Roboto Condensed ~30 px, branco 85%) fica logo acima da
+//   legenda durante toda a cena. É PROIBIDO sintetizar
+//   voz de pessoa real (Res. TSE 23.610/2019, art. 9º-C): personagem sem
+//   `audio_real` é ERRO (`citacao: true` não basta mais); sem trecho real, a
+//   frase vai para o narrador em 3ª pessoa. `voz.personagem` não é mais usado.
 //
 // Dependências (nada novo): Node 22 + sharp (node_modules do repo); ffmpeg
 // (mesma detecção de reel.mjs: FFMPEG, binário do imageio-ffmpeg ou PATH;
@@ -29,7 +51,7 @@ import { spawnSync } from "node:child_process";
 import { existsSync } from "node:fs";
 import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { basename, dirname, isAbsolute, join, resolve } from "node:path";
+import { basename, dirname, isAbsolute, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { medir, quebrar } from "./lib/card.mjs";
 
@@ -45,6 +67,7 @@ const DUR_ABERTURA = 2.5;
 const DUR_FECHAMENTO = 3;
 const FOLGA_CENA = 0.45; // silêncio depois da fala
 const DUR_MIN_CENA = 2.5;
+const MAX_AUDIO_REAL = 12; // s: trecho real mais longo aceito (ESPEC)
 
 const ANTON = "Anton";
 const ROBOTO = "Roboto Condensed";
@@ -335,6 +358,79 @@ function sintetizar(texto, { motor = "piper", modelo, velocidade, destino }) {
   }
 }
 
+// ---------------------------------------------------------------- áudio real
+/** Confere os campos obrigatórios de `audio_real` e devolve a versão normalizada. */
+function validarAudioReal(ar, n) {
+  const erro = (msg) => new Error(`cena ${n}: audio_real ${msg}`);
+  if (!ar || typeof ar !== "object") throw erro("precisa ser um objeto");
+  for (const campo of ["arquivo", "origem_url", "rede", "perfil", "data", "transcricao", "credito"])
+    if (!String(ar[campo] ?? "").trim()) throw erro(`sem \`${campo}\` (obrigatório: trecho real só entra com origem e crédito)`);
+  if (!/^https?:\/\//.test(ar.origem_url)) throw erro(`\`origem_url\` precisa ser a URL pública do post/vídeo original`);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(ar.data)) throw erro(`\`data\` precisa ser AAAA-MM-DD (data de publicação)`);
+  const inicio = Number(ar.inicio);
+  const fim = Number(ar.fim);
+  if (!Number.isFinite(inicio) || !Number.isFinite(fim) || inicio < 0 || fim <= inicio)
+    throw erro(`\`inicio\`/\`fim\` inválidos (${ar.inicio} → ${ar.fim})`);
+  if (fim - inicio > MAX_AUDIO_REAL + 0.05)
+    throw erro(`tem ${(fim - inicio).toFixed(2)} s; o máximo é ${MAX_AUDIO_REAL} s`);
+  const arquivo = caminho(ar.arquivo);
+  if (!existsSync(arquivo)) throw erro(`\`arquivo\` não existe: ${arquivo}`);
+  return { ...ar, arquivo, inicio, fim, transcricao: String(ar.transcricao).trim(), credito: String(ar.credito).trim() };
+}
+
+/**
+ * Recorta (se preciso) e normaliza o trecho real em duas passadas (mede com
+ * loudnorm; aplica ganho linear até −16 LUFS e limitador de pico a −1,5 dB),
+ * fades curtos contra estalos, wav 48 kHz mono. Aceita o recorte pronto (duração = fim − inicio)
+ * ou o áudio inteiro do vídeo (recorta de inicio a fim).
+ */
+function prepararAudioReal(ar, n, destino) {
+  const esperado = ar.fim - ar.inicio;
+  const total = duracaoDe(ar.arquivo);
+  let ss;
+  if (total >= ar.fim - 0.05) ss = ar.inicio; // áudio inteiro: recorta
+  else if (Math.abs(total - esperado) <= 0.35) ss = 0; // recorte pronto
+  else
+    throw new Error(
+      `cena ${n}: audio_real \`arquivo\` tem ${total.toFixed(2)} s, que não bate nem com o recorte (${esperado.toFixed(2)} s) nem com o vídeo inteiro (≥ ${ar.fim} s)`
+    );
+  const dur = Math.min(ss === 0 ? total : esperado, MAX_AUDIO_REAL);
+  const corte = ["-ss", ss.toFixed(3), "-t", dur.toFixed(3), "-i", ar.arquivo];
+  const alvo = "I=-16:TP=-1.5:LRA=11";
+
+  // 1ª passada: medir
+  const r = spawnSync(ffmpeg, ["-hide_banner", "-nostats", ...corte, "-af", `loudnorm=${alvo}:print_format=json`, "-f", "null", "-"], {
+    encoding: "utf8",
+    maxBuffer: 16 * 1024 * 1024,
+  });
+  let medida = null;
+  const json = (r.stderr || "").match(/\{[^{}]*"input_i"[^{}]*\}/);
+  if (json) {
+    try {
+      medida = JSON.parse(json[0]);
+    } catch {
+      medida = null;
+    }
+  }
+  const entradaI = Number(medida?.input_i);
+  if (medida && (/inf/i.test(String(medida.input_i)) || entradaI < -60))
+    throw new Error(`cena ${n}: audio_real sem voz audível no trecho ${ar.inicio}–${ar.fim} s (${medida.input_i} LUFS)`);
+  // ganho linear até −16 LUFS + limitador de pico (−1,5 dB); o loudnorm em modo
+  // linear desiste (vira dinâmico) quando o pico estouraria, e fica baixo demais
+  const norm = Number.isFinite(entradaI)
+    ? `aresample=48000,volume=${Math.max(-20, Math.min(30, -16 - entradaI)).toFixed(2)}dB,alimiter=limit=0.84:level=false:latency=true`
+    : `loudnorm=${alvo},aresample=48000`;
+  if (!Number.isFinite(entradaI)) console.warn(`AVISO: cena ${n}: não consegui medir o volume do trecho real; usando loudnorm de uma passada`);
+
+  // 2ª passada: corrigir + fades
+  const fadeOut = Math.max(0, dur - 0.06).toFixed(3);
+  rodarFfmpeg(
+    [...corte, "-af", `${norm},afade=t=in:d=0.02,afade=t=out:st=${fadeOut}:d=0.06`, "-ac", "1", "-ar", "48000", "-c:a", "pcm_s16le", destino],
+    `áudio real da cena ${n}`
+  );
+  return destino;
+}
+
 // ---------------------------------------------------------------- legendas (.ass)
 /** Quebra um texto em linhas de até `max` caracteres (palavras inteiras). */
 function quebrarChars(texto, max = 26) {
@@ -375,7 +471,25 @@ const tempoAss = (s) => {
   return `${h}:${String(m).padStart(2, "0")}:${seg}`;
 };
 
+/** Altura (px, PlayRes) de uma linha da legenda (Anton 90 no libass) e posição dela. */
+const LEGENDA_TAM = 90;
+const LEGENDA_MARGEM_V = 430;
+const CREDITO_TAM = 34; // corpo ASS ≈ 30 px CSS de Roboto Condensed
+
+/**
+ * Linha de crédito do áudio real: acima da legenda da cena (constante durante
+ * a cena, calculada pelo bloco de legenda mais alto), sem subir até o rosto.
+ */
+function eventoCredito(texto, inicio, fim, linhasLegenda) {
+  const margemV = LEGENDA_MARGEM_V + Math.max(1, linhasLegenda) * LEGENDA_TAM + 22;
+  return { estilo: "Credito", camada: 1, inicio, fim, margemV, texto: texto.replace(/\s+/g, " ").trim() };
+}
+
 function arquivoAss(eventos) {
+  const temCredito = eventos.some((e) => e.estilo === "Credito");
+  const estiloCredito = temCredito
+    ? `Style: Credito,${ROBOTO},${CREDITO_TAM},&H26FFFFFF,&H26FFFFFF,&H4D000000,&H80000000,0,0,0,0,100,100,0.5,0,1,2,1,2,60,60,${LEGENDA_MARGEM_V + LEGENDA_TAM + 22},1\n`
+    : "";
   const cabecalho = `[Script Info]
 ScriptType: v4.00+
 PlayResX: ${W}
@@ -385,13 +499,15 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Cena,Anton,90,&H0000D4FF,&H0000D4FF,&H00000000,&H80000000,0,0,0,0,100,100,1,0,1,6,2,2,50,50,430,1
-
+Style: Cena,Anton,${LEGENDA_TAM},&H0000D4FF,&H0000D4FF,&H00000000,&H80000000,0,0,0,0,100,100,1,0,1,6,2,2,50,50,${LEGENDA_MARGEM_V},1
+${estiloCredito}
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 `;
-  const linhas = eventos.map(
-    (e) => `Dialogue: 0,${tempoAss(e.inicio)},${tempoAss(e.fim)},Cena,,0,0,0,,{\\an2}${e.texto.replace(/[{}]/g, "")}`
+  const linhas = eventos.map((e) =>
+    e.estilo === "Credito"
+      ? `Dialogue: ${e.camada},${tempoAss(e.inicio)},${tempoAss(e.fim)},Credito,,0,0,${e.margemV},,{\\an2}${e.texto.replace(/[{}]/g, "")}`
+      : `Dialogue: 0,${tempoAss(e.inicio)},${tempoAss(e.fim)},Cena,,0,0,0,,{\\an2}${e.texto.replace(/[{}]/g, "")}`
   );
   return cabecalho + linhas.join("\n") + "\n";
 }
@@ -456,26 +572,48 @@ async function segmento({ imagem, audio, dur, movimento, destino }) {
 // ---------------------------------------------------------------- principal
 const tmp = await mkdtemp(join(tmpdir(), "hojemt-cena-"));
 async function principal() {
-  const voz = { motor: "piper", narrador: "pt_BR-faber-medium", personagem: "pt_BR-jeff-medium", velocidade: 1.0, ...(spec.voz || {}) };
+  const voz = { motor: "piper", narrador: "pt_BR-faber-medium", velocidade: 1.0, ...(spec.voz || {}) };
 
-  // 1. vozes
+  // 1. vozes: narrador sintetizado; pessoa real só com trecho real (audio_real)
   const cenas = [];
   for (const [i, c] of spec.cenas.entries()) {
     const n = c.n ?? i + 1;
-    const fala = String(c.fala || "").trim();
-    if (!fala) throw new Error(`cena ${n}: falta \`fala\``);
     const quem = String(c.quem || "narrador").trim();
     const ehNarrador = quem.toLowerCase() === "narrador";
-    if (!ehNarrador && c.citacao !== true)
-      throw new Error(`cena ${n}: personagem "${quem}" só fala com citação real (\`citacao: true\` e frase entre aspas na curta)`);
-    const modelo = ehNarrador ? voz.narrador : c.modelo_voz || voz.personagem;
     const destino = join(tmp, `cena-${String(n).padStart(2, "0")}.wav`);
-    process.stdout.write(`voz ${n} (${quem}, ${voz.motor}/${modelo})… `);
-    const audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, destino });
-    const duracaoAudio = duracaoDe(audio);
-    const dur = Math.max(DUR_MIN_CENA, duracaoAudio + FOLGA_CENA);
-    console.log(`${duracaoAudio.toFixed(2)} s → cena ${dur.toFixed(2)} s`);
-    cenas.push({ n, quem, fala, legenda: c.legenda || fala, imagem: c.imagem, movimento: c.movimento || "zoom-in", audio, duracaoAudio, dur });
+    const base = { n, quem, imagem: c.imagem, movimento: c.movimento || "zoom-in" };
+    let cena;
+    if (c.audio_real) {
+      if (ehNarrador)
+        throw new Error(`cena ${n}: \`audio_real\` é a voz da própria pessoa: \`quem\` precisa ser o nome dela, não "narrador"`);
+      const ar = validarAudioReal(c.audio_real, n);
+      if (c.legenda && c.legenda.trim() !== ar.transcricao)
+        console.warn(`AVISO: cena ${n}: \`legenda\` ignorada; com audio_real a legenda é a \`transcricao\``);
+      process.stdout.write(`voz ${n} (${quem}, áudio real ${basename(ar.arquivo)} ${ar.inicio}–${ar.fim} s)… `);
+      const audio = prepararAudioReal(ar, n, destino);
+      const transcricao = ar.transcricao.replace(/^["“”]+|["“”]+$/g, "").trim();
+      cena = { ...base, fala: ar.transcricao, legenda: `“${transcricao}”`, audio, audioReal: ar };
+    } else {
+      if (!ehNarrador)
+        throw new Error(
+          `cena ${n}: "${quem}" é pessoa real e só fala com \`audio_real\` (trecho real publicado por ela, ≤ ${MAX_AUDIO_REAL} s, com crédito). ` +
+            `É proibido sintetizar voz de pessoa real (Res. TSE 23.610/2019, art. 9º-C), mesmo com \`citacao: true\`; ` +
+            `sem trecho real, passe a frase ao narrador em 3ª pessoa (ex.: "Ele lembrou: “…”").`
+        );
+      const fala = String(c.fala || "").trim();
+      if (!fala) throw new Error(`cena ${n}: falta \`fala\``);
+      const legenda = c.legenda || fala;
+      if ((c.citacao === true || c.citacao_lida_pelo_narrador === true) && !/["“«][^"“”«»]{3,}["”»]/.test(legenda))
+        throw new Error(`cena ${n}: citação lida pelo narrador precisa da frase real entre aspas na legenda (\`legenda\` ou \`fala\`)`);
+      const modelo = voz.narrador;
+      process.stdout.write(`voz ${n} (${quem}, ${voz.motor}/${modelo})… `);
+      const audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, destino });
+      cena = { ...base, fala, legenda, audio };
+    }
+    cena.duracaoAudio = duracaoDe(cena.audio);
+    cena.dur = Math.max(DUR_MIN_CENA, cena.duracaoAudio + FOLGA_CENA);
+    console.log(`${cena.duracaoAudio.toFixed(2)} s → cena ${cena.dur.toFixed(2)} s`);
+    cenas.push(cena);
   }
 
   if (args["so-audio"] === true) {
@@ -487,7 +625,7 @@ async function principal() {
       c.audio = alvo;
     }
     console.log(`áudios em ${pasta}`);
-    console.log(JSON.stringify(cenas.map((c) => ({ n: c.n, quem: c.quem, duracao_audio: +c.duracaoAudio.toFixed(2), duracao_cena: +c.dur.toFixed(2), audio: c.audio })), null, 2));
+    console.log(JSON.stringify(cenas.map((c) => ({ n: c.n, quem: c.quem, voz: c.audioReal ? "audio_real" : "sintetica", duracao_audio: +c.duracaoAudio.toFixed(2), duracao_cena: +c.dur.toFixed(2), audio: c.audio })), null, 2));
     return;
   }
 
@@ -522,7 +660,13 @@ async function principal() {
   const eventos = [];
   for (const c of cenas) {
     c.inicio = t;
-    eventos.push(...blocosLegenda(c.legenda, t, c.duracaoAudio, t + c.dur));
+    const blocos = blocosLegenda(c.legenda, t, c.duracaoAudio, t + c.dur);
+    eventos.push(...blocos);
+    if (c.audioReal) {
+      const linhasLegenda = Math.max(...blocos.map((b) => b.texto.split("\\N").length));
+      const credito = quebrarChars(c.audioReal.credito, 58).join("\\N");
+      eventos.push(eventoCredito(credito, t, t + c.dur, linhasLegenda));
+    }
     t += c.dur;
   }
   const ass = join(tmp, "legendas.ass");
@@ -566,9 +710,33 @@ async function principal() {
     duracao: +duracao.toFixed(2),
     resolucao: res,
     fps: FPS,
+    ...(spec.universo ? { universo: spec.universo } : {}),
     voz,
     abertura: { duracao: DUR_ABERTURA },
-    cenas: cenas.map((c) => ({ n: c.n, quem: c.quem, movimento: c.movimento, inicio: +c.inicio.toFixed(2), duracao_audio: +c.duracaoAudio.toFixed(2), duracao: +c.dur.toFixed(2) })),
+    cenas: cenas.map((c) => ({
+      n: c.n,
+      quem: c.quem,
+      voz: c.audioReal ? "audio_real" : "sintetica",
+      movimento: c.movimento,
+      inicio: +c.inicio.toFixed(2),
+      duracao_audio: +c.duracaoAudio.toFixed(2),
+      duracao: +c.dur.toFixed(2),
+      ...(c.audioReal
+        ? {
+            audio_real: {
+              arquivo: c.audioReal.arquivo.startsWith(aqui + "/") ? relative(aqui, c.audioReal.arquivo) : c.audioReal.arquivo,
+              origem_url: c.audioReal.origem_url,
+              rede: c.audioReal.rede,
+              perfil: c.audioReal.perfil,
+              data: c.audioReal.data,
+              inicio: c.audioReal.inicio,
+              fim: c.audioReal.fim,
+              transcricao: c.audioReal.transcricao,
+              credito: c.audioReal.credito,
+            },
+          }
+        : {}),
+    })),
     fechamento: { inicio: +t.toFixed(2), duracao: DUR_FECHAMENTO },
   };
   await writeFile(saida.replace(/\.mp4$/, "") + ".json", JSON.stringify(registro, null, 2) + "\n");

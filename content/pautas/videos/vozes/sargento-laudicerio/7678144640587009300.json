@@ -1,0 +1,117 @@
+{
+  "candidato": "Sargento Laudicério (Laudicério Aguiar Machado)",
+  "id_candidato": "sargento-laudicerio",
+  "cargo": "governador",
+  "esfera": "estadual",
+  "partido": "Agir",
+  "numero": 36,
+  "id": "7678144640587009300",
+  "url": "https://www.tiktok.com/@sargentolau/video/7678144640587009300",
+  "rede": "tiktok",
+  "perfil": "@sargentolau",
+  "perfil_url": "https://www.tiktok.com/@sargentolau",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@sargentolau); uploader do vídeo = sargentolau / sargentolau",
+  "data": "2026-08-26",
+  "duracao_s": 76,
+  "titulo": "🌱 Produzir e preservar podem caminhar juntos. Mato Grosso é uma potên...",
+  "descricao": "🌱 Produzir e preservar podem caminhar juntos. Mato Grosso é uma potência do agronegócio e deve continuar crescendo com responsabilidade ambiental, segurança jurídica e respeito a quem trabalha e produz. O nosso compromisso é construir soluções equilibradas, conciliando o desenvolvimento econômico, a geração de empregos e a preservação dos nossos recursos naturais. É assim que Mato Grosso avança: com diálogo, responsabilidade e planejamento. Sargento Laudicério (Lau) – 36 Candidato a Governador de Mato Grosso #Agro #MeioAmbiente #DesenvolvimentoSustentável #MatoGrosso #SargentoLau   ",
+  "tipo": "trecho de entrevista na TV (TV Vila Real, \"Rodada de entrevistas\") repostado no perfil do candidato",
+  "fala_do_candidato": true,
+  "resumo": "Conciliar agro e preservação: agenda com Aprosoja, Famato, Acrimat e entidades ambientais; atenção aos pequenos e médios produtores.",
+  "temas": [
+    "agro",
+    "meio ambiente"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 8.3,
+      "text": "Mas qual é a compreensão com o Sargento tem dos grandes problemas de Mato Grosso, sustentabilidade,",
+      "voz": "entrevistador"
+    },
+    {
+      "start": 8.3,
+      "end": 13.5,
+      "text": "como é que concilia crescimento econômico, desenvolvimento do agro, que é a base econômica",
+      "voz": "entrevistador"
+    },
+    {
+      "start": 13.5,
+      "end": 19.08,
+      "text": "do Mato Grosso, com a preservação ambiental, o Sargento tem é esse tipo de preocupação",
+      "voz": "entrevistador"
+    },
+    {
+      "start": 19.08,
+      "end": 28.48,
+      "text": "ou seu foco é exclusivamente essa questão voltada para a questão corporativa da",
+      "voz": "entrevistador"
+    },
+    {
+      "start": 28.48,
+      "end": 34.96,
+      "text": "instituição policial militar. Claro que temos, nós temos essa preocupação sim, pois a",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 34.96,
+      "end": 40.88,
+      "text": "isso fala-se que o agronegócio está concentrado, a maior riqueza, partes que estão junto",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 40.88,
+      "end": 46.0,
+      "text": "aos grandes barões, só que nós temos pequenos médios produtores que muitas vezes estão",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 46.0,
+      "end": 52.0,
+      "text": "desassistidos, então temos que se convocar às associações, a Aprosoja, o Famato,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 52.0,
+      "end": 60.36,
+      "text": "Acrimat, para então criarmos uma agenda, as entidades representativas de defesa do meio ambiente,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 60.36,
+      "end": 66.0,
+      "text": "da natureza, para então criarmos uma agenda e assim trabalhar para o que é melhor para",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 66.0,
+      "end": 72.4,
+      "text": "Mato Grosso. Não estou falando que não será assistido, mas temos que trabalhar todos em",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 72.4,
+      "end": 77.0,
+      "text": "equipe para uma situação melhor para todos nós quanto população Mato Grosso.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 40.9,
+      "fim": 52.0,
+      "texto": "só que nós temos pequenos médios produtores que muitas vezes estão desassistidos, então temos que se convocar às associações, a Aprosoja, o Famato,",
+      "tema": "agro/meio ambiente"
+    },
+    {
+      "inicio": 66.0,
+      "fim": 77.0,
+      "texto": "Não estou falando que não será assistido, mas temos que trabalhar todos em equipe para uma situação melhor para todos nós quanto população Mato Grosso.",
+      "tema": "agro/meio ambiente"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Sargento Laudicério, TikTok @sargentolau, 2026-08-26",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/sargento-laudicerio/7678144640587009300.mp3 (não versionado)",
+  "obs": "ATENÇÃO: é trecho de ENTREVISTA DE TV (TV Vila Real/Record, tarja \"Rodada de entrevistas: Sargento Laudicério\") que o próprio candidato postou no TikTok dele; não é spot de campanha. A pergunta (0–28,5 s) é do entrevistador (homem de barba grisalha nos quadros de 10 e 22 s) — NÃO usar. A resposta (28,5 s em diante) é do candidato (homem de bigode, terno, nos quadros de 40 e 65 s). Usar só se o editor aceitar corte de entrevista repostado pelo candidato (mesmo critério aplicado a Maurício Coelho). ASR corrigido: Aprosoja, Famato, Acrimat."
+}

@@ -1,0 +1,93 @@
+{
+  "candidato": "Beny Godoy (Benival Alves da Silva)",
+  "id_candidato": "beny-godoy",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "Agir",
+  "numero": 365,
+  "id": "7687462196196019472",
+  "url": "https://www.tiktok.com/@user8616808410619/video/7687462196196019472",
+  "rede": "tiktok",
+  "perfil": "@user8616808410619",
+  "perfil_url": "https://vm.tiktok.com/ZS9kDtJbwyekh-aGXmT/",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://vm.tiktok.com/ZS9kDtJbwyekh-aGXmT/); uploader do vídeo = user8616808410619 / BENY GODOY SENADOR",
+  "data": "2026-09-20",
+  "duracao_s": 40,
+  "titulo": "*BENY GODOY*SENADOR *N°365*Hoje, 19 de Setembro 2026, esteve em um ev...",
+  "descricao": "*BENY GODOY*SENADOR *N°365*Hoje, 19 de Setembro 2026, esteve em um evento esportivo na vila Burití Município de Confresa, na região Araguaia, onde con",
+  "tipo": "fala direta à câmera em evento esportivo (Vila Buriti, Confresa), com arte \"Senador Beny Godoy 365\"",
+  "fala_do_candidato": true,
+  "resumo": "Pede voto em evento esportivo no Araguaia: \"Beny Godoy será o seu primeiro voto ao Senado, 365\".",
+  "temas": [
+    "pedido de voto",
+    "interior/Araguaia"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 5.76,
+      "text": "Olá, meus amigos do PREVIO, eu vou ter de contar que eu estava enfrenado com o número 365,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 5.76,
+      "end": 12.8,
+      "text": "o único candidato ao Senado do interior, desfechocamente da região Araguaia, com presença em Mato Grosso.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 12.8,
+      "end": 18.8,
+      "text": "E hoje estou aqui por dia, para ter um amigo aqui que é um esportista da nossa região,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 18.8,
+      "end": 24.8,
+      "text": "que participa de um torneio, que se não conversa com cada pessoa, com cada cidadão,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 24.8,
+      "end": 29.8,
+      "text": "para nós pedir um voto e cada pessoa do apoio, para ver que é 365.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 29.8,
+      "end": 32.8,
+      "text": "Você tem direito a votar em dois candidatos ao senado.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 32.8,
+      "end": 35.8,
+      "text": "Beny Godoy será o seu primeiro voto ao Senado.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 35.8,
+      "end": 38.8,
+      "text": "365. Beny Godoy para o senado.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 38.8,
+      "end": 39.8,
+      "text": "Vamo dar uma vota.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 29.8,
+      "fim": 38.8,
+      "texto": "Você tem direito a votar em dois candidatos ao Senado. Beny Godoy será o seu primeiro voto ao Senado. 365. Beny Godoy para o Senado.",
+      "tema": "pedido de voto"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Beny Godoy, TikTok @user8616808410619, 2026-09-20",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/beny-godoy/7687462196196019472.v.mp4 (não versionado)",
+  "obs": "Voz do candidato (conferido em quadros aos 5, 20 e 35 s: ele fala à câmera, à noite, camisa amarela; arte \"Senador Beny Godoy 365\"). Áudio ao ar livre, ASR muito ruim: número \"3,5\" corrigido para 365 e \"Benigodói\" para Beny Godoy; o trecho 0–12,8 s tem palavras incertas (\"PREVIO\", \"desfechocamente\") — usar só o final, que está claro."
+}

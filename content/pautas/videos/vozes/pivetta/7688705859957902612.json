@@ -1,0 +1,82 @@
+{
+  "candidato": "Otaviano Pivetta (Otaviano Olavo Pivetta)",
+  "id_candidato": "pivetta",
+  "cargo": "governador",
+  "esfera": "estadual",
+  "partido": "Republicanos",
+  "numero": 10,
+  "id": "7688705859957902612",
+  "url": "https://www.tiktok.com/@otaviano.pivetta/video/7688705859957902612",
+  "rede": "tiktok",
+  "perfil": "@otaviano.pivetta",
+  "perfil_url": "https://www.tiktok.com/@otaviano.pivetta",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@otaviano.pivetta); uploader do vídeo = otaviano.pivetta / Otaviano Pivetta",
+  "data": "2026-09-23",
+  "duracao_s": 28,
+  "titulo": "Estrada boa muda a vida das pessoas! É por onde a produção chega, o c...",
+  "descricao": "Estrada boa muda a vida das pessoas! É por onde a produção chega, o caminhão passa, o ônibus escolar circula e o trabalhador consegue chegar. É infraestrutura que aproxima municípios antes isolados e cria condições para Mato Grosso continuar crescendo. ➡️Nos últimos 8 anos, fizemos mais de 7 mil km de estradas e quase 400 pontes. E não vamos parar por aí: no nosso plano de governo, estão previstos mais 4 mil km nos próximos quatro anos. Enquanto a velha política promete, o governo do fazimento entrega. E Mato Grosso precisa continuar abrindo caminhos🚀 #Pivetta10 #PivettaGovernador #MatoGrosso10 #ToComPivetta",
+  "tipo": "vídeo de campanha, fala direta à câmera (estúdio), com legenda e marca \"Pivetta 10\"",
+  "fala_do_candidato": true,
+  "resumo": "Estrada boa é para as famílias, não só para o caminhão; \"fizemos muito nesses sete anos e meio, faremos mais\".",
+  "temas": [
+    "infraestrutura",
+    "estradas",
+    "continuidade"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 4.0,
+      "text": "Estrada boa não é só para caminhão transportar carga.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 4.0,
+      "end": 9.4,
+      "text": "Estrada boa é para as famílias, é para o cidadão trabalhador poder se locomover,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 9.4,
+      "end": 12.6,
+      "text": "poder ir passear, poder visitar um parente, um amigo.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 12.6,
+      "end": 16.8,
+      "text": "É para melhorar a vida das pessoas. É assim que nós pensamos.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 16.8,
+      "end": 19.4,
+      "text": "Fizemos muito nesses sete anos e meio.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 19.4,
+      "end": 25.0,
+      "text": "Com o seu voto faremos muito mais e melhor nesses próximos quatro anos.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 0.0,
+      "fim": 9.4,
+      "texto": "Estrada boa não é só para caminhão transportar carga. Estrada boa é para as famílias, é para o cidadão trabalhador poder se locomover,",
+      "tema": "infraestrutura/estradas"
+    },
+    {
+      "inicio": 16.8,
+      "fim": 25.0,
+      "texto": "Fizemos muito nesses sete anos e meio. Com o seu voto faremos muito mais e melhor nesses próximos quatro anos.",
+      "tema": "gestão/continuidade"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Otaviano Pivetta, TikTok @otaviano.pivetta, 2026-09-23",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/pivetta/7688705859957902612.mp3 (não versionado)",
+  "obs": "Voz do candidato do início ao fim (conferido em quadros aos 6, 11, 17 e 22 s: ele fala à câmera, legenda queimada acompanha a fala). Corrigido ASR: \"Estrada Boa\" -> \"Estrada boa\", \"parciar\" -> \"passear\". Tom de balanço de gestão, sem ataque nominal."
+}

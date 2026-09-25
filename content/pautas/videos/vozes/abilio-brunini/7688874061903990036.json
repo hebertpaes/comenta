@@ -1,0 +1,298 @@
+{
+  "candidato": "Abilio Brunini (Abilio Jacques Brunini Moumer)",
+  "id_candidato": "abilio-brunini",
+  "cargo": "prefeito de Cuiabá",
+  "esfera": "municipal",
+  "partido": "PL",
+  "numero": null,
+  "id": "7688874061903990036",
+  "url": "https://www.tiktok.com/@abiliobrunini/video/7688874061903990036",
+  "rede": "tiktok",
+  "perfil": "@abiliobrunini",
+  "perfil_url": "https://www.tiktok.com/@abiliobrunini",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@abiliobrunini); uploader do vídeo = abiliobrunini / abiliobrunini",
+  "data": "2026-09-23",
+  "duracao_s": 150,
+  "titulo": "A difícil tarefa de seguir a lei e tomar decisões impopulares. Ser re...",
+  "descricao": "A difícil tarefa de seguir a lei e tomar decisões impopulares. Ser responsável e cumprir a lei que outros não cumpriram, fazer o certo que os outros não fizeram, pagar o preço que outros não pagaram.",
+  "tipo": "fala direta à câmera no gabinete (prefeito explica decisão administrativa)",
+  "fala_do_candidato": true,
+  "resumo": "Explica por que a Prefeitura de Cuiabá deixou de pagar a iluminação interna de condomínios fechados (\"não posso autorizar ilegalidade\", mesmo em período eleitoral).",
+  "temas": [
+    "gestão municipal",
+    "iluminação pública",
+    "condomínios"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 4.52,
+      "text": "Vem uma outra pessoa falar pra mim Abilio, nós estamos num período eleitoral, deixa pra fazer isso depois da eleição.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 4.52,
+      "end": 6.76,
+      "text": "Eu não posso fazer isso. Não posso fazer isso.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 6.76,
+      "end": 11.72,
+      "text": "Porque cada dia que eu autorizo o pagamento de uma ilegalidade, eu estou sendo responsável por ela.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 11.72,
+      "end": 14.92,
+      "text": "Ah, mas vai prejudicar no processo. Eu não posso fazer isso.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 14.92,
+      "end": 20.12,
+      "text": "Infelizmente sofro e acolho os danos disso daí, sofro as consequências da impopularidade da decisão.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 20.12,
+      "end": 23.44,
+      "text": "Mais uma vez que foi atestada a ilegalidade eu não posso prosseguir.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 23.44,
+      "end": 25.2,
+      "text": "É por questão eleitoral que seja.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 25.2,
+      "end": 27.52,
+      "text": "A eleição é eleição de administração pública e administração pública.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 27.52,
+      "end": 33.08,
+      "text": "A gente só está dizendo o seguinte, a lei não permite o município pagar com dinheiro público",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 33.08,
+      "end": 36.04,
+      "text": "a iluminação interna de condomínios fechados.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 36.04,
+      "end": 39.16,
+      "text": "Porque as vias do condomínio fechados são vias privadas.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 39.16,
+      "end": 42.56,
+      "text": "Elas não são vias públicas, são vias privadas desde a sua origem.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 42.56,
+      "end": 47.56,
+      "text": "Quando se apresentam projetos na prefeitura e aprova, esse projeto da prefeitura aprova-se como vias privadas.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 47.56,
+      "end": 49.76,
+      "text": "Tanto é que o carro de lixo não passa lá dentro,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 49.76,
+      "end": 52.2,
+      "text": "tanto é que o carro da polícia não fica girando dentro do condomínio,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 52.2,
+      "end": 56.0,
+      "text": "tanto é que os serviços dentro do condomínio são serviços privados.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 56.04,
+      "end": 59.08,
+      "text": "Por modalidade escolhida pelo próprio criador do condomínio fechado.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 59.08,
+      "end": 62.64,
+      "text": "A pessoa quando vai fazer isso aqui, ele escolhe essa modalidade de parcelamento.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 62.64,
+      "end": 65.76,
+      "text": "Então, o que havia e o que vinha acontecendo?",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 65.76,
+      "end": 71.72,
+      "text": "A prefeitura no passado emitiu uma carta para a Energisa pedindo para que a Energisa cobrasse",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 71.72,
+      "end": 76.12,
+      "text": "do município a iluminação interna dos condomínios fechados.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 76.12,
+      "end": 78.2,
+      "text": "Só que isso é uma ilegalidade.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 78.2,
+      "end": 81.68,
+      "text": "Porque existe uma resolução da Aneel, número 1.000 de 2021,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 81.72,
+      "end": 85.12,
+      "text": "no seu artigo 189, no seu parágrafo primeiro, inciso III,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 85.12,
+      "end": 91.44,
+      "text": "que diz que vias internas de condomínios não podem ser configuradas ou consideradas em iluminação pública.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 91.44,
+      "end": 93.04,
+      "text": "O que é iluminação pública?",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 93.04,
+      "end": 97.24,
+      "text": "Vias públicas que têm posteamento público ou que têm iluminação pública.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 97.24,
+      "end": 102.12,
+      "text": "Vias privadas com iluminação privada não é iluminação pública e não pode ser paga pela prefeitura.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 102.12,
+      "end": 103.64,
+      "text": "Vamos ser mais radical imaginar.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 103.64,
+      "end": 107.0,
+      "text": "Imagina o seguinte, que eu, através da prefeitura, emitisse uma carta falando",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 107.0,
+      "end": 108.84,
+      "text": "que eu não vou pagar a luz na sua casa.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 108.84,
+      "end": 111.88,
+      "text": "Essa carta é ilegal, esse pagamento é ilegal.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 111.88,
+      "end": 114.92,
+      "text": "A Energisa, ao receber essa carta, ela deveria falar",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 114.92,
+      "end": 119.32,
+      "text": "não posso ser cúmplice de um ato da ilegalidade da administração pública.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 119.32,
+      "end": 123.44,
+      "text": "A Energisa tem compliance, a Energisa tem toda uma série de regramentos que fala.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 123.44,
+      "end": 127.24,
+      "text": "Se a administração pública quiser cometer um ato ilícito,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 127.24,
+      "end": 129.72,
+      "text": "a Energisa não pode ser cúmplice desse ato ilícito.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 129.72,
+      "end": 134.72,
+      "text": "Mas ela foi, ao medida que o prefeito dos anteriores emitiram essa carta para a Energisa",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 134.76,
+      "end": 137.76,
+      "text": "e ela aceitou, ela aceitou mediante uma ilegalidade.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 137.76,
+      "end": 140.84,
+      "text": "E se ela cometeu essa ilegalidade em conjunto com a prefeitura,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 140.84,
+      "end": 146.16,
+      "text": "ela tem que ressarcir os cofres públicos do recurso que ela recebeu inadequadamente, ilegalmente.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 146.16,
+      "end": 150.96,
+      "text": "Desde a resolução 1.000 de 2021.",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 4.5,
+      "fim": 11.7,
+      "texto": "Eu não posso fazer isso. Não posso fazer isso. Porque cada dia que eu autorizo o pagamento de uma ilegalidade, eu estou sendo responsável por ela.",
+      "tema": "gestão/legalidade"
+    },
+    {
+      "inicio": 27.5,
+      "fim": 36.0,
+      "texto": "A gente só está dizendo o seguinte, a lei não permite o município pagar com dinheiro público a iluminação interna de condomínios fechados.",
+      "tema": "iluminação/condomínios"
+    }
+  ],
+  "credito": "Áudio: vídeo publicado de Abilio Brunini, TikTok @abiliobrunini, 2026-09-23",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/abilio-brunini/7688874061903990036.mp3 (não versionado)",
+  "obs": "Abilio Brunini NÃO é candidato em 2026 (prefeito de Cuiabá): o crédito deve dizer \"vídeo publicado por\", não \"propaganda eleitoral\". Voz dele do início ao fim (conferido em quadros aos 3, 50, 100 e 140 s: ele fala à câmera no gabinete, legenda acompanha). Tema: fim do pagamento, pela prefeitura, da iluminação interna de condomínios fechados; cobra ressarcimento da Energisa (empresa, não candidato). ASR corrigido (Energisa, Aneel, parágrafo/inciso, ressarcir)."
+}

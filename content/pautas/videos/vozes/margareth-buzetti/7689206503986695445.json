@@ -1,0 +1,136 @@
+{
+  "candidato": "Margareth Buzetti",
+  "id_candidato": "margareth-buzetti",
+  "cargo": "senador",
+  "esfera": "estadual",
+  "partido": "PP",
+  "numero": 111,
+  "id": "7689206503986695445",
+  "url": "https://www.tiktok.com/@margarethbuzetti/video/7689206503986695445",
+  "rede": "tiktok",
+  "perfil": "@margarethbuzetti",
+  "perfil_url": "https://www.tiktok.com/@margarethbuzetti",
+  "confirmacao_perfil": "perfil listado no elenco.json (https://www.tiktok.com/@margarethbuzetti); uploader do vídeo = margarethbuzetti / Margareth Buzetti",
+  "data": "2026-09-24",
+  "duracao_s": 59,
+  "titulo": "Não é fácil se manter num país com uma carga tributária absurda. O go...",
+  "descricao": "Não é fácil se manter num país com uma carga tributária absurda. O governo só atrapalha o empresário. Mas quem paga a folha, a saúde e a educação deste país? Quero voltar ao Senado para defender quem produz e gera emprego. Pra cuidar das nossas vidas, Margareth Buzetti, 111!",
+  "tipo": "corte de podcast (ela ao microfone) com arte de campanha \"11\", postado no perfil da candidata",
+  "fala_do_candidato": true,
+  "resumo": "Empresária há quase 40 anos em MT, reclama da carga tributária e de um governo que \"só atrapalha o empresário\".",
+  "temas": [
+    "economia",
+    "impostos",
+    "empreendedorismo"
+  ],
+  "transcricao_metodo": "faster-whisper small (cpu/int8), language=pt, vad_filter=True; áudio convertido para wav 16 kHz mono com ffmpeg (imageio-ffmpeg)",
+  "segmentos": [
+    {
+      "start": 0.0,
+      "end": 2.76,
+      "text": "O governo só atrapalha o empresário.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 2.76,
+      "end": 6.8,
+      "text": "Ele nos chama de bandido, ele nos chama de explorador.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 6.8,
+      "end": 12.52,
+      "text": "A gente veio para cá, era muito desafiador o mercado aqui,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 12.52,
+      "end": 17.04,
+      "text": "porque o Mato Grosso tem suas particularidades.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 17.04,
+      "end": 21.2,
+      "text": "Mas deu certo, a gente conseguiu se instalar,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 21.2,
+      "end": 24.56,
+      "text": "temos a mesma empresa com o mesmo CNPJ,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 24.56,
+      "end": 28.32,
+      "text": "está quase 40 anos, não é fácil se manter",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 28.32,
+      "end": 32.32,
+      "text": "nesse país cheio de impostos na carga tributária absurda.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 32.32,
+      "end": 34.64,
+      "text": "Como o governo que não ajuda o empresário?",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 34.64,
+      "end": 36.72,
+      "text": "Nunca, nunca ajuda.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 36.72,
+      "end": 39.48,
+      "text": "O governo só atrapalha o empresário,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 39.48,
+      "end": 42.8,
+      "text": "ele nos chama de bandido, ele nos chama de explorador.",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 42.8,
+      "end": 45.2,
+      "text": "E eu não sei o que que ele pensa,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 45.2,
+      "end": 50.08,
+      "text": "quem que vai pagar a folha de pagamento desse governo,",
+      "voz": "candidato(a)"
+    },
+    {
+      "start": 50.08,
+      "end": 53.2,
+      "text": "quem que vai pagar a saúde, quem que vai pagar a educação?",
+      "voz": "candidato(a)"
+    }
+  ],
+  "trechos_sugeridos": [
+    {
+      "inicio": 17.0,
+      "fim": 32.3,
+      "texto": "Mas deu certo, a gente conseguiu se instalar, temos a mesma empresa com o mesmo CNPJ, está quase 40 anos, não é fácil se manter nesse país cheio de impostos na carga tributária absurda.",
+      "tema": "economia/impostos"
+    },
+    {
+      "inicio": 45.2,
+      "fim": 53.2,
+      "texto": "quem que vai pagar a folha de pagamento desse governo, quem que vai pagar a saúde, quem que vai pagar a educação?",
+      "tema": "economia/impostos"
+    }
+  ],
+  "credito": "Áudio: propaganda eleitoral de Margareth Buzetti, TikTok @margarethbuzetti, 2026-09-24",
+  "arquivo_local_temporario": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/vozes/margareth-buzetti/7689206503986695445.v.mp4 (não versionado)",
+  "obs": "Voz da candidata do início ao fim (conferido em quadros aos 1, 10, 30 e 45 s). Conta a história da empresa dela (quase 40 anos, mesmo CNPJ) e critica \"o governo\" (federal) por atrapalhar empresários — crítica genérica, sem nome. Os 0–6,8 s repetem 36,7–42,8 s (abertura do corte)."
+}
