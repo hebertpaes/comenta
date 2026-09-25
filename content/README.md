@@ -510,6 +510,17 @@ Regra do editor (24/09/2026): matérias de eleições podem ilustrar os candidat
 | Capa de um candidato | `DAHWH3jRQss` (Pivetta promete…) | `…-capa-pivetta-promete-devolver.jpg` | modelo para matéria sobre um candidato (proposta, agenda, entrevista) |
 | Capa de dois candidatos | `DAHWH_wMHgw` (debate) | `…-capa-pivetta-wellington-debate.jpg` | modelo para debate/embate entre dois |
 
+### Disputas em outros estados e Presidência (fotos do DivulgaCand/TSE)
+
+Pedido do editor (25/09/2026): "Favor envia com as fotos dos candidatos junto que está no divulgacande". Matérias que apresentam a disputa pelo governo de **qualquer estado**, pelo Senado ou pela Presidência (ex.: "Sergipe: seis candidatos disputam o governo") levam capa com a foto oficial de registro de **todos** os candidatos, em ordem alfabética:
+
+1. `python3 candidatos-tse.py lista <uf> [governador|senador]` (Presidência: `lista br presidente`) — lista do espelho ND Mais com nome de urna, partido, situação e foto. Tire indeferidos, renúncias e registros duplicados e confira nome a nome com a matéria (a contagem do título tem de bater; se a matéria omitir um nome, a montagem mantém todos os registrados e a omissão vai para a resposta ao editor).
+2. Suba cada foto no Canva com `upload-asset-from-url` (nome `TSE 2026 <UF> <cargo> - <nome> (<partido>) F<UF><SQ>`) e monte o spec (`titulo` "ELEIÇÕES 2026 · Governo de <estado>", `subtitulo` "<N> candidatos disputam o cargo · ordem alfabética · Fotos: TSE/Divulgação", `alt_cargo`, `design_titulo`, `candidatos` com `canva`).
+3. `python3 candidatos-tse.py ops spec.json > ops.json`; `copy-design` de `DAHWH1j1gbI`; `read-design open_transaction`; `edit-design` com as operações; conferir a miniatura (rostos inteiros, tarjas numa linha); `commit`; `export-design` jpg 92 → `pautas/eleicoes/<data>-candidatos-<cargo>-<uf>.jpg`.
+4. `imagem-post.mjs --legenda="Fotos: TSE/Divulgação · Arte: HOJE MT" --alt="Candidatos ao governo de <estado> em 2026, em ordem alfabética: <nome (partido)>…"`; `og-whatsapp.mjs --slug --da-destaque`; registro em `pautas/eleicoes/registro.json`.
+
+Mais de 10 candidatos (Presidência: 13): o modelo tem 10 vagas; acrescente as que faltam com `insert_fill`/`insert_shape`/`add_text` na mesma grade. Acusação/denúncia/investigação continua sem foto oficial (seção abaixo).
+
 ### Receita das capas (Canva MCP)
 
 1. `copy-design` do modelo 16:9 `DAHWDzwR5c0`; `read-design open_transaction`; apague todos os elementos do modelo de charge (faixa, balão, legenda, selo, assinatura, rodapé).
