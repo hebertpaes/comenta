@@ -783,14 +783,15 @@ def de_unificado(u):
 
 
 def busca_municipio(cli, tse, ele, uf, mun, cargo, cache_fixo=None, cache_r=None):
-    """-v + fixo (formato de 2022) ou, se não houver, o unificado -u (formato de 2024)."""
-    v = cli.json(tse.v(ele, uf, cargo, mun))
-    if v is None:
-        u = cli.json(tse.u(ele, uf, cargo, mun))
-        if u is None:
-            return None, None, None
+    """Unificado -u (formato de 2024, que o TSE também regerou para 2022 em 18/09/2026) ou, se não houver,
+    -v + arquivo fixo -f (formato original de 2022). mun='' = a UF inteira."""
+    u = cli.json(tse.u(ele, uf, cargo, mun))
+    if u is not None:
         v, fixo = de_unificado(u)
         return v, fixo, cache_r
+    v = cli.json(tse.v(ele, uf, cargo, mun))
+    if v is None:
+        return None, None, None
     nadf = v.get('nadf')
     cache_fixo = {} if cache_fixo is None else cache_fixo
     if nadf and nadf not in cache_fixo:
@@ -824,7 +825,7 @@ def cmd_municipio(a, cli):
     cargo = z4(a.cargo)
     v, fixo, _ = busca_municipio(cli, tse, a.ele, a.uf, a.mun, cargo)
     if v is None:
-        raise SystemExit(f'sem arquivo -v para {a.uf}{a.mun} cargo {cargo} eleição {a.ele}')
+        raise SystemExit(f'sem arquivo -u/-v para {a.uf}{a.mun} cargo {cargo} eleição {a.ele}')
     uf_r = cli.json(tse.r(a.ele, 'br' if cargo == '0001' else a.uf, cargo)) or {}
     ccn = {c['n']: c for c in uf_r.get('cand', [])}
     muns = nomes_municipios(cli, tse, a.ele, a.uf)
@@ -835,7 +836,8 @@ def cmd_municipio(a, cli):
         return
     ab = v['abr'][0]
     print(f"{nm} ({a.mun}) — {CARGOS.get(cargo, cargo)} — eleição {a.ele} ({tse.ciclo}) — "
-          f"totalização {d['atualizado']} ({'final' if d['final'] else 'parcial'}; arquivo gerado {v.get('dg')} {v.get('hg')})")
+          f"totalização {d['atualizado']} ({'final' if d['final'] else 'parcial'}; arquivo "
+          f"{'-u' if v.get('formato') == 'u' else '-v'} gerado {v.get('dg')} {v.get('hg')})")
     print(f"Seções: {milhar(d['secoes_totalizadas'])} de {milhar(d['secoes'])} totalizadas ({d['secoes_totalizadas_pct']}%)")
     print(f"Eleitorado {milhar(d['eleitorado'])} | Comparecimento {milhar(d['comparecimento'])} ({d['comparecimento_pct']}%)"
           f" | Abstenção {milhar(d['abstencao'])} ({d['abstencao_pct']}%)")
@@ -1142,7 +1144,7 @@ def valida(regs, v, fixo, ele, cargo):
 
 def imprime_validacao(titulo, linhas, ok):
     print(f'\nValidação — {titulo}: {"OK, bate exatamente" if ok else "DIVERGÊNCIA"}')
-    print(f"  {'Item':<34} {'Soma das seções':>16} {'Oficial (-v)':>14} {'Dif.':>7}")
+    print(f"  {'Item':<34} {'Soma das seções':>16} {'Oficial TSE':>14} {'Dif.':>7}")
     for nome, a, b in linhas:
         print(f'  {nome[:34]:<34} {milhar(a):>16} {milhar(b):>14} {a - b:>7}')
 
@@ -1209,7 +1211,7 @@ def cmd_secoes(a, cli):
         for cargo in [z4(c) for c in a.cargos.split(',')]:
             v, fixo, _ = busca_municipio(cli, tse, ele, uf, mun, cargo)
             if v is None:
-                print(f'(sem -v para cargo {cargo} na eleição {ele})')
+                print(f'(sem -u/-v para cargo {cargo} na eleição {ele})')
                 continue
             if not a.limite:
                 linhas, ok = valida(regs, v, fixo, ele, cargo)
