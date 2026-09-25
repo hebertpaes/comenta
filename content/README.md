@@ -519,7 +519,7 @@ Pedido do editor (25/09/2026): "Favor envia com as fotos dos candidatos junto qu
 3. `python3 candidatos-tse.py ops spec.json > ops.json`; `copy-design` de `DAHWH1j1gbI`; `read-design open_transaction`; `edit-design` com as operações; conferir a miniatura (rostos inteiros, tarjas numa linha); `commit`; `export-design` jpg 92 → `pautas/eleicoes/<data>-candidatos-<cargo>-<uf>.jpg`.
 4. `imagem-post.mjs --legenda="Fotos: TSE/Divulgação · Arte: HOJE MT" --alt="Candidatos ao governo de <estado> em 2026, em ordem alfabética: <nome (partido)>…"`; `og-whatsapp.mjs --slug --da-destaque`; registro em `pautas/eleicoes/registro.json`.
 
-Mais de 10 candidatos (Presidência: 13): o modelo tem 10 vagas; acrescente as que faltam com `insert_fill`/`insert_shape`/`add_text` na mesma grade. Acusação/denúncia/investigação continua sem foto oficial (seção abaixo).
+Fotos muito fechadas (o recorte padrão corta testa ou queixo): ponha `"encaixe": "inteiro"` no spec — cada foto entra inteira, centralizada, com o fundo verde nas laterais (Bahia, 25/09). Mais de 10 candidatos (Presidência: 13): o modelo tem 10 vagas; acrescente as que faltam com `insert_fill`/`insert_shape`/`add_text` na mesma grade. Acusação/denúncia/investigação continua sem foto oficial (seção abaixo).
 
 ### Receita das capas (Canva MCP)
 

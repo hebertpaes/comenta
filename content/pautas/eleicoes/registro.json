@@ -188,6 +188,444 @@
         }
       ],
       "obs": "o espelho lista também Pablo Marçal (PRTB, nº 28), mesmo número de Leonardo Avalanche; a matéria e a lista de agendas trazem Avalanche — Marçal fora da arte (checagem pendente da situação no TSE)"
+    },
+    {
+      "nome": "Candidatos ao governo — Alagoas (16:9)",
+      "design": "DAHWNSafQ_c",
+      "modelo": "DAHWH1j1gbI",
+      "arquivo": "pautas/eleicoes/2026-09-25-candidatos-governo-al.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-governo-al.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "JHC",
+          "partido": "PSDB",
+          "canva": "MAHWNVFBlro",
+          "sq": "20002553350"
+        },
+        {
+          "nome_urna": "Lenilda Luna",
+          "partido": "UP",
+          "canva": "MAHWNTh-6as",
+          "sq": "20002539642"
+        },
+        {
+          "nome_urna": "Márcio Jambo",
+          "partido": "Democrata",
+          "canva": "MAHWNXCoxu4",
+          "sq": "20002552502"
+        },
+        {
+          "nome_urna": "Renan Filho",
+          "partido": "MDB",
+          "canva": "MAHWNYYKaUY",
+          "sq": "20002553745"
+        }
+      ],
+      "fonte_fotos": "TSE (registro de candidatura), espelho https://ndmais.com.br/eleicoes/2026/candidatos/al/governador/"
+    },
+    {
+      "nome": "Candidatos ao governo — Bahia (16:9)",
+      "design": "DAHWNcPW7nA",
+      "modelo": "DAHWH1j1gbI",
+      "arquivo": "pautas/eleicoes/2026-09-25-candidatos-governo-ba.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-governo-ba.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "ACM Neto",
+          "partido": "União",
+          "canva": "MAHWNVSZBwQ",
+          "sq": "50002533190"
+        },
+        {
+          "nome_urna": "Ariel Capistrano",
+          "partido": "DC",
+          "canva": "MAHWNVw_Ksk",
+          "sq": "50002535253"
+        },
+        {
+          "nome_urna": "Aroldo Felix",
+          "partido": "UP",
+          "canva": "MAHWNbPdtg8",
+          "sq": "50002544692"
+        },
+        {
+          "nome_urna": "Jerônimo Rodrigues",
+          "partido": "PT",
+          "canva": "MAHWNalDp4c",
+          "sq": "50002536314"
+        },
+        {
+          "nome_urna": "Maria Bona",
+          "partido": "PCO",
+          "canva": "MAHWNWDCDkA",
+          "sq": "50002552489"
+        },
+        {
+          "nome_urna": "Ronaldo Mansur",
+          "partido": "PSOL",
+          "canva": "MAHWNV5Yf5Q",
+          "sq": "50002532269"
+        }
+      ],
+      "fonte_fotos": "TSE (registro de candidatura), espelho https://ndmais.com.br/eleicoes/2026/candidatos/ba/governador/"
+    },
+    {
+      "nome": "Candidatos ao governo — Ceará (16:9)",
+      "design": "DAHWNa1go2g",
+      "modelo": "DAHWH1j1gbI",
+      "arquivo": "pautas/eleicoes/2026-09-25-candidatos-governo-ce.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-governo-ce.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Ciro Gomes",
+          "partido": "PSDB",
+          "canva": "MAHWNeFAoAs",
+          "sq": "60002531351"
+        },
+        {
+          "nome_urna": "Danilo Soares",
+          "partido": "Democrata",
+          "canva": "MAHWNQG0M1k",
+          "sq": "60002552498"
+        },
+        {
+          "nome_urna": "Delegado Huggo",
+          "partido": "Missão",
+          "canva": "MAHWNSs9RZ4",
+          "sq": "60002540417"
+        },
+        {
+          "nome_urna": "Elmano de Freitas",
+          "partido": "PT",
+          "canva": "MAHWNZhn8N0",
+          "sq": "60002543969"
+        },
+        {
+          "nome_urna": "Ieri Braga",
+          "partido": "PCO",
+          "canva": "MAHWNZKt3oI",
+          "sq": "60002552320"
+        },
+        {
+          "nome_urna": "Serley Leal",
+          "partido": "UP",
+          "canva": "MAHWNcYA0Ts",
+          "sq": "60002533729"
+        },
+        {
+          "nome_urna": "Vera Lúcia",
+          "partido": "Novo",
+          "canva": "MAHWNb0iAV8",
+          "sq": "60002553922"
+        },
+        {
+          "nome_urna": "Zé Batista",
+          "partido": "PSTU",
+          "canva": "MAHWNbPw_Uo",
+          "sq": "60002549967"
+        }
+      ],
+      "fonte_fotos": "TSE (registro de candidatura), espelho https://ndmais.com.br/eleicoes/2026/candidatos/ce/governador/"
+    },
+    {
+      "nome": "Candidatos ao governo — Maranhão (16:9)",
+      "design": "DAHWNUA5ZUc",
+      "modelo": "DAHWH1j1gbI",
+      "arquivo": "pautas/eleicoes/2026-09-25-candidatos-governo-ma.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-governo-ma.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "André Luis",
+          "partido": "Missão",
+          "canva": "MAHWNUEdGbg",
+          "sq": "100002544076"
+        },
+        {
+          "nome_urna": "Dimas Cassimiro",
+          "partido": "PCO",
+          "canva": "MAHWNRH9JFk",
+          "sq": "100002552700"
+        },
+        {
+          "nome_urna": "Eduardo Braide",
+          "partido": "PSD",
+          "canva": "MAHWNVNLrbA",
+          "sq": "100002545679"
+        },
+        {
+          "nome_urna": "Felipe Camarão",
+          "partido": "PT",
+          "canva": "MAHWNU-E_fs",
+          "sq": "100002542556"
+        },
+        {
+          "nome_urna": "Orleans Brandão",
+          "partido": "MDB",
+          "canva": "MAHWNc5UhO0",
+          "sq": "100002543869"
+        },
+        {
+          "nome_urna": "Reginaldo Lima",
+          "partido": "PCB",
+          "canva": "MAHWNfg6m0I",
+          "sq": "100002544073"
+        },
+        {
+          "nome_urna": "Roberto Rocha",
+          "partido": "PRTB",
+          "canva": "MAHWNRO6zeo",
+          "sq": "100002551399"
+        },
+        {
+          "nome_urna": "Saulo Arcangeli",
+          "partido": "PSTU",
+          "canva": "MAHWNd8n098",
+          "sq": "100002534190"
+        }
+      ],
+      "fonte_fotos": "TSE (registro de candidatura), espelho https://ndmais.com.br/eleicoes/2026/candidatos/ma/governador/"
+    },
+    {
+      "nome": "Candidatos ao governo — Paraíba (16:9)",
+      "design": "DAHWNTNgLIk",
+      "modelo": "DAHWH1j1gbI",
+      "arquivo": "pautas/eleicoes/2026-09-25-candidatos-governo-pb.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-governo-pb.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Camilo Duarte",
+          "partido": "PCO",
+          "canva": "MAHWNVE7HPk",
+          "sq": "150002552603"
+        },
+        {
+          "nome_urna": "Cícero Lucena",
+          "partido": "MDB",
+          "canva": "MAHWNZQEKLQ",
+          "sq": "150002544133"
+        },
+        {
+          "nome_urna": "Efraim Filho",
+          "partido": "PL",
+          "canva": "MAHWNbesaEM",
+          "sq": "150002538692"
+        },
+        {
+          "nome_urna": "Lucas Ribeiro",
+          "partido": "PP",
+          "canva": "MAHWNRYvbOY",
+          "sq": "150002551789"
+        },
+        {
+          "nome_urna": "Pedro Coutinho",
+          "partido": "DC",
+          "canva": "MAHWNU4n094",
+          "sq": "150002551911"
+        },
+        {
+          "nome_urna": "Yuri Ezequiel",
+          "partido": "UP",
+          "canva": "MAHWNTDiDto",
+          "sq": "150002540204"
+        }
+      ],
+      "fonte_fotos": "TSE (registro de candidatura), espelho https://ndmais.com.br/eleicoes/2026/candidatos/pb/governador/"
+    },
+    {
+      "nome": "Candidatos ao governo — Pernambuco (16:9)",
+      "design": "DAHWNZfiU9U",
+      "modelo": "DAHWH1j1gbI",
+      "arquivo": "pautas/eleicoes/2026-09-25-candidatos-governo-pe.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-governo-pe.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Guilherme Fonseca",
+          "partido": "PSTU",
+          "canva": "MAHWNaTJvqw",
+          "sq": "170002536575"
+        },
+        {
+          "nome_urna": "Ivan Moraes",
+          "partido": "PSOL",
+          "canva": "MAHWNQs9KSY",
+          "sq": "170002538097"
+        },
+        {
+          "nome_urna": "João Campos",
+          "partido": "PSB",
+          "canva": "MAHWNYRjp5Y",
+          "sq": "170002537230"
+        },
+        {
+          "nome_urna": "Professora Camila",
+          "partido": "UP",
+          "canva": "MAHWNS7cGhA",
+          "sq": "170002537320"
+        },
+        {
+          "nome_urna": "Raquel Lyra",
+          "partido": "PSD",
+          "canva": "MAHWNQnctvQ",
+          "sq": "170002537227"
+        },
+        {
+          "nome_urna": "Renan",
+          "partido": "Missão",
+          "canva": "MAHWNYjuiP4",
+          "sq": "170002540337"
+        },
+        {
+          "nome_urna": "Victor Assis",
+          "partido": "PCO",
+          "canva": "MAHWNUkHYOA",
+          "sq": "170002552776"
+        }
+      ],
+      "fonte_fotos": "TSE (registro de candidatura), espelho https://ndmais.com.br/eleicoes/2026/candidatos/pe/governador/"
+    },
+    {
+      "nome": "Candidatos ao governo — Piauí (16:9)",
+      "design": "DAHWNd96aN0",
+      "modelo": "DAHWH1j1gbI",
+      "arquivo": "pautas/eleicoes/2026-09-25-candidatos-governo-pi.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-governo-pi.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Dra. Lúcia Santos",
+          "partido": "PSDB",
+          "canva": "MAHWNb_7-Ys",
+          "sq": "180002544216"
+        },
+        {
+          "nome_urna": "Elizeu Aguiar",
+          "partido": "Novo",
+          "canva": "MAHWNYQaj6Y",
+          "sq": "180002533958"
+        },
+        {
+          "nome_urna": "Geraldo Carvalho",
+          "partido": "PSTU",
+          "canva": "MAHWNWxLb3w",
+          "sq": "180002537422"
+        },
+        {
+          "nome_urna": "Joel Rodrigues",
+          "partido": "PP",
+          "canva": "MAHWNZxygq0",
+          "sq": "180002538530"
+        },
+        {
+          "nome_urna": "Lourdes Melo",
+          "partido": "PCO",
+          "canva": "MAHWNaS1oZU",
+          "sq": "180002553722"
+        },
+        {
+          "nome_urna": "Professor Gisvaldo",
+          "partido": "PSOL",
+          "canva": "MAHWNbWXQyo",
+          "sq": "180002549970"
+        },
+        {
+          "nome_urna": "Professor Jurity",
+          "partido": "DC",
+          "canva": "MAHWNVZQt-I",
+          "sq": "180002548565"
+        },
+        {
+          "nome_urna": "Rafael Fonteles",
+          "partido": "PT",
+          "canva": "MAHWNXn2fDo",
+          "sq": "180002532987"
+        },
+        {
+          "nome_urna": "Ravenna da Inclusão",
+          "partido": "Democrata",
+          "canva": "MAHWNcLvlT8",
+          "sq": "180002548388"
+        },
+        {
+          "nome_urna": "Santiago Belizário",
+          "partido": "UP",
+          "canva": "MAHWNc7C_sM",
+          "sq": "180002549995"
+        }
+      ],
+      "fonte_fotos": "TSE (registro de candidatura), espelho https://ndmais.com.br/eleicoes/2026/candidatos/pi/governador/"
+    },
+    {
+      "nome": "Candidatos ao governo — Rio Grande do Norte (16:9)",
+      "design": "DAHWNQLI6fE",
+      "modelo": "DAHWH1j1gbI",
+      "arquivo": "pautas/eleicoes/2026-09-25-candidatos-governo-rn.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-governo-rn.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Allyson",
+          "partido": "União",
+          "canva": "MAHWNU7VWsk",
+          "sq": "200002535255"
+        },
+        {
+          "nome_urna": "Álvaro Dias",
+          "partido": "PL",
+          "canva": "MAHWNUTpH4o",
+          "sq": "200002534442"
+        },
+        {
+          "nome_urna": "Arinalda do MLB",
+          "partido": "UP",
+          "canva": "MAHWNazoEFY",
+          "sq": "200002547826"
+        },
+        {
+          "nome_urna": "Cadu de Lula",
+          "partido": "PT",
+          "canva": "MAHWNSd7OJU",
+          "sq": "200002534001"
+        },
+        {
+          "nome_urna": "Dário Barbosa",
+          "partido": "PSTU",
+          "canva": "MAHWNWt-sy0",
+          "sq": "200002542481"
+        },
+        {
+          "nome_urna": "Henrique Lyra",
+          "partido": "PCO",
+          "canva": "MAHWNW9Oahw",
+          "sq": "200002553301"
+        },
+        {
+          "nome_urna": "Professor Roberio Paulino",
+          "partido": "PSOL",
+          "canva": "MAHWNQGxOO0",
+          "sq": "200002546757"
+        },
+        {
+          "nome_urna": "Rodrigo de Bolsonaro",
+          "partido": "Agir",
+          "canva": "MAHWNYO1yXM",
+          "sq": "200002546756"
+        }
+      ],
+      "fonte_fotos": "TSE (registro de candidatura), espelho https://ndmais.com.br/eleicoes/2026/candidatos/rn/governador/"
     }
   ],
   "posts_atualizados": [
@@ -226,6 +664,53 @@
       "slug": "presidenciaveis-intensificam-campanhas-em-varios-estados-nesta-sexta",
       "antes": "capa-229b704e866c0f6a.webp",
       "depois": "2026-09-25-candidatos-presidente-br.jpg"
+    },
+    {
+      "slug": "eleicoes-2026-alagoas-define-nomes-na-disputa-pelo-governo-estadual",
+      "antes": "capa-bc1fd5055daee1b1.webp → ilustração 2026-09-25-alagoas-governo-eleicao.jpg",
+      "depois": "2026-09-25-candidatos-governo-al.jpg"
+    },
+    {
+      "slug": "bahia-tem-seis-candidatos-a-disputa-pelo-governo-nas-eleicoes-2026",
+      "antes": "capa-7364c40655d11f4f.webp → ilustração 2026-09-25-bahia-governo-eleicao.jpg",
+      "depois": "2026-09-25-candidatos-governo-ba.jpg",
+      "obs": "fotos do TSE muito fechadas: encaixe \"inteiro\" (foto inteira centralizada); Estêvão (DC) fora — registro indeferido"
+    },
+    {
+      "slug": "ceara-tem-oito-nomes-na-disputa-pelo-governo-nas-eleicoes-2026",
+      "antes": "capa-aad42f3584e40b51.webp → ilustração 2026-09-25-ceara-governo-eleicao.jpg",
+      "depois": "2026-09-25-candidatos-governo-ce.jpg",
+      "obs": "a matéria anuncia oito, mas só lista quatro nomes (Danilo Soares, Delegado Huggo, Elmano de Freitas, Ieri Braga); a arte traz os oito; Pedro Brito (Novo) fora — renúncia"
+    },
+    {
+      "slug": "maranhao-tem-oito-candidatos-a-governador-nas-eleicoes-2026",
+      "antes": "capa-864278566978e613.webp",
+      "depois": "2026-09-25-candidatos-governo-ma.jpg",
+      "obs": "Roberto Rocha (PRTB) sem situação no espelho; está na lista da matéria"
+    },
+    {
+      "slug": "paraiba-tem-seis-candidatos-a-disputa-pelo-governo-nas-eleicoes-2026",
+      "antes": "capa-9b434471a59c365b.webp",
+      "depois": "2026-09-25-candidatos-governo-pb.jpg",
+      "obs": "três fotos muito fechadas (Camilo Duarte, Cícero Lucena, Lucas Ribeiro) reduzidas e centralizadas sobre caixa branca"
+    },
+    {
+      "slug": "sete-candidatos-concorrem-ao-governo-de-pernambuco-nas-eleicoes",
+      "antes": "capa-895efefb577e1666.webp",
+      "depois": "2026-09-25-candidatos-governo-pe.jpg",
+      "obs": "a matéria diz \"eleições de 2024\" (erro; são as de 2026); Professor Jeremias do Banco (Democrata) fora — registro indeferido"
+    },
+    {
+      "slug": "piaui-tem-dez-nomes-na-disputa-pelo-governo-nas-eleicoes-2026",
+      "antes": "capa-d663c9314be2e2b1.webp",
+      "depois": "2026-09-25-candidatos-governo-pi.jpg",
+      "obs": "Gustavo (Avante) fora — registro indeferido; Elizeu Aguiar tem dois registros no espelho, usado o SQ 180002533958"
+    },
+    {
+      "slug": "rio-grande-do-norte-tem-oito-nomes-na-disputa-pelo-governo",
+      "antes": "capa-b4f1df476d04d396.webp",
+      "depois": "2026-09-25-candidatos-governo-rn.jpg",
+      "obs": "a matéria anuncia oito e lista sete (omite Álvaro Dias, PL); Carlos Jararaca (DC, indeferido) e Godeiro Linharess (DC, pendente de julgamento) fora, como na contagem da matéria"
     }
   ],
   "mantidos": [

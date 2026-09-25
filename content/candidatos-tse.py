@@ -11,6 +11,9 @@ O `ops` usa o modelo Canva DAHWH1j1gbI (montagem do Senado por MT, 10 vagas: cab
 de 100 px + grade). Até 5 candidatos: uma fileira de 800 px de altura; de 6 a 10: duas
 fileiras de 400 px (a de baixo centralizada). Spec: {titulo, subtitulo, alt_cargo,
 design_titulo, candidatos: [{nome_urna, partido_fmt, canva}]} em ordem alfabética.
+Com "encaixe": "inteiro" no spec, cada foto aparece inteira (sem corte), centralizada na
+célula sobre o fundo verde — use quando as fotos do TSE forem muito fechadas (rosto
+cortado pelo recorte padrão), como na montagem da Bahia de 25/09/2026.
 """
 import html, json, math, re, sys, unicodedata, urllib.request
 
@@ -52,8 +55,10 @@ def ops(spec):
         off = (1600 - rown * W) / 2
         for j in range(rown):
             cand = c[k]; left = round(off + j * W, 2); top = 100 + r * H
-            sc = max(W / 161, H / 225); iw, ih = 161 * sc, 225 * sc
+            inteiro = spec.get('encaixe') == 'inteiro'
+            sc = (min if inteiro else max)(W / 161, H / 225); iw, ih = 161 * sc, 225 * sc
             crop_top = 0 if ih <= H + 1 else -min(0.035 * ih, ih - H)
+            pw, pleft = (iw, left + (W - iw) / 2) if inteiro else (W, left)
             label = f"{cand['nome_urna']} · {cand['partido_fmt']}"
             size = 23
             if len(label) * 0.53 * size > W - 16:
@@ -61,9 +66,9 @@ def ops(spec):
             out += [
                 {"type": "update_fill", "locator_id": L(P[k]), "asset_type": "image", "asset_id": cand['canva'],
                  "alt_text": f"{cand['nome_urna']} ({cand['partido_fmt']}), {spec['alt_cargo']}. Foto: TSE/Divulgação"},
-                {"type": "resize_element", "locator_id": L(P[k]), "width": round(W, 2), "height": H},
-                {"type": "position_element", "locator_id": L(P[k]), "top": top, "left": left},
-                {"type": "crop_media", "locator_id": L(P[k]), "top": round(crop_top, 2), "left": round(-(iw - W) / 2, 2), "width": round(iw, 2), "height": round(ih, 2)},
+                {"type": "resize_element", "locator_id": L(P[k]), "width": round(pw, 2), "height": H},
+                {"type": "position_element", "locator_id": L(P[k]), "top": top, "left": round(pleft, 2)},
+                {"type": "crop_media", "locator_id": L(P[k]), "top": round(crop_top, 2), "left": round(-(iw - pw) / 2, 2), "width": round(iw, 2), "height": round(ih, 2)},
                 {"type": "resize_element", "locator_id": L(S[k]), "width": round(W, 2), "height": 60},
                 {"type": "position_element", "locator_id": L(S[k]), "top": top + H - 60, "left": left},
                 {"type": "replace_text", "locator_id": L(T[k]), "text": label},

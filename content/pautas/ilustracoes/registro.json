@@ -408,7 +408,9 @@
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
       "feito_em": "2026-09-25",
       "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis",
-      "obs": "disputa estadual fora de MT: Parte B (sem foto de candidato)"
+      "obs": "disputa estadual fora de MT: Parte B (sem foto de candidato)",
+      "substituida_em": "2026-09-25",
+      "substituida_por": "pautas/eleicoes/2026-09-25-candidatos-governo-al.jpg (fotos oficiais do TSE, pedido do editor)"
     },
     {
       "slug": "bahia-tem-seis-candidatos-a-disputa-pelo-governo-nas-eleicoes-2026",
@@ -428,7 +430,9 @@
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
       "feito_em": "2026-09-25",
       "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis",
-      "obs": "disputa estadual fora de MT: Parte B (sem foto de candidato)"
+      "obs": "disputa estadual fora de MT: Parte B (sem foto de candidato)",
+      "substituida_em": "2026-09-25",
+      "substituida_por": "pautas/eleicoes/2026-09-25-candidatos-governo-ba.jpg (fotos oficiais do TSE, pedido do editor)"
     },
     {
       "slug": "ia-invade-saude-australiana-alerta-para-o-brasil",
@@ -468,7 +472,9 @@
       "obs": "disputa estadual fora de MT: Parte B",
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
       "feito_em": "2026-09-25",
-      "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
+      "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis",
+      "substituida_em": "2026-09-25",
+      "substituida_por": "pautas/eleicoes/2026-09-25-candidatos-governo-ce.jpg (fotos oficiais do TSE, pedido do editor)"
     }
   ]
 }
