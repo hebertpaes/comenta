@@ -73,6 +73,14 @@ const FOLGA_CENA = 0.45; // silêncio depois da fala
 const DUR_MIN_CENA = 2.5;
 const MAX_AUDIO_REAL = 12; // s: trecho real mais longo aceito (ESPEC)
 const MAX_TOTAL = 120; // s: nenhum Reel passa de 2 min (regra do editor; cortar cenas, nunca acelerar voz)
+const TRILHAS_JSON = join(aqui, "assets", "trilhas", "trilhas.json");
+const TRILHA_VOLUME = 0.12; // música sob a narração (multiplicador, com a faixa normalizada a −16 LUFS)
+const TRILHA_CARTELAS = 2.5; // × volume nas cartelas (≈ 0,3)
+const TRILHA_AUDIO_REAL = 0.5; // × volume sob trecho de áudio real (≈ 0,06)
+const TRILHA_RAMPA = 0.35; // s de transição entre níveis
+const TRILHA_FADE_IN = 0.5;
+const TRILHA_FADE_OUT = 2;
+const TRILHA_PADRAO = "comedia"; // universo/tema de reserva
 
 const ANTON = "Anton";
 const ROBOTO = "Roboto Condensed";
@@ -264,7 +272,7 @@ async function cartelaAbertura({ chip = "CHARGE EM CENA", gancho = "", sub = "" 
 
 /** Cartela de fechamento: crédito, link da curta, fontes, aviso e "Siga @hoje.mt". */
 async function cartelaFechamento(
-  { linha1 = "Charge: HOJE MT · hojemt.com.br", leia = "", fontes = [], aviso = AVISO_PADRAO, siga = "Siga @hoje.mt" },
+  { linha1 = "Charge: HOJE MT · hojemt.com.br", leia = "", fontes = [], aviso = AVISO_PADRAO, siga = "Siga @hoje.mt", musica = "" },
   destino
 ) {
   const sharp = await sharpComFontes();
@@ -300,6 +308,13 @@ async function cartelaFechamento(
   const avisoLinhas = (await quebrar(aviso, 900, { fonte: ROBOTO, tamanho: 36 })).slice(0, 5);
   t = linhasSvg(avisoLinhas, { y, tamanho: 36, fonte: ROBOTO, cor: VERDE_CLARO, entrelinha: 1.2 });
   partes.push(t.svg);
+
+  if (musica) {
+    // crédito obrigatório da trilha (CC BY): Roboto Condensed 30 px, branco 85%
+    const musicaLinhas = (await quebrar(`Música: ${musica}`, 900, { fonte: ROBOTO, tamanho: 30 })).slice(0, 4);
+    t = linhasSvg(musicaLinhas, { y: t.fim + 30, tamanho: 30, fonte: ROBOTO, opacidade: 0.85, entrelinha: 1.2 });
+    partes.push(t.svg);
+  }
 
   const sigaTxt = maiusculas(siga);
   const sigaW = Math.round((await medir(sigaTxt, { fonte: ANTON, tamanho: 48, espacamento: 2 })) + 90);
@@ -434,6 +449,101 @@ function prepararAudioReal(ar, n, destino) {
     `áudio real da cena ${n}`
   );
   return destino;
+}
+
+// ---------------------------------------------------------------- trilha musical
+const semAcento = (x) =>
+  String(x ?? "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+
+/**
+ * Escolhe a trilha do vídeo. `spec.trilha` = {id, volume?} (faixa pedida) ou
+ * "nenhuma"; sem o campo, a faixa cujo item de `universos` aparece mais cedo
+ * no texto de `spec.universo` (empate: o item mais longo); sem casamento, uma
+ * faixa de universo/tema "comedia". Catálogo: assets/trilhas/trilhas.json
+ * ({faixas:[{id, arquivo (relativo a content/), titulo, credito, universos,
+ * temas}]}). Sem catálogo/arquivo: devolve null e o vídeo sai sem música.
+ */
+async function escolherTrilha(spec) {
+  const pedido = spec.trilha;
+  if (pedido === "nenhuma" || pedido === false || pedido?.id === "nenhuma") {
+    console.log("trilha: nenhuma (pedido do roteiro)");
+    return null;
+  }
+  const semMusica = (motivo) => {
+    console.warn(`AVISO: ${motivo} — vídeo sem música`);
+    return null;
+  };
+  if (!existsSync(TRILHAS_JSON)) return semMusica(`catálogo de trilhas não existe (${relative(aqui, TRILHAS_JSON)})`);
+  let faixas;
+  try {
+    faixas = JSON.parse(await readFile(TRILHAS_JSON, "utf8")).faixas;
+  } catch (e) {
+    return semMusica(`catálogo de trilhas ilegível (${e.message})`);
+  }
+  if (!Array.isArray(faixas) || !faixas.length) return semMusica("catálogo de trilhas vazio");
+
+  let faixa;
+  let escolha;
+  if (pedido?.id) {
+    faixa = faixas.find((f) => f.id === pedido.id);
+    if (!faixa) return semMusica(`trilha "${pedido.id}" não está no catálogo`);
+    escolha = "roteiro";
+  } else {
+    const universo = semAcento(spec.universo);
+    let melhor = null;
+    for (const f of faixas)
+      for (const u of f.universos || []) {
+        const chave = semAcento(u).trim();
+        const pos = chave ? universo.indexOf(chave) : -1;
+        if (pos < 0) continue;
+        if (!melhor || pos < melhor.pos || (pos === melhor.pos && chave.length > melhor.len)) melhor = { f, pos, len: chave.length };
+      }
+    if (melhor) {
+      faixa = melhor.f;
+      escolha = "universo";
+    } else {
+      const reserva = (lista) => (lista || []).some((x) => semAcento(x) === TRILHA_PADRAO);
+      faixa = faixas.find((f) => f.id === TRILHA_PADRAO) || faixas.find((f) => reserva(f.universos)) || faixas.find((f) => reserva(f.temas));
+      escolha = "reserva";
+      if (!faixa) return semMusica(`nenhuma trilha casa com o universo e não há faixa "${TRILHA_PADRAO}"`);
+    }
+  }
+  const arquivo = caminho(faixa.arquivo);
+  if (!faixa.arquivo || !existsSync(arquivo)) return semMusica(`arquivo da trilha "${faixa.id}" não existe (${faixa.arquivo})`);
+  if (!String(faixa.credito || "").trim()) return semMusica(`trilha "${faixa.id}" sem \`credito\` (obrigatório: licença CC BY)`);
+  const volume = Number(pedido?.volume) > 0 ? Math.min(1, Number(pedido.volume)) : TRILHA_VOLUME;
+  console.log(`trilha: ${faixa.id} (${escolha}) · volume ${volume} · Música: ${faixa.credito}`);
+  return { id: faixa.id, titulo: faixa.titulo || faixa.id, arquivo, credito: String(faixa.credito).trim(), volume, escolha };
+}
+
+/** Ganho (dB) para levar a faixa a −16 LUFS integrados (medido com loudnorm). */
+function ganhoTrilha(arquivo) {
+  const r = spawnSync(ffmpeg, ["-hide_banner", "-nostats", "-i", arquivo, "-af", "loudnorm=I=-16:TP=-1.5:LRA=11:print_format=json", "-f", "null", "-"], {
+    encoding: "utf8",
+    maxBuffer: 16 * 1024 * 1024,
+  });
+  const json = (r.stderr || "").match(/\{[^{}]*"input_i"[^{}]*\}/);
+  const i = json ? Number(JSON.parse(json[0]).input_i) : NaN;
+  return Number.isFinite(i) ? Math.max(-20, Math.min(20, -16 - i)) : 0;
+}
+
+/**
+ * Envelope de volume da música (expressão do filtro volume, eval=frame):
+ * nível alto nas cartelas, baixo sob a narração, mais baixo sob áudio real,
+ * com rampas de TRILHA_RAMPA s (desce antes da fala começar, sobe depois).
+ */
+function envelopeTrilha(trechos) {
+  let expr = trechos[0].nivel.toFixed(4);
+  for (let i = 1; i < trechos.length; i++) {
+    const delta = trechos[i].nivel - trechos[i - 1].nivel;
+    if (Math.abs(delta) < 1e-6) continue;
+    const inicio = delta < 0 ? Math.max(0, trechos[i].inicio - TRILHA_RAMPA) : trechos[i].inicio;
+    expr += `+(${delta.toFixed(4)})*clip((t-${inicio.toFixed(3)})/${TRILHA_RAMPA},0,1)`;
+  }
+  return expr;
 }
 
 // ---------------------------------------------------------------- legendas (.ass)
@@ -666,12 +776,17 @@ async function principal() {
     if (!existsSync(c.imagem)) throw new Error(`cena ${c.n}: imagem não existe: ${c.imagem}`);
   }
 
-  // 3. cartelas
+  // 3. trilha + cartelas (o crédito da música vai no fechamento)
+  const trilha = await escolherTrilha(spec);
   const abertura = join(tmp, "abertura.png");
   const fechamento = join(tmp, "fechamento.png");
   await cartelaAbertura(spec.abertura || { gancho: spec.titulo || "" }, abertura);
   await cartelaFechamento(
-    { leia: spec.materia ? spec.materia.replace(/^https?:\/\//, "").replace(/\/$/, "") : "", ...(spec.fechamento || {}) },
+    {
+      leia: spec.materia ? spec.materia.replace(/^https?:\/\//, "").replace(/\/$/, "") : "",
+      ...(spec.fechamento || {}),
+      musica: trilha ? trilha.credito : "",
+    },
     fechamento
   );
 
@@ -714,7 +829,26 @@ async function principal() {
     filtros.push(`[1:v]scale=260:-1,format=rgba,colorchannelmixer=aa=0.9[wm]`, `[leg][wm]overlay=W-w-40:40[v]`);
     ultimo = "[v]";
   }
-  filtros.push(`[0:a]loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000[a]`);
+  if (trilha) {
+    // música em loop, cortada na duração total, por baixo das vozes (ducking por envelope)
+    const total = t + DUR_FECHAMENTO;
+    const trechos = [{ inicio: 0, nivel: trilha.volume * TRILHA_CARTELAS }];
+    for (const c of cenas) trechos.push({ inicio: c.inicio, nivel: trilha.volume * (c.audioReal ? TRILHA_AUDIO_REAL : 1) });
+    trechos.push({ inicio: t, nivel: trilha.volume * TRILHA_CARTELAS });
+    const idx = args["sem-marca"] !== true ? 2 : 1;
+    entradas.push("-stream_loop", "-1", "-i", trilha.arquivo);
+    const ganho = ganhoTrilha(trilha.arquivo);
+    filtros.push(
+      `[${idx}:a]atrim=0:${total.toFixed(3)},asetpts=PTS-STARTPTS,aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,` +
+        `volume=${ganho.toFixed(2)}dB,volume='${envelopeTrilha(trechos)}':eval=frame,` +
+        `afade=t=in:st=0:d=${TRILHA_FADE_IN},afade=t=out:st=${Math.max(0, total - TRILHA_FADE_OUT).toFixed(3)}:d=${TRILHA_FADE_OUT}[mus]`,
+      `[0:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo[vox]`,
+      `[vox][mus]amix=inputs=2:duration=first:dropout_transition=0:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000[a]`
+    );
+    trilha.ganho_db = +ganho.toFixed(2);
+  } else {
+    filtros.push(`[0:a]loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000[a]`);
+  }
   rodarFfmpeg(
     [
       ...entradas,
@@ -744,6 +878,18 @@ async function principal() {
     resolucao: res,
     fps: FPS,
     ...(spec.universo ? { universo: spec.universo } : {}),
+    trilha: trilha
+      ? {
+          id: trilha.id,
+          titulo: trilha.titulo,
+          arquivo: relative(aqui, trilha.arquivo),
+          escolha: trilha.escolha,
+          volume: trilha.volume,
+          ganho_db: trilha.ganho_db,
+          credito: trilha.credito,
+        }
+      : null,
+    credito_musica: trilha ? `Música: ${trilha.credito}` : null,
     voz,
     abertura: { duracao: DUR_ABERTURA },
     cenas: cenas.map((c) => ({
@@ -775,6 +921,7 @@ async function principal() {
   await writeFile(saida.replace(/\.mp4$/, "") + ".json", JSON.stringify(registro, null, 2) + "\n");
   console.log(saida);
   console.log(`duração ${duracao.toFixed(2)} s · ${res} · ${FPS} fps`);
+  if (trilha) console.log(`crédito para a legenda do post: Música: ${trilha.credito}`);
 }
 
 try {
