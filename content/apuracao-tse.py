@@ -941,14 +941,18 @@ def valida(regs, v, fixo, ele, cargo):
     extra = set(g['votos']) - {c['n'] for c in ab.get('cand', [])}
     for n in sorted(extra):
         linhas.append((f'{n} (fora do -v)', g['votos'][n], 0))
-    anulados = int(ab.get('van') or 0) + int(ab.get('vansj') or 0)
-    linhas += [('Brancos', g['brancos'], int(ab['vb'])), ('Nulos (tvn)', g['nulos'], int(ab['tvn'])),
-               ('Legenda', g['legenda'], int(ab.get('vl') or 0) if 'vl' in ab else g['legenda']),
+    anul_of = int(ab.get('van') or 0) + int(ab.get('vansj') or 0)
+    anul = sum(q for n, q in g['votos'].items()
+               if n in fixo and not (fixo[n].get('dvt') or 'Válido').startswith('Válido'))
+    validos = sum(g['votos'].values()) - anul + g['legenda']
+    linhas += [('Votos válidos', validos, int(ab['vv'])),
+               ('Legenda (válidos - nominais)', g['legenda'], int(ab['vv']) - int(ab['vnom'])),
+               ('Brancos', g['brancos'], int(ab['vb'])),
+               ('Nulos (vn)', g['nulos'], int(ab['vn'])), ('Nulos total (tvn)', g['nulos'], int(ab['tvn'])),
+               ('Anulados (van+vansj)', anul, anul_of),
                ('Comparecimento', g['comparecimento'], int(ab['c'])), ('Eleitorado apto', g['eleitorado'], int(ab['e'])),
                ('Abstenção', g['eleitorado'] - g['comparecimento'], int(ab['a'])),
                ('Seções totalizadas', g['secoes_totalizadas'], int(ab['st']))]
-    if anulados:
-        linhas.append(('Anulados (van+vansj)', 0, anulados))
     ok = all(a == b for _, a, b in linhas)
     return linhas, ok
 
