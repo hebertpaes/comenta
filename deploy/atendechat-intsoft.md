@@ -69,6 +69,24 @@ mexe no Node do sistema. Situação verificada em 25/09: Ubuntu 24.04.5, 11 GB d
 RAM, sem swap, 40 GB livres, sem Docker, Postgres ou PM2; `app` e `api` ainda
 sem registro no DNS.
 
+Detalhes do servidor conferidos em 25/09 (Claude Code rodando no Cloud Shell):
+
+- Node 22.23.2 veio do apt, repositório NodeSource
+  (`/etc/apt/sources.list.d/nodesource.sources`); o serviço
+  `ghost_intsoft-com-br` roda `/usr/bin/node` como usuário `ghost` (uid 997).
+- `nginx -t` passa; `client_max_body_size` está nos blocos do Ghost (1g no SSL,
+  50m no HTTP), sem diretiva no nível `http`.
+- iptables: INPUT libera só 22, 80 e 443; FORWARD rejeita tudo.
+- Fuso do servidor: UTC.
+- Banco do Ghost: MySQL local `ghost_prod` (o site ainda não tem posts).
+
+Backup feito antes de qualquer instalação (25/09 19:36 UTC), sem `ghost backup`
+(que pede login de administrador): `sudo mysqldump --single-transaction
+--routines --triggers ghost_prod | gzip` + `tar` de `content/` e
+`config.production.json`. Ficou em `/var/www/ghost/backup/` no servidor e em
+`~/backups-ghost/` no Cloud Shell (o tar contém a senha do banco: manter com
+permissão 600).
+
 ```bash
 # DEPOIS da instalação
 cd /var/www/* && ghost ls && ghost doctor     # Ghost "running"
