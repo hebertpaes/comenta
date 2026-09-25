@@ -776,6 +776,36 @@
       "legenda": "CHARGE · Marés que engolem ilhas\n\nMar em alta recorde, metas na maré baixa.\n\nEm 2024, o nível médio global do mar subiu 5,9 mm, acima dos 4,3 mm previstos, segundo análise da NASA com dados de satélite. Ilhas baixas e deltas densamente povoados estão entre as áreas mais expostas.\n\nLeia a curta completa: hojemt.com.br/mares-que-engolem-ilhas\n\nFonte do dado: NASA (sealevel.nasa.gov)\nCharge: HOJE MT · hojemt.com.br\n\n#charge #clima #niveldomar #hojemt",
       "materia": "https://hojemt.com.br/mares-que-engolem-ilhas/",
       "charge_json": "pautas/charges/2026-09-25-mares-que-engolem-ilhas.json"
+    },
+    {
+      "id": "47",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-03T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Plenitude atrás das grades",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-plenitude-atras-das-grades-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Plenitude atrás das grades\n\nA paz interior depende do sinal.\n\nEm 12 de setembro, cerca de 200 mulheres de unidades prisionais e socioeducativas de Mato Grosso, entre reeducandas, adolescentes, servidoras e policiais penais, assistiram on-line à Conferência de Mulheres Plenitude. A ação foi da Procuradoria Especial da Mulher e da Escola do Legislativo da ALMT, com a Sejus e a Febracis Cuiabá.\n\nLeia a curta completa: hojemt.com.br/plenitude-atras-das-grades\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #matogrosso #almt #hojemt",
+      "materia": "https://hojemt.com.br/plenitude-atras-das-grades/",
+      "charge_json": "pautas/charges/2026-09-25-plenitude-atras-das-grades.json"
+    },
+    {
+      "id": "48",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-03T19:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Paula em 13 votos",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-paula-em-13-votos-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Paula em 13 votos\n\nAbilio conta os peixes antes de puxar a rede.\n\nO prefeito Abilio Brunini (PL) diz que a vereadora Paula Calil (PL) tem 13 votos para seguir na presidência da Câmara de Cuiabá. O TJMT negou o pedido do prefeito para suspender a regra que exige 18 votos para mudar o Regimento Interno, o que dificulta a reeleição.\n\nLeia a curta completa: hojemt.com.br/paula-em-13-votos\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #cuiaba #camaradecuiaba #hojemt",
+      "materia": "https://hojemt.com.br/paula-em-13-votos/",
+      "charge_json": "pautas/charges/2026-09-25-paula-em-13-votos.json"
     }
   ]
 }

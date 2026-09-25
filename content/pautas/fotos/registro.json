@@ -1,31 +1,47 @@
 [
- {
-  "slug": "alta-floresta-define-perfil-do-novo-hospital-municipal-apos-vistoria",
-  "titulo": "Alta Floresta define perfil do novo Hospital Municipal após vistoria",
-  "arquivo": "pautas/fotos/2026-09-22-alta-floresta-hospital-municipal.jpg",
-  "url": "https://hojemt.com.br/content/images/2026/09/2026-09-22-alta-floresta-hospital-municipal.jpg",
-  "og": "https://hojemt.com.br/content/images/2026/09/2026-09-22-alta-floresta-hospital-municipal-og.jpg",
-  "origem": "https://www.altafloresta.mt.gov.br/fotos_bancoimagens/12294.jpeg",
-  "materia_fonte": "https://www.altafloresta.mt.gov.br/Noticias/Visita-tecnica-avanca-nas-tratativas-para-implantacao-do-novo-hospital-municipal-de-alta-floresta-4651/",
-  "credito": "Foto: Severino Júnior/Prefeitura de Alta Floresta",
-  "licenca": "foto oficial de divulgação da prefeitura, com crédito",
-  "tratamento": "recorte 16:9 (1600×900), sem outras alterações",
-  "antes": "capa-cc7d3832af11bccd.webp (capa genérica verde)",
-  "data": "2026-09-24"
- },
- {
-  "slug": "brt-estacoes-avenida-do-cpa-como-estao-e-o-que-falta",
-  "titulo": "BRT: estação em frente ao Pantanal Shopping está quase pronta, mas contrato das estações tinha 16,5% executado em setembro",
-  "status_post": "rascunho",
-  "arquivo": "pautas/fotos/2026-09-24-brt-estacao-av-cpa.jpg",
-  "url": "https://hojemt.com.br/content/images/2026/09/2026-09-24-brt-estacao-av-cpa.jpg",
-  "og": "https://hojemt.com.br/content/images/2026/09/2026-09-24-brt-estacao-av-cpa-og.jpg",
-  "origem": "https://www.secom.mt.gov.br/documents/21013/79934292/BRT+na+Avenida+do+CPA+terminais+de+%C3%B4nibus+Complexo+Leblon+na+trincheira+do+Jardim+Leblon-81.jpg/624d4aac-e3de-1399-a3fd-5c3868286be7",
-  "pagina": "https://www.secom.mt.gov.br/w/obras-do-brt-na-avenida-do-cpa-com-terminais-de-%C3%B4nibus-e-do-complexo-leblon-na-trincheira-do-jardim-leblon",
-  "credito": "Foto: Tonico Pinheiro/Secom-MT",
-  "data_foto": "2026-06-11",
-  "licenca": "foto oficial de divulgação da Secom-MT, com crédito (confirmar autorização de uso)",
-  "tratamento": "redimensionada do original 21000×11799 para 1600×900 e 1080×1350 (recorte)",
-  "data": "2026-09-24"
- }
+  {
+    "slug": "alta-floresta-define-perfil-do-novo-hospital-municipal-apos-vistoria",
+    "titulo": "Alta Floresta define perfil do novo Hospital Municipal após vistoria",
+    "arquivo": "pautas/fotos/2026-09-22-alta-floresta-hospital-municipal.jpg",
+    "url": "https://hojemt.com.br/content/images/2026/09/2026-09-22-alta-floresta-hospital-municipal.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-22-alta-floresta-hospital-municipal-og.jpg",
+    "origem": "https://www.altafloresta.mt.gov.br/fotos_bancoimagens/12294.jpeg",
+    "materia_fonte": "https://www.altafloresta.mt.gov.br/Noticias/Visita-tecnica-avanca-nas-tratativas-para-implantacao-do-novo-hospital-municipal-de-alta-floresta-4651/",
+    "credito": "Foto: Severino Júnior/Prefeitura de Alta Floresta",
+    "licenca": "foto oficial de divulgação da prefeitura, com crédito",
+    "tratamento": "recorte 16:9 (1600×900), sem outras alterações",
+    "antes": "capa-cc7d3832af11bccd.webp (capa genérica verde)",
+    "data": "2026-09-24"
+  },
+  {
+    "slug": "brt-estacoes-avenida-do-cpa-como-estao-e-o-que-falta",
+    "titulo": "BRT: estação em frente ao Pantanal Shopping está quase pronta, mas contrato das estações tinha 16,5% executado em setembro",
+    "status_post": "rascunho",
+    "arquivo": "pautas/fotos/2026-09-24-brt-estacao-av-cpa.jpg",
+    "url": "https://hojemt.com.br/content/images/2026/09/2026-09-24-brt-estacao-av-cpa.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-24-brt-estacao-av-cpa-og.jpg",
+    "origem": "https://www.secom.mt.gov.br/documents/21013/79934292/BRT+na+Avenida+do+CPA+terminais+de+%C3%B4nibus+Complexo+Leblon+na+trincheira+do+Jardim+Leblon-81.jpg/624d4aac-e3de-1399-a3fd-5c3868286be7",
+    "pagina": "https://www.secom.mt.gov.br/w/obras-do-brt-na-avenida-do-cpa-com-terminais-de-%C3%B4nibus-e-do-complexo-leblon-na-trincheira-do-jardim-leblon",
+    "credito": "Foto: Tonico Pinheiro/Secom-MT",
+    "data_foto": "2026-06-11",
+    "licenca": "foto oficial de divulgação da Secom-MT, com crédito (confirmar autorização de uso)",
+    "tratamento": "redimensionada do original 21000×11799 para 1600×900 e 1080×1350 (recorte)",
+    "data": "2026-09-24"
+  },
+  {
+    "slug": "alta-floresta-recebe-capacitacao-do-projeto-cro-na-estrada",
+    "titulo": "Alta Floresta recebe capacitação do projeto CRO na Estrada",
+    "arquivo": "pautas/fotos/2026-09-22-alta-floresta-cro-na-estrada.jpg",
+    "url": "https://hojemt.com.br/content/images/2026/09/2026-09-22-alta-floresta-cro-na-estrada.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-22-alta-floresta-cro-na-estrada-og.jpg",
+    "origem": "https://www.altafloresta.mt.gov.br/fotos_bancoimagens/12323.jpeg",
+    "materia_fonte": "https://www.altafloresta.mt.gov.br/Noticias/Cro-na-estrada-promove-capacitacao-para-profissionais-da-odontologia-em-alta-floresta-4652/",
+    "credito": "Foto: Severino Júnior/Prefeitura de Alta Floresta",
+    "licenca": "foto oficial de divulgação da prefeitura, com crédito (página da notícia assinada por Severino Júnior; sem crédito de fotógrafo separado)",
+    "tratamento": "recorte 16:9 (1600×900) do original 2560×1706, sem outras alterações",
+    "antes": "capa-5c1c2a22b1113d5a.webp (capa genérica verde)",
+    "data_foto": "2026-09-22",
+    "checagem_pendente": "a matéria publicada diz que a cidade 'sedia, nos próximos dias' a etapa; pelo certificado na galeria oficial, o evento foi em 22/09/2026 no Teatro Municipal Agostinho Bizinoto (texto não editado)",
+    "data": "2026-09-25"
+  }
 ]

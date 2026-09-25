@@ -1,0 +1,56 @@
+{
+  "slug": "paula-em-13-votos",
+  "titulo": "Paula em 13 votos (curta: Abilio diz que Paula Calil tem 13 votos para a presidência da Câmara de Cuiabá)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas",
+  "legenda": {
+    "site_16x9": "Na Câmara, Abilio já conta os peixes antes de puxar a rede.",
+    "instagram_4x5": "Abilio conta os peixes antes de puxar a rede. (33 px)"
+  },
+  "contexto": "Abilio Brunini diz que Paula Calil (PL) tem 13 votos ('12+1') para a reeleição à presidência da Câmara de Cuiabá; o TJMT negou pedido do prefeito para suspender a regra de dois terços (18 votos) para mudar o Regimento Interno.",
+  "fontes": [
+    "https://24horasmt.com.br/politica-mt/abilio-garante-que-paula-calil-tem-121-de-votos-e-mantem-apoio-a-reeleicao-na-camara/",
+    "https://olivre.com.br/abilio-diz-que-paula-calil-continua-no-pareo-pela-presidencia-da-camara-de-cuiaba/",
+    "https://leiagora.com.br/justica-nega-pedido-de-abilio-e-mantem-regra-que-pode-dificultar-reeleicao-de-paula-calil/"
+  ],
+  "regras_da_cena": "só Abilio desenhado (Paula Calil sem foto de referência cadastrada: fora da cena); pescaria no plenário, metáfora da própria curta; sem acusação",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini",
+      "cargo": "prefeito de Cuiabá (PL)",
+      "canva_fotos_referencia": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "data_foto": "2026-09-21 e 2026-09-03",
+      "credito": "Foto: Rennan Oliveira/Secom (galeria oficial do prefeito, Prefeitura de Cuiabá)",
+      "licenca": "divulgação oficial; só referência de desenho",
+      "obs": "referências da tabela do README (set/2026); nenhuma foto oficial mais nova localizada"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHWMURRrOQ",
+    "arte_16x9": "MAHWMW1frU8",
+    "design_instagram_4x5": "DAHWMZ9LHZk",
+    "arte_4x5": "MAHWMSlLhVw",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "materia": "https://hojemt.com.br/paula-em-13-votos/",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json (item 48, 2026-10-03T19:30:00-04:00)"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-25-paula-em-13-votos.jpg",
+    "instagram_4x5": "2026-09-25-paula-em-13-votos-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-25-paula-em-13-votos.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-paula-em-13-votos-og.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-25-paula-em-13-votos-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 25/09/2026 (antes: charge automática charge-1790328126.webp)",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT"
+}
