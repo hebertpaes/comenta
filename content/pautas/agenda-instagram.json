@@ -877,6 +877,20 @@
       "charge_json": "pautas/charges/2026-09-25-emenda-no-ar.json",
       "materia": "https://hojemt.com.br/emenda-no-ar/",
       "obs": "curta em rascunho: quando o editor publicar, trocar status para agendado e definir 'quando' ANTES do 1º turno (04/10), pois o assunto é eleitoral"
+    },
+    {
+      "id": "53",
+      "quando": null,
+      "status": "aguardando_materia",
+      "formato": "charge",
+      "titulo": "Duas Vagas, Três Nomes",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-duas-vagas-tres-nomes-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Duas Vagas, Três Nomes\n\nSofá para dois e cadeira para as eleitoras.\n\nA prefeita de Várzea Grande, Flávia Moretti (PL), declarou que vai votar em Mauro Mendes (União) e José Medeiros (PL) para o Senado e citou Margareth Buzetti (PP) \"para as mulheres que não querem votar só em homem\". Com informações do Repórter MT.\n\nLeia a curta completa: hojemt.com.br/duas-vagas-tres-nomes\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #varzeagrande #eleicoes2026 #hojemt",
+      "charge_json": "pautas/charges/2026-09-25-duas-vagas-tres-nomes.json",
+      "materia": "https://hojemt.com.br/duas-vagas-tres-nomes/",
+      "obs": "curta em rascunho (id 6ab6b63e834d62060cb1d6c9): quando o editor publicar, trocar status para agendado e definir 'quando' ANTES do 1º turno (04/10), pois o assunto é eleitoral"
     }
   ]
 }

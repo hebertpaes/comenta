@@ -1,0 +1,85 @@
+{
+ "slug": "duas-vagas-tres-nomes",
+ "titulo": "Duas Vagas, Três Nomes (curta: Flávia Moretti declara votos em Mauro Mendes e José Medeiros para o Senado e cita Margareth Buzetti)",
+ "pedido": "editor, 25/09: \"Prefeita de Várzea Grande declara apoio Medeiros 222 e Mauro Mendes 444 e indica as mulheres Buzetti 111\" + link do reel do Repórter MT (https://www.instagram.com/reel/Ddt-HIdIpI8/)",
+ "balao": "Para as mulheres que não querem votar só em homem.",
+ "balao_obs": "fala real de Flávia Moretti, idêntica em duas fontes (Repórter MT, 25/09 13h02, Karine Arruda; O Livre, 25/09, Lucas Bellinello); balão aponta para ela. Não há vídeo no perfil/canal oficial dela nem da Prefeitura (canal de YouTube @flaviamorettioficial sem vídeos recentes); o reel do Repórter MT não foi reproduzido (vídeo/áudio de terceiro), só usado como fonte",
+ "legenda": {
+  "site_16x9": "Sofá de dois lugares, com cadeira extra para as eleitoras.",
+  "instagram_4x5": "Sofá para dois e cadeira para as eleitoras."
+ },
+ "contexto": "Flávia Moretti (PL), prefeita de Várzea Grande, declarou que seus dois votos para o Senado em MT serão Mauro Mendes (União, 444) e José Medeiros (PL, 222, nome de urna Zé Medeiros) e citou Margareth Buzetti (PP, 111) como opção para quem quer votar numa mulher. Para o governo, apoia Otaviano Pivetta (Republicanos), e não Wellington Fagundes (PL); responde a procedimento interno do PL por infidelidade e disse 'Não é pessoal' (Olhar Direto, 25/09). Números de urna conferidos em pautas/eleicoes/2026-mt-candidatos.json (TSE, via ND Mais).",
+ "fontes": [
+  "https://www.reportermt.com/papo-reto/flavia-moretti-declara-voto-em-mauro-e-medeiros-e-cita-buzetti-como-opcao-feminina/244132",
+  "https://www.instagram.com/reel/Ddt-HIdIpI8/",
+  "https://olivre.com.br/falou-com-todas-as-letras/",
+  "https://www.olhardireto.com.br/noticias/flavia-rebate-wellington-e-diz-que-r-5-milhoes-do-senador-nao-foram-pagos-outros-recursos-vieram-da-bancada"
+ ],
+ "regras_da_cena": "Flávia como anfitriã numa varanda de Várzea Grande: acomoda Mauro Mendes e José Medeiros num sofá de exatamente dois lugares (os dois brindam com limonada) e puxa uma cadeira extra para Margareth Buzetti, que chega sorrindo e acenando; clima de festa, todos simpáticos, ninguém ridicularizado; nenhuma leitura de 'traição' ao partido; sem texto, números de urna, logos ou bandeiras",
+ "personagens": [
+  {
+   "nome": "Flávia Moretti",
+   "cargo": "prefeita de Várzea Grande (PL)",
+   "canva_fotos_referencia": [
+    "MAHWIE_abVw"
+   ],
+   "data_foto": "2026-09-19",
+   "credito": "Foto: Andre Luis/Secom-VG (galeria oficial da Prefeitura de Várzea Grande)",
+   "licenca": "divulgação oficial; só referência de desenho"
+  },
+  {
+   "nome": "Mauro Mendes",
+   "cargo": "ex-governador, candidato ao Senado por MT (União, 444)",
+   "canva_fotos_referencia": [
+    "MAHWHyLCtr0"
+   ],
+   "data_foto": "2026-08 (registro de candidatura)",
+   "credito": "TSE/Divulgação (SQ 110002551966)",
+   "licenca": "foto oficial do TSE; só referência de desenho"
+  },
+  {
+   "nome": "José Medeiros",
+   "cargo": "deputado federal, candidato ao Senado por MT (PL, 222)",
+   "canva_fotos_referencia": [
+    "MAHWH8VUd4M"
+   ],
+   "data_foto": "2026-08 (registro de candidatura)",
+   "credito": "TSE/Divulgação (SQ 110002552693)",
+   "licenca": "foto oficial do TSE; só referência de desenho"
+  },
+  {
+   "nome": "Margareth Buzetti",
+   "cargo": "senadora, candidata ao Senado por MT (PP, 111)",
+   "canva_fotos_referencia": [],
+   "descrita_no_prompt": "cabelos loiro-platinados ondulados na altura dos ombros, pele clara, sorriso, blusa branca de botões (conferido na foto oficial do TSE MAHWHz00VGQ, SQ 110002551967; imageReferences limitado a 3)",
+   "data_foto": "2026-08 (registro de candidatura)",
+   "credito": "TSE/Divulgação (SQ 110002551967)",
+   "licenca": "foto oficial do TSE; só referência de desenho"
+  }
+ ],
+ "canva": {
+  "design_site_16x9": "DAHWOfjK_sA",
+  "arte_16x9": "MAHWOnUCp4w",
+  "design_instagram_4x5": "DAHWOd4fCQg",
+  "arte_4x5": "MAHWOji3e1g",
+  "modelo_16x9": "DAHWDzwR5c0",
+  "modelo_retrato": "DAHWEJf2P1U"
+ },
+ "materia": "https://hojemt.com.br/duas-vagas-tres-nomes/",
+ "status_materia": "rascunho (id 6ab6b63e834d62060cb1d6c9), criado em 25/09 a pedido do editor",
+ "checagem_pendente": [
+  "o Repórter MT e O Livre não dizem onde/quando a prefeita falou (evento, entrevista ou vídeo); se o editor quiser, conferir no reel do Repórter MT o contexto da fala antes de publicar"
+ ],
+ "instagram": {
+  "status": "aguardando_materia (item 53 da agenda)"
+ },
+ "arquivos": {
+  "site_16x9": "2026-09-25-duas-vagas-tres-nomes.jpg",
+  "instagram_4x5": "2026-09-25-duas-vagas-tres-nomes-instagram-retrato.jpg"
+ },
+ "hospedado_em": {
+  "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-25-duas-vagas-tres-nomes.jpg",
+  "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-duas-vagas-tres-nomes-og.jpg",
+  "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-25-duas-vagas-tres-nomes-instagram-retrato.jpg"
+ }
+}
