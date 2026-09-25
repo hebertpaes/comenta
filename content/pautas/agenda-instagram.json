@@ -433,11 +433,14 @@
       "midia": [
         "https://hojemt.com.br/content/images/2026/09/2026-09-24-flavia-troca-o-pl-instagram-retrato.jpg"
       ],
-      "legenda": "CHARGE · Flávia Troca o PL?\n\nUm lado oferece a cadeira; o outro, o muro.\n\nA prefeita de Várzea Grande, Flávia Moretti, admitiu que pode deixar o PL e confirmou o convite do Republicanos, partido do governador Otaviano Pivetta.\n\nLeia a curta completa: hojemt.com.br/flavia-troca-o-pl\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #varzeagrande #matogrosso #hojemt",
+      "legenda": "CHARGE · Flávia Troca o PL?\n\nUm lado oferece a cadeira; o outro, o muro.\n\nEm 22/09, a prefeita de Várzea Grande, Flávia Moretti, admitiu que poderia deixar o PL e confirmou o convite do Republicanos, partido do governador Otaviano Pivetta. Em 24/09, disse que não sai do PL por iniciativa própria, e Pivetta afirmou que ela “não está precisando de partido”.\n\nLeia a curta completa: hojemt.com.br/flavia-troca-o-pl\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #varzeagrande #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/flavia-troca-o-pl/",
       "charge_json": "pautas/charges/2026-09-24-flavia-troca-o-pl.json",
       "lote": "todas-as-charges-2026-09-25",
-      "lote_ordem": 17
+      "lote_ordem": 17,
+      "obs_edicao": [
+        "25/09: legenda datada e atualizada com a declaração de 24/09 (Muvuca, Olhar Direto, Esportes & Notícias) antes de sair pelo lote"
+      ]
     },
     {
       "id": "25",
