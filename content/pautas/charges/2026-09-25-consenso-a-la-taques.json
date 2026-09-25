@@ -1,0 +1,58 @@
+{
+ "slug": "consenso-a-la-taques",
+ "titulo": "Consenso à la Taques (curta: Ilde Taques quer chapa única na eleição da Mesa Diretora da Câmara de Cuiabá)",
+ "pedido": "rotina das charges (Parte A): refazer no Canva a charge automática de bonecos (charge-1790101297.webp) da curta publicada em 22/09/2026 18:21 UTC",
+ "imagem_antiga": "https://hojemt.com.br/content/images/2026/09/charge-1790101297.webp",
+ "balao": null,
+ "balao_obs": "sem balão: a curta não traz fala literal de Ilde Taques entre aspas (só paráfrases, como 'promete esgotar as conversas nos bastidores'); balão e texto do balão apagados nos dois formatos",
+ "legenda": {
+  "site_16x9": "Na Câmara de Cuiabá, o consenso roda na guampa do tereré.",
+  "instagram_4x5": "Na Câmara, o consenso roda na guampa do tereré. (33 px)"
+ },
+ "contexto": "Ilde Taques (Podemos), vereador e candidato à presidência da Câmara Municipal de Cuiabá no biênio 2027–2028, disse que vai trabalhar 'até o último dia' por um consenso e uma chapa única e não descartou composição com a atual presidente, Paula Calil (PL). Em 25/09/2026 reuniu 15 vereadores e fechou a chapa (Eduardo Magalhães, Republicanos, de vice). A eleição da Mesa está marcada para 6 de outubro de 2026. Assunto da Câmara de Cuiabá, não da eleição geral de 4/10.",
+ "fontes": [
+  "https://hojemt.com.br/consenso-a-la-taques/",
+  "https://odocumento.com.br/ilde-taques-defende-chapa-unica-na-camara-e-admite-composicao-ate-com-paula/",
+  "https://24horasmt.com.br/politica-mt/ilde-taques-vira-o-jogo-e-reune-apoio-para-assumir-comando-da-camara-de-cuiaba/",
+  "https://www.unicanews.com.br/politica/ilde-reune-15-vereadores-e-fecha-chapa-para-disputar-comando-da-camara-de-cuiaba/141787"
+ ],
+ "regras_da_cena": "plenário com janelões de vidro e sol forte de Cuiabá; vereador genérico de terno azul, gravata afrouxada e sorriso paciente passa a guampa de tereré (com garrafa térmica) para uma roda de vereadores e vereadoras que trocam apertos de mão; ampulheta com a areia no fim (esperar 'até o último dia'); boi nelore cartunesco dormindo num tapete com chapéu de palha no rosto (o 'embate de boi' que ficou para depois). Humor leve, ninguém ridicularizado, sem facas nem briga; sem texto, números, logos ou bandeiras de partido",
+ "personagens": [
+  {
+   "nome": "Ilde Taques (representado por personagem genérico)",
+   "cargo": "vereador de Cuiabá (Podemos), candidato à presidência da Câmara",
+   "canva_fotos_referencia": [],
+   "descrita_no_prompt": "vereador genérico de meia-idade, terno azul, gravata afrouxada pelo calor, sorriso paciente (não é caricatura de Ilde Taques)",
+   "licenca": "sem foto de referência: personagem genérico, conforme a regra 'sem foto licenciada/oficial, personagem genérico'",
+   "busca_foto_recente": "25/09/2026: portal da Câmara Municipal de Cuiabá (legislativo.camaracuiaba.mt.gov.br e www.camaracuiaba.mt.gov.br) recusou o acesso daqui (conexão encerrada / 'Request Rejected'); DivulgaCand/TSE 2024 bloqueado fora do Brasil (Access Denied); Commons sem foto; ND Mais só tem 2026 e ele não é candidato em 2026; fotos de jornais sem crédito/licença não foram usadas"
+  }
+ ],
+ "canva": {
+  "design_site_16x9": "DAHWPmiaMOY",
+  "arte_16x9": "MAHWPrkwcoc",
+  "design_instagram_4x5": "DAHWPhekNCE",
+  "arte_4x5": "MAHWPjoDhUI",
+  "modelo_16x9": "DAHWDzwR5c0",
+  "modelo_retrato": "DAHWEJf2P1U"
+ },
+ "materia": "https://hojemt.com.br/consenso-a-la-taques/",
+ "status_materia": "publicada (22/09/2026); só a imagem de destaque, a legenda e o alt foram trocados",
+ "instagram": {
+  "status": "agendado (item 55 da agenda, lote todas-as-charges-2026-09-25, ordem 33; 'quando' no próximo horário livre de charge, 2026-10-06T07:30:00-04:00)",
+  "prazo": "o assunto perde sentido depois da eleição da Mesa (6/10/2026). O lote começou a sair em 25/09 às 22:04 UTC, a 3 por hora; com a ordem 33 a previsão é sair por volta de 26/09 (manhã), bem antes de 4/10 e de 6/10. Se o lote parar e o item não sair até 5/10, trocar para aguardando_decisao e consultar o editor",
+  "legenda": "CHARGE · Consenso à la Taques\n\nNa Câmara de Cuiabá, o consenso roda na guampa do tereré.\n\nO vereador Ilde Taques (Podemos), candidato à presidência da Câmara de Cuiabá, diz que vai conversar até o último dia para fechar uma chapa única e não descarta compor até com a atual presidente, Paula Calil (PL). A eleição da Mesa Diretora está marcada para 6 de outubro. Com informações de O Documento e 24 Horas MT.\n\nLeia a curta completa: hojemt.com.br/consenso-a-la-taques\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #cuiaba #matogrosso #hojemt"
+ },
+ "arquivos": {
+  "site_16x9": "2026-09-25-consenso-a-la-taques.jpg",
+  "instagram_4x5": "2026-09-25-consenso-a-la-taques-instagram-retrato.jpg"
+ },
+ "hospedado_em": {
+  "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-25-consenso-a-la-taques.jpg",
+  "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-consenso-a-la-taques-og.jpg",
+  "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-25-consenso-a-la-taques-instagram-retrato.jpg"
+ },
+ "site": "feature_image e og_image trocadas em 25/09/2026 (antes: charge automática charge-1790101297.webp); legenda 'Charge: HOJE MT'",
+ "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+ "selo": "CHARGE · HOJE MT",
+ "referencia_publica": "Charge: HOJE MT"
+}

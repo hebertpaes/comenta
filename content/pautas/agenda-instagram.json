@@ -990,6 +990,24 @@
       "obs": "assunto eleitoral (Janaina Riva, candidata ao Senado): o próximo horário livre de charge cai depois do 1º turno (04/10), mas o item entra no lote todas-as-charges-2026-09-25 pedido pelo editor e deve sair antes, pelo lote; se o lote não sair até 03/10, trocar para aguardando_decisao e consultar o editor",
       "lote": "todas-as-charges-2026-09-25",
       "lote_ordem": 32
+    },
+    {
+      "id": "55",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-06T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Consenso à la Taques",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-consenso-a-la-taques-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Consenso à la Taques\n\nNa Câmara de Cuiabá, o consenso roda na guampa do tereré.\n\nO vereador Ilde Taques (Podemos), candidato à presidência da Câmara de Cuiabá, diz que vai conversar até o último dia para fechar uma chapa única e não descarta compor até com a atual presidente, Paula Calil (PL). A eleição da Mesa Diretora está marcada para 6 de outubro. Com informações de O Documento e 24 Horas MT.\n\nLeia a curta completa: hojemt.com.br/consenso-a-la-taques\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #cuiaba #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/consenso-a-la-taques/",
+      "charge_json": "pautas/charges/2026-09-25-consenso-a-la-taques.json",
+      "obs": "assunto com prazo: eleição da Mesa Diretora da Câmara de Cuiabá em 06/10 (não é a eleição geral de 04/10). O 'quando' é o próximo horário livre de charge (2026-10-06T07:30:00-04:00), mas o item entra no lote todas-as-charges-2026-09-25 (ordem 33) e deve sair antes, pelo lote (3 por hora desde 25/09 22:04 UTC); se não sair até 05/10, trocar para aguardando_decisao e consultar o editor",
+      "lote": "todas-as-charges-2026-09-25",
+      "lote_ordem": 33
     }
   ]
 }
