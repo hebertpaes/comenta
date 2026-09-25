@@ -12,6 +12,10 @@
 //   node charge-cena.mjs <spec.cena.json> --so-audio     só sintetiza as vozes
 //   node charge-cena.mjs <spec.cena.json> --sem-marca    sem marca d'água
 //   node charge-cena.mjs <spec.cena.json> --manter-tmp   guarda os temporários
+//   node charge-cena.mjs <spec.cena.json> --cortar-ate-120
+//        se abertura + cenas + fechamento passar de 120 s, remove as últimas
+//        cenas (antes do fechamento) até caber, com aviso. Sem a opção, passar
+//        de 120 s é ERRO (lista as durações e sugere cortes; nunca acelera voz).
 //
 // Roteiro (.cena.json): { titulo, materia, universo?, voz:{motor,narrador,
 // velocidade}, abertura:{chip,gancho,sub}, cenas:[{n,quem,fala,legenda?,
@@ -68,6 +72,7 @@ const DUR_FECHAMENTO = 3;
 const FOLGA_CENA = 0.45; // silêncio depois da fala
 const DUR_MIN_CENA = 2.5;
 const MAX_AUDIO_REAL = 12; // s: trecho real mais longo aceito (ESPEC)
+const MAX_TOTAL = 120; // s: nenhum Reel passa de 2 min (regra do editor; cortar cenas, nunca acelerar voz)
 
 const ANTON = "Anton";
 const ROBOTO = "Roboto Condensed";
@@ -85,7 +90,7 @@ for (const a of process.argv.slice(2)) {
   else livres.push(a);
 }
 if (!livres[0]) {
-  console.log("uso: charge-cena.mjs pautas/videos/<spec>.cena.json [--so-audio] [--sem-marca]");
+  console.log("uso: charge-cena.mjs pautas/videos/<spec>.cena.json [--so-audio] [--sem-marca] [--cortar-ate-120] [--manter-tmp]");
   process.exit(process.argv.length > 2 ? 1 : 0);
 }
 
@@ -616,6 +621,31 @@ async function principal() {
     cenas.push(cena);
   }
 
+  // 1b. limite de duração: abertura + cenas + fechamento ≤ 120 s
+  const totalPrevisto = (lista) => DUR_ABERTURA + lista.reduce((soma, c) => soma + c.dur, 0) + DUR_FECHAMENTO;
+  const cenasCortadas = [];
+  if (totalPrevisto(cenas) > MAX_TOTAL) {
+    const tabela = cenas.map((c) => `  cena ${c.n} (${c.quem}): ${c.dur.toFixed(2)} s`).join("\n");
+    const sobra = [...cenas];
+    const sugeridas = [];
+    while (sobra.length > 1 && totalPrevisto(sobra) > MAX_TOTAL) sugeridas.push(sobra.pop().n);
+    const maiores = [...cenas].sort((a, b) => b.dur - a.dur).slice(0, 3).map((c) => `${c.n} (${c.dur.toFixed(1)} s)`);
+    const resumo =
+      `duração prevista ${totalPrevisto(cenas).toFixed(2)} s passa do limite de ${MAX_TOTAL} s ` +
+      `(abertura ${DUR_ABERTURA} s + cenas + fechamento ${DUR_FECHAMENTO} s):\n${tabela}\n` +
+      `Sugestão: cortar as últimas cenas antes do fechamento (${sugeridas.join(", ")}) ou encurtar/juntar as mais longas (${maiores.join(", ")}); nunca acelerar a voz.`;
+    if (args["cortar-ate-120"] === true && args["so-audio"] !== true) {
+      while (cenas.length > 1 && totalPrevisto(cenas) > MAX_TOTAL) cenasCortadas.unshift(cenas.pop().n);
+      console.warn(`AVISO: ${resumo}\n--cortar-ate-120: cenas removidas: ${cenasCortadas.join(", ")} → ${totalPrevisto(cenas).toFixed(2)} s`);
+      if (totalPrevisto(cenas) > MAX_TOTAL) throw new Error(`mesmo só com a cena ${cenas[0].n} o vídeo passa de ${MAX_TOTAL} s`);
+    } else if (args["so-audio"] === true) {
+      console.warn(`AVISO: ${resumo}`);
+    } else {
+      throw new Error(`${resumo}\nPara cortar automaticamente as últimas cenas, rode de novo com --cortar-ate-120.`);
+    }
+  }
+  console.log(`duração prevista: ${totalPrevisto(cenas).toFixed(2)} s (limite ${MAX_TOTAL} s)`);
+
   if (args["so-audio"] === true) {
     const pasta = saida.replace(/\.mp4$/, "") + "-voz";
     await mkdir(pasta, { recursive: true });
@@ -708,6 +738,9 @@ async function principal() {
     saida,
     gerado_em: new Date().toISOString(),
     duracao: +duracao.toFixed(2),
+    duracao_total: +duracao.toFixed(2),
+    limite_duracao: MAX_TOTAL,
+    ...(cenasCortadas.length ? { cenas_cortadas: cenasCortadas } : {}),
     resolucao: res,
     fps: FPS,
     ...(spec.universo ? { universo: spec.universo } : {}),
