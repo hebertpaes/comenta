@@ -1,0 +1,48 @@
+{
+  "slug": "mares-que-engolem-ilhas",
+  "titulo": "Marés que Engolem Ilhas (curta: recorde de alta do nível do mar em 2024)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala de ninguém",
+  "legenda": {
+    "site_16x9": "O mar subiu 5,9 mm em 2024; as metas seguem na maré baixa.",
+    "instagram_4x5": "Mar em alta recorde, metas na maré baixa."
+  },
+  "contexto": "Nível médio global do mar subiu 0,59 cm (5,9 mm) em 2024, acima dos 0,43 cm esperados, segundo análise da NASA (sealevel.nasa.gov, mar/2025).",
+  "fontes": [
+    "https://sealevel.nasa.gov/news/282",
+    "https://climainfo.org.br/2025/03/18/nivel-do-mar-subiu-mais-do-que-o-esperado-em-2024-mostra-nasa/"
+  ],
+  "checagem_pendente": "a curta atribui o levantamento ao PNUMA e diz que a Assembleia Geral da ONU reuniu especialistas para analisá-lo; o dado de 5,9 mm é da NASA; a reunião na ONU não foi confirmada em fonte. A arte não usa essas informações.",
+  "regras_da_cena": "personagens genéricos (nenhuma autoridade desenhada); sem texto nem bandeiras",
+  "personagens": [
+    {
+      "nome": "personagens genéricos",
+      "obs": "sem foto de referência"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHWMKuocyc",
+    "arte_16x9": "MAHWMN5ri5M",
+    "design_instagram_4x5": "DAHWMD3BSMc",
+    "arte_4x5": "MAHWMO1Vw4c",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "materia": "https://hojemt.com.br/mares-que-engolem-ilhas/",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "instagram": {
+    "status": "agendado em pautas/agenda-instagram.json (item 46, 2026-10-03T11:30:00-04:00)"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-25-mares-que-engolem-ilhas.jpg",
+    "instagram_4x5": "2026-09-25-mares-que-engolem-ilhas-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-25-mares-que-engolem-ilhas.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-mares-que-engolem-ilhas-og.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-25-mares-que-engolem-ilhas-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 25/09/2026 (antes: charge automática charge-dia-1790323816.webp)"
+}
