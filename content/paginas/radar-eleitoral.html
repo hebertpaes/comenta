@@ -1,21 +1,32 @@
 <style>
-#hmt-radar{--verde:#00a859;--verde-esc:#0a2e1f;--acao:#087443;--acao-tx:#fff;--pol:#b3261e;--pol-bg:#fdecec;--sol:#1559b3;--sol-bg:#e8f1fc;--card:#f6f8f7;--campo:#fff;--tx:#111;--mu:#5b6762;--bd:#d9e2dd;--bd-ctl:#7d8c85;--foco:#0b7a45;font-family:inherit;color:var(--tx);font-size:16px;line-height:1.45}
-@media (prefers-color-scheme:dark){html:not([data-theme="light"]) #hmt-radar{--card:#17201b;--campo:#0f1512;--tx:#eef3f0;--mu:#a3b3ac;--bd:#2b3731;--bd-ctl:#627369;--pol:#ff8a80;--pol-bg:#3a1b1b;--sol:#8ab4f8;--sol-bg:#17283d;--foco:#5fe3a1;--acao:#3ddc84;--acao-tx:#04150c}}
-html[data-theme="dark"] #hmt-radar,html.dark #hmt-radar,body.dark-mode #hmt-radar{--card:#17201b;--campo:#0f1512;--tx:#eef3f0;--mu:#a3b3ac;--bd:#2b3731;--bd-ctl:#627369;--pol:#ff8a80;--pol-bg:#3a1b1b;--sol:#8ab4f8;--sol-bg:#17283d;--foco:#5fe3a1;--acao:#3ddc84;--acao-tx:#04150c}
+#hmt-radar{--verde:#00a859;--verde-esc:#0a2e1f;--acao:#087443;--acao-tx:#fff;--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--sol-bg:#e8f1fc;--pol-bg:#fdefe8;--card:#f6f8f7;--campo:#fff;--tx:#111;--tx2:#3f4a45;--mu:#5b6762;--bd:#d9e2dd;--bd-ctl:#7d8c85;--grade:#e3e9e5;--base:#b9c6bf;--apag:#cdd6d1;--foco:#0b7a45;--som:0 1px 2px rgba(10,46,31,.06),0 6px 18px rgba(10,46,31,.06);position:relative;font-family:var(--font-sans,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif);color:var(--tx);font-size:16px;line-height:1.45}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) #hmt-radar{--s1:#3987e5;--s2:#d95926;--s3:#199e70;--sol-bg:#16263b;--pol-bg:#3a2217;--card:#17201b;--campo:#0f1512;--tx:#eef3f0;--tx2:#c9d6cf;--mu:#a3b3ac;--bd:#2b3731;--bd-ctl:#627369;--grade:#26312b;--base:#3d4a43;--apag:#35423b;--foco:#5fe3a1;--acao:#3ddc84;--acao-tx:#04150c;--som:none}}
+html[data-theme="dark"] #hmt-radar,html.dark #hmt-radar,body.dark-mode #hmt-radar{--s1:#3987e5;--s2:#d95926;--s3:#199e70;--sol-bg:#16263b;--pol-bg:#3a2217;--card:#17201b;--campo:#0f1512;--tx:#eef3f0;--tx2:#c9d6cf;--mu:#a3b3ac;--bd:#2b3731;--bd-ctl:#627369;--grade:#26312b;--base:#3d4a43;--apag:#35423b;--foco:#5fe3a1;--acao:#3ddc84;--acao-tx:#04150c;--som:none}
 #hmt-radar *{box-sizing:border-box}
 #hmt-radar :focus-visible{outline:3px solid var(--foco);outline-offset:2px}
 #hmt-radar .rd-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-#hmt-radar .rd-topo{background:linear-gradient(135deg,var(--verde-esc),#0f4a33);color:#fff;border-radius:16px;padding:20px 22px;margin:0 0 14px}
-#hmt-radar .rd-topo h2{margin:0 0 6px;font-size:1.4rem;line-height:1.2;color:#fff}
-#hmt-radar .rd-topo p{margin:0;color:#d4ebe0;font-size:.95rem}
-#hmt-radar .rd-status{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;font-size:.85rem}
-#hmt-radar .rd-status span{background:rgba(255,255,255,.13);border-radius:999px;padding:4px 11px}
+#hmt-radar h2,#hmt-radar h3,#hmt-radar h4,#hmt-radar h5{font-family:inherit;letter-spacing:0}
+#hmt-radar .rd-col a{font-family:var(--font-serif,"Source Serif 4",Georgia,"Times New Roman",serif)}
+#hmt-radar figure{margin:0}
+#hmt-radar button{font-family:inherit}
+/* Topo */
+#hmt-radar .rd-topo{background:radial-gradient(120% 140% at 100% 0,#16704a 0,rgba(22,112,74,0) 55%),linear-gradient(135deg,var(--verde-esc),#0f4a33);color:#fff;border-radius:18px;padding:22px 22px 18px;margin:0 0 14px;overflow:hidden}
+#hmt-radar .rd-kicker{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#7ff0b8;margin:0 0 6px}
+#hmt-radar .rd-topo h2{margin:0 0 6px;font-size:1.55rem;line-height:1.15;color:#fff}
+#hmt-radar .rd-topo p{margin:0;color:#d4ebe0;font-size:.95rem;max-width:60ch}
+#hmt-radar .rd-status{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;font-size:.84rem}
+#hmt-radar .rd-status span{background:rgba(255,255,255,.12);border-radius:999px;padding:4px 11px}
+#hmt-radar .rd-status .rd-cd{background:#7ff0b8;color:#06301d;font-weight:800}
+@media (max-width:600px){#hmt-radar .rd-topo{padding:18px 16px 14px}#hmt-radar .rd-topo h2{font-size:1.3rem}#hmt-radar .rd-topo p{font-size:.9rem}#hmt-radar .rd-status .rd-opc{display:none}#hmt-radar .rd-grupo button{padding:6px 10px;font-size:.84rem;min-height:34px}#hmt-radar .rd-filtros{padding:12px;gap:10px}#hmt-radar .rd-rot{min-width:0;width:100%}}
+#hmt-radar .rd-novas{margin-top:10px;font-size:.86rem;color:#eafff4}
+#hmt-radar .rd-novas b{background:#fff;color:#0a2e1f;border-radius:999px;padding:1px 8px;margin-right:4px}
+/* Filtros */
 #hmt-radar .rd-filtros{border:1px solid var(--bd);border-radius:14px;background:var(--card);padding:14px;margin:0 0 12px;display:grid;gap:12px;scroll-margin-top:96px}
 #hmt-radar .rd-filtros[hidden]{display:none}
 #hmt-radar .rd-linha{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
-#hmt-radar .rd-rot{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--mu);min-width:64px}
+#hmt-radar .rd-rot{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--mu);min-width:64px}
 #hmt-radar .rd-grupo{display:flex;flex-wrap:wrap;gap:6px;position:relative}
-#hmt-radar .rd-grupo button{border:1px solid var(--bd-ctl);background:transparent;color:var(--tx);border-radius:999px;padding:7px 13px;font:inherit;font-size:.88rem;cursor:pointer;min-height:36px}
+#hmt-radar .rd-grupo button{border:1px solid var(--bd-ctl);background:transparent;color:var(--tx);border-radius:999px;padding:7px 13px;font-size:.88rem;cursor:pointer;min-height:36px}
 #hmt-radar .rd-grupo button:hover{border-color:var(--verde)}
 #hmt-radar .rd-grupo button[aria-checked="true"]{background:var(--acao);border-color:var(--acao);color:var(--acao-tx);font-weight:700}
 #hmt-radar .rd-grupo button small{opacity:.75;margin-left:4px;font-size:.78rem}
@@ -23,64 +34,139 @@ html[data-theme="dark"] #hmt-radar,html.dark #hmt-radar,body.dark-mode #hmt-rada
 #hmt-radar .rd-grupo button[aria-disabled="true"]{opacity:.45;cursor:default;border-style:dashed}
 #hmt-radar .rd-grupo button[aria-disabled="true"]:hover{border-color:var(--bd-ctl)}
 @media (forced-colors:active){#hmt-radar .rd-grupo button[aria-checked="true"]{outline:2px solid CanvasText;outline-offset:1px}}
-#hmt-radar .rd-campos{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px}
-@media (max-width:720px){#hmt-radar .rd-campos{grid-template-columns:1fr 1fr}#hmt-radar .rd-campos .rd-busca{grid-column:1/-1}}
-#hmt-radar .rd-campos label{display:grid;gap:4px;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--mu)}
-#hmt-radar .rd-campos input,#hmt-radar .rd-campos select{font:inherit;font-size:.95rem;text-transform:none;letter-spacing:0;font-weight:400;color:var(--tx);background:transparent;border:1px solid var(--bd-ctl);border-radius:10px;padding:8px 10px;min-height:40px;width:100%}
-#hmt-radar .rd-campos input{background:var(--campo)}
-#hmt-radar .rd-campos input::placeholder{color:var(--mu);opacity:1}
-#hmt-radar .rd-campos select option{color:#111}
-#hmt-radar .rd-leia{margin:0 0 12px;font-size:.84rem;color:var(--mu)}
-#hmt-radar .rd-leia b.p{color:var(--pol)}#hmt-radar .rd-leia b.s{color:var(--sol)}
-#hmt-radar .rd-resumo{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin:0 0 6px;font-size:.9rem;color:var(--mu)}
-#hmt-radar #rd-contagem:empty+.rd-az{display:none}
-#hmt-radar .rd-limpar{border:0;background:none;color:var(--acao);font:inherit;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:underline;padding:4px;min-height:44px}
-#hmt-radar .rd-limpar[hidden]{display:none}
-#hmt-radar .rd-cargo{display:flex;align-items:baseline;gap:8px;font-size:1.02rem;margin:22px 0 10px;padding-left:12px;border-left:5px solid var(--verde);text-transform:uppercase;letter-spacing:.04em}
-#hmt-radar .rd-cargo small{font-size:.8rem;color:var(--mu);text-transform:none;letter-spacing:0;font-weight:400}
-#hmt-radar .rd-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,440px),1fr));gap:14px}
-#hmt-radar .rd-card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px 18px;min-width:0;display:flex;flex-direction:column}
-#hmt-radar .rd-cab{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
-#hmt-radar .rd-nome{font-size:1.15rem;font-weight:800;margin:0;line-height:1.2}
-#hmt-radar .rd-sub{color:var(--mu);font-size:.84rem;margin-top:3px}
-#hmt-radar .rd-partido{background:var(--verde-esc);color:#fff;border-radius:6px;padding:3px 8px;font-size:.74rem;font-weight:700;white-space:nowrap}
-#hmt-radar .rd-cont{display:flex;gap:6px;margin:10px 0 12px;flex-wrap:wrap}
-#hmt-radar .rd-cont>span{border-radius:8px;padding:4px 9px;font-size:.8rem;font-weight:700}
-#hmt-radar .rd-cont .p{background:var(--pol-bg);color:var(--pol)}#hmt-radar .rd-cont .s{background:var(--sol-bg);color:var(--sol)}
-#hmt-radar .rd-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1}
+#hmt-radar .rd-campos{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:640px){#hmt-radar .rd-campos{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}#hmt-radar .rd-campos .rd-busca{grid-column:1/-1}#hmt-radar .rd-campos select{padding:8px 6px;font-size:.9rem}}
+#hmt-radar .rd-campos label{display:grid;gap:4px;font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--mu)}
+#hmt-radar .rd-campos input,#hmt-radar .rd-campos select{font:inherit;font-size:.95rem;text-transform:none;letter-spacing:0;font-weight:400;color:var(--tx);background:var(--campo);border:1px solid var(--bd-ctl);border-radius:10px;padding:8px 10px;min-height:40px;width:100%}
+#hmt-radar .rd-leia{font-size:.86rem;color:var(--mu);margin:0 0 12px;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center}
+#hmt-radar .rd-pt{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:-1px;margin-right:5px}
+#hmt-radar .rd-pt.p{background:var(--s2)}#hmt-radar .rd-pt.s{background:var(--s1)}
+/* Painel */
+#hmt-radar .rd-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:0 0 12px}
+#hmt-radar .rd-kpi{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:12px 14px;box-shadow:var(--som)}
+#hmt-radar .rd-kpi b{display:block;font-size:1.7rem;line-height:1.1;font-weight:750;color:var(--tx)}
+#hmt-radar .rd-kpi span{display:flex;align-items:center;font-size:.8rem;color:var(--mu);margin-top:3px}
+@media (max-width:600px){#hmt-radar .rd-kpis{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}#hmt-radar .rd-kpi{padding:9px 10px;border-radius:12px}#hmt-radar .rd-kpi b{font-size:1.3rem}#hmt-radar .rd-kpi span{font-size:.74rem;line-height:1.25}}
+#hmt-radar .rd-graficos{display:grid;grid-template-columns:1.25fr 1fr;gap:12px;margin:0 0 12px}
+@media (max-width:760px){#hmt-radar .rd-graficos{grid-template-columns:1fr}}
+#hmt-radar .rd-fig{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px 14px 10px;box-shadow:var(--som);min-width:0}
+#hmt-radar .rd-fig+.rd-fig{margin-top:0}
+#hmt-radar .rd-larga{margin:0 0 12px}
+#hmt-radar .rd-fig h3{margin:0;font-size:1rem;line-height:1.25;color:var(--tx)}
+#hmt-radar .rd-fig figcaption p{margin:3px 0 8px;font-size:.82rem;color:var(--mu)}
+#hmt-radar .rd-leg{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.8rem;color:var(--tx2);margin:0 0 6px}
+#hmt-radar .rd-leg span{display:inline-flex;align-items:center}
+#hmt-radar .rd-plot svg{display:block;width:100%;height:auto;overflow:visible}
+#hmt-radar .rd-plot text{font-family:inherit;fill:var(--mu);font-size:11px}
+#hmt-radar .rd-plot .rd-val{fill:var(--tx2);font-size:11px;font-weight:650}
+#hmt-radar .rd-plot .rd-nm{fill:var(--tx);font-size:12px}
+#hmt-radar .rd-plot .rd-gr{fill:var(--mu);font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+#hmt-radar .rd-plot [data-tip]{cursor:pointer}
+#hmt-radar .rd-plot [data-tip]:hover .rd-hl,#hmt-radar .rd-plot [data-tip]:focus-visible .rd-hl{fill:var(--grade)}
+#hmt-radar .rd-plot [data-tip]:focus{outline:none}
+#hmt-radar .rd-plot [data-tip]:focus-visible .rd-hl{stroke:var(--foco);stroke-width:2px}
+#hmt-radar .rd-rodape-fig{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-top:6px;font-size:.78rem;color:var(--mu)}
+#hmt-radar .rd-bt-tab{white-space:nowrap;flex:0 0 auto;border:0;background:none;color:var(--acao);font-size:.8rem;font-weight:700;cursor:pointer;padding:6px 0;text-decoration:underline;text-underline-offset:3px}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) #hmt-radar .rd-bt-tab{color:var(--foco)}}
+html[data-theme="dark"] #hmt-radar .rd-bt-tab{color:var(--foco)}
+#hmt-radar .rd-tabela{overflow-x:auto;margin-top:6px}
+#hmt-radar .rd-tabela table{border-collapse:collapse;width:100%;font-size:.84rem}
+#hmt-radar .rd-tabela th,#hmt-radar .rd-tabela td{border-bottom:1px solid var(--bd);padding:5px 8px;text-align:left;color:var(--tx)}
+#hmt-radar .rd-tabela td.n,#hmt-radar .rd-tabela th.n{text-align:right;font-variant-numeric:tabular-nums}
+#hmt-radar .rd-tip{position:absolute;z-index:5;pointer-events:none;background:var(--campo);color:var(--tx);border:1px solid var(--bd);border-radius:10px;padding:8px 10px;font-size:.82rem;box-shadow:0 8px 24px rgba(0,0,0,.18);max-width:260px}
+#hmt-radar .rd-tip b{display:block;margin-bottom:2px}
+#hmt-radar .rd-tip div{display:flex;align-items:center;gap:6px;white-space:nowrap}
+#hmt-radar .rd-tip i{display:inline-block;width:12px;height:3px;border-radius:2px}
+#hmt-radar .rd-tip .rd-tv{font-weight:750;min-width:2ch}
+#hmt-radar .rd-tip .rd-tm{color:var(--mu)}
+/* Resumo */
+#hmt-radar .rd-resumo{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;font-size:.9rem;color:var(--mu);margin:4px 0 10px}
+#hmt-radar .rd-acoes{display:flex;gap:8px;flex-wrap:wrap}
+#hmt-radar .rd-limpar,#hmt-radar .rd-comp{border:1px solid var(--bd-ctl);background:var(--campo);color:var(--tx);border-radius:999px;padding:6px 12px;font-size:.84rem;cursor:pointer;min-height:34px}
+#hmt-radar .rd-comp{border-color:var(--acao);color:var(--acao);font-weight:700}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) #hmt-radar .rd-comp{border-color:var(--foco);color:var(--foco)}}
+html[data-theme="dark"] #hmt-radar .rd-comp{border-color:var(--foco);color:var(--foco)}
+#hmt-radar .rd-volta{position:sticky;top:10px;z-index:4;margin:0 0 8px auto;display:block;border:0;background:var(--acao);color:var(--acao-tx);border-radius:999px;padding:8px 14px;font-size:.85rem;font-weight:700;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.2);max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#hmt-radar .rd-volta[hidden]{display:none}
+/* Cards */
+#hmt-radar .rd-cargo{font-size:1.08rem;margin:20px 0 10px;display:flex;align-items:baseline;gap:8px;color:var(--tx)}
+#hmt-radar .rd-cargo small{font-size:.8rem;color:var(--mu);font-weight:400}
+#hmt-radar .rd-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,540px),1fr));gap:12px}
+#hmt-radar .rd-card{container-type:inline-size;background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0;box-shadow:var(--som);scroll-margin-top:90px}
+#hmt-radar .rd-card:target{outline:3px solid var(--foco);outline-offset:2px}
+#hmt-radar .rd-cab{display:flex;gap:10px;align-items:center}
+#hmt-radar .rd-av{flex:0 0 42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.95rem;color:var(--acao);background:var(--campo);border:2px solid var(--acao)}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) #hmt-radar .rd-av{color:var(--foco);border-color:var(--foco)}}
+html[data-theme="dark"] #hmt-radar .rd-av{color:var(--foco);border-color:var(--foco)}
+#hmt-radar .rd-id{flex:1;min-width:0}
+#hmt-radar .rd-nome{margin:0;font-size:1.05rem;line-height:1.2;color:var(--tx)}
+#hmt-radar .rd-sub{font-size:.8rem;color:var(--mu);margin-top:2px}
+#hmt-radar .rd-num{flex:0 0 auto;font-weight:800;font-size:.95rem;border-radius:10px;padding:4px 9px;background:var(--campo);border:1px solid var(--bd);color:var(--tx);font-variant-numeric:tabular-nums}
+#hmt-radar .rd-num small{display:block;font-size:.58rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mu);text-align:center}
+#hmt-radar .rd-ofic{margin:0;display:flex;flex-wrap:wrap;gap:3px 18px;font-size:.8rem;border-top:1px dashed var(--bd);padding-top:8px}
+#hmt-radar .rd-ofic div{display:flex;gap:6px;min-width:0}
+#hmt-radar .rd-ofic dt{color:var(--mu)}#hmt-radar .rd-ofic dd{margin:0;color:var(--tx2)}
+#hmt-radar .rd-chk{font-weight:700;color:var(--tx)}
+#hmt-radar .rd-mini{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end}
+#hmt-radar .rd-bal{display:flex;gap:2px;height:8px;border-radius:4px;overflow:hidden;background:var(--grade)}
+#hmt-radar .rd-bal i{display:block;height:100%}
+#hmt-radar .rd-bal i.p{background:var(--s2)}#hmt-radar .rd-bal i.s{background:var(--s1)}
+#hmt-radar .rd-chips{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:.82rem;color:var(--tx2);margin-top:6px}
+#hmt-radar .rd-spark{display:flex;gap:2px;align-items:flex-end;height:26px}
+#hmt-radar .rd-spark i{display:block;width:6px;border-radius:2px 2px 0 0;background:var(--apag);min-height:2px}
+#hmt-radar .rd-spark i.h{background:var(--s3)}
+#hmt-radar .rd-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 #hmt-radar .rd-cols.uma{grid-template-columns:1fr}
 @media (max-width:600px){#hmt-radar .rd-cols{grid-template-columns:1fr}}
-#hmt-radar .rd-col-tit{margin:0 0 6px;font-size:.78rem;font-weight:800;line-height:1.35;text-transform:uppercase;letter-spacing:.06em}
-#hmt-radar .rd-col.p .rd-col-tit{color:var(--pol)}#hmt-radar .rd-col.s .rd-col-tit{color:var(--sol)}
-#hmt-radar .rd-col-tit small{text-transform:none;letter-spacing:0;font-weight:400;font-size:.95em;color:var(--mu);white-space:nowrap}
-#hmt-radar .rd-col ul{list-style:none;margin:0;padding:0}
-#hmt-radar .rd-col li{padding:7px 0;border-top:1px solid var(--bd);font-size:.93rem;line-height:1.35}
-#hmt-radar .rd-col li:first-child{border-top:0;padding-top:0}
-#hmt-radar .rd-col li a{color:inherit;text-decoration:none}
-#hmt-radar .rd-col li a:hover{text-decoration:underline}
-#hmt-radar .rd-col li small{display:block;color:var(--mu);font-size:.78rem;margin-top:2px}
+@container (max-width:520px){#hmt-radar .rd-cols{grid-template-columns:1fr}}
+#hmt-radar .rd-col{min-width:0}
+#hmt-radar .rd-col-tit{margin:0 0 6px;font-size:.84rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 5px;color:var(--tx)}
+#hmt-radar .rd-col-tit small{font-weight:400;color:var(--mu)}
+#hmt-radar .rd-col ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+#hmt-radar .rd-col li{border-left:3px solid var(--bd);padding:2px 0 2px 9px}
+#hmt-radar .rd-col.p li{border-left-color:var(--s2)}#hmt-radar .rd-col.s li{border-left-color:var(--s1)}
 #hmt-radar .rd-col li[hidden]{display:none}
-#hmt-radar .rd-mais{border:0;background:none;color:var(--acao);font:inherit;font-size:.85rem;font-weight:700;cursor:pointer;padding:6px 0;min-height:44px;text-align:left}
-#hmt-radar .rd-vazio{color:var(--mu);font-size:.88rem;font-style:italic}
-#hmt-radar .rd-rodape-card{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;padding-top:10px;border-top:1px solid var(--bd);font-size:.86rem}
-#hmt-radar .rd-rodape-card a{color:var(--acao);font-weight:700;text-decoration:none}
-#hmt-radar .rd-rotina{color:var(--mu)}
-#hmt-radar .rd-aviso{padding:18px;border:1px dashed var(--bd);border-radius:12px;text-align:center;color:var(--mu)}
-#hmt-radar .rd-volta{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;max-width:calc(100vw - 32px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border:1px solid var(--verde);border-radius:999px;background:var(--verde-esc);color:#fff;font:inherit;font-size:.9rem;font-weight:700;padding:10px 16px;min-height:44px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3)}
-#hmt-radar .rd-volta[hidden]{display:none}
-body:has(#hmt-cookies:not([hidden])) #hmt-radar .rd-volta{display:none}
-@media print{#hmt-radar .rd-volta{display:none}}
-#hmt-radar details.rd-como{margin-top:22px;border:1px solid var(--bd);border-radius:12px;padding:12px 16px;font-size:.9rem;color:var(--mu)}
-#hmt-radar details.rd-como summary{cursor:pointer;font-weight:700;color:var(--tx)}
-#hmt-radar details.rd-como p{margin:8px 0 0}
-@media (max-width:600px){#hmt-radar .rd-topo{padding:16px}#hmt-radar .rd-topo h2{font-size:1.2rem}#hmt-radar .rd-topo p{font-size:.88rem}#hmt-radar .rd-status span:nth-child(n+3){display:none}#hmt-radar .rd-filtros{grid-template-columns:minmax(0,1fr)}#hmt-radar .rd-rot{min-width:0;width:100%}#hmt-radar .rd-linha{display:grid;gap:6px}#hmt-radar .rd-grupo button{padding:6px 10px;max-width:100%}#hmt-radar .rd-grupo button[aria-checked="true"]{font-weight:400}}
-#hmt-radar mark{background:#fff3a3;color:#111;padding:0 2px;border-radius:3px}
+#hmt-radar .rd-col a{color:var(--tx);text-decoration:none;font-size:.95rem;line-height:1.38}
+#hmt-radar .rd-col a:hover{text-decoration:underline}
+#hmt-radar .rd-meta{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:.76rem;color:var(--mu);margin-top:3px}
+#hmt-radar .rd-novo{background:var(--acao);color:var(--acao-tx);border-radius:999px;padding:0 7px;font-weight:800;font-size:.68rem;letter-spacing:.04em}
+#hmt-radar .rd-fx summary{cursor:pointer;color:var(--mu);list-style:none}
+#hmt-radar .rd-fx summary::-webkit-details-marker{display:none}
+#hmt-radar .rd-fx summary::before{content:"▸ ";font-size:.7rem}
+#hmt-radar .rd-fx[open] summary::before{content:"▾ "}
+#hmt-radar .rd-fx p{margin:3px 0 0;color:var(--tx2)}
+#hmt-radar .rd-vazio{font-size:.84rem;color:var(--mu);padding:6px 0}
+#hmt-radar .rd-mais{border:0;background:none;color:var(--acao);font-size:.84rem;font-weight:700;cursor:pointer;padding:6px 0;margin-top:2px}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) #hmt-radar .rd-mais{color:var(--foco)}}
+html[data-theme="dark"] #hmt-radar .rd-mais{color:var(--foco)}
+#hmt-radar mark{background:#fff3a3;color:#111;border-radius:3px;padding:0 1px}
+#hmt-radar .rd-rodape-card{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;color:var(--mu);border-top:1px solid var(--bd);padding-top:8px;margin-top:auto}
+#hmt-radar .rd-rodape-card a{color:var(--acao);font-weight:650}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) #hmt-radar .rd-rodape-card a{color:var(--foco)}}
+html[data-theme="dark"] #hmt-radar .rd-rodape-card a{color:var(--foco)}
+#hmt-radar .rd-aviso{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px;text-align:center;color:var(--mu)}
+/* Fontes e método */
+#hmt-radar .rd-como{margin-top:18px;border:1px solid var(--bd);border-radius:14px;background:var(--card);padding:0 14px}
+#hmt-radar .rd-como>summary{cursor:pointer;font-weight:750;padding:14px 0;color:var(--tx)}
+#hmt-radar .rd-como>summary small{font-weight:400;color:var(--mu);margin-left:6px}
+#hmt-radar .rd-como h4{margin:14px 0 6px;font-size:.95rem;color:var(--tx)}
+#hmt-radar .rd-como p,#hmt-radar .rd-como li{font-size:.88rem;color:var(--tx2)}
+#hmt-radar .rd-como ul{padding-left:18px;margin:6px 0}
+#hmt-radar .rd-como a{color:var(--acao)}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) #hmt-radar .rd-como a{color:var(--foco)}}
+html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
+#hmt-radar .rd-veics{columns:2;column-gap:20px;font-size:.84rem;color:var(--tx2);padding-left:18px}
+@media (max-width:600px){#hmt-radar .rd-veics{columns:1}}
+@media (prefers-reduced-motion:no-preference){#hmt-radar .rd-card,#hmt-radar .rd-kpi{transition:transform .15s ease,box-shadow .15s ease}#hmt-radar .rd-card:hover{transform:translateY(-1px)}}
+@media print{#hmt-radar .rd-filtros,#hmt-radar .rd-volta,#hmt-radar .rd-acoes,#hmt-radar .rd-bt-tab{display:none}}
 </style>
 <div id="hmt-radar">
  <header class="rd-topo">
-  <h2>Radar Eleitoral 2026: polêmicas e propostas</h2>
-  <p>O que a imprensa publicou nos últimos dias sobre candidatos e autoridades de Mato Grosso.</p>
+  <div class="rd-kicker">Eleições 2026 · Mato Grosso</div>
+  <h2>Candidato por candidato, o que a imprensa publicou</h2>
+  <p>O que a imprensa publicou nos últimos 7 dias sobre candidatos e autoridades de Mato Grosso: polêmicas e propostas, lado a lado, com os dados oficiais das candidaturas.</p>
   <div class="rd-status" id="rd-status"><span>Carregando…</span></div>
+  <div class="rd-novas" id="rd-novas" hidden></div>
  </header>
  <div class="rd-filtros" role="search" aria-label="Filtrar o radar">
   <div class="rd-linha"><span class="rd-rot" id="rd-rot-cargo">Cargo</span><div class="rd-grupo" id="rd-cargos" role="radiogroup" aria-labelledby="rd-rot-cargo"></div></div>
@@ -90,136 +176,290 @@ body:has(#hmt-cookies:not([hidden])) #hmt-radar .rd-volta{display:none}
    <button type="button" role="radio" data-tipo="solucoes" aria-checked="false" tabindex="-1"><span aria-hidden="true">💡</span> Propostas</button>
   </div></div>
   <div class="rd-campos">
-   <label class="rd-busca">Buscar nome, partido ou assunto<input id="rd-q" type="search" placeholder="Ex.: Pivetta, IPVA, saúde" autocomplete="off"></label>
+   <label class="rd-busca">Buscar<input id="rd-q" type="search" placeholder="Nome, partido ou assunto" autocomplete="off"></label>
    <label>Partido<select id="rd-partido"><option value="">Todos</option></select></label>
-   <label>Período<select id="rd-periodo"><option value="7">Últimos 7 dias</option><option value="3">Últimos 3 dias</option><option value="2">Hoje e ontem</option></select></label>
+   <label>Tema<select id="rd-tema"><option value="">Todos</option></select></label>
+   <label>Período<select id="rd-periodo"><option value="7">7 dias</option><option value="3">3 dias</option><option value="2">Hoje e ontem</option></select></label>
   </div>
  </div>
- <p class="rd-leia"><span aria-hidden="true">⚠️</span>&nbsp;<b class="p">Polêmica</b>: fato questionado ou sob apuração, segundo a imprensa — não é veredito. <span aria-hidden="true">💡</span>&nbsp;<b class="s">Proposta</b>: promessa, projeto ou entrega anunciada.</p>
- <div class="rd-resumo"><span><span id="rd-contagem" aria-live="polite"></span><span class="rd-az"> · ordem alfabética</span></span><button type="button" class="rd-limpar" id="rd-limpar" hidden>Limpar filtros</button></div>
+ <p class="rd-leia"><span><span class="rd-pt p" aria-hidden="true"></span><span aria-hidden="true">⚠️</span>&nbsp;<b>Polêmica</b>: fato questionado ou sob apuração, segundo a imprensa. Não é veredito.</span><span><span class="rd-pt s" aria-hidden="true"></span><span aria-hidden="true">💡</span>&nbsp;<b>Proposta</b>: promessa, projeto ou entrega anunciada.</span></p>
+ <section class="rd-painel" aria-label="Panorama da semana">
+  <div class="rd-kpis" id="rd-kpis"></div>
+  <div class="rd-graficos">
+   <figure class="rd-fig" id="rd-f-dias"><figcaption><h3>Manchetes por dia</h3><p id="rd-f-dias-sub">Polêmicas e propostas publicadas em cada dia.</p></figcaption>
+    <div class="rd-leg" aria-hidden="true"><span><span class="rd-pt p"></span>Polêmicas</span><span><span class="rd-pt s"></span>Propostas</span></div>
+    <div class="rd-plot" id="rd-g-dias"></div>
+    <div class="rd-rodape-fig"><span>Passe o mouse ou toque nas colunas</span><button type="button" class="rd-bt-tab" aria-expanded="false" aria-controls="rd-t-dias">Ver como tabela</button></div>
+    <div class="rd-tabela" id="rd-t-dias" hidden></div></figure>
+   <figure class="rd-fig" id="rd-f-temas"><figcaption><h3>Temas em alta</h3><p>Assuntos mais citados nas manchetes. Toque num tema para filtrar.</p></figcaption>
+    <div class="rd-plot" id="rd-g-temas"></div>
+    <div class="rd-rodape-fig"><span>Classificação automática por palavras</span><button type="button" class="rd-bt-tab" aria-expanded="false" aria-controls="rd-t-temas">Ver como tabela</button></div>
+    <div class="rd-tabela" id="rd-t-temas" hidden></div></figure>
+  </div>
+  <figure class="rd-fig rd-larga" id="rd-f-bal"><figcaption><h3>Balanço por nome</h3><p>Polêmicas à esquerda, propostas à direita. Nomes em ordem alfabética dentro de cada cargo; toque num nome para ir às manchetes.</p></figcaption>
+   <div class="rd-leg" aria-hidden="true"><span><span class="rd-pt p"></span>Polêmicas</span><span><span class="rd-pt s"></span>Propostas</span></div>
+   <div class="rd-plot" id="rd-g-bal"></div>
+   <div class="rd-rodape-fig"><span>Mais manchetes não significa mais culpa nem mais mérito: mede só a cobertura.</span><button type="button" class="rd-bt-tab" aria-expanded="false" aria-controls="rd-t-bal">Ver como tabela</button></div>
+   <div class="rd-tabela" id="rd-t-bal" hidden></div></figure>
+ </section>
+ <div class="rd-resumo"><span><span id="rd-contagem" aria-live="polite"></span><span class="rd-az"> · ordem alfabética</span></span><span class="rd-acoes"><button type="button" class="rd-comp" id="rd-comp">Compartilhar este recorte</button><button type="button" class="rd-limpar" id="rd-limpar" hidden>Limpar filtros</button></span></div>
  <button type="button" class="rd-volta" hidden><span aria-hidden="true">↑</span> Filtros</button>
  <div id="rd-conteudo"><div class="rd-aviso" role="status">Carregando o radar…</div></div>
- <details class="rd-como">
-  <summary>Como o radar funciona</summary>
-  <p>O radar lê manchetes públicas (Google Notícias, veículos de Mato Grosso e a cobertura do HOJE MT) a cada 30 minutos e classifica cada uma por palavras-chave. A classificação é automática e pode errar; "polêmica" indica que o fato foi questionado ou está sob apuração <i>segundo a cobertura</i>, não é juízo do HOJE MT, e vale a presunção de inocência. Notícias de rotina (eventos, entrevistas) só são contadas, no rodapé de cada nome, e não aparecem nas listas.</p>
-  <p>Isonomia (Lei 9.504/97): candidatos ao mesmo cargo aparecem em ordem alfabética, com o mesmo espaço, e nenhum filtro muda essa ordem. Manchetes repetidas em vários veículos aparecem uma vez, com todas as fontes.</p>
+ <details class="rd-como" id="rd-fontes">
+  <summary>Fontes, dados oficiais e como o radar funciona <small id="rd-fontes-n"></small></summary>
+  <figure class="rd-fig" id="rd-f-veic" style="margin:0 0 12px"><figcaption><h3>Veículos que mais publicaram</h3><p>Manchetes do recorte atual por veículo (uma manchete repetida conta para cada veículo que a publicou).</p></figcaption>
+   <div class="rd-plot" id="rd-g-veic"></div>
+   <div class="rd-rodape-fig"><span></span><button type="button" class="rd-bt-tab" aria-expanded="false" aria-controls="rd-t-veic">Ver como tabela</button></div>
+   <div class="rd-tabela" id="rd-t-veic" hidden></div></figure>
+  <h4>Todos os veículos do recorte</h4>
+  <ul class="rd-veics" id="rd-veics"></ul>
+  <h4>Dados oficiais das candidaturas</h4>
+  <p>Número de urna, partido, coligação, vice e situação do registro de governador e Senado vêm do TSE (DivulgaCandContas), conferidos com a lista do TRE-MT, do Senado Notícias e da CNN Brasil (atualização de 24/09/2026). Todos os candidatos registrados a governador e ao Senado aparecem, mesmo sem manchetes na semana. "Checagem pendente" indica registro ainda não confirmado como deferido.</p>
+  <ul>
+   <li><a href="https://divulgacandcontas.tse.jus.br/" target="_blank" rel="noopener">TSE · DivulgaCandContas</a> (consulta oficial de candidaturas; acesso a partir do Brasil)</li>
+   <li><a href="https://www.tre-mt.jus.br/comunicacao/noticias/2026/Setembro/eleicoes-2026-candidatos-ao-cargo-de-governador-a" target="_blank" rel="noopener">TRE-MT · Candidatos ao cargo de governador(a)</a></li>
+   <li><a href="https://www12.senado.leg.br/noticias/candidatos-2026/mato-grosso" target="_blank" rel="noopener">Senado Notícias · Candidatos 2026 em Mato Grosso</a></li>
+   <li><a href="https://www.cnnbrasil.com.br/eleicoes/quem-sao-os-candidatos-a-governador-de-mato-grosso-em-2026/" target="_blank" rel="noopener">CNN Brasil · Quem são os candidatos ao governo de MT</a></li>
+   <li><a href="/apuracao-2026/">Apuração 2026 no HOJE MT</a> (resultados oficiais do TSE a partir de 4/10)</li>
+  </ul>
+  <h4>Como o radar funciona</h4>
+  <p>O radar lê manchetes públicas (Google Notícias, veículos de Mato Grosso e a cobertura do HOJE MT) a cada 30 minutos e classifica cada uma por palavras-chave. A classificação é automática e pode errar; "polêmica" indica que o fato foi questionado ou está sob apuração <i>segundo a cobertura</i>, não é juízo do HOJE MT, e vale a presunção de inocência. Notícias de rotina (eventos, entrevistas) só são contadas, no rodapé de cada nome, e não aparecem nas listas. Os temas também são atribuídos por palavras-chave. Quando a manchete não traz o endereço original, o link abre a busca dela no Google Notícias.</p>
+  <p>Isonomia (Lei 9.504/97): candidatos ao mesmo cargo aparecem em ordem alfabética, com o mesmo espaço, e nenhum filtro ou gráfico muda essa ordem. Manchetes repetidas em vários veículos aparecem uma vez, com todas as fontes.</p>
   <p>Viu uma manchete no lugar errado ou falta um nome? Escreva para <a href="mailto:contato@hojemt.com.br">contato@hojemt.com.br</a>.</p>
  </details>
+ <div class="rd-tip" id="rd-tip" role="tooltip" hidden></div>
 </div>
 <script>
 (function(){
  var raiz=document.getElementById('hmt-radar');if(!raiz)return;
  var $=function(id){return document.getElementById(id)};
- var C=$('rd-conteudo'),Q=$('rd-q'),P=$('rd-partido'),PER=$('rd-periodo'),LIMPAR=$('rd-limpar'),CONT=$('rd-contagem'),CARGOS=$('rd-cargos'),TIPOS=$('rd-tipos'),F=raiz.querySelector('.rd-filtros'),VOLTA=raiz.querySelector('.rd-volta');
- var dados=null,hoje=null,estado;zera();
+ var C=$('rd-conteudo'),Q=$('rd-q'),P=$('rd-partido'),TM=$('rd-tema'),PER=$('rd-periodo'),LIMPAR=$('rd-limpar'),COMP=$('rd-comp'),CONT=$('rd-contagem'),CARGOS=$('rd-cargos'),TIPOS=$('rd-tipos'),F=raiz.querySelector('.rd-filtros'),VOLTA=raiz.querySelector('.rd-volta'),TIP=$('rd-tip');
+ var dados=null,hoje=null,estado,vistos=null,novasTotal=0;zera();
  var ALIAS={prefeita:'prefeito',governadora:'governador',senadora:'senador','deputada-federal':'deputado-federal','deputada-estadual':'deputado-estadual'};
  var CURTO={governador:'Governo',senador:'Senado','deputado-federal':'Câmara Federal','deputado-estadual':'Assembleia',prefeito:'Autoridades',outros:'Outros'};
  var PERIODO={'7':'na semana','3':'nos últimos 3 dias','2':'hoje e ontem'},PERTXT={'3':'últimos 3 dias','2':'hoje e ontem'};
- var RADAR=/(^|&)(cargo|mostrar|partido|dias|q)=/;
+ var RADAR=/(^|&)(cargo|mostrar|partido|dias|q|tema)=/;
  var VISIVEIS=window.matchMedia&&matchMedia('(max-width:600px)').matches?2:3;
- function zera(){estado={cargo:'todos',tipo:'todos',q:'',partido:'',periodo:'7'}}
+ var ELEICAO=new Date(2026,9,4);
+ // Dados oficiais (TSE/DivulgaCand conferido com TRE-MT, Senado Notícias e CNN Brasil em 24/09/2026): cargo, nome de urna, nome no radar, número, partido, coligação, vice, deferido(1)/checagem pendente(0)
+ var OFICIAL=[["governador","Doutora Natasha","Natasha Slhessarenko",55,"PSD","Mato Grosso para Todos","Diogo Botelho (PDT)",1],["governador","Maurício Coelho","Maurício Coelho",33,"Mobiliza","chapa isolada","Dr. Wagner Malheiros (Mobiliza)",1],["governador","Otaviano Pivetta","Otaviano Pivetta",10,"Republicanos","Mato Grosso Não Pode Parar","Gisela Simona (União)",1],["governador","Rafaell Milas","Rafaell Milas",14,"Missão","chapa isolada","Thales Sartorelo (Missão)",1],["governador","Sargento Laudicério","Sargento Laudicério",36,"Agir","chapa isolada","Alex Pucineli (Agir)",0],["governador","Wellington Fagundes","Wellington Fagundes",22,"PL","Coração da Gente","Reinaldo Gomes de Morais (Novo)",1],["senador","Beny Godoy","Beny Godoy",365,"Agir","","",0],["senador","Coronel Darwin","Coronel Darwin",351,"Democrata","","",1],["senador","Fávaro","Carlos Fávaro",555,"PSD","","",1],["senador","Galvan","",700,"Avante","","",1],["senador","Janaina Riva","Janaina Riva",150,"MDB","","",1],["senador","Margareth Buzetti","Margareth Buzetti",111,"PP","","",1],["senador","Mauro Mendes","Mauro Mendes",444,"União","","",1],["senador","Pedro Taques","Pedro Taques",400,"PSB","","",1],["senador","Professor Nelson Ferreira","",360,"Agir","","",1],["senador","Zé Medeiros","Zé Medeiros",222,"PL","","",1]];
+ // Temas por palavras (até 3 letras: palavra inteira; mais longas: começo de palavra)
+ var TEMAS=[['saude','Saúde',['saude','sus','hospita','medic','upa','vacin','cirurg','doenc','dengue','autis','terapia','samu','leito','clinica']],
+  ['educacao','Educação',['educa','escola','professor','ensino','creche','aluno','universid','unemat','ifmt','merenda']],
+  ['seguranca','Segurança',['seguranca','policia','policiais','crime','crimin','violenc','faccao','presidio','homicid','armas','feminicid']],
+  ['impostos','Impostos e contas',['ipva','imposto','icms','tribut','renuncia','fiscal','taxa','divida','orcament','gastos','contas','emenda']],
+  ['infra','Obras e infraestrutura',['estrada','rodovia','br','ponte','asfalt','obra','obras','paviment','ferrovia','brt','saneament','iluminac','agua','habitac','moradia']],
+  ['economia','Agro e economia',['agro','soja','milho','frete','grao','graos','emprego','economia','industria','energia','empresa','comercio','renda','salario']],
+  ['ambiente','Meio ambiente',['ambient','queimad','incendi','fogo','pantanal','desmat','clima','seca','rios']],
+  ['justica','Justiça e fiscalização',['tre','tse','justica','stf','stj','tce','ministerio','mpe','mpf','investig','denuncia','processo','condena','cassac','inelegiv','operacao','auditoria']],
+  ['aliancas','Alianças e partidos',['apoio','apoia','alianca','partido','filia','chapa','coligac','vice','aliad','rompe','racha','expuls']],
+  ['campanha','Pesquisas e campanha',['pesquisa','debate','sabatina','propaganda','comicio','carreata','jingle','agenda','caminhada','voto','votos']]];
+ var TEMA_NOME={};TEMAS.forEach(function(t){TEMA_NOME[t[0]]=t[1]});
+ function zera(){estado={cargo:'todos',tipo:'todos',q:'',partido:'',periodo:'7',tema:''}}
  function tem(o,k){return Object.prototype.hasOwnProperty.call(o,k)}
  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
  function norm(s){return String(s==null?'':s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
  function ic(e){return '<span aria-hidden="true">'+e+'</span> '}
- // Busca por termos: "PL", "PT", "sus" (até 3 letras) só casam com a palavra inteira; termos maiores casam com o começo de uma palavra.
+ function pl(n,s,p){return n+' '+(n===1?s:(p||s+'s'))}
+ function fmt(n){try{return n.toLocaleString('pt-BR')}catch(e){return String(n)}}
  function txt(s){return ' '+norm(s).replace(/[^a-z0-9]+/g,' ')+' '}
  function termos(q){return norm(q).split(/[^a-z0-9]+/).filter(Boolean)}
  function casa(t,w){return t.indexOf(' '+w+(w.length<=3?' ':''))>=0}
+ function slug(s){return norm(s).replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+ function hash(s){var h=5381,i;for(i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))|0;return (h>>>0).toString(36)}
+ function iniciais(n){var p=String(n).replace(/^(doutora?|dr\.?|dra\.?|professora?|prof\.?|sargento|coronel|delegad[oa]|pastor[a]?)\s+/i,'').split(/\s+/).filter(function(w){return w.length>2||/^[A-ZÁÉÍÓÚ]/.test(w)});if(!p.length)p=String(n).split(/\s+/);return ((p[0]||'').charAt(0)+(p.length>1?p[p.length-1].charAt(0):'')).toUpperCase()}
  function limpaTitulo(t,f){t=String(t==null?'':t).normalize('NFC').trim();var i=t.lastIndexOf(' - ');if(i>20){var suf=t.slice(i+3);if(!f||norm(suf)===norm(f)||suf.length<=40)t=t.slice(0,i)}return t}
  // Dia de hoje no calendário de Cuiabá (UTC-4, sem horário de verão desde 2019)
  function diaMT(u){var y,mo,da;try{new Intl.DateTimeFormat('en-US',{timeZone:'America/Cuiaba',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(u).forEach(function(p){if(p.type==='year')y=+p.value;if(p.type==='month')mo=+p.value;if(p.type==='day')da=+p.value})}catch(e){}if(!y||!mo||!da){var t=new Date(u.getTime()-4*36e5);y=t.getUTCFullYear();mo=t.getUTCMonth()+1;da=t.getUTCDate()}return new Date(y,mo-1,da)}
- // Só DD/MM; data inválida fica fora dos filtros curtos; o ano é o mais próximo de hoje e data futura conta como hoje
  function diasAtras(ddmm){var m=/^(\d{1,2})\/(\d{1,2})(?:\/\d{2,4})?$/.exec(String(ddmm==null?'':ddmm).trim());if(!m||!hoje)return Infinity;var best=Infinity;[-1,0,1].forEach(function(k){var dif=Math.round((hoje-new Date(hoje.getFullYear()+k,+m[2]-1,+m[1]))/864e5);if(Math.abs(dif)<Math.abs(best))best=dif});return Math.max(0,best)}
- function agrupa(lista){var por=Object.create(null),ordem=[];(Array.isArray(lista)?lista:[]).forEach(function(x){if(!x||typeof x!=='object')return;var t=limpaTitulo(x.titulo,x.fonte);if(!t)return;var k=norm(t).replace(/[^a-z0-9]+/g,' ').trim(),f=x.fonte==null?'':String(x.fonte).trim();if(!por[k]){por[k]={titulo:t,url:seguro(x.url),data:x.data==null?'':String(x.data),fontes:[],n:txt(t),d:diasAtras(x.data)};ordem.push(k)}var g=por[k];if(f&&g.fontes.indexOf(f)<0)g.fontes.push(f);if(!g.url&&seguro(x.url))g.url=seguro(x.url)});return ordem.map(function(k){return por[k]})}
+ function ddmm(d){var x=new Date(hoje.getFullYear(),hoje.getMonth(),hoje.getDate()-d);return ('0'+x.getDate()).slice(-2)+'/'+('0'+(x.getMonth()+1)).slice(-2)}
+ function temasDe(n){var r=[];TEMAS.forEach(function(t){if(t[2].some(function(w){return casa(n,w)}))r.push(t[0])});return r}
+ function agrupa(lista){var por=Object.create(null),ordem=[];(Array.isArray(lista)?lista:[]).forEach(function(x){if(!x||typeof x!=='object')return;var t=limpaTitulo(x.titulo,x.fonte);if(!t)return;var k=norm(t).replace(/[^a-z0-9]+/g,' ').trim(),f=x.fonte==null?'':String(x.fonte).trim().replace(/\s+[-|–]\s+.*$/,'');if(!por[k]){por[k]={titulo:t,url:seguro(x.url),data:x.data==null?'':String(x.data),fontes:[],n:txt(t),d:diasAtras(x.data),k:hash(k)};ordem.push(k)}var g=por[k];if(f&&g.fontes.indexOf(f)<0)g.fontes.push(f);if(!g.url&&seguro(x.url))g.url=seguro(x.url)});
+  return ordem.map(function(k){var g=por[k];g.temas=temasDe(g.n);return g})}
+ function oficial(d){var porNome=Object.create(null);d.candidatos.forEach(function(c){porNome[norm(c.nome)+'|'+c.cargoN]=c});
+  OFICIAL.forEach(function(o){var c=o[2]?porNome[norm(o[2])+'|'+o[0]]:null,of={urna:o[1],numero:o[3],partido:o[4],coligacao:o[5],vice:o[6],deferido:!!o[7]};
+   if(c){c.of=of;return}
+   d.candidatos.push({nome:o[1],cargo:o[0],cargoN:o[0],partido:o[4],candidato:true,neutras:0,pol:[],sol:[],of:of,semRadar:true,instagram:''})})}
  function prepara(d){if(!d||typeof d!=='object'||!Array.isArray(d.candidatos))throw new Error('JSON sem candidatos');
   if(!d.cargos||typeof d.cargos!=='object'||Array.isArray(d.cargos))d.cargos={};
-  var h=/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(d.gerado_em||'');hoje=diaMT(h?new Date(Date.UTC(+h[1],+h[2]-1,+h[3],+h[4],+h[5])):new Date());
+  var h=/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(d.gerado_em||'');hoje=diaMT(h?new Date(Date.UTC(+h[1],+h[2]-1,+h[3],+h[4]+4,+h[5])):new Date());
   d.candidatos=d.candidatos.filter(function(c){return c&&typeof c==='object'&&typeof c.nome==='string'&&c.nome.trim()});
   d.candidatos.forEach(function(c){c.nome=c.nome.trim().replace(/\s+/g,' ').normalize('NFC');c.partido=c.partido==null?'':String(c.partido).trim();
    var k=norm(c.cargo).trim().replace(/[\s_]+/g,'-');if(tem(ALIAS,k))k=ALIAS[k];if(!/^[a-z0-9-]{1,40}$/.test(k))k='outros';c.cargoN=k;
-   if(!tem(d.cargos,k)||typeof d.cargos[k]!=='string'||!d.cargos[k].trim())d.cargos[k]=k==='outros'?'Outros nomes monitorados':k.charAt(0).toUpperCase()+k.slice(1).replace(/-/g,' ');
-   c.neutras=Math.max(0,parseInt(c.neutras,10)||0);c.pol=agrupa(c.polemicas);c.sol=agrupa(c.solucoes);
-   c.bn=txt(c.nome);c.busca=txt(c.partido+' '+(c.cidade==null?'':c.cidade)+' '+k.replace(/-/g,' ')+' '+norm(c.cargo))});
+   c.neutras=Math.max(0,parseInt(c.neutras,10)||0);c.pol=agrupa(c.polemicas);c.sol=agrupa(c.solucoes)});
+  try{oficial(d)}catch(e){}
+  d.candidatos.forEach(function(c){var k=c.cargoN;if(!tem(d.cargos,k)||typeof d.cargos[k]!=='string'||!d.cargos[k].trim())d.cargos[k]=k==='outros'?'Outros nomes monitorados':k.charAt(0).toUpperCase()+k.slice(1).replace(/-/g,' ');
+   c.bn=txt(c.nome+(c.of&&c.of.urna!==c.nome?' '+c.of.urna:''));c.busca=txt(c.partido+' '+(c.cidade==null?'':c.cidade)+' '+k.replace(/-/g,' ')+' '+norm(c.cargo)+(c.of?' '+c.of.numero+' '+c.of.coligacao:''));c.id='rd-c-'+slug(c.nome)});
   d.candidatos.sort(function(a,b){return a.nome.localeCompare(b.nome,'pt-BR')});return d}
- function atualizadoEm(g){var m=/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(g||'');if(!m)return'';var u=new Date(Date.UTC(+m[1],+m[2]-1,+m[3],+m[4],+m[5]));try{return u.toLocaleString('pt-BR',{timeZone:'America/Cuiaba',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).replace(',',' às')}catch(e){return m[3]+'/'+m[2]+' '+m[4]+':'+m[5]}}
- // Grifa com a mesma regra da busca (pref=true no nome: começo de palavra com qualquer tamanho). O mapa de posições mantém o grifo certo com acentos (NFC ou NFD).
+ // O gerado_em vem no horário de Cuiabá (UTC-4) sem fuso; converte para UTC antes de formatar
+ function atualizadoEm(g){var m=/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(g||'');if(!m)return'';return m[3]+'/'+m[2]+' às '+m[4]+':'+m[5]}
  function destaca(t,ts,pref){t=String(t==null?'':t);if(!ts||!ts.length)return esc(t);var n='',pos=[],i,j,s;for(i=0;i<t.length;i++){s=norm(t.charAt(i));for(j=0;j<s.length;j++){n+=s.charAt(j);pos.push(i)}}pos.push(t.length);
   var iv=[];ts.forEach(function(w){var re=new RegExp('(^|[^a-z0-9])('+w+')'+(w.length<=3&&!pref?'(?![a-z0-9])':''),'g'),m;while((m=re.exec(n))){var a=m.index+m[1].length;iv.push([pos[a],pos[a+w.length]])}});
   if(!iv.length)return esc(t);iv.sort(function(a,b){return a[0]-b[0]||b[1]-a[1]});var r='',p=0;iv.forEach(function(v){if(v[0]<p)return;r+=esc(t.slice(p,v[0]))+'<mark>'+esc(t.slice(v[0],v[1]))+'</mark>';p=v[1]});return r+esc(t.slice(p))}
- function filtraItens(lista,ts){var per=+estado.periodo;return lista.filter(function(x){if(per<7&&x.d>=per)return false;return ts.every(function(w){return casa(x.n,w)})})}
+ function filtraItens(lista,ts){var per=+estado.periodo,tm=estado.tema;return lista.filter(function(x){if(per<7&&x.d>=per)return false;if(tm&&x.temas.indexOf(tm)<0)return false;return ts.every(function(w){return casa(x.n,w)})})}
  function seguro(u){return /^https?:\/\//i.test(String(u||''))?String(u):''}
  function linkDe(x){return seguro(x.url)||('https://news.google.com/search?q='+encodeURIComponent(x.titulo)+'&hl=pt-BR&gl=BR&ceid=BR:pt-419')}
- function item(x,ts,i){return '<li'+(i>=VISIVEIS?' hidden':'')+'><a href="'+esc(linkDe(x))+'" target="_blank" rel="nofollow noopener">'+destaca(x.titulo,ts)+' <span aria-hidden="true">↗</span><span class="rd-sr"> (abre em nova aba'+(seguro(x.url)?'':', busca no Google Notícias')+')</span></a><small>'+(x.data?esc(x.data)+' · ':'')+esc(x.fontes.join(', '))+'</small></li>'}
+ function eNovo(x){return !!vistos&&!vistos[x.k]}
+ function item(x,ts,i){var nf=x.fontes.length,fx=nf?'<details class="rd-fx"><summary>'+pl(nf,'fonte')+'</summary><p>'+esc(x.fontes.join(' · '))+'</p></details>':'';
+  return '<li'+(i>=VISIVEIS?' hidden':'')+'><a href="'+esc(linkDe(x))+'" target="_blank" rel="nofollow noopener">'+destaca(x.titulo,ts)+' <span aria-hidden="true">↗</span><span class="rd-sr"> (abre em nova aba'+(seguro(x.url)?'':', busca no Google Notícias')+')</span></a><div class="rd-meta">'+(eNovo(x)?'<span class="rd-novo">NOVO</span>':'')+(x.data?'<span>'+esc(x.data)+'</span>':'')+fx+'</div></li>'}
  function coluna(c,cls,titulo,lista,ts,vazio){var h='<div class="rd-col '+cls+'"><h5 class="rd-col-tit">'+titulo+'</h5>';if(!lista.length)return h+'<div class="rd-vazio">'+vazio+'</div></div>';h+='<ul>'+lista.map(function(x,i){return item(x,ts,i)}).join('')+'</ul>';
   if(lista.length>VISIVEIS){var n=lista.length-VISIVEIS,tp=cls==='p'?'polêmica':'proposta',rot='Ver mais '+n+' '+tp+(n===1?'':'s');h+='<button type="button" class="rd-mais" aria-expanded="false" data-rot="'+rot+'" data-tp="'+tp+'s" data-nome="'+esc(c.nome)+'"><span class="rd-mais-tx">'+rot+'</span><span class="rd-sr"> de '+esc(c.nome)+'</span></button>'}return h+'</div>'}
  function conta(n,t,pal){return n+(t>n?' de '+t:'')+' '+pal+(t===1?'':'s')}
- // Aplica partido, busca e "Mostrar" a um nome (o cargo fica de fora para as contagens dos botões). null = o nome não entra.
+ // Aplica partido, busca, tema e "Mostrar" a um nome (o cargo fica de fora para as contagens dos botões). null = o nome não entra.
  function avalia(c,ts){if(estado.partido&&c.partido!==estado.partido)return null;
   var resto=ts.filter(function(w){return c.bn.indexOf(' '+w)<0&&!casa(c.busca,w)}),pol=filtraItens(c.pol,resto),sol=filtraItens(c.sol,resto),vis=(estado.tipo!=='solucoes'?pol.length:0)+(estado.tipo!=='polemicas'?sol.length:0);
-  if(resto.length&&!vis)return null;return {c:c,pol:pol,sol:sol,resto:resto,vis:vis}}
- function card(r,ts,i){var c=r.c,pol=r.pol,sol=r.sol,resto=r.resto,qf=resto.length>0,polT=qf?filtraItens(c.pol,[]).length:pol.length,solT=qf?filtraItens(c.sol,[]).length:sol.length,
-   vz=(qf?' com “'+esc(resto.length===ts.length?estado.q.trim():resto.join(' '))+'”':'')+' '+PERIODO[estado.periodo];
-  var sub=c.candidato===false?(c.cidade?'Prefeitura de '+esc(c.cidade):esc(dados.cargos[c.cargoN]||'Autoridade monitorada')):('Candidato(a)'+(c.cargoN==='outros'?'':' · '+esc(dados.cargos[c.cargoN])))+(c.confirmar?' · <i>candidatura a confirmar</i>':'');
-  var cols='',chips='';if(estado.tipo!=='solucoes'){cols+=coluna(c,'p',ic('⚠️')+'Polêmicas <small>· não é veredito</small>',pol,resto,'Nenhuma polêmica'+vz+'.');chips+='<span class="p">'+ic('⚠️')+conta(pol.length,polT,'polêmica')+'</span>'}
-  if(estado.tipo!=='polemicas'){cols+=coluna(c,'s',ic('💡')+'Propostas',sol,resto,'Nenhuma proposta'+vz+'.');chips+='<span class="s">'+ic('💡')+conta(sol.length,solT,'proposta')+'</span>'}
+  if((resto.length||estado.tema)&&!vis)return null;return {c:c,pol:estado.tipo==='solucoes'?[]:pol,sol:estado.tipo==='polemicas'?[]:sol,polAll:pol,solAll:sol,resto:resto,vis:vis}}
+ function porDia(r,n){var a=[];for(var i=0;i<n;i++)a.push(0);r.pol.concat(r.sol).forEach(function(x){if(x.d<n)a[n-1-x.d]++});return a}
+ function card(r,ts,i){var c=r.c,pol=r.polAll,sol=r.solAll,resto=r.resto,qf=resto.length>0||!!estado.tema,polT=qf?c.pol.filter(function(x){return +estado.periodo>=7||x.d<+estado.periodo}).length:pol.length,solT=qf?c.sol.filter(function(x){return +estado.periodo>=7||x.d<+estado.periodo}).length:sol.length,
+   vz=(resto.length?' com “'+esc(resto.length===ts.length?estado.q.trim():resto.join(' '))+'”':'')+(estado.tema?' sobre '+esc(TEMA_NOME[estado.tema]):'')+' '+PERIODO[estado.periodo];
+  var sub=c.candidato===false?(c.cidade?'Prefeitura de '+esc(c.cidade):esc(dados.cargos[c.cargoN]||'Autoridade monitorada')):('Candidato(a)'+(c.cargoN==='outros'?'':' · '+esc(dados.cargos[c.cargoN])));
+  if(c.partido)sub+=' · '+esc(c.partido);if(c.confirmar)sub+=' · <i>candidatura a confirmar</i>';
+  var cols='',chips='';if(estado.tipo!=='solucoes'){cols+=coluna(c,'p',ic('⚠️')+'Polêmicas <small>· não é veredito</small>',pol,resto,c.semRadar?'Sem manchetes classificadas pelo radar '+PERIODO[estado.periodo]+'.':'Nenhuma polêmica'+vz+'.');chips+='<span><span class="rd-pt p" aria-hidden="true"></span>'+conta(pol.length,polT,'polêmica')+'</span>'}
+  if(estado.tipo!=='polemicas'){cols+=coluna(c,'s',ic('💡')+'Propostas',sol,resto,c.semRadar?'Sem manchetes classificadas pelo radar '+PERIODO[estado.periodo]+'.':'Nenhuma proposta'+vz+'.');chips+='<span><span class="rd-pt s" aria-hidden="true"></span>'+conta(sol.length,solT,'proposta')+'</span>'}
+  var tot=r.pol.length+r.sol.length,bal=tot?'<div class="rd-bal" role="img" aria-label="'+pl(r.pol.length,'polêmica')+' e '+pl(r.sol.length,'proposta')+'">'+(r.pol.length?'<i class="p" style="flex:'+r.pol.length+'"></i>':'')+(r.sol.length?'<i class="s" style="flex:'+r.sol.length+'"></i>':'')+'</div>':'<div class="rd-bal" aria-hidden="true"></div>';
+  var nd=+estado.periodo,dias=porDia(r,nd),mx=Math.max.apply(null,dias.concat([1])),pico=dias.indexOf(Math.max.apply(null,dias)),spark='<div class="rd-spark" role="img" aria-label="'+(tot?'Manchetes por dia; pico em '+ddmm(nd-1-pico):'Sem manchetes no período')+'">'+dias.map(function(v,j){return '<i class="'+(v&&j===pico?'h':'')+'" style="height:'+Math.max(2,Math.round(v/mx*26))+'px" title="'+ddmm(nd-1-j)+': '+v+'"></i>'}).join('')+'</div>';
+  function par(t,v){return '<div><dt>'+t+'</dt><dd>'+v+'</dd></div>'}
+  var of='';if(c.of){of='<dl class="rd-ofic">'+(c.of.urna&&c.of.urna!==c.nome?par('Nome de urna',esc(c.of.urna)):'')+(c.of.coligacao?par('Coligação',esc(c.of.coligacao)):'')+(c.of.vice?par('Vice',esc(c.of.vice)):'')+par('Registro',c.of.deferido?'deferido (TSE)':'<span class="rd-chk">checagem pendente</span>')+'</dl>'}
   var igU=String(c.instagram||'').trim().replace(/^(?:https?:\/\/)?(?:(?:www|m)\.)?instagram\.com\//i,'').replace(/^@/,'').split(/[\/?#]/)[0];igU=/^[A-Za-z0-9._]{1,30}$/.test(igU)&&!/^(p|reel|reels|tv|stories|explore|accounts)$/i.test(igU)&&!/instagram\.com$/i.test(igU)?igU:'';
   var ig=igU?'<a href="https://www.instagram.com/'+igU+'/" rel="nofollow noopener" target="_blank">Instagram @'+igU+' <span aria-hidden="true">↗</span><span class="rd-sr"> (abre em nova aba)</span></a>':'';
-  var rotina=c.neutras&&estado.periodo==='7'&&!ts.length?'<span class="rd-rotina">+'+c.neutras+' notícia'+(c.neutras===1?'':'s')+' de rotina na semana, não listada'+(c.neutras===1?'':'s')+'</span>':'';
-  return '<article class="rd-card" aria-labelledby="rd-n-'+i+'"><div class="rd-cab"><div><h4 class="rd-nome" id="rd-n-'+i+'">'+destaca(c.nome,ts,true)+'</h4><div class="rd-sub">'+sub+'</div></div>'+(c.partido?'<span class="rd-partido">'+esc(c.partido)+'</span>':'')+'</div>'
-   +'<div class="rd-cont">'+chips+'</div>'
+  var rotina=c.neutras&&estado.periodo==='7'&&!ts.length&&!estado.tema?'<span>+'+pl(c.neutras,'notícia')+' de rotina na semana</span>':'';
+  return '<article class="rd-card" id="'+c.id+'" aria-labelledby="rd-n-'+i+'"><div class="rd-cab"><div class="rd-av" aria-hidden="true">'+esc(iniciais(c.nome))+'</div><div class="rd-id"><h4 class="rd-nome" id="rd-n-'+i+'">'+destaca(c.nome,ts,true)+'</h4><div class="rd-sub">'+sub+'</div></div>'+(c.of?'<span class="rd-num"><small>Número</small>'+esc(c.of.numero)+'</span>':'')+'</div>'
+   +of+'<div class="rd-mini"><div>'+bal+'<div class="rd-chips">'+chips+'</div></div>'+spark+'</div>'
    +'<div class="rd-cols'+(estado.tipo==='todos'?'':' uma')+'">'+cols+'</div>'
    +'<div class="rd-rodape-card"><a href="/search/?q='+encodeURIComponent(c.nome)+'">Cobertura no HOJE MT<span class="rd-sr"> sobre '+esc(c.nome)+'</span></a>'+ig+rotina+'</div></article>'}
- function render(){if(!dados)return;var ts=termos(estado.q),grupos=Object.create(null),pc=Object.create(null),nomes=0,manchetes=0;pc.todos=0;
-  dados.candidatos.forEach(function(c){var r=avalia(c,ts);if(!r)return;pc.todos++;pc[c.cargoN]=(pc[c.cargoN]||0)+1;if(estado.cargo!=='todos'&&c.cargoN!==estado.cargo)return;(grupos[c.cargoN]=grupos[c.cargoN]||[]).push(card(r,ts,nomes));nomes++;manchetes+=r.vis});
+ // ---------- Gráficos (SVG sem bibliotecas; texto sempre em tons de texto, cor só nas marcas) ----------
+ function arred(v){if(v<=4)return 4;var p=Math.pow(10,Math.floor(Math.log10(v))),m=v/p;return (m<=1?1:m<=2?2:m<=2.5?2.5:m<=5?5:10)*p}
+ function tabela(el,cab,linhas){el.innerHTML='<table><thead><tr>'+cab.map(function(h,i){return '<th'+(i?' class="n"':'')+' scope="col">'+esc(h)+'</th>'}).join('')+'</tr></thead><tbody>'+linhas.map(function(l){return '<tr>'+l.map(function(v,i){return i?'<td class="n">'+esc(v)+'</td>':'<th scope="row">'+esc(v)+'</th>'}).join('')+'</tr>'}).join('')+'</tbody></table>'}
+ function larg(el){return Math.max(280,Math.round(el.clientWidth||460))}
+ var cv=null;function mede(t,px){try{cv=cv||document.createElement('canvas').getContext('2d');cv.font=px+'px '+getComputedStyle(raiz).fontFamily;return cv.measureText(t).width}catch(e){return t.length*px*.56}}
+ function corta(t,px,max){t=String(t);if(mede(t,px)<=max)return t;while(t.length>1&&mede(t+'…',px)>max)t=t.slice(0,-1);return t.trim()+'…'}
+ function grDias(vis){var n=+estado.periodo,S=[],P=[],i;for(i=0;i<n;i++){S.push(0);P.push(0)}
+  vis.forEach(function(r){r.sol.forEach(function(x){if(x.d<n)S[n-1-x.d]++});r.pol.forEach(function(x){if(x.d<n)P[n-1-x.d]++})});
+  var W=larg($('rd-g-dias')),H=210,ml=30,mr=8,mt=14,mb=26,pw=W-ml-mr,ph=H-mt-mb,max=arred(Math.max.apply(null,S.map(function(v,j){return v+P[j]}).concat([1]))),bw=Math.min(24,pw/n*.5),g='';
+  [0,.5,1].forEach(function(f){var y=mt+ph-ph*f;g+='<line x1="'+ml+'" x2="'+(W-mr)+'" y1="'+y+'" y2="'+y+'" stroke="var(--'+(f?'grade':'base')+')" stroke-width="1"/><text x="'+(ml-6)+'" y="'+(y+3.5)+'" text-anchor="end">'+fmt(Math.round(max*f))+'</text>'});
+  for(i=0;i<n;i++){var cx=ml+pw/n*(i+.5),x=cx-bw/2,hs=S[i]/max*ph,hp=P[i]/max*ph,y0=mt+ph,dia=ddmm(n-1-i),t=S[i]+P[i],seg='';
+   // propostas na base, polêmicas em cima, com 2px de respiro entre as camadas; só o topo da coluna é arredondado
+   if(hs>0)seg+=barra(x,y0-hs,bw,hs,'var(--s1)',!hp);
+   if(hp>0)seg+=barra(x,y0-hs-hp+(hs>0?-2:0),bw,hp,'var(--s2)',true);
+   g+='<g tabindex="0" role="listitem" data-tip="'+esc(JSON.stringify({t:dia+(i===n-1?' (hoje)':''),l:[['p',P[i],'polêmicas'],['s',S[i],'propostas']]}))+'" aria-label="'+esc(dia+': '+P[i]+' polêmicas e '+S[i]+' propostas')+'"><rect class="rd-hl" x="'+(cx-pw/n/2+2)+'" y="'+mt+'" width="'+(pw/n-4)+'" height="'+ph+'" rx="6" fill="transparent"/>'+seg+(t?'<text class="rd-val" x="'+cx+'" y="'+(y0-hs-hp-(hs&&hp?2:0)-5)+'" text-anchor="middle">'+t+'</text>':'')+'<text x="'+cx+'" y="'+(H-8)+'" text-anchor="middle">'+(i===n-1?'hoje':dia)+'</text></g>'}
+  $('rd-g-dias').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="list" aria-label="Manchetes por dia">'+g+'</svg>';
+  $('rd-f-dias-sub').textContent='Polêmicas e propostas publicadas em cada dia ('+(n===7?'últimos 7 dias':PERTXT[estado.periodo])+').';
+  tabela($('rd-t-dias'),['Dia','Polêmicas','Propostas','Total'],S.map(function(v,j){return [ddmm(n-1-j),P[j],v,v+P[j]]}))}
+ function barra(x,y,w,h,cor,arred4){var r=Math.min(4,h/2,w/2);if(!arred4||h<1)return '<rect x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+w.toFixed(1)+'" height="'+h.toFixed(1)+'" fill="'+cor+'"/>';
+  return '<path d="M'+x.toFixed(1)+' '+(y+h).toFixed(1)+'V'+(y+r).toFixed(1)+'Q'+x.toFixed(1)+' '+y.toFixed(1)+' '+(x+r).toFixed(1)+' '+y.toFixed(1)+'H'+(x+w-r).toFixed(1)+'Q'+(x+w).toFixed(1)+' '+y.toFixed(1)+' '+(x+w).toFixed(1)+' '+(y+r).toFixed(1)+'V'+(y+h).toFixed(1)+'Z" fill="'+cor+'"/>'}
+ function barraH(x,y,w,h,cor,dir){var r=Math.min(4,h/2,w);if(w<1)return '';if(dir>0)return '<path d="M'+x.toFixed(1)+' '+y+'H'+(x+w-r).toFixed(1)+'Q'+(x+w).toFixed(1)+' '+y+' '+(x+w).toFixed(1)+' '+(y+r)+'V'+(y+h-r)+'Q'+(x+w).toFixed(1)+' '+(y+h)+' '+(x+w-r).toFixed(1)+' '+(y+h)+'H'+x.toFixed(1)+'Z" fill="'+cor+'"/>';
+  return '<path d="M'+x.toFixed(1)+' '+y+'H'+(x-w+r).toFixed(1)+'Q'+(x-w).toFixed(1)+' '+y+' '+(x-w).toFixed(1)+' '+(y+r)+'V'+(y+h-r)+'Q'+(x-w).toFixed(1)+' '+(y+h)+' '+(x-w+r).toFixed(1)+' '+(y+h)+'H'+x.toFixed(1)+'Z" fill="'+cor+'"/>'}
+ function grBarras(el,tab,itens,rotulo,cor,clicavel){var W=larg(el),lw=Math.round(Math.min(W*.5,200,Math.max(80,Math.max.apply(null,itens.map(function(it){return mede(it[1],12)}).concat([40]))+14))),rh=26,bh=14,mt=4,H=mt+itens.length*rh+4,pw=W-lw-44,max=Math.max.apply(null,itens.map(function(it){return it[2]}).concat([1])),g='';
+  if(!itens.length){el.innerHTML='<div class="rd-vazio">Sem dados no recorte atual.</div>';tab.innerHTML='';return}
+  itens.forEach(function(it,i){var y=mt+i*rh,w=it[2]/max*pw,sel=clicavel&&estado.tema===it[0],apag=clicavel&&estado.tema&&!sel;
+   g+='<g tabindex="0" role="listitem"'+(clicavel?' data-tema="'+esc(it[0])+'"':'')+' data-tip="'+esc(JSON.stringify({t:it[1],l:[['n',it[2],rotulo]]}))+'" aria-label="'+esc(it[1]+': '+it[2]+' '+rotulo+(sel?' (filtro ativo)':''))+'"><rect class="rd-hl" x="0" y="'+y+'" width="'+W+'" height="'+(rh-2)+'" rx="6" fill="transparent"/><text class="rd-nm" x="'+(lw-8)+'" y="'+(y+rh/2+2)+'" text-anchor="end"'+(sel?' font-weight="700"':'')+'>'+esc(corta(it[1],12,lw-10))+'</text>'+barraH(lw,y+(rh-2-bh)/2,Math.max(w,2),bh,apag?'var(--apag)':cor,1)+'<text class="rd-val" x="'+(lw+Math.max(w,2)+6)+'" y="'+(y+rh/2+2)+'">'+fmt(it[2])+'</text></g>'});
+  el.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="list" aria-label="'+esc(rotulo)+'">'+g+'</svg>';
+  tabela(tab,['Item',rotulo.charAt(0).toUpperCase()+rotulo.slice(1)],itens.map(function(it){return [it[1],it[2]]}))}
+ function grTemas(vis){var c=Object.create(null);vis.forEach(function(r){r.pol.concat(r.sol).forEach(function(x){x.temas.forEach(function(t){c[t]=(c[t]||0)+1})})});
+  var it=TEMAS.map(function(t){return [t[0],t[1],c[t[0]]||0]}).filter(function(x){return x[2]>0||estado.tema===x[0]}).sort(function(a,b){return b[2]-a[2]||a[1].localeCompare(b[1],'pt-BR')}).slice(0,8);
+  grBarras($('rd-g-temas'),$('rd-t-temas'),it,'manchetes','var(--s3)',true)}
+ function grVeiculos(vis){var c=Object.create(null);vis.forEach(function(r){r.pol.concat(r.sol).forEach(function(x){x.fontes.forEach(function(f){c[f]=(c[f]||0)+1})})});
+  var todos=Object.keys(c).map(function(k){return [k,k,c[k]]}).sort(function(a,b){return b[2]-a[2]||a[1].localeCompare(b[1],'pt-BR')});
+  grBarras($('rd-g-veic'),$('rd-t-veic'),todos.slice(0,10),'manchetes','var(--s3)',false);
+  $('rd-veics').innerHTML=todos.slice().sort(function(a,b){return a[1].localeCompare(b[1],'pt-BR')}).map(function(v){return '<li>'+esc(v[1])+' <span style="color:var(--mu)">('+v[2]+')</span></li>'}).join('')||'<li>Nenhum veículo no recorte atual.</li>';
+  $('rd-fontes-n').textContent='· '+pl(todos.length,'veículo')+' no recorte';return todos.length}
+ function grBalanco(vis){var W=larg($('rd-g-bal')),lw=Math.min(170,Math.round(W*.4)),rh=24,bh=12,gh=22,cx=lw+(W-lw)/2,half=(W-lw)/2-30,max=1,y=4,g='',linhas=[],cargoAt='';
+  vis.forEach(function(r){max=Math.max(max,r.pol.length,r.sol.length)});
+  var grupos=[];Object.keys(dados.cargos).forEach(function(k){var l=vis.filter(function(r){return r.c.cargoN===k});if(l.length)grupos.push([k,l])});
+  grupos.forEach(function(gr){g+='<text class="rd-gr" x="0" y="'+(y+15)+'">'+esc(dados.cargos[gr[0]])+'</text>';y+=gh;
+   gr[1].forEach(function(r){var c=r.c,p=r.pol.length,s=r.sol.length,wp=p/max*half,ws=s/max*half,yy=y+(rh-2-bh)/2;
+    g+='<g tabindex="0" role="listitem" data-ir="'+esc(c.id)+'" data-tip="'+esc(JSON.stringify({t:c.nome+(c.partido?' ('+c.partido+')':''),l:[['p',p,'polêmicas'],['s',s,'propostas']].concat(c.neutras&&estado.periodo==='7'?[['n',c.neutras,'de rotina (não listadas)']]:[])}))+'" aria-label="'+esc(c.nome+': '+p+' polêmicas e '+s+' propostas. Ir para as manchetes.')+'"><rect class="rd-hl" x="0" y="'+y+'" width="'+W+'" height="'+(rh-2)+'" rx="6" fill="transparent"/><text class="rd-nm" x="0" y="'+(y+rh/2+2)+'">'+esc(corta(c.nome,12,lw-8))+'</text>'
+     +barraH(cx-1,yy,wp,bh,'var(--s2)',-1)+barraH(cx+1,yy,ws,bh,'var(--s1)',1)
+     +(p?'<text class="rd-val" x="'+(cx-1-wp-5)+'" y="'+(y+rh/2+2)+'" text-anchor="end">'+p+'</text>':'')+(s?'<text class="rd-val" x="'+(cx+1+ws+5)+'" y="'+(y+rh/2+2)+'">'+s+'</text>':'')+(!p&&!s?'<text x="'+(cx+6)+'" y="'+(y+rh/2+2)+'">sem manchetes</text>':'')+'</g>';
+    linhas.push([c.nome,p,s,c.neutras&&estado.periodo==='7'?c.neutras:'—']);y+=rh})});
+  if(!linhas.length){$('rd-g-bal').innerHTML='<div class="rd-vazio">Nenhum nome no recorte atual.</div>';$('rd-t-bal').innerHTML='';return}
+  g='<line x1="'+cx+'" x2="'+cx+'" y1="0" y2="'+y+'" stroke="var(--base)" stroke-width="1"/>'+g;
+  $('rd-g-bal').innerHTML='<svg viewBox="0 0 '+W+' '+(y+4)+'" role="list" aria-label="Balanço de polêmicas e propostas por nome">'+g+'</svg>';
+  tabela($('rd-t-bal'),['Nome','Polêmicas','Propostas','Rotina (semana)'],linhas)}
+ function kpis(vis){var pol=0,sol=0,rot=0,nov=0,f=Object.create(null),nf=0;vis.forEach(function(r){pol+=r.pol.length;sol+=r.sol.length;rot+=r.c.neutras;r.pol.concat(r.sol).forEach(function(x){if(eNovo(x))nov++;x.fontes.forEach(function(v){if(!f[v]){f[v]=1;nf++}})})});
+  var semFiltro=estado.periodo==='7'&&!estado.q.trim()&&!estado.tema,h='';
+  function t(v,l,pt){return '<div class="rd-kpi"><b>'+fmt(v)+'</b><span>'+(pt?'<span class="rd-pt '+pt+'" aria-hidden="true"></span>':'')+esc(l)+'</span></div>'}
+  h+=t(pol+sol,'manchetes no recorte');if(estado.tipo!=='solucoes')h+=t(pol,'polêmicas','p');if(estado.tipo!=='polemicas')h+=t(sol,'propostas','s');h+=t(nf,'veículos');if(semFiltro)h+=t(rot,'notícias de rotina');if(vistos)h+=t(nov,'novas desde a sua última visita');
+  $('rd-kpis').innerHTML=h}
+ var ultimo=null;
+ function graficos(){if(!ultimo)return;try{grDias(ultimo);grTemas(ultimo);grBalanco(ultimo);grVeiculos(ultimo)}catch(e){if(window.console)console.error(e)}}
+ function render(){if(!dados)return;var ts=termos(estado.q),grupos=Object.create(null),pc=Object.create(null),nomes=0,manchetes=0,vis=[];pc.todos=0;
+  dados.candidatos.forEach(function(c){var r=avalia(c,ts);if(!r)return;pc.todos++;pc[c.cargoN]=(pc[c.cargoN]||0)+1;if(estado.cargo!=='todos'&&c.cargoN!==estado.cargo)return;vis.push(r);(grupos[c.cargoN]=grupos[c.cargoN]||[]).push(card(r,ts,nomes));nomes++;manchetes+=r.vis});
   CARGOS.querySelectorAll('button').forEach(function(b){var k=b.getAttribute('data-cargo'),n=pc[k]||0;b.querySelector('small').innerHTML='<span class="rd-sr">, </span>'+n+'<span class="rd-sr"> '+(n===1?'nome':'nomes')+'</span>';if(!n&&k!=='todos'&&b.getAttribute('aria-checked')!=='true')b.setAttribute('aria-disabled','true');else b.removeAttribute('aria-disabled')});
   var h='';Object.keys(dados.cargos).forEach(function(k){var g=grupos[k];if(!g)return;h+='<section><h3 class="rd-cargo">'+esc(dados.cargos[k])+' <small>'+g.length+' '+(g.length===1?'nome':'nomes')+'</small></h3><div class="rd-grade">'+g.join('')+'</div></section>'});
-  if(!h){if(!dados.candidatos.length)h='<div class="rd-aviso">O radar ainda não tem nomes monitorados. Volte mais tarde.</div>';else{var at=[];if(estado.cargo!=='todos')at.push(dados.cargos[estado.cargo]||estado.cargo);if(estado.partido)at.push('partido '+estado.partido);
+  if(!h){if(!dados.candidatos.length)h='<div class="rd-aviso">O radar ainda não tem nomes monitorados. Volte mais tarde.</div>';else{var at=[];if(estado.cargo!=='todos')at.push(dados.cargos[estado.cargo]||estado.cargo);if(estado.partido)at.push('partido '+estado.partido);if(estado.tema)at.push('tema '+TEMA_NOME[estado.tema]);
    if(ts.length){at.push('busca “'+estado.q.trim()+'”');if(estado.tipo!=='todos')at.push(estado.tipo==='polemicas'?'só polêmicas':'só propostas');if(PERTXT[estado.periodo])at.push(PERTXT[estado.periodo])}
    h='<div class="rd-aviso">Nenhum nome encontrado'+(at.length?' para '+esc(at.join(' + ')):'')+'. <button type="button" class="rd-limpar" data-limpar>Limpar filtros</button></div>'}}
   C.innerHTML=h;
+  ultimo=vis;kpis(vis);graficos()
   var rot=estado.tipo==='polemicas'?'polêmica':estado.tipo==='solucoes'?'proposta':'manchete',tx='Mostrando '+nomes+' de '+dados.candidatos.length+' nomes · '+manchetes+' '+rot+(manchetes===1?'':'s');if(CONT.textContent!==tx)CONT.textContent=tx;
-  var q=estado.q.trim(),vt=[];if(estado.cargo!=='todos')vt.push(CURTO[estado.cargo]||dados.cargos[estado.cargo]);if(estado.tipo!=='todos')vt.push(estado.tipo==='polemicas'?'Só polêmicas':'Só propostas');if(estado.partido)vt.push(estado.partido);if(PERTXT[estado.periodo])vt.push(estado.periodo==='3'?'3 dias':'Hoje e ontem');if(q)vt.push('“'+q+'”');
+  var q=estado.q.trim(),vt=[];if(estado.cargo!=='todos')vt.push(CURTO[estado.cargo]||dados.cargos[estado.cargo]);if(estado.tipo!=='todos')vt.push(estado.tipo==='polemicas'?'Só polêmicas':'Só propostas');if(estado.partido)vt.push(estado.partido);if(estado.tema)vt.push(TEMA_NOME[estado.tema]);if(PERTXT[estado.periodo])vt.push(estado.periodo==='3'?'3 dias':'Hoje e ontem');if(q)vt.push('“'+q+'”');
   VOLTA.innerHTML='<span aria-hidden="true">↑</span> Filtros'+(vt.length?': '+esc(vt.join(' · ')):'');LIMPAR.hidden=!vt.length;salvaHash()}
  function marca(grupo,attr,val){grupo.querySelectorAll('button').forEach(function(b){var on=b.getAttribute(attr)===val;b.setAttribute('aria-checked',String(on));b.tabIndex=on?0:-1})}
- // Grupo de rádio: uma parada de Tab por grupo; setas, Home e End escolhem a opção (pulando cargos sem resultado)
  function setas(g){g.addEventListener('keydown',function(e){var a=document.activeElement,bs=[].filter.call(g.querySelectorAll('button'),function(b){return b===a||b.getAttribute('aria-disabled')!=='true'}),i=bs.indexOf(a),k=e.key,j=k==='ArrowRight'||k==='ArrowDown'?i+1:k==='ArrowLeft'||k==='ArrowUp'?i-1:k==='Home'?0:k==='End'?bs.length-1:null;if(i<0||j===null)return;e.preventDefault();j=(j+bs.length)%bs.length;bs[j].focus();bs[j].click()})}
  function montaFiltros(){var cont=Object.create(null),partidos=[];dados.candidatos.forEach(function(c){cont[c.cargoN]=1;if(c.partido&&partidos.indexOf(c.partido)<0)partidos.push(c.partido)});
   var h='<button type="button" role="radio" data-cargo="todos">Todos <small></small></button>';Object.keys(dados.cargos).forEach(function(k){if(cont[k])h+='<button type="button" role="radio" data-cargo="'+esc(k)+'">'+esc(CURTO[k]||dados.cargos[k])+' <small></small></button>'});CARGOS.innerHTML=h;marca(CARGOS,'data-cargo',estado.cargo);
-  partidos.sort(function(a,b){return a.localeCompare(b,'pt-BR')});P.insertAdjacentHTML('beforeend',partidos.map(function(p){return '<option value="'+esc(p)+'">'+esc(p)+'</option>'}).join(''))}
- function salvaHash(){var p=[];if(estado.cargo!=='todos')p.push('cargo='+encodeURIComponent(estado.cargo));if(estado.tipo!=='todos')p.push('mostrar='+estado.tipo);if(estado.partido)p.push('partido='+encodeURIComponent(estado.partido));if(estado.periodo!=='7')p.push('dias='+estado.periodo);if(estado.q)p.push('q='+encodeURIComponent(estado.q));
-  if(!p.length&&location.hash&&!RADAR.test(location.hash.slice(1)))return;var h=p.length?'#'+p.join('&'):'';if(location.hash!==h){try{history.replaceState(null,'',location.pathname+location.search+h)}catch(e){}}}
- // Valores do endereço são validados um a um; um link cortado ou antigo nunca derruba o radar
+  partidos.sort(function(a,b){return a.localeCompare(b,'pt-BR')});P.insertAdjacentHTML('beforeend',partidos.map(function(p){return '<option value="'+esc(p)+'">'+esc(p)+'</option>'}).join(''));
+  TM.insertAdjacentHTML('beforeend',TEMAS.slice().sort(function(a,b){return a[1].localeCompare(b[1],'pt-BR')}).map(function(t){return '<option value="'+t[0]+'">'+esc(t[1])+'</option>'}).join(''))}
+ function params(){var p=[];if(estado.cargo!=='todos')p.push('cargo='+encodeURIComponent(estado.cargo));if(estado.tipo!=='todos')p.push('mostrar='+estado.tipo);if(estado.partido)p.push('partido='+encodeURIComponent(estado.partido));if(estado.tema)p.push('tema='+estado.tema);if(estado.periodo!=='7')p.push('dias='+estado.periodo);if(estado.q)p.push('q='+encodeURIComponent(estado.q));return p}
+ function salvaHash(){var p=params();if(!p.length&&location.hash&&!RADAR.test(location.hash.slice(1)))return;var h=p.length?'#'+p.join('&'):'';if(location.hash!==h){try{history.replaceState(null,'',location.pathname+location.search+h)}catch(e){}}}
  function leHash(){location.hash.replace(/^#/,'').split('&').forEach(function(kv){var i=kv.indexOf('=');if(i<0)return;var k=kv.slice(0,i),v;try{v=decodeURIComponent(kv.slice(i+1).replace(/\+/g,' ')).trim()}catch(e){return}
    if(k==='cargo'){v=norm(v).replace(/[\s_]+/g,'-');if(tem(ALIAS,v))v=ALIAS[v];[].some.call(CARGOS.querySelectorAll('button'),function(b){if(b.getAttribute('data-cargo')===v){estado.cargo=v;return true}})}
    if(k==='mostrar'&&/^(polemicas|solucoes)$/.test(v))estado.tipo=v;
    if(k==='partido'){var pv=norm(v);[].some.call(P.options,function(o){if(o.value&&norm(o.value)===pv){estado.partido=o.value;return true}})}
+   if(k==='tema'&&tem(TEMA_NOME,v))estado.tema=v;
    if(k==='dias'&&/^(2|3)$/.test(v))estado.periodo=v;if(k==='q')estado.q=v});
-  marca(CARGOS,'data-cargo',estado.cargo);marca(TIPOS,'data-tipo',estado.tipo);Q.value=estado.q;P.value=estado.partido;PER.value=estado.periodo}
- // Depois de limpar, o foco vai para o primeiro filtro se estava no botão que some (rola só se veio do teclado)
+  marca(CARGOS,'data-cargo',estado.cargo);marca(TIPOS,'data-tipo',estado.tipo);Q.value=estado.q;P.value=estado.partido;TM.value=estado.tema;PER.value=estado.periodo}
  function limpa(){var f=document.activeElement,perde=!!f&&(f===LIMPAR||C.contains(f)),tec=false;try{tec=perde&&f.matches(':focus-visible')}catch(e){}
-  zera();Q.value='';P.value='';PER.value='7';marca(CARGOS,'data-cargo','todos');marca(TIPOS,'data-tipo','todos');render();
+  zera();Q.value='';P.value='';TM.value='';PER.value='7';marca(CARGOS,'data-cargo','todos');marca(TIPOS,'data-tipo','todos');render();
   if(perde){var t=CARGOS.querySelector('[data-cargo="todos"]');if(t)t.focus({preventScroll:!tec})}}
  CARGOS.addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.getAttribute('aria-disabled')==='true')return;estado.cargo=b.getAttribute('data-cargo');marca(CARGOS,'data-cargo',estado.cargo);render()});
  TIPOS.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;estado.tipo=b.getAttribute('data-tipo');marca(TIPOS,'data-tipo',estado.tipo);render()});
  setas(CARGOS);setas(TIPOS);
  var tQ;Q.addEventListener('input',function(){clearTimeout(tQ);tQ=setTimeout(function(){estado.q=Q.value;render()},400)});
  Q.addEventListener('keydown',function(e){if(e.key==='Enter'){clearTimeout(tQ);estado.q=Q.value;render()}});
- P.addEventListener('change',function(){estado.partido=P.value;render()});PER.addEventListener('change',function(){estado.periodo=PER.value;render()});
+ P.addEventListener('change',function(){estado.partido=P.value;render()});PER.addEventListener('change',function(){estado.periodo=PER.value;render()});TM.addEventListener('change',function(){estado.tema=TM.value;render()});
  LIMPAR.addEventListener('click',limpa);
+ COMP.addEventListener('click',function(){var url=location.origin+location.pathname+(params().length?'#'+params().join('&'):''),tt='Radar Eleitoral 2026 · HOJE MT';
+  function ok(m){COMP.textContent=m;setTimeout(function(){COMP.textContent='Compartilhar este recorte'},2200)}
+  if(navigator.share){navigator.share({title:tt,url:url}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){ok('Link copiado ✓')},function(){ok('Copie o endereço da página')})}else ok('Copie o endereço da página')});
  C.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;if(b.hasAttribute('data-limpar')){limpa();return}
   if(b.classList.contains('rd-mais')){var ul=b.previousElementSibling,aberto=b.getAttribute('aria-expanded')==='true';ul.querySelectorAll('li').forEach(function(li,i){if(i>=VISIVEIS)li.hidden=aberto});b.setAttribute('aria-expanded',String(!aberto));
    b.querySelector('.rd-mais-tx').textContent=aberto?b.getAttribute('data-rot'):'Ver menos';b.querySelector('.rd-sr').textContent=(aberto?'':' '+b.getAttribute('data-tp'))+' de '+b.getAttribute('data-nome');var li=ul.children[VISIVEIS];if(!aberto&&li)li.querySelector('a').focus()}});
- // Só reage a endereços do próprio radar (âncoras e #/portal/... do Ghost ficam intactos)
+ // Tabelas dos gráficos
+ raiz.addEventListener('click',function(e){var b=e.target.closest('.rd-bt-tab');if(!b)return;var t=$(b.getAttribute('aria-controls')),ab=b.getAttribute('aria-expanded')==='true';t.hidden=ab;b.setAttribute('aria-expanded',String(!ab));b.textContent=ab?'Ver como tabela':'Esconder tabela'});
+ // Dica (tooltip) nas marcas, por mouse, toque ou teclado; o texto entra por textContent
+ function mostraTip(el,ev){var d;try{d=JSON.parse(el.getAttribute('data-tip'))}catch(e){return}TIP.textContent='';var b=document.createElement('b');b.textContent=d.t;TIP.appendChild(b);
+  d.l.forEach(function(l){var row=document.createElement('div'),k=document.createElement('i'),v=document.createElement('span'),m=document.createElement('span');k.style.background=l[0]==='p'?'var(--s2)':l[0]==='s'?'var(--s1)':'var(--s3)';v.className='rd-tv';v.textContent=fmt(l[1]);m.className='rd-tm';m.textContent=l[2];row.appendChild(k);row.appendChild(v);row.appendChild(m);TIP.appendChild(row)});
+  TIP.hidden=false;var rr=raiz.getBoundingClientRect(),er=el.getBoundingClientRect(),x=ev&&ev.clientX!=null?ev.clientX:er.left+er.width/2,y=ev&&ev.clientY!=null?ev.clientY:er.top,tw=TIP.offsetWidth,th=TIP.offsetHeight,l=x-rr.left+12,t=y-rr.top-th-10;
+  if(l+tw>rr.width)l=x-rr.left-tw-12;if(l<0)l=4;if(t<0)t=y-rr.top+16;TIP.style.left=l+'px';TIP.style.top=t+'px'}
+ function escondeTip(){TIP.hidden=true}
+ // No toque não há "hover": o toque numa coluna mostra a dica
+ raiz.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse')return;var g=e.target.closest&&e.target.closest('.rd-plot [data-tip]');if(g)mostraTip(g,e);else escondeTip()});
+ var tR,lw0=raiz.clientWidth;window.addEventListener('resize',function(){clearTimeout(tR);tR=setTimeout(function(){if(raiz.clientWidth!==lw0){lw0=raiz.clientWidth;escondeTip();graficos()}},200)});
+ $('rd-fontes').addEventListener('toggle',function(){if(this.open)graficos()});
+ raiz.addEventListener('pointermove',function(e){var g=e.target.closest&&e.target.closest('[data-tip]');if(g)mostraTip(g,e);else escondeTip()});
+ raiz.addEventListener('pointerleave',escondeTip);
+ raiz.addEventListener('focusin',function(e){var g=e.target.closest&&e.target.closest('[data-tip]');if(g)mostraTip(g,null);else escondeTip()});
+ raiz.addEventListener('focusout',escondeTip);
+ function acao(g){if(g.hasAttribute('data-tema')){var t=g.getAttribute('data-tema');estado.tema=estado.tema===t?'':t;TM.value=estado.tema;render();var n=raiz.querySelector('[data-tema="'+t+'"]');if(n)n.focus({preventScroll:true})}
+  else if(g.hasAttribute('data-ir')){var c=$(g.getAttribute('data-ir'));if(c){var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;c.scrollIntoView({behavior:r?'auto':'smooth',block:'start'});var h=c.querySelector('.rd-nome');if(h){h.tabIndex=-1;h.focus({preventScroll:true})}}}}
+ raiz.addEventListener('click',function(e){var g=e.target.closest&&e.target.closest('[data-tema],[data-ir]');if(g&&g.closest('.rd-plot'))acao(g)});
+ raiz.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('.rd-plot [data-tema],.rd-plot [data-ir]')){e.preventDefault();acao(e.target)}if(e.key==='Escape')escondeTip()});
  window.addEventListener('hashchange',function(){if(!dados||!RADAR.test(location.hash.slice(1)))return;zera();try{leHash()}catch(e){}render()});
  var acima=false,dentro=false;
  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.target===F)acima=!e.isIntersecting&&e.boundingClientRect.top<0;else dentro=e.isIntersecting});VOLTA.hidden=!(acima&&dentro)});io.observe(F);io.observe(C)}
  VOLTA.addEventListener('click',function(){var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;F.scrollIntoView({behavior:r?'auto':'smooth',block:'start'});var b=CARGOS.querySelector('[aria-checked="true"]');if(b)b.focus({preventScroll:true})});
- function inicia(d){dados=d;montaFiltros();try{leHash()}catch(e){}
-  var n=0,jd=parseInt(d.janela_dias,10),at=atualizadoEm(d.gerado_em);d.candidatos.forEach(function(c){n+=c.pol.length+c.sol.length});
-  $('rd-status').innerHTML=(at?'<span>Atualizado '+esc(at)+' (horário de MT)</span>':'')+'<span>Janela de '+(jd>0?jd:7)+' dias</span><span>'+d.candidatos.length+' nomes · '+n+' manchetes</span><span>Atualiza a cada 30 min</span>';render()}
- // Falha de rede ou JSON inválido: aviso anunciado pela região role="status" que já existe na página
- function falha(){var a=C.querySelector('.rd-aviso[role="status"]'),m='Radar temporariamente indisponível. Tente novamente em instantes.';if(a)a.textContent=m;else C.innerHTML='<div class="rd-aviso" role="status">'+m+'</div>';$('rd-status').innerHTML='<span>Dados indisponíveis no momento</span>';F.hidden=true}
+ // Novidades desde a última visita: só neste navegador; sem armazenamento, o radar funciona igual
+ function carregaVistos(d){var chave='hmt-radar-vistos',ant=null,todos={};d.candidatos.forEach(function(c){c.pol.concat(c.sol).forEach(function(x){todos[x.k]=1})});
+  try{var s=localStorage.getItem(chave);if(s){s=JSON.parse(s);if(s&&s.k&&typeof s.k==='object')ant=s}}catch(e){}
+  if(ant&&ant.g!==d.gerado_em){vistos=ant.k}else if(ant){vistos=ant.v||null}
+  try{localStorage.setItem(chave,JSON.stringify({g:d.gerado_em,k:todos,v:vistos}))}catch(e){}
+  if(vistos){Object.keys(todos).forEach(function(k){if(!vistos[k])novasTotal++});var nv=$('rd-novas');if(novasTotal){nv.innerHTML='<b>'+novasTotal+'</b> '+(novasTotal===1?'manchete nova':'manchetes novas')+' desde a sua última visita (marcadas com NOVO).';nv.hidden=false}}}
+ function inicia(d){dados=d;montaFiltros();try{carregaVistos(d)}catch(e){}try{leHash()}catch(e){}
+  var n=0,jd=parseInt(d.janela_dias,10),at=atualizadoEm(d.gerado_em),falta=Math.round((ELEICAO-hoje)/864e5);d.candidatos.forEach(function(c){n+=c.pol.length+c.sol.length});
+  $('rd-status').innerHTML=(falta>0?'<span class="rd-cd">Faltam '+pl(falta,'dia')+' para o 1º turno (4/10)</span>':falta===0?'<span class="rd-cd">Hoje é dia de eleição</span>':'')+(at?'<span>Atualizado '+esc(at)+' (horário de MT)</span>':'')+'<span>'+d.candidatos.length+' nomes · '+fmt(n)+' manchetes</span><span class="rd-opc">Janela de '+(jd>0?jd:7)+' dias · atualiza a cada 30 min</span>';render()}
+ function falha(){var a=C.querySelector('.rd-aviso[role="status"]'),m='Radar temporariamente indisponível. Tente novamente em instantes.';if(a)a.textContent=m;else C.innerHTML='<div class="rd-aviso" role="status">'+m+'</div>';$('rd-status').innerHTML='<span>Dados indisponíveis no momento</span>';F.hidden=true;raiz.querySelector('.rd-painel').hidden=true}
  fetch('/content/media/apuracao/radar-candidatos.json?t='+Math.floor(Date.now()/6e4),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(prepara).then(inicia,falha)
   .catch(function(e){C.innerHTML='<div class="rd-aviso" role="status">Não foi possível exibir o radar. Recarregue a página.</div>';if(window.console)console.error(e)});
 })();

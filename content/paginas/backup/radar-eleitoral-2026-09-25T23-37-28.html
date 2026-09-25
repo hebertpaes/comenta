@@ -1,0 +1,226 @@
+<style>
+#hmt-radar{--verde:#00a859;--verde-esc:#0a2e1f;--acao:#087443;--acao-tx:#fff;--pol:#b3261e;--pol-bg:#fdecec;--sol:#1559b3;--sol-bg:#e8f1fc;--card:#f6f8f7;--campo:#fff;--tx:#111;--mu:#5b6762;--bd:#d9e2dd;--bd-ctl:#7d8c85;--foco:#0b7a45;font-family:inherit;color:var(--tx);font-size:16px;line-height:1.45}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) #hmt-radar{--card:#17201b;--campo:#0f1512;--tx:#eef3f0;--mu:#a3b3ac;--bd:#2b3731;--bd-ctl:#627369;--pol:#ff8a80;--pol-bg:#3a1b1b;--sol:#8ab4f8;--sol-bg:#17283d;--foco:#5fe3a1;--acao:#3ddc84;--acao-tx:#04150c}}
+html[data-theme="dark"] #hmt-radar,html.dark #hmt-radar,body.dark-mode #hmt-radar{--card:#17201b;--campo:#0f1512;--tx:#eef3f0;--mu:#a3b3ac;--bd:#2b3731;--bd-ctl:#627369;--pol:#ff8a80;--pol-bg:#3a1b1b;--sol:#8ab4f8;--sol-bg:#17283d;--foco:#5fe3a1;--acao:#3ddc84;--acao-tx:#04150c}
+#hmt-radar *{box-sizing:border-box}
+#hmt-radar :focus-visible{outline:3px solid var(--foco);outline-offset:2px}
+#hmt-radar .rd-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#hmt-radar .rd-topo{background:linear-gradient(135deg,var(--verde-esc),#0f4a33);color:#fff;border-radius:16px;padding:20px 22px;margin:0 0 14px}
+#hmt-radar .rd-topo h2{margin:0 0 6px;font-size:1.4rem;line-height:1.2;color:#fff}
+#hmt-radar .rd-topo p{margin:0;color:#d4ebe0;font-size:.95rem}
+#hmt-radar .rd-status{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;font-size:.85rem}
+#hmt-radar .rd-status span{background:rgba(255,255,255,.13);border-radius:999px;padding:4px 11px}
+#hmt-radar .rd-filtros{border:1px solid var(--bd);border-radius:14px;background:var(--card);padding:14px;margin:0 0 12px;display:grid;gap:12px;scroll-margin-top:96px}
+#hmt-radar .rd-filtros[hidden]{display:none}
+#hmt-radar .rd-linha{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+#hmt-radar .rd-rot{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--mu);min-width:64px}
+#hmt-radar .rd-grupo{display:flex;flex-wrap:wrap;gap:6px;position:relative}
+#hmt-radar .rd-grupo button{border:1px solid var(--bd-ctl);background:transparent;color:var(--tx);border-radius:999px;padding:7px 13px;font:inherit;font-size:.88rem;cursor:pointer;min-height:36px}
+#hmt-radar .rd-grupo button:hover{border-color:var(--verde)}
+#hmt-radar .rd-grupo button[aria-checked="true"]{background:var(--acao);border-color:var(--acao);color:var(--acao-tx);font-weight:700}
+#hmt-radar .rd-grupo button small{opacity:.75;margin-left:4px;font-size:.78rem}
+#hmt-radar .rd-grupo button[aria-checked="true"] small{opacity:1}
+#hmt-radar .rd-grupo button[aria-disabled="true"]{opacity:.45;cursor:default;border-style:dashed}
+#hmt-radar .rd-grupo button[aria-disabled="true"]:hover{border-color:var(--bd-ctl)}
+@media (forced-colors:active){#hmt-radar .rd-grupo button[aria-checked="true"]{outline:2px solid CanvasText;outline-offset:1px}}
+#hmt-radar .rd-campos{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px}
+@media (max-width:720px){#hmt-radar .rd-campos{grid-template-columns:1fr 1fr}#hmt-radar .rd-campos .rd-busca{grid-column:1/-1}}
+#hmt-radar .rd-campos label{display:grid;gap:4px;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--mu)}
+#hmt-radar .rd-campos input,#hmt-radar .rd-campos select{font:inherit;font-size:.95rem;text-transform:none;letter-spacing:0;font-weight:400;color:var(--tx);background:transparent;border:1px solid var(--bd-ctl);border-radius:10px;padding:8px 10px;min-height:40px;width:100%}
+#hmt-radar .rd-campos input{background:var(--campo)}
+#hmt-radar .rd-campos input::placeholder{color:var(--mu);opacity:1}
+#hmt-radar .rd-campos select option{color:#111}
+#hmt-radar .rd-leia{margin:0 0 12px;font-size:.84rem;color:var(--mu)}
+#hmt-radar .rd-leia b.p{color:var(--pol)}#hmt-radar .rd-leia b.s{color:var(--sol)}
+#hmt-radar .rd-resumo{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin:0 0 6px;font-size:.9rem;color:var(--mu)}
+#hmt-radar #rd-contagem:empty+.rd-az{display:none}
+#hmt-radar .rd-limpar{border:0;background:none;color:var(--acao);font:inherit;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:underline;padding:4px;min-height:44px}
+#hmt-radar .rd-limpar[hidden]{display:none}
+#hmt-radar .rd-cargo{display:flex;align-items:baseline;gap:8px;font-size:1.02rem;margin:22px 0 10px;padding-left:12px;border-left:5px solid var(--verde);text-transform:uppercase;letter-spacing:.04em}
+#hmt-radar .rd-cargo small{font-size:.8rem;color:var(--mu);text-transform:none;letter-spacing:0;font-weight:400}
+#hmt-radar .rd-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,440px),1fr));gap:14px}
+#hmt-radar .rd-card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px 18px;min-width:0;display:flex;flex-direction:column}
+#hmt-radar .rd-cab{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+#hmt-radar .rd-nome{font-size:1.15rem;font-weight:800;margin:0;line-height:1.2}
+#hmt-radar .rd-sub{color:var(--mu);font-size:.84rem;margin-top:3px}
+#hmt-radar .rd-partido{background:var(--verde-esc);color:#fff;border-radius:6px;padding:3px 8px;font-size:.74rem;font-weight:700;white-space:nowrap}
+#hmt-radar .rd-cont{display:flex;gap:6px;margin:10px 0 12px;flex-wrap:wrap}
+#hmt-radar .rd-cont>span{border-radius:8px;padding:4px 9px;font-size:.8rem;font-weight:700}
+#hmt-radar .rd-cont .p{background:var(--pol-bg);color:var(--pol)}#hmt-radar .rd-cont .s{background:var(--sol-bg);color:var(--sol)}
+#hmt-radar .rd-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1}
+#hmt-radar .rd-cols.uma{grid-template-columns:1fr}
+@media (max-width:600px){#hmt-radar .rd-cols{grid-template-columns:1fr}}
+#hmt-radar .rd-col-tit{margin:0 0 6px;font-size:.78rem;font-weight:800;line-height:1.35;text-transform:uppercase;letter-spacing:.06em}
+#hmt-radar .rd-col.p .rd-col-tit{color:var(--pol)}#hmt-radar .rd-col.s .rd-col-tit{color:var(--sol)}
+#hmt-radar .rd-col-tit small{text-transform:none;letter-spacing:0;font-weight:400;font-size:.95em;color:var(--mu);white-space:nowrap}
+#hmt-radar .rd-col ul{list-style:none;margin:0;padding:0}
+#hmt-radar .rd-col li{padding:7px 0;border-top:1px solid var(--bd);font-size:.93rem;line-height:1.35}
+#hmt-radar .rd-col li:first-child{border-top:0;padding-top:0}
+#hmt-radar .rd-col li a{color:inherit;text-decoration:none}
+#hmt-radar .rd-col li a:hover{text-decoration:underline}
+#hmt-radar .rd-col li small{display:block;color:var(--mu);font-size:.78rem;margin-top:2px}
+#hmt-radar .rd-col li[hidden]{display:none}
+#hmt-radar .rd-mais{border:0;background:none;color:var(--acao);font:inherit;font-size:.85rem;font-weight:700;cursor:pointer;padding:6px 0;min-height:44px;text-align:left}
+#hmt-radar .rd-vazio{color:var(--mu);font-size:.88rem;font-style:italic}
+#hmt-radar .rd-rodape-card{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;padding-top:10px;border-top:1px solid var(--bd);font-size:.86rem}
+#hmt-radar .rd-rodape-card a{color:var(--acao);font-weight:700;text-decoration:none}
+#hmt-radar .rd-rotina{color:var(--mu)}
+#hmt-radar .rd-aviso{padding:18px;border:1px dashed var(--bd);border-radius:12px;text-align:center;color:var(--mu)}
+#hmt-radar .rd-volta{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;max-width:calc(100vw - 32px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border:1px solid var(--verde);border-radius:999px;background:var(--verde-esc);color:#fff;font:inherit;font-size:.9rem;font-weight:700;padding:10px 16px;min-height:44px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+#hmt-radar .rd-volta[hidden]{display:none}
+body:has(#hmt-cookies:not([hidden])) #hmt-radar .rd-volta{display:none}
+@media print{#hmt-radar .rd-volta{display:none}}
+#hmt-radar details.rd-como{margin-top:22px;border:1px solid var(--bd);border-radius:12px;padding:12px 16px;font-size:.9rem;color:var(--mu)}
+#hmt-radar details.rd-como summary{cursor:pointer;font-weight:700;color:var(--tx)}
+#hmt-radar details.rd-como p{margin:8px 0 0}
+@media (max-width:600px){#hmt-radar .rd-topo{padding:16px}#hmt-radar .rd-topo h2{font-size:1.2rem}#hmt-radar .rd-topo p{font-size:.88rem}#hmt-radar .rd-status span:nth-child(n+3){display:none}#hmt-radar .rd-filtros{grid-template-columns:minmax(0,1fr)}#hmt-radar .rd-rot{min-width:0;width:100%}#hmt-radar .rd-linha{display:grid;gap:6px}#hmt-radar .rd-grupo button{padding:6px 10px;max-width:100%}#hmt-radar .rd-grupo button[aria-checked="true"]{font-weight:400}}
+#hmt-radar mark{background:#fff3a3;color:#111;padding:0 2px;border-radius:3px}
+</style>
+<div id="hmt-radar">
+ <header class="rd-topo">
+  <h2>Radar Eleitoral 2026: polêmicas e propostas</h2>
+  <p>O que a imprensa publicou nos últimos dias sobre candidatos e autoridades de Mato Grosso.</p>
+  <div class="rd-status" id="rd-status"><span>Carregando…</span></div>
+ </header>
+ <div class="rd-filtros" role="search" aria-label="Filtrar o radar">
+  <div class="rd-linha"><span class="rd-rot" id="rd-rot-cargo">Cargo</span><div class="rd-grupo" id="rd-cargos" role="radiogroup" aria-labelledby="rd-rot-cargo"></div></div>
+  <div class="rd-linha"><span class="rd-rot" id="rd-rot-tipo">Mostrar</span><div class="rd-grupo" id="rd-tipos" role="radiogroup" aria-labelledby="rd-rot-tipo">
+   <button type="button" role="radio" data-tipo="todos" aria-checked="true">Tudo</button>
+   <button type="button" role="radio" data-tipo="polemicas" aria-checked="false" tabindex="-1"><span aria-hidden="true">⚠️</span> Polêmicas</button>
+   <button type="button" role="radio" data-tipo="solucoes" aria-checked="false" tabindex="-1"><span aria-hidden="true">💡</span> Propostas</button>
+  </div></div>
+  <div class="rd-campos">
+   <label class="rd-busca">Buscar nome, partido ou assunto<input id="rd-q" type="search" placeholder="Ex.: Pivetta, IPVA, saúde" autocomplete="off"></label>
+   <label>Partido<select id="rd-partido"><option value="">Todos</option></select></label>
+   <label>Período<select id="rd-periodo"><option value="7">Últimos 7 dias</option><option value="3">Últimos 3 dias</option><option value="2">Hoje e ontem</option></select></label>
+  </div>
+ </div>
+ <p class="rd-leia"><span aria-hidden="true">⚠️</span>&nbsp;<b class="p">Polêmica</b>: fato questionado ou sob apuração, segundo a imprensa — não é veredito. <span aria-hidden="true">💡</span>&nbsp;<b class="s">Proposta</b>: promessa, projeto ou entrega anunciada.</p>
+ <div class="rd-resumo"><span><span id="rd-contagem" aria-live="polite"></span><span class="rd-az"> · ordem alfabética</span></span><button type="button" class="rd-limpar" id="rd-limpar" hidden>Limpar filtros</button></div>
+ <button type="button" class="rd-volta" hidden><span aria-hidden="true">↑</span> Filtros</button>
+ <div id="rd-conteudo"><div class="rd-aviso" role="status">Carregando o radar…</div></div>
+ <details class="rd-como">
+  <summary>Como o radar funciona</summary>
+  <p>O radar lê manchetes públicas (Google Notícias, veículos de Mato Grosso e a cobertura do HOJE MT) a cada 30 minutos e classifica cada uma por palavras-chave. A classificação é automática e pode errar; "polêmica" indica que o fato foi questionado ou está sob apuração <i>segundo a cobertura</i>, não é juízo do HOJE MT, e vale a presunção de inocência. Notícias de rotina (eventos, entrevistas) só são contadas, no rodapé de cada nome, e não aparecem nas listas.</p>
+  <p>Isonomia (Lei 9.504/97): candidatos ao mesmo cargo aparecem em ordem alfabética, com o mesmo espaço, e nenhum filtro muda essa ordem. Manchetes repetidas em vários veículos aparecem uma vez, com todas as fontes.</p>
+  <p>Viu uma manchete no lugar errado ou falta um nome? Escreva para <a href="mailto:contato@hojemt.com.br">contato@hojemt.com.br</a>.</p>
+ </details>
+</div>
+<script>
+(function(){
+ var raiz=document.getElementById('hmt-radar');if(!raiz)return;
+ var $=function(id){return document.getElementById(id)};
+ var C=$('rd-conteudo'),Q=$('rd-q'),P=$('rd-partido'),PER=$('rd-periodo'),LIMPAR=$('rd-limpar'),CONT=$('rd-contagem'),CARGOS=$('rd-cargos'),TIPOS=$('rd-tipos'),F=raiz.querySelector('.rd-filtros'),VOLTA=raiz.querySelector('.rd-volta');
+ var dados=null,hoje=null,estado;zera();
+ var ALIAS={prefeita:'prefeito',governadora:'governador',senadora:'senador','deputada-federal':'deputado-federal','deputada-estadual':'deputado-estadual'};
+ var CURTO={governador:'Governo',senador:'Senado','deputado-federal':'Câmara Federal','deputado-estadual':'Assembleia',prefeito:'Autoridades',outros:'Outros'};
+ var PERIODO={'7':'na semana','3':'nos últimos 3 dias','2':'hoje e ontem'},PERTXT={'3':'últimos 3 dias','2':'hoje e ontem'};
+ var RADAR=/(^|&)(cargo|mostrar|partido|dias|q)=/;
+ var VISIVEIS=window.matchMedia&&matchMedia('(max-width:600px)').matches?2:3;
+ function zera(){estado={cargo:'todos',tipo:'todos',q:'',partido:'',periodo:'7'}}
+ function tem(o,k){return Object.prototype.hasOwnProperty.call(o,k)}
+ function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+ function norm(s){return String(s==null?'':s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+ function ic(e){return '<span aria-hidden="true">'+e+'</span> '}
+ // Busca por termos: "PL", "PT", "sus" (até 3 letras) só casam com a palavra inteira; termos maiores casam com o começo de uma palavra.
+ function txt(s){return ' '+norm(s).replace(/[^a-z0-9]+/g,' ')+' '}
+ function termos(q){return norm(q).split(/[^a-z0-9]+/).filter(Boolean)}
+ function casa(t,w){return t.indexOf(' '+w+(w.length<=3?' ':''))>=0}
+ function limpaTitulo(t,f){t=String(t==null?'':t).normalize('NFC').trim();var i=t.lastIndexOf(' - ');if(i>20){var suf=t.slice(i+3);if(!f||norm(suf)===norm(f)||suf.length<=40)t=t.slice(0,i)}return t}
+ // Dia de hoje no calendário de Cuiabá (UTC-4, sem horário de verão desde 2019)
+ function diaMT(u){var y,mo,da;try{new Intl.DateTimeFormat('en-US',{timeZone:'America/Cuiaba',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(u).forEach(function(p){if(p.type==='year')y=+p.value;if(p.type==='month')mo=+p.value;if(p.type==='day')da=+p.value})}catch(e){}if(!y||!mo||!da){var t=new Date(u.getTime()-4*36e5);y=t.getUTCFullYear();mo=t.getUTCMonth()+1;da=t.getUTCDate()}return new Date(y,mo-1,da)}
+ // Só DD/MM; data inválida fica fora dos filtros curtos; o ano é o mais próximo de hoje e data futura conta como hoje
+ function diasAtras(ddmm){var m=/^(\d{1,2})\/(\d{1,2})(?:\/\d{2,4})?$/.exec(String(ddmm==null?'':ddmm).trim());if(!m||!hoje)return Infinity;var best=Infinity;[-1,0,1].forEach(function(k){var dif=Math.round((hoje-new Date(hoje.getFullYear()+k,+m[2]-1,+m[1]))/864e5);if(Math.abs(dif)<Math.abs(best))best=dif});return Math.max(0,best)}
+ function agrupa(lista){var por=Object.create(null),ordem=[];(Array.isArray(lista)?lista:[]).forEach(function(x){if(!x||typeof x!=='object')return;var t=limpaTitulo(x.titulo,x.fonte);if(!t)return;var k=norm(t).replace(/[^a-z0-9]+/g,' ').trim(),f=x.fonte==null?'':String(x.fonte).trim();if(!por[k]){por[k]={titulo:t,url:seguro(x.url),data:x.data==null?'':String(x.data),fontes:[],n:txt(t),d:diasAtras(x.data)};ordem.push(k)}var g=por[k];if(f&&g.fontes.indexOf(f)<0)g.fontes.push(f);if(!g.url&&seguro(x.url))g.url=seguro(x.url)});return ordem.map(function(k){return por[k]})}
+ function prepara(d){if(!d||typeof d!=='object'||!Array.isArray(d.candidatos))throw new Error('JSON sem candidatos');
+  if(!d.cargos||typeof d.cargos!=='object'||Array.isArray(d.cargos))d.cargos={};
+  var h=/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(d.gerado_em||'');hoje=diaMT(h?new Date(Date.UTC(+h[1],+h[2]-1,+h[3],+h[4],+h[5])):new Date());
+  d.candidatos=d.candidatos.filter(function(c){return c&&typeof c==='object'&&typeof c.nome==='string'&&c.nome.trim()});
+  d.candidatos.forEach(function(c){c.nome=c.nome.trim().replace(/\s+/g,' ').normalize('NFC');c.partido=c.partido==null?'':String(c.partido).trim();
+   var k=norm(c.cargo).trim().replace(/[\s_]+/g,'-');if(tem(ALIAS,k))k=ALIAS[k];if(!/^[a-z0-9-]{1,40}$/.test(k))k='outros';c.cargoN=k;
+   if(!tem(d.cargos,k)||typeof d.cargos[k]!=='string'||!d.cargos[k].trim())d.cargos[k]=k==='outros'?'Outros nomes monitorados':k.charAt(0).toUpperCase()+k.slice(1).replace(/-/g,' ');
+   c.neutras=Math.max(0,parseInt(c.neutras,10)||0);c.pol=agrupa(c.polemicas);c.sol=agrupa(c.solucoes);
+   c.bn=txt(c.nome);c.busca=txt(c.partido+' '+(c.cidade==null?'':c.cidade)+' '+k.replace(/-/g,' ')+' '+norm(c.cargo))});
+  d.candidatos.sort(function(a,b){return a.nome.localeCompare(b.nome,'pt-BR')});return d}
+ function atualizadoEm(g){var m=/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(g||'');if(!m)return'';var u=new Date(Date.UTC(+m[1],+m[2]-1,+m[3],+m[4],+m[5]));try{return u.toLocaleString('pt-BR',{timeZone:'America/Cuiaba',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).replace(',',' às')}catch(e){return m[3]+'/'+m[2]+' '+m[4]+':'+m[5]}}
+ // Grifa com a mesma regra da busca (pref=true no nome: começo de palavra com qualquer tamanho). O mapa de posições mantém o grifo certo com acentos (NFC ou NFD).
+ function destaca(t,ts,pref){t=String(t==null?'':t);if(!ts||!ts.length)return esc(t);var n='',pos=[],i,j,s;for(i=0;i<t.length;i++){s=norm(t.charAt(i));for(j=0;j<s.length;j++){n+=s.charAt(j);pos.push(i)}}pos.push(t.length);
+  var iv=[];ts.forEach(function(w){var re=new RegExp('(^|[^a-z0-9])('+w+')'+(w.length<=3&&!pref?'(?![a-z0-9])':''),'g'),m;while((m=re.exec(n))){var a=m.index+m[1].length;iv.push([pos[a],pos[a+w.length]])}});
+  if(!iv.length)return esc(t);iv.sort(function(a,b){return a[0]-b[0]||b[1]-a[1]});var r='',p=0;iv.forEach(function(v){if(v[0]<p)return;r+=esc(t.slice(p,v[0]))+'<mark>'+esc(t.slice(v[0],v[1]))+'</mark>';p=v[1]});return r+esc(t.slice(p))}
+ function filtraItens(lista,ts){var per=+estado.periodo;return lista.filter(function(x){if(per<7&&x.d>=per)return false;return ts.every(function(w){return casa(x.n,w)})})}
+ function seguro(u){return /^https?:\/\//i.test(String(u||''))?String(u):''}
+ function linkDe(x){return seguro(x.url)||('https://news.google.com/search?q='+encodeURIComponent(x.titulo)+'&hl=pt-BR&gl=BR&ceid=BR:pt-419')}
+ function item(x,ts,i){return '<li'+(i>=VISIVEIS?' hidden':'')+'><a href="'+esc(linkDe(x))+'" target="_blank" rel="nofollow noopener">'+destaca(x.titulo,ts)+' <span aria-hidden="true">↗</span><span class="rd-sr"> (abre em nova aba'+(seguro(x.url)?'':', busca no Google Notícias')+')</span></a><small>'+(x.data?esc(x.data)+' · ':'')+esc(x.fontes.join(', '))+'</small></li>'}
+ function coluna(c,cls,titulo,lista,ts,vazio){var h='<div class="rd-col '+cls+'"><h5 class="rd-col-tit">'+titulo+'</h5>';if(!lista.length)return h+'<div class="rd-vazio">'+vazio+'</div></div>';h+='<ul>'+lista.map(function(x,i){return item(x,ts,i)}).join('')+'</ul>';
+  if(lista.length>VISIVEIS){var n=lista.length-VISIVEIS,tp=cls==='p'?'polêmica':'proposta',rot='Ver mais '+n+' '+tp+(n===1?'':'s');h+='<button type="button" class="rd-mais" aria-expanded="false" data-rot="'+rot+'" data-tp="'+tp+'s" data-nome="'+esc(c.nome)+'"><span class="rd-mais-tx">'+rot+'</span><span class="rd-sr"> de '+esc(c.nome)+'</span></button>'}return h+'</div>'}
+ function conta(n,t,pal){return n+(t>n?' de '+t:'')+' '+pal+(t===1?'':'s')}
+ // Aplica partido, busca e "Mostrar" a um nome (o cargo fica de fora para as contagens dos botões). null = o nome não entra.
+ function avalia(c,ts){if(estado.partido&&c.partido!==estado.partido)return null;
+  var resto=ts.filter(function(w){return c.bn.indexOf(' '+w)<0&&!casa(c.busca,w)}),pol=filtraItens(c.pol,resto),sol=filtraItens(c.sol,resto),vis=(estado.tipo!=='solucoes'?pol.length:0)+(estado.tipo!=='polemicas'?sol.length:0);
+  if(resto.length&&!vis)return null;return {c:c,pol:pol,sol:sol,resto:resto,vis:vis}}
+ function card(r,ts,i){var c=r.c,pol=r.pol,sol=r.sol,resto=r.resto,qf=resto.length>0,polT=qf?filtraItens(c.pol,[]).length:pol.length,solT=qf?filtraItens(c.sol,[]).length:sol.length,
+   vz=(qf?' com “'+esc(resto.length===ts.length?estado.q.trim():resto.join(' '))+'”':'')+' '+PERIODO[estado.periodo];
+  var sub=c.candidato===false?(c.cidade?'Prefeitura de '+esc(c.cidade):esc(dados.cargos[c.cargoN]||'Autoridade monitorada')):('Candidato(a)'+(c.cargoN==='outros'?'':' · '+esc(dados.cargos[c.cargoN])))+(c.confirmar?' · <i>candidatura a confirmar</i>':'');
+  var cols='',chips='';if(estado.tipo!=='solucoes'){cols+=coluna(c,'p',ic('⚠️')+'Polêmicas <small>· não é veredito</small>',pol,resto,'Nenhuma polêmica'+vz+'.');chips+='<span class="p">'+ic('⚠️')+conta(pol.length,polT,'polêmica')+'</span>'}
+  if(estado.tipo!=='polemicas'){cols+=coluna(c,'s',ic('💡')+'Propostas',sol,resto,'Nenhuma proposta'+vz+'.');chips+='<span class="s">'+ic('💡')+conta(sol.length,solT,'proposta')+'</span>'}
+  var igU=String(c.instagram||'').trim().replace(/^(?:https?:\/\/)?(?:(?:www|m)\.)?instagram\.com\//i,'').replace(/^@/,'').split(/[\/?#]/)[0];igU=/^[A-Za-z0-9._]{1,30}$/.test(igU)&&!/^(p|reel|reels|tv|stories|explore|accounts)$/i.test(igU)&&!/instagram\.com$/i.test(igU)?igU:'';
+  var ig=igU?'<a href="https://www.instagram.com/'+igU+'/" rel="nofollow noopener" target="_blank">Instagram @'+igU+' <span aria-hidden="true">↗</span><span class="rd-sr"> (abre em nova aba)</span></a>':'';
+  var rotina=c.neutras&&estado.periodo==='7'&&!ts.length?'<span class="rd-rotina">+'+c.neutras+' notícia'+(c.neutras===1?'':'s')+' de rotina na semana, não listada'+(c.neutras===1?'':'s')+'</span>':'';
+  return '<article class="rd-card" aria-labelledby="rd-n-'+i+'"><div class="rd-cab"><div><h4 class="rd-nome" id="rd-n-'+i+'">'+destaca(c.nome,ts,true)+'</h4><div class="rd-sub">'+sub+'</div></div>'+(c.partido?'<span class="rd-partido">'+esc(c.partido)+'</span>':'')+'</div>'
+   +'<div class="rd-cont">'+chips+'</div>'
+   +'<div class="rd-cols'+(estado.tipo==='todos'?'':' uma')+'">'+cols+'</div>'
+   +'<div class="rd-rodape-card"><a href="/search/?q='+encodeURIComponent(c.nome)+'">Cobertura no HOJE MT<span class="rd-sr"> sobre '+esc(c.nome)+'</span></a>'+ig+rotina+'</div></article>'}
+ function render(){if(!dados)return;var ts=termos(estado.q),grupos=Object.create(null),pc=Object.create(null),nomes=0,manchetes=0;pc.todos=0;
+  dados.candidatos.forEach(function(c){var r=avalia(c,ts);if(!r)return;pc.todos++;pc[c.cargoN]=(pc[c.cargoN]||0)+1;if(estado.cargo!=='todos'&&c.cargoN!==estado.cargo)return;(grupos[c.cargoN]=grupos[c.cargoN]||[]).push(card(r,ts,nomes));nomes++;manchetes+=r.vis});
+  CARGOS.querySelectorAll('button').forEach(function(b){var k=b.getAttribute('data-cargo'),n=pc[k]||0;b.querySelector('small').innerHTML='<span class="rd-sr">, </span>'+n+'<span class="rd-sr"> '+(n===1?'nome':'nomes')+'</span>';if(!n&&k!=='todos'&&b.getAttribute('aria-checked')!=='true')b.setAttribute('aria-disabled','true');else b.removeAttribute('aria-disabled')});
+  var h='';Object.keys(dados.cargos).forEach(function(k){var g=grupos[k];if(!g)return;h+='<section><h3 class="rd-cargo">'+esc(dados.cargos[k])+' <small>'+g.length+' '+(g.length===1?'nome':'nomes')+'</small></h3><div class="rd-grade">'+g.join('')+'</div></section>'});
+  if(!h){if(!dados.candidatos.length)h='<div class="rd-aviso">O radar ainda não tem nomes monitorados. Volte mais tarde.</div>';else{var at=[];if(estado.cargo!=='todos')at.push(dados.cargos[estado.cargo]||estado.cargo);if(estado.partido)at.push('partido '+estado.partido);
+   if(ts.length){at.push('busca “'+estado.q.trim()+'”');if(estado.tipo!=='todos')at.push(estado.tipo==='polemicas'?'só polêmicas':'só propostas');if(PERTXT[estado.periodo])at.push(PERTXT[estado.periodo])}
+   h='<div class="rd-aviso">Nenhum nome encontrado'+(at.length?' para '+esc(at.join(' + ')):'')+'. <button type="button" class="rd-limpar" data-limpar>Limpar filtros</button></div>'}}
+  C.innerHTML=h;
+  var rot=estado.tipo==='polemicas'?'polêmica':estado.tipo==='solucoes'?'proposta':'manchete',tx='Mostrando '+nomes+' de '+dados.candidatos.length+' nomes · '+manchetes+' '+rot+(manchetes===1?'':'s');if(CONT.textContent!==tx)CONT.textContent=tx;
+  var q=estado.q.trim(),vt=[];if(estado.cargo!=='todos')vt.push(CURTO[estado.cargo]||dados.cargos[estado.cargo]);if(estado.tipo!=='todos')vt.push(estado.tipo==='polemicas'?'Só polêmicas':'Só propostas');if(estado.partido)vt.push(estado.partido);if(PERTXT[estado.periodo])vt.push(estado.periodo==='3'?'3 dias':'Hoje e ontem');if(q)vt.push('“'+q+'”');
+  VOLTA.innerHTML='<span aria-hidden="true">↑</span> Filtros'+(vt.length?': '+esc(vt.join(' · ')):'');LIMPAR.hidden=!vt.length;salvaHash()}
+ function marca(grupo,attr,val){grupo.querySelectorAll('button').forEach(function(b){var on=b.getAttribute(attr)===val;b.setAttribute('aria-checked',String(on));b.tabIndex=on?0:-1})}
+ // Grupo de rádio: uma parada de Tab por grupo; setas, Home e End escolhem a opção (pulando cargos sem resultado)
+ function setas(g){g.addEventListener('keydown',function(e){var a=document.activeElement,bs=[].filter.call(g.querySelectorAll('button'),function(b){return b===a||b.getAttribute('aria-disabled')!=='true'}),i=bs.indexOf(a),k=e.key,j=k==='ArrowRight'||k==='ArrowDown'?i+1:k==='ArrowLeft'||k==='ArrowUp'?i-1:k==='Home'?0:k==='End'?bs.length-1:null;if(i<0||j===null)return;e.preventDefault();j=(j+bs.length)%bs.length;bs[j].focus();bs[j].click()})}
+ function montaFiltros(){var cont=Object.create(null),partidos=[];dados.candidatos.forEach(function(c){cont[c.cargoN]=1;if(c.partido&&partidos.indexOf(c.partido)<0)partidos.push(c.partido)});
+  var h='<button type="button" role="radio" data-cargo="todos">Todos <small></small></button>';Object.keys(dados.cargos).forEach(function(k){if(cont[k])h+='<button type="button" role="radio" data-cargo="'+esc(k)+'">'+esc(CURTO[k]||dados.cargos[k])+' <small></small></button>'});CARGOS.innerHTML=h;marca(CARGOS,'data-cargo',estado.cargo);
+  partidos.sort(function(a,b){return a.localeCompare(b,'pt-BR')});P.insertAdjacentHTML('beforeend',partidos.map(function(p){return '<option value="'+esc(p)+'">'+esc(p)+'</option>'}).join(''))}
+ function salvaHash(){var p=[];if(estado.cargo!=='todos')p.push('cargo='+encodeURIComponent(estado.cargo));if(estado.tipo!=='todos')p.push('mostrar='+estado.tipo);if(estado.partido)p.push('partido='+encodeURIComponent(estado.partido));if(estado.periodo!=='7')p.push('dias='+estado.periodo);if(estado.q)p.push('q='+encodeURIComponent(estado.q));
+  if(!p.length&&location.hash&&!RADAR.test(location.hash.slice(1)))return;var h=p.length?'#'+p.join('&'):'';if(location.hash!==h){try{history.replaceState(null,'',location.pathname+location.search+h)}catch(e){}}}
+ // Valores do endereço são validados um a um; um link cortado ou antigo nunca derruba o radar
+ function leHash(){location.hash.replace(/^#/,'').split('&').forEach(function(kv){var i=kv.indexOf('=');if(i<0)return;var k=kv.slice(0,i),v;try{v=decodeURIComponent(kv.slice(i+1).replace(/\+/g,' ')).trim()}catch(e){return}
+   if(k==='cargo'){v=norm(v).replace(/[\s_]+/g,'-');if(tem(ALIAS,v))v=ALIAS[v];[].some.call(CARGOS.querySelectorAll('button'),function(b){if(b.getAttribute('data-cargo')===v){estado.cargo=v;return true}})}
+   if(k==='mostrar'&&/^(polemicas|solucoes)$/.test(v))estado.tipo=v;
+   if(k==='partido'){var pv=norm(v);[].some.call(P.options,function(o){if(o.value&&norm(o.value)===pv){estado.partido=o.value;return true}})}
+   if(k==='dias'&&/^(2|3)$/.test(v))estado.periodo=v;if(k==='q')estado.q=v});
+  marca(CARGOS,'data-cargo',estado.cargo);marca(TIPOS,'data-tipo',estado.tipo);Q.value=estado.q;P.value=estado.partido;PER.value=estado.periodo}
+ // Depois de limpar, o foco vai para o primeiro filtro se estava no botão que some (rola só se veio do teclado)
+ function limpa(){var f=document.activeElement,perde=!!f&&(f===LIMPAR||C.contains(f)),tec=false;try{tec=perde&&f.matches(':focus-visible')}catch(e){}
+  zera();Q.value='';P.value='';PER.value='7';marca(CARGOS,'data-cargo','todos');marca(TIPOS,'data-tipo','todos');render();
+  if(perde){var t=CARGOS.querySelector('[data-cargo="todos"]');if(t)t.focus({preventScroll:!tec})}}
+ CARGOS.addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.getAttribute('aria-disabled')==='true')return;estado.cargo=b.getAttribute('data-cargo');marca(CARGOS,'data-cargo',estado.cargo);render()});
+ TIPOS.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;estado.tipo=b.getAttribute('data-tipo');marca(TIPOS,'data-tipo',estado.tipo);render()});
+ setas(CARGOS);setas(TIPOS);
+ var tQ;Q.addEventListener('input',function(){clearTimeout(tQ);tQ=setTimeout(function(){estado.q=Q.value;render()},400)});
+ Q.addEventListener('keydown',function(e){if(e.key==='Enter'){clearTimeout(tQ);estado.q=Q.value;render()}});
+ P.addEventListener('change',function(){estado.partido=P.value;render()});PER.addEventListener('change',function(){estado.periodo=PER.value;render()});
+ LIMPAR.addEventListener('click',limpa);
+ C.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;if(b.hasAttribute('data-limpar')){limpa();return}
+  if(b.classList.contains('rd-mais')){var ul=b.previousElementSibling,aberto=b.getAttribute('aria-expanded')==='true';ul.querySelectorAll('li').forEach(function(li,i){if(i>=VISIVEIS)li.hidden=aberto});b.setAttribute('aria-expanded',String(!aberto));
+   b.querySelector('.rd-mais-tx').textContent=aberto?b.getAttribute('data-rot'):'Ver menos';b.querySelector('.rd-sr').textContent=(aberto?'':' '+b.getAttribute('data-tp'))+' de '+b.getAttribute('data-nome');var li=ul.children[VISIVEIS];if(!aberto&&li)li.querySelector('a').focus()}});
+ // Só reage a endereços do próprio radar (âncoras e #/portal/... do Ghost ficam intactos)
+ window.addEventListener('hashchange',function(){if(!dados||!RADAR.test(location.hash.slice(1)))return;zera();try{leHash()}catch(e){}render()});
+ var acima=false,dentro=false;
+ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.target===F)acima=!e.isIntersecting&&e.boundingClientRect.top<0;else dentro=e.isIntersecting});VOLTA.hidden=!(acima&&dentro)});io.observe(F);io.observe(C)}
+ VOLTA.addEventListener('click',function(){var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;F.scrollIntoView({behavior:r?'auto':'smooth',block:'start'});var b=CARGOS.querySelector('[aria-checked="true"]');if(b)b.focus({preventScroll:true})});
+ function inicia(d){dados=d;montaFiltros();try{leHash()}catch(e){}
+  var n=0,jd=parseInt(d.janela_dias,10),at=atualizadoEm(d.gerado_em);d.candidatos.forEach(function(c){n+=c.pol.length+c.sol.length});
+  $('rd-status').innerHTML=(at?'<span>Atualizado '+esc(at)+' (horário de MT)</span>':'')+'<span>Janela de '+(jd>0?jd:7)+' dias</span><span>'+d.candidatos.length+' nomes · '+n+' manchetes</span><span>Atualiza a cada 30 min</span>';render()}
+ // Falha de rede ou JSON inválido: aviso anunciado pela região role="status" que já existe na página
+ function falha(){var a=C.querySelector('.rd-aviso[role="status"]'),m='Radar temporariamente indisponível. Tente novamente em instantes.';if(a)a.textContent=m;else C.innerHTML='<div class="rd-aviso" role="status">'+m+'</div>';$('rd-status').innerHTML='<span>Dados indisponíveis no momento</span>';F.hidden=true}
+ fetch('/content/media/apuracao/radar-candidatos.json?t='+Math.floor(Date.now()/6e4),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(prepara).then(inicia,falha)
+  .catch(function(e){C.innerHTML='<div class="rd-aviso" role="status">Não foi possível exibir o radar. Recarregue a página.</div>';if(window.console)console.error(e)});
+})();
+</script>
