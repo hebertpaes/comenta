@@ -1,0 +1,65 @@
+{
+ "slug": "emenda-no-ar",
+ "titulo": "Emenda no Ar (curta: Flávia diz que emenda de R$ 5 mi de Wellington não foi paga)",
+ "pedido": "editor, 25/09: \"Crie as charges relacionadas\" + link do Olhar Direto",
+ "balao": "Não é pessoal.",
+ "balao_obs": "fala real de Flávia Moretti, entre aspas na curta e no Olhar Direto; balão aponta para ela",
+ "legenda": {
+  "site_16x9": "Em VG, emenda só conta quando pousa no cofre.",
+  "instagram_4x5": "Emenda só conta quando pousa no cofre."
+ },
+ "contexto": "Flávia Moretti (PL), prefeita de Várzea Grande, em ato de campanha de Pivetta, disse que a emenda de cerca de R$ 5 milhões indicada por Wellington Fagundes (PL) não foi paga e que parte dos recursos veio de emendas de bancada; Wellington havia dito que a bancada do PL destinou quase R$ 300 milhões a VG; a prefeitura contabiliza R$ 45,2 mi em emendas pagas em 2025-2026 (R$ 62,4 mi com outros repasses).",
+ "fontes": [
+  "https://www.olhardireto.com.br/noticias/flavia-rebate-wellington-e-diz-que-r-5-milhoes-do-senador-nao-foram-pagos-outros-recursos-vieram-da-bancada"
+ ],
+ "regras_da_cena": "humor sobre a diferença entre anunciado e pago (dinheiro 'no ar'); Wellington desenhado simpático, acenando, sem ridicularizar; nada de acusação; sem texto, logos ou bandeiras",
+ "personagens": [
+  {
+   "nome": "Flávia Moretti",
+   "cargo": "prefeita de Várzea Grande (PL)",
+   "canva_fotos_referencia": [
+    "MAHWIE_abVw",
+    "MAHWIMIJ4SM"
+   ],
+   "data_foto": "2026-09-19",
+   "credito": "Foto: Andre Luis/Secom-VG (galeria oficial da Prefeitura de Várzea Grande)",
+   "licenca": "divulgação oficial; só referência de desenho"
+  },
+  {
+   "nome": "Wellington Fagundes",
+   "cargo": "senador, candidato ao Governo de MT (PL)",
+   "canva_fotos_referencia": [
+    "MAHWH-KaOvA"
+   ],
+   "data_foto": "2026-08 (registro de candidatura)",
+   "credito": "TSE/Divulgação (SQ 110002551737)",
+   "licenca": "foto oficial do TSE; só referência de desenho"
+  }
+ ],
+ "canva": {
+  "design_site_16x9": "DAHWOXer_vw",
+  "arte_16x9": "MAHWOQhs8ow",
+  "design_instagram_4x5": "DAHWOQWNmJI",
+  "arte_4x5": "MAHWOb2nx8A",
+  "modelo_16x9": "DAHWDzwR5c0",
+  "modelo_retrato": "DAHWEJf2P1U"
+ },
+ "materia": "https://hojemt.com.br/emenda-no-ar/",
+ "status_materia": "rascunho (id 6ab6b0fe834d62060cb1d6a6), criado em 25/09 a pedido do editor",
+ "checagem_pendente": [
+  "localizar a declaração original de Wellington sobre os quase R$ 300 milhões (data e veículo)",
+  "procurar a assessoria de Wellington Fagundes para o outro lado antes de publicar"
+ ],
+ "instagram": {
+  "status": "aguardando_materia (item 52 da agenda)"
+ },
+ "arquivos": {
+  "site_16x9": "2026-09-25-emenda-no-ar.jpg",
+  "instagram_4x5": "2026-09-25-emenda-no-ar-instagram-retrato.jpg"
+ },
+ "hospedado_em": {
+  "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-25-emenda-no-ar.jpg",
+  "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-emenda-no-ar-og.jpg",
+  "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-25-emenda-no-ar-instagram-retrato.jpg"
+ }
+}

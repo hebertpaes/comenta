@@ -863,6 +863,20 @@
       "materia": "https://hojemt.com.br/fortuna-caiu-em-cuiaba/",
       "charge_json": "pautas/charges/2026-09-25-fortuna-caiu-em-cuiaba.json",
       "obs": "assunto não eleitoral (emendas), sem prazo: próximo horário livre depois do último item agendado (32, 05/10 11:30)"
+    },
+    {
+      "id": "52",
+      "quando": null,
+      "status": "aguardando_materia",
+      "formato": "charge",
+      "titulo": "Emenda no Ar",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-emenda-no-ar-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Emenda no Ar\n\nEmenda só conta quando pousa no cofre.\n\nA prefeita de Várzea Grande, Flávia Moretti, diz que a emenda de R$ 5 milhões de Wellington Fagundes ainda não foi paga; o senador fala em quase R$ 300 milhões da bancada do PL para a cidade.\n\nLeia a curta completa: hojemt.com.br/emenda-no-ar\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #varzeagrande #hojemt",
+      "charge_json": "pautas/charges/2026-09-25-emenda-no-ar.json",
+      "materia": "https://hojemt.com.br/emenda-no-ar/",
+      "obs": "curta em rascunho: quando o editor publicar, trocar status para agendado e definir 'quando' ANTES do 1º turno (04/10), pois o assunto é eleitoral"
     }
   ]
 }
