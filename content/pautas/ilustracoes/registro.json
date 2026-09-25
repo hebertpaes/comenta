@@ -475,6 +475,46 @@
       "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis",
       "substituida_em": "2026-09-25",
       "substituida_por": "pautas/eleicoes/2026-09-25-candidatos-governo-ce.jpg (fotos oficiais do TSE, pedido do editor)"
+    },
+    {
+      "slug": "ex-vereadora-veronica-costa-e-presa-por-tortura-no-rio-de-janeiro",
+      "titulo": "Ex-vereadora Veronica Costa é presa por tortura no Rio de Janeiro",
+      "materia": "https://hojemt.com.br/ex-vereadora-veronica-costa-e-presa-por-tortura-no-rio-de-janeiro/",
+      "tag": "Polícia",
+      "canva": {
+        "design": "DAHWNSclJPQ",
+        "arte": "MAHWNY7k_OE",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "viaturas policiais com giroflex aceso diante de uma casa de campo numa estrada de serra, à noite; agentes de costas ao longe; sem pessoa detida, sem violência",
+      "arquivo": "2026-09-25-veronica-costa-presa-serra.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-25-veronica-costa-presa-serra.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-veronica-costa-presa-serra-og.jpg",
+      "capa_anterior": "capa-92d32821e0583189.webp",
+      "obs": "Parte B: a fonte (Agência Brasil) só tinha miniatura genérica; matéria policial, cena sóbria sem retratar a ex-vereadora",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "feito_em": "2026-09-25",
+      "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
+    },
+    {
+      "slug": "festival-artes-e-cores-abre-praca-do-rio-verde-em-27-09",
+      "titulo": "Festival Artes e Cores abre praça do Rio Verde em 27/09",
+      "materia": "https://hojemt.com.br/festival-artes-e-cores-abre-praca-do-rio-verde-em-27-09/",
+      "tag": "Cultura",
+      "canva": {
+        "design": "DAHWNQt7VCc",
+        "arte": "MAHWNRRmh2s",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "famílias de costas assistem a apresentação num palco numa praça ao entardecer; crianças de costas pintam telas em cavaletes",
+      "arquivo": "2026-09-25-festival-artes-e-cores-lrv.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-25-festival-artes-e-cores-lrv.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-festival-artes-e-cores-lrv-og.jpg",
+      "capa_anterior": "capa-9190ead7c23579a9.webp",
+      "obs": "Parte B: a fonte (Prefeitura de Lucas do Rio Verde) só tinha cartaz com texto e logos",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "feito_em": "2026-09-25",
+      "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
     }
   ]
 }
