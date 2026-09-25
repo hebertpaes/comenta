@@ -62,7 +62,7 @@
     },
     {
       "id": "13",
-      "status": "suspenso",
+      "status": "cancelado",
       "permalink": null,
       "publicado_em": null,
       "quando": "2026-09-25T07:30:00-04:00",
@@ -75,7 +75,7 @@
       "materia": "https://hojemt.com.br/",
       "pauta": "pautas/2026-09-24-arquivo-jo-soares-zanin-dallagnol.md",
       "obs": "formato Arquivo HOJE MT (reel-arquivo.mjs); corte de 1:41; versão completa 3:03 em pautas/videos",
-      "motivo": "retido em 25/09 07:38 (Cuiabá): é trecho do Programa do Jô (TV Globo) sem autorização; content/README.md exige autorização para vídeo de terceiros que não seja oficial/de agência, e o plano do Instagram diz 'nunca vídeo ou frame de terceiros'. Volta para 'agendado' só se o editor confirmar a publicação."
+      "motivo": "decisão de 25/09 (editor pediu \"Dirige\"): cancelado; é trecho do Programa do Jô (TV Globo) sem autorização, e content/README.md só admite vídeo de terceiros com autorização ou material oficial/de agência. Não publicar."
     },
     {
       "id": "05",
@@ -527,7 +527,7 @@
       "status": "agendado",
       "permalink": null,
       "publicado_em": null,
-      "quando": "2026-10-01T15:30:00-04:00",
+      "quando": "2026-10-05T11:30:00-04:00",
       "formato": "charge",
       "titulo": "Fome em tempos de guerra",
       "midia": [
@@ -535,7 +535,8 @@
       ],
       "legenda": "CHARGE · Fome em tempos de guerra\n\nGuerra e seca à mesa: prato vazio.\n\nSegundo a FAO, conflitos e eventos climáticos extremos somaram 40 milhões de pessoas à insegurança alimentar no mundo. Brasil e Espanha anunciaram uma aliança contra a fome.\n\nLeia a curta completa: hojemt.com.br/fome-em-tempos-de-guerra\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #fome #FAO #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/fome-em-tempos-de-guerra/",
-      "charge_json": "pautas/charges/2026-09-24-fome-em-tempos-de-guerra.json"
+      "charge_json": "pautas/charges/2026-09-24-fome-em-tempos-de-guerra.json",
+      "obs": "decisão de 25/09 (editor pediu \"Dirige\"): adiada para depois do 1º turno: repete o assunto da charge Aliança contra a fome (30/09 19:30), então vai para 05/10"
     },
     {
       "id": "33",
@@ -768,7 +769,7 @@
       "status": "agendado",
       "permalink": null,
       "publicado_em": null,
-      "quando": "2026-10-03T11:30:00-04:00",
+      "quando": "2026-10-05T07:30:00-04:00",
       "formato": "charge",
       "titulo": "Marés que engolem ilhas",
       "midia": [
@@ -776,7 +777,8 @@
       ],
       "legenda": "CHARGE · Marés que engolem ilhas\n\nMar em alta recorde, metas na maré baixa.\n\nEm 2024, o nível médio global do mar subiu 5,9 mm, acima dos 4,3 mm previstos, segundo análise da NASA com dados de satélite. Ilhas baixas e deltas densamente povoados estão entre as áreas mais expostas.\n\nLeia a curta completa: hojemt.com.br/mares-que-engolem-ilhas\n\nFonte do dado: NASA (sealevel.nasa.gov)\nCharge: HOJE MT · hojemt.com.br\n\n#charge #clima #niveldomar #hojemt",
       "materia": "https://hojemt.com.br/mares-que-engolem-ilhas/",
-      "charge_json": "pautas/charges/2026-09-25-mares-que-engolem-ilhas.json"
+      "charge_json": "pautas/charges/2026-09-25-mares-que-engolem-ilhas.json",
+      "obs": "decisão de 25/09 (editor pediu \"Dirige\"): adiada para depois do 1º turno para abrir espaço à charge eleitoral Placar eletrônico (assunto não perde validade)"
     },
     {
       "id": "47",
@@ -810,10 +812,10 @@
     },
     {
       "id": "49",
-      "status": "aguardando_decisao",
+      "status": "agendado",
       "permalink": null,
       "publicado_em": null,
-      "quando": "2026-10-05T07:30:00-04:00",
+      "quando": "2026-10-03T11:30:00-04:00",
       "formato": "charge",
       "titulo": "Placar eletrônico na Casa",
       "midia": [
@@ -822,14 +824,14 @@
       "legenda": "CHARGE · Placar eletrônico na Casa\n\nO boato vai ter concorrência.\n\nA TV Assembleia e o TRE-MT renovaram a parceria para transmitir a apuração das Eleições 2026 direto da sede da Justiça Eleitoral, no domingo, 4 de outubro, a partir das 15h45 (horário de Mato Grosso): canal 30.1 em Cuiabá e Várzea Grande, 9.2 ou 10.2 no interior e YouTube da TV Assembleia.\n\nLeia a curta completa: hojemt.com.br/placar-eletronico-na-casa\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/placar-eletronico-na-casa/",
       "charge_json": "pautas/charges/2026-09-25-placar-eletronico-na-casa.json",
-      "obs": "fila de charges cheia até 03/10 19:30; o próximo horário livre (05/10) cai depois do 1º turno (04/10) e o assunto é eleitoral. Fica fora da publicação automática até o editor decidir: trocar por um item menos urgente antes de 04/10 ou descartar."
+      "obs": "decisão de 25/09 (editor pediu \"Dirige\"): entrou no horário da charge Marés (assunto eleitoral precisa sair antes do 1º turno de 04/10)"
     },
     {
       "id": "50",
-      "status": "aguardando_decisao",
+      "status": "agendado",
       "permalink": null,
       "publicado_em": null,
-      "quando": "2026-10-05T11:30:00-04:00",
+      "quando": "2026-10-01T15:30:00-04:00",
       "formato": "charge",
       "titulo": "IA, salário e bala",
       "midia": [
@@ -838,7 +840,7 @@
       "legenda": "CHARGE · IA, salário e bala\n\nAté o robô entra na folha.\n\nO candidato ao governo Sargento Laudicério (Agir) propõe recompor o efetivo policial, pagar RGA de 18,38% aos servidores (condicionado a análise técnica, legal e fiscal, segundo o plano) e usar inteligência artificial na administração estadual.\n\nLeia a curta completa: hojemt.com.br/ia-salario-e-bala\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/ia-salario-e-bala/",
       "charge_json": "pautas/charges/2026-09-25-ia-salario-e-bala.json",
-      "obs": "fila de charges cheia até 03/10 19:30; o próximo horário livre (05/10) cai depois do 1º turno (04/10) e o assunto é eleitoral. Fica fora da publicação automática até o editor decidir: trocar por um item menos urgente antes de 04/10 ou descartar."
+      "obs": "decisão de 25/09 (editor pediu \"Dirige\"): entrou no horário da charge Fome em tempos de guerra (assunto eleitoral precisa sair antes de 04/10)"
     }
   ]
 }

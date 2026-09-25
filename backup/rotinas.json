@@ -26,7 +26,7 @@
   {
    "id": "trig_017Hsqviu4hME7Kd93eucPWL",
    "nome": "Backup do sistema no GitHub (a cada 6 h)",
-   "cron_utc": "0 */6 * * *",
+   "cron_utc": "9 */6 * * *",
    "fonte": "content/backup-ghost.mjs",
    "resumo": "Roda node content/backup-ghost.mjs (posts, páginas, tags, autores sem e-mail, configurações sem segredos, newsletters, site, manifesto de mídias) em backup/ghost/latest; inclui no mesmo commit o trabalho ainda não enviado em content/ e backup/ (nunca .env nem chaves); commit e push (sem tags: o proxy do GitHub não aceita refs/tags) para claude/exciting-thompson-4rhut2. Pedido do editor de 25/09: \"faça o backup e mantenha enviando para GitHub\"."
   },
