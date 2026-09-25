@@ -429,6 +429,46 @@
       "feito_em": "2026-09-25",
       "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis",
       "obs": "disputa estadual fora de MT: Parte B (sem foto de candidato)"
+    },
+    {
+      "slug": "ia-invade-saude-australiana-alerta-para-o-brasil",
+      "titulo": "IA invade saúde australiana: alerta para o Brasil",
+      "materia": "https://hojemt.com.br/ia-invade-saude-australiana-alerta-para-o-brasil/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHWNDAg0qE",
+        "arte": "MAHWNCiECpY",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "técnica de TI de costas diante de monitores com alertas, na sala de tecnologia de um hospital público de MT, à noite",
+      "arquivo": "2026-09-25-ia-dados-saude.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-25-ia-dados-saude.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-ia-dados-saude-og.jpg",
+      "capa_anterior": "opiniao-1790337897.webp",
+      "checagem_pendente": "o artigo diz que o incidente foi em julho e que dados foram 'expostos'; pela ABC/CNN/Al Jazeera (24/09), o acesso ao portal de estatísticas do Medicare foi em 18/06, e o governo diz não haver indício de acesso a dados pessoais (texto não editado)",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "feito_em": "2026-09-25",
+      "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
+    },
+    {
+      "slug": "ceara-tem-oito-nomes-na-disputa-pelo-governo-nas-eleicoes-2026",
+      "titulo": "Ceará tem oito nomes na disputa pelo governo nas eleições 2026",
+      "materia": "https://hojemt.com.br/ceara-tem-oito-nomes-na-disputa-pelo-governo-nas-eleicoes-2026/",
+      "tag": "Eleições",
+      "canva": {
+        "design": "DAHWNCpQeJA",
+        "arte": "MAHWNFbRMdE",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "eleitores de costas no calçadão de uma orla com jangadas, a caminho da votação",
+      "arquivo": "2026-09-25-ceara-governo-eleicao.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-25-ceara-governo-eleicao.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-ceara-governo-eleicao-og.jpg",
+      "capa_anterior": "capa-aad42f3584e40b51.webp",
+      "obs": "disputa estadual fora de MT: Parte B",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "feito_em": "2026-09-25",
+      "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
     }
   ]
 }

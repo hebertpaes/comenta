@@ -807,6 +807,38 @@
       "legenda": "CHARGE · Paula em 13 votos\n\nAbilio conta os peixes antes de puxar a rede.\n\nO prefeito Abilio Brunini (PL) diz que a vereadora Paula Calil (PL) tem 13 votos para seguir na presidência da Câmara de Cuiabá. O TJMT negou o pedido do prefeito para suspender a regra que exige 18 votos para mudar o Regimento Interno, o que dificulta a reeleição.\n\nLeia a curta completa: hojemt.com.br/paula-em-13-votos\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #cuiaba #camaradecuiaba #hojemt",
       "materia": "https://hojemt.com.br/paula-em-13-votos/",
       "charge_json": "pautas/charges/2026-09-25-paula-em-13-votos.json"
+    },
+    {
+      "id": "49",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-05T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Placar eletrônico na Casa",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-placar-eletronico-na-casa-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Placar eletrônico na Casa\n\nO boato vai ter concorrência.\n\nA TV Assembleia e o TRE-MT renovaram a parceria para transmitir a apuração das Eleições 2026 direto da sede da Justiça Eleitoral, no domingo, 4 de outubro, a partir das 15h45 (horário de Mato Grosso): canal 30.1 em Cuiabá e Várzea Grande, 9.2 ou 10.2 no interior e YouTube da TV Assembleia.\n\nLeia a curta completa: hojemt.com.br/placar-eletronico-na-casa\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/placar-eletronico-na-casa/",
+      "charge_json": "pautas/charges/2026-09-25-placar-eletronico-na-casa.json",
+      "obs": "fila de charges cheia até 03/10 19:30; o próximo horário livre (05/10) cai depois do 1º turno (04/10) e o assunto é eleitoral. Fica fora da publicação automática até o editor decidir: trocar por um item menos urgente antes de 04/10 ou descartar."
+    },
+    {
+      "id": "50",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-05T11:30:00-04:00",
+      "formato": "charge",
+      "titulo": "IA, salário e bala",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-ia-salario-e-bala-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · IA, salário e bala\n\nAté o robô entra na folha.\n\nO candidato ao governo Sargento Laudicério (Agir) propõe recompor o efetivo policial, pagar RGA de 18,38% aos servidores (condicionado a análise técnica, legal e fiscal, segundo o plano) e usar inteligência artificial na administração estadual.\n\nLeia a curta completa: hojemt.com.br/ia-salario-e-bala\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/ia-salario-e-bala/",
+      "charge_json": "pautas/charges/2026-09-25-ia-salario-e-bala.json",
+      "obs": "fila de charges cheia até 03/10 19:30; o próximo horário livre (05/10) cai depois do 1º turno (04/10) e o assunto é eleitoral. Fica fora da publicação automática até o editor decidir: trocar por um item menos urgente antes de 04/10 ou descartar."
     }
   ]
 }
