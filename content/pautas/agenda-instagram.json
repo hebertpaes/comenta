@@ -596,6 +596,111 @@
    "legenda": "A estação do BRT em frente ao Pantanal Shopping está quase pronta. E o resto da obra?\nSegundo a Sinfra, 16 dos 23 locais de estação tiveram obra iniciada, e o contrato das estações tinha 16,51% dos serviços executados em setembro. Os terminais estão em fase de projeto, com entrega prevista para fevereiro de 2027, e os ônibus elétricos ainda não foram licitados. O governador Pivetta, candidato à reeleição, diz esperar entregar o primeiro trecho até dezembro.\nLeia a matéria completa: hojemt.com.br/brt-estacoes-avenida-do-cpa-como-estao-e-o-que-falta\nFontes: Olhar Direto, VGN, MidiaNews, RDNews, Sinfra e Diário Oficial de MT.\n#BRT #Cuiabá #VárzeaGrande #MatoGrosso",
    "materia": "https://hojemt.com.br/brt-estacoes-avenida-do-cpa-como-estao-e-o-que-falta/",
    "obs": "só agendar depois que o editor publicar a matéria (rascunho 6ab5ab13834d62060cb1d335) e fechar o outro lado"
+  },
+  {
+   "id": "37",
+   "status": "aguardando_materia",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": null,
+   "formato": "card",
+   "titulo": "MT-170: cautelar do TCE suspende punições da Sinfra ao consórcio",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-25-tce-mt170-cautelar-instagram-retrato.jpg"
+   ],
+   "legenda": "MT-170: cautelar do TCE suspende punições da Sinfra ao consórcio\n\nA Sinfra tinha multado o consórcio e rescindido o contrato de 2014. O Estado recorreu. A MTSUL, uma das empresas do consórcio, integra o grupo que venceu a concessão de 634 km de rodovias\n\nLeia a matéria completa: hojemt.com.br/mt-170-cautelar-do-presidente-do-tce-suspende-punicoes-da-sinfra\n\nIlustração: HOJE MT (gerada com IA; cena de ficção)\n\n#TCEMT #MatoGrosso #Cuiaba #HojeMT",
+   "materia": "https://hojemt.com.br/mt-170-cautelar-do-presidente-do-tce-suspende-punicoes-da-sinfra/",
+   "obs": "só agendar depois que o editor publicar a matéria (rascunho 6ab5e22a834d62060cb1d39a)",
+   "card": {
+    "design": "DAHWKr8jdFg",
+    "kicker": "TRIBUNAL DE CONTAS DE MT",
+    "manchete": "MT-170: cautelar do TCE suspende punições da Sinfra ao consórcio",
+    "apoio": "A Sinfra tinha multado o consórcio e rescindido o contrato de 2014. O Estado recorreu ao Plenário."
+   }
+  },
+  {
+   "id": "38",
+   "status": "aguardando_materia",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": null,
+   "formato": "card",
+   "titulo": "TCE-MT vai apurar interrupção de terapias de crianças com deficiência",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-25-tce-terapias-infantis-instagram-retrato.jpg"
+   ],
+   "legenda": "TCE-MT vai apurar interrupção de terapias de crianças com deficiência\n\nDados preliminares de uma auditoria do tribunal indicam que 90,3% das famílias de crianças autistas ouvidas relatam já ter tido o tratamento interrompido. Em Várzea Grande, o Campi chegou a suspender atendimentos por atraso de repasses da Prefeitura\n\nLeia a matéria completa: hojemt.com.br/tce-mt-vai-apurar-interrupcao-de-terapias-de-criancas-com-deficiencia\n\nIlustração: HOJE MT (gerada com IA; cena de ficção)\n\n#TCEMT #MatoGrosso #Cuiaba #HojeMT",
+   "materia": "https://hojemt.com.br/tce-mt-vai-apurar-interrupcao-de-terapias-de-criancas-com-deficiencia/",
+   "obs": "só agendar depois que o editor publicar a matéria (rascunho 6ab5e22a834d62060cb1d3a0)",
+   "card": {
+    "design": "DAHWKm87fjQ",
+    "kicker": "TRIBUNAL DE CONTAS DE MT",
+    "manchete": "TCE-MT vai apurar interrupção de terapias de crianças com deficiência",
+    "apoio": "Auditoria preliminar: 90,3% das famílias de crianças autistas ouvidas relatam tratamento interrompido."
+   }
+  },
+  {
+   "id": "39",
+   "status": "aguardando_materia",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": null,
+   "formato": "card",
+   "titulo": "Rondonópolis: TCE manteve veto ao sorteio de carros para professores",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-25-tce-rondonopolis-carros-instagram-retrato.jpg"
+   ],
+   "legenda": "Rondonópolis: TCE manteve veto ao sorteio de carros para professores\n\nO Plenário homologou por unanimidade a cautelar do relator, José Carlos Novelli, que vê indícios de irregularidade no remanejamento de uma dotação da saúde, e mandou o caso aos Ministérios Públicos Eleitoral e Estadual. A Prefeitura diz que usou recursos próprios\n\nLeia a matéria completa: hojemt.com.br/rondonopolis-tce-mt-manteve-veto-ao-sorteio-de-carros-para-professores\n\nIlustração: HOJE MT (gerada com IA; cena de ficção)\n\n#TCEMT #MatoGrosso #Cuiaba #HojeMT",
+   "materia": "https://hojemt.com.br/rondonopolis-tce-mt-manteve-veto-ao-sorteio-de-carros-para-professores/",
+   "obs": "só agendar depois que o editor publicar a matéria (rascunho 6ab5e22b834d62060cb1d3a6)",
+   "card": {
+    "design": "DAHWKsv67HU",
+    "kicker": "TRIBUNAL DE CONTAS DE MT",
+    "manchete": "Rondonópolis: TCE manteve veto ao sorteio de carros para professores",
+    "apoio": "Relator vê indícios de irregularidade no uso de dotação da saúde; a Prefeitura diz que usou recursos próprios."
+   }
+  },
+  {
+   "id": "40",
+   "status": "aguardando_materia",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": null,
+   "formato": "card",
+   "titulo": "TCE-MT segurou vistorias de obras até o fim da eleição, diz presidente",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-25-tce-vistorias-eleicao-instagram-retrato.jpg"
+   ],
+   "legenda": "TCE-MT segurou vistorias de obras até o fim da eleição, diz presidente\n\nEm transmissão oficial de 3/9, Sérgio Ricardo afirmou que parar as visitas de campo foi decisão de todos os conselheiros. Nenhum ato formal foi localizado\n\nLeia a matéria completa: hojemt.com.br/presidente-do-tce-mt-diz-que-corte-segurou-vistorias-de-obras-ate-o-fim-da-eleicao\n\nIlustração: HOJE MT (gerada com IA; cena de ficção)\n\n#TCEMT #MatoGrosso #Cuiaba #HojeMT",
+   "materia": "https://hojemt.com.br/presidente-do-tce-mt-diz-que-corte-segurou-vistorias-de-obras-ate-o-fim-da-eleicao/",
+   "obs": "só agendar depois que o editor publicar a matéria (rascunho 6ab5e22b834d62060cb1d3ac)",
+   "card": {
+    "design": "DAHWKtRkCTQ",
+    "kicker": "TRIBUNAL DE CONTAS DE MT",
+    "manchete": "TCE-MT segurou vistorias de obras até o fim da eleição, diz presidente",
+    "apoio": "Em transmissão de 3/9, Sérgio Ricardo disse que a decisão foi de todos os conselheiros; não há ato formal."
+   }
+  },
+  {
+   "id": "41",
+   "status": "aguardando_materia",
+   "permalink": null,
+   "publicado_em": null,
+   "quando": null,
+   "formato": "card",
+   "titulo": "TCE-MT trava contratações e vê indício de sobrepreço de R$ 100,6 mi",
+   "midia": [
+    "https://hojemt.com.br/content/images/2026/09/2026-09-25-tce-contratacoes-sobrepreco-instagram-retrato.jpg"
+   ],
+   "legenda": "TCE-MT trava contratações e vê indício de sobrepreço de R$ 100,6 mi\n\nAuditoria vê indícios de sobrepreço de R$ 100,6 milhões em ata de consórcio de municípios. Decisões de setembro também atingem Água Boa, Tangará da Serra, Pontes e Lacerda, Aripuanã e a Sefaz\n\nLeia a matéria completa: hojemt.com.br/tce-mt-trava-contratacoes-e-aponta-possivel-sobrepreco\n\nIlustração: HOJE MT (gerada com IA; cena de ficção)\n\n#TCEMT #MatoGrosso #Cuiaba #HojeMT",
+   "materia": "https://hojemt.com.br/tce-mt-trava-contratacoes-e-aponta-possivel-sobrepreco/",
+   "obs": "só agendar depois que o editor publicar a matéria (rascunho 6ab5e22b834d62060cb1d3b2)",
+   "card": {
+    "design": "DAHWKsd9Shw",
+    "kicker": "TRIBUNAL DE CONTAS DE MT",
+    "manchete": "TCE-MT trava contratações e vê indício de sobrepreço de R$ 100,6 mi",
+    "apoio": "Energia solar, creche e hospital: decisões de setembro atingem consórcio de municípios, 4 cidades e a Sefaz."
+   }
   }
  ]
 }

@@ -33,7 +33,53 @@
    "status": "rascunho",
    "arte": "pautas/ilustracoes/2026-09-24-crise-no-tce-mt.jpg",
    "instagram": "agenda 26 (aguardando_materia)",
-   "origem": "link do editor: TikTok @ehfonte 7688775065416076552"
+   "origem": "link do editor: TikTok @ehfonte 7688775065416076552",
+   "atualizado": "2026-09-25: rascunho reescrito com as correções da checagem (sem a aspa não conferida da MT-170; nota datada de 22/09; 10 ou 13 processos; Campos Neto de licença; falas do presidente; próxima sessão 29/09; repercussão; linha do tempo). Versão anterior em pautas/tce/rascunho-crise-v1-2026-09-24.html"
+  },
+  {
+   "data": "2026-09-25",
+   "slug": "mt-170-cautelar-do-presidente-do-tce-suspende-punicoes-da-sinfra",
+   "status": "rascunho",
+   "ghost_id": "6ab5e22a834d62060cb1d39a",
+   "arte": "pautas/ilustracoes/2026-09-25-tce-mt170-cautelar.jpg",
+   "instagram": "agenda 37 (aguardando_materia)",
+   "origem": "apuração em várias fontes (workflow de 24/09) + canal oficial do TCE-MT"
+  },
+  {
+   "data": "2026-09-25",
+   "slug": "tce-mt-vai-apurar-interrupcao-de-terapias-de-criancas-com-deficiencia",
+   "status": "rascunho",
+   "ghost_id": "6ab5e22a834d62060cb1d3a0",
+   "arte": "pautas/ilustracoes/2026-09-25-tce-terapias-infantis.jpg",
+   "instagram": "agenda 38 (aguardando_materia)",
+   "origem": "apuração em várias fontes (workflow de 24/09) + canal oficial do TCE-MT"
+  },
+  {
+   "data": "2026-09-25",
+   "slug": "rondonopolis-tce-mt-manteve-veto-ao-sorteio-de-carros-para-professores",
+   "status": "rascunho",
+   "ghost_id": "6ab5e22b834d62060cb1d3a6",
+   "arte": "pautas/ilustracoes/2026-09-25-tce-rondonopolis-carros.jpg",
+   "instagram": "agenda 39 (aguardando_materia)",
+   "origem": "apuração em várias fontes (workflow de 24/09) + canal oficial do TCE-MT"
+  },
+  {
+   "data": "2026-09-25",
+   "slug": "presidente-do-tce-mt-diz-que-corte-segurou-vistorias-de-obras-ate-o-fim-da-eleicao",
+   "status": "rascunho",
+   "ghost_id": "6ab5e22b834d62060cb1d3ac",
+   "arte": "pautas/ilustracoes/2026-09-25-tce-vistorias-eleicao.jpg",
+   "instagram": "agenda 40 (aguardando_materia)",
+   "origem": "apuração em várias fontes (workflow de 24/09) + canal oficial do TCE-MT"
+  },
+  {
+   "data": "2026-09-25",
+   "slug": "tce-mt-trava-contratacoes-e-aponta-possivel-sobrepreco",
+   "status": "rascunho",
+   "ghost_id": "6ab5e22b834d62060cb1d3b2",
+   "arte": "pautas/ilustracoes/2026-09-25-tce-contratacoes-sobrepreco.jpg",
+   "instagram": "agenda 41 (aguardando_materia)",
+   "origem": "apuração em várias fontes (workflow de 24/09) + canal oficial do TCE-MT"
   }
  ],
  "transcricoes": [
@@ -59,5 +105,10 @@
    "situacao": "na fila",
    "objetivo": "achar e conferir o diálogo sobre a MT-170 citado pelo Eh Fonte; ler com opusclip_get_transcript quando o stage for COMPLETE"
   }
- ]
+ ],
+ "ultima_verificacao": {
+  "data": "2026-09-25T02:40Z",
+  "rss": "sem vídeo novo desde Olgww1jsu-U (24/09 13:51)",
+  "proxima_sessao": "2026-09-29 (terça), presidente promete convocar auditores substitutos se houver ausências"
+ }
 }
