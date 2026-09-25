@@ -1,0 +1,205 @@
+{
+  "_como_funciona": "Trilhas dos Reels Charge em cena. Todas CC BY 4.0 (Kevin MacLeod, incompetech.com): o crédito é obrigatório no fechamento do vídeo e na legenda do post. O motor content/charge-cena.mjs escolhe a faixa pelo campo trilha do roteiro ou pelo universo.",
+  "padrao": "comedia",
+  "faixas": [
+    {
+      "id": "rodeio",
+      "arquivo": "assets/trilhas/rodeio.m4a",
+      "titulo": "Hillbilly Swing",
+      "autor": "Kevin MacLeod",
+      "origem_url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1900032&Search=Search",
+      "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Hillbilly%20Swing.mp3",
+      "isrc": "USUAN1900032",
+      "licenca": "CC BY 4.0",
+      "licenca_url": "https://creativecommons.org/licenses/by/4.0/",
+      "credito": "Música: \"Hillbilly Swing\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
+      "credito_oficial": "\"Hillbilly Swing\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/",
+      "temas": [
+        "rodeio",
+        "country",
+        "bluegrass",
+        "arena",
+        "festa de peão"
+      ],
+      "universos": [
+        "Rodeio das Urnas"
+      ],
+      "trecho": {
+        "inicio_s": 0.0,
+        "duracao_s": 75.0
+      },
+      "bpm": 145,
+      "clima": "Country/bluegrass animado (banjo, rabeca, violão, baixo): clima de arena de rodeio, festa e disputa."
+    },
+    {
+      "id": "fazenda",
+      "arquivo": "assets/trilhas/fazenda.m4a",
+      "titulo": "Fireflies and Stardust",
+      "autor": "Kevin MacLeod",
+      "origem_url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1600061&Search=Search",
+      "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Fireflies%20and%20Stardust.mp3",
+      "isrc": "USUAN1600061",
+      "licenca": "CC BY 4.0",
+      "licenca_url": "https://creativecommons.org/licenses/by/4.0/",
+      "credito": "Música: \"Fireflies and Stardust\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
+      "credito_oficial": "\"Fireflies and Stardust\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/",
+      "temas": [
+        "fazenda",
+        "campo",
+        "country leve",
+        "interior",
+        "agro"
+      ],
+      "universos": [
+        "Fazenda Brasil"
+      ],
+      "trecho": {
+        "inicio_s": 0.0,
+        "duracao_s": 75.0
+      },
+      "bpm": 170,
+      "clima": "Americana rural leve (banjo, bandolim, violões e violinos): campo, manhã na fazenda, tom tranquilo e simpático."
+    },
+    {
+      "id": "pantanal",
+      "arquivo": "assets/trilhas/pantanal.m4a",
+      "titulo": "Windswept",
+      "autor": "Kevin MacLeod",
+      "origem_url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100757&Search=Search",
+      "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Windswept.mp3",
+      "isrc": "USUAN1100757",
+      "licenca": "CC BY 4.0",
+      "licenca_url": "https://creativecommons.org/licenses/by/4.0/",
+      "credito": "Música: \"Windswept\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
+      "credito_oficial": "\"Windswept\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/",
+      "temas": [
+        "pantanal",
+        "natureza",
+        "calmo",
+        "acústico",
+        "paisagem"
+      ],
+      "universos": [
+        "Pantanal em Cena"
+      ],
+      "trecho": {
+        "inicio_s": 0.0,
+        "duracao_s": 54.6
+      },
+      "bpm": 79,
+      "clima": "Violão e cordas, calmo e contemplativo: paisagem natural, rio, fim de tarde. O trecho termina quando a frase se dissolve, antes da nova seção."
+    },
+    {
+      "id": "estrada",
+      "arquivo": "assets/trilhas/estrada.m4a",
+      "titulo": "Hustle",
+      "autor": "Kevin MacLeod",
+      "origem_url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100793&Search=Search",
+      "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Hustle.mp3",
+      "isrc": "USUAN1100793",
+      "licenca": "CC BY 4.0",
+      "licenca_url": "https://creativecommons.org/licenses/by/4.0/",
+      "credito": "Música: \"Hustle\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
+      "credito_oficial": "\"Hustle\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/",
+      "temas": [
+        "estrada",
+        "viagem",
+        "caminhão",
+        "rodovia",
+        "ritmo constante"
+      ],
+      "universos": [
+        "Estrada da Soja"
+      ],
+      "trecho": {
+        "inicio_s": 0.0,
+        "duracao_s": 75.0
+      },
+      "bpm": 120,
+      "clima": "Riff de baixo blues rodando com órgão, violão e bateria: pulsação constante de estrada e viagem, sensação de movimento."
+    },
+    {
+      "id": "escolinha",
+      "arquivo": "assets/trilhas/escolinha.m4a",
+      "titulo": "Carefree",
+      "autor": "Kevin MacLeod",
+      "origem_url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400037&Search=Search",
+      "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Carefree.mp3",
+      "isrc": "USUAN1400037",
+      "licenca": "CC BY 4.0",
+      "licenca_url": "https://creativecommons.org/licenses/by/4.0/",
+      "credito": "Música: \"Carefree\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
+      "credito_oficial": "\"Carefree\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/",
+      "temas": [
+        "escolinha",
+        "lúdico",
+        "sala de aula",
+        "comédia leve",
+        "infantil"
+      ],
+      "universos": [
+        "Escolinha do Cerrado"
+      ],
+      "trecho": {
+        "inicio_s": 0.0,
+        "duracao_s": 75.0
+      },
+      "bpm": 96,
+      "clima": "Ukulele, marimba e glockenspiel: lúdico e leve, clima de 'vai dar tudo certo'. Comédia leve de sala de aula."
+    },
+    {
+      "id": "comedia",
+      "arquivo": "assets/trilhas/comedia.m4a",
+      "titulo": "March of the Spoons",
+      "autor": "Kevin MacLeod",
+      "origem_url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1700008&Search=Search",
+      "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/March%20of%20the%20Spoons.mp3",
+      "isrc": "USUAN1700008",
+      "licenca": "CC BY 4.0",
+      "licenca_url": "https://creativecommons.org/licenses/by/4.0/",
+      "credito": "Música: \"March of the Spoons\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
+      "credito_oficial": "\"March of the Spoons\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/",
+      "temas": [
+        "comédia",
+        "charge",
+        "pizzicato",
+        "cartoon",
+        "trapalhada"
+      ],
+      "universos": [],
+      "trecho": {
+        "inicio_s": 0.0,
+        "duracao_s": 56.2
+      },
+      "bpm": 85,
+      "clima": "Cordas em pizzicato, clarone e madeiras agudas em staccato: marcha cômica de desenho animado, humor genérico de charge. Serve para qualquer universo e é a faixa padrão."
+    },
+    {
+      "id": "suspense-leve",
+      "arquivo": "assets/trilhas/suspense-leve.m4a",
+      "titulo": "Thinking Music",
+      "autor": "Kevin MacLeod",
+      "origem_url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1600060&Search=Search",
+      "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Thinking%20Music.mp3",
+      "isrc": "USUAN1600060",
+      "licenca": "CC BY 4.0",
+      "licenca_url": "https://creativecommons.org/licenses/by/4.0/",
+      "credito": "Música: \"Thinking Music\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
+      "credito_oficial": "\"Thinking Music\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/",
+      "temas": [
+        "suspense",
+        "tensão cômica",
+        "apuração",
+        "contagem de votos",
+        "expectativa"
+      ],
+      "universos": [],
+      "trecho": {
+        "inicio_s": 30.25,
+        "duracao_s": 52.1
+      },
+      "bpm": 125,
+      "clima": "Cordas e harpa em frases curtas entrecortadas por pausas ('pensando muito'): tensão cômica para apuração, contagem de votos e expectativa. O trecho começa na reentrada depois de uma pausa (30,25 s da faixa original)."
+    }
+  ]
+}
