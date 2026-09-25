@@ -265,6 +265,14 @@ class Cliente:
             os.replace(meta_arq + '.tmp', meta_arq)
         return corpo
 
+    def cache_local(self, caminho):
+        arq = os.path.join(self.cache, HOST, caminho.lstrip('/'))
+        try:
+            with open(arq, 'rb') as f:
+                return f.read()
+        except OSError:
+            return None
+
     def get(self, caminho, modo='vivo'):
         if threading.current_thread().name.startswith('tse'):
             return self._get(caminho, modo)
@@ -305,6 +313,10 @@ class Tse:
 
     def v(self, ele, uf, cargo, mun=''):
         return f'/{self.amb}/{self.ciclo}/{int(ele)}/dados/{uf}/{uf}{mun}-c{cargo}-e{int(ele):06d}-v.json'
+
+    def u(self, ele, uf, cargo, mun='', zona=''):
+        z = f'-z{int(zona):04d}' if zona else ''
+        return f'/{self.amb}/{self.ciclo}/{int(ele)}/dados/{uf}/{uf}{mun}{z}-c{cargo}-e{int(ele):06d}-u.json'
 
     def fixo(self, ele, nadf):
         return f'/{self.amb}/{self.ciclo}/{int(ele)}/dados/{nadf.split("-")[0].lower()}/{nadf}.json'
@@ -564,8 +576,18 @@ def cmd_locais(a):
         if a.turno and row.get('NR_TURNO') and row['NR_TURNO'] != str(a.turno):
             continue
         n += 1
-        k = (int(row['NR_ZONA']), int(row['NR_LOCAL_VOTACAO']))
-        g = grupos.setdefault(k, {'row': row, 'principais': set(), 'agregadas': set(), 'eleitores': 0})
+        # O BU traz o local ORIGINAL da seção; o cadastro traz em NR_LOCAL_VOTACAO onde ela vota agora
+        # (local temporário, p.ex. escola em reforma). Agrupa pelo número que aparece no BU.
+        atual = int(row['NR_LOCAL_VOTACAO'])
+        orig = int(row.get('NR_LOCAL_VOTACAO_ORIGINAL') or atual or 0) or atual
+        k = (int(row['NR_ZONA']), orig)
+        g = grupos.setdefault(k, {'row': None, 'row_temp': None, 'atuais': set(), 'principais': set(),
+                                  'agregadas': set(), 'eleitores': 0})
+        if orig == atual:
+            g['row'] = g['row'] or row
+        else:
+            g['row_temp'] = g['row_temp'] or row
+            g['atuais'].add(f"{atual:04d} {row['NM_LOCAL_VOTACAO'].strip()}")
         (g['agregadas'] if row.get('DS_TIPO_SECAO_AGREGADA', '').lower().startswith('agreg') else g['principais']).add(
             int(row['NR_SECAO']))
         try:
@@ -578,6 +600,9 @@ def cmd_locais(a):
         raise SystemExit('nenhuma linha para esse UF/município — confira --uf/--mun e o arquivo')
     ano = a.ano or '/'.join(sorted(x for x in anos if x))
     fonte = a.fonte or f"TSE eleitorado_local_votacao_{ano} (gerado {', '.join(sorted(geracao))})"
+    for g in grupos.values():  # local só com seções deslocadas: usa a linha do local temporário
+        g['temp_only'] = g['row'] is None
+        g['row'] = g['row'] or g['row_temp']
     # grafia de exibição: por município, a variante mais frequente (com acento) de cada chave
     variantes = collections.defaultdict(collections.Counter)
     for (z, l), g in grupos.items():
@@ -585,7 +610,7 @@ def cmd_locais(a):
         variantes[(r['CD_MUNICIPIO'], chave_bairro(nome_bairro(r['NM_BAIRRO'])))][nome_bairro(r['NM_BAIRRO'])] += 1
     exib = {k: max(c.items(), key=lambda kv: (kv[1], len(kv[0].encode())))[0] for k, c in variantes.items()}
     cols = ['zona', 'local', 'nome', 'endereco', 'bairro', 'cep', 'lat', 'lon', 'fonte', 'ano', 'cd_municipio',
-            'municipio', 'bairro_tse', 'tipo_local', 'secoes', 'secoes_agregadas', 'eleitores']
+            'municipio', 'bairro_tse', 'tipo_local', 'secoes', 'secoes_agregadas', 'eleitores', 'votando_em', 'obs']
     os.makedirs(os.path.dirname(os.path.abspath(a.saida)), exist_ok=True)
     with open(a.saida, 'w', encoding='utf-8', newline='') as f:
         w = csv.writer(f, delimiter=';', lineterminator='\n')
@@ -597,11 +622,19 @@ def cmd_locais(a):
             if lat in ('-1', '0', '') or lon in ('-1', '0', ''):
                 lat = lon = ''
             b = exib[(r['CD_MUNICIPIO'], chave_bairro(nome_bairro(r['NM_BAIRRO'])))]
-            w.writerow([z4(z), z4(l), r['NM_LOCAL_VOTACAO'].strip(), r['DS_ENDERECO'].strip(), b,
+            nome, end, obs = r['NM_LOCAL_VOTACAO'].strip(), r['DS_ENDERECO'].strip(), ''
+            if g['temp_only']:
+                nome = (r.get('NM_LOCAL_VOTACAO_ORIGINAL') or nome).strip()
+                end = (r.get('DS_ENDERECO_LOCVT_ORIGINAL') or end).strip()
+                obs = 'todas as seções votam em local temporário; bairro/coordenadas são do local temporário'
+            elif g['atuais']:
+                obs = 'parte das seções vota em local temporário'
+            w.writerow([z4(z), z4(l), nome, end, b,
                         r.get('NR_CEP', ''), lat, lon, fonte, ano, r['CD_MUNICIPIO'], r['NM_MUNICIPIO'],
                         r['NM_BAIRRO'].strip(), r.get('DS_TIPO_LOCAL', ''),
                         ' '.join(z4(s) for s in sorted(g['principais'])),
-                        ' '.join(z4(s) for s in sorted(g['agregadas'])), g['eleitores']])
+                        ' '.join(z4(s) for s in sorted(g['agregadas'])), g['eleitores'],
+                        ' | '.join(sorted(g['atuais'])), obs])
     por_mun = collections.Counter(g['row']['NM_MUNICIPIO'] for g in grupos.values())
     bairros = collections.defaultdict(set)
     for g in grupos.values():
@@ -656,6 +689,11 @@ def _u(s):
     return html.unescape(s) if isinstance(s, str) else s
 
 
+def flag_e(st):
+    """'s' só para eleito(a). O TSE põe e='s' também em quem vai ao 2º turno, e a página trata e='s' como eleito."""
+    return 's' if re.match(r'\s*eleit', st or '', re.I) else 'n'
+
+
 def indice_fixo(f):
     """Arquivo fixo -f -> {numero: {nm, nome, sg, partido, coligacao, composicao, vice, dvt}}."""
     out, partidos = {}, {}
@@ -694,7 +732,7 @@ def resultado_r(r, municipio=None):
         'votos_validos': r.get('vv'), 'brancos': r.get('vb'), 'brancos_pct': r.get('pvb'),
         'nulos': r.get('tvn'), 'nulos_pct': r.get('ptvn'),
         'candidatos': [{'n': c.get('n'), 'nm': _u(c.get('nm')), 'cc': _u(c.get('cc')), 'nv': _u(c.get('nv')),
-                        'st': c.get('st'), 'e': (c.get('e') or 'n').lower(), 'vap': c.get('vap'),
+                        'st': c.get('st'), 'e': flag_e(c.get('st')), 'vap': c.get('vap'),
                         'pvap': c.get('pvap')} for c in cands],
         'total_candidatos': len(cands), **({'municipio': municipio} if municipio else {}),
         'final': (r.get('tf') or '').lower() == 's',
@@ -711,7 +749,7 @@ def resultado_v(v, fixo, cc_por_numero=None, municipio=None):
         cands.append({'n': c['n'], 'nm': info.get('nm') or f"Nº {c['n']}",
                       'cc': _u(cc_por_numero.get(c['n'], {}).get('cc')) or cc_de(info),
                       'nv': _u(cc_por_numero.get(c['n'], {}).get('nv')) or info.get('vice'),
-                      'st': c.get('st'), 'e': (c.get('e') or 'n').lower(), 'vap': c.get('vap'), 'pvap': c.get('pvap')})
+                      'st': c.get('st'), 'e': flag_e(c.get('st')), 'vap': c.get('vap'), 'pvap': c.get('pvap')})
     return {
         'atualizado': f"{ab.get('dt', '')} {ab.get('ht', '')}".strip(), 'turno': v.get('t'), 'abr': ab.get('cdabr'),
         'secoes_totalizadas_pct': ab.get('pst'), 'secoes': ab.get('s'), 'secoes_totalizadas': ab.get('st'),
@@ -723,16 +761,54 @@ def resultado_v(v, fixo, cc_por_numero=None, municipio=None):
     }
 
 
+def de_unificado(u):
+    """Arquivo unificado -u.json (formato de 2024, provável em 2026: votos + nomes juntos) -> (pseudo -v, fixo)."""
+    s, e, vt = u.get('s') or {}, u.get('e') or {}, u.get('v') or {}
+    carg = (u.get('carg') or [{}])[0]
+    cands = []
+    for agr in carg.get('agr', []):
+        agr['tp'] = (agr.get('tp') or '').upper()
+        for par in agr.get('par', []):
+            for c in par.get('cand', []):
+                if c.get('vap') is not None:
+                    cands.append({'seq': c.get('seq'), 'n': c['n'], 'vap': c.get('vap') or '0', 'pvap': c.get('pvap'),
+                                  'e': c.get('e'), 'st': c.get('st')})
+    ab = {'dt': u.get('dt'), 'ht': u.get('ht'), 'tf': u.get('tf'), 'and': u.get('and'), 'tpabr': u.get('tpabr'),
+          'cdabr': u.get('cdabr'), 's': s.get('ts'), 'st': s.get('st'), 'pst': s.get('pst'), 'snt': s.get('snt'),
+          'e': e.get('te'), 'ea': e.get('est'), 'c': e.get('c'), 'pc': e.get('pc'), 'a': e.get('a'), 'pa': e.get('pa'),
+          **{k: vt.get(k) for k in ('tv', 'vv', 'vnom', 'vb', 'pvb', 'tvn', 'ptvn', 'vn', 'vnt', 'van', 'vansj', 'vscv')},
+          'cand': cands}
+    return {'ele': u.get('ele'), 't': u.get('t'), 'dg': u.get('dg'), 'hg': u.get('hg'), 'formato': 'u', 'abr': [ab]}, \
+        indice_fixo({'carg': carg})
+
+
 def busca_municipio(cli, tse, ele, uf, mun, cargo, cache_fixo=None, cache_r=None):
+    """-v + fixo (formato de 2022) ou, se não houver, o unificado -u (formato de 2024)."""
     v = cli.json(tse.v(ele, uf, cargo, mun))
     if v is None:
-        return None, None, None
+        u = cli.json(tse.u(ele, uf, cargo, mun))
+        if u is None:
+            return None, None, None
+        v, fixo = de_unificado(u)
+        return v, fixo, cache_r
     nadf = v.get('nadf')
     cache_fixo = {} if cache_fixo is None else cache_fixo
     if nadf and nadf not in cache_fixo:
         cache_fixo[nadf] = indice_fixo(cli.json(tse.fixo(ele, nadf), modo='fixo'))
     fixo = cache_fixo.get(nadf, {})
     return v, fixo, cache_r
+
+
+def resultado_uf(cli, tse, ele, uf, cargo):
+    """Resultado da UF (ou br) no formato da página: dados-simplificados -r; se não houver, -u ou -v da UF."""
+    r = cli.json(tse.r(ele, uf, cargo))
+    if r and r.get('cand'):
+        return resultado_r(r), r
+    v, fixo, _ = busca_municipio(cli, tse, ele, uf, '', cargo)
+    if v is None:
+        return None, None
+    d = resultado_v(v, fixo)
+    return d, {'cand': [dict(c, nm=c['nm']) for c in d['candidatos']]}
 
 
 def nomes_municipios(cli, tse, ele, uf):
@@ -801,10 +877,20 @@ def escolhe_hash(aux, incluir_recebidas=False):
     return max(cand, key=_quando) if cand else None
 
 
-def processa_secao(cli, tse, pleito, uf, mun, zona, secao, agregadas, incluir_recebidas=False):
+def processa_secao(cli, tse, pleito, uf, mun, zona, secao, agregadas, incluir_recebidas=False, so_pendentes=True):
     t0 = time.monotonic()
     r = {'zona': zona, 'secao': secao, 'agregadas': agregadas}
-    aux = cli.json(tse.aux(pleito, uf, mun, zona, secao))
+    caminho = tse.aux(pleito, uf, mun, zona, secao)
+    modo = 'vivo'
+    if so_pendentes:  # seção já totalizada no cache: não pergunta de novo ao TSE (use --rechecar-totalizadas)
+        b = cli.cache_local(caminho)
+        try:
+            a0 = json.loads(b) if b else None
+        except ValueError:
+            a0 = None
+        if a0 and (a0.get('st') or '').lower().startswith('totaliz') and escolhe_hash(a0):
+            modo = 'fixo'
+    aux = cli.json(caminho, modo)
     if aux is None:
         r.update(status='pendente', motivo='aux ainda não publicado (404)')
         return r
@@ -829,7 +915,7 @@ def processa_secao(cli, tse, pleito, uf, mun, zona, secao, agregadas, incluir_re
     return r
 
 
-def varre(cli, tse, pleito, uf, mun, limite=None, incluir_recebidas=False, progresso=True):
+def varre(cli, tse, pleito, uf, mun, limite=None, incluir_recebidas=False, progresso=True, so_pendentes=True):
     cs = cli.json(tse.cs(pleito, uf))
     if cs is None:
         raise SystemExit(f'cs.json não encontrado: {tse.cs(pleito, uf)}')
@@ -840,8 +926,8 @@ def varre(cli, tse, pleito, uf, mun, limite=None, incluir_recebidas=False, progr
         secs = secs[:limite]
     regs, erros = [], []
     t0 = time.monotonic()
-    for i, (it, res) in enumerate(cli.mapa(lambda s: processa_secao(cli, tse, pleito, uf, mun, *s, incluir_recebidas),
-                                           secs), 1):
+    for i, (it, res) in enumerate(cli.mapa(lambda s: processa_secao(cli, tse, pleito, uf, mun, *s, incluir_recebidas,
+                                                                   so_pendentes), secs), 1):
         if isinstance(res, Exception):
             erros.append({'zona': it[0], 'secao': it[1], 'erro': str(res)})
             regs.append({'zona': it[0], 'secao': it[1], 'agregadas': it[2], 'status': 'erro', 'motivo': str(res)})
@@ -915,8 +1001,9 @@ def classifica(votos, fixo, legenda=None):
     return val, van, vansj, vnt, legv
 
 
-def fecha_grupo(g, nomes, fixo=None, top=None):
-    """Grupo somado -> mesmo formato do arquivo de município da página (+ campos do grupo)."""
+def fecha_grupo(g, fixo=None, top=None):
+    """Grupo somado -> totais no formato do arquivo de município da página; candidatos só com n/vap/pvap
+    (nome, coligação e situação ficam na legenda "candidatos" do topo do arquivo)."""
     val, van, vansj, vnt, legv = classifica(g['votos'], fixo or {}, g['leg'])
     anulados = van + vansj
     validos = sum(val.values()) + legv
@@ -925,11 +1012,7 @@ def fecha_grupo(g, nomes, fixo=None, top=None):
     cands = sorted(val.items(), key=lambda kv: (-kv[1], int(kv[0])))
     if top:
         cands = cands[:top]
-    lista = []
-    for n, q in cands:
-        info = nomes.get(n, {})
-        lista.append({'n': n, 'nm': info.get('nm') or f'Nº {n}', 'cc': info.get('cc', ''),
-                      'st': info.get('st', ''), 'e': info.get('e', 'n'), 'vap': str(q), 'pvap': pct(q, validos)})
+    lista = [{'n': n, 'vap': str(q), 'pvap': pct(q, validos)} for n, q in cands]
     return {
         'secoes_totalizadas_pct': pct(g['secoes_totalizadas'], g['secoes']), 'secoes': str(g['secoes']),
         'secoes_totalizadas': str(g['secoes_totalizadas']), 'eleitorado': str(g['eleitorado']),
@@ -978,12 +1061,23 @@ def agrega_detalhe(regs, ele, cargo, mapa_locais, mapa_secoes, nomes, fixo=None,
         gb['nome'] = bairro
         gb.setdefault('locais_set', set()).add(chave_l)
         soma_secao(gb, r, ele, cargo)
+    tot = novo_grupo()
+    for r in regs:
+        soma_secao(tot, r, ele, cargo)
+    total = fecha_grupo(tot, fixo, None)
+    legenda = [{'n': c['n'], 'nm': nomes.get(c['n'], {}).get('nm') or f"Nº {c['n']}",
+                'cc': nomes.get(c['n'], {}).get('cc', ''), 'nv': nomes.get(c['n'], {}).get('nv'),
+                'st': nomes.get(c['n'], {}).get('st', ''), 'e': nomes.get(c['n'], {}).get('e', 'n')}
+               for c in total['candidatos']]
+    atual = max((r.get('recebido') or '' for r in regs if r.get('status') == 'totalizada'),
+                key=lambda x: _quando({'dr': x[:10], 'hr': x[11:]}) if x else dt.datetime.min, default='')
+    total.pop('candidatos')
     base = {'uf': uf, 'cd': mun, 'municipio': mun_nome, 'cargo': cargo, 'rotulo': CARGOS.get(cargo, cargo),
-            'eleicao': str(ele), 'gerado': agora()}
+            'eleicao': str(ele), 'gerado': agora(), 'atualizado': atual, 'total': total, 'candidatos': legenda}
     saida_l = []
     for (z, l), g in sorted(locais.items()):
         info = g['info'] or {}
-        d = fecha_grupo(g, nomes, fixo, top)
+        d = fecha_grupo(g, fixo, top)
         aprox = g.get('aprox')
         nm = info.get('nome') or ('?' if l else 'seções sem local')
         if aprox:  # nome/endereço do local que hoje recebe a mesma seção — referência, não o local da eleição
@@ -995,7 +1089,7 @@ def agrega_detalhe(regs, ele, cargo, mapa_locais, mapa_secoes, nomes, fixo=None,
         saida_l.append(d)
     saida_b = []
     for k, g in sorted(bairros.items(), key=lambda kv: kv[1]['nome']):
-        d = fecha_grupo(g, nomes, fixo, top)
+        d = fecha_grupo(g, fixo, top)
         pts = [(float(locais[x]['info']['lat']), float(locais[x]['info']['lon'])) for x in g['locais_set']
                if locais[x].get('info') and locais[x]['info'].get('lat')]
         d.update(id=slug(g['nome']), nm=g['nome'], locais=len(g['locais_set']),
@@ -1038,7 +1132,8 @@ def valida(regs, v, fixo, ele, cargo):
                ('Nulos total (tvn)', g['nulos'] + vnt, int(ab['tvn'])),
                ('Anulados (van)', van, int(ab.get('van') or 0)),
                ('Anulados sub judice (vansj)', vansj, int(ab.get('vansj') or 0)),
-               ('Comparecimento', g['comparecimento'], int(ab['c'])), ('Eleitorado apto', g['eleitorado'], int(ab['e'])),
+               ('Comparecimento', g['comparecimento'], int(ab['c'])),
+               ('Eleitorado apto (seções totalizadas)', g['eleitorado'], int(ab.get('ea') or ab['e'])),
                ('Abstenção', g['eleitorado'] - g['comparecimento'], int(ab['a'])),
                ('Seções totalizadas', g['secoes_totalizadas'], int(ab['st']))]
     ok = all(a == b for _, a, b in linhas)
@@ -1052,13 +1147,38 @@ def imprime_validacao(titulo, linhas, ok):
         print(f'  {nome[:34]:<34} {milhar(a):>16} {milhar(b):>14} {a - b:>7}')
 
 
+def grava_detalhe(cli, tse, regs, ele, uf, mun, cargo, fixo, mun_nome, mapa, pleito, top, saida):
+    """Grava <uf><mun>-c<cargo>-locais.json e -bairros.json (formato proposto para a página)."""
+    mapa_locais, mapa_secoes = le_mapa(mapa)
+    uf_r = cli.json(tse.r(ele, 'br' if cargo == '0001' else uf, cargo)) or {}
+    nomes = {c['n']: {'nm': _u(c.get('nm')), 'cc': _u(c.get('cc')), 'nv': _u(c.get('nv')), 'st': c.get('st'),
+                      'e': flag_e(c.get('st'))} for c in uf_r.get('cand', [])}
+    for n, info in (fixo or {}).items():
+        if not n.startswith('_'):
+            nomes.setdefault(n, {'nm': info['nm'], 'cc': cc_de(info), 'nv': info.get('vice'), 'st': '', 'e': 'n'})
+    top = None if cargo in MAJORITARIOS else top
+    dl, db, cob = agrega_detalhe(regs, ele, cargo, mapa_locais, mapa_secoes, nomes, fixo, top, mun_nome, uf, mun)
+    if cargo not in MAJORITARIOS:  # proporcionais: sem votos por seção (o arquivo ficaria grande)
+        for loc in dl['locais']:
+            for x in loc['por_secao']:
+                x.pop('v', None)
+    fonte_mapa = next(iter(mapa_locais.values())).get('fonte') if mapa_locais else None
+    for d in (dl, db):
+        d['fonte'] = f'TSE — boletins de urna (resultados.tse.jus.br, {tse.ciclo}/arquivo-urna/{pleito})'
+        d['mapa'] = {'fonte': fonte_mapa, 'cobertura': dict(cob)}
+    grava_json(os.path.join(saida, f'{uf}{mun}-c{cargo}-locais.json'), dl, True)
+    grava_json(os.path.join(saida, f'{uf}{mun}-c{cargo}-bairros.json'), db, True)
+    return dl, db, cob
+
+
 def cmd_secoes(a, cli):
     tse = Tse(a.ambiente, a.ano)
     uf, mun = a.uf, a.mun
     saida = a.saida or os.path.join(SAIDA_PADRAO, f'{tse.ciclo}-p{a.pleito}', f'{uf}{mun}')
     os.makedirs(os.path.join(saida, 'secoes'), exist_ok=True)
     print(f'Varredura {tse.ciclo} pleito {a.pleito} {uf.upper()} {mun} (até {cli.conexoes} conexões)…', file=sys.stderr)
-    regs, erros, dur = varre(cli, tse, a.pleito, uf, mun, a.limite, a.incluir_recebidas)
+    regs, erros, dur = varre(cli, tse, a.pleito, uf, mun, a.limite, a.incluir_recebidas,
+                             so_pendentes=not a.rechecar_totalizadas)
     for r in regs:
         grava_json(os.path.join(saida, 'secoes', f"z{r['zona']}-s{r['secao']}.json"), compacta_secao(r, mun, uf), True)
     st = collections.Counter(r['status'] for r in regs)
@@ -1095,25 +1215,7 @@ def cmd_secoes(a, cli):
                 linhas, ok = valida(regs, v, fixo, ele, cargo)
                 imprime_validacao(f'{mun_nome} {CARGOS.get(cargo, cargo)} (eleição {ele})', linhas, ok)
                 resumo['validacao'][cargo] = {'ok': ok, 'linhas': linhas}
-            uf_r = cli.json(tse.r(ele, 'br' if cargo == '0001' else uf, cargo)) or {}
-            nomes = {c['n']: {'nm': _u(c.get('nm')), 'cc': _u(c.get('cc')), 'st': c.get('st'), 'e': (c.get('e') or 'n').lower()}
-                     for c in uf_r.get('cand', [])}
-            for n, info in fixo.items():
-                if n.startswith('_'):
-                    continue
-                nomes.setdefault(n, {'nm': info['nm'], 'cc': cc_de(info), 'st': '', 'e': 'n'})
-            top = None if cargo in MAJORITARIOS else a.top
-            dl, db, cob = agrega_detalhe(regs, ele, cargo, mapa_locais, mapa_secoes, nomes, fixo, top, mun_nome, uf, mun)
-            if cargo not in MAJORITARIOS:  # proporcionais: sem votos por seção (arquivo ficaria grande)
-                for loc in dl['locais']:
-                    for s in loc['por_secao']:
-                        s.pop('v', None)
-            fonte_mapa = next(iter(mapa_locais.values())).get('fonte') if mapa_locais else None
-            for d in (dl, db):
-                d['fonte'] = f'TSE — boletins de urna (resultados.tse.jus.br, {tse.ciclo}/arquivo-urna/{a.pleito})'
-                d['mapa'] = {'fonte': fonte_mapa, 'cobertura': dict(cob)}
-            grava_json(os.path.join(saida, f'{uf}{mun}-c{cargo}-locais.json'), dl)
-            grava_json(os.path.join(saida, f'{uf}{mun}-c{cargo}-bairros.json'), db)
+            dl, db, cob = grava_detalhe(cli, tse, regs, ele, uf, mun, cargo, fixo, mun_nome, a.mapa, a.pleito, a.top, saida)
             print(f'  -> {uf}{mun}-c{cargo}-locais.json ({len(dl["locais"])} locais) e -bairros.json '
                   f'({len(db["bairros"])} bairros); cobertura do mapa: {dict(cob)}')
     grava_json(os.path.join(saida, 'resumo.json'), resumo)
@@ -1135,12 +1237,13 @@ def cmd_pagina(a, cli):
         ele = ele_de(cargo)
         abr, placar = [], []
         alvos = (['br'] + ufs) if cargo == '0001' else ufs
-        res = dict(cli.mapa(lambda u: cli.json(tse.r(ele, u, cargo)), alvos))
+        res = dict(cli.mapa(lambda u: resultado_uf(cli, tse, ele, u, cargo), alvos))
         for u in alvos:
-            r = res.get(u)
-            if not r or isinstance(r, Exception) or not r.get('cand'):
+            x = res.get(u)
+            if not x or isinstance(x, Exception) or x[0] is None:
                 continue
-            d = resultado_r(r)
+            d, r = x
+            d.pop('final', None)
             grava_json(os.path.join(out, f'{u}-c{cargo}.json'), d)
             n_arq += 1
             abr.append(u)
@@ -1157,7 +1260,8 @@ def cmd_pagina(a, cli):
             if u not in abr:
                 continue
             muns = nomes_municipios(cli, tse, ele, u)
-            uf_r = res.get('br' if cargo == '0001' else u) or {}
+            x = res.get('br' if cargo == '0001' else u)
+            uf_r = x[1] if x and not isinstance(x, Exception) and x[1] else {}
             ccn = {c['n']: c for c in uf_r.get('cand', [])}
 
             def um(cd, u=u, ele=ele, cargo=cargo, ccn=ccn, muns=muns):
@@ -1180,31 +1284,17 @@ def cmd_pagina(a, cli):
         print(f'cargo {cargo}: {len(abr)} abrangências, placar {len(placar)} UFs  [{cli.resumo()}]', file=sys.stderr)
     # bairros / locais (varredura de seções)
     if a.bairros and a.pleito:
-        mapa_locais, mapa_secoes = le_mapa(a.mapa)
         uf = a.bairros_uf
         for mun in a.bairros.split(','):
-            regs, erros, dur = varre(cli, tse, a.pleito, uf, mun, None, False, progresso=False)
+            regs, erros, dur = varre(cli, tse, a.pleito, uf, mun, None, False, progresso=False,
+                                     so_pendentes=not a.rechecar_totalizadas)
             print(f'seções {uf}{mun}: {len(regs)} em {dur:.1f} s ({len(erros)} erros)', file=sys.stderr)
             for cargo in cargos:
                 ele = ele_de(cargo)
                 v, fixo, _ = busca_municipio(cli, tse, ele, uf, mun, cargo, fixos)
                 muns = nomes_municipios(cli, tse, ele, uf)
-                uf_r = cli.json(tse.r(ele, 'br' if cargo == '0001' else uf, cargo)) or {}
-                nomes = {c['n']: {'nm': _u(c.get('nm')), 'cc': _u(c.get('cc')), 'st': c.get('st'),
-                                  'e': (c.get('e') or 'n').lower()} for c in uf_r.get('cand', [])}
-                top = None if cargo in MAJORITARIOS else a.top
-                dl, db, cob = agrega_detalhe(regs, ele, cargo, mapa_locais, mapa_secoes, nomes, fixo, top,
-                                             muns.get(mun, {}).get('nm', mun), uf, mun)
-                if cargo not in MAJORITARIOS:
-                    for loc in dl['locais']:
-                        for s in loc['por_secao']:
-                            s.pop('v', None)
-                fonte_mapa = next(iter(mapa_locais.values())).get('fonte') if mapa_locais else None
-                for d in (dl, db):
-                    d['fonte'] = f'TSE — boletins de urna ({tse.ciclo}/arquivo-urna/{a.pleito})'
-                    d['mapa'] = {'fonte': fonte_mapa, 'cobertura': dict(cob)}
-                grava_json(os.path.join(out, f'{uf}{mun}-c{cargo}-locais.json'), dl)
-                grava_json(os.path.join(out, f'{uf}{mun}-c{cargo}-bairros.json'), db)
+                grava_detalhe(cli, tse, regs, ele, uf, mun, cargo, fixo, muns.get(mun, {}).get('nm', mun), a.mapa,
+                              a.pleito, a.top, out)
                 n_arq += 2
                 indice_bairros.setdefault(cargo, []).append(f'{uf}{mun}')
     ele_r = cli.json(tse.r(a.estadual, (ufs or ['mt'])[0], cargos[-1])) or {}
@@ -1243,6 +1333,8 @@ def main(argv=None):
     s.add_argument('--mapa', default=MAPA_PADRAO, help='CSV local de votação -> bairro')
     s.add_argument('--top', type=int, default=30, help='candidatos por local/bairro nos cargos proporcionais')
     s.add_argument('--incluir-recebidas', action='store_true', help='usa BUs recebidos ainda não totalizados')
+    s.add_argument('--rechecar-totalizadas', action='store_true',
+                   help='pergunta de novo ao TSE (ETag) também pelas seções já totalizadas no cache')
     s.add_argument('--saida')
     lo = sp.add_parser('locais', help='mapa local de votação -> bairro a partir do dataset do TSE')
     lo.add_argument('--entrada', required=True, help='eleitorado_local_votacao_<ano>.zip|.csv (TSE) ou espelho .json/URL')
@@ -1268,6 +1360,8 @@ def main(argv=None):
     pg.add_argument('--nome', help="nome da eleição no indice.json (com 'SIMULAÇÃO' a página mostra o aviso de demonstração)")
     pg.add_argument('--status', default='apurando')
     pg.add_argument('--motivo')
+    pg.add_argument('--rechecar-totalizadas', action='store_true')
+    pg.add_argument('--repetir', type=float, default=0, help='regera a cada N segundos (0 = uma vez)')
     pg.add_argument('--saida', required=True)
     a = p.parse_args(argv)
     if a.cmd == 'locais':
@@ -1277,8 +1371,23 @@ def main(argv=None):
         ano = int(getattr(a, 'ano', 0) or 0)
         rev = float('inf') if ano and ano < dt.date.today().year else 0.0
     cli = Cliente(a.cache, a.conexoes, revalidar=rev, offline=a.offline)
+    cmd = {'config': cmd_config, 'municipio': cmd_municipio, 'secoes': cmd_secoes, 'pagina': cmd_pagina}[a.cmd]
     try:
-        {'config': cmd_config, 'municipio': cmd_municipio, 'secoes': cmd_secoes, 'pagina': cmd_pagina}[a.cmd](a, cli)
+        while True:
+            try:
+                cmd(a, cli)
+            except ErroTSE as e:
+                dica = (' — o ambiente "simulado" do TSE só responde nas janelas de teste'
+                        if a.ambiente == 'simulado' else '')
+                print(f'ERRO: {e}{dica}', file=sys.stderr)
+                if not getattr(a, 'repetir', 0):
+                    sys.exit(2)
+            if not getattr(a, 'repetir', 0):
+                break
+            print(f'[{agora()}] próxima rodada em {a.repetir:.0f} s', file=sys.stderr)
+            time.sleep(a.repetir)
+    except KeyboardInterrupt:
+        sys.exit(130)
     finally:
         cli.pool.shutdown(wait=False, cancel_futures=True)
 
