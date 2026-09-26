@@ -1,9 +1,9 @@
 {
   "spec": "/home/user/comenta/content/pautas/videos/argos/2026-09-26-boletim-01.cena.json",
   "saida": "/home/user/comenta/content/pautas/videos/argos/2026-09-26-boletim-01.mp4",
-  "gerado_em": "2026-09-26T00:45:50.349Z",
-  "duracao": 75.72,
-  "duracao_total": 75.72,
+  "gerado_em": "2026-09-26T01:37:31.045Z",
+  "duracao": 80.72,
+  "duracao_total": 80.72,
   "limite_duracao": 120,
   "resolucao": "1080x1920",
   "fps": 25,
@@ -21,8 +21,8 @@
   },
   "credito_musica": "Música: \"Windswept\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
   "voz": {
-    "motor": "piper",
-    "narrador": "pt_BR-faber-medium",
+    "motor": "kokoro",
+    "narrador": "pm_santa",
     "velocidade": 1,
     "personagem": null
   },
@@ -36,57 +36,57 @@
       "voz": "sintetica",
       "movimento": "zoom-in",
       "inicio": 2.5,
-      "duracao_audio": 9.46,
-      "duracao": 9.91
+      "duracao_audio": 9.49,
+      "duracao": 9.94
     },
     {
       "n": 2,
       "quem": "narrador",
       "voz": "sintetica",
       "movimento": "zoom-in",
-      "inicio": 12.41,
-      "duracao_audio": 15.16,
-      "duracao": 15.61
+      "inicio": 12.44,
+      "duracao_audio": 15.91,
+      "duracao": 16.36
     },
     {
       "n": 3,
       "quem": "narrador",
       "voz": "sintetica",
       "movimento": "zoom-out",
-      "inicio": 28.02,
-      "duracao_audio": 10.44,
-      "duracao": 10.89
+      "inicio": 28.8,
+      "duracao_audio": 11.69,
+      "duracao": 12.14
     },
     {
       "n": 4,
       "quem": "narrador",
       "voz": "sintetica",
       "movimento": "zoom-in",
-      "inicio": 38.91,
-      "duracao_audio": 9.63,
-      "duracao": 10.08
+      "inicio": 40.94,
+      "duracao_audio": 10.32,
+      "duracao": 10.77
     },
     {
       "n": 5,
       "quem": "narrador",
       "voz": "sintetica",
       "movimento": "zoom-out",
-      "inicio": 48.99,
-      "duracao_audio": 11.5,
-      "duracao": 11.95
+      "inicio": 51.71,
+      "duracao_audio": 12.65,
+      "duracao": 13.1
     },
     {
       "n": 6,
       "quem": "narrador",
       "voz": "sintetica",
       "movimento": "zoom-out",
-      "inicio": 60.94,
-      "duracao_audio": 11.25,
-      "duracao": 11.7
+      "inicio": 64.81,
+      "duracao_audio": 12.39,
+      "duracao": 12.84
     }
   ],
   "fechamento": {
-    "inicio": 72.64,
+    "inicio": 77.65,
     "duracao": 3
   }
 }

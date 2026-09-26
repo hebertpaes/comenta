@@ -60,7 +60,9 @@
 // (mesma detecção de reel.mjs: FFMPEG, binário do imageio-ffmpeg ou PATH;
 // precisa de libass + zoompan + loudnorm; NÃO usa drawtext); Piper TTS
 // (`python3 -m piper`) com as vozes em $HOJEMT_VOZES
-// (padrão /root/.local/share/hojemt-vozes); gTTS como reserva.
+// (padrão /root/.local/share/hojemt-vozes); gTTS como reserva. Motor "kokoro"
+// (voz do Argos, mais natural): Kokoro-82M em $HOJEMT_VOZES/kokoro, instalado
+// por vozes-kokoro.sh; narrador = nome da voz (pm_santa, pm_alex, pf_dora).
 // Fontes: assets/fonts (Anton, Roboto Condensed) via fontconfig gerado em
 // tempo de execução — o mesmo truque de lib/card.mjs.
 import { spawnSync } from "node:child_process";
@@ -360,6 +362,15 @@ const motoresVoz = {
     }
     return destino;
   },
+  kokoro(texto, { modelo = "pm_santa", velocidade = 1, destino }) {
+    const r = spawnSync("python3", [join(aqui, "lib", "kokoro-tts.py"), "--voz", modelo, "--velocidade", String(Number(velocidade) || 1), "--saida", destino], {
+      input: pronuncia(texto),
+      encoding: "utf8",
+      env: { ...process.env, HOJEMT_VOZES: VOZES_DIR },
+    });
+    if (r.status !== 0) throw new Error(`Kokoro falhou: ${r.stderr.trim().split("\n").slice(-2).join(" | ")}`);
+    return destino;
+  },
   gtts(texto, { destino }) {
     const mp3 = destino.replace(/\.wav$/, ".mp3");
     const py = "import sys\nfrom gtts import gTTS\ngTTS(sys.stdin.read(), lang='pt', tld='com.br').save(sys.argv[1])\n";
@@ -375,10 +386,22 @@ const motoresVoz = {
   },
 };
 
+/** Grafia só para a síntese (a legenda continua com a grafia certa). */
+const PRONUNCIA = [
+  [/\bPivetta\b/g, "Pivéta"],
+  [/\bWellington\b/g, "Uélinton"],
+  [/\bDatafolha\b/g, "Data Folha"],
+  [/\bAtlasIntel\b/g, "Átlas Intel"],
+  [/\bJanaina\b/g, "Janaína"],
+];
+function pronuncia(texto) {
+  return PRONUNCIA.reduce((t, [de, para]) => t.replace(de, para), texto.trim());
+}
+
 /** Sintetiza uma fala; com Piper indisponível, cai para o gTTS avisando. */
 function sintetizar(texto, { motor = "piper", modelo, velocidade, destino }) {
   const fn = motoresVoz[motor];
-  if (!fn) throw new Error(`motor de voz desconhecido: ${motor} (use piper, gtts, elevenlabs ou heygen)`);
+  if (!fn) throw new Error(`motor de voz desconhecido: ${motor} (use kokoro, piper, gtts, elevenlabs ou heygen)`);
   try {
     return fn(texto, { modelo, velocidade, destino });
   } catch (e) {

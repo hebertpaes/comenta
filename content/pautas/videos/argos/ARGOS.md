@@ -12,13 +12,23 @@ sugestivo e intrigante").
   HOJE MT, criado com inteligência artificial."
 - **Personagem fictício.** Não imita nem lembra pessoa real. Não tem biografia
   inventada (não "cobriu" nada antes, não tem família, não dá opinião pessoal).
-- **Avatar:** animação 3D gerada no Canva (media `MAHWQKGqrGo`, quadro 9:16
-  `DAHWQFrXvyA`): paletó verde-floresta, broche de tuiuiú, crachá de imprensa em
-  branco, estúdio com o Pantanal ao pôr do sol. Arquivos nesta pasta:
-  `argos-veredas-avatar-9x16.jpg`, `-1x1.jpg`, `-240.jpg`.
-- **Voz:** Piper, modelo `pt_BR-faber-medium` (voz sintética genérica, não é
-  clone de ninguém). Nunca usar voz sintética de pessoa real (Res. TSE
+- **Avatar:** foto realista gerada com IA no Canva em 26/09 a pedido do editor
+  ("deixe o avatar realista"): media `MAHWQY-1ml4`, quadro 9:16 `DAHWQcr_4U0`.
+  Paletó verde-floresta, broche de tuiuiú, crachá de imprensa em branco,
+  estúdio com o Pantanal ao pôr do sol. Rosto inventado, que não imita
+  ninguém. Arquivos nesta pasta: `argos-veredas-avatar-9x16.jpg`, `-1x1.jpg`,
+  `-240.jpg`. A versão 3D anterior (media `MAHWQKGqrGo`, quadro `DAHWQFrXvyA`)
+  fica no histórico do git.
+- **Voz:** Kokoro-82M (Apache-2.0), voz `pm_santa`, em português do Brasil:
+  `"voz": {"motor": "kokoro", "narrador": "pm_santa"}` no roteiro; instalar uma
+  vez com `bash vozes-kokoro.sh`. Trocou a Piper `pt_BR-faber-medium` em 26/09
+  (mais grave e com entonação mais natural). É voz sintética genérica, não é
+  clone de ninguém. Nunca usar voz sintética de pessoa real (Res. TSE
   23.610/2019, art. 9º-C).
+- **Boca e expressões (pendente):** o vídeo ainda usa a foto parada com zoom.
+  Para o Argos falar com movimento de boca e expressões, o caminho previsto é
+  o HeyGen pelo Zapier (foto do avatar + o áudio do Kokoro), assim que a conta
+  do HeyGen for conectada. Sempre com o aviso de IA na tela.
 
 ## Regras (valem para vídeo, áudio, texto e Radar)
 
