@@ -626,6 +626,28 @@
       "credito_fonte": "mantido na legenda: 'Com informações da Prefeitura de Primavera do Leste' (link da nota original), que estava na capa genérica",
       "feito_em": "2026-09-25",
       "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
+    },
+    {
+      "slug": "lider-do-pcc-e-preso-na-bolivia-e-levado-ao-brasil",
+      "titulo": "Líder do PCC é preso na Bolívia e levado ao Brasil",
+      "materia": "https://hojemt.com.br/lider-do-pcc-e-preso-na-bolivia-e-levado-ao-brasil/",
+      "tag": "Polícia",
+      "canva": {
+        "design": "DAHWQY2fzI4",
+        "arte": "MAHWQahtFsY",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "fim de tarde num pátio de aeroporto regional perto da fronteira com a Bolívia: pequeno avião bimotor branco e liso, sem inscrições, com a escada aberta; três agentes de colete escuro liso, sem distintivo, caminham de costas em direção ao avião; cerrado verde, morros baixos e céu alaranjado; sem pessoa detida, sem armas à mostra, sem violência",
+      "alt": "Ilustração (ficção): agentes de costas caminham ao entardecer em direção a um pequeno avião numa pista cercada de cerrado",
+      "arquivo": "pautas/ilustracoes/2026-09-26-pcc-lider-preso-bolivia.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-26-pcc-lider-preso-bolivia.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-26-pcc-lider-preso-bolivia-og.jpg",
+      "capa_anterior": "capa-8ab7db66b6aa1124.webp",
+      "obs": "Parte B: a fonte (Agência Brasil) não tem foto própria da matéria (só miniatura genérica); matéria policial: cena sóbria, sem retratar o preso nem a fuga armada; todos de costas, nenhum rosto visível; sem letras legíveis nem logos",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção) · Com informações da <a href=\"https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/lider-do-pcc-e-preso-na-bolivia-e-transferido-para-sao-paulo\" rel=\"nofollow noopener\">Agência Brasil</a>",
+      "credito_fonte": "mantido na legenda: \"Com informações da Agência Brasil\" (link da matéria original), que estava na capa genérica",
+      "feito_em": "2026-09-26",
+      "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
     }
   ]
 }
