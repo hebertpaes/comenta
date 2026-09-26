@@ -626,6 +626,79 @@
         }
       ],
       "fonte_fotos": "TSE (registro de candidatura), espelho https://ndmais.com.br/eleicoes/2026/candidatos/rn/governador/"
+    },
+    {
+      "nome": "Candidatos ao governo — Distrito Federal (16:9)",
+      "design": "DAHWSykr4CY",
+      "modelo": "DAHWH1j1gbI",
+      "arquivo": "pautas/eleicoes/2026-09-26-candidatos-governo-df.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-26-candidatos-governo-df.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Cappelli",
+          "partido": "PSB",
+          "canva": "MAHWS-P6Olc",
+          "sq": "70002551557"
+        },
+        {
+          "nome_urna": "Celina Leão",
+          "partido": "PP",
+          "canva": "MAHWS5aORuo",
+          "sq": "70002553055"
+        },
+        {
+          "nome_urna": "Elisson",
+          "partido": "Agir",
+          "canva": "MAHWS3TKdfE",
+          "sq": "70002551298"
+        },
+        {
+          "nome_urna": "Expedito Mendonça",
+          "partido": "PCO",
+          "canva": "MAHWS-_oEI8",
+          "sq": "70002552341"
+        },
+        {
+          "nome_urna": "Kiko Caputo",
+          "partido": "Novo",
+          "canva": "MAHWSxdRi8U",
+          "sq": "70002547775"
+        },
+        {
+          "nome_urna": "Leandro Grass",
+          "partido": "PT",
+          "canva": "MAHWS1IuukU",
+          "sq": "70002552496"
+        },
+        {
+          "nome_urna": "Paula Belmonte",
+          "partido": "PSDB",
+          "canva": "MAHWS6yU_28",
+          "sq": "70002552965"
+        },
+        {
+          "nome_urna": "Professor Robson",
+          "partido": "PSTU",
+          "canva": "MAHWS83bW7U",
+          "sq": "70002535930"
+        },
+        {
+          "nome_urna": "Professora Samara Mineiro",
+          "partido": "UP",
+          "canva": "MAHWS4yeYbs",
+          "sq": "70002537111"
+        },
+        {
+          "nome_urna": "Rico Pinheiro",
+          "partido": "PRTB",
+          "canva": "MAHWS62yO_U",
+          "sq": "70002553982"
+        }
+      ],
+      "fonte_fotos": "TSE (registro de candidatura), espelho https://ndmais.com.br/eleicoes/2026/candidatos/df/governador/",
+      "obs": "11 registros no espelho; Arruda (PSD) indeferido, fora da arte. Elisson (Agir) e Rico Pinheiro (PRTB) sem situação publicada no espelho em 26/09 (não indeferidos), mantidos."
     }
   ],
   "posts_atualizados": [
@@ -719,6 +792,14 @@
       "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-presidente-br-1-og.jpg",
       "feito_em": "2026-09-26",
       "obs": "post sem a tag eleicoes (só Política), mas é disputa presidencial com capa genérica: aplicada a montagem pronta da Presidência, como na matéria-irmã de 25/09; legenda mantém o crédito da Agência Brasil"
+    },
+    {
+      "slug": "df-2026-10-candidatos-disputam-a-governadoria-do-distrito-federal",
+      "antes": "capa-bea897f53b48f493.webp",
+      "depois": "2026-09-26-candidatos-governo-df.jpg (montagem DAHWSykr4CY, 10 candidatos)",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-26-candidatos-governo-df-og.jpg",
+      "feito_em": "2026-09-26",
+      "obs": "a matéria diz 'dez nomes' mas lista só oito: omite Cappelli (PSB) e Elisson (Agir), que estão na arte; as legendas de partido da matéria usam nomes de coligação/federação (ex.: Celina Leão 'Propósito e Ação')"
     }
   ],
   "mantidos": [
