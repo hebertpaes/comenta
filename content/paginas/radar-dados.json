@@ -2391,7 +2391,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "26/09/2026",
+  "atualizado": "25/09/2026 21:53",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -2709,6 +2709,27 @@
       "papel": "pedido"
      },
      {
+      "data": "2026-09-24",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juíza auxiliar)",
+      "resumo": "A pedido de Mauro Mendes, foi concedido direito de resposta de um minuto na TV Pantanal e nas plataformas digitais da emissora, por falas de Taques em entrevista que atribuíam crimes a Mauro sem condenação ou acusação formal.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/tre-garante-a-mauro-direito-de-resposta-contra-acusacoes-de-taques-sobre-roubo-e-caso-master",
+        "2026-09-24"
+       ],
+       [
+        "24 Horas MT",
+        "https://24horasmt.com.br/politica-mt/justica-da-direito-de-resposta-a-mauro-e-multa-taques-em-r-10-mil/",
+        "2026-09-24"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
       "data": "2026-09-23",
       "tipo": "acao_em_andamento",
       "orgao": "TRE-MT (juiz auxiliar)",
@@ -2927,6 +2948,27 @@
       "papel": "contra"
      },
      {
+      "data": "2026-09-10",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "A pedido da coligação de Wellington, Pivetta foi multado em R$ 5 mil por propaganda antecipada negativa em entrevista coletiva de 15/8; o juiz liberou a reportagem do MidiaNews com as falas, que tinha sido retirada por liminar.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/juiz-revoga-censura-ao-midianews-e-condena-pivetta-a-r-5-mil/528949",
+        "2026-09-11"
+       ],
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/tre-mt-condena-pivetta-por-propaganda-negativa-contra-wellington-mas-libera-materia-do-portal-midianews",
+        "2026-09-11"
+       ]
+      ],
+      "papel": "contra"
+     },
+     {
       "data": "2026-09-03",
       "tipo": "decisao",
       "orgao": "TRE-MT (liminar)",
@@ -3106,6 +3148,27 @@
         "Poconet",
         "http://www.poconet.com.br/noticia/ler/coligacao-pede-cassacao-de-taques-e-inelegibilidade-por-8-anos-por-ataques-a-mauro/46390",
         ""
+       ]
+      ],
+      "papel": "contra"
+     },
+     {
+      "data": "2026-09-24",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juíza auxiliar)",
+      "resumo": "A pedido de Mauro Mendes, foi concedido direito de resposta de um minuto na TV Pantanal e nas plataformas digitais da emissora, por falas de Taques em entrevista que atribuíam crimes a Mauro sem condenação ou acusação formal.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/tre-garante-a-mauro-direito-de-resposta-contra-acusacoes-de-taques-sobre-roubo-e-caso-master",
+        "2026-09-24"
+       ],
+       [
+        "24 Horas MT",
+        "https://24horasmt.com.br/politica-mt/justica-da-direito-de-resposta-a-mauro-e-multa-taques-em-r-10-mil/",
+        "2026-09-24"
        ]
       ],
       "papel": "contra"
@@ -3429,6 +3492,27 @@
         "FTN Brasil",
         "https://ftnbrasil.com.br/juiz-auxiliar-do-tre-manda-retirar-propaganda-de-otaviano-pivetta-com-prefeitos-do-pl/",
         "2026-09-21"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-10",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "A pedido da coligação de Wellington, Pivetta foi multado em R$ 5 mil por propaganda antecipada negativa em entrevista coletiva de 15/8; o juiz liberou a reportagem do MidiaNews com as falas, que tinha sido retirada por liminar.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/juiz-revoga-censura-ao-midianews-e-condena-pivetta-a-r-5-mil/528949",
+        "2026-09-11"
+       ],
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/tre-mt-condena-pivetta-por-propaganda-negativa-contra-wellington-mas-libera-materia-do-portal-midianews",
+        "2026-09-11"
        ]
       ],
       "papel": "pedido"
