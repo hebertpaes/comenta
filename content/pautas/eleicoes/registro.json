@@ -699,6 +699,116 @@
       ],
       "fonte_fotos": "TSE (registro de candidatura), espelho https://ndmais.com.br/eleicoes/2026/candidatos/df/governador/",
       "obs": "11 registros no espelho; Arruda (PSD) indeferido, fora da arte. Elisson (Agir) e Rico Pinheiro (PRTB) sem situação publicada no espelho em 26/09 (não indeferidos), mantidos."
+    },
+    {
+      "nome": "Candidatos ao governo — Mato Grosso do Sul (16:9)",
+      "design": "DAHWTNbp7og",
+      "modelo": "DAHWH1j1gbI",
+      "arquivo": "pautas/eleicoes/2026-09-26-candidatos-governo-ms.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-26-candidatos-governo-ms.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Daniel Lemes",
+          "partido": "PCO",
+          "canva": "MAHWTPcJqkg",
+          "sq": "120002552201"
+        },
+        {
+          "nome_urna": "Delcidio Amaral",
+          "partido": "PRD",
+          "canva": "MAHWTDIVR_I",
+          "sq": "120002552155"
+        },
+        {
+          "nome_urna": "Economista Renato Gomes",
+          "partido": "DC",
+          "canva": "MAHWTIAcKpc",
+          "sq": "120002549681"
+        },
+        {
+          "nome_urna": "Eduardo Riedel",
+          "partido": "PP",
+          "canva": "MAHWTLD3mIU",
+          "sq": "120002536582"
+        },
+        {
+          "nome_urna": "Fábio Trad",
+          "partido": "PT",
+          "canva": "MAHWTJ1vlpE",
+          "sq": "120002539834"
+        },
+        {
+          "nome_urna": "Jeferson Bezerra",
+          "partido": "Agir",
+          "canva": "MAHWTF3eZbM",
+          "sq": "120002550198"
+        },
+        {
+          "nome_urna": "João Henrique Catan",
+          "partido": "Novo",
+          "canva": "MAHWTBIbM3o",
+          "sq": "120002552191"
+        },
+        {
+          "nome_urna": "Lucien Rezende",
+          "partido": "PSOL",
+          "canva": "MAHWTMk0qKU",
+          "sq": "120002532257"
+        }
+      ],
+      "fonte_fotos": "TSE (registro de candidatura), espelho https://ndmais.com.br/eleicoes/2026/candidatos/ms/governador/",
+      "obs": "8 candidatos no espelho em 26/09; ordem alfabética por nome de urna."
+    },
+    {
+      "nome": "Candidatos ao governo — Goiás (16:9)",
+      "design": "DAHWTO2pThY",
+      "modelo": "DAHWH1j1gbI",
+      "arquivo": "pautas/eleicoes/2026-09-26-candidatos-governo-go.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-26-candidatos-governo-go.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Daniel Vilela",
+          "partido": "MDB",
+          "canva": "MAHWTGkw9UQ",
+          "sq": "90002540993"
+        },
+        {
+          "nome_urna": "Danilo da Silva",
+          "partido": "PCO",
+          "canva": "MAHWTFqRMr4",
+          "sq": "90002553733"
+        },
+        {
+          "nome_urna": "Luciana Amorim",
+          "partido": "UP",
+          "canva": "MAHWTPmcrYI",
+          "sq": "90002550707"
+        },
+        {
+          "nome_urna": "Luis Cesar Bueno",
+          "partido": "PT",
+          "canva": "MAHWTPCTe8s",
+          "sq": "90002545476"
+        },
+        {
+          "nome_urna": "Marconi Perillo",
+          "partido": "PSDB",
+          "canva": "MAHWTNx5jG4",
+          "sq": "90002543463"
+        },
+        {
+          "nome_urna": "Wilder Morais",
+          "partido": "PL",
+          "canva": "MAHWTIbFs2I",
+          "sq": "90002551791"
+        }
+      ],
+      "fonte_fotos": "TSE (registro de candidatura), espelho https://ndmais.com.br/eleicoes/2026/candidatos/go/governador/",
+      "obs": "6 candidatos no espelho em 26/09; ordem alfabética por nome de urna. Enquadramento de Danilo da Silva e Marconi Perillo subido para a faixa do nome não cobrir o rosto."
     }
   ],
   "posts_atualizados": [
@@ -800,6 +910,30 @@
       "og": "https://hojemt.com.br/content/images/2026/09/2026-09-26-candidatos-governo-df-og.jpg",
       "feito_em": "2026-09-26",
       "obs": "a matéria diz 'dez nomes' mas lista só oito: omite Cappelli (PSB) e Elisson (Agir), que estão na arte; as legendas de partido da matéria usam nomes de coligação/federação (ex.: Celina Leão 'Propósito e Ação')"
+    },
+    {
+      "slug": "seis-candidatos-se-apresentam-ao-governo-de-mato-grosso-nas-eleicoes-de-2026",
+      "antes": "capa-3949d614e16302d9.webp",
+      "depois": "2026-09-24-candidatos-governo-mt-3.jpg (arte pronta 'Candidatos ao Governo de MT (16:9)', 6 candidatos)",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-24-candidatos-governo-mt-3-og.jpg",
+      "feito_em": "2026-09-26",
+      "obs": "o texto cita os 6 candidatos da arte"
+    },
+    {
+      "slug": "ms-tem-oito-candidatos-ao-governo-nas-eleicoes-de-2026",
+      "antes": "capa-42cd899bbd7abbb8.webp",
+      "depois": "2026-09-26-candidatos-governo-ms.jpg (montagem DAHWTNbp7og, 8 candidatos)",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-26-candidatos-governo-ms-og.jpg",
+      "feito_em": "2026-09-26",
+      "obs": "o texto cita os 8 candidatos da arte"
+    },
+    {
+      "slug": "goias-tem-seis-candidatos-a-governadoria-nas-eleicoes-de-2026",
+      "antes": "capa-5e11be6a0d6b9d71.webp",
+      "depois": "2026-09-26-candidatos-governo-go.jpg (montagem DAHWTO2pThY, 6 candidatos)",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-26-candidatos-governo-go-og.jpg",
+      "feito_em": "2026-09-26",
+      "obs": "o texto cita os 6 candidatos da arte"
     }
   ],
   "mantidos": [

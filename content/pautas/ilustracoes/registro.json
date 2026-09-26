@@ -648,6 +648,27 @@
       "credito_fonte": "mantido na legenda: \"Com informações da Agência Brasil\" (link da matéria original), que estava na capa genérica",
       "feito_em": "2026-09-26",
       "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
+    },
+    {
+      "slug": "lula-big-tech-e-a-soberania-o-que-mato-grosso-precisa-saber",
+      "titulo": "Lula, Big Tech e a Soberania: O que Mato Grosso Precisa Saber",
+      "materia": "https://hojemt.com.br/lula-big-tech-e-a-soberania-o-que-mato-grosso-precisa-saber/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHWTI3x3ro",
+        "arte": "MAHWTBd6YiU",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "produtor rural de chapéu, de costas, sentado na caçamba de uma caminhonete, olha o celular diante de uma lavoura de soja ao pôr do sol; no horizonte, torres de dados e linhas de conexão; sem rosto visível, sem letras legíveis nem logos",
+      "alt": "Ilustração (ficção): produtor rural de costas, sentado na caçamba de uma caminhonete, olha o celular diante de uma lavoura de soja ao pôr do sol; no horizonte, torres de dados e linhas de conexão",
+      "arquivo": "pautas/ilustracoes/2026-09-26-lula-big-tech.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-26-lula-big-tech.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-26-lula-big-tech-og.jpg",
+      "capa_anterior": "opiniao-1790424978.webp",
+      "obs": "artigo de opinião sobre a influência das big techs nas eleições; cena genérica do eleitor do agro diante da tecnologia, sem retratar Lula nem qualquer pessoa real; sem logotipo de empresa",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "feito_em": "2026-09-26",
+      "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
     }
   ]
 }
