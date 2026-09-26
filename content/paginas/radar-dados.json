@@ -2391,7 +2391,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "25/09/2026 23:25",
+  "atualizado": "26/09/2026 04:46",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -2849,6 +2849,27 @@
       "papel": "pedido"
      },
      {
+      "data": "2026-09-25",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (liminar)",
+      "resumo": "A pedido de Janaina Riva, liminar mandou Medeiros retirar em 24 horas vídeo de 23/9 com trechos editados de um vídeo dela sobre a divisão do tempo de propaganda; o juiz considerou o conteúdo descontextualizado por sugerir que ela escolheu o ministro Alexandre de Moraes para o caso. Multa diária de R$ 5 mil.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/medeiros-mente-que-janaina-escolheu-moraes-para-equilibrar-tempo-de-propaganda-e-juiz-manda-retirar-video-do-ar",
+        "2026-09-25"
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/politica/medeiros-acumula-cinco-decisoes-desfavoraveis-no-tre-mt-em-apenas-dois-dias/35558",
+        "2026-09-25"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
       "data": "2026-09-24",
       "tipo": "decisao",
       "orgao": "TRE-MT (mandado de segurança)",
@@ -2896,6 +2917,27 @@
         "Olhar Direto",
         "https://www.olhardireto.com.br/juridico/noticias/tre-libera-video-de-humorista-com-janaina-e-jose-riva-dancando-segura-o-tchan-na-almt",
         "2026-09-24"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-24",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (liminar)",
+      "resumo": "A pedido de Janaina Riva, liminar proibiu novo impulsionamento pago de vídeo de Medeiros com trechos do debate da TV Guaporé de 18/9 com críticas a ela, sob multa de R$ 10 mil por contratação; foi negada a retirada da publicação, que pode continuar no ar sem impulsionamento.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/tre-proibe-medeiros-de-impulsionar-video-com-criticas-a-janaina-riva-mas-mantem-publicacao-organica",
+        ""
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/politica/medeiros-acumula-cinco-decisoes-desfavoraveis-no-tre-mt-em-apenas-dois-dias/35558",
+        "2026-09-25"
        ]
       ],
       "papel": "pedido"
@@ -5836,6 +5878,48 @@
       "papel": "contra"
      },
      {
+      "data": "2026-09-25",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (liminar)",
+      "resumo": "A pedido de Janaina Riva, liminar mandou Medeiros retirar em 24 horas vídeo de 23/9 com trechos editados de um vídeo dela sobre a divisão do tempo de propaganda; o juiz considerou o conteúdo descontextualizado por sugerir que ela escolheu o ministro Alexandre de Moraes para o caso. Multa diária de R$ 5 mil.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/medeiros-mente-que-janaina-escolheu-moraes-para-equilibrar-tempo-de-propaganda-e-juiz-manda-retirar-video-do-ar",
+        "2026-09-25"
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/politica/medeiros-acumula-cinco-decisoes-desfavoraveis-no-tre-mt-em-apenas-dois-dias/35558",
+        "2026-09-25"
+       ]
+      ],
+      "papel": "contra"
+     },
+     {
+      "data": "2026-09-25",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "Medeiros pediu a retirada de reportagem e vídeo do Olhar Direto, de 22/9, com trecho de áudio de conversa dele com o prefeito de Diamantino, Chico Mendes. A liminar foi negada; falta o julgamento do mérito.",
+      "cabe_recurso": null,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/justica-nega-pedido-de-medeiros-para-censurar-reportagem-do-olhar-direto-com-audio-sobre-oracao-a-alienigena-e-detergente",
+        "2026-09-25"
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/politica/medeiros-acumula-cinco-decisoes-desfavoraveis-no-tre-mt-em-apenas-dois-dias/35558",
+        "2026-09-25"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
       "data": "2026-09-24",
       "tipo": "decisao",
       "orgao": "TRE-MT (mandado de segurança)",
@@ -5878,6 +5962,27 @@
         "Folhamax",
         "https://www.folhamax.com/politica/medeiros-e-acionado-no-tre-ao-tentar-lacrar-com-fake-news/573921",
         "2026-09-24"
+       ]
+      ],
+      "papel": "contra"
+     },
+     {
+      "data": "2026-09-24",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (liminar)",
+      "resumo": "A pedido de Janaina Riva, liminar proibiu novo impulsionamento pago de vídeo de Medeiros com trechos do debate da TV Guaporé de 18/9 com críticas a ela, sob multa de R$ 10 mil por contratação; foi negada a retirada da publicação, que pode continuar no ar sem impulsionamento.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/tre-proibe-medeiros-de-impulsionar-video-com-criticas-a-janaina-riva-mas-mantem-publicacao-organica",
+        ""
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/politica/medeiros-acumula-cinco-decisoes-desfavoraveis-no-tre-mt-em-apenas-dois-dias/35558",
+        "2026-09-25"
        ]
       ],
       "papel": "contra"
