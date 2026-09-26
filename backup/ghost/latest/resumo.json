@@ -1,12 +1,12 @@
 {
-  "gerado_em": "2026-09-26T00:15:50.554Z",
+  "gerado_em": "2026-09-26T06:10:50.735Z",
   "site": "https://hojemt.com.br/",
-  "posts": 1520,
-  "publicados": 1465,
-  "rascunhos": 55,
+  "posts": 1524,
+  "publicados": 1467,
+  "rascunhos": 57,
   "pages": 8,
   "tags": 20,
   "users": 2,
-  "imagens": 3014,
+  "imagens": 3022,
   "obs": "db/ e themes/ não são acessíveis à chave de integração; tema versionado em ghost/content/themes/hojemt"
 }

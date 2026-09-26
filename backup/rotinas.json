@@ -65,7 +65,7 @@
       "cron_utc": "41 * * * *",
       "cuiaba": "de hora em hora, aos 41 min",
       "fonte": "content/paginas/radar-dados.json",
-      "resumo": "Procura decisões e ações da Justiça Eleitoral sobre os 16 candidatos a governador e Senado de MT (só com fonte oficial ou dois veículos, com o papel de cada candidato), pesquisas registradas novas (PesqEle), movimentos dos grupos e corrige a análise de pontos fortes e fracos; embute os dados com radar-build.py, publica a página com pagina-ghost.mjs, commit e push. Desativa-se depois do fechamento das urnas em 4/10."
+      "resumo": "Procura decisões e ações da Justiça Eleitoral sobre os 16 candidatos a governador e Senado de MT (só com fonte oficial ou dois veículos, com o papel de cada candidato), pesquisas registradas novas (PesqEle), movimentos dos grupos e corrige a análise de pontos fortes e fracos; puxa a medição das APIs das redes (radar-redes-api.json), embute os dados com radar-build.py, publica a página com pagina-ghost.mjs, commit e push. Desativa-se depois do fechamento das urnas em 4/10."
     },
     {
       "id": "trig_01Ax3HrwPELnt6yYdiurSjrS",
@@ -73,7 +73,7 @@
       "cron_utc": "CRON_TZ=America/Cuiaba 52 6,17 * * *",
       "cuiaba": "06:52 e 17:52",
       "fonte": "content/pautas/videos/argos/",
-      "resumo": "Se houver fato novo e conferido, faz um boletim em vídeo (≤ 120 s) do repórter virtual Argos Veredas com charge-cena.mjs (voz Piper genérica, aviso de IA), hospeda, atualiza o boletim do Radar e deixa o vídeo na agenda do Instagram como aguardando_decisao."
+      "resumo": "Se houver fato novo e conferido, faz um boletim em vídeo (≤ 120 s) do repórter virtual Argos Veredas (avatar realista, duas poses alternadas em planos abertos e close) com charge-cena.mjs: voz do HeyGen pelo Zapier (\"Giles\") se houver créditos de API, senão Kokoro pm_santa (−1 semitom, 8% mais rápida); roteiro em tom de conversa, aviso de IA; hospeda, atualiza o boletim do Radar e deixa o vídeo na agenda do Instagram como aguardando_decisao."
     },
     {
       "id": "trig_019HLBXgy3Pv3YR8vqU5z47P",
