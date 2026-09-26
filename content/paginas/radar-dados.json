@@ -2304,8 +2304,10 @@
     "redes": [
      {
       "rede": "Instagram",
-      "seguidores": 373000,
-      "origem": "busca"
+      "seguidores": 380000,
+      "origem": "perfil_conferido",
+      "perfil": "https://www.instagram.com/mauromendesoficial/",
+      "conferido": "25/09/2026 21:14"
      },
      {
       "rede": "TikTok",
@@ -2318,7 +2320,7 @@
       "origem": "pagina_publica"
      }
     ],
-    "rede_mais_forte": "Instagram (~373 mil) e TikTok (164 mil, a maior conta de TikTok entre os 16 candidatos) são as maiores bases medidas."
+    "rede_mais_forte": "Instagram (380 mil no perfil verificado @mauromendesoficial, conferido em 25/9) e TikTok (164 mil, a maior conta de TikTok entre os 16 candidatos) são as maiores bases medidas."
    },
    {
     "nome": "Pedro Taques",
@@ -2386,7 +2388,7 @@
     "rede_mais_forte": "Instagram (332 mil no perfil verificado @zemedeiros.222, conferido em 25/9; o registro no TSE lista @senadorzemedeiros222) é a maior base; X (~227 mil) vem em seguida. É o 1º em interações no Instagram entre candidatos ao Senado no DX (127.253)."
    }
   ],
-  "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
+  "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
   "atualizado": "26/09/2026",
@@ -4578,7 +4580,7 @@
       ]
      ],
      [
-      "Maior base nas redes entre os 16 candidatos: cerca de 373 mil seguidores no Instagram e 164 mil no TikTok.",
+      "Maior base nas redes entre os 16 candidatos: 380 mil seguidores no Instagram (perfil verificado, conferido em 25/9) e 164 mil no TikTok.",
       [
        [
         "Instagram de Mauro",
