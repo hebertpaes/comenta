@@ -74,6 +74,15 @@
       "cuiaba": "06:52 e 17:52",
       "fonte": "content/pautas/videos/argos/",
       "resumo": "Se houver fato novo e conferido, faz um boletim em vídeo (≤ 120 s) do repórter virtual Argos Veredas com charge-cena.mjs (voz Piper genérica, aviso de IA), hospeda, atualiza o boletim do Radar e deixa o vídeo na agenda do Instagram como aguardando_decisao."
+    },
+    {
+      "id": "trig_019HLBXgy3Pv3YR8vqU5z47P",
+      "nome": "Radar — redes pelas APIs oficiais (2x/dia, até 4/10)",
+      "cron_utc": "CRON_TZ=America/Cuiaba 13 6,18 * * *",
+      "cuiaba": "06:13 e 18:13",
+      "sessao": "nova a cada disparo (lê as chaves das variáveis de ambiente)",
+      "fonte": "content/redes-api.mjs",
+      "resumo": "Roda redes-api.mjs (Instagram Business Discovery, Biblioteca de Anúncios da Meta, YouTube Data API, X API v2) e faz push de content/paginas/radar-redes-api.json; sem nenhuma chave, encerra sem commit. A rotina de hora em hora do Radar puxa, embute e publica."
     }
   ],
   "modelos_canva": {
