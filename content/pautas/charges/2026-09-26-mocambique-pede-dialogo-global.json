@@ -1,0 +1,41 @@
+{
+  "slug": "mocambique-pede-dialogo-global",
+  "titulo": "Moçambique pede diálogo global (curta: presidente de Moçambique defende diálogo e justiça climática e pede apoio internacional)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas",
+  "legenda": {
+    "site_16x9": "Quem menos polui é quem mais segura o guarda-chuva.",
+    "instagram_4x5": "Polui pouco, segura o guarda-chuva."
+  },
+  "contexto": "Em entrevista à ONU News em Nova Iorque, em 24/09/2026, à margem do Debate Geral da 81ª Assembleia Geral da ONU, o presidente de Moçambique, Daniel Chapo, apontou o diálogo, a justiça climática e o multilateralismo como saídas para os desafios do país; disse que Moçambique polui menos e sofre mais com desastres naturais e pediu financiamento climático justo e apoio internacional.",
+  "fontes": [
+    "https://news.un.org/pt/story/2026/09/1854441",
+    "https://portaldogoverno.gov.mz/pr-defende-reforco-do-multilateralismo-e-maior-participacao-de-africa-na-governacao-global/"
+  ],
+  "checagem_pendente": "a curta diz que o presidente é Filipe Nyusi e que a fala foi numa cimeira regional; o presidente desde janeiro de 2025 é Daniel Chapo, e a fala foi na entrevista à ONU News em Nova Iorque (24/09/2026). A correção do texto publicado é manual no Ghost Admin. A arte não desenha nenhuma autoridade.",
+  "regras_da_cena": "sem personagens humanos (nenhuma autoridade desenhada): pomba da paz com guarda-chuva remendado sob chuva de ciclone numa praia do Índico, mesa redonda com cadeiras vazias à espera do diálogo, nuvem formada pela fumaça de chaminés distantes; sem texto nem bandeiras",
+  "personagens": [
+    {
+      "nome": "nenhum personagem humano",
+      "obs": "sem foto de referência"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHWSA2wXDQ",
+    "arte_16x9": "MAHWSH7aJzs",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "materia": "https://hojemt.com.br/mocambique-pede-dialogo-global/",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "arquivos": {
+    "site_16x9": "2026-09-26-mocambique-pede-dialogo-global.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-26-mocambique-pede-dialogo-global.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-26-mocambique-pede-dialogo-global-og.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 26/09/2026 (antes: charge automática charge-dia-1790410214.webp)"
+}
