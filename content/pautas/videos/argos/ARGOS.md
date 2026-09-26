@@ -19,9 +19,12 @@ sugestivo e intrigante").
   ninguém. Arquivos nesta pasta: `argos-veredas-avatar-9x16.jpg`, `-1x1.jpg`,
   `-240.jpg`. A versão 3D anterior (media `MAHWQKGqrGo`, quadro `DAHWQFrXvyA`)
   fica no histórico do git.
-- **Voz:** Kokoro-82M (Apache-2.0), voz `pm_santa`, em português do Brasil:
-  `"voz": {"motor": "kokoro", "narrador": "pm_santa"}` no roteiro; instalar uma
-  vez com `bash vozes-kokoro.sh`. Trocou a Piper `pt_BR-faber-medium` em 26/09
+- **Voz:** Kokoro-82M (Apache-2.0), voz `pm_santa`, 2,5 semitons mais grave
+  (pedido do editor: "Deixe a voz mais grave"), com tratamento de locutor:
+  `"voz": {"motor": "kokoro", "narrador": "pm_santa", "tom": -2.5}` no roteiro;
+  instalar uma vez com `bash vozes-kokoro.sh`. O sotaque do Kokoro não é 100%
+  brasileiro; a voz definitiva prevista é a "Fabio - Newscaster" (ou "Giles")
+  do HeyGen, que depende de créditos de API na conta do HeyGen. Trocou a Piper `pt_BR-faber-medium` em 26/09
   (mais grave e com entonação mais natural). É voz sintética genérica, não é
   clone de ninguém. Nunca usar voz sintética de pessoa real (Res. TSE
   23.610/2019, art. 9º-C).

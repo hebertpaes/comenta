@@ -4,12 +4,13 @@
   "materia": "https://hojemt.com.br/radar-eleitoral/",
   "estilo": "realista",
   "universo": "Estúdio do Argos, Pantanal ao pôr do sol",
-  "obs": "Primeiro boletim em vídeo do Argos Veredas, repórter virtual oficial do HOJE MT criado com IA (regras em pautas/videos/argos/ARGOS.md). Só o narrador fala (voz Kokoro pm_santa, sintética genérica; nenhuma voz de pessoa real). Números das falas e dos gráficos saem de paginas/radar-dados.json (campo pesquisas, atualizado em 26/09/2026): governador-mt (5 pesquisas desde 4/9, 1º e 2º turno), senado-mt (1º voto: Quaest, Paraná Pesquisas 15-17/9 e MT Dados) e presidente (11 nacionais; gráfico com as 6 mais recentes + Quaest MT). Cenas 1 e 6 usam o avatar 9:16 (Canva, media MAHWQKGqrGo); cenas 2 a 5 são gráficos próprios (HTML + Playwright, 1080x1920) com a ficha curta de cada pesquisa (instituto, período, entrevistas, margem, registro); o miolo claro termina em y=1240 e a faixa verde-escura de baixo fica livre para a legenda queimada (y~1310-1490) e para a interface do Instagram. Legendas com números em algarismos. Trilha 'pantanal' (calma) escolhida no roteiro porque o universo não casa com nenhuma faixa e a reserva 'comedia' não combina com boletim de pesquisa. As fichas completas (com contratante) precisam ir na legenda do post, como diz a fala da cena 6.",
+  "obs": "Primeiro boletim em vídeo do Argos Veredas, repórter virtual oficial do HOJE MT criado com IA (regras em pautas/videos/argos/ARGOS.md). Só o narrador fala (voz Kokoro pm_santa 2,5 semitons mais grave, sintética genérica; nenhuma voz de pessoa real). Números das falas e dos gráficos saem de paginas/radar-dados.json (campo pesquisas, atualizado em 26/09/2026): governador-mt (5 pesquisas desde 4/9, 1º e 2º turno), senado-mt (1º voto: Quaest, Paraná Pesquisas 15-17/9 e MT Dados) e presidente (11 nacionais; gráfico com as 6 mais recentes + Quaest MT). Cenas 1 e 6 usam o avatar 9:16 (Canva, media MAHWQKGqrGo); cenas 2 a 5 são gráficos próprios (HTML + Playwright, 1080x1920) com a ficha curta de cada pesquisa (instituto, período, entrevistas, margem, registro); o miolo claro termina em y=1240 e a faixa verde-escura de baixo fica livre para a legenda queimada (y~1310-1490) e para a interface do Instagram. Legendas com números em algarismos. Trilha 'pantanal' (calma) escolhida no roteiro porque o universo não casa com nenhuma faixa e a reserva 'comedia' não combina com boletim de pesquisa. As fichas completas (com contratante) precisam ir na legenda do post, como diz a fala da cena 6.",
   "voz": {
     "motor": "kokoro",
     "narrador": "pm_santa",
     "personagem": null,
-    "velocidade": 1
+    "velocidade": 1,
+    "tom": -2.5
   },
   "trilha": {
     "id": "pantanal"

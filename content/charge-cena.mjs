@@ -362,13 +362,21 @@ const motoresVoz = {
     }
     return destino;
   },
-  kokoro(texto, { modelo = "pm_santa", velocidade = 1, destino }) {
-    const r = spawnSync("python3", [join(aqui, "lib", "kokoro-tts.py"), "--voz", modelo, "--velocidade", String(Number(velocidade) || 1), "--saida", destino], {
+  kokoro(texto, { modelo = "pm_santa", velocidade = 1, tom = 0, destino }) {
+    const bruto = Number(tom) ? destino.replace(/\.wav$/, "-bruto.wav") : destino;
+    const r = spawnSync("python3", [join(aqui, "lib", "kokoro-tts.py"), "--voz", modelo, "--velocidade", String(Number(velocidade) || 1), "--saida", bruto], {
       input: pronuncia(texto),
       encoding: "utf8",
       env: { ...process.env, HOJEMT_VOZES: VOZES_DIR },
     });
     if (r.status !== 0) throw new Error(`Kokoro falhou: ${r.stderr.trim().split("\n").slice(-2).join(" | ")}`);
+    if (bruto !== destino) {
+      // `tom` em semitons (negativo = mais grave), com formantes preservados, e
+      // tratamento de locutor: corpo em 140 Hz, presença em 3,2 kHz, compressão leve.
+      const fator = (2 ** (Number(tom) / 12)).toFixed(4);
+      const af = `rubberband=pitch=${fator}:formant=preserved:pitchq=quality,highpass=f=60,equalizer=f=140:t=q:w=1.0:g=2.5,equalizer=f=3200:t=q:w=1.2:g=1.5,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2`;
+      rodarFfmpeg(["-i", bruto, "-af", af, "-ar", "24000", destino], "tom da voz");
+    }
     return destino;
   },
   gtts(texto, { destino }) {
@@ -399,11 +407,11 @@ function pronuncia(texto) {
 }
 
 /** Sintetiza uma fala; com Piper indisponível, cai para o gTTS avisando. */
-function sintetizar(texto, { motor = "piper", modelo, velocidade, destino }) {
+function sintetizar(texto, { motor = "piper", modelo, velocidade, tom, destino }) {
   const fn = motoresVoz[motor];
   if (!fn) throw new Error(`motor de voz desconhecido: ${motor} (use kokoro, piper, gtts, elevenlabs ou heygen)`);
   try {
-    return fn(texto, { modelo, velocidade, destino });
+    return fn(texto, { modelo, velocidade, tom, destino });
   } catch (e) {
     if (motor === "piper" && e.piperIndisponivel) {
       console.warn(`AVISO: ${e.message} — usando gTTS como reserva`);
@@ -762,7 +770,7 @@ async function principal() {
         throw new Error(`cena ${n}: citação lida pelo narrador precisa da frase real entre aspas na legenda (\`legenda\` ou \`fala\`)`);
       const modelo = voz.narrador;
       process.stdout.write(`voz ${n} (${quem}, ${voz.motor}/${modelo})… `);
-      const audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, destino });
+      const audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, tom: voz.tom, destino });
       cena = { ...base, fala, legenda, audio };
     }
     cena.duracaoAudio = duracaoDe(cena.audio);

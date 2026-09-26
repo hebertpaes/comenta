@@ -1,9 +1,9 @@
 {
   "spec": "/home/user/comenta/content/pautas/videos/argos/2026-09-26-boletim-01.cena.json",
   "saida": "/home/user/comenta/content/pautas/videos/argos/2026-09-26-boletim-01.mp4",
-  "gerado_em": "2026-09-26T01:37:31.045Z",
-  "duracao": 80.72,
-  "duracao_total": 80.72,
+  "gerado_em": "2026-09-26T01:46:39.176Z",
+  "duracao": 80.52,
+  "duracao_total": 80.52,
   "limite_duracao": 120,
   "resolucao": "1080x1920",
   "fps": 25,
@@ -24,7 +24,8 @@
     "motor": "kokoro",
     "narrador": "pm_santa",
     "velocidade": 1,
-    "personagem": null
+    "personagem": null,
+    "tom": -2.5
   },
   "abertura": {
     "duracao": 2.5
@@ -45,33 +46,33 @@
       "voz": "sintetica",
       "movimento": "zoom-in",
       "inicio": 12.44,
-      "duracao_audio": 15.91,
-      "duracao": 16.36
+      "duracao_audio": 15.84,
+      "duracao": 16.29
     },
     {
       "n": 3,
       "quem": "narrador",
       "voz": "sintetica",
       "movimento": "zoom-out",
-      "inicio": 28.8,
-      "duracao_audio": 11.69,
-      "duracao": 12.14
+      "inicio": 28.73,
+      "duracao_audio": 11.61,
+      "duracao": 12.06
     },
     {
       "n": 4,
       "quem": "narrador",
       "voz": "sintetica",
       "movimento": "zoom-in",
-      "inicio": 40.94,
-      "duracao_audio": 10.32,
-      "duracao": 10.77
+      "inicio": 40.79,
+      "duracao_audio": 10.25,
+      "duracao": 10.7
     },
     {
       "n": 5,
       "quem": "narrador",
       "voz": "sintetica",
       "movimento": "zoom-out",
-      "inicio": 51.71,
+      "inicio": 51.49,
       "duracao_audio": 12.65,
       "duracao": 13.1
     },
@@ -80,13 +81,13 @@
       "quem": "narrador",
       "voz": "sintetica",
       "movimento": "zoom-out",
-      "inicio": 64.81,
+      "inicio": 64.59,
       "duracao_audio": 12.39,
       "duracao": 12.84
     }
   ],
   "fechamento": {
-    "inicio": 77.65,
+    "inicio": 77.43,
     "duracao": 3
   }
 }
