@@ -1,0 +1,94 @@
+{
+  "slug": "boletim-01",
+  "titulo": "Boletim do Argos nº 1: o que dizem as pesquisas a 8 dias da eleição",
+  "materia": "https://hojemt.com.br/radar-eleitoral/",
+  "estilo": "3d",
+  "universo": "Estúdio do Argos, Pantanal ao pôr do sol",
+  "obs": "Primeiro boletim em vídeo do Argos Veredas, repórter virtual oficial do HOJE MT criado com IA (regras em pautas/videos/argos/ARGOS.md). Só o narrador fala (voz Piper pt_BR-faber-medium, sintética genérica; nenhuma voz de pessoa real). Números das falas e dos gráficos saem de paginas/radar-dados.json (campo pesquisas, atualizado em 26/09/2026): governador-mt (5 pesquisas desde 4/9, 1º e 2º turno), senado-mt (1º voto: Quaest, Paraná Pesquisas 15-17/9 e MT Dados) e presidente (11 nacionais; gráfico com as 6 mais recentes + Quaest MT). Cenas 1 e 6 usam o avatar 9:16 (Canva, media MAHWQKGqrGo); cenas 2 a 5 são gráficos próprios (HTML + Playwright, 1080x1920) com a ficha curta de cada pesquisa (instituto, período, entrevistas, margem, registro); o miolo claro termina em y=1240 e a faixa verde-escura de baixo fica livre para a legenda queimada (y~1310-1490) e para a interface do Instagram. Legendas com números em algarismos. Trilha 'pantanal' (calma) escolhida no roteiro porque o universo não casa com nenhuma faixa e a reserva 'comedia' não combina com boletim de pesquisa. As fichas completas (com contratante) precisam ir na legenda do post, como diz a fala da cena 6.",
+  "voz": {
+    "motor": "piper",
+    "narrador": "pt_BR-faber-medium",
+    "personagem": null,
+    "velocidade": 1
+  },
+  "trilha": {
+    "id": "pantanal"
+  },
+  "abertura": {
+    "chip": "BOLETIM DO ARGOS",
+    "gancho": "O QUE DIZEM AS PESQUISAS A 8 DIAS DA ELEIÇÃO",
+    "sub": "Mato Grosso · 26/09"
+  },
+  "cenas": [
+    {
+      "n": 1,
+      "quem": "narrador",
+      "fala": "Olá. Eu sou Argos Veredas, repórter virtual oficial do HOJE MT, criado com inteligência artificial. Meu trabalho é contar o que a redação apurou e conferiu.",
+      "legenda": "Olá. Eu sou Argos Veredas, repórter virtual oficial do HOJE MT, criado com inteligência artificial. Meu trabalho é contar o que a redação apurou e conferiu.",
+      "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
+      "movimento": "zoom-in"
+    },
+    {
+      "n": 2,
+      "quem": "narrador",
+      "fala": "Governo de Mato Grosso. Nas cinco pesquisas registradas desde quatro de setembro, Otaviano Pivetta e Wellington Fagundes estão sempre nos dois primeiros lugares. Pivetta aparece à frente em quatro; na Quaest, a mais recente, é empate técnico: vinte e nove a vinte e sete.",
+      "legenda": "Governo de Mato Grosso. Nas 5 pesquisas registradas desde 4 de setembro, Otaviano Pivetta e Wellington Fagundes estão sempre nos 2 primeiros lugares. Pivetta aparece à frente em 4; na Quaest, a mais recente, é empate técnico: 29% a 27%.",
+      "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-2.jpg",
+      "movimento": "zoom-in"
+    },
+    {
+      "n": 3,
+      "quem": "narrador",
+      "fala": "No segundo turno simulado, Pivetta vence em três pesquisas, e Wellington aparece à frente em duas, ambas dentro da margem de erro. Por enquanto, o cenário provável é de segundo turno entre os dois.",
+      "legenda": "No 2º turno simulado, Pivetta vence em 3 pesquisas, e Wellington aparece à frente em 2, ambas dentro da margem de erro. Por enquanto, o cenário provável é de 2º turno entre os dois.",
+      "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-3.jpg",
+      "movimento": "zoom-out"
+    },
+    {
+      "n": 4,
+      "quem": "narrador",
+      "fala": "Senado. Mauro Mendes e Janaina Riva lideram em todas as pesquisas para as duas vagas. Na Quaest, Mauro tem trinta e sete por cento no primeiro voto, e Janaina, dezenove.",
+      "legenda": "Senado. Mauro Mendes e Janaina Riva lideram em todas as pesquisas para as 2 vagas. Na Quaest, Mauro tem 37% no 1º voto, e Janaina, 19%.",
+      "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-4.jpg",
+      "movimento": "zoom-in"
+    },
+    {
+      "n": 5,
+      "quem": "narrador",
+      "fala": "Para presidente, Lula e Flávio Bolsonaro disputam o topo nas onze pesquisas nacionais, quase sempre em empate técnico. Em Mato Grosso, a Quaest mostra Flávio com cinquenta por cento e Lula com vinte e cinco.",
+      "legenda": "Para presidente, Lula e Flávio Bolsonaro disputam o topo nas 11 pesquisas nacionais, quase sempre em empate técnico. Em Mato Grosso, a Quaest mostra Flávio com 50% e Lula com 25%.",
+      "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-5.jpg",
+      "movimento": "zoom-out"
+    },
+    {
+      "n": 6,
+      "quem": "narrador",
+      "fala": "Pesquisa é retrato do momento, e quem decide é você, no dia quatro de outubro. As fichas técnicas estão na legenda e no Radar Eleitoral do HOJE MT. Eu volto com as próximas decisões da Justiça Eleitoral.",
+      "legenda": "Pesquisa é retrato do momento, e quem decide é você, no dia 4 de outubro. As fichas técnicas estão na legenda e no Radar Eleitoral do HOJE MT. Eu volto com as próximas decisões da Justiça Eleitoral.",
+      "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
+      "movimento": "zoom-out"
+    }
+  ],
+  "fechamento": {
+    "linha1": "Argos Veredas · repórter virtual do HOJE MT",
+    "leia": "hojemt.com.br/radar-eleitoral",
+    "fontes": [
+      "Quaest",
+      "MT Dados",
+      "Paraná Pesquisas",
+      "AtlasIntel",
+      "Datafolha",
+      "PoderData",
+      "Real Time Big Data",
+      "Palver",
+      "Futura",
+      "Alfa",
+      "Nexus",
+      "American Analytics",
+      "Gerp",
+      "PesqEle/TSE"
+    ],
+    "aviso": "Argos Veredas é um repórter virtual criado com IA (imagem e voz sintéticas). Fatos apurados e conferidos pela redação do HOJE MT. Pesquisas registradas na Justiça Eleitoral; fichas na legenda."
+  },
+  "saida": "pautas/videos/argos/2026-09-26-boletim-01.mp4"
+}
