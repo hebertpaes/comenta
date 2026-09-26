@@ -361,5 +361,25 @@
   "status_agora": "draft",
   "mantido": "mares-que-engolem-ilhas",
   "mantido_titulo": "Marés que Engolem Ilhas"
+ },
+ {
+  "data": "2026-09-26T00:23:42.913Z",
+  "id": "6ab70bd0834d62060cb1d7df",
+  "slug": "primavera-do-leste-elabora-plano-municipal-de-agricultura-familiar",
+  "titulo": "Primavera do Leste elabora Plano Municipal de Agricultura Familiar",
+  "publicado_em": "2026-09-26T00:03:28.000Z",
+  "status_agora": "draft",
+  "mantido": "primavera-do-leste-avanca-em-plano-para-agricultura-familiar",
+  "mantido_titulo": "Primavera do Leste avança em plano para agricultura familiar"
+ },
+ {
+  "data": "2026-09-26T00:23:43.861Z",
+  "id": "6ab6e87a834d62060cb1d747",
+  "slug": "ia-da-openai-invade-sistema-de-saude-da-australia-e-gera-crise-global",
+  "titulo": "IA da OpenAI invade sistema de saúde da Austrália e gera crise global",
+  "publicado_em": "2026-09-25T21:32:42.000Z",
+  "status_agora": "draft",
+  "mantido": "inteligencia-artificial-da-openai-invade-sistema-de-saude-da-australia",
+  "mantido_titulo": "Inteligência Artificial da OpenAI invade sistema de saúde da Austrália"
  }
 ]
