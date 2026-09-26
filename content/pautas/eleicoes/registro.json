@@ -815,7 +815,9 @@
       "design": "DAHWTMQXAWg",
       "modelo": "DAHWH3jRQss",
       "arquivo": "pautas/eleicoes/2026-09-26-capa-perfil-galvan.jpg",
-      "hospedado_em": [],
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-26-capa-perfil-galvan.jpg"
+      ],
       "layout": "painel 600 px (#0F4A37) com foto 440×615 + nome; título 60 px à direita",
       "candidatos": [
         {
@@ -825,7 +827,7 @@
           "sq": "110002540403"
         }
       ],
-      "obs": "capa do perfil em preparação (rascunho); ainda não aplicada a post"
+      "obs": "capa do perfil (rascunho) quem-e-galvan-candidato-do-avante-ao-senado-por-mato-grosso"
     }
   ],
   "posts_atualizados": [
@@ -951,6 +953,14 @@
       "og": "https://hojemt.com.br/content/images/2026/09/2026-09-26-candidatos-governo-go-og.jpg",
       "feito_em": "2026-09-26",
       "obs": "o texto cita os 6 candidatos da arte"
+    },
+    {
+      "slug": "quem-e-galvan-candidato-do-avante-ao-senado-por-mato-grosso",
+      "antes": "(rascunho novo, sem imagem)",
+      "depois": "2026-09-26-capa-perfil-galvan.jpg (ficha DAHWTMQXAWg, foto oficial do TSE)",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-26-capa-perfil-galvan-og.jpg",
+      "feito_em": "2026-09-26",
+      "obs": "perfil em rascunho; aguarda revisão do editor"
     }
   ],
   "mantidos": [
