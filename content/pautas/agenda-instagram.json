@@ -1085,6 +1085,22 @@
       "legenda": "Senado em MT: Mauro Mendes e Janaina Riva seguem na frente, aponta a Quaest 👉 arrasta pro lado\n\nSoma dos dois votos (voto consolidado):\n• Mauro Mendes (União): 27%\n• Janaina Riva (MDB): 19%\n• Pedro Taques (PSB): 9%\n• Zé Medeiros (PL): 9%\n• Fávaro (PSD): 8%\nTaques, Medeiros e Fávaro estão tecnicamente empatados. Indecisos: 18%.\n\nNo 1º voto, Mauro tem 37%; no 2º, Janaina lidera com 20%.\n\nQuaest, contratada pela TV Centro América (Rádio e Televisão Matogrossense Ltda.) · 804 entrevistas de 21 a 24/09 · margem de erro de 3 pontos, confiança de 95% · registro MT-08098/2026\n\nMatéria completa: hojemt.com.br/quaest-senado-mt-mauro-e-janaina-seguem-na-frente\n\n#eleicoes2026 #senado #pesquisa #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/quaest-senado-mt-mauro-e-janaina-seguem-na-frente/",
       "obs": "matéria em rascunho (id 6ab70b59834d62060cb1d7ca, https://hojemt.com.br/p/bec90373-823e-4e23-b9e3-61b7c6907c5f/): quando o editor publicar, trocar status para agendado e definir 'quando' o quanto antes (pesquisa perde validade com a próxima rodada e o 1º turno é em 04/10). Se o slug mudar, atualizar 'materia' e o link da legenda. Gráficos gerados por content/pautas/eleicoes/2026-09-25-quaest-senado-graficos.py."
+    },
+    {
+      "id": "59",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-26T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Moçambique pede diálogo global",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-26-mocambique-pede-dialogo-global-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Moçambique pede diálogo global\n\nPolui pouco, segura o guarda-chuva.\n\nEm entrevista à ONU News em Nova Iorque, em 24/09, à margem da 81ª Assembleia Geral da ONU, o presidente de Moçambique, Daniel Chapo, apontou o diálogo, a justiça climática e o multilateralismo como saídas para os desafios do país, disse que Moçambique polui menos e sofre mais com desastres naturais e pediu financiamento climático justo e apoio internacional.\n\nLeia a curta completa: hojemt.com.br/mocambique-pede-dialogo-global\n\nFonte: ONU News\nCharge: HOJE MT · hojemt.com.br\n\n#charge #mocambique #clima #hojemt",
+      "materia": "https://hojemt.com.br/mocambique-pede-dialogo-global/",
+      "charge_json": "pautas/charges/2026-09-26-mocambique-pede-dialogo-global.json",
+      "obs": "aguardando correção da curta: o texto publicado diz que o presidente é Filipe Nyusi e que a fala foi numa cimeira regional; desde janeiro de 2025 o presidente é Daniel Chapo, e a fala foi na entrevista à ONU News em Nova Iorque (24/09/2026). A legenda já traz os fatos certos. Depois de corrigir o texto no Ghost Admin (manual), trocar o status para agendado. Horário: os de 26/09 em diante ficaram livres porque o lote todas-as-charges publicou tudo adiantado."
     }
   ]
 }

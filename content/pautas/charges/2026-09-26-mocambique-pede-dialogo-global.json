@@ -23,6 +23,8 @@
   "canva": {
     "design_site_16x9": "DAHWSA2wXDQ",
     "arte_16x9": "MAHWSH7aJzs",
+    "design_instagram_4x5": "DAHWSM-R6OU",
+    "arte_4x5": "MAHWSJ2OiCk",
     "modelo_16x9": "DAHWDzwR5c0",
     "modelo_retrato": "DAHWEJf2P1U"
   },
@@ -30,12 +32,17 @@
   "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
   "selo": "CHARGE · HOJE MT",
   "referencia_publica": "Charge: HOJE MT",
+  "instagram": {
+    "status": "aguardando_decisao (item 59 da agenda): sai depois que a curta for corrigida"
+  },
   "arquivos": {
-    "site_16x9": "2026-09-26-mocambique-pede-dialogo-global.jpg"
+    "site_16x9": "2026-09-26-mocambique-pede-dialogo-global.jpg",
+    "instagram_4x5": "2026-09-26-mocambique-pede-dialogo-global-instagram-retrato.jpg"
   },
   "hospedado_em": {
     "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-26-mocambique-pede-dialogo-global.jpg",
-    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-26-mocambique-pede-dialogo-global-og.jpg"
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-26-mocambique-pede-dialogo-global-og.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-26-mocambique-pede-dialogo-global-instagram-retrato.jpg"
   },
   "site": "feature_image e og_image trocadas em 26/09/2026 (antes: charge automática charge-dia-1790410214.webp)"
 }
