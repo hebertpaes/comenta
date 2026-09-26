@@ -106,3 +106,27 @@ Nas pesquisas estaduais, Flávio lidera, e Zema aparece com menos de 1%. No Inst
 - **Rafaell Milas, Maurício Coelho, Sargento Laudicério:** perguntar às campanhas em quem votam para presidente.
 - **Pesquisas de MT:** conferir no PesqEle os registros BR-02939/2026 (Veritá) e MT-02766/2026 / BR-08540/2026 (AtlasIntel) e os contratantes.
 - Capa: fica para depois (sem foto do post de terceiros). Sugestão: arte com as fotos oficiais do TSE de Zema, Flávio e Lula (registro.json, "Candidatos à Presidência").
+
+## Atualização de 26/09/2026 (08h30 MT)
+
+O editor enviou o reel do Pleno News "Marina Helena, do Novo, declara voto útil em Flávio Bolsonaro no 1º turno" (https://www.instagram.com/reel/Ddt-R_uBD-W/). O rascunho no Ghost (`novo-apoio-flavio-primeiro-turno`, ainda rascunho) ganhou:
+
+- **Frase sobre o STF:** "Não podemos correr o risco de ter mais quatro Dinos no STF" (CNN, 24/09), em referência ao ministro Flávio Dino; é o destaque do vídeo do Pleno News, cujo card traz "A gente não pode correr o risco de ter 4 Dinos no STF". As duas redações divergem: transcrever do vídeo original antes de publicar.
+- **Marco Antônio Superman** (Novo, Senado-MG) também pediu voto em Flávio: "Queria falar para o Zema que essa é a hora de estar com o Flávio Bolsonaro" (Metrópoles, 25/09); o presidente do Novo-MG, Christopher Laguna, criticou os apoios dele a políticos de outras legendas.
+- **Pressão para Zema desistir, em versões divergentes e sem fontes nomeadas:** a Revista Oeste (25/09, reproduzida pelo Transmissão Política) diz que o Novo avalia retirar a candidatura e decidir até segunda (28), após pesquisas internas; O Fator (25/09, 19h39) diz que lideranças de SP e do Sul pedem a desistência, mas Zema resiste e quer ficar até o fim para ajudar a eleger deputados e superar a cláusula de barreira. Até a manhã de 26/09, nem Zema nem o Novo anunciaram mudança. Sem substituição possível: Lei 9.504/1997, art. 13, § 3º (troca só até 20 dias antes do pleito, ou seja, 14/09, salvo morte).
+- **Zema com 1%** também no PoderData (20 a 23/09, 3.000 entrevistas, ±1,8, recursos próprios, BR-01739/2026; Lula 41%, Flávio 39%), além do Datafolha.
+
+Fontes novas:
+
+- Pleno News (Instagram), reel sobre Marina Helena, 25/09/2026 — https://www.instagram.com/reel/Ddt-R_uBD-W/
+- Revista Oeste, "Zema está prestes a desistir da candidatura para apoiar Flávio", 25/09/2026 (acesso bloqueado daqui; conteúdo pelo Transmissão Política e resumo de busca) — https://revistaoeste.com/no-ponto/zema-esta-prestes-a-desistir-da-candidatura-para-apoiar-flavio/
+- Transmissão Política, "Novo avalia retirada de Zema e apoio a Flávio já no 1º turno", 25/09/2026 — https://transmissaopolitica.com.br/politica-nacional/2026/09/25/zema-candidato-presidencia-novo-apoio-flavio/
+- O Fator, "A pressão para Zema desistir de candidatura", 25/09/2026, 19h39 — https://ofator.com.br/informacao/a-pressao-para-zema-desistir-de-candidatura/
+- TSE, Lei das Eleições, art. 13, § 3º — https://www.tse.jus.br/legislacao/codigo-eleitoral/lei-das-eleicoes/lei-das-eleicoes-lei-nb0-9.504-de-30-de-setembro-de-1997 ; Temas Selecionados (prazo de substituição) — https://temasselecionados.tse.jus.br/temas-selecionados/registro-de-candidato/substituicao-de-candidato/prazo
+- Poder360, PoderData 20 a 23/09 — https://www.poder360.com.br/poderdata/em-votos-validos-lula-tem-43-contra-42-de-flavio-no-1o-turno/
+
+Checagens novas:
+
+- **Retirada de Zema:** só vira fato com anúncio oficial do Novo ou de Zema; rever na segunda (28). Procurar a campanha de Zema e a direção nacional do Novo.
+- **Superman:** conferir a fala no vídeo original e ouvir o Novo-MG.
+- Um desmentido da campanha de Zema sobre desistência (CNN, blog Isabel Mega) é de 24/08, sobre outro boato: não serve de resposta ao relato de agora.
