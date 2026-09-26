@@ -97,6 +97,34 @@ sudo nginx -t && pm2 list                     # nginx ok; intsoft-backend/fronte
 Se o Ghost cair: `ghost restart`; se reclamar da versão do Node, `ghost doctor`
 mostra o motivo (em último caso, restaurar o backup com `ghost import`).
 
+## Pacote de instalação guiada (26/09) — use este
+
+O passo a passo manual abaixo ficou como referência. Para instalar, use o
+`pacote-intsoft.zip` (versão do patch `2026-09-26.1`, sha256
+`17275beea1f1e814ebb435927d13b82328de191f1e604c866dba14c979cd1be7`), entregue
+ao editor pelo chat e **fora deste repositório** (tem trechos adaptados dos
+scripts do fornecedor). O pacote **não** tem a credencial do fornecedor nem
+senhas: ele aplica as correções no `instalador-main.zip` original do editor
+dentro do servidor e confere antes se é a versão testada (23/05/2025).
+
+- Siga o `LEIA-ME.txt` do pacote (Passos 1 a 10, pelo Cloud Shell da Oracle,
+  dentro do `tmux`). A instalação guiada pergunta tudo, gera senhas fortes se
+  você só apertar Enter, troca a senha de fábrica do painel logo após o seed e
+  manda as credenciais por e-mail (Gmail, porta 587, senha de app de
+  intsoft@intsoft.com.br). Depois, apague a mensagem em Enviados do Gmail e
+  revogue a senha de app.
+- Não mexe no Node do Ghost, não reinicia o nginx (só testa e recarrega), não
+  muda o fuso nem o firewall, faz backup do Ghost antes e roda o `posflight`
+  no fim.
+- Testado só em ambiente simulado (PostgreSQL e bcrypt reais; Docker, nginx,
+  certbot e systemd simulados). Ainda não confirmados no servidor real: a
+  tabela `"Users"` do Atendechat (`email`/`"passwordHash"`), a rota
+  `/auth/login`, o envio pelo Gmail e a entrega no iCloud. Se a troca da
+  senha do painel falhar, a instalação para sem publicar o painel.
+- Passo 10 (limpeza): apagar o `instalador-main.zip` original (e a pasta que
+  o Mac cria ao abrir) do Mac, do Cloud Shell e do `/home/ubuntu` do
+  servidor: ele tem a credencial do fornecedor.
+
 ## Passo a passo
 
 1. **DNS na Cloudflare** (zona intsoft.com.br) — dois registros A apontando
