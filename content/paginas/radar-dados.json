@@ -2326,8 +2326,10 @@
     "redes": [
      {
       "rede": "Instagram",
-      "seguidores": 40000,
-      "origem": "busca"
+      "seguidores": 50000,
+      "origem": "perfil_conferido",
+      "perfil": "https://www.instagram.com/pedrotaques/",
+      "conferido": "25/09/2026 21:04"
      },
      {
       "rede": "TikTok",
@@ -2340,7 +2342,7 @@
       "origem": "pagina_publica"
      }
     ],
-    "rede_mais_forte": "Instagram (~40 mil) é a maior base medida; o YouTube tem 5,8 mil inscritos."
+    "rede_mais_forte": "Instagram (50 mil, perfil verificado @pedrotaques, conferido em 25/9) é a maior base medida; o YouTube tem 5,8 mil inscritos."
    },
    {
     "nome": "Professor Nelson Ferreira",
@@ -2359,6 +2361,13 @@
     "cargo": "senador",
     "redes": [
      {
+      "rede": "Instagram",
+      "seguidores": 332000,
+      "origem": "perfil_conferido",
+      "perfil": "https://www.instagram.com/zemedeiros.222/",
+      "conferido": "25/09/2026 21:05"
+     },
+     {
       "rede": "TikTok",
       "seguidores": 23800,
       "origem": "pagina_publica"
@@ -2374,10 +2383,10 @@
       "origem": "busca"
      }
     ],
-    "rede_mais_forte": "Entre os perfis declarados, X (~227 mil) e TikTok (23,8 mil) são as maiores bases medidas; é o 1º em interações no Instagram entre candidatos ao Senado no DX (127.253)."
+    "rede_mais_forte": "Instagram (332 mil no perfil verificado @zemedeiros.222, conferido em 25/9; o registro no TSE lista @senadorzemedeiros222) é a maior base; X (~227 mil) vem em seguida. É o 1º em interações no Instagram entre candidatos ao Senado no DX (127.253)."
    }
   ],
-  "nota": "Seguidores aproximados de perfis oficiais declarados ao TSE, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
+  "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
   "atualizado": "26/09/2026",

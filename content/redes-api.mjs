@@ -55,6 +55,13 @@ const NOME_CIVIL = {
   "Pedro Taques": "Pedro Taques", "Professor Nelson Ferreira": "Nelson Ferreira", "Zé Medeiros": "José Medeiros",
 };
 
+// Perfil verificado que o candidato usa de fato, quando difere do @ que consta no
+// registro do TSE (conferido pela redação no app). O @ do TSE fica guardado em
+// handles.instagram_tse.
+const IG_VERIFICADO = {
+  "Zé Medeiros": "zemedeiros.222", // TSE lista @senadorzemedeiros222; conferido em 25/09/2026 21h05 (MT)
+};
+
 /** Extrai o @ de cada rede a partir das URLs declaradas ao TSE. */
 export function handles(redes = []) {
   const h = {};
@@ -181,6 +188,7 @@ const todos = [...CARGO.governador.map((n) => [n, "governador"]), ...CARGO.senad
 const listaX = [];
 for (const [nome, cargo] of todos) {
   const h = handles((dados.redes || {})[nome]);
+  if (IG_VERIFICADO[nome] && IG_VERIFICADO[nome] !== h.instagram) { h.instagram_tse = h.instagram || null; h.instagram = IG_VERIFICADO[nome]; }
   const c = (saida.candidatos[nome] = { cargo, handles: h });
   const roda = async (p, fn) => {
     if (saida.provedores[p].status !== "ok") return;
