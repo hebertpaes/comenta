@@ -1,0 +1,123 @@
+{
+  "slug": "boletim-02",
+  "titulo": "Boletim do Argos nº 2: a Justiça Eleitoral na reta final",
+  "materia": "https://hojemt.com.br/radar-eleitoral/",
+  "estilo": "realista",
+  "universo": "Estúdio do Argos, Pantanal ao pôr do sol",
+  "obs": "Segundo boletim em vídeo do Argos Veredas, repórter virtual oficial do HOJE MT criado com IA (regras em pautas/videos/argos/ARGOS.md). Só o narrador fala (voz Kokoro pm_santa, 1 semitom mais grave e 8% mais rápida, sintética genérica; nenhuma voz de pessoa real; o HeyGen respondeu 'Insufficient API credits' em 26/09 10:5x UTC). Números das falas e dos quadros saem de paginas/radar-dados.json em 26/09/2026 (justica atualizada às 05:50 MT; grupos às 05:50 MT): 86 casos únicos (57 decisões, 15 ações em andamento, 14 arquivadas), 15 de 16 registros deferidos (Sargento Laudicério aguarda julgamento), 10 decisões do TRE-MT em 24 e 25/9, 8 delas em disputas só entre candidatos ao Senado (classificação: 5 retiradas de vídeos ou publicações, 3 sobre impulsionamento pago, 2 direitos de resposta; 3 multas de R$ 5 mil a R$ 10 mil). Tratamento igual: a fala não cita nomes nas disputas judiciais nem repete termos ofensivos das peças; os casos, com as partes e as fontes, ficam no radar. Palanques: só os apoios de 23 a 25/9 (os 2 grupos que tiveram movimentos novos no período), em ordem alfabética. Quadros próprios (HTML + Playwright, graficos-boletim-02.mjs, 1080x1920) com a mesma moldura do nº 1. Trilha 'pantanal' (calma).",
+  "voz": {
+    "motor": "kokoro",
+    "narrador": "pm_santa",
+    "personagem": null,
+    "velocidade": 1.08,
+    "tom": -1
+  },
+  "trilha": {
+    "id": "pantanal"
+  },
+  "abertura": {
+    "chip": "BOLETIM DO ARGOS",
+    "gancho": "A JUSTIÇA ELEITORAL NA RETA FINAL",
+    "sub": "Mato Grosso · 26/09"
+  },
+  "cenas": [
+    {
+      "n": 1,
+      "quem": "narrador",
+      "fala": "Olá, tudo bem? Eu sou o Argos Veredas, repórter virtual do HOJE MT.",
+      "legenda": "Olá, tudo bem? Eu sou o Argos Veredas, repórter virtual do HOJE MT.",
+      "imagem": "pautas/videos/argos/argos-veredas-cena-falando-9x16.jpg",
+      "movimento": "zoom-in"
+    },
+    {
+      "n": 2,
+      "quem": "narrador",
+      "fala": "E sim: fui criado com inteligência artificial!",
+      "legenda": "E sim: fui criado com inteligência artificial!",
+      "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
+      "movimento": "close-in"
+    },
+    {
+      "n": 3,
+      "quem": "narrador",
+      "fala": "Hoje o assunto é a Justiça Eleitoral nesta reta final de campanha. Vamos lá?",
+      "legenda": "Hoje o assunto é a Justiça Eleitoral nesta reta final de campanha. Vamos lá?",
+      "imagem": "pautas/videos/argos/argos-veredas-cena-falando-9x16.jpg",
+      "movimento": "close-out"
+    },
+    {
+      "n": 4,
+      "quem": "narrador",
+      "fala": "Começando pelo quadro geral. O Radar Eleitoral do HOJE MT já reúne oitenta e seis casos envolvendo os dezesseis candidatos ao governo e ao Senado de Mato Grosso: cinquenta e sete decisões, quinze ações ainda sem julgamento e catorze arquivadas.",
+      "legenda": "Começando pelo quadro geral. O Radar Eleitoral do HOJE MT já reúne 86 casos envolvendo os 16 candidatos ao governo e ao Senado de MT: 57 decisões, 15 ações ainda sem julgamento e 14 arquivadas.",
+      "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-4.jpg",
+      "movimento": "zoom-in"
+    },
+    {
+      "n": 5,
+      "quem": "narrador",
+      "fala": "E olha só: só em vinte e quatro e vinte e cinco de setembro, o Tribunal Regional Eleitoral tomou dez decisões. Cinco mandaram retirar vídeos ou publicações, três trataram de impulsionamento pago e duas deram direito de resposta. Oito das dez foram em disputas entre candidatos ao Senado.",
+      "legenda": "E olha só: só em 24 e 25 de setembro, o TRE-MT tomou 10 decisões. 5 mandaram retirar vídeos ou publicações, 3 trataram de impulsionamento pago e 2 deram direito de resposta. 8 das 10 foram em disputas entre candidatos ao Senado.",
+      "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-5.jpg",
+      "movimento": "zoom-out"
+    },
+    {
+      "n": 6,
+      "quem": "narrador",
+      "fala": "Detalhe importante: liminar é decisão provisória e pode ser revista; e ação em andamento não é condenação.",
+      "legenda": "Detalhe importante: liminar é decisão provisória e pode ser revista; e ação em andamento não é condenação.",
+      "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
+      "movimento": "close-in"
+    },
+    {
+      "n": 7,
+      "quem": "narrador",
+      "fala": "E os registros? Quinze dos dezesseis candidatos estão com a candidatura deferida. O pedido de Sargento Laudicério, ao governo, ainda aguarda julgamento.",
+      "legenda": "E os registros? 15 dos 16 candidatos estão com a candidatura deferida. O pedido de Sargento Laudicério, ao governo, ainda aguarda julgamento.",
+      "imagem": "pautas/videos/argos/argos-veredas-cena-falando-9x16.jpg",
+      "movimento": "close-out"
+    },
+    {
+      "n": 8,
+      "quem": "narrador",
+      "fala": "Agora, os palanques. Do lado de Pivetta, Mauro Mendes pediu votos para ele e para Margareth Buzetti, e a campanha divulgou uma lista de cem prefeitos que apoiam a reeleição. Do lado de Wellington, Flávio Bolsonaro pediu votos para ele e para Zé Medeiros, e Sergio Moro declarou apoio.",
+      "legenda": "Agora, os palanques. Do lado de Pivetta, Mauro Mendes pediu votos para ele e para Margareth Buzetti, e a campanha divulgou uma lista de 100 prefeitos que apoiam a reeleição. Do lado de Wellington, Flávio Bolsonaro pediu votos para ele e para Zé Medeiros, e Sergio Moro declarou apoio.",
+      "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-8.jpg",
+      "movimento": "zoom-in"
+    },
+    {
+      "n": 9,
+      "quem": "narrador",
+      "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
+      "legenda": "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
+      "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
+      "movimento": "close-in"
+    },
+    {
+      "n": 10,
+      "quem": "narrador",
+      "fala": "Eu volto no fim da tarde com as novidades. Até já!",
+      "legenda": "Eu volto no fim da tarde com as novidades. Até já!",
+      "imagem": "pautas/videos/argos/argos-veredas-cena-falando-9x16.jpg",
+      "movimento": "close-out"
+    }
+  ],
+  "fechamento": {
+    "linha1": "Argos Veredas · repórter virtual do HOJE MT",
+    "leia": "hojemt.com.br/radar-eleitoral",
+    "fontes": [
+      "TRE-MT",
+      "Olhar Direto",
+      "MidiaNews",
+      "MidiaJur",
+      "Folhamax",
+      "24 Horas MT",
+      "Infoverus",
+      "O Documento",
+      "Gazeta Digital",
+      "RDM Online"
+    ],
+    "aviso": "Argos Veredas é um repórter virtual criado com IA (imagem e voz sintéticas). Fatos apurados e conferidos pela redação do HOJE MT. Casos da Justiça Eleitoral com fonte oficial ou dois veículos; lista completa no Radar Eleitoral."
+  },
+  "saida": "pautas/videos/argos/2026-09-26-boletim-02.mp4"
+}

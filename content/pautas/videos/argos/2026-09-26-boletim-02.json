@@ -1,0 +1,129 @@
+{
+  "spec": "/home/user/comenta/content/pautas/videos/argos/2026-09-26-boletim-02.cena.json",
+  "saida": "/home/user/comenta/content/pautas/videos/argos/2026-09-26-boletim-02.mp4",
+  "gerado_em": "2026-09-26T11:02:09.068Z",
+  "duracao": 89.56,
+  "duracao_total": 89.56,
+  "limite_duracao": 120,
+  "resolucao": "1080x1920",
+  "fps": 25,
+  "universo": "Estúdio do Argos, Pantanal ao pôr do sol",
+  "trilha": {
+    "id": "pantanal",
+    "titulo": "Windswept",
+    "arquivo": "assets/trilhas/pantanal.m4a",
+    "escolha": "roteiro",
+    "volume": 0.12,
+    "ganho_db": 4.04,
+    "licenca": "CC BY 4.0",
+    "credito": "Música: \"Windswept\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
+    "credito_oficial": "\"Windswept\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/"
+  },
+  "credito_musica": "Música: \"Windswept\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "voz": {
+    "motor": "kokoro",
+    "narrador": "pm_santa",
+    "velocidade": 1.08,
+    "personagem": null,
+    "tom": -1
+  },
+  "abertura": {
+    "duracao": 2.5
+  },
+  "cenas": [
+    {
+      "n": 1,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 2.5,
+      "duracao_audio": 4.06,
+      "duracao": 4.51
+    },
+    {
+      "n": 2,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "close-in",
+      "inicio": 7.01,
+      "duracao_audio": 2.87,
+      "duracao": 3.32
+    },
+    {
+      "n": 3,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "close-out",
+      "inicio": 10.33,
+      "duracao_audio": 4.11,
+      "duracao": 4.56
+    },
+    {
+      "n": 4,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 14.89,
+      "duracao_audio": 14.26,
+      "duracao": 14.71
+    },
+    {
+      "n": 5,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 29.6,
+      "duracao_audio": 16.49,
+      "duracao": 16.94
+    },
+    {
+      "n": 6,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "close-in",
+      "inicio": 46.54,
+      "duracao_audio": 6.29,
+      "duracao": 6.74
+    },
+    {
+      "n": 7,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "close-out",
+      "inicio": 53.28,
+      "duracao_audio": 9.15,
+      "duracao": 9.6
+    },
+    {
+      "n": 8,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 62.88,
+      "duracao_audio": 15.07,
+      "duracao": 15.52
+    },
+    {
+      "n": 9,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "close-in",
+      "inicio": 78.4,
+      "duracao_audio": 3.94,
+      "duracao": 4.39
+    },
+    {
+      "n": 10,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "close-out",
+      "inicio": 82.79,
+      "duracao_audio": 3.22,
+      "duracao": 3.67
+    }
+  ],
+  "fechamento": {
+    "inicio": 86.46,
+    "duracao": 3
+  }
+}

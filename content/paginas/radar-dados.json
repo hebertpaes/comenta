@@ -7486,27 +7486,37 @@
   "metodo": "Análise HOJE MT, feita com dados verificáveis: pesquisas registradas na Justiça Eleitoral, decisões confirmadas por fonte oficial ou dois veículos, coligações e apoios publicados, estudo de redes do Instituto Democracia em Xeque/UFMT e gastos declarados à Justiça Eleitoral. Cada candidato tem o mesmo número de pontos, em ordem alfabética, e cada ponto traz a fonte. Não é recomendação de voto."
  },
  "boletim": {
-  "quando": "Boletim nº 1 · 26/09/2026",
-  "titulo": "O que dizem as pesquisas a 8 dias da eleição",
+  "quando": "Boletim nº 2 · 26/09/2026, 07:03 (MT)",
+  "titulo": "A Justiça Eleitoral na reta final",
   "texto": [
-   "Governo de Mato Grosso: nas cinco pesquisas registradas desde 4/9, Otaviano Pivetta e Wellington Fagundes ficam sempre nos dois primeiros lugares. Pivetta aparece à frente em quatro; na Quaest, a mais recente, é empate técnico (29% a 27%). No 2º turno simulado, Pivetta vence em três pesquisas e Wellington aparece à frente em duas, ambas dentro da margem de erro.",
-   "Senado: Mauro Mendes e Janaina Riva lideram em todas as pesquisas para as duas vagas. Na Quaest, Mauro tem 37% no 1º voto e Janaina, 19%.",
-   "Presidência: Lula e Flávio Bolsonaro disputam o topo nas 11 pesquisas nacionais, quase sempre em empate técnico. Em Mato Grosso, a Quaest mostra Flávio com 50% e Lula com 25%.",
-   "Pesquisa é retrato do momento; quem decide é o eleitor, em 4 de outubro. As fichas técnicas completas estão no bloco de pesquisas, logo abaixo. Música do vídeo: \"Windswept\", de Kevin MacLeod (incompetech.com), licença CC BY 4.0."
+   "O Radar Eleitoral do HOJE MT reúne 86 casos da Justiça Eleitoral envolvendo os 16 candidatos ao governo e ao Senado de Mato Grosso: 57 decisões, 15 ações ainda sem julgamento e 14 arquivadas. Cada caso foi conferido em fonte oficial ou em dois veículos. Quinze candidatos estão com o registro deferido; o pedido de Sargento Laudicério, ao governo, aguarda julgamento.",
+   "Só em 24 e 25 de setembro, o TRE-MT tomou 10 decisões em disputas entre candidatos: 5 mandaram retirar vídeos ou publicações, 3 trataram de impulsionamento pago e 2 deram direito de resposta. Oito das dez foram em disputas entre candidatos ao Senado; houve 3 multas, de R$ 5 mil a R$ 10 mil. Liminar é decisão provisória e pode ser revista, e ação em andamento não é condenação. As partes e as fontes de cada caso estão na seção Justiça Eleitoral, logo abaixo.",
+   "Nos palanques, entre 23 e 25 de setembro: do lado de Otaviano Pivetta, Mauro Mendes pediu votos para ele e para Margareth Buzetti, e a campanha divulgou uma lista de 100 prefeitos que apoiam a reeleição. Do lado de Wellington Fagundes, Flávio Bolsonaro pediu votos para ele e para Zé Medeiros, e Sergio Moro declarou apoio.",
+   "Argos Veredas é um repórter virtual criado com IA (imagem e voz sintéticas); os fatos são apurados e conferidos pela redação do HOJE MT. Música do vídeo: \"Windswept\", de Kevin MacLeod (incompetech.com), licença CC BY 4.0."
   ],
-  "video": "https://hojemt.com.br/content/media/2026/09/2026-09-26-boletim-01-argos-v4.mp4",
-  "poster": "https://hojemt.com.br/content/images/2026/09/2026-09-26-boletim-01-capa-v2.jpg",
+  "video": "https://hojemt.com.br/content/media/2026/09/2026-09-26-boletim-02.mp4",
+  "poster": "https://hojemt.com.br/content/images/2026/09/2026-09-26-boletim-02-capa.jpg",
   "avatar": "https://hojemt.com.br/content/images/2026/09/argos-veredas-realista-240.jpg",
   "fontes": [
    [
-    "TSE (PesqEle)",
-    "https://pesqele-divulgacao.tse.jus.br/",
+    "Radar Eleitoral do HOJE MT (Justiça Eleitoral)",
+    "https://hojemt.com.br/radar-eleitoral/#rd-justica",
     "2026-09-26"
    ],
    [
-    "g1 MT (Quaest)",
-    "https://g1.globo.com/mt/mato-grosso/",
+    "Olhar Direto (Pivetta, Mauro e 100 prefeitos)",
+    "https://www.olhardireto.com.br/noticias/pivetta-e-mauro-juntam-cem-prefeitos-em-reuniao-e-diz-que-quer-estreitar-ainda-mais-relacao-com-municipios",
     "2026-09-25"
+   ],
+   [
+    "RDM Online (Mauro pede votos para Pivetta e Buzetti)",
+    "https://rdmonline.com.br/mauro-pede-votos-para-pivetta-e-buzetti-em-ato-de-campanha-em-cuiaba/",
+    "2026-09-25"
+   ],
+   [
+    "O Documento (Flávio Bolsonaro pede voto para Wellington)",
+    "https://odocumento.com.br/flavio-bolsonaro-pede-voto-para-wellington-e-diz-que-pl-vai-recolocar-mt-nos-trilhos/",
+    "2026-09-24"
    ]
   ]
  }
