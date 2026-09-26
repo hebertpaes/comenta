@@ -1,70 +1,78 @@
 {
- "_como_funciona": "Cópia das Routines (automações) da sessão do Claude que operam o HOJE MT. Se a sessão for perdida, recriar com create_trigger usando estes prompts. Horários em UTC (Cuiabá = UTC-4). Credenciais nunca ficam aqui: a Admin API Key do Ghost está no .env.ghost do scratchpad da sessão (ou nas variáveis de ambiente GHOST_ADMIN_URL/GHOST_ADMIN_API_KEY).",
- "rotinas": [
-  {
-   "id": "trig_014WnzAnzYATz1c5sqpRVz9h",
-   "nome": "Instagram @hoje.mt — publicar item da agenda (4x/dia)",
-   "cron_utc": "30 11,15,19,23 * * *",
-   "cuiaba": "07:30, 11:30, 15:30, 19:30",
-   "fonte": "content/pautas/agenda-instagram.json",
-   "resumo": "Pega o item mais antigo com status agendado cujo horário já passou e publica via Zapier (Instagram for Business: publish_media_v2 para foto/carrossel, publish_video para vídeo, instagramPageId 17841460614185827); busca o permalink na Graph API; grava status/permalink/publicado_em no item, no charge_json e em instagram-links.json; commit e push. Nunca publica duas vezes, não altera legenda nem mídia, não publica itens futuros; falha definitiva vira status erro."
+  "_como_funciona": "Cópia das Routines (automações) da sessão do Claude que operam o HOJE MT. Se a sessão for perdida, recriar com create_trigger usando estes prompts. Horários em UTC (Cuiabá = UTC-4). Credenciais nunca ficam aqui: a Admin API Key do Ghost está no .env.ghost do scratchpad da sessão (ou nas variáveis de ambiente GHOST_ADMIN_URL/GHOST_ADMIN_API_KEY).",
+  "rotinas": [
+    {
+      "id": "trig_014WnzAnzYATz1c5sqpRVz9h",
+      "nome": "Instagram @hoje.mt — publicar item da agenda (4x/dia)",
+      "cron_utc": "30 11,15,19,23 * * *",
+      "cuiaba": "07:30, 11:30, 15:30, 19:30",
+      "fonte": "content/pautas/agenda-instagram.json",
+      "resumo": "Pega o item mais antigo com status agendado cujo horário já passou e publica via Zapier (Instagram for Business: publish_media_v2 para foto/carrossel, publish_video para vídeo, instagramPageId 17841460614185827); busca o permalink na Graph API; grava status/permalink/publicado_em no item, no charge_json e em instagram-links.json; commit e push. Nunca publica duas vezes, não altera legenda nem mídia, não publica itens futuros; falha definitiva vira status erro. Vídeo com 'Video is still processing': confere que não saiu e publica em etapas pela Graph API via Zapier (contêiner REELS, espera FINISHED, media_publish)."
+    },
+    {
+      "id": "trig_01DAzF2ND4v9VHottfuYsv5G",
+      "nome": "Charges e artes no Canva — trocar charges automáticas e capas genéricas (de hora em hora)",
+      "cron_utc": "25 * * * *",
+      "fonte": "content/README.md (seções \"Charges no Canva\", \"Referências de imagem por personagem\", \"Artes dos artigos no Canva\" e \"Candidatos com foto oficial do TSE\")",
+      "resumo": "Parte A: posts das últimas 3 h com feature_image contendo /charge- ganham charge no Canva (16:9 + 4:5) a partir de foto licenciada/oficial do personagem (Abilio: MAHWHiDa8C0 + MAHWHkYuCOg, visual atual de camiseta cinza), troca feature_image e og, hospeda 4:5 e agenda no Instagram; às 15 e 21 UTC refaz até 2 antigas; máx. 3 por disparo. Parte B: posts com capa genérica (/opiniao- ou /capa-) ganham ilustração realista de ficção (personagens reais sempre de costas/silhueta, sem rosto), selo ILUSTRAÇÃO · HOJE MT, legenda 'Ilustração: HOJE MT (gerada com IA; cena de ficção)', registro em pautas/ilustracoes/registro.json; máx. 2 por disparo. Commit + push. Parte C: matérias com tag eleicoes que citam candidatos ao Governo/Senado de MT e têm capa genérica ganham capa com foto oficial do TSE (montagem pronta para a disputa em geral; capa de um ou dois candidatos para proposta/agenda/debate; nunca em matéria de acusação), dados em content/pautas/eleicoes/2026-mt-candidatos.json; máx. 2 por disparo. Regra de 24/09: sempre buscar a foto oficial mais recente do personagem antes de gerar (Flávia Moretti MAHWIE_abVw/MAHWIMIJ4SM, Pivetta TSE 2026 MAHWH0J-3js). Parte C 5b (25/09): matérias com tag eleicoes sobre a disputa pelo governo/Senado de outros estados ou pela Presidência ganham montagem com as fotos oficiais de registro (DivulgaCand/TSE, via espelho ND Mais) de todos os candidatos em ordem alfabética, sem indeferidos/renúncias, com content/candidatos-tse.py e o modelo DAHWH1j1gbI; crédito 'Fotos: TSE/Divulgação · Arte: HOJE MT'; máx. 4 por disparo."
+    },
+    {
+      "id": "trig_01UkLYDrfmgR5Y5VCXX9ydEW",
+      "nome": "Tecnologia — monitorar IA na indústria/agro e produzir matéria (dias úteis, 06:00 Cuiabá)",
+      "cron_utc": "0 10 * * 1-5",
+      "fonte": "content/pautas/monitor-tecnologia.md",
+      "resumo": "Busca novidades das últimas 24–48 h sobre IA na indústria/agro de MT e ciência de resultados, checa na fonte primária e, se houver história sólida, escreve matéria (500–800 palavras, fontes com link, checagem pendente), cria rascunho no Ghost com ilustração do Canva e card 4:5 agendado no Instagram condicionado à publicação. Nunca publica."
+    },
+    {
+      "id": "trig_017Hsqviu4hME7Kd93eucPWL",
+      "nome": "Backup do sistema no GitHub (a cada 6 h)",
+      "cron_utc": "9 */6 * * *",
+      "fonte": "content/backup-ghost.mjs",
+      "resumo": "Roda node content/backup-ghost.mjs (posts, páginas, tags, autores sem e-mail, configurações sem segredos, newsletters, site, manifesto de mídias) em backup/ghost/latest; inclui no mesmo commit o trabalho ainda não enviado em content/ e backup/ (nunca .env nem chaves); commit e push (sem tags: o proxy do GitHub não aceita refs/tags) para claude/exciting-thompson-4rhut2. Pedido do editor de 25/09: \"faça o backup e mantenha enviando para GitHub\"."
+    },
+    {
+      "id": "trig_017n6KdPrLbPFabBGSuEjD7n",
+      "nome": "TCE-MT — monitorar sessões e decisões (dias úteis, 18:00 Cuiabá)",
+      "cron_utc": "0 22 * * 1-5",
+      "fonte": "content/pautas/tce/monitor.json e content/README.md (\"Artes dos artigos no Canva\")",
+      "resumo": "Lê o RSS do canal oficial do TCE-MT no YouTube (lives das sessões do Pleno às terças e vídeos de decisões) e a imprensa de MT; até 2 pautas por dia viram rascunho no Ghost com fonte, outro lado e checagem pendente; arte sempre montagem ilustrativa própria no Canva (nunca frame da transmissão ou de TikTok de terceiros); card 4:5 do Instagram fica \"aguardando_materia\"."
+    },
+    {
+      "id": "trig_01NHdwe3fFgHHA8PsA4Jtx3M",
+      "nome": "Instagram perfil zero — medição semanal e próximos posts (segunda, 09:00 Cuiabá)",
+      "cron_utc": "0 13 * * 1",
+      "fonte": "content/pautas/instagram-crescimento.md e content/pautas/instagram-metricas.json",
+      "resumo": "Lê seguidores, curtidas e comentários pela Graph API (Zapier), grava a leitura semanal, atualiza a tabela da sequência de 10 posts e produz no Canva os 2 próximos posts \"A fazer\" (Reel 9:16 ou carrossel 4:5), só com fatos de fonte oficial conferida; hospeda no Ghost e agenda no horário das 19:30 (quem publica é a Routine do Instagram)."
+    },
+    {
+      "id": "trig_01QZF4hTmH3JH6MPVxLyjibY",
+      "nome": "Duplicadas no site — achar e despublicar cópias (a cada 3 h)",
+      "cron_utc": "20 */3 * * *",
+      "fonte": "content/duplicadas.mjs e content/pautas/duplicadas/",
+      "resumo": "Roda duplicadas.mjs nos posts dos últimos 2 dias (texto, foto por dHash e link da fonte), lê os pares candidatos e despublica (volta para rascunho) só a cópia de uma mesma notícia, mantendo a versão mais antiga; registra em pautas/duplicadas/registro.json e acrescenta o redirecionamento 301 em redirects-pendentes.yaml para o editor subir no Ghost Admin."
+    },
+    {
+      "id": "trig_014AgtkZsj8eZVxwWGjRV41B",
+      "nome": "Instagram — lote de todas as charges do Canva (até acabar)",
+      "cron_utc": "24 * * * *",
+      "cuiaba": "de hora em hora, aos 24 min (UTC)",
+      "fonte": "content/pautas/agenda-instagram.json (itens com lote todas-as-charges-2026-09-25)",
+      "resumo": "Publica até 3 itens do lote por disparo, em ordem de lote_ordem, no @hoje.mt via Zapier, com as mesmas regras da rotina da agenda (inclusive a publicação de vídeo em etapas); registra permalink no item, no charge_json e em instagram-links.json; commit e push. Para no limite de tarefas do Zapier sem alterar nada; quando o lote acaba, desativa a si mesma."
+    }
+  ],
+  "modelos_canva": {
+    "charge_16x9": "DAHWDzwR5c0",
+    "charge_4x5": "DAHWEJf2P1U",
+    "capa_publicacao": "DAHWEeS_MbI",
+    "reel_9x16_perfil_zero": "DAHWIHvIE3U",
+    "carrossel_4x5_perfil_zero": "DAHWIEnYeBU",
+    "card_4x5_ilustracao": "DAHWHxXxNqw"
   },
-  {
-   "id": "trig_01DAzF2ND4v9VHottfuYsv5G",
-   "nome": "Charges e artes no Canva — trocar charges automáticas e capas genéricas (de hora em hora)",
-   "cron_utc": "25 * * * *",
-   "fonte": "content/README.md (seções \"Charges no Canva\", \"Referências de imagem por personagem\", \"Artes dos artigos no Canva\" e \"Candidatos com foto oficial do TSE\")",
-   "resumo": "Parte A: posts das últimas 3 h com feature_image contendo /charge- ganham charge no Canva (16:9 + 4:5) a partir de foto licenciada/oficial do personagem (Abilio: MAHWHiDa8C0 + MAHWHkYuCOg, visual atual de camiseta cinza), troca feature_image e og, hospeda 4:5 e agenda no Instagram; às 15 e 21 UTC refaz até 2 antigas; máx. 3 por disparo. Parte B: posts com capa genérica (/opiniao- ou /capa-) ganham ilustração realista de ficção (personagens reais sempre de costas/silhueta, sem rosto), selo ILUSTRAÇÃO · HOJE MT, legenda 'Ilustração: HOJE MT (gerada com IA; cena de ficção)', registro em pautas/ilustracoes/registro.json; máx. 2 por disparo. Commit + push. Parte C: matérias com tag eleicoes que citam candidatos ao Governo/Senado de MT e têm capa genérica ganham capa com foto oficial do TSE (montagem pronta para a disputa em geral; capa de um ou dois candidatos para proposta/agenda/debate; nunca em matéria de acusação), dados em content/pautas/eleicoes/2026-mt-candidatos.json; máx. 2 por disparo. Regra de 24/09: sempre buscar a foto oficial mais recente do personagem antes de gerar (Flávia Moretti MAHWIE_abVw/MAHWIMIJ4SM, Pivetta TSE 2026 MAHWH0J-3js). Parte C 5b (25/09): matérias com tag eleicoes sobre a disputa pelo governo/Senado de outros estados ou pela Presidência ganham montagem com as fotos oficiais de registro (DivulgaCand/TSE, via espelho ND Mais) de todos os candidatos em ordem alfabética, sem indeferidos/renúncias, com content/candidatos-tse.py e o modelo DAHWH1j1gbI; crédito 'Fotos: TSE/Divulgação · Arte: HOJE MT'; máx. 4 por disparo."
-  },
-  {
-   "id": "trig_01UkLYDrfmgR5Y5VCXX9ydEW",
-   "nome": "Tecnologia — monitorar IA na indústria/agro e produzir matéria (dias úteis, 06:00 Cuiabá)",
-   "cron_utc": "0 10 * * 1-5",
-   "fonte": "content/pautas/monitor-tecnologia.md",
-   "resumo": "Busca novidades das últimas 24–48 h sobre IA na indústria/agro de MT e ciência de resultados, checa na fonte primária e, se houver história sólida, escreve matéria (500–800 palavras, fontes com link, checagem pendente), cria rascunho no Ghost com ilustração do Canva e card 4:5 agendado no Instagram condicionado à publicação. Nunca publica."
-  },
-  {
-   "id": "trig_017Hsqviu4hME7Kd93eucPWL",
-   "nome": "Backup do sistema no GitHub (a cada 6 h)",
-   "cron_utc": "9 */6 * * *",
-   "fonte": "content/backup-ghost.mjs",
-   "resumo": "Roda node content/backup-ghost.mjs (posts, páginas, tags, autores sem e-mail, configurações sem segredos, newsletters, site, manifesto de mídias) em backup/ghost/latest; inclui no mesmo commit o trabalho ainda não enviado em content/ e backup/ (nunca .env nem chaves); commit e push (sem tags: o proxy do GitHub não aceita refs/tags) para claude/exciting-thompson-4rhut2. Pedido do editor de 25/09: \"faça o backup e mantenha enviando para GitHub\"."
-  },
-  {
-   "id": "trig_017n6KdPrLbPFabBGSuEjD7n",
-   "nome": "TCE-MT — monitorar sessões e decisões (dias úteis, 18:00 Cuiabá)",
-   "cron_utc": "0 22 * * 1-5",
-   "fonte": "content/pautas/tce/monitor.json e content/README.md (\"Artes dos artigos no Canva\")",
-   "resumo": "Lê o RSS do canal oficial do TCE-MT no YouTube (lives das sessões do Pleno às terças e vídeos de decisões) e a imprensa de MT; até 2 pautas por dia viram rascunho no Ghost com fonte, outro lado e checagem pendente; arte sempre montagem ilustrativa própria no Canva (nunca frame da transmissão ou de TikTok de terceiros); card 4:5 do Instagram fica \"aguardando_materia\"."
-  },
-  {
-   "id": "trig_01NHdwe3fFgHHA8PsA4Jtx3M",
-   "nome": "Instagram perfil zero — medição semanal e próximos posts (segunda, 09:00 Cuiabá)",
-   "cron_utc": "0 13 * * 1",
-   "fonte": "content/pautas/instagram-crescimento.md e content/pautas/instagram-metricas.json",
-   "resumo": "Lê seguidores, curtidas e comentários pela Graph API (Zapier), grava a leitura semanal, atualiza a tabela da sequência de 10 posts e produz no Canva os 2 próximos posts \"A fazer\" (Reel 9:16 ou carrossel 4:5), só com fatos de fonte oficial conferida; hospeda no Ghost e agenda no horário das 19:30 (quem publica é a Routine do Instagram)."
-  },
-  {
-   "id": "trig_01QZF4hTmH3JH6MPVxLyjibY",
-   "nome": "Duplicadas no site — achar e despublicar cópias (a cada 3 h)",
-   "cron_utc": "20 */3 * * *",
-   "fonte": "content/duplicadas.mjs e content/pautas/duplicadas/",
-   "resumo": "Roda duplicadas.mjs nos posts dos últimos 2 dias (texto, foto por dHash e link da fonte), lê os pares candidatos e despublica (volta para rascunho) só a cópia de uma mesma notícia, mantendo a versão mais antiga; registra em pautas/duplicadas/registro.json e acrescenta o redirecionamento 301 em redirects-pendentes.yaml para o editor subir no Ghost Admin."
+  "ghost": {
+    "url": "https://hojemt.com.br",
+    "versao": "6.61.0",
+    "instalacao": "/var/www/hojemt (ghost-cli, MySQL ghost_prod, VM Azure)",
+    "integracao_admin_api": "'Claude' (chave fora do repositório)",
+    "tema": "ghost/content/themes/hojemt (versionado neste repositório)"
   }
- ],
- "modelos_canva": {
-  "charge_16x9": "DAHWDzwR5c0",
-  "charge_4x5": "DAHWEJf2P1U",
-  "capa_publicacao": "DAHWEeS_MbI",
-  "reel_9x16_perfil_zero": "DAHWIHvIE3U",
-  "carrossel_4x5_perfil_zero": "DAHWIEnYeBU",
-  "card_4x5_ilustracao": "DAHWHxXxNqw"
- },
- "ghost": {
-  "url": "https://hojemt.com.br",
-  "versao": "6.61.0",
-  "instalacao": "/var/www/hojemt (ghost-cli, MySQL ghost_prod, VM Azure)",
-  "integracao_admin_api": "'Claude' (chave fora do repositório)",
-  "tema": "ghost/content/themes/hojemt (versionado neste repositório)"
- }
 }
