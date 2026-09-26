@@ -810,7 +810,1059 @@
       "soma": "Mauro Mendes 55,0%, Janaina Riva 31,5%, Zé Medeiros 21,4%, Fávaro 16,6%, Pedro Taques 15,6%"
      }
     ]
+   },
+   {
+    "id": "presidente",
+    "titulo": "Presidência da República",
+    "cenario": "2º turno entre Lula (PT) e Flávio Bolsonaro (PL), sem favorito claro",
+    "porque": "Nas 11 pesquisas nacionais registradas (a rodada mais recente de cada instituto, com campo entre 14 e 23/9), Lula e Flávio estão sempre nos dois primeiros lugares, e nenhum chega à metade dos votos válidos. No 1º turno, Lula aparece à frente em oito, Flávio em duas, e há um empate. No 2º turno simulado, Flávio está à frente em seis, Lula em três, e há dois empates; em nove delas a diferença fica dentro da margem de erro.",
+    "nota": "Em Mato Grosso, a Quaest (21 a 24/9, registros MT-08098/2026 e BR-09594/2026) mostra Flávio com 50% e Lula com 25% no 1º turno; no 2º turno, 56% a 30%.",
+    "nomes": [
+     "Lula",
+     "Flávio Bolsonaro",
+     "Augusto Cury",
+     "Renan Santos",
+     "Ronaldo Caiado"
+    ],
+    "t2max": 6,
+    "pesquisas": [
+     {
+      "inst": "Datafolha",
+      "contratante": "Folha de S.Paulo (Empresa Folha da Manhã S.A.) e Grupo Globo (Globo Comunicação e Participações S.A.)",
+      "campo": "22 a 23/09",
+      "amostra": "2.002",
+      "margem": "2",
+      "conf": 95,
+      "metodo": "entrevistas presenciais (abordagem pesso",
+      "reg": "BR-00304/2026",
+      "base": "totais",
+      "v": {
+       "Lula": 40,
+       "Flávio Bolsonaro": 36,
+       "Augusto Cury": 5,
+       "Ronaldo Caiado": 4,
+       "Renan Santos": 3,
+       "Romeu Zema": 1,
+       "Samara Martins": 1,
+       "Edmilson Costa": 0,
+       "Rui Costa Pimenta": 0,
+       "Veterinário Wilson Grassi": 0,
+       "Leonardo Avalanche": 0,
+       "Clariana Barão": 0,
+       "Hertz Dias": 0
+      },
+      "fontes": [
+       [
+        "G1",
+        "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/24/datafolha-presidente-24-setembro.ghtml",
+        "2026-09-24"
+       ],
+       [
+        "Gazeta do Povo",
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/datafolha-presidente-setembro-2026-4/",
+        "2026-09-24"
+       ],
+       [
+        "O Povo",
+        "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/24/na-datafolha-lula-tem-40-e-flavio-36-ha-empate-no-2-turno.html",
+        "2026-09-24"
+       ],
+       [
+        "NSC Total",
+        "https://www.nsctotal.com.br/politica/eleicoes-2026-que-horas-sai-a-pesquisa-datafolha-para-presidente-hoje-24-09",
+        "2026-09-24"
+       ],
+       [
+        "Jornal de Brasília",
+        "https://jornaldebrasilia.com.br/noticias/politica-e-poder/eleicoes-2026-quaest-datafolha-atlasintel-e-verita-divulgam-pesquisas-nesta-semana/",
+        "2026-09-21"
+       ]
+      ],
+      "t2": [
+       [
+        "Lula",
+        47,
+        "Flávio Bolsonaro",
+        45
+       ]
+      ]
+     },
+     {
+      "inst": "PoderData",
+      "contratante": "recursos próprios",
+      "campo": "20 a 23/09",
+      "amostra": "3.000",
+      "margem": "1,8",
+      "conf": 95,
+      "metodo": "pesquisa telefônica ivr/ura (discador al",
+      "reg": "BR-01739/2026",
+      "base": "totais",
+      "v": {
+       "Lula": 41,
+       "Flávio Bolsonaro": 39,
+       "Augusto Cury": 6,
+       "Renan Santos": 3,
+       "Ronaldo Caiado": 2,
+       "Romeu Zema": 1,
+       "Samara Martins": 1,
+       "Rui Costa Pimenta": 1,
+       "Clariana Barão": 1,
+       "Leonardo Avalanche": 0,
+       "Hertz Dias": 0,
+       "Edmilson Costa": 0,
+       "Veterinário Wilson Grassi": 0
+      },
+      "fontes": [
+       [
+        "Relatório PoderData",
+        "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/09/Relatorio-PoderData-Eleitoral-23set26.pdf",
+        "2026-09-24"
+       ],
+       [
+        "Jovem Pan",
+        "https://jovempan.com.br/politica/poderdata-aya-lula-e-flavio-empatam-tecnicamente-no-1o-e-no-2o-turno/",
+        "2026-09-24"
+       ],
+       [
+        "Revista Oeste",
+        "https://revistaoeste.com/politica/poderdata-flavio-tem-46-e-lula-45-no-2o-turno/",
+        "2026-09-24"
+       ],
+       [
+        "Gazeta do Povo",
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/poderdata-presidente-setembro-2026-3/",
+        "2026-09-24"
+       ],
+       [
+        "Poder360",
+        "https://www.poder360.com.br/poderdata/em-votos-validos-lula-tem-43-contra-42-de-flavio-no-1o-turno/",
+        "2026-09-24"
+       ]
+      ],
+      "t2": [
+       [
+        "Flávio Bolsonaro",
+        46,
+        "Lula",
+        45
+       ]
+      ]
+     },
+     {
+      "inst": "Real Time Big Data",
+      "contratante": "recursos próprios",
+      "campo": "19 a 23/09",
+      "amostra": "2.000",
+      "margem": "2",
+      "conf": 95,
+      "metodo": "entrevistas por telefone e recrutamento ",
+      "reg": "BR-04202/2026",
+      "base": "totais",
+      "v": {
+       "Lula": 41,
+       "Flávio Bolsonaro": 37,
+       "Augusto Cury": 6,
+       "Renan Santos": 6,
+       "Ronaldo Caiado": 2,
+       "Romeu Zema": 1,
+       "Outros (Clariana Barão, Rui Costa Pimenta, Samara, Edmilson Costa, Hertz Dias, Wilson Grassi e Leonardo Avalanche, somados)": 1
+      },
+      "fontes": [
+       [
+        "CNN Brasil – 1º turno",
+        "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-lula-tem-41-no-1o-turno-flavio-37/",
+        "2026-09-24"
+       ],
+       [
+        "CNN Brasil – 2º turno",
+        "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-flavio-tem-45-no-2o-turno-lula-44/",
+        "2026-09-24"
+       ],
+       [
+        "Gazeta do Povo",
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-presidente-setembro-2026-2/",
+        "2026-09-24"
+       ]
+      ],
+      "t2": [
+       [
+        "Flávio Bolsonaro",
+        45,
+        "Lula",
+        44
+       ]
+      ]
+     },
+     {
+      "inst": "Palver",
+      "contratante": "recursos próprios",
+      "campo": "20 a 23/09",
+      "amostra": "5.000",
+      "margem": "2,5",
+      "conf": 95,
+      "metodo": "recrutamento digital online (opt-in via ",
+      "reg": "BR-09587/2026",
+      "base": "totais",
+      "v": {
+       "Flávio Bolsonaro": 43,
+       "Lula": 43,
+       "Renan Santos": 8,
+       "Augusto Cury": 2,
+       "Ronaldo Caiado": 1,
+       "Romeu Zema": 1,
+       "Outros": 1
+      },
+      "fontes": [
+       [
+        "CNN Brasil – 1º turno",
+        "https://www.cnnbrasil.com.br/eleicoes/palver-flavio-e-lula-empatam-no-1o-turno-em-43/",
+        "2026-09-24"
+       ],
+       [
+        "CNN Brasil – 2º turno",
+        "https://www.cnnbrasil.com.br/eleicoes/palver-flavio-tem-48-das-intencoes-de-voto-no-2o-turno-lula-45/",
+        "2026-09-24"
+       ],
+       [
+        "Gazeta do Povo",
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/palver-presidente-setembro-2026-2/",
+        "2026-09-24"
+       ],
+       [
+        "Palver – relatório Onda 4",
+        "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/09/Pesquisa-Eleitoral-Palver-Onda-4.pdf",
+        "2026-09-24"
+       ]
+      ],
+      "t2": [
+       [
+        "Flávio Bolsonaro",
+        48,
+        "Lula",
+        45
+       ]
+      ]
+     },
+     {
+      "inst": "Futura Inteligência",
+      "contratante": "recursos próprios",
+      "campo": "19 a 23/09",
+      "amostra": "2.000",
+      "margem": "2,2",
+      "conf": 95,
+      "metodo": "entrevista telefônica assistida por comp",
+      "reg": "BR-05268/2026",
+      "base": "totais",
+      "v": {
+       "Flávio Bolsonaro": 40.4,
+       "Lula": 38.4,
+       "Ronaldo Caiado": 5.7,
+       "Augusto Cury": 5.6,
+       "Renan Santos": 2.4,
+       "Romeu Zema": 0.9,
+       "Samara Martins": 0.5,
+       "Rui Costa Pimenta": 0.3,
+       "Leonardo Avalanche": 0.2,
+       "Edmilson Costa": 0.1,
+       "Hertz Dias": 0.1,
+       "Clariana Barão": 0.0
+      },
+      "fontes": [
+       [
+        "Futura – relatório Rodada 3",
+        "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/09/R_BR_Setembro_3_3ce1c3.pdf",
+        "2026-09-24"
+       ],
+       [
+        "CNN Brasil – 2º turno",
+        "https://www.cnnbrasil.com.br/eleicoes/futura-flavio-tem-494-no-2o-turno-lula-437/",
+        "2026-09-24"
+       ],
+       [
+        "Exame – 1º turno",
+        "https://exame.com/brasil/futura-flavio-bolsonaro-cresce-chega-a-404-e-ultrapassa-lula-no-1o-turno/",
+        "2026-09-24"
+       ],
+       [
+        "Exame – 2º turno",
+        "https://exame.com/brasil/futura-flavio-bolsonaro-tem-494-e-lula-437-no-2o-turno/",
+        "2026-09-24"
+       ]
+      ],
+      "t2": [
+       [
+        "Flávio Bolsonaro",
+        49.4,
+        "Lula",
+        43.7
+       ]
+      ]
+     },
+     {
+      "inst": "Alfa Inteligência",
+      "contratante": "Rádio Transamérica de São Paulo Ltda. (Gazeta); CartaCapital diz 'encomendada pela TMC'",
+      "campo": "18 a 23/09",
+      "amostra": "2.700",
+      "margem": "1,8",
+      "conf": 95,
+      "metodo": "não informado nas fontes consultadas",
+      "reg": "BR-02512/2026",
+      "base": "totais",
+      "v": {
+       "Lula": 40,
+       "Flávio Bolsonaro": 33,
+       "Augusto Cury": 6,
+       "Ronaldo Caiado": 5,
+       "Renan Santos": 3,
+       "Romeu Zema": 1,
+       "Outros": 1
+      },
+      "fontes": [
+       [
+        "Gazeta do Povo",
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/alfa-inteligencia-presidente-setembro-2026/",
+        "2026-09-24"
+       ],
+       [
+        "CartaCapital",
+        "https://www.cartacapital.com.br/politica/lula-lidera-em-1o-turno-e-empata-com-flavio-bolsonaro-no-2o-indica-pesquisa-alfa/",
+        "2026-09-24"
+       ]
+      ],
+      "t2": [
+       [
+        "Lula",
+        43,
+        "Flávio Bolsonaro",
+        43
+       ]
+      ]
+     },
+     {
+      "inst": "AtlasIntel",
+      "contratante": "recursos próprios",
+      "campo": "17 a 22/09",
+      "amostra": "5.015",
+      "margem": "1",
+      "conf": 95,
+      "metodo": "recrutamento digital aleatório (atlas rd",
+      "reg": "BR-04739/2026",
+      "base": "totais",
+      "v": {
+       "Lula": 45.8,
+       "Flávio Bolsonaro": 43.4,
+       "Renan Santos": 4.5,
+       "Augusto Cury": 2.1,
+       "Ronaldo Caiado": 1.3,
+       "Romeu Zema": 0.9,
+       "Clariana Barão": 0.4,
+       "Samara Martins": 0.4,
+       "Edmilson Costa": 0,
+       "Hertz Dias": 0,
+       "Rui Costa Pimenta": 0,
+       "Veterinário Wilson Grassi": 0
+      },
+      "fontes": [
+       [
+        "CNN Brasil – 1º turno",
+        "https://www.cnnbrasil.com.br/eleicoes/atlas-bloomberg-lula-tem-458-no-1o-turno-flavio-434/",
+        "2026-09-23"
+       ],
+       [
+        "CNN Brasil – 2º turno",
+        "https://www.cnnbrasil.com.br/eleicoes/atlas-bloomberg-lula-tem-477-no-2o-turno-flavio-474/",
+        "2026-09-23"
+       ],
+       [
+        "Gazeta do Povo",
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-presidente-setembro-2026-3/",
+        "2026-09-23"
+       ],
+       [
+        "AtlasIntel/Bloomberg – relatório do instituto",
+        "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/09/Pesquisa-Atlas_Bloomberg-Nacional-260922.pdf",
+        "2026-09-23"
+       ],
+       [
+        "Jornal de Brasília",
+        "https://jornaldebrasilia.com.br/noticias/politica-e-poder/eleicoes-2026-quaest-datafolha-atlasintel-e-verita-divulgam-pesquisas-nesta-semana/",
+        "2026-09-21"
+       ]
+      ],
+      "t2": [
+       [
+        "Lula",
+        47.7,
+        "Flávio Bolsonaro",
+        47.4
+       ]
+      ]
+     },
+     {
+      "inst": "Quaest",
+      "contratante": "Grupo Globo (Editora Globo S.A. / O Globo e Globo Comunicação e Participações S.A.)",
+      "campo": "17 a 20/09",
+      "amostra": "2.004",
+      "margem": "2",
+      "conf": 95,
+      "metodo": "entrevistas pessoais domiciliares (face ",
+      "reg": "BR-06004/2026",
+      "base": "totais",
+      "v": {
+       "Lula": 37,
+       "Flávio Bolsonaro": 33,
+       "Augusto Cury": 6,
+       "Ronaldo Caiado": 4,
+       "Renan Santos": 3,
+       "Romeu Zema": 1,
+       "Samara Martins": 1,
+       "Clariana Barão": 0,
+       "Edmilson Costa": 0,
+       "Hertz Dias": 0,
+       "Rui Costa Pimenta": 0,
+       "Veterinário Wilson Grassi": 0,
+       "Leonardo Avalanche": 0
+      },
+      "fontes": [
+       [
+        "G1",
+        "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/21/quaest-presidente-1o-turno-21-setembro.ghtml",
+        "2026-09-21"
+       ],
+       [
+        "Gazeta do Povo",
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-presidente-setembro-2026-4/",
+        "2026-09-21"
+       ],
+       [
+        "CNN Brasil",
+        "https://www.cnnbrasil.com.br/eleicoes/quaest-flavio-tem-oscilacao-positiva-no-nordeste-e-lula-no-sudeste/",
+        "2026-09-22"
+       ],
+       [
+        "Jornal de Brasília",
+        "https://jornaldebrasilia.com.br/noticias/politica-e-poder/eleicoes-2026-quaest-datafolha-atlasintel-e-verita-divulgam-pesquisas-nesta-semana/",
+        "2026-09-21"
+       ]
+      ],
+      "t2": [
+       [
+        "Flávio Bolsonaro",
+        42,
+        "Lula",
+        41
+       ]
+      ]
+     },
+     {
+      "inst": "Nexus",
+      "contratante": "Banco BTG Pactual",
+      "campo": "18 a 20/09",
+      "amostra": "2.006",
+      "margem": "2",
+      "conf": 95,
+      "metodo": "entrevistas por telefone (cati), cotas d",
+      "reg": "BR-00485/2026",
+      "base": "totais",
+      "v": {
+       "Lula": 40,
+       "Flávio Bolsonaro": 37,
+       "Augusto Cury": 6,
+       "Ronaldo Caiado": 5,
+       "Renan Santos": 3,
+       "Romeu Zema": 1,
+       "Samara Martins": 1,
+       "Rui Costa Pimenta": 0,
+       "Hertz Dias": 0,
+       "Edmilson Costa": 0,
+       "Veterinário Wilson Grassi": 0,
+       "Clariana Barão": 0
+      },
+      "fontes": [
+       [
+        "CNN Brasil – 1º turno",
+        "https://www.cnnbrasil.com.br/eleicoes/nexus-btg-lula-tem-40-no-1o-turno-flavio-37-e-cury-6/",
+        "2026-09-21"
+       ],
+       [
+        "CNN Brasil – 2º turno",
+        "https://www.cnnbrasil.com.br/eleicoes/nexus-btg-2o-turno-lula-empata-com-caiado-e-tem-empate-tecnico-com-flavio/",
+        "2026-09-21"
+       ],
+       [
+        "BTG/Nexus – relatório 15ª rodada",
+        "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/09/BTG-Nexus-Eleicoes-2026-Rodada-15.pdf",
+        "2026-09-21"
+       ],
+       [
+        "TVT News",
+        "https://tvtnews.com.br/quaest-pesquisa-presidente-21-setembro-2026/",
+        "2026-09-21"
+       ]
+      ],
+      "t2": [
+       [
+        "Lula",
+        46,
+        "Flávio Bolsonaro",
+        45
+       ]
+      ]
+     },
+     {
+      "inst": "American Analytics",
+      "contratante": "Times Brasil Media (Times Brasil | CNBC), segundo o Correio Braziliense; custo R$ 50 mil",
+      "campo": "15 a 20/09",
+      "amostra": "2.000",
+      "margem": "2,5",
+      "conf": 95,
+      "metodo": "não informado nas fontes consultadas",
+      "reg": "BR-02587/2026",
+      "base": "totais",
+      "v": {
+       "Lula": 38,
+       "Flávio Bolsonaro": 34,
+       "Augusto Cury": 5,
+       "Ronaldo Caiado": 4,
+       "Renan Santos": 4,
+       "Romeu Zema": 1
+      },
+      "fontes": [
+       [
+        "Times Brasil | CNBC",
+        "https://timesbrasil.com.br/brasil/decisao-2026-lula-e-flavio-bolsonaro-estao-empatados-numericamente-em-43-no-2o-turno-indica-pesquisa-american-analytics-times-brasil-cnbc/",
+        "2026-09-23"
+       ],
+       [
+        "CartaCapital",
+        "https://www.cartacapital.com.br/politica/american-analytics-indica-empate-entre-lula-e-flavio-bolsonaro-no-2o-turno/",
+        "2026-09-23"
+       ],
+       [
+        "Correio Braziliense",
+        "https://www.correiobraziliense.com.br/politica/2026/09/7503518-american-analytics-divulga-nova-pesquisa-nacional-para-a-presidencia.html",
+        "2026-09-21"
+       ]
+      ],
+      "t2": [
+       [
+        "Lula",
+        43,
+        "Flávio Bolsonaro",
+        43
+       ]
+      ]
+     },
+     {
+      "inst": "Gerp",
+      "contratante": "recursos próprios",
+      "campo": "14 a 16/09",
+      "amostra": "2.400",
+      "margem": "2",
+      "conf": 95,
+      "metodo": "entrevistas telefônicas",
+      "reg": "BR-00535/2026",
+      "base": "totais",
+      "v": {
+       "Flávio Bolsonaro": 40,
+       "Lula": 37,
+       "Augusto Cury": 7,
+       "Ronaldo Caiado": 3,
+       "Renan Santos": 2,
+       "Romeu Zema": 1,
+       "Pablo Marçal": 1,
+       "Veterinário Wilson Grassi": 0,
+       "Rui Costa Pimenta": 0,
+       "Samara Martins": 0,
+       "Hertz Dias": 0
+      },
+      "fontes": [
+       [
+        "Gazeta do Povo",
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/gerp-presidente-setembro-2026-2/",
+        "2026-09-17"
+       ],
+       [
+        "Exame – 1º turno",
+        "https://exame.com/brasil/pesquisa-gerp-flavio-bolsonaro-tem-40-e-lula-37-no-1o-turno/",
+        "2026-09-17"
+       ],
+       [
+        "Exame – 2º turno",
+        "https://exame.com/brasil/pesquisa-gerp-flavio-bolsonaro-tem-50-e-lula-43-no-2-turno/",
+        "2026-09-17"
+       ]
+      ],
+      "t2": [
+       [
+        "Flávio Bolsonaro",
+        50,
+        "Lula",
+        43
+       ]
+      ]
+     }
+    ]
    }
   ]
+ },
+ "grupos": {
+  "atualizado": "26/09/2026",
+  "grupos": [
+   {
+    "governador": "Doutora Natasha",
+    "partido": "PSD",
+    "coligacao": "Mato Grosso para Todos",
+    "partidos": [
+     "PSD",
+     "PDT",
+     "PSB",
+     "PT",
+     "PCdoB",
+     "PV",
+     "PSOL",
+     "Rede"
+    ],
+    "vice": "Diogo Botelho (PDT)",
+    "senado": [
+     "Fávaro (PSD)",
+     "Pedro Taques (PSB)"
+    ],
+    "desenho": "Coligação liderada pelo PSD com os partidos que apoiam a reeleição de Lula; disputa com o grupo do governo estadual.",
+    "movimentos": [
+     {
+      "data": "2026-09-17",
+      "fato": "Segundo o senador Carlos Fávaro, Lula gravou vídeo pedindo votos para os aliados em MT e não virá ao estado no 1º turno.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/noticias/favaro-diz-que-baixa-densidade-eleitoral-afasta-lula-de-mt-no-1-turno",
+        "2026-09-18"
+       ],
+       [
+        "Muvuca Popular",
+        "https://www.muvucapopular.com.br/2026/09/18/favaro-confirma-que-lula-nao-vira-para-campanha-de-natasha-em-mato-grosso/",
+        "2026-09-18"
+       ]
+      ]
+     },
+     {
+      "data": "2026-09-17",
+      "fato": "O Novo-MT negou em nota que vá apoiar Natasha, hipótese levantada antes nos bastidores.",
+      "fontes": [
+       [
+        "Momento MT",
+        "https://momentomt.com.br/momento-destaque/novo-avalia-romper-com-pl-apos-candidatos-cobrarem-revisao-de-acordo/",
+        "2026-09-17"
+       ],
+       [
+        "24 Horas MT",
+        "https://24horasmt.com.br/politica-mt/candidatos-do-novo-pedem-rompimento-com-wellington-e-medeiros-por-suposto-descumprimento-de-acordos/",
+        "2026-09-17"
+       ]
+      ]
+     }
+    ],
+    "fontes": [
+     [
+      "ND Mais",
+      "https://ndmais.com.br/eleicoes/2026/candidatos/mt/governador/55-doutora-natasha/",
+      "2026-09-25"
+     ],
+     [
+      "NSC Total",
+      "https://www.nsctotal.com.br/politica/eleicoes-2026-candidatos-governo-mato-grosso",
+      "2026-08-24"
+     ],
+     [
+      "PNB Online",
+      "https://pnbonline.com.br/convencoes-definem-seis-nomes-ao-governo-e-dez-ao-senado-em-mt/",
+      "2026-08-07"
+     ],
+     [
+      "Olhar Direto",
+      "https://www.olhardireto.com.br/noticias/natasha-admite-abrir-governo-a-adversarios-e-diz-que-apoio-nao-se-nega",
+      "2026-09-17"
+     ]
+    ]
+   },
+   {
+    "governador": "Maurício Coelho",
+    "partido": "Mobiliza",
+    "coligacao": "chapa isolada",
+    "partidos": [
+     "Mobiliza"
+    ],
+    "vice": "Dr. Wagner Malheiros (Mobiliza)",
+    "senado": [],
+    "desenho": "Chapa própria do Mobiliza, sem coligação e sem candidato ao Senado.",
+    "movimentos": [],
+    "fontes": [
+     [
+      "ND Mais",
+      "https://ndmais.com.br/eleicoes/2026/candidatos/mt/governador/33-mauricio-coelho/",
+      "2026-09-25"
+     ],
+     [
+      "NSC Total",
+      "https://www.nsctotal.com.br/politica/eleicoes-2026-candidatos-governo-mato-grosso",
+      "2026-08-24"
+     ],
+     [
+      "PNB Online",
+      "https://pnbonline.com.br/convencoes-definem-seis-nomes-ao-governo-e-dez-ao-senado-em-mt/",
+      "2026-08-07"
+     ]
+    ]
+   },
+   {
+    "governador": "Otaviano Pivetta",
+    "partido": "Republicanos",
+    "coligacao": "Mato Grosso Não Pode Parar",
+    "partidos": [
+     "Republicanos",
+     "União Brasil",
+     "PP",
+     "PSDB",
+     "Cidadania",
+     "Podemos"
+    ],
+    "vice": "Gisela Simona (União)",
+    "senado": [
+     "Mauro Mendes (União)",
+     "Margareth Buzetti (PP)",
+     "Galvan (Avante), apoio declarado"
+    ],
+    "desenho": "Grupo do governo estadual, com o governador candidato à reeleição e o ex-governador Mauro Mendes.",
+    "movimentos": [
+     {
+      "data": "2026-09-24",
+      "fato": "No ato \"Arrancada da Vitória\", em Cuiabá, Mauro Mendes pediu votos para Pivetta e para Margareth Buzetti ao Senado.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/noticias/mauro-pede-votos-para-pivetta-e-buzetti-e-exalta-gestao-povo-de-mato-grosso-nao-e-bobo",
+        "2026-09-25"
+       ],
+       [
+        "RDM Online",
+        "https://rdmonline.com.br/mauro-pede-votos-para-pivetta-e-buzetti-em-ato-de-campanha-em-cuiaba/",
+        "2026-09-25"
+       ]
+      ]
+     },
+     {
+      "data": "2026-09-16",
+      "fato": "Três prefeitos do PL declararam apoio a Pivetta, contra a orientação do partido: Cláudio Ferreira (Rondonópolis), Flávia Moretti (Várzea Grande) e Sérgio Machnic (Primavera do Leste).",
+      "fontes": [
+       [
+        "MidiaJur",
+        "https://www.midiajur.com.br/eleicoes-2026/filiado-ao-pl-prefeito-de-rondonopolis-admite-pagar-o-preco-e-declara-apoio-a-pivetta/86195",
+        "2026-08-28"
+       ],
+       [
+        "Muvuca Popular",
+        "https://www.muvucapopular.com.br/2026/09/18/com-adesivo-de-pivetta-claudio-diz-nao-temer-represalia-do-pl-vivemos-numa-democracia/",
+        "2026-09-18"
+       ],
+       [
+        "24 Horas MT",
+        "https://24horasmt.com.br/politica-mt/flavia-moretti-declara-voto-em-pivetta-e-amplia-racha-no-pl-de-mato-grosso/",
+        "2026-08-31"
+       ],
+       [
+        "PlantãoNews",
+        "https://plantaonews.com.br/prefeita-do-segundo-maior-colegio-eleitoral-de-mato-grosso-declara-apoio-a-otaviano-pivetta/",
+        "2026-08-30"
+       ]
+      ]
+     },
+     {
+      "data": "2026-09-14",
+      "fato": "O TRE-MT rejeitou, por 7 a 0, o recurso da coligação de Wellington contra o registro de Pivetta.",
+      "fontes": [
+       [
+        "PlantãoNews",
+        "https://plantaonews.com.br/justica-aplica-nova-derrota-a-wellington-e-rejeita-por-7-a-0-recurso-contra-candidatura-de-pivetta/",
+        "2026-09-15"
+       ],
+       [
+        "O Documento",
+        "https://odocumento.com.br/por-7-a-0-tre-de-mt-rejeita-impugnacao-e-confirma-pivetta-como-candidato-a-reeleicao/",
+        "2026-09-15"
+       ],
+       [
+        "MidiaJur",
+        "https://www.midiajur.com.br/eleicoes-2026/tre-mt-rejeita-pedido-de-impugnacao-e-defere-candidatura-de-pivetta/86500",
+        "2026-09-04"
+       ]
+      ]
+     },
+     {
+      "data": "2026-09-17",
+      "fato": "Virginia Mendes (União), da coligação de Pivetta, pediu votos para Zé Medeiros (PL), da coligação adversária.",
+      "fontes": [
+       [
+        "Gazeta Digital",
+        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/virginia-pede-votos-a-medeiros-e-segue-cartilha-mauro-banalizando-fidelidade-partidaria/859822",
+        "2026-09-18"
+       ],
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/noticias/virginia-diz-que-pediu-votos-para-medeiros-e-buzetti-mas-mantem-segundo-voto-em-segredo-pedi-para-os-dois",
+        "2026-09-25"
+       ]
+      ]
+     }
+    ],
+    "fontes": [
+     [
+      "ND Mais",
+      "https://ndmais.com.br/eleicoes/2026/candidatos/mt/governador/10-otaviano-pivetta/",
+      "2026-09-25"
+     ],
+     [
+      "NSC Total",
+      "https://www.nsctotal.com.br/politica/eleicoes-2026-candidatos-governo-mato-grosso",
+      "2026-08-24"
+     ],
+     [
+      "Exame",
+      "https://exame.com/brasil/eleicoes-2026-quem-sao-os-candidatos-ao-governo-de-mato-grosso/",
+      "2026-08-18"
+     ],
+     [
+      "PNB Online",
+      "https://pnbonline.com.br/convencoes-definem-seis-nomes-ao-governo-e-dez-ao-senado-em-mt/",
+      "2026-08-07"
+     ]
+    ]
+   },
+   {
+    "governador": "Rafaell Milas",
+    "partido": "Missão",
+    "coligacao": "chapa isolada",
+    "partidos": [
+     "Missão"
+    ],
+    "vice": "Thales Sartorelo (Missão)",
+    "senado": [],
+    "desenho": "Chapa própria do Missão, sem coligação e sem candidato ao Senado.",
+    "movimentos": [],
+    "fontes": [
+     [
+      "ND Mais",
+      "https://ndmais.com.br/eleicoes/2026/candidatos/mt/governador/14-rafaell-milas/",
+      "2026-09-25"
+     ],
+     [
+      "NSC Total",
+      "https://www.nsctotal.com.br/politica/eleicoes-2026-candidatos-governo-mato-grosso",
+      "2026-08-24"
+     ],
+     [
+      "PNB Online",
+      "https://pnbonline.com.br/convencoes-definem-seis-nomes-ao-governo-e-dez-ao-senado-em-mt/",
+      "2026-08-07"
+     ]
+    ]
+   },
+   {
+    "governador": "Sargento Laudicério",
+    "partido": "Agir",
+    "coligacao": "chapa isolada",
+    "partidos": [
+     "Agir"
+    ],
+    "vice": "Sargento Karen Fortes (Agir)",
+    "senado": [
+     "Beny Godoy (Agir)",
+     "Professor Nelson Ferreira (Agir)"
+    ],
+    "desenho": "Chapa própria do Agir, sem coligação, com dois candidatos do partido ao Senado.",
+    "movimentos": [
+     {
+      "data": "2026-09-13",
+      "fato": "A Sargento Karen Fortes foi anunciada como vice depois que o TRE-MT homologou a renúncia de Alex Pucineli.",
+      "fontes": [
+       [
+        "Leia MT",
+        "https://leiamt.com.br/no-limite-do-prazo-laudicerio-escolhe-pm-premiada-por-bravura-para-disputar-vice-governadoria/",
+        "2026-09-14"
+       ],
+       [
+        "Muvuca Popular",
+        "https://www.muvucapopular.com.br/2026/09/14/laudicerio-anuncia-sargento-como-vice-na-disputa-pelo-governo-de-mt/",
+        "2026-09-14"
+       ],
+       [
+        "Primeira Página",
+        "https://primeirapagina.com.br/politica/sargento-laudicerio-machado-troca-vice-e-coloca-empresario-no-lugar-de-produtor-rural/",
+        "2026-08-16"
+       ]
+      ]
+     }
+    ],
+    "fontes": [
+     [
+      "ND Mais",
+      "https://ndmais.com.br/eleicoes/2026/candidatos/mt/governador/36-sargento-laudicerio/",
+      "2026-09-25"
+     ],
+     [
+      "ND Mais",
+      "https://ndmais.com.br/eleicoes/2026/candidatos/mt/governador/36-sargento-laudicerio-lau/",
+      "2026-09-25"
+     ],
+     [
+      "NSC Total",
+      "https://www.nsctotal.com.br/politica/eleicoes-2026-candidatos-governo-mato-grosso",
+      "2026-08-24"
+     ],
+     [
+      "PNB Online",
+      "https://pnbonline.com.br/convencoes-definem-seis-nomes-ao-governo-e-dez-ao-senado-em-mt/",
+      "2026-08-07"
+     ]
+    ]
+   },
+   {
+    "governador": "Wellington Fagundes",
+    "partido": "PL",
+    "coligacao": "Coração da Gente",
+    "partidos": [
+     "PL",
+     "MDB",
+     "Novo",
+     "PRD",
+     "Solidariedade"
+    ],
+    "vice": "Reinaldo Gomes de Morais (Novo)",
+    "senado": [
+     "Zé Medeiros (PL)",
+     "Janaina Riva (MDB)"
+    ],
+    "desenho": "Candidatura do PL alinhada à de Flávio Bolsonaro para presidente, em coligação com MDB, Novo, PRD e Solidariedade.",
+    "movimentos": [
+     {
+      "data": "2026-09-24",
+      "fato": "Flávio Bolsonaro pediu votos para Wellington e para Zé Medeiros em vídeo; Sergio Moro declarou apoio a Wellington em 23/9.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://olhardireto.com.br/noticias/flavio-bolsonaro-pede-votos-para-wellington-e-diz-que-pl-vai-recolocar-mt-nos-trilhos",
+        "2026-09-24"
+       ],
+       [
+        "O Documento",
+        "https://odocumento.com.br/flavio-bolsonaro-pede-voto-para-wellington-e-diz-que-pl-vai-recolocar-mt-nos-trilhos/",
+        "2026-09-24"
+       ],
+       [
+        "Gazeta Digital",
+        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/wellington-propoe-ampliar-acesso-a-maternidades-e-recebe-apoio-de-flavio-bolsonaro-em-programa-eleitoral/860546",
+        "2026-09-25"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/moro-declara-apoio-a-wellington-fagundes-ao-governo-de-mt/152488",
+        "2026-09-24"
+       ]
+      ]
+     },
+     {
+      "data": "2026-09-21",
+      "fato": "O PL-MT anunciou em 2/9 procedimento contra prefeitos do partido que apoiam Pivetta; em 21/9, o presidente estadual disse que os processos ainda não começaram e que a punição pode não ser a expulsão.",
+      "fontes": [
+       [
+        "Minuto MT",
+        "https://minutomt.com.br/politica/pl-abre-processo-contra-prefeitos-que-declararam-apoio-a-pivetta/",
+        "2026-09-02"
+       ],
+       [
+        "RDM Online",
+        "https://rdmonline.com.br/pl-abre-caminho-para-expulsao-de-prefeitos-que-apoiam-pivetta/",
+        "2026-09-03"
+       ],
+       [
+        "Gazeta Digital",
+        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/pl-recalcula-rota-e-descarta-expulsar-prefeitos-infieis/860048",
+        "2026-09-21"
+       ],
+       [
+        "Leia MT",
+        "https://leiamt.com.br/punicao-alternativa-pl-recalcula-rota-e-descarta-expulsar-prefeitos-infieis/",
+        "2026-09-21"
+       ]
+      ]
+     },
+     {
+      "data": "2026-09-23",
+      "fato": "Candidatos do Novo pediram rompimento com Wellington e Medeiros; o presidente do Novo-MT condicionou o apoio a Medeiros ao compromisso com o impeachment de ministros do STF.",
+      "fontes": [
+       [
+        "24 Horas MT",
+        "https://24horasmt.com.br/politica-mt/candidatos-do-novo-pedem-rompimento-com-wellington-e-medeiros-por-suposto-descumprimento-de-acordos/",
+        "2026-09-17"
+       ],
+       [
+        "Momento MT",
+        "https://momentomt.com.br/momento-destaque/novo-avalia-romper-com-pl-apos-candidatos-cobrarem-revisao-de-acordo/",
+        "2026-09-17"
+       ],
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/noticias/apos-vazamento-novo-exige-posicao-de-medeiros-sobre-impeachment-de-ministros-do-stf-para-fechar-apoio",
+        "2026-09-24"
+       ],
+       [
+        "Gazeta Digital",
+        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/novo-condiciona-apoio-a-medeiros-ao-apoio-por-impeachment-somos-bem-criticos-ao-stf/860322",
+        "2026-09-24"
+       ]
+      ]
+     },
+     {
+      "data": "2026-09-16",
+      "fato": "O TRE-MT mandou a coligação e o PL compensarem o tempo de rádio e TV retirado de Janaina Riva.",
+      "fontes": [
+       [
+        "O Documento",
+        "https://odocumento.com.br/tre-segue-stf-e-manda-pl-devolver-tempo-retirado-de-janaina-riva-na-tv-e-no-radio/",
+        "2026-09-16"
+       ],
+       [
+        "Voz MT",
+        "https://www.vozmt.com.br/politica/briga-pelo-tempo-de-tv-esquenta-disputa-entre-janaina-riva-e-jose-medeiros/",
+        "2026-09-21"
+       ]
+      ]
+     }
+    ],
+    "fontes": [
+     [
+      "ND Mais",
+      "https://ndmais.com.br/eleicoes/2026/candidatos/mt/governador/22-wellington-fagundes/",
+      "2026-09-25"
+     ],
+     [
+      "NSC Total",
+      "https://www.nsctotal.com.br/politica/eleicoes-2026-candidatos-governo-mato-grosso",
+      "2026-08-24"
+     ],
+     [
+      "Olhar Direto",
+      "https://www.olhardireto.com.br/noticias/janaina-rejeita-patrulha-do-pl-e-diz-que-mdb-nao-vai-punir-aliados-em-outros-palanques",
+      "2026-09-10"
+     ],
+     [
+      "PNB Online",
+      "https://pnbonline.com.br/convencoes-definem-seis-nomes-ao-governo-e-dez-ao-senado-em-mt/",
+      "2026-08-07"
+     ]
+    ]
+   }
+  ],
+  "nota": "Coronel Darwin (Democrata) disputa o Senado sem alinhamento com candidato a governador: o partido decidiu não lançar nem apoiar candidato ao cargo. Fontes: espelho do DivulgaCand/TSE (ND Mais) e veículos citados em cada item; só entram fatos com pelo menos duas fontes."
  }
 }
