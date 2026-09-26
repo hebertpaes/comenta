@@ -33,6 +33,52 @@ html[data-theme="dark"] #hmt-radar,html.dark #hmt-radar,body.dark-mode #hmt-rada
 @media (max-width:600px){#hmt-radar .rd-toast{left:16px;right:16px;max-width:none}}
 #hmt-radar .rd-novas b{background:#fff;color:#0a2e1f;border-radius:999px;padding:1px 8px;margin-right:4px}
 /* Filtros */
+/* Navegação, boletim, Justiça Eleitoral, grupos */
+#hmt-radar .rd-nav{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+#hmt-radar .rd-nav a{border:1px solid var(--bd-ctl);border-radius:999px;padding:6px 12px;font-size:.84rem;color:var(--tx);text-decoration:none;background:var(--campo)}
+#hmt-radar .rd-nav a:hover{border-color:var(--verde)}
+#hmt-radar .rd-sec{margin:0 0 16px;scroll-margin-top:90px}
+#hmt-radar .rd-sec[hidden]{display:none}
+#hmt-radar .rd-sec-cab{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;margin:0 0 8px}
+#hmt-radar .rd-sec-cab h3{margin:0;font-size:1.15rem;color:var(--tx)}
+#hmt-radar .rd-sec-cab p{margin:0;font-size:.82rem;color:var(--mu)}
+#hmt-radar .rd-bol{display:grid;grid-template-columns:minmax(0,220px) 1fr;gap:14px;background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;box-shadow:var(--som)}
+@media (max-width:640px){#hmt-radar .rd-bol{grid-template-columns:1fr}}
+#hmt-radar .rd-bol video,#hmt-radar .rd-bol img.rd-bol-poster{width:100%;border-radius:12px;background:#000;display:block;aspect-ratio:9/16;object-fit:cover}
+@media (max-width:640px){#hmt-radar .rd-bol video,#hmt-radar .rd-bol img.rd-bol-poster{max-width:260px;margin:0 auto}}
+#hmt-radar .rd-bol-id{display:flex;align-items:center;gap:10px;margin:0 0 8px}
+#hmt-radar .rd-bol-id img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--s3)}
+#hmt-radar .rd-bol-id b{display:block;font-size:1rem;color:var(--tx)}
+#hmt-radar .rd-bol-id small{display:block;font-size:.76rem;color:var(--mu)}
+#hmt-radar .rd-bol h4{margin:0 0 6px;font-size:1.05rem;line-height:1.3;color:var(--tx)}
+#hmt-radar .rd-bol p{margin:0 0 8px;font-size:.92rem;color:var(--tx2);line-height:1.5}
+#hmt-radar .rd-bol .rd-ia{font-size:.74rem;color:var(--mu);border-top:1px dashed var(--bd);padding-top:8px;margin-top:6px}
+#hmt-radar .rd-jus-grade,#hmt-radar .rd-gru-grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:12px}
+#hmt-radar .rd-jus,#hmt-radar .rd-gru{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;box-shadow:var(--som);min-width:0}
+#hmt-radar .rd-jus h4,#hmt-radar .rd-gru h4{margin:0 0 8px;font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mu)}
+#hmt-radar .rd-jus ul,#hmt-radar .rd-gru ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+#hmt-radar .rd-jus li{border-top:1px solid var(--bd);padding-top:8px}
+#hmt-radar .rd-jus li:first-child{border-top:0;padding-top:0}
+#hmt-radar .rd-jn{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;font-weight:700;color:var(--tx);font-size:.92rem}
+#hmt-radar .rd-sit{border-radius:999px;padding:1px 8px;font-size:.7rem;font-weight:800;border:1px solid var(--bd-ctl);color:var(--tx2);background:var(--campo)}
+#hmt-radar .rd-sit.ok{border-color:var(--s3)}
+#hmt-radar .rd-sit.alerta{border-color:var(--s4);border-width:2px}
+#hmt-radar .rd-jit{font-size:.82rem;color:var(--tx2);line-height:1.45;margin-top:5px}
+#hmt-radar .rd-jit b{color:var(--tx)}
+#hmt-radar .rd-jit .rd-tipo{font-size:.68rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--mu);margin-right:4px}
+#hmt-radar .rd-nada{font-size:.8rem;color:var(--mu);margin-top:3px}
+#hmt-radar .rd-gru .rd-gru-nome{font-size:1rem;font-weight:800;color:var(--tx);margin:0 0 2px}
+#hmt-radar .rd-gru .rd-gru-sub{font-size:.8rem;color:var(--mu);margin:0 0 8px}
+#hmt-radar .rd-gru dl{margin:0 0 8px;display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:.82rem}
+#hmt-radar .rd-gru dt{color:var(--mu)}#hmt-radar .rd-gru dd{margin:0;color:var(--tx2)}
+#hmt-radar .rd-gru li{font-size:.82rem;color:var(--tx2);line-height:1.45;border-left:3px solid var(--bd);padding-left:9px}
+#hmt-radar .rd-gru li small{color:var(--mu)}
+#hmt-radar .rd-fx2 summary{cursor:pointer;font-size:.76rem;color:var(--mu);list-style:none;display:inline}
+#hmt-radar .rd-fx2 summary::-webkit-details-marker{display:none}
+#hmt-radar .rd-fx2 summary::before{content:"▸ ";font-size:.65rem}
+#hmt-radar .rd-fx2[open] summary::before{content:"▾ "}
+#hmt-radar .rd-fx2 span{display:block;font-size:.76rem;color:var(--tx2)}
+#hmt-radar .rd-fx2 a{color:var(--tx2)}
 /* Pesquisas */
 #hmt-radar .rd-pesq{margin:0 0 14px}
 #hmt-radar .rd-pesq[hidden]{display:none}
@@ -226,7 +272,13 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
   <div class="rd-status" id="rd-status"><span>Carregando…</span></div>
   <div class="rd-novas" id="rd-novas" hidden></div>
  </header>
- <section class="rd-pesq" id="rd-pesq" aria-labelledby="rd-pesq-t" hidden></section>
+ <nav class="rd-nav" aria-label="Seções do radar"><a href="#rd-boletim">Boletim do Argos</a><a href="#rd-pesq">Pesquisas</a><a href="#rd-justica">Justiça Eleitoral</a><a href="#rd-grupos">Grupos e alianças</a><a href="#rd-noticias">Notícias</a></nav>
+ <section class="rd-sec" id="rd-boletim" aria-labelledby="rd-boletim-t" hidden></section>
+ <section class="rd-pesq rd-sec" id="rd-pesq" aria-labelledby="rd-pesq-t" hidden></section>
+ <section class="rd-sec" id="rd-justica" aria-labelledby="rd-justica-t" hidden></section>
+ <section class="rd-sec" id="rd-grupos" aria-labelledby="rd-grupos-t" hidden></section>
+ <h3 class="rd-cargo" id="rd-noticias" style="scroll-margin-top:90px">Notícias da semana <small>o que a imprensa publicou, candidato por candidato</small></h3>
+ <!--DADOS--><script type="application/json" id="rd-dados">{}</script><!--/DADOS-->
  <div class="rd-filtros" role="search" aria-label="Filtrar o radar">
   <div class="rd-linha"><span class="rd-rot" id="rd-rot-cargo">Cargo</span><div class="rd-grupo" id="rd-cargos" role="radiogroup" aria-labelledby="rd-rot-cargo"></div></div>
   <div class="rd-linha"><span class="rd-rot" id="rd-rot-tipo">Mostrar</span><div class="rd-grupo" id="rd-tipos" role="radiogroup" aria-labelledby="rd-rot-tipo">
@@ -402,11 +454,14 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
   var of='';if(c.of){of='<dl class="rd-ofic">'+(c.of.urna&&c.of.urna!==c.nome?par('Nome de urna',esc(c.of.urna)):'')+(c.of.coligacao?par('Coligação',esc(c.of.coligacao)):'')+(c.of.vice?par('Vice',esc(c.of.vice)):'')+par('Registro',c.of.deferido?'deferido (TSE)':'<span class="rd-chk">checagem pendente</span>')+'</dl>'}
   var igU=String(c.instagram||'').trim().replace(/^(?:https?:\/\/)?(?:(?:www|m)\.)?instagram\.com\//i,'').replace(/^@/,'').split(/[\/?#]/)[0];igU=/^[A-Za-z0-9._]{1,30}$/.test(igU)&&!/^(p|reel|reels|tv|stories|explore|accounts)$/i.test(igU)&&!/instagram\.com$/i.test(igU)?igU:'';
   var ig=igU?'<a href="https://www.instagram.com/'+igU+'/" rel="nofollow noopener" target="_blank">Instagram @'+igU+' <span aria-hidden="true">↗</span><span class="rd-sr"> (abre em nova aba)</span></a>':'';
+  var rd=(DADOS.redes||{})[c.nome]||(c.of&&(DADOS.redes||{})[c.of.urna]),redes=rd&&rd.length?'<span class="rd-redes">Redes oficiais: '+rd.filter(function(r){return seguro(r[1])}).map(function(r){return '<a href="'+esc(r[1])+'" target="_blank" rel="noopener nofollow">'+esc(r[0])+'</a>'}).join(' · ')+'</span>':'';
+  if(redes)ig='';
+  var jj=(DADOS.justica&&DADOS.justica.candidatos||[]).filter(function(x){return x.nome===(c.of?c.of.urna:c.nome)||x.nome===c.nome})[0],jus=jj?'<a href="#rd-j-'+slug(jj.nome)+'">Justiça Eleitoral: '+((jj.itens||[]).length?pl(jj.itens.length,'registro'):'nada encontrado')+'</a>':'';
   var rotina=c.neutras&&estado.periodo==='7'&&!ts.length&&!estado.tema?'<span>+'+pl(c.neutras,'notícia')+' de rotina na semana</span>':'';
   return '<article class="rd-card" id="'+c.id+'" aria-labelledby="rd-n-'+i+'"><div class="rd-cab"><div class="rd-av" aria-hidden="true">'+esc(iniciais(c.nome))+'</div><div class="rd-id"><h4 class="rd-nome" id="rd-n-'+i+'">'+destaca(c.nome,ts,true)+'</h4><div class="rd-sub">'+sub+'</div></div>'+(c.of?'<span class="rd-num"><small>Número</small>'+esc(c.of.numero)+'</span>':'')+'</div>'
    +of+'<div class="rd-mini"><div>'+bal+'<div class="rd-chips">'+chips+'</div></div>'+spark+'</div>'
    +'<div class="rd-cols'+(estado.tipo==='todos'?'':' uma')+'">'+cols+'</div>'
-   +'<div class="rd-rodape-card"><a href="/search/?q='+encodeURIComponent(c.nome)+'">Cobertura no HOJE MT<span class="rd-sr"> sobre '+esc(c.nome)+'</span></a>'+ig+rotina+'</div></article>'}
+   +'<div class="rd-rodape-card"><a href="/search/?q='+encodeURIComponent(c.nome)+'">Cobertura no HOJE MT<span class="rd-sr"> sobre '+esc(c.nome)+'</span></a>'+ig+jus+redes+rotina+'</div></article>'}
  // ---------- Gráficos (SVG sem bibliotecas; texto sempre em tons de texto, cor só nas marcas) ----------
  function arred(v){if(v<=4)return 4;var p=Math.pow(10,Math.floor(Math.log10(v))),m=v/p;return (m<=1?1:m<=2?2:m<=2.5?2.5:m<=5?5:10)*p}
  function tabela(el,cab,linhas){el.innerHTML='<table><thead><tr>'+cab.map(function(h,i){return '<th'+(i?' class="n"':'')+' scope="col">'+esc(h)+'</th>'}).join('')+'</tr></thead><tbody>'+linhas.map(function(l){return '<tr>'+l.map(function(v,i){return i?'<td class="n">'+esc(v)+'</td>':'<th scope="row">'+esc(v)+'</th>'}).join('')+'</tr>'}).join('')+'</tbody></table>'}
@@ -607,6 +662,37 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
  function agenda(){clearTimeout(tPoll);tPoll=setTimeout(function(){if(document.visibilityState!=='hidden')confere();agenda()},6e4)}
  document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'&&dados&&Date.now()-ultimaBusca>3e4){confere();agenda()}});
  setInterval(function(){if(dados&&document.visibilityState!=='hidden')pintaStatus()},3e4);
+ // ---------- Dados editoriais (atualizados pela redação/rotina): boletim, pesquisas, Justiça Eleitoral, grupos, redes ----------
+ var DADOS={};try{DADOS=JSON.parse($('rd-dados').textContent)||{}}catch(e){DADOS={}}
+ var PESQ=DADOS.pesquisas;
+ function fontesHtml(fs){fs=(fs||[]).filter(function(f){return f&&seguro(f[1])});if(!fs.length)return '';return '<details class="rd-fx2"><summary>'+pl(fs.length,'fonte')+'</summary><span>'+fs.map(function(f){return '<a href="'+esc(f[1])+'" target="_blank" rel="noopener nofollow">'+esc(f[0])+'</a>'+(f[2]?' ('+esc(f[2])+')':'')}).join(' · ')+'</span></details>'}
+ function dataBR(d){var m=/^(\d{4})-(\d{2})-(\d{2})/.exec(d||'');return m?m[3]+'/'+m[2]:esc(d||'')}
+ function boletim(){var b=DADOS.boletim,el=$('rd-boletim');if(!b||!el)return;
+  el.innerHTML='<div class="rd-sec-cab"><h3 id="rd-boletim-t">Boletim do Argos</h3><p>'+esc(b.quando||'')+'</p></div><div class="rd-bol">'+
+   (b.video?'<video controls preload="none" playsinline poster="'+esc(b.poster||'')+'" src="'+esc(b.video)+'"><a href="'+esc(b.video)+'">Assistir ao boletim</a></video>':(b.poster?'<img class="rd-bol-poster" src="'+esc(b.poster)+'" alt="Argos Veredas, repórter virtual do HOJE MT">':''))+
+   '<div><div class="rd-bol-id">'+(b.avatar?'<img src="'+esc(b.avatar)+'" alt="" width="48" height="48">':'')+'<div><b>Argos Veredas</b><small>Repórter virtual oficial do HOJE MT · criado com IA</small></div></div>'+
+   '<h4>'+esc(b.titulo||'')+'</h4>'+(b.texto||[]).map(function(t){return '<p>'+esc(t)+'</p>'}).join('')+fontesHtml(b.fontes)+
+   '<p class="rd-ia">Argos Veredas é um repórter virtual criado com inteligência artificial (imagem e voz sintéticas, sem imitar ninguém). Os fatos foram apurados e conferidos pela redação do HOJE MT.</p></div></div>';el.hidden=false}
+ var SIT={'deferido':['ok','Registro deferido'],'deferido com recurso':['alerta','Deferido, com recurso pendente'],'indeferido com recurso':['alerta','Indeferido, com recurso'],'indeferido':['alerta','Registro indeferido'],'aguardando julgamento':['','Registro aguardando julgamento'],'renuncia':['','Renunciou']};
+ var TIPO={decisao:'Decisão',acao_em_andamento:'Ação em andamento (sem julgamento)',arquivada:'Arquivada ou improcedente'};
+ function justica(){var j=DADOS.justica,el=$('rd-justica');if(!j||!j.candidatos||!el)return;
+  var porCargo={governador:[],senador:[]};j.candidatos.forEach(function(c){(porCargo[c.cargo]=porCargo[c.cargo]||[]).push(c)});
+  el.innerHTML='<div class="rd-sec-cab"><h3 id="rd-justica-t">Na Justiça Eleitoral</h3><p>Registros e decisões oficiais · atualizado em '+esc(j.atualizado||'')+'</p></div><div class="rd-jus-grade">'+
+   [['governador','Governo de Mato Grosso'],['senador','Senado por Mato Grosso']].map(function(g){var l=(porCargo[g[0]]||[]).slice().sort(function(a,b){return a.nome.localeCompare(b.nome,'pt-BR')});if(!l.length)return '';
+    return '<article class="rd-jus"><h4>'+g[1]+'</h4><ul>'+l.map(function(c){var r=c.registro||{},si=SIT[norm(r.situacao||'').replace(/[^a-z ]/g,'').trim()]||['',r.situacao?('Registro: '+r.situacao):'Registro: sem informação'];
+     return '<li id="rd-j-'+slug(c.nome)+'"><div class="rd-jn">'+esc(c.nome)+(c.partido?' <small style="font-weight:400;color:var(--mu)">'+esc(c.partido)+'</small>':'')+'<span class="rd-sit '+si[0]+'">'+esc(si[1])+'</span></div>'+
+      (r.obs?'<div class="rd-jit">'+esc(r.obs)+'</div>':'')+
+      ((c.itens||[]).length?(c.itens||[]).map(function(it){return '<div class="rd-jit"><span class="rd-tipo">'+esc(TIPO[it.tipo]||it.tipo||'')+'</span>'+dataBR(it.data)+(it.orgao?' · '+esc(it.orgao):'')+': '+esc(it.resumo)+(it.cabe_recurso?' <i>Cabe recurso.</i>':'')+(it.defesa?' <b>Defesa:</b> '+esc(it.defesa):'')+fontesHtml(it.fontes)+'</div>'}).join(''):'<div class="rd-nada">Nenhuma decisão ou ação eleitoral encontrada até agora.</div>')+
+      (r.fontes&&r.fontes.length?fontesHtml(r.fontes):'')+'</li>'}).join('')+'</ul></article>'}).join('')+'</div>'+
+   '<p class="rd-pesq-nota">Só entram atos da Justiça Eleitoral com fonte oficial (TRE-MT/TSE) ou dois veículos. "Ação em andamento" é pedido ainda sem julgamento: não é condenação. Vale a presunção de inocência. Viu algo errado? contato@hojemt.com.br.</p>';el.hidden=false}
+ function grupos(){var g=DADOS.grupos,el=$('rd-grupos');if(!g||!g.grupos||!el)return;
+  el.innerHTML='<div class="rd-sec-cab"><h3 id="rd-grupos-t">Grupos e alianças</h3><p>Quem está com quem, em ordem alfabética · atualizado em '+esc(g.atualizado||'')+'</p></div><div class="rd-gru-grade">'+
+   g.grupos.slice().sort(function(a,b){return a.governador.localeCompare(b.governador,'pt-BR')}).map(function(x){
+    return '<article class="rd-gru"><h4>Governo · '+esc(x.partido||'')+'</h4><p class="rd-gru-nome">'+esc(x.governador)+'</p><p class="rd-gru-sub">'+esc(x.desenho||'')+'</p><dl>'+
+     (x.coligacao?'<dt>Coligação</dt><dd>'+esc(x.coligacao)+'</dd>':'')+(x.partidos&&x.partidos.length?'<dt>Partidos</dt><dd>'+esc(x.partidos.join(', '))+'</dd>':'')+(x.vice?'<dt>Vice</dt><dd>'+esc(x.vice)+'</dd>':'')+
+     (x.senado&&x.senado.length?'<dt>Senado</dt><dd>'+esc(x.senado.join(', '))+'</dd>':'')+'</dl>'+
+     ((x.movimentos||[]).length?'<ul>'+x.movimentos.map(function(m){return '<li><small>'+dataBR(m.data)+'</small> '+esc(m.fato)+fontesHtml(m.fontes)+'</li>'}).join('')+'</ul>':'')+fontesHtml(x.fontes)+'</article>'}).join('')+'</div>'+
+   (g.nota?'<p class="rd-pesq-nota">'+esc(g.nota)+'</p>':'');el.hidden=false}
  // ---------- Pesquisas registradas: cenário provável ----------
  function pctTxt(v){return String(v).replace('.',',')+'%'}
  function fichaPesq(q){return '<li><b>'+esc(q.inst)+'</b>'+(q.contratante?', contratada por '+esc(q.contratante):'')+' · campo de '+esc(q.campo)+' · '+esc(q.amostra)+' entrevistas'+(q.metodo?' ('+esc(q.metodo)+')':'')+' · margem de '+esc(q.margem)+' pontos, confiança de '+esc(q.conf||95)+'% · registro '+esc(q.reg)+(q.base==='validos'?' · <i>votos válidos</i>':'')+
@@ -639,7 +725,7 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
   setTimeout(primeira,6e4)}
  function primeira(){fetch(URL_DADOS+Math.floor(Date.now()/6e4),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(prepara).then(function(d){F.hidden=false;raiz.querySelector('.rd-painel').hidden=false;inicia(d)},falha)
   .catch(function(e){C.innerHTML='<div class="rd-aviso" role="status">Não foi possível exibir o radar. Recarregue a página.</div>';if(window.console)console.error(e)})}
- try{pesquisas()}catch(e){if(window.console)console.error(e)}
+ [boletim,pesquisas,justica,grupos].forEach(function(f){try{f()}catch(e){if(window.console)console.error(e)}});
  primeira();
 })();
 </script>
