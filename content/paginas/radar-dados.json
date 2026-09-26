@@ -1407,7 +1407,7 @@
   ]
  },
  "grupos": {
-  "atualizado": "26/09/2026",
+  "atualizado": "26/09/2026 05:50",
   "grupos": [
    {
     "governador": "Doutora Natasha",
@@ -1536,6 +1536,27 @@
     "desenho": "Grupo do governo estadual, com o governador candidato à reeleição e o ex-governador Mauro Mendes.",
     "movimentos": [
      {
+      "data": "2026-09-25",
+      "fato": "Pivetta reuniu por videochamada, com Mauro Mendes, cem prefeitos que apoiam sua reeleição, segundo lista divulgada pela campanha.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/noticias/pivetta-e-mauro-juntam-cem-prefeitos-em-reuniao-e-diz-que-quer-estreitar-ainda-mais-relacao-com-municipios",
+        "2026-09-25"
+       ],
+       [
+        "MidiaJur",
+        "https://www.midiajur.com.br/eleicoes-2026/pivetta-e-mauro-reforcam-parceria-e-recebem-apoio-de-100-prefeitos-lista/87329",
+        "2026-09-25"
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/politica/pivetta-e-mauro-mendes-se-reunem-com-100-prefeitos-de-mt-e-prometem-estreitar-parceria-com-municipios/35568",
+        "2026-09-25"
+       ]
+      ]
+     },
+     {
       "data": "2026-09-24",
       "fato": "No ato \"Arrancada da Vitória\", em Cuiabá, Mauro Mendes pediu votos para Pivetta e para Margareth Buzetti ao Senado.",
       "fontes": [
@@ -1547,6 +1568,22 @@
        [
         "RDM Online",
         "https://rdmonline.com.br/mauro-pede-votos-para-pivetta-e-buzetti-em-ato-de-campanha-em-cuiaba/",
+        "2026-09-25"
+       ]
+      ]
+     },
+     {
+      "data": "2026-09-17",
+      "fato": "Virginia Mendes (União), da coligação de Pivetta, pediu votos para Zé Medeiros (PL), da coligação adversária.",
+      "fontes": [
+       [
+        "Gazeta Digital",
+        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/virginia-pede-votos-a-medeiros-e-segue-cartilha-mauro-banalizando-fidelidade-partidaria/859822",
+        "2026-09-18"
+       ],
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/noticias/virginia-diz-que-pediu-votos-para-medeiros-e-buzetti-mas-mantem-segundo-voto-em-segredo-pedi-para-os-dois",
         "2026-09-25"
        ]
       ]
@@ -1574,43 +1611,6 @@
         "PlantãoNews",
         "https://plantaonews.com.br/prefeita-do-segundo-maior-colegio-eleitoral-de-mato-grosso-declara-apoio-a-otaviano-pivetta/",
         "2026-08-30"
-       ]
-      ]
-     },
-     {
-      "data": "2026-09-14",
-      "fato": "O TRE-MT rejeitou, por 7 a 0, o recurso da coligação de Wellington contra o registro de Pivetta.",
-      "fontes": [
-       [
-        "PlantãoNews",
-        "https://plantaonews.com.br/justica-aplica-nova-derrota-a-wellington-e-rejeita-por-7-a-0-recurso-contra-candidatura-de-pivetta/",
-        "2026-09-15"
-       ],
-       [
-        "O Documento",
-        "https://odocumento.com.br/por-7-a-0-tre-de-mt-rejeita-impugnacao-e-confirma-pivetta-como-candidato-a-reeleicao/",
-        "2026-09-15"
-       ],
-       [
-        "MidiaJur",
-        "https://www.midiajur.com.br/eleicoes-2026/tre-mt-rejeita-pedido-de-impugnacao-e-defere-candidatura-de-pivetta/86500",
-        "2026-09-04"
-       ]
-      ]
-     },
-     {
-      "data": "2026-09-17",
-      "fato": "Virginia Mendes (União), da coligação de Pivetta, pediu votos para Zé Medeiros (PL), da coligação adversária.",
-      "fontes": [
-       [
-        "Gazeta Digital",
-        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/virginia-pede-votos-a-medeiros-e-segue-cartilha-mauro-banalizando-fidelidade-partidaria/859822",
-        "2026-09-18"
-       ],
-       [
-        "Olhar Direto",
-        "https://www.olhardireto.com.br/noticias/virginia-diz-que-pediu-votos-para-medeiros-e-buzetti-mas-mantem-segundo-voto-em-segredo-pedi-para-os-dois",
-        "2026-09-25"
        ]
       ]
      }
@@ -2391,7 +2391,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "26/09/2026 04:46",
+  "atualizado": "26/09/2026 05:50",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -5161,6 +5161,27 @@
     "itens": [
      {
       "data": "2026-09-25",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "Medeiros pediu a retirada de vídeo de Milas, de 24/9, sobre a decisão do caso \"Zé do Bolsonaro\", que o chama de \"Zé do Gilmar\" e mostra imagem do ministro Gilmar Mendes; a liminar foi negada, e Milas foi citado para apresentar defesa em um dia.",
+      "cabe_recurso": null,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/justica-mantem-publicacao-que-chama-medeiros-de-ze-do-gilmar-em-referencia-a-encontro-com-ministro-do-stf",
+        "2026-09-25"
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/judiciario/justica-mantem-video-que-chama-medeiros-de-ze-do-gilmar-apos-referencia-a-ministro-do-stf/35535",
+        "2026-09-25"
+       ]
+      ],
+      "papel": "contra"
+     },
+     {
+      "data": "2026-09-25",
       "tipo": "decisao",
       "orgao": "TRE-MT (liminar)",
       "resumo": "A pedido de Milas, liminar proibiu Zé Medeiros de usar a denominação \"Zé do Bolsonaro\" na campanha e mandou excluir seis publicações. O TRE-MT negou o mandado de segurança de Medeiros e manteve a restrição.",
@@ -5825,6 +5846,27 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-09-25",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "Medeiros pediu a retirada de vídeo de Milas, de 24/9, sobre a decisão do caso \"Zé do Bolsonaro\", que o chama de \"Zé do Gilmar\" e mostra imagem do ministro Gilmar Mendes; a liminar foi negada, e Milas foi citado para apresentar defesa em um dia.",
+      "cabe_recurso": null,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/justica-mantem-publicacao-que-chama-medeiros-de-ze-do-gilmar-em-referencia-a-encontro-com-ministro-do-stf",
+        "2026-09-25"
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/judiciario/justica-mantem-video-que-chama-medeiros-de-ze-do-gilmar-apos-referencia-a-ministro-do-stf/35535",
+        "2026-09-25"
+       ]
+      ],
+      "papel": "pedido"
+     },
      {
       "data": "2026-09-25",
       "tipo": "decisao",
