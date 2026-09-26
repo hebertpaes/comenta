@@ -847,9 +847,9 @@
     },
     {
       "id": "45",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
+      "status": "publicado",
+      "permalink": "https://www.instagram.com/p/DdvYp3vl3ie/",
+      "publicado_em": "2026-09-26T06:25:00Z",
       "quando": "2026-10-03T07:30:00-04:00",
       "formato": "charge",
       "titulo": "Dados na calamidade",
@@ -882,9 +882,9 @@
     },
     {
       "id": "47",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
+      "status": "publicado",
+      "permalink": "https://www.instagram.com/p/DdvY6YwlwxG/",
+      "publicado_em": "2026-09-26T06:27:15Z",
       "quando": "2026-10-03T15:30:00-04:00",
       "formato": "charge",
       "titulo": "Plenitude atrás das grades",
@@ -895,7 +895,8 @@
       "materia": "https://hojemt.com.br/plenitude-atras-das-grades/",
       "charge_json": "pautas/charges/2026-09-25-plenitude-atras-das-grades.json",
       "lote": "todas-as-charges-2026-09-25",
-      "lote_ordem": 27
+      "lote_ordem": 27,
+      "tentativas": "1ª tentativa 06:25 UTC: \"mídia não está pronta\" (não publicou; conferido na lista de mídias); 2ª tentativa publicou"
     },
     {
       "id": "48",
@@ -916,9 +917,9 @@
     },
     {
       "id": "49",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
+      "status": "publicado",
+      "permalink": "https://www.instagram.com/p/DdvYuFWjKnL/",
+      "publicado_em": "2026-09-26T06:25:35Z",
       "quando": "2026-10-03T11:30:00-04:00",
       "formato": "charge",
       "titulo": "Placar eletrônico na Casa",
