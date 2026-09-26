@@ -809,6 +809,23 @@
       ],
       "fonte_fotos": "TSE (registro de candidatura), espelho https://ndmais.com.br/eleicoes/2026/candidatos/go/governador/",
       "obs": "6 candidatos no espelho em 26/09; ordem alfabética por nome de urna. Enquadramento de Danilo da Silva e Marconi Perillo subido para a faixa do nome não cobrir o rosto."
+    },
+    {
+      "nome": "Capa · Perfil Galvan, candidato ao Senado por MT",
+      "design": "DAHWTMQXAWg",
+      "modelo": "DAHWH3jRQss",
+      "arquivo": "pautas/eleicoes/2026-09-26-capa-perfil-galvan.jpg",
+      "hospedado_em": [],
+      "layout": "painel 600 px (#0F4A37) com foto 440×615 + nome; título 60 px à direita",
+      "candidatos": [
+        {
+          "nome_urna": "Galvan",
+          "partido": "Avante",
+          "canva": "MAHWHzp2Kjs",
+          "sq": "110002540403"
+        }
+      ],
+      "obs": "capa do perfil em preparação (rascunho); ainda não aplicada a post"
     }
   ],
   "posts_atualizados": [
