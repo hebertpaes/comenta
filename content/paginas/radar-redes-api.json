@@ -1,0 +1,136 @@
+{
+ "coletado_em": "2026-09-26T00:56:40.919Z",
+ "provedores": {
+  "instagram": {
+   "status": "sem_chave",
+   "erros": 0
+  },
+  "anuncios": {
+   "status": "sem_chave",
+   "erros": 0
+  },
+  "youtube": {
+   "status": "sem_chave",
+   "erros": 0
+  },
+  "x": {
+   "status": "sem_chave",
+   "erros": 0
+  }
+ },
+ "candidatos": {
+  "Doutora Natasha": {
+   "cargo": "governador",
+   "handles": {
+    "instagram": "dranatashamt",
+    "youtube": "@dranatashamt-u4o"
+   }
+  },
+  "Maurício Coelho": {
+   "cargo": "governador",
+   "handles": {
+    "instagram": "soumauriciocoelho",
+    "youtube": "@soumauriciocoelho"
+   }
+  },
+  "Otaviano Pivetta": {
+   "cargo": "governador",
+   "handles": {
+    "instagram": "otavianopivetta",
+    "youtube": "@pivettaotavianomt10"
+   }
+  },
+  "Rafaell Milas": {
+   "cargo": "governador",
+   "handles": {
+    "instagram": "rafaellmilas",
+    "youtube": "@rafaellmilasmt"
+   }
+  },
+  "Sargento Laudicério": {
+   "cargo": "governador",
+   "handles": {
+    "instagram": "sargentolau",
+    "x": "drlaudicerio"
+   }
+  },
+  "Wellington Fagundes": {
+   "cargo": "governador",
+   "handles": {
+    "instagram": "wellingtonfagundesmt",
+    "youtube": "@wellingtonfagundesmt",
+    "x": "sen_wellington"
+   }
+  },
+  "Beny Godoy": {
+   "cargo": "senador",
+   "handles": {
+    "instagram": "benygodoysenador",
+    "youtube": "@benygodoysenador"
+   }
+  },
+  "Coronel Darwin": {
+   "cargo": "senador",
+   "handles": {
+    "instagram": "coronel_darwin_oficial",
+    "youtube": "@coronel_darwin_oficial"
+   }
+  },
+  "Fávaro": {
+   "cargo": "senador",
+   "handles": {
+    "instagram": "carloshbfavaro",
+    "youtube": "@carlosfavaro3720"
+   }
+  },
+  "Galvan": {
+   "cargo": "senador",
+   "handles": {
+    "instagram": "antoniogalvan.mt"
+   }
+  },
+  "Janaina Riva": {
+   "cargo": "senador",
+   "handles": {
+    "instagram": "janainariva",
+    "youtube": "@janainarivamt"
+   }
+  },
+  "Margareth Buzetti": {
+   "cargo": "senador",
+   "handles": {
+    "instagram": "margarethbuzetti",
+    "youtube": "@SenadoraMargarethBuzetti",
+    "x": "margabuzetti"
+   }
+  },
+  "Mauro Mendes": {
+   "cargo": "senador",
+   "handles": {
+    "instagram": "mauromendesoficial",
+    "youtube": "@mauromendesoficial"
+   }
+  },
+  "Pedro Taques": {
+   "cargo": "senador",
+   "handles": {
+    "instagram": "pedrotaques",
+    "youtube": "@TVTAQUES"
+   }
+  },
+  "Professor Nelson Ferreira": {
+   "cargo": "senador",
+   "handles": {
+    "instagram": "nelsonferreiraju"
+   }
+  },
+  "Zé Medeiros": {
+   "cargo": "senador",
+   "handles": {
+    "instagram": "senadorzemedeiros222",
+    "youtube": "@josemedeiros222",
+    "x": "josemedeirosmt"
+   }
+  }
+ }
+}

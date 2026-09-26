@@ -538,3 +538,30 @@ Matéria de acusação, denúncia, áudio não confirmado ou investigação envo
 ### Presidenciáveis (próxima etapa, se o editor pedir)
 
 As fotos oficiais do TSE dos candidatos a presidente estão no Wikimedia Commons (`File:2026 <NOME> CANDIDATO PRESIDENTE TSE (<id>).jpg`, CC BY 4.0); os 23 posts de "Agenda dos presidenciáveis" usam duas artes genéricas da Agência Brasil e podem receber montagem no mesmo padrão.
+
+## Radar Eleitoral: redes medidas pelas APIs oficiais
+
+`redes-api.mjs` mede os perfis que cada candidato declarou ao TSE (campo `redes`
+de `paginas/radar-dados.json`) e grava `paginas/radar-redes-api.json`. O
+`paginas/radar-build.py` embute só os números na página (sem @ nem mensagens de
+erro); a tabela "Medição direta pelas APIs oficiais" aparece na seção de redes,
+por cargo, assim que pelo menos um provedor tiver chave.
+
+```bash
+node redes-api.mjs --seco        # mostra quais provedores têm chave, sem chamar nada
+node redes-api.mjs               # coleta e grava paginas/radar-redes-api.json
+python3 paginas/radar-build.py   # embute no HTML; depois publique com pagina-ghost.mjs
+```
+
+| Var                 | Provedor                                                                                                      |
+| ------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `META_ACCESS_TOKEN` | Instagram (Business Discovery: seguidores, posts e interações dos últimos 7 dias). App da Meta com `instagram_basic`, `pages_show_list` e `pages_read_engagement`, de preferência token de Usuário do Sistema |
+| `META_IG_USER_ID`   | Conta profissional do @hoje.mt que faz a consulta (padrão `17841460614185827`)                                |
+| `META_ADLIB_TOKEN`  | Opcional. Biblioteca de Anúncios (anúncios políticos no Brasil desde 16/08, gasto em faixas); sem ela usa `META_ACCESS_TOKEN`, que precisa de identidade confirmada em facebook.com/ads/library/api |
+| `YOUTUBE_API_KEY`   | YouTube Data API v3 (inscritos, visualizações dos vídeos dos últimos 7 dias), chave do Google Cloud           |
+| `X_BEARER_TOKEN`    | API v2 do X (seguidores e interações); leitura exige plano pago                                               |
+
+As chaves ficam nas variáveis de ambiente (configurações do ambiente), nunca no
+repositório nem no chat. Provedor sem chave fica "sem_chave" e a página mostra
+"em implantação". Sem provedor Google Ads: o Google parou de veicular anúncios
+políticos no Brasil em maio de 2024. TikTok não tem API aberta para isso.
