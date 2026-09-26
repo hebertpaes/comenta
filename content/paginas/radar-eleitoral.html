@@ -33,6 +33,42 @@ html[data-theme="dark"] #hmt-radar,html.dark #hmt-radar,body.dark-mode #hmt-rada
 @media (max-width:600px){#hmt-radar .rd-toast{left:16px;right:16px;max-width:none}}
 #hmt-radar .rd-novas b{background:#fff;color:#0a2e1f;border-radius:999px;padding:1px 8px;margin-right:4px}
 /* Filtros */
+/* Pesquisas */
+#hmt-radar .rd-pesq{margin:0 0 14px}
+#hmt-radar .rd-pesq[hidden]{display:none}
+#hmt-radar .rd-pesq-cab{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;margin:0 0 8px}
+#hmt-radar .rd-pesq-cab h3{margin:0;font-size:1.15rem;color:var(--tx)}
+#hmt-radar .rd-pesq-cab p{margin:0;font-size:.82rem;color:var(--mu)}
+#hmt-radar .rd-pesq-grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:12px}
+#hmt-radar .rd-corr{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;box-shadow:var(--som);display:flex;flex-direction:column;gap:10px;min-width:0}
+#hmt-radar .rd-corr h4{margin:0;font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mu)}
+#hmt-radar .rd-ver{border-radius:12px;background:var(--campo);border:1px solid var(--bd);border-left:5px solid var(--s3);padding:9px 12px}
+#hmt-radar .rd-ver small{display:block;font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mu)}
+#hmt-radar .rd-ver b{display:block;font-size:1.05rem;line-height:1.25;color:var(--tx);margin-top:2px}
+#hmt-radar .rd-ver span{display:block;font-size:.82rem;color:var(--tx2);margin-top:4px;line-height:1.4}
+#hmt-radar .rd-dots svg{display:block;width:100%;height:auto;overflow:visible}
+#hmt-radar .rd-dots text{font-family:inherit;fill:var(--mu);font-size:11px}
+#hmt-radar .rd-dots .rd-nm{fill:var(--tx);font-size:12px;font-weight:650}
+#hmt-radar .rd-dots .rd-val{fill:var(--tx2);font-size:11px;font-weight:700}
+#hmt-radar .rd-dots [data-tip]{cursor:pointer}
+#hmt-radar .rd-dots [data-tip]:focus{outline:none}
+#hmt-radar .rd-dots [data-tip]:focus-visible circle{stroke:var(--foco);stroke-width:3px}
+#hmt-radar .rd-t2{display:grid;gap:6px}
+#hmt-radar .rd-t2-tit{font-size:.78rem;font-weight:700;color:var(--mu)}
+#hmt-radar .rd-t2-l{display:grid;grid-template-columns:1fr;gap:3px;font-size:.8rem;color:var(--tx2)}
+#hmt-radar .rd-t2-n{display:flex;justify-content:space-between;gap:8px;font-weight:700;color:var(--tx)}
+#hmt-radar .rd-t2-n small{font-weight:400;color:var(--mu)}
+#hmt-radar .rd-t2-b{display:flex;gap:2px;height:10px;border-radius:4px;overflow:hidden;background:var(--grade)}
+#hmt-radar .rd-t2-b i{display:block;height:100%}
+#hmt-radar .rd-t2-b .a{background:var(--s3)}#hmt-radar .rd-t2-b .b{background:var(--tx2)}#hmt-radar .rd-t2-b .o{background:var(--apag)}
+#hmt-radar .rd-fichas summary{cursor:pointer;font-size:.8rem;font-weight:700;color:var(--acao)}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) #hmt-radar .rd-fichas summary{color:var(--foco)}}
+html[data-theme="dark"] #hmt-radar .rd-fichas summary{color:var(--foco)}
+#hmt-radar .rd-fichas ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px}
+#hmt-radar .rd-fichas li{font-size:.78rem;color:var(--tx2);line-height:1.45;border-left:3px solid var(--bd);padding-left:9px}
+#hmt-radar .rd-fichas li b{color:var(--tx)}
+#hmt-radar .rd-fichas a{color:var(--tx2)}
+#hmt-radar .rd-pesq-nota{font-size:.78rem;color:var(--mu);margin:8px 0 0;line-height:1.45}
 #hmt-radar .rd-filtros{border:1px solid var(--bd);border-radius:14px;background:var(--card);padding:14px;margin:0 0 12px;display:grid;gap:12px;scroll-margin-top:96px}
 #hmt-radar .rd-filtros[hidden]{display:none}
 #hmt-radar .rd-linha{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
@@ -180,6 +216,7 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
   <div class="rd-status" id="rd-status"><span>Carregando…</span></div>
   <div class="rd-novas" id="rd-novas" hidden></div>
  </header>
+ <section class="rd-pesq" id="rd-pesq" aria-labelledby="rd-pesq-t" hidden></section>
  <div class="rd-filtros" role="search" aria-label="Filtrar o radar">
   <div class="rd-linha"><span class="rd-rot" id="rd-rot-cargo">Cargo</span><div class="rd-grupo" id="rd-cargos" role="radiogroup" aria-labelledby="rd-rot-cargo"></div></div>
   <div class="rd-linha"><span class="rd-rot" id="rd-rot-tipo">Mostrar</span><div class="rd-grupo" id="rd-tipos" role="radiogroup" aria-labelledby="rd-rot-tipo">
@@ -236,7 +273,7 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
   </ul>
   <h4>Como o radar funciona</h4>
   <p>O radar lê manchetes públicas (Google Notícias, veículos de Mato Grosso e a cobertura do HOJE MT) a cada 30 minutos e classifica cada uma por palavras-chave. A classificação é automática e pode errar; "polêmica" indica que o fato foi questionado ou está sob apuração <i>segundo a cobertura</i>, não é juízo do HOJE MT, e vale a presunção de inocência. Notícias de rotina (eventos, entrevistas) só são contadas, no rodapé de cada nome, e não aparecem nas listas. Os temas também são atribuídos por palavras-chave. Quando a manchete não traz o endereço original, o link abre a busca dela no Google Notícias. Esta página confere a cada minuto se há dados novos e se atualiza sozinha, sem recarregar e sem mudar os filtros escolhidos; o que chegou enquanto você lia ganha a marca NOVO.</p>
-  <p>Isonomia (Lei 9.504/97): candidatos ao mesmo cargo aparecem em ordem alfabética, com o mesmo espaço, e nenhum filtro ou gráfico muda essa ordem. Manchetes repetidas em vários veículos aparecem uma vez, com todas as fontes.</p>
+  <p>Isonomia (Lei 9.504/97): no radar de notícias, candidatos ao mesmo cargo aparecem em ordem alfabética, com o mesmo espaço, e nenhum filtro ou gráfico muda essa ordem. Só o bloco de pesquisas ordena pelo resultado, como publicado pelos institutos. Manchetes repetidas em vários veículos aparecem uma vez, com todas as fontes.</p>
   <p>Viu uma manchete no lugar errado ou falta um nome? Escreva para <a href="mailto:contato@hojemt.com.br">contato@hojemt.com.br</a>.</p>
  </details>
  <div class="rd-tip" id="rd-tip" role="tooltip" hidden></div>
@@ -453,7 +490,7 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
  function escondeTip(){TIP.hidden=true}
  // No toque não há "hover": o toque numa coluna mostra a dica
  raiz.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse')return;var g=e.target.closest&&e.target.closest('.rd-plot [data-tip]');if(g)mostraTip(g,e);else escondeTip()});
- var tR,lw0=raiz.clientWidth;window.addEventListener('resize',function(){clearTimeout(tR);tR=setTimeout(function(){if(raiz.clientWidth!==lw0){lw0=raiz.clientWidth;escondeTip();graficos()}},200)});
+ var tR,lw0=raiz.clientWidth;window.addEventListener('resize',function(){clearTimeout(tR);tR=setTimeout(function(){if(raiz.clientWidth!==lw0){lw0=raiz.clientWidth;escondeTip();graficos();try{pesqGraficos()}catch(e){}}},200)});
  $('rd-fontes').addEventListener('toggle',function(){if(this.open)graficos()});
  raiz.addEventListener('pointermove',function(e){var g=e.target.closest&&e.target.closest('[data-tip]');if(g)mostraTip(g,e);else escondeTip()});
  raiz.addEventListener('pointerleave',escondeTip);
@@ -522,11 +559,39 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
  function agenda(){clearTimeout(tPoll);tPoll=setTimeout(function(){if(document.visibilityState!=='hidden')confere();agenda()},6e4)}
  document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'&&dados&&Date.now()-ultimaBusca>3e4){confere();agenda()}});
  setInterval(function(){if(dados&&document.visibilityState!=='hidden')pintaStatus()},3e4);
+ // ---------- Pesquisas registradas: cenário provável ----------
+ function pctTxt(v){return String(v).replace('.',',')+'%'}
+ function fichaPesq(q){return '<li><b>'+esc(q.inst)+'</b>'+(q.contratante?', contratada por '+esc(q.contratante):'')+' · campo de '+esc(q.campo)+' · '+esc(q.amostra)+' entrevistas'+(q.metodo?' ('+esc(q.metodo)+')':'')+' · margem de '+esc(q.margem)+' pontos, confiança de '+esc(q.conf||95)+'% · registro '+esc(q.reg)+(q.base==='validos'?' · <i>votos válidos</i>':'')+
+   (q.fontes&&q.fontes.length?'<br>Fontes: '+q.fontes.map(function(f){return '<a href="'+esc(f[1])+'" target="_blank" rel="noopener nofollow">'+esc(f[0])+'</a>'}).join(', '):'')+'</li>'}
+ function dotplot(c,W){var qs=c.pesquisas.filter(function(q){return q.base!=='validos'&&q.v}),nomes=c.nomes,lw=Math.min(150,Math.round(W*.36)),rh=30,mt=6,H=mt+nomes.length*rh+22,max=Math.max(10,Math.ceil(Math.max.apply(null,[].concat.apply([],qs.map(function(q){return nomes.map(function(n){return q.v[n]||0})})))/10)*10),pw=W-lw-58,x=function(v){return lw+v/max*pw},g='',i;
+  if(!qs.length)return '';
+  for(i=0;i<=max;i+=10)g+='<line x1="'+x(i)+'" x2="'+x(i)+'" y1="'+mt+'" y2="'+(H-18)+'" stroke="var(--'+(i?'grade':'base')+')"/><text x="'+x(i)+'" y="'+(H-4)+'" text-anchor="middle">'+i+'%</text>';
+  nomes.forEach(function(n,k){var y=mt+k*rh+rh/2,vs=qs.map(function(q){return q.v[n]}).filter(function(v){return v!=null}),mn=Math.min.apply(null,vs),mxv=Math.max.apply(null,vs),ult=qs[0].v[n];
+   g+='<text class="rd-nm" x="'+(lw-10)+'" y="'+(y+4)+'" text-anchor="end">'+esc(corta(n,12,lw-14))+'</text>';
+   if(vs.length>1)g+='<line x1="'+x(mn)+'" x2="'+x(mxv)+'" y1="'+y+'" y2="'+y+'" stroke="var(--apag)" stroke-width="8" stroke-linecap="round"/>';
+   qs.slice().reverse().forEach(function(q){var v=q.v[n];if(v==null)return;var eu=q===qs[0];
+    g+='<g tabindex="0" role="listitem" data-tip="'+esc(JSON.stringify({t:q.inst+' · '+q.campo,l:[['n',v,n]]}))+'" aria-label="'+esc(n+': '+pctTxt(v)+' na '+q.inst+', campo de '+q.campo)+'"><circle cx="'+x(v)+'" cy="'+y+'" r="'+(eu?7:5.5)+'" fill="'+(eu?'var(--s3)':'var(--card)')+'" stroke="'+(eu?'var(--card)':'var(--tx2)')+'" stroke-width="2"/></g>'});
+   if(ult!=null)g+='<text class="rd-val" x="'+(W-2)+'" y="'+(y+4)+'" text-anchor="end">'+pctTxt(ult)+'</text>'});
+  return '<svg viewBox="0 0 '+W+' '+H+'" role="list" aria-label="'+esc(c.titulo+': intenção de voto por pesquisa')+'">'+g+'</svg>'}
+ function legDots(c){var qs=c.pesquisas.filter(function(q){return q.base!=='validos'&&q.v}),n=qs.length-1;if(!qs.length)return '';
+  return '<div class="rd-leg" aria-hidden="true"><span><i class="rd-pt" style="background:var(--s3);border-radius:50%"></i>'+esc(qs[0].inst)+' ('+esc(qs[0].campo)+'), valor à direita</span>'+(n?'<span><i class="rd-pt" style="background:var(--card);border:2px solid var(--tx2);border-radius:50%"></i>'+(n===1?'outra pesquisa':'outras '+n+' pesquisas')+'</span>':'')+'</div>'}
+ function pesqGraficos(){if(typeof PESQ==='undefined')return;[].forEach.call(document.querySelectorAll('#rd-pesq .rd-dots-svg'),function(el){var c=PESQ.corridas[+el.getAttribute('data-c')];if(c)el.innerHTML=dotplot(c,larg(el))})}
+ function segundo(c){var l=[];c.pesquisas.forEach(function(q){(q.t2||[]).forEach(function(t){l.push([q,t])})});if(!l.length)return '';
+  return '<div class="rd-t2"><div class="rd-t2-tit">2º turno simulado</div>'+l.map(function(e){var q=e[0],t=e[1],a=t[1]>=t[3]?[t[0],t[1],t[2],t[3]]:[t[2],t[3],t[0],t[1]],o=Math.max(0,100-a[1]-a[3]);
+   return '<div class="rd-t2-l"><small style="color:var(--mu)">'+esc(q.inst)+' · '+esc(q.campo)+(q.base==='validos'?' · votos válidos':'')+'</small><div class="rd-t2-n"><span>'+esc(a[0])+' '+pctTxt(a[1])+'</span><span style="text-align:right">'+pctTxt(a[3])+' '+esc(a[2])+'</span></div><div class="rd-t2-b" role="img" aria-label="'+esc(a[0]+' '+pctTxt(a[1])+', '+a[2]+' '+pctTxt(a[3])+', segundo a '+q.inst)+'"><i class="a" style="flex:'+a[1]+'"></i>'+(o?'<i class="o" style="flex:'+o+'"></i>':'')+'<i class="b" style="flex:'+a[3]+'"></i></div></div>'}).join('')+'</div>'}
+ function pesquisas(){var el=$('rd-pesq');if(!el||typeof PESQ==='undefined'||!PESQ.corridas.length)return;
+  if(Date.now()>=FECHA){el.innerHTML='<div class="rd-pesq-cab"><h3 id="rd-pesq-t">Votação encerrada</h3></div><div class="rd-corr"><div class="rd-ver"><small>Agora valem as urnas</small><b>Os resultados oficiais estão na <a href="/apuracao-2026/">Apuração 2026</a>.</b></div></div>';el.hidden=false;return}
+  el.innerHTML='<div class="rd-pesq-cab"><h3 id="rd-pesq-t">Para onde apontam as pesquisas</h3><p>Pesquisas registradas na Justiça Eleitoral · atualizado em '+esc(PESQ.atualizado)+'</p></div><div class="rd-pesq-grade">'+PESQ.corridas.map(function(c,k){
+   return '<article class="rd-corr"><h4>'+esc(c.titulo)+'</h4><div class="rd-ver"><small>Cenário provável</small><b>'+esc(c.cenario)+'</b><span>'+esc(c.porque)+'</span></div>'+'<div class="rd-dots">'+legDots(c)+'<div class="rd-dots-svg" data-c="'+k+'"></div></div>'+segundo(c)+
+    '<details class="rd-fichas"><summary>Fichas técnicas e fontes ('+c.pesquisas.length+')</summary><ul>'+c.pesquisas.map(fichaPesq).join('')+'</ul></details></article>'}).join('')+'</div>'+
+   '<p class="rd-pesq-nota">Não é previsão do HOJE MT nem pesquisa própria: é a leitura das pesquisas registradas mais recentes, cada uma com sua ficha técnica. Pesquisa é retrato do momento, tem margem de erro e não garante resultado; quem decide é o eleitor em 4 de outubro.</p>';
+  el.hidden=false;pesqGraficos()}
  function inicia(d){dados=d;montaFiltros();try{carregaVistos(d)}catch(e){}try{leHash()}catch(e){}pintaStatus();render();ultimaBusca=Date.now();agenda()}
  function falha(){var a=C.querySelector('.rd-aviso[role="status"]'),m='Radar temporariamente indisponível. Tentando de novo…';if(a)a.textContent=m;else C.innerHTML='<div class="rd-aviso" role="status">'+m+'</div>';$('rd-status').innerHTML='<span>Dados indisponíveis no momento</span>';F.hidden=true;raiz.querySelector('.rd-painel').hidden=true;
   setTimeout(primeira,6e4)}
  function primeira(){fetch(URL_DADOS+Math.floor(Date.now()/6e4),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(prepara).then(function(d){F.hidden=false;raiz.querySelector('.rd-painel').hidden=false;inicia(d)},falha)
   .catch(function(e){C.innerHTML='<div class="rd-aviso" role="status">Não foi possível exibir o radar. Recarregue a página.</div>';if(window.console)console.error(e)})}
+ try{pesquisas()}catch(e){if(window.console)console.error(e)}
  primeira();
 })();
 </script>
