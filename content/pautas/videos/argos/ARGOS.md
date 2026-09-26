@@ -19,15 +19,20 @@ sugestivo e intrigante").
   ninguém. Arquivos nesta pasta: `argos-veredas-avatar-9x16.jpg`, `-1x1.jpg`,
   `-240.jpg`. A versão 3D anterior (media `MAHWQKGqrGo`, quadro `DAHWQFrXvyA`)
   fica no histórico do git.
-- **Voz:** Kokoro-82M (Apache-2.0), voz `pm_santa`, 2,5 semitons mais grave
-  (pedido do editor: "Deixe a voz mais grave"), com tratamento de locutor:
-  `"voz": {"motor": "kokoro", "narrador": "pm_santa", "tom": -2.5}` no roteiro;
-  instalar uma vez com `bash vozes-kokoro.sh`. O sotaque do Kokoro não é 100%
-  brasileiro; a voz definitiva prevista é a "Fabio - Newscaster" (ou "Giles")
-  do HeyGen, que depende de créditos de API na conta do HeyGen. Trocou a Piper `pt_BR-faber-medium` em 26/09
-  (mais grave e com entonação mais natural). É voz sintética genérica, não é
-  clone de ninguém. Nunca usar voz sintética de pessoa real (Res. TSE
-  23.610/2019, art. 9º-C).
+- **Voz:** Kokoro-82M (Apache-2.0), voz `pm_santa` (a de entonação mais
+  variada), 1 semitom mais grave e 8% mais rápida:
+  `"voz": {"motor": "kokoro", "narrador": "pm_santa", "velocidade": 1.08, "tom": -1}`.
+  Instalar uma vez com `bash vozes-kokoro.sh`. Rebaixar −2,5 semitons deixou a
+  voz "muito velha" (editor, 26/09); não passe de −1. É voz sintética genérica,
+  não é clone de ninguém. Nunca usar voz sintética de pessoa real (Res. TSE
+  23.610/2019, art. 9º-C). A voz definitiva prevista é do HeyGen ("Giles" ou
+  "Fabio - Newscaster"), que depende de créditos de API.
+- **Personalidade e planos:** fala em tom de conversa ("Olá, tudo bem?", "E olha
+  só:", "Vamos às pesquisas?", "Até já!"), sem opinião nem adjetivo sobre
+  candidato. Nas cenas do Argos, alterne as duas poses (`argos-veredas-avatar-9x16.jpg`,
+  microfone; `argos-veredas-cena-falando-9x16.jpg`, falando e gesticulando,
+  Canva media `MAHWQcUkH8k`, quadro `DAHWQdXZ2Mc`) e os planos
+  `zoom-in`/`close-in`/`close-out`, com uma frase curta por cena.
 - **Boca e expressões (pendente):** o vídeo ainda usa a foto parada com zoom.
   Para o Argos falar com movimento de boca e expressões, o caminho previsto é
   o HeyGen pelo Zapier (foto do avatar + o áudio do Kokoro), assim que a conta

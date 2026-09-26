@@ -19,7 +19,8 @@
 //
 // Roteiro (.cena.json): { titulo, materia, universo?, voz:{motor,narrador,
 // velocidade}, abertura:{chip,gancho,sub}, cenas:[{n,quem,fala,legenda?,
-// imagem,movimento,citacao?,audio_real?}], fechamento:{linha1,leia,fontes,
+// imagem,movimento (zoom-in|zoom-out|pan-esq|pan-dir|close-in|close-out|parado),
+// citacao?,audio_real?}], fechamento:{linha1,leia,fontes,
 // aviso}, saida }. `universo` (cenário + figurinos + tom do episódio) é só
 // registro: vai para o <saida>.json. Caminhos relativos são relativos a
 // content/. Regras editoriais: README.md, pautas/README.md e a ESPEC do formato
@@ -374,9 +375,10 @@ const motoresVoz = {
     if (r.status !== 0) throw new Error(`Kokoro falhou: ${r.stderr.trim().split("\n").slice(-2).join(" | ")}`);
     if (bruto !== destino) {
       // `tom` em semitons (negativo = mais grave), com formantes preservados, e
-      // tratamento de locutor: corpo em 140 Hz, presença em 3,2 kHz, compressão leve.
+      // tratamento leve: presença em 3,2 kHz e compressão suave. Tom muito baixo
+      // (−2,5) e reforço de graves envelheceram a voz (editor, 26/09): use −1.
       const fator = (2 ** (Number(tom) / 12)).toFixed(4);
-      const af = `rubberband=pitch=${fator}:formant=preserved:pitchq=quality,highpass=f=60,equalizer=f=140:t=q:w=1.0:g=2.5,equalizer=f=3200:t=q:w=1.2:g=1.5,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2`;
+      const af = `rubberband=pitch=${fator}:formant=preserved:pitchq=quality,highpass=f=70,equalizer=f=3200:t=q:w=1.2:g=1.5,acompressor=threshold=-18dB:ratio=2:attack=10:release=150:makeup=1.5`;
       rodarFfmpeg(["-i", bruto, "-af", af, "-ar", "24000", destino], "tom da voz");
     }
     return destino;
@@ -692,6 +694,10 @@ function filtroMovimento(movimento, frames) {
       return `zoompan=z='1.08':x='(iw-iw/zoom)*${p}':y='ih/2-(ih/zoom/2)'`;
     case "parado":
       return `zoompan=z='1.0':x='0':y='0'`;
+    case "close-in": // plano fechado no rosto (terço de cima), aproximando devagar
+      return `zoompan=z='1.45+0.08*${p}':x='iw/2-(iw/zoom/2)':y='max(0,ih*0.30-(ih/zoom/2))'`;
+    case "close-out":
+      return `zoompan=z='1.53-0.08*${p}':x='iw/2-(iw/zoom/2)':y='max(0,ih*0.30-(ih/zoom/2))'`;
     case "zoom-in":
     default:
       return `zoompan=z='1+0.10*${p}':${centro}`;
