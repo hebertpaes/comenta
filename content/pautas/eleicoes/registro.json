@@ -105,7 +105,8 @@
       "modelo": "DAHWH1j1gbI (+3 vagas inseridas)",
       "arquivo": "pautas/eleicoes/2026-09-25-candidatos-presidente-br.jpg",
       "hospedado_em": [
-        "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-presidente-br.jpg"
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-presidente-br.jpg",
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-presidente-br-2.jpg"
       ],
       "candidatos": [
         {
@@ -961,6 +962,14 @@
       "og": "https://hojemt.com.br/content/images/2026/09/2026-09-26-capa-perfil-galvan-og.jpg",
       "feito_em": "2026-09-26",
       "obs": "perfil em rascunho; aguarda revisão do editor"
+    },
+    {
+      "slug": "candidatos-a-presidencia-marcam-agenda-intensa-nas-cidades-brasileiras",
+      "antes": "capa-1917e8a1be045806.webp",
+      "depois": "2026-09-25-candidatos-presidente-br-2.jpg (montagem pronta DAHWNWpBR1E, 13 candidatos)",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-presidente-br-2-og.jpg",
+      "feito_em": "2026-09-26",
+      "obs": "a matéria não lista os candidatos (cita só Augusto Cury); legenda mantém o crédito da Agência Brasil. Pablo Marçal segue fora da arte (checagem pendente, ver obs da arte)"
     }
   ],
   "mantidos": [
