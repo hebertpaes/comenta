@@ -255,6 +255,18 @@ async function camadaLogo(sharp, largura = 380, top = 120) {
   return { input: buf, left: Math.round((W - largura) / 2), top, height };
 }
 
+/** Rótulo pequeno de canto (fundo escuro translúcido, texto branco). */
+async function rotuloIa(texto, destino) {
+  const sharp = await sharpComFontes();
+  const tam = 28;
+  const larg = Math.round((await medir(texto, { fonte: ROBOTO, tamanho: tam, peso: "bold" })) + 36);
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${larg}" height="48">
+  <rect width="${larg}" height="48" rx="10" fill="#000" fill-opacity="0.55"/>
+  <text x="18" y="33" font-family="${ROBOTO}" font-weight="bold" font-size="${tam}" fill="#fff" fill-opacity="0.92">${esc(texto)}</text>
+</svg>`;
+  await sharp(Buffer.from(svg)).png().toFile(destino);
+}
+
 /** Cartela de abertura: chip, gancho grande (terço de cima), sublinha. */
 async function cartelaAbertura({ chip = "CHARGE EM CENA", gancho = "", sub = "" }, destino) {
   const sharp = await sharpComFontes();
@@ -383,10 +395,15 @@ const motoresVoz = {
       // não de tom mais baixo, que envelhece a voz.
       const fator = (2 ** (Number(tom) / 12)).toFixed(4);
       const tomF = Number(tom) ? `rubberband=pitch=${fator}:formant=preserved:pitchq=quality,` : "";
+      // `tratamento: "limpo"` (editor, 26/09: "voz muito feia, precisa ser mais
+      // jovem"): voz pm_alex pura, sem mudar o tom; só tira o grave embolado
+      // (250 Hz), dá um pouco de presença e compressão leve.
       const cadeia =
         tratamento === "suave"
           ? "highpass=f=60,equalizer=f=160:t=q:w=1:g=2,equalizer=f=3200:t=q:w=1.2:g=-1,treble=g=-3:f=7000,deesser,acompressor=threshold=-22dB:ratio=1.5:attack=20:release=250:makeup=1.2"
-          : "highpass=f=70,equalizer=f=3200:t=q:w=1.2:g=1.5,acompressor=threshold=-18dB:ratio=2:attack=10:release=150:makeup=1.5";
+          : tratamento === "limpo"
+            ? "highpass=f=80,equalizer=f=250:t=q:w=1:g=-1.5,equalizer=f=3500:t=q:w=1.2:g=1,deesser,acompressor=threshold=-20dB:ratio=1.6:attack=15:release=200:makeup=1.2"
+            : "highpass=f=70,equalizer=f=3200:t=q:w=1.2:g=1.5,acompressor=threshold=-18dB:ratio=2:attack=10:release=150:makeup=1.5";
       const af = tomF + cadeia;
       rodarFfmpeg(["-i", bruto, "-af", af, "-ar", "24000", destino], "tom da voz");
     }
@@ -923,13 +940,22 @@ async function principal() {
     filtros.push(`[1:v]scale=260:-1,format=rgba,colorchannelmixer=aa=0.9[wm]`, `[leg][wm]overlay=W-w-40:40[v]`);
     ultimo = "[v]";
   }
+  if (spec.rotulo_ia) {
+    // rótulo discreto e fixo no canto (ex.: "Imagem e voz geradas com IA"), em
+    // vez de o narrador dizer que é IA (editor, 26/09: "somente noticie os fatos")
+    const png = join(tmp, "rotulo-ia.png");
+    await rotuloIa(String(spec.rotulo_ia), png);
+    entradas.push("-i", png);
+    filtros.push(`${ultimo}[${entradas.filter((e) => e === "-i").length - 1}:v]overlay=40:48[vr]`);
+    ultimo = "[vr]";
+  }
   if (trilha) {
     // música em loop, cortada na duração total, por baixo das vozes (ducking por envelope)
     const total = t + DUR_FECHAMENTO;
     const trechos = [{ inicio: 0, nivel: trilha.volume * TRILHA_CARTELAS }];
     for (const c of cenas) trechos.push({ inicio: c.inicio, nivel: trilha.volume * (c.audioReal ? TRILHA_AUDIO_REAL : 1) });
     trechos.push({ inicio: t, nivel: trilha.volume * TRILHA_CARTELAS });
-    const idx = args["sem-marca"] !== true ? 2 : 1;
+    const idx = entradas.filter((e) => e === "-i").length;
     entradas.push("-stream_loop", "-1", "-i", trilha.arquivo);
     const ganho = ganhoTrilha(trilha.arquivo);
     filtros.push(

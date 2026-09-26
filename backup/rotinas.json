@@ -70,11 +70,11 @@
     },
     {
       "id": "trig_01Ax3HrwPELnt6yYdiurSjrS",
-      "nome": "Boletim do Argos Veredas (2x/dia, até 4/10)",
+      "nome": "Boletim em vídeo do Radar Eleitoral (2x/dia, até 4/10)",
       "cron_utc": "CRON_TZ=America/Cuiaba 52 6,17 * * *",
       "cuiaba": "06:52 e 17:52",
       "fonte": "content/pautas/videos/argos/",
-      "resumo": "Se houver fato novo e conferido, faz um boletim em vídeo (≤ 120 s) do repórter virtual Argos Veredas (avatar v3 jovem, animado por lib/argos-anima.py: boca pelo volume da fala, piscadas e movimento leve, em planos abertos e close) com charge-cena.mjs: voz do HeyGen pelo Zapier (\"Giles\") se houver créditos de API, senão Kokoro em mistura 70% pm_santa + 30% am_onyx (−1 semitom, velocidade 1,0, tratamento suave); roteiro em tom de conversa, aviso de IA; hospeda, atualiza o boletim do Radar e deixa o vídeo na agenda do Instagram como aguardando_decisao."
+      "resumo": "Se houver fato novo e conferido, faz um boletim em vídeo (≤ 120 s) do Radar Eleitoral com o avatar animado (lib/argos-anima.py) e charge-cena.mjs. Desde 26/09 (editor: \"voz mais jovem, sem se apresentar e sem dizer que é IA, somente noticie os fatos\"): narração de telejornal, só os fatos, sem apresentação, cumprimento nem despedida; voz Kokoro pm_alex (velocidade 1,05, tom 0, tratamento \"limpo\"); a informação de IA fica só na tela (rótulo fixo no canto e cartela final), na página e na legenda. Atualiza o bloco \"Boletim em vídeo\" do Radar, republica a página e põe o vídeo na agenda do Instagram como aguardando_decisao."
     },
     {
       "id": "trig_019HLBXgy3Pv3YR8vqU5z47P",

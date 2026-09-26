@@ -8,8 +8,11 @@ sugestivo e intrigante").
 
 - **Nome:** Argos Veredas. Argos é o gigante de cem olhos da mitologia grega, o
   vigia que não dorme; Veredas são os caminhos do Cerrado e do Pantanal.
-- **Apresentação padrão:** "Eu sou Argos Veredas, repórter virtual oficial do
-  HOJE MT, criado com inteligência artificial."
+- **Sem apresentação (26/09):** a pedido do editor ("sem se apresentar e sem
+  dizer que é IA. Somente noticie os fatos"), o narrador não diz o nome, não se
+  apresenta, não cumprimenta nem se despede: a primeira fala já é a notícia. O
+  nome "Argos Veredas" fica só nos arquivos internos; no vídeo, na página e no
+  Instagram o produto se chama "Boletim em vídeo" do Radar Eleitoral.
 - **Personagem fictício.** Não imita nem lembra pessoa real. Não tem biografia
   inventada (não "cobriu" nada antes, não tem família, não dá opinião pessoal).
 - **Avatar (v3, 26/09):** a pedido do editor ("Deve ser mais novo um avatar
@@ -39,28 +42,33 @@ sugestivo e intrigante").
   --olhos <olhos-fechados.png> --pasta pautas/videos/argos/anima-v3`.
   Não é sincronia labial por fonema (a boca segue o volume); a sincronia fina
   fica para o HeyGen, quando houver créditos de API.
-- **Voz (v3, 26/09):** Kokoro-82M (Apache-2.0), mistura de vozes sintéticas
-  genéricas 70% `pm_santa` + 30% `am_onyx`, 1 semitom mais grave, velocidade
-  1,0 e tratamento suave (calor em 160 Hz, menos brilho, de-esser, compressão
-  leve):
-  `"voz": {"motor": "kokoro", "narrador": "pm_santa:0.7,am_onyx:0.3", "velocidade": 1.0, "tom": -1, "tratamento": "suave"}`.
-  Tom médio ~112 Hz (a v2 tinha ~133 Hz) e reconhecida como português (0,98
-  na transcrição automática). O grave vem da mistura, não de baixar o tom:
-  −2,5 semitons deixou a voz "muito velha" (editor, 26/09); não passe de −1.
+- **Voz (v4, 26/09):** Kokoro-82M (Apache-2.0), voz sintética genérica
+  `pm_alex` pura (a mais jovem em português), velocidade 1,05, sem mudar o
+  tom, tratamento "limpo" (tira o grave embolado em 250 Hz, um pouco de
+  presença, de-esser e compressão leve):
+  `"voz": {"motor": "kokoro", "narrador": "pm_alex", "velocidade": 1.05, "tom": 0, "tratamento": "limpo"}`.
+  Tom médio ~131 Hz. A v3 (mistura `pm_santa` + `am_onyx`, −1 semitom,
+  tratamento suave) foi reprovada pelo editor em 26/09 ("a voz está muito
+  feia, precisa ser uma voz mais jovem"): não use `pm_santa` (voz envelhecida)
+  nem baixe o tom.
   Instalar uma vez com `bash vozes-kokoro.sh`. Nunca usar voz sintética de
   pessoa real (Res. TSE 23.610/2019, art. 9º-C). A voz do HeyGen ("Giles" ou
   "Fabio - Newscaster") segue prevista, dependendo de créditos de API.
-- **Personalidade e planos:** fala em tom de conversa ("Olá, tudo bem?", "E olha
-  só:", "Vamos lá?", "Até já!"), sem opinião nem adjetivo sobre candidato. Uma
-  frase curta por cena do Argos, sempre animada, variando os planos; gráficos
-  e cartelas próprios no meio.
+- **Texto e planos:** só os fatos, em frases diretas de telejornal, sem
+  "olá", "vamos lá", "até já", sem opinião nem adjetivo sobre candidato. Nas
+  cenas com o avatar, uma frase curta e animada, variando os planos; quadros e
+  cartelas próprios no meio. Nome nas falas por extenso quando ajuda o ouvinte
+  (ex.: "pediu votos para Pivetta", não "para ele").
 
 ## Regras (valem para vídeo, áudio, texto e Radar)
 
-1. **Transparência sempre:** toda peça diz, na fala ou na tela, que Argos é
-   virtual e criado com IA. Na cartela final: "Argos Veredas é um repórter
-   virtual criado com IA. Os fatos foram apurados e conferidos pela redação do
-   HOJE MT."
+1. **IA só na tela, nunca na fala:** o narrador não diz que é IA; a
+   informação fica num rótulo discreto fixo no canto (`"rotulo_ia": "Imagem e
+   voz geradas com IA"` no roteiro), na cartela final ("Imagem e voz geradas
+   com IA. Fatos apurados e conferidos pela redação do HOJE MT…"), na página do
+   Radar e na legenda do Instagram. Motivo: o avatar é realista e é período
+   eleitoral (Meta exige rótulo em vídeo realista gerado por IA; Res. TSE
+   23.610/2019, art. 9º-B, para conteúdo sintético em campanha).
 2. **Só narra fato conferido:** o que está publicado no HOJE MT ou foi conferido
    em fonte oficial ou em dois veículos, com link na legenda. Nada de "fontes
    dizem", boato ou print sem origem.
@@ -81,8 +89,8 @@ sugestivo e intrigante").
 
 ## Onde aparece
 
-- **Radar Eleitoral** (hojemt.com.br/radar-eleitoral/): bloco "Boletim do
-  Argos" com o último boletim (vídeo + texto).
+- **Radar Eleitoral** (hojemt.com.br/radar-eleitoral/): bloco "Boletim em
+  vídeo" com o último boletim (vídeo + texto), sem cartão de apresentação.
 - **Instagram @hoje.mt:** boletins pela agenda (`agenda-instagram.json`).
 - Roteiros: `pautas/videos/argos/<data>-<assunto>.cena.json`, montados com
   `node charge-cena.mjs`.

@@ -1,6 +1,8 @@
-// Gera os 3 quadros (1080×1920) do Boletim do Argos nº 2 (Justiça Eleitoral e
+// Gera os 3 quadros (1080×1920) do boletim em vídeo nº 2 (Justiça Eleitoral e
 // apoios) a partir de content/paginas/radar-dados.json. Mesma moldura do nº 1
-// (graficos-boletim.mjs). Uso: node graficos-boletim-02.mjs [saida-dir]
+// (graficos-boletim.mjs), com o cabeçalho "RADAR ELEITORAL" (sem a assinatura
+// do Argos desde 26/09: o boletim só noticia os fatos, sem se apresentar).
+// Uso: node graficos-boletim-02.mjs [saida-dir]
 import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { createRequire } from "node:module";
@@ -84,7 +86,7 @@ function pagina({ titulo, sub, miolo, fonte = "", padTop }) {
   return `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><style>${CSS}</style></head>
 <body style="${padTop != null ? `--pad-top:${padTop}px` : ""}">
 <div class="topo">
-  <div class="cab"><div class="selo"></div><div class="assina"><div class="n">ARGOS VEREDAS</div><div class="r">REPÓRTER VIRTUAL (IA)</div></div></div>
+  <div class="cab"><div class="assina"><div class="n">RADAR ELEITORAL</div><div class="r">HOJE MT · ELEIÇÕES 2026</div></div></div>
   <div class="titulo"><h1>${titulo}</h1>${sub ? `<div class="sub">${sub}</div>` : ""}</div>
 </div>
 <div class="miolo">${miolo}${fonte ? `<div class="fonte">${fonte}</div>` : ""}</div>
