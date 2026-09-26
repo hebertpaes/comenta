@@ -17,8 +17,10 @@ p.add_argument('--pasta', default=os.path.join(os.environ.get('HOJEMT_VOZES', os
 a = p.parse_args()
 
 modelo = os.path.join(a.pasta, 'model.onnx')
-voz_bin = os.path.join(a.pasta, f'{a.voz}.bin')
-for f in (modelo, voz_bin):
+# --voz aceita uma voz ("pm_santa") ou uma mistura com pesos ("pm_santa:0.7,am_onyx:0.3");
+# a mistura é a média ponderada dos vetores de estilo e a fonética segue em pt-br.
+mistura = [(n.split(':')[0].strip(), float(n.split(':')[1]) if ':' in n else 1.0) for n in a.voz.split(',') if n.strip()]
+for f in [modelo] + [os.path.join(a.pasta, f'{n}.bin') for n, _ in mistura]:
     if not os.path.exists(f):
         sys.exit(f'arquivo do Kokoro não encontrado: {f} (rode: bash vozes-kokoro.sh)')
 try:
@@ -37,5 +39,10 @@ texto = sys.stdin.read().strip()
 if not texto:
     sys.exit('texto vazio')
 k = Kokoro(modelo, pacote)
-audio, sr = k.create(texto, voice=a.voz, speed=a.velocidade, lang='pt-br')
+if len(mistura) == 1:
+    voz = mistura[0][0]
+else:
+    total = sum(p for _, p in mistura)
+    voz = sum(k.get_voice_style(n) * (p / total) for n, p in mistura).astype(np.float32)
+audio, sr = k.create(texto, voice=voz, speed=a.velocidade, lang='pt-br')
 sf.write(a.saida, audio, sr)

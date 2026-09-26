@@ -4,13 +4,17 @@
   "materia": "https://hojemt.com.br/radar-eleitoral/",
   "estilo": "realista",
   "universo": "Estúdio do Argos, Pantanal ao pôr do sol",
-  "obs": "Segundo boletim em vídeo do Argos Veredas, repórter virtual oficial do HOJE MT criado com IA (regras em pautas/videos/argos/ARGOS.md). Só o narrador fala (voz Kokoro pm_santa, 1 semitom mais grave e 8% mais rápida, sintética genérica; nenhuma voz de pessoa real; o HeyGen respondeu 'Insufficient API credits' em 26/09 10:5x UTC). Números das falas e dos quadros saem de paginas/radar-dados.json em 26/09/2026 (justica atualizada às 05:50 MT; grupos às 05:50 MT): 86 casos únicos (57 decisões, 15 ações em andamento, 14 arquivadas), 15 de 16 registros deferidos (Sargento Laudicério aguarda julgamento), 10 decisões do TRE-MT em 24 e 25/9, 8 delas em disputas só entre candidatos ao Senado (classificação: 5 retiradas de vídeos ou publicações, 3 sobre impulsionamento pago, 2 direitos de resposta; 3 multas de R$ 5 mil a R$ 10 mil). Tratamento igual: a fala não cita nomes nas disputas judiciais nem repete termos ofensivos das peças; os casos, com as partes e as fontes, ficam no radar. Palanques: só os apoios de 23 a 25/9 (os 2 grupos que tiveram movimentos novos no período), em ordem alfabética. Quadros próprios (HTML + Playwright, graficos-boletim-02.mjs, 1080x1920) com a mesma moldura do nº 1. Trilha 'pantanal' (calma).",
+  "obs": "Segundo boletim em vídeo do Argos Veredas, repórter virtual oficial do HOJE MT criado com IA (regras em pautas/videos/argos/ARGOS.md). Só o narrador fala (voz Kokoro sintética genérica: mistura 70% pm_santa + 30% am_onyx, 1 semitom mais grave, velocidade 1,0 e tratamento suave, pedido do editor em 26/09: 'mais novo, animado e com a voz mais suave e grave'; nenhuma voz de pessoa real; o HeyGen respondeu 'Insufficient API credits' em 26/09 10:5x UTC). Números das falas e dos quadros saem de paginas/radar-dados.json em 26/09/2026 (justica atualizada às 05:50 MT; grupos às 05:50 MT): 86 casos únicos (57 decisões, 15 ações em andamento, 14 arquivadas), 15 de 16 registros deferidos (Sargento Laudicério aguarda julgamento), 10 decisões do TRE-MT em 24 e 25/9, 8 delas em disputas só entre candidatos ao Senado (classificação: 5 retiradas de vídeos ou publicações, 3 sobre impulsionamento pago, 2 direitos de resposta; 3 multas de R$ 5 mil a R$ 10 mil). Tratamento igual: a fala não cita nomes nas disputas judiciais nem repete termos ofensivos das peças; os casos, com as partes e as fontes, ficam no radar. Palanques: só os apoios de 23 a 25/9 (os 2 grupos que tiveram movimentos novos no período), em ordem alfabética. Quadros próprios (HTML + Playwright, graficos-boletim-02.mjs, 1080x1920) com a mesma moldura do nº 1. Trilha 'pantanal' (calma). Versão 2 (26/09, pedido do editor): Argos v3, mais jovem, animado por lib/argos-anima.py (boca pelo volume da fala, piscadas, leve movimento de cabeça e respiração) a partir de variações do mesmo retrato geradas no Canva (anima-v3/).",
   "voz": {
     "motor": "kokoro",
-    "narrador": "pm_santa",
+    "narrador": "pm_santa:0.7,am_onyx:0.3",
     "personagem": null,
-    "velocidade": 1.08,
-    "tom": -1
+    "velocidade": 1.0,
+    "tom": -1,
+    "tratamento": "suave"
+  },
+  "anima": {
+    "pasta": "pautas/videos/argos/anima-v3"
   },
   "trilha": {
     "id": "pantanal"
@@ -26,8 +30,9 @@
       "quem": "narrador",
       "fala": "Olá, tudo bem? Eu sou o Argos Veredas, repórter virtual do HOJE MT.",
       "legenda": "Olá, tudo bem? Eu sou o Argos Veredas, repórter virtual do HOJE MT.",
-      "imagem": "pautas/videos/argos/argos-veredas-cena-falando-9x16.jpg",
-      "movimento": "zoom-in"
+      "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
+      "movimento": "zoom-in",
+      "anima": true
     },
     {
       "n": 2,
@@ -35,15 +40,17 @@
       "fala": "E sim: fui criado com inteligência artificial!",
       "legenda": "E sim: fui criado com inteligência artificial!",
       "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
-      "movimento": "close-in"
+      "movimento": "close-in",
+      "anima": true
     },
     {
       "n": 3,
       "quem": "narrador",
       "fala": "Hoje o assunto é a Justiça Eleitoral nesta reta final de campanha. Vamos lá?",
       "legenda": "Hoje o assunto é a Justiça Eleitoral nesta reta final de campanha. Vamos lá?",
-      "imagem": "pautas/videos/argos/argos-veredas-cena-falando-9x16.jpg",
-      "movimento": "close-out"
+      "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
+      "movimento": "close-out",
+      "anima": true
     },
     {
       "n": 4,
@@ -67,15 +74,17 @@
       "fala": "Detalhe importante: liminar é decisão provisória e pode ser revista; e ação em andamento não é condenação.",
       "legenda": "Detalhe importante: liminar é decisão provisória e pode ser revista; e ação em andamento não é condenação.",
       "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
-      "movimento": "close-in"
+      "movimento": "close-in",
+      "anima": true
     },
     {
       "n": 7,
       "quem": "narrador",
       "fala": "E os registros? Quinze dos dezesseis candidatos estão com a candidatura deferida. O pedido de Sargento Laudicério, ao governo, ainda aguarda julgamento.",
       "legenda": "E os registros? 15 dos 16 candidatos estão com a candidatura deferida. O pedido de Sargento Laudicério, ao governo, ainda aguarda julgamento.",
-      "imagem": "pautas/videos/argos/argos-veredas-cena-falando-9x16.jpg",
-      "movimento": "close-out"
+      "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
+      "movimento": "zoom-out",
+      "anima": true
     },
     {
       "n": 8,
@@ -91,15 +100,17 @@
       "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
       "legenda": "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
       "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
-      "movimento": "close-in"
+      "movimento": "close-in",
+      "anima": true
     },
     {
       "n": 10,
       "quem": "narrador",
       "fala": "Eu volto no fim da tarde com as novidades. Até já!",
       "legenda": "Eu volto no fim da tarde com as novidades. Até já!",
-      "imagem": "pautas/videos/argos/argos-veredas-cena-falando-9x16.jpg",
-      "movimento": "close-out"
+      "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
+      "movimento": "close-out",
+      "anima": true
     }
   ],
   "fechamento": {

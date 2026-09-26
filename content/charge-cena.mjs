@@ -365,8 +365,8 @@ const motoresVoz = {
     }
     return destino;
   },
-  kokoro(texto, { modelo = "pm_santa", velocidade = 1, tom = 0, destino }) {
-    const bruto = Number(tom) ? destino.replace(/\.wav$/, "-bruto.wav") : destino;
+  kokoro(texto, { modelo = "pm_santa", velocidade = 1, tom = 0, tratamento, destino }) {
+    const bruto = Number(tom) || tratamento ? destino.replace(/\.wav$/, "-bruto.wav") : destino;
     const r = spawnSync("python3", [join(aqui, "lib", "kokoro-tts.py"), "--voz", modelo, "--velocidade", String(Number(velocidade) || 1), "--saida", bruto], {
       input: pronuncia(texto),
       encoding: "utf8",
@@ -377,8 +377,17 @@ const motoresVoz = {
       // `tom` em semitons (negativo = mais grave), com formantes preservados, e
       // tratamento leve: presença em 3,2 kHz e compressão suave. Tom muito baixo
       // (−2,5) e reforço de graves envelheceram a voz (editor, 26/09): use −1.
+      // `tratamento: "suave"` (editor, 26/09: "voz mais suave e grave"): calor em
+      // 160 Hz, menos brilho em 3,2 e 7 kHz, de-esser e compressão leve. O grave
+      // vem da mistura de vozes no `narrador` (ex.: "pm_santa:0.7,am_onyx:0.3"),
+      // não de tom mais baixo, que envelhece a voz.
       const fator = (2 ** (Number(tom) / 12)).toFixed(4);
-      const af = `rubberband=pitch=${fator}:formant=preserved:pitchq=quality,highpass=f=70,equalizer=f=3200:t=q:w=1.2:g=1.5,acompressor=threshold=-18dB:ratio=2:attack=10:release=150:makeup=1.5`;
+      const tomF = Number(tom) ? `rubberband=pitch=${fator}:formant=preserved:pitchq=quality,` : "";
+      const cadeia =
+        tratamento === "suave"
+          ? "highpass=f=60,equalizer=f=160:t=q:w=1:g=2,equalizer=f=3200:t=q:w=1.2:g=-1,treble=g=-3:f=7000,deesser,acompressor=threshold=-22dB:ratio=1.5:attack=20:release=250:makeup=1.2"
+          : "highpass=f=70,equalizer=f=3200:t=q:w=1.2:g=1.5,acompressor=threshold=-18dB:ratio=2:attack=10:release=150:makeup=1.5";
+      const af = tomF + cadeia;
       rodarFfmpeg(["-i", bruto, "-af", af, "-ar", "24000", destino], "tom da voz");
     }
     return destino;
@@ -411,11 +420,11 @@ function pronuncia(texto) {
 }
 
 /** Sintetiza uma fala; com Piper indisponível, cai para o gTTS avisando. */
-function sintetizar(texto, { motor = "piper", modelo, velocidade, tom, destino }) {
+function sintetizar(texto, { motor = "piper", modelo, velocidade, tom, tratamento, destino }) {
   const fn = motoresVoz[motor];
   if (!fn) throw new Error(`motor de voz desconhecido: ${motor} (use kokoro, piper, gtts, elevenlabs ou heygen)`);
   try {
-    return fn(texto, { modelo, velocidade, tom, destino });
+    return fn(texto, { modelo, velocidade, tom, tratamento, destino });
   } catch (e) {
     if (motor === "piper" && e.piperIndisponivel) {
       console.warn(`AVISO: ${e.message} — usando gTTS como reserva`);
@@ -704,20 +713,27 @@ function filtroMovimento(movimento, frames) {
   }
 }
 
-/** Renderiza um segmento (imagem + áudio ou silêncio) de `dur` s em mkv sem perdas. */
-async function segmento({ imagem, audio, dur, movimento, destino }) {
-  const sharp = await sharpComFontes();
-  const meta = await sharp(imagem).metadata();
-  const proporcaoOk = Math.abs(meta.width / meta.height - W / H) < 0.02;
+/** Renderiza um segmento (imagem ou clipe 9:16 + áudio ou silêncio) de `dur` s em mkv sem perdas. */
+async function segmento({ imagem, video, audio, dur, movimento, destino }) {
   const frames = Math.round(dur * FPS);
-  const zoom = `${filtroMovimento(movimento, frames)}:d=${frames}:s=${W}x${H}:fps=${FPS}`;
-
-  // imagem fora de 9:16: fundo desfocado (como reel.mjs) e imagem inteira por cima
-  const preparo = proporcaoOk
-    ? `[0:v]scale=${W * 2}:${H * 2}:flags=lanczos[base]`
-    : `[0:v]split[a][b];[a]scale=${W * 2}:${H * 2}:force_original_aspect_ratio=increase,crop=${W * 2}:${H * 2},boxblur=40:8,eq=brightness=-0.08[bg];[b]scale=${W * 2}:${H * 2}:force_original_aspect_ratio=decrease:flags=lanczos[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2[base]`;
+  let preparo, zoom;
+  if (video) {
+    // clipe já em 9:16 (ex.: Argos animado por lib/argos-anima.py): a câmera
+    // (zoompan) anda quadro a quadro sobre ele, d=1
+    preparo = `[0:v]fps=${FPS},scale=${W * 2}:${H * 2}:flags=lanczos,tpad=stop_mode=clone:stop_duration=${dur.toFixed(3)}[base]`;
+    zoom = `${filtroMovimento(movimento, frames)}:d=1:s=${W}x${H}:fps=${FPS}`;
+  } else {
+    const sharp = await sharpComFontes();
+    const meta = await sharp(imagem).metadata();
+    const proporcaoOk = Math.abs(meta.width / meta.height - W / H) < 0.02;
+    zoom = `${filtroMovimento(movimento, frames)}:d=${frames}:s=${W}x${H}:fps=${FPS}`;
+    // imagem fora de 9:16: fundo desfocado (como reel.mjs) e imagem inteira por cima
+    preparo = proporcaoOk
+      ? `[0:v]scale=${W * 2}:${H * 2}:flags=lanczos[base]`
+      : `[0:v]split[a][b];[a]scale=${W * 2}:${H * 2}:force_original_aspect_ratio=increase,crop=${W * 2}:${H * 2},boxblur=40:8,eq=brightness=-0.08[bg];[b]scale=${W * 2}:${H * 2}:force_original_aspect_ratio=decrease:flags=lanczos[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2[base]`;
+  }
   const filtros = [`${preparo}`, `[base]${zoom},setsar=1,format=yuv420p[v]`];
-  const entradas = ["-i", imagem];
+  const entradas = ["-i", video || imagem];
   if (audio) {
     entradas.push("-i", audio);
     filtros.push(`[1:a]aresample=48000,aformat=sample_fmts=s16:channel_layouts=stereo,apad[a]`);
@@ -752,7 +768,7 @@ async function principal() {
     const quem = String(c.quem || "narrador").trim();
     const ehNarrador = quem.toLowerCase() === "narrador";
     const destino = join(tmp, `cena-${String(n).padStart(2, "0")}.wav`);
-    const base = { n, quem, imagem: c.imagem, movimento: c.movimento || "zoom-in" };
+    const base = { n, quem, imagem: c.imagem, anima: c.anima === true, movimento: c.movimento || "zoom-in" };
     let cena;
     if (c.audio_real) {
       if (ehNarrador)
@@ -788,7 +804,7 @@ async function principal() {
         rodarFfmpeg(["-i", origem, "-ac", "1", "-ar", "24000", destino], `voz pronta da cena ${n}`);
         audio = destino;
       } else {
-        audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, tom: voz.tom, destino });
+        audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, tom: voz.tom, tratamento: voz.tratamento, destino });
       }
       cena = { ...base, fala, legenda, audio };
     }
@@ -861,8 +877,19 @@ async function principal() {
   const lista = [];
   lista.push(await segmento({ imagem: abertura, dur: DUR_ABERTURA, movimento: "parado", destino: join(tmp, "seg-00-abertura.mkv") }));
   for (const c of cenas) {
-    process.stdout.write(`cena ${c.n} (${c.movimento})… `);
-    lista.push(await segmento({ imagem: c.imagem, audio: c.audio, dur: c.dur, movimento: c.movimento, destino: join(tmp, `seg-${String(c.n).padStart(2, "0")}.mkv`) }));
+    process.stdout.write(`cena ${c.n} (${c.movimento}${c.anima ? ", animada" : ""})… `);
+    let video;
+    if (c.anima) {
+      // retrato animado sem modelo externo (boca pelo volume da fala, piscadas,
+      // movimento leve): pasta preparada por `lib/argos-anima.py preparar`
+      const pasta = caminho(spec.anima?.pasta || "");
+      if (!spec.anima?.pasta || !existsSync(join(pasta, "anima.json")))
+        throw new Error(`cena ${c.n}: "anima": true precisa de spec.anima.pasta com anima.json (lib/argos-anima.py preparar)`);
+      video = join(tmp, `anima-${String(c.n).padStart(2, "0")}.mp4`);
+      const r = spawnSync("python3", [join(aqui, "lib", "argos-anima.py"), "animar", "--pasta", pasta, "--audio", c.audio, "--dur", c.dur.toFixed(3), "--saida", video, "--semente", String(c.n)], { encoding: "utf8", env: { ...process.env, FFMPEG: ffmpeg } });
+      if (r.status !== 0) throw new Error(`animação da cena ${c.n} falhou: ${r.stderr.trim().split("\n").slice(-3).join(" | ")}`);
+    }
+    lista.push(await segmento({ imagem: c.imagem, video, audio: c.audio, dur: c.dur, movimento: c.movimento, destino: join(tmp, `seg-${String(c.n).padStart(2, "0")}.mkv`) }));
     console.log("ok");
   }
   lista.push(await segmento({ imagem: fechamento, dur: DUR_FECHAMENTO, movimento: "parado", destino: join(tmp, "seg-99-fechamento.mkv") }));
