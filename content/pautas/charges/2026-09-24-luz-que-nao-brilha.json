@@ -71,7 +71,10 @@
   },
   "site": "feature_image e og_image trocadas em 24/09/2026 pela v2 (Abilio atual)",
   "instagram": {
-    "status": "agendado em pautas/agenda-instagram.json"
+    "permalink": "https://www.instagram.com/p/Ddu5NfrjM4m/",
+    "id": "18024991925914046",
+    "publicado_em": "2026-09-26T01:50:15Z",
+    "agenda_item": "15"
   },
   "versao": "v2 (24/09/2026): caricatura refeita com fotos oficiais recentes do prefeito (camiseta cinza, cabeça raspada, sem terno), a pedido do editor: \"Deixa o Abílio mais atual\". Legenda, balão e layout mantidos."
 }
