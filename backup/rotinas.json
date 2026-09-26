@@ -54,6 +54,7 @@
     {
       "id": "trig_014AgtkZsj8eZVxwWGjRV41B",
       "nome": "Instagram — lote de todas as charges do Canva (até acabar)",
+      "situacao": "desativada em 26/09/2026 08:28 UTC: lote concluído, 33 de 33 publicados; não reativar ao restaurar",
       "cron_utc": "24 * * * *",
       "cuiaba": "de hora em hora, aos 24 min (UTC)",
       "fonte": "content/pautas/agenda-instagram.json (itens com lote todas-as-charges-2026-09-25)",
