@@ -1,7 +1,7 @@
 <style>
-#hmt-radar{--verde:#00a859;--verde-esc:#0a2e1f;--acao:#087443;--acao-tx:#fff;--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--sol-bg:#e8f1fc;--pol-bg:#fdefe8;--card:#f6f8f7;--campo:#fff;--tx:#111;--tx2:#3f4a45;--mu:#5b6762;--bd:#d9e2dd;--bd-ctl:#7d8c85;--grade:#e3e9e5;--base:#b9c6bf;--apag:#cdd6d1;--foco:#0b7a45;--som:0 1px 2px rgba(10,46,31,.06),0 6px 18px rgba(10,46,31,.06);position:relative;font-family:var(--font-sans,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif);color:var(--tx);font-size:16px;line-height:1.45}
-@media (prefers-color-scheme:dark){html:not([data-theme="light"]) #hmt-radar{--s1:#3987e5;--s2:#d95926;--s3:#199e70;--sol-bg:#16263b;--pol-bg:#3a2217;--card:#17201b;--campo:#0f1512;--tx:#eef3f0;--tx2:#c9d6cf;--mu:#a3b3ac;--bd:#2b3731;--bd-ctl:#627369;--grade:#26312b;--base:#3d4a43;--apag:#35423b;--foco:#5fe3a1;--acao:#3ddc84;--acao-tx:#04150c;--som:none}}
-html[data-theme="dark"] #hmt-radar,html.dark #hmt-radar,body.dark-mode #hmt-radar{--s1:#3987e5;--s2:#d95926;--s3:#199e70;--sol-bg:#16263b;--pol-bg:#3a2217;--card:#17201b;--campo:#0f1512;--tx:#eef3f0;--tx2:#c9d6cf;--mu:#a3b3ac;--bd:#2b3731;--bd-ctl:#627369;--grade:#26312b;--base:#3d4a43;--apag:#35423b;--foco:#5fe3a1;--acao:#3ddc84;--acao-tx:#04150c;--som:none}
+#hmt-radar{--verde:#00a859;--verde-esc:#0a2e1f;--acao:#087443;--acao-tx:#fff;--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--sol-bg:#e8f1fc;--pol-bg:#fdefe8;--card:#f6f8f7;--campo:#fff;--tx:#111;--tx2:#3f4a45;--mu:#5b6762;--bd:#d9e2dd;--bd-ctl:#7d8c85;--grade:#e3e9e5;--base:#b9c6bf;--apag:#cdd6d1;--foco:#0b7a45;--som:0 1px 2px rgba(10,46,31,.06),0 6px 18px rgba(10,46,31,.06);position:relative;font-family:var(--font-sans,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif);color:var(--tx);font-size:16px;line-height:1.45}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) #hmt-radar{--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--sol-bg:#16263b;--pol-bg:#3a2217;--card:#17201b;--campo:#0f1512;--tx:#eef3f0;--tx2:#c9d6cf;--mu:#a3b3ac;--bd:#2b3731;--bd-ctl:#627369;--grade:#26312b;--base:#3d4a43;--apag:#35423b;--foco:#5fe3a1;--acao:#3ddc84;--acao-tx:#04150c;--som:none}}
+html[data-theme="dark"] #hmt-radar,html.dark #hmt-radar,body.dark-mode #hmt-radar{--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--sol-bg:#16263b;--pol-bg:#3a2217;--card:#17201b;--campo:#0f1512;--tx:#eef3f0;--tx2:#c9d6cf;--mu:#a3b3ac;--bd:#2b3731;--bd-ctl:#627369;--grade:#26312b;--base:#3d4a43;--apag:#35423b;--foco:#5fe3a1;--acao:#3ddc84;--acao-tx:#04150c;--som:none}
 #hmt-radar *{box-sizing:border-box}
 #hmt-radar :focus-visible{outline:3px solid var(--foco);outline-offset:2px}
 #hmt-radar .rd-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -177,6 +177,16 @@ html[data-theme="dark"] #hmt-radar .rd-av{color:var(--foco);border-color:var(--f
 #hmt-radar .rd-col a{color:var(--tx);text-decoration:none;font-size:.95rem;line-height:1.38}
 #hmt-radar .rd-col a:hover{text-decoration:underline}
 #hmt-radar .rd-meta{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:.76rem;color:var(--mu);margin-top:3px}
+#hmt-radar .rd-tag{border-radius:999px;padding:0 7px;font-size:.68rem;font-weight:700;border:1px solid var(--bd-ctl);color:var(--tx2)}
+#hmt-radar .rd-pt.imp{background:var(--s3)}#hmt-radar .rd-pt.ofi{background:var(--s4)}#hmt-radar .rd-pt.ext{background:var(--s5)}
+#hmt-radar .rd-orig-bar{display:flex;gap:2px;height:22px;border-radius:6px;overflow:hidden;margin:4px 0 10px}
+#hmt-radar .rd-orig-bar i{display:block;height:100%;min-width:4px}
+#hmt-radar .rd-orig-l{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+#hmt-radar .rd-orig-l li{font-size:.84rem;color:var(--tx2);line-height:1.4}
+#hmt-radar .rd-orig-l b{color:var(--tx)}
+#hmt-radar .rd-orig-l small{display:block;color:var(--mu);font-size:.76rem}
+#hmt-radar .rd-redes{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:.78rem;color:var(--mu)}
+#hmt-radar .rd-redes a{color:var(--tx2);font-weight:600}
 #hmt-radar .rd-novo{background:var(--acao);color:var(--acao-tx);border-radius:999px;padding:0 7px;font-weight:800;font-size:.68rem;letter-spacing:.04em}
 #hmt-radar .rd-fx summary{cursor:pointer;color:var(--mu);list-style:none}
 #hmt-radar .rd-fx summary::-webkit-details-marker{display:none}
@@ -250,6 +260,17 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
    <div class="rd-plot" id="rd-g-bal"></div>
    <div class="rd-rodape-fig"><span>Mais manchetes não significa mais culpa nem mais mérito: mede só a cobertura.</span><button type="button" class="rd-bt-tab" aria-expanded="false" aria-controls="rd-t-bal">Ver como tabela</button></div>
    <div class="rd-tabela" id="rd-t-bal" hidden></div></figure>
+  <div class="rd-graficos">
+   <figure class="rd-fig" id="rd-f-part"><figcaption><h3>Balanço por partido</h3><p>Soma das manchetes dos nomes de cada partido no recorte, em ordem alfabética. Toque num partido para filtrar.</p></figcaption>
+    <div class="rd-leg" aria-hidden="true"><span><span class="rd-pt p"></span>Polêmicas</span><span><span class="rd-pt s"></span>Propostas</span></div>
+    <div class="rd-plot" id="rd-g-part"></div>
+    <div class="rd-rodape-fig"><span>Conta só os nomes monitorados pelo radar</span><button type="button" class="rd-bt-tab" aria-expanded="false" aria-controls="rd-t-part">Ver como tabela</button></div>
+    <div class="rd-tabela" id="rd-t-part" hidden></div></figure>
+   <figure class="rd-fig" id="rd-f-orig"><figcaption><h3>De onde vêm as manchetes</h3><p>Cada publicação do recorte, por tipo de canal: imprensa, canais oficiais (governos, Justiça Eleitoral, Legislativo, partidos e campanhas) e extraoficiais (redes sociais e blogs).</p></figcaption>
+    <div id="rd-g-orig"></div>
+    <div class="rd-rodape-fig"><span>Classificação automática pelo nome e endereço do canal</span><button type="button" class="rd-bt-tab" aria-expanded="false" aria-controls="rd-t-orig">Ver como tabela</button></div>
+    <div class="rd-tabela" id="rd-t-orig" hidden></div></figure>
+  </div>
  </section>
  <div class="rd-resumo"><span><span id="rd-contagem" aria-live="polite"></span><span class="rd-az"> · ordem alfabética</span></span><span class="rd-acoes"><button type="button" class="rd-comp" id="rd-comp">Compartilhar este recorte</button><button type="button" class="rd-limpar" id="rd-limpar" hidden>Limpar filtros</button></span></div>
  <button type="button" class="rd-volta" hidden><span aria-hidden="true">↑</span> Filtros</button>
@@ -323,9 +344,16 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
  function diaMT(u){var y,mo,da;try{new Intl.DateTimeFormat('en-US',{timeZone:'America/Cuiaba',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(u).forEach(function(p){if(p.type==='year')y=+p.value;if(p.type==='month')mo=+p.value;if(p.type==='day')da=+p.value})}catch(e){}if(!y||!mo||!da){var t=new Date(u.getTime()-4*36e5);y=t.getUTCFullYear();mo=t.getUTCMonth()+1;da=t.getUTCDate()}return new Date(y,mo-1,da)}
  function diasAtras(ddmm){var m=/^(\d{1,2})\/(\d{1,2})(?:\/\d{2,4})?$/.exec(String(ddmm==null?'':ddmm).trim());if(!m||!hoje)return Infinity;var best=Infinity;[-1,0,1].forEach(function(k){var dif=Math.round((hoje-new Date(hoje.getFullYear()+k,+m[2]-1,+m[1]))/864e5);if(Math.abs(dif)<Math.abs(best))best=dif});return Math.max(0,best)}
  function ddmm(d){var x=new Date(hoje.getFullYear(),hoje.getMonth(),hoje.getDate()-d);return ('0'+x.getDate()).slice(-2)+'/'+('0'+(x.getMonth()+1)).slice(-2)}
+ // Origem: canal oficial (governo, Justiça, Legislativo, partido, campanha), extraoficial (rede social, blog) ou imprensa
+ var PARTIDOS_RE=/^(pl|pt|psb|psd|mdb|pp|pdt|psdb|psol|rede|novo|podemos|agir|avante|democrata|mobiliza|missao|republicanos|uniao( brasil)?|cidadania|pcdob|pv|solidariedade|prd|dc)( \d{2,5})?$/;
+ function origem(f,u){var n=norm(f).trim(),d=(/^https?:\/\/([^\/]+)/i.exec(u||'')||[])[1]||'';d=norm(d);
+  if(/(^|\.)(instagram|facebook|fb|youtube|youtu|tiktok|twitter|x|threads|kwai|whatsapp|telegram|t)\.(com|me|be|net)/.test(d)||/^(instagram|facebook|youtube|tiktok|twitter|x|threads|kwai|whatsapp|telegram)(\.com)?$/.test(n)||/\bblog\b|blogspot|wordpress\.com|substack|medium\.com/.test(n+' '+d))return 'ext';
+  if(/\.(gov|jus|leg|mp|def)\.br$/.test(d)||/^(governo|prefeitura|secom|assembleia|almt|tre|tse|tce|tcu|mpe|mpf|ministerio publico|camara municipal|camara dos deputados|agencia (camara|senado)|senado|tribunal|justica eleitoral|diario oficial)\b/.test(n)||PARTIDOS_RE.test(n))return 'ofi';
+  return 'imp'}
+ var ORIG={imp:'Imprensa',ofi:'Canais oficiais e partidos',ext:'Extraoficial: redes e blogs'};
  function temasDe(n){var r=[];TEMAS.forEach(function(t){if(t[2].some(function(w){return casa(n,w)}))r.push(t[0])});return r}
- function agrupa(lista){var por=Object.create(null),ordem=[];(Array.isArray(lista)?lista:[]).forEach(function(x){if(!x||typeof x!=='object')return;var t=limpaTitulo(x.titulo,x.fonte);if(!t)return;var k=norm(t).replace(/[^a-z0-9]+/g,' ').trim(),f=x.fonte==null?'':String(x.fonte).trim().replace(/\s+[-|–]\s+.*$/,'');if(!por[k]){por[k]={titulo:t,url:seguro(x.url),data:x.data==null?'':String(x.data),fontes:[],n:txt(t),d:diasAtras(x.data),k:hash(k)};ordem.push(k)}var g=por[k];if(f&&g.fontes.indexOf(f)<0)g.fontes.push(f);if(!g.url&&seguro(x.url))g.url=seguro(x.url)});
-  return ordem.map(function(k){var g=por[k];g.temas=temasDe(g.n);return g})}
+ function agrupa(lista){var por=Object.create(null),ordem=[];(Array.isArray(lista)?lista:[]).forEach(function(x){if(!x||typeof x!=='object')return;var t=limpaTitulo(x.titulo,x.fonte);if(!t)return;var k=norm(t).replace(/[^a-z0-9]+/g,' ').trim(),f=x.fonte==null?'':String(x.fonte).trim().replace(/\s+[-|–]\s+.*$/,'');if(!por[k]){por[k]={titulo:t,url:seguro(x.url),data:x.data==null?'':String(x.data),fontes:[],n:txt(t),d:diasAtras(x.data),k:hash(k)};ordem.push(k)}var g=por[k];if(f&&g.fontes.indexOf(f)<0){g.fontes.push(f);(g.orig=g.orig||[]).push(origem(f,x.url))}if(!g.url&&seguro(x.url))g.url=seguro(x.url)});
+  return ordem.map(function(k){var g=por[k];g.temas=temasDe(g.n);g.orig=g.orig||['imp'];g.tipo=g.orig.indexOf('imp')>=0?'imp':g.orig.indexOf('ofi')>=0?'ofi':'ext';return g})}
  function oficial(d){var porNome=Object.create(null);d.candidatos.forEach(function(c){porNome[norm(c.nome)+'|'+c.cargoN]=c});
   OFICIAL.forEach(function(o){var c=o[2]?porNome[norm(o[2])+'|'+o[0]]:null,of={urna:o[1],numero:o[3],partido:o[4],coligacao:o[5],vice:o[6],deferido:!!o[7]};
    if(c){c.of=of;return}
@@ -353,7 +381,7 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
  function linkDe(x){return seguro(x.url)||('https://news.google.com/search?q='+encodeURIComponent(x.titulo)+'&hl=pt-BR&gl=BR&ceid=BR:pt-419')}
  function eNovo(x){return !!vistos&&!vistos[x.k]}
  function item(x,ts,i){var nf=x.fontes.length,fx=nf?'<details class="rd-fx"><summary>'+pl(nf,'fonte')+'</summary><p>'+esc(x.fontes.join(' · '))+'</p></details>':'';
-  return '<li'+(i>=VISIVEIS?' hidden':'')+(chegou[x.k]?' class="rd-chegou"':'')+'><a href="'+esc(linkDe(x))+'" target="_blank" rel="nofollow noopener">'+destaca(x.titulo,ts)+' <span aria-hidden="true">↗</span><span class="rd-sr"> (abre em nova aba'+(seguro(x.url)?'':', busca no Google Notícias')+')</span></a><div class="rd-meta">'+(eNovo(x)?'<span class="rd-novo">NOVO</span>':'')+(x.data?'<span>'+esc(x.data)+'</span>':'')+fx+'</div></li>'}
+  return '<li'+(i>=VISIVEIS?' hidden':'')+(chegou[x.k]?' class="rd-chegou"':'')+'><a href="'+esc(linkDe(x))+'" target="_blank" rel="nofollow noopener">'+destaca(x.titulo,ts)+' <span aria-hidden="true">↗</span><span class="rd-sr"> (abre em nova aba'+(seguro(x.url)?'':', busca no Google Notícias')+')</span></a><div class="rd-meta">'+(eNovo(x)?'<span class="rd-novo">NOVO</span>':'')+(x.tipo==='ofi'?'<span class="rd-tag"><span class="rd-pt ofi" aria-hidden="true"></span>canal oficial</span>':x.tipo==='ext'?'<span class="rd-tag"><span class="rd-pt ext" aria-hidden="true"></span>rede/blog</span>':'')+(x.data?'<span>'+esc(x.data)+'</span>':'')+fx+'</div></li>'}
  function coluna(c,cls,titulo,lista,ts,vazio){var h='<div class="rd-col '+cls+'"><h5 class="rd-col-tit">'+titulo+'</h5>';if(!lista.length)return h+'<div class="rd-vazio">'+vazio+'</div></div>';h+='<ul>'+lista.map(function(x,i){return item(x,ts,i)}).join('')+'</ul>';
   if(lista.length>VISIVEIS){var n=lista.length-VISIVEIS,tp=cls==='p'?'polêmica':'proposta',rot='Ver mais '+n+' '+tp+(n===1?'':'s');h+='<button type="button" class="rd-mais" aria-expanded="false" data-rot="'+rot+'" data-tp="'+tp+'s" data-nome="'+esc(c.nome)+'"><span class="rd-mais-tx">'+rot+'</span><span class="rd-sr"> de '+esc(c.nome)+'</span></button>'}return h+'</div>'}
  function conta(n,t,pal){return n+(t>n?' de '+t:'')+' '+pal+(t===1?'':'s')}
@@ -428,13 +456,32 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
   g='<line x1="'+cx+'" x2="'+cx+'" y1="0" y2="'+y+'" stroke="var(--base)" stroke-width="1"/>'+g;
   $('rd-g-bal').innerHTML='<svg viewBox="0 0 '+W+' '+(y+4)+'" role="list" aria-label="Balanço de polêmicas e propostas por nome">'+g+'</svg>';
   tabela($('rd-t-bal'),['Nome','Polêmicas','Propostas','Rotina (semana)'],linhas)}
+ function grOrigem(vis){var c={imp:0,ofi:0,ext:0},v={imp:{},ofi:{},ext:{}},t=0;
+  vis.forEach(function(r){r.pol.concat(r.sol).forEach(function(x){x.fontes.forEach(function(f,i){var o=(x.orig||[])[i]||'imp';c[o]++;t++;v[o][f]=(v[o][f]||0)+1})})});
+  var el=$('rd-g-orig');if(!t){el.innerHTML='<div class="rd-vazio">Sem publicações no recorte atual.</div>';$('rd-t-orig').innerHTML='';return}
+  var ks=['imp','ofi','ext'],top=function(o){return Object.keys(v[o]).sort(function(a,b){return v[o][b]-v[o][a]||a.localeCompare(b,'pt-BR')})};
+  el.innerHTML='<div class="rd-orig-bar" role="img" aria-label="'+esc(ks.map(function(o){return ORIG[o]+': '+c[o]}).join('; '))+'">'+ks.filter(function(o){return c[o]}).map(function(o){return '<i class="rd-pt '+o+'" style="flex:'+c[o]+';margin:0;border-radius:0;width:auto" tabindex="0" data-tip="'+esc(JSON.stringify({t:ORIG[o],l:[[o==='imp'?'n':o==='ofi'?'o':'e',c[o],(c[o]===1?'publicação':'publicações')+' ('+Math.round(c[o]/t*100)+'%)']]}))+'"></i>'}).join('')+'</div>'+
+   '<ul class="rd-orig-l">'+ks.map(function(o){var tp=top(o);return '<li><span class="rd-pt '+o+'" aria-hidden="true"></span><b>'+ORIG[o]+'</b>: '+pl(c[o],'publicação','publicações')+' ('+Math.round(c[o]/t*100)+'%)'+(tp.length?'<small>'+esc(tp.slice(0,4).join(', '))+(tp.length>4?' e mais '+(tp.length-4):'')+'</small>':'<small>Nenhuma no recorte.</small>')+'</li>'}).join('')+'</ul>';
+  tabela($('rd-t-orig'),['Tipo de canal','Publicações','Canais'],ks.map(function(o){return [ORIG[o],c[o],Object.keys(v[o]).length]}))}
+ function nPart(p){p=String(p||'').trim();return /^uni[aã]o( brasil)?$/i.test(p)?'União':p||'Sem partido'}
+ function grPartido(vis){var W=larg($('rd-g-part')),lw=Math.min(130,Math.round(W*.32)),rh=24,bh=12,cx=lw+(W-lw)/2,half=(W-lw)/2-26,max=1,y=4,g='',por={},linhas=[];
+  vis.forEach(function(r){var k=nPart(r.c.partido),e=por[k]=por[k]||{p:0,s:0,n:0,orig:r.c.partido};e.p+=r.pol.length;e.s+=r.sol.length;e.n++});
+  var ks=Object.keys(por).sort(function(a,b){return a.localeCompare(b,'pt-BR')});ks.forEach(function(k){max=Math.max(max,por[k].p,por[k].s)});
+  if(!ks.length){$('rd-g-part').innerHTML='<div class="rd-vazio">Nenhum nome no recorte atual.</div>';$('rd-t-part').innerHTML='';return}
+  ks.forEach(function(k){var e=por[k],wp=e.p/max*half,ws=e.s/max*half,yy=y+(rh-2-bh)/2,sel=estado.partido&&nPart(estado.partido)===k;
+   g+='<g tabindex="0" role="listitem" data-partido="'+esc(e.orig)+'" data-tip="'+esc(JSON.stringify({t:k+' · '+pl(e.n,'nome'),l:[['p',e.p,'polêmicas'],['s',e.s,'propostas']]}))+'" aria-label="'+esc(k+': '+e.p+' polêmicas e '+e.s+' propostas. Filtrar por este partido.')+'"><rect class="rd-hl" x="0" y="'+y+'" width="'+W+'" height="'+(rh-2)+'" rx="6" fill="transparent"/><text class="rd-nm" x="0" y="'+(y+rh/2+2)+'"'+(sel?' font-weight="800"':'')+'>'+esc(corta(k+' ('+e.n+')',12,lw-6))+'</text>'
+    +barraH(cx-1,yy,wp,bh,'var(--s2)',-1)+barraH(cx+1,yy,ws,bh,'var(--s1)',1)
+    +(e.p?'<text class="rd-val" x="'+(cx-1-wp-5)+'" y="'+(y+rh/2+2)+'" text-anchor="end">'+e.p+'</text>':'')+(e.s?'<text class="rd-val" x="'+(cx+1+ws+5)+'" y="'+(y+rh/2+2)+'">'+e.s+'</text>':'')+(!e.p&&!e.s?'<text x="'+(cx+6)+'" y="'+(y+rh/2+2)+'">sem manchetes</text>':'')+'</g>';
+   linhas.push([k,e.n,e.p,e.s]);y+=rh});
+  $('rd-g-part').innerHTML='<svg viewBox="0 0 '+W+' '+(y+4)+'" role="list" aria-label="Balanço por partido"><line x1="'+cx+'" x2="'+cx+'" y1="0" y2="'+y+'" stroke="var(--base)"/>'+g+'</svg>';
+  tabela($('rd-t-part'),['Partido','Nomes','Polêmicas','Propostas'],linhas)}
  function kpis(vis){var pol=0,sol=0,rot=0,nov=0,f=Object.create(null),nf=0;vis.forEach(function(r){pol+=r.pol.length;sol+=r.sol.length;rot+=r.c.neutras;r.pol.concat(r.sol).forEach(function(x){if(eNovo(x))nov++;x.fontes.forEach(function(v){if(!f[v]){f[v]=1;nf++}})})});
   var semFiltro=estado.periodo==='7'&&!estado.q.trim()&&!estado.tema,h='';
   function t(v,l,pt){return '<div class="rd-kpi"><b>'+fmt(v)+'</b><span>'+(pt?'<span class="rd-pt '+pt+'" aria-hidden="true"></span>':'')+esc(l)+'</span></div>'}
   h+=t(pol+sol,'manchetes no recorte');if(estado.tipo!=='solucoes')h+=t(pol,'polêmicas','p');if(estado.tipo!=='polemicas')h+=t(sol,'propostas','s');h+=t(nf,'veículos');if(semFiltro)h+=t(rot,'notícias de rotina');if(vistos)h+=t(nov,'novas desde a sua última visita');
   $('rd-kpis').innerHTML=h}
  var ultimo=null;
- function graficos(){if(!ultimo)return;try{grDias(ultimo);grTemas(ultimo);grBalanco(ultimo);grVeiculos(ultimo)}catch(e){if(window.console)console.error(e)}}
+ function graficos(){if(!ultimo)return;try{grDias(ultimo);grTemas(ultimo);grBalanco(ultimo);grPartido(ultimo);grOrigem(ultimo);grVeiculos(ultimo)}catch(e){if(window.console)console.error(e)}}
  function render(){if(!dados)return;var ts=termos(estado.q),grupos=Object.create(null),pc=Object.create(null),nomes=0,manchetes=0,vis=[];pc.todos=0;
   dados.candidatos.forEach(function(c){var r=avalia(c,ts);if(!r)return;pc.todos++;pc[c.cargoN]=(pc[c.cargoN]||0)+1;if(estado.cargo!=='todos'&&c.cargoN!==estado.cargo)return;vis.push(r);(grupos[c.cargoN]=grupos[c.cargoN]||[]).push(card(r,ts,nomes));nomes++;manchetes+=r.vis});
   CARGOS.querySelectorAll('button').forEach(function(b){var k=b.getAttribute('data-cargo'),n=pc[k]||0;b.querySelector('small').innerHTML='<span class="rd-sr">, </span>'+n+'<span class="rd-sr"> '+(n===1?'nome':'nomes')+'</span>';if(!n&&k!=='todos'&&b.getAttribute('aria-checked')!=='true')b.setAttribute('aria-disabled','true');else b.removeAttribute('aria-disabled')});
@@ -484,7 +531,7 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
  raiz.addEventListener('click',function(e){var b=e.target.closest('.rd-bt-tab');if(!b)return;var t=$(b.getAttribute('aria-controls')),ab=b.getAttribute('aria-expanded')==='true';t.hidden=ab;b.setAttribute('aria-expanded',String(!ab));b.textContent=ab?'Ver como tabela':'Esconder tabela'});
  // Dica (tooltip) nas marcas, por mouse, toque ou teclado; o texto entra por textContent
  function mostraTip(el,ev){var d;try{d=JSON.parse(el.getAttribute('data-tip'))}catch(e){return}TIP.textContent='';var b=document.createElement('b');b.textContent=d.t;TIP.appendChild(b);
-  d.l.forEach(function(l){var row=document.createElement('div'),k=document.createElement('i'),v=document.createElement('span'),m=document.createElement('span');k.style.background=l[0]==='p'?'var(--s2)':l[0]==='s'?'var(--s1)':'var(--s3)';v.className='rd-tv';v.textContent=fmt(l[1]);m.className='rd-tm';m.textContent=l[2];row.appendChild(k);row.appendChild(v);row.appendChild(m);TIP.appendChild(row)});
+  d.l.forEach(function(l){var row=document.createElement('div'),k=document.createElement('i'),v=document.createElement('span'),m=document.createElement('span');k.style.background=l[0]==='p'?'var(--s2)':l[0]==='s'?'var(--s1)':l[0]==='o'?'var(--s4)':l[0]==='e'?'var(--s5)':'var(--s3)';v.className='rd-tv';v.textContent=fmt(l[1]);m.className='rd-tm';m.textContent=l[2];row.appendChild(k);row.appendChild(v);row.appendChild(m);TIP.appendChild(row)});
   TIP.hidden=false;var rr=raiz.getBoundingClientRect(),er=el.getBoundingClientRect(),x=ev&&ev.clientX!=null?ev.clientX:er.left+er.width/2,y=ev&&ev.clientY!=null?ev.clientY:er.top,tw=TIP.offsetWidth,th=TIP.offsetHeight,l=x-rr.left+12,t=y-rr.top-th-10;
   if(l+tw>rr.width)l=x-rr.left-tw-12;if(l<0)l=4;if(t<0)t=y-rr.top+16;TIP.style.left=l+'px';TIP.style.top=t+'px'}
  function escondeTip(){TIP.hidden=true}
@@ -496,10 +543,11 @@ html[data-theme="dark"] #hmt-radar .rd-como a{color:var(--foco)}
  raiz.addEventListener('pointerleave',escondeTip);
  raiz.addEventListener('focusin',function(e){var g=e.target.closest&&e.target.closest('[data-tip]');if(g)mostraTip(g,null);else escondeTip()});
  raiz.addEventListener('focusout',escondeTip);
- function acao(g){if(g.hasAttribute('data-tema')){var t=g.getAttribute('data-tema');estado.tema=estado.tema===t?'':t;TM.value=estado.tema;render();var n=raiz.querySelector('[data-tema="'+t+'"]');if(n)n.focus({preventScroll:true})}
+ function acao(g){if(g.hasAttribute('data-partido')){var pp=g.getAttribute('data-partido');estado.partido=estado.partido===pp?'':pp;P.value=estado.partido;render();var n2=[].filter.call(raiz.querySelectorAll('[data-partido]'),function(z){return z.getAttribute('data-partido')===pp})[0];if(n2)n2.focus({preventScroll:true});return}
+  if(g.hasAttribute('data-tema')){var t=g.getAttribute('data-tema');estado.tema=estado.tema===t?'':t;TM.value=estado.tema;render();var n=raiz.querySelector('[data-tema="'+t+'"]');if(n)n.focus({preventScroll:true})}
   else if(g.hasAttribute('data-ir')){var c=$(g.getAttribute('data-ir'));if(c){var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;c.scrollIntoView({behavior:r?'auto':'smooth',block:'start'});var h=c.querySelector('.rd-nome');if(h){h.tabIndex=-1;h.focus({preventScroll:true})}}}}
- raiz.addEventListener('click',function(e){var g=e.target.closest&&e.target.closest('[data-tema],[data-ir]');if(g&&g.closest('.rd-plot'))acao(g)});
- raiz.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('.rd-plot [data-tema],.rd-plot [data-ir]')){e.preventDefault();acao(e.target)}if(e.key==='Escape')escondeTip()});
+ raiz.addEventListener('click',function(e){var g=e.target.closest&&e.target.closest('[data-tema],[data-ir],[data-partido]');if(g&&g.closest('.rd-plot'))acao(g)});
+ raiz.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('.rd-plot [data-tema],.rd-plot [data-ir],.rd-plot [data-partido]')){e.preventDefault();acao(e.target)}if(e.key==='Escape')escondeTip()});
  window.addEventListener('hashchange',function(){if(!dados||!RADAR.test(location.hash.slice(1)))return;zera();try{leHash()}catch(e){}render()});
  var acima=false,dentro=false;
  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.target===F)acima=!e.isIntersecting&&e.boundingClientRect.top<0;else dentro=e.isIntersecting});VOLTA.hidden=!(acima&&dentro)});io.observe(F);io.observe(C)}
