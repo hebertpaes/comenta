@@ -1056,6 +1056,22 @@
       "materia": "https://hojemt.com.br/coracao-no-pl-palanque-com-pivetta/",
       "charge_json": "pautas/charges/2026-09-25-coracao-no-pl-palanque-com-pivetta.json",
       "obs": "curta em rascunho (id 6ab7025e834d62060cb1d7a2, https://hojemt.com.br/p/07dce690-31c2-43fe-aacb-1778218f2a96/): quando o editor publicar, trocar status para agendado e definir 'quando' ANTES do 1º turno (04/10), pois o assunto é eleitoral. Se o editor mudar o slug, atualizar 'materia' e o link da legenda. A legenda não cita a dança (fonte única, Estadão MT)."
+    },
+    {
+      "id": "58",
+      "status": "aguardando_materia",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "carrossel",
+      "titulo": "Quaest · Senado MT: Mauro e Janaina seguem na frente",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-quaest-senado-consolidado-4x5.jpg",
+        "https://hojemt.com.br/content/images/2026/09/2026-09-25-quaest-senado-votos-4x5.jpg"
+      ],
+      "legenda": "Senado em MT: Mauro Mendes e Janaina Riva seguem na frente, aponta a Quaest 👉 arrasta pro lado\n\nSoma dos dois votos (voto consolidado):\n• Mauro Mendes (União): 27%\n• Janaina Riva (MDB): 19%\n• Pedro Taques (PSB): 9%\n• Zé Medeiros (PL): 9%\n• Fávaro (PSD): 8%\nTaques, Medeiros e Fávaro estão tecnicamente empatados. Indecisos: 18%.\n\nNo 1º voto, Mauro tem 37%; no 2º, Janaina lidera com 20%.\n\nQuaest, contratada pela TV Centro América (Rádio e Televisão Matogrossense Ltda.) · 804 entrevistas de 21 a 24/09 · margem de erro de 3 pontos, confiança de 95% · registro MT-08098/2026\n\nMatéria completa: hojemt.com.br/quaest-senado-mt-mauro-e-janaina-seguem-na-frente\n\n#eleicoes2026 #senado #pesquisa #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/quaest-senado-mt-mauro-e-janaina-seguem-na-frente/",
+      "obs": "matéria em rascunho (id 6ab70b59834d62060cb1d7ca, https://hojemt.com.br/p/bec90373-823e-4e23-b9e3-61b7c6907c5f/): quando o editor publicar, trocar status para agendado e definir 'quando' o quanto antes (pesquisa perde validade com a próxima rodada e o 1º turno é em 04/10). Se o slug mudar, atualizar 'materia' e o link da legenda. Gráficos gerados por content/pautas/eleicoes/2026-09-25-quaest-senado-graficos.py."
     }
   ]
 }
