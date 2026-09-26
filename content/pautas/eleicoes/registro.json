@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-09-25",
+  "atualizado_em": "2026-09-26",
   "regra": "Matérias de eleições sobre Mato Grosso: capa com fotos oficiais do TSE (montagem/ficha feita no Canva), nunca rosto gerado por IA. Dados e ids dos assets em 2026-mt-candidatos.json.",
   "artes": [
     {
@@ -711,6 +711,14 @@
       "antes": "capa-b4f1df476d04d396.webp",
       "depois": "2026-09-25-candidatos-governo-rn.jpg",
       "obs": "a matéria anuncia oito e lista sete (omite Álvaro Dias, PL); Carlos Jararaca (DC, indeferido) e Godeiro Linharess (DC, pendente de julgamento) fora, como na contagem da matéria"
+    },
+    {
+      "slug": "presidenciaveis-intensificam-campanhas-com-foco-em-economia-e-apostas",
+      "antes": "capa-6de1acada214a87d.webp",
+      "depois": "2026-09-25-candidatos-presidente-br-1.jpg (montagem pronta DAHWNWpBR1E, 13 candidatos)",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-presidente-br-1-og.jpg",
+      "feito_em": "2026-09-26",
+      "obs": "post sem a tag eleicoes (só Política), mas é disputa presidencial com capa genérica: aplicada a montagem pronta da Presidência, como na matéria-irmã de 25/09; legenda mantém o crédito da Agência Brasil"
     }
   ],
   "mantidos": [
