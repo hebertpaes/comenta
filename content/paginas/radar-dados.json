@@ -1407,7 +1407,7 @@
   ]
  },
  "grupos": {
-  "atualizado": "26/09/2026 05:50",
+  "atualizado": "26/09/2026 08:55",
   "grupos": [
    {
     "governador": "Doutora Natasha",
@@ -1745,6 +1745,22 @@
     "desenho": "Candidatura do PL alinhada à de Flávio Bolsonaro para presidente, em coligação com MDB, Novo, PRD e Solidariedade.",
     "movimentos": [
      {
+      "data": "2026-09-25",
+      "fato": "O prefeito de Cuiabá, Abilio Brunini (PL), reafirmou em reunião política na capital o apoio a Mauro Mendes (União), da coligação de Pivetta, ao Senado e defendeu também a eleição de Zé Medeiros (PL); disse que Bolsonaro havia indicado os dois.",
+      "fontes": [
+       [
+        "MidiaJur",
+        "https://www.midiajur.com.br/eleicoes-2026/abilio-cita-desejo-de-bolsonaro-e-declara-apoio-a-mauro-ao-senado/87339",
+        "2026-09-26"
+       ],
+       [
+        "24 Horas MT",
+        "https://24horasmt.com.br/politica-mt/abilio-expoe-conversa-com-bolsonaro-e-coloca-mauro-como-nome-do-ex-presidente/",
+        "2026-09-26"
+       ]
+      ]
+     },
+     {
       "data": "2026-09-24",
       "fato": "Flávio Bolsonaro pediu votos para Wellington e para Zé Medeiros em vídeo; Sergio Moro declarou apoio a Wellington em 23/9.",
       "fontes": [
@@ -1819,22 +1835,6 @@
         "Gazeta Digital",
         "https://www.gazetadigital.com.br/editorias/eleicoes-2026/novo-condiciona-apoio-a-medeiros-ao-apoio-por-impeachment-somos-bem-criticos-ao-stf/860322",
         "2026-09-24"
-       ]
-      ]
-     },
-     {
-      "data": "2026-09-16",
-      "fato": "O TRE-MT mandou a coligação e o PL compensarem o tempo de rádio e TV retirado de Janaina Riva.",
-      "fontes": [
-       [
-        "O Documento",
-        "https://odocumento.com.br/tre-segue-stf-e-manda-pl-devolver-tempo-retirado-de-janaina-riva-na-tv-e-no-radio/",
-        "2026-09-16"
-       ],
-       [
-        "Voz MT",
-        "https://www.vozmt.com.br/politica/briga-pelo-tempo-de-tv-esquenta-disputa-entre-janaina-riva-e-jose-medeiros/",
-        "2026-09-21"
        ]
       ]
      }
