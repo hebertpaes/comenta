@@ -62,7 +62,9 @@
 // (`python3 -m piper`) com as vozes em $HOJEMT_VOZES
 // (padrão /root/.local/share/hojemt-vozes); gTTS como reserva. Motor "kokoro"
 // (voz do Argos, mais natural): Kokoro-82M em $HOJEMT_VOZES/kokoro, instalado
-// por vozes-kokoro.sh; narrador = nome da voz (pm_santa, pm_alex, pf_dora).
+// por vozes-kokoro.sh; narrador = nome da voz (pm_santa, pm_alex, pf_dora);
+// `voz.tom` em semitons (ex.: -2.5 = mais grave). Motor "arquivo": cada cena
+// traz `audio_tts` (fala já sintetizada fora, ex.: HeyGen pelo Zapier).
 // Fontes: assets/fonts (Anton, Roboto Condensed) via fontconfig gerado em
 // tempo de execução — o mesmo truque de lib/card.mjs.
 import { spawnSync } from "node:child_process";
@@ -768,9 +770,20 @@ async function principal() {
       const legenda = c.legenda || fala;
       if ((c.citacao === true || c.citacao_lida_pelo_narrador === true) && !/["“«][^"“”«»]{3,}["”»]/.test(legenda))
         throw new Error(`cena ${n}: citação lida pelo narrador precisa da frase real entre aspas na legenda (\`legenda\` ou \`fala\`)`);
-      const modelo = voz.narrador;
+      const modelo = voz.motor === "arquivo" ? "audio_tts" : voz.narrador;
       process.stdout.write(`voz ${n} (${quem}, ${voz.motor}/${modelo})… `);
-      const audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, tom: voz.tom, destino });
+      let audio;
+      if (voz.motor === "arquivo") {
+        // Fala já sintetizada fora daqui (ex.: voz do HeyGen baixada pelo Zapier):
+        // `audio_tts` em cada cena, relativo a content/. Só voz sintética genérica.
+        if (!c.audio_tts) throw new Error(`cena ${n}: com voz.motor "arquivo", cada cena do narrador precisa de \`audio_tts\``);
+        const origem = isAbsolute(c.audio_tts) ? c.audio_tts : join(aqui, c.audio_tts);
+        if (!existsSync(origem)) throw new Error(`cena ${n}: audio_tts não encontrado: ${c.audio_tts}`);
+        rodarFfmpeg(["-i", origem, "-ac", "1", "-ar", "24000", destino], `voz pronta da cena ${n}`);
+        audio = destino;
+      } else {
+        audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, tom: voz.tom, destino });
+      }
       cena = { ...base, fala, legenda, audio };
     }
     cena.duracaoAudio = duracaoDe(cena.audio);
