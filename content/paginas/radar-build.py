@@ -13,7 +13,7 @@ import json, re, sys, os
 aqui = os.path.dirname(os.path.abspath(__file__))
 dados = json.load(open(os.path.join(aqui, 'radar-dados.json'), encoding='utf-8'))
 for k in dados:
-    if k not in ('atualizado', 'boletim', 'pesquisas', 'justica', 'grupos', 'redes'):
+    if k not in ('atualizado', 'boletim', 'pesquisas', 'justica', 'grupos', 'redes', 'analise', 'redes_metricas'):
         sys.exit(f'chave inesperada em radar-dados.json: {k}')
 if '--checar' in sys.argv:
     print('ok:', ', '.join(sorted(dados))); sys.exit(0)
