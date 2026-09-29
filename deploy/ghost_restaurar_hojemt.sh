@@ -44,6 +44,17 @@ GHOST_ADMIN_API_KEY="${GHOST_ADMIN_API_KEY:-}"
 IMPORTAR_CONTEUDO="${IMPORTAR_CONTEUDO:-0}"
 ATIVAR_TEMA="${ATIVAR_TEMA:-1}"
 REPO="https://github.com/hebertpaes/comenta.git"
+
+# Repositório privado: exporte GITHUB_TOKEN (token fine-grained só com
+# "Contents: read" neste repositório) antes de rodar. O token vai só no
+# cabeçalho de cada comando git (http.extraHeader), nunca no .git/config.
+git_repo() {
+  if [ -n "${GITHUB_TOKEN:-}" ]; then
+    git -c "http.https://github.com/.extraHeader=AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64 | tr -d '\n')" "$@"
+  else
+    git "$@"
+  fi
+}
 export GHOST_ADMIN_URL GHOST_ADMIN_API_KEY
 
 log(){ printf "\n\033[1;36m==> %s\033[0m\n" "$*"; }
@@ -61,12 +72,12 @@ esac
 log "1/4 Repositório (ramo $BRANCH)"
 REPO_DIR="$BASE/comenta"
 if [ -d "$REPO_DIR/.git" ]; then
-  git -C "$REPO_DIR" fetch origin "$BRANCH" --depth 1 -q
+  git_repo -C "$REPO_DIR" fetch origin "$BRANCH" --depth 1 -q
   git -C "$REPO_DIR" checkout -q "$BRANCH" 2>/dev/null || git -C "$REPO_DIR" checkout -q -B "$BRANCH" FETCH_HEAD
   git -C "$REPO_DIR" reset --hard -q FETCH_HEAD
 else
   mkdir -p "$BASE"
-  git clone --branch "$BRANCH" --depth 1 "$REPO" "$REPO_DIR"
+  git_repo clone --branch "$BRANCH" --depth 1 "$REPO" "$REPO_DIR"
 fi
 TEMA_DIR="$REPO_DIR/ghost/content/themes/hojemt"
 EXPORT_JSON="$TEMA_DIR/content/noticias.json"

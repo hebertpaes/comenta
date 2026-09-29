@@ -52,6 +52,17 @@ GHOST_MODE="${GHOST_MODE:-auto}"
 MOVE_GHOST="${MOVE_GHOST:-0}"
 FORCE_GHOST_MOVE="${FORCE_GHOST_MOVE:-0}"
 REPO="https://github.com/hebertpaes/comenta.git"
+
+# Repositório privado: exporte GITHUB_TOKEN (token fine-grained só com
+# "Contents: read" neste repositório) antes de rodar. O token vai só no
+# cabeçalho de cada comando git (http.extraHeader), nunca no .git/config.
+git_repo() {
+  if [ -n "${GITHUB_TOKEN:-}" ]; then
+    git -c "http.https://github.com/.extraHeader=AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64 | tr -d '\n')" "$@"
+  else
+    git "$@"
+  fi
+}
 WEBROOT="/var/www/html"
 CONF="/etc/nginx/sites-available/comenta.conf"
 ENABLED="/etc/nginx/sites-enabled/comenta.conf"
@@ -129,13 +140,13 @@ log "3/8 Repositório em $BASE (ramo $BRANCH)"
 mkdir -p "$BASE"
 REPO_DIR="$BASE/comenta"
 if [ -d "$REPO_DIR/.git" ]; then
-  git -C "$REPO_DIR" fetch origin "$BRANCH" --depth 1 -q
+  git_repo -C "$REPO_DIR" fetch origin "$BRANCH" --depth 1 -q
   # `checkout $BRANCH` falha num clone --depth 1 de outro ramo: cria/move o
   # ramo local a partir do FETCH_HEAD que acabou de chegar.
   git -C "$REPO_DIR" checkout -q "$BRANCH" 2>/dev/null || git -C "$REPO_DIR" checkout -q -B "$BRANCH" FETCH_HEAD
   git -C "$REPO_DIR" reset --hard -q FETCH_HEAD
 else
-  git clone --branch "$BRANCH" --depth 1 "$REPO" "$REPO_DIR"
+  git_repo clone --branch "$BRANCH" --depth 1 "$REPO" "$REPO_DIR"
 fi
 DEPLOY_DIR="$REPO_DIR/deploy"
 

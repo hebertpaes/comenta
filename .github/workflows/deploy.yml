@@ -29,6 +29,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Menor permissão possível para o token do job (só ler o código).
+permissions:
+  contents: read
+
 concurrency:
   group: deploy-site
   cancel-in-progress: false
@@ -140,6 +144,8 @@ jobs:
 
       # Sistema completo: o script é quem clona o repo e sobe os containers, e
       # ele mesmo confere o DNS, o conflito de vhost e o Ghost que já existe.
+      # Com o repositório privado, o clone usa o token temporário deste job
+      # (só leitura, pelas permissions acima), que expira quando o job termina.
       - name: Instala no servidor (sistema completo)
         if: env.DEPLOY_STACK == 'full'
         env:
@@ -148,9 +154,10 @@ jobs:
           DEPLOY_EMAIL: ${{ secrets.DEPLOY_EMAIL }}
           DEPLOY_DOMAIN: ${{ vars.DEPLOY_DOMAIN }}
           DEPLOY_TAKE_OVER: ${{ vars.DEPLOY_TAKE_OVER }}
+          TOKEN_LEITURA: ${{ github.token }}
         run: |
           ssh -i ~/.ssh/deploy_key -o BatchMode=yes -o ConnectTimeout=20 "$DEPLOY_USER@$DEPLOY_HOST" \
-            "sudo DOMAIN='${DEPLOY_DOMAIN:-intsoft.com.br}' BRANCH='${{ github.ref_name }}' \
+            "sudo DOMAIN='${DEPLOY_DOMAIN:-intsoft.com.br}' BRANCH='${{ github.ref_name }}' GITHUB_TOKEN='$TOKEN_LEITURA' \
                   EMAIL='$DEPLOY_EMAIL' TAKE_OVER='$DEPLOY_TAKE_OVER' bash -s" \
             < deploy/bootstrap.sh
 

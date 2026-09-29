@@ -148,7 +148,10 @@ fluência de Portugal".
 3. **Pesquisa eleitoral só com registro**, e sempre com instituto, contratante,
    período, entrevistas, margem e registro (na fala resumida e completa na
    legenda/cartela). Mostra todos os cenários publicados (1º e 2º turno), não só
-   os favoráveis a alguém.
+   os favoráveis a alguém. Antes de usar números, confere se a pesquisa não foi
+   **suspensa ou impugnada** (TRE/TSE, PesqEle e notícias do dia): pesquisa com
+   divulgação suspensa sai do Radar e do boletim, sem números — só a notícia da
+   suspensão, com fonte (caso Veritá, liminar do TRE-MT de 28/09/2026).
 4. **Justiça Eleitoral:** separa decisão de ação em andamento; diz se cabe
    recurso; cita a defesa quando houver manifestação publicada. Presunção de
    inocência.

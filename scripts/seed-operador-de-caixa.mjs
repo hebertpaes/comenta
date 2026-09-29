@@ -48,14 +48,17 @@ async function main() {
         (${course[0].id}, 'Aula 2: Atendimento e Formas de Pagamento (Pix, Cartão, Boleto)', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Como operar Maquininhas de Cartão e conferir recebimentos via Pix.', 20, 2, NOW());
     `;
 
-    // Atualiza o token ABACS nas configurações da empresa
-    await sql`
-      UPDATE companies
-      SET settings = jsonb_set(COALESCE(settings, '{}'::jsonb), '{abacsToken}', '"89945.18284682318tokenavancada"')
-      WHERE id = ${companyId};
-    `;
-
-    console.log("✓ Token ABACS '89945.18284682318tokenavancada' salvo como padrão!");
+    // Token ABACS só pelo ambiente (ABACS_TOKEN); nunca no código
+    if (process.env.ABACS_TOKEN) {
+      await sql`
+        UPDATE companies
+        SET settings = jsonb_set(COALESCE(settings, '{}'::jsonb), '{abacsToken}', to_jsonb(${process.env.ABACS_TOKEN}::text))
+        WHERE id = ${companyId};
+      `;
+      console.log("✓ Token ABACS (de ABACS_TOKEN) salvo nas configurações da empresa");
+    } else {
+      console.log("⚠️  ABACS_TOKEN não definido: token não gravado (configure no painel ou no .env)");
+    }
     console.log("=========================================================");
     console.log("🎉 CONFIGURAÇÃO 'OPERADOR DE CAIXA' (CURSO 77) CONCLUÍDA!");
     console.log("=========================================================");

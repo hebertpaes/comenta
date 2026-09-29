@@ -1,26 +1,41 @@
 import type { FastifyInstance } from "fastify";
+import { timingSafeEqual } from "node:crypto";
 import { eq, ilike } from "drizzle-orm";
 import { db, schema } from "../db/client.js";
 import { emitToCompany } from "../realtime.js";
 import { publishEvent } from "../queues.js";
 import { sendToContact } from "../channels/whatsapp.js";
+import { authenticate, requireAdmin } from "../lib/http.js";
 
-const OFFICIAL_HOTTOK =
-  process.env.HOTMART_HOTTOK ||
-  "i3PKT8y4IDZIJ6ZK5xEMraSXppomf12d610670-551e-497b-8f6c-3f32cb10f3bc";
+// Hottok do Hotmart só por variável de ambiente (HOTMART_HOTTOK). Nunca no
+// código: o repositório já foi público e o valor antigo precisa ser trocado.
+const OFFICIAL_HOTTOK = process.env.HOTMART_HOTTOK || "";
+
+/** Compara em tempo constante (não vaza o tamanho do acerto por timing). */
+function mesmoSegredo(recebido: unknown, esperado: string): boolean {
+  if (typeof recebido !== "string" || !recebido || !esperado) return false;
+  const a = Buffer.from(recebido);
+  const b = Buffer.from(esperado);
+  return a.length === b.length && timingSafeEqual(a, b);
+}
 
 /**
  * Módulo de Integração Direta: Cursos Comenta Academy <-> Hotmart.
  *
- * Valida o Hottok oficial de verificação:
- *  i3PKT8y4IDZIJ6ZK5xEMraSXppomf12d610670-551e-497b-8f6c-3f32cb10f3bc
+ * Valida o Hottok de verificação enviado pelo Hotmart (cabeçalho
+ * X-HOTMART-HOTTOK ou campo "hottok") contra HOTMART_HOTTOK.
  */
 export async function hotmartRoutes(app: FastifyInstance) {
   app.post("/webhooks/hotmart", async (req, reply) => {
     const payload = (req.body as any) || {};
 
-    const receivedHottok =
-      req.headers["hottok"] || payload.hottok || payload.token || OFFICIAL_HOTTOK;
+    // Sem HOTMART_HOTTOK configurado o webhook fica fechado; com ele, só passa
+    // quem mandar o mesmo hottok (antes qualquer POST era aceito como compra).
+    if (!OFFICIAL_HOTTOK) return reply.status(503).send({ error: "Webhook Hotmart não configurado." });
+    const receivedHottok = req.headers["x-hotmart-hottok"] ?? req.headers["hottok"] ?? payload.hottok;
+    if (!mesmoSegredo(receivedHottok, OFFICIAL_HOTTOK)) {
+      return reply.status(401).send({ error: "Hottok inválido." });
+    }
 
     const event = payload.event || payload.status || "PURCHASE_APPROVED";
     const data = payload.data || payload;
@@ -43,7 +58,7 @@ export async function hotmartRoutes(app: FastifyInstance) {
     const companyId = company.id;
 
     console.log(
-      `[Hotmart Webhook] Hottok: ${receivedHottok} | Evento: ${event} | Produto: ${productName} (${productIdHotmart}) | Aluno: ${buyerName}`
+      `[Hotmart Webhook] Hottok verificado | Evento: ${event} | Produto: ${productName} (${productIdHotmart}) | Aluno: ${buyerName}`
     );
 
     if (event === "PURCHASE_APPROVED" || event === "APPROVED") {
@@ -137,7 +152,6 @@ export async function hotmartRoutes(app: FastifyInstance) {
       return reply.send({
         success: true,
         hottokVerified: true,
-        hottok: receivedHottok,
         event,
         courseId: course?.id || null,
         courseTitle,
@@ -157,8 +171,8 @@ export async function hotmartRoutes(app: FastifyInstance) {
     });
   });
 
-  // Teste de conexão de curso Hotmart com Hottok
-  app.post("/webhooks/hotmart/test", async (req, reply) => {
+  // Teste interno: só administrador autenticado (antes era aberto a qualquer um).
+  app.post("/webhooks/hotmart/test", { preHandler: [authenticate, requireAdmin] }, async (req, reply) => {
     const testPayload = {
       hottok: OFFICIAL_HOTTOK,
       event: "PURCHASE_APPROVED",

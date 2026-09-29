@@ -58,6 +58,17 @@ SKIP_SSL="${SKIP_SSL:-0}"
 TAKE_OVER="${TAKE_OVER:-0}"
 GHOST_UPSTREAM="${GHOST_UPSTREAM:-}"
 REPO="https://github.com/hebertpaes/comenta.git"
+
+# Repositório privado: exporte GITHUB_TOKEN (token fine-grained só com
+# "Contents: read" neste repositório) antes de rodar. O token vai só no
+# cabeçalho de cada comando git (http.extraHeader), nunca no .git/config.
+git_repo() {
+  if [ -n "${GITHUB_TOKEN:-}" ]; then
+    git -c "http.https://github.com/.extraHeader=AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64 | tr -d '\n')" "$@"
+  else
+    git "$@"
+  fi
+}
 APP_NAME="comenta-site"
 PRIMARY="${DOMAINS%% *}"
 WEBROOT="/var/www/html"
@@ -124,11 +135,11 @@ else
   REPO_DIR="$BASE/repo"
   log "2/5 Repositório em $REPO_DIR (branch $BRANCH)"
   if [ -d "$REPO_DIR/.git" ]; then
-    git -C "$REPO_DIR" fetch origin "$BRANCH" --depth 1 -q
+    git_repo -C "$REPO_DIR" fetch origin "$BRANCH" --depth 1 -q
     git -C "$REPO_DIR" checkout -q "$BRANCH" 2>/dev/null || git -C "$REPO_DIR" checkout -q -B "$BRANCH" FETCH_HEAD
     git -C "$REPO_DIR" reset --hard -q FETCH_HEAD
   else
-    git clone --branch "$BRANCH" --depth 1 "$REPO" "$REPO_DIR"
+    git_repo clone --branch "$BRANCH" --depth 1 "$REPO" "$REPO_DIR"
   fi
   REV="$(git -C "$REPO_DIR" rev-parse HEAD)"
   RELEASE_DIR="$(release_dir_for "$REV")"

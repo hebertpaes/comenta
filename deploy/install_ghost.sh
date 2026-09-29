@@ -27,7 +27,9 @@ sudo chown -R $USER:$USER /var/www/ghost
 
 # 3. Baixar código do repositório
 echo "📥 3/4 Baixando código-fonte do Ghost CMS..."
-git clone https://github.com/hebertpaes/comenta.git /tmp/comenta_repo 2>/dev/null || (cd /tmp/comenta_repo && git pull origin main)
+# repositório privado: GITHUB_TOKEN (token só de leitura) vai só no cabeçalho do git
+git_repo() { if [ -n "${GITHUB_TOKEN:-}" ]; then git -c "http.https://github.com/.extraHeader=AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64 | tr -d '\n')" "$@"; else git "$@"; fi; }
+git_repo clone https://github.com/hebertpaes/comenta.git /tmp/comenta_repo 2>/dev/null || (cd /tmp/comenta_repo && git_repo pull origin main)
 cp -r /tmp/comenta_repo/ghost/* /var/www/ghost/
 
 cd /var/www/ghost
@@ -44,6 +46,7 @@ server {
     server_name ${DOMAIN} www.${DOMAIN} comenta.com.br www.comenta.com.br 147.15.103.114 _;
 
     client_max_body_size 50M;
+    server_tokens off;
 
     location / {
         proxy_pass http://127.0.0.1:${PORT};
@@ -54,6 +57,15 @@ server {
         proxy_set_header X-Real-IP \$remote_addr;
         proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto \$scheme;
+
+        # Cabeçalhos de segurança (protocolo de 29/09/2026, SECURITY.md).
+        # Sem CSP completa de propósito: o tema e os embeds do Ghost quebrariam.
+        proxy_hide_header X-Powered-By;
+        add_header Strict-Transport-Security "max-age=15552000" always;
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+        add_header X-Frame-Options "SAMEORIGIN" always;
+        add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()" always;
     }
 }
 EOF

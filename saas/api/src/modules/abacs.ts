@@ -1,15 +1,34 @@
 import type { FastifyInstance } from "fastify";
+import { timingSafeEqual } from "node:crypto";
 import { eq, ilike } from "drizzle-orm";
 import { db, schema } from "../db/client.js";
 import { emitToCompany } from "../realtime.js";
 import { publishEvent } from "../queues.js";
 import { sendToContact } from "../channels/whatsapp.js";
+import { authenticate, requireAdmin } from "../lib/http.js";
+
+/** Token da integração ABACS: ABACS_TOKEN no ambiente ou salvo pelo painel
+ * (settings.abacsToken). Nunca no código: o repositório já foi público e o
+ * valor antigo precisa ser trocado junto à ABACS. */
+function tokenEsperado(settings: Record<string, any>): string {
+  return process.env.ABACS_TOKEN || (typeof settings.abacsToken === "string" ? settings.abacsToken : "");
+}
+
+function mesmoSegredo(recebido: unknown, esperado: string): boolean {
+  if (typeof recebido !== "string" || !recebido || !esperado) return false;
+  const a = Buffer.from(recebido);
+  const b = Buffer.from(esperado);
+  return a.length === b.length && timingSafeEqual(a, b);
+}
+
+/** Mostra só o final de um segredo (painel), nunca o valor inteiro. */
+const final4 = (v: unknown) => (typeof v === "string" && v.length > 4 ? `…${v.slice(-4)}` : v ? "…" : "");
 
 /**
  * Módulo de Integração ABACS / Escola Avançada / Playcurso <-> Hotmart & Comenta.
  *
  * Suporta a URL oficial de integração ABACS:
- *   https://abacs.org.br/integracao/hotmart/hotmart.php?token=89945.18284682318tokenavancada&curso=77
+ *   https://abacs.org.br/integracao/hotmart/hotmart.php?token=<ABACS_TOKEN>&curso=77
  *
  * E realiza o sincronismo automático de login com https://abacs.org.br/login.php
  */
@@ -19,7 +38,7 @@ export async function abacsRoutes(app: FastifyInstance) {
     const queryParams = (req.query as Record<string, string>) || {};
     const bodyPayload = (req.body as any) || {};
 
-    const token = queryParams.token || bodyPayload.token || "89945.18284682318tokenavancada";
+    const token = queryParams.token || bodyPayload.token;
     const cursoIdParam = queryParams.curso || bodyPayload.curso || "77";
 
     const payloadData = bodyPayload.data || bodyPayload;
@@ -41,8 +60,13 @@ export async function abacsRoutes(app: FastifyInstance) {
     if (!company) return reply.status(404).send({ error: "Empresa não configurada." });
     const companyId = company.id;
 
+    // Só processa com o token certo (antes qualquer chamada virava "compra").
+    const esperado = tokenEsperado((company.settings as Record<string, any>) || {});
+    if (!esperado) return reply.status(503).send({ error: "Integração ABACS não configurada." });
+    if (!mesmoSegredo(token, esperado)) return reply.status(401).send({ error: "Token inválido." });
+
     console.log(
-      `[ABACS Webhook Operador de Caixa] Token: ${token} | Curso ID: ${cursoIdParam} | Comprador: ${buyerName} (${buyerPhone})`
+      `[ABACS Webhook Operador de Caixa] Token verificado | Curso ID: ${cursoIdParam} | Comprador: ${buyerName} (${buyerPhone})`
     );
 
     // 2. Busca ou insere o contato do Aluno
@@ -134,7 +158,6 @@ export async function abacsRoutes(app: FastifyInstance) {
       integration: "ABACS_EscolaAvancada_Hotmart",
       abacsPortalUrl: "https://abacs.org.br/login.php",
       configName: "Operador de Caixa",
-      token,
       cursoId: course?.id || cursoIdParam,
       courseTitle,
       transactionId,
@@ -150,39 +173,39 @@ export async function abacsRoutes(app: FastifyInstance) {
   app.all("/integracao/hotmart/hotmart.php", processAbacsWebhook);
 
   // Endpoints para salvar e recuperar Credenciais de Pagamento (Mercado Pago / Card / Boleto / ABACS)
-  app.get("/abacs/config", async (req, reply) => {
+  app.get("/abacs/config", { preHandler: [authenticate, requireAdmin] }, async (req, reply) => {
     const [company] = await db.select().from(schema.companies).limit(1);
     if (!company) return reply.status(404).send({ error: "Empresa não encontrada" });
 
     const settings = (company.settings as Record<string, any>) || {};
+    // Credenciais só mascaradas (antes a rota era aberta e devolvia tudo).
     return reply.send({
       configName: "Operador de Caixa",
       abacsPortalUrl: "https://abacs.org.br/login.php",
-      abacsToken: settings.abacsToken || "89945.18284682318tokenavancada",
+      abacsTokenConfigurado: Boolean(tokenEsperado(settings)),
+      abacsToken: final4(tokenEsperado(settings)),
       cursoId: "77",
-      paymentApiKey: settings.paymentApiKey || "API_KEY_CARTAO_BOLETO_OCULTO",
-      accessTokenCard: settings.accessTokenCard || "ACCESS_TOKEN_CARTAO_OCULTO",
-      publicKey: settings.publicKey || "PUBLIC_KEY_OCULTO",
-      collectorId: settings.collectorId || "COLLECTOR_ID_OCULTO",
-      webhookUrl:
-        "https://abacs.org.br/integracao/hotmart/hotmart.php?token=89945.18284682318tokenavancada&curso=77",
+      paymentApiKey: final4(settings.paymentApiKey),
+      accessTokenCard: final4(settings.accessTokenCard),
+      publicKey: final4(settings.publicKey),
+      collectorId: final4(settings.collectorId),
+      webhookUrl: "https://abacs.org.br/integracao/hotmart/hotmart.php?token=<ABACS_TOKEN>&curso=77",
     });
   });
 
-  app.post("/abacs/config", async (req, reply) => {
+  app.post("/abacs/config", { preHandler: [authenticate, requireAdmin] }, async (req, reply) => {
     const [company] = await db.select().from(schema.companies).limit(1);
     if (!company) return reply.status(404).send({ error: "Empresa não encontrada" });
 
     const body = (req.body as any) || {};
 
-    const updatedSettings = {
-      ...((company.settings as Record<string, any>) || {}),
-      abacsToken: body.abacsToken || "89945.18284682318tokenavancada",
-      paymentApiKey: body.paymentApiKey,
-      accessTokenCard: body.accessTokenCard,
-      publicKey: body.publicKey,
-      collectorId: body.collectorId,
-    };
+    // Só grava o que veio preenchido (não apaga credencial com campo vazio).
+    const atuais = (company.settings as Record<string, any>) || {};
+    const novos: Record<string, string> = {};
+    for (const k of ["abacsToken", "paymentApiKey", "accessTokenCard", "publicKey", "collectorId"]) {
+      if (typeof body[k] === "string" && body[k].trim()) novos[k] = body[k].trim();
+    }
+    const updatedSettings = { ...atuais, ...novos };
 
     await db
       .update(schema.companies)
@@ -196,10 +219,11 @@ export async function abacsRoutes(app: FastifyInstance) {
   });
 
   // Teste de Sincronismo de Aluno Hotmart -> ABACS Portal (login.php)
-  app.post("/abacs/sync-hotmart", async (req, reply) => {
+  app.post("/abacs/sync-hotmart", { preHandler: [authenticate, requireAdmin] }, async (req, reply) => {
     const body = (req.body as any) || {};
-    const usuario = body.usuario || "aluno.caixa";
-    const senha = body.senha || "123456";
+    const usuario = typeof body.usuario === "string" ? body.usuario : "";
+    const senha = typeof body.senha === "string" ? body.senha : "";
+    if (!usuario || !senha) return reply.status(400).send({ error: "Informe usuário e senha." });
 
     try {
       const abacsRes = await fetch("https://abacs.org.br/processa.php", {

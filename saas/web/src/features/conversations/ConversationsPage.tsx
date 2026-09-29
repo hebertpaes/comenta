@@ -493,7 +493,7 @@ export function ConversationsPage() {
                       {
                         name: "Operador de Caixa",
                         price: "R$ 99,00",
-                        url: "https://abacs.org.br/integracao/hotmart/hotmart.php?token=89945.18284682318tokenavancada&curso=77",
+                        url: import.meta.env.VITE_ABACS_OPERADOR_CAIXA_URL || "https://abacs.org.br/login.php", // sem o token da integração (ia para o navegador de quem abrisse o painel)
                       },
                       {
                         name: "Administrativo Completo",

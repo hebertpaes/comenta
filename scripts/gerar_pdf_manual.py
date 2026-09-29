@@ -120,13 +120,13 @@ def generate_pdf(filename):
     # Seção 3: Webhooks & Integração ABACS / Hotmart
     story.append(Paragraph("3. CONFIGURAÇÃO DE WEBHOOKS HOTMART & ABACS", heading2_style))
     story.append(Paragraph("Credenciais de Segurança e Tokens Oficiais:", body_style))
-    story.append(Paragraph("Hottok de Verificação Hotmart: i3PKT8y4IDZIJ6ZK5xEMraSXppomf12d610670-551e-497b-8f6c-3f32cb10f3bc\nToken da Escola Avançada / ABACS: 89945.18284682318tokenavancada\nCurso ID Mapeado: 77 (Operador de Caixa)", code_style))
+    story.append(Paragraph("Hottok de Verificação Hotmart: (variável HOTMART_HOTTOK no .env do servidor)\nToken da Escola Avançada / ABACS: (variável ABACS_TOKEN no .env do servidor)\nCurso ID Mapeado: 77 (Operador de Caixa)", code_style))
 
     story.append(Paragraph("URL de Integração Hotmart (Cadastrar no painel da Hotmart):", body_style))
-    story.append(Paragraph("https://abacs.org.br/integracao/hotmart/hotmart.php?token=89945.18284682318tokenavancada&curso=77", code_style))
+    story.append(Paragraph("https://abacs.org.br/integracao/hotmart/hotmart.php?token=<ABACS_TOKEN>&curso=77", code_style))
 
     story.append(Paragraph("Comando Curl para testar a integração ABACS Operador de Caixa localmente:", body_style))
-    story.append(Paragraph("curl -i -X POST -H \"Content-Type: application/json\" -d '{\"data\":{\"buyer\":{\"name\":\"Aluno Operador de Caixa\",\"email\":\"caixa@abacs.org.br\",\"checkout_phone\":\"5566999999999\"},\"product\":{\"name\":\"Operador de Caixa\"},\"purchase\":{\"transaction\":\"TRX_CAIXA_77\"}}}' \"http://localhost:4000/integracao/hotmart/hotmart.php?token=89945.18284682318tokenavancada&curso=77\"", code_style))
+    story.append(Paragraph("curl -i -X POST -H \"Content-Type: application/json\" -d '{\"data\":{\"buyer\":{\"name\":\"Aluno Operador de Caixa\",\"email\":\"caixa@abacs.org.br\",\"checkout_phone\":\"5566999999999\"},\"product\":{\"name\":\"Operador de Caixa\"},\"purchase\":{\"transaction\":\"TRX_CAIXA_77\"}}}' \"http://localhost:4000/integracao/hotmart/hotmart.php?token=<ABACS_TOKEN>&curso=77\"", code_style))
 
     story.append(Spacer(1, 10))
 

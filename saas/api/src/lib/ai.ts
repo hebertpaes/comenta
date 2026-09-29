@@ -18,7 +18,7 @@ import { ApiError } from "./http.js";
  */
 
 const client = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY || "sk-ant-dummy-placeholder-key-for-test-init",
+  apiKey: process.env.ANTHROPIC_API_KEY || "sk-ant-dummy-placeholder-key-for-test-init", // segredo-ok: valor fictício só para inicializar o cliente sem a variável
 });
 
 function getGoogleApiKey(): string {

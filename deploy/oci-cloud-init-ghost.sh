@@ -39,6 +39,17 @@ TIMEZONE="${TIMEZONE:-America/Cuiaba}"
 GHOST_DIR="${GHOST_DIR:-/var/www/ghost}"
 BASE="${BASE:-/srv/comenta}"
 REPO="https://github.com/hebertpaes/comenta.git"
+
+# Repositório privado: exporte GITHUB_TOKEN (token fine-grained só com
+# "Contents: read" neste repositório) antes de rodar. O token vai só no
+# cabeçalho de cada comando git (http.extraHeader), nunca no .git/config.
+git_repo() {
+  if [ -n "${GITHUB_TOKEN:-}" ]; then
+    git -c "http.https://github.com/.extraHeader=AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64 | tr -d '\n')" "$@"
+  else
+    git "$@"
+  fi
+}
 LOG="${LOG:-/var/log/ghost-install.log}"
 # O ghost-cli recusa rodar como root; o ubuntu da imagem da Oracle tem sudo sem senha.
 GHOST_USER="${GHOST_USER:-ubuntu}"
@@ -139,10 +150,10 @@ nginx -t && systemctl reload nginx
 log "6/8 Tema hojemt (repositório, ramo $BRANCH)"
 mkdir -p "$BASE"
 if [ -d "$BASE/comenta/.git" ]; then
-  git -C "$BASE/comenta" fetch origin "$BRANCH" --depth 1 -q
+  git_repo -C "$BASE/comenta" fetch origin "$BRANCH" --depth 1 -q
   git -C "$BASE/comenta" checkout -q -B "$BRANCH" FETCH_HEAD
 else
-  git clone --branch "$BRANCH" --depth 1 "$REPO" "$BASE/comenta"
+  git_repo clone --branch "$BRANCH" --depth 1 "$REPO" "$BASE/comenta"
 fi
 TEMA_SRC="$BASE/comenta/ghost/content/themes/hojemt"
 [ -f "$TEMA_SRC/package.json" ] || die "tema não encontrado em $TEMA_SRC (ramo $BRANCH)."

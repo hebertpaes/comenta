@@ -1,0 +1,30 @@
+# Barra segredos no que chega ao GitHub (protocolo de segurança, SECURITY.md).
+# Olha só as linhas novas do push/PR (o histórico antigo tem valores já
+# expostos, que precisam ser trocados na origem; ver SECURITY.md).
+name: Segredos
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Procura segredos nas linhas novas
+        env:
+          ANTES: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+          DEPOIS: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+        run: |
+          if [ -z "$ANTES" ] || [ "$ANTES" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$ANTES" 2>/dev/null; then
+            # ramo novo: só o último commit
+            git diff -U0 --no-color "$DEPOIS~1" "$DEPOIS" 2>/dev/null | python3 scripts/verificar-segredos.py
+          else
+            git diff -U0 --no-color "$ANTES" "$DEPOIS" | python3 scripts/verificar-segredos.py
+          fi
