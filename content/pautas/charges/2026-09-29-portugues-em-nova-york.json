@@ -1,0 +1,49 @@
+{
+  "slug": "portugues-em-nova-york",
+  "materia": "https://hojemt.com.br/portugues-em-nova-york/",
+  "titulo": "Português em Nova York",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas (as falas dos professores do Camões, Carla Gomes da Silva e João Caixinha, estão só nas fontes e não viram piada)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Quem ficou sem vaga já aprendeu a primeira palavra: saudade.",
+    "instagram_4x5": "Sem vaga, já aprenderam: saudade."
+  },
+  "contexto": "O primeiro curso de língua portuguesa do programa regular de idiomas da ONU em Nova Iorque, para diplomatas, funcionários e associados, começou em 28/09/2026 e esgotou as vagas em menos de 24 horas, segundo a ONU News. A iniciativa é uma parceria da ONU com o Governo de Portugal; as aulas são do Camões, Instituto da Cooperação e da Língua. Houve lista de espera e as turmas passaram de 15 para 18 alunos.",
+  "fontes": [
+    "https://www.noticiasaominuto.com/mundo/3058557/curso-de-portugues-para-funcionarios-da-onu-esgota-vagas-em-menos-de-24-horas",
+    "https://www.noticiasdecoimbra.pt/curso-de-portugues-para-funcionarios-da-onu-esgota-vagas-em-menos-de-24-horas/",
+    "https://www.diariocoimbra.pt/2026/09/28/lingua-portuguesa-comeca-a-ser-ensinada-pela-primeira-vez-a-funcionarios-da-onu/"
+  ],
+  "checagem_pendente": "a curta diz que o português 'atua desde sua fundação como uma das seis línguas oficiais' da ONU: está errado. As seis línguas oficiais são árabe, chinês, inglês, francês, russo e espanhol; o curso de português passou a ser oferecido AO LADO delas. A correção do texto publicado é manual no Ghost Admin; a charge e a legenda do Instagram não repetem o erro.",
+  "regras_da_cena": "sem pessoa real: sala de aula lotada de diplomatas genéricos de várias nacionalidades, segurança empurrando a porta, fila enorme no corredor e o último da fila sentado na mala com nuvenzinha de chuva (saudade); sem texto, emblemas, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "nenhuma pessoa real",
+      "obs": "personagens genéricos, sem foto de referência"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHWnSoCLeU",
+    "arte_16x9": "PENDENTE",
+    "design_instagram_4x5": "DAHWnXk_wOE",
+    "arte_4x5": "PENDENTE",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "item de agenda entregue ao editor (sem horário) em 29/09/2026"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-29-portugues-em-nova-york.jpg",
+    "instagram_4x5": "2026-09-29-portugues-em-nova-york-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-29-portugues-em-nova-york.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-29-portugues-em-nova-york-og.jpg",
+    "instagram_4x5": "PENDENTE"
+  },
+  "site": "feature_image e og_image trocadas em 29/09/2026 (antes: charge automática charge-dia-1790669424.webp; og antiga card-669424677.webp)"
+}

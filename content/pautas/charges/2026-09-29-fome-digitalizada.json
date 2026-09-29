@@ -1,0 +1,49 @@
+{
+  "slug": "fome-digitalizada",
+  "materia": "https://hojemt.com.br/fome-digitalizada/",
+  "titulo": "Fome Digitalizada",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Com o aplicativo, quem passa fome agora é a lixeira.",
+    "instagram_4x5": "Agora quem passa fome é a lixeira."
+  },
+  "contexto": "A associação ambientalista ZERO lançou em Portugal a plataforma gratuita FoodConnect (projeto LIFE FoodConnect, financiado pela União Europeia, também em Chipre e Malta), no Dia Internacional da Consciencialização sobre Perdas e Desperdício Alimentar (29/09): restaurantes, cafés, hotéis, municípios e produtores registram excedentes próprios para consumo e os beneficiários reservam e recolhem pela aplicação, com identificador anônimo. Portugal desperdiça cerca de 184 kg de comida por pessoa ao ano.",
+  "fontes": [
+    "https://sapo.pt/artigo/plataforma-foodconnect-chega-a-portugal-para-facilitar-a-doacao-de-excedentes-alimentares-6ab3af2630021d88924ce972",
+    "https://www.tsf.pt/sociedade/artigo/tem-alimentos-em-excesso-pode-doa-los-a-quem-mais-precisa-atraves-de-uma-plataforma-gratuita/18129569",
+    "https://ctc.grupoautonoma.pt/associacao-zero-lanca-foodconnect-a-nova-plataforma-digital-e-gratuita-para-doacao-de-alimentos/"
+  ],
+  "checagem_pendente": "a curta diz que 'Portugal lançou' a aplicação; quem lançou foi a associação ambientalista ZERO, com financiamento do programa LIFE da UE (não é iniciativa do governo português). Imprecisão leve; texto não editado.",
+  "regras_da_cena": "sem pessoa real: dono de padaria genérico manda pães, pastéis de nata e frutas do celular direto para voluntários de cozinha solidária (coletes lisos), numa rua de Lisboa com bonde amarelo; a lixeira de rua personificada, de guardanapo e talheres, fica sem comida; moscas vão embora de mala; sem texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "nenhuma pessoa real",
+      "obs": "personagens genéricos, sem foto de referência"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHWnYfJhcA",
+    "arte_16x9": "MAHWnVpZsYw",
+    "design_instagram_4x5": "DAHWnbT6MDk",
+    "arte_4x5": "MAHWnSNLEs4",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "item de agenda entregue ao editor (sem horário) em 29/09/2026"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-29-fome-digitalizada.jpg",
+    "instagram_4x5": "2026-09-29-fome-digitalizada-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-29-fome-digitalizada.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-29-fome-digitalizada-og.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-29-fome-digitalizada-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image trocadas em 29/09/2026 (antes: charge automática charge-dia-1790705414.webp; og antiga card-705416627.webp)"
+}
