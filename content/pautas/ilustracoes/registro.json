@@ -725,6 +725,27 @@
       "credito_fonte": "mantido na legenda: \"Com informações da Prefeitura de Várzea Grande\" (link da matéria original), que estava na capa genérica",
       "feito_em": "2026-09-29",
       "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
+    },
+    {
+      "slug": "lula-na-onu-e-stf-o-impacto-direto-no-bolso-e-na-lei-do-mato-grossense",
+      "titulo": "Lula na ONU e STF: o impacto direto no bolso e na lei do mato-grossense",
+      "materia": "https://hojemt.com.br/lula-na-onu-e-stf-o-impacto-direto-no-bolso-e-na-lei-do-mato-grossense/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHWnYd_1EQ",
+        "arte": "MAHWnwAbGQ8",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "fim de tarde na varanda de uma casa de fazenda em Mato Grosso: produtor rural de chapéu de palha e camisa xadrez, de costas, olha a lavoura de soja com silos e caminhões graneleiros; na mesa, balança da justiça de bronze com grãos de soja de um lado e moedas do outro (a lei e o bolso), rádio antigo ligado (o discurso), caderno de contas e café; avião cargueiro distante no céu (novas rotas comerciais); nenhum rosto visível, sem letras legíveis nem logos",
+      "alt": "Ilustração (ficção): produtor rural de costas na varanda da fazenda olha a lavoura de soja ao entardecer; na mesa, balança da justiça com soja e moedas, rádio antigo e café",
+      "arquivo": "pautas/ilustracoes/2026-09-29-lula-onu-stf-bolso-lei.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-29-lula-onu-stf-bolso-lei.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-29-lula-onu-stf-bolso-lei-og.jpg",
+      "capa_anterior": "opiniao-1790597124.webp",
+      "obs": "artigo de opinião sobre o discurso de Lula na ONU e a proposta de mudar o critério de indicação ao STF, com reflexos na segurança jurídica, no câmbio e nas exportações de MT; sem retratar Lula nem ministros (cena diferente das anteriores de Lula na ONU, que usavam a tribuna/corredor da ONU)",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "feito_em": "2026-09-29",
+      "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
     }
   ]
 }
