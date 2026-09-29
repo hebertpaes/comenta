@@ -1408,7 +1408,7 @@
   ]
  },
  "grupos": {
-  "atualizado": "26/09/2026 08:55",
+  "atualizado": "29/09/2026 18:53",
   "grupos": [
    {
     "governador": "Doutora Natasha",
@@ -1431,6 +1431,22 @@
     ],
     "desenho": "Coligação liderada pelo PSD com os partidos que apoiam a reeleição de Lula; disputa com o grupo do governo estadual.",
     "movimentos": [
+     {
+      "data": "2026-09-26",
+      "fato": "Vídeo em que Lula pede votos para Natasha passou a ser exibido nas inserções de TV da candidata em 26/9 e foi republicado nas redes; nele, Lula promete 55 mil casas, 16 casas de apoio a mulheres vítimas de violência com delegacias 24 horas, três maternidades e seis hospitais.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/noticias/lula-pede-voto-a-natasha-e-se-compromete-com-55-mil-casas-e-novos-hospitais",
+        "2026-09-27"
+       ],
+       [
+        "Muvuca Popular",
+        "https://www.muvucapopular.com.br/2026/09/27/lula-aparece-em-campanha-em-mt-e-pede-votos-para-natasha/",
+        "2026-09-27"
+       ]
+      ]
+     },
      {
       "data": "2026-09-17",
       "fato": "Segundo o senador Carlos Fávaro, Lula gravou vídeo pedindo votos para os aliados em MT e não virá ao estado no 1º turno.",
@@ -1537,6 +1553,43 @@
     "desenho": "Grupo do governo estadual, com o governador candidato à reeleição e o ex-governador Mauro Mendes.",
     "movimentos": [
      {
+      "data": "2026-09-28",
+      "fato": "O presidente do União Brasil em MT, Mauro Mendes, assinou resolução, ad referendum do diretório estadual, que libera o senador Jayme Campos (União) para apoiar candidatos fora da aliança do partido sem risco de punição. Jayme apoia Wellington Fagundes (PL) ao governo e Janaina Riva (MDB) ao Senado; o União segue com Pivetta, Mauro e Margareth Buzetti.",
+      "fontes": [
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/mendes-libera-jayme-para-apoiar-wellington-contra-pivetta/530113",
+        "2026-09-28"
+       ],
+       [
+        "Muvuca Popular",
+        "https://www.muvucapopular.com.br/2026/09/28/mauro-libera-jayme-campos-para-apoiar-candidatos-fora-da-alianca-do-uniao-sem-risco-de-punicao/",
+        "2026-09-28"
+       ]
+      ]
+     },
+     {
+      "data": "2026-09-26",
+      "fato": "O governador de São Paulo, Tarcísio de Freitas (Republicanos), aparece ao lado de Mauro Mendes em inserção de TV da campanha de Pivetta divulgada em 26/9 e diz que Mato Grosso \"estará em excelentes mãos\". Tarcísio já havia gravado vídeo de apoio em agosto.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/noticias/tarcisio-e-mauro-aparecem-em-insercao-e-defendem-reeleicao-de-pivetta-grande-gestor-veja-video",
+        "2026-09-26"
+       ],
+       [
+        "Muvuca Popular",
+        "https://www.muvucapopular.com.br/2026/09/26/tarcisio-e-mauro-aparecem-em-insercao-e-defendem-reeleicao-de-pivetta-em-mt/",
+        "2026-09-26"
+       ],
+       [
+        "24 Horas MT",
+        "https://24horasmt.com.br/politica-mt/tarcisio-grava-video-e-deseja-trajetoria-vitoriosa-para-pivetta-na-disputa-pelo-governo-de-mt/",
+        "2026-08-20"
+       ]
+      ]
+     },
+     {
       "data": "2026-09-25",
       "fato": "Pivetta reuniu por videochamada, com Mauro Mendes, cem prefeitos que apoiam sua reeleição, segundo lista divulgada pela campanha.",
       "fontes": [
@@ -1570,48 +1623,6 @@
         "RDM Online",
         "https://rdmonline.com.br/mauro-pede-votos-para-pivetta-e-buzetti-em-ato-de-campanha-em-cuiaba/",
         "2026-09-25"
-       ]
-      ]
-     },
-     {
-      "data": "2026-09-17",
-      "fato": "Virginia Mendes (União), da coligação de Pivetta, pediu votos para Zé Medeiros (PL), da coligação adversária.",
-      "fontes": [
-       [
-        "Gazeta Digital",
-        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/virginia-pede-votos-a-medeiros-e-segue-cartilha-mauro-banalizando-fidelidade-partidaria/859822",
-        "2026-09-18"
-       ],
-       [
-        "Olhar Direto",
-        "https://www.olhardireto.com.br/noticias/virginia-diz-que-pediu-votos-para-medeiros-e-buzetti-mas-mantem-segundo-voto-em-segredo-pedi-para-os-dois",
-        "2026-09-25"
-       ]
-      ]
-     },
-     {
-      "data": "2026-09-16",
-      "fato": "Três prefeitos do PL declararam apoio a Pivetta, contra a orientação do partido: Cláudio Ferreira (Rondonópolis), Flávia Moretti (Várzea Grande) e Sérgio Machnic (Primavera do Leste).",
-      "fontes": [
-       [
-        "MidiaJur",
-        "https://www.midiajur.com.br/eleicoes-2026/filiado-ao-pl-prefeito-de-rondonopolis-admite-pagar-o-preco-e-declara-apoio-a-pivetta/86195",
-        "2026-08-28"
-       ],
-       [
-        "Muvuca Popular",
-        "https://www.muvucapopular.com.br/2026/09/18/com-adesivo-de-pivetta-claudio-diz-nao-temer-represalia-do-pl-vivemos-numa-democracia/",
-        "2026-09-18"
-       ],
-       [
-        "24 Horas MT",
-        "https://24horasmt.com.br/politica-mt/flavia-moretti-declara-voto-em-pivetta-e-amplia-racha-no-pl-de-mato-grosso/",
-        "2026-08-31"
-       ],
-       [
-        "PlantãoNews",
-        "https://plantaonews.com.br/prefeita-do-segundo-maior-colegio-eleitoral-de-mato-grosso-declara-apoio-a-otaviano-pivetta/",
-        "2026-08-30"
        ]
       ]
      }
@@ -1746,6 +1757,22 @@
     "desenho": "Candidatura do PL alinhada à de Flávio Bolsonaro para presidente, em coligação com MDB, Novo, PRD e Solidariedade.",
     "movimentos": [
      {
+      "data": "2026-09-30",
+      "fato": "Marcado para 30/9: lideranças do PL em MT, entre elas Zé Medeiros, candidato ao Senado na coligação de Wellington, o prefeito de Cuiabá, Abilio Brunini, o deputado federal Coronel Assis e a vereadora Samantha Íris, convocaram encontro com católicos no Parque das Águas, em Cuiabá, em meio à polêmica nacional envolvendo Flávio Bolsonaro e Nossa Senhora Aparecida (Flávio nega intenção de retirar o título de padroeira).",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://olhardireto.com.br/noticias/entre-a-cruz-e-a-urna321",
+        "2026-09-28"
+       ],
+       [
+        "Esportes & Notícias",
+        "https://en.com.br/em-meio-a-polemica-nacional-direita-de-mt-marca-encontro-com-catolicos-em-cuiaba/",
+        "2026-09-29"
+       ]
+      ]
+     },
+     {
       "data": "2026-09-25",
       "fato": "O prefeito de Cuiabá, Abilio Brunini (PL), reafirmou em reunião política na capital o apoio a Mauro Mendes (União), da coligação de Pivetta, ao Senado e defendeu também a eleição de Zé Medeiros (PL); disse que Bolsonaro havia indicado os dois.",
       "fontes": [
@@ -1784,32 +1811,6 @@
         "VGN",
         "https://www.vgnoticias.com.br/eleicoes-2026/moro-declara-apoio-a-wellington-fagundes-ao-governo-de-mt/152488",
         "2026-09-24"
-       ]
-      ]
-     },
-     {
-      "data": "2026-09-21",
-      "fato": "O PL-MT anunciou em 2/9 procedimento contra prefeitos do partido que apoiam Pivetta; em 21/9, o presidente estadual disse que os processos ainda não começaram e que a punição pode não ser a expulsão.",
-      "fontes": [
-       [
-        "Minuto MT",
-        "https://minutomt.com.br/politica/pl-abre-processo-contra-prefeitos-que-declararam-apoio-a-pivetta/",
-        "2026-09-02"
-       ],
-       [
-        "RDM Online",
-        "https://rdmonline.com.br/pl-abre-caminho-para-expulsao-de-prefeitos-que-apoiam-pivetta/",
-        "2026-09-03"
-       ],
-       [
-        "Gazeta Digital",
-        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/pl-recalcula-rota-e-descarta-expulsar-prefeitos-infieis/860048",
-        "2026-09-21"
-       ],
-       [
-        "Leia MT",
-        "https://leiamt.com.br/punicao-alternativa-pl-recalcula-rota-e-descarta-expulsar-prefeitos-infieis/",
-        "2026-09-21"
        ]
       ]
      },
@@ -6269,7 +6270,7 @@
   ]
  },
  "analise": {
-  "atualizado": "26/09/2026",
+  "atualizado": "29/09/2026",
   "candidatos": [
    {
     "nome": "Doutora Natasha",
@@ -6335,8 +6336,12 @@
       "A coligação reúne os partidos de Lula, que em Mato Grosso tem 25% contra 50% de Flávio Bolsonaro na Quaest.",
       [
        [
-        "g1 MT (Quaest, Presidência em MT)",
-        "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/24/datafolha-presidente-24-setembro.ghtml"
+        "Cenário MT (Quaest, Presidência em MT)",
+        "https://cenariomt.com.br/cenario-politico/flavio-bolsonaro-lidera-com-50-das-intencoes-de-voto-em-mato-grosso-enquanto-lula-registra-25-aponta-quaest/"
+       ],
+       [
+        "Capital Política (Quaest, Presidência em MT)",
+        "https://capitalpolitica.com.br/pesquisa-quaest-em-mato-grosso-flavio-bolsonaro-lidera-com-50-para-2026-lula-marca-25-e-bolsonarismo-se-consolida-no-estado/"
        ]
       ]
      ],
@@ -6497,7 +6502,7 @@
       ]
      ],
      [
-      "Liminares contra a campanha no TRE-MT, como a que mandou excluir 14 links da Secom-MT e a que suspendeu inserção com prefeitos do PL por excesso de tempo de apoiadores.",
+      "Liminares contra a campanha no TRE-MT, como a que mandou excluir 14 links da Secom-MT e a de 27/9 que suspendeu o impulsionamento pago de vídeo com críticas a uma emenda de Wellington; a liminar que havia tirado do ar a inserção com prefeitos do PL foi revogada.",
       [
        [
         "GC Notícias",
@@ -6505,7 +6510,19 @@
        ],
        [
         "Olhar Direto",
-        "https://www.olhardireto.com.br/juridico/noticias/justica-derruba-insercao-em-que-pivetta-explora-debandada-no-pl-e-diz-quem-conhece-wellington-nao-vota-em-wellington"
+        "https://olhardireto.com.br/juridico/noticias/justica-manda-suspender-anuncios-pagos-de-pivetta-com-criticas-a-emenda-de-r-600-mil-de-wellington-para-pesquisa-na-antartica"
+       ],
+       [
+        "Esportes & Notícias",
+        "https://en.com.br/tre-manda-pivetta-parar-de-impulsionar-video-que-ironiza-emenda-de-wellington/"
+       ],
+       [
+        "Olhar Direto (revogação)",
+        "https://olhardireto.com.br/juridico/noticias/justica-libera-propaganda-de-pivetta-com-apoio-de-claudio-ferreira-e-flavia-moretti"
+       ],
+       [
+        "ND Mais (revogação)",
+        "https://ndmais.com.br/politica/juiz-do-mato-grosso-libera-propaganda-de-pivetta-candidato-a-reeleicao-e-diz-que-apoio-de-prefeitos-do-pl-nao-e-irregular-no-1o-turno/"
        ]
       ]
      ]
@@ -6694,8 +6711,12 @@
         "https://olhardireto.com.br/noticias/flavio-bolsonaro-pede-votos-para-wellington-e-diz-que-pl-vai-recolocar-mt-nos-trilhos"
        ],
        [
-        "g1 MT (Quaest, Presidência em MT)",
-        "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/24/datafolha-presidente-24-setembro.ghtml"
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/moro-declara-apoio-a-wellington-fagundes-ao-governo-de-mt/152488"
+       ],
+       [
+        "Cenário MT (Quaest, Presidência em MT)",
+        "https://cenariomt.com.br/cenario-politico/flavio-bolsonaro-lidera-com-50-das-intencoes-de-voto-em-mato-grosso-enquanto-lula-registra-25-aponta-quaest/"
        ]
       ]
      ],
