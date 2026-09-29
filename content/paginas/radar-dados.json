@@ -2393,7 +2393,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "26/09/2026 05:50",
+  "atualizado": "29/09/2026 18:58",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -2443,6 +2443,151 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-09-29",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (Corregedoria)",
+      "resumo": "Após duas novas peças (19 exibições em 13 emissoras, segundo a coligação de Pivetta) em que Natasha diz ter sido proibida de mostrar a reportagem e indica QR Code e busca por \"Pivetta Fantástico\", o corregedor Marcos Machado suspendeu a propaganda gratuita da candidata no rádio e na TV até 1º/10, fim do horário eleitoral, e elevou a multa para R$ 100 mil por descumprimento.",
+      "cabe_recurso": true,
+      "defesa": "Natasha classifica as restrições como censura (declaração de 28/9); a defesa contesta as punições no mandado de segurança.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/natasha-tem-propaganda-suspensa-pelo-tre-apos-nova-referencia-a-reportagem-do-fantastico-sobre-pivetta",
+        "2026-09-29"
+       ],
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/judiciario/tre-suspende-propaganda-de-natasha-ate-fim-do-horario-eleitoral/530218",
+        "2026-09-29"
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/politica/tre-mt-suspende-propaganda-de-natasha-que-citava-pivetta-e-eleva-multa-para-r-100-mil/35770",
+        "2026-09-29"
+       ],
+       [
+        "O Documento",
+        "https://odocumento.com.br/tre-cita-descumprimento-de-decisao-e-suspende-propaganda-de-natasha-ate-o-fim-do-horario-eleitoral/",
+        "2026-09-29"
+       ],
+       [
+        "RDNews",
+        "https://www.rdnews.com.br/eleicoes-2026/justica-suspende-propaganda-de-natasha-ate-o-fim-do-horario-eleitoral/249868",
+        "2026-09-29"
+       ]
+      ],
+      "papel": "contra"
+     },
+     {
+      "data": "2026-09-28",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (Corregedoria)",
+      "resumo": "A pedido de Pivetta, que apontou 17 exibições em 15 emissoras de peças com a reportagem após a liminar, o corregedor Marcos Machado considerou a ordem descumprida, suspendeu por um dia a propaganda eleitoral gratuita de Natasha e fixou multa de R$ 50 mil por novo descumprimento.",
+      "cabe_recurso": true,
+      "defesa": "Natasha classificou a decisão como censura e impetrou mandado de segurança: alega que as exibições ocorreram antes de ela e as emissoras serem notificadas e que a ordem foi ampliada para conteúdos não analisados.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/natasha-perde-um-dia-de-propaganda-por-descumprir-ordem-que-proibia-associar-pivetta-a-agressao-contra-mulher",
+        "2026-09-28"
+       ],
+       [
+        "Exclusivo News",
+        "https://exclusivonews.com.br/politica-mt/apos-ter-propaganda-suspensa-na-tv-natasha-fala-em-censura-querem-me-calar/",
+        "2026-09-28"
+       ],
+       [
+        "Esportes & Notícias",
+        "https://en.com.br/tre-suspende-propaganda-de-natasha-por-um-dia-e-fixa-multa-de-r-50-mil-por-descumprimento/",
+        "2026-09-28"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/natasha-alega-falta-de-comunicacao-e-tenta-reverter-suspensao-de-propaganda/152710",
+        "2026-09-28"
+       ]
+      ],
+      "papel": "contra"
+     },
+     {
+      "data": "2026-09-26",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juíza auxiliar)",
+      "resumo": "A pedido da coligação Mato Grosso para Todos, a juíza auxiliar Glenda Borges multou Medeiros em R$ 5 mil por três vídeos no Instagram sem os nomes dos suplentes de forma clara e legível; as versões ficam fora do ar até serem corrigidas. Foi negado o pedido de multa à coligação Coração da Gente.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/medeiros-e-multado-por-videos-sem-identificacao-de-suplentes/152641",
+        "2026-09-27"
+       ],
+       [
+        "JB News",
+        "https://jbnews.com.br/tre-mantem-videos-fora-do-ar-e-multa-medeiros-em-r-5-mil-por-propaganda-sem-identificacao-de-suplentes/",
+        "2026-09-27"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-25",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT (Corregedoria)",
+      "resumo": "A coligação de Pivetta ajuizou ação de investigação judicial eleitoral (AIJE) contra Natasha e o vice, Diogo Botelho, por suposto uso indevido dos meios de comunicação, citando inserções de rádio e TV e anúncio no Instagram que reproduzem reportagem do Fantástico de 2021 sobre acusação de violência doméstica contra Pivetta sem informar que os inquéritos foram arquivados. Pede cassação do registro e inelegibilidade por oito anos; o mérito será julgado pelo Pleno.",
+      "cabe_recurso": null,
+      "defesa": "Natasha classificou as restrições como censura, disse que o conteúdo é público e que o arquivamento não equivale a conclusão sobre culpa ou inocência.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/acao-pede-cassacao-de-candidatura-e-inelegibilidade-de-natasha-por-ataques-em-serie-contra-pivetta",
+        "2026-09-28"
+       ],
+       [
+        "ND Mais",
+        "https://ndmais.com.br/politica/pivetta-pede-cassacao-de-natasha-e-taques-por-supostas-irregularidades-na-campanha-ao-senado-em-mt/",
+        "2026-09-28"
+       ],
+       [
+        "MT Econômico",
+        "https://matogrossoeconomico.com.br/politica-mato-grosso/eleicoes/com-317-ataques-e-paginas-falsas-pivetta-e-mauro-acionam-tre-para-cassar-natasha-e-taques/",
+        "2026-09-29"
+       ],
+       [
+        "Exclusivo News",
+        "https://exclusivonews.com.br/politica-mt/apos-ter-propaganda-suspensa-na-tv-natasha-fala-em-censura-querem-me-calar/",
+        "2026-09-28"
+       ]
+      ],
+      "papel": "contra"
+     },
+     {
+      "data": "2026-09-25",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (Corregedoria, liminar)",
+      "resumo": "Na AIJE da coligação de Pivetta, liminar do corregedor Marcos Machado mandou Natasha e o vice pararem de veicular dez versões de inserções de TV, e as de rádio correspondentes, que reproduzem a reportagem de 2021 sem informar o arquivamento dos inquéritos, e retirar vídeo impulsionado no Instagram, sob multa de R$ 20 mil por descumprimento. Foi negada a proibição ampla de publicações futuras.",
+      "cabe_recurso": true,
+      "defesa": "A defesa sustenta que a ordem deve se limitar às peças individualizadas no processo (inserções 35 a 44).",
+      "fontes": [
+       [
+        "Muvuca Popular",
+        "https://www.muvucapopular.com.br/2026/09/28/tre-manda-suspender-propagandas-de-natasha-sobre-pivetta/",
+        "2026-09-28"
+       ],
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/acao-pede-cassacao-de-candidatura-e-inelegibilidade-de-natasha-por-ataques-em-serie-contra-pivetta",
+        "2026-09-28"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/natasha-alega-falta-de-comunicacao-e-tenta-reverter-suspensao-de-propaganda/152710",
+        "2026-09-28"
+       ]
+      ],
+      "papel": "contra"
+     },
      {
       "data": "2026-09-22",
       "tipo": "acao_em_andamento",
@@ -2544,6 +2689,27 @@
      ]
     },
     "itens": [
+     {
+      "data": "2026-09-26",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juíza auxiliar)",
+      "resumo": "A pedido da coligação Mato Grosso para Todos, a juíza auxiliar Glenda Borges multou Medeiros em R$ 5 mil por três vídeos no Instagram sem os nomes dos suplentes de forma clara e legível; as versões ficam fora do ar até serem corrigidas. Foi negado o pedido de multa à coligação Coração da Gente.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/medeiros-e-multado-por-videos-sem-identificacao-de-suplentes/152641",
+        "2026-09-27"
+       ],
+       [
+        "JB News",
+        "https://jbnews.com.br/tre-mantem-videos-fora-do-ar-e-multa-medeiros-em-r-5-mil-por-propaganda-sem-identificacao-de-suplentes/",
+        "2026-09-27"
+       ]
+      ],
+      "papel": "pedido"
+     },
      {
       "data": "2026-09-24",
       "tipo": "acao_em_andamento",
@@ -2829,6 +2995,74 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-09-29",
+      "tipo": "arquivada",
+      "orgao": "TRE-MT (juíza auxiliar)",
+      "resumo": "Foi julgada improcedente representação de Danilo Trento, 1º suplente na chapa de Janaina Riva, contra publicação de Ana Cristina Feldner que criticou a indicação dele e citou apurações da CPI da Pandemia. A juíza auxiliar Glenda Borges negou retirada, multa e envio ao MPE e registrou que investigação em CPI não equivale a condenação.",
+      "cabe_recurso": true,
+      "defesa": "Feldner afirmou que o vídeo se baseou no relatório final da CPI da Pandemia e está protegido pela liberdade de expressão.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/tre-mt-mantem-no-ar-video-de-feldner-com-criticas-a-candidato-a-suplente-de-senador-alvo-da-cpi-da-pandemia",
+        "2026-09-29"
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/politica/justica-eleitoral-rejeita-acao-contra-critica-a-suplente-e-mantem-chapa-de-janaina-riva/35739",
+        "2026-09-29"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-28",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar, liminar)",
+      "resumo": "A pedido de Janaina Riva, liminar do juiz auxiliar Flávio Fraga e Silva suspendeu a divulgação de pesquisa do Instituto Veritá para governador e senador, após identificar 30 registros duplicados e localidades incompatíveis na amostra. O instituto e a emissora devem retirar os resultados publicados em 24 horas, e o Veritá tem 48 horas para dar explicações.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/tre-barra-pesquisa-verita-ao-governo-e-senado-por-registros-duplicados-e-falhas-na-amostra",
+        "2026-09-28"
+       ],
+       [
+        "Midiajur",
+        "https://www.midiajur.com.br/eleicoes-2026/tre-suspende-pesquisa-verita-apos-encontrar-registros-duplicados-e-inconsistencias/87426",
+        "2026-09-28"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/justica/tre-barra-pesquisa-do-verita-em-mt-apos-identificar-duplicacoes-e-falhas-na-amostra/577762",
+        ""
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-27",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar, liminar)",
+      "resumo": "A pedido de Medeiros, o juiz auxiliar Flávio Fraga e Silva mandou Janaina Riva parar em 24 horas de usar na campanha o perfil \"Janaina Riva 150\" no Spotify, por não ter sido informado à Justiça Eleitoral, até que o endereço seja comunicado; multa de R$ 2 mil por dia.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Estadão Mato Grosso",
+        "https://www.estadaomatogrosso.com.br/eleicoes-2026/tre-atende-pedido-de-medeiros-e-manda-janaina-retirar-link-para-spotify-de-campanha/146900",
+        ""
+       ],
+       [
+        "Esportes & Notícias",
+        "https://en.com.br/tre-manda-janaina-retirar-link-para-spotify-da-campanha-apos-pedido-de-medeiros/",
+        "2026-09-28"
+       ]
+      ],
+      "papel": "contra"
+     },
      {
       "data": "2026-09-25",
       "tipo": "decisao",
@@ -3166,6 +3400,74 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-09-29",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "O juiz auxiliar Marcelo Morgado mandou cinco veículos (Gazeta Digital, Preto no Branco, Blog do Popó, VG Notícias e Isso É Notícia) retirarem 11 publicações que diziam que Mauro Mendes participou de jantar custeado pelo banqueiro Daniel Vorcaro e multou cada um em R$ 5 mil. Segundo a decisão, a reportagem de origem, do Metrópoles, informava que ele estava em outra mesa do mesmo restaurante.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/justica-condena-cinco-sites-por-publicarem-que-mauro-jantou-com-vorcaro",
+        "2026-09-29"
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/politica/justica-condena-cinco-veiculos-por-informacoes-sobre-suposto-jantar-de-mauro-com-vorcaro/35756",
+        "2026-09-29"
+       ]
+      ],
+      "papel": "favor"
+     },
+     {
+      "data": "2026-09-29",
+      "tipo": "arquivada",
+      "orgao": "TRE-MT (Pleno)",
+      "resumo": "O Pleno do TRE-MT rejeitou, por 4 a 2, recurso da coligação Mato Grosso Não Pode Parar I, que apoia Mauro Mendes, e manteve improcedente a representação por propaganda antecipada negativa contra Taques por falas em coletiva de 6/8 sobre a Operação Heritage e o acordo com a Oi. A maioria viu questionamentos sobre fatos investigados, sem atribuição individualizada de crime; o MPE tinha opinado pelo provimento (Acórdão 32916).",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/tre-mt-rejeita-recurso-contra-taques/574811",
+        "2026-09-29"
+       ],
+       [
+        "FTN Brasil",
+        "https://ftnbrasil.com.br/tre-mt-rejeita-recurso-contra-taques-por-declaracoes-sobre-mauro-na-operacao-heritage/",
+        "2026-09-29"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-28",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar, liminar)",
+      "resumo": "A pedido da coligação de Wellington, liminar do juiz auxiliar Flávio Fraga e Silva mandou Mauro Mendes suspender em 12 horas quatro anúncios pagos, desde 26/9, de vídeo com críticas a Wellington que cita o implante capilar feito por ele, sob multa diária de R$ 5 mil; o vídeo sem impulsionamento foi mantido. A ação também aponta Pivetta e a coligação dele como cientes da publicação; a liminar atingiu só Mauro.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://olhardireto.com.br/juridico/noticias/tre-mt-manda-suspender-anuncios-pagos-por-mauro-com-ataques-citando-implante-capilar-de-wellington",
+        "2026-09-28"
+       ],
+       [
+        "O Documento",
+        "https://odocumento.com.br/mauro-mendes-tera-que-suspender-video-sobre-implante-capilar-de-wellington-fagundes/",
+        "2026-09-28"
+       ],
+       [
+        "Estadão Mato Grosso",
+        "https://www.estadaomatogrosso.com.br/eleicoes-2026/justica-manda-mauro-parar-de-impulsionar-video-que-ironiza-implante-de-wellington/146906",
+        ""
+       ]
+      ],
+      "papel": "contra"
+     },
      {
       "data": "2026-09-25",
       "tipo": "decisao",
@@ -3908,6 +4210,265 @@
     },
     "itens": [
      {
+      "data": "2026-09-29",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (Corregedoria)",
+      "resumo": "Após duas novas peças (19 exibições em 13 emissoras, segundo a coligação de Pivetta) em que Natasha diz ter sido proibida de mostrar a reportagem e indica QR Code e busca por \"Pivetta Fantástico\", o corregedor Marcos Machado suspendeu a propaganda gratuita da candidata no rádio e na TV até 1º/10, fim do horário eleitoral, e elevou a multa para R$ 100 mil por descumprimento.",
+      "cabe_recurso": true,
+      "defesa": "Natasha classifica as restrições como censura (declaração de 28/9); a defesa contesta as punições no mandado de segurança.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/natasha-tem-propaganda-suspensa-pelo-tre-apos-nova-referencia-a-reportagem-do-fantastico-sobre-pivetta",
+        "2026-09-29"
+       ],
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/judiciario/tre-suspende-propaganda-de-natasha-ate-fim-do-horario-eleitoral/530218",
+        "2026-09-29"
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/politica/tre-mt-suspende-propaganda-de-natasha-que-citava-pivetta-e-eleva-multa-para-r-100-mil/35770",
+        "2026-09-29"
+       ],
+       [
+        "O Documento",
+        "https://odocumento.com.br/tre-cita-descumprimento-de-decisao-e-suspende-propaganda-de-natasha-ate-o-fim-do-horario-eleitoral/",
+        "2026-09-29"
+       ],
+       [
+        "RDNews",
+        "https://www.rdnews.com.br/eleicoes-2026/justica-suspende-propaganda-de-natasha-ate-o-fim-do-horario-eleitoral/249868",
+        "2026-09-29"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-28",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (Corregedoria)",
+      "resumo": "A pedido de Pivetta, que apontou 17 exibições em 15 emissoras de peças com a reportagem após a liminar, o corregedor Marcos Machado considerou a ordem descumprida, suspendeu por um dia a propaganda eleitoral gratuita de Natasha e fixou multa de R$ 50 mil por novo descumprimento.",
+      "cabe_recurso": true,
+      "defesa": "Natasha classificou a decisão como censura e impetrou mandado de segurança: alega que as exibições ocorreram antes de ela e as emissoras serem notificadas e que a ordem foi ampliada para conteúdos não analisados.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/natasha-perde-um-dia-de-propaganda-por-descumprir-ordem-que-proibia-associar-pivetta-a-agressao-contra-mulher",
+        "2026-09-28"
+       ],
+       [
+        "Exclusivo News",
+        "https://exclusivonews.com.br/politica-mt/apos-ter-propaganda-suspensa-na-tv-natasha-fala-em-censura-querem-me-calar/",
+        "2026-09-28"
+       ],
+       [
+        "Esportes & Notícias",
+        "https://en.com.br/tre-suspende-propaganda-de-natasha-por-um-dia-e-fixa-multa-de-r-50-mil-por-descumprimento/",
+        "2026-09-28"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/natasha-alega-falta-de-comunicacao-e-tenta-reverter-suspensao-de-propaganda/152710",
+        "2026-09-28"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-28",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar, liminar)",
+      "resumo": "A pedido da coligação de Wellington, liminar do juiz auxiliar Flávio Fraga e Silva mandou Mauro Mendes suspender em 12 horas quatro anúncios pagos, desde 26/9, de vídeo com críticas a Wellington que cita o implante capilar feito por ele, sob multa diária de R$ 5 mil; o vídeo sem impulsionamento foi mantido. A ação também aponta Pivetta e a coligação dele como cientes da publicação; a liminar atingiu só Mauro.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://olhardireto.com.br/juridico/noticias/tre-mt-manda-suspender-anuncios-pagos-por-mauro-com-ataques-citando-implante-capilar-de-wellington",
+        "2026-09-28"
+       ],
+       [
+        "O Documento",
+        "https://odocumento.com.br/mauro-mendes-tera-que-suspender-video-sobre-implante-capilar-de-wellington-fagundes/",
+        "2026-09-28"
+       ],
+       [
+        "Estadão Mato Grosso",
+        "https://www.estadaomatogrosso.com.br/eleicoes-2026/justica-manda-mauro-parar-de-impulsionar-video-que-ironiza-implante-de-wellington/146906",
+        ""
+       ]
+      ],
+      "papel": "contra"
+     },
+     {
+      "data": "2026-09-28",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "A coligação de Wellington pediu a suspensão de inserção de Pivetta exibida em 27/9 que associa Wellington e Natasha à \"velha política\" e cita a aproximação de Natasha com o ex-prefeito Emanuel Pinheiro. A liminar foi negada; o mérito será julgado após a defesa e o parecer do Ministério Público Eleitoral.",
+      "cabe_recurso": null,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/justica-nega-liminar-e-mantem-no-ar-propaganda-de-pivetta-que-associa-wellington-e-natasha-a-velha-politica",
+        "2026-09-28"
+       ],
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/tre-nega-derrubar-video-em-que-pivetta-associa-wf-e-natasha-a-velha-politica/530155",
+        "2026-09-29"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/aquele-do-paleto-juiz-nega-pedido-de-wellington-e-mantem-insercao-de-pivetta/152698",
+        "2026-09-28"
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/politica/justica-eleitoral-libera-propaganda-de-pivetta-com-criticas-a-wellington-e-natasha/35759",
+        "2026-09-29"
+       ]
+      ],
+      "papel": "contra"
+     },
+     {
+      "data": "2026-09-27",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar, liminar)",
+      "resumo": "A pedido da coligação de Wellington, liminar do juiz auxiliar Flávio Fraga e Silva mandou Pivetta suspender em 12 horas o impulsionamento pago de vídeo com críticas à emenda de R$ 600 mil de Wellington para pesquisas na Antártica, sob multa diária de R$ 5 mil. O vídeo sem impulsionamento foi mantido, e a retirada pedida por falta de rótulo de inteligência artificial foi negada nesta fase.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/justica-manda-suspender-anuncios-pagos-de-pivetta-com-criticas-a-emenda-de-r-600-mil-de-wellington-para-pesquisa-na-antartica",
+        "2026-09-28"
+       ],
+       [
+        "24 Horas MT",
+        "https://24horasmt.com.br/politica-mt/tre-manda-pivetta-suspender-impulsionamento-de-video-contra-wellington/",
+        "2026-09-28"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/tre-mantem-video-de-pivetta-com-pinguins-e-cenario-antartico/152657",
+        "2026-09-27"
+       ]
+      ],
+      "papel": "contra"
+     },
+     {
+      "data": "2026-09-27",
+      "tipo": "arquivada",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "O juiz auxiliar Marcelo Morgado julgou improcedente representação da coligação de Wellington contra Pivetta e a vice, Gisela Simona, pela divulgação de financiamento de até R$ 15 milhões do Fundes à associação do Shopping Popular, em Cuiabá. O juiz viu caráter promocional nas publicações, mas não conduta vedada, porque o financiamento tem de ser pago com juros.",
+      "cabe_recurso": true,
+      "defesa": "A defesa disse que não houve entrega direta de recursos a eleitores e que o contrato prevê juros e garantias.",
+      "fontes": [
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/juiz-ve-promocao-eleitoral-mas-rejeita-acao-contra-pivetta-sobre-financiamento-ao-shopping-popular/152679",
+        "2026-09-28"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/justica/juiz-rejeita-acao-de-wf-contra-pivetta-por-suposto-uso-eleitoral-de-contrato-do-shopping-popular/577650",
+        "2026-09-28"
+       ],
+       [
+        "RepórterMT",
+        "https://www.reportermt.com/politica/justica-rejeita-acao-de-wellington-contra-pivetta-e-gisela-por-emprestimo-de-r-15-milhoes-ao-shopping-popular/244285",
+        "2026-09-29"
+       ]
+      ],
+      "papel": "favor"
+     },
+     {
+      "data": "2026-09-26",
+      "tipo": "arquivada",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "O juiz auxiliar Marcelo Morgado julgou improcedente a representação da coligação de Wellington contra a inserção de Pivetta com os prefeitos Cláudio Ferreira e Flávia Moretti (PL) e revogou a liminar que a suspendia: a fala dos prefeitos somou 7,5 segundos, dentro do limite de 25%, e a lei não proíbe apoio de filiados a outro partido no 1º turno.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/juiz-nega-pedido-do-pl-e-libera-propaganda-com-apoio-da-prefeita-de-vg-a-pivetta/152643",
+        "2026-09-27"
+       ],
+       [
+        "ND Mais",
+        "https://ndmais.com.br/politica/juiz-do-mato-grosso-libera-propaganda-de-pivetta-candidato-a-reeleicao-e-diz-que-apoio-de-prefeitos-do-pl-nao-e-irregular-no-1o-turno/",
+        "2026-09-28"
+       ],
+       [
+        "Olhar Direto",
+        "https://olhardireto.com.br/juridico/noticias/justica-libera-propaganda-de-pivetta-com-apoio-de-claudio-ferreira-e-flavia-moretti",
+        "2026-09-28"
+       ]
+      ],
+      "papel": "favor"
+     },
+     {
+      "data": "2026-09-25",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT (Corregedoria)",
+      "resumo": "A coligação de Pivetta ajuizou ação de investigação judicial eleitoral (AIJE) contra Natasha e o vice, Diogo Botelho, por suposto uso indevido dos meios de comunicação, citando inserções de rádio e TV e anúncio no Instagram que reproduzem reportagem do Fantástico de 2021 sobre acusação de violência doméstica contra Pivetta sem informar que os inquéritos foram arquivados. Pede cassação do registro e inelegibilidade por oito anos; o mérito será julgado pelo Pleno.",
+      "cabe_recurso": null,
+      "defesa": "Natasha classificou as restrições como censura, disse que o conteúdo é público e que o arquivamento não equivale a conclusão sobre culpa ou inocência.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/acao-pede-cassacao-de-candidatura-e-inelegibilidade-de-natasha-por-ataques-em-serie-contra-pivetta",
+        "2026-09-28"
+       ],
+       [
+        "ND Mais",
+        "https://ndmais.com.br/politica/pivetta-pede-cassacao-de-natasha-e-taques-por-supostas-irregularidades-na-campanha-ao-senado-em-mt/",
+        "2026-09-28"
+       ],
+       [
+        "MT Econômico",
+        "https://matogrossoeconomico.com.br/politica-mato-grosso/eleicoes/com-317-ataques-e-paginas-falsas-pivetta-e-mauro-acionam-tre-para-cassar-natasha-e-taques/",
+        "2026-09-29"
+       ],
+       [
+        "Exclusivo News",
+        "https://exclusivonews.com.br/politica-mt/apos-ter-propaganda-suspensa-na-tv-natasha-fala-em-censura-querem-me-calar/",
+        "2026-09-28"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-25",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (Corregedoria, liminar)",
+      "resumo": "Na AIJE da coligação de Pivetta, liminar do corregedor Marcos Machado mandou Natasha e o vice pararem de veicular dez versões de inserções de TV, e as de rádio correspondentes, que reproduzem a reportagem de 2021 sem informar o arquivamento dos inquéritos, e retirar vídeo impulsionado no Instagram, sob multa de R$ 20 mil por descumprimento. Foi negada a proibição ampla de publicações futuras.",
+      "cabe_recurso": true,
+      "defesa": "A defesa sustenta que a ordem deve se limitar às peças individualizadas no processo (inserções 35 a 44).",
+      "fontes": [
+       [
+        "Muvuca Popular",
+        "https://www.muvucapopular.com.br/2026/09/28/tre-manda-suspender-propagandas-de-natasha-sobre-pivetta/",
+        "2026-09-28"
+       ],
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/acao-pede-cassacao-de-candidatura-e-inelegibilidade-de-natasha-por-ataques-em-serie-contra-pivetta",
+        "2026-09-28"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/natasha-alega-falta-de-comunicacao-e-tenta-reverter-suspensao-de-propaganda/152710",
+        "2026-09-28"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
       "data": "2026-09-23",
       "tipo": "acao_em_andamento",
       "orgao": "TRE-MT (juiz auxiliar)",
@@ -4478,6 +5039,48 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-09-29",
+      "tipo": "arquivada",
+      "orgao": "TRE-MT (Pleno)",
+      "resumo": "O Pleno do TRE-MT rejeitou, por 4 a 2, recurso da coligação Mato Grosso Não Pode Parar I, que apoia Mauro Mendes, e manteve improcedente a representação por propaganda antecipada negativa contra Taques por falas em coletiva de 6/8 sobre a Operação Heritage e o acordo com a Oi. A maioria viu questionamentos sobre fatos investigados, sem atribuição individualizada de crime; o MPE tinha opinado pelo provimento (Acórdão 32916).",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/tre-mt-rejeita-recurso-contra-taques/574811",
+        "2026-09-29"
+       ],
+       [
+        "FTN Brasil",
+        "https://ftnbrasil.com.br/tre-mt-rejeita-recurso-contra-taques-por-declaracoes-sobre-mauro-na-operacao-heritage/",
+        "2026-09-29"
+       ]
+      ],
+      "papel": "favor"
+     },
+     {
+      "data": "2026-09-26",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juíza auxiliar)",
+      "resumo": "A pedido da coligação Mato Grosso para Todos, a juíza auxiliar Glenda Borges multou Medeiros em R$ 5 mil por três vídeos no Instagram sem os nomes dos suplentes de forma clara e legível; as versões ficam fora do ar até serem corrigidas. Foi negado o pedido de multa à coligação Coração da Gente.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/medeiros-e-multado-por-videos-sem-identificacao-de-suplentes/152641",
+        "2026-09-27"
+       ],
+       [
+        "JB News",
+        "https://jbnews.com.br/tre-mantem-videos-fora-do-ar-e-multa-medeiros-em-r-5-mil-por-propaganda-sem-identificacao-de-suplentes/",
+        "2026-09-27"
+       ]
+      ],
+      "papel": "pedido"
+     },
      {
       "data": "2026-09-25",
       "tipo": "decisao",
@@ -5345,23 +5948,23 @@
     "cargo": "governador",
     "partido": "Agir",
     "registro": {
-     "situacao": "aguardando julgamento",
-     "obs": "O 1º pedido foi indeferido porque o Agir enviou a documentação depois do prazo; o pedido individual do candidato, ligado a um 2º registro do partido já aceito, aguarda julgamento. O TRE-MT homologou a renúncia do vice Alex Pucineli; o Agir indicou a Sargento Karen Fortes.",
+     "situacao": "deferido",
+     "obs": "Deferido por unanimidade em 25/9, ao acolher embargos de declaração depois da apresentação de documentos de desfiliação do União Brasil e certidão do TSE (Acórdão 32909, processo 0600845-60.2026.6.11.0000). No mesmo dia foi deferido o registro da vice, Sargento Karen Fortes, que substituiu Alex Pucineli (Acórdão 32910). Cabe recurso.",
      "fontes": [
       [
-       "Olhar Direto",
-       "https://www.olhardireto.com.br/juridico/noticias/mp-aponta-registro-fora-do-prazo-e-coloca-em-risco-candidatura-de-sargento-laudicerio-ao-governo-de-mt",
-       "2026-08-20"
+       "Cidadão Consumidor",
+       "https://cidadaoconsumidor.com.br/tre-mt-defere-por-unanimidade-chapa-de-laudicerio-e-karen-fortes-apos-correcao-de-filiacao-ao-uniao-brasil/",
+       "2026-09-26"
       ],
       [
-       "Olhar Direto",
-       "https://www.olhardireto.com.br/juridico/noticias/mp-pede-rejeicao-de-registro-do-agir-apos-partido-confirmar-perda-do-prazo-laudicerio-pode-ficar-fora-da-disputa",
-       "2026-08-25"
+       "O Tempo (espelho DivulgaCandContas/TSE, atualizado 29/09/2026)",
+       "https://www.otempo.com.br/eleicoes/2026/candidatos/mato-grosso/governador/sargento-laudicerio-36",
+       "2026-09-29"
       ],
       [
-       "Olhar Direto",
-       "https://www.olhardireto.com.br/juridico/noticias/tre-rejeita-primeiro-pedido-de-registro-do-agir-por-atraso-mas-valida-chapa-ao-governo-com-base-em-nova-solicitacao",
-       "2026-09-04"
+       "O Tempo – vice Sargento Karen Fortes (espelho DivulgaCandContas/TSE)",
+       "https://www.otempo.com.br/eleicoes/2026/candidatos/mato-grosso/vice-governador/sargento-karen-fortes-36",
+       "2026-09-29"
       ]
      ]
     },
@@ -5377,6 +5980,141 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-09-28",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar, liminar)",
+      "resumo": "A pedido da coligação de Wellington, liminar do juiz auxiliar Flávio Fraga e Silva mandou Mauro Mendes suspender em 12 horas quatro anúncios pagos, desde 26/9, de vídeo com críticas a Wellington que cita o implante capilar feito por ele, sob multa diária de R$ 5 mil; o vídeo sem impulsionamento foi mantido. A ação também aponta Pivetta e a coligação dele como cientes da publicação; a liminar atingiu só Mauro.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://olhardireto.com.br/juridico/noticias/tre-mt-manda-suspender-anuncios-pagos-por-mauro-com-ataques-citando-implante-capilar-de-wellington",
+        "2026-09-28"
+       ],
+       [
+        "O Documento",
+        "https://odocumento.com.br/mauro-mendes-tera-que-suspender-video-sobre-implante-capilar-de-wellington-fagundes/",
+        "2026-09-28"
+       ],
+       [
+        "Estadão Mato Grosso",
+        "https://www.estadaomatogrosso.com.br/eleicoes-2026/justica-manda-mauro-parar-de-impulsionar-video-que-ironiza-implante-de-wellington/146906",
+        ""
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-28",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "A coligação de Wellington pediu a suspensão de inserção de Pivetta exibida em 27/9 que associa Wellington e Natasha à \"velha política\" e cita a aproximação de Natasha com o ex-prefeito Emanuel Pinheiro. A liminar foi negada; o mérito será julgado após a defesa e o parecer do Ministério Público Eleitoral.",
+      "cabe_recurso": null,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/justica-nega-liminar-e-mantem-no-ar-propaganda-de-pivetta-que-associa-wellington-e-natasha-a-velha-politica",
+        "2026-09-28"
+       ],
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/tre-nega-derrubar-video-em-que-pivetta-associa-wf-e-natasha-a-velha-politica/530155",
+        "2026-09-29"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/aquele-do-paleto-juiz-nega-pedido-de-wellington-e-mantem-insercao-de-pivetta/152698",
+        "2026-09-28"
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/politica/justica-eleitoral-libera-propaganda-de-pivetta-com-criticas-a-wellington-e-natasha/35759",
+        "2026-09-29"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-27",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar, liminar)",
+      "resumo": "A pedido da coligação de Wellington, liminar do juiz auxiliar Flávio Fraga e Silva mandou Pivetta suspender em 12 horas o impulsionamento pago de vídeo com críticas à emenda de R$ 600 mil de Wellington para pesquisas na Antártica, sob multa diária de R$ 5 mil. O vídeo sem impulsionamento foi mantido, e a retirada pedida por falta de rótulo de inteligência artificial foi negada nesta fase.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/justica-manda-suspender-anuncios-pagos-de-pivetta-com-criticas-a-emenda-de-r-600-mil-de-wellington-para-pesquisa-na-antartica",
+        "2026-09-28"
+       ],
+       [
+        "24 Horas MT",
+        "https://24horasmt.com.br/politica-mt/tre-manda-pivetta-suspender-impulsionamento-de-video-contra-wellington/",
+        "2026-09-28"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/tre-mantem-video-de-pivetta-com-pinguins-e-cenario-antartico/152657",
+        "2026-09-27"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-27",
+      "tipo": "arquivada",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "O juiz auxiliar Marcelo Morgado julgou improcedente representação da coligação de Wellington contra Pivetta e a vice, Gisela Simona, pela divulgação de financiamento de até R$ 15 milhões do Fundes à associação do Shopping Popular, em Cuiabá. O juiz viu caráter promocional nas publicações, mas não conduta vedada, porque o financiamento tem de ser pago com juros.",
+      "cabe_recurso": true,
+      "defesa": "A defesa disse que não houve entrega direta de recursos a eleitores e que o contrato prevê juros e garantias.",
+      "fontes": [
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/juiz-ve-promocao-eleitoral-mas-rejeita-acao-contra-pivetta-sobre-financiamento-ao-shopping-popular/152679",
+        "2026-09-28"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/justica/juiz-rejeita-acao-de-wf-contra-pivetta-por-suposto-uso-eleitoral-de-contrato-do-shopping-popular/577650",
+        "2026-09-28"
+       ],
+       [
+        "RepórterMT",
+        "https://www.reportermt.com/politica/justica-rejeita-acao-de-wellington-contra-pivetta-e-gisela-por-emprestimo-de-r-15-milhoes-ao-shopping-popular/244285",
+        "2026-09-29"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-26",
+      "tipo": "arquivada",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "O juiz auxiliar Marcelo Morgado julgou improcedente a representação da coligação de Wellington contra a inserção de Pivetta com os prefeitos Cláudio Ferreira e Flávia Moretti (PL) e revogou a liminar que a suspendia: a fala dos prefeitos somou 7,5 segundos, dentro do limite de 25%, e a lei não proíbe apoio de filiados a outro partido no 1º turno.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/juiz-nega-pedido-do-pl-e-libera-propaganda-com-apoio-da-prefeita-de-vg-a-pivetta/152643",
+        "2026-09-27"
+       ],
+       [
+        "ND Mais",
+        "https://ndmais.com.br/politica/juiz-do-mato-grosso-libera-propaganda-de-pivetta-candidato-a-reeleicao-e-diz-que-apoio-de-prefeitos-do-pl-nao-e-irregular-no-1o-turno/",
+        "2026-09-28"
+       ],
+       [
+        "Olhar Direto",
+        "https://olhardireto.com.br/juridico/noticias/justica-libera-propaganda-de-pivetta-com-apoio-de-claudio-ferreira-e-flavia-moretti",
+        "2026-09-28"
+       ]
+      ],
+      "papel": "pedido"
+     },
      {
       "data": "2026-09-24",
       "tipo": "decisao",
@@ -5848,6 +6586,121 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-09-28",
+      "tipo": "arquivada",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "Foi julgada improcedente representação de Medeiros contra reportagens do PNB Online, do Caldeirão Político e do Novidades MT sobre custo e produtividade do mandato dele na Câmara; o juiz auxiliar Marcelo Morgado entendeu que os textos usaram dados públicos oficiais e critérios editoriais próprios.",
+      "cabe_recurso": true,
+      "defesa": "PNB Online e Caldeirão Político disseram que usaram dados oficiais e critérios próprios; o Novidades MT não se manifestou.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://olhardireto.com.br/juridico/noticias/medeiros-tenta-censurar-materias-que-apontam-mandato-de-alto-custo-e-baixa-produtividade-na-camara-mas-tre-nega",
+        "2026-09-28"
+       ],
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/tre-mantem-reportagens-que-lembram-improdutividade-de-medeiros/574572",
+        "2026-09-28"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-28",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "Medeiros pediu a retirada de vídeo do candidato a deputado estadual Flávio Caminhoneiro (PSD) com críticas e apelidos a ele, sobre a situação funcional da esposa no Senado e a atuação no pedido de impeachment de Alexandre de Moraes. A liminar foi negada; o mérito será julgado após a defesa (Representação 0601583-48.2026.6.11.0000).",
+      "cabe_recurso": null,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/justica-eleitoral-nega-pedido-de-medeiros-para-retirar-video-de-flavio-caminhoneiro-do-instagram",
+        "2026-09-28"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/medeiros-tenta-derrubar-video-de-flavio-caminhoneiro-mas-justica-nega/152678",
+        "2026-09-28"
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/judiciario/justica-mantem-video-que-chama-medeiros-de-ze-mamata-e-cego-surdo-e-mudo/35698",
+        "2026-09-28"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-28",
+      "tipo": "arquivada",
+      "orgao": "TRE-MT (juiz, poder de polícia)",
+      "resumo": "O juiz Moacir Rogério Tortato negou pedido do Ministério Público Eleitoral para impedir Medeiros de usar a imagem de Jair Bolsonaro na propaganda de TV e internet, porque o TSE não referendou a liminar que restringia esse uso; a notícia de irregularidade será arquivada.",
+      "cabe_recurso": null,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/juiz-nega-pedido-do-mp-e-mantem-permissao-para-medeiros-usar-imagem-de-bolsonaro-em-campanha",
+        "2026-09-28"
+       ],
+       [
+        "O Documento",
+        "https://odocumento.com.br/justica-rejeita-pedido-para-barrar-imagem-de-bolsonaro-na-campanha-eleitoral-de-medeiros/",
+        "2026-09-28"
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/politica/justica-eleitoral-libera-medeiros-para-usar-imagem-de-bolsonaro-em-campanha-ao-senado/35662",
+        "2026-09-28"
+       ]
+      ],
+      "papel": "favor"
+     },
+     {
+      "data": "2026-09-27",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar, liminar)",
+      "resumo": "A pedido de Medeiros, o juiz auxiliar Flávio Fraga e Silva mandou Janaina Riva parar em 24 horas de usar na campanha o perfil \"Janaina Riva 150\" no Spotify, por não ter sido informado à Justiça Eleitoral, até que o endereço seja comunicado; multa de R$ 2 mil por dia.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Estadão Mato Grosso",
+        "https://www.estadaomatogrosso.com.br/eleicoes-2026/tre-atende-pedido-de-medeiros-e-manda-janaina-retirar-link-para-spotify-de-campanha/146900",
+        ""
+       ],
+       [
+        "Esportes & Notícias",
+        "https://en.com.br/tre-manda-janaina-retirar-link-para-spotify-da-campanha-apos-pedido-de-medeiros/",
+        "2026-09-28"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-26",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juíza auxiliar)",
+      "resumo": "A pedido da coligação Mato Grosso para Todos, a juíza auxiliar Glenda Borges multou Medeiros em R$ 5 mil por três vídeos no Instagram sem os nomes dos suplentes de forma clara e legível; as versões ficam fora do ar até serem corrigidas. Foi negado o pedido de multa à coligação Coração da Gente.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/medeiros-e-multado-por-videos-sem-identificacao-de-suplentes/152641",
+        "2026-09-27"
+       ],
+       [
+        "JB News",
+        "https://jbnews.com.br/tre-mantem-videos-fora-do-ar-e-multa-medeiros-em-r-5-mil-por-propaganda-sem-identificacao-de-suplentes/",
+        "2026-09-27"
+       ]
+      ],
+      "papel": "contra"
+     },
      {
       "data": "2026-09-25",
       "tipo": "acao_em_andamento",
