@@ -1116,6 +1116,21 @@
       "legenda": "RADAR ELEITORAL · Boletim nº 2: a Justiça Eleitoral na reta final\n\nO Radar Eleitoral do HOJE MT reúne 86 casos da Justiça Eleitoral envolvendo os 16 candidatos ao governo e ao Senado de MT: 57 decisões, 15 ações ainda sem julgamento e 14 arquivadas. Só em 24 e 25/9, o TRE-MT tomou 10 decisões: 5 mandaram retirar vídeos ou publicações, 3 trataram de impulsionamento pago e 2 deram direito de resposta; 8 delas em disputas entre candidatos ao Senado. Liminar é decisão provisória e pode ser revista; ação em andamento não é condenação.\n\nNos palanques (23 a 25/9): Mauro Mendes pediu votos para Otaviano Pivetta e Margareth Buzetti, e a campanha de Pivetta divulgou uma lista de 100 prefeitos que apoiam a reeleição; Flávio Bolsonaro pediu votos para Wellington Fagundes e Zé Medeiros, e Sergio Moro declarou apoio a Wellington.\n\nCasos, partes e fontes: hojemt.com.br/radar-eleitoral\n\nImagem e voz do vídeo geradas com IA. Fatos apurados e conferidos pela redação do HOJE MT.\nMúsica: \"Windswept\" — Kevin MacLeod (incompetech.com), CC BY 4.0\n\n#eleicoes2026 #matogrosso #justicaeleitoral #hojemt",
       "materia": "https://hojemt.com.br/radar-eleitoral/",
       "obs": "rotina do boletim: vídeo sai só com aprovação do editor (trocar status para agendado). Reel 9:16 de 71,8 s (versão 3, 26/09, pedido do editor: voz mais jovem, sem se apresentar e sem dizer que é IA, só os fatos; a informação de IA fica só na tela e nesta legenda); capa em https://hojemt.com.br/content/images/2026/09/2026-09-26-boletim-02-v3-capa.jpg. Sem pesquisa citada, então sem fichas técnicas. Horário das 19:30 por ser post de alcance (instagram-crescimento.md)."
+    },
+    {
+      "id": "61",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-30T19:30:00-04:00",
+      "formato": "video",
+      "titulo": "Boletim em vídeo nº 3 · As pesquisas da reta final",
+      "midia": [
+        "https://hojemt.com.br/content/media/2026/09/2026-09-29-boletim-03.mp4"
+      ],
+      "legenda": "RADAR ELEITORAL · Boletim nº 3: as pesquisas da reta final\n\nGoverno de MT — duas novas pesquisas registradas mostram Otaviano Pivetta (Republicanos) e Wellington Fagundes (PL) nos dois primeiros lugares.\n• Quaest: Pivetta 29%, Wellington 27%, Doutora Natasha (PSD) 11%, Sargento Laudicério (Agir) 2%, Maurício Coelho (Mobiliza) 2%, Rafaell Milas (Missão) 1% — empate técnico entre os dois primeiros. 2º turno simulado: Wellington 41%, Pivetta 36% (empate técnico).\n• Veritá: Pivetta 39,1%, Wellington 32,3%, Natasha 15%, Laudicério 1,3%, Milas 0,7%, Maurício Coelho 0,5%; brancos e nulos 5,8%, não souberam 5,3%. Votos válidos: Pivetta 44,1%, Wellington 36,3%, Natasha 16,9%.\n\nSenado (Quaest, 1º voto): Mauro Mendes (União) 37%, Janaina Riva (MDB) 19%, Zé Medeiros (PL) 11%, Pedro Taques (PSB) 8%, Carlos Fávaro (PSD) 8%, Coronel Darwin (Democrata) 1%, Galvan (Avante) 1%, Margareth Buzetti (PP) 1%, Beny Godoy (Agir) 0%, Professor Nelson Ferreira (Agir) 0%; indecisos 11%, branco/nulo/não vai votar 3%.\n\nPesquisa é retrato do momento. A eleição é no domingo, 4/10.\n\nFichas técnicas:\nQuaest — contratada por Rádio e Televisão Matogrossense Ltda. (TV Centro América); 804 entrevistas presenciais de 21 a 24/9/2026; margem de erro de 3 pontos; confiança de 95%; registro MT-08098/2026.\nVeritá — contratada por Sistema de Comunicação Pantanal/Rede Brasil de Televisão; 1.220 entrevistas de 20 a 24/9/2026; margem de erro de 3 pontos; confiança de 95%; registros MT-09975/2026 e BR-04418/2026.\n\nPesquisas, fichas e fontes: hojemt.com.br/radar-eleitoral\n\nVoz do vídeo gerada com IA. Fatos apurados e conferidos pela redação do HOJE MT.\nMúsica: \"Windswept\" — Kevin MacLeod (incompetech.com), CC BY 4.0\n\n#eleicoes2026 #matogrosso #pesquisaeleitoral #hojemt",
+      "materia": "https://hojemt.com.br/radar-eleitoral/",
+      "obs": "Formato novo só com voz e slides (sem avatar), voz Kokoro pm_alex mais rápida e menos grave, fonética pt-br corrigida e sotaque cuiabano aproximado. O editor aprova antes de ir ao ar (mude o status para \"agendado\"). Substitui o boletim nº 2 (item 60), que continua aguardando decisão."
     }
   ]
 }

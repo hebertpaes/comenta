@@ -1,0 +1,244 @@
+{
+ "slug": "boletim-03",
+ "titulo": "Boletim nº 3: as pesquisas da reta final",
+ "materia": "https://hojemt.com.br/radar-eleitoral/",
+ "estilo": "slides",
+ "universo": "Slides escuros com ondas e curvas de nível verdes (estilo visual do vídeo de referência indicado pelo editor), sem avatar",
+ "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides (editor, 29/09: 'Não deixe avatar. Deixe somente a voz e slides'; 'Deixe uma voz menos grave e mais rápida e com português brasileiro com sotaque Cuiabano'; slides no estilo de youtu.be/M6jemlgwZxU, 'somente com narrador e slides em tempo real', 'retirando qualquer coisa fluência de Portugal'). Do vídeo de referência veio só o estilo visual; o narrador dele não é imitado. Voz: Kokoro pm_alex (sintética genérica), velocidade 1,18, tom +2 semitons (menos grave), fonética como no treino do Kokoro (espeak pt-br com ligaduras, --fonetica misaki) e sotaque 'cuiabano' aproximado (ch/x → tch, j/g → dj); nenhuma voz de pessoa real. Camadas de cada slide entram quando o narrador chega ao trecho (campo camadas). Sem legenda queimada: o texto está nos slides. A informação de que a voz é sintética fica só na tela (rótulo fixo e cartela final), na página e na legenda. Números: paginas/radar-dados.json em 29/09/2026 (Quaest MT-08098/2026, 21 a 24/9, divulgada em 25/9; Veritá MT-09975/2026, 20 a 24/9, divulgada em 28/9). Veritá para o Senado ficou de fora: os números publicados não fecham (1º voto soma mais de 100%) e as fontes divergem entre votos totais e válidos. Tratamento igual: todos os candidatos nos gráficos, em ordem de resultado; pesquisas contadas de forma neutra.",
+ "voz": {
+  "motor": "kokoro",
+  "narrador": "pm_alex",
+  "personagem": null,
+  "velocidade": 1.18,
+  "tom": 2,
+  "tratamento": "limpo",
+  "fonetica": "misaki",
+  "sotaque": "cuiabano"
+ },
+ "legendas": false,
+ "trilha": {
+  "id": "pantanal"
+ },
+ "abertura": {
+  "chip": "RADAR ELEITORAL",
+  "gancho": "AS PESQUISAS DA RETA FINAL",
+  "sub": "Mato Grosso · 29/09"
+ },
+ "cenas": [
+  {
+   "n": 1,
+   "quem": "narrador",
+   "fala": "Duas novas pesquisas registradas mostram Otaviano Pivetta e Wellington Fagundes nos dois primeiros lugares na disputa pelo governo de Mato Grosso.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-1-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-1-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-1-c1.png",
+     "quando": "Otaviano Pivetta"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "quem": "narrador",
+   "fala": "Na Quaest, Pivetta tem vinte e nove por cento, e Wellington, vinte e sete. Doutora Natasha tem onze por cento.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-2-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-2-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-2-c1.png",
+     "quando": "Pivetta tem"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-2-c2.png",
+     "quando": "Wellington, vinte"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-2-c3.png",
+     "quando": "Doutora Natasha"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "quem": "narrador",
+   "fala": "Com margem de erro de três pontos, os dois estão em empate técnico.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-3-fundo.png",
+   "movimento": "pan-dir",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-3-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-3-c1.png",
+     "quando": "margem de erro"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-3-c2.png",
+     "quando": "empate técnico"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "quem": "narrador",
+   "fala": "Na pesquisa da Veritá, Pivetta tem trinta e nove vírgula um por cento; Wellington, trinta e dois vírgula três; e Natasha, quinze por cento.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-4-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-4-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-4-c1.png",
+     "quando": "Pivetta tem"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-4-c2.png",
+     "quando": "Wellington, trinta"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-4-c3.png",
+     "quando": "Natasha, quinze"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "quem": "narrador",
+   "fala": "Nos votos válidos da Veritá, Pivetta chega a quarenta e quatro vírgula um por cento. Para vencer no primeiro turno, é preciso mais da metade.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-5-fundo.png",
+   "movimento": "close-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-5-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-5-c1.png",
+     "quando": "Pivetta chega"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-5-c2.png",
+     "quando": "Para vencer"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "quem": "narrador",
+   "fala": "No segundo turno simulado pela Quaest, Wellington tem quarenta e um por cento, e Pivetta, trinta e seis, também em empate técnico.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-6-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-6-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-6-c1.png",
+     "quando": "Wellington tem"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-6-c2.png",
+     "quando": "Pivetta, trinta"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-6-c3.png",
+     "quando": "empate técnico"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "quem": "narrador",
+   "fala": "Para o Senado, na Quaest, Mauro Mendes tem trinta e sete por cento no primeiro voto, e Janaina Riva, dezenove. Zé Medeiros tem onze; Pedro Taques e Carlos Fávaro, oito cada.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-7-fundo.png",
+   "movimento": "pan-esq",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-7-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-7-c1.png",
+     "quando": "Mauro Mendes tem"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-7-c2.png",
+     "quando": "Janaina Riva"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-7-c3.png",
+     "quando": "Zé Medeiros"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-7-c4.png",
+     "quando": "Pedro Taques"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "quem": "narrador",
+   "fala": "Pesquisa é retrato do momento. A eleição é no domingo, quatro de outubro.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-8-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-8-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-8-c1.png",
+     "quando": "retrato do momento"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-8-c2.png",
+     "quando": "A eleição"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "quem": "narrador",
+   "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-9-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-9-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-9-c1.png",
+     "quando": "Radar Eleitoral"
+    }
+   ]
+  }
+ ],
+ "fechamento": {
+  "linha1": "Radar Eleitoral · HOJE MT",
+  "leia": "hojemt.com.br/radar-eleitoral",
+  "fontes": [
+   "Quaest/g1 MT",
+   "Veritá/HiperNotícias",
+   "Muvuca Popular",
+   "CNN Brasil",
+   "TSE (PesqEle)"
+  ],
+  "aviso": "Voz gerada com IA (narrador sintético). Fatos apurados e conferidos pela redação do HOJE MT; pesquisas registradas na Justiça Eleitoral, fichas técnicas no Radar Eleitoral."
+ },
+ "saida": "pautas/videos/argos/2026-09-29-boletim-03.mp4",
+ "rotulo_ia": "Voz gerada com IA"
+}

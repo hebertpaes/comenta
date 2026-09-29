@@ -20,8 +20,12 @@
 // Roteiro (.cena.json): { titulo, materia, universo?, voz:{motor,narrador,
 // velocidade}, abertura:{chip,gancho,sub}, cenas:[{n,quem,fala,legenda?,
 // imagem,movimento (zoom-in|zoom-out|pan-esq|pan-dir|close-in|close-out|parado),
-// citacao?,audio_real?}], fechamento:{linha1,leia,fontes,
-// aviso}, saida }. `universo` (cenário + figurinos + tom do episódio) é só
+// citacao?,audio_real?,camadas?}], fechamento:{linha1,leia,fontes,
+// aviso}, legendas?, saida }. `camadas`: [{imagem (PNG transparente 1080×1920),
+// quando: "trecho da fala" | em: s}] entram por cima do fundo quando o narrador
+// chega ao trecho (slides "em tempo real"); `legendas: false` tira a legenda
+// queimada; `voz.fonetica: "misaki"` e `voz.sotaque: "cuiabano"` vão para o
+// Kokoro (lib/kokoro-tts.py). `universo` (cenário + figurinos + tom do episódio) é só
 // registro: vai para o <saida>.json. Caminhos relativos são relativos a
 // content/. Regras editoriais: README.md, pautas/README.md e a ESPEC do formato
 // ("Não ataque ninguém"; "Vozes reais, nunca clonadas").
@@ -377,9 +381,13 @@ const motoresVoz = {
     }
     return destino;
   },
-  kokoro(texto, { modelo = "pm_santa", velocidade = 1, tom = 0, tratamento, destino }) {
+  kokoro(texto, { modelo = "pm_santa", velocidade = 1, tom = 0, tratamento, fonetica, sotaque, destino }) {
     const bruto = Number(tom) || tratamento ? destino.replace(/\.wav$/, "-bruto.wav") : destino;
-    const r = spawnSync("python3", [join(aqui, "lib", "kokoro-tts.py"), "--voz", modelo, "--velocidade", String(Number(velocidade) || 1), "--saida", bruto], {
+    // `fonetica: "misaki"` (editor, 29/09: "retirando qualquer coisa fluência de
+    // Portugal"): fonemas como no treino do Kokoro; `sotaque: "cuiabano"`:
+    // aproximação com ch/x → tch e j/g → dj (ver lib/kokoro-tts.py)
+    const extra = [...(fonetica ? ["--fonetica", fonetica] : []), ...(sotaque ? ["--sotaque", sotaque] : [])];
+    const r = spawnSync("python3", [join(aqui, "lib", "kokoro-tts.py"), "--voz", modelo, "--velocidade", String(Number(velocidade) || 1), ...extra, "--saida", bruto], {
       input: pronuncia(texto),
       encoding: "utf8",
       env: { ...process.env, HOJEMT_VOZES: VOZES_DIR },
@@ -431,17 +439,20 @@ const PRONUNCIA = [
   [/\bDatafolha\b/g, "Data Folha"],
   [/\bAtlasIntel\b/g, "Átlas Intel"],
   [/\bJanaina\b/g, "Janaína"],
+  [/\bQuaest\b/g, "Cuaést"],
+  [/\bNatasha\b/g, "Natacha"],
+  [/\bHOJE MT\b/g, "Hoje ême tê"],
 ];
 function pronuncia(texto) {
   return PRONUNCIA.reduce((t, [de, para]) => t.replace(de, para), texto.trim());
 }
 
 /** Sintetiza uma fala; com Piper indisponível, cai para o gTTS avisando. */
-function sintetizar(texto, { motor = "piper", modelo, velocidade, tom, tratamento, destino }) {
+function sintetizar(texto, { motor = "piper", modelo, velocidade, tom, tratamento, fonetica, sotaque, destino }) {
   const fn = motoresVoz[motor];
   if (!fn) throw new Error(`motor de voz desconhecido: ${motor} (use kokoro, piper, gtts, elevenlabs ou heygen)`);
   try {
-    return fn(texto, { modelo, velocidade, tom, tratamento, destino });
+    return fn(texto, { modelo, velocidade, tom, tratamento, fonetica, sotaque, destino });
   } catch (e) {
     if (motor === "piper" && e.piperIndisponivel) {
       console.warn(`AVISO: ${e.message} — usando gTTS como reserva`);
@@ -730,8 +741,29 @@ function filtroMovimento(movimento, frames) {
   }
 }
 
+/**
+ * Camadas de um slide que entram "em tempo real", junto com a fala (editor,
+ * 29/09: "somente com narrador e slides em tempo real"): cada item de
+ * `camadas` é {imagem (PNG transparente 1080×1920), quando?: "trecho da fala",
+ * em?: segundos}. Com `quando`, a camada aparece quando o narrador chega ao
+ * trecho (posição do trecho na fala × duração do áudio, um pouco antes).
+ */
+function tempoCamadas(cena, n) {
+  const fala = String(cena.fala || "");
+  return (cena.camadas || []).map((cam, i) => {
+    let t = 0;
+    if (typeof cam.em === "number") t = cam.em;
+    else if (cam.quando) {
+      const idx = fala.toLowerCase().indexOf(String(cam.quando).toLowerCase());
+      if (idx < 0) throw new Error(`cena ${n}: camada ${i + 1}: trecho "${cam.quando}" não está na fala`);
+      t = Math.max(0, (idx / Math.max(1, fala.length)) * cena.duracaoAudio - 0.15);
+    }
+    return { imagem: caminho(cam.imagem), t: Math.min(t, Math.max(0, cena.dur - 0.4)) };
+  });
+}
+
 /** Renderiza um segmento (imagem ou clipe 9:16 + áudio ou silêncio) de `dur` s em mkv sem perdas. */
-async function segmento({ imagem, video, audio, dur, movimento, destino }) {
+async function segmento({ imagem, video, audio, dur, movimento, destino, camadas = [] }) {
   const frames = Math.round(dur * FPS);
   let preparo, zoom;
   if (video) {
@@ -749,7 +781,7 @@ async function segmento({ imagem, video, audio, dur, movimento, destino }) {
       ? `[0:v]scale=${W * 2}:${H * 2}:flags=lanczos[base]`
       : `[0:v]split[a][b];[a]scale=${W * 2}:${H * 2}:force_original_aspect_ratio=increase,crop=${W * 2}:${H * 2},boxblur=40:8,eq=brightness=-0.08[bg];[b]scale=${W * 2}:${H * 2}:force_original_aspect_ratio=decrease:flags=lanczos[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2[base]`;
   }
-  const filtros = [`${preparo}`, `[base]${zoom},setsar=1,format=yuv420p[v]`];
+  const filtros = [`${preparo}`, `[base]${zoom},setsar=1,format=${camadas.length ? "rgba[v0]" : "yuv420p[v]"}`];
   const entradas = ["-i", video || imagem];
   if (audio) {
     entradas.push("-i", audio);
@@ -758,6 +790,15 @@ async function segmento({ imagem, video, audio, dur, movimento, destino }) {
     entradas.push("-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo");
     filtros.push(`[1:a]aformat=sample_fmts=s16[a]`);
   }
+  // camadas fixas por cima do fundo em movimento, cada uma entrando com fade
+  camadas.forEach((cam, i) => {
+    if (!existsSync(cam.imagem)) throw new Error(`camada não existe: ${cam.imagem}`);
+    entradas.push("-loop", "1", "-framerate", String(FPS), "-t", dur.toFixed(3), "-i", cam.imagem);
+    filtros.push(
+      `[${2 + i}:v]scale=${W}:${H},format=rgba,fade=t=in:st=${cam.t.toFixed(3)}:d=0.3:alpha=1[c${i}]`,
+      `[v${i}][c${i}]overlay=0:0:format=auto${i === camadas.length - 1 ? ",format=yuv420p[v]" : `[v${i + 1}]`}`
+    );
+  });
   rodarFfmpeg(
     [
       ...entradas,
@@ -785,7 +826,7 @@ async function principal() {
     const quem = String(c.quem || "narrador").trim();
     const ehNarrador = quem.toLowerCase() === "narrador";
     const destino = join(tmp, `cena-${String(n).padStart(2, "0")}.wav`);
-    const base = { n, quem, imagem: c.imagem, anima: c.anima === true, movimento: c.movimento || "zoom-in" };
+    const base = { n, quem, imagem: c.imagem, anima: c.anima === true, movimento: c.movimento || "zoom-in", camadas: c.camadas || [] };
     let cena;
     if (c.audio_real) {
       if (ehNarrador)
@@ -821,12 +862,13 @@ async function principal() {
         rodarFfmpeg(["-i", origem, "-ac", "1", "-ar", "24000", destino], `voz pronta da cena ${n}`);
         audio = destino;
       } else {
-        audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, tom: voz.tom, tratamento: voz.tratamento, destino });
+        audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, tom: voz.tom, tratamento: voz.tratamento, fonetica: voz.fonetica, sotaque: voz.sotaque, destino });
       }
       cena = { ...base, fala, legenda, audio };
     }
     cena.duracaoAudio = duracaoDe(cena.audio);
     cena.dur = Math.max(DUR_MIN_CENA, cena.duracaoAudio + FOLGA_CENA);
+    cena.camadas = tempoCamadas(cena, n);
     console.log(`${cena.duracaoAudio.toFixed(2)} s → cena ${cena.dur.toFixed(2)} s`);
     cenas.push(cena);
   }
@@ -906,7 +948,7 @@ async function principal() {
       const r = spawnSync("python3", [join(aqui, "lib", "argos-anima.py"), "animar", "--pasta", pasta, "--audio", c.audio, "--dur", c.dur.toFixed(3), "--saida", video, "--semente", String(c.n)], { encoding: "utf8", env: { ...process.env, FFMPEG: ffmpeg } });
       if (r.status !== 0) throw new Error(`animação da cena ${c.n} falhou: ${r.stderr.trim().split("\n").slice(-3).join(" | ")}`);
     }
-    lista.push(await segmento({ imagem: c.imagem, video, audio: c.audio, dur: c.dur, movimento: c.movimento, destino: join(tmp, `seg-${String(c.n).padStart(2, "0")}.mkv`) }));
+    lista.push(await segmento({ imagem: c.imagem, video, audio: c.audio, dur: c.dur, movimento: c.movimento, camadas: c.camadas, destino: join(tmp, `seg-${String(c.n).padStart(2, "0")}.mkv`) }));
     console.log("ok");
   }
   lista.push(await segmento({ imagem: fechamento, dur: DUR_FECHAMENTO, movimento: "parado", destino: join(tmp, "seg-99-fechamento.mkv") }));
@@ -932,7 +974,9 @@ async function principal() {
   const listaTxt = join(tmp, "lista.txt");
   await writeFile(listaTxt, lista.map((f) => `file '${f.replace(/'/g, "'\\''")}'`).join("\n") + "\n");
   await mkdir(dirname(saida), { recursive: true });
-  const filtros = [`[0:v]subtitles=filename='${escFiltro(ass)}':fontsdir='${escFiltro(FONTES_DIR)}'[leg]`];
+  // `legendas: false`: sem legenda queimada (boletim em slides, em que o texto
+  // já está no slide; editor, 29/09: "somente com narrador e slides")
+  const filtros = [spec.legendas === false ? `[0:v]null[leg]` : `[0:v]subtitles=filename='${escFiltro(ass)}':fontsdir='${escFiltro(FONTES_DIR)}'[leg]`];
   let ultimo = "[leg]";
   const entradas = ["-f", "concat", "-safe", "0", "-i", listaTxt];
   if (args["sem-marca"] !== true) {

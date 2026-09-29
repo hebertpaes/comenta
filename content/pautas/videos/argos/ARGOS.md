@@ -4,6 +4,41 @@ Criado em 26/09/2026 a pedido do editor ("Crie o avatar do jornalista hojemt e
 comece narrar os fatos. Se apresente como Jornalista oficial, com nome
 sugestivo e intrigante").
 
+## Formato vigente (29/09/2026): só voz e slides
+
+Pedidos do editor em 29/09: "Não deixe avatar. Deixe somente a voz e slides";
+"Deixe uma voz menos grave e mais rápida e com português brasileiro com
+sotaque Cuiabano"; slides "no estilo deste vídeo" (youtu.be/M6jemlgwZxU)
+"somente com narrador e slides em tempo real", "retirando qualquer coisa
+fluência de Portugal".
+
+- **Sem avatar:** nenhuma cena com o Argos (nem `"anima": true`). O vídeo é só
+  narração + slides. O avatar e a animação abaixo ficam no histórico.
+- **Slides (modelo: `graficos-boletim-03.mjs`):** 1080×1920, fundo escuro com
+  ondas e curvas de nível verdes, chips com brilho verde (#2EDC8A), cartões
+  de vidro com barras. Do vídeo de referência vem só o estilo visual; o
+  narrador dele nunca é imitado. Cada cena tem um `-fundo.png` (a câmera anda
+  sobre ele) e camadas transparentes `-c<k>.png` que entram "em tempo real",
+  quando o narrador chega ao trecho: no roteiro, `"camadas": [{"imagem": …,
+  "quando": "trecho da fala"}]` (a camada 0 usa `"em": 0`). Todos os
+  candidatos nos gráficos, em ordem de resultado; ficha técnica no cartão.
+- **Sem legenda queimada** (`"legendas": false` no roteiro): o texto está nos
+  slides. Rótulo fixo `"rotulo_ia": "Voz gerada com IA"` e aviso na cartela
+  final ("Voz gerada com IA (narrador sintético)…").
+- **Voz (v5, 29/09):** `"voz": {"motor": "kokoro", "narrador": "pm_alex",
+  "velocidade": 1.18, "tom": 2, "tratamento": "limpo", "fonetica": "misaki",
+  "sotaque": "cuiabano"}` — mais rápida e menos grave (tom médio ~141 Hz, antes
+  ~130 Hz). `fonetica: "misaki"` refaz os fonemas como no treino do Kokoro
+  (espeak-ng pt-br com ligaduras: ʤ, ʧ, ditongos), o que tira a pronúncia
+  estranha que soava "de Portugal". `sotaque: "cuiabano"` é uma APROXIMAÇÃO:
+  ch/x viram "tch" e j/g viram "dj" só nas palavras comuns ("tchega",
+  "mardjem"); nomes próprios e siglas ficam na pronúncia padrão (com o
+  sotaque, "Janaína" virava "Dianaína"). O Kokoro não tem voz cuiabana de
+  verdade. Pronúncias de nomes em `PRONUNCIA` do `charge-cena.mjs`.
+- **Conferência:** transcrever com faster_whisper "small" (nomes e números
+  têm de sair certos), olhar quadros de cada cena com ffmpeg (camadas
+  entrando na hora da fala) e duração ≤ 120 s.
+
 ## Quem é
 
 - **Nome:** Argos Veredas. Argos é o gigante de cem olhos da mitologia grega, o
@@ -15,7 +50,7 @@ sugestivo e intrigante").
   Instagram o produto se chama "Boletim em vídeo" do Radar Eleitoral.
 - **Personagem fictício.** Não imita nem lembra pessoa real. Não tem biografia
   inventada (não "cobriu" nada antes, não tem família, não dá opinião pessoal).
-- **Avatar (v3, 26/09):** a pedido do editor ("Deve ser mais novo um avatar
+- **Avatar (v3, 26/09; fora de uso desde 29/09):** a pedido do editor ("Deve ser mais novo um avatar
   animado e não estático com a voz mais suave e grave"), o Argos é um repórter
   jovem, de uns 27 anos, cabelo castanho-escuro curto, barba curta, terno
   verde-escuro com camisa branca aberta, broche de tuiuiú e microfone de
@@ -42,7 +77,7 @@ sugestivo e intrigante").
   --olhos <olhos-fechados.png> --pasta pautas/videos/argos/anima-v3`.
   Não é sincronia labial por fonema (a boca segue o volume); a sincronia fina
   fica para o HeyGen, quando houver créditos de API.
-- **Voz (v4, 26/09):** Kokoro-82M (Apache-2.0), voz sintética genérica
+- **Voz (v4, 26/09; substituída pela v5 em 29/09, ver acima):** Kokoro-82M (Apache-2.0), voz sintética genérica
   `pm_alex` pura (a mais jovem em português), velocidade 1,05, sem mudar o
   tom, tratamento "limpo" (tira o grave embolado em 250 Hz, um pouco de
   presença, de-esser e compressão leve):
@@ -63,8 +98,9 @@ sugestivo e intrigante").
 ## Regras (valem para vídeo, áudio, texto e Radar)
 
 1. **IA só na tela, nunca na fala:** o narrador não diz que é IA; a
-   informação fica num rótulo discreto fixo no canto (`"rotulo_ia": "Imagem e
-   voz geradas com IA"` no roteiro), na cartela final ("Imagem e voz geradas
+   informação fica num rótulo discreto fixo no canto (`"rotulo_ia": "Voz
+   gerada com IA"` no formato só voz e slides; era "Imagem e voz geradas com
+   IA" com o avatar), na cartela final ("Imagem e voz geradas
    com IA. Fatos apurados e conferidos pela redação do HOJE MT…"), na página do
    Radar e na legenda do Instagram. Motivo: o avatar é realista e é período
    eleitoral (Meta exige rótulo em vídeo realista gerado por IA; Res. TSE
@@ -84,7 +120,8 @@ sugestivo e intrigante").
 6. **Não fala por pessoa real:** fala de candidato só em 3ª pessoa ("Ele
    disse: …") e só com citação confirmada; trecho de áudio real só pelo campo
    `audio_real` do `charge-cena.mjs`.
-7. **Vídeos de até 2 minutos**, 9:16, legenda queimada, marca do HOJE MT.
+7. **Vídeos de até 2 minutos**, 9:16, marca do HOJE MT; no formato só voz e
+   slides, sem legenda queimada (o texto está nos slides).
    Nunca usa vídeo de terceiros nem de imprensa.
 
 ## Onde aparece

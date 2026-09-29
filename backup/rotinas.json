@@ -70,11 +70,11 @@
     },
     {
       "id": "trig_01Ax3HrwPELnt6yYdiurSjrS",
-      "nome": "Boletim em vídeo do Radar Eleitoral (2x/dia, até 4/10)",
+      "nome": "Boletim em vídeo do Radar Eleitoral — voz e slides (2x/dia, até 4/10)",
       "cron_utc": "CRON_TZ=America/Cuiaba 52 6,17 * * *",
       "cuiaba": "06:52 e 17:52",
       "fonte": "content/pautas/videos/argos/",
-      "resumo": "Se houver fato novo e conferido, faz um boletim em vídeo (≤ 120 s) do Radar Eleitoral com o avatar animado (lib/argos-anima.py) e charge-cena.mjs. Desde 26/09 (editor: \"voz mais jovem, sem se apresentar e sem dizer que é IA, somente noticie os fatos\"): narração de telejornal, só os fatos, sem apresentação, cumprimento nem despedida; voz Kokoro pm_alex (velocidade 1,05, tom 0, tratamento \"limpo\"); a informação de IA fica só na tela (rótulo fixo no canto e cartela final), na página e na legenda. Atualiza o bloco \"Boletim em vídeo\" do Radar, republica a página e põe o vídeo na agenda do Instagram como aguardando_decisao."
+      "resumo": "Se houver fato novo e conferido, faz um boletim em vídeo (≤ 120 s) do Radar Eleitoral com charge-cena.mjs, só com voz e slides. Desde 29/09 (editor: \"Não deixe avatar. Deixe somente a voz e slides\"; \"voz menos grave e mais rápida, português brasileiro com sotaque cuiabano\"; slides no estilo de um vídeo de referência, \"em tempo real\"): sem avatar; slides escuros com chips e cartões (modelo graficos-boletim-03.mjs) cujas camadas entram quando o narrador chega ao trecho; sem legenda queimada; voz Kokoro pm_alex v5 (velocidade 1,18, tom +2, fonética misaki, sotaque cuiabano aproximado só nas palavras comuns); narração de telejornal, só os fatos, sem apresentação; IA informada só na tela (rótulo \"Voz gerada com IA\" e cartela final), na página e na legenda. Atualiza o bloco boletim do Radar e põe o vídeo na agenda do Instagram como aguardando_decisao."
     },
     {
       "id": "trig_019HLBXgy3Pv3YR8vqU5z47P",
