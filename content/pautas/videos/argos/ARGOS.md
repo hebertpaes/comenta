@@ -72,6 +72,32 @@ fluência de Portugal".
     um lado numa disputa, mostrar o do outro quando houver. Uso como citação,
     com autor e origem (Lei 9.610/1998, art. 46, III); o link vai na legenda.
   - Modelo: cenas 9 e 10 do boletim nº 3 v2 (vídeo e post do @TSEjusbr no X).
+- **API do Gemini (29/09, editor: "Use api Gemini 3.8 para gerar os vídeos do
+  radar"):** `lib/gemini.mjs` + `gemini-video.mjs`, com a chave em
+  `GEMINI_API_KEY` (variável de ambiente; nunca no git nem no chat). O modelo
+  é escolhido pela lista da própria chave: o "3.8" pedido quando existir, senão
+  o mais novo de cada tipo (`node gemini-video.mjs modelos` mostra a escolha;
+  `GEMINI_MODELO_TEXTO/VIDEO/TTS` fixam um).
+  - **Cenas ilustrativas (Veo):** na cena, `"clipe": {"gerar": {"prompt":
+    "…", "duracao": 8}}` (com `caixa` para a janela do slide; sem ela, tela
+    inteira). Só paisagem, cidade, lavoura, estrada, prédio público por fora,
+    urna genérica. **Nunca pessoa reconhecível, candidato, logotipo, bandeira
+    ou texto:** o script recusa prompt com nome de candidato do Radar ou rosto
+    em destaque e anexa as regras ao prompt. O clipe sai com o selo "IMAGEM
+    GERADA POR IA" na caixa, o rótulo do vídeo vira "Voz e imagens geradas com
+    IA" e a proveniência (modelo, prompt, data) vai em `clipes_gerados_ia` no
+    registro do vídeo. Pessoa real só em imagem real publicada, com crédito
+    (redes-post.mjs); em notícia de acusação ou investigação, nada de cena
+    gerada que sugira o fato. `node gemini-video.mjs sugerir <roteiro>` pede ao
+    modelo de texto uma cena por fala (o editor revisa antes de gerar).
+  - **Voz:** `"voz": {"motor": "gemini", "narrador": "Charon", "estilo": "Leia
+    em português do Brasil, em tom de telejornal, ritmo ágil", "reserva": {voz
+    v6}}` — voz pronta do Gemini (sintética genérica, nunca imitação de pessoa
+    real). Sem chave, com cota esgotada ou fora do ar, a reserva assume sozinha.
+    Só vira padrão depois que o editor ouvir e aprovar.
+  - **Tarja de manchete** (formato do reel indicado pelo editor, 29/09):
+    `tarjaManchete("texto com **destaque**")` do `slides-lib.mjs` — aspas verdes
+    e linhas em caixa branca, como camada sobre a cena do Veo.
 - **Conferência:** transcrever com faster_whisper "small" (nomes e números
   têm de sair certos), olhar quadros de cada cena com ffmpeg (camadas
   entrando na hora da fala) e duração ≤ 120 s.

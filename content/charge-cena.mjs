@@ -27,6 +27,12 @@
 // caixa: [x, y, w, h], origem_url, credito} põe um trecho de vídeo de rede
 // social (sem o áudio original) numa caixa do slide, por baixo das camadas
 // (buscar com redes-post.mjs; regras em pautas/videos/argos/ARGOS.md);
+// `clipe.gerar: {prompt, duracao?, modelo?}` no lugar de `arquivo` gera a cena
+// ILUSTRATIVA com o Veo (gemini-video.mjs; sem pessoa reconhecível, com selo
+// "IMAGEM GERADA POR IA" na caixa; sem `caixa`, ocupa a tela inteira) e o
+// rótulo de IA do vídeo passa a citar imagens; `voz.motor: "gemini"`
+// (narrador = voz pronta do Gemini, ex.: "Charon"; `voz.estilo` = instrução
+// de leitura) com `voz.reserva` para quando a API falhar;
 // `legendas: false` tira a legenda
 // queimada; `voz.fonetica: "misaki"` e `voz.sotaque: "cuiabano"` vão para o
 // Kokoro (lib/kokoro-tts.py). `universo` (cenário + figurinos + tom do episódio) é só
@@ -77,6 +83,7 @@
 // Fontes: assets/fonts (Anton, Roboto Condensed) via fontconfig gerado em
 // tempo de execução — o mesmo truque de lib/card.mjs.
 import { spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
 import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
@@ -436,6 +443,23 @@ const motoresVoz = {
     rodarFfmpeg(["-i", mp3, "-ac", "1", "-ar", "24000", destino], "voz edge");
     return destino;
   },
+  gemini(texto, { modelo = "Charon", estilo, destino }) {
+    // voz pronta do Gemini (editor, 29/09: "Use api Gemini … para gerar os
+    // vídeos do radar"); voz sintética genérica, nunca imitação de pessoa real
+    const bruto = destino.replace(/\.wav$/, "-gemini.wav");
+    const r = spawnSync(process.execPath, [join(aqui, "gemini-video.mjs"), "voz", `--voz=${modelo}`, ...(estilo ? [`--estilo=${estilo}`] : []), `--saida=${bruto}`], {
+      input: pronunciaEdge(texto),
+      encoding: "utf8",
+      timeout: 180000,
+    });
+    if (r.status !== 0) {
+      const erro = new Error(`Gemini TTS falhou: ${(r.stderr || r.error?.message || "").trim().split("\n").slice(-2).join(" | ")}`);
+      erro.geminiIndisponivel = r.status === 3 || r.status === null;
+      throw erro;
+    }
+    rodarFfmpeg(["-i", bruto, "-ac", "1", "-ar", "24000", destino], "voz gemini");
+    return destino;
+  },
   gtts(texto, { destino }) {
     const mp3 = destino.replace(/\.wav$/, ".mp3");
     const py = "import sys\nfrom gtts import gTTS\ngTTS(sys.stdin.read(), lang='pt', tld='com.br').save(sys.argv[1])\n";
@@ -475,14 +499,14 @@ function pronunciaEdge(texto) {
 }
 
 /** Sintetiza uma fala; com Piper indisponível, cai para o gTTS avisando. */
-function sintetizar(texto, { motor = "piper", modelo, velocidade, tom, tratamento, fonetica, sotaque, reserva, destino }) {
+function sintetizar(texto, { motor = "piper", modelo, velocidade, tom, tratamento, fonetica, sotaque, estilo, reserva, destino }) {
   const fn = motoresVoz[motor];
-  if (!fn) throw new Error(`motor de voz desconhecido: ${motor} (use edge, kokoro, piper, gtts, elevenlabs ou heygen)`);
+  if (!fn) throw new Error(`motor de voz desconhecido: ${motor} (use gemini, edge, kokoro, piper, gtts, elevenlabs ou heygen)`);
   try {
-    return fn(texto, { modelo, velocidade, tom, tratamento, fonetica, sotaque, destino });
+    return fn(texto, { modelo, velocidade, tom, tratamento, fonetica, sotaque, estilo, destino });
   } catch (e) {
-    if (motor === "edge" && e.edgeIndisponivel && reserva) {
-      // serviço da voz neural fora do ar: segue com a voz de reserva (Kokoro v5)
+    if ((e.edgeIndisponivel || e.geminiIndisponivel) && reserva) {
+      // serviço da voz fora do ar ou sem chave: segue com a voz de reserva
       console.warn(`AVISO: ${e.message} — usando a voz de reserva (${reserva.motor}/${reserva.narrador})`);
       return sintetizar(texto, { ...reserva, modelo: reserva.narrador, destino });
     }
@@ -834,11 +858,18 @@ async function segmento({ imagem, video, audio, dur, movimento, destino, camadas
     const len = Math.min(dur, Math.max(0.5, (Number(clipe.fim) || ini + dur) - ini));
     entradas.push("-ss", ini.toFixed(3), "-t", len.toFixed(3), "-i", arq);
     const idx = entradas.filter((e) => e === "-i").length - 1;
+    const fimClipe = camadas.length ? "[vc]" : ",format=yuv420p[v]";
     filtros.push(
       `[${idx}:v]fps=${FPS},scale=${w}:${h}:force_original_aspect_ratio=increase,crop=${w}:${h},setsar=1,format=rgba,` +
         `tpad=stop_mode=clone:stop_duration=${dur.toFixed(3)},trim=0:${dur.toFixed(3)},setpts=PTS-STARTPTS,fade=t=in:st=0:d=0.3:alpha=1[clip]`,
-      `[${atual}][clip]overlay=${x}:${y}:eof_action=repeat${camadas.length ? "[vc]" : ",format=yuv420p[v]"}`
+      `[${atual}][clip]overlay=${x}:${y}:eof_action=repeat${clipe.selo ? "[vs]" : fimClipe}`
     );
+    if (clipe.selo) {
+      // clipe gerado por IA: selo fixo no canto de baixo da caixa, a cena toda
+      entradas.push("-loop", "1", "-framerate", String(FPS), "-t", dur.toFixed(3), "-i", clipe.selo);
+      const is = entradas.filter((e) => e === "-i").length - 1;
+      filtros.push(`[vs][${is}:v]overlay=${x + 24}:${y + h - 88}${fimClipe}`);
+    }
     atual = "vc";
   }
   // camadas fixas por cima do fundo em movimento, cada uma entrando com fade
@@ -868,6 +899,42 @@ async function segmento({ imagem, video, audio, dur, movimento, destino, camadas
   return destino;
 }
 
+// ---------------------------------------------------------------- clipe gerado (Veo)
+const CACHE_GEMINI = join(process.env.HOJEMT_CACHE || join(tmpdir(), "hojemt-cache"), "gemini");
+const clipesGerados = [];
+let seloIa = null;
+/** `clipe.gerar` → clipe ilustrativo do Veo (em cache pelo prompt), com selo de IA. */
+async function clipeGerado(clipe, n) {
+  const { prompt, duracao = 8, modelo } = clipe.gerar;
+  if (!prompt) throw new Error(`cena ${n}: clipe.gerar precisa de \`prompt\``);
+  await mkdir(CACHE_GEMINI, { recursive: true });
+  const chave = createHash("sha1").update(JSON.stringify([prompt.trim(), duracao, modelo || ""])).digest("hex").slice(0, 16);
+  const arquivo = join(CACHE_GEMINI, `veo-${chave}.mp4`);
+  if (!existsSync(arquivo) || !existsSync(`${arquivo}.json`)) {
+    process.stdout.write(`vídeo ${n} (Veo: ${prompt.slice(0, 50)}…) `);
+    const r = spawnSync(process.execPath, [join(aqui, "gemini-video.mjs"), "cena", `--prompt=${prompt}`, `--saida=${arquivo}`, `--duracao=${duracao}`, ...(modelo ? [`--modelo=${modelo}`] : [])], {
+      encoding: "utf8",
+      timeout: 900000,
+    });
+    if (r.status !== 0) throw new Error(`cena ${n}: Veo não gerou o clipe: ${(r.stderr || r.error?.message || "").trim().split("\n").slice(-2).join(" | ")}`);
+  }
+  const registro = JSON.parse(await readFile(`${arquivo}.json`, "utf8"));
+  clipesGerados.push({ cena: n, arquivo: basename(arquivo), ...registro });
+  if (!seloIa) {
+    seloIa = join(tmp, "selo-imagem-ia.png");
+    await rotuloIa("IMAGEM GERADA POR IA", seloIa);
+  }
+  return {
+    inicio: 0,
+    fim: Number(duracao),
+    caixa: [0, 0, W, H],
+    ...clipe,
+    arquivo,
+    credito: clipe.credito || "Imagem ilustrativa gerada com IA",
+    selo: seloIa,
+  };
+}
+
 // ---------------------------------------------------------------- principal
 const tmp = await mkdtemp(join(tmpdir(), "hojemt-cena-"));
 async function principal() {
@@ -880,7 +947,8 @@ async function principal() {
     const quem = String(c.quem || "narrador").trim();
     const ehNarrador = quem.toLowerCase() === "narrador";
     const destino = join(tmp, `cena-${String(n).padStart(2, "0")}.wav`);
-    const base = { n, quem, imagem: c.imagem, anima: c.anima === true, movimento: c.movimento || "zoom-in", camadas: c.camadas || [], clipe: c.clipe || null };
+    const clipe = c.clipe?.gerar && !c.clipe.arquivo ? await clipeGerado(c.clipe, n) : c.clipe || null;
+    const base = { n, quem, imagem: c.imagem, anima: c.anima === true, movimento: c.movimento || "zoom-in", camadas: c.camadas || [], clipe };
     let cena;
     if (c.audio_real) {
       if (ehNarrador)
@@ -916,7 +984,7 @@ async function principal() {
         rodarFfmpeg(["-i", origem, "-ac", "1", "-ar", "24000", destino], `voz pronta da cena ${n}`);
         audio = destino;
       } else {
-        audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, tom: voz.tom, tratamento: voz.tratamento, fonetica: voz.fonetica, sotaque: voz.sotaque, reserva: voz.reserva, destino });
+        audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, tom: voz.tom, tratamento: voz.tratamento, fonetica: voz.fonetica, sotaque: voz.sotaque, estilo: voz.estilo, reserva: voz.reserva, destino });
       }
       cena = { ...base, fala, legenda, audio };
     }
@@ -1038,6 +1106,9 @@ async function principal() {
     filtros.push(`[1:v]scale=260:-1,format=rgba,colorchannelmixer=aa=0.9[wm]`, `[leg][wm]overlay=W-w-40:40[v]`);
     ultimo = "[v]";
   }
+  // com cena gerada pelo Veo o rótulo precisa citar as imagens (e existe mesmo
+  // que o roteiro não tenha pedido)
+  if (clipesGerados.length && !/imag/i.test(spec.rotulo_ia || "")) spec.rotulo_ia = spec.rotulo_ia ? "Voz e imagens geradas com IA" : "Imagens geradas com IA";
   if (spec.rotulo_ia) {
     // rótulo discreto e fixo no canto (ex.: "Imagem e voz geradas com IA"), em
     // vez de o narrador dizer que é IA (editor, 26/09: "somente noticie os fatos")
@@ -1110,6 +1181,8 @@ async function principal() {
         }
       : null,
     credito_musica: trilha ? `Música: ${trilha.credito}` : null,
+    // cenas geradas pelo Veo: proveniência (modelo, prompt, data) para a legenda e o arquivo
+    clipes_gerados_ia: clipesGerados.length ? clipesGerados : undefined,
     voz,
     abertura: { duracao: DUR_ABERTURA },
     cenas: cenas.map((c) => ({

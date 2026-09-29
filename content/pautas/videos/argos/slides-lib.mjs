@@ -78,6 +78,11 @@ html,body{width:1080px;height:1920px;background:transparent;font-family:Inter,sa
 .post .cred{font:600 24px/1.35 Inter;color:#9fb8ad;margin-top:18px}
 .janela{position:absolute;border:3px solid #2EDC8A;border-radius:28px;box-shadow:0 0 40px rgba(46,220,138,.55)}
 .cred-video{position:absolute;white-space:nowrap;font:700 24px/1.3 Inter;color:#cfe9dd;background:rgba(4,12,9,.78);border-radius:14px;padding:10px 16px}
+.tarja{position:absolute;left:70px;right:70px}
+.tarja .aspas{display:inline-flex;align-items:center;justify-content:center;width:84px;height:66px;border-radius:10px;background:#2EDC8A;color:#04150c;font:900 110px/1 Georgia,serif;padding-top:52px;overflow:hidden;margin-bottom:14px;box-shadow:0 0 22px rgba(46,220,138,.5)}
+.tarja p{font:800 50px/1.42 Inter;color:#0b0f0d}
+.tarja p span{background:#fff;padding:4px 14px;-webkit-box-decoration-break:clone;box-decoration-break:clone;border-radius:6px}
+.tarja p b{color:#0a7a4c}
 `;
 
 
@@ -99,4 +104,15 @@ export function cartaoPost(post, { topo = 460, imagemMax = 620 } = {}) {
 export function molduraVideo([x, y, w, h], credito) {
   return `<div class="janela" style="left:${x - 3}px;top:${y - 3}px;width:${w + 6}px;height:${h + 6}px"></div>` +
     `<div class="cred-video" style="left:${x}px;top:${y + h + 14}px">${esc(credito)}</div>`;
+}
+
+/**
+ * Tarja de manchete (formato do reel indicado pelo editor em 29/09: ícone de
+ * aspas + linhas em caixa branca sobre o vídeo). Vai como camada por cima de
+ * uma cena do Veo ou de um clipe real com crédito. `**trecho**` sai em verde.
+ * Só texto apurado; nunca frase atribuída a alguém sem aspas e fonte.
+ */
+export function tarjaManchete(texto, { topo = 1180 } = {}) {
+  const corpo = esc(texto).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
+  return `<div class="tarja" style="top:${topo}px"><div class="aspas">“</div><p><span>${corpo}</span></p></div>`;
 }
