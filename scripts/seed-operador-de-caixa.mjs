@@ -57,7 +57,9 @@ async function main() {
       `;
       console.log("✓ Token ABACS (de ABACS_TOKEN) salvo nas configurações da empresa");
     } else {
-      console.log("⚠️  ABACS_TOKEN não definido: token não gravado (configure no painel ou no .env)");
+      console.log(
+        "⚠️  ABACS_TOKEN não definido: token não gravado (configure no painel ou no .env)"
+      );
     }
     console.log("=========================================================");
     console.log("🎉 CONFIGURAÇÃO 'OPERADOR DE CAIXA' (CURSO 77) CONCLUÍDA!");

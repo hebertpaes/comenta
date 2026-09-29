@@ -31,8 +31,10 @@ export async function hotmartRoutes(app: FastifyInstance) {
 
     // Sem HOTMART_HOTTOK configurado o webhook fica fechado; com ele, só passa
     // quem mandar o mesmo hottok (antes qualquer POST era aceito como compra).
-    if (!OFFICIAL_HOTTOK) return reply.status(503).send({ error: "Webhook Hotmart não configurado." });
-    const receivedHottok = req.headers["x-hotmart-hottok"] ?? req.headers["hottok"] ?? payload.hottok;
+    if (!OFFICIAL_HOTTOK)
+      return reply.status(503).send({ error: "Webhook Hotmart não configurado." });
+    const receivedHottok =
+      req.headers["x-hotmart-hottok"] ?? req.headers["hottok"] ?? payload.hottok;
     if (!mesmoSegredo(receivedHottok, OFFICIAL_HOTTOK)) {
       return reply.status(401).send({ error: "Hottok inválido." });
     }
@@ -172,32 +174,36 @@ export async function hotmartRoutes(app: FastifyInstance) {
   });
 
   // Teste interno: só administrador autenticado (antes era aberto a qualquer um).
-  app.post("/webhooks/hotmart/test", { preHandler: [authenticate, requireAdmin] }, async (req, reply) => {
-    const testPayload = {
-      hottok: OFFICIAL_HOTTOK,
-      event: "PURCHASE_APPROVED",
-      data: {
-        buyer: {
-          name: "Hebert Paes (Aluno Conectado)",
-          email: "hebert@comenta.com.br",
-          checkout_phone: "5566999999999",
+  app.post(
+    "/webhooks/hotmart/test",
+    { preHandler: [authenticate, requireAdmin] },
+    async (req, reply) => {
+      const testPayload = {
+        hottok: OFFICIAL_HOTTOK,
+        event: "PURCHASE_APPROVED",
+        data: {
+          buyer: {
+            name: "Hebert Paes (Aluno Conectado)",
+            email: "hebert@comenta.com.br",
+            checkout_phone: "5566999999999",
+          },
+          product: {
+            id: 123456,
+            name: "Formação Atendente IA & Vendas no WhatsApp",
+          },
+          purchase: {
+            transaction: `HOT_COURSE_${Date.now()}`,
+          },
         },
-        product: {
-          id: 123456,
-          name: "Formação Atendente IA & Vendas no WhatsApp",
-        },
-        purchase: {
-          transaction: `HOT_COURSE_${Date.now()}`,
-        },
-      },
-    };
+      };
 
-    const res = await app.inject({
-      method: "POST",
-      url: "/webhooks/hotmart",
-      payload: testPayload,
-    });
+      const res = await app.inject({
+        method: "POST",
+        url: "/webhooks/hotmart",
+        payload: testPayload,
+      });
 
-    return reply.send(JSON.parse(res.payload));
-  });
+      return reply.send(JSON.parse(res.payload));
+    }
+  );
 }

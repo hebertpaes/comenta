@@ -26,7 +26,12 @@ vi.mock("../src/db/client.js", () => {
   };
   const alteracao = () => {
     estado.gravou();
-    const q: any = { set: () => q, values: () => q, where: () => Promise.resolve([]), returning: () => Promise.resolve([]) };
+    const q: any = {
+      set: () => q,
+      values: () => q,
+      where: () => Promise.resolve([]),
+      returning: () => Promise.resolve([]),
+    };
     return q;
   };
   return {
@@ -80,7 +85,11 @@ describe("webhook Hotmart", () => {
     process.env.HOTMART_HOTTOK = "hottok-de-teste-123";
     const app = await montar("hotmart");
     for (const extra of [{}, { hottok: "errado" }, { hottok: "hottok-de-teste-12" }]) {
-      const r = await app.inject({ method: "POST", url: "/webhooks/hotmart", payload: { ...compra, ...extra } });
+      const r = await app.inject({
+        method: "POST",
+        url: "/webhooks/hotmart",
+        payload: { ...compra, ...extra },
+      });
       expect(r.statusCode).toBe(401);
       expect(r.body).not.toContain("hottok-de-teste-123");
     }
@@ -118,7 +127,10 @@ describe("integração ABACS", () => {
   it("webhook fica fechado (503) sem token configurado", async () => {
     estado.empresa = { id: "c1", settings: {} };
     const app = await montar("abacs");
-    const r = await app.inject({ method: "GET", url: "/integracao/hotmart/hotmart.php?token=qualquer&curso=77" });
+    const r = await app.inject({
+      method: "GET",
+      url: "/integracao/hotmart/hotmart.php?token=qualquer&curso=77",
+    });
     expect(r.statusCode).toBe(503);
   });
 
@@ -141,7 +153,10 @@ describe("integração ABACS", () => {
     process.env.ABACS_TOKEN = "token-do-ambiente-5555";
     estado.empresa = { id: "c1", settings: { abacsToken: "token-antigo-do-painel" } };
     const app = await montar("abacs");
-    const antigo = await app.inject({ method: "GET", url: "/integracao/hotmart/hotmart.php?token=token-antigo-do-painel" });
+    const antigo = await app.inject({
+      method: "GET",
+      url: "/integracao/hotmart/hotmart.php?token=token-antigo-do-painel",
+    });
     expect(antigo.statusCode).toBe(401);
   });
 
@@ -153,7 +168,11 @@ describe("integração ABACS", () => {
       ["POST", "/abacs/config"],
       ["POST", "/abacs/sync-hotmart"],
     ] as const) {
-      const r = await app.inject({ method, url, payload: method === "POST" ? { abacsToken: "invasor" } : undefined });
+      const r = await app.inject({
+        method,
+        url,
+        payload: method === "POST" ? { abacsToken: "invasor" } : undefined,
+      });
       expect(r.statusCode).toBe(401);
     }
     const atendente = await app.inject({
@@ -169,7 +188,10 @@ describe("integração ABACS", () => {
   it("administrador vê as credenciais só mascaradas", async () => {
     estado.empresa = {
       id: "c1",
-      settings: { abacsToken: "token-abacs-certo-9876", paymentApiKey: "chave-pagamento-secreta-4321" },
+      settings: {
+        abacsToken: "token-abacs-certo-9876",
+        paymentApiKey: "chave-pagamento-secreta-4321",
+      },
     };
     const app = await montar("abacs");
     const r = await app.inject({

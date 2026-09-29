@@ -11,7 +11,9 @@ import { authenticate, requireAdmin } from "../lib/http.js";
  * (settings.abacsToken). Nunca no código: o repositório já foi público e o
  * valor antigo precisa ser trocado junto à ABACS. */
 function tokenEsperado(settings: Record<string, any>): string {
-  return process.env.ABACS_TOKEN || (typeof settings.abacsToken === "string" ? settings.abacsToken : "");
+  return (
+    process.env.ABACS_TOKEN || (typeof settings.abacsToken === "string" ? settings.abacsToken : "")
+  );
 }
 
 function mesmoSegredo(recebido: unknown, esperado: string): boolean {
@@ -22,7 +24,8 @@ function mesmoSegredo(recebido: unknown, esperado: string): boolean {
 }
 
 /** Mostra só o final de um segredo (painel), nunca o valor inteiro. */
-const final4 = (v: unknown) => (typeof v === "string" && v.length > 4 ? `…${v.slice(-4)}` : v ? "…" : "");
+const final4 = (v: unknown) =>
+  typeof v === "string" && v.length > 4 ? `…${v.slice(-4)}` : v ? "…" : "";
 
 /**
  * Módulo de Integração ABACS / Escola Avançada / Playcurso <-> Hotmart & Comenta.
@@ -189,7 +192,8 @@ export async function abacsRoutes(app: FastifyInstance) {
       accessTokenCard: final4(settings.accessTokenCard),
       publicKey: final4(settings.publicKey),
       collectorId: final4(settings.collectorId),
-      webhookUrl: "https://abacs.org.br/integracao/hotmart/hotmart.php?token=<ABACS_TOKEN>&curso=77",
+      webhookUrl:
+        "https://abacs.org.br/integracao/hotmart/hotmart.php?token=<ABACS_TOKEN>&curso=77",
     });
   });
 
@@ -202,7 +206,13 @@ export async function abacsRoutes(app: FastifyInstance) {
     // Só grava o que veio preenchido (não apaga credencial com campo vazio).
     const atuais = (company.settings as Record<string, any>) || {};
     const novos: Record<string, string> = {};
-    for (const k of ["abacsToken", "paymentApiKey", "accessTokenCard", "publicKey", "collectorId"]) {
+    for (const k of [
+      "abacsToken",
+      "paymentApiKey",
+      "accessTokenCard",
+      "publicKey",
+      "collectorId",
+    ]) {
       if (typeof body[k] === "string" && body[k].trim()) novos[k] = body[k].trim();
     }
     const updatedSettings = { ...atuais, ...novos };
@@ -219,33 +229,37 @@ export async function abacsRoutes(app: FastifyInstance) {
   });
 
   // Teste de Sincronismo de Aluno Hotmart -> ABACS Portal (login.php)
-  app.post("/abacs/sync-hotmart", { preHandler: [authenticate, requireAdmin] }, async (req, reply) => {
-    const body = (req.body as any) || {};
-    const usuario = typeof body.usuario === "string" ? body.usuario : "";
-    const senha = typeof body.senha === "string" ? body.senha : "";
-    if (!usuario || !senha) return reply.status(400).send({ error: "Informe usuário e senha." });
+  app.post(
+    "/abacs/sync-hotmart",
+    { preHandler: [authenticate, requireAdmin] },
+    async (req, reply) => {
+      const body = (req.body as any) || {};
+      const usuario = typeof body.usuario === "string" ? body.usuario : "";
+      const senha = typeof body.senha === "string" ? body.senha : "";
+      if (!usuario || !senha) return reply.status(400).send({ error: "Informe usuário e senha." });
 
-    try {
-      const abacsRes = await fetch("https://abacs.org.br/processa.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ usuario, senha }).toString(),
-      }).catch(() => null);
+      try {
+        const abacsRes = await fetch("https://abacs.org.br/processa.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({ usuario, senha }).toString(),
+        }).catch(() => null);
 
-      return reply.send({
-        success: true,
-        abacsPortalUrl: "https://abacs.org.br/login.php",
-        synced: true,
-        status: abacsRes ? abacsRes.status : 200,
-        message: `Aluno ${usuario} (Operador de Caixa) sincronizado com a ABACS e Hotmart com sucesso!`,
-      });
-    } catch {
-      return reply.send({
-        success: true,
-        abacsPortalUrl: "https://abacs.org.br/login.php",
-        synced: true,
-        message: `Sincronismo ABACS simulado com sucesso.`,
-      });
+        return reply.send({
+          success: true,
+          abacsPortalUrl: "https://abacs.org.br/login.php",
+          synced: true,
+          status: abacsRes ? abacsRes.status : 200,
+          message: `Aluno ${usuario} (Operador de Caixa) sincronizado com a ABACS e Hotmart com sucesso!`,
+        });
+      } catch {
+        return reply.send({
+          success: true,
+          abacsPortalUrl: "https://abacs.org.br/login.php",
+          synced: true,
+          message: `Sincronismo ABACS simulado com sucesso.`,
+        });
+      }
     }
-  });
+  );
 }
