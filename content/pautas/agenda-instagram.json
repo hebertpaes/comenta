@@ -255,7 +255,7 @@
     },
     {
       "id": "17",
-      "status": "agendado",
+      "status": "aguardando_materia",
       "permalink": null,
       "publicado_em": null,
       "quando": "2026-09-28T15:30:00-04:00",
@@ -266,7 +266,7 @@
       ],
       "legenda": "IA na fábrica: uso mais que dobra em dois anos e já rende resultado medido\n\nEntre 2022 e 2024, a fatia de empresas industriais com IA passou de 16,9% para 41,9% (IBGE). WEG, Tupy, Bosch e Petrobras contam ganhos em reais, horas e taxa de erro. Mas 58% das empresas ainda não conseguem tirar os pilotos do laboratório (Deloitte).\n\nMatéria completa: hojemt.com.br/ia-na-industria-onde-ja-da-resultado\n\n#inteligenciaartificial #industria #tecnologia #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/ia-na-industria-onde-ja-da-resultado/",
-      "obs": "publicar só depois que a matéria (rascunho no Ghost) for publicada; se ainda estiver em rascunho no horário, pular e avisar"
+      "obs": "publicar só depois que a matéria (rascunho no Ghost) for publicada; se ainda estiver em rascunho no horário, pular e avisar. 29/09 19:37 (Cuiabá): pulado pela rotina — matéria ainda em rascunho no Ghost (id 6ab5203a834d62060cb1d11f); reagendar quando for publicada"
     },
     {
       "id": "12",
