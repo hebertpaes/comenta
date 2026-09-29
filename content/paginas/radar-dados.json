@@ -2393,7 +2393,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "29/09/2026 18:58",
+  "atualizado": "29/09/2026 19:43",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -3038,6 +3038,27 @@
         "HiperNotícias",
         "https://www.hnt.com.br/justica/tre-barra-pesquisa-do-verita-em-mt-apos-identificar-duplicacoes-e-falhas-na-amostra/577762",
         ""
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-28",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "A pedido da coligação de Janaina Riva, o juiz auxiliar Marcelo Morgado multou em R$ 5 mil a responsável por perfis de uma pizzaria de Juara por quatro publicações que atribuíam a Janaina falas falsas ou fora de contexto, entre elas uma defesa, entre aspas, dos ministros do STF; as publicações ficam fora do ar (decisão publicada em 28/9).",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/dona-de-pizzaria-e-multada-por-fake-news-contra-candidata-em-mt/574710",
+        "2026-09-29"
+       ],
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/empresaria-e-multada-pela-justica-eleitoral-apos-usar-perfil-de-pizzaria-para-publicar-falas-falsas-atribuidas-a-janaina-riva",
+        "2026-09-29"
        ]
       ],
       "papel": "pedido"
