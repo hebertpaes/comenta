@@ -18,13 +18,13 @@
   "https://www.olhardireto.com.br"
  ],
  "ultimo_video_visto": {
-  "id": "DlKj0rqJ8x0",
-  "titulo": "Sérgio Ricardo recebe famílias atípicas que denunciam problemas no atendimento da rede estadual",
-  "publicado": "2026-09-25T17:40"
+  "id": "oXxObLhdCUg",
+  "titulo": "Sérgio Ricardo destaca certificação internacional em auditoria conquistada por servidoras do TCE-MT",
+  "publicado": "2026-09-29T21:42"
  },
  "ultima_sessao_vista": {
-  "id": "NVujAcJDkRU",
-  "titulo": "TCE-MT – 13ª SESSÃO ORDINÁRIA DO PLENÁRIO PRESENCIAL - 15 DE SETEMBRO DE 2026"
+  "id": "aTo4U6AIDDs",
+  "titulo": "TCE-MT – 14ª SESSÃO ORDINÁRIA DO PLENÁRIO PRESENCIAL - 29 DE SETEMBRO DE 2026"
  },
  "pautas": [
   {
@@ -90,6 +90,28 @@
    "arte": "pautas/ilustracoes/2026-09-25-tce-itanhanga-licitacao.jpg",
    "instagram": "agenda 56 (aguardando_materia)",
    "origem": "vídeo oficial DhShurxPhis (25/09) + texto do TCE reproduzido por 4 veículos (16/09) + PNCP (Dispensa Eletrônica 15/2026 de Itanhangá)"
+  },
+  {
+   "data": "2026-09-29",
+   "slug": "tce-mt-conselheiros-admitem-falta-em-protesto-e-sessao-tem-bate-boca",
+   "status": "rascunho",
+   "ghost_id": "6abc3e4d834d62060cb1de1e",
+   "rascunho": "https://hojemt.com.br/p/70230183-c1d4-4231-a782-00f8fbadf43b/",
+   "arte": "pautas/ilustracoes/2026-09-29-tce-sessao-bate-boca.jpg",
+   "card_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-29-tce-sessao-bate-boca-instagram-retrato.jpg",
+   "instagram": "item de agenda devolvido ao orquestrador (aguardando_materia)",
+   "origem": "sessão oficial aTo4U6AIDDs (14ª, 29/09; não transcrita) + Olhar Direto (repórter no local), Infoverus e Veja Bem MT; desdobramento de 2026-09-24-crise-no-tce-mt"
+  },
+  {
+   "data": "2026-09-29",
+   "slug": "pocone-tce-mt-multa-ex-prefeito-por-falhas-no-controle-da-frota",
+   "status": "rascunho",
+   "ghost_id": "6abc3e4d834d62060cb1de23",
+   "rascunho": "https://hojemt.com.br/p/fa6b1ed4-d627-4f04-a8c1-98848078af37/",
+   "arte": "pautas/ilustracoes/2026-09-29-tce-pocone-frota.jpg",
+   "card_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-29-tce-pocone-frota-instagram-retrato.jpg",
+   "instagram": "item de agenda devolvido ao orquestrador (aguardando_materia)",
+   "origem": "decisão singular de Alisson Alencar no DOC de 25/09 (segundo Poconet) + Olhar Direto, O Documento, Infoverus, VIP MT (29/09)"
   }
  ],
  "transcricoes": [
@@ -129,11 +151,21 @@
     "Waldir Teis pondera que o atestado público pode se justificar, recusa pedir vista e acompanha; 'Aprovado por unanimidade' (30:16); processo ouvido '27879 8, dígito 9 de 2026'; acórdão ouvido '447 de 2026'"
    ],
    "falta": "a transcrição não identifica oradores; ouvir os trechos citados antes de publicar e conferir os números no DOC"
+  },
+  {
+   "video": "aTo4U6AIDDs",
+   "sessao": "14ª ordinária, 29/09/2026",
+   "trecho": "nenhum",
+   "ferramenta": "tentado: yt-dlp (YouTube pede login: 'confirme que você não é um bot') e OpusClip (sem créditos: 'not enough credits', até para 5 min)",
+   "lido_em": "2026-09-29",
+   "pauta": "tce-mt-conselheiros-admitem-falta-em-protesto-e-sessao-tem-bate-boca",
+   "falta": "transcrever o bate-boca Sérgio Ricardo x Antonio Joaquim, a justificativa da saída de Teis e a resposta dele (horários desconhecidos; Olhar Direto publicou às 15h49 de Cuiabá), a lista de presença, auditores substitutos e o julgamento dos processos adiados de 22/09"
   }
  ],
  "ultima_verificacao": {
-  "data": "2026-09-25T22:47Z",
-  "rss": "vídeos novos desde Olgww1jsu-U: kSNRkkPaDcU (Me Conta, prazos processuais), DhShurxPhis (Itanhangá: virou pauta), BJh_ICPqsnw (MBA Gestão de Cidades, módulo 20), DlKj0rqJ8x0 (famílias atípicas: já coberto no rascunho das terapias; vídeo acrescentado como fonte). Nenhuma sessão plenária nova no feed.",
-  "proxima_sessao": "2026-09-29 (terça), presidente promete convocar auditores substitutos se houver ausências"
+  "data": "2026-09-29T22:51Z",
+  "rss": "vídeos novos desde DlKj0rqJ8x0: TkGbfICx73s (28/09, entendimento sobre verbas rescisórias de comissionados, consulta da Câmara de Tapurah, relator Alisson Alencar: não virou pauta nesta rodada, fica como sugestão), aScP3SrjD0Y (MBA, governo digital), IK1wiLtPFB4 (balanço 2025, institucional), hIEPaOH4NWU (29/09, Hospital de Câncer: decisão de Maluf publicada no DOC de 18/09, noticiada desde 19/09; vídeo tardio, não virou pauta), aTo4U6AIDDs (14ª sessão presencial, 29/09: virou pauta via imprensa, sem transcrição), oXxObLhdCUg (certificação internacional de auditoras, institucional).",
+  "web": "Olhar Direto, Infoverus e Veja Bem MT (sessão de 29/09); Poconet/Poconé Online, Olhar Direto, O Documento, Infoverus, VIP MT (Poconé); Portal Mato Grosso (Escola de Contas, 29/09); O Documento (Plenário Virtual com 93 processos esta semana; auditoras certificadas); site do TCE-MT fora do ar (503/conexão recusada), HNT e Fatos de MT bloqueados (403) para leitura direta.",
+  "proxima_sessao": "2026-10-06 (terça), 14h30; conferir presença, requerimento de desconto de 1/30 e processos adiados de 22/09"
  }
 }

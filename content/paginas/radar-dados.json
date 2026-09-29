@@ -299,7 +299,7 @@
   ]
  },
  "pesquisas": {
-  "atualizado": "29/09/2026 17:55",
+  "atualizado": "29/09/2026 18:47",
   "corridas": [
    {
     "id": "governador-mt",
@@ -315,44 +315,6 @@
      "Rafaell Milas"
     ],
     "pesquisas": [
-     {
-      "inst": "Veritá",
-      "contratante": "Sistema de Comunicação Pantanal/Rede Brasil de Televisão",
-      "campo": "20 a 24/09",
-      "amostra": "1.220",
-      "margem": "3",
-      "conf": 95,
-      "reg": "MT-09975/2026, BR-04418/2026",
-      "base": "totais",
-      "v": {
-       "Otaviano Pivetta": 39.1,
-       "Wellington Fagundes": 32.3,
-       "Doutora Natasha": 15,
-       "Sargento Laudicério": 1.3,
-       "Rafaell Milas": 0.7,
-       "Maurício Coelho": 0.5,
-       "Branco/nulo": 5.8,
-       "Não sabe/não respondeu": 5.3
-      },
-      "fontes": [
-       [
-        "HiperNotícias",
-        "https://www.hnt.com.br/politica/pivetta-chega-a-441-dos-votos-validos-e-abre-78-pontos-sobre-wellington/577654",
-        "2026-09-28"
-       ],
-       [
-        "Muvuca Popular",
-        "https://www.muvucapopular.com.br/2026/09/28/pivetta-amplia-vantagem-sobre-wellington-e-lidera-disputa-pelo-governo-de-mt-com-391/",
-        "2026-09-28"
-       ],
-       [
-        "CNN Brasil",
-        "https://www.cnnbrasil.com.br/eleicoes/verita-pivetta-tem-391-no-1o-turno-em-mt-fagundes-323/",
-        "2026-09-28"
-       ]
-      ],
-      "nota": "Votos válidos divulgados: Pivetta 44,1%, Wellington 36,3%, Natasha 16,9%, Laudicério 1,4%, Milas 0,8%, Maurício Coelho 0,6%. O instituto não divulgou 2º turno."
-     },
      {
       "inst": "Quaest",
       "contratante": "Rádio e Televisão Matogrossense Ltda. (TV Centro América)",
@@ -633,7 +595,8 @@
        ]
       ]
      }
-    ]
+    ],
+    "nota": "A pesquisa Veritá (MT-09975/2026, 20 a 24/9) não aparece aqui: a divulgação foi suspensa por liminar do TRE-MT em 28/9 (juiz auxiliar Flávio Fraga e Silva, a pedido de Janaina Riva), que apontou 30 entrevistas duplicadas e localidades que não batem com os municípios informados. É decisão provisória; o instituto tem prazo para se explicar."
    },
    {
     "id": "senado-mt",
@@ -7524,16 +7487,15 @@
   "metodo": "Análise HOJE MT, feita com dados verificáveis: pesquisas registradas na Justiça Eleitoral, decisões confirmadas por fonte oficial ou dois veículos, coligações e apoios publicados, estudo de redes do Instituto Democracia em Xeque/UFMT e gastos declarados à Justiça Eleitoral. Cada candidato tem o mesmo número de pontos, em ordem alfabética, e cada ponto traz a fonte. Não é recomendação de voto."
  },
  "boletim": {
-  "quando": "Boletim nº 3 · 29/09/2026, 17:57 (MT)",
+  "quando": "Boletim nº 3 · 29/09/2026, 18:52 (MT)",
   "titulo": "As pesquisas da reta final",
   "texto": [
-   "Duas novas pesquisas registradas mostram Otaviano Pivetta (Republicanos) e Wellington Fagundes (PL) nos dois primeiros lugares na disputa pelo governo de Mato Grosso. Na Quaest (21 a 24/9, divulgada em 25/9), Pivetta tem 29% e Wellington, 27%; Doutora Natasha (PSD) tem 11%. Com margem de erro de três pontos, os dois estão em empate técnico. No 2º turno simulado pela Quaest, Wellington tem 41% e Pivetta, 36%, também em empate técnico.",
-   "Na Veritá (20 a 24/9, divulgada em 28/9), Pivetta tem 39,1%; Wellington, 32,3%; e Natasha, 15%. Nos votos válidos, Pivetta chega a 44,1%; para vencer no 1º turno é preciso mais da metade dos válidos. A Veritá não divulgou 2º turno.",
-   "Para o Senado, na Quaest, Mauro Mendes (União) tem 37% no 1º voto e Janaina Riva (MDB), 19%; Zé Medeiros (PL) tem 11%, e Pedro Taques (PSB) e Carlos Fávaro (PSD), 8% cada. Pesquisa é retrato do momento; a eleição é no domingo, 4 de outubro. As fichas técnicas completas estão na seção Pesquisas, logo abaixo.",
-   "Na urna, o voto começa por deputado federal e deputado estadual; depois vêm dois votos para o Senado, um para cada vaga, e então governador e presidente. O celular não pode ser usado na cabine de votação, e o Tribunal Superior Eleitoral recomenda anotar os números dos candidatos antes de sair de casa. O vídeo reproduz um trecho do vídeo oficial do TSE sobre a ordem de votação (sem o áudio original) e a postagem do TSE sobre a cola eleitoral, com crédito.",
+   "A pesquisa Quaest (21 a 24/9, divulgada em 25/9), registrada na Justiça Eleitoral, mostra Otaviano Pivetta (Republicanos) e Wellington Fagundes (PL) nos dois primeiros lugares na disputa pelo governo de Mato Grosso: Pivetta tem 29% e Wellington, 27%; Doutora Natasha (PSD) tem 11%. Com margem de erro de três pontos, os dois estão em empate técnico. No 2º turno simulado pela Quaest, Wellington tem 41% e Pivetta, 36%, também em empate técnico.",
+   "A Justiça Eleitoral suspendeu em 28/9 a divulgação da pesquisa Veritá (MT-09975/2026) para o governo e o Senado, a pedido de Janaina Riva, depois de encontrar 30 entrevistas duplicadas e localidades que não batem com os municípios informados. É uma liminar, decisão provisória; o instituto tem prazo para se explicar. Por isso os números dessa pesquisa não aparecem no Radar.",
+   "Para o Senado, na Quaest, Mauro Mendes (União) tem 37% no 1º voto e Janaina Riva (MDB), 19%; Zé Medeiros (PL) tem 11%, e Pedro Taques (PSB) e Carlos Fávaro (PSD), 8% cada. Pesquisa é retrato do momento; a eleição é no domingo, 4 de outubro. Na urna, o voto começa por deputado federal e estadual; depois vêm dois votos para o Senado, um para cada vaga, e então governador e presidente. O celular não pode ser usado na cabine, e o TSE recomenda anotar os números antes de sair de casa.",
    "Voz do vídeo gerada com IA (narrador sintético, sem imitar pessoa real); os slides e os fatos são feitos, apurados e conferidos pela redação do HOJE MT; postagens reproduzidas: @TSEjusbr no X. Música do vídeo: \"Windswept\", de Kevin MacLeod (incompetech.com), licença CC BY 4.0."
   ],
-  "video": "https://hojemt.com.br/content/media/2026/09/2026-09-29-boletim-03-v3.mp4",
+  "video": "https://hojemt.com.br/content/media/2026/09/2026-09-29-boletim-03-v4.mp4",
   "poster": "https://hojemt.com.br/content/images/2026/09/2026-09-29-boletim-03-capa.jpg",
   "fontes": [
    [
@@ -7552,13 +7514,13 @@
     "2026-09-25"
    ],
    [
-    "HiperNotícias (Veritá)",
-    "https://www.hnt.com.br/politica/pivetta-chega-a-441-dos-votos-validos-e-abre-78-pontos-sobre-wellington/577654",
+    "Olhar Direto (Veritá suspensa)",
+    "https://olhardireto.com.br/juridico/noticias/tre-barra-pesquisa-verita-ao-governo-e-senado-por-registros-duplicados-e-falhas-na-amostra",
     "2026-09-28"
    ],
    [
-    "Muvuca Popular (Veritá)",
-    "https://www.muvucapopular.com.br/2026/09/28/pivetta-amplia-vantagem-sobre-wellington-e-lidera-disputa-pelo-governo-de-mt-com-391/",
+    "MidiaJur (Veritá suspensa)",
+    "https://www.midiajur.com.br/eleicoes-2026/tre-suspende-pesquisa-verita-apos-encontrar-registros-duplicados-e-inconsistencias/87426",
     "2026-09-28"
    ],
    [

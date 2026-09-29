@@ -29,13 +29,12 @@ const radar = JSON.parse(readFileSync(join(REPO, "paginas/radar-dados.json"), "u
 const [gov, sen] = radar.pesquisas.corridas;
 const achar = (c, inst, reg) => c.pesquisas.find((q) => q.inst === inst && q.reg.includes(reg));
 const qGov = achar(gov, "Quaest", "MT-08098");
-const vGov = achar(gov, "Veritá", "MT-09975");
 const qSen = achar(sen, "Quaest", "MT-08098");
 // postagens oficiais do TSE no X (buscadas com redes-post.mjs; mídia no scratchpad)
 const post = (id) => JSON.parse(readFileSync(join(SCRATCH, "redes-cache", `x-${id}.json`), "utf8"));
 const tseOrdem = post("2088037888218853564"); // vídeo "ordem de votação", 13/08/2026
 const tseCola = post("2094092790699368719"); // "cola eleitoral", 30/08/2026
-if (!qGov || !vGov || !qSen) throw new Error("pesquisa não encontrada no radar");
+if (!qGov || !qSen) throw new Error("pesquisa não encontrada no radar");
 
 function barras(v, nomes, { max = 50, pq = false, partidos = {} } = {}) {
   return nomes.map((n) => {
@@ -61,11 +60,11 @@ const cenas = [];
 
 // 1 — abertura da notícia
 cenas.push({
-  fala: "Duas novas pesquisas registradas mostram Otaviano Pivetta e Wellington Fagundes nos dois primeiros lugares na disputa pelo governo de Mato Grosso.",
+  fala: "A pesquisa Quaest, registrada na Justiça Eleitoral, mostra Otaviano Pivetta e Wellington Fagundes nos dois primeiros lugares na disputa pelo governo de Mato Grosso.",
   movimento: "zoom-in",
   pecas: [
-    [0, CAB + `<div class="p" style="top:330px"><span class="chip">Governo de MT</span></div><div class="p tit" style="top:470px">Duas novas<br>pesquisas<br><b>registradas</b></div>`],
-    [1, `<div class="p card" style="top:900px"><h3>Nos dois primeiros lugares</h3><div class="sub" style="font-size:52px;font-weight:800;color:#fff">Otaviano Pivetta <span style="color:#9fb8ad;font-size:32px;font-weight:600">Republicanos</span></div><div class="sub" style="font-size:52px;font-weight:800;color:#fff;margin-top:22px">Wellington Fagundes <span style="color:#9fb8ad;font-size:32px;font-weight:600">PL</span></div><div class="ficha" style="margin-top:28px">Quaest (21 a 24/9) e Veritá (20 a 24/9)</div></div>`],
+    [0, CAB + `<div class="p" style="top:330px"><span class="chip">Governo de MT</span></div><div class="p tit" style="top:470px">Pesquisa<br>Quaest<br><b>registrada</b></div>`],
+    [1, `<div class="p card" style="top:900px"><h3>Nos dois primeiros lugares</h3><div class="sub" style="font-size:52px;font-weight:800;color:#fff">Otaviano Pivetta <span style="color:#9fb8ad;font-size:32px;font-weight:600">Republicanos</span></div><div class="sub" style="font-size:52px;font-weight:800;color:#fff;margin-top:22px">Wellington Fagundes <span style="color:#9fb8ad;font-size:32px;font-weight:600">PL</span></div><div class="ficha" style="margin-top:28px">Quaest · 21 a 24/9 · registro MT-08098/2026</div></div>`],
   ],
   quando: [null, "Otaviano Pivetta"],
 });
@@ -99,34 +98,17 @@ cenas.push({
   quando: [null, "margem de erro", "empate técnico"],
 });
 
-// 4 — Veritá governo
-{
-  const v = vGov.v, nomes = ordena(v, GOV6), linhas = barras(v, nomes, { max: 45, partidos: PART });
-  const extra = ` · brancos e nulos ${pct(v["Branco/nulo"])}, não souberam ${pct(v["Não sabe/não respondeu"])}`;
-  cenas.push({
-    fala: "Na pesquisa da Veritá, Pivetta tem trinta e nove vírgula um por cento; Wellington, trinta e dois vírgula três; e Natasha, quinze por cento.",
-    movimento: "zoom-in",
-    pecas: [
-      [0, CAB + `<div class="p" style="top:330px"><span class="chip">Veritá · 1º turno</span></div>`],
-      [0, `<div class="p card" style="top:480px"><h3>Governo de MT · votos totais</h3>${resto(3, 104, linhas.slice(3).join(""))}<div style="height:${6 * 104}px"></div><div class="ficha">${ficha(vGov, extra)}</div></div>`],
-      [1, lay(0, 104, linhas[0])],
-      [2, lay(1, 104, linhas[1])],
-      [3, lay(2, 104, linhas[2])],
-    ],
-    quando: [null, "Pivetta tem", "Wellington, trinta", "Natasha, quinze"],
-  });
-}
-
-// 5 — votos válidos (Veritá)
+// 4 — pesquisa Veritá suspensa (sem os números: divulgação suspensa por liminar)
 cenas.push({
-  fala: "Nos votos válidos da Veritá, Pivetta chega a quarenta e quatro vírgula um por cento. Para vencer no primeiro turno, é preciso mais da metade.",
-  movimento: "close-in",
+  fala: "A Justiça Eleitoral suspendeu a divulgação da pesquisa Veritá para o governo e o Senado, a pedido de Janaina Riva, depois de encontrar entrevistas duplicadas. É uma decisão provisória, e o instituto pode se explicar.",
+  movimento: "zoom-out",
   pecas: [
-    [0, CAB + `<div class="p" style="top:330px"><span class="chip">Veritá · votos válidos</span></div>`],
-    [1, `<div class="p" style="top:560px;text-align:center"><div class="grande">44,1%</div><div class="sub" style="margin-top:18px;font-size:44px;color:#fff;font-weight:800">Otaviano Pivetta</div><div class="sub" style="font-size:32px">Wellington Fagundes 36,3% · Doutora Natasha 16,9%</div></div>`],
-    [2, `<div class="p" style="top:1180px;text-align:center"><span class="pill" style="font-size:44px">Vitória no 1º turno: mais de 50% dos válidos</span></div>`],
+    [0, CAB + `<div class="p" style="top:330px"><span class="chip">Justiça Eleitoral</span></div><div class="p tit" style="top:470px">Pesquisa Veritá<br><b>suspensa</b></div>`],
+    [1, `<div class="p" style="top:760px"><span class="pill">Liminar do TRE-MT · 28/9</span><span class="pill">Pedido de Janaina Riva</span></div>`],
+    [2, `<div class="p" style="top:950px"><span class="pill">30 entrevistas duplicadas</span></div>`],
+    [3, `<div class="p" style="top:1050px"><span class="pill">Decisão provisória</span><span class="pill">Instituto pode se explicar</span></div>`],
   ],
-  quando: [null, "Pivetta chega", "Para vencer"],
+  quando: [null, "a pedido de Janaina", "entrevistas duplicadas", "decisão provisória"],
 });
 
 // 6 — 2º turno Quaest

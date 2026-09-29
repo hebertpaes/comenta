@@ -4,7 +4,7 @@
  "materia": "https://hojemt.com.br/radar-eleitoral/",
  "estilo": "slides",
  "universo": "Slides escuros com ondas e curvas de nível verdes (estilo visual do vídeo de referência indicado pelo editor), sem avatar",
- "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides (editor, 29/09: 'Não deixe avatar. Deixe somente a voz e slides'; 'Deixe uma voz menos grave e mais rápida e com português brasileiro com sotaque Cuiabano'; slides no estilo de youtu.be/M6jemlgwZxU, 'somente com narrador e slides em tempo real', 'retirando qualquer coisa fluência de Portugal'). Do vídeo de referência veio só o estilo visual; o narrador dele não é imitado. Voz: Kokoro pm_alex (sintética genérica), velocidade 1,18, tom +2 semitons (menos grave), fonética como no treino do Kokoro (espeak pt-br com ligaduras, --fonetica misaki) e sotaque 'cuiabano' aproximado (ch/x → tch, j/g → dj); nenhuma voz de pessoa real. Camadas de cada slide entram quando o narrador chega ao trecho (campo camadas). Sem legenda queimada: o texto está nos slides. A informação de que a voz é sintética fica só na tela (rótulo fixo e cartela final), na página e na legenda. Números: paginas/radar-dados.json em 29/09/2026 (Quaest MT-08098/2026, 21 a 24/9, divulgada em 25/9; Veritá MT-09975/2026, 20 a 24/9, divulgada em 28/9). Veritá para o Senado ficou de fora: os números publicados não fecham (1º voto soma mais de 100%) e as fontes divergem entre votos totais e válidos. Tratamento igual: todos os candidatos nos gráficos, em ordem de resultado; pesquisas contadas de forma neutra. Versão 2 (29/09, editor: 'Não precisa de avatar, somente áudio e slides e vídeos demonstrativos com imagens de postagens e vídeos de redes sociais'): cenas 9 e 10 com postagens oficiais do TSE no X, buscadas com redes-post.mjs — trecho de 9,5 s do vídeo 'ordem de votação' (x.com/TSEjusbr/status/2088037888218853564, 13/08/2026, sem o áudio original, numa caixa do slide) e cartão de reprodução do post 'cola eleitoral' (x.com/TSEjusbr/status/2094092790699368719, 30/08/2026), com crédito na tela. Uso como citação com autor e origem (Lei 9.610/1998, art. 46, III), sem alteração; fonte oficial. Versão 3 (29/09, editor: 'Aprimore a voz'): voz neural pt-BR AntonioNeural (voz sintética genérica do catálogo da Microsoft, pelo edge-tts), 18% mais rápida e um pouco mais aguda (+4 Hz); reserva automática: Kokoro v5. A voz neural não faz o sotaque cuiabano.",
+ "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides (editor, 29/09: 'Não deixe avatar. Deixe somente a voz e slides'; 'Deixe uma voz menos grave e mais rápida e com português brasileiro com sotaque Cuiabano'; slides no estilo de youtu.be/M6jemlgwZxU, 'somente com narrador e slides em tempo real', 'retirando qualquer coisa fluência de Portugal'). Do vídeo de referência veio só o estilo visual; o narrador dele não é imitado. Voz: Kokoro pm_alex (sintética genérica), velocidade 1,18, tom +2 semitons (menos grave), fonética como no treino do Kokoro (espeak pt-br com ligaduras, --fonetica misaki) e sotaque 'cuiabano' aproximado (ch/x → tch, j/g → dj); nenhuma voz de pessoa real. Camadas de cada slide entram quando o narrador chega ao trecho (campo camadas). Sem legenda queimada: o texto está nos slides. A informação de que a voz é sintética fica só na tela (rótulo fixo e cartela final), na página e na legenda. Números: paginas/radar-dados.json em 29/09/2026 (Quaest MT-08098/2026, 21 a 24/9, divulgada em 25/9; Veritá MT-09975/2026, 20 a 24/9, divulgada em 28/9). Veritá para o Senado ficou de fora: os números publicados não fecham (1º voto soma mais de 100%) e as fontes divergem entre votos totais e válidos. Tratamento igual: todos os candidatos nos gráficos, em ordem de resultado; pesquisas contadas de forma neutra. Versão 2 (29/09, editor: 'Não precisa de avatar, somente áudio e slides e vídeos demonstrativos com imagens de postagens e vídeos de redes sociais'): cenas 9 e 10 com postagens oficiais do TSE no X, buscadas com redes-post.mjs — trecho de 9,5 s do vídeo 'ordem de votação' (x.com/TSEjusbr/status/2088037888218853564, 13/08/2026, sem o áudio original, numa caixa do slide) e cartão de reprodução do post 'cola eleitoral' (x.com/TSEjusbr/status/2094092790699368719, 30/08/2026), com crédito na tela. Uso como citação com autor e origem (Lei 9.610/1998, art. 46, III), sem alteração; fonte oficial. Versão 3 (29/09, editor: 'Aprimore a voz'): voz neural pt-BR AntonioNeural (voz sintética genérica do catálogo da Microsoft, pelo edge-tts), 18% mais rápida e um pouco mais aguda (+4 Hz); reserva automática: Kokoro v5. A voz neural não faz o sotaque cuiabano. Versão 4 (29/09, 18h50 MT): a pesquisa Veritá (MT-09975/2026) saiu do boletim e do Radar — a divulgação foi suspensa por liminar do TRE-MT em 28/9 (juiz auxiliar Flávio Fraga e Silva, a pedido de Janaina Riva; 30 entrevistas duplicadas), o que as versões 1 a 3 não consideraram. A cena 4 passou a noticiar a suspensão, sem os números da pesquisa. Fontes: Olhar Direto, MidiaJur, Muvuca Popular, O Documento, 24 Horas MT.",
  "voz": {
   "motor": "edge",
   "narrador": "pt-BR-AntonioNeural",
@@ -34,7 +34,7 @@
   {
    "n": 1,
    "quem": "narrador",
-   "fala": "Duas novas pesquisas registradas mostram Otaviano Pivetta e Wellington Fagundes nos dois primeiros lugares na disputa pelo governo de Mato Grosso.",
+   "fala": "A pesquisa Quaest, registrada na Justiça Eleitoral, mostra Otaviano Pivetta e Wellington Fagundes nos dois primeiros lugares na disputa pelo governo de Mato Grosso.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-1-fundo.png",
    "movimento": "zoom-in",
    "camadas": [
@@ -97,9 +97,9 @@
   {
    "n": 4,
    "quem": "narrador",
-   "fala": "Na pesquisa da Veritá, Pivetta tem trinta e nove vírgula um por cento; Wellington, trinta e dois vírgula três; e Natasha, quinze por cento.",
+   "fala": "A Justiça Eleitoral suspendeu a divulgação da pesquisa Veritá para o governo e o Senado, a pedido de Janaina Riva, depois de encontrar entrevistas duplicadas. É uma decisão provisória, e o instituto pode se explicar.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-4-fundo.png",
-   "movimento": "zoom-in",
+   "movimento": "zoom-out",
    "camadas": [
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-4-c0.png",
@@ -107,24 +107,24 @@
     },
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-4-c1.png",
-     "quando": "Pivetta tem"
+     "quando": "a pedido de Janaina"
     },
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-4-c2.png",
-     "quando": "Wellington, trinta"
+     "quando": "entrevistas duplicadas"
     },
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-4-c3.png",
-     "quando": "Natasha, quinze"
+     "quando": "decisão provisória"
     }
    ]
   },
   {
    "n": 5,
    "quem": "narrador",
-   "fala": "Nos votos válidos da Veritá, Pivetta chega a quarenta e quatro vírgula um por cento. Para vencer no primeiro turno, é preciso mais da metade.",
+   "fala": "No segundo turno simulado pela Quaest, Wellington tem quarenta e um por cento, e Pivetta, trinta e seis, também em empate técnico.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-5-fundo.png",
-   "movimento": "close-in",
+   "movimento": "zoom-out",
    "camadas": [
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-5-c0.png",
@@ -132,20 +132,24 @@
     },
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-5-c1.png",
-     "quando": "Pivetta chega"
+     "quando": "Wellington tem"
     },
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-5-c2.png",
-     "quando": "Para vencer"
+     "quando": "Pivetta, trinta"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-5-c3.png",
+     "quando": "empate técnico"
     }
    ]
   },
   {
    "n": 6,
    "quem": "narrador",
-   "fala": "No segundo turno simulado pela Quaest, Wellington tem quarenta e um por cento, e Pivetta, trinta e seis, também em empate técnico.",
+   "fala": "Para o Senado, na Quaest, Mauro Mendes tem trinta e sete por cento no primeiro voto, e Janaina Riva, dezenove. Zé Medeiros tem onze; Pedro Taques e Carlos Fávaro, oito cada.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-6-fundo.png",
-   "movimento": "zoom-out",
+   "movimento": "pan-esq",
    "camadas": [
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-6-c0.png",
@@ -153,24 +157,28 @@
     },
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-6-c1.png",
-     "quando": "Wellington tem"
+     "quando": "Mauro Mendes tem"
     },
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-6-c2.png",
-     "quando": "Pivetta, trinta"
+     "quando": "Janaina Riva"
     },
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-6-c3.png",
-     "quando": "empate técnico"
+     "quando": "Zé Medeiros"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-6-c4.png",
+     "quando": "Pedro Taques"
     }
    ]
   },
   {
    "n": 7,
    "quem": "narrador",
-   "fala": "Para o Senado, na Quaest, Mauro Mendes tem trinta e sete por cento no primeiro voto, e Janaina Riva, dezenove. Zé Medeiros tem onze; Pedro Taques e Carlos Fávaro, oito cada.",
+   "fala": "Pesquisa é retrato do momento. A eleição é no domingo, quatro de outubro.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-7-fundo.png",
-   "movimento": "pan-esq",
+   "movimento": "zoom-in",
    "camadas": [
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-7-c0.png",
@@ -178,48 +186,19 @@
     },
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-7-c1.png",
-     "quando": "Mauro Mendes tem"
+     "quando": "retrato do momento"
     },
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-7-c2.png",
-     "quando": "Janaina Riva"
-    },
-    {
-     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-7-c3.png",
-     "quando": "Zé Medeiros"
-    },
-    {
-     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-7-c4.png",
-     "quando": "Pedro Taques"
+     "quando": "A eleição"
     }
    ]
   },
   {
    "n": 8,
    "quem": "narrador",
-   "fala": "Pesquisa é retrato do momento. A eleição é no domingo, quatro de outubro.",
-   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-8-fundo.png",
-   "movimento": "zoom-in",
-   "camadas": [
-    {
-     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-8-c0.png",
-     "em": 0
-    },
-    {
-     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-8-c1.png",
-     "quando": "retrato do momento"
-    },
-    {
-     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-8-c2.png",
-     "quando": "A eleição"
-    }
-   ]
-  },
-  {
-   "n": 9,
-   "quem": "narrador",
    "fala": "Na urna, o voto começa por deputado federal e deputado estadual. Depois vêm dois votos para o Senado, um para cada vaga, e então governador e presidente.",
-   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-9-fundo.png",
+   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-8-fundo.png",
    "movimento": "parado",
    "clipe": {
     "arquivo": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/redes-cache/x-2088037888218853564.mp4",
@@ -236,29 +215,46 @@
    },
    "camadas": [
     {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-8-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-8-c1.png",
+     "quando": "deputado federal"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-8-c2.png",
+     "quando": "dois votos"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-8-c3.png",
+     "quando": "governador e presidente"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "quem": "narrador",
+   "fala": "O celular não pode ser usado na cabine de votação. O Tribunal Superior Eleitoral recomenda anotar os números dos candidatos antes de sair de casa.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-9-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-9-c0.png",
      "em": 0
     },
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-9-c1.png",
-     "quando": "deputado federal"
-    },
-    {
-     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-9-c2.png",
-     "quando": "dois votos"
-    },
-    {
-     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-9-c3.png",
-     "quando": "governador e presidente"
+     "quando": "celular"
     }
    ]
   },
   {
    "n": 10,
    "quem": "narrador",
-   "fala": "O celular não pode ser usado na cabine de votação. O Tribunal Superior Eleitoral recomenda anotar os números dos candidatos antes de sair de casa.",
+   "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-10-fundo.png",
-   "movimento": "zoom-in",
+   "movimento": "zoom-out",
    "camadas": [
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-10-c0.png",
@@ -266,23 +262,6 @@
     },
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-10-c1.png",
-     "quando": "celular"
-    }
-   ]
-  },
-  {
-   "n": 11,
-   "quem": "narrador",
-   "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
-   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-11-fundo.png",
-   "movimento": "zoom-out",
-   "camadas": [
-    {
-     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-11-c0.png",
-     "em": 0
-    },
-    {
-     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-11-c1.png",
      "quando": "Radar Eleitoral"
     }
    ]
@@ -293,14 +272,14 @@
   "leia": "hojemt.com.br/radar-eleitoral",
   "fontes": [
    "Quaest/g1 MT",
-   "Veritá/HiperNotícias",
+   "Olhar Direto",
+   "MidiaJur",
    "Muvuca Popular",
-   "CNN Brasil",
    "TSE (PesqEle)",
    "TSE (@TSEjusbr no X)"
   ],
   "aviso": "Voz gerada com IA (narrador sintético). Fatos apurados e conferidos pela redação do HOJE MT; pesquisas registradas na Justiça Eleitoral, fichas técnicas no Radar Eleitoral."
  },
- "saida": "pautas/videos/argos/2026-09-29-boletim-03-v3.mp4",
+ "saida": "pautas/videos/argos/2026-09-29-boletim-03-v4.mp4",
  "rotulo_ia": "Voz gerada com IA"
 }
