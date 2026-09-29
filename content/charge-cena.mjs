@@ -421,6 +421,21 @@ const motoresVoz = {
     }
     return destino;
   },
+  edge(texto, { modelo = "pt-BR-AntonioNeural", velocidade = "+0%", tom = "+0Hz", destino }) {
+    // voz neural pt-BR (editor, 29/09: "Aprimore a voz"): lib/edge-tts.py; sai
+    // em mp3 e vira wav mono 24 kHz como as outras
+    const mp3 = destino.replace(/\.wav$/, ".mp3");
+    const vel = typeof velocidade === "number" ? `${velocidade >= 1 ? "+" : ""}${Math.round((velocidade - 1) * 100)}%` : String(velocidade);
+    const tomTxt = typeof tom === "number" ? `${tom >= 0 ? "+" : ""}${tom}Hz` : String(tom);
+    const r = spawnSync("python3", [join(aqui, "lib", "edge-tts.py"), "--voz", modelo, "--velocidade", vel, "--tom", tomTxt, "--saida", mp3], {
+      input: pronunciaEdge(texto),
+      encoding: "utf8",
+      timeout: 90000,
+    });
+    if (r.status !== 0) throw Object.assign(new Error(`edge-tts falhou: ${(r.stderr || "").trim().split("\n").slice(-2).join(" | ")}`), { edgeIndisponivel: true });
+    rodarFfmpeg(["-i", mp3, "-ac", "1", "-ar", "24000", destino], "voz edge");
+    return destino;
+  },
   gtts(texto, { destino }) {
     const mp3 = destino.replace(/\.wav$/, ".mp3");
     const py = "import sys\nfrom gtts import gTTS\ngTTS(sys.stdin.read(), lang='pt', tld='com.br').save(sys.argv[1])\n";
@@ -450,14 +465,27 @@ const PRONUNCIA = [
 function pronuncia(texto) {
   return PRONUNCIA.reduce((t, [de, para]) => t.replace(de, para), texto.trim());
 }
+/** A voz neural (edge) já lê bem os nomes; só as siglas e marcas que ela erra. */
+const PRONUNCIA_EDGE = [
+  [/\bQuaest\b/g, "Cuaést"],
+  [/\bHOJE MT\b/g, "Hoje ême tê"],
+];
+function pronunciaEdge(texto) {
+  return PRONUNCIA_EDGE.reduce((t, [de, para]) => t.replace(de, para), texto.trim());
+}
 
 /** Sintetiza uma fala; com Piper indisponível, cai para o gTTS avisando. */
-function sintetizar(texto, { motor = "piper", modelo, velocidade, tom, tratamento, fonetica, sotaque, destino }) {
+function sintetizar(texto, { motor = "piper", modelo, velocidade, tom, tratamento, fonetica, sotaque, reserva, destino }) {
   const fn = motoresVoz[motor];
-  if (!fn) throw new Error(`motor de voz desconhecido: ${motor} (use kokoro, piper, gtts, elevenlabs ou heygen)`);
+  if (!fn) throw new Error(`motor de voz desconhecido: ${motor} (use edge, kokoro, piper, gtts, elevenlabs ou heygen)`);
   try {
     return fn(texto, { modelo, velocidade, tom, tratamento, fonetica, sotaque, destino });
   } catch (e) {
+    if (motor === "edge" && e.edgeIndisponivel && reserva) {
+      // serviço da voz neural fora do ar: segue com a voz de reserva (Kokoro v5)
+      console.warn(`AVISO: ${e.message} — usando a voz de reserva (${reserva.motor}/${reserva.narrador})`);
+      return sintetizar(texto, { ...reserva, modelo: reserva.narrador, destino });
+    }
     if (motor === "piper" && e.piperIndisponivel) {
       console.warn(`AVISO: ${e.message} — usando gTTS como reserva`);
       return motoresVoz.gtts(texto, { destino });
@@ -888,7 +916,7 @@ async function principal() {
         rodarFfmpeg(["-i", origem, "-ac", "1", "-ar", "24000", destino], `voz pronta da cena ${n}`);
         audio = destino;
       } else {
-        audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, tom: voz.tom, tratamento: voz.tratamento, fonetica: voz.fonetica, sotaque: voz.sotaque, destino });
+        audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, tom: voz.tom, tratamento: voz.tratamento, fonetica: voz.fonetica, sotaque: voz.sotaque, reserva: voz.reserva, destino });
       }
       cena = { ...base, fala, legenda, audio };
     }

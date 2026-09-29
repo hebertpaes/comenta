@@ -25,7 +25,19 @@ fluência de Portugal".
 - **Sem legenda queimada** (`"legendas": false` no roteiro): o texto está nos
   slides. Rótulo fixo `"rotulo_ia": "Voz gerada com IA"` e aviso na cartela
   final ("Voz gerada com IA (narrador sintético)…").
-- **Voz (v5, 29/09):** `"voz": {"motor": "kokoro", "narrador": "pm_alex",
+- **Voz (v6, 29/09, editor: "Aprimore a voz"):** voz neural pt-BR
+  **AntonioNeural** (catálogo da Microsoft, pelo pacote edge-tts, via
+  `lib/edge-tts.py`, que usa o CA do proxy sem desligar a verificação TLS),
+  18% mais rápida e um pouco mais aguda:
+  `"voz": {"motor": "edge", "narrador": "pt-BR-AntonioNeural", "velocidade":
+  "+18%", "tom": "+4Hz", "reserva": {…voz v5 abaixo…}}`. Português do
+  Brasil nativo, natural e claro na transcrição (nomes e números certos; só
+  "Quaest" e "HOJE MT" têm grafia de pronúncia em `PRONUNCIA_EDGE`). É voz
+  sintética genérica, não imita pessoa real. Não faz sotaque cuiabano. Se o
+  serviço cair, o `charge-cena.mjs` usa sozinho a `reserva` (Kokoro v5).
+  Alternativas testadas em 29/09: ThalitaMultilingualNeural e FranciscaNeural
+  (femininas), Piper cadu/jeff (locais, mais robóticas).
+- **Voz (v5, 29/09; agora reserva):** `"voz": {"motor": "kokoro", "narrador": "pm_alex",
   "velocidade": 1.18, "tom": 2, "tratamento": "limpo", "fonetica": "misaki",
   "sotaque": "cuiabano"}` — mais rápida e menos grave (tom médio ~141 Hz, antes
   ~130 Hz). `fonetica: "misaki"` refaz os fonemas como no treino do Kokoro
