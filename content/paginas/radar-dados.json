@@ -1,5 +1,5 @@
 {
- "atualizado": "26/09/2026",
+ "atualizado": "29/09/2026",
  "redes": {
   "Maurício Coelho": [
    [
@@ -299,13 +299,13 @@
   ]
  },
  "pesquisas": {
-  "atualizado": "26/09/2026",
+  "atualizado": "29/09/2026 17:55",
   "corridas": [
    {
     "id": "governador-mt",
     "titulo": "Governo de Mato Grosso",
     "cenario": "2º turno entre Otaviano Pivetta (Republicanos) e Wellington Fagundes (PL)",
-    "porque": "Os dois ficam nos dois primeiros lugares nas cinco pesquisas registradas desde 4/9. Pivetta aparece à frente no 1º turno em quatro delas (na Quaest, em empate técnico) e Wellington em uma (AtlasIntel, também empate técnico). Nenhum candidato chega à metade dos votos válidos. No 2º turno simulado, Pivetta vence em três pesquisas e Wellington aparece à frente em duas, ambas dentro da margem de erro.",
+    "porque": "Os dois ficam nos dois primeiros lugares nas seis pesquisas registradas desde 4/9. Pivetta aparece à frente no 1º turno em cinco delas (na Quaest, em empate técnico) e Wellington em uma (AtlasIntel, também empate técnico). Nenhum candidato chega à metade dos votos válidos (na Veritá, divulgada em 28/9, Pivetta tem 44,1% dos válidos). No 2º turno simulado, Pivetta vence em três pesquisas e Wellington aparece à frente em duas, ambas dentro da margem de erro; a Veritá não divulgou 2º turno.",
     "nomes": [
      "Otaviano Pivetta",
      "Wellington Fagundes",
@@ -315,6 +315,44 @@
      "Rafaell Milas"
     ],
     "pesquisas": [
+     {
+      "inst": "Veritá",
+      "contratante": "Sistema de Comunicação Pantanal/Rede Brasil de Televisão",
+      "campo": "20 a 24/09",
+      "amostra": "1.220",
+      "margem": "3",
+      "conf": 95,
+      "reg": "MT-09975/2026, BR-04418/2026",
+      "base": "totais",
+      "v": {
+       "Otaviano Pivetta": 39.1,
+       "Wellington Fagundes": 32.3,
+       "Doutora Natasha": 15,
+       "Sargento Laudicério": 1.3,
+       "Rafaell Milas": 0.7,
+       "Maurício Coelho": 0.5,
+       "Branco/nulo": 5.8,
+       "Não sabe/não respondeu": 5.3
+      },
+      "fontes": [
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/politica/pivetta-chega-a-441-dos-votos-validos-e-abre-78-pontos-sobre-wellington/577654",
+        "2026-09-28"
+       ],
+       [
+        "Muvuca Popular",
+        "https://www.muvucapopular.com.br/2026/09/28/pivetta-amplia-vantagem-sobre-wellington-e-lidera-disputa-pelo-governo-de-mt-com-391/",
+        "2026-09-28"
+       ],
+       [
+        "CNN Brasil",
+        "https://www.cnnbrasil.com.br/eleicoes/verita-pivetta-tem-391-no-1o-turno-em-mt-fagundes-323/",
+        "2026-09-28"
+       ]
+      ],
+      "nota": "Votos válidos divulgados: Pivetta 44,1%, Wellington 36,3%, Natasha 16,9%, Laudicério 1,4%, Milas 0,8%, Maurício Coelho 0,6%. O instituto não divulgou 2º turno."
+     },
      {
       "inst": "Quaest",
       "contratante": "Rádio e Televisão Matogrossense Ltda. (TV Centro América)",

@@ -381,5 +381,35 @@
   "status_agora": "draft",
   "mantido": "inteligencia-artificial-da-openai-invade-sistema-de-saude-da-australia",
   "mantido_titulo": "Inteligência Artificial da OpenAI invade sistema de saúde da Austrália"
+ },
+ {
+  "data": "2026-09-29T21:33:18.064Z",
+  "id": "6abac0b5834d62060cb1db5a",
+  "slug": "primavera-do-leste-lanca-plano-primavera-para-revisar-plano-diretor",
+  "titulo": "Primavera do Leste lança Plano Primavera para revisar Plano Diretor",
+  "publicado_em": "2026-09-28T19:32:05.000Z",
+  "status_agora": "draft",
+  "mantido": "primavera-do-leste-lanca-plano-diretor-com-foco-em-participacao-popular",
+  "mantido_titulo": "Primavera do Leste lança Plano Diretor com foco em participação popular"
+ },
+ {
+  "data": "2026-09-29T21:33:18.340Z",
+  "id": "6abbf56d834d62060cb1dd3d",
+  "slug": "lisboa-recebe-maior-numero-de-eleitores-em-2026",
+  "titulo": "Lisboa recebe maior número de eleitores em 2026",
+  "publicado_em": "2026-09-29T17:29:17.000Z",
+  "status_agora": "draft",
+  "mantido": "portugal-abriga-maior-colegio-eleitoral-brasileiro-no-exterior",
+  "mantido_titulo": "Portugal abriga maior colégio eleitoral brasileiro no exterior"
+ },
+ {
+  "data": "2026-09-29T21:33:18.650Z",
+  "id": "6abc208a834d62060cb1dd9e",
+  "slug": "cientista-brasileira-assume-vice-diretoria-de-ciencias-na-unesco",
+  "titulo": "Cientista brasileira assume vice-diretoria de ciências na Unesco",
+  "publicado_em": "2026-09-29T20:33:14.000Z",
+  "status_agora": "draft",
+  "mantido": "denise-pires-de-carvalho-sera-brasileira-a-liderar-ciencia-da-unesco",
+  "mantido_titulo": "Denise Pires de Carvalho será brasileira a liderar ciência da UNESCO"
  }
 ]
