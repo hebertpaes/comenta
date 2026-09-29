@@ -703,6 +703,28 @@
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
       "feito_em": "2026-09-29",
       "origem_pedido": "monitor do TCE-MT (decisão no DOC de 25/09, noticiada em 29/09); montagem ilustrativa própria"
+    },
+    {
+      "slug": "sine-de-varzea-grande-abre-516-vagas-com-176-exclusivas-para-pcd",
+      "titulo": "Sine de Várzea Grande abre 516 vagas, com 176 exclusivas para PCD",
+      "materia": "https://hojemt.com.br/sine-de-varzea-grande-abre-516-vagas-com-176-exclusivas-para-pcd/",
+      "tag": "Cidades & Mato Grosso",
+      "canva": {
+        "design": "DAHWnczeWys",
+        "arte": "MAHWn9XrUSk",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "manhã ensolarada numa cidade de Mato Grosso: fila de candidatos a emprego, de costas, diante da entrada envidraçada de um posto de atendimento ao trabalhador sem letreiros (homem em cadeira de rodas com pasta no colo, mulher com bengala branca, jovem com envelope de currículo, mulher de uniforme de fábrica, homem de boné); ao fundo ipê, galpões industriais e caminhão; nenhum rosto visível, sem letras legíveis nem logos",
+      "alt": "Ilustração (ficção): fila de candidatos a emprego, de costas, diante de um posto de atendimento ao trabalhador; um homem em cadeira de rodas e uma mulher com bengala branca",
+      "arquivo": "pautas/ilustracoes/2026-09-29-sine-vg-516-vagas-pcd.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/09/2026-09-29-sine-vg-516-vagas-pcd.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-29-sine-vg-516-vagas-pcd-og.jpg",
+      "capa_anterior": "capa-5a9bf71b29cd17c9.webp",
+      "obs": "Parte B (notícia): a fonte (Prefeitura de Várzea Grande, Secom-VG, 29/09/2026) não tem foto; a única imagem da página é um card institucional 'Oportunidade de emprego · Sine VG' com brasão e logotipo da prefeitura, então vale ilustração. Cena de inclusão (PCD) ligada às vagas de indústria e transporte; todos de costas",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção) · Com informações da <a href=\"https://www.varzeagrande.mt.gov.br/sine-de-varzea-grande-oferta-516-vagas-de-emprego-sendo-176-para-pcd\" rel=\"nofollow noopener\">Prefeitura de Várzea Grande</a>",
+      "credito_fonte": "mantido na legenda: \"Com informações da Prefeitura de Várzea Grande\" (link da matéria original), que estava na capa genérica",
+      "feito_em": "2026-09-29",
+      "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
     }
   ]
 }
