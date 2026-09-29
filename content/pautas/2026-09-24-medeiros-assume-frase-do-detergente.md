@@ -4,6 +4,8 @@
 
 **Status:** rascunho no Ghost (id 6ab5a368834d62060cb1d320, tag Curtas & Bastidores), com a charge "Dúvida no Rótulo" feita no Canva a partir da foto oficial do TSE. Pedido do editor (24/09/2026): Reel https://www.instagram.com/reel/DdqxaT6uP6i/ (Zé Medeiros, "Já diz a propaganda: DÚVIDA PRA QUÊ?"). O vídeo de terceiros não é reproduzido.
 
+**Atualização (29/09):** a íntegra do áudio saiu (Olhar Direto, Muvuca Popular); curta nova em `2026-09-29-medeiros-integra-audio-janaina.md` (rascunho 6abc4a97834d62060cb1de57). Antes de publicar esta, conferir na íntegra o contexto da frase do detergente e o "áudio editado".
+
 ## O que está confirmado
 
 - Frase do áudio conferida no arquivo publicado pela CartaCapital (10,9 s): "Você sabe que o meu eleitor é aquele eleitor que ora pra alienígena e bebe detergente, né? Esse eleitor, Chico."
