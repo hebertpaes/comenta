@@ -23,7 +23,11 @@
 // citacao?,audio_real?,camadas?}], fechamento:{linha1,leia,fontes,
 // aviso}, legendas?, saida }. `camadas`: [{imagem (PNG transparente 1080×1920),
 // quando: "trecho da fala" | em: s}] entram por cima do fundo quando o narrador
-// chega ao trecho (slides "em tempo real"); `legendas: false` tira a legenda
+// chega ao trecho (slides "em tempo real"); `clipe`: {arquivo, inicio, fim,
+// caixa: [x, y, w, h], origem_url, credito} põe um trecho de vídeo de rede
+// social (sem o áudio original) numa caixa do slide, por baixo das camadas
+// (buscar com redes-post.mjs; regras em pautas/videos/argos/ARGOS.md);
+// `legendas: false` tira a legenda
 // queimada; `voz.fonetica: "misaki"` e `voz.sotaque: "cuiabano"` vão para o
 // Kokoro (lib/kokoro-tts.py). `universo` (cenário + figurinos + tom do episódio) é só
 // registro: vai para o <saida>.json. Caminhos relativos são relativos a
@@ -763,7 +767,7 @@ function tempoCamadas(cena, n) {
 }
 
 /** Renderiza um segmento (imagem ou clipe 9:16 + áudio ou silêncio) de `dur` s em mkv sem perdas. */
-async function segmento({ imagem, video, audio, dur, movimento, destino, camadas = [] }) {
+async function segmento({ imagem, video, audio, dur, movimento, destino, camadas = [], clipe = null }) {
   const frames = Math.round(dur * FPS);
   let preparo, zoom;
   if (video) {
@@ -781,7 +785,8 @@ async function segmento({ imagem, video, audio, dur, movimento, destino, camadas
       ? `[0:v]scale=${W * 2}:${H * 2}:flags=lanczos[base]`
       : `[0:v]split[a][b];[a]scale=${W * 2}:${H * 2}:force_original_aspect_ratio=increase,crop=${W * 2}:${H * 2},boxblur=40:8,eq=brightness=-0.08[bg];[b]scale=${W * 2}:${H * 2}:force_original_aspect_ratio=decrease:flags=lanczos[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2[base]`;
   }
-  const filtros = [`${preparo}`, `[base]${zoom},setsar=1,format=${camadas.length ? "rgba[v0]" : "yuv420p[v]"}`];
+  const extras = camadas.length > 0 || !!clipe;
+  const filtros = [`${preparo}`, `[base]${zoom},setsar=1,format=${extras ? "rgba[v0]" : "yuv420p[v]"}`];
   const entradas = ["-i", video || imagem];
   if (audio) {
     entradas.push("-i", audio);
@@ -790,14 +795,35 @@ async function segmento({ imagem, video, audio, dur, movimento, destino, camadas
     entradas.push("-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo");
     filtros.push(`[1:a]aformat=sample_fmts=s16[a]`);
   }
+  // trecho de vídeo de rede social ("vídeo demonstrativo", editor 29/09) numa
+  // caixa fixa do slide, sem o áudio original (a narração segue por cima)
+  let atual = "v0";
+  if (clipe) {
+    const arq = caminho(clipe.arquivo);
+    if (!existsSync(arq)) throw new Error(`clipe não existe: ${arq}`);
+    const [x, y, w, h] = clipe.caixa;
+    const ini = Number(clipe.inicio) || 0;
+    const len = Math.min(dur, Math.max(0.5, (Number(clipe.fim) || ini + dur) - ini));
+    entradas.push("-ss", ini.toFixed(3), "-t", len.toFixed(3), "-i", arq);
+    const idx = entradas.filter((e) => e === "-i").length - 1;
+    filtros.push(
+      `[${idx}:v]fps=${FPS},scale=${w}:${h}:force_original_aspect_ratio=increase,crop=${w}:${h},setsar=1,format=rgba,` +
+        `tpad=stop_mode=clone:stop_duration=${dur.toFixed(3)},trim=0:${dur.toFixed(3)},setpts=PTS-STARTPTS,fade=t=in:st=0:d=0.3:alpha=1[clip]`,
+      `[${atual}][clip]overlay=${x}:${y}:eof_action=repeat${camadas.length ? "[vc]" : ",format=yuv420p[v]"}`
+    );
+    atual = "vc";
+  }
   // camadas fixas por cima do fundo em movimento, cada uma entrando com fade
   camadas.forEach((cam, i) => {
     if (!existsSync(cam.imagem)) throw new Error(`camada não existe: ${cam.imagem}`);
     entradas.push("-loop", "1", "-framerate", String(FPS), "-t", dur.toFixed(3), "-i", cam.imagem);
+    const idx = entradas.filter((e) => e === "-i").length - 1;
+    const saidaLabel = i === camadas.length - 1 ? ",format=yuv420p[v]" : `[l${i}]`;
     filtros.push(
-      `[${2 + i}:v]scale=${W}:${H},format=rgba,fade=t=in:st=${cam.t.toFixed(3)}:d=0.3:alpha=1[c${i}]`,
-      `[v${i}][c${i}]overlay=0:0:format=auto${i === camadas.length - 1 ? ",format=yuv420p[v]" : `[v${i + 1}]`}`
+      `[${idx}:v]scale=${W}:${H},format=rgba,fade=t=in:st=${cam.t.toFixed(3)}:d=0.3:alpha=1[c${i}]`,
+      `[${atual}][c${i}]overlay=0:0:format=auto${saidaLabel}`
     );
+    atual = `l${i}`;
   });
   rodarFfmpeg(
     [
@@ -826,7 +852,7 @@ async function principal() {
     const quem = String(c.quem || "narrador").trim();
     const ehNarrador = quem.toLowerCase() === "narrador";
     const destino = join(tmp, `cena-${String(n).padStart(2, "0")}.wav`);
-    const base = { n, quem, imagem: c.imagem, anima: c.anima === true, movimento: c.movimento || "zoom-in", camadas: c.camadas || [] };
+    const base = { n, quem, imagem: c.imagem, anima: c.anima === true, movimento: c.movimento || "zoom-in", camadas: c.camadas || [], clipe: c.clipe || null };
     let cena;
     if (c.audio_real) {
       if (ehNarrador)
@@ -948,7 +974,7 @@ async function principal() {
       const r = spawnSync("python3", [join(aqui, "lib", "argos-anima.py"), "animar", "--pasta", pasta, "--audio", c.audio, "--dur", c.dur.toFixed(3), "--saida", video, "--semente", String(c.n)], { encoding: "utf8", env: { ...process.env, FFMPEG: ffmpeg } });
       if (r.status !== 0) throw new Error(`animação da cena ${c.n} falhou: ${r.stderr.trim().split("\n").slice(-3).join(" | ")}`);
     }
-    lista.push(await segmento({ imagem: c.imagem, video, audio: c.audio, dur: c.dur, movimento: c.movimento, camadas: c.camadas, destino: join(tmp, `seg-${String(c.n).padStart(2, "0")}.mkv`) }));
+    lista.push(await segmento({ imagem: c.imagem, video, audio: c.audio, dur: c.dur, movimento: c.movimento, camadas: c.camadas, clipe: c.clipe, destino: join(tmp, `seg-${String(c.n).padStart(2, "0")}.mkv`) }));
     console.log("ok");
   }
   lista.push(await segmento({ imagem: fechamento, dur: DUR_FECHAMENTO, movimento: "parado", destino: join(tmp, "seg-99-fechamento.mkv") }));

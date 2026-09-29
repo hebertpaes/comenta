@@ -4,7 +4,7 @@
  "materia": "https://hojemt.com.br/radar-eleitoral/",
  "estilo": "slides",
  "universo": "Slides escuros com ondas e curvas de nível verdes (estilo visual do vídeo de referência indicado pelo editor), sem avatar",
- "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides (editor, 29/09: 'Não deixe avatar. Deixe somente a voz e slides'; 'Deixe uma voz menos grave e mais rápida e com português brasileiro com sotaque Cuiabano'; slides no estilo de youtu.be/M6jemlgwZxU, 'somente com narrador e slides em tempo real', 'retirando qualquer coisa fluência de Portugal'). Do vídeo de referência veio só o estilo visual; o narrador dele não é imitado. Voz: Kokoro pm_alex (sintética genérica), velocidade 1,18, tom +2 semitons (menos grave), fonética como no treino do Kokoro (espeak pt-br com ligaduras, --fonetica misaki) e sotaque 'cuiabano' aproximado (ch/x → tch, j/g → dj); nenhuma voz de pessoa real. Camadas de cada slide entram quando o narrador chega ao trecho (campo camadas). Sem legenda queimada: o texto está nos slides. A informação de que a voz é sintética fica só na tela (rótulo fixo e cartela final), na página e na legenda. Números: paginas/radar-dados.json em 29/09/2026 (Quaest MT-08098/2026, 21 a 24/9, divulgada em 25/9; Veritá MT-09975/2026, 20 a 24/9, divulgada em 28/9). Veritá para o Senado ficou de fora: os números publicados não fecham (1º voto soma mais de 100%) e as fontes divergem entre votos totais e válidos. Tratamento igual: todos os candidatos nos gráficos, em ordem de resultado; pesquisas contadas de forma neutra.",
+ "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides (editor, 29/09: 'Não deixe avatar. Deixe somente a voz e slides'; 'Deixe uma voz menos grave e mais rápida e com português brasileiro com sotaque Cuiabano'; slides no estilo de youtu.be/M6jemlgwZxU, 'somente com narrador e slides em tempo real', 'retirando qualquer coisa fluência de Portugal'). Do vídeo de referência veio só o estilo visual; o narrador dele não é imitado. Voz: Kokoro pm_alex (sintética genérica), velocidade 1,18, tom +2 semitons (menos grave), fonética como no treino do Kokoro (espeak pt-br com ligaduras, --fonetica misaki) e sotaque 'cuiabano' aproximado (ch/x → tch, j/g → dj); nenhuma voz de pessoa real. Camadas de cada slide entram quando o narrador chega ao trecho (campo camadas). Sem legenda queimada: o texto está nos slides. A informação de que a voz é sintética fica só na tela (rótulo fixo e cartela final), na página e na legenda. Números: paginas/radar-dados.json em 29/09/2026 (Quaest MT-08098/2026, 21 a 24/9, divulgada em 25/9; Veritá MT-09975/2026, 20 a 24/9, divulgada em 28/9). Veritá para o Senado ficou de fora: os números publicados não fecham (1º voto soma mais de 100%) e as fontes divergem entre votos totais e válidos. Tratamento igual: todos os candidatos nos gráficos, em ordem de resultado; pesquisas contadas de forma neutra. Versão 2 (29/09, editor: 'Não precisa de avatar, somente áudio e slides e vídeos demonstrativos com imagens de postagens e vídeos de redes sociais'): cenas 9 e 10 com postagens oficiais do TSE no X, buscadas com redes-post.mjs — trecho de 9,5 s do vídeo 'ordem de votação' (x.com/TSEjusbr/status/2088037888218853564, 13/08/2026, sem o áudio original, numa caixa do slide) e cartão de reprodução do post 'cola eleitoral' (x.com/TSEjusbr/status/2094092790699368719, 30/08/2026), com crédito na tela. Uso como citação com autor e origem (Lei 9.610/1998, art. 46, III), sem alteração; fonte oficial.",
  "voz": {
   "motor": "kokoro",
   "narrador": "pm_alex",
@@ -212,9 +212,22 @@
   {
    "n": 9,
    "quem": "narrador",
-   "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
+   "fala": "Na urna, o voto começa por deputado federal e deputado estadual. Depois vêm dois votos para o Senado, um para cada vaga, e então governador e presidente.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-9-fundo.png",
-   "movimento": "zoom-out",
+   "movimento": "parado",
+   "clipe": {
+    "arquivo": "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/redes-cache/x-2088037888218853564.mp4",
+    "inicio": 20,
+    "fim": 29.5,
+    "caixa": [
+     260,
+     420,
+     560,
+     700
+    ],
+    "origem_url": "https://x.com/TSEjusbr/status/2088037888218853564",
+    "credito": "Reprodução: @TSEjusbr no X, 13/08/2026"
+   },
    "camadas": [
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-9-c0.png",
@@ -222,6 +235,48 @@
     },
     {
      "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-9-c1.png",
+     "quando": "deputado federal"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-9-c2.png",
+     "quando": "dois votos"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-9-c3.png",
+     "quando": "governador e presidente"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "quem": "narrador",
+   "fala": "O celular não pode ser usado na cabine de votação. O Tribunal Superior Eleitoral recomenda anotar os números dos candidatos antes de sair de casa.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-10-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-10-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-10-c1.png",
+     "quando": "celular"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "quem": "narrador",
+   "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-11-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-11-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-11-c1.png",
      "quando": "Radar Eleitoral"
     }
    ]
@@ -235,10 +290,11 @@
    "Veritá/HiperNotícias",
    "Muvuca Popular",
    "CNN Brasil",
-   "TSE (PesqEle)"
+   "TSE (PesqEle)",
+   "TSE (@TSEjusbr no X)"
   ],
   "aviso": "Voz gerada com IA (narrador sintético). Fatos apurados e conferidos pela redação do HOJE MT; pesquisas registradas na Justiça Eleitoral, fichas técnicas no Radar Eleitoral."
  },
- "saida": "pautas/videos/argos/2026-09-29-boletim-03.mp4",
+ "saida": "pautas/videos/argos/2026-09-29-boletim-03-v2.mp4",
  "rotulo_ia": "Voz gerada com IA"
 }

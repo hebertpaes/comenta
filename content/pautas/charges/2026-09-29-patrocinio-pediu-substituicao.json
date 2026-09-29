@@ -1,0 +1,121 @@
+{
+  "slug": "patrocinio-pediu-substituicao",
+  "titulo": "Patrocínio pediu substituição (MP 1.394/2026 proíbe bets e a publicidade/patrocínio de apostas; transmissões esportivas perdem anunciantes)",
+  "pedido": "Editor, 29/09/2026: \"Crie Charges\" a partir do post do Instagram do Diário 360 (https://www.instagram.com/p/Ddv-jF-Ed0n/ ; texto em https://diario360.com.br/2026/09/26/faz-o-l-caze-apoiou-lula-e-agora-decisao-do-governo-sobre-bets-ameaca-importante-fonte-de-receita-da-cazetv/). O post foi usado só como pista; os fatos abaixo vêm de fontes jornalísticas e oficiais.",
+  "balao": null,
+  "balao_obs": "sem balão: o personagem é genérico (narrador fictício), e não se põe fala real de pessoa na boca de personagem genérico",
+  "legenda": {
+    "site_16x9": "Fim das bets: o jogo segue, o patrocínio pediu substituição.",
+    "instagram_4x5": "O patrocínio pediu substituição."
+  },
+  "contexto": "A Medida Provisória 1.394, assinada pelo presidente Lula e publicada em 25/09/2026, proíbe a exploração, a oferta, a intermediação e a publicidade das apostas de quota fixa (bets), inclusive propagandas, campanhas de marketing e patrocínios; as plataformas saem do ar em 6/10, e a retirada voluntária de anúncios e materiais de patrocínio vai até 5/10. A MP precisa ser aprovada pelo Congresso em até 120 dias. Casas de apostas estão entre os patrocinadores da CazéTV (Bet365, Betnacional e KTO na Copa do Mundo de 2026), e veículos apontam que a medida atinge a receita publicitária de emissoras e streamings esportivos, entre eles a CazéTV.",
+  "fatos_apurados": [
+    {
+      "fato": "MP 1.394/2026, assinada em 25/09/2026, proíbe exploração, oferta, intermediação e publicidade das bets (incluindo patrocínios); plataformas fora do ar em 6/10; retirada voluntária de anúncios e saques até 5/10; devolução de saldos de 9 a 14/10 (Caixa a partir de 14/10 em caso de impedimento); 85 outorgas (R$ 2,55 bilhões) extintas sem indenização; não atinge outras loterias previstas em lei; Congresso tem 120 dias para votar.",
+      "fontes": [
+        [
+          "Agência Câmara de Notícias (oficial)",
+          "https://www.camara.leg.br/noticias/1306939-medida-provisoria-proibe-o-funcionamento-de-bets-no-brasil",
+          "2026-09-28"
+        ],
+        [
+          "Agência Brasil (EBC)",
+          "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/entenda-medida-provisoria-e-projeto-que-proibem-bets-no-brasil",
+          "2026-09-26"
+        ],
+        [
+          "Planalto (texto da MP; fora do ar na consulta de 29/09)",
+          "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/mpv/mpv1394.htm",
+          "2026-09-25"
+        ]
+      ]
+    },
+    {
+      "fato": "CazéTV tem casas de apostas entre os patrocinadores: Bet365, Betnacional e KTO estavam entre as 11 marcas das transmissões da Copa do Mundo de 2026 (com Ambev, Coca-Cola, iFood, Mercado Livre, Vivo, Itaú, Decolar e GM).",
+      "fontes": [
+        [
+          "Máquina do Esporte",
+          "https://maquinadoesporte.com.br/midia/cazetv-e-youtube-anunciam-patrocinadores-da-copa-do-mundo-2026/",
+          "2025-10-09"
+        ],
+        [
+          "Meio & Mensagem",
+          "https://www.meioemensagem.com.br/midia/cazetv-anuncia-patrocinadores-da-copa-do-mundo-no-youtube",
+          "2025-10-08"
+        ]
+      ]
+    },
+    {
+      "fato": "Veículos apontam que a proibição atinge a receita publicitária de emissoras e streamings esportivos, citando a CazéTV.",
+      "fontes": [
+        [
+          "Jornal de Brasília (coluna Kátia Flávia): 'ESPN, TNT Sports e CazéTV igualmente dependem da fatia publicitária que as bets passaram a ocupar'",
+          "https://jornaldebrasilia.com.br/entretenimento/katia-flavia/lula-contra-bets-vira-pesadelo-na-globo-e-band-tvs-temem-rombo-e-demissoes-no-esporte/",
+          "2026-09-25"
+        ],
+        [
+          "TV Foco (portal UAI), com base na coluna Outro Canal da Folha: decisão 'atingiu em cheio as emissoras como Globo e CazéTV'",
+          "https://tvfoco.uai.com.br/desespero-e-gritaria-na-globo-cazetv-e-lula-da-fim-nas-bets/",
+          "2026-09-25"
+        ]
+      ]
+    },
+    {
+      "fato": "Casimiro Miguel declarou voto em Lula no 2º turno de 2022, em live, em 03/10/2022 ('Eu vou votar no Barba... se o Bolsonaro tá de um lado, eu estou do outro'); no 1º turno declarara apoio a Sofia Manzano (PCB). Não foi achado apoio declarado a Lula em 2026.",
+      "fontes": [
+        [
+          "Estado de Minas",
+          "https://www.em.com.br/app/noticia/politica/2022/10/03/interna_politica,1402562/casimiro-declara-voto-em-lula-se-bolsonaro-ta-de-um-lado-eu-to-do-outro.shtml",
+          "2022-10-03"
+        ],
+        [
+          "Correio Braziliense",
+          "https://www.correiobraziliense.com.br/politica/2022/10/5041708-casimiro-declara-voto-em-lula-se-bolsonaro-ta-de-um-lado-eu-to-do-outro.html",
+          "2022-10-03"
+        ],
+        [
+          "Nexo",
+          "https://www.nexojornal.com.br/extra/2022/10/24/casimiro-atinge-1-milhao-de-likes-ao-confirmar-voto-em-lula",
+          "2022-10-24"
+        ]
+      ],
+      "uso_na_charge": "confirmado, mas NÃO usado: a charge trata do efeito da MP sobre as transmissões esportivas em geral; o gancho 'Faz o L' é provocação partidária a uma pessoa (regras: não atacar ninguém, tratamento igual)."
+    }
+  ],
+  "nao_confirmado": [
+    "Valor de 'cerca de R$ 560 milhões' de receita de bets da CazéTV: é conta do site São Carlos no Toque (28% de uma receita estimada em R$ 2 bilhões), sem fonte original; não usar.",
+    "Nenhuma manifestação da CazéTV ou de Casimiro sobre a MP foi encontrada até 29/09/2026. Registro anterior: durante a Copa de 2026, após apuração preliminar da Senacon e recomendação do Conar, a CazéTV disse em nota que trabalha só com operadoras regularizadas pela Fazenda (Lei 14.790/2023) e adotou padrão mais restritivo para anúncios de bets (Terra: https://www.terra.com.br/esportes/futebol/copa-2026/cazetv-muda-divulgacao-de-bets-apos-investigacao-do-ministerio-da-justica,73031301a79462a099259b3ecd275a22kkvz7020.html ; Exame: https://exame.com/brasil/conar-suspende-publicidade-de-bets-na-cazetv-durante-a-copa/)."
+  ],
+  "regras_da_cena": "personagem genérico (narrador esportivo fictício, bigodudo, de fone e moletom) comemora ao vivo sem perceber que operários retiram as placas de patrocínio vazias do estúdio; sem Casimiro, sem Lula, sem nenhuma pessoa real; sem texto, logos, marcas, balão ou bandeiras",
+  "personagens": [
+    {
+      "nome": "narrador esportivo genérico (fictício)",
+      "obs": "sem foto de referência; nenhuma pessoa real desenhada"
+    }
+  ],
+  "referencias_de_imagem": "nenhuma (texto puro no generate-image)",
+  "canva": {
+    "design_site_16x9": "DAHWncL303I",
+    "arte_16x9": "MAHWnlGzMe0",
+    "design_instagram_4x5": "DAHWnek4Kvc",
+    "arte_4x5": "MAHWnmTUVP4",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "materia": "https://hojemt.com.br/mp-de-lula-proibe-apostas-esportivas-e-online-no-brasil/",
+  "materia_obs": "a capa do post é foto real da Agência Brasil; por orientação, a capa NÃO foi trocada. O texto publicado diz que Lula 'sancionou' a MP (MP não se sanciona: foi assinada/editada) e fala em 'nova lei' e que a MP 'pune' as apostas (a MP proíbe; a tipificação de crimes está no PL 5477/26, ainda em tramitação). Correção, se o editor quiser, é manual no Ghost Admin.",
+  "formato": "charge de jornal montada inteira no Canva",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "instagram": {
+    "status": "não agendada por esta sessão (a agenda é editada por outra sessão); item sugerido no relatório ao editor"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-29-patrocinio-pediu-substituicao.jpg",
+    "instagram_4x5": "2026-09-29-patrocinio-pediu-substituicao-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-29-patrocinio-pediu-substituicao-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og_image NÃO trocadas (post já tem foto de agência)"
+}

@@ -15,7 +15,7 @@ import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { createRequire } from "node:module";
 
-const SCRATCH = "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad";
+import { SCRATCH, esc, pct, fundo, CSS, cartaoPost, molduraVideo } from "./slides-lib.mjs";
 const require = createRequire(join(SCRATCH, "pw", "package.json"));
 const { chromium } = require("playwright-core");
 
@@ -31,72 +31,11 @@ const achar = (c, inst, reg) => c.pesquisas.find((q) => q.inst === inst && q.reg
 const qGov = achar(gov, "Quaest", "MT-08098");
 const vGov = achar(gov, "Veritá", "MT-09975");
 const qSen = achar(sen, "Quaest", "MT-08098");
+// postagens oficiais do TSE no X (buscadas com redes-post.mjs; mídia no scratchpad)
+const post = (id) => JSON.parse(readFileSync(join(SCRATCH, "redes-cache", `x-${id}.json`), "utf8"));
+const tseOrdem = post("2088037888218853564"); // vídeo "ordem de votação", 13/08/2026
+const tseCola = post("2094092790699368719"); // "cola eleitoral", 30/08/2026
 if (!qGov || !vGov || !qSen) throw new Error("pesquisa não encontrada no radar");
-
-const b64 = (p) => readFileSync(p).toString("base64");
-const fontes = [400, 600, 700, 800]
-  .map((w) => `@font-face{font-family:Inter;font-weight:${w};src:url(data:font/woff2;base64,${b64(join(SCRATCH, `fonts/inter-${w}.woff2`))}) format("woff2");}`)
-  .join("\n");
-const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
-const pct = (v) => String(v).replace(".", ",") + "%";
-
-// ------------------------------------------------------------ fundo
-// ondas escuras "de seda" + curvas de nível em verde-água, variando por cena
-function fundo(semente) {
-  let s = semente * 9301 + 49297;
-  const rnd = () => ((s = (s * 9301 + 49297) % 233280) / 233280);
-  const ondas = [];
-  for (let i = 0; i < 7; i++) {
-    const y0 = 200 + i * 260 + rnd() * 120;
-    const a = 80 + rnd() * 140, f = 1.2 + rnd() * 1.6, fase = rnd() * 6.28;
-    let d = `M -100 ${y0}`;
-    for (let x = -100; x <= 1180; x += 30) d += ` L ${x} ${(y0 + a * Math.sin((x / 1080) * f * 6.28 + fase)).toFixed(1)}`;
-    ondas.push(`<path d="${d}" stroke="url(#g${i % 2})" stroke-width="${90 + rnd() * 120}" fill="none" opacity="${(0.18 + rnd() * 0.2).toFixed(2)}" filter="url(#b)"/>`);
-  }
-  const curvas = [];
-  const cx = 200 + rnd() * 680, cy = 500 + rnd() * 900;
-  for (let r = 60; r < 1500; r += 46) {
-    let d = "";
-    for (let k = 0; k <= 72; k++) {
-      const t = (k / 72) * 6.2832;
-      const rr = r * (1 + 0.16 * Math.sin(3 * t + r / 180) + 0.08 * Math.sin(5 * t + r / 90));
-      d += `${k ? "L" : "M"} ${(cx + rr * Math.cos(t)).toFixed(1)} ${(cy + rr * 1.25 * Math.sin(t)).toFixed(1)} `;
-    }
-    curvas.push(`<path d="${d}Z" stroke="#2EDC8A" stroke-width="1.6" fill="none" opacity="${(0.05 + 0.10 * Math.exp(-r / 700)).toFixed(3)}"/>`);
-  }
-  return `<svg width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
-<defs><linearGradient id="g0" x1="0" x2="1"><stop offset="0" stop-color="#0d3b2c"/><stop offset=".5" stop-color="#1c5a47"/><stop offset="1" stop-color="#0a2a20"/></linearGradient>
-<linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#123a3a"/><stop offset=".6" stop-color="#27665a"/><stop offset="1" stop-color="#0b2422"/></linearGradient>
-<filter id="b"><feGaussianBlur stdDeviation="38"/></filter>
-<radialGradient id="luz" cx=".5" cy=".42" r=".75"><stop offset="0" stop-color="#0f261f"/><stop offset="1" stop-color="#030605"/></radialGradient></defs>
-<rect width="1080" height="1920" fill="url(#luz)"/>${ondas.join("")}${curvas.join("")}
-<rect width="1080" height="1920" fill="#000" opacity=".18"/></svg>`;
-}
-
-// ------------------------------------------------------------ peças
-const CSS = `${fontes}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{width:1080px;height:1920px;background:transparent;font-family:Inter,sans-serif;color:#fff;overflow:hidden}
-.p{position:absolute;left:70px;right:70px}
-.cab{top:196px;font:700 25px Inter;letter-spacing:.2em;color:#8fe9c2;text-shadow:0 0 12px rgba(46,220,138,.55)}
-.chip{display:inline-block;border:2px solid #2EDC8A;border-radius:999px;padding:14px 32px;font:800 36px Inter;letter-spacing:.04em;text-transform:uppercase;color:#e7fff4;background:rgba(6,30,22,.62);box-shadow:0 0 22px rgba(46,220,138,.55),inset 0 0 14px rgba(46,220,138,.22);text-shadow:0 0 12px rgba(46,220,138,.9)}
-.tit{font:800 76px/1.06 Inter;letter-spacing:-.01em;text-shadow:0 4px 30px rgba(0,0,0,.6)}
-.tit b{color:#2EDC8A;text-shadow:0 0 24px rgba(46,220,138,.6)}
-.sub{font:600 38px/1.3 Inter;color:#cfe9dd}
-.card{background:rgba(8,20,16,.80);border:2px solid rgba(46,220,138,.8);border-radius:38px;padding:40px 44px;box-shadow:0 0 44px rgba(46,220,138,.32),inset 0 0 30px rgba(46,220,138,.08)}
-.card h3{font:800 34px/60px Inter;height:60px;letter-spacing:.06em;color:#8fe9c2;text-transform:uppercase;text-shadow:0 0 12px rgba(46,220,138,.5)}
-.lay{padding:40px 44px;border:2px solid transparent}
-.row{height:104px;position:relative}
-.row .n{font:700 36px Inter;color:#fff}
-.row .n i{font-style:normal;font-weight:600;color:#9fb8ad;font-size:28px;margin-left:10px}
-.row .v{position:absolute;right:0;top:0;font:800 42px Inter;color:#fff}
-.row .t{position:absolute;left:0;right:0;top:54px;height:26px;border-radius:13px;background:rgba(255,255,255,.08)}
-.row .f{height:100%;border-radius:13px;background:linear-gradient(90deg,#1baf7a,#2EDC8A);box-shadow:0 0 18px rgba(46,220,138,.7)}
-.row.pq{height:76px}.row.pq .n{font-size:30px}.row.pq .v{font-size:32px}.row.pq .t{top:42px;height:18px}
-.ficha{font:500 25px/1.4 Inter;color:#9fb8ad;margin-top:18px}
-.grande{font:800 210px/1 Inter;color:#2EDC8A;text-shadow:0 0 50px rgba(46,220,138,.7)}
-.pill{display:inline-block;border:2px solid rgba(143,233,194,.7);border-radius:22px;padding:18px 28px;font:700 40px Inter;color:#e7fff4;background:rgba(6,30,22,.6);box-shadow:0 0 20px rgba(46,220,138,.35);margin:0 14px 18px 0}
-`;
 
 function barras(v, nomes, { max = 50, pq = false, partidos = {} } = {}) {
   return nomes.map((n) => {
@@ -241,6 +180,34 @@ cenas.push({
   quando: [null, "retrato do momento", "A eleição"],
 });
 
+// 9 — ordem de votação, com trecho do vídeo oficial do TSE (sem o áudio)
+{
+  const caixa = [260, 420, 560, 700];
+  cenas.push({
+    fala: "Na urna, o voto começa por deputado federal e deputado estadual. Depois vêm dois votos para o Senado, um para cada vaga, e então governador e presidente.",
+    movimento: "parado",
+    clipe: { arquivo: tseOrdem.video, inicio: 20, fim: 29.5, caixa, origem_url: tseOrdem.url, credito: tseOrdem.credito },
+    pecas: [
+      [0, CAB + `<div class="p" style="top:300px"><span class="chip">Ordem de votação</span></div>` + molduraVideo(caixa, tseOrdem.credito)],
+      [1, `<div class="p" style="top:1215px"><span class="pill" style="font-size:36px">1 · Deputado federal</span></div><div class="p" style="top:1300px"><span class="pill" style="font-size:36px">2 · Deputado estadual</span></div>`],
+      [2, `<div class="p" style="top:1385px"><span class="pill" style="font-size:36px">3 e 4 · Senado (duas vagas)</span></div>`],
+      [3, `<div class="p" style="top:1470px"><span class="pill" style="font-size:36px">5 · Governador</span><span class="pill" style="font-size:36px">6 · Presidente</span></div>`],
+    ],
+    quando: [null, "deputado federal", "dois votos", "governador e presidente"],
+  });
+}
+
+// 10 — celular na cabine, com a postagem do TSE
+cenas.push({
+  fala: "O celular não pode ser usado na cabine de votação. O Tribunal Superior Eleitoral recomenda anotar os números dos candidatos antes de sair de casa.",
+  movimento: "zoom-in",
+  pecas: [
+    [0, CAB + `<div class="p" style="top:300px"><span class="chip">Dica do TSE</span></div>`],
+    [1, cartaoPost(tseCola, { topo: 440, imagemMax: 520 })],
+  ],
+  quando: [null, "celular"],
+});
+
 // 9 — encerramento (fala obrigatória)
 cenas.push({
   fala: "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
@@ -277,7 +244,7 @@ for (const [i, c] of cenas.entries()) {
     mkdirSync(join(SCRATCH, "b3-previa"), { recursive: true });
     await page.screenshot({ path: join(SCRATCH, "b3-previa", `${n}.png`) });
   });
-  roteiro.push({ n, quem: "narrador", fala: c.fala, imagem: `${PASTA}/cenas/${nome("fundo")}`, movimento: c.movimento, camadas: lista });
+  roteiro.push({ n, quem: "narrador", fala: c.fala, imagem: `${PASTA}/cenas/${nome("fundo")}`, movimento: c.movimento, ...(c.clipe ? { clipe: c.clipe } : {}), camadas: lista });
 }
 await browser.close();
 writeFileSync(join(SCRATCH, "b3-cenas.json"), JSON.stringify(roteiro, null, 1));

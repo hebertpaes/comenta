@@ -13,7 +13,7 @@ sotaque Cuiabano"; slides "no estilo deste vídeo" (youtu.be/M6jemlgwZxU)
 fluência de Portugal".
 
 - **Sem avatar:** nenhuma cena com o Argos (nem `"anima": true`). O vídeo é só
-  narração + slides. O avatar e a animação abaixo ficam no histórico.
+  narração + slides + reprodução de postagens e vídeos de redes (abaixo). O avatar e a animação abaixo ficam no histórico.
 - **Slides (modelo: `graficos-boletim-03.mjs`):** 1080×1920, fundo escuro com
   ondas e curvas de nível verdes, chips com brilho verde (#2EDC8A), cartões
   de vidro com barras. Do vídeo de referência vem só o estilo visual; o
@@ -35,6 +35,31 @@ fluência de Portugal".
   "mardjem"); nomes próprios e siglas ficam na pronúncia padrão (com o
   sotaque, "Janaína" virava "Dianaína"). O Kokoro não tem voz cuiabana de
   verdade. Pronúncias de nomes em `PRONUNCIA` do `charge-cena.mjs`.
+- **Postagens e vídeos de redes sociais (29/09, editor: "Não precisa de
+  avatar, somente áudio e slides e vídeos demonstrativos com imagens de
+  postagens e vídeos de redes sociais"):** o boletim mostra, como prova do fato
+  narrado, a postagem ou um trecho do vídeo original.
+  - Buscar com `node redes-post.mjs <link>` (grava JSON + mídia no
+    scratchpad `redes-cache/`, fora do repositório). Daqui funcionam: **X**
+    (texto, data, foto e vídeo do post, pelo link), **YouTube** (título, canal
+    e miniatura; o download do vídeo é barrado pelo YouTube e não se contorna) e
+    **TikTok** (título e miniatura). **Instagram e Facebook** não abrem sem
+    login e a API do Zapier não tem permissão: use `--manual` com o print ou a
+    gravação de tela que o editor mandar e o link do post.
+  - No slide: `cartaoPost(post)` (`slides-lib.mjs`) monta o cartão de
+    reprodução no visual do HOJE MT (não imita a tela da rede), com o texto
+    entre aspas, a imagem original sem alteração e o crédito "Reprodução:
+    @perfil no <rede>, dd/mm/aaaa". Vídeo: campo `clipe` da cena ({arquivo,
+    inicio, fim, caixa: [x, y, w, h], origem_url, credito}) + `molduraVideo()`
+    na camada 0; o trecho entra sem o áudio original, com a narração por cima.
+  - Só de perfis oficiais de candidatos, campanhas, partidos e órgãos públicos
+    (TSE, TRE-MT, governo); nunca vídeo de imprensa/TV nem post de pessoa comum.
+    Sempre para comprovar um fato narrado e já conferido; trecho curto (até
+    ~10 s); sem cortes que mudem o sentido; voz real de candidato só pelo
+    `audio_real` (≤ 12 s, com crédito). Tratamento igual: se mostrar o post de
+    um lado numa disputa, mostrar o do outro quando houver. Uso como citação,
+    com autor e origem (Lei 9.610/1998, art. 46, III); o link vai na legenda.
+  - Modelo: cenas 9 e 10 do boletim nº 3 v2 (vídeo e post do @TSEjusbr no X).
 - **Conferência:** transcrever com faster_whisper "small" (nomes e números
   têm de sair certos), olhar quadros de cada cena com ffmpeg (camadas
   entrando na hora da fala) e duração ≤ 120 s.
@@ -122,7 +147,9 @@ fluência de Portugal".
    `audio_real` do `charge-cena.mjs`.
 7. **Vídeos de até 2 minutos**, 9:16, marca do HOJE MT; no formato só voz e
    slides, sem legenda queimada (o texto está nos slides).
-   Nunca usa vídeo de terceiros nem de imprensa.
+   Nunca usa vídeo de imprensa; de redes sociais, só trechos de perfis
+   oficiais para comprovar o fato narrado, com crédito (ver "Postagens e vídeos
+   de redes sociais").
 
 ## Onde aparece
 
