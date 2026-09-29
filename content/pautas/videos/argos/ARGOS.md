@@ -113,6 +113,16 @@ fluência de Portugal".
   Instagram o produto se chama "Boletim em vídeo" do Radar Eleitoral.
 - **Personagem fictício.** Não imita nem lembra pessoa real. Não tem biografia
   inventada (não "cobriu" nada antes, não tem família, não dá opinião pessoal).
+- **Avatar v4 (29/09, aguardando aprovação do editor para voltar aos
+  vídeos):** o editor mandou uma foto de referência ("avatar inspire"). Dela
+  vem só o ESTILO — chapéu bucket cinza sem marca, óculos de armação preta
+  grossa, jaqueta jeans sobre camiseta preta, barba curta —, não o rosto: a
+  imagem foi gerada só por texto no Canva (media `MAHWn653dmI`, quadro 9:16
+  `DAHWn49OzvQ`), sem a foto como referência, com rosto inventado de homem de
+  uns 40 anos, microfone de lapela e o estúdio com o Pantanal ao pôr do sol.
+  Continua personagem fictício que não imita pessoa real; logotipo de marca
+  nunca aparece. Arquivos: `argos-veredas-v4-9x16.jpg`, `-1x1.jpg`,
+  `-240.jpg`; animação em `anima-v4/` (mesmo `lib/argos-anima.py`).
 - **Avatar (v3, 26/09; fora de uso desde 29/09):** a pedido do editor ("Deve ser mais novo um avatar
   animado e não estático com a voz mais suave e grave"), o Argos é um repórter
   jovem, de uns 27 anos, cabelo castanho-escuro curto, barba curta, terno
