@@ -1,0 +1,54 @@
+{
+  "slug": "na-integra-do-audio-medeiros-diz-que-janaina-provavelmente-vai-vencer",
+  "materia": "https://hojemt.com.br/na-integra-do-audio-medeiros-diz-que-janaina-provavelmente-vai-vencer/",
+  "materia_status": "rascunho no Ghost (id 6abc4a97834d62060cb1de57); a charge já está como imagem de destaque e og:image do rascunho",
+  "titulo": "Projeto solo",
+  "formato": "charge de jornal montada inteira no Canva (pedido do editor em 29/09: \"Seja criativo\")",
+  "balao": "Eu só servi para apoiar, eu não sirvo para ser apoiada.",
+  "balao_obs": "fala de Janaina Riva à Rádio Cidade, de Alto Araguaia, em 29/09/2026, sem citar Medeiros pelo nome; conferida no MidiaNews e no Olhar Direto e citada na curta",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Projeto solo: agora a escada sobe com a dona.",
+    "instagram_4x5": "Projeto solo: a escada sobe com a dona."
+  },
+  "contexto": "Janaina disse que apoiou \"esse candidato\" nas últimas eleições, que ele fez material do PL com a foto dela e que \"só servi para ser apoio e ser escada\"; agora toca \"projeto solo\". No mesmo dia saiu a íntegra do áudio em que Medeiros diz ao prefeito de Diamantino que não pode \"estar na foto\" com Janaina. A melancia é o símbolo que Medeiros usou na propaganda de TV no início de setembro e que Janaina ironizou em vídeo de 28/09.",
+  "fontes": [
+    "https://www.midianews.com.br/politica/janaina-cita-rompimento-com-medeiros-fui-usada-nas-eleicoes/530205",
+    "https://www.olhardireto.com.br/noticias/janaina-diz-que-serviu-de-escada-para-medeiros-e-rompe-alianca-nao-me-permito-mais",
+    "https://jornaladvogado.com.br/2026/09/29/facada-pelas-costas-janaina-riva-critica-jose-medeiros-fui-usada-nas-eleicoes/",
+    "https://www.olhardireto.com.br/noticias/em-audio-completo-a-irmao-de-gilmar-mendes-medeiros-diz-que-janaina-e-nome-a-ser-batido-provavelmente-vai-vencer-a-eleicao",
+    "https://www.muvucapopular.com.br/2026/09/29/janaina-e-uma-candidata-que-provavelmente-vai-vencer-a-eleicao-afirma-medeiros-em-audio-vazado/",
+    "https://olhardireto.com.br/noticias/com-melancia-nas-maos-janaina-ironiza-medeiros-e-explora-audios-e-procura-por-gilmar"
+  ],
+  "regras_da_cena": "Janaina (caricatura a partir da foto oficial do TSE) sai do comitê com a escada no ombro, sorridente e confiante; ao fundo, painel com foto de grupo em que ela aparece e falta, recortada, a silhueta de um homem (\"não posso estar na foto\"), e uma melancia partida. Medeiros NÃO é desenhado nem citado na imagem: o áudio completo não foi confirmado por ele, então nada de rosto nem de fala dele; as outras pessoas do painel são genéricas. Sem texto, logos ou bandeiras; ninguém humilhado.",
+  "personagens": [
+    {
+      "nome": "Janaina Riva (MDB)",
+      "referencia_canva": "MAHWESV-xec",
+      "origem": "foto oficial do registro de candidatura, TSE/Divulgação, 2026",
+      "obs": "só referência de desenho; a imagem não traz crédito de foto"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHWn_xaoDI",
+    "arte_16x9": "MAHWn4a6wJk",
+    "design_instagram_4x5": "PENDENTE",
+    "arte_4x5": "PENDENTE",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "4:5 pendente (cota de geração do Canva esgotada em 29/09 à noite); o item da agenda entra como aguardando_materia, porque a curta é rascunho"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-29-projeto-solo-escada.jpg",
+    "instagram_4x5": "PENDENTE"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-29-projeto-solo-escada.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-29-projeto-solo-escada-og.jpg",
+    "instagram_4x5": "PENDENTE"
+  },
+  "site": "feature_image e og_image do rascunho definidas em 29/09/2026"
+}

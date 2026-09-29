@@ -2,7 +2,7 @@
 
 **Sutiã:** No áudio ao prefeito de Diamantino, o candidato do PL ao Senado diz que a colega de coligação é o nome a ser batido e que não pode "estar na foto" com ela. No mesmo dia, Janaina disse que foi "usada" em eleições passadas.
 
-**Status:** rascunho no Ghost (id 6abc4a97834d62060cb1de57, slug `na-integra-do-audio-medeiros-diz-que-janaina-provavelmente-vai-vencer`, tag Curtas & Bastidores), sem imagem. Pedido do editor (29/09/2026, 19h23): print e link do Reel do Olhar Direto https://www.instagram.com/reel/Dd4fgJ1CblV/. O áudio e o vídeo de terceiros não são reproduzidos. Complementa a curta de 24/09 (`2026-09-24-medeiros-assume-frase-do-detergente.md`, ainda rascunho), que pedia atualização se saísse a íntegra. Radar Eleitoral: movimento de 29/9 no grupo de Wellington (saiu o de 23/9, do Novo).
+**Status:** rascunho no Ghost (id 6abc4a97834d62060cb1de57, slug `na-integra-do-audio-medeiros-diz-que-janaina-provavelmente-vai-vencer`, tag Curtas & Bastidores), com a charge "Projeto solo" como imagem de destaque (`pautas/charges/2026-09-29-projeto-solo-escada.json`). Pedido do editor (29/09/2026, 19h23): print e link do Reel do Olhar Direto https://www.instagram.com/reel/Dd4fgJ1CblV/. O áudio e o vídeo de terceiros não são reproduzidos. Complementa a curta de 24/09 (`2026-09-24-medeiros-assume-frase-do-detergente.md`, ainda rascunho), que pedia atualização se saísse a íntegra. Radar Eleitoral: movimento de 29/9 no grupo de Wellington (saiu o de 23/9, do Novo).
 
 ## O que está confirmado
 
@@ -31,4 +31,5 @@ Não localizamos manifestação de Medeiros sobre a íntegra divulgada em 29/09.
 - https://www.olhardireto.com.br/noticias/janaina-diz-que-serviu-de-escada-para-medeiros-e-rompe-alianca-nao-me-permito-mais
 - https://jornaladvogado.com.br/2026/09/29/facada-pelas-costas-janaina-riva-critica-jose-medeiros-fui-usada-nas-eleicoes/
 - https://olhardireto.com.br/noticias/com-melancia-nas-maos-janaina-ironiza-medeiros-e-explora-audios-e-procura-por-gilmar
+- https://www.midianews.com.br/politica/janaina-cita-rompimento-com-medeiros-fui-usada-nas-eleicoes/530205 (29/09, 15h; confirma que ela falou "sem citar o nome dele"; traz "Eu só servi para apoiar, eu não sirvo para ser apoiada", a fala sobre a melancia e o pedido de um dos dois votos)
 - Também noticiaram (não lidos na íntegra daqui, bloqueio 403 ou não abertos): Estadão MT, MT24h, MinutoMT, Veja Bem MT, HiperNotícias, Cliquef5, RDM Online (ex-deputado defende Medeiros).
