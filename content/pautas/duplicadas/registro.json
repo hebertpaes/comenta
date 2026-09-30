@@ -520,5 +520,25 @@
   "mantido": "caceres-define-regras-de-privacidade-e-seguranca-para-uso-de-site-oficial",
   "mantido_titulo": "Cáceres define regras de privacidade e segurança para uso de site oficial",
   "obs": "mesmo texto: o publicador automático leu o rodapé de política de privacidade/termos de uso do site da prefeitura em vez da notícia (a legenda da foto aponta para outra matéria do portal) e publicou como notícia várias vezes; mantida a primeira publicação da cidade."
+ },
+ {
+  "data": "2026-09-30T18:21:34.726Z",
+  "id": "6abd326d834d62060cb1dfce",
+  "slug": "primavera-do-leste-realiza-feirao-da-empregabilidade-para-pcd-2",
+  "titulo": "Primavera do Leste realiza Feirão da Empregabilidade para PCD",
+  "publicado_em": "2026-09-30T16:01:49.000Z",
+  "status_agora": "draft",
+  "mantido": "primavera-do-leste-realiza-feirao-da-empregabilidade-para-pcd",
+  "mantido_titulo": "Primavera do Leste realiza Feirão da Empregabilidade para PCD"
+ },
+ {
+  "data": "2026-09-30T18:21:35.894Z",
+  "id": "6abd2ff5834d62060cb1dfb5",
+  "slug": "justica-determina-que-discord-amplie-protecao-a-menores-no-brasil",
+  "titulo": "Justiça determina que Discord amplie proteção a menores no Brasil",
+  "publicado_em": "2026-09-30T15:51:17.000Z",
+  "status_agora": "draft",
+  "mantido": "justica-obriga-discord-a-reforcar-protecao-a-menores",
+  "mantido_titulo": "Justiça obriga Discord a reforçar proteção a menores"
  }
 ]
