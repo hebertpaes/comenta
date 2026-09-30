@@ -60,8 +60,9 @@ GHOST_ADMIN_URL=http://localhost:2368 GHOST_ADMIN_API_KEY=... node publish.mjs -
 | `BLOG_PER_FEED`       | itens por feed por rodada (default 3)                                                    |
 | `GEMINI_API_KEY`      | Liga a ilustração realista (`ilustrar.mjs`); chave em https://aistudio.google.com/apikey |
 | `TYPESAFE_API_KEY`    | Liga o Jev (`lib/jev.mjs`, `jev-teste.mjs`); chave em https://console.typesafe.ai/keys — só no ambiente, nunca no git |
-| `BLOG_IMAGEM_MODELO`  | Modelo de imagem do Gemini (default `gemini-2.5-flash-image`)                            |
-| `BLOG_TEXTO_MODELO`   | Modelo que descreve a cena e escreve a frase (default `gemini-2.5-flash`)                |
+| `BLOG_IMAGEM_MODELO`  | Fixa o modelo de imagem do Gemini; sem ela, vale o mais novo da lista da chave (reserva: `gemini-2.5-flash-image`) |
+| `BLOG_TEXTO_MODELO`   | Fixa o modelo que descreve a cena e escreve a frase; sem ela, vale o Gemini de texto mais novo da lista (reserva: `gemini-2.5-flash`) |
+| `GEMINI_PEDIDO`       | Só para vídeo, voz e sugestão de cena (`lib/gemini.mjs`): fixa uma versão, ex. `3.8`; vazio = sempre a mais nova |
 
 Idempotente: cada matéria vira um `slug` estável derivado da URL da fonte, então
 rodar várias vezes não duplica posts.
@@ -118,13 +119,13 @@ relações). A rotina horária das charges também procura capas `opiniao-*` e
 As charges da seção **Curtas & Bastidores** eram desenhos vetoriais (bonecos
 geométricos). `ilustrar.mjs` troca cada uma por uma cena realista:
 
-1. `gemini-2.5-flash` lê a matéria e descreve **uma cena** (sem texto na
+1. o Gemini de texto mais novo da chave (reserva `gemini-2.5-flash`) lê a matéria e descreve **uma cena** (sem texto na
    imagem), escreve a frase curta da charge e lista os **personagens**: as
    figuras públicas citadas (prefeito, deputado, ministro…), no máximo 3;
 2. para cada personagem, `lib/imagens.mjs` procura a **foto real com licença**
    (Wikimedia Commons: Câmara, Senado, TSE, Planalto, Agência Brasil) e a
    entrega ao modelo de imagem como referência;
-3. `gemini-2.5-flash-image` desenha a cena em 16:9 no estilo de charge de
+3. o Gemini de imagem mais novo da chave (reserva `gemini-2.5-flash-image`; se o novo falhar ou não devolver imagem, repete com a reserva) desenha a cena em 16:9 no estilo de charge de
    jornal (caricatura reconhecível a partir da foto, traço de desenho, nunca
    aparência de foto) — ou, com `--tipo=ilustracao`, uma cena com aparência de
    foto **sem** nenhuma pessoa real reconhecível;

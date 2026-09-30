@@ -23,15 +23,55 @@
 // Env:
 //   GEMINI_API_KEY        obrigatória para gerar (sem ela, só `compor` funciona)
 //   GEMINI_API_URL        default https://generativelanguage.googleapis.com
-//   BLOG_IMAGEM_MODELO    default gemini-2.5-flash-image
-//   BLOG_TEXTO_MODELO     default gemini-2.5-flash
+//   BLOG_IMAGEM_MODELO    fixa o modelo de imagem; default: o Gemini de imagem MAIS NOVO da lista da API
+//   BLOG_TEXTO_MODELO     fixa o modelo que descreve a cena; default: o Gemini de texto MAIS NOVO da lista
+// Editor, 30/09/2026: "use a última versão do Gemini". Os modelos são descobertos
+// pela lista da chave (lib/gemini.mjs); sem chave, sem rede ou se o modelo novo
+// falhar, vale o modelo antigo abaixo (gemini-2.5-flash-image / gemini-2.5-flash).
 import { buscar } from "./imagens.mjs";
+import { escolherModelo } from "./gemini.mjs";
 
 const GEMINI_URL = (
   process.env.GEMINI_API_URL || "https://generativelanguage.googleapis.com"
 ).replace(/\/+$/, "");
-const MODELO_IMAGEM = process.env.BLOG_IMAGEM_MODELO || "gemini-2.5-flash-image";
-const MODELO_TEXTO = process.env.BLOG_TEXTO_MODELO || "gemini-2.5-flash";
+const LEGADO = { imagem: "gemini-2.5-flash-image", texto: "gemini-2.5-flash" };
+const FIXO = { imagem: process.env.BLOG_IMAGEM_MODELO, texto: process.env.BLOG_TEXTO_MODELO };
+
+let _modelos;
+/**
+ * Modelos de imagem e de texto desta execução: o fixado no ambiente, senão o
+ * Gemini mais novo que a chave lista (aceitando generateContent), senão o legado.
+ * Devolve { imagem, texto, origem: {imagem, texto} }, origem = "ambiente" | "descoberto" | "legado".
+ */
+export function modelosGemini({ chave = process.env.GEMINI_API_KEY, lista } = {}) {
+  if (_modelos && !lista) return _modelos;
+  const resolve = async () => {
+    const r = { origem: {} };
+    for (const papel of ["imagem", "texto"]) {
+      if (FIXO[papel]) {
+        r[papel] = FIXO[papel].replace(/^models\//, "");
+        r.origem[papel] = "ambiente";
+        continue;
+      }
+      try {
+        if (!chave && !lista) throw new Error("sem GEMINI_API_KEY");
+        r[papel] = await escolherModelo(papel, { lista, metodo: "generateContent" });
+        r.origem[papel] = "descoberto";
+      } catch (e) {
+        r[papel] = LEGADO[papel];
+        r.origem[papel] = "legado";
+        if (chave) console.warn(`  modelo de ${papel} não descoberto (${e.message}); usando ${LEGADO[papel]}`);
+      }
+    }
+    return r;
+  };
+  const p = resolve();
+  if (!lista) _modelos = p;
+  return p;
+}
+
+/** Modelos a tentar, em ordem: o escolhido e, se foi descoberto, o legado como reserva. */
+const candidatos = (m, papel) => (m.origem[papel] === "descoberto" && m[papel] !== LEGADO[papel] ? [m[papel], LEGADO[papel]] : [m[papel]]);
 const UA = "HojeMT-redacao/1.0 (+https://hojemt.com.br)";
 const MAX_PERSONAGENS = 3;
 
@@ -146,14 +186,23 @@ export async function descreverCena({
   ].join("\n");
 
   try {
-    const r = await gemini(
-      MODELO_TEXTO,
-      {
-        contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: { responseMimeType: "application/json", temperature: 0.7 },
-      },
-      chave
-    );
+    const modelos = await modelosGemini({ chave });
+    const corpo = {
+      contents: [{ parts: [{ text: prompt }] }],
+      generationConfig: { responseMimeType: "application/json", temperature: 0.7 },
+    };
+    let r;
+    let modeloTexto;
+    for (const [i, m] of candidatos(modelos, "texto").entries()) {
+      try {
+        r = await gemini(m, corpo, chave);
+        modeloTexto = m;
+        break;
+      } catch (e) {
+        if (i === candidatos(modelos, "texto").length - 1) throw e;
+        console.warn(`  ${m} falhou (${e.message}); repetindo com ${LEGADO.texto}`);
+      }
+    }
     const bruto = (r.candidates?.[0]?.content?.parts || [])
       .map((p) => p.text || "")
       .join("")
@@ -174,7 +223,7 @@ export async function descreverCena({
               .slice(0, 110)
           : "",
       personagens,
-      origem: MODELO_TEXTO,
+      origem: modeloTexto,
     };
   } catch (e) {
     console.warn(`  descrição por IA falhou (${e.message}); usando título + resumo`);
@@ -296,24 +345,33 @@ export async function gerarImagem(
         inlineData: { mimeType: r.mime || "image/jpeg", data: r.imagem.toString("base64") },
       });
     }
-  const r = await gemini(
-    MODELO_IMAGEM,
-    {
-      contents: [{ parts }],
-      generationConfig: { responseModalities: ["IMAGE"], imageConfig: { aspectRatio: "16:9" } },
-    },
-    chave
-  );
-  const parte = (r.candidates?.[0]?.content?.parts || []).find((p) => p.inlineData?.data);
-  if (!parte) {
-    const motivo = r.candidates?.[0]?.finishReason || r.promptFeedback?.blockReason || "sem imagem";
-    throw new Error(`Gemini não devolveu imagem (${motivo}).`);
-  }
-  return {
-    imagem: Buffer.from(parte.inlineData.data, "base64"),
-    mime: parte.inlineData.mimeType || "image/png",
-    prompt,
+  const corpo = {
+    contents: [{ parts }],
+    generationConfig: { responseModalities: ["IMAGE"], imageConfig: { aspectRatio: "16:9" } },
   };
+  const modelos = await modelosGemini({ chave });
+  const lista = candidatos(modelos, "imagem");
+  let ultimoErro;
+  for (const [i, modelo] of lista.entries()) {
+    try {
+      const r = await gemini(modelo, corpo, chave);
+      const parte = (r.candidates?.[0]?.content?.parts || []).find((p) => p.inlineData?.data);
+      if (!parte) {
+        const motivo = r.candidates?.[0]?.finishReason || r.promptFeedback?.blockReason || "sem imagem";
+        throw new Error(`Gemini (${modelo}) não devolveu imagem (${motivo}).`);
+      }
+      return {
+        imagem: Buffer.from(parte.inlineData.data, "base64"),
+        mime: parte.inlineData.mimeType || "image/png",
+        prompt,
+        modelo,
+      };
+    } catch (e) {
+      ultimoErro = e;
+      if (i < lista.length - 1) console.warn(`  ${modelo} falhou (${e.message}); repetindo com ${LEGADO.imagem}`);
+    }
+  }
+  throw ultimoErro;
 }
 
 const escXml = (s = "") =>

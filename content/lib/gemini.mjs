@@ -16,21 +16,22 @@
 //   - texto: sugere a cena ilustrativa de cada fala (o editor revisa).
 //
 // Os nomes de modelo mudam; por isso o modelo é DESCOBERTO pela lista da API
-// (`listarModelos`), preferindo o que o editor pediu ("3.8") e, sem isso, a
-// versão mais nova de cada tipo. Env (todas opcionais menos a chave):
+// (`listarModelos`) e, sem modelo fixo, vale a versão MAIS NOVA de cada tipo
+// (editor, 30/09/2026: "use a última versão do Gemini"). `GEMINI_PEDIDO` fixa
+// uma versão quando for preciso. Env (todas opcionais menos a chave):
 //   GEMINI_API_KEY        chave do AI Studio (configurar no ambiente, nunca no git)
 //   GEMINI_API_URL        default https://generativelanguage.googleapis.com
-//   GEMINI_MODELO_TEXTO   ex.: o "3.8" pedido; default: o mais novo da lista
+//   GEMINI_MODELO_TEXTO   ex.: gemini-…; default: o mais novo da lista
 //   GEMINI_MODELO_VIDEO   ex.: veo-…; default: o Veo mais novo da lista
 //   GEMINI_MODELO_TTS     ex.: …-tts; default: o TTS mais novo da lista
-//   GEMINI_PEDIDO         versão preferida quando não há modelo fixo (default "3.8")
+//   GEMINI_PEDIDO         versão preferida quando não há modelo fixo, ex. "3.8" (default: vazio = a mais nova)
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const aqui = dirname(fileURLToPath(import.meta.url));
 export const GEMINI_URL = (process.env.GEMINI_API_URL || "https://generativelanguage.googleapis.com").replace(/\/+$/, "");
-const PEDIDO = process.env.GEMINI_PEDIDO || "3.8";
+const PEDIDO = process.env.GEMINI_PEDIDO || "";
 
 export class GeminiIndisponivel extends Error {}
 
@@ -107,11 +108,20 @@ function pontuar(id) {
 
 const FIXO = { texto: "GEMINI_MODELO_TEXTO", video: "GEMINI_MODELO_VIDEO", tts: "GEMINI_MODELO_TTS" };
 
-/** Escolhe o modelo do tipo: o fixado no ambiente, o da versão pedida ou o mais novo. */
-export async function escolherModelo(tipo, { pedido = PEDIDO, lista } = {}) {
+/** Modelos de uso especial que não servem para descrever cena nem escrever frase. */
+const ESPECIAIS = /live|audio|robotics|computer-use|embedding/;
+
+/**
+ * Escolhe o modelo do tipo: o fixado no ambiente, o da versão pedida ou o mais novo.
+ * `metodo` (ex.: "generateContent") exige que o modelo aceite esse método — o
+ * `ilustrar.mjs` precisa disso, porque os modelos "imagen-*" só aceitam `predict`.
+ */
+export async function escolherModelo(tipo, { pedido = PEDIDO, lista, metodo } = {}) {
   const fixo = process.env[FIXO[tipo]];
   if (fixo) return fixo.replace(/^models\//, "");
-  const modelos = (lista || (await listarModelos())).filter((m) => tipoDoModelo(m) === tipo);
+  const modelos = (lista || (await listarModelos())).filter(
+    (m) => tipoDoModelo(m) === tipo && (!metodo || m.metodos.includes(metodo)) && !(tipo === "texto" && ESPECIAIS.test(m.id.toLowerCase()))
+  );
   if (!modelos.length) throw new GeminiIndisponivel(`nenhum modelo de ${tipo} disponível para esta chave`);
   const ordem = [...modelos].sort((x, y) => pontuar(y.id) - pontuar(x.id));
   const doPedido = pedido && ordem.find((m) => versao(m.id).join(".") === String(pedido));

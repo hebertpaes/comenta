@@ -75,9 +75,10 @@ fluência de Portugal".
 - **API do Gemini (29/09, editor: "Use api Gemini 3.8 para gerar os vídeos do
   radar"):** `lib/gemini.mjs` + `gemini-video.mjs`, com a chave em
   `GEMINI_API_KEY` (variável de ambiente; nunca no git nem no chat). O modelo
-  é escolhido pela lista da própria chave: o "3.8" pedido quando existir, senão
-  o mais novo de cada tipo (`node gemini-video.mjs modelos` mostra a escolha;
-  `GEMINI_MODELO_TEXTO/VIDEO/TTS` fixam um).
+  é escolhido pela lista da própria chave e vale sempre o mais novo de cada
+  tipo (editor, 30/09: "use a última versão do Gemini"; `GEMINI_PEDIDO=3.8`
+  fixa uma versão; `node gemini-video.mjs modelos` mostra a escolha;
+  `GEMINI_MODELO_TEXTO/VIDEO/TTS` fixam um modelo).
   - **Cenas ilustrativas (Veo):** na cena, `"clipe": {"gerar": {"prompt":
     "…", "duracao": 8}}` (com `caixa` para a janela do slide; sem ela, tela
     inteira). Só paisagem, cidade, lavoura, estrada, prédio público por fora,
