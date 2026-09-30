@@ -2393,7 +2393,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "30/09/2026 09:43",
+  "atualizado": "30/09/2026 10:44",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -3509,6 +3509,32 @@
        ]
       ],
       "papel": "contra"
+     },
+     {
+      "data": "2026-09-26",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT",
+      "resumo": "A coligação Mato Grosso Não Pode Parar, que apoia Mauro Mendes, ajuizou ação de investigação judicial eleitoral (AIJE) contra Pedro Taques e os suplentes Carlos Ernesto Augustin e Guelda Cristina de Oliveira Andrade, por suposto abuso de poder econômico e uso indevido dos meios de comunicação. A ação aponta 317 falas que associariam Mauro a práticas criminosas sem denúncia ou condenação, 38 impulsionamentos pagos e o descumprimento de decisões da Justiça Eleitoral, e pede a cassação do registro ou do diploma e inelegibilidade por oito anos. Ainda não há decisão.",
+      "cabe_recurso": null,
+      "defesa": null,
+      "fontes": [
+       [
+        "MT Econômico",
+        "https://matogrossoeconomico.com.br/politica-mato-grosso/eleicoes/coligacao-de-mauro-entra-com-aije-contra-taques-e-pede-inelegibilidade-por-8-anos/",
+        "2026-09-26"
+       ],
+       [
+        "FTN Brasil",
+        "https://ftnbrasil.com.br/pivetta-aciona-justica-eleitoral-para-tentar-cassar-candidaturas-de-natasha-e-taques/",
+        "2026-09-28"
+       ],
+       [
+        "ND Mais",
+        "https://ndmais.com.br/politica/pivetta-pede-cassacao-de-natasha-e-taques-por-supostas-irregularidades-na-campanha-ao-senado-em-mt/",
+        "2026-09-28"
+       ]
+      ],
+      "papel": "pedido"
      },
      {
       "data": "2026-09-25",
@@ -5122,6 +5148,32 @@
        ]
       ],
       "papel": "pedido"
+     },
+     {
+      "data": "2026-09-26",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT",
+      "resumo": "A coligação Mato Grosso Não Pode Parar, que apoia Mauro Mendes, ajuizou ação de investigação judicial eleitoral (AIJE) contra Pedro Taques e os suplentes Carlos Ernesto Augustin e Guelda Cristina de Oliveira Andrade, por suposto abuso de poder econômico e uso indevido dos meios de comunicação. A ação aponta 317 falas que associariam Mauro a práticas criminosas sem denúncia ou condenação, 38 impulsionamentos pagos e o descumprimento de decisões da Justiça Eleitoral, e pede a cassação do registro ou do diploma e inelegibilidade por oito anos. Ainda não há decisão.",
+      "cabe_recurso": null,
+      "defesa": null,
+      "fontes": [
+       [
+        "MT Econômico",
+        "https://matogrossoeconomico.com.br/politica-mato-grosso/eleicoes/coligacao-de-mauro-entra-com-aije-contra-taques-e-pede-inelegibilidade-por-8-anos/",
+        "2026-09-26"
+       ],
+       [
+        "FTN Brasil",
+        "https://ftnbrasil.com.br/pivetta-aciona-justica-eleitoral-para-tentar-cassar-candidaturas-de-natasha-e-taques/",
+        "2026-09-28"
+       ],
+       [
+        "ND Mais",
+        "https://ndmais.com.br/politica/pivetta-pede-cassacao-de-natasha-e-taques-por-supostas-irregularidades-na-campanha-ao-senado-em-mt/",
+        "2026-09-28"
+       ]
+      ],
+      "papel": "contra"
      },
      {
       "data": "2026-09-25",
