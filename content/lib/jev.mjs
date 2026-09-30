@@ -19,23 +19,27 @@
 // Uso:
 //   import { perguntar, choice, noul, score, resumo } from "./lib/jev.mjs";
 //   const r = await perguntar({ titulo, texto }, {
-//     editoria: choice("Em qual editoria a matéria se encaixa?", { politica: null, cidades: null }),
-//     tem_aspas: noul("O texto traz fala entre aspas atribuída a pessoa nomeada?"),
+//     editoria: choice("Em qual editoria a matéria em `texto` se encaixa?", {
+//       politica: "Assembleia, Câmara, governo, tribunais", cidades: "Serviços, obras e cotidiano das cidades" }),
+//     tem_aspas: noul("O `texto` traz fala entre aspas atribuída a pessoa nomeada?"),
 //   });
+//   (exemplo completo, com as três perguntas: jev-teste.mjs)
 //   r.answers.editoria.choice, r.answers.editoria.confidence, r.answers.tem_aspas.noul
 //
 // Limites e custos (docs.typesafe.ai/models, lidos em 30/09/2026): 64 mil
 // tokens por pedido (32 mil para o estado mais a pergunta mais longa); só
 // texto; US$ 0,042 por milhão de tokens de entrada, saída grátis; 40 pedidos
-// e 100 mil tokens por segundo. O inglês é a língua principal do treino; o
-// português "é atendido, mas não igualmente bem": testar nos nossos textos
-// antes de confiar num limiar.
+// e 100 mil tokens por segundo. O inglês é a língua principal do treino; as
+// outras línguas "são atendidas, mas não igualmente bem" (a doc não cita o
+// português): testar nos nossos textos antes de confiar num limiar.
 //
 // Env (só a chave é obrigatória; configurar no ambiente, nunca no git):
 //   TYPESAFE_API_KEY        chave de https://console.typesafe.ai/keys
 //   TYPESAFE_BASE_URL       default https://api.typesafe.ai
 //   TYPESAFE_DEFAULT_MODEL  default jev-latest (alias da versão estável)
 //   TYPESAFE_LOG_LEVEL      debug | info | warn (default) | error | off
+//                           (debug imprime o corpo do pedido, isto é, o texto da matéria, e os 4
+//                           últimos caracteres da chave; não usar em log compartilhado nem colar no chat)
 // Os scripts rodam com o mesmo prefixo dos demais (NODE_USE_ENV_PROXY=1 e
 // NODE_EXTRA_CA_CERTS), porque o SDK usa o `fetch` global do Node.
 import {
@@ -69,12 +73,13 @@ export function chaveJev() {
 }
 
 /** Modelo que a chamada vai usar sem `modelo` explícito. */
-export const modeloPadrao = () => process.env[ENV.defaultModel] || MODELO_PADRAO;
+export const modeloPadrao = () => process.env[ENV.defaultModel]?.trim() || MODELO_PADRAO;
 
 /**
  * Confere as perguntas antes de gastar tokens: cada uma tem de vir de
- * choice()/noul()/score() e respeitar os limites da API (choice: 2 a 255
- * rótulos; score: 2 a 10 níveis). Lança Error com o id da pergunta.
+ * choice()/noul()/score(). Limites da API: choice até 255 rótulos; score de 2
+ * a 10 níveis. Regra nossa, não da API: choice com pelo menos 2 rótulos (um
+ * choice de 1 opção não decide nada). Lança Error com o id da pergunta.
  */
 export function validarPerguntas(perguntas) {
   if (!perguntas || typeof perguntas !== "object" || Array.isArray(perguntas) || !Object.keys(perguntas).length) {
@@ -84,7 +89,7 @@ export function validarPerguntas(perguntas) {
     if (!q || typeof q !== "object") throw new Error(`pergunta "${id}": use choice(), noul() ou score()`);
     if (q.type === "choice") {
       const n = q.criteria && typeof q.criteria === "object" && !Array.isArray(q.criteria) ? Object.keys(q.criteria).length : 0;
-      if (n < 2) throw new Error(`pergunta "${id}": choice precisa de pelo menos 2 rótulos em criteria`);
+      if (n < 2) throw new Error(`pergunta "${id}": o helper exige pelo menos 2 rótulos em criteria no choice`);
       if (n > 255) throw new Error(`pergunta "${id}": choice aceita no máximo 255 rótulos (tem ${n})`);
     } else if (q.type === "score") {
       const n = Array.isArray(q.criteria) ? q.criteria.length : 0;
@@ -142,27 +147,27 @@ export async function perguntar(estado, perguntas, { modelo, opcoes, config } = 
 export async function listarModelos(config) {
   const c = cliente(config);
   if (!c.models || typeof c.models.list !== "function") throw new Error("o SDK instalado não expõe client.models.list()");
-  const r = await c.models.list();
-  return Array.isArray(r) ? r : r?.data || r?.models || r;
+  return await c.models.list(); // o SDK 0.6 já devolve o array de ModelCard (ou lança)
 }
 
 const pct = (x) => `${Math.round(Number(x) * 100)}%`;
+const dist = (p) =>
+  Object.entries(p || {})
+    .sort((x, y) => y[1] - x[1])
+    .map(([k, v]) => `${k} ${pct(v)}`)
+    .join(", ");
 
 /** Uma linha por resposta, para log e para o editor ler. */
 export function resumo(resposta) {
   const linhas = [];
   for (const [id, a] of Object.entries(resposta?.answers || {})) {
     if (a.type === "choice") {
-      const dist = Object.entries(a.probabilities || {})
-        .sort((x, y) => y[1] - x[1])
-        .map(([k, v]) => `${k} ${pct(v)}`)
-        .join(", ");
-      linhas.push(`${id}: ${a.choice} (confiança ${pct(a.confidence)}; ${dist})`);
+      linhas.push(`${id}: ${a.choice} (confiança ${pct(a.confidence)}; ${dist(a.probabilities)})`);
     } else if (a.type === "noul") {
       linhas.push(`${id}: sim ${pct(a.noul)}`);
     } else if (a.type === "score") {
       const nivel = a.legend?.[Math.round(a.score)];
-      linhas.push(`${id}: ${Number(a.score).toFixed(2)}${nivel ? ` (≈ ${typeof nivel === "string" ? nivel : JSON.stringify(nivel)})` : ""} (confiança ${pct(a.confidence)})`);
+      linhas.push(`${id}: ${Number(a.score).toFixed(2)}${nivel ? ` (≈ ${typeof nivel === "string" ? nivel : JSON.stringify(nivel)})` : ""} (confiança ${pct(a.confidence)}; ${dist(a.probabilities)})`);
     } else {
       linhas.push(`${id}: ${JSON.stringify(a)}`);
     }

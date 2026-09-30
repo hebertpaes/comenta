@@ -45,7 +45,7 @@ const estado = {
 };
 
 const perguntas = {
-  editoria: choice("Em qual editoria do HOJE MT a matéria em `texto` se encaixa melhor?", {
+  editoria: choice("Em qual editoria do HOJE MT a matéria (`titulo` e `texto`) se encaixa melhor?", {
     politica: "Política estadual ou municipal: Assembleia, Câmara, governo, prefeituras, tribunais de contas",
     cidades: "Serviços, obras, trânsito e cotidiano das cidades de Mato Grosso",
     eleicoes: "Campanha, candidatos, pesquisas e Justiça Eleitoral",

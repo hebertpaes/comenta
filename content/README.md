@@ -584,7 +584,11 @@ import { perguntar, choice, noul, score, resumo } from "./lib/jev.mjs";
 const r = await perguntar({ titulo, texto }, {
   editoria: choice("Em qual editoria a matéria em `texto` se encaixa?", { politica: "...", cidades: "..." }),
   tem_aspas: noul("O `texto` traz fala entre aspas atribuída a pessoa nomeada?"),
-  acusacao: score("Grau de acusação contra pessoa nomeada no `texto`", ["nenhuma", "leve", "grave"]),
+  acusacao: score("Grau de acusação contra pessoa nomeada no `texto`", [
+    "Nenhuma: só relata fatos, decisões ou opiniões sem imputar conduta a alguém",
+    "Leve: critica atuação ou decisão de pessoa nomeada, sem atribuir crime ou irregularidade",
+    "Grave: atribui crime, irregularidade ou desonestidade a pessoa nomeada",
+  ]),
 });
 r.answers.editoria.choice; r.answers.editoria.confidence; r.answers.tem_aspas.noul; r.answers.acusacao.score;
 console.log(resumo(r));
@@ -595,9 +599,11 @@ Regras de uso na redação:
 - O Jev classifica, pontua e compara; **nunca escreve texto nem publica**. A
   saída é um dado para o script ou para o editor. Rascunho continua rascunho.
 - Limiares (`confidence`, `noul`) só depois de testar nos nossos textos: o
-  inglês é a língua principal do modelo e o português "é atendido, mas não
-  igualmente bem" (docs, 30/09/2026). Abaixo do limiar, a decisão vai para o
-  editor, não para o "sim" automático.
+  inglês é a língua principal do modelo; as outras línguas "são atendidas, mas
+  não igualmente bem" (docs, 30/09/2026; a doc não cita o português). Abaixo
+  do limiar, a decisão vai para o editor, não para o "sim" automático.
+- Os níveis de um `score` descrevem **situações concretas**, não graus soltos
+  ("leve", "grave"): é o que o modelo compara com o estado.
 - Limites e preço (docs, 30/09/2026): modelo `jev-latest` (= `jev-1.13.0`);
   64 mil tokens por pedido, 32 mil para o estado mais a pergunta mais longa;
   só texto; US$ 0,042 por milhão de tokens de entrada, saída grátis; 40
