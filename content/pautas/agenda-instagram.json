@@ -1224,6 +1224,22 @@
       "materia": "https://hojemt.com.br/portugues-em-nova-york/",
       "charge_json": "pautas/charges/2026-09-29-portugues-em-nova-york.json",
       "obs": "aguardando o editor corrigir a curta publicada (diz que o português é 'uma das seis línguas oficiais' da ONU; não é); depois, agendar no próximo horário livre"
+    },
+    {
+      "id": "68",
+      "status": "aguardando_materia",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Projeto solo",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-29-projeto-solo-escada-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Projeto solo\n\nProjeto solo: a escada sobe com a dona.\n\nNa mesma coligação ao Senado, a de Wellington Fagundes, veio a público a íntegra do áudio em que José Medeiros (PL) diz que Janaina Riva (MDB) \"provavelmente vai vencer a eleição\" e que ele não pode \"estar na foto\" com ela. No mesmo dia, sem citar o nome dele, Janaina disse que foi \"usada nas últimas eleições\": \"Eu só servi para apoiar, eu não sirvo para ser apoiada\".\n\nLeia a curta completa no site (link na bio).\n\nFontes: Olhar Direto, Muvuca Popular, MidiaNews\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #senado #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/na-integra-do-audio-medeiros-diz-que-janaina-provavelmente-vai-vencer/",
+      "charge_json": "pautas/charges/2026-09-29-projeto-solo-escada.json",
+      "obs": "curta em rascunho no Ghost (id 6abc4a97834d62060cb1de57): agendar só depois de publicada; charge eleitoral, perde sentido depois do 1º turno (4/10)"
     }
   ]
 }

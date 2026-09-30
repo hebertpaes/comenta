@@ -33,22 +33,22 @@
   "canva": {
     "design_site_16x9": "DAHWn_xaoDI",
     "arte_16x9": "MAHWn4a6wJk",
-    "design_instagram_4x5": "PENDENTE",
-    "arte_4x5": "PENDENTE",
+    "design_instagram_4x5": "DAHWoLbPu9w",
+    "arte_4x5": "MAHWoI2WeMU",
     "modelo_16x9": "DAHWDzwR5c0",
     "modelo_retrato": "DAHWEJf2P1U"
   },
   "instagram": {
-    "status": "4:5 pendente (cota de geração do Canva esgotada em 29/09 à noite); o item da agenda entra como aguardando_materia, porque a curta é rascunho"
+    "status": "na agenda como aguardando_materia (item 68): sai depois que o editor publicar a curta"
   },
   "arquivos": {
     "site_16x9": "2026-09-29-projeto-solo-escada.jpg",
-    "instagram_4x5": "PENDENTE"
+    "instagram_4x5": "2026-09-29-projeto-solo-escada-instagram-retrato.jpg"
   },
   "hospedado_em": {
     "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-29-projeto-solo-escada.jpg",
     "og": "https://hojemt.com.br/content/images/2026/09/2026-09-29-projeto-solo-escada-og.jpg",
-    "instagram_4x5": "PENDENTE"
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-29-projeto-solo-escada-instagram-retrato.jpg"
   },
   "site": "feature_image e og_image do rascunho definidas em 29/09/2026"
 }
