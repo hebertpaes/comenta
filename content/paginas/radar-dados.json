@@ -299,13 +299,13 @@
   ]
  },
  "pesquisas": {
-  "atualizado": "29/09/2026 18:47",
+  "atualizado": "30/09/2026 12:46",
   "corridas": [
    {
     "id": "governador-mt",
     "titulo": "Governo de Mato Grosso",
     "cenario": "2º turno entre Otaviano Pivetta (Republicanos) e Wellington Fagundes (PL)",
-    "porque": "Os dois ficam nos dois primeiros lugares nas seis pesquisas registradas desde 4/9. Pivetta aparece à frente no 1º turno em cinco delas (na Quaest, em empate técnico) e Wellington em uma (AtlasIntel, também empate técnico). Nenhum candidato chega à metade dos votos válidos (na Veritá, divulgada em 28/9, Pivetta tem 44,1% dos válidos). No 2º turno simulado, Pivetta vence em três pesquisas e Wellington aparece à frente em duas, ambas dentro da margem de erro; a Veritá não divulgou 2º turno.",
+    "porque": "Os dois ficam nos dois primeiros lugares nas seis pesquisas registradas desde 4/9 que estão no Radar. Pivetta aparece à frente no 1º turno em cinco delas (na Quaest, em empate técnico) e Wellington em uma (AtlasIntel, também empate técnico). Na Paraná Pesquisas de 27 a 29/9, Pivetta tem 51,6% dos votos válidos, acima da metade (Gazeta do Povo); nas demais, nenhum candidato chega a ela. No 2º turno simulado, Pivetta vence em quatro pesquisas e Wellington aparece à frente em duas, ambas dentro da margem de erro.",
     "nomes": [
      "Otaviano Pivetta",
      "Wellington Fagundes",
@@ -315,6 +315,50 @@
      "Rafaell Milas"
     ],
     "pesquisas": [
+     {
+      "inst": "Paraná Pesquisas",
+      "contratante": "Sedek Serviços, Tecnologia & Informação Ltda. (segundo a Gazeta do Povo)",
+      "campo": "27 a 29/09",
+      "amostra": "1.352",
+      "margem": "2,7",
+      "conf": 95,
+      "metodo": "presencial",
+      "reg": "MT-02094/2026",
+      "base": "totais",
+      "v": {
+       "Otaviano Pivetta": 46.4,
+       "Wellington Fagundes": 27.1,
+       "Doutora Natasha": 15.5,
+       "Sargento Laudicério": 0.4,
+       "Rafaell Milas": 0.4,
+       "Maurício Coelho": 0.1
+      },
+      "fontes": [
+       [
+        "Metrópoles",
+        "https://www.metropoles.com/brasil/parana-pesquisa-pivetta-lidera-em-mato-grosso-seguido-por-fagundes",
+        "2026-09-30"
+       ],
+       [
+        "CartaCapital",
+        "https://www.cartacapital.com.br/politica/pivetta-lidera-e-pode-ser-reeleito-em-1o-turno-no-mt-indica-parana-pesquisas/",
+        "2026-09-30T13:00-03:00"
+       ],
+       [
+        "Gazeta do Povo",
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-mato-grosso-setembro-2026-2/",
+        "2026-09-30"
+       ]
+      ],
+      "t2": [
+       [
+        "Otaviano Pivetta",
+        53.1,
+        "Wellington Fagundes",
+        34.6
+       ]
+      ]
+     },
      {
       "inst": "Quaest",
       "contratante": "Rádio e Televisão Matogrossense Ltda. (TV Centro América)",
@@ -602,7 +646,7 @@
     "id": "senado-mt",
     "titulo": "Senado por Mato Grosso (2 vagas)",
     "cenario": "Mauro Mendes (União) e Janaina Riva (MDB) à frente para as duas vagas",
-    "porque": "Nas quatro pesquisas registradas desde 6/9, Mauro lidera e Janaina fica em segundo, com vantagem sobre o terceiro colocado maior que a margem de erro em todas. Zé Medeiros (PL), Fávaro (PSD) e Pedro Taques (PSB) vêm em seguida. O gráfico compara o 1º voto, medido do mesmo jeito pelos institutos; a soma dos dois votos de cada pesquisa está nas fichas.",
+    "porque": "Nas cinco pesquisas registradas desde 6/9, Mauro lidera e Janaina fica em segundo; nas quatro primeiras, com vantagem sobre o terceiro colocado maior que a margem de erro. Na Paraná Pesquisas de 27 a 29/9, que divulgou só a soma dos dois votos, Janaina tem 33,3% e Zé Medeiros (PL), 29,3%: 4 pontos de diferença, com margem de erro de 2,7 pontos. Fávaro (PSD) e Pedro Taques (PSB) vêm em seguida. O gráfico compara o 1º voto, medido do mesmo jeito pelos institutos; a soma dos dois votos de cada pesquisa está nas fichas.",
     "nomes": [
      "Mauro Mendes",
      "Janaina Riva",
@@ -611,6 +655,36 @@
      "Fávaro"
     ],
     "pesquisas": [
+     {
+      "inst": "Paraná Pesquisas",
+      "contratante": "Sedek Serviços, Tecnologia & Informação Ltda. (segundo a Gazeta do Povo)",
+      "campo": "27 a 29/09",
+      "amostra": "1.352",
+      "margem": "2,7",
+      "conf": 95,
+      "metodo": "presencial",
+      "reg": "MT-02094/2026",
+      "base": "totais",
+      "v": null,
+      "fontes": [
+       [
+        "Metrópoles",
+        "https://www.metropoles.com/brasil/parana-pesquisa-pivetta-lidera-em-mato-grosso-seguido-por-fagundes",
+        "2026-09-30"
+       ],
+       [
+        "Boca",
+        "https://boca.com.br/politica/mauro-mendes-lidera-pesquisa-para-o-senado-em-mato-grosso",
+        "2026-09-30T16:05"
+       ],
+       [
+        "Gazeta do Povo",
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-mato-grosso-setembro-2026-2/",
+        "2026-09-30"
+       ]
+      ],
+      "soma": "soma das menções, perto de 200%: Mauro Mendes 54,9%, Janaina Riva 33,3%, Zé Medeiros 29,3%, Fávaro 18%, Pedro Taques 14,1%"
+     },
      {
       "inst": "Quaest",
       "contratante": "Rádio e Televisão Matogrossense Ltda. (TV Centro América)",
@@ -7238,7 +7312,7 @@
   ]
  },
  "analise": {
-  "atualizado": "29/09/2026",
+  "atualizado": "30/09/2026 12:46",
   "candidatos": [
    {
     "nome": "Doutora Natasha",
@@ -7247,7 +7321,7 @@
     "numero": 55,
     "fortes": [
      [
-      "Terceira colocada em todas as cinco pesquisas registradas, com 11% (Quaest) a 23,2% (AtlasIntel) no 1º turno.",
+      "Terceira colocada em todas as seis pesquisas registradas, com 11% (Quaest) a 23,2% (AtlasIntel) no 1º turno.",
       [
        [
         "g1 MT (Quaest)",
@@ -7256,6 +7330,10 @@
        [
         "Gazeta do Povo (AtlasIntel)",
         "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-governador-mato-grosso-setembro-2026/"
+       ],
+       [
+        "Metrópoles (Paraná Pesquisas)",
+        "https://www.metropoles.com/brasil/parana-pesquisa-pivetta-lidera-em-mato-grosso-seguido-por-fagundes"
        ]
       ]
      ],
@@ -7407,7 +7485,7 @@
     "numero": 10,
     "fortes": [
      [
-      "À frente no 1º turno em quatro das cinco pesquisas registradas: Paraná Pesquisas (42,4%), MT Dados (34%) e Quaest (29%, em empate técnico).",
+      "À frente no 1º turno em cinco das seis pesquisas registradas: Paraná Pesquisas (46,4% em 27 a 29/9, 51,6% dos válidos), MT Dados (34%) e Quaest (29%, em empate técnico).",
       [
        [
         "Paraná Pesquisas (Paraná Pesquisas)",
@@ -7420,6 +7498,14 @@
        [
         "g1 MT (Quaest)",
         "https://g1.globo.com/mt/mato-grosso/eleicoes/2026/noticia/2026/09/25/quaest-mt-governador-25-setembro.ghtml"
+       ],
+       [
+        "Metrópoles (Paraná Pesquisas)",
+        "https://www.metropoles.com/brasil/parana-pesquisa-pivetta-lidera-em-mato-grosso-seguido-por-fagundes"
+       ],
+       [
+        "Gazeta do Povo (Paraná Pesquisas)",
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-mato-grosso-setembro-2026-2/"
        ]
       ]
      ],
@@ -7828,11 +7914,19 @@
       ]
      ],
      [
-      "Aparece com 3,2% na soma dos votos da Paraná Pesquisas (15 a 17/9).",
+      "Aparece com 3,3% na soma dos votos da Paraná Pesquisas (27 a 29/9).",
       [
        [
         "Paraná Pesquisas (Paraná Pesquisas)",
         "https://paranapesquisas.com.br/wp-content/uploads/2026/09/MT_Set26-2.pdf"
+       ],
+       [
+        "Metrópoles (Paraná Pesquisas)",
+        "https://www.metropoles.com/brasil/parana-pesquisa-pivetta-lidera-em-mato-grosso-seguido-por-fagundes"
+       ],
+       [
+        "Boca (Paraná Pesquisas)",
+        "https://boca.com.br/politica/mauro-mendes-lidera-pesquisa-para-o-senado-em-mato-grosso"
        ]
       ]
      ],
@@ -7848,7 +7942,7 @@
     ],
     "fracos": [
      [
-      "Tem de 1% a 3,2% nas pesquisas registradas.",
+      "Tem de 1% a 3,3% nas pesquisas registradas.",
       [
        [
         "g1 MT (Quaest)",
@@ -7857,6 +7951,10 @@
        [
         "Paraná Pesquisas (Paraná Pesquisas)",
         "https://paranapesquisas.com.br/wp-content/uploads/2026/09/MT_Set26-2.pdf"
+       ],
+       [
+        "Boca (Paraná Pesquisas)",
+        "https://boca.com.br/politica/mauro-mendes-lidera-pesquisa-para-o-senado-em-mato-grosso"
        ]
       ]
      ],
@@ -8001,7 +8099,7 @@
       ]
      ],
      [
-      "Tem 2% no consolidado da Quaest e 3,6% na soma dos dois votos da Paraná Pesquisas.",
+      "Tem 2% no consolidado da Quaest e 4,3% na soma dos dois votos da Paraná Pesquisas (27 a 29/9).",
       [
        [
         "g1 MT (Quaest)",
@@ -8010,6 +8108,10 @@
        [
         "Paraná Pesquisas (Paraná Pesquisas)",
         "https://paranapesquisas.com.br/wp-content/uploads/2026/09/MT_Set26-2.pdf"
+       ],
+       [
+        "Boca (Paraná Pesquisas)",
+        "https://boca.com.br/politica/mauro-mendes-lidera-pesquisa-para-o-senado-em-mato-grosso"
        ]
       ]
      ],
@@ -8031,7 +8133,7 @@
     "numero": 150,
     "fortes": [
      [
-      "Segunda colocada em todas as pesquisas registradas, com vantagem sobre o terceiro maior que a margem de erro.",
+      "Segunda colocada em todas as pesquisas registradas; na Paraná Pesquisas de 27 a 29/9, tem 33,3% na soma dos dois votos, contra 29,3% de Zé Medeiros (margem de 2,7 pontos).",
       [
        [
         "g1 MT (Quaest)",
@@ -8044,6 +8146,14 @@
        [
         "MT Dados (MT Dados)",
         "https://mtdados.com.br/pesquisa-senado-mt-2026-4a-rodada"
+       ],
+       [
+        "Metrópoles (Paraná Pesquisas)",
+        "https://www.metropoles.com/brasil/parana-pesquisa-pivetta-lidera-em-mato-grosso-seguido-por-fagundes"
+       ],
+       [
+        "Boca (Paraná Pesquisas)",
+        "https://boca.com.br/politica/mauro-mendes-lidera-pesquisa-para-o-senado-em-mato-grosso"
        ]
       ]
      ],
@@ -8140,7 +8250,7 @@
     ],
     "fracos": [
      [
-      "Tem 1% na Quaest e de 3,9% a 4% na soma dos votos dos outros institutos.",
+      "Tem 1% na Quaest e de 3,9% a 4% na soma dos votos dos outros institutos; na Paraná Pesquisas de 27 a 29/9, 0,4%.",
       [
        [
         "g1 MT (Quaest)",
@@ -8149,6 +8259,10 @@
        [
         "MT Dados (MT Dados)",
         "https://mtdados.com.br/pesquisa-senado-mt-2026-4a-rodada"
+       ],
+       [
+        "Boca (Paraná Pesquisas)",
+        "https://boca.com.br/politica/mauro-mendes-lidera-pesquisa-para-o-senado-em-mato-grosso"
        ]
       ]
      ],
@@ -8399,7 +8513,7 @@
     "numero": 222,
     "fortes": [
      [
-      "Terceiro colocado nas pesquisas, com 11% a 15% no 1º voto.",
+      "Terceiro colocado nas pesquisas, com 11% a 15% no 1º voto; na soma dos dois votos da Paraná Pesquisas, foi de 23,1% (15 a 17/9) para 29,3% (27 a 29/9).",
       [
        [
         "g1 MT (Quaest)",
@@ -8408,6 +8522,14 @@
        [
         "MT Dados (MT Dados)",
         "https://mtdados.com.br/pesquisa-senado-mt-2026-4a-rodada"
+       ],
+       [
+        "Metrópoles (Paraná Pesquisas)",
+        "https://www.metropoles.com/brasil/parana-pesquisa-pivetta-lidera-em-mato-grosso-seguido-por-fagundes"
+       ],
+       [
+        "Boca (Paraná Pesquisas)",
+        "https://boca.com.br/politica/mauro-mendes-lidera-pesquisa-para-o-senado-em-mato-grosso"
        ]
       ]
      ],
@@ -8436,7 +8558,7 @@
     ],
     "fracos": [
      [
-      "A distância para Janaina Riva, 2ª colocada, é maior que a margem de erro em todas as pesquisas.",
+      "Não passou Janaina Riva, 2ª colocada, em nenhuma pesquisa; na Paraná Pesquisas de 27 a 29/9, a diferença é de 4 pontos na soma dos votos (33,3% a 29,3%).",
       [
        [
         "g1 MT (Quaest)",
@@ -8445,6 +8567,14 @@
        [
         "Paraná Pesquisas (Paraná Pesquisas)",
         "https://paranapesquisas.com.br/wp-content/uploads/2026/09/MT_Set26-2.pdf"
+       ],
+       [
+        "Metrópoles (Paraná Pesquisas)",
+        "https://www.metropoles.com/brasil/parana-pesquisa-pivetta-lidera-em-mato-grosso-seguido-por-fagundes"
+       ],
+       [
+        "Boca (Paraná Pesquisas)",
+        "https://boca.com.br/politica/mauro-mendes-lidera-pesquisa-para-o-senado-em-mato-grosso"
        ]
       ]
      ],
