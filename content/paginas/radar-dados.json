@@ -299,7 +299,7 @@
   ]
  },
  "pesquisas": {
-  "atualizado": "30/09/2026 19:00",
+  "atualizado": "30/09/2026 19:51",
   "corridas": [
    {
     "id": "governador-mt",
@@ -646,7 +646,7 @@
     "id": "senado-mt",
     "titulo": "Senado por Mato Grosso (2 vagas)",
     "cenario": "Mauro Mendes (União) e Janaina Riva (MDB) à frente para as duas vagas",
-    "porque": "Nas cinco pesquisas registradas desde 6/9, Mauro lidera e Janaina fica em segundo; nas quatro primeiras, com vantagem sobre o terceiro colocado maior que a margem de erro. Na Paraná Pesquisas de 27 a 29/9, que divulgou só a soma dos dois votos, Janaina tem 33,3% e Zé Medeiros (PL), 29,3%: 4 pontos de diferença, com margem de erro de 2,7 pontos. Fávaro (PSD) e Pedro Taques (PSB) vêm em seguida. O gráfico compara o 1º voto, medido do mesmo jeito pelos institutos; a soma dos dois votos de cada pesquisa está nas fichas.",
+    "porque": "Nas cinco pesquisas registradas desde 6/9, Mauro lidera e Janaina fica em segundo no 1º voto; nas quatro primeiras, com vantagem sobre o terceiro colocado maior que a margem de erro. Na Paraná Pesquisas de 27 a 29/9, Janaina tem 18% no 1º voto e Zé Medeiros (PL), 16%: 2 pontos de diferença, dentro da margem de erro de 2,7 pontos; na soma dos dois votos, 33,3% a 29,3%. Fávaro (PSD) e Pedro Taques (PSB) vêm em seguida. O gráfico compara o 1º voto, medido do mesmo jeito pelos institutos; a soma dos dois votos de cada pesquisa está nas fichas.",
     "nomes": [
      "Mauro Mendes",
      "Janaina Riva",
@@ -657,7 +657,7 @@
     "pesquisas": [
      {
       "inst": "Paraná Pesquisas",
-      "contratante": "Sedek Serviços, Tecnologia & Informação Ltda. (segundo a Gazeta do Povo)",
+      "contratante": "Sedek Serviços, Tecnologia & Informação Ltda. (segundo o registro no TSE)",
       "campo": "27 a 29/09",
       "amostra": "1.352",
       "margem": "2,7",
@@ -665,8 +665,26 @@
       "metodo": "presencial",
       "reg": "MT-02094/2026",
       "base": "totais",
-      "v": null,
+      "v": {
+       "Mauro Mendes": 37.5,
+       "Janaina Riva": 18,
+       "Zé Medeiros": 16,
+       "Fávaro": 9.8,
+       "Pedro Taques": 6.1,
+       "Galvan": 1.6,
+       "Coronel Darwin": 1.4,
+       "Professor Nelson Ferreira": 1,
+       "Margareth Buzetti": 0.1,
+       "Beny Godoy": 0,
+       "Nenhum/branco/nulo": 4.6,
+       "Não sabe/não opinou": 4
+      },
       "fontes": [
+       [
+        "Paraná Pesquisas",
+        "https://paranapesquisas.com.br/wp-content/uploads/2026/09/MT_Set26-3.pdf",
+        "2026-09-30"
+       ],
        [
         "Metrópoles",
         "https://www.metropoles.com/brasil/parana-pesquisa-pivetta-lidera-em-mato-grosso-seguido-por-fagundes",
@@ -680,6 +698,16 @@
        [
         "Gazeta do Povo",
         "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-mato-grosso-setembro-2026-2/",
+        "2026-09-30"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/politica/mauro-avanca-26-pontos-e-alcanca-549-das-intencoes-de-voto-ao-senado-em-mt/578186",
+        "2026-09-30"
+       ],
+       [
+        "Muvuca Popular",
+        "https://www.muvucapopular.com.br/2026/09/30/mauro-chega-a-549-e-lidera-primeiro-e-segundo-votos-em-pesquisa/",
         "2026-09-30"
        ]
       ],
@@ -4932,6 +4960,11 @@
         "RepórterMT",
         "https://www.reportermt.com/politica/wellington-acusa-chapa-de-pivetta-de-obter-propaganda-de-natasha-sem-autorizacao-e-pede-cassacao-no-tre/244373",
         "2026-09-30"
+       ],
+       [
+        "MT Econômico",
+        "https://matogrossoeconomico.com.br/politica-mato-grosso/eleicoes/wellington-fagundes-aciona-tre-mt-e-pede-cassacao-da-chapa-de-otaviano-pivetta/",
+        "2026-09-30"
        ]
       ],
       "papel": "contra"
@@ -6837,6 +6870,11 @@
        [
         "RepórterMT",
         "https://www.reportermt.com/politica/wellington-acusa-chapa-de-pivetta-de-obter-propaganda-de-natasha-sem-autorizacao-e-pede-cassacao-no-tre/244373",
+        "2026-09-30"
+       ],
+       [
+        "MT Econômico",
+        "https://matogrossoeconomico.com.br/politica-mato-grosso/eleicoes/wellington-fagundes-aciona-tre-mt-e-pede-cassacao-da-chapa-de-otaviano-pivetta/",
         "2026-09-30"
        ]
       ],
