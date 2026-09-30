@@ -61,3 +61,34 @@ As falas acima foram publicadas por veículos que cobriram a sessão e ainda nã
 - https://olivre.com.br/tce-mt-saida-de-waldir-teis-provoca-reacao-e-derruba-sessao-por-falta-de-quorum/
 - https://www.hnt.com.br/politica/conselheiros-saem-em-defesa-de-teis-faltam-a-sessao-e-sergio-ricardo-reage-a-plenario-esvaziado/576580
 - https://www.youtube.com/watch?v=NVujAcJDkRU (13ª sessão, 15/09/2026)
+
+## Atualização 30/09 (reel do Eh Fonte)
+
+**Origem:** o editor mandou o reel https://www.instagram.com/reel/Dd45uMmg0yr/ (@ehfonte, 29/09, 570 curtidas), com trecho da sessão e legenda sobre a fala de Sérgio Ricardo ("mora em dois estados") e a resposta de Teis. Tudo que a legenda traz já estava no rascunho, exceto os pontos abaixo, incluídos no Ghost depois de confirmados em pelo menos dois veículos:
+
+- **Desagravo lido por Joaquim** em nome dos quatro (Folhamax, 18h03; Olhar Direto).
+- **Proposta de mudança no regimento:** supervisor da Escola e ouvidor-geral eleitos pelo plenário, mandato de dois anos; assinada por Joaquim, Alencar, Maluf e Teis; depende de análise técnica e votação futura (Olhar Direto 16h13; HiperNotícias 17h05; Folhamax).
+- **"130 servidores":** afirmação de Teis (O Livre); resposta de Sérgio Ricardo (lei da Assembleia, Fatos de MT; "130 pessoas do concurso de 1999", O Livre). Números não verificados.
+- **"Embaixador da paz":** ironia de Sérgio Ricardo depois do apelo de Teis (Olhar Direto 18h00, repórteres Rafael Machado e Jardel P. Arruda; HiperNotícias, vídeos "Reprodução/TV Contas"; Gazeta Digital 20h00, Aparecido Carmo).
+- **Presenças:** todos menos Campos Neto; Novelli a distância; procurador-geral William Brito (Fatos de MT 20h16; Folhamax). Desconto de 1/30 acolhido na hora, sem votação formal (Fatos de MT; Sorriso News 21h20 não registra votação).
+- **Aspas corrigida:** "se degradar" → "se degladiar" (Gazeta Digital, Sorriso News e Eh Fonte trazem "degladiar"; Olhar Direto e Fatos de MT, "degradar"). Só o áudio resolve.
+
+**Divergências e itens que ficaram fora (uma fonte só):**
+- Eh Fonte e Jornal Advogado (30/09, texto derivado da mesma legenda) dizem que **Maluf também participou de fora do estado** e que Novelli estava **na Itália**; Fatos de MT e Folhamax colocam Maluf presente. Fora do texto.
+- **"O senhor não está vencendo o trabalho"** aparece só no Eh Fonte/Jornal Advogado. Olhar Direto e Gazeta trazem "não conseguiu desenvolver trabalho nenhum na segurança". Fora do texto.
+- Folhamax traz outra versão da fala sobre Santa Catarina, dirigida a Joaquim: "Ele mora em Santa Catarina e um pouco aqui em Cuiabá". Pode ser um segundo momento. Manter a versão de Olhar Direto + Gazeta.
+- "Eu aceito, desde que tudo isso seja uma questão séria de se fazer" (Teis) só no Olhar Direto. Fora.
+- **Jornal Advogado, 30/09, "presidente pede afastamento de Teis":** não é fato novo; é a retirada da Escola de Contas (21/09) recontada. Não usar como desdobramento.
+- Vídeo: HiperNotícias embute dois trechos creditados à TV Contas, mas o site devolve 403 ao curl e o YouTube oficial segue bloqueado; a trava de conferir as aspas no áudio continua.
+
+**Fontes novas:**
+- https://www.folhamax.com/politica/em-sessao-tensa-conselheiros-do-tce-trocam-ataques-e-expoe-racha-em-mt/574826 (29/09, 18h03)
+- https://olhardireto.com.br/noticias/conselheiros-propoem-tirar-de-sergio-ricardo-poder-de-escolher-ouvidor-e-supervisor-da-escola-de-contas (29/09, 16h13)
+- https://www.olhardireto.com.br/noticias/em-tom-de-ironia-sergio-ricardo-nomeia-teis-como-embaixador-da-paz-e-da-tranquilidade-apos-crise-no-tce (29/09, 18h00)
+- https://www.hnt.com.br/politica/apos-sessao-tensa-e-com-troca-de-insultos-conselheiros-do-tce-tentam-pacificacao-veja-videos/577974 (29/09, 17h05)
+- https://www.gazetadigital.com.br/editorias/politica-de-mt/conselheiros-discutem-em-sessao-e-colega-e-acusado-de-nao-trabalhar/860938 (29/09, 20h00)
+- https://www.fatosdematogrosso.com.br/politica/mentiroso-presidente-e-conselheiro-trocam-acusacoes-em-sessao-do-tce-mt/16716 (29/09, 20h16)
+- https://olivre.com.br/rixa-no-tce-mt-se-agrava-e-sergio-ricardo-cobra-atuacao-de-waldir-teis/ (30/09)
+- https://sorrisonewsmt.com.br/ultimas-noticias/sessao-do-tce-mt-tem-bate-boca-entre-conselheiros-em-meio-a-crise-interna/ (29/09, 21h20)
+- https://jornaladvogado.com.br/2026/09/30/presidente-do-tce-mt-sergio-ricardo-pede-afastamento-do-conselheiro-valdir-teis/ (30/09; não usado)
+- https://www.instagram.com/reel/Dd45uMmg0yr/ (Eh Fonte, 29/09; usado só como pista)
