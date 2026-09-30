@@ -59,6 +59,7 @@ GHOST_ADMIN_URL=http://localhost:2368 GHOST_ADMIN_API_KEY=... node publish.mjs -
 | `BLOG_INTERVAL_MIN`   | `>0` roda em loop a cada N min                                                           |
 | `BLOG_PER_FEED`       | itens por feed por rodada (default 3)                                                    |
 | `GEMINI_API_KEY`      | Liga a ilustração realista (`ilustrar.mjs`); chave em https://aistudio.google.com/apikey |
+| `TYPESAFE_API_KEY`    | Liga o Jev (`lib/jev.mjs`, `jev-teste.mjs`); chave em https://console.typesafe.ai/keys — só no ambiente, nunca no git |
 | `BLOG_IMAGEM_MODELO`  | Modelo de imagem do Gemini (default `gemini-2.5-flash-image`)                            |
 | `BLOG_TEXTO_MODELO`   | Modelo que descreve a cena e escreve a frase (default `gemini-2.5-flash`)                |
 
@@ -538,6 +539,71 @@ Matéria de acusação, denúncia, áudio não confirmado ou investigação envo
 ### Presidenciáveis (próxima etapa, se o editor pedir)
 
 As fotos oficiais do TSE dos candidatos a presidente estão no Wikimedia Commons (`File:2026 <NOME> CANDIDATO PRESIDENTE TSE (<id>).jpg`, CC BY 4.0); os 23 posts de "Agenda dos presidenciáveis" usam duas artes genéricas da Agência Brasil e podem receber montagem no mesmo padrão.
+
+## Jev (TypeSafe): julgamentos tipados para o robô
+
+Pedido do editor (30/09/2026): "instale o jev"
+(https://typesafe.ai/blog/introducing-system-one-models-and-jev). O Jev é o
+primeiro "System One model" da TypeSafe: não gera texto; responde perguntas
+fechadas sobre um estado (texto ou JSON) com **respostas tipadas e
+probabilidades calibradas**, numa chamada só e em paralelo. Serve para as
+checagens que hoje são feitas à mão antes de publicar, com o editor decidindo
+no fim: em que editoria uma matéria se encaixa, se a curta traz fala entre
+aspas de pessoa nomeada (regra do balão da charge), qual o grau de acusação
+contra alguém ("não ataque ninguém"), se dois textos contam o mesmo fato
+(candidatos do `duplicadas.mjs`), qual foto de banco combina com a pauta.
+
+**Instalado (30/09/2026):**
+
+- JavaScript: `@typesafe-ai/sdk` 0.6.0 em `content/package.json`
+  (`cd content && npm install` traz junto). Helper em `lib/jev.mjs`
+  (`perguntar`, `choice`, `noul`, `score`, `resumo`, `validarPerguntas`,
+  `montarPedido`, `listarModelos`); teste em `jev-teste.mjs`.
+- Python: `pip install typesafe-sdk` (0.7.2; o módulo se chama
+  `typesafe_sdk`: `from typesafe_sdk import TypeSafeClient, Choice, Noul, Score`).
+  Como as outras dependências Python, não fica no repositório.
+- Claude Code: plugin `typesafe@typesafe-ai` (skill `typesafe-ai`) instalado
+  no escopo do projeto em `.claude/settings.json`; `claude plugin list` confere.
+
+**Chave:** criar em https://console.typesafe.ai/keys e configurar como
+`TYPESAFE_API_KEY` nas variáveis do ambiente (aba de ambiente da sessão, não
+no `.env` versionado nem no chat). Sem a chave, `lib/jev.mjs` lança
+`JevIndisponivel` e o script segue sem o Jev.
+
+```bash
+cd content
+node jev-teste.mjs --dry-run     # monta e valida o pedido, sem chave
+NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt node jev-teste.mjs   # chama a API
+```
+
+Três perguntas, uma chamada (`lib/jev.mjs`):
+
+```js
+import { perguntar, choice, noul, score, resumo } from "./lib/jev.mjs";
+const r = await perguntar({ titulo, texto }, {
+  editoria: choice("Em qual editoria a matéria em `texto` se encaixa?", { politica: "...", cidades: "..." }),
+  tem_aspas: noul("O `texto` traz fala entre aspas atribuída a pessoa nomeada?"),
+  acusacao: score("Grau de acusação contra pessoa nomeada no `texto`", ["nenhuma", "leve", "grave"]),
+});
+r.answers.editoria.choice; r.answers.editoria.confidence; r.answers.tem_aspas.noul; r.answers.acusacao.score;
+console.log(resumo(r));
+```
+
+Regras de uso na redação:
+
+- O Jev classifica, pontua e compara; **nunca escreve texto nem publica**. A
+  saída é um dado para o script ou para o editor. Rascunho continua rascunho.
+- Limiares (`confidence`, `noul`) só depois de testar nos nossos textos: o
+  inglês é a língua principal do modelo e o português "é atendido, mas não
+  igualmente bem" (docs, 30/09/2026). Abaixo do limiar, a decisão vai para o
+  editor, não para o "sim" automático.
+- Limites e preço (docs, 30/09/2026): modelo `jev-latest` (= `jev-1.13.0`);
+  64 mil tokens por pedido, 32 mil para o estado mais a pergunta mais longa;
+  só texto; US$ 0,042 por milhão de tokens de entrada, saída grátis; 40
+  pedidos e 100 mil tokens por segundo. Mandar só o trecho necessário.
+- Referência viva: https://docs.typesafe.ai/llms.txt (índice), `/api.md`,
+  `/sdk/javascript.md`, cookbooks de deduplicação (`entity_alignment`),
+  classificação com confiança e checagem de citações (`citation_check`).
 
 ## Radar Eleitoral: redes medidas pelas APIs oficiais
 
