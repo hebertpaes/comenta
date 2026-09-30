@@ -1,9 +1,9 @@
 {
   "spec": "/home/user/comenta/content/pautas/videos/argos/2026-09-30-boletim-04.cena.json",
   "saida": "/home/user/comenta/content/pautas/videos/argos/2026-09-30-boletim-04.mp4",
-  "gerado_em": "2026-09-30T11:16:16.264Z",
-  "duracao": 105.84,
-  "duracao_total": 105.84,
+  "gerado_em": "2026-09-30T22:30:22.015Z",
+  "duracao": 105.8,
+  "duracao_total": 105.8,
   "limite_duracao": 120,
   "resolucao": "1080x1920",
   "fps": 25,
@@ -82,15 +82,15 @@
       "voz": "sintetica",
       "movimento": "zoom-out",
       "inicio": 39.31,
-      "duracao_audio": 10.48,
-      "duracao": 10.93
+      "duracao_audio": 10.41,
+      "duracao": 10.86
     },
     {
       "n": 6,
       "quem": "narrador",
       "voz": "sintetica",
       "movimento": "pan-esq",
-      "inicio": 50.24,
+      "inicio": 50.17,
       "duracao_audio": 12.26,
       "duracao": 12.71
     },
@@ -99,7 +99,7 @@
       "quem": "narrador",
       "voz": "sintetica",
       "movimento": "zoom-in",
-      "inicio": 62.95,
+      "inicio": 62.88,
       "duracao_audio": 12.88,
       "duracao": 13.33
     },
@@ -108,7 +108,7 @@
       "quem": "narrador",
       "voz": "sintetica",
       "movimento": "zoom-out",
-      "inicio": 76.28,
+      "inicio": 76.21,
       "duracao_audio": 10.77,
       "duracao": 11.22
     },
@@ -117,7 +117,7 @@
       "quem": "narrador",
       "voz": "sintetica",
       "movimento": "pan-dir",
-      "inicio": 87.5,
+      "inicio": 87.43,
       "duracao_audio": 9.45,
       "duracao": 9.9
     },
@@ -126,13 +126,13 @@
       "quem": "narrador",
       "voz": "sintetica",
       "movimento": "zoom-out",
-      "inicio": 97.4,
+      "inicio": 97.33,
       "duracao_audio": 4.89,
       "duracao": 5.34
     }
   ],
   "fechamento": {
-    "inicio": 102.74,
+    "inicio": 102.67,
     "duracao": 3
   }
 }

@@ -477,7 +477,7 @@ const motoresVoz = {
 
 /** Grafia só para a síntese (a legenda continua com a grafia certa). */
 const PRONUNCIA = [
-  [/\bPivetta\b/g, "Pivéta"],
+  [/\bPivetta\b/g, "Pivêta"],
   [/\bWellington\b/g, "Uélinton"],
   [/\bDatafolha\b/g, "Data Folha"],
   [/\bAtlasIntel\b/g, "Átlas Intel"],
@@ -491,6 +491,8 @@ function pronuncia(texto) {
 }
 /** A voz neural (edge) já lê bem os nomes; só as siglas e marcas que ela erra. */
 const PRONUNCIA_EDGE = [
+  // Editor, 30/09: "Pivetta" se fala com "e" fechado (Pivêta), não "Pivétta".
+  [/\bPivetta\b/g, "Pivêta"],
   [/\bQuaest\b/g, "Cuaést"],
   [/\bHOJE MT\b/g, "Hoje ême tê"],
   [/\bTRE\b/g, "tê érre é"],
