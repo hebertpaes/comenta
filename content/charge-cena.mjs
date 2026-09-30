@@ -21,7 +21,7 @@
 // velocidade}, abertura:{chip,gancho,sub}, cenas:[{n,quem,fala,legenda?,
 // imagem,movimento (zoom-in|zoom-out|pan-esq|pan-dir|close-in|close-out|parado),
 // citacao?,audio_real?,camadas?}], fechamento:{linha1,leia,fontes,
-// aviso}, legendas?, saida }. `camadas`: [{imagem (PNG transparente 1080×1920),
+// aviso, leia_rotulo? (padrão "Leia a curta:")}, legendas?, saida }. `camadas`: [{imagem (PNG transparente 1080×1920),
 // quando: "trecho da fala" | em: s}] entram por cima do fundo quando o narrador
 // chega ao trecho (slides "em tempo real"); `clipe`: {arquivo, inicio, fim,
 // caixa: [x, y, w, h], origem_url, credito} põe um trecho de vídeo de rede
@@ -316,7 +316,7 @@ async function cartelaAbertura({ chip = "CHARGE EM CENA", gancho = "", sub = "" 
 
 /** Cartela de fechamento: crédito, link da curta, fontes, aviso e "Siga @hoje.mt". */
 async function cartelaFechamento(
-  { linha1 = "Charge: HOJE MT · hojemt.com.br", leia = "", fontes = [], aviso = AVISO_PADRAO, siga = "Siga @hoje.mt", musica = "" },
+  { linha1 = "Charge: HOJE MT · hojemt.com.br", leia = "", leia_rotulo = "Leia a curta:", fontes = [], aviso = AVISO_PADRAO, siga = "Siga @hoje.mt", musica = "" },
   destino
 ) {
   const sharp = await sharpComFontes();
@@ -330,7 +330,7 @@ async function cartelaFechamento(
   y = t.fim + 60;
 
   if (leia) {
-    t = linhasSvg(["Leia a curta:"], { y, tamanho: 44, fonte: ROBOTO, cor: VERDE_CLARO });
+    t = linhasSvg([leia_rotulo], { y, tamanho: 44, fonte: ROBOTO, cor: VERDE_CLARO });
     partes.push(t.svg);
     y = t.fim + 6;
     const link = (await quebrar(leia, 940, { fonte: ROBOTO, tamanho: 44, peso: "bold" })).slice(0, 2);

@@ -92,3 +92,12 @@ As falas acima foram publicadas por veículos que cobriram a sessão e ainda nã
 - https://sorrisonewsmt.com.br/ultimas-noticias/sessao-do-tce-mt-tem-bate-boca-entre-conselheiros-em-meio-a-crise-interna/ (29/09, 21h20)
 - https://jornaladvogado.com.br/2026/09/30/presidente-do-tce-mt-sergio-ricardo-pede-afastamento-do-conselheiro-valdir-teis/ (30/09; não usado)
 - https://www.instagram.com/reel/Dd45uMmg0yr/ (Eh Fonte, 29/09; usado só como pista)
+
+## Reel próprio (30/09, pedido do editor: "Crie a própria")
+
+- Vídeo 9:16, 98,7 s, só voz (narrador sintético) e slides, com a ilustração da matéria na cena 1: `pautas/videos/2026-09-30-tce-sessao.mp4` · hospedado em https://hojemt.com.br/content/media/2026/09/2026-09-30-tce-sessao.mp4 · capa https://hojemt.com.br/content/images/2026/09/2026-09-30-tce-sessao-capa.jpg
+- Roteiro `pautas/videos/2026-09-30-tce-sessao.cena.json`, gerado por `pautas/videos/graficos-tce-sessao.mjs`.
+- Agenda do Instagram: item 70, status `aguardando_materia` (sai junto com a matéria, depois da conferência das falas no áudio).
+- Aspas na tela (todas iguais em pelo menos dois veículos): "Nós não viemos, está escrito aqui, protesto…" (Olhar Direto, Infoverus); "Eu acho que vocês deram um tiro no pé…" (Olhar Direto, Infoverus, Sorriso News); "Eu quero que vocês paguem as despesas dos prefeitos que vieram aqui. Não é só descontar" (Olhar Direto, Infoverus); "Qual foi o vosso trabalho na Comissão de Segurança? Nenhum" (Gazeta Digital, Fatos de MT, Folhamax); "Vale a pena nós, sete conselheiros, discutir, brigar, degladiar por coisas tão vazias?" (Gazeta Digital, Sorriso News); "Lhe nomeio o embaixador da paz" (Olhar Direto, Gazeta Digital).
+- Rascunho ajustado: a pergunta sobre a Comissão de Segurança passou de "seu" (Olhar Direto) para "vosso" (Gazeta Digital, Fatos de MT, Folhamax, O Livre), com crédito aos três. O áudio decide.
+

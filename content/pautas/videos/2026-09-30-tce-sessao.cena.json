@@ -1,0 +1,256 @@
+{
+ "slug": "tce-sessao-29-09",
+ "titulo": "Crise no TCE-MT: a sessão de 29/09",
+ "materia": "https://hojemt.com.br/tce-mt-conselheiros-admitem-falta-em-protesto-e-sessao-tem-bate-boca/",
+ "estilo": "slides",
+ "universo": "Slides escuros com ondas e curvas de nível verdes (mesmo visual dos boletins), sem avatar; ilustração própria da matéria na cena 1",
+ "obs": "Reel próprio pedido pelo editor em 30/09 (\"Crie a própria\"), depois do reel do @ehfonte (Dd45uMmg0yr), usado só como pista. Base: rascunho tce-mt-conselheiros-admitem-falta-em-protesto-e-sessao-tem-bate-boca (id 6abc3e4d834d62060cb1de1e). Cada aspa na tela tem crédito e saiu igual em pelo menos dois veículos; as falas ainda não foram conferidas na gravação oficial (YouTube aTo4U6AIDDs bloqueado daqui), a mesma trava da matéria. Os dois lados: justificativa do presidente e resposta de Teis. Sem frame da TV Contas nem de terceiros. Voz sintética genérica (narrador), nunca de pessoa real.",
+ "voz": {
+  "motor": "edge",
+  "narrador": "pt-BR-AntonioNeural",
+  "personagem": null,
+  "velocidade": "+18%",
+  "tom": "+4Hz",
+  "reserva": {
+   "motor": "kokoro",
+   "narrador": "pm_alex",
+   "velocidade": 1.18,
+   "tom": 2,
+   "tratamento": "limpo",
+   "fonetica": "misaki",
+   "sotaque": "cuiabano"
+  }
+ },
+ "legendas": false,
+ "trilha": {
+  "id": "pantanal"
+ },
+ "abertura": {
+  "chip": "TCE-MT",
+  "gancho": "A CRISE CHEGOU AO PLENÁRIO",
+  "sub": "Tribunal de Contas · 29/09"
+ },
+ "cenas": [
+  {
+   "n": 1,
+   "quem": "narrador",
+   "fala": "Uma semana depois da sessão que não foi aberta por falta de quórum, o Tribunal de Contas de Mato Grosso voltou a se reunir na terça-feira, vinte e nove, e a crise interna chegou ao plenário.",
+   "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-1-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-1-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-1-c1.png",
+     "quando": "voltou a se reunir"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "quem": "narrador",
+   "fala": "A crise começou em vinte e um de setembro, quando o presidente, Sérgio Ricardo, tirou o conselheiro Waldir Teis da supervisão da Escola Superior de Contas e assumiu a função. No dia seguinte, quatro conselheiros faltaram à sessão.",
+   "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-2-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-2-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-2-c1.png",
+     "quando": "vinte e um de setembro"
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-2-c2.png",
+     "quando": "No dia seguinte"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "quem": "narrador",
+   "fala": "Na terça, Antonio Joaquim leu um desagravo em nome dos quatro e disse que a ausência foi um protesto. Eles também propõem mudar o regimento, para que o supervisor da Escola e o ouvidor-geral sejam eleitos pelo plenário.",
+   "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-3-fundo.png",
+   "movimento": "pan-dir",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-3-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-3-c1.png",
+     "quando": "protesto"
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-3-c2.png",
+     "quando": "mudar o regimento"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "quem": "narrador",
+   "fala": "O presidente disse que os colegas desrespeitaram a população de Mato Grosso.",
+   "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-4-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-4-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-4-c1.png",
+     "quando": "desrespeitaram"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "quem": "narrador",
+   "fala": "Joaquim pediu o desconto de um dia de salário pela falta. Sérgio Ricardo respondeu que não bastava e cobrou as despesas dos prefeitos que tinham ido à sessão. Depois, os dois trocaram acusações e se chamaram de mentirosos.",
+   "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-5-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-5-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-5-c1.png",
+     "quando": "desconto"
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-5-c2.png",
+     "quando": "não bastava"
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-5-c3.png",
+     "quando": "trocaram acusações"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "quem": "narrador",
+   "fala": "Sobre Teis, o presidente negou motivação política. Disse que o colega estava sobrecarregado, dividia o tempo entre Mato Grosso e Santa Catarina e não apresentou trabalho na Comissão de Segurança do tribunal.",
+   "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-6-fundo.png",
+   "movimento": "pan-esq",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-6-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-6-c1.png",
+     "quando": "motivação política"
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-6-c2.png",
+     "quando": "Santa Catarina"
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-6-c3.png",
+     "quando": "Comissão de Segurança"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "quem": "narrador",
+   "fala": "Teis respondeu que trabalhou na Escola e na comissão, apesar das limitações de orçamento. Admitiu a falta e fez um apelo aos colegas.",
+   "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-7-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-7-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-7-c1.png",
+     "quando": "trabalhou na Escola"
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-7-c2.png",
+     "quando": "apelo"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "quem": "narrador",
+   "fala": "Depois do apelo, Sérgio Ricardo nomeou Teis, em tom de ironia, embaixador da paz.",
+   "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-8-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-8-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-8-c1.png",
+     "quando": "embaixador"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "quem": "narrador",
+   "fala": "A proposta de mudar o regimento ainda passa por análise técnica antes de ir a votação. As falas foram publicadas por veículos que acompanharam a sessão.",
+   "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-9-fundo.png",
+   "movimento": "pan-dir",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-9-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-9-c1.png",
+     "quando": "análise técnica"
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-9-c2.png",
+     "quando": "As falas"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "quem": "narrador",
+   "fala": "A matéria completa, com as fontes, está no HOJE MT.",
+   "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-10-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-10-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/cenas/2026-09-30-tce-sessao-10-c1.png",
+     "quando": "HOJE MT"
+    }
+   ]
+  }
+ ],
+ "fechamento": {
+  "linha1": "HOJE MT · hojemt.com.br",
+  "leia": "hojemt.com.br · link na bio",
+  "leia_rotulo": "Leia a matéria:",
+  "fontes": [
+   "Olhar Direto",
+   "Folhamax",
+   "Gazeta Digital",
+   "Fatos de Mato Grosso",
+   "HiperNotícias",
+   "Infoverus",
+   "O Livre",
+   "Sorriso News",
+   "Eh Fonte"
+  ],
+  "aviso": "Voz gerada com IA (narrador sintético) e ilustração gerada com IA (cena de ficção). Falas publicadas por veículos que acompanharam a sessão; fatos conferidos pela redação do HOJE MT."
+ },
+ "saida": "pautas/videos/2026-09-30-tce-sessao.mp4",
+ "rotulo_ia": "Voz e ilustração geradas com IA"
+}

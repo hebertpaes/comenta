@@ -1,0 +1,138 @@
+{
+  "spec": "/home/user/comenta/content/pautas/videos/2026-09-30-tce-sessao.cena.json",
+  "saida": "/home/user/comenta/content/pautas/videos/2026-09-30-tce-sessao.mp4",
+  "gerado_em": "2026-09-30T16:11:05.772Z",
+  "duracao": 98.72,
+  "duracao_total": 98.72,
+  "limite_duracao": 120,
+  "resolucao": "1080x1920",
+  "fps": 25,
+  "universo": "Slides escuros com ondas e curvas de nível verdes (mesmo visual dos boletins), sem avatar; ilustração própria da matéria na cena 1",
+  "trilha": {
+    "id": "pantanal",
+    "titulo": "Windswept",
+    "arquivo": "assets/trilhas/pantanal.m4a",
+    "escolha": "roteiro",
+    "volume": 0.12,
+    "ganho_db": 4.04,
+    "licenca": "CC BY 4.0",
+    "credito": "Música: \"Windswept\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
+    "credito_oficial": "\"Windswept\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/"
+  },
+  "credito_musica": "Música: \"Windswept\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-AntonioNeural",
+    "velocidade": "+18%",
+    "personagem": null,
+    "tom": "+4Hz",
+    "reserva": {
+      "motor": "kokoro",
+      "narrador": "pm_alex",
+      "velocidade": 1.18,
+      "tom": 2,
+      "tratamento": "limpo",
+      "fonetica": "misaki",
+      "sotaque": "cuiabano"
+    }
+  },
+  "abertura": {
+    "duracao": 2.5
+  },
+  "cenas": [
+    {
+      "n": 1,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 2.5,
+      "duracao_audio": 9.79,
+      "duracao": 10.24
+    },
+    {
+      "n": 2,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 12.74,
+      "duracao_audio": 12.55,
+      "duracao": 13
+    },
+    {
+      "n": 3,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "pan-dir",
+      "inicio": 25.74,
+      "duracao_audio": 11.59,
+      "duracao": 12.04
+    },
+    {
+      "n": 4,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 37.78,
+      "duracao_audio": 4.29,
+      "duracao": 4.74
+    },
+    {
+      "n": 5,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 42.52,
+      "duracao_audio": 12.74,
+      "duracao": 13.19
+    },
+    {
+      "n": 6,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "pan-esq",
+      "inicio": 55.71,
+      "duracao_audio": 11.44,
+      "duracao": 11.89
+    },
+    {
+      "n": 7,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 67.6,
+      "duracao_audio": 7.96,
+      "duracao": 8.41
+    },
+    {
+      "n": 8,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 76.01,
+      "duracao_audio": 5.64,
+      "duracao": 6.09
+    },
+    {
+      "n": 9,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "pan-dir",
+      "inicio": 82.1,
+      "duracao_audio": 8.54,
+      "duracao": 8.99
+    },
+    {
+      "n": 10,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 91.09,
+      "duracao_audio": 4.1,
+      "duracao": 4.55
+    }
+  ],
+  "fechamento": {
+    "inicio": 95.64,
+    "duracao": 3
+  }
+}
