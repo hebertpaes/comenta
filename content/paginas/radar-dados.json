@@ -2467,7 +2467,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "30/09/2026 10:44",
+  "atualizado": "30/09/2026 14:03",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -4331,7 +4331,7 @@
     "partido": "Republicanos",
     "registro": {
      "situacao": "deferido",
-     "obs": "Deferido. A impugnação da coligação de Wellington (contas de convênio de 2001 julgadas irregulares pelo TCU) foi julgada improcedente em 3/9 e o Pleno confirmou por 7 a 0 em 14/9, porque o TRF-1 suspendeu a rejeição das contas; o registro fica condicionado a essa suspensão.",
+     "obs": "Deferido. A impugnação da coligação de Wellington (contas de convênio de 2001 julgadas irregulares pelo TCU) foi julgada improcedente em 3/9 e o Pleno confirmou por 7 a 0 em 14/9, porque o TRF-1 suspendeu a rejeição das contas. Segundo o VGN, o relator reconheceu que a candidatura está sujeita à regra da Lei das Inelegibilidades, que permite atingir o registro se a suspensão cair, mas dispensou a ressalva expressa no acórdão pedida pela coligação de Wellington.",
      "fontes": [
       [
        "ND Mais – ficha do candidato",
@@ -4347,10 +4347,36 @@
        "ND Mais (espelho DivulgaCandContas, atualizado 25/09/2026)",
        "https://ndmais.com.br/eleicoes/2026/candidatos/mt/governador/",
        "2026-09-25"
+      ],
+      [
+       "VGN",
+       "https://www.vgnoticias.com.br/vgnjur/tre-mt-mantem-candidatura-de-pivetta-apos-rejeitar-recurso-de-wellington/151997",
+       "2026-09-14"
       ]
      ]
     },
     "itens": [
+     {
+      "data": "2026-09-29",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT",
+      "resumo": "A coligação Coração da Gente, de Wellington, ajuizou em 29/9 uma ação de investigação judicial eleitoral (AIJE) contra Pivetta e a vice, Gisela Simona, por suposto uso indevido dos meios de comunicação e abuso de poder político e econômico: segundo a ação, a chapa teria tido acesso, sem autorização, a comerciais de TV e a documentos sobre a programação da candidata Natasha antes da exibição. A coligação pede a cassação do registro ou do diploma e a inelegibilidade por oito anos. Ainda sem decisão; as matérias não trazem manifestação da chapa de Pivetta.",
+      "cabe_recurso": null,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://olhardireto.com.br/juridico/noticias/fagundes-pede-cassacao-de-pivetta-por-suposto-acesso-antecipado-a-propaganda-de-adversaria",
+        "2026-09-30"
+       ],
+       [
+        "RepórterMT",
+        "https://www.reportermt.com/politica/wellington-acusa-chapa-de-pivetta-de-obter-propaganda-de-natasha-sem-autorizacao-e-pede-cassacao-no-tre/244373",
+        "2026-09-30"
+       ]
+      ],
+      "papel": "contra"
+     },
      {
       "data": "2026-09-29",
       "tipo": "decisao",
@@ -5933,10 +5959,10 @@
     },
     "itens": [
      {
-      "data": "2026-09-25",
-      "tipo": "acao_em_andamento",
+      "data": "2026-09-29",
+      "tipo": "arquivada",
       "orgao": "TRE-MT (juiz auxiliar)",
-      "resumo": "Medeiros pediu a retirada de vídeo de Milas, de 24/9, sobre a decisão do caso \"Zé do Bolsonaro\", que o chama de \"Zé do Gilmar\" e mostra imagem do ministro Gilmar Mendes; a liminar foi negada, e Milas foi citado para apresentar defesa em um dia.",
+      "resumo": "Medeiros pediu a retirada de vídeo de Milas, de 24/9, sobre a decisão do caso \"Zé do Bolsonaro\", que o chama de \"Zé do Gilmar\" e mostra imagem do ministro Gilmar Mendes, e também direito de resposta. A liminar de retirada foi negada em 25/9. Em decisão divulgada em 29/9, o juiz auxiliar Marcelo Morgado negou o direito de resposta e manteve o vídeo no ar. Segundo o RepórterMT, o juiz acompanhou o parecer da Procuradoria Regional Eleitoral e destacou o caráter manifestamente satírico da expressão \"Zé do Gilmar\". De acordo com a Folhamax, ele entendeu que a fala sobre Medeiros supostamente ligar para Gilmar Mendes foi apresentada de forma hipotética e como crítica política, sem afirmar interferência do ministro, e rejeitou também a resposta no mesmo perfil de Milas e o impulsionamento da resposta.",
       "cabe_recurso": null,
       "defesa": null,
       "fontes": [
@@ -5949,9 +5975,19 @@
         "Infoverus",
         "https://www.infoverus.com.br/judiciario/justica-mantem-video-que-chama-medeiros-de-ze-do-gilmar-apos-referencia-a-ministro-do-stf/35535",
         "2026-09-25"
+       ],
+       [
+        "RepórterMT",
+        "https://www.reportermt.com/politica/medeiros-perde-acao-e-justica-mantem-video-que-o-chama-de-ze-do-gilmar/244355",
+        "2026-09-30"
+       ],
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/tre-mantem-video-em-que-candidato-chama-medeiros-de-ze-do-gilmar/574706",
+        "2026-09-30"
        ]
       ],
-      "papel": "contra"
+      "papel": "favor"
      },
      {
       "data": "2026-09-25",
@@ -6148,6 +6184,27 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-09-29",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT",
+      "resumo": "A coligação Coração da Gente, de Wellington, ajuizou em 29/9 uma ação de investigação judicial eleitoral (AIJE) contra Pivetta e a vice, Gisela Simona, por suposto uso indevido dos meios de comunicação e abuso de poder político e econômico: segundo a ação, a chapa teria tido acesso, sem autorização, a comerciais de TV e a documentos sobre a programação da candidata Natasha antes da exibição. A coligação pede a cassação do registro ou do diploma e a inelegibilidade por oito anos. Ainda sem decisão; as matérias não trazem manifestação da chapa de Pivetta.",
+      "cabe_recurso": null,
+      "defesa": null,
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://olhardireto.com.br/juridico/noticias/fagundes-pede-cassacao-de-pivetta-por-suposto-acesso-antecipado-a-propaganda-de-adversaria",
+        "2026-09-30"
+       ],
+       [
+        "RepórterMT",
+        "https://www.reportermt.com/politica/wellington-acusa-chapa-de-pivetta-de-obter-propaganda-de-natasha-sem-autorizacao-e-pede-cassacao-no-tre/244373",
+        "2026-09-30"
+       ]
+      ],
+      "papel": "pedido"
+     },
      {
       "data": "2026-09-28",
       "tipo": "decisao",
@@ -6891,10 +6948,10 @@
       "papel": "contra"
      },
      {
-      "data": "2026-09-25",
-      "tipo": "acao_em_andamento",
+      "data": "2026-09-29",
+      "tipo": "arquivada",
       "orgao": "TRE-MT (juiz auxiliar)",
-      "resumo": "Medeiros pediu a retirada de vídeo de Milas, de 24/9, sobre a decisão do caso \"Zé do Bolsonaro\", que o chama de \"Zé do Gilmar\" e mostra imagem do ministro Gilmar Mendes; a liminar foi negada, e Milas foi citado para apresentar defesa em um dia.",
+      "resumo": "Medeiros pediu a retirada de vídeo de Milas, de 24/9, sobre a decisão do caso \"Zé do Bolsonaro\", que o chama de \"Zé do Gilmar\" e mostra imagem do ministro Gilmar Mendes, e também direito de resposta. A liminar de retirada foi negada em 25/9. Em decisão divulgada em 29/9, o juiz auxiliar Marcelo Morgado negou o direito de resposta e manteve o vídeo no ar. Segundo o RepórterMT, o juiz acompanhou o parecer da Procuradoria Regional Eleitoral e destacou o caráter manifestamente satírico da expressão \"Zé do Gilmar\". De acordo com a Folhamax, ele entendeu que a fala sobre Medeiros supostamente ligar para Gilmar Mendes foi apresentada de forma hipotética e como crítica política, sem afirmar interferência do ministro, e rejeitou também a resposta no mesmo perfil de Milas e o impulsionamento da resposta.",
       "cabe_recurso": null,
       "defesa": null,
       "fontes": [
@@ -6907,6 +6964,16 @@
         "Infoverus",
         "https://www.infoverus.com.br/judiciario/justica-mantem-video-que-chama-medeiros-de-ze-do-gilmar-apos-referencia-a-ministro-do-stf/35535",
         "2026-09-25"
+       ],
+       [
+        "RepórterMT",
+        "https://www.reportermt.com/politica/medeiros-perde-acao-e-justica-mantem-video-que-o-chama-de-ze-do-gilmar/244355",
+        "2026-09-30"
+       ],
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/tre-mantem-video-em-que-candidato-chama-medeiros-de-ze-do-gilmar/574706",
+        "2026-09-30"
        ]
       ],
       "papel": "pedido"
@@ -7312,7 +7379,7 @@
   ]
  },
  "analise": {
-  "atualizado": "30/09/2026 12:46",
+  "atualizado": "30/09/2026 14:03",
   "candidatos": [
    {
     "nome": "Doutora Natasha",
@@ -7547,11 +7614,15 @@
       ]
      ],
      [
-      "Registro deferido com condição: a rejeição de contas pelo TCU está suspensa por decisão do TRF-1; se a suspensão cair, o registro pode ser revisto.",
+      "Registro deferido, mas sujeito à regra da Lei das Inelegibilidades: a rejeição de contas pelo TCU está suspensa por decisão do TRF-1 e, se a suspensão cair, o registro pode ser atingido; o relator dispensou a ressalva expressa no acórdão.",
       [
        [
         "ND Mais – ficha do candidato",
         "https://ndmais.com.br/eleicoes/2026/candidatos/mt/governador/10-otaviano-pivetta/"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/vgnjur/tre-mt-mantem-candidatura-de-pivetta-apos-rejeitar-recurso-de-wellington/151997"
        ]
       ]
      ],
