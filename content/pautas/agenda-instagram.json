@@ -1192,6 +1192,38 @@
       "legenda": "TCE-MT multa ex-prefeito de Poconé por falhas no controle da frota\n\nO relator, Alisson Alencar, viu “evidente desídia”: R$ 115 mil em multas de trânsito sem apurar os responsáveis e 47 pessoas dirigindo carros oficiais sem designação formal. A defesa diz que não houve dano comprovado ao erário nem dolo.\n\nLeia a matéria completa: hojemt.com.br/pocone-tce-mt-multa-ex-prefeito-por-falhas-no-controle-da-frota\n\nIlustração: HOJE MT (gerada com IA; cena de ficção)\n\n#TCEMT #MatoGrosso #Pocone #HojeMT",
       "materia": "https://hojemt.com.br/pocone-tce-mt-multa-ex-prefeito-por-falhas-no-controle-da-frota/",
       "obs": "só agendar depois que o editor publicar a matéria (rascunho 6abc3e4d834d62060cb1de23)"
+    },
+    {
+      "id": "66",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-09-30T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Fome Digitalizada",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-29-fome-digitalizada-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Fome Digitalizada\n\nAgora quem passa fome é a lixeira.\n\nEm Portugal, a associação ambientalista ZERO lançou a FoodConnect, plataforma gratuita em que restaurantes, cafés, hotéis e produtores oferecem a comida que sobrou e ainda está boa, e quem precisa reserva e busca pelo aplicativo. Os portugueses desperdiçam cerca de 184 kg de comida por pessoa por ano.\n\nLeia a curta completa: hojemt.com.br/fome-digitalizada\n\nFonte: TSF e SAPO\nCharge: HOJE MT · hojemt.com.br\n\n#charge #desperdiciodealimentos #fome #hojemt",
+      "materia": "https://hojemt.com.br/fome-digitalizada/",
+      "charge_json": "pautas/charges/2026-09-29-fome-digitalizada.json",
+      "obs": "a curta publicada atribui o lançamento a 'Portugal'; quem lançou foi a associação ZERO (programa LIFE da UE) — a legenda já está certa"
+    },
+    {
+      "id": "67",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Português em Nova York",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/09/2026-09-29-portugues-em-nova-york-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Português em Nova York\n\nSem vaga, já aprenderam: saudade.\n\nO primeiro curso de português para diplomatas e funcionários da ONU em Nova York, parceria com o Governo de Portugal e aulas do Instituto Camões, começou em 28/09 e esgotou as vagas em menos de 24 horas. Abriu lista de espera, e as turmas passaram de 15 para 18 alunos.\n\nLeia a curta completa: hojemt.com.br/portugues-em-nova-york\n\nFonte: ONU News\nCharge: HOJE MT · hojemt.com.br\n\n#charge #linguaportuguesa #onu #hojemt",
+      "materia": "https://hojemt.com.br/portugues-em-nova-york/",
+      "charge_json": "pautas/charges/2026-09-29-portugues-em-nova-york.json",
+      "obs": "aguardando o editor corrigir a curta publicada (diz que o português é 'uma das seis línguas oficiais' da ONU; não é); depois, agendar no próximo horário livre"
     }
   ]
 }
