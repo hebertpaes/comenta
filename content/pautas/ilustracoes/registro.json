@@ -767,6 +767,24 @@
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
       "feito_em": "2026-09-30",
       "estilo": "v2 realista (pintura digital cinematográfica); sem rostos visíveis"
+    },
+    {
+      "slug": "primavera-do-leste-interdita-vias-para-obras-de-faixas-elevadas",
+      "titulo": "Primavera do Leste interdita vias para obras de faixas elevadas",
+      "materia": "https://hojemt.com.br/primavera-do-leste-interdita-vias-para-obras-de-faixas-elevadas/",
+      "tag": "Cidades & Mato Grosso",
+      "canva": {
+        "design": "DAHWsHeB3iM",
+        "arte": "MAHWsE0k1Mg",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "avenida arborizada de cidade do interior de MT ao entardecer: trabalhador de colete refletivo e capacete, de costas, alisa o concreto fresco de uma faixa elevada; cones e cavaletes bloqueiam metade da pista e carros passam devagar pela outra",
+      "arquivo": "pautas/ilustracoes/2026-09-30-primavera-faixas-elevadas.jpg",
+      "hospedado_em": "https://hojemt.com.br/content/images/2026/09/2026-09-30-primavera-faixas-elevadas.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-30-primavera-faixas-elevadas-og.jpg",
+      "antes": "capa-db86bd599d44d0a2.webp",
+      "feito_em": "2026-09-30",
+      "obs": "a única imagem da fonte (Prefeitura de Primavera do Leste) é arte genérica de banco de imagens ('Trânsito interditado'), sem foto da obra; por isso ilustração. Há um rascunho parecido de 29/09 (primavera-do-leste-interdita-avenida-cuiaba-para-obra-de-faixa-elevada), não publicado."
     }
   ]
 }
