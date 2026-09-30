@@ -2393,7 +2393,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "29/09/2026 19:43",
+  "atualizado": "30/09/2026 09:43",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -3058,6 +3058,27 @@
        [
         "Olhar Direto",
         "https://www.olhardireto.com.br/juridico/noticias/empresaria-e-multada-pela-justica-eleitoral-apos-usar-perfil-de-pizzaria-para-publicar-falas-falsas-atribuidas-a-janaina-riva",
+        "2026-09-29"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-28",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "A pedido de Janaina Riva, o juiz auxiliar Flávio Fraga e Silva concedeu a ela direito de resposta no rádio e na TV contra peças da coligação de Medeiros exibidas em 21/9. Segundo a decisão, as peças atribuíam a Janaina o corte no tempo de propaganda de Medeiros, que decorreu de decisão do STF sobre o tempo das candidaturas femininas (Reclamação 99.603/MT). A decisão confirmou a proibição de voltar a exibir a peça de TV nos moldes questionados; a data da resposta ainda será definida.",
+      "cabe_recurso": true,
+      "defesa": "A coligação de Medeiros alegou liberdade de expressão e direito à crítica política.",
+      "fontes": [
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/tre-manda-medeiros-dar-direito-de-resposta-a-janaina-na-tv-e-radio/530227",
+        "2026-09-29"
+       ],
+       [
+        "O Documento",
+        "https://odocumento.com.br/campanha-de-medeiros-sofre-reves-apos-tenta-ligar-janaina-riva-a-perda-de-tempo-eleitoral/",
         "2026-09-29"
        ]
       ],
@@ -6679,6 +6700,27 @@
        ]
       ],
       "papel": "favor"
+     },
+     {
+      "data": "2026-09-28",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "A pedido de Janaina Riva, o juiz auxiliar Flávio Fraga e Silva concedeu a ela direito de resposta no rádio e na TV contra peças da coligação de Medeiros exibidas em 21/9. Segundo a decisão, as peças atribuíam a Janaina o corte no tempo de propaganda de Medeiros, que decorreu de decisão do STF sobre o tempo das candidaturas femininas (Reclamação 99.603/MT). A decisão confirmou a proibição de voltar a exibir a peça de TV nos moldes questionados; a data da resposta ainda será definida.",
+      "cabe_recurso": true,
+      "defesa": "A coligação de Medeiros alegou liberdade de expressão e direito à crítica política.",
+      "fontes": [
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/tre-manda-medeiros-dar-direito-de-resposta-a-janaina-na-tv-e-radio/530227",
+        "2026-09-29"
+       ],
+       [
+        "O Documento",
+        "https://odocumento.com.br/campanha-de-medeiros-sofre-reves-apos-tenta-ligar-janaina-riva-a-perda-de-tempo-eleitoral/",
+        "2026-09-29"
+       ]
+      ],
+      "papel": "contra"
      },
      {
       "data": "2026-09-27",
