@@ -986,6 +986,22 @@
       "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-presidente-br-4-og.jpg",
       "feito_em": "2026-09-30",
       "obs": "matéria de agenda (sem acusação); cita 11 dos 13 candidatos da montagem — Edmilson Costa (PCB) e Renan Santos (Missão) não aparecem no texto, mas estão na arte, que traz todos os registrados em ordem alfabética"
+    },
+    {
+      "slug": "agenda-desta-terca-lula-caminha-em-salvador-e-caiado-em-goiania",
+      "antes": "capa-0ac010d98bc3ca84.webp",
+      "depois": "2026-09-25-candidatos-presidente-br-5.jpg (montagem pronta DAHWNWpBR1E, 13 candidatos)",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-presidente-br-5-og.jpg",
+      "feito_em": "2026-09-30",
+      "obs": "matéria de agenda (sem acusação); cita 9 dos 13 candidatos da montagem (faltam Clariana Barão, Edmilson Costa, Leonardo Avalanche e Rui Costa Pimenta), todos com o partido da arte; legenda mantém o link da Agência Brasil. Erros no texto para o editor: chama Caiado (PSD) de 'o tucano' e fala em 'segundo turno' ao tratar da mobilização no Nordeste"
+    },
+    {
+      "slug": "lula-e-flavio-bolsonaro-pautam-saude-e-impostos-em-atos-na-ultima-semana",
+      "antes": "capa-d4ff81ae7f44b3eb.webp",
+      "depois": "2026-09-25-candidatos-presidente-br-6.jpg (montagem pronta DAHWNWpBR1E, 13 candidatos)",
+      "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-presidente-br-6-og.jpg",
+      "feito_em": "2026-09-30",
+      "obs": "matéria de agenda (sem acusação); cita 7 dos 13 candidatos da montagem, todos com o partido da arte; legenda mantém o link da Agência Brasil. Erro no texto para o editor: diz que Caiado destacou a experiência administrativa 'no Mato Grosso' (ele governou Goiás)"
     }
   ],
   "mantidos": [

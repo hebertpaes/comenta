@@ -1,0 +1,49 @@
+{
+  "slug": "cabo-verde-na-onu",
+  "materia": "https://hojemt.com.br/cabo-verde-na-onu/",
+  "titulo": "Cabo Verde na ONU",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Para quem mora numa ilha, o clima não é debate: é endereço.",
+    "instagram_4x5": "Na ilha, o clima não é debate: é endereço."
+  },
+  "contexto": "O primeiro-ministro de Cabo Verde, Francisco Carvalho, discursou em 26/09 na 81.ª sessão da Assembleia Geral da ONU, em Nova Iorque, e tratou a crise climática como questão de justiça: quem menos contribui para ela não pode continuar a arcar com as consequências. O discurso veio um dia depois de a tempestade tropical Gonzalo provocar inundações e cortes de energia em ilhas do arquipélago.",
+  "fontes": [
+    "https://jornaleconomico.sapo.pt/noticias/pm-cabo-verdiano-apela-na-onu-a-mobilizacao-para-enfrentar-crise-climatica/",
+    "https://executivedigest.sapo.pt/pm-cabo-verdiano-apela-na-onu-a-mobilizacao-para-enfrentar-crise-climatica/"
+  ],
+  "checagem_pendente": "a curta diz '76ª Assembleia Geral'; a sessão de 2026 é a 81.ª (Jornal Económico). A curta 'deus-no-clima' (27/09 08h10) trata do mesmo discurso e chama Francisco Carvalho de 'chanceler'; ele é primeiro-ministro. Par duplicado sinalizado ao editor; textos não editados.",
+  "regras_da_cena": "sem pessoa real: estadista genérico num púlpito gigante sobre uma ilhota no Atlântico, entre sol escaldante e tempestade, aponta um termômetro fervendo; ao longe, figuras de terno descansam à sombra na cidade grande; sem texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "nenhuma pessoa real",
+      "obs": "personagem genérico, sem foto de referência"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHWr35Y3AU",
+    "arte_16x9": "MAHWr5X7r5Y",
+    "design_instagram_4x5": null,
+    "arte_4x5": null,
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "pendente",
+    "obs": "versão 4:5 não gerada: pausa de cota do Canva em 30/09; entra na agenda como aguardando_decisao depois da correção do '76ª' na curta"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-27-cabo-verde-na-onu.jpg",
+    "instagram_4x5": null
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-27-cabo-verde-na-onu.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-27-cabo-verde-na-onu-og.jpg",
+    "instagram_4x5": null
+  },
+  "site": "feature_image e og_image trocadas em 30/09/2026 (antes: charge automática charge-dia-1790532613.webp; og antiga card-532613857.webp)"
+}
