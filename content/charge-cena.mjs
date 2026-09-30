@@ -493,6 +493,8 @@ function pronuncia(texto) {
 const PRONUNCIA_EDGE = [
   [/\bQuaest\b/g, "Cuaést"],
   [/\bHOJE MT\b/g, "Hoje ême tê"],
+  [/\bTRE\b/g, "tê érre é"],
+  [/\bJanaina\b/g, "Janaína"],
 ];
 function pronunciaEdge(texto) {
   return PRONUNCIA_EDGE.reduce((t, [de, para]) => t.replace(de, para), texto.trim());

@@ -1,0 +1,138 @@
+{
+  "spec": "/home/user/comenta/content/pautas/videos/argos/2026-09-30-boletim-04.cena.json",
+  "saida": "/home/user/comenta/content/pautas/videos/argos/2026-09-30-boletim-04.mp4",
+  "gerado_em": "2026-09-30T11:16:16.264Z",
+  "duracao": 105.84,
+  "duracao_total": 105.84,
+  "limite_duracao": 120,
+  "resolucao": "1080x1920",
+  "fps": 25,
+  "universo": "Slides escuros com ondas e curvas de nível verdes (estilo visual do vídeo de referência indicado pelo editor), sem avatar",
+  "trilha": {
+    "id": "pantanal",
+    "titulo": "Windswept",
+    "arquivo": "assets/trilhas/pantanal.m4a",
+    "escolha": "roteiro",
+    "volume": 0.12,
+    "ganho_db": 4.04,
+    "licenca": "CC BY 4.0",
+    "credito": "Música: \"Windswept\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
+    "credito_oficial": "\"Windswept\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/"
+  },
+  "credito_musica": "Música: \"Windswept\" — Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-AntonioNeural",
+    "velocidade": "+18%",
+    "personagem": null,
+    "tom": "+4Hz",
+    "reserva": {
+      "motor": "kokoro",
+      "narrador": "pm_alex",
+      "velocidade": 1.18,
+      "tom": 2,
+      "tratamento": "limpo",
+      "fonetica": "misaki",
+      "sotaque": "cuiabano"
+    }
+  },
+  "abertura": {
+    "duracao": 2.5
+  },
+  "cenas": [
+    {
+      "n": 1,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 2.5,
+      "duracao_audio": 8.28,
+      "duracao": 8.73
+    },
+    {
+      "n": 2,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 11.23,
+      "duracao_audio": 8.35,
+      "duracao": 8.8
+    },
+    {
+      "n": 3,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "pan-dir",
+      "inicio": 20.03,
+      "duracao_audio": 8.35,
+      "duracao": 8.8
+    },
+    {
+      "n": 4,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 28.83,
+      "duracao_audio": 10.03,
+      "duracao": 10.48
+    },
+    {
+      "n": 5,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 39.31,
+      "duracao_audio": 10.48,
+      "duracao": 10.93
+    },
+    {
+      "n": 6,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "pan-esq",
+      "inicio": 50.24,
+      "duracao_audio": 12.26,
+      "duracao": 12.71
+    },
+    {
+      "n": 7,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 62.95,
+      "duracao_audio": 12.88,
+      "duracao": 13.33
+    },
+    {
+      "n": 8,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 76.28,
+      "duracao_audio": 10.77,
+      "duracao": 11.22
+    },
+    {
+      "n": 9,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "pan-dir",
+      "inicio": 87.5,
+      "duracao_audio": 9.45,
+      "duracao": 9.9
+    },
+    {
+      "n": 10,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 97.4,
+      "duracao_audio": 4.89,
+      "duracao": 5.34
+    }
+  ],
+  "fechamento": {
+    "inicio": 102.74,
+    "duracao": 3
+  }
+}
