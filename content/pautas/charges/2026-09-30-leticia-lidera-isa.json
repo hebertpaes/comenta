@@ -1,0 +1,50 @@
+{
+  "slug": "leticia-lidera-isa",
+  "materia": "https://hojemt.com.br/leticia-lidera-isa/",
+  "titulo": "Letícia lidera ISA",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas de Letícia Carvalho que possa virar piada",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Primeira mulher no leme do fundo do mar: a maré virou",
+    "instagram_4x5": null
+  },
+  "contexto": "Segundo a curta publicada, a brasileira Letícia Carvalho assumiu a liderança da Autoridade Internacional dos Fundos Marinhos (ISA), primeira mulher no cargo máximo da organização que regula a mineração em alto-mar, e lançou o programa SHE, voltado à presença e à segurança de mulheres no setor. A charge usa só esse fato (primeira mulher no comando), sem atribuir fala, crime ou humilhação à personagem.",
+  "fontes": [
+    "https://hojemt.com.br/leticia-lidera-isa/"
+  ],
+  "regras_da_cena": "personagem em posição de comando (leme de submarino de latão), peixe curioso na vigia, escavadeira submarina parada ao fundo (alusão à mineração em águas profundas, sem afirmar nada sobre a pessoa); sem texto, logos ou bandeiras na arte",
+  "personagens": [
+    {
+      "nome": "Letícia Carvalho",
+      "referencia_canva": "MAHWsvmfAAc",
+      "origem": "UNCTAD, 04/02/2026, Flickr 55079992997, via Wikimedia Commons, licença CC BY-SA 4.0 (recorte do rosto)",
+      "obs": "licença com compartilhamento pela mesma licença (share-alike): a arte derivada foi gerada no Canva e o crédito da referência fica registrado aqui; decisão do editor se quer creditar a fonte na legenda. O rosto saiu com acabamento mais realista que o de outras charges: se o editor achar pouco 'desenho', refazer quando a cota do Canva voltar."
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHWshdSKLw",
+    "arte_16x9": "MAHWsvZm9Sc",
+    "design_instagram_4x5": null,
+    "arte_4x5": null,
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "pendente",
+    "obs": "versão 4:5 não gerada: pausa de cota do Canva (quota_cooldown) em 30/09/2026 14:40 (Cuiabá); entra na agenda depois que a cota voltar"
+  },
+  "arquivos": {
+    "site_16x9": "2026-09-30-leticia-lidera-isa.jpg",
+    "instagram_4x5": null
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/09/2026-09-30-leticia-lidera-isa.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/09/2026-09-30-leticia-lidera-isa-og.jpg",
+    "instagram_4x5": null
+  },
+  "site": "feature_image e og_image trocadas em 30/09/2026 (antes: charge automática charge-dia-1790791819.webp)",
+  "fontes_obs": "a curta não cita fonte externa; conferir a fonte original (ISA/ONU) antes de qualquer uso adicional"
+}
