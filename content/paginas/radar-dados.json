@@ -1,5 +1,5 @@
 {
- "atualizado": "29/09/2026",
+ "atualizado": "01/10/2026",
  "redes": {
   "Maurício Coelho": [
    [
@@ -299,7 +299,7 @@
   ]
  },
  "pesquisas": {
-  "atualizado": "30/09/2026 19:51",
+  "atualizado": "01/10/2026 08:30",
   "corridas": [
    {
     "id": "governador-mt",
@@ -640,7 +640,7 @@
       ]
      }
     ],
-    "nota": "A pesquisa Veritá (MT-09975/2026, 20 a 24/9) não aparece aqui: a divulgação foi suspensa por liminar do TRE-MT em 28/9 (juiz auxiliar Flávio Fraga e Silva, a pedido de Janaina Riva), que apontou 30 entrevistas duplicadas e localidades que não batem com os municípios informados. É decisão provisória; o instituto tem prazo para se explicar."
+    "nota": "A pesquisa Veritá (MT-09975/2026, 20 a 24/9) não aparece aqui: a divulgação foi suspensa por liminar do TRE-MT em 28/9 (juiz auxiliar Flávio Fraga e Silva, a pedido de Janaina Riva), que apontou 30 entrevistas duplicadas e localidades que não batem com os municípios informados. É decisão provisória; o instituto tem prazo para se explicar. A Percent Brasil divulgou em 30/9 pesquisa só do município de Cuiabá (MT-02166/2026 e BR-08302/2026; 600 entrevistas presenciais, campo de 15 a 18/9, margem de 4 pontos): Pivetta 33%, Wellington Fagundes 24% e Doutora Natasha 16,3% no 1º turno (Olhar Direto e MidiaJur, 30/9). Não representa o eleitorado do estado e por isso não entra no quadro."
    },
    {
     "id": "senado-mt",
@@ -918,8 +918,8 @@
     "id": "presidente",
     "titulo": "Presidência da República",
     "cenario": "2º turno entre Lula (PT) e Flávio Bolsonaro (PL), sem favorito claro",
-    "porque": "Nas 14 pesquisas nacionais registradas (a rodada mais recente de cada instituto, com campo entre 15 e 29/9), Lula e Flávio estão sempre nos dois primeiros lugares, e nenhum chega à metade dos votos válidos. No 1º turno, Lula aparece à frente em onze, Flávio em duas, e há um empate. No 2º turno simulado, Flávio está à frente em sete, Lula em quatro, e há três empates; em doze delas a diferença fica dentro da margem de erro.",
-    "nota": "Em Mato Grosso, a Quaest (21 a 24/9, registros MT-08098/2026 e BR-09594/2026) mostra Flávio com 50% e Lula com 25% no 1º turno; no 2º turno, 56% a 30%.",
+    "porque": "Nas 15 pesquisas nacionais registradas (a rodada mais recente de cada instituto, com campo entre 15 e 30/9), Lula e Flávio estão sempre nos dois primeiros lugares, e nenhum chega à metade dos votos válidos. No 1º turno, Lula aparece à frente em onze, Flávio em três, e há um empate. No 2º turno simulado (14 pesquisas; o Veritá divulgou só o 1º turno), Flávio está à frente em sete, Lula em quatro, e há três empates; em doze delas a diferença fica dentro da margem de erro.",
+    "nota": "Em Mato Grosso, a Quaest (21 a 24/9, registros MT-08098/2026 e BR-09594/2026) mostra Flávio com 50% e Lula com 25% no 1º turno; no 2º turno, 56% a 30%. A pesquisa do Veritá (BR-04467/2026, divulgada em 30/9) traz só votos válidos: por isso não entra no gráfico de pontos nem é comparável diretamente com as demais, que estão em votos totais; o registro é o protocolo agregado de 27 registros estaduais, e a margem varia de 2 a 3,5 pontos conforme a UF.",
     "nomes": [
      "Lula",
      "Flávio Bolsonaro",
@@ -929,6 +929,56 @@
     ],
     "t2max": 6,
     "pesquisas": [
+     {
+      "inst": "Real Time Big Data",
+      "contratante": "recursos próprios",
+      "campo": "26 a 30/09",
+      "amostra": "2.000",
+      "margem": "2",
+      "conf": 95,
+      "metodo": "entrevistas por telefone",
+      "reg": "BR-09503/2026",
+      "base": "totais",
+      "v": {
+       "Lula": 43,
+       "Flávio Bolsonaro": 39,
+       "Augusto Cury": 3,
+       "Renan Santos": 4,
+       "Ronaldo Caiado": 3,
+       "Romeu Zema": 1,
+       "Outros (Clariana Barão, Rui Costa Pimenta, Samara, Edmilson Costa, Hertz Dias, Wilson Grassi e Leonardo Avalanche, somados)": 1
+      },
+      "fontes": [
+       [
+        "CNN Brasil – 1º turno",
+        "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-lula-tem-43-no-1o-turno-flavio-39/",
+        "2026-10-01"
+       ],
+       [
+        "CNN Brasil – 2º turno",
+        "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-flavio-tem-46-no-2o-turno-lula-45/",
+        "2026-10-01"
+       ],
+       [
+        "Gazeta do Povo",
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-presidente-outubro-2026/",
+        "2026-10-01"
+       ],
+       [
+        "Metrópoles",
+        "https://www.metropoles.com/brasil/real-time-lula-tem-43-e-flavio-marca-39-em-ultima-pesquisa-no-1o-turno",
+        "2026-10-01"
+       ]
+      ],
+      "t2": [
+       [
+        "Flávio Bolsonaro",
+        46,
+        "Lula",
+        45
+       ]
+      ]
+     },
      {
       "inst": "Indexa",
       "contratante": "Agência Estado S.A. (Broadcast/Estadão)",
@@ -1507,6 +1557,42 @@
       ]
      },
      {
+      "inst": "Veritá",
+      "contratante": "Sistema de Comunicação Pantanal Ltda. (Rede Brasil de Televisão)",
+      "campo": "20 a 25/09",
+      "amostra": "40.500",
+      "margem": "2 a 3,5",
+      "conf": 95,
+      "metodo": "ligações a celulares com resposta automatizada; margem por UF",
+      "reg": "BR-04467/2026",
+      "base": "validos",
+      "v": {
+       "Flávio Bolsonaro": 45.14,
+       "Lula": 44.65,
+       "Augusto Cury": 4.25,
+       "Renan Santos": 2.39,
+       "Ronaldo Caiado": 2.16,
+       "Romeu Zema": 0.46
+      },
+      "fontes": [
+       [
+        "Revista Oeste",
+        "https://revistaoeste.com/politica/verita-flavio-lula-1-turno/",
+        "2026-10-01"
+       ],
+       [
+        "Revista Fórum",
+        "https://revistaforum.com.br/politica/pesquisa-verita-lula-flavio-bolsonaro",
+        "2026-10-01"
+       ],
+       [
+        "Blog do BG",
+        "https://www.blogdobg.com.br/maior-pesquisa-da-campanha-instituto-verita-aponta-flavio-bolsonaro-a-frente-para-presidencia-e-detalha-raio-x-do-eleitorado/",
+        "2026-09-30"
+       ]
+      ]
+     },
+     {
       "inst": "Datafolha",
       "contratante": "Folha de S.Paulo (Empresa Folha da Manhã S.A.) e Grupo Globo (Globo Comunicação e Participações S.A.)",
       "campo": "22 a 23/09",
@@ -1629,51 +1715,6 @@
       ]
      },
      {
-      "inst": "Real Time Big Data",
-      "contratante": "recursos próprios",
-      "campo": "19 a 23/09",
-      "amostra": "2.000",
-      "margem": "2",
-      "conf": 95,
-      "metodo": "entrevistas por telefone e recrutamento ",
-      "reg": "BR-04202/2026",
-      "base": "totais",
-      "v": {
-       "Lula": 41,
-       "Flávio Bolsonaro": 37,
-       "Augusto Cury": 6,
-       "Renan Santos": 6,
-       "Ronaldo Caiado": 2,
-       "Romeu Zema": 1,
-       "Outros (Clariana Barão, Rui Costa Pimenta, Samara, Edmilson Costa, Hertz Dias, Wilson Grassi e Leonardo Avalanche, somados)": 1
-      },
-      "fontes": [
-       [
-        "CNN Brasil – 1º turno",
-        "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-lula-tem-41-no-1o-turno-flavio-37/",
-        "2026-09-24"
-       ],
-       [
-        "CNN Brasil – 2º turno",
-        "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-flavio-tem-45-no-2o-turno-lula-44/",
-        "2026-09-24"
-       ],
-       [
-        "Gazeta do Povo",
-        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-presidente-setembro-2026-2/",
-        "2026-09-24"
-       ]
-      ],
-      "t2": [
-       [
-        "Flávio Bolsonaro",
-        45,
-        "Lula",
-        44
-       ]
-      ]
-     },
-     {
       "inst": "Alfa Inteligência",
       "contratante": "Rádio Transamérica de São Paulo Ltda. (Gazeta); CartaCapital diz 'encomendada pela TMC'",
       "campo": "18 a 23/09",
@@ -1762,7 +1803,7 @@
   ]
  },
  "grupos": {
-  "atualizado": "30/09/2026 19:00",
+  "atualizado": "01/10/2026 08:30",
   "grupos": [
    {
     "governador": "Doutora Natasha",
@@ -1949,6 +1990,22 @@
       ]
      },
      {
+      "data": "2026-09-30",
+      "fato": "Em entrevista da série com candidatos ao Senado promovida pela Aprosoja-MT, Antônio Galvan (Avante), que declarou apoio a Pivetta, disse que na véspera recebeu “dois, três mensageiros” que lhe pediram que retirasse a candidatura “pelo bem da direita, pelo bem do país”. Ele não identificou os mensageiros nem quem os enviou e afirmou que não vai recuar “um milímetro”. As matérias não atribuem o pedido a nenhum candidato, partido ou coligação.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/noticias/galvan-rejeita-pressao-para-desistir-da-candidatura-ao-senado-nao-vou-recuar-um-milimetro",
+        "2026-09-30"
+       ],
+       [
+        "Muvuca Popular",
+        "https://www.muvucapopular.com.br/2026/09/30/galvan-revela-que-foi-procurado-para-desistir-da-eleicao-ao-senado-mas-diz-que-nao-vai-recuar-nem-um-milimetro/",
+        "2026-09-30"
+       ]
+      ]
+     },
+     {
       "data": "2026-09-29",
       "fato": "A vice de Pivetta, Gisela Simona (União), negou ter declarado apoio a Galvan (Avante) ao Senado: disse que os senadores dela são Mauro Mendes e Margareth Buzetti e que o gesto foi retribuição ao apoio de Galvan a Pivetta.",
       "fontes": [
@@ -1977,22 +2034,6 @@
         "Minuto MT",
         "https://minutomt.com.br/espia-ai/meu-voto-e-medeiros-e-mauro-diz-faissal-durante-evento-em-vg/",
         "2026-09-30"
-       ]
-      ]
-     },
-     {
-      "data": "2026-09-28",
-      "fato": "O presidente do União Brasil em MT, Mauro Mendes, assinou resolução, ad referendum do diretório estadual, que libera o senador Jayme Campos (União) para apoiar candidatos fora da aliança do partido sem risco de punição. Jayme apoia Wellington Fagundes (PL) ao governo e Janaina Riva (MDB) ao Senado; o União segue com Pivetta, Mauro e Margareth Buzetti.",
-      "fontes": [
-       [
-        "MidiaNews",
-        "https://www.midianews.com.br/politica/mendes-libera-jayme-para-apoiar-wellington-contra-pivetta/530113",
-        "2026-09-28"
-       ],
-       [
-        "Muvuca Popular",
-        "https://www.muvucapopular.com.br/2026/09/28/mauro-libera-jayme-campos-para-apoiar-candidatos-fora-da-alianca-do-uniao-sem-risco-de-punicao/",
-        "2026-09-28"
        ]
       ]
      }
@@ -2169,6 +2210,27 @@
       ]
      },
      {
+      "data": "2026-09-30",
+      "fato": "Na mesma série da Aprosoja-MT, Janaina Riva (MDB), candidata ao Senado na coligação de Wellington, disse que pretende cumprir os oito anos de mandato e que, na opinião dela, o candidato a governador nesta eleição deveria ter sido Max Russi (Podemos), presidente da Assembleia Legislativa, que “seria o nosso candidato, eventualmente, lá em 2030”. O Podemos integra a coligação de Pivetta nesta eleição, e as matérias não trazem manifestação de Max Russi sobre a fala.",
+      "fontes": [
+       [
+        "Gazeta Digital",
+        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/janaina-promete-cumprir-mandato-no-senado-de-8-anos-e-lanca-russi-para-2030/861011",
+        "2026-09-30"
+       ],
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/noticias/janaina-descarta-disputa-ao-governo-em-2030-e-lanca-max-russi-como-nome-do-grupo-para-disputar-o-paiaguas",
+        "2026-09-30"
+       ],
+       [
+        "en.com.br",
+        "https://en.com.br/janaina-promete-ficar-oito-anos-no-senado-e-cita-max-russi-como-nome-para-2030/",
+        "2026-09-30"
+       ]
+      ]
+     },
+     {
       "data": "2026-09-29",
       "fato": "Em vídeo, o governador de São Paulo, Tarcísio de Freitas (Republicanos), pediu votos para Zé Medeiros e Mauro Mendes ao Senado e para Pivetta ao governo; o apoio foi exibido no último programa de Medeiros na TV, em 30/9.",
       "fontes": [
@@ -2180,27 +2242,6 @@
        [
         "MidiaNews",
         "https://www.midianews.com.br/politica/ultimo-programa-ao-senado-traz-stf-obras-de-lula-e-apoios-nacionais/530271",
-        "2026-09-30"
-       ]
-      ]
-     },
-     {
-      "data": "2026-09-29",
-      "fato": "O deputado estadual Faissal Calil (PL) declarou os dois votos ao Senado em Zé Medeiros e em Mauro Mendes (União), da coligação de Pivetta, no encerramento da campanha dele em Várzea Grande, com Mauro presente.",
-      "fontes": [
-       [
-        "Minuto MT",
-        "https://minutomt.com.br/espia-ai/meu-voto-e-medeiros-e-mauro-diz-faissal-durante-evento-em-vg/",
-        "2026-09-30"
-       ],
-       [
-        "Olhar Direto",
-        "https://www.olhardireto.com.br/noticias/com-divergencias-no-retrovisor-mauro-pede-votos-para-faissal-em-vg",
-        "2026-09-30"
-       ],
-       [
-        "RDNews",
-        "https://www.rdnews.com.br/eleicoes-2026/em-ato-varzea-grande-mauro-mendes-reforca-apoio-a-reeleicao-de-faissal/249903",
         "2026-09-30"
        ]
       ]
@@ -2758,7 +2799,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "30/09/2026 19:00",
+  "atualizado": "01/10/2026 08:30",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -5786,6 +5827,74 @@
        ]
       ],
       "papel": "pedido"
+     },
+     {
+      "data": "2026-08-14",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar da propaganda Flávio Fraga e Silva)",
+      "resumo": "Em representação do PL, o juiz auxiliar condenou Pivetta e o diretor-presidente da MT Par, Wener Klesley dos Santos, a multa de R$ 30 mil cada por publicidade institucional no site e nas redes da estatal durante o período vedado; uma das publicações chamava Pivetta de “novo governador”. O juiz reconheceu o descumprimento parcial da liminar de 16/7 (duas publicações seguiam acessíveis em 10/8) e fixou multa diária de R$ 1.621, que somava R$ 147.534 na data da sentença, segundo o VGN (o Olhar Direto soma R$ 134 mil, sem as diárias). Rejeitou a tese de que a personalidade jurídica própria da MT Par afastaria o dever do governador, por causa da vinculação da estatal ao Gabinete do Governador. Decisão de 14/8, divulgada em 17/8; em 16/9 o juiz rejeitou embargos de declaração de Wener e manteve a condenação.",
+      "cabe_recurso": true,
+      "defesa": "A defesa sustentou que a MT Par tem personalidade jurídica própria e autonomia, argumento rejeitado na decisão. Segundo o Fatos de Mato Grosso, o parecer técnico da defesa indicou que as publicações só foram excluídas em 17/8.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/pivetta-e-diretor-da-mt-par-descumprem-liminar-e-tre-aplica-r-134-mil-em-multas",
+        "2026-08-17"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/vgnjur/pivetta-e-presidente-da-mt-par-sao-multados-em-r-147-mil-por-crime-eleitoral/150645",
+        "2026-08-17"
+       ],
+       [
+        "Fatos de Mato Grosso",
+        "https://www.fatosdematogrosso.com.br/eleicoes/justica-diz-que-esconder-materias-nao-e-remove-las-e-mantem-condenacao-na-mt-par/16091",
+        "2026-09-16"
+       ]
+      ],
+      "papel": "contra"
+     },
+     {
+      "data": "2026-09-10",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juíza auxiliar da propaganda Glenda Moreira Borges)",
+      "resumo": "Em representação do PL, partido de Wellington Fagundes, a juíza auxiliar multou o governador Otaviano Pivetta em R$ 25 mil por manter no ar publicidade institucional do Governo de Mato Grosso depois de 4/7, início dos três meses de vedação: eram 12 publicações nos perfis oficiais da Sefaz e da Setasc, em duas das quais a imagem de Pivetta aparecia associada às realizações. Os secretários Fábio Pimenta (Sefaz) e Klebson Gomes Haagsma (Setasc) foram multados em cerca de R$ 5,3 mil cada. A juíza afastou a multa diária da liminar porque duas postagens foram retiradas a tempo e mandou remover em 24 horas as que seguissem acessíveis. Decisão de 10/9, divulgada em 11/9; trata de infração à lei eleitoral e não é condenação criminal.",
+      "cabe_recurso": true,
+      "defesa": "Pivetta alegou falta de responsabilidade pessoal, porque a comunicação é coordenada pela Secom e os perfis são operados pelas secretarias, e disse que as postagens eram anteriores a 4/7. Os secretários, representados pela PGE, sustentaram que o conteúdo era informativo e estava oculto no Instagram, mas visível no Facebook pela integração entre as plataformas. A juíza rejeitou as teses.",
+      "fontes": [
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/tre-multa-governador-e-secretarios-por-posts-oficiais/571847",
+        "2026-09-11"
+       ],
+       [
+        "Fatos de Mato Grosso",
+        "https://www.fatosdematogrosso.com.br/eleicoes/posts-da-sefaz-e-da-setasc-rendem-multa-de-r-25-mil-a-pivetta/15876",
+        "2026-09-11"
+       ]
+      ],
+      "papel": "contra"
+     },
+     {
+      "data": "2026-09-22",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar da propaganda Marcelo Morgado)",
+      "resumo": "A coligação Coração da Gente, de Wellington Fagundes, pediu a retirada de inserções e programas de Pivetta exibidos em 18/9 com imagens de escolas estaduais e de uma unidade ligada ao programa Ser Família Criança, sob o argumento de uso de bem público em campanha. O juiz negou a liminar: neste momento não há documentação que comprove que os ambientes internos pertencem à rede pública nem em que circunstâncias as imagens foram gravadas, e usá-las em propaganda não basta, por si só, para caracterizar uso irregular de bem público. Pivetta e a vice, Gisela, foram citados e têm cinco dias para apresentar defesa; o mérito será julgado depois. As matérias divergem sobre o dia da decisão (21 ou 22/9).",
+      "cabe_recurso": false,
+      "defesa": "As matérias não trazem manifestação da campanha de Pivetta.",
+      "fontes": [
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/tre-ignora-fagundes-e-mantem-video-de-pivetta-com-imagens-de-escola/573515",
+        "2026-09-22"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/justica/juiz-nega-liminar-a-coligacao-de-wellington-para-pivetta-apagar-programa-gravado-em-escola/576542",
+        "2026-09-22"
+       ]
+      ],
+      "papel": "favor"
      }
     ]
    },
@@ -7470,6 +7579,74 @@
         "Muvuca Popular",
         "https://www.muvucapopular.com.br/2026/07/20/justica-mantem-multas-contra-wellington-jovem-pan-e-jornalistas-por-ataques-a-pivetta/",
         "2026-07-20"
+       ]
+      ],
+      "papel": "contra"
+     },
+     {
+      "data": "2026-09-10",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juíza auxiliar da propaganda Glenda Moreira Borges)",
+      "resumo": "Em representação do PL, partido de Wellington Fagundes, a juíza auxiliar multou o governador Otaviano Pivetta em R$ 25 mil por manter no ar publicidade institucional do Governo de Mato Grosso depois de 4/7, início dos três meses de vedação: eram 12 publicações nos perfis oficiais da Sefaz e da Setasc, em duas das quais a imagem de Pivetta aparecia associada às realizações. Os secretários Fábio Pimenta (Sefaz) e Klebson Gomes Haagsma (Setasc) foram multados em cerca de R$ 5,3 mil cada. A juíza afastou a multa diária da liminar porque duas postagens foram retiradas a tempo e mandou remover em 24 horas as que seguissem acessíveis. Decisão de 10/9, divulgada em 11/9; trata de infração à lei eleitoral e não é condenação criminal.",
+      "cabe_recurso": true,
+      "defesa": "Pivetta alegou falta de responsabilidade pessoal, porque a comunicação é coordenada pela Secom e os perfis são operados pelas secretarias, e disse que as postagens eram anteriores a 4/7. Os secretários, representados pela PGE, sustentaram que o conteúdo era informativo e estava oculto no Instagram, mas visível no Facebook pela integração entre as plataformas. A juíza rejeitou as teses.",
+      "fontes": [
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/tre-multa-governador-e-secretarios-por-posts-oficiais/571847",
+        "2026-09-11"
+       ],
+       [
+        "Fatos de Mato Grosso",
+        "https://www.fatosdematogrosso.com.br/eleicoes/posts-da-sefaz-e-da-setasc-rendem-multa-de-r-25-mil-a-pivetta/15876",
+        "2026-09-11"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-22",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar da propaganda Marcelo Morgado)",
+      "resumo": "A coligação Coração da Gente, de Wellington Fagundes, pediu a retirada de inserções e programas de Pivetta exibidos em 18/9 com imagens de escolas estaduais e de uma unidade ligada ao programa Ser Família Criança, sob o argumento de uso de bem público em campanha. O juiz negou a liminar: neste momento não há documentação que comprove que os ambientes internos pertencem à rede pública nem em que circunstâncias as imagens foram gravadas, e usá-las em propaganda não basta, por si só, para caracterizar uso irregular de bem público. Pivetta e a vice, Gisela, foram citados e têm cinco dias para apresentar defesa; o mérito será julgado depois. As matérias divergem sobre o dia da decisão (21 ou 22/9).",
+      "cabe_recurso": false,
+      "defesa": "As matérias não trazem manifestação da campanha de Pivetta.",
+      "fontes": [
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/tre-ignora-fagundes-e-mantem-video-de-pivetta-com-imagens-de-escola/573515",
+        "2026-09-22"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/justica/juiz-nega-liminar-a-coligacao-de-wellington-para-pivetta-apagar-programa-gravado-em-escola/576542",
+        "2026-09-22"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-02",
+      "tipo": "acao_em_andamento",
+      "orgao": "6ª Zona Eleitoral de Cáceres (juiz Antonio Carlos Pereira de Sousa Junior)",
+      "resumo": "Denúncia feita pelo aplicativo Pardal apontou a distribuição, a estudantes de Direito da Unemat, de exemplares do Vade Mecum com nome, foto e biografia de Wellington Fagundes na capa e na contracapa. O juiz escreveu que o ato, em tese, visa à promoção da candidatura e pode caracterizar propaganda eleitoral irregular ou conduta vedada, mas que a foto isolada, sem dados sobre a confecção e a distribuição, não basta para medidas de poder de polícia. Enviou os autos ao Ministério Público Eleitoral, que avalia se há elementos para uma ação; o procedimento administrativo da zona foi arquivado. Não houve sanção, e as matérias não confirmam quem produziu ou distribuiu os livros.",
+      "cabe_recurso": false,
+      "defesa": "As matérias não trazem manifestação de Wellington Fagundes ou do PL.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/justica-eleitoral-envia-ao-mp-denuncia-contra-wellington-fagundes-por-distribuicao-de-livros-com-autopromocao",
+        "2026-09-02"
+       ],
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/fogo-amigo/livros-distribuidos/528412",
+        "2026-09-02"
+       ],
+       [
+        "en.com.br",
+        "https://en.com.br/mpe-vai-investigar-distribuicao-de-livro-com-foto-e-biografia-de-wellington/",
+        "2026-09-02"
        ]
       ],
       "papel": "contra"
