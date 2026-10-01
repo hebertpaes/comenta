@@ -2,6 +2,98 @@
 
 Situação às ~18h30 de 30/09/2026 (Cuiabá). Tudo abaixo vem de material publicado. Quando um fato tem uma só fonte, está marcado **[fonte única]**.
 
+**Atualizado em 01/10/2026 (~17h de Cuiabá): ver a seção 0, logo abaixo. As seções 1 a 7 refletem o fechamento de 30/09.**
+
+---
+
+## 0. Atualização 01/10 (tarde)
+
+Fechado às ~17h de 01/10/2026 (Cuiabá). Horários em hora de Cuiabá (UTC-4). Tudo vem de material publicado e reaberto por curl; o que tem uma só fonte está marcado **[Checagem pendente]**. O site da Câmara continua bloqueado (WAF) e o Estadão MT devolveu 403.
+
+**Placar declarado das chapas em 01/10**
+
+| Chapa | Votos declarados | Quem diz | Fontes |
+|---|---|---|---|
+| Ilde Taques (Podemos) | 15 | O próprio Ilde: "Somos 15 vereadores hoje" | Gazeta Digital (07h36); Folhamax (08h56, reproduz a Gazeta); Olhar Direto (11h26); Infoverus (14h45); Diário Digital MT (10h28) |
+| Dilemário Alencar (União) | 12 | Olhar Direto: Dilemário "alega ter 12" | Olhar Direto, 30/09 20h51 (matéria da LOA). Nenhuma fala nova de Dilemário em 01/10 foi localizada |
+| Kássio Coelho (Podemos) | 7 | O próprio Kássio: "já conto com 7 vereadores" | Muvuca (16h06) **[Checagem pendente: fonte única; Olhar Direto e Infoverus não trazem número]** |
+
+- 15 + 12 = 27, o total da Câmara. Os 7 de Kássio só cabem na conta se saírem dos 12 de Dilemário (Kássio estava na foto dos 13 de 29/09). Nenhum veículo fez essa conta nem nomeou os sete.
+- Dilemário: nenhuma decisão publicada em 01/10 sobre manter ou retirar a candidatura. Muvuca e Olhar Direto registram que Kássio "não confirmou se Dilemário desistirá".
+
+**Kássio Coelho lança candidatura (01/10)**
+- Partido: Podemos (Muvuca, Olhar Direto, Infoverus). Até então integrava o grupo de Paula/Dilemário e aparece na foto dos 13 de 29/09.
+- Diz que protocola a chapa na segunda-feira (5), véspera da eleição. Só desiste se não reunir outros quatro vereadores para completar a chapa. Não disse se Dilemário sai da disputa.
+- Falas (texto como publicado):
+  - "Eu sou candidato. Lancei meu nome e já conto com 7 vereadores. Agora estou trabalhando para ampliar o número de parlamentares no grupo" — Muvuca, 16h06: https://www.muvucapopular.com.br/2026/10/01/kassio-coelho-lanca-nome-a-presidencia-da-camara-de-cuiaba-e-diz-ja-contar-com-7-votos/
+  - "Eu sou o candidato, vamos com a nossa chapa até o final. A eleição ainda não acabou, é dia 6 de outubro. Estou lançando a candidatura. Todo mundo que não for votar no Ilde vai votar em mim. Vou sozinho, so vou desistir se eu não achar quatro nomes para ir comigo. Na segunda feira, eu vou protocolar a minha candidatura" — Olhar Direto, 15h11: https://www.olhardireto.com.br/noticias/kassio-coelho-anuncia-candidatura-a-presidencia-da-camara-e-protocola-chapa-na-segunda-feira (o Infoverus, 16h12, reproduz com a grafia corrigida: https://www.infoverus.com.br/politica/kassio-coelho-lanca-candidatura-a-presidencia-da-camara-e-promete-protocolar-chapa-na-segunda-feira/35922)
+- Quem o apoia: nenhum nome publicado. **[Checagem pendente]**
+- Estadão MT (15h48) também noticiou ("Kássio lança candidatura e amplia disputa pela presidência da Câmara de Cuiabá"), mas o site devolveu 403; não reaberto.
+- Contexto: a Gazeta Digital (07h12) diz que Abilio autorizou Kássio Coelho, Marcus Brito Júnior e Rafael Ranalli a conversar com Ilde sobre uma composição, "segundo interlocutores". **[Checagem pendente: fonte única, sem fonte nomeada; Folhamax e Poconé Online reproduzem a Gazeta]** https://www.gazetadigital.com.br/editorias/politica-de-mt/apos-perder-forca-na-disputa-abilio-autoriza-base-a-negociar-com-ilde-taques/861127
+  - A Gazeta dá Marcus Brito Júnior como Podemos; a seção 3 tinha PV. Acrescentar à tabela de partidos a conferir.
+  - Não está dito se a candidatura de Kássio é alternativa ou complemento a essa negociação.
+
+**Ilde Taques: conversas com aliados de Abilio e relação com o prefeito**
+- À Gazeta Digital (07h36), Ilde confirmou conversas com aliados do prefeito desde 30/09, "sem discussão sobre cargos": https://www.gazetadigital.com.br/editorias/politica-de-mt/apos-15-votos-fechados-ilde-confirma-negociacao-com-aliados-de-abilio/861131
+  - "Eu não sei se o Abilio que pediu, mas a gente está conversando, sim. Na política, sempre tem que ter porta aberta. Seria muito bom tornar-se chapa única. Tem espaço para isso, a gente não tem que fechar a porta para ninguém"
+  - "Não marcou nenhuma reunião. a gente conversa quase todo dia, toda semana, mas nesse sentido ainda não" (sobre Abilio)
+  - "Eu não sei se 26, mas a tendência é aumentar o número de votos, como eu sempre disse desde o começo"
+  - Sobre migração em bloco dos aliados do prefeito: "Eu acredito que não. Deve ser parte do grupo"
+  - "A gente está construindo. Eu não posso falar apenas por mim, eu tenho que conversar com todo o meu grupo. Somos 15 vereadores hoje. Tem que saber a opinião de todos"
+  - A Folhamax (08h56) reproduz a mesma entrevista ("ao GD"): https://www.folhamax.com/politica/ilde-confirma-negociacao-com-aliados-de-abilio/575063. Não é fonte independente.
+  - Atenção: Gazeta e Folhamax escrevem "próxima segunda-feira (6)". 6/10/2026 é terça-feira.
+- No PodOlhar (videocast do Olhar Direto, 11h26; Infoverus 14h45 reproduz): https://olhardireto.com.br/noticias/podolhar-nao-tera-perseguicao-garante-ilde-taques-sobre-abilio-e-eventual-comando-da-camara
+  - "Eu me comprometo: não terá, de forma alguma, uma Câmara Municipal de Cuiabá, uma Mesa Diretora, trabalhando contra os projetos e as matérias que sejam bons para Cuiabá. Não terá perseguição ao Executivo, nada disso"
+  - "Ninguém está jogando contra Cuiabá. São 27 cabeças, 27 vereadores que pensam diferente. E são os vereadores que elegem a nova Mesa Diretora, não é a Prefeitura"
+  - Sobre a ADI: "Nesse ponto, sim. Eu vejo que não precisava partir do Executivo uma interferência através do Judiciário. A eleição de Mesa, de Câmara ou da Assembleia Legislativa tem que ser discutida ali, com quem vota, com os vereadores"
+  - "O prefeito pode ir na Câmara Municipal de Cuiabá a hora que ele bem entender. Agora, se eu vou discutir matéria com ele, aí já é outra pegada. Eu acho que a gente tem que discutir no Colégio de Líderes, chamar os vereadores, perguntar a opinião, ser um debate mais ampliado"
+  - Sobre Abilio e a recondução de Paula: "O prefeito Abilio participou da eleição da Mesa. Ele declarou apoio à Paula, falou que quem quer ter algum diálogo com a Prefeitura teria que estar naquele projeto, naquele grupo"
+  - Sobre Paula: "A Paula, apesar de ela ter tentado disputar a reeleição, é minha amiga. Não tenho nada contra a atual presidente"; e, sobre o entendimento de 2025, "Diretamente com ela, a gente tinha esse alinhamento"
+  - Sobre o próprio grupo: "Coloco a mão no fogo. Eu não vejo mais alguma oportunidade de eles saírem desse bloco"
+  - Sobre Adevair Cabral: "Ele traiu quem, se ela não disputou? Ela não é candidata"
+  - "Não tenho nada contra o prefeito Abilio também"
+- Abilio, em 30/09 ao MidiaNews (15h00): https://www.midianews.com.br/politica/abilio-grupo-de-ilde-escolheu-a-oposicao-e-perda-de-dialogo/530087
+  - "Naturalmente é [uma derrota]. Um grupo optou por construir um projeto diverso ao que a gente estava fazendo"
+  - "Temos obras importantes para fazer e os vereadores que optaram pela oposição, optaram pela perda de diálogo comigo, pessoalmente. Construíram o caminho deles e vida que segue"
+  - "Vou tratá-los como oposição é tratada. Oposição é oposição, base é base, vida que segue"
+  - Sobre LDO e LOA: "A gente tem trabalhado os projetos na Câmara. Os projetos importantes para a gente têm avançado, têm sido aprovados e a vida é normal. As coisas estão indo bem"
+  - O MidiaNews lista 14 nomes no grupo de Ilde (sem Lemes, com Jeferson) e dá Alex Rodrigues como PV, Dídimo Vovô como PSB e Chico 2000 como sem partido.
+- Nenhuma fala de Abilio sobre a candidatura de Kássio ou sobre a negociação com Ilde foi localizada em 01/10. **[Checagem pendente]** O Estadão MT publicou "Abilio reconhece vitória política do grupo de Ilde e diz que vereadores perderam diálogo com ele" e "Com avanço de grupo de Ilde, Abilio minimiza risco de CPIs" (403, não reabertos).
+
+**Desistência de Paula e adesão de Lemes (reforço de fontes em 01/10)**
+- Diário Digital MT (11h02): Paula não disputa a recondução e apoia Dilemário, com Nadaf na vice; o texto diz que "Paula Calil será candidata à primeira-secretaria". https://diariodigitalmt.com.br/paula-desiste-de-tentar-reeleicao-e-fecha-apoio-a-dilemario-na-camara-de-cuiaba/
+  - A 1ª secretaria de Paula segue **não confirmada**: agora são três veículos a favor (Folhamax, Infoverus, Diário Digital) contra HNT e Veja Bem MT, que dizem que a composição não foi fechada. Nenhum traz fala de Paula sobre o cargo.
+- Diário Digital MT (10h28): Lemes saiu do grupo de WhatsApp dos aliados de Dilemário e "decidiu acompanhar a orientação do titular do mandato, Jeferson Siqueira". https://diariodigitalmt.com.br/suplente-muda-de-grupo-e-declara-apoio-a-ilde-taques/
+  - A Gazeta Digital (30/09) traz a mesma justificativa: https://www.gazetadigital.com.br/editorias/politica-de-mt/lemes-abandona-base-de-paula-e-decreta-apoio-a-ilde-em-respeito-ao-compromisso-com-siqueira/861022
+
+**Outros fatos de 30/09 e 01/10**
+- LOA 2027 protocolada em 30/09 às 18h35, com pedido de urgência: R$ 5.739.412.807,57 (Olhar Direto, VIP MT, RDM Online, Diário Digital MT; "R$ 5,73 bilhões" em VOZ MT, MidiaNews, RepórterMT, CBN Cuiabá; HNT). Resolve o item "[fonte única] FTN Brasil" de 20/09 na cronologia: o envio ocorreu. O HNT diz que a expectativa é que Paula paute a LOA em 6/10 (sem fonte nomeada). Pauta própria: `content/pautas/camara-cuiaba/2026-10-01-loa-2027-cuiaba-5-7-bilhoes.md`.
+- Prefeitura não renova contrato com a ASPE (Associação dos Servidores Públicos do Município), presidida por Adevair Cabral. A Prefeitura atribui a decisão ao não recolhimento de 1% da arrecadação ao Fundo de Capacitação do Servidor, previsto no Credenciamento 003/2025, e não a relaciona à eleição (nota oficial: https://cuiaba.mt.gov.br/noticias/prefeitura-de-cuiaba-nao-renova-contrato-com-a-aspe-por-descumprimento-de-obrigacoes-contratuais). O Infoverus (14h56) registra que a decisão saiu seis dias depois de Adevair aderir a Ilde: https://www.infoverus.com.br/politica/prefeitura-nao-renova-contrato-com-associacao-de-adevair-apos-vereador-mudar-apoio-na-camara/35906. Resposta de Adevair: não localizada. **[Checagem pendente]** Tratar como fato administrativo com versão da Prefeitura; a relação com a eleição é leitura do veículo, não fato.
+
+**Pendências para antes de 06/10**
+- Dilemário mantém ou retira a candidatura? Nenhuma fala dele em 01/10.
+- Os sete nomes de Kássio; se ele completa a chapa com quatro nomes; se protocola em 5/10.
+- Se a conversa entre Ilde e aliados de Abilio vira chapa única, e o que Abilio diz sobre isso.
+- Horário da sessão de 6/10, forma de votação (aberta ou secreta) e prazo de registro de chapas: continuam não localizados.
+- Partidos: Marcus Brito Júnior (PV na seção 3; Podemos na Gazeta), Alex Rodrigues (Podemos ou PV), Dídimo Vovô, Chico 2000.
+
+**Links de 01/10 (todos reabertos por curl, salvo indicação)**
+- https://www.muvucapopular.com.br/2026/10/01/kassio-coelho-lanca-nome-a-presidencia-da-camara-de-cuiaba-e-diz-ja-contar-com-7-votos/ (16h06)
+- https://www.olhardireto.com.br/noticias/kassio-coelho-anuncia-candidatura-a-presidencia-da-camara-e-protocola-chapa-na-segunda-feira (15h11)
+- https://www.infoverus.com.br/politica/kassio-coelho-lanca-candidatura-a-presidencia-da-camara-e-promete-protocolar-chapa-na-segunda-feira/35922 (16h12)
+- https://www.infoverus.com.br/politica/ilde-promete-dialogo-com-abilio-e-diz-que-camara-nao-fara-oposicao-ao-prefeito/35904 (14h45)
+- https://olhardireto.com.br/noticias/podolhar-nao-tera-perseguicao-garante-ilde-taques-sobre-abilio-e-eventual-comando-da-camara (11h26)
+- https://www.gazetadigital.com.br/editorias/politica-de-mt/apos-15-votos-fechados-ilde-confirma-negociacao-com-aliados-de-abilio/861131 (07h36, horário do Google Notícias)
+- https://www.gazetadigital.com.br/editorias/politica-de-mt/apos-perder-forca-na-disputa-abilio-autoriza-base-a-negociar-com-ilde-taques/861127 (07h12, horário do Google Notícias)
+- https://www.folhamax.com/politica/ilde-confirma-negociacao-com-aliados-de-abilio/575063 (08h56)
+- https://diariodigitalmt.com.br/paula-desiste-de-tentar-reeleicao-e-fecha-apoio-a-dilemario-na-camara-de-cuiaba/ (11h02)
+- https://diariodigitalmt.com.br/suplente-muda-de-grupo-e-declara-apoio-a-ilde-taques/ (10h28)
+- https://www.midianews.com.br/politica/abilio-grupo-de-ilde-escolheu-a-oposicao-e-perda-de-dialogo/530087 (30/09, 15h00)
+- https://olhardireto.com.br/noticias/em-meio-a-desgaste-com-a-camara-abilio-envia-orcamento-de-r-57-bilhoes-para-2027 (30/09, 20h51)
+- https://www.infoverus.com.br/politica/prefeitura-nao-renova-contrato-com-associacao-de-adevair-apos-vereador-mudar-apoio-na-camara/35906 (14h56)
+- https://cuiaba.mt.gov.br/noticias/prefeitura-de-cuiaba-nao-renova-contrato-com-a-aspe-por-descumprimento-de-obrigacoes-contratuais (nota oficial; só confirmada a existência, HTTP 200)
+- Não reabertos (403): https://www.estadaomatogrosso.com.br/politica/kassio-lanca-candidatura-e-amplia-disputa-pela-presidencia-da-camara-de-cuiaba/147200 ; https://www.estadaomatogrosso.com.br/politica/video-abilio-reconhece-vitoria-politica-do-grupo-de-ilde-e-diz-que-vereadores-perderam-dialogo-com-ele/146809 ; https://www.estadaomatogrosso.com.br/politica/com-avanco-de-grupo-de-ilde-abilio-minimiza-risco-de-cpis-e-diz-que-investigacoes-sao-normais/146975
+
 ---
 
 ## 1. Resumo em 5 linhas
@@ -165,6 +257,7 @@ Situação às ~18h30 de 30/09/2026 (Cuiabá). Tudo abaixo vem de material publi
 | Baixinha Giraldelli | Solidariedade, Cidadania ou Podemos |
 | Wilson Kero Kero | PMB ou Democrata/DEM |
 | Katiuscia Mantelli | PSB em 2025; Podemos em 2026 |
+| Marcus Brito Júnior | PV (RDNews, Folhamax) ou Podemos (Gazeta Digital, 01/10) |
 
 Grafia a conferir: "Tenente-Coronel Dias", que o Voz MT escreve "Assis".
 

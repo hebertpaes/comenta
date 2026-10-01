@@ -1331,6 +1331,22 @@
       "legenda": "Câmara de Lucas do Rio Verde devolve R$ 5 milhões à Prefeitura e doa caminhonete avaliada em R$ 146 mil\n\nA devolução foi anunciada em sessão solene no dia 16. O presidente da Câmara, Airton Callai, diz que os vereadores vão sugerir ao Executivo onde aplicar o dinheiro. As notas oficiais não detalham a composição do valor, e as chaves da caminhonete foram entregues em agosto, antes da aprovação da lei da doação.\n\nMatéria completa: hojemt.com.br/camara-de-lucas-do-rio-verde-devolve-r-5-milhoes-a-prefeitura-e-doa-caminhonete-avaliada-em-r-146-mil\n\n#lucasdorioverde #matogrosso #camaramunicipal #hojemt",
       "materia": "https://hojemt.com.br/camara-de-lucas-do-rio-verde-devolve-r-5-milhoes-a-prefeitura-e-doa-caminhonete-avaliada-em-r-146-mil/",
       "obs": "publicar só depois que a matéria (rascunho no Ghost, 6abe54916357bc8c6ad4d402) for publicada; capa do artigo pendente (cena neutra, Canva em cooldown)"
+    },
+    {
+      "id": "75",
+      "status": "aguardando_materia",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-04T07:30:00-04:00",
+      "formato": "card",
+      "titulo": "Abilio envia à Câmara de Cuiabá orçamento de R$ 5,7 bilhões para 2027",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-01-loa-2027-cuiaba.jpg"
+      ],
+      "legenda": "Abilio envia à Câmara de Cuiabá orçamento de R$ 5,7 bilhões para 2027\n\nO projeto da LOA 2027 foi protocolado na quarta (30) com pedido de urgência. A proposta estima receita e despesa em R$ 5,739 bilhões, cerca de 5% acima dos R$ 5,46 bilhões de 2026. Saúde (R$ 1,9 bi) e Educação (R$ 1,1 bi) ficam com as maiores fatias, e a própria Câmara recebe R$ 117,6 milhões. O texto chega sem LDO aprovada, a seis dias da eleição da Mesa Diretora, e ainda passa pelas comissões antes do plenário.\n\nMatéria completa: hojemt.com.br/abilio-envia-a-camara-de-cuiaba-orcamento-de-r-5-7-bilhoes-para-2027\n\nFontes: Olhar Direto, VOZ MT, HiperNotícias, MidiaNews, RepórterMT, CBN Cuiabá\n\n#cuiaba #camaramunicipal #orcamento #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/abilio-envia-a-camara-de-cuiaba-orcamento-de-r-5-7-bilhoes-para-2027/",
+      "ghost_id": "6abec6296357bc8c6ad4d41c",
+      "obs": "publicar só depois que a matéria (rascunho no Ghost, 6abec6296357bc8c6ad4d41c; prévia https://hojemt.com.br/p/ee1ba1d1-44f3-40d9-aef9-754ee16e5077/) for publicada. Horário: primeiro slot livre a partir de 02/10 (02 e 03/10 estão tomados por charges); cai no domingo da eleição geral, trocar se o editor preferir. Card: pautas/cards/2026-10-01-loa-2027-cuiaba.card.json"
     }
   ]
 }
