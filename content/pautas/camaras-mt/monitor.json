@@ -1,0 +1,24 @@
+{
+ "_comentario": "Monitor das Câmaras Municipais de Sorriso (sorriso.mt.leg.br) e Lucas do Rio Verde (camaralucasdorioverde.mt.gov.br); rotina em backup/rotinas.json. Nenhuma tem RSS: o leitor camaras-mt.mjs lê a lista de notícias e o RSS do YouTube de cada Câmara. 'vistos' guarda o que já foi avaliado; `node camaras-mt.mjs` lista os novos e `--marcar` grava.",
+ "camaras": {
+  "sorriso": {
+   "site": "https://sorriso.mt.leg.br",
+   "youtube": "UCxB83MjthQzTscHkE4vX1mA",
+   "sessoes": "https://sorriso.siscam.com.br/sessoes",
+   "redes": [
+    "https://www.instagram.com/camaradesorriso/",
+    "https://www.facebook.com/camaradevereadoresdesorriso"
+   ]
+  },
+  "lrv": {
+   "site": "https://www.camaralucasdorioverde.mt.gov.br",
+   "youtube": "UCAnCP9FRRZybkqSm2XzoPmQ",
+   "redes": [
+    "https://www.instagram.com/camaralucasdorioverde/",
+    "https://www.facebook.com/camaralucasdorioverde/"
+   ]
+  }
+ },
+ "pautas": [],
+ "vistos": {}
+}

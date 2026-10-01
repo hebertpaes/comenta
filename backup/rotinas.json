@@ -102,6 +102,15 @@
       "sessao": "esta (persistente)",
       "fonte": "content/camara-cuiaba.mjs + content/pautas/camara-cuiaba/monitor.json",
       "resumo": "Pedido do editor (01/10/2026): 'Monitore também https://www.camaracuiaba.mt.gov.br'. O site oficial bloqueia este ambiente (WAF 'Request Rejected', não contornar); lê o YouTube oficial (RSS), o Google Notícias e a imprensa, mantém o dossiê da eleição da Mesa (06/10) e escreve até 2 pautas por disparo (rascunho no Ghost, ilustração no Canva, card aguardando_materia)."
+    },
+    {
+      "id": "trig_01N9gmnCCMNRid6bmVgZcs9b",
+      "nome": "Câmaras de Sorriso e de Lucas do Rio Verde — monitorar notícias, sessões e projetos (dias úteis, 08:37 e 16:37 Cuiabá)",
+      "cron_utc": "37 12,20 * * 1-5",
+      "cuiaba": "08:37 e 16:37 (seg–sex)",
+      "sessao": "esta (persistente)",
+      "fonte": "content/camaras-mt.mjs + content/pautas/camaras-mt/monitor.json",
+      "resumo": "Pedido do editor (01/10/2026): sorriso.mt.leg.br e camaralucasdorioverde.mt.gov.br. Sem RSS: lê a lista de notícias de cada site e o RSS do YouTube oficial; escreve até 2 pautas por disparo (rascunho no Ghost, ilustração no Canva, card aguardando_materia)."
     }
   ],
   "modelos_canva": {
