@@ -51,4 +51,6 @@ O que as duas pesquisas e o edital têm em comum é a cobrança por um número: 
 - Interpretação marcada como "Leitura do HOJE MT".
 - Matérias anteriores da série: Deloitte e IBGE (24/09), OMPI (29/09).
 
-**Arte (a fazer quando o Ghost voltar):** ilustração editorial vetorial gerada no Canva, sem texto nem pessoas identificáveis, legenda "Ilustração: HOJE MT (gerada com IA)"; imagem de compartilhamento com `og-whatsapp.mjs`; card 4:5; entrada na agenda do Instagram só depois da publicação. Slug sugerido: `duas-pesquisas-globais-ia-medir-resultado-escalar`, tag Tecnologia.
+**Arte:** ilustração editorial vetorial gerada no Canva (`pautas/ilustracoes/2026-10-01-ia-medir-resultado-escalar.jpg`, design DAHWwqWNb_o, arte MAHWwpjLJcQ, a partir do modelo DAHWDzwR5c0), sem texto nem pessoas, selo "ILUSTRAÇÃO · HOJE MT", legenda "Ilustração: HOJE MT (gerada com IA)". Card 4:5 pronto em `pautas/cards/2026-10-01-ia-medir-resultado-escalar.jpg` (JSON ao lado).
+
+**Pendente quando o Ghost voltar (hoje 502):** criar o rascunho (slug sugerido `duas-pesquisas-globais-ia-medir-resultado-escalar`, tag Tecnologia, `posts.add` em status draft), aplicar a capa com `imagem-post.mjs`, rodar `og-whatsapp.mjs --da-destaque`, hospedar o card com `upload-ghost.mjs` e incluir na agenda do Instagram com obs "publicar só depois que a matéria for publicada"; registrar a ilustração em `ilustracoes/registro.json`.
