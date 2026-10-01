@@ -6,6 +6,42 @@ sugestivo e intrigante").
 
 ## Formato vigente (29/09/2026): só voz e slides
 
+### Ajustes de 01/10/2026 (valem sobre o que está abaixo)
+
+Pedido do editor em 01/10: "Deixe os vídeos sem avatar com a voz aprimorada e
+sem música de fundo, com uma intro e com o fechamento. E com as séries na
+ordem cronológica e subsequente."
+
+- **Sem música de fundo:** `"trilha": "nenhuma"` em todo roteiro de boletim
+  (o `charge-cena.mjs` respeita e não põe crédito de música). Só a voz.
+- **Voz:** continua a v6 (edge-tts pt-BR-AntonioNeural, +18%, +4Hz, reserva
+  Kokoro pm_alex). Sem avatar em nenhuma cena.
+- **Intro (1ª cena):** slide feito por `intro-boletim.mjs` (`--prefixo`, `--n`,
+  `--data`, `--tema`): cabeçalho, chip "BOLETIM Nº N", título "Radar
+  Eleitoral", data por extenso e o tema do dia; fala fixa: "Radar Eleitoral do
+  HOJE MT. Boletim número N, <dia da semana>, <dia> de <mês>." (sem "olá", sem
+  "eu sou", sem citar IA). A camada 1 (data + tema) entra em `"quando":
+  "Boletim"`. Antes dela continua a cartela de abertura do charge-cena (2,5 s,
+  muda). A notícia principal vem na 2ª cena.
+- **Fechamento (última cena + cartela):** fala fixa "Todos os casos, com as
+  fontes, estão no Radar Eleitoral do HOJE MT." (ou "Todos os dados…", quando
+  o tema for pesquisas), seguida da cartela final com link, fontes e o aviso
+  "Voz gerada com IA (narrador sintético)…".
+- **Capa (poster):** a composição do slide de intro (prévia gerada pelo
+  `intro-boletim.mjs`, 1080×1920) convertida em JPG `<prefixo>-capa.jpg`; sem
+  avatar.
+- **Série em ordem cronológica no Radar:** `radar-dados.json` tem a chave
+  `boletins` (lista do nº 1 ao mais recente, cada item com n, quando, titulo,
+  texto, video, poster, fontes, duracao_s); a seção "Boletins em vídeo" da
+  página mostra todos nessa ordem, com o texto e as fontes dos anteriores
+  recolhidos e o mais recente aberto. A chave `boletim` continua apontando
+  para o mais recente (compatibilidade). Cada boletim novo é ACRESCENTADO ao
+  fim de `boletins` (nunca substitui o anterior).
+- **Refeitura dos antigos:** nº 3 e nº 4 refeitos em 01/10 sem música e com
+  intro (v5 e v2); nº 1 e nº 2 (que tinham avatar) são refeitos no formato só
+  voz e slides, com as mesmas falas e os números da época (são registro
+  histórico: não se atualizam os dados, só o formato).
+
 Pedidos do editor em 29/09: "Não deixe avatar. Deixe somente a voz e slides";
 "Deixe uma voz menos grave e mais rápida e com português brasileiro com
 sotaque Cuiabano"; slides "no estilo deste vídeo" (youtu.be/M6jemlgwZxU)

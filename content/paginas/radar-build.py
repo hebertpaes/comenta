@@ -13,7 +13,7 @@ import json, re, sys, os
 aqui = os.path.dirname(os.path.abspath(__file__))
 dados = json.load(open(os.path.join(aqui, 'radar-dados.json'), encoding='utf-8'))
 for k in dados:
-    if k not in ('atualizado', 'boletim', 'pesquisas', 'justica', 'grupos', 'redes', 'analise', 'redes_metricas'):
+    if k not in ('atualizado', 'boletim', 'boletins', 'pesquisas', 'justica', 'grupos', 'redes', 'analise', 'redes_metricas'):
         sys.exit(f'chave inesperada em radar-dados.json: {k}')
 # Medição automática pelas APIs oficiais (gerada por ../redes-api.mjs). Só os
 # números entram na página: mensagens de erro e @ ficam de fora.

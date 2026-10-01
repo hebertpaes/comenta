@@ -4,7 +4,7 @@
  "materia": "https://hojemt.com.br/radar-eleitoral/",
  "estilo": "slides",
  "universo": "Slides escuros com ondas e curvas de nível verdes (estilo visual do vídeo de referência indicado pelo editor), sem avatar",
- "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides (pedidos do editor de 29/09). Voz v6: pt-BR-AntonioNeural (voz sintética genérica do catálogo da Microsoft, pelo edge-tts), +18% de velocidade e +4 Hz; reserva Kokoro pm_alex. Pauta: casos da Justiça Eleitoral com candidatos ao governo e ao Senado de MT desde o boletim nº 2 (26/9), contados em content/paginas/radar-dados.json em 30/09/2026 (17 casos: 9 decisões, 6 improcedentes ou arquivados, 2 ações em andamento; o gerador confere a contagem), cada um com duas fontes no Radar; registros: os 16 deferidos no Radar (Laudicério e a vice Karen Fortes deferidos em 25/9). Notícia principal: a Corregedoria do TRE-MT suspendeu a propaganda de rádio e TV de Doutora Natasha até 1º/10 (decisão de 29/9, a pedido da coligação de Pivetta), com o outro lado (Natasha fala em censura e impetrou mandado de segurança). Tratamento igual: decisões contra e a favor de Pivetta e dos candidatos ao Senado citados (Janaina, Mauro, Zé Medeiros em ordem alfabética), sem adjetivos. Não entra o áudio de Medeiros (curta ainda em rascunho à espera do editor). Postagens das redes: nenhuma reproduzida — não localizamos post oficial em rede aberta daqui (X/YouTube) que comprove essas decisões; Instagram e Facebook não abrem sem print do editor.",
+ "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides (pedidos do editor de 29/09). Voz v6: pt-BR-AntonioNeural (voz sintética genérica do catálogo da Microsoft, pelo edge-tts), +18% de velocidade e +4 Hz; reserva Kokoro pm_alex. Pauta: casos da Justiça Eleitoral com candidatos ao governo e ao Senado de MT desde o boletim nº 2 (26/9), contados em content/paginas/radar-dados.json em 30/09/2026 (17 casos: 9 decisões, 6 improcedentes ou arquivados, 2 ações em andamento; o gerador confere a contagem), cada um com duas fontes no Radar; registros: os 16 deferidos no Radar (Laudicério e a vice Karen Fortes deferidos em 25/9). Notícia principal: a Corregedoria do TRE-MT suspendeu a propaganda de rádio e TV de Doutora Natasha até 1º/10 (decisão de 29/9, a pedido da coligação de Pivetta), com o outro lado (Natasha fala em censura e impetrou mandado de segurança). Tratamento igual: decisões contra e a favor de Pivetta e dos candidatos ao Senado citados (Janaina, Mauro, Zé Medeiros em ordem alfabética), sem adjetivos. Não entra o áudio de Medeiros (curta ainda em rascunho à espera do editor). Postagens das redes: nenhuma reproduzida — não localizamos post oficial em rede aberta daqui (X/YouTube) que comprove essas decisões; Instagram e Facebook não abrem sem print do editor. v2 (01/10, editor: \"sem música de fundo, com uma intro e com o fechamento\"): sem trilha; cena 1 de intro (intro-boletim.mjs); fechamento = última fala + cartela.",
  "voz": {
   "motor": "edge",
   "narrador": "pt-BR-AntonioNeural",
@@ -22,9 +22,7 @@
   }
  },
  "legendas": false,
- "trilha": {
-  "id": "pantanal"
- },
+ "trilha": "nenhuma",
  "abertura": {
   "chip": "RADAR ELEITORAL",
   "gancho": "A ÚLTIMA SEMANA NOS TRIBUNAIS",
@@ -33,6 +31,23 @@
  "cenas": [
   {
    "n": 1,
+   "quem": "narrador",
+   "fala": "Radar Eleitoral do HOJE MT. Boletim número quatro, quarta-feira, trinta de setembro.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-intro-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-intro-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-intro-c1.png",
+     "quando": "Boletim"
+    }
+   ]
+  },
+  {
+   "n": 2,
    "quem": "narrador",
    "fala": "A Justiça Eleitoral suspendeu a propaganda de Doutora Natasha no rádio e na televisão até quinta-feira, primeiro de outubro, último dia do horário eleitoral.",
    "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-1-fundo.png",
@@ -53,7 +68,7 @@
    ]
   },
   {
-   "n": 2,
+   "n": 3,
    "quem": "narrador",
    "fala": "O corregedor atendeu a coligação de Otaviano Pivetta, entendeu que uma ordem anterior foi descumprida e fixou multa de cem mil reais para um novo descumprimento.",
    "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-2-fundo.png",
@@ -78,7 +93,7 @@
    ]
   },
   {
-   "n": 3,
+   "n": 4,
    "quem": "narrador",
    "fala": "Natasha chama as restrições de censura e recorreu com um mandado de segurança. A defesa diz que as primeiras exibições foram antes da notificação.",
    "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-3-fundo.png",
@@ -103,7 +118,7 @@
    ]
   },
   {
-   "n": 4,
+   "n": 5,
    "quem": "narrador",
    "fala": "Desde sábado, o Radar do HOJE MT reuniu dezessete casos com candidatos ao governo e ao Senado: nove decisões, seis improcedentes ou arquivados e duas ações em andamento.",
    "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-4-fundo.png",
@@ -128,7 +143,7 @@
    ]
   },
   {
-   "n": 5,
+   "n": 6,
    "quem": "narrador",
    "fala": "Pivetta teve de suspender o impulsionamento pago de um vídeo sobre uma emenda de Wellington Fagundes. E a Justiça julgou improcedentes duas representações da coligação de Wellington contra ele.",
    "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-5-fundo.png",
@@ -149,7 +164,7 @@
    ]
   },
   {
-   "n": 6,
+   "n": 7,
    "quem": "narrador",
    "fala": "No Senado, Janaina Riva teve de parar de usar um perfil de músicas não informado à Justiça Eleitoral. A pedido da coligação dela, foi multada a responsável por perfis que atribuíram a Janaina falas falsas ou fora de contexto.",
    "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-6-fundo.png",
@@ -170,7 +185,7 @@
    ]
   },
   {
-   "n": 7,
+   "n": 8,
    "quem": "narrador",
    "fala": "Mauro Mendes teve anúncios pagos suspensos, também a pedido de Wellington, e cinco sites tiveram de retirar publicações sobre ele. O pleno do TRE manteve improcedente uma representação da coligação de Mauro contra Pedro Taques.",
    "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-7-fundo.png",
@@ -195,7 +210,7 @@
    ]
   },
   {
-   "n": 8,
+   "n": 9,
    "quem": "narrador",
    "fala": "Zé Medeiros foi multado em cinco mil reais por vídeos sem os nomes dos suplentes de forma legível. E a Justiça negou o pedido do Ministério Público contra o uso da imagem de Jair Bolsonaro por ele.",
    "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-8-fundo.png",
@@ -216,7 +231,7 @@
    ]
   },
   {
-   "n": 9,
+   "n": 10,
    "quem": "narrador",
    "fala": "Os dezesseis candidatos ao governo e ao Senado estão com registro deferido; em alguns casos, ainda cabe recurso. A eleição é no domingo, quatro de outubro.",
    "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-9-fundo.png",
@@ -237,7 +252,7 @@
    ]
   },
   {
-   "n": 10,
+   "n": 11,
    "quem": "narrador",
    "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
    "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-10-fundo.png",

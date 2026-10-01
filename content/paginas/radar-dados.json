@@ -1,5 +1,5 @@
 {
- "atualizado": "01/10/2026",
+ "atualizado": "01/10/2026 11:40",
  "redes": {
   "Maurício Coelho": [
    [
@@ -9664,16 +9664,17 @@
   "metodo": "Análise HOJE MT, feita com dados verificáveis: pesquisas registradas na Justiça Eleitoral, decisões confirmadas por fonte oficial ou dois veículos, coligações e apoios publicados, estudo de redes do Instituto Democracia em Xeque/UFMT e gastos declarados à Justiça Eleitoral. Cada candidato tem o mesmo número de pontos, em ordem alfabética, e cada ponto traz a fonte. Não é recomendação de voto."
  },
  "boletim": {
+  "n": 4,
   "quando": "Boletim nº 4 · 30/09/2026, 07:17 (MT)",
   "titulo": "A Justiça Eleitoral na última semana de campanha",
   "texto": [
    "A Corregedoria do TRE-MT suspendeu a propaganda de Doutora Natasha (PSD) no rádio e na TV até quinta-feira, 1º de outubro, último dia do horário eleitoral. A decisão de 29/9, do corregedor Marcos Machado, atendeu a coligação de Otaviano Pivetta (Republicanos), que apontou 19 exibições em 13 emissoras depois de uma ordem anterior; o corregedor considerou a ordem descumprida e fixou multa de R$ 100 mil para novo descumprimento. Cabe recurso. Natasha chama as restrições de censura e impetrou mandado de segurança; a defesa diz que as primeiras exibições ocorreram antes da notificação.",
    "Desde sábado (26/9), o Radar do HOJE MT reuniu 17 casos na Justiça Eleitoral com candidatos ao governo e ao Senado: 9 decisões, 6 representações julgadas improcedentes ou arquivadas e 2 ações em andamento. Pivetta teve de suspender o impulsionamento pago de um vídeo sobre uma emenda de Wellington Fagundes (PL) (liminar de 27/9), e duas representações da coligação de Wellington contra ele foram julgadas improcedentes (26 e 27/9).",
    "No Senado, Janaina Riva (MDB) teve de parar de usar um perfil no Spotify não informado à Justiça Eleitoral (liminar de 27/9, a pedido de Zé Medeiros); a pedido da coligação dela, a responsável por perfis de uma pizzaria de Juara foi multada em R$ 5 mil por publicações que atribuíam a Janaina falas falsas ou fora de contexto (28/9). Mauro Mendes (União) teve quatro anúncios pagos suspensos a pedido da coligação de Wellington (28/9), e cinco sites tiveram de retirar 11 publicações sobre ele, com multa de R$ 5 mil cada (29/9); o Pleno do TRE-MT manteve, por 4 a 2, improcedente uma representação da coligação de Mauro contra Pedro Taques (PSB). Zé Medeiros (PL) foi multado em R$ 5 mil por vídeos sem os nomes dos suplentes de forma legível (26/9), e a Justiça negou pedido do Ministério Público Eleitoral contra o uso da imagem de Jair Bolsonaro na propaganda dele (28/9). Os 16 candidatos ao governo e ao Senado estão com registro deferido; em alguns casos, ainda cabe recurso. A eleição é no domingo, 4 de outubro.",
-   "Voz do vídeo gerada com IA (narrador sintético, sem imitar pessoa real); os slides e os fatos são feitos, apurados e conferidos pela redação do HOJE MT; postagens reproduzidas: nenhuma neste boletim. Música do vídeo: \"Windswept\", de Kevin MacLeod (incompetech.com), licença CC BY 4.0."
+   "Voz do vídeo gerada com IA (narrador sintético, sem imitar pessoa real); sem música; os slides e os fatos são feitos, apurados e conferidos pela redação do HOJE MT; postagens reproduzidas: nenhuma neste boletim."
   ],
-  "video": "https://hojemt.com.br/content/media/2026/10/2026-09-30-boletim-04.mp4",
-  "poster": "https://hojemt.com.br/content/images/2026/09/2026-09-30-boletim-04-capa.jpg",
+  "video": "https://hojemt.com.br/content/media/2026/10/2026-09-30-boletim-04-v2.mp4",
+  "poster": "https://hojemt.com.br/content/images/2026/10/2026-09-30-boletim-04-capa-v2.jpg",
   "fontes": [
    [
     "Radar Eleitoral do HOJE MT (Justiça Eleitoral)",
@@ -9795,6 +9796,260 @@
     "https://cidadaoconsumidor.com.br/tre-mt-defere-por-unanimidade-chapa-de-laudicerio-e-karen-fortes-apos-correcao-de-filiacao-ao-uniao-brasil/",
     "2026-09-26"
    ]
-  ]
- }
+  ],
+  "duracao_s": 113
+ },
+ "boletins": [
+  {
+   "n": 1,
+   "quando": "Boletim nº 1 · 26/09/2026",
+   "titulo": "O que dizem as pesquisas a 8 dias da eleição",
+   "texto": [
+    "Governo de Mato Grosso: nas cinco pesquisas registradas desde 4/9, Otaviano Pivetta e Wellington Fagundes ficam sempre nos dois primeiros lugares. Pivetta aparece à frente em quatro; na Quaest, a mais recente, é empate técnico (29% a 27%). No 2º turno simulado, Pivetta vence em três pesquisas e Wellington aparece à frente em duas, ambas dentro da margem de erro.",
+    "Senado: Mauro Mendes e Janaina Riva lideram em todas as pesquisas para as duas vagas. Na Quaest, Mauro tem 37% no 1º voto e Janaina, 19%.",
+    "Presidência: Lula e Flávio Bolsonaro disputam o topo nas 11 pesquisas nacionais, quase sempre em empate técnico. Em Mato Grosso, a Quaest mostra Flávio com 50% e Lula com 25%.",
+    "Pesquisa é retrato do momento; quem decide é o eleitor, em 4 de outubro. As fichas técnicas completas estão no bloco de pesquisas, logo abaixo. Música do vídeo: \"Windswept\", de Kevin MacLeod (incompetech.com), licença CC BY 4.0."
+   ],
+   "video": "https://hojemt.com.br/content/media/2026/09/2026-09-26-boletim-01-argos-v4.mp4",
+   "poster": "https://hojemt.com.br/content/images/2026/09/2026-09-26-boletim-01-capa-v2.jpg",
+   "fontes": [
+    [
+     "TSE (PesqEle)",
+     "https://pesqele-divulgacao.tse.jus.br/",
+     "2026-09-26"
+    ],
+    [
+     "g1 MT (Quaest)",
+     "https://g1.globo.com/mt/mato-grosso/",
+     "2026-09-25"
+    ]
+   ],
+   "duracao_s": 87,
+   "avatar": true
+  },
+  {
+   "n": 2,
+   "quando": "Boletim nº 2 · 26/09/2026, 07:03 (MT)",
+   "titulo": "A Justiça Eleitoral na reta final",
+   "texto": [
+    "O Radar Eleitoral do HOJE MT reúne 86 casos da Justiça Eleitoral envolvendo os 16 candidatos ao governo e ao Senado de Mato Grosso: 57 decisões, 15 ações ainda sem julgamento e 14 arquivadas. Cada caso foi conferido em fonte oficial ou em dois veículos. Quinze candidatos estão com o registro deferido; o pedido de Sargento Laudicério, ao governo, aguarda julgamento.",
+    "Só em 24 e 25 de setembro, o TRE-MT tomou 10 decisões em disputas entre candidatos: 5 mandaram retirar vídeos ou publicações, 3 trataram de impulsionamento pago e 2 deram direito de resposta. Oito das dez foram em disputas entre candidatos ao Senado; houve 3 multas, de R$ 5 mil a R$ 10 mil. Liminar é decisão provisória e pode ser revista, e ação em andamento não é condenação. As partes e as fontes de cada caso estão na seção Justiça Eleitoral, logo abaixo.",
+    "Nos palanques, entre 23 e 25 de setembro: Mauro Mendes pediu votos para Otaviano Pivetta e para Margareth Buzetti, e a campanha de Pivetta divulgou uma lista de 100 prefeitos que apoiam a reeleição. Flávio Bolsonaro pediu votos para Wellington Fagundes e para Zé Medeiros, e Sergio Moro declarou apoio a Wellington.",
+    "Imagem e voz do vídeo geradas com IA; os fatos são apurados e conferidos pela redação do HOJE MT. Música do vídeo: \"Windswept\", de Kevin MacLeod (incompetech.com), licença CC BY 4.0."
+   ],
+   "video": "https://hojemt.com.br/content/media/2026/09/2026-09-26-boletim-02-v3.mp4",
+   "poster": "https://hojemt.com.br/content/images/2026/09/2026-09-26-boletim-02-v3-capa.jpg",
+   "fontes": [
+    [
+     "Radar Eleitoral do HOJE MT (Justiça Eleitoral)",
+     "https://hojemt.com.br/radar-eleitoral/#rd-justica",
+     "2026-09-26"
+    ],
+    [
+     "Olhar Direto (Pivetta, Mauro e 100 prefeitos)",
+     "https://www.olhardireto.com.br/noticias/pivetta-e-mauro-juntam-cem-prefeitos-em-reuniao-e-diz-que-quer-estreitar-ainda-mais-relacao-com-municipios",
+     "2026-09-25"
+    ],
+    [
+     "RDM Online (Mauro pede votos para Pivetta e Buzetti)",
+     "https://rdmonline.com.br/mauro-pede-votos-para-pivetta-e-buzetti-em-ato-de-campanha-em-cuiaba/",
+     "2026-09-25"
+    ],
+    [
+     "O Documento (Flávio Bolsonaro pede voto para Wellington)",
+     "https://odocumento.com.br/flavio-bolsonaro-pede-voto-para-wellington-e-diz-que-pl-vai-recolocar-mt-nos-trilhos/",
+     "2026-09-24"
+    ]
+   ],
+   "duracao_s": 72,
+   "avatar": true
+  },
+  {
+   "n": 3,
+   "quando": "Boletim nº 3 · 29/09/2026, 18:52 (MT)",
+   "titulo": "As pesquisas da reta final",
+   "texto": [
+    "A pesquisa Quaest (21 a 24/9, divulgada em 25/9), registrada na Justiça Eleitoral, mostra Otaviano Pivetta (Republicanos) e Wellington Fagundes (PL) nos dois primeiros lugares na disputa pelo governo de Mato Grosso: Pivetta tem 29% e Wellington, 27%; Doutora Natasha (PSD) tem 11%. Com margem de erro de três pontos, os dois estão em empate técnico. No 2º turno simulado pela Quaest, Wellington tem 41% e Pivetta, 36%, também em empate técnico.",
+    "A Justiça Eleitoral suspendeu em 28/9 a divulgação da pesquisa Veritá (MT-09975/2026) para o governo e o Senado, a pedido de Janaina Riva, depois de encontrar 30 entrevistas duplicadas e localidades que não batem com os municípios informados. É uma liminar, decisão provisória; o instituto tem prazo para se explicar. Por isso os números dessa pesquisa não aparecem no Radar.",
+    "Para o Senado, na Quaest, Mauro Mendes (União) tem 37% no 1º voto e Janaina Riva (MDB), 19%; Zé Medeiros (PL) tem 11%, e Pedro Taques (PSB) e Carlos Fávaro (PSD), 8% cada. Pesquisa é retrato do momento; a eleição é no domingo, 4 de outubro. Na urna, o voto começa por deputado federal e estadual; depois vêm dois votos para o Senado, um para cada vaga, e então governador e presidente. O celular não pode ser usado na cabine, e o TSE recomenda anotar os números antes de sair de casa.",
+    "Voz do vídeo gerada com IA (narrador sintético, sem imitar pessoa real); sem música; os slides e os fatos são feitos, apurados e conferidos pela redação do HOJE MT; postagens reproduzidas: @TSEjusbr no X."
+   ],
+   "video": "https://hojemt.com.br/content/media/2026/10/2026-09-29-boletim-03-v5.mp4",
+   "poster": "https://hojemt.com.br/content/images/2026/10/2026-09-29-boletim-03-capa-v2.jpg",
+   "fontes": [
+    [
+     "Radar Eleitoral do HOJE MT (Pesquisas)",
+     "https://hojemt.com.br/radar-eleitoral/#rd-pesq",
+     "2026-09-29"
+    ],
+    [
+     "g1 MT (Quaest, governo)",
+     "https://g1.globo.com/mt/mato-grosso/eleicoes/2026/noticia/2026/09/25/quaest-mt-governador-25-setembro.ghtml",
+     "2026-09-25"
+    ],
+    [
+     "g1 MT (Quaest, Senado)",
+     "https://g1.globo.com/mt/mato-grosso/eleicoes/2026/noticia/2026/09/25/quaest-mt-senado-25-setembro.ghtml",
+     "2026-09-25"
+    ],
+    [
+     "Olhar Direto (Veritá suspensa)",
+     "https://olhardireto.com.br/juridico/noticias/tre-barra-pesquisa-verita-ao-governo-e-senado-por-registros-duplicados-e-falhas-na-amostra",
+     "2026-09-28"
+    ],
+    [
+     "MidiaJur (Veritá suspensa)",
+     "https://www.midiajur.com.br/eleicoes-2026/tre-suspende-pesquisa-verita-apos-encontrar-registros-duplicados-e-inconsistencias/87426",
+     "2026-09-28"
+    ],
+    [
+     "TSE no X (ordem de votação, vídeo)",
+     "https://x.com/TSEjusbr/status/2088037888218853564",
+     "2026-08-13"
+    ],
+    [
+     "TSE no X (cola eleitoral)",
+     "https://x.com/TSEjusbr/status/2094092790699368719",
+     "2026-08-30"
+    ]
+   ],
+   "duracao_s": 96
+  },
+  {
+   "n": 4,
+   "quando": "Boletim nº 4 · 30/09/2026, 07:17 (MT)",
+   "titulo": "A Justiça Eleitoral na última semana de campanha",
+   "texto": [
+    "A Corregedoria do TRE-MT suspendeu a propaganda de Doutora Natasha (PSD) no rádio e na TV até quinta-feira, 1º de outubro, último dia do horário eleitoral. A decisão de 29/9, do corregedor Marcos Machado, atendeu a coligação de Otaviano Pivetta (Republicanos), que apontou 19 exibições em 13 emissoras depois de uma ordem anterior; o corregedor considerou a ordem descumprida e fixou multa de R$ 100 mil para novo descumprimento. Cabe recurso. Natasha chama as restrições de censura e impetrou mandado de segurança; a defesa diz que as primeiras exibições ocorreram antes da notificação.",
+    "Desde sábado (26/9), o Radar do HOJE MT reuniu 17 casos na Justiça Eleitoral com candidatos ao governo e ao Senado: 9 decisões, 6 representações julgadas improcedentes ou arquivadas e 2 ações em andamento. Pivetta teve de suspender o impulsionamento pago de um vídeo sobre uma emenda de Wellington Fagundes (PL) (liminar de 27/9), e duas representações da coligação de Wellington contra ele foram julgadas improcedentes (26 e 27/9).",
+    "No Senado, Janaina Riva (MDB) teve de parar de usar um perfil no Spotify não informado à Justiça Eleitoral (liminar de 27/9, a pedido de Zé Medeiros); a pedido da coligação dela, a responsável por perfis de uma pizzaria de Juara foi multada em R$ 5 mil por publicações que atribuíam a Janaina falas falsas ou fora de contexto (28/9). Mauro Mendes (União) teve quatro anúncios pagos suspensos a pedido da coligação de Wellington (28/9), e cinco sites tiveram de retirar 11 publicações sobre ele, com multa de R$ 5 mil cada (29/9); o Pleno do TRE-MT manteve, por 4 a 2, improcedente uma representação da coligação de Mauro contra Pedro Taques (PSB). Zé Medeiros (PL) foi multado em R$ 5 mil por vídeos sem os nomes dos suplentes de forma legível (26/9), e a Justiça negou pedido do Ministério Público Eleitoral contra o uso da imagem de Jair Bolsonaro na propaganda dele (28/9). Os 16 candidatos ao governo e ao Senado estão com registro deferido; em alguns casos, ainda cabe recurso. A eleição é no domingo, 4 de outubro.",
+    "Voz do vídeo gerada com IA (narrador sintético, sem imitar pessoa real); sem música; os slides e os fatos são feitos, apurados e conferidos pela redação do HOJE MT; postagens reproduzidas: nenhuma neste boletim."
+   ],
+   "video": "https://hojemt.com.br/content/media/2026/10/2026-09-30-boletim-04-v2.mp4",
+   "poster": "https://hojemt.com.br/content/images/2026/10/2026-09-30-boletim-04-capa-v2.jpg",
+   "fontes": [
+    [
+     "Radar Eleitoral do HOJE MT (Justiça Eleitoral)",
+     "https://hojemt.com.br/radar-eleitoral/#rd-justica",
+     "2026-09-30"
+    ],
+    [
+     "Olhar Direto (29/09)",
+     "https://www.olhardireto.com.br/juridico/noticias/natasha-tem-propaganda-suspensa-pelo-tre-apos-nova-referencia-a-reportagem-do-fantastico-sobre-pivetta",
+     "2026-09-29"
+    ],
+    [
+     "MidiaNews (29/09)",
+     "https://www.midianews.com.br/judiciario/tre-suspende-propaganda-de-natasha-ate-fim-do-horario-eleitoral/530218",
+     "2026-09-29"
+    ],
+    [
+     "Olhar Direto (27/09)",
+     "https://www.olhardireto.com.br/juridico/noticias/justica-manda-suspender-anuncios-pagos-de-pivetta-com-criticas-a-emenda-de-r-600-mil-de-wellington-para-pesquisa-na-antartica",
+     "2026-09-28"
+    ],
+    [
+     "24 Horas MT (27/09)",
+     "https://24horasmt.com.br/politica-mt/tre-manda-pivetta-suspender-impulsionamento-de-video-contra-wellington/",
+     "2026-09-28"
+    ],
+    [
+     "VGN (26/09)",
+     "https://www.vgnoticias.com.br/eleicoes-2026/juiz-nega-pedido-do-pl-e-libera-propaganda-com-apoio-da-prefeita-de-vg-a-pivetta/152643",
+     "2026-09-27"
+    ],
+    [
+     "ND Mais (26/09)",
+     "https://ndmais.com.br/politica/juiz-do-mato-grosso-libera-propaganda-de-pivetta-candidato-a-reeleicao-e-diz-que-apoio-de-prefeitos-do-pl-nao-e-irregular-no-1o-turno/",
+     "2026-09-28"
+    ],
+    [
+     "VGN (27/09)",
+     "https://www.vgnoticias.com.br/eleicoes-2026/juiz-ve-promocao-eleitoral-mas-rejeita-acao-contra-pivetta-sobre-financiamento-ao-shopping-popular/152679",
+     "2026-09-28"
+    ],
+    [
+     "HiperNotícias (27/09)",
+     "https://www.hnt.com.br/justica/juiz-rejeita-acao-de-wf-contra-pivetta-por-suposto-uso-eleitoral-de-contrato-do-shopping-popular/577650",
+     "2026-09-28"
+    ],
+    [
+     "Estadão Mato Grosso (27/09)",
+     "https://www.estadaomatogrosso.com.br/eleicoes-2026/tre-atende-pedido-de-medeiros-e-manda-janaina-retirar-link-para-spotify-de-campanha/146900",
+     "2026-09-27"
+    ],
+    [
+     "Esportes & Notícias (27/09)",
+     "https://en.com.br/tre-manda-janaina-retirar-link-para-spotify-da-campanha-apos-pedido-de-medeiros/",
+     "2026-09-28"
+    ],
+    [
+     "Folhamax (28/09)",
+     "https://www.folhamax.com/politica/dona-de-pizzaria-e-multada-por-fake-news-contra-candidata-em-mt/574710",
+     "2026-09-29"
+    ],
+    [
+     "Olhar Direto (28/09)",
+     "https://www.olhardireto.com.br/juridico/noticias/empresaria-e-multada-pela-justica-eleitoral-apos-usar-perfil-de-pizzaria-para-publicar-falas-falsas-atribuidas-a-janaina-riva",
+     "2026-09-29"
+    ],
+    [
+     "Olhar Direto (28/09)",
+     "https://olhardireto.com.br/juridico/noticias/tre-mt-manda-suspender-anuncios-pagos-por-mauro-com-ataques-citando-implante-capilar-de-wellington",
+     "2026-09-28"
+    ],
+    [
+     "O Documento (28/09)",
+     "https://odocumento.com.br/mauro-mendes-tera-que-suspender-video-sobre-implante-capilar-de-wellington-fagundes/",
+     "2026-09-28"
+    ],
+    [
+     "Olhar Direto (29/09)",
+     "https://www.olhardireto.com.br/juridico/noticias/justica-condena-cinco-sites-por-publicarem-que-mauro-jantou-com-vorcaro",
+     "2026-09-29"
+    ],
+    [
+     "Infoverus (29/09)",
+     "https://www.infoverus.com.br/politica/justica-condena-cinco-veiculos-por-informacoes-sobre-suposto-jantar-de-mauro-com-vorcaro/35756",
+     "2026-09-29"
+    ],
+    [
+     "Folhamax (29/09)",
+     "https://www.folhamax.com/politica/tre-mt-rejeita-recurso-contra-taques/574811",
+     "2026-09-29"
+    ],
+    [
+     "FTN Brasil (29/09)",
+     "https://ftnbrasil.com.br/tre-mt-rejeita-recurso-contra-taques-por-declaracoes-sobre-mauro-na-operacao-heritage/",
+     "2026-09-29"
+    ],
+    [
+     "VGN (26/09)",
+     "https://www.vgnoticias.com.br/eleicoes-2026/medeiros-e-multado-por-videos-sem-identificacao-de-suplentes/152641",
+     "2026-09-27"
+    ],
+    [
+     "JB News (26/09)",
+     "https://jbnews.com.br/tre-mantem-videos-fora-do-ar-e-multa-medeiros-em-r-5-mil-por-propaganda-sem-identificacao-de-suplentes/",
+     "2026-09-27"
+    ],
+    [
+     "Olhar Direto (28/09)",
+     "https://www.olhardireto.com.br/juridico/noticias/juiz-nega-pedido-do-mp-e-mantem-permissao-para-medeiros-usar-imagem-de-bolsonaro-em-campanha",
+     "2026-09-28"
+    ],
+    [
+     "O Documento (28/09)",
+     "https://odocumento.com.br/justica-rejeita-pedido-para-barrar-imagem-de-bolsonaro-na-campanha-eleitoral-de-medeiros/",
+     "2026-09-28"
+    ],
+    [
+     "Cidadão Consumidor (registro de Laudicério e Karen Fortes)",
+     "https://cidadaoconsumidor.com.br/tre-mt-defere-por-unanimidade-chapa-de-laudicerio-e-karen-fortes-apos-correcao-de-filiacao-ao-uniao-brasil/",
+     "2026-09-26"
+    ]
+   ],
+   "duracao_s": 113
+  }
+ ]
 }

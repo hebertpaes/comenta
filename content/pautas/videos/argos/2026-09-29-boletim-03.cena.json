@@ -4,7 +4,7 @@
  "materia": "https://hojemt.com.br/radar-eleitoral/",
  "estilo": "slides",
  "universo": "Slides escuros com ondas e curvas de nível verdes (estilo visual do vídeo de referência indicado pelo editor), sem avatar",
- "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides (editor, 29/09: 'Não deixe avatar. Deixe somente a voz e slides'; 'Deixe uma voz menos grave e mais rápida e com português brasileiro com sotaque Cuiabano'; slides no estilo de youtu.be/M6jemlgwZxU, 'somente com narrador e slides em tempo real', 'retirando qualquer coisa fluência de Portugal'). Do vídeo de referência veio só o estilo visual; o narrador dele não é imitado. Voz: Kokoro pm_alex (sintética genérica), velocidade 1,18, tom +2 semitons (menos grave), fonética como no treino do Kokoro (espeak pt-br com ligaduras, --fonetica misaki) e sotaque 'cuiabano' aproximado (ch/x → tch, j/g → dj); nenhuma voz de pessoa real. Camadas de cada slide entram quando o narrador chega ao trecho (campo camadas). Sem legenda queimada: o texto está nos slides. A informação de que a voz é sintética fica só na tela (rótulo fixo e cartela final), na página e na legenda. Números: paginas/radar-dados.json em 29/09/2026 (Quaest MT-08098/2026, 21 a 24/9, divulgada em 25/9; Veritá MT-09975/2026, 20 a 24/9, divulgada em 28/9). Veritá para o Senado ficou de fora: os números publicados não fecham (1º voto soma mais de 100%) e as fontes divergem entre votos totais e válidos. Tratamento igual: todos os candidatos nos gráficos, em ordem de resultado; pesquisas contadas de forma neutra. Versão 2 (29/09, editor: 'Não precisa de avatar, somente áudio e slides e vídeos demonstrativos com imagens de postagens e vídeos de redes sociais'): cenas 9 e 10 com postagens oficiais do TSE no X, buscadas com redes-post.mjs — trecho de 9,5 s do vídeo 'ordem de votação' (x.com/TSEjusbr/status/2088037888218853564, 13/08/2026, sem o áudio original, numa caixa do slide) e cartão de reprodução do post 'cola eleitoral' (x.com/TSEjusbr/status/2094092790699368719, 30/08/2026), com crédito na tela. Uso como citação com autor e origem (Lei 9.610/1998, art. 46, III), sem alteração; fonte oficial. Versão 3 (29/09, editor: 'Aprimore a voz'): voz neural pt-BR AntonioNeural (voz sintética genérica do catálogo da Microsoft, pelo edge-tts), 18% mais rápida e um pouco mais aguda (+4 Hz); reserva automática: Kokoro v5. A voz neural não faz o sotaque cuiabano. Versão 4 (29/09, 18h50 MT): a pesquisa Veritá (MT-09975/2026) saiu do boletim e do Radar — a divulgação foi suspensa por liminar do TRE-MT em 28/9 (juiz auxiliar Flávio Fraga e Silva, a pedido de Janaina Riva; 30 entrevistas duplicadas), o que as versões 1 a 3 não consideraram. A cena 4 passou a noticiar a suspensão, sem os números da pesquisa. Fontes: Olhar Direto, MidiaJur, Muvuca Popular, O Documento, 24 Horas MT.",
+ "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides (editor, 29/09: 'Não deixe avatar. Deixe somente a voz e slides'; 'Deixe uma voz menos grave e mais rápida e com português brasileiro com sotaque Cuiabano'; slides no estilo de youtu.be/M6jemlgwZxU, 'somente com narrador e slides em tempo real', 'retirando qualquer coisa fluência de Portugal'). Do vídeo de referência veio só o estilo visual; o narrador dele não é imitado. Voz: Kokoro pm_alex (sintética genérica), velocidade 1,18, tom +2 semitons (menos grave), fonética como no treino do Kokoro (espeak pt-br com ligaduras, --fonetica misaki) e sotaque 'cuiabano' aproximado (ch/x → tch, j/g → dj); nenhuma voz de pessoa real. Camadas de cada slide entram quando o narrador chega ao trecho (campo camadas). Sem legenda queimada: o texto está nos slides. A informação de que a voz é sintética fica só na tela (rótulo fixo e cartela final), na página e na legenda. Números: paginas/radar-dados.json em 29/09/2026 (Quaest MT-08098/2026, 21 a 24/9, divulgada em 25/9; Veritá MT-09975/2026, 20 a 24/9, divulgada em 28/9). Veritá para o Senado ficou de fora: os números publicados não fecham (1º voto soma mais de 100%) e as fontes divergem entre votos totais e válidos. Tratamento igual: todos os candidatos nos gráficos, em ordem de resultado; pesquisas contadas de forma neutra. Versão 2 (29/09, editor: 'Não precisa de avatar, somente áudio e slides e vídeos demonstrativos com imagens de postagens e vídeos de redes sociais'): cenas 9 e 10 com postagens oficiais do TSE no X, buscadas com redes-post.mjs — trecho de 9,5 s do vídeo 'ordem de votação' (x.com/TSEjusbr/status/2088037888218853564, 13/08/2026, sem o áudio original, numa caixa do slide) e cartão de reprodução do post 'cola eleitoral' (x.com/TSEjusbr/status/2094092790699368719, 30/08/2026), com crédito na tela. Uso como citação com autor e origem (Lei 9.610/1998, art. 46, III), sem alteração; fonte oficial. Versão 3 (29/09, editor: 'Aprimore a voz'): voz neural pt-BR AntonioNeural (voz sintética genérica do catálogo da Microsoft, pelo edge-tts), 18% mais rápida e um pouco mais aguda (+4 Hz); reserva automática: Kokoro v5. A voz neural não faz o sotaque cuiabano. Versão 4 (29/09, 18h50 MT): a pesquisa Veritá (MT-09975/2026) saiu do boletim e do Radar — a divulgação foi suspensa por liminar do TRE-MT em 28/9 (juiz auxiliar Flávio Fraga e Silva, a pedido de Janaina Riva; 30 entrevistas duplicadas), o que as versões 1 a 3 não consideraram. A cena 4 passou a noticiar a suspensão, sem os números da pesquisa. Fontes: Olhar Direto, MidiaJur, Muvuca Popular, O Documento, 24 Horas MT. v5 (01/10, editor: \"sem música de fundo, com uma intro e com o fechamento\"): sem trilha; cena 1 de intro (intro-boletim.mjs); fechamento = última fala + cartela.",
  "voz": {
   "motor": "edge",
   "narrador": "pt-BR-AntonioNeural",
@@ -22,9 +22,7 @@
   }
  },
  "legendas": false,
- "trilha": {
-  "id": "pantanal"
- },
+ "trilha": "nenhuma",
  "abertura": {
   "chip": "RADAR ELEITORAL",
   "gancho": "AS PESQUISAS DA RETA FINAL",
@@ -33,6 +31,23 @@
  "cenas": [
   {
    "n": 1,
+   "quem": "narrador",
+   "fala": "Radar Eleitoral do HOJE MT. Boletim número três, terça-feira, vinte e nove de setembro.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-intro-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-intro-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-intro-c1.png",
+     "quando": "Boletim"
+    }
+   ]
+  },
+  {
+   "n": 2,
    "quem": "narrador",
    "fala": "A pesquisa Quaest, registrada na Justiça Eleitoral, mostra Otaviano Pivetta e Wellington Fagundes nos dois primeiros lugares na disputa pelo governo de Mato Grosso.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-1-fundo.png",
@@ -49,7 +64,7 @@
    ]
   },
   {
-   "n": 2,
+   "n": 3,
    "quem": "narrador",
    "fala": "Na Quaest, Pivetta tem vinte e nove por cento, e Wellington, vinte e sete. Doutora Natasha tem onze por cento.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-2-fundo.png",
@@ -74,7 +89,7 @@
    ]
   },
   {
-   "n": 3,
+   "n": 4,
    "quem": "narrador",
    "fala": "Com margem de erro de três pontos, os dois estão em empate técnico.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-3-fundo.png",
@@ -95,7 +110,7 @@
    ]
   },
   {
-   "n": 4,
+   "n": 5,
    "quem": "narrador",
    "fala": "A Justiça Eleitoral suspendeu a divulgação da pesquisa Veritá para o governo e o Senado, a pedido de Janaina Riva, depois de encontrar entrevistas duplicadas. É uma decisão provisória, e o instituto pode se explicar.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-4-fundo.png",
@@ -120,7 +135,7 @@
    ]
   },
   {
-   "n": 5,
+   "n": 6,
    "quem": "narrador",
    "fala": "No segundo turno simulado pela Quaest, Wellington tem quarenta e um por cento, e Pivetta, trinta e seis, também em empate técnico.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-5-fundo.png",
@@ -145,7 +160,7 @@
    ]
   },
   {
-   "n": 6,
+   "n": 7,
    "quem": "narrador",
    "fala": "Para o Senado, na Quaest, Mauro Mendes tem trinta e sete por cento no primeiro voto, e Janaina Riva, dezenove. Zé Medeiros tem onze; Pedro Taques e Carlos Fávaro, oito cada.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-6-fundo.png",
@@ -174,7 +189,7 @@
    ]
   },
   {
-   "n": 7,
+   "n": 8,
    "quem": "narrador",
    "fala": "Pesquisa é retrato do momento. A eleição é no domingo, quatro de outubro.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-7-fundo.png",
@@ -195,7 +210,7 @@
    ]
   },
   {
-   "n": 8,
+   "n": 9,
    "quem": "narrador",
    "fala": "Na urna, o voto começa por deputado federal e deputado estadual. Depois vêm dois votos para o Senado, um para cada vaga, e então governador e presidente.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-8-fundo.png",
@@ -233,7 +248,7 @@
    ]
   },
   {
-   "n": 9,
+   "n": 10,
    "quem": "narrador",
    "fala": "O celular não pode ser usado na cabine de votação. O Tribunal Superior Eleitoral recomenda anotar os números dos candidatos antes de sair de casa.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-9-fundo.png",
@@ -250,7 +265,7 @@
    ]
   },
   {
-   "n": 10,
+   "n": 11,
    "quem": "narrador",
    "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
    "imagem": "pautas/videos/argos/cenas/2026-09-29-boletim-03-10-fundo.png",
@@ -280,6 +295,6 @@
   ],
   "aviso": "Voz gerada com IA (narrador sintético). Fatos apurados e conferidos pela redação do HOJE MT; pesquisas registradas na Justiça Eleitoral, fichas técnicas no Radar Eleitoral."
  },
- "saida": "pautas/videos/argos/2026-09-29-boletim-03-v4.mp4",
+ "saida": "pautas/videos/argos/2026-09-29-boletim-03.mp4",
  "rotulo_ia": "Voz gerada com IA"
 }
