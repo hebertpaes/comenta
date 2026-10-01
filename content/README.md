@@ -639,3 +639,20 @@ As chaves ficam nas variáveis de ambiente (configurações do ambiente), nunca 
 repositório nem no chat. Provedor sem chave fica "sem_chave" e a página mostra
 "em implantação". Sem provedor Google Ads: o Google parou de veicular anúncios
 políticos no Brasil em maio de 2024. TikTok não tem API aberta para isso.
+
+## Posts vazios do publicador das Curtas ("(Untitled)")
+
+O publicador automático das Curtas (roda fora deste repositório, às 08:10 e 18:10 UTC) às vezes
+publica um post sem título e sem texto: título "(Untitled)", lexical com dois parágrafos vazios,
+capa `charge-dia-<timestamp>.webp` com um boneco genérico e balão do tipo "Nenhum detalhe foi
+informado.", tags `curtas` + `charges`. Casos: `untitled-2` (19/09), `untitled-3` (28/09),
+`untitled-4` (01/10/2026; pedido do editor: "Corrija isso").
+
+- Guarda: `node sem-titulo.mjs --despublicar` tira do ar (status draft) todo post publicado
+  **sem título e sem texto** e registra em `pautas/sem-titulo/registro.json`. Sem flag, só lista.
+  Post com texto mas sem título (ex.: `untitled`, 15/09, Economia) não é tocado: o editor decide
+  o título no Ghost Admin. Nunca apaga post.
+- Roda automaticamente na rotina "Charges e artes no Canva" (de hora em hora, Parte 0) e na
+  rotina "Duplicadas e posts vazios" (a cada 3 h). Esses posts não recebem charge: não há fato.
+- A correção definitiva é no publicador: não publicar quando o item de origem vier vazio.
+  A assinatura acima serve para localizar o caso no código dele.
