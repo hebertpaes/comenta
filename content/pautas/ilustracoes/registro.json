@@ -828,6 +828,25 @@
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
       "feito_em": "2026-10-01",
       "estilo": "v2 realista (pintura digital cinematográfica); sem rosto"
+    },
+    {
+      "slug": "duas-pesquisas-globais-ia-medir-resultado-escalar",
+      "titulo": "Duas pesquisas globais em 48 horas apontam o mesmo gargalo da IA: provar o resultado para poder escalar",
+      "materia": "rascunho (Ghost 6abe43726357bc8c6ad4d3df)",
+      "tag": "Tecnologia",
+      "canva": {
+        "design": "DAHWwqWNb_o",
+        "arte": "MAHWwpjLJcQ",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "protótipo robótico numa bancada à esquerda e linha de produção agroindustrial à direita, ligados por gráfico de linha ascendente; sem pessoas",
+      "arquivo": "2026-10-01-ia-medir-resultado-escalar.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-01-ia-medir-resultado-escalar.jpg",
+      "og": "https://hojemt.com.br/content/images/2026/10/2026-10-01-ia-medir-resultado-escalar-og.jpg",
+      "capa_anterior": null,
+      "legenda": "Ilustração: HOJE MT (gerada com IA)",
+      "feito_em": "2026-10-01",
+      "estilo": "vetorial editorial; sem texto nem pessoas"
     }
   ]
 }

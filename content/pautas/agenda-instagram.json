@@ -1271,6 +1271,21 @@
       "legenda": "TCE-MT · A crise chegou ao plenário\n\nUma semana depois da sessão que não foi aberta por falta de quórum, o Tribunal de Contas de Mato Grosso voltou a se reunir na terça (29). Antonio Joaquim leu um desagravo em nome dos quatro conselheiros que faltaram em 22/9 e disse que a ausência foi um protesto contra a saída de Waldir Teis da Escola Superior de Contas. Os quatro propõem que o supervisor da Escola e o ouvidor-geral passem a ser eleitos pelo plenário; a proposta ainda passa por análise técnica e votação.\n\nO presidente, Sérgio Ricardo, disse que os colegas desrespeitaram a população, negou motivação política e afirmou que Teis estava sobrecarregado. Teis respondeu que trabalhou na Escola e na Comissão de Segurança, apesar do orçamento limitado, e pediu o fim da briga. Joaquim e o presidente trocaram acusações.\n\nLeia a matéria completa no site (link na bio).\n\nFontes: Olhar Direto, Folhamax, Gazeta Digital, Fatos de Mato Grosso, HiperNotícias, Infoverus, O Livre, Sorriso News\nVoz do vídeo e ilustração geradas com IA (cena de ficção). Fatos apurados e conferidos pela redação do HOJE MT.\nMúsica: \"Windswept\" — Kevin MacLeod (incompetech.com), CC BY 4.0\n\n#TCEMT #MatoGrosso #TribunalDeContas #hojemt",
       "materia": "https://hojemt.com.br/tce-mt-conselheiros-admitem-falta-em-protesto-e-sessao-tem-bate-boca/",
       "obs": "Pedido do editor (30/09, \"Crie a própria\", depois do reel do @ehfonte Dd45uMmg0yr). Vídeo de 98,7 s, só voz e slides (roteiro pautas/videos/2026-09-30-tce-sessao.cena.json; gerador pautas/videos/graficos-tce-sessao.mjs). Cada aspa na tela saiu igual em pelo menos dois veículos, com crédito. Espera a matéria (rascunho 6abc3e4d834d62060cb1de1e), que tem a trava de conferir as falas na gravação oficial da sessão; o vídeo usa as mesmas falas e sai junto. Sem frame da TV Contas nem de terceiros."
+    },
+    {
+      "id": "71",
+      "status": "aguardando_materia",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "card",
+      "titulo": "Duas pesquisas globais: IA que não prova resultado não escala",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-01-ia-medir-resultado-escalar-1.jpg"
+      ],
+      "legenda": "Duas pesquisas globais: IA que não prova resultado não escala\n\nA BCG (30/09) e a BearingPoint (1º/10) ouviram mais de 2.300 executivos. Segundo a BCG, quem acompanha o valor da IA direto no resultado financeiro realiza três vezes o valor de quem não mede. Segundo a BearingPoint, só 13% das empresas com IA implantada escalaram como planejado. Nenhuma das duas incluiu o Brasil. Em paralelo, SENAI e Finep abriram, até 16/10, a primeira janela de R$ 47,5 milhões do Smart Factory para a indústria.\n\nMatéria completa: hojemt.com.br/duas-pesquisas-globais-ia-medir-resultado-escalar\n\n#inteligenciaartificial #industria #tecnologia #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/duas-pesquisas-globais-ia-medir-resultado-escalar/",
+      "obs": "publicar só depois que a matéria (rascunho no Ghost, 6abe43726357bc8c6ad4d3df) for publicada"
     }
   ]
 }
