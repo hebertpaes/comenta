@@ -19,6 +19,269 @@
    ]
   }
  },
- "pautas": [],
- "vistos": {}
+ "pautas": [
+  {
+   "data": "2026-10-01",
+   "cidade": "Lucas do Rio Verde",
+   "titulo": "Câmara de Lucas do Rio Verde autoriza prorrogar por até 10 anos a concessão do terminal rodoviário; um vereador votou contra",
+   "arquivo": "pautas/camaras-mt/2026-10-01-lucas-terminal-rodoviario-concessao.md",
+   "ghost_id": "6abe54916357bc8c6ad4d3fd",
+   "status": "rascunho",
+   "arte": "feita (Canva DAHWxPXJaD0)",
+   "agenda": 73
+  },
+  {
+   "data": "2026-10-01",
+   "cidade": "Lucas do Rio Verde",
+   "titulo": "Câmara de Lucas do Rio Verde devolve R$ 5 milhões à Prefeitura e doa caminhonete avaliada em R$ 146 mil",
+   "arquivo": "pautas/camaras-mt/2026-10-01-lucas-camara-devolve-5-milhoes.md",
+   "ghost_id": "6abe54916357bc8c6ad4d402",
+   "status": "rascunho",
+   "arte": "PENDENTE: capa 16:9 (Canva em quota_cooldown); cena sugerida: duas autoridades de costas, envelope, prédio público e caminhonete prata; depois imagem-post.mjs + og-whatsapp.mjs + registro.json",
+   "agenda": 74
+  }
+ ],
+ "vistos": {
+  "sorriso:https://sorriso.mt.leg.br/noticia/vereadora-indica-construcao-de-arquibancadas-em-campo-de-futebol-do-rota-do-sol": {
+   "titulo": "Vereadora indica construção de arquibancadas em campo de futebol do Rota do Sol",
+   "data": "2026-09-30"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/camara-de-sorriso-realiza-sessao-solene-em-homenagem-aos-20-anos-do-colegio-regina-coeli": {
+   "titulo": "Câmara de Sorriso realiza sessão solene em homenagem aos 20 anos do Colégio Regina Coeli",
+   "data": "2026-09-30"
+  },
+  "lrv:yt:VO36YEyQ4Lc": {
+   "titulo": "Fala, Vereador: Jackson Lopes",
+   "data": "2026-09-30"
+  },
+  "lrv:yt:IZN05Otgd3A": {
+   "titulo": "Fala, Vereador: Jackson Lopes",
+   "data": "2026-09-30"
+  },
+  "lrv:yt:c4NTXs5i60M": {
+   "titulo": "Fala Vereador: Jackson Lopes",
+   "data": "2026-09-30"
+  },
+  "lrv:yt:kmgadZvo_Gc": {
+   "titulo": "Audiência Pública - Prestação de Contas 2º Quadrimestre 2026",
+   "data": "2026-09-30"
+  },
+  "lrv:yt:DbmzlGMVNjk": {
+   "titulo": "Fala, Vereador: Hélio Kaminski",
+   "data": "2026-09-30"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/vereadora-pede-implantacao-de-pracas-publicas-inclusivas-em-sorriso": {
+   "titulo": "Vereadora pede implantação de praças públicas inclusivas em Sorriso",
+   "data": "2026-09-29"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/vereadora-defende-retomada-da-telemedicina-na-rede-municipal-de-saude-de-sorriso": {
+   "titulo": "Vereadora defende retomada da telemedicina na rede municipal de saúde de Sorriso",
+   "data": "2026-09-29"
+  },
+  "sorriso:yt:XP24uM0LQ_k": {
+   "titulo": "32ª Sessão Ordinária 28-09-26",
+   "data": "2026-09-29"
+  },
+  "lrv:https://www.camaralucasdorioverde.mt.gov.br/Noticias/Radio-camara-de-lucas-do-rio-verde-completa-um-ano-e-fortalece-transparencia-do-legislativo-2441/": {
+   "titulo": "Rádio Câmara de Lucas do Rio Verde completa um ano e fortalece transparência do Legislativo",
+   "data": "2026-09-29"
+  },
+  "lrv:yt:oRmdZ0h8VFg": {
+   "titulo": "Sessão Ordinária Nº 31-2026 de 01-10-2026",
+   "data": "2026-09-29"
+  },
+  "lrv:yt:TiEUP_aA31U": {
+   "titulo": "Fala, Vereador: Hélio Kaminski",
+   "data": "2026-09-29"
+  },
+  "lrv:yt:N2dnRZpL6pY": {
+   "titulo": "Fala, Vereador: Hélio Kaminski",
+   "data": "2026-09-29"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/vereadora-indica-manutencao-e-reforma-estrutural-da-escola-mundo-do-saber-basilio-da-silva-em-sorriso": {
+   "titulo": "Vereadora indica manutenção e reforma estrutural da Escola Mundo do Saber - Basílio da Silva, em Sorriso",
+   "data": "2026-09-28"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/vice-presidente-da-camara-de-sorriso-sugere-comissao-tecnica-para-elaborar-politicas-publicas-voltadas-a-populacao-migrante-em-sorriso": {
+   "titulo": "Vice-presidente da Câmara de Sorriso sugere comissão técnica para elaborar políticas públicas voltadas à população migrante em Sorriso",
+   "data": "2026-09-28"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/presidente-da-camara-de-sorriso-indica-campo-sintetico-e-reforma-do-telhado-da-escola-ivete-lourdes-arenhardt": {
+   "titulo": "Presidente da Câmara de Sorriso indica campo sintético e reforma do telhado da Escola Ivete Lourdes Arenhardt",
+   "data": "2026-09-28"
+  },
+  "lrv:https://www.camaralucasdorioverde.mt.gov.br/Noticias/Camara-de-lucas-aprova-ate-4-ligacoes-de-agua-e-esgoto-por-lote-e-autoriza-concessao-de-area-para-projeto-de-jiu-jitsu-2440/": {
+   "titulo": "Câmara de Lucas aprova até 4 ligações de água e esgoto por lote e autoriza concessão de área para projeto de Jiu Jitsu",
+   "data": "2026-09-28"
+  },
+  "lrv:yt:lYXVruOnq1Y": {
+   "titulo": "Hélio Kaminski - Grande Expediente - 28/09/2026",
+   "data": "2026-09-28"
+  },
+  "lrv:yt:Jnu-4OeXvk8": {
+   "titulo": "Jackson Lopes - Grande Expediente - 28/09/2026",
+   "data": "2026-09-28"
+  },
+  "lrv:yt:saJP5UaDxWU": {
+   "titulo": "Josias Ferreira - Grande Expediente - 28/09/2026",
+   "data": "2026-09-28"
+  },
+  "lrv:yt:ooh2GlU1KF4": {
+   "titulo": "Márcio Albieri - Grande Expediente - 28/09/2026",
+   "data": "2026-09-28"
+  },
+  "lrv:yt:rj5p5I9GE8c": {
+   "titulo": "Nadir Santana - Grande Expediente - 28/09/2026",
+   "data": "2026-09-28"
+  },
+  "lrv:yt:GhxtpLX3eOM": {
+   "titulo": "Débora Carneiro - Grande Expediente - 28/09/2026",
+   "data": "2026-09-28"
+  },
+  "lrv:yt:t6S0CT30dUo": {
+   "titulo": "Nelson Hasegawa - Grande Expediente - 28/09/2026",
+   "data": "2026-09-28"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/nota-de-pesar-12367": {
+   "titulo": "Câmara de Sorriso declara Luto Oficial de três dias pelo falecimento dos empresários Cleodir e Iracy Barreto",
+   "data": "2026-09-26"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/presidente-da-camara-participa-do-conexao-growth-evento-que-reune-empresarios-em-sorriso": {
+   "titulo": "Presidente da Câmara participa do Conexão & Growth, evento que reúne empresários em Sorriso",
+   "data": "2026-09-25"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/sorriso-vereadora-indica-revitalizacao-da-fachada-do-centro-de-especialidades-odontologicas": {
+   "titulo": "Sorriso: vereadora indica revitalização da fachada do Centro de Especialidades Odontológicas",
+   "data": "2026-09-25"
+  },
+  "lrv:https://www.camaralucasdorioverde.mt.gov.br/Noticias/Podcast-lucas-em-debate-escolinha-de-futsal-do-viva-lucas-atende-150-alunos-e-alcanca-resultados-positivos-em-competicoes-2439/": {
+   "titulo": "Podcast Lucas em Debate: Escolinha de futsal do Viva Lucas atende 150 alunos e alcança resultados positivos em competições",
+   "data": "2026-09-25"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/vereadores-indicam-construcao-de-praca-publica-no-bairro-benjamim-raiser": {
+   "titulo": "Vereadores indicam construção de praça pública no Bairro Benjamim Raiser",
+   "data": "2026-09-24"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/camara-de-sorriso-pede-informacoes-sobre-custos-e-destinacao-dos-residuos-solidos-em-sorriso": {
+   "titulo": "Câmara de Sorriso pede informações sobre custos e destinação dos resíduos sólidos em Sorriso",
+   "data": "2026-09-24"
+  },
+  "sorriso:yt:LndMGNKyg2M": {
+   "titulo": "Reunião de Comissões 24-09-026",
+   "data": "2026-09-24"
+  },
+  "lrv:https://www.camaralucasdorioverde.mt.gov.br/Noticias/Fizemos-pela-segunda-vez-a-maior-sessao-do-estado-de-mato-grosso-destaca-presidente-da-camara-2438/": {
+   "titulo": "\"Fizemos pela segunda vez a maior sessão do Estado de Mato Grosso\", destaca presidente da Câmara",
+   "data": "2026-09-24"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/sorriso-vereadora-indica-reforco-na-equipe-de-saude-da-ubs-do-distrito-de-primavera": {
+   "titulo": "Sorriso: vereadora indica reforço na equipe de saúde da UBS do Distrito de Primavera",
+   "data": "2026-09-23"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/indicacao-pede-curso-de-primeiros-socorros-para-gestantes-durante-o-pre-natal-em-sorriso": {
+   "titulo": "Indicação pede curso de primeiros socorros para gestantes durante o pré-natal, em Sorriso",
+   "data": "2026-09-23"
+  },
+  "lrv:https://www.camaralucasdorioverde.mt.gov.br/Noticias/Podcast-lucas-em-debate-semana-de-valorizacao-da-pessoa-com-deficiencia-reforca-empatia-e-respeito-em-lucas-do-rio-verde-2437/": {
+   "titulo": "Podcast Lucas em Debate: Semana de Valorização da Pessoa com Deficiência reforça empatia e respeito em Lucas do Rio Verde",
+   "data": "2026-09-23"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/sorriso-vereadora-pede-instalacao-de-bebedouro-e-construcao-de-banheiro-em-praca-do-sao-francisco": {
+   "titulo": "Sorriso: vereadora pede instalação de bebedouro e construção de banheiro em praça do São Francisco",
+   "data": "2026-09-22"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/presidente-da-camara-quer-criacao-do-museu-do-agro-no-parque-tecnologico-luiz-giroletti-em-sorriso": {
+   "titulo": "Presidente da Câmara quer criação do Museu do Agro no Parque Tecnológico Luiz Giroletti, em Sorriso",
+   "data": "2026-09-22"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/sorriso-vereadora-defende-ampliacao-do-transporte-coletivo-noturno-para-atender-bairros-afastados": {
+   "titulo": "Sorriso: vereadora defende ampliação do transporte coletivo noturno para atender bairros afastados",
+   "data": "2026-09-22"
+  },
+  "lrv:https://www.camaralucasdorioverde.mt.gov.br/Noticias/Camara-de-lucas-do-rio-verde-devolve-r-5-milhoes-a-prefeitura-e-planeja-indicar-destinacao-dos-recursos-ao-executivo-2436/": {
+   "titulo": "Câmara de Lucas do Rio Verde devolve R$ 5 milhões à Prefeitura e planeja indicar destinação dos recursos ao Executivo",
+   "data": "2026-09-22"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/requerimento-solicita-melhorias-no-acesso-ao-projeto-casulo-chao-do-amanha-pela-br-163": {
+   "titulo": "Requerimento solicita melhorias no acesso ao Projeto Casulo Chão do Amanhã pela BR-163",
+   "data": "2026-09-21"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/vereadora-cobra-investimentos-na-infraestrutura-de-pracas-de-sorriso-com-instalacao-de-bancos-e-banheiros-acessiveis": {
+   "titulo": "Vereadora cobra investimentos na infraestrutura de praças de Sorriso com instalação de bancos e banheiros acessíveis",
+   "data": "2026-09-21"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/sorriso-camara-realiza-sessao-solene-em-homenagem-ao-dia-do-gaucho-com-honrarias-ao-ctg": {
+   "titulo": "Sorriso: Câmara realiza sessão solene em homenagem ao Dia do Gaúcho com honrarias ao CTG",
+   "data": "2026-09-21"
+  },
+  "sorriso:yt:0yJs-SrZrNU": {
+   "titulo": "31ª Sessão Ordinária 21-09-26",
+   "data": "2026-09-21"
+  },
+  "lrv:https://www.camaralucasdorioverde.mt.gov.br/Noticias/Camara-autoriza-prorrogar-concessao-do-terminal-rodoviario-de-lucas-com-previsao-de-investimentos-em-modernizacao-2435/": {
+   "titulo": "Câmara autoriza prorrogar concessão do terminal rodoviário de Lucas com previsão de investimentos em modernização",
+   "data": "2026-09-21"
+  },
+  "sorriso:yt:7SadG1F4AT0": {
+   "titulo": "Sessão Solene em Homenagem ao dia do Gaúcho - 19-09-26",
+   "data": "2026-09-20"
+  },
+  "sorriso:yt:KBDImA-ASxs": {
+   "titulo": "Reunião de Comissões  - 02  -    18-09-26",
+   "data": "2026-09-18"
+  },
+  "sorriso:yt:dq5usDzLR9Y": {
+   "titulo": "Reunião de Comissões 18-09-26",
+   "data": "2026-09-18"
+  },
+  "lrv:https://www.camaralucasdorioverde.mt.gov.br/Noticias/Podcast-lucas-em-debate-associacao-luverdense-de-judo-cresce-com-projeto-viva-lucas-e-realiza-festival-neste-sabado-2434/": {
+   "titulo": "Podcast Lucas em Debate: Associação Luverdense de Judô cresce com projeto Viva Lucas e realiza festival neste sábado",
+   "data": "2026-09-18"
+  },
+  "sorriso:yt:IgmEAEgxO8g": {
+   "titulo": "Reunião de Comissões 17-09-26",
+   "data": "2026-09-17"
+  },
+  "sorriso:yt:WPwJDmB8woM": {
+   "titulo": "30ª Sessão Ordinária 16-09-26",
+   "data": "2026-09-17"
+  },
+  "lrv:https://www.camaralucasdorioverde.mt.gov.br/Noticias/Em-sessao-solene-com-centenas-de-pessoas-camara-entrega-titulos-e-mocoes-e-devolve-r-5-milhoes-a-prefeitura-2433/": {
+   "titulo": "Em sessão solene com centenas de pessoas, Câmara entrega títulos e moções e devolve R$ 5 milhões à Prefeitura",
+   "data": "2026-09-17"
+  },
+  "lrv:https://www.camaralucasdorioverde.mt.gov.br/Noticias/Camara-homenageia-hoje-mais-de-60-pessoas-e-entidades-em-sessao-solene-no-ctg-sentinela-da-tradicao-2432/": {
+   "titulo": "Câmara homenageia hoje mais de 60 pessoas e entidades em sessão solene no CTG Sentinela da Tradição",
+   "data": "2026-09-16"
+  },
+  "sorriso:yt:zZTO8eVWMf8": {
+   "titulo": "Reunião de Comissões 14-09-26",
+   "data": "2026-09-15"
+  },
+  "sorriso:yt:U-9oBVR63jM": {
+   "titulo": "29ª Sessão Ordinária 04-09-26",
+   "data": "2026-09-05"
+  },
+  "sorriso:yt:Nwa3SVvbZAo": {
+   "titulo": "Reunião de Comissões 04-09-26",
+   "data": "2026-09-04"
+  },
+  "sorriso:yt:4UDNWlhCe84": {
+   "titulo": "Reunião de Comissões 03-09-26",
+   "data": "2026-09-04"
+  },
+  "sorriso:yt:_ultZCYo7jA": {
+   "titulo": "28ª Sessão Ordinária 02-09-26",
+   "data": "2026-09-03"
+  },
+  "sorriso:yt:RfFyhFVCkYc": {
+   "titulo": "Reunião de Comissões 27-08-26",
+   "data": "2026-08-28"
+  },
+  "sorriso:yt:VJzTmL-Atz8": {
+   "titulo": "27ª Sessão Ordinária 21-08-26",
+   "data": "2026-08-22"
+  }
+ },
+ "ultima_checagem": "2026-10-01T12:42:17.134Z"
 }

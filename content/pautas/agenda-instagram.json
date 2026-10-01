@@ -1301,6 +1301,36 @@
       "legenda": "Câmara de VG aprova PCCSs da Saúde, dos garis e de outras categorias por 23 votos\n\nNa terça (29), a Câmara de Várzea Grande votou os planos de carreira do funcionalismo sem mudar o texto da Prefeitura, depois de a CCJ retirar as emendas por causa de um acordo entre as categorias e a prefeita Flávia Moretti. A Prefeitura diz que o conjunto alcança 3.017 servidores, com implantação a partir de janeiro de 2027. Na mesma sessão, três projetos da Educação foram aprovados.\n\nMatéria completa: hojemt.com.br/camara-de-varzea-grande-aprova-pccss-da-saude-dos-garis-e-de-outras-categorias\n\n#varzeagrande #servidorespublicos #matogrosso #camaramunicipal #hojemt",
       "materia": "https://hojemt.com.br/camara-de-varzea-grande-aprova-pccss-da-saude-dos-garis-e-de-outras-categorias/",
       "obs": "publicar só depois que a matéria (rascunho no Ghost, 6abe4e1f6357bc8c6ad4d3f1) for publicada"
+    },
+    {
+      "id": "73",
+      "status": "aguardando_materia",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "card",
+      "titulo": "Câmara de Lucas autoriza prorrogar por até 10 anos a concessão do terminal rodoviário",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-01-lucas-terminal-rodoviario-1.jpg"
+      ],
+      "legenda": "Câmara de Lucas do Rio Verde autoriza prorrogar por até 10 anos a concessão do terminal rodoviário\n\nO projeto do Executivo (PL 33/2026) prevê obras de modernização pagas pela concessionária, segundo a Câmara, e foi aprovado com um voto contrário, o do vereador Márcio Albieri. Uma emenda estabelece que a prorrogação não garante a permanência do terminal no endereço atual. O texto segue para sanção do prefeito Miguel Vaz.\n\nMatéria completa: hojemt.com.br/camara-de-lucas-do-rio-verde-autoriza-prorrogar-por-ate-10-anos-concessao-do-terminal-rodoviario\n\n#lucasdorioverde #matogrosso #camaramunicipal #hojemt",
+      "materia": "https://hojemt.com.br/camara-de-lucas-do-rio-verde-autoriza-prorrogar-por-ate-10-anos-concessao-do-terminal-rodoviario/",
+      "obs": "publicar só depois que a matéria (rascunho no Ghost, 6abe54916357bc8c6ad4d3fd) for publicada"
+    },
+    {
+      "id": "74",
+      "status": "aguardando_materia",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "card",
+      "titulo": "Câmara de Lucas devolve R$ 5 milhões à Prefeitura e doa caminhonete de R$ 146 mil",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-01-lucas-camara-devolve-5-milhoes.jpg"
+      ],
+      "legenda": "Câmara de Lucas do Rio Verde devolve R$ 5 milhões à Prefeitura e doa caminhonete avaliada em R$ 146 mil\n\nA devolução foi anunciada em sessão solene no dia 16. O presidente da Câmara, Airton Callai, diz que os vereadores vão sugerir ao Executivo onde aplicar o dinheiro. As notas oficiais não detalham a composição do valor, e as chaves da caminhonete foram entregues em agosto, antes da aprovação da lei da doação.\n\nMatéria completa: hojemt.com.br/camara-de-lucas-do-rio-verde-devolve-r-5-milhoes-a-prefeitura-e-doa-caminhonete-avaliada-em-r-146-mil\n\n#lucasdorioverde #matogrosso #camaramunicipal #hojemt",
+      "materia": "https://hojemt.com.br/camara-de-lucas-do-rio-verde-devolve-r-5-milhoes-a-prefeitura-e-doa-caminhonete-avaliada-em-r-146-mil/",
+      "obs": "publicar só depois que a matéria (rascunho no Ghost, 6abe54916357bc8c6ad4d402) for publicada; capa do artigo pendente (Canva em cooldown)"
     }
   ]
 }
