@@ -1,0 +1,394 @@
+{
+ "_comentario": "Monitor da Câmara Municipal de Cuiabá (rotina em backup/rotinas.json, dias úteis 08:07 e 16:07 de Cuiabá). O site oficial camaracuiaba.mt.gov.br responde 'Request Rejected' (WAF) a este ambiente e NÃO deve ser contornado; as fontes são o YouTube oficial, o Google Notícias e a imprensa. 'vistos' guarda o que já foi avaliado; use `node camara-cuiaba.mjs` e `--marcar`.",
+ "site": "https://www.camaracuiaba.mt.gov.br",
+ "site_status_2026-10-01": "bloqueado pelo WAF (Request Rejected, curl e WebFetch)",
+ "youtube": {
+  "canal": "Câmara Municipal de Cuiabá",
+  "channel_id": "UCNCoIaMma_H-aFP6rRNb56w",
+  "rss": "https://www.youtube.com/feeds/videos.xml?channel_id=UCNCoIaMma_H-aFP6rRNb56w"
+ },
+ "redes": {
+  "instagram": "https://www.instagram.com/camaracba/",
+  "x": "https://x.com/CamaraCba"
+ },
+ "sessoes": "ordinárias às terças e quartas; extraordinárias avulsas; eleição da Mesa Diretora em 06/10/2026",
+ "pautas_abertas": [
+  "content/pautas/2026-09-30-camara-cuiaba-eleicao-da-mesa.md",
+  "content/pautas/2026-09-30-camara-cuiaba-paula-recua-dilemario.md"
+ ],
+ "vistos": {
+  "gn:lemes abandona base de paula apoia ilde": {
+   "titulo": "Lemes abandona base de Paula apoia Ilde - FOLHAMAX",
+   "data": "2026-09-30T22:51:18.000Z"
+  },
+  "gn:abilio prevê relação “mais distante” com câmara se grupo de ilde assumir mesa da câmara": {
+   "titulo": "Abilio prevê relação “mais distante” com Câmara se grupo de Ilde assumir Mesa da Câmara - JBNEWS",
+   "data": "2026-09-30T22:38:12.000Z"
+  },
+  "gn:12+0": {
+   "titulo": "12+0 - Olhar Direto",
+   "data": "2026-09-30T21:30:00.000Z"
+  },
+  "gn:paula diz respeitar dissidências e afirma que eleição da mesa será na base do diálogo": {
+   "titulo": "Paula diz respeitar dissidências e afirma que eleição da Mesa será na base do diálogo - Rdnews",
+   "data": "2026-09-30T21:25:00.000Z"
+  },
+  "gn:abílio diz que ilde é da base, mas vê oposição forte em chapa para a mesa diretora": {
+   "titulo": "Abílio diz que Ilde é da base, mas vê oposição forte em chapa para a Mesa Diretora - O Documento",
+   "data": "2026-09-30T21:10:12.000Z"
+  },
+  "gn:ilde nega ameaça a abílio, defende união por cuiabá e diz pedir apoio do grupo de paula": {
+   "titulo": "Ilde nega ameaça a Abílio, defende união por Cuiabá e diz pedir apoio do grupo de Paula - O Documento",
+   "data": "2026-09-30T21:10:11.000Z"
+  },
+  "gn:antônio lemes volta atrás, desfalca grupo de paula e deixa ilde taques mais perto da presi": {
+   "titulo": "Antônio Lemes volta atrás, desfalca grupo de Paula e deixa Ilde Taques mais perto da presidência da Câmara - LEIAGORA",
+   "data": "2026-09-30T21:00:00.000Z"
+  },
+  "gn:ilde desafia articulação de abilio e garante: “não fui para a oposição": {
+   "titulo": "Ilde desafia articulação de Abilio e garante: “Não fui para a oposição - rdmonline.com.br",
+   "data": "2026-09-30T20:41:00.000Z"
+  },
+  "gn:\"dormiu conosco e não amanheceu”: paula diz respeitar 'traição' de vereador e promete elei": {
+   "titulo": "\"Dormiu conosco e não amanheceu”: Paula diz respeitar 'traição' de vereador e promete eleição da Mesa sem pressão - Olhar Direto",
+   "data": "2026-09-30T20:09:00.000Z"
+  },
+  "gn:paula calil desiste de tentar reeleição e admite desgaste na câmara de cuiabá": {
+   "titulo": "Paula Calil desiste de tentar reeleição e admite desgaste na Câmara de Cuiabá - VOZ MT",
+   "data": "2026-09-30T19:45:57.000Z"
+  },
+  "gn:suplente acerta apoio e ilde já conta com 15 votos para comandar câmara de cuiabá": {
+   "titulo": "Suplente acerta apoio e Ilde já conta com 15 votos para comandar Câmara de Cuiabá - midiajur.com.br",
+   "data": "2026-09-30T19:11:00.000Z"
+  },
+  "gn:dilemário alencar é lançado como cabeça de chapa na câmara de cuiabá": {
+   "titulo": "Dilemário Alencar é lançado como cabeça de chapa na Câmara de Cuiabá - Veja Bem MT",
+   "data": "2026-09-30T18:33:23.000Z"
+  },
+  "gn:após foto com paula, lemes muda de lado e declara apoio a ilde": {
+   "titulo": "Após foto com Paula, Lemes muda de lado e declara apoio a Ilde - Diario de Cuiabá",
+   "data": "2026-09-30T18:00:00.000Z"
+  },
+  "gn:ilde fecha chapa e reúne apoio de 15 vereadores para disputar comando da câmara de cuiabá": {
+   "titulo": "Ilde fecha chapa e reúne apoio de 15 vereadores para disputar comando da Câmara de Cuiabá - MT PLAY",
+   "data": "2026-09-30T16:45:00.000Z"
+  },
+  "gn:lemes deixa o grupo de paula e leva ilde a 15 votos na disputa pela mesa": {
+   "titulo": "Lemes deixa o grupo de Paula e leva Ilde a 15 votos na disputa pela Mesa - Rdnews",
+   "data": "2026-09-30T16:30:00.000Z"
+  },
+  "gn:abilio diz que não tratou de pressão com lemes e defende que câmara tome providências": {
+   "titulo": "Abilio diz que não tratou de pressão com Lemes e defende que Câmara tome providências - Olhar Direto",
+   "data": "2026-09-30T16:05:00.000Z"
+  },
+  "gn:suplente de jeferson abandona grupo governista e anuncia apoio à candidatura de ilde taque": {
+   "titulo": "Suplente de Jeferson abandona grupo governista e anuncia apoio à candidatura de Ilde Taques - Olhar Direto",
+   "data": "2026-09-30T15:55:00.000Z"
+  },
+  "gn:grupo de paula aciona “plano b” e lança dilemário à presidência da câmara": {
+   "titulo": "Grupo de Paula aciona “plano B” e lança Dilemário à Presidência da Câmara - vgnoticias.com.br",
+   "data": "2026-09-30T15:41:00.000Z"
+  },
+  "gn:paula calil desiste de reeleição e grupo fecha apoio a dilemário para comandar câmara de c": {
+   "titulo": "Paula Calil desiste de reeleição e grupo fecha apoio a Dilemário para comandar Câmara de Cuiabá - infoverus.com.br",
+   "data": "2026-09-30T15:22:00.000Z"
+  },
+  "gn:vereador ilde taques indica que apoiará abilio brunini se for presidente da câmara de cuia": {
+   "titulo": "Vereador Ilde Taques indica que apoiará Abilio Brunini se for presidente da Câmara de Cuiabá - O Livre",
+   "data": "2026-09-30T13:53:49.000Z"
+  },
+  "gn:ilde diz ter 15 votos e busca ampliar apoio para 17 na câmara de cuiabá": {
+   "titulo": "Ilde diz ter 15 votos e busca ampliar apoio para 17 na Câmara de Cuiabá - Mato Grosso Mais",
+   "data": "2026-09-30T13:25:36.000Z"
+  },
+  "gn:sem reeleição, paula fecha com dilemário e acirra disputa na câmara": {
+   "titulo": "Sem reeleição, Paula fecha com Dilemário e acirra disputa na Câmara - Diario de Cuiabá",
+   "data": "2026-09-30T13:00:00.000Z"
+  },
+  "gn:paula recua e grupo apoiará dilemário em disputa pela câmara": {
+   "titulo": "Paula recua e grupo apoiará Dilemário em disputa pela Câmara - MidiaNews",
+   "data": "2026-09-30T12:55:00.000Z"
+  },
+  "gn:grupo de paula fecha apoio a dilemário para presidir câmara": {
+   "titulo": "Grupo de Paula fecha apoio a Dilemário para presidir Câmara - rdmonline.com.br",
+   "data": "2026-09-30T12:34:33.000Z"
+  },
+  "gn:grupo de paula fecha com dilemário e reúne 13 vereadores para disputar comando da câmara d": {
+   "titulo": "Grupo de Paula fecha com Dilemário e reúne 13 vereadores para disputar comando da Câmara de Cuiabá - RepórterMT",
+   "data": "2026-09-30T12:30:00.000Z"
+  },
+  "gn:ilde taques diz que tem 15 votos e articula chegar a 17 para vencer eleição da mesa direto": {
+   "titulo": "Ilde Taques diz que tem 15 votos e articula chegar a 17 para vencer eleição da Mesa Diretora - RepórterMT",
+   "data": "2026-09-30T11:40:00.000Z"
+  },
+  "gn:dilemário mantém candidatura à presidência da câmara de cuiabá: \"minha palavra não tem cur": {
+   "titulo": "Dilemário mantém candidatura à Presidência da Câmara de Cuiabá: \"Minha palavra não tem curva\" - RepórterMT",
+   "data": "2026-09-30T11:33:00.000Z"
+  },
+  "gn:dilemário enfrentará ilde na câmara, mas grupo tenta fechar 14º voto": {
+   "titulo": "Dilemário enfrentará Ilde na Câmara, mas grupo tenta fechar 14º voto - gazetadigital.com.br",
+   "data": "2026-09-30T11:27:00.000Z"
+  },
+  "gn:dilemário fecha com 'grupo dos 12' e busca 14º voto para derrotar ilde": {
+   "titulo": "Dilemário fecha com 'grupo dos 12' e busca 14º voto para derrotar Ilde - Rdnews",
+   "data": "2026-09-30T11:22:00.000Z"
+  },
+  "gn:abilio defende paula calil e cobra coerência de quem diz apoiar mulheres na política: 'na ": {
+   "titulo": "Abilio defende Paula Calil e cobra coerência de quem diz apoiar mulheres na política: 'na hora, manifesta ao homem' - Olhar Direto",
+   "data": "2026-09-30T11:10:00.000Z"
+  },
+  "gn:ilde nega ser chapa de oposição a abilio: “processo nos afastou”": {
+   "titulo": "Ilde nega ser chapa de oposição a Abilio: “Processo nos afastou” - MidiaNews",
+   "data": "2026-09-30T11:10:00.000Z"
+  },
+  "yt:93fPhbd4X6M": {
+   "titulo": "29.09.2026 - 13ª SESSÃO EXTRAORDINÁRIA",
+   "data": "2026-09-30T04:42:19+00:00"
+  },
+  "yt:JmB4qRq6K6c": {
+   "titulo": "29.09.2026 - 58ª SESSÃO ORDINÁRIA",
+   "data": "2026-09-30T04:09:03+00:00"
+  },
+  "gn:grupo de paula reúne 13 vereadores e consolida apoio a dilemário alencar na disputa pela p": {
+   "titulo": "Grupo de Paula reúne 13 vereadores e consolida apoio a Dilemário Alencar na disputa pela Presidência da Câmara - Olhar Direto",
+   "data": "2026-09-30T02:35:00.000Z"
+  },
+  "gn:câmara não vota projeto sobre reeleição de paula": {
+   "titulo": "Câmara não vota projeto sobre reeleição de Paula - MINUTO MT",
+   "data": "2026-09-30T02:26:47.000Z"
+  },
+  "gn:ilde descarta oposição a abilio e mira 17 votos na câmara": {
+   "titulo": "Ilde descarta oposição a Abilio e mira 17 votos na Câmara - Rdnews",
+   "data": "2026-09-29T22:50:00.000Z"
+  },
+  "gn:abilio aponta “grupo de oposição” na câmara e reage a vereadores que “batem” na gestão": {
+   "titulo": "Abilio aponta “grupo de oposição” na Câmara e reage a vereadores que “batem” na gestão - infoverus.com.br",
+   "data": "2026-09-29T22:21:00.000Z"
+  },
+  "gn:prefeito rejeita ilde e vê distanciamento entre poderes em cuiabá": {
+   "titulo": "Prefeito rejeita Ilde e vê distanciamento entre poderes em Cuiabá - FOLHAMAX",
+   "data": "2026-09-29T22:04:00.000Z"
+  },
+  "gn:paula recua e não pauta projeto que abriria caminho para própria reeleição na câmara": {
+   "titulo": "Paula recua e não pauta projeto que abriria caminho para própria reeleição na Câmara - Olhar Direto",
+   "data": "2026-09-29T21:00:00.000Z"
+  },
+  "gn:abilio aponta prejuízos e prevê cuiabá igual a várzea grande se oposição assumir controle ": {
+   "titulo": "Abilio aponta prejuízos e prevê Cuiabá igual a Várzea Grande se oposição assumir controle da Câmara de Vereadores - RepórterMT",
+   "data": "2026-09-29T20:40:00.000Z"
+  },
+  "gn:dilemário quer assumir câmara; abilio não crava apoio a ex-líder": {
+   "titulo": "Dilemário quer assumir Câmara; Abilio não crava apoio a ex-líder - Rdnews",
+   "data": "2026-09-29T20:36:00.000Z"
+  },
+  "gn:abilio dispara contra câmara após maioria fechar com ilde: “incoerência tem predominado”": {
+   "titulo": "Abilio dispara contra Câmara após maioria fechar com Ilde: “incoerência tem predominado” - hnt.com.br",
+   "data": "2026-09-29T20:36:00.000Z"
+  },
+  "gn:abilio vê “grupo de oposição” articulado para comandar câmara e critica vereadores que “ba": {
+   "titulo": "Abilio vê “grupo de oposição” articulado para comandar Câmara e critica vereadores que “batem” na gestão - Olhar Direto",
+   "data": "2026-09-29T20:00:00.000Z"
+  },
+  "gn:câmara de cuiabá não vota projeto que pode manter paula calil na presidência | hipernotíci": {
+   "titulo": "Câmara de Cuiabá não vota projeto que pode manter Paula Calil na Presidência | HiperNotícias - Você bem informado - hnt.com.br",
+   "data": "2026-09-29T19:49:00.000Z"
+  },
+  "gn:faissal destina r$ 27,7 milhões em emendas para cuiabá durante segundo mandato": {
+   "titulo": "Faissal destina R$ 27,7 milhões em emendas para Cuiabá durante segundo mandato - Olhar Direto",
+   "data": "2026-09-29T19:47:00.000Z"
+  },
+  "gn:abilio comenta pressão sobre lemes e diz que câmara deve tomar providências": {
+   "titulo": "Abilio comenta pressão sobre Lemes e diz que Câmara deve tomar providências - noveen.com.br",
+   "data": "2026-09-29T19:26:00.000Z"
+  },
+  "gn:licença impede jeferson de reassumir cadeira antes da eleição da mesa na câmara de cuiabá": {
+   "titulo": "Licença impede Jeferson de reassumir cadeira antes da eleição da Mesa na Câmara de Cuiabá - Única News",
+   "data": "2026-09-29T19:21:00.000Z"
+  },
+  "gn:favorito para comandar câmara, ilde nega ser oposição a abilio: 'temos que nos unir'": {
+   "titulo": "Favorito para comandar Câmara, Ilde nega ser oposição a Abilio: 'temos que nos unir' - midiajur.com.br",
+   "data": "2026-09-29T19:10:00.000Z"
+  },
+  "gn:projeto que viabiliza reeleição de paula calil na presidência fica fora da pauta na câmara": {
+   "titulo": "Projeto que viabiliza reeleição de Paula Calil na Presidência fica fora da pauta na Câmara de Cuiabá - RepórterMT",
+   "data": "2026-09-29T18:50:00.000Z"
+  },
+  "gn:suplente acusa vereador de pressioná-lo por voto na eleição da mesa da câmara de cuiabá": {
+   "titulo": "Suplente acusa vereador de pressioná-lo por voto na eleição da Mesa da Câmara de Cuiabá - VOZ MT",
+   "data": "2026-09-29T18:32:51.000Z"
+  },
+  "gn:“o voto é dele, não é meu”: suplente denuncia pressão na câmara de cuiabá": {
+   "titulo": "“O voto é dele, não é meu”: suplente denuncia pressão na Câmara de Cuiabá - Mato Grosso Mais",
+   "data": "2026-09-29T18:15:20.000Z"
+  },
+  "gn:emanuelzinho, zaeli e barbudo entram na reta final pressionados na disputa pela câmara": {
+   "titulo": "Emanuelzinho, Zaeli e Barbudo entram na reta final pressionados na disputa pela Câmara - Olhar Direto",
+   "data": "2026-09-29T18:10:00.000Z"
+  },
+  "gn:mesmo com dilemário na disputa, baixinha declara apoio a ilde taques à mesa diretora": {
+   "titulo": "Mesmo com Dilemário na disputa, Baixinha declara apoio a Ilde Taques à Mesa Diretora - midiajur.com.br",
+   "data": "2026-09-29T17:57:00.000Z"
+  },
+  "gn:câmara faz 2 sessões, mas não vota projeto que libera reeleição de paula": {
+   "titulo": "Câmara faz 2 sessões, mas não vota projeto que libera reeleição de Paula - Rdnews",
+   "data": "2026-09-29T17:53:00.000Z"
+  },
+  "gn:vídeo | visita de abilio à câmara rende novo bate-boca entre oposição e base durante sessã": {
+   "titulo": "Vídeo | Visita de Abilio à Câmara rende novo bate-boca entre oposição e base durante sessão - LEIAGORA",
+   "data": "2026-09-29T17:31:00.000Z"
+  },
+  "gn:câmara não volta projeto que beneficia reeleição de paula na câmara": {
+   "titulo": "Câmara não volta projeto que beneficia reeleição de Paula na Câmara - FOLHAMAX",
+   "data": "2026-09-29T17:13:00.000Z"
+  },
+  "gn:eleição da mesa": {
+   "titulo": "Eleição da Mesa - MidiaNews",
+   "data": "2026-09-29T16:45:00.000Z"
+  },
+  "gn:vídeo: wilson kero kero tumultua sessão da câmara em dia decisivo para eleição da mesa": {
+   "titulo": "VÍDEO: Wilson Kero Kero tumultua sessão da Câmara em dia decisivo para eleição da Mesa - Estadão MT",
+   "data": "2026-09-29T16:34:00.000Z"
+  },
+  "yt:t7tN_XAUtB8": {
+   "titulo": "29.09.2026 - 13ª SESSÃO EXTRAORDINÁRIA",
+   "data": "2026-09-29T16:23:53+00:00"
+  },
+  "gn:ilde diz estar “muito confiante” e afirma que mudança no regimento “não vai passar” na câm": {
+   "titulo": "Ilde diz estar “muito confiante” e afirma que mudança no Regimento “não vai passar” na Câmara - Olhar Direto",
+   "data": "2026-09-29T16:15:00.000Z"
+  },
+  "gn:suplente acusa vereador jeferson siqueira de ameaça após declarar voto em paula calil na c": {
+   "titulo": "Suplente acusa vereador Jeferson Siqueira de ameaça após declarar voto em Paula Calil na Câmara de Cuiabá - RepórterMT",
+   "data": "2026-09-29T16:05:00.000Z"
+  },
+  "gn:baixinha mantém voto em ilde, mas admite torcida por dilemário na disputa pela câmara": {
+   "titulo": "Baixinha mantém voto em Ilde, mas admite torcida por Dilemário na disputa pela Câmara - muvucapopular.com.br",
+   "data": "2026-09-29T16:04:56.000Z"
+  },
+  "gn:suplente diz que jeferson tentou \"ir para cima\" dele após recusar foto com ilde em gabinet": {
+   "titulo": "Suplente diz que Jeferson tentou \"ir para cima\" dele após recusar foto com Ilde em gabinete - Olhar Direto",
+   "data": "2026-09-29T15:56:00.000Z"
+  },
+  "gn:decisão judicial garante votação para reconduzir paula por maioria simples, diz procurador": {
+   "titulo": "Decisão judicial garante votação para reconduzir Paula por maioria simples, diz procurador da Câmara - Olhar Direto",
+   "data": "2026-09-29T15:33:00.000Z"
+  },
+  "gn:suplente acusa vereador de pressioná-lo por voto na eleição da mesa da câmara": {
+   "titulo": "Suplente acusa vereador de pressioná-lo por voto na eleição da Mesa da Câmara - cbncuiaba.com.br",
+   "data": "2026-09-29T15:31:44.000Z"
+  },
+  "gn:procuradoria barra retorno antecipado de jeferson siqueira e mantém suplente na câmara": {
+   "titulo": "Procuradoria barra retorno antecipado de Jeferson Siqueira e mantém suplente na Câmara - 24 HORAS MT",
+   "data": "2026-09-29T15:30:00.000Z"
+  },
+  "gn:em dia decisivo sobre mesa, vereadores ‘batem boca’ e sessão é tensa - vídeo": {
+   "titulo": "Em dia decisivo sobre Mesa, vereadores ‘batem boca’ e sessão é tensa - vídeo - Rdnews",
+   "data": "2026-09-29T15:23:00.000Z"
+  },
+  "gn:procuradoria nega retorno de vereador que se \"arrependeu\" de licença": {
+   "titulo": "Procuradoria nega retorno de vereador que se \"arrependeu\" de licença - FOLHAMAX",
+   "data": "2026-09-29T15:14:00.000Z"
+  },
+  "gn:procuradoria barra retorno de jeferson antes do fim da licença de 120 dias; vereador 'perd": {
+   "titulo": "Procuradoria barra retorno de Jeferson antes do fim da licença de 120 dias; vereador 'perde' eleição da Mesa - Olhar Direto",
+   "data": "2026-09-29T14:45:00.000Z"
+  },
+  "gn:vídeo | kassio coelho aguarda orientação de abilio para definir voto na mesa diretora": {
+   "titulo": "Vídeo | Kassio Coelho aguarda orientação de Abilio para definir voto na Mesa Diretora - LEIAGORA",
+   "data": "2026-09-29T14:18:00.000Z"
+  },
+  "gn:procurador explica novo quórum de votação na câmara após decisão do tjmt “maioria dos pres": {
+   "titulo": "Procurador explica novo quórum de votação na Câmara após decisão do TJMT “Maioria dos presentes pode reconduzir Paula a presidência” - JBNEWS",
+   "data": "2026-09-29T14:14:44.000Z"
+  },
+  "gn:dia d: vereador tenta antecipar retorno; procuradoria é contra": {
+   "titulo": "Dia D: Vereador tenta antecipar retorno; Procuradoria é contra - Rdnews",
+   "data": "2026-09-29T14:06:00.000Z"
+  },
+  "gn:abilio diz que sua gestão pode ficar \"tumultuada\" se oposição assumir comando da câmara de": {
+   "titulo": "Abilio diz que sua gestão pode ficar \"tumultuada\" se oposição assumir comando da Câmara de Cuiabá - O Livre",
+   "data": "2026-09-29T13:57:44.000Z"
+  },
+  "gn:saúde de cuiabá em alerta: vereadora denuncia 24 mil na fila e abandono de pacientes com d": {
+   "titulo": "Saúde de Cuiabá em alerta: vereadora denuncia 24 mil na fila e abandono de pacientes com d - Caldeirão Político",
+   "data": "2026-09-29T13:29:00.000Z"
+  },
+  "gn:presidente da câmara de cuiabá deve pautar redução de quórum nesta terça-feira": {
+   "titulo": "Presidente da Câmara de Cuiabá deve pautar redução de quórum nesta terça-feira - O Livre",
+   "data": "2026-09-29T12:47:32.000Z"
+  },
+  "gn:associação comercial de cuiabá é declarada entidade de utilidade pública municipal": {
+   "titulo": "Associação Comercial de Cuiabá é declarada entidade de Utilidade Pública Municipal - MT Econômico",
+   "data": "2026-09-29T12:22:02.000Z"
+  },
+  "gn:trocando disputa eleitoral pela mesa": {
+   "titulo": "Trocando disputa eleitoral pela Mesa - Rdnews",
+   "data": "2026-09-29T01:12:00.000Z"
+  },
+  "gn:justiça derruba exigência de dois terços para votação de mudança no regimento da câmara de": {
+   "titulo": "Justiça derruba exigência de dois terços para votação de mudança no Regimento da Câmara de Cuiabá - Única News",
+   "data": "2026-09-28T21:14:00.000Z"
+  },
+  "gn:disputa pela câmara ganha novo impasse com possível retorno antecipado de jeferson siqueir": {
+   "titulo": "Disputa pela Câmara ganha novo impasse com possível retorno antecipado de Jeferson Siqueira - Olhar Direto",
+   "data": "2026-09-28T18:20:00.000Z"
+  },
+  "yt:UCJ5RofgNQk": {
+   "titulo": "CÂMARA SEDIA POSSE DE NOVOS PROCURADORES MUNICIPAIS",
+   "data": "2026-09-28T15:18:01+00:00"
+  },
+  "gn:paula calil ganha nova chance para tentar reeleição na câmara de cuiabá": {
+   "titulo": "Paula Calil ganha nova chance para tentar reeleição na Câmara de Cuiabá - noveen.com.br",
+   "data": "2026-09-28T14:10:00.000Z"
+  },
+  "gn:nova decisão judicial pode alterar articulação de eleição da mesa diretora na câmara de cu": {
+   "titulo": "Nova decisão judicial pode alterar articulação de eleição da Mesa Diretora na Câmara de Cuiabá - O Livre",
+   "data": "2026-09-28T13:46:56.000Z"
+  },
+  "yt:EM4H03nBw_Y": {
+   "titulo": "57ª SESSÃO ORDINÁRIA E 12ª EXTRAORDINÁRIA: PRINCIPAIS DESTAQUES",
+   "data": "2026-09-26T14:10:11+00:00"
+  },
+  "yt:Ff9MR9rIZtw": {
+   "titulo": "24.09.2026 - HOMENAGEM AOS PROCURADORES DO MUNICIPIO DE CUIABA 75 ANOS",
+   "data": "2026-09-25T13:21:38+00:00"
+  },
+  "yt:JI2XAa4AByM": {
+   "titulo": "24.09.2026 - POSSE DOS NOVOS PROCURADORES",
+   "data": "2026-09-25T11:29:00+00:00"
+  },
+  "yt:pZPk1xGgw4U": {
+   "titulo": "CÂMARA HOMENAGEIA AUDITORES FISCAIS EM SESSÃO SOLENE",
+   "data": "2026-09-23T15:33:10+00:00"
+  },
+  "yt:RYcPMuWLQ7Y": {
+   "titulo": "VEREADOR ADEVAIR CABRAL HOMENAGEIA PERSONALIDADES COM MOÇÕES DE APLAUSOS",
+   "data": "2026-09-23T15:01:09+00:00"
+  },
+  "yt:kXcrs2Eo4as": {
+   "titulo": "22.09.2026 - 12ª SESSÃO EXTRAORDINÁRIA",
+   "data": "2026-09-23T06:59:09+00:00"
+  },
+  "yt:P_5etKfsPis": {
+   "titulo": "22.09.2026 - 57ª SESSÃO ORDINÁRIA",
+   "data": "2026-09-23T05:00:59+00:00"
+  },
+  "yt:bpxYoKq8Qt8": {
+   "titulo": "22.09.2026 - 6ª REUNIÃO ORDINÁRIA DA COMISSÃO PERMANENTE DE OBRAS PÚBLICAS",
+   "data": "2026-09-22T18:31:16+00:00"
+  },
+  "yt:mNT9Bjdyz6U": {
+   "titulo": "21.09.2026 - ENTREGA DE MOÇÕES DE APLAUSOS PELO DIA MUNICIPAL DO AUDITOR FISCAL TRIBUTÁRIO",
+   "data": "2026-09-22T14:51:04+00:00"
+  },
+  "yt:qLNvmSf3FVA": {
+   "titulo": "22.09.2026 - 02ª REUNIÃO EXTRAORDINÁRIA DA COMISSÃO PERMANENTE DE INDÚSTRIA E COMÉRCIO",
+   "data": "2026-09-22T14:32:11+00:00"
+  },
+  "yt:h5Ib5tCkzfc": {
+   "titulo": "22.09.2026 - 18ª REUNIÃO ORDINÁRIA DA COMISSÃO PERMANENTE DE CONSTITUIÇÃO, JUSTIÇA E REDAÇÃO",
+   "data": "2026-09-22T14:02:02+00:00"
+  }
+ },
+ "ultima_checagem": "2026-10-01T12:16:37.515Z"
+}

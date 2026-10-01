@@ -93,6 +93,15 @@
       "sessao": "esta (persistente)",
       "fonte": "content/camara-vg.mjs + content/pautas/camara-varzea-grande/monitor.json",
       "resumo": "Pedido do editor (01/10/2026): 'Monitore também https://www.varzeagrande.mt.leg.br'. Lê o RSS e as páginas do site da Câmara, completa com a imprensa, escreve até 2 pautas por disparo (rascunho no Ghost, tag Cidades & Mato Grosso, ilustração no Canva, card na agenda do Instagram como aguardando_materia)."
+    },
+    {
+      "id": "trig_018KJzjSVN1WZJuWURAtTRTD",
+      "nome": "Câmara de Cuiabá — monitorar sessões, Mesa Diretora e projetos (dias úteis, 08:07 e 16:07 Cuiabá)",
+      "cron_utc": "7 12,20 * * 1-5",
+      "cuiaba": "08:07 e 16:07 (seg–sex)",
+      "sessao": "esta (persistente)",
+      "fonte": "content/camara-cuiaba.mjs + content/pautas/camara-cuiaba/monitor.json",
+      "resumo": "Pedido do editor (01/10/2026): 'Monitore também https://www.camaracuiaba.mt.gov.br'. O site oficial bloqueia este ambiente (WAF 'Request Rejected', não contornar); lê o YouTube oficial (RSS), o Google Notícias e a imprensa, mantém o dossiê da eleição da Mesa (06/10) e escreve até 2 pautas por disparo (rascunho no Ghost, ilustração no Canva, card aguardando_materia)."
     }
   ],
   "modelos_canva": {
