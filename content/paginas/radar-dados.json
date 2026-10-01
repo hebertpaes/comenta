@@ -299,7 +299,7 @@
   ]
  },
  "pesquisas": {
-  "atualizado": "01/10/2026 08:30",
+  "atualizado": "01/10/2026 09:55",
   "corridas": [
    {
     "id": "governador-mt",
@@ -640,13 +640,13 @@
       ]
      }
     ],
-    "nota": "A pesquisa Veritá (MT-09975/2026, 20 a 24/9) não aparece aqui: a divulgação foi suspensa por liminar do TRE-MT em 28/9 (juiz auxiliar Flávio Fraga e Silva, a pedido de Janaina Riva), que apontou 30 entrevistas duplicadas e localidades que não batem com os municípios informados. É decisão provisória; o instituto tem prazo para se explicar. A Percent Brasil divulgou em 30/9 pesquisa só do município de Cuiabá (MT-02166/2026 e BR-08302/2026; 600 entrevistas presenciais, campo de 15 a 18/9, margem de 4 pontos): Pivetta 33%, Wellington Fagundes 24% e Doutora Natasha 16,3% no 1º turno (Olhar Direto e MidiaJur, 30/9). Não representa o eleitorado do estado e por isso não entra no quadro."
+    "nota": "A pesquisa Veritá (MT-09975/2026, 20 a 24/9) não aparece aqui: a divulgação foi suspensa por liminar do TRE-MT em 28/9 (juiz auxiliar Flávio Fraga e Silva, a pedido de Janaina Riva), que apontou 30 entrevistas duplicadas e localidades que não batem com os municípios informados. É decisão provisória; o instituto tem prazo para se explicar. A Percent Brasil divulgou em 30/9 pesquisa só do município de Cuiabá (MT-02166/2026 e BR-08302/2026; 600 entrevistas presenciais, campo de 15 a 18/9, margem de 4 pontos): Pivetta 33%, Wellington Fagundes 24% e Doutora Natasha 16,3% no 1º turno (Olhar Direto e MidiaJur, 30/9). Não representa o eleitorado do estado e por isso não entra no quadro. A Percent Brasil também divulgou em 1/10 a pesquisa estadual MT-09025/2026 (1.200 entrevistas, campo de 26 a 29/9, margem de 2,83 pontos) com o Senado e as citações espontâneas de deputados; os números de governador dessa pesquisa ainda não tinham sido divulgados até as 8h13 e entram no quadro quando saírem (Olhar Direto e Folhamax, 1/10)."
    },
    {
     "id": "senado-mt",
     "titulo": "Senado por Mato Grosso (2 vagas)",
     "cenario": "Mauro Mendes (União) e Janaina Riva (MDB) à frente para as duas vagas",
-    "porque": "Nas cinco pesquisas registradas desde 6/9, Mauro lidera e Janaina fica em segundo no 1º voto; nas quatro primeiras, com vantagem sobre o terceiro colocado maior que a margem de erro. Na Paraná Pesquisas de 27 a 29/9, Janaina tem 18% no 1º voto e Zé Medeiros (PL), 16%: 2 pontos de diferença, dentro da margem de erro de 2,7 pontos; na soma dos dois votos, 33,3% a 29,3%. Fávaro (PSD) e Pedro Taques (PSB) vêm em seguida. O gráfico compara o 1º voto, medido do mesmo jeito pelos institutos; a soma dos dois votos de cada pesquisa está nas fichas.",
+    "porque": "Nas seis pesquisas registradas desde 6/9, Mauro lidera e Janaina fica em segundo no 1º voto; em cinco delas, com vantagem sobre o terceiro colocado maior que a margem de erro. Na Paraná Pesquisas de 27 a 29/9, Janaina tem 18% no 1º voto e Zé Medeiros (PL), 16%: 2 pontos de diferença, dentro da margem de erro de 2,7 pontos; na soma dos dois votos, 33,3% a 29,3%. Na Percent (26 a 29/9), Janaina tem 22,8% e Zé Medeiros, 10,4%. Fávaro (PSD) e Pedro Taques (PSB) vêm em seguida. O gráfico compara o 1º voto, medido do mesmo jeito pelos institutos; a soma dos dois votos de cada pesquisa está nas fichas.",
     "nomes": [
      "Mauro Mendes",
      "Janaina Riva",
@@ -712,6 +712,37 @@
        ]
       ],
       "soma": "soma das menções, perto de 200%: Mauro Mendes 54,9%, Janaina Riva 33,3%, Zé Medeiros 29,3%, Fávaro 18%, Pedro Taques 14,1%"
+     },
+     {
+      "inst": "Percent Brasil",
+      "contratante": "recursos próprios",
+      "campo": "26 a 29/09",
+      "amostra": "1.200",
+      "margem": "2,83",
+      "conf": 95,
+      "metodo": "entrevistas domiciliares presenciais, eleitores de 15 anos ou mais",
+      "reg": "MT-09025/2026 (governador, Senado e deputados) e BR-07647/2026 (presidente)",
+      "base": "totais",
+      "v": {
+       "Mauro Mendes": 38.3,
+       "Janaina Riva": 22.8,
+       "Zé Medeiros": 10.4,
+       "Fávaro": 6.1,
+       "Pedro Taques": 6.1
+      },
+      "soma": "média do 1º e do 2º voto: Mauro Mendes 27,4%, Janaina Riva 19,9%, Zé Medeiros 10,7%",
+      "fontes": [
+       [
+        "Olhar Direto – Senado",
+        "https://www.olhardireto.com.br/noticias/mauro-mendes-lidera-corrida-ao-senado-em-mato-grosso-com-274-janaina-riva-aparece-em-segundo-com-199",
+        "2026-10-01"
+       ],
+       [
+        "Folhamax – Senado",
+        "https://www.folhamax.com/politica/a-tres-dias-da-eleicao-mauro-e-janaina-se-consolidam-ao-senado-em-mt/575051",
+        "2026-10-01"
+       ]
+      ]
      },
      {
       "inst": "Quaest",
@@ -2799,7 +2830,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "01/10/2026 08:30",
+  "atualizado": "01/10/2026 09:55",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -3554,6 +3585,27 @@
        ]
       ],
       "papel": "contra"
+     },
+     {
+      "data": "2026-09-29",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juíza auxiliar da propaganda Glenda Moreira Borges)",
+      "resumo": "A juíza determinou que a Meta forneça, em cinco dias, dados cadastrais e registros de conexão dos perfis de Instagram @mov.conservadorpatriota e @papopatriota. A ordem atende a pedido do MDB estadual, autor de representação contra esses dois perfis, contra o perfil @sauloguizelinpatriota e contra Saulo Breda Guizelini, candidato a 2º suplente de senador na chapa de Antônio Galvan (Avante). O MDB afirma que sete das oito publicações do perfil do candidato foram feitas em colaboração com ao menos um dos outros dois perfis, que não teriam sido informados à Justiça Eleitoral como canais de propaganda, e quer apurar a origem de conteúdo sintético e eventual propaganda irregular. Segundo a decisão, os dados servem para instruir a representação, ficam restritos à identificação dos responsáveis e seguem ao TRE-MT sob sigilo; a ordem não significa que os responsáveis cometeram irregularidade, o que será analisado depois da produção de provas. Galvan não é parte na representação.",
+      "cabe_recurso": false,
+      "defesa": "As matérias não trazem manifestação dos representados.",
+      "fontes": [
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/justica-da-5-dias-para-meta-identificar-donos-de-perfis-patriotas-em-mt/152718",
+        "2026-09-29"
+       ],
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/tre-mt-determina-que-facebook-entregue-dados-de-perfis-de-direita-em-investigacao-sobre-propaganda-em-cadeia",
+        "2026-09-29"
+       ]
+      ],
+      "papel": "contra"
      }
     ]
    },
@@ -4095,6 +4147,27 @@
         "FTN Brasil",
         "https://ftnbrasil.com.br/juiz-do-tre-atende-pedido-de-janaina-riva-e-suspende-pesquisa-da-verita-em-mato-grosso/",
         "2026-09-17"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-29",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juíza auxiliar da propaganda Glenda Moreira Borges)",
+      "resumo": "A juíza determinou que a Meta forneça, em cinco dias, dados cadastrais e registros de conexão dos perfis de Instagram @mov.conservadorpatriota e @papopatriota. A ordem atende a pedido do MDB estadual, autor de representação contra esses dois perfis, contra o perfil @sauloguizelinpatriota e contra Saulo Breda Guizelini, candidato a 2º suplente de senador na chapa de Antônio Galvan (Avante). O MDB afirma que sete das oito publicações do perfil do candidato foram feitas em colaboração com ao menos um dos outros dois perfis, que não teriam sido informados à Justiça Eleitoral como canais de propaganda, e quer apurar a origem de conteúdo sintético e eventual propaganda irregular. Segundo a decisão, os dados servem para instruir a representação, ficam restritos à identificação dos responsáveis e seguem ao TRE-MT sob sigilo; a ordem não significa que os responsáveis cometeram irregularidade, o que será analisado depois da produção de provas. Galvan não é parte na representação.",
+      "cabe_recurso": false,
+      "defesa": "As matérias não trazem manifestação dos representados.",
+      "fontes": [
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/justica-da-5-dias-para-meta-identificar-donos-de-perfis-patriotas-em-mt/152718",
+        "2026-09-29"
+       ],
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/tre-mt-determina-que-facebook-entregue-dados-de-perfis-de-direita-em-investigacao-sobre-propaganda-em-cadeia",
+        "2026-09-29"
        ]
       ],
       "papel": "pedido"
@@ -4959,7 +5032,7 @@
     "partido": "Republicanos",
     "registro": {
      "situacao": "deferido",
-     "obs": "Deferido. A impugnação da coligação de Wellington (contas de convênio de 2001 julgadas irregulares pelo TCU) foi julgada improcedente em 3/9 e o Pleno confirmou por 7 a 0 em 14/9, porque o TRF-1 suspendeu a rejeição das contas. Segundo o VGN, o relator reconheceu que a candidatura está sujeita à regra da Lei das Inelegibilidades, que permite atingir o registro se a suspensão cair, mas dispensou a ressalva expressa no acórdão pedida pela coligação de Wellington.",
+     "obs": "Deferido. A impugnação da coligação de Wellington (contas de convênio de 2001 julgadas irregulares pelo TCU) foi julgada improcedente em 3/9 e o Pleno confirmou por 7 a 0 em 14/9, porque o TRF-1 suspendeu a rejeição das contas. Segundo o VGN, o relator reconheceu que a candidatura está sujeita à regra da Lei das Inelegibilidades, que permite atingir o registro se a suspensão cair, mas dispensou a ressalva expressa no acórdão pedida pela coligação de Wellington. Em 30/9 e 1/10, duas páginas que reproduzem dados do TSE (O Tempo, atualizada em 30/9 às 20h40, e Gazeta do Povo, em 1/10 às 9h01) exibem a situação como 'Deferido com recurso'. Segundo o FAQ do O Tempo, o rótulo indica recurso interposto contra a decisão, aguardando instância superior; nenhuma fonte informa quem recorreu, em que instância ou em que processo, e não foi localizada nota do TRE-MT ou decisão do TSE. O VGN noticiou em 14/9 que 'ainda é possível apresentar recurso ao Tribunal Superior Eleitoral (TSE)'.",
      "fontes": [
       [
        "ND Mais – ficha do candidato",
@@ -4980,6 +5053,16 @@
        "VGN",
        "https://www.vgnoticias.com.br/vgnjur/tre-mt-mantem-candidatura-de-pivetta-apos-rejeitar-recurso-de-wellington/151997",
        "2026-09-14"
+      ],
+      [
+       "O Tempo (espelho DivulgaCandContas/TSE: 'Deferido com recurso', 30/09/2026 20h40)",
+       "https://www.otempo.com.br/eleicoes/2026/candidatos/mato-grosso/governador/otaviano-pivetta-10",
+       "2026-09-30"
+      ],
+      [
+       "Gazeta do Povo (ficha de Pivetta: 'Deferido em prazo recursal ou com recurso', 01/10/2026 09h01)",
+       "https://www.gazetadopovo.com.br/eleicoes/2026/candidatos/mt/governador/otaviano-pivetta-republicanos-10/",
+       "2026-10-01"
       ]
      ]
     },
@@ -6932,7 +7015,7 @@
     "partido": "Agir",
     "registro": {
      "situacao": "deferido",
-     "obs": "Deferido por unanimidade em 25/9, ao acolher embargos de declaração depois da apresentação de documentos de desfiliação do União Brasil e certidão do TSE (Acórdão 32909, processo 0600845-60.2026.6.11.0000). No mesmo dia foi deferido o registro da vice, Sargento Karen Fortes, que substituiu Alex Pucineli (Acórdão 32910). Cabe recurso.",
+     "obs": "Deferido por unanimidade em 25/9, ao acolher embargos de declaração depois da apresentação de documentos de desfiliação do União Brasil e certidão do TSE (Acórdão 32909, processo 0600845-60.2026.6.11.0000). No mesmo dia foi deferido o registro da vice, Sargento Karen Fortes, que substituiu Alex Pucineli (Acórdão 32910). Cabe recurso. Nos espelhos do DivulgaCand há dois cadastros do candidato: o principal (SQ 110002554073), 'Deferido', e o de nome de urna 'Sargento Laudicério (lau)' (SQ 110002553937), 'Indeferido'. Segundo o ND Mais (15/9), o TRE-MT indeferiu o primeiro registro porque o DRAP do Agir foi protocolado às 21h02min51s de 15/8, depois do prazo, e Laudicério havia pedido um registro individual, ligado a outro DRAP do partido, que é o deferido em 25/9; o 'Indeferido' exibido nos sites corresponde, portanto, ao primeiro cadastro (leitura do HOJE MT a partir dessa reportagem). Alex Pucineli, vice original, consta como 'Renúncia' no ND Mais.",
      "fontes": [
       [
        "Cidadão Consumidor",
@@ -6948,6 +7031,16 @@
        "O Tempo – vice Sargento Karen Fortes (espelho DivulgaCandContas/TSE)",
        "https://www.otempo.com.br/eleicoes/2026/candidatos/mato-grosso/vice-governador/sargento-karen-fortes-36",
        "2026-09-29"
+      ],
+      [
+       "ND Mais – TRE-MT indefere o 1º registro por DRAP fora do prazo (15/09/2026)",
+       "https://ndmais.com.br/politica/justica-eleitoral-indefere-registro-de-candidato-do-agir-ao-governo-de-mato-grosso/",
+       "2026-09-15"
+      ],
+      [
+       "ND Mais – ficha '(lau)' e lista de governador (dados do TSE, 01/10/2026)",
+       "https://ndmais.com.br/eleicoes/2026/candidatos/mt/governador/36-sargento-laudicerio-lau/",
+       "2026-10-01"
       ]
      ]
     },
