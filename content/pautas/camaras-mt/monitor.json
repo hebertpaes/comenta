@@ -58,8 +58,32 @@
    "arquivo": "pautas/camaras-mt/2026-10-01-lucas-camara-devolve-5-milhoes.md",
    "ghost_id": "6abe54916357bc8c6ad4d402",
    "status": "rascunho",
-   "arte": "PENDENTE: a 1ª capa (DAHWxeTIJhA, duas autoridades trocando envelope) foi retirada porque a imagem de envelope sugere propina numa matéria sobre devolução legítima; refazer com cena neutra (servidores de costas diante do prédio e da caminhonete, luz de dia, planta de obra) quando o Canva sair do cooldown; depois imagem-post.mjs + og-whatsapp.mjs + registro.json",
+   "arte": "feita em 01/10/2026 (Canva DAHWzeBjEJk, cena neutra: servidores de costas diante do prédio e da caminhonete, planta de obra sobre o capô); a 1ª capa (DAHWxeTIJhA, envelope) foi descartada; feature_image, og e registro.json atualizados",
    "agenda": 74
+  },
+  {
+   "data": "2026-10-01",
+   "cidade": "Barra do Garças",
+   "titulo": "Prefeito de Barra do Garças exonera secretária de Saúde um mês depois de cobranças e de pedido de CPI na Câmara; portaria não traz justificativa",
+   "arquivo": "pautas/camaras-mt/2026-10-01-barra-cpi-saude-secretaria-exonerada.md",
+   "ghost_id": "6abecbde6357bc8c6ad4d428",
+   "previa": "https://hojemt.com.br/p/75d629b0-4e4c-43a6-a03b-4ba80ad35734/",
+   "status": "rascunho",
+   "arte": "feita (Canva DAHWzR9R5v0, imagem MAHWzQbhMoM; feature_image, og e registro.json atualizados)",
+   "card": "pautas/cards/2026-10-01-barra-cpi-saude-secretaria-exonerada.card.json (jpg hospedado no Ghost)",
+   "agenda_id": 76
+  },
+  {
+   "data": "2026-10-01",
+   "cidade": "Lucas do Rio Verde",
+   "titulo": "Câmara de Lucas do Rio Verde aprova doação de área ao Sesi para clínica de saúde ocupacional e cessão de terreno à SOS Animais de Rua",
+   "arquivo": "pautas/camaras-mt/2026-10-01-lucas-31a-sessao-saude-ocupacional-protecao-animal.md",
+   "ghost_id": "6abecbdf6357bc8c6ad4d42d",
+   "previa": "https://hojemt.com.br/p/1fc4596f-a04c-4b5a-ac5c-a1c3c2ecc237/",
+   "status": "rascunho",
+   "arte": "PENDENTE: Canva em quota_cooldown nas 2 tentativas de 01/10 (~21h UTC); gerar na próxima rodada a cena 'plenário visto de trás das cadeiras, vereadores de costas, documentos sobre a mesa, janela com luz de fim de tarde' (receita do README) e aplicar com imagem-post.mjs + og-whatsapp.mjs + registro.json",
+   "card": "pautas/cards/2026-10-01-lucas-31a-sessao-saude-ocupacional-protecao-animal.card.json (jpg hospedado no Ghost)",
+   "agenda_id": 77
   }
  ],
  "vistos": {
@@ -434,7 +458,246 @@
   "chapada:yt:h6cMuTEWNzE": {
    "titulo": "SESSÃO EXTRAORDINÁRIA 19 DE DEZEMBRO DE 2023 - CÂMARA MUNICIPAL CHAPADA DOS GUIMARÃES",
    "data": "2023-12-20"
+  },
+  "barra:gn:amigos fazem pix solidário para ajudar tratamento de saúde da cidinha, funcionária da câma": {
+   "titulo": "Amigos fazem PIX solidário para ajudar tratamento de saúde da Cidinha, funcionária da Câmara de Barra do… - Araguaia Notícia",
+   "data": "2026-10-01"
+  },
+  "barra:gn:saúde de barra do garças atende além de suas fronteiras e precisa de olhar regional": {
+   "titulo": "Saúde de Barra do Garças atende além de suas fronteiras e precisa de olhar regional - Araguaia Notícia",
+   "data": "2026-10-01"
+  },
+  "barra:gn:acompanhe a votação e apuração da eleição no site araguaia notícia neste domingo (4/10) a ": {
+   "titulo": "Acompanhe a votação e apuração da eleição no site Araguaia Notícia neste domingo (4/10) a partir das 16 horas - Araguaia Notícia",
+   "data": "2026-10-01"
+  },
+  "barra:gn:vale do araguaia cresce e atinge 300 mil eleitores em 2026": {
+   "titulo": "Vale do Araguaia cresce e atinge 300 mil eleitores em 2026 - Araguaia Notícia",
+   "data": "2026-10-01"
+  },
+  "barra:gn:após pedido de cpi, prefeito exonera secretária de saúde de barra do garças": {
+   "titulo": "Após pedido de CPI, prefeito exonera secretária de Saúde de Barra do Garças - SEMANA 7",
+   "data": "2026-10-01"
+  },
+  "barra:gn:defensoria aciona justiça para obrigar prefeitura a implantar caps infantil": {
+   "titulo": "Defensoria aciona Justiça para obrigar prefeitura a implantar Caps infantil - SEMANA 7",
+   "data": "2026-10-01"
+  },
+  "lrv:https://www.camaralucasdorioverde.mt.gov.br/Noticias/Camara-aprova-projetos-sobre-saude-ocupacional-protecao-animal-e-regularizacao-de-areas-publicas-durante-31-sessao-2442/": {
+   "titulo": "Câmara aprova projetos sobre saúde ocupacional, proteção animal e regularização de áreas públicas durante 31ª Sessão",
+   "data": "2026-10-01"
+  },
+  "lrv:yt:gm0l--G82uE": {
+   "titulo": "Hélio Kaminski - Grande Expediente - 01/10/2026",
+   "data": "2026-10-01"
+  },
+  "lrv:yt:gHyTo4Yup9U": {
+   "titulo": "Sessão Ordinária Nº 31-2026 de 01-10-2026",
+   "data": "2026-10-01"
+  },
+  "barra:gn:dpemt cobra capsi em barra do garças após 211 crianças aguardarem atendimento - hipernotíc": {
+   "titulo": "DPEMT cobra CapsI em Barra do Garças após 211 crianças aguardarem atendimento - HiperNotícias - Você bem informado",
+   "data": "2026-09-30"
+  },
+  "barra:yt:gnLxlSfKZTM": {
+   "titulo": "TV CÂMARA - SESSÃO ORDINÁRIA 28/09/2026",
+   "data": "2026-09-29"
+  },
+  "barra:gn:tre barra pesquisa veritá ao governo e senado por registros duplicados e falhas na amostra": {
+   "titulo": "TRE barra pesquisa Veritá ao Governo e Senado por registros duplicados e falhas na amostra - Olhar Direto",
+   "data": "2026-09-28"
+  },
+  "barra:yt:QLdqt6Cul0c": {
+   "titulo": "TV CÂMARA - SESSÃO ORDINÁRIA 21/09/2026",
+   "data": "2026-09-21"
+  },
+  "barra:yt:beADI4_2y80": {
+   "titulo": "🔴 AO VIVO | BARRA DO GARÇAS 78 ANOS — CELEBRANDO NOSSA HISTÓRIA",
+   "data": "2026-09-16"
+  },
+  "barra:yt:dROrVKKgU2k": {
+   "titulo": "TV CÂMARA - SESSÃO EXTRAORDINÁRIA 11/09/2026",
+   "data": "2026-09-11"
+  },
+  "barra:yt:R_FOj7El204": {
+   "titulo": "TV CÂMARA - SESSÃO ORDINÁRIA 31/08/2026",
+   "data": "2026-09-01"
+  },
+  "barra:yt:6eA1vj8xzHA": {
+   "titulo": "TV CÂMARA - AUDIÊNCIA PÚBLICA - PRESTAÇÃO DE CONTAS DO 3º QUADRIMESTRE DE 2025 DA SEC. MUN DE SAÚDE",
+   "data": "2026-08-29"
+  },
+  "barra:yt:Co-Jgn0zmss": {
+   "titulo": "TV CÂMARA - SESSÃO ORDINÁRIA 24-08-2026",
+   "data": "2026-08-25"
+  },
+  "barra:yt:QeFjhVzLfvI": {
+   "titulo": "TV CÂMARA - SESSÃO ORDINÁRIA 17-08-2026",
+   "data": "2026-08-18"
+  },
+  "barra:yt:4zQd2-G9XEI": {
+   "titulo": "TV CÂMARA   SESSÃO ORDINÁRIA 10/08/2026 -  SESSÃO COMPLETA",
+   "data": "2026-08-11"
+  },
+  "barra:yt:Kpsjwc5KusA": {
+   "titulo": "TV CÂMARA - SESSÃO ORDINÁRIA 10-08-2026",
+   "data": "2026-08-11"
+  },
+  "barra:yt:hN3cNlIOhsQ": {
+   "titulo": "TV CÂMARA - SESSÃO EXTRAORDINÁRIA 07-08-2026",
+   "data": "2026-08-08"
+  },
+  "barra:yt:UIuoHU_hQ08": {
+   "titulo": "TV CÂMARA - SESSÃO ORDINÁRIA 03-08-2026",
+   "data": "2026-08-03"
+  },
+  "barra:yt:6zKnRItfQmw": {
+   "titulo": "TV CÂMARA - AUDIÊNCIA PÚBLICA -  (LDO ) LEI DE DIRETRIZES ORÇAMENTÁRIAS 30-06-2026",
+   "data": "2026-07-01"
+  },
+  "barra:yt:FODGJin6lGE": {
+   "titulo": "TV CÂMARA - SESSÃO ORDINÁRIA 30-06-2026",
+   "data": "2026-07-01"
+  },
+  "barra:yt:QcWTFsyex9s": {
+   "titulo": "TV CÂMARA - AUDIÊNCIA PÚBLICA -  (LDO ) LEI DE DIRETRIZES ORÇAMENTÁRIAS 30-06-2026",
+   "data": "2026-06-30"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/camara-municipal-destaca-importancia-do-maio-laranja-e-reforca-combate-ao-abuso-infantil": {
+   "titulo": "Câmara Municipal destaca importância do Maio Laranja e reforça combate ao abuso infantil",
+   "data": "2026-05-18"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/camara-realiza-42a-sessao-ordinaria-com-aprovacao-de-projeto-e-discussao-de-demandas-municipais": {
+   "titulo": "Câmara realiza 42ª Sessão Ordinária com aprovação de projeto e discussão de demandas",
+   "data": "2026-03-05"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/em-seu-terceiro-mandato-jaime-rodrigues-assume-presidencia-da-camara-municipal-de-barra-do-garcas": {
+   "titulo": "Em seu terceiro mandato, Jaime Rodrigues assume presidência da Câmara Municipal",
+   "data": "2026-01-21"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/corrida-passos-que-inspiram-solidariedade-e-conscientizacao-em-barra-do-garcas": {
+   "titulo": "Corrida: Passos que Inspiram Solidariedade e Conscientização em Barra do Garças",
+   "data": "2025-10-02"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/escola-do-legislativo-de-barra-do-garcas-promove-palestras-especiais-sobre-prevencao-a-violencia-contra-a-mulher": {
+   "titulo": "Escola do Legislativo promove Palestras Especiais sobre prevenção à violência contra a mulher",
+   "data": "2025-08-22"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/convite-para-audiencia-publica-2013-discussao-da-ldo-2026": {
+   "titulo": "Convite para Audiência Pública – Discussão da LDO 2026",
+   "data": "2025-06-24"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/inscricoes-abertas-para-vagas-remanescentes-do-residencial-carvalho": {
+   "titulo": "Inscrições Abertas para Vagas Remanescentes do Residencial Carvalho",
+   "data": "2025-05-09"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/sessao-produtiva-emendas-anunciadas-e-projetos-relevantes-aprovados": {
+   "titulo": "Sessão Produtiva: Emendas Anunciadas e Projetos Relevantes Aprovados",
+   "data": "2025-04-10"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/bebeto-betti-assume-mandato-de-vereador-em-barra-do-garcas-durante-licenca-medica-de-paulo-raye": {
+   "titulo": "Bebeto Betti assume mandato de vereador em Barra do Garças durante licença médica de Paulo Raye",
+   "data": "2025-04-03"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/camara-de-barra-do-garcas-aprova-reducao-no-iptu-e-aumento-no-piso-salarial-da-educacao-municipal": {
+   "titulo": "Câmara aprova redução no IPTU e aumento no piso salarial da educação municipal",
+   "data": "2025-04-02"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/camara-de-barra-do-garcas-promove-a-4a-sessao-ordinaria-da-20a-legislatura": {
+   "titulo": "Câmara de Barra do Garças Promove a 4ª Sessão Ordinária da 20ª Legislatura",
+   "data": "2025-02-26"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/camara-de-vereadores-de-barra-do-garcas-realiza-a-2a-sessao-legislativa-da-20a-legislatura": {
+   "titulo": "Câmara de Vereadores de Barra do Garças realiza a 2ª Sessão Legislativa da 20ª Legislatura",
+   "data": "2025-02-12"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/vereadores-de-barra-do-garcas-tomam-posse-e-elegem-mesa-diretora-com-alex-matos-na-presidencia": {
+   "titulo": "Vereadores de Barra do Garças Tomam Posse e Elegem Mesa Diretora",
+   "data": "2025-01-03"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/camara-municipal-celebra-avancos-na-seguranca-alimentar-do-territorio-xavante": {
+   "titulo": "Câmara Municipal Celebra Avanços na Segurança Alimentar do Território Xavante",
+   "data": "2024-12-16"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/audiencia-publica-discute-desafios-e-solucoes-para-a-causa-animal-em-barra-do-garcas": {
+   "titulo": "Audiência Pública discute desafios e soluções para a causa animal em Barra do Garças",
+   "data": "2024-12-09"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/camara-municipal-de-barra-do-garcas-realiza-cafe-da-manha-e-entrega-de-mocoes-de-aplauso-a-vereadores-eleitos-e-reeleitos": {
+   "titulo": "Câmara Municipal realiza café da manhã e entrega de moções de aplauso a vereadores eleitos e reeleitos",
+   "data": "2024-12-04"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/audiencia-publica-na-camara-municipal-de-barra-do-garcas-discute-desafios-e-solucoes-para-a-causa-animal": {
+   "titulo": "Audiência Pública na Câmara Municipal discute desafios e soluções para a causa animal",
+   "data": "2024-11-29"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/camara-municipal-realiza-evento-alusivo-ao-novembro-azul": {
+   "titulo": "Câmara Municipal realiza evento alusivo ao Novembro Azul",
+   "data": "2024-11-26"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/camara-de-barra-do-garcas-aprova-primeira-materia-pelo-sistema-digital": {
+   "titulo": "Câmara de Barra do Garças aprova primeira matéria pelo sistema digital",
+   "data": "2024-11-07"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/vereador-vinicius-dantas-assume-mandato-na-camara-de-barra-do-garcas-por-30-dias": {
+   "titulo": "Vereador Vinícius Dantas assume mandato na Câmara de Barra do Garças por 30 dias",
+   "data": "2024-11-05"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/camara-de-vereadores-de-barra-do-garcas-realiza-palestra-em-alusao-ao-outubro-rosa": {
+   "titulo": "Câmara de Vereadores de Barra do Garças realiza palestra em alusão ao Outubro Rosa",
+   "data": "2024-10-24"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/camara-de-barra-do-garcas-inicia-semana-de-conscientizacao-em-alusao-ao-outubro-rosa": {
+   "titulo": "Câmara de Barra do Garças inicia semana de conscientização em alusão ao Outubro Rosa",
+   "data": "2024-10-22"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/audiencia-publica-discute-a-situacao-dos-fios-de-internet-em-barra-do-garcas": {
+   "titulo": "Audiência Pública Discute a Situação dos Fios de Internet em Barra do Garças",
+   "data": "2024-10-10"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/edital-de-convocacao-para-o-residencial-carvalho-i-ii-e-iii-ja-disponivel": {
+   "titulo": "Edital de Convocação para o Residencial Carvalho I, II e III Já Disponível",
+   "data": "2024-07-01"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/sessao-solene-de-entrega-de-titulos-barra-garcense-celebra-contribuicoes-valorosas-ao-nosso-municipio": {
+   "titulo": "Sessão solene de entrega de títulos barra-garcense celebra contribuições valorosas ao nosso município",
+   "data": "2024-06-27"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/camara-municipal-prepara-servidores-para-eleicoes-de-2024-condutas-vedadas-aos-agentes-publicos": {
+   "titulo": "Câmara Municipal prepara Servidores para Eleições de 2024: Condutas Vedadas aos Agentes Públicos",
+   "data": "2024-06-26"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/participe-da-audiencia-publica-da-ldo-em-barra-do-garcas": {
+   "titulo": "Participe da Audiência Pública da LDO em Barra do Garças",
+   "data": "2024-06-20"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/camara-e-banco-de-sangue-promovem-campanha-de-doacao-em-homenagem-ao-dia-mundial-do-doador": {
+   "titulo": "Câmara e Banco de sangue promovem campanha de doação em homenagem ao Dia Mundial do Doador",
+   "data": "2024-06-11"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/equipe-de-taekwondo-brilha-na-copa-regional-centro-oeste-e-recebe-homenagem": {
+   "titulo": "Equipe de Taekwondo brilha na Copa Regional Centro-Oeste e recebe homenagem",
+   "data": "2024-06-06"
+  },
+  "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/inicio-das-obras-de-pavimentacao-no-jardim-nova-barra-um-marco-para-a-comunidade": {
+   "titulo": "Início das obras de pavimentação no Jardim Nova Barra: Um marco para a comunidade",
+   "data": "2024-05-28"
   }
  },
- "ultima_checagem": "2026-10-01T13:39:13.448Z"
+ "ultima_checagem": "2026-10-01T21:12:57.263Z",
+ "descartados_2026-10-01_tarde": [
+  {
+   "cidade": "Sorriso",
+   "motivo": "notícias do site de 28 a 30/09 são indicações de rotina (arquibancadas, praças inclusivas, telemedicina) e sessão solene (Colégio Regina Coeli); sem fato novo que justifique pauta nesta rodada"
+  },
+  {
+   "cidade": "Barra do Garças",
+   "item": "ação da Defensoria por um CapsI (211 crianças na fila; Semana 7, HNT, RepórterMT)",
+   "motivo": "entrou como contexto na pauta da exoneração da secretária de Saúde; pode virar pauta própria na próxima rodada se houver decisão judicial ou resposta da Prefeitura"
+  },
+  {
+   "cidade": "Chapada dos Guimarães",
+   "motivo": "sessão de 30/09 adiada para 06/10; nada a deliberar"
+  }
+ ]
 }
