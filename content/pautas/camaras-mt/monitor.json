@@ -1,5 +1,5 @@
 {
- "_comentario": "Monitor das Câmaras Municipais de Sorriso (sorriso.mt.leg.br), Lucas do Rio Verde (camaralucasdorioverde.mt.gov.br) e Chapada dos Guimarães (camarachapadadosguimaraes.mt.gov.br); rotina em backup/rotinas.json. Nenhuma tem RSS: o leitor camaras-mt.mjs lê a lista de notícias e o RSS do YouTube de cada Câmara. 'vistos' guarda o que já foi avaliado; `node camaras-mt.mjs` lista os novos e `--marcar` grava.",
+ "_comentario": "Monitor das Câmaras Municipais de Sorriso (sorriso.mt.leg.br), Lucas do Rio Verde (camaralucasdorioverde.mt.gov.br) Chapada dos Guimarães (camarachapadadosguimaraes.mt.gov.br) e Barra do Garças (barradogarcas.mt.leg.br); rotina em backup/rotinas.json. Nenhuma tem RSS: o leitor camaras-mt.mjs lê a lista de notícias e o RSS do YouTube de cada Câmara. 'vistos' guarda o que já foi avaliado; `node camaras-mt.mjs` lista os novos e `--marcar` grava.",
  "camaras": {
   "sorriso": {
    "site": "https://sorriso.mt.leg.br",
@@ -28,6 +28,16 @@
    "sapl": "https://sapl.chapadadosguimaraes.mt.leg.br (API aberta, mas sem matérias nem sessões cadastradas em 01/10/2026)",
    "imprensa": "Alô Chapada (alochapada.com.br, bloqueia este ambiente), Muvuca Popular, GC Notícias, Olhar Direto",
    "contexto": "sessão ordinária de 30/09/2026 adiada para 06/10 (Ato Legislativo nº 021/2026: proximidade da eleição e nenhuma matéria a deliberar), segundo o Alô Chapada; presidente da Câmara em 2025: Zé Otávio; prefeito Osmar Froner"
+  },
+  "barra": {
+   "site": "https://www.barradogarcas.mt.leg.br",
+   "rss_noticias": "https://www.barradogarcas.mt.leg.br/institucional/noticias/agregador/RSS (Plone/Interlegis; última notícia em 05/2026)",
+   "youtube": "UCLfGQrOwqH3TNQ8U9R5ywZg (TV Câmara: sessões ordinárias às segundas, ex.: 28/09/2026)",
+   "redes": [
+    "https://www.instagram.com/camaramunicipalbarradogarcas/"
+   ],
+   "imprensa": "Semana 7, Araguaia Notícia, RepórterMT, HNT, Olhar Direto",
+   "contexto_2026-10-01": "presidente Jaime Rodrigues (3º mandato, desde 01/2026); na imprensa de 01/10: pedido de CPI e exoneração da secretária de Saúde pelo prefeito (Semana 7) e ação da Defensoria por Caps infantil (Semana 7, RepórterMT, HNT) — avaliar na próxima rodada"
   }
  },
  "pautas": [

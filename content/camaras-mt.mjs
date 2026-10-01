@@ -6,7 +6,7 @@
 // Cuiabá, camara-cuiaba.mjs.
 //
 //   node camaras-mt.mjs                       novos desde pautas/camaras-mt/monitor.json
-//   node camaras-mt.mjs --camara=sorriso      só uma (sorriso | lrv | chapada)
+//   node camaras-mt.mjs --camara=sorriso      só uma (sorriso | lrv | chapada | barra)
 //   node camaras-mt.mjs --textos              inclui o começo do texto das notícias novas
 //   node camaras-mt.mjs --marcar              grava os novos como vistos
 //   node camaras-mt.mjs --texto=<url>         imprime o texto de uma notícia
@@ -24,6 +24,21 @@ const pega = async (url) => { const r = await fetch(url, { headers: { "user-agen
 const absoluta = (base, u) => new URL(u, base).toString();
 
 const CAMARAS = {
+  barra: {
+    nome: "Câmara de Barra do Garças", youtube: "UCLfGQrOwqH3TNQ8U9R5ywZg",
+    lista: "https://www.barradogarcas.mt.leg.br/institucional/noticias/agregador/RSS", // Plone/Interlegis (RDF); notícias raras (última de 05/2026); as sessões saem no YouTube (TV Câmara)
+    extrair(x) {
+      const out = [];
+      for (const m of x.matchAll(/<item rdf:about="([^"]+)">([\s\S]*?)<\/item>/g)) {
+        const titulo = ent((m[2].match(/<title>([\s\S]*?)<\/title>/) || [])[1] || "");
+        const data = ((m[2].match(/<dc:date>(.*?)<\/dc:date>/) || [])[1] || "").slice(0, 10);
+        if (titulo) out.push({ url: m[1], data, categoria: "", titulo });
+      }
+      return out;
+    },
+    gnews: ['"Câmara de Barra do Garças" when:3d', 'Barra do Garças vereadores "Câmara Municipal" when:3d'],
+    extras: ["Site: https://www.barradogarcas.mt.leg.br (RSS geral com licitações: /RSS; notícias: /institucional/noticias)", "Atividade legislativa: https://www.barradogarcas.mt.leg.br/processo-legislativo", "Eventos: https://www.barradogarcas.mt.leg.br/institucional/eventos", "Vídeos das sessões (TV Câmara, segundas): YouTube UCLfGQrOwqH3TNQ8U9R5ywZg", "Instagram: https://www.instagram.com/camaramunicipalbarradogarcas/ (só com print do editor)"],
+  },
   chapada: {
     nome: "Câmara de Chapada dos Guimarães", youtube: ["UCuvSvovy7SDpHHLScxxSjhw", "UCFkqY6WaArTS7R-31O6MdsA"],
     lista: null, // o site (camarachapadadosguimaraes.mt.gov.br) pede verificação anti-robô e derruba a conexão deste ambiente; não contornar
