@@ -84,6 +84,15 @@
       "sessao": "nova a cada disparo (lê as chaves das variáveis de ambiente)",
       "fonte": "content/redes-api.mjs",
       "resumo": "Roda redes-api.mjs (Instagram Business Discovery, Biblioteca de Anúncios da Meta, YouTube Data API, X API v2) e faz push de content/paginas/radar-redes-api.json; sem nenhuma chave, encerra sem commit. A rotina de hora em hora do Radar puxa, embute e publica."
+    },
+    {
+      "id": "trig_01959tQrEnSf2MmrXz2N8gB4",
+      "nome": "Câmara de Várzea Grande — monitorar notícias, sessões e projetos (dias úteis, 07:17 e 15:17 Cuiabá)",
+      "cron_utc": "17 11,19 * * 1-5",
+      "cuiaba": "07:17 e 15:17 (seg–sex)",
+      "sessao": "esta (persistente)",
+      "fonte": "content/camara-vg.mjs + content/pautas/camara-varzea-grande/monitor.json",
+      "resumo": "Pedido do editor (01/10/2026): 'Monitore também https://www.varzeagrande.mt.leg.br'. Lê o RSS e as páginas do site da Câmara, completa com a imprensa, escreve até 2 pautas por disparo (rascunho no Ghost, tag Cidades & Mato Grosso, ilustração no Canva, card na agenda do Instagram como aguardando_materia)."
     }
   ],
   "modelos_canva": {

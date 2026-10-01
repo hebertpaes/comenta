@@ -1,0 +1,148 @@
+{
+ "_comentario": "Monitor da Câmara Municipal de Várzea Grande (rotina trig_01959tQrEnSf2MmrXz2N8gB4, dias úteis 07:17 e 15:17 de Cuiabá; ver backup/rotinas.json). 'vistos' guarda as notícias do RSS já avaliadas; use `node camara-vg.mjs` para listar as novas e `--marcar` para gravá-las.",
+ "site": "https://www.varzeagrande.mt.leg.br",
+ "rss": "https://www.varzeagrande.mt.leg.br/institucional/noticias/agregador/RSS (RDF; Plone/Interlegis, responde comprimido)",
+ "paginas": {
+  "eventos": "/institucional/eventos/event_listing",
+  "processo_legislativo": "/processo-legislativo",
+  "comissoes": "/processo-legislativo/comissoes",
+  "mesa_diretora": "/institucional/mesa-diretora",
+  "boletins": "/boletins",
+  "transparencia": "https://scpi_cmvg.egpicloud.com.br/transparencia/"
+ },
+ "sessoes": "ordinárias às terças (ex.: 29/09/2026); extraordinárias avulsas (ex.: 24/07/2026)",
+ "pessoas": "presidente Wanderley Cerqueira (MDB); CCJ: Alessandro Moreira (MDB, presidente), Raul Curvo (Republicanos, relator), Gisa Barros; prefeita Flávia Moretti (PL)",
+ "vistos": {
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-de-varzea-grande-aprova-pccss-por-unanimidade-em-sessao-marcada-por-debate-e-acordo-com-servidores": {
+   "titulo": "Câmara de Várzea Grande aprova PCCSs por unanimidade em sessão marcada por debate e acordo com servidores",
+   "data": "2026-10-01T11:51:32Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-de-varzea-grande-aprova-em-regime-de-urgencia-tres-projetos-para-reorganizar-a-educacao-municipal": {
+   "titulo": "Câmara de Várzea Grande aprova em regime de urgência três projetos para reorganizar a Educação municipal",
+   "data": "2026-10-01T11:49:48Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/vereadora-gisa-barros-vota-a-favor-das-gratificacoes-da-educacao-mas-cobra-inclusao-dos-tecnicos-e-envio-do-pccs-da-categoria": {
+   "titulo": "Vereadora Gisa Barros vota a favor das gratificações da Educação, mas cobra inclusão dos técnicos e envio do PCCS da categoria",
+   "data": "2026-10-01T11:47:50Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-de-varzea-grande-avanca-na-implementacao-da-lgpd-para-reforcar-governanca-e-transparencia": {
+   "titulo": "Câmara de Várzea Grande avança na implementação da LGPD para reforçar governança e transparência",
+   "data": "2026-10-01T11:46:31Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/ider-jacinto-realiza-sessao-solene-para-homenagear-grupo-g300-nesta-quinta-feira": {
+   "titulo": "Ider Jacintho realiza sessão solene para homenagear Grupo G300 nesta quinta-feira",
+   "data": "2026-09-30T14:05:45Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-de-varzea-grande-mantem-salarios-em-dia-e-realiza-pagamento-de-servidores-e-vereadores": {
+   "titulo": "Câmara de Várzea Grande mantém salários em dia e realiza pagamento de servidores e vereadores",
+   "data": "2026-09-28T15:20:09Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-de-varzea-grande-vota-projetos-sobre-abastecimento-de-agua-gratuidade-no-transporte-e-limpeza-digital-nesta-terca-feira": {
+   "titulo": "Câmara de Várzea Grande vota projetos sobre abastecimento de água, gratuidade no transporte e Limpeza Digital nesta terça-feira",
+   "data": "2026-09-28T12:41:27Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/ccj-da-camara-reune-servidores-e-representantes-sindicais-para-avancar-com-projetos-dos-pccs": {
+   "titulo": "CCJ da Câmara reúne servidores e representantes sindicais para avançar com projetos dos PCCS",
+   "data": "2026-09-25T16:04:09Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-municipal-de-varzea-grande-promove-palestra-sobre-saude-mental-e-autocuidado-no-setembro-amarelo": {
+   "titulo": "Câmara Municipal de Várzea Grande promove palestra sobre saúde mental e autocuidado no Setembro Amarelo",
+   "data": "2026-09-24T16:17:38Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/vereador-jero-neto-indica-construcao-de-creche-no-santa-maria-sinalizacao-no-aeroporto-e-faixas-elevadas-em-escolas": {
+   "titulo": "Vereador Jero Neto indica construção de creche no Santa Maria, sinalização no Aeroporto e faixas elevadas em escolas",
+   "data": "2026-09-24T11:49:54Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/alessandro-moreira-contesta-novamente-reorganizacao-da-rede-municipal-e-cobra-alternativa-para-alunos-do-grande-cristo-rei": {
+   "titulo": "Alessandro Moreira contesta novamente reorganização da rede municipal e cobra alternativa para alunos do Grande Cristo Rei",
+   "data": "2026-09-24T11:47:43Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/gisa-barros-cobra-executivo-por-atraso-no-pagamento-de-acordo-trabalhista-desperdicio-de-merenda-e-falta-de-transparencia-fiscal": {
+   "titulo": "Gisa Barros cobra Executivo por atraso no pagamento de acordo trabalhista, desperdício de merenda e falta de transparência fiscal",
+   "data": "2026-09-24T11:45:20Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/wanderley-cerqueira-denuncia-caos-na-saude-e-calote-a-fornecedores-em-varzea-grande-camara-vai-elaborar-dossie-para-o-tce-mt": {
+   "titulo": "Wanderley Cerqueira denuncia caos na saúde e calote a fornecedores em Várzea Grande; Câmara vai elaborar dossiê para o TCE-MT",
+   "data": "2026-09-24T11:42:37Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/rosy-prado-contesta-parecer-da-ccj-sobre-projeto-que-declara-o-baguncinha-patrimonio-cultural": {
+   "titulo": "Rosy Prado contesta parecer da CCJ sobre projeto que declara o baguncinha patrimônio cultural",
+   "data": "2026-09-24T11:39:35Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/cilcinho-cobra-responsabilidade-da-prefeita-e-prioridade-nos-pagamentos-apos-relato-de-morte-de-paciente-atendida-na-upa-do-ipase": {
+   "titulo": "Cilcinho cobra responsabilidade da prefeita e prioridade nos pagamentos após relato de morte de paciente atendida na UPA do Ipase",
+   "data": "2026-09-23T12:10:25Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/jovenil-da-saude-destaca-avanco-na-tramitacao-do-pccs-dos-servidores-municipais": {
+   "titulo": "Jovenil da Saúde destaca avanço na tramitação do PCCS dos servidores municipais",
+   "data": "2026-09-23T12:08:43Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/charles-fabiano-destaca-pautas-da-educacao-em-reuniao-com-a-secretaria-maria-fernanda": {
+   "titulo": "Charles Fabiano destaca pautas da Educação em reunião com a secretária Maria Fernanda",
+   "data": "2026-09-23T12:07:40Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/enfermeiro-emerson-cobra-cumprimento-do-piso-da-enfermagem-em-varzea-grande": {
+   "titulo": "Enfermeiro Emerson cobra cumprimento do piso da enfermagem em Várzea Grande",
+   "data": "2026-09-23T12:00:28Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-de-varzea-grande-promove-acao-especial-de-setembro-amarelo-com-terapias-integrativas-gratuitas-nesta-terca-feira": {
+   "titulo": "Câmara de Várzea Grande promove ação especial de Setembro Amarelo com terapias integrativas gratuitas nesta terça-feira",
+   "data": "2026-09-22T13:37:34Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-de-varzea-grande-vota-nesta-terca-22-projetos-sobre-limpeza-digital-e-apoio-ao-esporte": {
+   "titulo": "Câmara de Várzea Grande vota, nesta terça (22), projetos sobre limpeza digital e apoio ao esporte",
+   "data": "2026-09-21T12:12:16Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/vereador-sargento-galibert-homenageia-servidora-maristela-moraes-por-trajetoria-na-saude-publica": {
+   "titulo": "Vereador Sargento Galibert homenageia servidora Maristela Moraes por trajetória na saúde pública",
+   "data": "2026-09-21T12:09:24Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-de-varzea-grande-aprova-mocao-de-pesar-pelo-falecimento-de-mariuce-maria-da-silva": {
+   "titulo": "Câmara de Várzea Grande aprova moção de pesar pelo falecimento de Mariuce Maria da Silva",
+   "data": "2026-09-17T11:47:13Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/alessandro-moreira-contesta-nota-da-educacao-na-camara-e-cobra-dialogo-sobre-reordenamento-de-alunos-em-vg": {
+   "titulo": "Alessandro Moreira contesta nota da Educação na Câmara e cobra diálogo sobre reordenamento de alunos em VG",
+   "data": "2026-09-17T11:44:10Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/galibert-cobra-limpeza-preventiva-de-corregos-e-bueiros-para-evitar-alagamentos-no-periodo-chuvoso": {
+   "titulo": "Galibert cobra limpeza preventiva de córregos e bueiros para evitar alagamentos no período chuvoso",
+   "data": "2026-09-17T11:42:32Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-de-varzea-grande-aprova-projeto-que-inclui-nocoes-da-lei-maria-da-penha-no-curriculo-da-rede-municipal": {
+   "titulo": "Câmara de Várzea Grande aprova projeto que inclui noções da Lei Maria da Penha no currículo da rede municipal",
+   "data": "2026-09-16T11:51:59Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-de-varzea-grande-aprova-projeto-que-promove-reciclagem-nas-escolas-municipais": {
+   "titulo": "Câmara de Várzea Grande aprova projeto que promove reciclagem nas escolas municipais",
+   "data": "2026-09-16T11:48:47Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/wanderley-denuncia-201cdecreto-de-blindagem201d-e-exige-respostas-de-requerimentos-atrasados-em-vg": {
+   "titulo": "Wanderley denuncia “decreto de blindagem” e exige respostas de requerimentos atrasados em VG",
+   "data": "2026-09-16T11:45:14Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/vereadora-rosy-prado-cobra-secretaria-de-obras-e-pede-limpeza-geral-nos-corregos-de-varzea-grande": {
+   "titulo": "Vereadora Rosy Prado cobra Secretaria de Obras e pede limpeza geral nos córregos de Várzea Grande",
+   "data": "2026-09-14T13:56:17Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-de-vg-debate-empregabilidade-de-adolescentes-e-assistencia-social-nesta-terca-15": {
+   "titulo": "Câmara de VG debate empregabilidade de adolescentes e assistência social nesta terça (15)",
+   "data": "2026-09-14T12:58:42Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-de-varzea-grande-prepara-solenidade-de-entrega-da-comenda-couto-magalhaes": {
+   "titulo": "Câmara de Várzea Grande prepara solenidade de entrega da Comenda Couto Magalhães",
+   "data": "2026-09-10T15:13:44Z"
+  }
+ },
+ "ultima_checagem": "2026-10-01T12:14:29.255Z",
+ "pautas": [
+  {
+   "data": "2026-10-01",
+   "titulo": "Câmara de Várzea Grande aprova PCCSs da Saúde, dos garis e de outras categorias por 23 votos, sem mudar o texto da Prefeitura",
+   "arquivo": "pautas/camara-varzea-grande/2026-10-01-pccss-saude-garis-aprovados.md",
+   "ghost_slug": "camara-de-varzea-grande-aprova-pccss-da-saude-dos-garis-e-de-outras-categorias",
+   "ghost_id": "6abe4e1f6357bc8c6ad4d3f1",
+   "status": "rascunho"
+  }
+ ]
+}
