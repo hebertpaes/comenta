@@ -1,5 +1,5 @@
 {
- "atualizado": "01/10/2026 11:40",
+ "atualizado": "01/10/2026 16:40",
  "redes": {
   "Maurício Coelho": [
    [
@@ -299,13 +299,13 @@
   ]
  },
  "pesquisas": {
-  "atualizado": "01/10/2026 09:55",
+  "atualizado": "01/10/2026 16:40",
   "corridas": [
    {
     "id": "governador-mt",
     "titulo": "Governo de Mato Grosso",
     "cenario": "2º turno entre Otaviano Pivetta (Republicanos) e Wellington Fagundes (PL)",
-    "porque": "Os dois ficam nos dois primeiros lugares nas seis pesquisas registradas desde 4/9 que estão no Radar. Pivetta aparece à frente no 1º turno em cinco delas (na Quaest, em empate técnico) e Wellington em uma (AtlasIntel, também empate técnico). Na Paraná Pesquisas de 27 a 29/9, Pivetta tem 51,6% dos votos válidos, acima da metade (Gazeta do Povo); nas demais, nenhum candidato chega a ela. No 2º turno simulado, Pivetta vence em quatro pesquisas e Wellington aparece à frente em duas, ambas dentro da margem de erro.",
+    "porque": "Os dois ficam nos dois primeiros lugares nas sete pesquisas registradas desde 4/9 que estão no Radar. Pivetta aparece à frente no 1º turno em cinco delas (na Quaest, em empate técnico) e Wellington em duas (AtlasIntel e Povo e Poder, ambas em empate técnico). Na Paraná Pesquisas de 27 a 29/9, Pivetta tem 51,6% dos votos válidos, acima da metade (Gazeta do Povo); nas demais, nenhum candidato chega a ela. No 2º turno simulado, Pivetta vence em quatro pesquisas e Wellington aparece à frente em três, todas dentro da margem de erro.",
     "nomes": [
      "Otaviano Pivetta",
      "Wellington Fagundes",
@@ -356,6 +356,50 @@
         53.1,
         "Wellington Fagundes",
         34.6
+       ]
+      ]
+     },
+     {
+      "inst": "Povo e Poder",
+      "contratante": "TVCO – SBT Barra do Garças (segundo as matérias)",
+      "campo": "19 a 27/09",
+      "amostra": "1.200",
+      "margem": "2,83",
+      "conf": 95,
+      "metodo": "presencial",
+      "reg": "MT-07968/2026",
+      "base": "totais",
+      "v": {
+       "Otaviano Pivetta": 30.7,
+       "Wellington Fagundes": 31.8,
+       "Doutora Natasha": 9.0,
+       "Sargento Laudicério": 1.2,
+       "Maurício Coelho": 0.0,
+       "Rafaell Milas": 0.4
+      },
+      "fontes": [
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/pesquisa-mostra-wellington-liderando-disputa/575061",
+        "2026-10-01T08:35:00-04:00"
+       ],
+       [
+        "Primeira Hora",
+        "https://primeirahora.com.br/pesquisa-estadual-mostra-wellington-liderando-disputa-ao-governo-candidato-do-pl-amplia-vantagem-nos-cenarios-de-segundo-turno/",
+        "2026-10-01T08:55:00-04:00"
+       ],
+       [
+        "Boraver MT",
+        "https://boravermt.com.br/politica/pesquisa-aponta-wellington-fagundes-numericamente-a-frente-de-pivetta-na-disputa-pelo-governo-de-mt/",
+        "2026-10-01"
+       ]
+      ],
+      "t2": [
+       [
+        "Wellington Fagundes",
+        35.6,
+        "Otaviano Pivetta",
+        31.5
        ]
       ]
      },
@@ -640,7 +684,7 @@
       ]
      }
     ],
-    "nota": "A pesquisa Veritá (MT-09975/2026, 20 a 24/9) não aparece aqui: a divulgação foi suspensa por liminar do TRE-MT em 28/9 (juiz auxiliar Flávio Fraga e Silva, a pedido de Janaina Riva), que apontou 30 entrevistas duplicadas e localidades que não batem com os municípios informados. É decisão provisória; o instituto tem prazo para se explicar. A Percent Brasil divulgou em 30/9 pesquisa só do município de Cuiabá (MT-02166/2026 e BR-08302/2026; 600 entrevistas presenciais, campo de 15 a 18/9, margem de 4 pontos): Pivetta 33%, Wellington Fagundes 24% e Doutora Natasha 16,3% no 1º turno (Olhar Direto e MidiaJur, 30/9). Não representa o eleitorado do estado e por isso não entra no quadro. A Percent Brasil também divulgou em 1/10 a pesquisa estadual MT-09025/2026 (1.200 entrevistas, campo de 26 a 29/9, margem de 2,83 pontos) com o Senado e as citações espontâneas de deputados; os números de governador dessa pesquisa ainda não tinham sido divulgados até as 8h13 e entram no quadro quando saírem (Olhar Direto e Folhamax, 1/10)."
+    "nota": "A pesquisa Veritá (MT-09975/2026, 20 a 24/9) não aparece aqui: a divulgação foi suspensa por liminar do TRE-MT em 28/9 (juiz auxiliar Flávio Fraga e Silva, a pedido de Janaina Riva), que apontou 30 entrevistas duplicadas e localidades que não batem com os municípios informados. É decisão provisória; o instituto tem prazo para se explicar. A Percent Brasil divulgou em 30/9 pesquisa só do município de Cuiabá (MT-02166/2026 e BR-08302/2026; 600 entrevistas presenciais, campo de 15 a 18/9, margem de 4 pontos): Pivetta 33%, Wellington Fagundes 24% e Doutora Natasha 16,3% no 1º turno (Olhar Direto e MidiaJur, 30/9). Não representa o eleitorado do estado e por isso não entra no quadro. A Percent Brasil também divulgou em 1/10 a pesquisa estadual MT-09025/2026 (1.200 entrevistas, campo de 26 a 29/9, margem de 2,83 pontos) com o Senado e as citações espontâneas de deputados; os números de governador dessa pesquisa ainda não tinham sido divulgados até as 8h13 e entram no quadro quando saírem (Olhar Direto e Folhamax, 1/10). A Povo e Poder (MT-07968/2026; 1.200 entrevistas presenciais, campo de 19 a 27/9, margem de 2,83 pontos) entra no quadro com uma ressalva: divulgada por release da contratante, TVCO – SBT Barra do Garças; as três matérias (Folhamax, Primeira Hora, Boraver MT) reproduzem o mesmo texto; registro não conferido no PesqEle a partir deste ambiente. Nela, Wellington aparece numericamente à frente (31,8% a 30,7%), dentro da margem, resultado que difere das demais pesquisas estaduais de fim de setembro; estatístico responsável, valor pago, cenário espontâneo e rejeição não foram informados."
    },
    {
     "id": "senado-mt",
@@ -1834,7 +1878,7 @@
   ]
  },
  "grupos": {
-  "atualizado": "01/10/2026 08:30",
+  "atualizado": "01/10/2026 16:40",
   "grupos": [
    {
     "governador": "Doutora Natasha",
@@ -1857,6 +1901,32 @@
     ],
     "desenho": "Coligação liderada pelo PSD com os partidos que apoiam a reeleição de Lula; disputa com o grupo do governo estadual.",
     "movimentos": [
+     {
+      "data": "2026-10-01",
+      "fato": "Os seis candidatos ao Governo — Otaviano Pivetta (Republicanos), Wellington Fagundes (PL), Doutora Natasha (PSD), Maurício Coelho (Mobiliza), Rafaell Milas (Missão) e Sargento Laudicério (Agir) — participaram em 1º/10, a partir das 10h30, do último debate do 1º turno, na TV Vila Real, mediado por Antônio Carlos Silva, em quatro blocos com perguntas livres entre os candidatos. Entre os temas: incentivos fiscais, infraestrutura, educação, situação fiscal do Estado e as decisões da Justiça Eleitoral sobre a propaganda; houve troca de críticas entre os candidatos, com uso de direito de resposta.",
+      "fontes": [
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/natasha-cita-agressao-e-pivetta-e-wf-trocam-acusacoes-ao-vivo/530335",
+        "2026-10-01"
+       ],
+       [
+        "RDNews",
+        "https://www.rdnews.com.br/eleicoes-2026/pivetta-defende-gestao-em-debate-wellington-e-natasha-sobem-o-tom/249984",
+        "2026-10-01"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/politica/wellington-acusa-pivetta-de-mentir-e-desafia-governador-a-renunciar-ao-mandato/152856",
+        "2026-10-01"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/politica/natasha-cobra-wf-sobre-alianca-com-pivetta-e-leva-invertida-de-adversario/578334",
+        "2026-10-01"
+       ]
+      ]
+     },
      {
       "data": "2026-09-30",
       "fato": "No último programa na TV antes do 1º turno, Fávaro exibiu vídeo de apoio de Lula; segundo o Olhar Direto, Lula diz: “O que eu quero com Fávaro no Senado é a demonstração mais forte de que o Estado de Mato Grosso estará muito bem representado”. O programa de Natasha não foi ao ar por decisão da Justiça Eleitoral.",
@@ -1904,22 +1974,6 @@
         "2026-09-18"
        ]
       ]
-     },
-     {
-      "data": "2026-09-17",
-      "fato": "O Novo-MT negou em nota que vá apoiar Natasha, hipótese levantada antes nos bastidores.",
-      "fontes": [
-       [
-        "Momento MT",
-        "https://momentomt.com.br/momento-destaque/novo-avalia-romper-com-pl-apos-candidatos-cobrarem-revisao-de-acordo/",
-        "2026-09-17"
-       ],
-       [
-        "24 Horas MT",
-        "https://24horasmt.com.br/politica-mt/candidatos-do-novo-pedem-rompimento-com-wellington-e-medeiros-por-suposto-descumprimento-de-acordos/",
-        "2026-09-17"
-       ]
-      ]
      }
     ],
     "fontes": [
@@ -1955,7 +2009,34 @@
     "vice": "Dr. Wagner Malheiros (Mobiliza)",
     "senado": [],
     "desenho": "Chapa própria do Mobiliza, sem coligação e sem candidato ao Senado.",
-    "movimentos": [],
+    "movimentos": [
+     {
+      "data": "2026-10-01",
+      "fato": "Os seis candidatos ao Governo — Otaviano Pivetta (Republicanos), Wellington Fagundes (PL), Doutora Natasha (PSD), Maurício Coelho (Mobiliza), Rafaell Milas (Missão) e Sargento Laudicério (Agir) — participaram em 1º/10, a partir das 10h30, do último debate do 1º turno, na TV Vila Real, mediado por Antônio Carlos Silva, em quatro blocos com perguntas livres entre os candidatos. Entre os temas: incentivos fiscais, infraestrutura, educação, situação fiscal do Estado e as decisões da Justiça Eleitoral sobre a propaganda; houve troca de críticas entre os candidatos, com uso de direito de resposta.",
+      "fontes": [
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/natasha-cita-agressao-e-pivetta-e-wf-trocam-acusacoes-ao-vivo/530335",
+        "2026-10-01"
+       ],
+       [
+        "RDNews",
+        "https://www.rdnews.com.br/eleicoes-2026/pivetta-defende-gestao-em-debate-wellington-e-natasha-sobem-o-tom/249984",
+        "2026-10-01"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/politica/wellington-acusa-pivetta-de-mentir-e-desafia-governador-a-renunciar-ao-mandato/152856",
+        "2026-10-01"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/politica/natasha-cobra-wf-sobre-alianca-com-pivetta-e-leva-invertida-de-adversario/578334",
+        "2026-10-01"
+       ]
+      ]
+     }
+    ],
     "fontes": [
      [
       "ND Mais",
@@ -1994,6 +2075,32 @@
     ],
     "desenho": "Grupo do governo estadual, com o governador candidato à reeleição e o ex-governador Mauro Mendes.",
     "movimentos": [
+     {
+      "data": "2026-10-01",
+      "fato": "Os seis candidatos ao Governo — Otaviano Pivetta (Republicanos), Wellington Fagundes (PL), Doutora Natasha (PSD), Maurício Coelho (Mobiliza), Rafaell Milas (Missão) e Sargento Laudicério (Agir) — participaram em 1º/10, a partir das 10h30, do último debate do 1º turno, na TV Vila Real, mediado por Antônio Carlos Silva, em quatro blocos com perguntas livres entre os candidatos. Entre os temas: incentivos fiscais, infraestrutura, educação, situação fiscal do Estado e as decisões da Justiça Eleitoral sobre a propaganda; houve troca de críticas entre os candidatos, com uso de direito de resposta.",
+      "fontes": [
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/natasha-cita-agressao-e-pivetta-e-wf-trocam-acusacoes-ao-vivo/530335",
+        "2026-10-01"
+       ],
+       [
+        "RDNews",
+        "https://www.rdnews.com.br/eleicoes-2026/pivetta-defende-gestao-em-debate-wellington-e-natasha-sobem-o-tom/249984",
+        "2026-10-01"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/politica/wellington-acusa-pivetta-de-mentir-e-desafia-governador-a-renunciar-ao-mandato/152856",
+        "2026-10-01"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/politica/natasha-cobra-wf-sobre-alianca-com-pivetta-e-leva-invertida-de-adversario/578334",
+        "2026-10-01"
+       ]
+      ]
+     },
      {
       "data": "2026-09-30",
       "fato": "Pivetta fez reunião com empresários e caminhada em Rondonópolis, base eleitoral de Wellington, com o prefeito Cláudio Ferreira (PL), que já o apoiava, e com Zé Medeiros (PL), candidato ao Senado da coligação de Wellington, e o suplente dele, Odílio Balbinotti. Cláudio disse: “Agora, sou cabo eleitoral. Trabalho para o Pivetta, Mauro Mendes e Flávio Bolsonaro.”",
@@ -2038,33 +2145,17 @@
      },
      {
       "data": "2026-09-29",
-      "fato": "A vice de Pivetta, Gisela Simona (União), negou ter declarado apoio a Galvan (Avante) ao Senado: disse que os senadores dela são Mauro Mendes e Margareth Buzetti e que o gesto foi retribuição ao apoio de Galvan a Pivetta.",
+      "fato": "Mauro Mendes (União), candidato ao Senado na coligação de Pivetta, confirmou em coletiva após sabatina da Aprosoja-MT que o senador Rogério Marinho (PL-RN), coordenador da campanha de Flávio Bolsonaro, lhe telefonou na semana anterior dizendo que precisaria reforçar a equipe num eventual 2º turno; disse não ter respondido (“não disse nem sim nem não”) e que, se o convite vier após o 1º turno, “muito provavelmente” vai ajudar. Negou que a ligação tenha tratado de ministério.",
       "fontes": [
        [
-        "Olhar Direto",
-        "https://www.olhardireto.com.br/noticias/apos-pedir-voto-para-senador-com-coragem-em-palanque-com-galvan-gisela-nega-apoio-e-diz-que-aceno-foi-apenas-retribuicao",
-        "2026-09-30"
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/mendes-admite-atuar-em-campanha-de-flavio-no-2-turno-provavel/530309",
+        "2026-10-01"
        ],
        [
-        "Muvuca Popular",
-        "https://www.muvucapopular.com.br/2026/09/30/gisela-nega-apoio-a-galvan-reafirma-votos-em-mendes-e-buzetti-e-rebate-posicao-sobre-feminicidio/",
-        "2026-09-30"
-       ]
-      ]
-     },
-     {
-      "data": "2026-09-29",
-      "fato": "Mauro Mendes pediu votos para a reeleição do deputado estadual Faissal Calil (PL) em Várzea Grande; Faissal declarou os votos ao Senado em Mauro e em Zé Medeiros.",
-      "fontes": [
-       [
-        "Olhar Direto",
-        "https://www.olhardireto.com.br/noticias/com-divergencias-no-retrovisor-mauro-pede-votos-para-faissal-em-vg",
-        "2026-09-30"
-       ],
-       [
-        "Minuto MT",
-        "https://minutomt.com.br/espia-ai/meu-voto-e-medeiros-e-mauro-diz-faissal-durante-evento-em-vg/",
-        "2026-09-30"
+        "RepórterMT",
+        "https://www.reportermt.com/politica/mauro-mendes-nega-que-tenha-sido-convidado-para-ser-ministro-de-flavio-bolsonaro/244338",
+        "2026-09-29"
        ]
       ]
      }
@@ -2102,7 +2193,34 @@
     "vice": "Thales Sartorelo (Missão)",
     "senado": [],
     "desenho": "Chapa própria do Missão, sem coligação e sem candidato ao Senado.",
-    "movimentos": [],
+    "movimentos": [
+     {
+      "data": "2026-10-01",
+      "fato": "Os seis candidatos ao Governo — Otaviano Pivetta (Republicanos), Wellington Fagundes (PL), Doutora Natasha (PSD), Maurício Coelho (Mobiliza), Rafaell Milas (Missão) e Sargento Laudicério (Agir) — participaram em 1º/10, a partir das 10h30, do último debate do 1º turno, na TV Vila Real, mediado por Antônio Carlos Silva, em quatro blocos com perguntas livres entre os candidatos. Entre os temas: incentivos fiscais, infraestrutura, educação, situação fiscal do Estado e as decisões da Justiça Eleitoral sobre a propaganda; houve troca de críticas entre os candidatos, com uso de direito de resposta.",
+      "fontes": [
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/natasha-cita-agressao-e-pivetta-e-wf-trocam-acusacoes-ao-vivo/530335",
+        "2026-10-01"
+       ],
+       [
+        "RDNews",
+        "https://www.rdnews.com.br/eleicoes-2026/pivetta-defende-gestao-em-debate-wellington-e-natasha-sobem-o-tom/249984",
+        "2026-10-01"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/politica/wellington-acusa-pivetta-de-mentir-e-desafia-governador-a-renunciar-ao-mandato/152856",
+        "2026-10-01"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/politica/natasha-cobra-wf-sobre-alianca-com-pivetta-e-leva-invertida-de-adversario/578334",
+        "2026-10-01"
+       ]
+      ]
+     }
+    ],
     "fontes": [
      [
       "ND Mais",
@@ -2135,6 +2253,32 @@
     ],
     "desenho": "Chapa própria do Agir, sem coligação, com dois candidatos do partido ao Senado.",
     "movimentos": [
+     {
+      "data": "2026-10-01",
+      "fato": "Os seis candidatos ao Governo — Otaviano Pivetta (Republicanos), Wellington Fagundes (PL), Doutora Natasha (PSD), Maurício Coelho (Mobiliza), Rafaell Milas (Missão) e Sargento Laudicério (Agir) — participaram em 1º/10, a partir das 10h30, do último debate do 1º turno, na TV Vila Real, mediado por Antônio Carlos Silva, em quatro blocos com perguntas livres entre os candidatos. Entre os temas: incentivos fiscais, infraestrutura, educação, situação fiscal do Estado e as decisões da Justiça Eleitoral sobre a propaganda; houve troca de críticas entre os candidatos, com uso de direito de resposta.",
+      "fontes": [
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/natasha-cita-agressao-e-pivetta-e-wf-trocam-acusacoes-ao-vivo/530335",
+        "2026-10-01"
+       ],
+       [
+        "RDNews",
+        "https://www.rdnews.com.br/eleicoes-2026/pivetta-defende-gestao-em-debate-wellington-e-natasha-sobem-o-tom/249984",
+        "2026-10-01"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/politica/wellington-acusa-pivetta-de-mentir-e-desafia-governador-a-renunciar-ao-mandato/152856",
+        "2026-10-01"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/politica/natasha-cobra-wf-sobre-alianca-com-pivetta-e-leva-invertida-de-adversario/578334",
+        "2026-10-01"
+       ]
+      ]
+     },
      {
       "data": "2026-09-13",
       "fato": "A Sargento Karen Fortes foi anunciada como vice depois que o TRE-MT homologou a renúncia de Alex Pucineli.",
@@ -2199,6 +2343,32 @@
     "desenho": "Candidatura do PL alinhada à de Flávio Bolsonaro para presidente, em coligação com MDB, Novo, PRD e Solidariedade.",
     "movimentos": [
      {
+      "data": "2026-10-01",
+      "fato": "Os seis candidatos ao Governo — Otaviano Pivetta (Republicanos), Wellington Fagundes (PL), Doutora Natasha (PSD), Maurício Coelho (Mobiliza), Rafaell Milas (Missão) e Sargento Laudicério (Agir) — participaram em 1º/10, a partir das 10h30, do último debate do 1º turno, na TV Vila Real, mediado por Antônio Carlos Silva, em quatro blocos com perguntas livres entre os candidatos. Entre os temas: incentivos fiscais, infraestrutura, educação, situação fiscal do Estado e as decisões da Justiça Eleitoral sobre a propaganda; houve troca de críticas entre os candidatos, com uso de direito de resposta.",
+      "fontes": [
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/natasha-cita-agressao-e-pivetta-e-wf-trocam-acusacoes-ao-vivo/530335",
+        "2026-10-01"
+       ],
+       [
+        "RDNews",
+        "https://www.rdnews.com.br/eleicoes-2026/pivetta-defende-gestao-em-debate-wellington-e-natasha-sobem-o-tom/249984",
+        "2026-10-01"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/politica/wellington-acusa-pivetta-de-mentir-e-desafia-governador-a-renunciar-ao-mandato/152856",
+        "2026-10-01"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/politica/natasha-cobra-wf-sobre-alianca-com-pivetta-e-leva-invertida-de-adversario/578334",
+        "2026-10-01"
+       ]
+      ]
+     },
+     {
       "data": "2026-09-30",
       "fato": "Zé Medeiros (PL), candidato ao Senado na coligação de Wellington, e o 1º suplente dele, Odílio Balbinotti, participaram de caminhada de Pivetta em Rondonópolis, base eleitoral de Wellington. A única fala de Medeiros publicada: “É a Caminhada da Vitória! Caminhada de Pivetta, Zé Medeiros.” Ele segue candidato pela coligação de Wellington; até as 18h30 não havia resposta publicada de Wellington ou do PL.",
       "fontes": [
@@ -2242,37 +2412,16 @@
      },
      {
       "data": "2026-09-30",
-      "fato": "Na mesma série da Aprosoja-MT, Janaina Riva (MDB), candidata ao Senado na coligação de Wellington, disse que pretende cumprir os oito anos de mandato e que, na opinião dela, o candidato a governador nesta eleição deveria ter sido Max Russi (Podemos), presidente da Assembleia Legislativa, que “seria o nosso candidato, eventualmente, lá em 2030”. O Podemos integra a coligação de Pivetta nesta eleição, e as matérias não trazem manifestação de Max Russi sobre a fala.",
+      "fato": "Janaina Riva (MDB), candidata ao Senado na coligação de Wellington, disse em coletiva após sabatina na Aprosoja-MT ter formalizado na Polícia Federal denúncia sobre suposta oferta de R$ 7 mil para que mulheres gravassem depoimentos contra ela; segundo ela, prints, áudios e gravações foram entregues à PF. Disse que não apontaria responsáveis antes da investigação (“Está com a Polícia Federal. Não quero cometer nenhum tipo de ilação”). As matérias não trazem manifestação da PF, e nenhum adversário é nomeado.",
       "fontes": [
-       [
-        "Gazeta Digital",
-        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/janaina-promete-cumprir-mandato-no-senado-de-8-anos-e-lanca-russi-para-2030/861011",
-        "2026-09-30"
-       ],
-       [
-        "Olhar Direto",
-        "https://www.olhardireto.com.br/noticias/janaina-descarta-disputa-ao-governo-em-2030-e-lanca-max-russi-como-nome-do-grupo-para-disputar-o-paiaguas",
-        "2026-09-30"
-       ],
-       [
-        "en.com.br",
-        "https://en.com.br/janaina-promete-ficar-oito-anos-no-senado-e-cita-max-russi-como-nome-para-2030/",
-        "2026-09-30"
-       ]
-      ]
-     },
-     {
-      "data": "2026-09-29",
-      "fato": "Em vídeo, o governador de São Paulo, Tarcísio de Freitas (Republicanos), pediu votos para Zé Medeiros e Mauro Mendes ao Senado e para Pivetta ao governo; o apoio foi exibido no último programa de Medeiros na TV, em 30/9.",
-      "fontes": [
-       [
-        "RDNews",
-        "https://www.rdnews.com.br/eleicoes-2026/tarcisio-pede-votos-para-ze-medeiros-ao-senado-em-mato-grosso-video/249871",
-        "2026-09-29"
-       ],
        [
         "MidiaNews",
-        "https://www.midianews.com.br/politica/ultimo-programa-ao-senado-traz-stf-obras-de-lula-e-apoios-nacionais/530271",
+        "https://www.midianews.com.br/politica/janaina-diz-que-mulheres-receberam-oferta-de-r-7-mil-para-ataca-la/530263",
+        "2026-09-30"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/politica/janaina-denuncia-a-pf-suposta-oferta-de-r-7-mil-para-gravacoes-contra-sua-campanha/578176",
         "2026-09-30"
        ]
       ]
@@ -2830,7 +2979,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "01/10/2026 09:55",
+  "atualizado": "01/10/2026 16:40",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -2880,6 +3029,27 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-09-30",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (Pleno)",
+      "resumo": "Desdobramento da suspensão de 29/9: o Pleno do TRE-MT rejeitou, por maioria, a reclamação de Natasha contra o corregedor Marcos Machado e manteve a suspensão do programa eleitoral gratuito dela no rádio e na TV até 1º/10, fim do horário eleitoral. A defesa pedia a volta do programa para a candidata se despedir dos eleitores e questionava a atuação do corregedor, já que o tribunal tem juízes auxiliares para a propaganda. O relator, juiz-membro Eduardo Calmon de Almeida Cezar, entendeu que não houve usurpação de competência; o corregedor não participou do julgamento; o Ministério Público Eleitoral opinou pela improcedência. A coligação de Pivetta entrou como interessada e defendeu a manutenção da suspensão. As matérias não informam se cabe recurso.",
+      "cabe_recurso": null,
+      "defesa": "A defesa de Natasha sustentou risco de dano à candidatura e falta de competência do corregedor para decidir sobre a propaganda.",
+      "fontes": [
+       [
+        "RDNews",
+        "https://www.rdnews.com.br/eleicoes-2026/tre-mt-rejeita-reclamacao-de-natasha-e-mantem-propaganda-fora-do-ar/249944",
+        "2026-09-30"
+       ],
+       [
+        "Cliquef5",
+        "https://www.cliquef5.com.br/politica/tre-mt-nega-recurso-de-doutora-natasha-e-mantem-propaganda-eleitoral-fora-do-ar/422041",
+        "2026-10-01"
+       ]
+      ],
+      "papel": "contra"
+     },
      {
       "data": "2026-09-30",
       "tipo": "decisao",
@@ -3621,6 +3791,32 @@
     "itens": [
      {
       "data": "2026-09-30",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar, liminar)",
+      "resumo": "A pedido de Janaina Riva (MDB), liminar do juiz auxiliar da propaganda Marcelo Alexandre Oliveira da Silva Morgado mandou Medeiros (PL) e a coligação Coração da Gente retirarem do Instagram e do Facebook, em 2 horas após a intimação, vídeo em que o candidato afirma que adversários tentarão comprar votos e orienta o eleitor a aceitar o dinheiro oferecido e votar nele e em Flávio Bolsonaro. Em análise preliminar, o juiz entendeu que a fala vai além da crítica política, orienta o eleitor a aceitar vantagem em razão do voto e viola o art. 243, IV, do Código Eleitoral, que veda propaganda capaz de instigar desobediência coletiva à lei; destacou que a mensagem foi dirigida ao conjunto dos eleitores às vésperas do 1º turno. Fixou multa de R$ 100 mil em caso de descumprimento, sem prejuízo de posterior revisão ou majoração, e determinou que a Facebook Serviços Online do Brasil (Meta), terceira interessada, bloqueie os links em 4 horas após a intimação se não houver remoção. Segundo o Folhamax, Medeiros já apagou os vídeos. Decisão liminar, passível de revisão.",
+      "cabe_recurso": true,
+      "defesa": "As matérias não trazem manifestação de Medeiros ou da defesa.",
+      "fontes": [
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/tre-ve-estimulo-a-venda-de-votos-e-derruba-video-de-medeiros/574907",
+        "2026-09-30"
+       ],
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/tre-determina-remocao-de-video-de-medeiros-que-orienta-eleitores-a-receberem-dinheiro-por-voto",
+        "2026-10-01"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/justica/tre-manda-medeiros-apagar-video-sobre-compra-de-votos-e-fixa-multa-de-r-100-mil/578348",
+        "2026-10-01"
+       ]
+      ],
+      "papel": "pedido"
+     },
+     {
+      "data": "2026-09-30",
       "tipo": "arquivada",
       "orgao": "TRE-MT (juiz auxiliar)",
       "resumo": "O juiz auxiliar Flávio Fraga e Silva julgou improcedente o pedido de direito de resposta de Janaina Riva contra Galvan e a TV Vila Real. O pedido era sobre falas de Galvan no debate de 17/9: que ela seria \"muito amiguinha da turma\" do STF e que Alexandre de Moraes \"deu favorável para te tirar o tempo\". Para o juiz, a primeira fala é juízo de valor e crítica política. A segunda se refere ao efeito prático da decisão do STF que mudou a divisão do tempo de cerca de 60% e 40% para 50% a cada candidatura, e por isso não é falsidade verificável. O MPE também opinou pela improcedência. A decisão foi divulgada em 30/9.",
@@ -4217,6 +4413,37 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-09-30",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT (Corregedoria)",
+      "resumo": "Pedro Taques (PSB), candidato ao Senado, ajuizou em 30/9 ação de investigação judicial eleitoral (AIJE) contra Mauro Mendes (União), também candidato ao Senado, a candidata a deputada federal Virgínia Mendes (União) e os suplentes de senador Cidinho Santos e Elson Ramos, por suposto abuso de poder político e econômico. A ação trata do show \"Histórias – O Show do Século\", realizado em 26/9 na Arena Pantanal, imóvel do Estado, e produzido pela Ditado Produções, empresa de Elson Ramos, 2º suplente de Mauro: segundo a petição, o apresentador exaltou Mauro, citou os suplentes e pediu voto a Virgínia diante de cerca de 40 mil pessoas, e Virgínia teria republicado trechos nos stories. Taques pede a cassação do registro ou do diploma e a declaração de inelegibilidade dos envolvidos (sem prazo informado nas matérias), liminar que proíba propaganda eleitoral na Arena e em prédios e equipamentos públicos estaduais em favor dos representados, a preservação de vídeos e stories pela Meta, a íntegra do processo de cessão da Arena e, da produtora, o contrato com o apresentador, roteiro, gravações e documentos financeiros. A ação foi distribuída ao corregedor regional eleitoral, desembargador Marcos Machado; não há decisão.",
+      "cabe_recurso": null,
+      "defesa": "Em 29/9, Mauro disse que chegou ao evento por volta das 23h, que não pediu a fala do apresentador e não a viu (\"Eu não posso ser responsabilizado por um ato que eu não fiz e nem pedi para fazer\"); a petição reproduz essas declarações e sustenta que o candidato beneficiado responde independentemente de ter pedido o ato (Gazeta Digital, 29/9).",
+      "fontes": [
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/vgnjur/taques-pede-cassacao-de-mauro-e-virginia-por-suposto-showmicio-na-arena-pantanal/152828",
+        "2026-10-01"
+       ],
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/acao-no-tre-busca-cassacao-da-chapa-de-mauro-mendes-e-de-virginia-por-pedido-de-votos-em-show-na-arena-pantanal",
+        "2026-10-01"
+       ],
+       [
+        "Fatos de Mato Grosso",
+        "https://www.fatosdematogrosso.com.br/eleicoes/taques-acusa-showmicio-na-arena-e-pede-cassacao-de-mauro-virginia-e-suplentes/16762",
+        "2026-10-01"
+       ],
+       [
+        "Gazeta Digital (defesa de Mauro)",
+        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/mauro-nega-uso-de-megashow-promovido-pelo-suplente-para-campanha-nao-pedi/860926",
+        "2026-09-29"
+       ]
+      ],
+      "papel": "contra"
+     },
      {
       "data": "2026-09-29",
       "tipo": "decisao",
@@ -5067,6 +5294,27 @@
      ]
     },
     "itens": [
+     {
+      "data": "2026-09-30",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (Pleno)",
+      "resumo": "Desdobramento da suspensão de 29/9: o Pleno do TRE-MT rejeitou, por maioria, a reclamação de Natasha contra o corregedor Marcos Machado e manteve a suspensão do programa eleitoral gratuito dela no rádio e na TV até 1º/10, fim do horário eleitoral. A defesa pedia a volta do programa para a candidata se despedir dos eleitores e questionava a atuação do corregedor, já que o tribunal tem juízes auxiliares para a propaganda. O relator, juiz-membro Eduardo Calmon de Almeida Cezar, entendeu que não houve usurpação de competência; o corregedor não participou do julgamento; o Ministério Público Eleitoral opinou pela improcedência. A coligação de Pivetta entrou como interessada e defendeu a manutenção da suspensão. As matérias não informam se cabe recurso.",
+      "cabe_recurso": null,
+      "defesa": "A defesa de Natasha sustentou risco de dano à candidatura e falta de competência do corregedor para decidir sobre a propaganda.",
+      "fontes": [
+       [
+        "RDNews",
+        "https://www.rdnews.com.br/eleicoes-2026/tre-mt-rejeita-reclamacao-de-natasha-e-mantem-propaganda-fora-do-ar/249944",
+        "2026-09-30"
+       ],
+       [
+        "Cliquef5",
+        "https://www.cliquef5.com.br/politica/tre-mt-nega-recurso-de-doutora-natasha-e-mantem-propaganda-eleitoral-fora-do-ar/422041",
+        "2026-10-01"
+       ]
+      ],
+      "papel": "favor"
+     },
      {
       "data": "2026-09-29",
       "tipo": "acao_em_andamento",
@@ -5991,6 +6239,37 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-09-30",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT (Corregedoria)",
+      "resumo": "Pedro Taques (PSB), candidato ao Senado, ajuizou em 30/9 ação de investigação judicial eleitoral (AIJE) contra Mauro Mendes (União), também candidato ao Senado, a candidata a deputada federal Virgínia Mendes (União) e os suplentes de senador Cidinho Santos e Elson Ramos, por suposto abuso de poder político e econômico. A ação trata do show \"Histórias – O Show do Século\", realizado em 26/9 na Arena Pantanal, imóvel do Estado, e produzido pela Ditado Produções, empresa de Elson Ramos, 2º suplente de Mauro: segundo a petição, o apresentador exaltou Mauro, citou os suplentes e pediu voto a Virgínia diante de cerca de 40 mil pessoas, e Virgínia teria republicado trechos nos stories. Taques pede a cassação do registro ou do diploma e a declaração de inelegibilidade dos envolvidos (sem prazo informado nas matérias), liminar que proíba propaganda eleitoral na Arena e em prédios e equipamentos públicos estaduais em favor dos representados, a preservação de vídeos e stories pela Meta, a íntegra do processo de cessão da Arena e, da produtora, o contrato com o apresentador, roteiro, gravações e documentos financeiros. A ação foi distribuída ao corregedor regional eleitoral, desembargador Marcos Machado; não há decisão.",
+      "cabe_recurso": null,
+      "defesa": "Em 29/9, Mauro disse que chegou ao evento por volta das 23h, que não pediu a fala do apresentador e não a viu (\"Eu não posso ser responsabilizado por um ato que eu não fiz e nem pedi para fazer\"); a petição reproduz essas declarações e sustenta que o candidato beneficiado responde independentemente de ter pedido o ato (Gazeta Digital, 29/9).",
+      "fontes": [
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/vgnjur/taques-pede-cassacao-de-mauro-e-virginia-por-suposto-showmicio-na-arena-pantanal/152828",
+        "2026-10-01"
+       ],
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/acao-no-tre-busca-cassacao-da-chapa-de-mauro-mendes-e-de-virginia-por-pedido-de-votos-em-show-na-arena-pantanal",
+        "2026-10-01"
+       ],
+       [
+        "Fatos de Mato Grosso",
+        "https://www.fatosdematogrosso.com.br/eleicoes/taques-acusa-showmicio-na-arena-e-pede-cassacao-de-mauro-virginia-e-suplentes/16762",
+        "2026-10-01"
+       ],
+       [
+        "Gazeta Digital (defesa de Mauro)",
+        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/mauro-nega-uso-de-megashow-promovido-pelo-suplente-para-campanha-nao-pedi/860926",
+        "2026-09-29"
+       ]
+      ],
+      "papel": "pedido"
+     },
      {
       "data": "2026-09-30",
       "tipo": "decisao",
@@ -7760,6 +8039,32 @@
       "data": "2026-09-30",
       "tipo": "decisao",
       "orgao": "TRE-MT (juiz auxiliar, liminar)",
+      "resumo": "A pedido de Janaina Riva (MDB), liminar do juiz auxiliar da propaganda Marcelo Alexandre Oliveira da Silva Morgado mandou Medeiros (PL) e a coligação Coração da Gente retirarem do Instagram e do Facebook, em 2 horas após a intimação, vídeo em que o candidato afirma que adversários tentarão comprar votos e orienta o eleitor a aceitar o dinheiro oferecido e votar nele e em Flávio Bolsonaro. Em análise preliminar, o juiz entendeu que a fala vai além da crítica política, orienta o eleitor a aceitar vantagem em razão do voto e viola o art. 243, IV, do Código Eleitoral, que veda propaganda capaz de instigar desobediência coletiva à lei; destacou que a mensagem foi dirigida ao conjunto dos eleitores às vésperas do 1º turno. Fixou multa de R$ 100 mil em caso de descumprimento, sem prejuízo de posterior revisão ou majoração, e determinou que a Facebook Serviços Online do Brasil (Meta), terceira interessada, bloqueie os links em 4 horas após a intimação se não houver remoção. Segundo o Folhamax, Medeiros já apagou os vídeos. Decisão liminar, passível de revisão.",
+      "cabe_recurso": true,
+      "defesa": "As matérias não trazem manifestação de Medeiros ou da defesa.",
+      "fontes": [
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/tre-ve-estimulo-a-venda-de-votos-e-derruba-video-de-medeiros/574907",
+        "2026-09-30"
+       ],
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/tre-determina-remocao-de-video-de-medeiros-que-orienta-eleitores-a-receberem-dinheiro-por-voto",
+        "2026-10-01"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/justica/tre-manda-medeiros-apagar-video-sobre-compra-de-votos-e-fixa-multa-de-r-100-mil/578348",
+        "2026-10-01"
+       ]
+      ],
+      "papel": "contra"
+     },
+     {
+      "data": "2026-09-30",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar, liminar)",
       "resumo": "A pedido de Janaina Riva, liminar do juiz auxiliar Flávio Fraga e Silva mandou Medeiros retirar em 3 horas vídeo publicado no Instagram em 28/9 que atribuía a candidatura de Janaina a uma articulação dos ministros do STF Gilmar Mendes e Alexandre de Moraes, sob multa de R$ 5 mil por hora de atraso (limitada a R$ 100 mil); se ele não o fizer, a Meta deve tirar a publicação do ar em 6 horas. Medeiros também fica proibido, até o fim da eleição, de publicar ou impulsionar conteúdo que afirme ou sugira que a candidatura dela foi articulada ou patrocinada por ministros do STF, sob multa de R$ 30 mil por publicação. O juiz citou decisões anteriores sobre o mesmo tema, das quais Medeiros foi intimado em 24 e 25/9, e negou a proibição genérica de manifestações futuras.",
       "cabe_recurso": true,
       "defesa": null,
@@ -8366,7 +8671,7 @@
   ]
  },
  "analise": {
-  "atualizado": "30/09/2026 14:03",
+  "atualizado": "01/10/2026 16:40",
   "candidatos": [
    {
     "nome": "Doutora Natasha",
@@ -8375,7 +8680,7 @@
     "numero": 55,
     "fortes": [
      [
-      "Terceira colocada em todas as seis pesquisas registradas, com 11% (Quaest) a 23,2% (AtlasIntel) no 1º turno.",
+      "Terceira colocada em todas as sete pesquisas registradas, com 9% (Povo e Poder) a 23,2% (AtlasIntel) no 1º turno.",
       [
        [
         "g1 MT (Quaest)",
@@ -8388,6 +8693,10 @@
        [
         "Metrópoles (Paraná Pesquisas)",
         "https://www.metropoles.com/brasil/parana-pesquisa-pivetta-lidera-em-mato-grosso-seguido-por-fagundes"
+       ],
+       [
+        "Folhamax (Povo e Poder)",
+        "https://www.folhamax.com/politica/pesquisa-mostra-wellington-liderando-disputa/575061"
        ]
       ]
      ],
@@ -8496,7 +8805,7 @@
     ],
     "fracos": [
      [
-      "Tem de 0,4% a 2% nas pesquisas registradas.",
+      "Tem de 0% (não citado na Povo e Poder) a 2% nas pesquisas registradas.",
       [
        [
         "Paraná Pesquisas (Paraná Pesquisas)",
@@ -8505,6 +8814,10 @@
        [
         "g1 MT (Quaest)",
         "https://g1.globo.com/mt/mato-grosso/eleicoes/2026/noticia/2026/09/25/quaest-mt-governador-25-setembro.ghtml"
+       ],
+       [
+        "Folhamax (Povo e Poder)",
+        "https://www.folhamax.com/politica/pesquisa-mostra-wellington-liderando-disputa/575061"
        ]
       ]
      ],
@@ -8539,7 +8852,7 @@
     "numero": 10,
     "fortes": [
      [
-      "À frente no 1º turno em cinco das seis pesquisas registradas: Paraná Pesquisas (46,4% em 27 a 29/9, 51,6% dos válidos), MT Dados (34%) e Quaest (29%, em empate técnico).",
+      "À frente no 1º turno em cinco das sete pesquisas registradas: Paraná Pesquisas (46,4% em 27 a 29/9, 51,6% dos válidos), MT Dados (34%) e Quaest (29%, em empate técnico).",
       [
        [
         "Paraná Pesquisas (Paraná Pesquisas)",
@@ -8560,6 +8873,10 @@
        [
         "Gazeta do Povo (Paraná Pesquisas)",
         "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-mato-grosso-setembro-2026-2/"
+       ],
+       [
+        "Folhamax (Povo e Poder)",
+        "https://www.folhamax.com/politica/pesquisa-mostra-wellington-liderando-disputa/575061"
        ]
       ]
      ],
@@ -8588,7 +8905,7 @@
     ],
     "fracos": [
      [
-      "Aparece atrás de Wellington no 2º turno em duas pesquisas, Quaest (36% a 41%) e AtlasIntel (36,9% a 40,4%), ambas em empate técnico.",
+      "Aparece atrás de Wellington no 2º turno em três pesquisas, Quaest (36% a 41%), AtlasIntel (36,9% a 40,4%) e Povo e Poder (31,5% a 35,6%), todas em empate técnico.",
       [
        [
         "g1 MT (Quaest)",
@@ -8597,6 +8914,10 @@
        [
         "Gazeta do Povo (AtlasIntel)",
         "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-governador-mato-grosso-setembro-2026/"
+       ],
+       [
+        "Folhamax (Povo e Poder)",
+        "https://www.folhamax.com/politica/pesquisa-mostra-wellington-liderando-disputa/575061"
        ]
       ]
      ],
@@ -8803,7 +9124,7 @@
     "numero": 22,
     "fortes": [
      [
-      "À frente na AtlasIntel (34,4% a 30,8%) e vence os 2º turnos simulados da Quaest (41% a 36%) e da AtlasIntel (40,4% a 36,9%), em empate técnico.",
+      "À frente na AtlasIntel (34,4% a 30,8%) e na Povo e Poder (31,8% a 30,7%), em empate técnico, e vence os 2º turnos simulados da Quaest (41% a 36%), da AtlasIntel (40,4% a 36,9%) e da Povo e Poder (35,6% a 31,5%), também em empate técnico.",
       [
        [
         "Gazeta do Povo (AtlasIntel)",
@@ -8812,6 +9133,10 @@
        [
         "g1 MT (Quaest)",
         "https://g1.globo.com/mt/mato-grosso/eleicoes/2026/noticia/2026/09/25/quaest-mt-governador-25-setembro.ghtml"
+       ],
+       [
+        "Folhamax (Povo e Poder)",
+        "https://www.folhamax.com/politica/pesquisa-mostra-wellington-liderando-disputa/575061"
        ]
       ]
      ],
