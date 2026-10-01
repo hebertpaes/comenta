@@ -1,5 +1,5 @@
 {
- "_comentario": "Monitor das Câmaras Municipais de Sorriso (sorriso.mt.leg.br) e Lucas do Rio Verde (camaralucasdorioverde.mt.gov.br); rotina em backup/rotinas.json. Nenhuma tem RSS: o leitor camaras-mt.mjs lê a lista de notícias e o RSS do YouTube de cada Câmara. 'vistos' guarda o que já foi avaliado; `node camaras-mt.mjs` lista os novos e `--marcar` grava.",
+ "_comentario": "Monitor das Câmaras Municipais de Sorriso (sorriso.mt.leg.br), Lucas do Rio Verde (camaralucasdorioverde.mt.gov.br) e Chapada dos Guimarães (camarachapadadosguimaraes.mt.gov.br); rotina em backup/rotinas.json. Nenhuma tem RSS: o leitor camaras-mt.mjs lê a lista de notícias e o RSS do YouTube de cada Câmara. 'vistos' guarda o que já foi avaliado; `node camaras-mt.mjs` lista os novos e `--marcar` grava.",
  "camaras": {
   "sorriso": {
    "site": "https://sorriso.mt.leg.br",
@@ -17,6 +17,17 @@
     "https://www.instagram.com/camaralucasdorioverde/",
     "https://www.facebook.com/camaralucasdorioverde/"
    ]
+  },
+  "chapada": {
+   "site": "https://www.camarachapadadosguimaraes.mt.gov.br",
+   "site_status_2026-10-01": "verificação anti-robô e conexão derrubada neste ambiente; não contornar",
+   "youtube": [
+    "UCuvSvovy7SDpHHLScxxSjhw (@camaramunicipalchapada; um vídeo de 03/2026 sobre VPN destoa do canal: possível invasão ou desvio; conferir)",
+    "UCFkqY6WaArTS7R-31O6MdsA (@CamaraMunicipaldeChapada, TV Câmara)"
+   ],
+   "sapl": "https://sapl.chapadadosguimaraes.mt.leg.br (API aberta, mas sem matérias nem sessões cadastradas em 01/10/2026)",
+   "imprensa": "Alô Chapada (alochapada.com.br, bloqueia este ambiente), Muvuca Popular, GC Notícias, Olhar Direto",
+   "contexto": "sessão ordinária de 30/09/2026 adiada para 06/10 (Ato Legislativo nº 021/2026: proximidade da eleição e nenhuma matéria a deliberar), segundo o Alô Chapada; presidente da Câmara em 2025: Zé Otávio; prefeito Osmar Froner"
   }
  },
  "pautas": [
@@ -281,7 +292,139 @@
   "sorriso:yt:VJzTmL-Atz8": {
    "titulo": "27ª Sessão Ordinária 21-08-26",
    "data": "2026-08-22"
+  },
+  "chapada:gn:câmara de chapada adia sessão ordinária de 30 de setembro para outubro": {
+   "titulo": "Câmara de Chapada adia sessão ordinária de 30 de setembro para outubro - Alochapada",
+   "data": "2026-09-29"
+  },
+  "chapada:gn:feminicida que matou ex-esposa em 2020 é preso em chácara de chapada dos guimarães": {
+   "titulo": "Feminicida que matou ex-esposa em 2020 é preso em chácara de Chapada dos Guimarães - Olhar Direto",
+   "data": "2026-09-29"
+  },
+  "chapada:gn:termômetro de peixaria marca 42°c em chapada dos guimarães durante onda de calor": {
+   "titulo": "Termômetro de peixaria marca 42°C em Chapada dos Guimarães durante onda de calor - Olhar Direto",
+   "data": "2026-09-28"
+  },
+  "chapada:yt:tj3t-I9DOh8": {
+   "titulo": "How To Download VyprVPN? Overview software",
+   "data": "2026-03-09"
+  },
+  "chapada:yt:AcuhAsqan1A": {
+   "titulo": "Presidente da Câmara, vereador Zé Otávio, fala na última Sessão de 2025",
+   "data": "2025-12-23"
+  },
+  "chapada:yt:J0QClGMH4cA": {
+   "titulo": "Sessão Extraordinária 22-12-2025 da 𝐂â𝐦𝐚𝐫𝐚 𝐌𝐮𝐧𝐢𝐜𝐢𝐩𝐚𝐥 𝐝𝐞 𝐂𝐡𝐚𝐩𝐚𝐝𝐚 𝐝𝐨𝐬 𝐆𝐮𝐢𝐦𝐚𝐫ã𝐞𝐬",
+   "data": "2025-12-22"
+  },
+  "chapada:yt:LYMf4-AI6mU": {
+   "titulo": "Sessão Ordinária 18-12-2025 da 𝐂â𝐦𝐚𝐫𝐚 𝐌𝐮𝐧𝐢𝐜𝐢𝐩𝐚𝐥 𝐝𝐞 𝐂𝐡𝐚𝐩𝐚𝐝𝐚 𝐝𝐨𝐬 𝐆𝐮𝐢𝐦𝐚𝐫ã𝐞𝐬",
+   "data": "2025-12-19"
+  },
+  "chapada:yt:onuF3ZyHmQM": {
+   "titulo": "Sessão Extraordinária 16-12-2025 da 𝐂â𝐦𝐚𝐫𝐚 𝐌𝐮𝐧𝐢𝐜𝐢𝐩𝐚𝐥 𝐝𝐞 𝐂𝐡𝐚𝐩𝐚𝐝𝐚 𝐝𝐨𝐬 𝐆𝐮𝐢𝐦𝐚𝐫ã𝐞𝐬",
+   "data": "2025-12-16"
+  },
+  "chapada:yt:SthPHkAu9F0": {
+   "titulo": "Câmara Cast | Episódio 19 - Bate-papo com Rafael Nilo, vereador de Chapada dos Guimarães",
+   "data": "2025-12-16"
+  },
+  "chapada:yt:xYWMO0C0U3o": {
+   "titulo": "Câmara Cast | Episódio 18 - Bate-papo com Carlinhos, vice-prefeito de Chapada dos Guimarães",
+   "data": "2025-12-11"
+  },
+  "chapada:yt:E97ezuZ_U0c": {
+   "titulo": "Sessão Ordinária--10-12-2025 da 𝐂â𝐦𝐚𝐫𝐚 𝐌𝐮𝐧𝐢𝐜𝐢𝐩𝐚𝐥 𝐝𝐞 𝐂𝐡𝐚𝐩𝐚𝐝𝐚 𝐝𝐨𝐬 𝐆𝐮𝐢𝐦𝐚𝐫ã𝐞𝐬",
+   "data": "2025-12-11"
+  },
+  "chapada:yt:GB5nI_e4q_w": {
+   "titulo": "Sessão Ordinária--10-12-2025 da 𝐂â𝐦𝐚𝐫𝐚 𝐌𝐮𝐧𝐢𝐜𝐢𝐩𝐚𝐥 𝐝𝐞 𝐂𝐡𝐚𝐩𝐚𝐝𝐚 𝐝𝐨𝐬 𝐆𝐮𝐢𝐦𝐚𝐫ã𝐞𝐬",
+   "data": "2025-12-11"
+  },
+  "chapada:yt:i8CLJ7gyIUs": {
+   "titulo": "Sessão Ordinária--01-12-2025 da 𝐂â𝐦𝐚𝐫𝐚 𝐌𝐮𝐧𝐢𝐜𝐢𝐩𝐚𝐥 𝐝𝐞 𝐂𝐡𝐚𝐩𝐚𝐝𝐚 𝐝𝐨𝐬 𝐆𝐮𝐢𝐦𝐚𝐫ã𝐞𝐬",
+   "data": "2025-12-02"
+  },
+  "chapada:yt:1gkWVD2y0wE": {
+   "titulo": "Servidores da Sejus-MT e barbeiros voluntários recebem Moção de Aplauso na Sessão da Câmara",
+   "data": "2025-12-01"
+  },
+  "chapada:yt:M8FARzKic54": {
+   "titulo": "Veja como foi a Sessão Itinerante na comunidade Rio da Casca",
+   "data": "2025-11-21"
+  },
+  "chapada:yt:N6a5xpbjuNI": {
+   "titulo": "Sessão Itinerante -RIO DA CASCA --19-11-2025 da 𝐂â𝐦𝐚𝐫𝐚 𝐌𝐮𝐧𝐢𝐜𝐢𝐩𝐚𝐥 𝐝𝐞 𝐂𝐡𝐚𝐩𝐚𝐝𝐚 𝐝𝐨𝐬 𝐆𝐮𝐢𝐦𝐚𝐫ã𝐞𝐬",
+   "data": "2025-11-19"
+  },
+  "chapada:yt:Lz_2P7MHLRk": {
+   "titulo": "Próxima Sessão Itinerante acontece na comunidade Rio da Casca dia 19 de novembro",
+   "data": "2025-11-10"
+  },
+  "chapada:yt:OFfyGc-e63Q": {
+   "titulo": "Câmara entrega Moção de Aplausos para competidores de prova do tambor",
+   "data": "2025-11-10"
+  },
+  "chapada:yt:PaRXxOOc0kg": {
+   "titulo": "SESSÃO ORDINÁRIA DE 30 DE ABRIL DE 2024  -  CÂMARA MUNICIPAL",
+   "data": "2024-05-01"
+  },
+  "chapada:yt:MfEAeXjpVL4": {
+   "titulo": "SESSÃO ORDINÁRIA DE 22 DE ABRIL DE 2024  -  CÂMARA MUNICIPAL",
+   "data": "2024-04-23"
+  },
+  "chapada:yt:o5GoPnUECfM": {
+   "titulo": "SESSÃO ORDINÁRIA DE 11 MARÇO DE 2024  -  CÂMARA MUNICIPAL",
+   "data": "2024-03-12"
+  },
+  "chapada:yt:PYi8fXULKhQ": {
+   "titulo": "SESSÃO ORDINÁRIA DE 29 FEVEREIRO DE 2024  -  CÂMARA MUNICIPAL",
+   "data": "2024-03-01"
+  },
+  "chapada:yt:ZZPDWn_vCXc": {
+   "titulo": "SESSÃO EXTRAORDINÁRIA DE 28 FEVEREIRO DE 2024  -  CÂMARA MUNICIPAL",
+   "data": "2024-02-29"
+  },
+  "chapada:yt:OGC03CxxV6o": {
+   "titulo": "SESSÃO ORDINÁRIA DE 20 FEVEREIRO DE 2024  -  CÂMARA MUNICIPAL",
+   "data": "2024-02-21"
+  },
+  "chapada:yt:KBmYFXT7Wgw": {
+   "titulo": "SESSÃO ORDINÁRIA DE 09 FEVEREIRO DE 2024  -  CÂMARA MUNICIPAL",
+   "data": "2024-02-10"
+  },
+  "chapada:yt:IUa6haK2sIc": {
+   "titulo": "SESSÃO SOLENE INAUGURAL 02 DE FEVEREIRO DE 2024  -  CÂMARA MUNICIPAL",
+   "data": "2024-02-03"
+  },
+  "chapada:yt:EJjUvfzGknM": {
+   "titulo": "SESSÃO EXTRAORDINÁRIA 21 DE DEZEMBRO DE 2023  -  (PERIODO VESPERTINO) CÂMARA MUNICIPAL",
+   "data": "2023-12-22"
+  },
+  "chapada:yt:Nw0kNT0HjBY": {
+   "titulo": "SESSÃO EXTRAORDINÁRIA 21 DE DEZEMBRO DE 2023  -  (PERIODO MATUTINO) CÂMARA MUNICIPAL",
+   "data": "2023-12-21"
+  },
+  "chapada:yt:JraJ5gJCzPQ": {
+   "titulo": "SESSÃO EXTRAORDINÁRIA 20 DE DEZEMBRO DE 2023  -  (PERIODO NOTURNO) CÂMARA MUNICIPAL",
+   "data": "2023-12-21"
+  },
+  "chapada:yt:6V5QmGVftIY": {
+   "titulo": "SESSÃO ORDINÁRIA 20 DE DEZEMBRO DE 2023  - CÂMARA MUNICIPAL CHAPADA DOS GUIMARÃES",
+   "data": "2023-12-20"
+  },
+  "chapada:yt:VtmIJfCIKzg": {
+   "titulo": "SESSÃO EXTRAORDINÁRIA 20 DE DEZEMBRO DE 2023 (PERIODO VESPERTINO) - CÂMARA MUNICIPAL CHAPADA",
+   "data": "2023-12-20"
+  },
+  "chapada:yt:pOjGmnjsZw8": {
+   "titulo": "SESSÃO EXTRAORDINÁRIA 20 DE DEZEMBRO DE 2023 - CÂMARA MUNICIPAL CHAPADA DOS GUIMARÃES",
+   "data": "2023-12-20"
+  },
+  "chapada:yt:h6cMuTEWNzE": {
+   "titulo": "SESSÃO EXTRAORDINÁRIA 19 DE DEZEMBRO DE 2023 - CÂMARA MUNICIPAL CHAPADA DOS GUIMARÃES",
+   "data": "2023-12-20"
   }
  },
- "ultima_checagem": "2026-10-01T12:42:17.134Z"
+ "ultima_checagem": "2026-10-01T13:39:13.448Z"
 }

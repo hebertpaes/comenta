@@ -6,7 +6,7 @@
 // Cuiabá, camara-cuiaba.mjs.
 //
 //   node camaras-mt.mjs                       novos desde pautas/camaras-mt/monitor.json
-//   node camaras-mt.mjs --camara=sorriso      só uma (sorriso | lrv)
+//   node camaras-mt.mjs --camara=sorriso      só uma (sorriso | lrv | chapada)
 //   node camaras-mt.mjs --textos              inclui o começo do texto das notícias novas
 //   node camaras-mt.mjs --marcar              grava os novos como vistos
 //   node camaras-mt.mjs --texto=<url>         imprime o texto de uma notícia
@@ -24,6 +24,12 @@ const pega = async (url) => { const r = await fetch(url, { headers: { "user-agen
 const absoluta = (base, u) => new URL(u, base).toString();
 
 const CAMARAS = {
+  chapada: {
+    nome: "Câmara de Chapada dos Guimarães", youtube: ["UCuvSvovy7SDpHHLScxxSjhw", "UCFkqY6WaArTS7R-31O6MdsA"],
+    lista: null, // o site (camarachapadadosguimaraes.mt.gov.br) pede verificação anti-robô e derruba a conexão deste ambiente; não contornar
+    gnews: ['"Câmara de Chapada dos Guimarães" when:3d', 'Chapada dos Guimarães vereadores Câmara Municipal when:3d'],
+    extras: ["Site oficial: https://www.camarachapadadosguimaraes.mt.gov.br (bloqueio anti-robô: não contornar; se um dia abrir, ler Imprensa/Noticias)", "SAPL (matérias, sessões e pautas; hoje praticamente vazio): https://sapl.chapadadosguimaraes.mt.leg.br", "YouTube: @camaramunicipalchapada e @CamaraMunicipaldeChapada (TV Câmara)", "Sessão ordinária de 30/09 adiada para 06/10 (Ato Legislativo nº 021/2026), segundo o Alô Chapada"],
+  },
   sorriso: {
     nome: "Câmara de Sorriso", youtube: "UCxB83MjthQzTscHkE4vX1mA",
     lista: "https://sorriso.mt.leg.br/noticias",
@@ -74,14 +80,29 @@ const quais = args.camara ? [String(args.camara)] : Object.keys(CAMARAS);
 const todos = [];
 for (const k of quais) {
   const c = CAMARAS[k]; if (!c) { console.log("câmara desconhecida: " + k); continue; }
-  try { for (const i of c.extrair(await pega(c.lista), c.lista)) todos.push({ ...i, camara: k, fonte: c.nome, id: `${k}:${i.url}` }); } catch (e) { console.log(`(${c.nome}: site indisponível — ${e.message})`); }
-  try {
-    const x = await pega(`https://www.youtube.com/feeds/videos.xml?channel_id=${c.youtube}`);
-    for (const e of x.matchAll(/<entry>([\s\S]*?)<\/entry>/g)) {
-      const id = (e[1].match(/<yt:videoId>(.*?)<\/yt:videoId>/) || [])[1];
-      todos.push({ camara: k, fonte: c.nome + " (YouTube)", id: `${k}:yt:${id}`, url: `https://www.youtube.com/watch?v=${id}`, data: ((e[1].match(/<published>(.*?)<\/published>/) || [])[1] || "").slice(0, 10), categoria: "vídeo", titulo: ent((e[1].match(/<title>([\s\S]*?)<\/title>/) || [])[1] || "") });
-    }
-  } catch (e) { console.log(`(${c.nome}: YouTube indisponível — ${e.message})`); }
+  if (c.lista) { try { for (const i of c.extrair(await pega(c.lista), c.lista)) todos.push({ ...i, camara: k, fonte: c.nome, id: `${k}:${i.url}` }); } catch (e) { console.log(`(${c.nome}: site indisponível — ${e.message})`); } }
+  for (const yt of [].concat(c.youtube)) {
+    try {
+      const x = await pega(`https://www.youtube.com/feeds/videos.xml?channel_id=${yt}`);
+      for (const e of x.matchAll(/<entry>([\s\S]*?)<\/entry>/g)) {
+        const id = (e[1].match(/<yt:videoId>(.*?)<\/yt:videoId>/) || [])[1];
+        if (todos.some((t) => t.id === `${k}:yt:${id}`)) continue;
+        todos.push({ camara: k, fonte: c.nome + " (YouTube)", id: `${k}:yt:${id}`, url: `https://www.youtube.com/watch?v=${id}`, data: ((e[1].match(/<published>(.*?)<\/published>/) || [])[1] || "").slice(0, 10), categoria: "vídeo", titulo: ent((e[1].match(/<title>([\s\S]*?)<\/title>/) || [])[1] || "") });
+      }
+    } catch (e) { console.log(`(${c.nome}: YouTube indisponível — ${e.message})`); }
+  }
+  for (const q of c.gnews || []) {
+    try {
+      const x = await pega(`https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=pt-BR&gl=BR&ceid=BR:pt-419`);
+      for (const it of x.matchAll(/<item>([\s\S]*?)<\/item>/g)) {
+        const titulo = ent((it[1].match(/<title>([\s\S]*?)<\/title>/) || [])[1] || "");
+        const url = ent((it[1].match(/<link>([\s\S]*?)<\/link>/) || [])[1] || "");
+        const data = new Date((it[1].match(/<pubDate>(.*?)<\/pubDate>/) || [])[1] || 0).toISOString().slice(0, 10);
+        const id = `${k}:gn:` + titulo.toLowerCase().replace(/\s+-\s+[^-]+$/, "").slice(0, 90);
+        if (!todos.some((t) => t.id === id)) todos.push({ camara: k, fonte: c.nome + " (imprensa)", id, url, data, categoria: "imprensa", titulo });
+      }
+    } catch (e) { console.log(`(${c.nome}: Google Notícias indisponível — ${e.message})`); }
+  }
 }
 todos.sort((a, b) => (b.data || "").localeCompare(a.data || ""));
 const novos = args.todas ? todos : todos.filter((i) => !mon.vistos[i.id]);
