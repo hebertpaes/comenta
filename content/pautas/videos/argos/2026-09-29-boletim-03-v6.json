@@ -1,0 +1,137 @@
+{
+  "spec": "/home/user/comenta/content/pautas/videos/argos/2026-09-29-boletim-03.cena.json",
+  "saida": "/home/user/comenta/content/pautas/videos/argos/2026-09-29-boletim-03-v6.mp4",
+  "gerado_em": "2026-10-02T13:14:45.215Z",
+  "duracao": 100.32,
+  "duracao_total": 100.32,
+  "limite_duracao": 120,
+  "resolucao": "1080x1920",
+  "fps": 25,
+  "universo": "Slides escuros com ondas e curvas de nível verdes (estilo visual do vídeo de referência indicado pelo editor), sem avatar",
+  "trilha": null,
+  "credito_musica": null,
+  "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-AntonioNeural",
+    "velocidade": "+18%",
+    "personagem": null,
+    "tom": "+4Hz",
+    "reserva": {
+      "motor": "kokoro",
+      "narrador": "pm_alex",
+      "velocidade": 1.18,
+      "tom": 2,
+      "tratamento": "limpo",
+      "fonetica": "misaki",
+      "sotaque": "cuiabano"
+    }
+  },
+  "abertura": {
+    "duracao": 2.5
+  },
+  "cenas": [
+    {
+      "n": 1,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 2.5,
+      "duracao_audio": 6.57,
+      "duracao": 7.02
+    },
+    {
+      "n": 2,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 9.52,
+      "duracao_audio": 8.44,
+      "duracao": 8.89
+    },
+    {
+      "n": 3,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 18.41,
+      "duracao_audio": 7.36,
+      "duracao": 7.81
+    },
+    {
+      "n": 4,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "pan-dir",
+      "inicio": 26.22,
+      "duracao_audio": 4.27,
+      "duracao": 4.72
+    },
+    {
+      "n": 5,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 30.94,
+      "duracao_audio": 11.97,
+      "duracao": 12.42
+    },
+    {
+      "n": 6,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 43.36,
+      "duracao_audio": 7.56,
+      "duracao": 8.01
+    },
+    {
+      "n": 7,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "pan-esq",
+      "inicio": 51.37,
+      "duracao_audio": 10.68,
+      "duracao": 11.13
+    },
+    {
+      "n": 8,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 62.5,
+      "duracao_audio": 5.25,
+      "duracao": 5.7
+    },
+    {
+      "n": 9,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "parado",
+      "inicio": 68.2,
+      "duracao_audio": 9.62,
+      "duracao": 10.07
+    },
+    {
+      "n": 10,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 78.27,
+      "duracao_audio": 8.61,
+      "duracao": 9.06
+    },
+    {
+      "n": 11,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 87.33,
+      "duracao_audio": 9.43,
+      "duracao": 9.88
+    }
+  ],
+  "fechamento": {
+    "inicio": 97.21,
+    "duracao": 3
+  }
+}
