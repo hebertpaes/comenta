@@ -1,5 +1,5 @@
 {
- "atualizado": "01/10/2026 23:44",
+ "atualizado": "02/10/2026 01:43",
  "redes": {
   "Maurício Coelho": [
    [
@@ -1880,7 +1880,7 @@
   ]
  },
  "grupos": {
-  "atualizado": "01/10/2026 23:44",
+  "atualizado": "02/10/2026 01:43",
   "grupos": [
    {
     "governador": "Doutora Natasha",
@@ -2079,6 +2079,22 @@
     "movimentos": [
      {
       "data": "2026-10-01",
+      "fato": "A ex-prefeita de Sinop Rosana Martinelli, filiada ao MDB (partido da coligação de Wellington) e com passagem pelo Senado, declarou apoio a Margareth Buzetti (PP), candidata ao Senado na coligação de Pivetta. Segundo as matérias, Rosana chegou a trabalhar uma candidatura à Câmara dos Deputados, que não avançou por falta de chapa federal do partido.",
+      "fontes": [
+       [
+        "O Documento",
+        "https://odocumento.com.br/rosana-martinelli-declara-apoio-a-margareth-buzetti-e-reforca-candidatura-no-norte-de-mt/",
+        "2026-10-01"
+       ],
+       [
+        "Noveen",
+        "https://www.noveen.com.br/politica/politica-mt/rosana-martinelli-declara-apoio-a-margareth-buzetti-e-reforca-candidatura-no-norte-de-mato-grosso/47451",
+        "2026-10-01"
+       ]
+      ]
+     },
+     {
+      "data": "2026-10-01",
       "fato": "Os seis candidatos ao Governo — Otaviano Pivetta (Republicanos), Wellington Fagundes (PL), Doutora Natasha (PSD), Maurício Coelho (Mobiliza), Rafaell Milas (Missão) e Sargento Laudicério (Agir) — participaram em 1º/10, a partir das 10h30, do último debate do 1º turno, na TV Vila Real, mediado por Antônio Carlos Silva, em quatro blocos com perguntas livres entre os candidatos. Entre os temas: incentivos fiscais, infraestrutura, educação, situação fiscal do Estado e as decisões da Justiça Eleitoral sobre a propaganda; houve troca de críticas entre os candidatos, com uso de direito de resposta.",
       "fontes": [
        [
@@ -2152,22 +2168,6 @@
         "Muvuca Popular",
         "https://www.muvucapopular.com.br/2026/09/30/galvan-revela-que-foi-procurado-para-desistir-da-eleicao-ao-senado-mas-diz-que-nao-vai-recuar-nem-um-milimetro/",
         "2026-09-30"
-       ]
-      ]
-     },
-     {
-      "data": "2026-09-29",
-      "fato": "Mauro Mendes (União), candidato ao Senado na coligação de Pivetta, confirmou em coletiva após sabatina da Aprosoja-MT que o senador Rogério Marinho (PL-RN), coordenador da campanha de Flávio Bolsonaro, lhe telefonou na semana anterior dizendo que precisaria reforçar a equipe num eventual 2º turno; disse não ter respondido (“não disse nem sim nem não”) e que, se o convite vier após o 1º turno, “muito provavelmente” vai ajudar. Negou que a ligação tenha tratado de ministério.",
-      "fontes": [
-       [
-        "MidiaNews",
-        "https://www.midianews.com.br/politica/mendes-admite-atuar-em-campanha-de-flavio-no-2-turno-provavel/530309",
-        "2026-10-01"
-       ],
-       [
-        "RepórterMT",
-        "https://www.reportermt.com/politica/mauro-mendes-nega-que-tenha-sido-convidado-para-ser-ministro-de-flavio-bolsonaro/244338",
-        "2026-09-29"
        ]
       ]
      }
