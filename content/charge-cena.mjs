@@ -497,6 +497,11 @@ const PRONUNCIA_EDGE = [
   [/\bHOJE MT\b/g, "Hoje ême tê"],
   [/\bTRE\b/g, "tê érre é"],
   [/\bJanaina\b/g, "Janaína"],
+  // Boletim nº 5 (02/10): sem pausa, "Riva e Zé" emenda e soa "Rivas é" na
+  // transcrição; a vírgula só na síntese separa o nome (o texto não muda).
+  [/\bRiva e Zé Medeiros/g, "Riva, e Zé Medeiros"],
+  // Boletim nº 5 (02/10): "não fez nem pediu o ato" saía como "nem pedir o ato".
+  [/\bnão fez nem pediu\b/g, "não fez, nem pediu,"],
 ];
 function pronunciaEdge(texto) {
   return PRONUNCIA_EDGE.reduce((t, [de, para]) => t.replace(de, para), texto.trim());

@@ -10078,140 +10078,191 @@
   "metodo": "Análise HOJE MT, feita com dados verificáveis: pesquisas registradas na Justiça Eleitoral, decisões confirmadas por fonte oficial ou dois veículos, coligações e apoios publicados, estudo de redes do Instituto Democracia em Xeque/UFMT e gastos declarados à Justiça Eleitoral. Cada candidato tem o mesmo número de pontos, em ordem alfabética, e cada ponto traz a fonte. Não é recomendação de voto."
  },
  "boletim": {
-  "n": 4,
-  "quando": "Boletim nº 4 · 30/09/2026, 07:17 (MT)",
-  "titulo": "A Justiça Eleitoral na última semana de campanha",
+  "n": 5,
+  "quando": "Boletim nº 5 · 02/10/2026, 07:38 (MT)",
+  "titulo": "STF devolve a propaganda de Natasha; quatro pesquisas novas e a disputa pelo Senado",
   "texto": [
-   "A Corregedoria do TRE-MT suspendeu a propaganda de Doutora Natasha (PSD) no rádio e na TV até quinta-feira, 1º de outubro, último dia do horário eleitoral. A decisão de 29/9, do corregedor Marcos Machado, atendeu a coligação de Otaviano Pivetta (Republicanos), que apontou 19 exibições em 13 emissoras depois de uma ordem anterior; o corregedor considerou a ordem descumprida e fixou multa de R$ 100 mil para novo descumprimento. Cabe recurso. Natasha chama as restrições de censura e impetrou mandado de segurança; a defesa diz que as primeiras exibições ocorreram antes da notificação.",
-   "Desde sábado (26/9), o Radar do HOJE MT reuniu 17 casos na Justiça Eleitoral com candidatos ao governo e ao Senado: 9 decisões, 6 representações julgadas improcedentes ou arquivadas e 2 ações em andamento. Pivetta teve de suspender o impulsionamento pago de um vídeo sobre uma emenda de Wellington Fagundes (PL) (liminar de 27/9), e duas representações da coligação de Wellington contra ele foram julgadas improcedentes (26 e 27/9).",
-   "No Senado, Janaina Riva (MDB) teve de parar de usar um perfil no Spotify não informado à Justiça Eleitoral (liminar de 27/9, a pedido de Zé Medeiros); a pedido da coligação dela, a responsável por perfis de uma pizzaria de Juara foi multada em R$ 5 mil por publicações que atribuíam a Janaina falas falsas ou fora de contexto (28/9). Mauro Mendes (União) teve quatro anúncios pagos suspensos a pedido da coligação de Wellington (28/9), e cinco sites tiveram de retirar 11 publicações sobre ele, com multa de R$ 5 mil cada (29/9); o Pleno do TRE-MT manteve, por 4 a 2, improcedente uma representação da coligação de Mauro contra Pedro Taques (PSB). Zé Medeiros (PL) foi multado em R$ 5 mil por vídeos sem os nomes dos suplentes de forma legível (26/9), e a Justiça negou pedido do Ministério Público Eleitoral contra o uso da imagem de Jair Bolsonaro na propaganda dele (28/9). Os 16 candidatos ao governo e ao Senado estão com registro deferido; em alguns casos, ainda cabe recurso. A eleição é no domingo, 4 de outubro.",
+   "Na quinta-feira, 1º de outubro, último dia do horário eleitoral, o ministro Alexandre de Moraes, do Supremo Tribunal Federal, julgou procedente reclamação de Doutora Natasha (PSD) e devolveu a ela o direito de exibir as propagandas que o TRE-MT tinha suspendido em 28 e 29/9. Na véspera (30/9), o Pleno do TRE-MT, por maioria, tinha mantido a suspensão. As matérias não trazem manifestação de Otaviano Pivetta (Republicanos) ou da coligação dele sobre a decisão do STF.",
+   "Para o governo, a Paraná Pesquisas (registro MT-02094/2026; 1.352 entrevistas presenciais de 27 a 29/9; margem de 2,7 pontos; confiança de 95%) traz Pivetta com 46,4%, Wellington Fagundes (PL) com 27,1%, Doutora Natasha com 15,5%, Rafaell Milas (Missão) e Sargento Laudicério (Agir) com 0,4% e Maurício Coelho (Mobiliza) com 0,1%; no 2º turno simulado, Pivetta tem 53,1% e Wellington, 34,6%. A Povo e Poder (registro MT-07968/2026; 1.200 entrevistas presenciais de 19 a 27/9; margem de 2,83 pontos), divulgada pela emissora contratante, traz Wellington com 31,8% e Pivetta com 30,7%, em empate técnico, Natasha com 9%, Laudicério com 1,2%, Milas com 0,4% e Coelho com 0%; no 2º turno, Wellington tem 35,6% e Pivetta, 31,5%.",
+   "Para o Senado, no 1º voto, a Paraná Pesquisas traz Mauro Mendes (União) com 37,5%, Janaina Riva (MDB) com 18% e Zé Medeiros (PL) com 16%, em empate técnico entre os dois, Carlos Fávaro (PSD) com 9,8%, Pedro Taques (PSB) com 6,1%, Galvan (Avante) com 1,6%, Coronel Darwin (Democrata) com 1,4%, Professor Nelson Ferreira (Agir) com 1%, Margareth Buzetti (PP) com 0,1% e Beny Godoy (Agir) com 0%. A Percent Brasil (registro MT-09025/2026; 1.200 entrevistas domiciliares de 26 a 29/9; margem de 2,83 pontos) traz Mauro com 38,3%, Janaina com 22,8%, Medeiros com 10,4% e Fávaro e Taques com 6,1%; as matérias não divulgaram o 1º voto dos outros cinco candidatos. Pesquisa é retrato do momento.",
+   "No TRE-MT, em 30/9, liminares de juízes auxiliares pedidas por Janaina Riva mandaram Zé Medeiros retirar dois vídeos das redes (decisões provisórias; cabe recurso; as matérias não trazem manifestação dele), e Janaina e a coligação Coração da Gente foram multadas em R$ 5 mil por um programa de TV de 16/9 sem os nomes legíveis dos suplentes (cabe recurso; ela diz que enviou versões corrigidas às emissoras em 21/9). Pedro Taques entrou em 30/9 com ação de investigação judicial eleitoral contra Mauro Mendes, ainda sem decisão; em 29/9, Mauro disse: \"Eu não posso ser responsabilizado por um ato que eu não fiz e nem pedi para fazer\". Em Rondonópolis, em 30/9, Zé Medeiros, da coligação de Wellington, participou de caminhada de Pivetta, e Mauro Mendes, da coligação de Pivetta, pediu votos para Medeiros.",
    "Voz do vídeo gerada com IA (narrador sintético, sem imitar pessoa real); sem música; os slides e os fatos são feitos, apurados e conferidos pela redação do HOJE MT; postagens reproduzidas: nenhuma neste boletim."
   ],
-  "video": "https://hojemt.com.br/content/media/2026/10/2026-09-30-boletim-04-v2.mp4",
-  "poster": "https://hojemt.com.br/content/images/2026/10/2026-09-30-boletim-04-capa-v2.jpg",
+  "video": "https://hojemt.com.br/content/media/2026/10/2026-10-02-boletim-05.mp4",
+  "poster": "https://hojemt.com.br/content/images/2026/10/2026-10-02-boletim-05-capa.jpg",
   "fontes": [
    [
-    "Radar Eleitoral do HOJE MT (Justiça Eleitoral)",
-    "https://hojemt.com.br/radar-eleitoral/#rd-justica",
+    "Radar Eleitoral do HOJE MT",
+    "https://hojemt.com.br/radar-eleitoral/",
+    "2026-10-02"
+   ],
+   [
+    "Olhar Direto",
+    "https://www.olhardireto.com.br/juridico/noticias/alexandre-de-moraes-derruba-decisao-que-suspendeu-propaganda-de-natasha-contra-pivetta-suspensa-pelo-tre-mt",
+    "2026-10-01"
+   ],
+   [
+    "Gazeta Digital",
+    "https://www.gazetadigital.com.br/editorias/eleicoes-2026/nos-ultimos-instantes-stf-restabelece-propaganda-eleitoral-gratuita-de-natasha/861190",
+    "2026-10-01"
+   ],
+   [
+    "RepórterMT",
+    "https://www.reportermt.com/politica/moraes-derruba-suspensao-do-tre-e-devolve-propaganda-de-natasha-no-radio-e-na-tv/244483",
+    "2026-10-01"
+   ],
+   [
+    "Folhamax",
+    "https://www.folhamax.com/politica/stf-ve-afronta-do-tre-mt-e-manda-exibir-propagandas-de-natasha/575248",
+    "2026-10-01"
+   ],
+   [
+    "RDNews (Pleno, 30/9)",
+    "https://www.rdnews.com.br/eleicoes-2026/tre-mt-rejeita-reclamacao-de-natasha-e-mantem-propaganda-fora-do-ar/249944",
     "2026-09-30"
    ],
    [
-    "Olhar Direto (29/09)",
-    "https://www.olhardireto.com.br/juridico/noticias/natasha-tem-propaganda-suspensa-pelo-tre-apos-nova-referencia-a-reportagem-do-fantastico-sobre-pivetta",
+    "Cliquef5 (Pleno, 30/9)",
+    "https://www.cliquef5.com.br/politica/tre-mt-nega-recurso-de-doutora-natasha-e-mantem-propaganda-eleitoral-fora-do-ar/422041",
+    "2026-10-01"
+   ],
+   [
+    "Metrópoles",
+    "https://www.metropoles.com/brasil/parana-pesquisa-pivetta-lidera-em-mato-grosso-seguido-por-fagundes",
+    "2026-09-30"
+   ],
+   [
+    "CartaCapital",
+    "https://www.cartacapital.com.br/politica/pivetta-lidera-e-pode-ser-reeleito-em-1o-turno-no-mt-indica-parana-pesquisas/",
+    "2026-09-30"
+   ],
+   [
+    "Gazeta do Povo",
+    "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-mato-grosso-setembro-2026-2/",
+    "2026-09-30"
+   ],
+   [
+    "Folhamax",
+    "https://www.folhamax.com/politica/pesquisa-mostra-wellington-liderando-disputa/575061",
+    "2026-10-01"
+   ],
+   [
+    "Primeira Hora",
+    "https://primeirahora.com.br/pesquisa-estadual-mostra-wellington-liderando-disputa-ao-governo-candidato-do-pl-amplia-vantagem-nos-cenarios-de-segundo-turno/",
+    "2026-10-01"
+   ],
+   [
+    "Boraver MT",
+    "https://boravermt.com.br/politica/pesquisa-aponta-wellington-fagundes-numericamente-a-frente-de-pivetta-na-disputa-pelo-governo-de-mt/",
+    "2026-10-01"
+   ],
+   [
+    "Paraná Pesquisas (relatório)",
+    "https://paranapesquisas.com.br/wp-content/uploads/2026/09/MT_Set26-3.pdf",
+    "2026-09-30"
+   ],
+   [
+    "HiperNotícias",
+    "https://www.hnt.com.br/politica/mauro-avanca-26-pontos-e-alcanca-549-das-intencoes-de-voto-ao-senado-em-mt/578186",
+    "2026-09-30"
+   ],
+   [
+    "Olhar Direto (Percent, Senado)",
+    "https://www.olhardireto.com.br/noticias/mauro-mendes-lidera-corrida-ao-senado-em-mato-grosso-com-274-janaina-riva-aparece-em-segundo-com-199",
+    "2026-10-01"
+   ],
+   [
+    "Folhamax (Percent, Senado)",
+    "https://www.folhamax.com/politica/a-tres-dias-da-eleicao-mauro-e-janaina-se-consolidam-ao-senado-em-mt/575051",
+    "2026-10-01"
+   ],
+   [
+    "Folhamax",
+    "https://www.folhamax.com/politica/tre-ve-estimulo-a-venda-de-votos-e-derruba-video-de-medeiros/574907",
+    "2026-09-30"
+   ],
+   [
+    "Olhar Direto",
+    "https://www.olhardireto.com.br/juridico/noticias/tre-determina-remocao-de-video-de-medeiros-que-orienta-eleitores-a-receberem-dinheiro-por-voto",
+    "2026-10-01"
+   ],
+   [
+    "HiperNotícias",
+    "https://www.hnt.com.br/justica/tre-manda-medeiros-apagar-video-sobre-compra-de-votos-e-fixa-multa-de-r-100-mil/578348",
+    "2026-10-01"
+   ],
+   [
+    "Olhar Direto",
+    "https://www.olhardireto.com.br/juridico/noticias/medeiros-e-condenado-a-remover-video-com-desinformacao-ligando-janaina-a-gilmar-mendes-e-turma-do-alexandre",
+    "2026-09-30"
+   ],
+   [
+    "Folhamax",
+    "https://www.folhamax.com/politica/tre-proibe-medeiros-de-atacar-janaina-como-candidata-do-stf-em-mt/574969",
+    "2026-09-30"
+   ],
+   [
+    "VGN",
+    "https://www.vgnoticias.com.br/eleicoes-2026/janaina-riva-e-multada-em-r-5-mil-por-nao-exibir-sobrenomes-de-suplentes-na-tv/152815",
+    "2026-09-30"
+   ],
+   [
+    "Infoverus",
+    "https://www.infoverus.com.br/politica/janaina-riva-e-multada-em-r-5-mil-por-esconder-sobrenomes-de-suplentes-em-programa-eleitoral/35857",
+    "2026-09-30"
+   ],
+   [
+    "VGN",
+    "https://www.vgnoticias.com.br/vgnjur/taques-pede-cassacao-de-mauro-e-virginia-por-suposto-showmicio-na-arena-pantanal/152828",
+    "2026-10-01"
+   ],
+   [
+    "Olhar Direto",
+    "https://www.olhardireto.com.br/juridico/noticias/acao-no-tre-busca-cassacao-da-chapa-de-mauro-mendes-e-de-virginia-por-pedido-de-votos-em-show-na-arena-pantanal",
+    "2026-10-01"
+   ],
+   [
+    "Fatos de Mato Grosso",
+    "https://www.fatosdematogrosso.com.br/eleicoes/taques-acusa-showmicio-na-arena-e-pede-cassacao-de-mauro-virginia-e-suplentes/16762",
+    "2026-10-01"
+   ],
+   [
+    "Gazeta Digital (declaração de Mauro)",
+    "https://www.gazetadigital.com.br/editorias/eleicoes-2026/mauro-nega-uso-de-megashow-promovido-pelo-suplente-para-campanha-nao-pedi/860926",
     "2026-09-29"
    ],
    [
-    "MidiaNews (29/09)",
-    "https://www.midianews.com.br/judiciario/tre-suspende-propaganda-de-natasha-ate-fim-do-horario-eleitoral/530218",
-    "2026-09-29"
+    "MidiaNews",
+    "https://www.midianews.com.br/politica/medeiros-oficializa-abandono-a-wf-e-faz-ato-com-pivetta-video/530269",
+    "2026-09-30"
    ],
    [
-    "Olhar Direto (27/09)",
-    "https://www.olhardireto.com.br/juridico/noticias/justica-manda-suspender-anuncios-pagos-de-pivetta-com-criticas-a-emenda-de-r-600-mil-de-wellington-para-pesquisa-na-antartica",
-    "2026-09-28"
+    "Olhar Direto",
+    "https://www.olhardireto.com.br/noticias/na-casa-do-adversario1",
+    "2026-09-30"
    ],
    [
-    "24 Horas MT (27/09)",
-    "https://24horasmt.com.br/politica-mt/tre-manda-pivetta-suspender-impulsionamento-de-video-contra-wellington/",
-    "2026-09-28"
+    "HiperNotícias",
+    "https://www.hnt.com.br/politica/medeiros-declara-voto-em-pivetta-e-participa-de-ato-com-claudio-e-balbinotti/578169",
+    "2026-09-30"
    ],
    [
-    "VGN (26/09)",
-    "https://www.vgnoticias.com.br/eleicoes-2026/juiz-nega-pedido-do-pl-e-libera-propaganda-com-apoio-da-prefeita-de-vg-a-pivetta/152643",
-    "2026-09-27"
+    "RDNews",
+    "https://www.rdnews.com.br/eleicoes-2026/medeiros-participa-de-ato-politico-ao-lado-de-claudio-e-pivetta-video/249936",
+    "2026-09-30"
    ],
    [
-    "ND Mais (26/09)",
-    "https://ndmais.com.br/politica/juiz-do-mato-grosso-libera-propaganda-de-pivetta-candidato-a-reeleicao-e-diz-que-apoio-de-prefeitos-do-pl-nao-e-irregular-no-1o-turno/",
-    "2026-09-28"
+    "RDNews",
+    "https://www.rdnews.com.br/eleicoes-2026/mauro-mendes-pede-votos-para-ze-medeiros-ao-senado-durante-evento/250018",
+    "2026-10-01"
    ],
    [
-    "VGN (27/09)",
-    "https://www.vgnoticias.com.br/eleicoes-2026/juiz-ve-promocao-eleitoral-mas-rejeita-acao-contra-pivetta-sobre-financiamento-ao-shopping-popular/152679",
-    "2026-09-28"
-   ],
-   [
-    "HiperNotícias (27/09)",
-    "https://www.hnt.com.br/justica/juiz-rejeita-acao-de-wf-contra-pivetta-por-suposto-uso-eleitoral-de-contrato-do-shopping-popular/577650",
-    "2026-09-28"
-   ],
-   [
-    "Estadão Mato Grosso (27/09)",
-    "https://www.estadaomatogrosso.com.br/eleicoes-2026/tre-atende-pedido-de-medeiros-e-manda-janaina-retirar-link-para-spotify-de-campanha/146900",
-    "2026-09-27"
-   ],
-   [
-    "Esportes & Notícias (27/09)",
-    "https://en.com.br/tre-manda-janaina-retirar-link-para-spotify-da-campanha-apos-pedido-de-medeiros/",
-    "2026-09-28"
-   ],
-   [
-    "Folhamax (28/09)",
-    "https://www.folhamax.com/politica/dona-de-pizzaria-e-multada-por-fake-news-contra-candidata-em-mt/574710",
-    "2026-09-29"
-   ],
-   [
-    "Olhar Direto (28/09)",
-    "https://www.olhardireto.com.br/juridico/noticias/empresaria-e-multada-pela-justica-eleitoral-apos-usar-perfil-de-pizzaria-para-publicar-falas-falsas-atribuidas-a-janaina-riva",
-    "2026-09-29"
-   ],
-   [
-    "Olhar Direto (28/09)",
-    "https://olhardireto.com.br/juridico/noticias/tre-mt-manda-suspender-anuncios-pagos-por-mauro-com-ataques-citando-implante-capilar-de-wellington",
-    "2026-09-28"
-   ],
-   [
-    "O Documento (28/09)",
-    "https://odocumento.com.br/mauro-mendes-tera-que-suspender-video-sobre-implante-capilar-de-wellington-fagundes/",
-    "2026-09-28"
-   ],
-   [
-    "Olhar Direto (29/09)",
-    "https://www.olhardireto.com.br/juridico/noticias/justica-condena-cinco-sites-por-publicarem-que-mauro-jantou-com-vorcaro",
-    "2026-09-29"
-   ],
-   [
-    "Infoverus (29/09)",
-    "https://www.infoverus.com.br/politica/justica-condena-cinco-veiculos-por-informacoes-sobre-suposto-jantar-de-mauro-com-vorcaro/35756",
-    "2026-09-29"
-   ],
-   [
-    "Folhamax (29/09)",
-    "https://www.folhamax.com/politica/tre-mt-rejeita-recurso-contra-taques/574811",
-    "2026-09-29"
-   ],
-   [
-    "FTN Brasil (29/09)",
-    "https://ftnbrasil.com.br/tre-mt-rejeita-recurso-contra-taques-por-declaracoes-sobre-mauro-na-operacao-heritage/",
-    "2026-09-29"
-   ],
-   [
-    "VGN (26/09)",
-    "https://www.vgnoticias.com.br/eleicoes-2026/medeiros-e-multado-por-videos-sem-identificacao-de-suplentes/152641",
-    "2026-09-27"
-   ],
-   [
-    "JB News (26/09)",
-    "https://jbnews.com.br/tre-mantem-videos-fora-do-ar-e-multa-medeiros-em-r-5-mil-por-propaganda-sem-identificacao-de-suplentes/",
-    "2026-09-27"
-   ],
-   [
-    "Olhar Direto (28/09)",
-    "https://www.olhardireto.com.br/juridico/noticias/juiz-nega-pedido-do-mp-e-mantem-permissao-para-medeiros-usar-imagem-de-bolsonaro-em-campanha",
-    "2026-09-28"
-   ],
-   [
-    "O Documento (28/09)",
-    "https://odocumento.com.br/justica-rejeita-pedido-para-barrar-imagem-de-bolsonaro-na-campanha-eleitoral-de-medeiros/",
-    "2026-09-28"
-   ],
-   [
-    "Cidadão Consumidor (registro de Laudicério e Karen Fortes)",
-    "https://cidadaoconsumidor.com.br/tre-mt-defere-por-unanimidade-chapa-de-laudicerio-e-karen-fortes-apos-correcao-de-filiacao-ao-uniao-brasil/",
-    "2026-09-26"
+    "Primeira Hora",
+    "https://primeirahora.com.br/mauro-mendes-pede-votos-para-ze-medeiros-ao-senado-durante-evento-em-rondonopolis/",
+    "2026-10-01"
    ]
   ],
-  "duracao_s": 113
+  "duracao_s": 107
  },
  "boletins": [
   {
@@ -10464,6 +10515,193 @@
     ]
    ],
    "duracao_s": 113
+  },
+  {
+   "n": 5,
+   "quando": "Boletim nº 5 · 02/10/2026, 07:38 (MT)",
+   "titulo": "STF devolve a propaganda de Natasha; quatro pesquisas novas e a disputa pelo Senado",
+   "texto": [
+    "Na quinta-feira, 1º de outubro, último dia do horário eleitoral, o ministro Alexandre de Moraes, do Supremo Tribunal Federal, julgou procedente reclamação de Doutora Natasha (PSD) e devolveu a ela o direito de exibir as propagandas que o TRE-MT tinha suspendido em 28 e 29/9. Na véspera (30/9), o Pleno do TRE-MT, por maioria, tinha mantido a suspensão. As matérias não trazem manifestação de Otaviano Pivetta (Republicanos) ou da coligação dele sobre a decisão do STF.",
+    "Para o governo, a Paraná Pesquisas (registro MT-02094/2026; 1.352 entrevistas presenciais de 27 a 29/9; margem de 2,7 pontos; confiança de 95%) traz Pivetta com 46,4%, Wellington Fagundes (PL) com 27,1%, Doutora Natasha com 15,5%, Rafaell Milas (Missão) e Sargento Laudicério (Agir) com 0,4% e Maurício Coelho (Mobiliza) com 0,1%; no 2º turno simulado, Pivetta tem 53,1% e Wellington, 34,6%. A Povo e Poder (registro MT-07968/2026; 1.200 entrevistas presenciais de 19 a 27/9; margem de 2,83 pontos), divulgada pela emissora contratante, traz Wellington com 31,8% e Pivetta com 30,7%, em empate técnico, Natasha com 9%, Laudicério com 1,2%, Milas com 0,4% e Coelho com 0%; no 2º turno, Wellington tem 35,6% e Pivetta, 31,5%.",
+    "Para o Senado, no 1º voto, a Paraná Pesquisas traz Mauro Mendes (União) com 37,5%, Janaina Riva (MDB) com 18% e Zé Medeiros (PL) com 16%, em empate técnico entre os dois, Carlos Fávaro (PSD) com 9,8%, Pedro Taques (PSB) com 6,1%, Galvan (Avante) com 1,6%, Coronel Darwin (Democrata) com 1,4%, Professor Nelson Ferreira (Agir) com 1%, Margareth Buzetti (PP) com 0,1% e Beny Godoy (Agir) com 0%. A Percent Brasil (registro MT-09025/2026; 1.200 entrevistas domiciliares de 26 a 29/9; margem de 2,83 pontos) traz Mauro com 38,3%, Janaina com 22,8%, Medeiros com 10,4% e Fávaro e Taques com 6,1%; as matérias não divulgaram o 1º voto dos outros cinco candidatos. Pesquisa é retrato do momento.",
+    "No TRE-MT, em 30/9, liminares de juízes auxiliares pedidas por Janaina Riva mandaram Zé Medeiros retirar dois vídeos das redes (decisões provisórias; cabe recurso; as matérias não trazem manifestação dele), e Janaina e a coligação Coração da Gente foram multadas em R$ 5 mil por um programa de TV de 16/9 sem os nomes legíveis dos suplentes (cabe recurso; ela diz que enviou versões corrigidas às emissoras em 21/9). Pedro Taques entrou em 30/9 com ação de investigação judicial eleitoral contra Mauro Mendes, ainda sem decisão; em 29/9, Mauro disse: \"Eu não posso ser responsabilizado por um ato que eu não fiz e nem pedi para fazer\". Em Rondonópolis, em 30/9, Zé Medeiros, da coligação de Wellington, participou de caminhada de Pivetta, e Mauro Mendes, da coligação de Pivetta, pediu votos para Medeiros.",
+    "Voz do vídeo gerada com IA (narrador sintético, sem imitar pessoa real); sem música; os slides e os fatos são feitos, apurados e conferidos pela redação do HOJE MT; postagens reproduzidas: nenhuma neste boletim."
+   ],
+   "video": "https://hojemt.com.br/content/media/2026/10/2026-10-02-boletim-05.mp4",
+   "poster": "https://hojemt.com.br/content/images/2026/10/2026-10-02-boletim-05-capa.jpg",
+   "fontes": [
+    [
+     "Radar Eleitoral do HOJE MT",
+     "https://hojemt.com.br/radar-eleitoral/",
+     "2026-10-02"
+    ],
+    [
+     "Olhar Direto",
+     "https://www.olhardireto.com.br/juridico/noticias/alexandre-de-moraes-derruba-decisao-que-suspendeu-propaganda-de-natasha-contra-pivetta-suspensa-pelo-tre-mt",
+     "2026-10-01"
+    ],
+    [
+     "Gazeta Digital",
+     "https://www.gazetadigital.com.br/editorias/eleicoes-2026/nos-ultimos-instantes-stf-restabelece-propaganda-eleitoral-gratuita-de-natasha/861190",
+     "2026-10-01"
+    ],
+    [
+     "RepórterMT",
+     "https://www.reportermt.com/politica/moraes-derruba-suspensao-do-tre-e-devolve-propaganda-de-natasha-no-radio-e-na-tv/244483",
+     "2026-10-01"
+    ],
+    [
+     "Folhamax",
+     "https://www.folhamax.com/politica/stf-ve-afronta-do-tre-mt-e-manda-exibir-propagandas-de-natasha/575248",
+     "2026-10-01"
+    ],
+    [
+     "RDNews (Pleno, 30/9)",
+     "https://www.rdnews.com.br/eleicoes-2026/tre-mt-rejeita-reclamacao-de-natasha-e-mantem-propaganda-fora-do-ar/249944",
+     "2026-09-30"
+    ],
+    [
+     "Cliquef5 (Pleno, 30/9)",
+     "https://www.cliquef5.com.br/politica/tre-mt-nega-recurso-de-doutora-natasha-e-mantem-propaganda-eleitoral-fora-do-ar/422041",
+     "2026-10-01"
+    ],
+    [
+     "Metrópoles",
+     "https://www.metropoles.com/brasil/parana-pesquisa-pivetta-lidera-em-mato-grosso-seguido-por-fagundes",
+     "2026-09-30"
+    ],
+    [
+     "CartaCapital",
+     "https://www.cartacapital.com.br/politica/pivetta-lidera-e-pode-ser-reeleito-em-1o-turno-no-mt-indica-parana-pesquisas/",
+     "2026-09-30"
+    ],
+    [
+     "Gazeta do Povo",
+     "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-mato-grosso-setembro-2026-2/",
+     "2026-09-30"
+    ],
+    [
+     "Folhamax",
+     "https://www.folhamax.com/politica/pesquisa-mostra-wellington-liderando-disputa/575061",
+     "2026-10-01"
+    ],
+    [
+     "Primeira Hora",
+     "https://primeirahora.com.br/pesquisa-estadual-mostra-wellington-liderando-disputa-ao-governo-candidato-do-pl-amplia-vantagem-nos-cenarios-de-segundo-turno/",
+     "2026-10-01"
+    ],
+    [
+     "Boraver MT",
+     "https://boravermt.com.br/politica/pesquisa-aponta-wellington-fagundes-numericamente-a-frente-de-pivetta-na-disputa-pelo-governo-de-mt/",
+     "2026-10-01"
+    ],
+    [
+     "Paraná Pesquisas (relatório)",
+     "https://paranapesquisas.com.br/wp-content/uploads/2026/09/MT_Set26-3.pdf",
+     "2026-09-30"
+    ],
+    [
+     "HiperNotícias",
+     "https://www.hnt.com.br/politica/mauro-avanca-26-pontos-e-alcanca-549-das-intencoes-de-voto-ao-senado-em-mt/578186",
+     "2026-09-30"
+    ],
+    [
+     "Olhar Direto (Percent, Senado)",
+     "https://www.olhardireto.com.br/noticias/mauro-mendes-lidera-corrida-ao-senado-em-mato-grosso-com-274-janaina-riva-aparece-em-segundo-com-199",
+     "2026-10-01"
+    ],
+    [
+     "Folhamax (Percent, Senado)",
+     "https://www.folhamax.com/politica/a-tres-dias-da-eleicao-mauro-e-janaina-se-consolidam-ao-senado-em-mt/575051",
+     "2026-10-01"
+    ],
+    [
+     "Folhamax",
+     "https://www.folhamax.com/politica/tre-ve-estimulo-a-venda-de-votos-e-derruba-video-de-medeiros/574907",
+     "2026-09-30"
+    ],
+    [
+     "Olhar Direto",
+     "https://www.olhardireto.com.br/juridico/noticias/tre-determina-remocao-de-video-de-medeiros-que-orienta-eleitores-a-receberem-dinheiro-por-voto",
+     "2026-10-01"
+    ],
+    [
+     "HiperNotícias",
+     "https://www.hnt.com.br/justica/tre-manda-medeiros-apagar-video-sobre-compra-de-votos-e-fixa-multa-de-r-100-mil/578348",
+     "2026-10-01"
+    ],
+    [
+     "Olhar Direto",
+     "https://www.olhardireto.com.br/juridico/noticias/medeiros-e-condenado-a-remover-video-com-desinformacao-ligando-janaina-a-gilmar-mendes-e-turma-do-alexandre",
+     "2026-09-30"
+    ],
+    [
+     "Folhamax",
+     "https://www.folhamax.com/politica/tre-proibe-medeiros-de-atacar-janaina-como-candidata-do-stf-em-mt/574969",
+     "2026-09-30"
+    ],
+    [
+     "VGN",
+     "https://www.vgnoticias.com.br/eleicoes-2026/janaina-riva-e-multada-em-r-5-mil-por-nao-exibir-sobrenomes-de-suplentes-na-tv/152815",
+     "2026-09-30"
+    ],
+    [
+     "Infoverus",
+     "https://www.infoverus.com.br/politica/janaina-riva-e-multada-em-r-5-mil-por-esconder-sobrenomes-de-suplentes-em-programa-eleitoral/35857",
+     "2026-09-30"
+    ],
+    [
+     "VGN",
+     "https://www.vgnoticias.com.br/vgnjur/taques-pede-cassacao-de-mauro-e-virginia-por-suposto-showmicio-na-arena-pantanal/152828",
+     "2026-10-01"
+    ],
+    [
+     "Olhar Direto",
+     "https://www.olhardireto.com.br/juridico/noticias/acao-no-tre-busca-cassacao-da-chapa-de-mauro-mendes-e-de-virginia-por-pedido-de-votos-em-show-na-arena-pantanal",
+     "2026-10-01"
+    ],
+    [
+     "Fatos de Mato Grosso",
+     "https://www.fatosdematogrosso.com.br/eleicoes/taques-acusa-showmicio-na-arena-e-pede-cassacao-de-mauro-virginia-e-suplentes/16762",
+     "2026-10-01"
+    ],
+    [
+     "Gazeta Digital (declaração de Mauro)",
+     "https://www.gazetadigital.com.br/editorias/eleicoes-2026/mauro-nega-uso-de-megashow-promovido-pelo-suplente-para-campanha-nao-pedi/860926",
+     "2026-09-29"
+    ],
+    [
+     "MidiaNews",
+     "https://www.midianews.com.br/politica/medeiros-oficializa-abandono-a-wf-e-faz-ato-com-pivetta-video/530269",
+     "2026-09-30"
+    ],
+    [
+     "Olhar Direto",
+     "https://www.olhardireto.com.br/noticias/na-casa-do-adversario1",
+     "2026-09-30"
+    ],
+    [
+     "HiperNotícias",
+     "https://www.hnt.com.br/politica/medeiros-declara-voto-em-pivetta-e-participa-de-ato-com-claudio-e-balbinotti/578169",
+     "2026-09-30"
+    ],
+    [
+     "RDNews",
+     "https://www.rdnews.com.br/eleicoes-2026/medeiros-participa-de-ato-politico-ao-lado-de-claudio-e-pivetta-video/249936",
+     "2026-09-30"
+    ],
+    [
+     "RDNews",
+     "https://www.rdnews.com.br/eleicoes-2026/mauro-mendes-pede-votos-para-ze-medeiros-ao-senado-durante-evento/250018",
+     "2026-10-01"
+    ],
+    [
+     "Primeira Hora",
+     "https://primeirahora.com.br/mauro-mendes-pede-votos-para-ze-medeiros-ao-senado-durante-evento-em-rondonopolis/",
+     "2026-10-01"
+    ]
+   ],
+   "duracao_s": 107
   }
  ]
 }
