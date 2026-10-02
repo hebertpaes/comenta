@@ -1,0 +1,62 @@
+{
+  "slug": "buque-pos-debate",
+  "materia": "https://hojemt.com.br/buque-pos-debate/",
+  "titulo": "Buquê pós Debate",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 02/10/2026 09:25 UTC)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Depois do debate quente, o único refresco veio em forma de rosas.",
+    "instagram_4x5": "O único refresco do debate: rosas."
+  },
+  "contexto": "Segundo a curta (e as notas da Gazeta Digital e da HiperNotícias de 01/10), a candidata ao Governo Doutora Natasha (PSD) recebeu um buquê de rosas do marido, o médico Roberto Barreto, depois do debate da TV Vila Real. A charge mostra só a entrega das flores, com dois políticos genéricos suando ao fundo pelo calor do debate; sem fala, crime ou humilhação.",
+  "fontes": [
+    "https://hojemt.com.br/buque-pos-debate/",
+    "https://www.gazetadigital.com.br/colunas-e-opiniao/fogo-cruzado/marido-de-natasha-entrega-buque-apos-debate-da-tv-vila-real/861174",
+    "https://www.hnt.com.br/no-de-cachorro/natasha-recebe-buque-flores-do-marido-apos-debate-veja-video/578425"
+  ],
+  "regras_da_cena": "estúdio de TV com púlpitos; Natasha sorridente recebe rosas vermelhas de homem genérico de jaleco, de costas; dois políticos genéricos ao fundo enxugam o suor; sem texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "Doutora Natasha",
+      "referencia_canva": [
+        "MAHWH7_xSAk"
+      ],
+      "origem": "foto oficial de registro no TSE 2026 (DivulgaCand; content/pautas/eleicoes/2026-mt-candidatos.json), usada só como referência de desenho"
+    },
+    {
+      "nome": "Roberto Barreto (personagem genérico)",
+      "referencia_canva": [],
+      "origem": "sem foto oficial/licenciada: desenhado de costas, sem traços de pessoa real"
+    },
+    {
+      "nome": "políticos ao fundo (genéricos)",
+      "referencia_canva": [],
+      "origem": "genéricos, sem traços de pessoa real"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHW2Yprlac",
+    "arte_16x9": "MAHW2Uo6oxg",
+    "design_instagram_4x5": null,
+    "arte_4x5": null,
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "pendente",
+    "obs": "4:5 não gerada (pausa de cota do Canva). Assunto eleitoral: a próxima vaga de charge livre é depois de 04/10, então o item iria como aguardando_decisao."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-02-buque-pos-debate.jpg",
+    "instagram_4x5": null
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-02-buque-pos-debate.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/10/2026-10-02-buque-pos-debate-og.jpg",
+    "instagram_4x5": null
+  },
+  "site": "feature_image e og/twitter trocadas em 02/10/2026 ~09:35 UTC (antes: charge automática do publicador, charge-1790932912.webp)"
+}
