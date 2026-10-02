@@ -1,0 +1,58 @@
+{
+  "slug": "riva-segura-o-senado",
+  "materia": "https://hojemt.com.br/riva-segura-o-senado/",
+  "titulo": "Riva Segura o Senado",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 02/10/2026 ~22:30 UTC)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal entre aspas (as matérias citam \"vou cumprir os oito anos\", mas a curta só parafraseia)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Âncora de oito anos no Senado e dica de pesqueiro para 2030.",
+    "instagram_4x5": null
+  },
+  "contexto": "Janaina Riva (MDB), candidata ao Senado por MT, disse em entrevista coletiva que, se eleita, vai cumprir os oito anos de mandato e não deixará o Senado para disputar o Governo em 2030, e apontou o presidente da ALMT, Max Russi (Podemos), como o nome do grupo para o Governo em 2030. A charge brinca só com a pescaria (canoa ancorada, ponto de pesca indicado), sem atribuir fala, crime ou humilhação.",
+  "fontes": [
+    "https://hojemt.com.br/riva-segura-o-senado/",
+    "https://odocumento.com.br/janaina-garante-cumprir-oito-anos-de-mandato-no-senado-e-lanca-max-russi-ao-governo-para-2030/",
+    "https://www.midiajur.com.br/eleicoes-2026/janaina-nega-plano-de-deixar-senado-para-disputar-governo-vou-cumprir-os-oito-anos/87525",
+    "https://www.hnt.com.br/politica/janaina-nega-plano-de-deixar-senado-para-disputar-governo-vou-cumprir-os-oito-anos/578235"
+  ],
+  "regras_da_cena": "rio do Pantanal ao entardecer; Janaina numa canoa de madeira presa por âncora enorme, com chapéu de pescador, vara de pesca, garrafa térmica, cuia de tereré e mochila, apontando para a margem; Max Russi de terno azul na margem, ao lado de uma barraquinha de peixaria, segurando uma rede dobrada; tuiuiú e aguapés; humor leve; sem texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "Janaina Riva",
+      "referencia_canva": ["MAHWH6BBj6A"],
+      "origem": "foto oficial de candidata (TSE/DivulgaCand 2026), conforme content/pautas/eleicoes/2026-mt-candidatos.json; só referência de desenho",
+      "descrita_no_prompt": "cabelos longos, lisos e castanho-escuros quase pretos, repartidos ao meio; pele clara; sobrancelhas escuras marcadas; sorriso largo; camisa branca social; colar fino"
+    },
+    {
+      "nome": "Max Russi",
+      "referencia_canva": ["MAHWLrtMkZs"],
+      "origem": "foto oficial da Assembleia Legislativa de MT, conforme a tabela do content/README.md; só referência de desenho",
+      "descrito_no_prompt": "cabelo claro curto e ralo no alto, rosto largo e corado, terno azul"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHW5riO8Zc",
+    "arte_16x9": "MAHW5k4bCqg",
+    "design_instagram_4x5": null,
+    "arte_4x5": null,
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "pendente",
+    "obs": "4:5 não gerada (cota do Canva em pausa, quota_cooldown). Assunto eleitoral: só faz sentido até o 1º turno de 04/10; se não houver vaga de charge antes disso, gravar como aguardando_decisao."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-02-riva-segura-o-senado.jpg",
+    "instagram_4x5": null
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-02-riva-segura-o-senado.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/riva-segura-o-senado-wa-1.jpg",
+    "instagram_4x5": null
+  },
+  "site": "feature_image e og/twitter trocadas em 02/10/2026 ~22:30 UTC (antes: charge automática do publicador, charge-1790976098.webp)"
+}
