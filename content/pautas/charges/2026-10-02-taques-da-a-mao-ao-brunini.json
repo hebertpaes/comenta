@@ -1,0 +1,54 @@
+{
+  "slug": "taques-da-a-mao-ao-brunini",
+  "materia": "https://hojemt.com.br/taques-da-a-mao-ao-brunini/",
+  "titulo": "Taques dá a mão ao Brunini",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 02/10/2026 ~21:30 UTC)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal entre aspas de Ilde Taques",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Previsão do tempo na Câmara: sol entre os Poderes, sem vendaval.",
+    "instagram_4x5": null
+  },
+  "contexto": "Segundo a curta, o vereador Ilde Taques (Podemos), candidato à presidência da Câmara de Cuiabá, disse à imprensa que sua eventual presidência não vai virar 'vendaval' para o prefeito Abilio Brunini e que haverá convergência entre os Poderes (ver também a entrevista ao PodOlhar, Olhar Direto, 02/10). A charge brinca só com a previsão do tempo e o aperto de mão, sem atribuir fala, crime ou humilhação.",
+  "fontes": [
+    "https://hojemt.com.br/taques-da-a-mao-ao-brunini/",
+    "https://olhardireto.com.br/noticias/ilde-diz-que-abilio-tera-portas-abertas-na-camara-mas-avisa-discutir-materia-e-outra-pegada"
+  ],
+  "regras_da_cena": "escadaria de câmara municipal em Cuiabá, nuvens de tempestade se afastando e céu abrindo; vereador genérico de terno aperta a mão de Abilio de camiseta cinza; guarda-chuva fechado e cata-vento parado; tuiuiú num poste; sem texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini",
+      "referencia_canva": ["MAHWHiDa8C0", "MAHWHkYuCOg"],
+      "origem": "galeria oficial do prefeito, Prefeitura de Cuiabá (21/09/2026 e 03/09/2026), conforme a tabela do content/README.md; só referência de desenho"
+    },
+    {
+      "nome": "Ilde Taques (representado por vereador genérico)",
+      "referencia_canva": [],
+      "origem": "sem foto oficial cadastrada (site da Câmara de Cuiabá bloqueado; DivulgaCand 2024 fora do Brasil): personagem genérico"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHW5bfW2F8",
+    "arte_16x9": "MAHW5XMcYNA",
+    "design_instagram_4x5": null,
+    "arte_4x5": null,
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "pendente",
+    "obs": "4:5 não gerada (cota do Canva em pausa). Assunto municipal (eleição da Mesa em 06/10): se houver vaga de charge antes de 06/10, pode ir para a agenda."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-02-taques-da-a-mao-ao-brunini.jpg",
+    "instagram_4x5": null
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-02-taques-da-a-mao-ao-brunini.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/taques-da-a-mao-ao-brunini-wa-1.jpg",
+    "instagram_4x5": null
+  },
+  "site": "feature_image e og/twitter trocadas em 02/10/2026 ~21:30 UTC (antes: charge automática do publicador, charge-1790976149.webp)"
+}
