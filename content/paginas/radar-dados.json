@@ -3040,7 +3040,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "02/10/2026 08:43",
+  "atualizado": "02/10/2026 13:55",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -3094,7 +3094,7 @@
       "data": "2026-10-01",
       "tipo": "decisao",
       "orgao": "STF (ministro Alexandre de Moraes)",
-      "resumo": "Desdobramento das suspensões de 28 e 29/9 e da decisão do Pleno de 30/9: o ministro Alexandre de Moraes, do STF, julgou procedente reclamação de Natasha e cassou as decisões do TRE-MT que tinham suspendido propagandas dela com trechos da reportagem do Fantástico de 2021 sobre acusação de violência doméstica contra Pivetta e, depois, todo o programa eleitoral gratuito da chapa no rádio e na TV até 1º/10, com multa de R$ 100 mil por novo descumprimento. Moraes mandou devolver imediatamente o direito de veicular as propagandas suspensas e comunicar o TRE-MT com urgência. Para o ministro, as decisões criaram obstáculos à divulgação de informações sem razões legítimas e contrariaram entendimentos do STF sobre liberdade de expressão (ADPF 130 e ADI 4.451); segundo o Olhar Direto, ele não reexaminou o conteúdo da reportagem. A decisão foi assinada em 1º/10, último dia do horário eleitoral gratuito. As matérias não informam se as peças voltaram ao ar nem se cabe recurso.",
+      "resumo": "Desdobramento das suspensões de 28 e 29/9 e da decisão do Pleno de 30/9: o ministro Alexandre de Moraes, do STF, julgou procedente reclamação de Natasha e cassou as decisões do TRE-MT que tinham suspendido propagandas dela com trechos da reportagem do Fantástico de 2021 sobre acusação de violência doméstica contra Pivetta e, depois, todo o programa eleitoral gratuito da chapa no rádio e na TV até 1º/10, com multa de R$ 100 mil por novo descumprimento. Moraes mandou devolver imediatamente o direito de veicular as propagandas suspensas e comunicar o TRE-MT com urgência. Para o ministro, as decisões criaram obstáculos à divulgação de informações sem razões legítimas e contrariaram entendimentos do STF sobre liberdade de expressão (ADPF 130 e ADI 4.451); segundo o Olhar Direto, ele não reexaminou o conteúdo da reportagem. A decisão foi assinada em 1º/10, último dia do horário eleitoral gratuito. Em 2/10, a presidente do TRE-MT, desembargadora Serly Marcondes Alves, disse à imprensa que o tribunal cumpriu a decisão imediatamente e que o caso seguiu o caminho normal dos graus de jurisdição; ela não comentou o mérito. As matérias não informam se as peças voltaram ao ar nem se cabe recurso.",
       "cabe_recurso": null,
       "defesa": "Natasha alegou ao STF que a suspensão atingiu também peças sem relação com a reportagem, sobre saúde, educação e segurança, e que a proibição de materiais futuros, QR Codes, links e termos de busca seria restrição prévia à liberdade de expressão. As matérias não trazem manifestação de Pivetta ou da coligação dele sobre a decisão do STF; nas decisões cassadas, o TRE-MT tinha entendido que as peças usavam recortes da reportagem sem informar que as investigações foram arquivadas por ausência de justa causa.",
       "fontes": [
@@ -3117,6 +3117,16 @@
         "Folhamax",
         "https://www.folhamax.com/politica/stf-ve-afronta-do-tre-mt-e-manda-exibir-propagandas-de-natasha/575248",
         "2026-10-01"
+       ],
+       [
+        "RDNews",
+        "https://www.rdnews.com.br/eleicoes-2026/presidente-do-tre-manda-cumprir-decisao-pro-natasha-e-nao-ve-interferencia-do-stf-na-eleicao/250047",
+        "2026-10-02"
+       ],
+       [
+        "Gazeta Digital",
+        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/presidente-do-tre-diz-que-decisao-do-stf-pro-natasha-e-parte-do-jogo-judicial-e-evita-falar-sobre-vazamento/861261",
+        "2026-10-02"
        ]
       ],
       "papel": "pedido"
@@ -5421,7 +5431,7 @@
       "data": "2026-10-01",
       "tipo": "decisao",
       "orgao": "STF (ministro Alexandre de Moraes)",
-      "resumo": "Desdobramento das suspensões de 28 e 29/9 e da decisão do Pleno de 30/9: o ministro Alexandre de Moraes, do STF, julgou procedente reclamação de Natasha e cassou as decisões do TRE-MT que tinham suspendido propagandas dela com trechos da reportagem do Fantástico de 2021 sobre acusação de violência doméstica contra Pivetta e, depois, todo o programa eleitoral gratuito da chapa no rádio e na TV até 1º/10, com multa de R$ 100 mil por novo descumprimento. Moraes mandou devolver imediatamente o direito de veicular as propagandas suspensas e comunicar o TRE-MT com urgência. Para o ministro, as decisões criaram obstáculos à divulgação de informações sem razões legítimas e contrariaram entendimentos do STF sobre liberdade de expressão (ADPF 130 e ADI 4.451); segundo o Olhar Direto, ele não reexaminou o conteúdo da reportagem. A decisão foi assinada em 1º/10, último dia do horário eleitoral gratuito. As matérias não informam se as peças voltaram ao ar nem se cabe recurso.",
+      "resumo": "Desdobramento das suspensões de 28 e 29/9 e da decisão do Pleno de 30/9: o ministro Alexandre de Moraes, do STF, julgou procedente reclamação de Natasha e cassou as decisões do TRE-MT que tinham suspendido propagandas dela com trechos da reportagem do Fantástico de 2021 sobre acusação de violência doméstica contra Pivetta e, depois, todo o programa eleitoral gratuito da chapa no rádio e na TV até 1º/10, com multa de R$ 100 mil por novo descumprimento. Moraes mandou devolver imediatamente o direito de veicular as propagandas suspensas e comunicar o TRE-MT com urgência. Para o ministro, as decisões criaram obstáculos à divulgação de informações sem razões legítimas e contrariaram entendimentos do STF sobre liberdade de expressão (ADPF 130 e ADI 4.451); segundo o Olhar Direto, ele não reexaminou o conteúdo da reportagem. A decisão foi assinada em 1º/10, último dia do horário eleitoral gratuito. Em 2/10, a presidente do TRE-MT, desembargadora Serly Marcondes Alves, disse à imprensa que o tribunal cumpriu a decisão imediatamente e que o caso seguiu o caminho normal dos graus de jurisdição; ela não comentou o mérito. As matérias não informam se as peças voltaram ao ar nem se cabe recurso.",
       "cabe_recurso": null,
       "defesa": "Natasha alegou ao STF que a suspensão atingiu também peças sem relação com a reportagem, sobre saúde, educação e segurança, e que a proibição de materiais futuros, QR Codes, links e termos de busca seria restrição prévia à liberdade de expressão. As matérias não trazem manifestação de Pivetta ou da coligação dele sobre a decisão do STF; nas decisões cassadas, o TRE-MT tinha entendido que as peças usavam recortes da reportagem sem informar que as investigações foram arquivadas por ausência de justa causa.",
       "fontes": [
@@ -5444,6 +5454,16 @@
         "Folhamax",
         "https://www.folhamax.com/politica/stf-ve-afronta-do-tre-mt-e-manda-exibir-propagandas-de-natasha/575248",
         "2026-10-01"
+       ],
+       [
+        "RDNews",
+        "https://www.rdnews.com.br/eleicoes-2026/presidente-do-tre-manda-cumprir-decisao-pro-natasha-e-nao-ve-interferencia-do-stf-na-eleicao/250047",
+        "2026-10-02"
+       ],
+       [
+        "Gazeta Digital",
+        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/presidente-do-tre-diz-que-decisao-do-stf-pro-natasha-e-parte-do-jogo-judicial-e-evita-falar-sobre-vazamento/861261",
+        "2026-10-02"
        ]
       ],
       "papel": "contra"
