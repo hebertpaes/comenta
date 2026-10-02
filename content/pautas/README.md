@@ -12,7 +12,7 @@ Regras iguais às do robô, e uma a mais:
 - **Separe documento de acusação.** Em matéria sobre investigação, o que está em
   relatório, o que é alegação de uma das partes e o que já foi julgado são coisas
   diferentes — e o texto precisa deixar isso explícito.
-- **Ouça o outro lado**, ou registre que a manifestação foi procurada e não veio.
+- **Ouça o outro lado**: traga a manifestação publicada nas fontes; se não houver, diga isso e liste quem procurar em "checagem pendente". Só escreva que a manifestação foi procurada e não veio se alguém de fato procurou (as rotinas automáticas não procuram ninguém).
 
 Cada arquivo traz, no fim, uma lista de **checagem pendente**: o que quem revisar
 precisa confirmar antes de publicar. A lista só existe enquanto o texto é

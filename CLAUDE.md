@@ -52,6 +52,11 @@ source content/tools/ambiente.sh --checar      # proxy/CA do Node, $HOJEMT_TMP e
 - Voz v7: edge-tts `pt-BR-AntonioNeural`, 96 kbps, +14% (até +16% se encostar em 120 s; nunca acima de +18%), +3 Hz, tratamento "leve"; reserva Kokoro `pm_alex`. "Pivetta" se pronuncia "Pivêta". Sem música. Vídeo ≤ 120 s.
 - Intro: `content/pautas/videos/argos/intro-boletim.mjs`; fechamento padrão: `fechamento-boletim.mjs` (site + redes @hoje.mt, YouTube @hojemt, X @hojemt). Detalhes: skill `hojemt-boletim` e `content/pautas/videos/argos/ARGOS.md`.
 
+## Rotinas em paralelo
+
+- Cada disparo pode ser uma sessão nova, e várias rodam ao mesmo tempo no mesmo branch: sempre `git pull --rebase` antes de mexer em arquivo compartilhado (radar-dados.json, agenda-instagram.json, registros) e commit+push logo depois.
+- A memória de cada rotina está em arquivos do repositório (monitor.json, manchetes-vistas.json, registros, agenda); commite-os em todo disparo, mesmo sem novidade.
+
 ## Instagram @hoje.mt
 
 - Publica **só** pela rotina da agenda (`content/pautas/agenda-instagram.json`, status "agendado" e horário vencido), via Zapier; **nunca publique o mesmo item duas vezes**. Itens "aguardando_materia"/"aguardando_decisao" esperam o editor.

@@ -1,6 +1,9 @@
-// Lista os posts publicados nas últimas N horas (padrão 3), com capa e tags.
-//   node content/tools/recentes.mjs [--horas=3] [--json]
-// Credenciais: source content/tools/ambiente.sh antes.
+// Lista posts publicados, mais recentes primeiro, com capa e tags.
+//   node content/tools/recentes.mjs [--horas=3]                  últimas N horas (padrão 3)
+//   node content/tools/recentes.mjs --todos --padrao=/charge- --max=5
+//        todo o acervo (paginado, 100 por página), só capas que contêm o padrão, até N itens
+//   --json   saída em JSON
+// Credenciais: source content/tools/ambiente.sh antes (na mesma chamada do Bash).
 import { ghostClient } from "../lib/ghost.mjs";
 
 const args = Object.fromEntries(
@@ -10,14 +13,31 @@ const args = Object.fromEntries(
   })
 );
 const horas = Number(args.horas || 3);
+const padrao = args.padrao ? String(args.padrao) : null;
+const max = args.max ? Number(args.max) : Infinity;
 const api = ghostClient();
-const desde = new Date(Date.now() - horas * 3600e3).toISOString();
-const posts = await api.posts.browse({
-  filter: `status:published+published_at:>'${desde}'`,
-  limit: "all",
-  fields: "id,slug,title,feature_image,published_at,url",
-  include: "tags",
-});
+const filtro = args.todos
+  ? "status:published"
+  : `status:published+published_at:>'${new Date(Date.now() - horas * 3600e3).toISOString()}'`;
+
+const posts = [];
+for (let page = 1; posts.length < max; page++) {
+  const lote = await api.posts.browse({
+    filter: filtro,
+    limit: 100,
+    page,
+    order: "published_at DESC",
+    fields: "id,slug,title,feature_image,published_at,url",
+    include: "tags",
+  });
+  for (const p of lote) {
+    if (padrao && !(p.feature_image || "").includes(padrao)) continue;
+    posts.push(p);
+    if (posts.length >= max) break;
+  }
+  if (lote.length < 100) break;
+}
+
 if (args.json) {
   console.log(
     JSON.stringify(
@@ -46,5 +66,9 @@ if (args.json) {
       "|",
       p.title.slice(0, 90)
     );
-  console.log(`${posts.length} post(s) nas últimas ${horas} h`);
+  console.log(
+    `${posts.length} post(s)` +
+      (args.todos ? " no acervo" : ` nas últimas ${horas} h`) +
+      (padrao ? ` com capa "${padrao}"` : "")
+  );
 }
