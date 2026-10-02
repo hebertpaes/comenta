@@ -1,5 +1,5 @@
 {
- "atualizado": "02/10/2026 07:43",
+ "atualizado": "02/10/2026 08:43",
  "redes": {
   "Maurício Coelho": [
    [
@@ -1880,7 +1880,7 @@
   ]
  },
  "grupos": {
-  "atualizado": "02/10/2026 01:43",
+  "atualizado": "02/10/2026 08:43",
   "grupos": [
    {
     "governador": "Doutora Natasha",
@@ -2079,7 +2079,7 @@
     "movimentos": [
      {
       "data": "2026-10-01",
-      "fato": "A ex-prefeita de Sinop Rosana Martinelli, filiada ao MDB (partido da coligação de Wellington) e com passagem pelo Senado, declarou apoio a Margareth Buzetti (PP), candidata ao Senado na coligação de Pivetta. Segundo as matérias, Rosana chegou a trabalhar uma candidatura à Câmara dos Deputados, que não avançou por falta de chapa federal do partido.",
+      "fato": "A ex-prefeita de Sinop Rosana Martinelli, filiada ao MDB (partido da coligação de Wellington) e com passagem pelo Senado, declarou apoio a Margareth Buzetti (PP), candidata ao Senado na coligação de Pivetta. Segundo as matérias, Rosana chegou a trabalhar uma candidatura à Câmara dos Deputados, que não avançou por falta de chapa federal do partido. Em 1º/10, em Sinop, Rosana — segundo as matérias, 2ª suplente do senador Wellington Fagundes — participou de caminhada de Pivetta e declarou apoio a ele; na mesma caminhada esteve Zé Medeiros (PL), candidato ao Senado na coligação de Wellington.",
       "fontes": [
        [
         "O Documento",
@@ -2090,6 +2090,16 @@
         "Noveen",
         "https://www.noveen.com.br/politica/politica-mt/rosana-martinelli-declara-apoio-a-margareth-buzetti-e-reforca-candidatura-no-norte-de-mato-grosso/47451",
         "2026-10-01"
+       ],
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/pivetta-faz-campanha-em-sinop-e-reforca-compromisso-com-nortao/530403",
+        "2026-10-02"
+       ],
+       [
+        "O Documento",
+        "https://odocumento.com.br/medeiros-volta-a-participar-e-ato-politico-ao-lado-de-pivetta-na-reta-final-da-campanha-eleitoral/",
+        "2026-10-02"
        ]
       ]
      },
@@ -2356,6 +2366,22 @@
     "movimentos": [
      {
       "data": "2026-10-01",
+      "fato": "Em Sinop, em 1º/10, Zé Medeiros (PL), candidato ao Senado na coligação de Wellington, fez caminhada de campanha com Pivetta, de novo (a primeira foi em Rondonópolis, em 30/9). Na mesma caminhada, Rosana Martinelli (MDB), ex-prefeita de Sinop e, segundo as matérias, 2ª suplente do senador Wellington Fagundes, declarou apoio a Pivetta. Não há resposta publicada de Wellington ou do PL.",
+      "fontes": [
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/pivetta-faz-campanha-em-sinop-e-reforca-compromisso-com-nortao/530403",
+        "2026-10-02"
+       ],
+       [
+        "O Documento",
+        "https://odocumento.com.br/medeiros-volta-a-participar-e-ato-politico-ao-lado-de-pivetta-na-reta-final-da-campanha-eleitoral/",
+        "2026-10-02"
+       ]
+      ]
+     },
+     {
+      "data": "2026-10-01",
       "fato": "O prefeito de Cuiabá, Abilio Brunini (PL), divulgou “colinha” com os candidatos que apoia: Zé Medeiros (PL) no 1º voto ao Senado, Mauro Mendes (União) ou Galvan (Avante) no 2º, Flávio Bolsonaro (PL) para presidente e nomes para deputado. O campo de governador ficou em branco, com a orientação “Coloque aqui o número do seu candidato”; Wellington Fagundes, candidato do PL, não é citado. Abilio já tinha dito que não faria campanha contra Pivetta; até a publicação das matérias não havia manifestação de Wellington sobre a colinha.",
       "fontes": [
        [
@@ -2434,22 +2460,6 @@
         "Primeira Hora",
         "https://primeirahora.com.br/mauro-mendes-pede-votos-para-ze-medeiros-ao-senado-durante-evento-em-rondonopolis/",
         "2026-10-01"
-       ]
-      ]
-     },
-     {
-      "data": "2026-09-30",
-      "fato": "No último programa na TV antes do 1º turno, Wellington exibiu apoio de Flávio Bolsonaro, que pede votos para ele, e de Michelle Bolsonaro.",
-      "fontes": [
-       [
-        "MidiaNews",
-        "https://www.midianews.com.br/politica/em-ultimo-programa-pivetta-mostra-staff-feminino-e-wf-traz-flavio/530272",
-        "2026-09-30"
-       ],
-       [
-        "HiperNotícias",
-        "https://www.hnt.com.br/politica/pivetta-destaca-mulheres-na-gestao-e-wellington-foca-em-apoio-dos-bolsonaros/578167",
-        "2026-09-30"
        ]
       ]
      }
@@ -3006,7 +3016,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "02/10/2026 07:43",
+  "atualizado": "02/10/2026 08:43",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -4471,6 +4481,27 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-10-01",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "A pedido da coligação Mato Grosso Não Pode Parar, que apoia Mauro Mendes, o juiz auxiliar da propaganda Marcelo Alexandre Oliveira da Silva Morgado multou Taques em duas representações, com valores que somam mais de R$ 30 mil, por declarações em entrevistas sobre investigações em andamento. Para o juiz, há diferença entre informar que uma apuração está em curso e apresentar como comprovados a autoria ou o destino de valores; ele negou o pedido para retirar as entrevistas do ar.",
+      "cabe_recurso": true,
+      "defesa": "As matérias não trazem manifestação de Taques sobre estas decisões.",
+      "fontes": [
+       [
+        "RDNews",
+        "https://www.rdnews.com.br/eleicoes-2026/justica-eleitoral-multa-taques-por-ofensas-contra-mauro-mendes/250008",
+        "2026-10-02"
+       ],
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/justica-volta-a-multar-taques-por-ataques-a-mendes-e-familia/530397",
+        "2026-10-02"
+       ]
+      ],
+      "papel": "pedido"
+     },
      {
       "data": "2026-09-30",
       "tipo": "acao_em_andamento",
@@ -6348,6 +6379,27 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-10-01",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "A pedido da coligação Mato Grosso Não Pode Parar, que apoia Mauro Mendes, o juiz auxiliar da propaganda Marcelo Alexandre Oliveira da Silva Morgado multou Taques em duas representações, com valores que somam mais de R$ 30 mil, por declarações em entrevistas sobre investigações em andamento. Para o juiz, há diferença entre informar que uma apuração está em curso e apresentar como comprovados a autoria ou o destino de valores; ele negou o pedido para retirar as entrevistas do ar.",
+      "cabe_recurso": true,
+      "defesa": "As matérias não trazem manifestação de Taques sobre estas decisões.",
+      "fontes": [
+       [
+        "RDNews",
+        "https://www.rdnews.com.br/eleicoes-2026/justica-eleitoral-multa-taques-por-ofensas-contra-mauro-mendes/250008",
+        "2026-10-02"
+       ],
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/justica-volta-a-multar-taques-por-ataques-a-mendes-e-familia/530397",
+        "2026-10-02"
+       ]
+      ],
+      "papel": "contra"
+     },
      {
       "data": "2026-09-30",
       "tipo": "acao_em_andamento",
