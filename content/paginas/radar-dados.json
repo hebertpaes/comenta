@@ -1,5 +1,5 @@
 {
- "atualizado": "01/10/2026 16:40",
+ "atualizado": "01/10/2026 21:50",
  "redes": {
   "Maurício Coelho": [
    [
@@ -299,7 +299,7 @@
   ]
  },
  "pesquisas": {
-  "atualizado": "01/10/2026 16:40",
+  "atualizado": "01/10/2026 21:50",
   "corridas": [
    {
     "id": "governador-mt",
@@ -993,7 +993,7 @@
     "id": "presidente",
     "titulo": "Presidência da República",
     "cenario": "2º turno entre Lula (PT) e Flávio Bolsonaro (PL), sem favorito claro",
-    "porque": "Nas 15 pesquisas nacionais registradas (a rodada mais recente de cada instituto, com campo entre 15 e 30/9), Lula e Flávio estão sempre nos dois primeiros lugares, e nenhum chega à metade dos votos válidos. No 1º turno, Lula aparece à frente em onze, Flávio em três, e há um empate. No 2º turno simulado (14 pesquisas; o Veritá divulgou só o 1º turno), Flávio está à frente em sete, Lula em quatro, e há três empates; em doze delas a diferença fica dentro da margem de erro.",
+    "porque": "Nas 15 pesquisas nacionais registradas (a rodada mais recente de cada instituto, com campo entre 15/9 e 1º/10), Lula e Flávio estão sempre nos dois primeiros lugares, e nenhum chega à metade dos votos válidos. No 1º turno, Lula aparece à frente em onze, Flávio em três, e há um empate. No 2º turno simulado (14 pesquisas; o Veritá divulgou só o 1º turno), Flávio está à frente em sete, Lula em quatro, e há três empates; em doze delas a diferença fica dentro da margem de erro.",
     "nota": "Em Mato Grosso, a Quaest (21 a 24/9, registros MT-08098/2026 e BR-09594/2026) mostra Flávio com 50% e Lula com 25% no 1º turno; no 2º turno, 56% a 30%. A pesquisa do Veritá (BR-04467/2026, divulgada em 30/9) traz só votos válidos: por isso não entra no gráfico de pontos nem é comparável diretamente com as demais, que estão em votos totais; o registro é o protocolo agregado de 27 registros estaduais, e a margem varia de 2 a 3,5 pontos conforme a UF.",
     "nomes": [
      "Lula",
@@ -1004,6 +1004,69 @@
     ],
     "t2max": 6,
     "pesquisas": [
+     {
+      "inst": "Datafolha",
+      "contratante": "Folha de S.Paulo e Grupo Globo",
+      "campo": "28/09 a 01/10",
+      "amostra": "2.506",
+      "margem": "2",
+      "conf": 95,
+      "metodo": "entrevistas presenciais em pontos de fluxo",
+      "reg": "BR-08039/2026",
+      "base": "totais",
+      "v": {
+       "Lula": 42,
+       "Flávio Bolsonaro": 38,
+       "Augusto Cury": 4,
+       "Ronaldo Caiado": 3,
+       "Renan Santos": 3,
+       "Romeu Zema": 1,
+       "Samara Martins": 1,
+       "Veterinário Wilson Grassi": 1,
+       "Edmilson Costa": 0,
+       "Rui Costa Pimenta": 0,
+       "Leonardo Avalanche": 0,
+       "Clariana Barão": 0,
+       "Hertz Dias": 0,
+       "Brancos/nulos": 5,
+       "Não sabem": 2
+      },
+      "fontes": [
+       [
+        "CNN Brasil – 1º turno",
+        "https://www.cnnbrasil.com.br/eleicoes/datafolha-lula-tem-42-no-1o-turno-flavio-38/",
+        "2026-10-01"
+       ],
+       [
+        "Gazeta do Povo",
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/datafolha-presidente-outubro-2026-2/",
+        "2026-10-01"
+       ],
+       [
+        "Terra",
+        "https://www.terra.com.br/noticias/eleicoes/pesquisas/datafolha-1-turno-lula-tem-42-e-flavio-bolsonaro-38,653d09440d1b52ae7dfa864798b0b6bf7ervcyig.html",
+        "2026-10-01"
+       ],
+       [
+        "Jornal de Brasília (2º turno)",
+        "https://jornaldebrasilia.com.br/noticias/politica-e-poder/datafolha-lula-lidera-com-42-e-flavio-bolsonaro-tem-38/",
+        "2026-10-01"
+       ],
+       [
+        "O Povo (método)",
+        "https://www.opovo.com.br/noticias/politica/eleicoes/2026/10/01/datafolha-divulga-novas-pesquisas-para-presidente-e-governos.html",
+        "2026-10-01"
+       ]
+      ],
+      "t2": [
+       [
+        "Lula",
+        48,
+        "Flávio Bolsonaro",
+        45
+       ]
+      ]
+     },
      {
       "inst": "Real Time Big Data",
       "contratante": "recursos próprios",
@@ -1668,67 +1731,6 @@
       ]
      },
      {
-      "inst": "Datafolha",
-      "contratante": "Folha de S.Paulo (Empresa Folha da Manhã S.A.) e Grupo Globo (Globo Comunicação e Participações S.A.)",
-      "campo": "22 a 23/09",
-      "amostra": "2.002",
-      "margem": "2",
-      "conf": 95,
-      "metodo": "entrevistas presenciais (abordagem pesso",
-      "reg": "BR-00304/2026",
-      "base": "totais",
-      "v": {
-       "Lula": 40,
-       "Flávio Bolsonaro": 36,
-       "Augusto Cury": 5,
-       "Ronaldo Caiado": 4,
-       "Renan Santos": 3,
-       "Romeu Zema": 1,
-       "Samara Martins": 1,
-       "Edmilson Costa": 0,
-       "Rui Costa Pimenta": 0,
-       "Veterinário Wilson Grassi": 0,
-       "Leonardo Avalanche": 0,
-       "Clariana Barão": 0,
-       "Hertz Dias": 0
-      },
-      "fontes": [
-       [
-        "G1",
-        "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/24/datafolha-presidente-24-setembro.ghtml",
-        "2026-09-24"
-       ],
-       [
-        "Gazeta do Povo",
-        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/datafolha-presidente-setembro-2026-4/",
-        "2026-09-24"
-       ],
-       [
-        "O Povo",
-        "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/24/na-datafolha-lula-tem-40-e-flavio-36-ha-empate-no-2-turno.html",
-        "2026-09-24"
-       ],
-       [
-        "NSC Total",
-        "https://www.nsctotal.com.br/politica/eleicoes-2026-que-horas-sai-a-pesquisa-datafolha-para-presidente-hoje-24-09",
-        "2026-09-24"
-       ],
-       [
-        "Jornal de Brasília",
-        "https://jornaldebrasilia.com.br/noticias/politica-e-poder/eleicoes-2026-quaest-datafolha-atlasintel-e-verita-divulgam-pesquisas-nesta-semana/",
-        "2026-09-21"
-       ]
-      ],
-      "t2": [
-       [
-        "Lula",
-        47,
-        "Flávio Bolsonaro",
-        45
-       ]
-      ]
-     },
-     {
       "inst": "PoderData",
       "contratante": "recursos próprios",
       "campo": "20 a 23/09",
@@ -1878,7 +1880,7 @@
   ]
  },
  "grupos": {
-  "atualizado": "01/10/2026 16:40",
+  "atualizado": "01/10/2026 21:50",
   "grupos": [
    {
     "governador": "Doutora Natasha",
@@ -2344,6 +2346,27 @@
     "movimentos": [
      {
       "data": "2026-10-01",
+      "fato": "O prefeito de Cuiabá, Abilio Brunini (PL), divulgou “colinha” com os candidatos que apoia: Zé Medeiros (PL) no 1º voto ao Senado, Mauro Mendes (União) ou Galvan (Avante) no 2º, Flávio Bolsonaro (PL) para presidente e nomes para deputado. O campo de governador ficou em branco, com a orientação “Coloque aqui o número do seu candidato”; Wellington Fagundes, candidato do PL, não é citado. Abilio já tinha dito que não faria campanha contra Pivetta; até a publicação das matérias não havia manifestação de Wellington sobre a colinha.",
+      "fontes": [
+       [
+        "RepórterMT",
+        "https://www.reportermt.com/papo-reto/abilio-escanteia-wellington-e-deixa-governo-em-branco-na-colinha/244442",
+        "2026-10-01"
+       ],
+       [
+        "O Documento",
+        "https://odocumento.com.br/abilio-pede-votos-para-chapa-do-pl-mas-deixa-wellington-fagundes-fora-da-colinha/",
+        "2026-10-01"
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/politica/abilio-deixa-em-branco-espaco-para-governador-em-colinha-eleitoral-e-nao-cita-wellington-fagundes/35919",
+        "2026-10-01"
+       ]
+      ]
+     },
+     {
+      "data": "2026-10-01",
       "fato": "Os seis candidatos ao Governo — Otaviano Pivetta (Republicanos), Wellington Fagundes (PL), Doutora Natasha (PSD), Maurício Coelho (Mobiliza), Rafaell Milas (Missão) e Sargento Laudicério (Agir) — participaram em 1º/10, a partir das 10h30, do último debate do 1º turno, na TV Vila Real, mediado por Antônio Carlos Silva, em quatro blocos com perguntas livres entre os candidatos. Entre os temas: incentivos fiscais, infraestrutura, educação, situação fiscal do Estado e as decisões da Justiça Eleitoral sobre a propaganda; houve troca de críticas entre os candidatos, com uso de direito de resposta.",
       "fontes": [
        [
@@ -2406,22 +2429,6 @@
        [
         "HiperNotícias",
         "https://www.hnt.com.br/politica/pivetta-destaca-mulheres-na-gestao-e-wellington-foca-em-apoio-dos-bolsonaros/578167",
-        "2026-09-30"
-       ]
-      ]
-     },
-     {
-      "data": "2026-09-30",
-      "fato": "Janaina Riva (MDB), candidata ao Senado na coligação de Wellington, disse em coletiva após sabatina na Aprosoja-MT ter formalizado na Polícia Federal denúncia sobre suposta oferta de R$ 7 mil para que mulheres gravassem depoimentos contra ela; segundo ela, prints, áudios e gravações foram entregues à PF. Disse que não apontaria responsáveis antes da investigação (“Está com a Polícia Federal. Não quero cometer nenhum tipo de ilação”). As matérias não trazem manifestação da PF, e nenhum adversário é nomeado.",
-      "fontes": [
-       [
-        "MidiaNews",
-        "https://www.midianews.com.br/politica/janaina-diz-que-mulheres-receberam-oferta-de-r-7-mil-para-ataca-la/530263",
-        "2026-09-30"
-       ],
-       [
-        "HiperNotícias",
-        "https://www.hnt.com.br/politica/janaina-denuncia-a-pf-suposta-oferta-de-r-7-mil-para-gravacoes-contra-sua-campanha/578176",
         "2026-09-30"
        ]
       ]
@@ -2979,7 +2986,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "01/10/2026 16:40",
+  "atualizado": "01/10/2026 21:50",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -3029,6 +3036,37 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-10-01",
+      "tipo": "decisao",
+      "orgao": "STF (ministro Alexandre de Moraes)",
+      "resumo": "Desdobramento das suspensões de 28 e 29/9 e da decisão do Pleno de 30/9: o ministro Alexandre de Moraes, do STF, julgou procedente reclamação de Natasha e cassou as decisões do TRE-MT que tinham suspendido propagandas dela com trechos da reportagem do Fantástico de 2021 sobre acusação de violência doméstica contra Pivetta e, depois, todo o programa eleitoral gratuito da chapa no rádio e na TV até 1º/10, com multa de R$ 100 mil por novo descumprimento. Moraes mandou devolver imediatamente o direito de veicular as propagandas suspensas e comunicar o TRE-MT com urgência. Para o ministro, as decisões criaram obstáculos à divulgação de informações sem razões legítimas e contrariaram entendimentos do STF sobre liberdade de expressão (ADPF 130 e ADI 4.451); segundo o Olhar Direto, ele não reexaminou o conteúdo da reportagem. A decisão foi assinada em 1º/10, último dia do horário eleitoral gratuito. As matérias não informam se as peças voltaram ao ar nem se cabe recurso.",
+      "cabe_recurso": null,
+      "defesa": "Natasha alegou ao STF que a suspensão atingiu também peças sem relação com a reportagem, sobre saúde, educação e segurança, e que a proibição de materiais futuros, QR Codes, links e termos de busca seria restrição prévia à liberdade de expressão. As matérias não trazem manifestação de Pivetta ou da coligação dele sobre a decisão do STF; nas decisões cassadas, o TRE-MT tinha entendido que as peças usavam recortes da reportagem sem informar que as investigações foram arquivadas por ausência de justa causa.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/alexandre-de-moraes-derruba-decisao-que-suspendeu-propaganda-de-natasha-contra-pivetta-suspensa-pelo-tre-mt",
+        "2026-10-01"
+       ],
+       [
+        "Gazeta Digital",
+        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/nos-ultimos-instantes-stf-restabelece-propaganda-eleitoral-gratuita-de-natasha/861190",
+        "2026-10-01"
+       ],
+       [
+        "RepórterMT",
+        "https://www.reportermt.com/politica/moraes-derruba-suspensao-do-tre-e-devolve-propaganda-de-natasha-no-radio-e-na-tv/244483",
+        "2026-10-01"
+       ],
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/stf-ve-afronta-do-tre-mt-e-manda-exibir-propagandas-de-natasha/575248",
+        "2026-10-01"
+       ]
+      ],
+      "papel": "pedido"
+     },
      {
       "data": "2026-09-30",
       "tipo": "decisao",
@@ -5294,6 +5332,37 @@
      ]
     },
     "itens": [
+     {
+      "data": "2026-10-01",
+      "tipo": "decisao",
+      "orgao": "STF (ministro Alexandre de Moraes)",
+      "resumo": "Desdobramento das suspensões de 28 e 29/9 e da decisão do Pleno de 30/9: o ministro Alexandre de Moraes, do STF, julgou procedente reclamação de Natasha e cassou as decisões do TRE-MT que tinham suspendido propagandas dela com trechos da reportagem do Fantástico de 2021 sobre acusação de violência doméstica contra Pivetta e, depois, todo o programa eleitoral gratuito da chapa no rádio e na TV até 1º/10, com multa de R$ 100 mil por novo descumprimento. Moraes mandou devolver imediatamente o direito de veicular as propagandas suspensas e comunicar o TRE-MT com urgência. Para o ministro, as decisões criaram obstáculos à divulgação de informações sem razões legítimas e contrariaram entendimentos do STF sobre liberdade de expressão (ADPF 130 e ADI 4.451); segundo o Olhar Direto, ele não reexaminou o conteúdo da reportagem. A decisão foi assinada em 1º/10, último dia do horário eleitoral gratuito. As matérias não informam se as peças voltaram ao ar nem se cabe recurso.",
+      "cabe_recurso": null,
+      "defesa": "Natasha alegou ao STF que a suspensão atingiu também peças sem relação com a reportagem, sobre saúde, educação e segurança, e que a proibição de materiais futuros, QR Codes, links e termos de busca seria restrição prévia à liberdade de expressão. As matérias não trazem manifestação de Pivetta ou da coligação dele sobre a decisão do STF; nas decisões cassadas, o TRE-MT tinha entendido que as peças usavam recortes da reportagem sem informar que as investigações foram arquivadas por ausência de justa causa.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://www.olhardireto.com.br/juridico/noticias/alexandre-de-moraes-derruba-decisao-que-suspendeu-propaganda-de-natasha-contra-pivetta-suspensa-pelo-tre-mt",
+        "2026-10-01"
+       ],
+       [
+        "Gazeta Digital",
+        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/nos-ultimos-instantes-stf-restabelece-propaganda-eleitoral-gratuita-de-natasha/861190",
+        "2026-10-01"
+       ],
+       [
+        "RepórterMT",
+        "https://www.reportermt.com/politica/moraes-derruba-suspensao-do-tre-e-devolve-propaganda-de-natasha-no-radio-e-na-tv/244483",
+        "2026-10-01"
+       ],
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/stf-ve-afronta-do-tre-mt-e-manda-exibir-propagandas-de-natasha/575248",
+        "2026-10-01"
+       ]
+      ],
+      "papel": "contra"
+     },
      {
       "data": "2026-09-30",
       "tipo": "decisao",
