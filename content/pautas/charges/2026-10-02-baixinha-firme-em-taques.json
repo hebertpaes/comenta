@@ -13,7 +13,10 @@
   },
   "contexto": "Segundo a curta, a vereadora Baixinha Giraldelli manteve o voto em Ilde Taques para a Mesa da Câmara de Cuiabá, mesmo depois de se desentender com Dilemário Alencar e sair do grupo que sustenta Taques. A charge usa só essa firmeza (ela parada enquanto os outros giram como cata-ventos), sem atribuir fala, crime ou humilhação a ninguém.",
   "fontes": [
-    "https://hojemt.com.br/baixinha-firme-em-taques/"
+    "https://hojemt.com.br/baixinha-firme-em-taques/",
+    "https://www.folhamax.com/politica/baixinha-garante-voto-em-ilde-na-camara/574260",
+    "https://www.hnt.com.br/politica/baixinha-chora-ao-citar-dilemario-e-diz-que-ainda-pode-tomar-novo-rumo-veja-video/577885",
+    "https://www.midiajur.com.br/politica/mesmo-com-dilemario-na-disputa-baixinha-declara-apoio-a-ilde-taques-a-mesa-diretora/87452"
   ],
   "regras_da_cena": "plenário com bancadas de madeira; vereadora genérica baixinha, de costas, braços cruzados, parada no centro; vereadores genéricos de terno giram como cata-ventos; papéis em branco voando; sem texto, logos ou bandeiras",
   "personagens": [
@@ -31,23 +34,25 @@
   "canva": {
     "design_site_16x9": "DAHW1Gb-_2s",
     "arte_16x9": "MAHW1LDrq5g",
-    "design_instagram_4x5": null,
-    "arte_4x5": null,
+    "design_instagram_4x5": "DAHW1enW2U0",
+    "arte_4x5": "MAHW1Ryw5eo",
     "modelo_16x9": "DAHWDzwR5c0",
     "modelo_retrato": "DAHWEJf2P1U"
   },
   "instagram": {
-    "status": "pendente",
-    "obs": "4:5 bloqueada por pausa de cota do Canva (quota_cooldown) em 02/10 ~04:35 UTC; refazer na próxima rodada com a arte MAHW1LDrq5g como referência."
+    "status": "agendado",
+    "agenda_id": "78",
+    "quando": "2026-10-04T19:30:00-04:00",
+    "obs": "4:5 gerada na rodada de 02/10 05:25 UTC com a arte 16:9 (MAHW1LDrq5g) como referência."
   },
   "arquivos": {
     "site_16x9": "2026-10-02-baixinha-firme-em-taques.jpg",
-    "instagram_4x5": null
+    "instagram_4x5": "2026-10-02-baixinha-firme-em-taques-instagram-retrato.jpg"
   },
   "hospedado_em": {
     "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-02-baixinha-firme-em-taques.jpg",
     "og": "https://hojemt.com.br/content/images/2026/10/2026-10-02-baixinha-firme-em-taques-og.jpg",
-    "instagram_4x5": null
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-02-baixinha-firme-em-taques-instagram-retrato.jpg"
   },
   "site": "feature_image e og/twitter trocadas em 02/10/2026 ~04:35 UTC (antes: charge automática do publicador, charge-1790911297.webp)"
 }

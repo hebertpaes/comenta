@@ -1379,6 +1379,22 @@
       "materia": "https://hojemt.com.br/camara-de-lucas-do-rio-verde-aprova-doacao-de-area-ao-sesi-e-cessao-de-terreno-a-sos-animais-de-rua/",
       "ghost_id": "6abecbdf6357bc8c6ad4d42d",
       "obs": "publicar só depois que a matéria (rascunho no Ghost, 6abecbdf6357bc8c6ad4d42d; prévia https://hojemt.com.br/p/1fc4596f-a04c-4b5a-ac5c-a1c3c2ecc237/) for publicada. Card: pautas/cards/2026-10-01-lucas-31a-sessao-saude-ocupacional-protecao-animal.card.json. Horário: slot de card livre seguinte."
+    },
+    {
+      "id": "78",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-04T19:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Baixinha, firme em Taques",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-02-baixinha-firme-em-taques-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Baixinha, firme em Taques\n\nNa Câmara, todo mundo virou cata-vento. Menos ela.\n\nEm 25/09, a vereadora Baixinha Giraldelli (Solidariedade) anunciou apoio a Ilde Taques (Podemos) na disputa pela presidência da Câmara de Cuiabá, depois de mais de quatro meses defendendo o nome de Dilemário Alencar (União) (Folhamax). Em 29/09, disse que a decisão não foi tomada \"por pressão\", mas deixou em aberto um \"novo rumo\" (HiperNotícias). Segundo o MidiaJur, Ilde reúne 15 dos 27 vereadores. A eleição da Mesa Diretora é em 6 de outubro.\n\nLeia a curta completa: hojemt.com.br/baixinha-firme-em-taques\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #cuiaba #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/baixinha-firme-em-taques/",
+      "charge_json": "pautas/charges/2026-10-02-baixinha-firme-em-taques.json",
+      "obs": "próximo horário livre de charge (depois do card das 15:30 de 04/10). Assunto com prazo: eleição da Mesa Diretora da Câmara de Cuiabá em 06/10 (não é a eleição geral de 04/10); 19:30 de 04/10 é depois do fechamento das urnas. Fontes da legenda: Folhamax 25/09 (folhamax.com/politica/baixinha-garante-voto-em-ilde-na-camara/574260), HiperNotícias 29/09 (hnt.com.br/politica/baixinha-chora-ao-citar-dilemario-e-diz-que-ainda-pode-tomar-novo-rumo-veja-video/577885), MidiaJur 29/09 (midiajur.com.br/politica/mesmo-com-dilemario-na-disputa-baixinha-declara-apoio-a-ilde-taques-a-mesa-diretora/87452)."
     }
   ]
 }
