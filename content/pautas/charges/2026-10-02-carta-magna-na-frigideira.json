@@ -1,0 +1,21 @@
+{
+  "slug": "carta-magna-na-frigideira",
+  "materia": "https://hojemt.com.br/carta-magna-na-frigideira/",
+  "titulo": "Carta Magna na Frigideira",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 02/10/2026 02:25 UTC)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas de Mauro Mendes",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {"site_16x9": "Receita de campanha: Constituição nova, fogo alto", "instagram_4x5": "Constituição nova, fogo alto"},
+  "contexto": "Segundo a curta, Mauro Mendes (União), candidato ao Senado, defende uma nova Constituição que inclua prisão perpétua para crimes contra a vida. A charge usa só a metáfora da própria curta (a Constituição na frigideira), sem atribuir fala, crime ou humilhação.",
+  "fontes": ["https://hojemt.com.br/carta-magna-na-frigideira/"],
+  "fontes_obs": "a curta não linka a declaração original de Mauro Mendes; conferir a fonte antes de qualquer uso adicional",
+  "regras_da_cena": "personagem de avental numa cozinha cuiabana com quintal de mandiocas, mexendo uma frigideira onde cozinha um livro grosso de capa verde sem letras; tom bem-humorado; sem texto, logos ou bandeiras",
+  "personagens": [{"nome": "Mauro Mendes", "referencia_canva": ["MAHWHyLCtr0"], "origem": "foto oficial do registro de candidatura, TSE/Divulgação (ago/2026); só referência de desenho"}],
+  "canva": {"design_site_16x9": "DAHW0gem-PI", "arte_16x9": "MAHW0jzxC7E", "design_instagram_4x5": null, "arte_4x5": null, "modelo_16x9": "DAHWDzwR5c0", "modelo_retrato": "DAHWEJf2P1U"},
+  "instagram": {"status": "pendente", "obs": "4:5 não gerada: quota_cooldown do Canva em 02/10/2026 ~02:30 UTC. Assunto eleitoral (Senado): se o 4:5 só sair depois de 04/10, item vai como aguardando_decisao."},
+  "arquivos": {"site_16x9": "2026-10-02-carta-magna-na-frigideira.jpg", "instagram_4x5": null},
+  "hospedado_em": {"site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-02-carta-magna-na-frigideira.jpg", "og": "https://hojemt.com.br/content/images/2026/10/2026-10-02-carta-magna-na-frigideira-og.jpg", "instagram_4x5": null},
+  "site": "feature_image e og/twitter trocadas em 02/10/2026 ~02:35 UTC (antes: charge automática charge-1790900498.webp)"
+}
