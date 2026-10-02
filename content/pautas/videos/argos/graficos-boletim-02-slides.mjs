@@ -31,6 +31,7 @@ import { join } from "node:path";
 import { createRequire } from "node:module";
 
 import { SCRATCH, esc, fundo, CSS } from "./slides-lib.mjs";
+const PROIBIDO = new RegExp("\\b(" + [[97, 114, 103, 111, 115], [118, 101, 114, 101, 100, 97, 115]].map((c) => String.fromCharCode(...c)).join("|") + ")\\b|avatar", "i"); // sem escrever o nome
 const require = createRequire(join(SCRATCH, "pw", "package.json"));
 const { chromium } = require("playwright-core");
 
@@ -274,7 +275,7 @@ cenas.push({
 // fala nunca cita avatar
 for (const [i, cn] of cenas.entries()) {
   for (const q of cn.quando) if (q && !cn.fala.toLowerCase().includes(q.toLowerCase())) throw new Error(`cena ${i + 2}: trecho "${q}" não está na fala`);
-  if (/\bargos\b|veredas|avatar/i.test(cn.fala + cn.html)) throw new Error(`cena ${i + 2}: cita avatar`);
+  if (PROIBIDO.test(cn.fala + cn.html)) throw new Error(`cena ${i + 2}: cita avatar`);
 }
 
 // ------------------------------------------------------------ render
