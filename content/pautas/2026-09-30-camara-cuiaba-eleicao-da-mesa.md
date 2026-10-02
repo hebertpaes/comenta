@@ -4,6 +4,8 @@ Situação às ~18h30 de 30/09/2026 (Cuiabá). Tudo abaixo vem de material publi
 
 **Atualizado em 01/10/2026 (~17h de Cuiabá): ver a seção 0, logo abaixo. As seções 1 a 7 refletem o fechamento de 30/09.**
 
+**Atualizado em 02/10/2026 (~8h30 de Cuiabá): ver a seção "Atualização de 02/10/2026", no fim do arquivo.**
+
 ---
 
 ## 0. Atualização 01/10 (tarde)
@@ -545,3 +547,132 @@ Grafia a conferir: "Tenente-Coronel Dias", que o Voz MT escreve "Assis".
   - A negativa de liminar foi referendada em sessão virtual encerrada em 14/09, não em 28/09.
 - **Decisão de Dilemário:** uma busca feita por volta das 18h30 não achou decisão publicada. Checar antes de publicar.
 - **Não localizados:** forma de votação (aberta ou secreta), horário da sessão de 6/10 e registro oficial das chapas. O site da Câmara não respondeu nas tentativas do levantamento.
+
+---
+
+## Atualização de 02/10/2026
+
+Fechado às ~8h30 de 02/10/2026 (Cuiabá). Horários em hora de Cuiabá (UTC-4). Tudo vem de material publicado e reaberto por curl em 02/10; o que tem uma só fonte está marcado **[Checagem pendente]**. O site da Câmara continua bloqueado (WAF) e não foi consultado. Estadão MT e Noveen devolveram 403 a curl e WebFetch. Pauta escrita: `content/pautas/camara-cuiaba/2026-10-02-mesa-kassio-coelho-terceira-chapa.md`.
+
+**Nada novo sobre a Mesa entre a noite de 01/10 e as 8h20 de 02/10.** Buscas no Google Notícias (últimas 24 h), WebSearch e nas capas de Olhar Direto, RDNews, MidiaNews, HNT, Muvuca, Folhamax e Gazeta Digital não trouxeram registro de chapa, liminar, horário da sessão de 6/10 nem decisão de Dilemário. O YouTube da Câmara não tem vídeo novo desde as sessões de 29/09. Atenção a falsos positivos: "Wanderley nega pedido de 10 vereadores para nova eleição da Mesa" (Olhar Direto, Infoverus, Folhamax, 01/10) é sobre a Câmara de **Várzea Grande**; "Câmara faz nova eleição da Mesa Diretora após suspensão judicial" (primeirapagina.com.br) é sobre **Campo Grande (MS)**.
+
+**Placar declarado em 02/10 (sem mudança desde 01/10)**
+
+| Chapa | Votos declarados | Quem diz | Fonte |
+|---|---|---|---|
+| Ilde Taques (Podemos) | 15 | Ilde: "Hoje eu tenho um grupo de 15 vereadores" | Olhar Direto, 01/10 17h00 (PodOlhar) |
+| Dilemário Alencar (União) | 12 | Dilemário: "Agora, com 12, tem que conseguir dois votos" | Olhar Direto, 30/09 16h35; o Olhar Direto de 30/09 20h51 escreve que ele "alega ter 12" |
+| Kássio Coelho (Podemos) | 7 | Kássio: "já conto com 7 vereadores" | Muvuca, 01/10 16h06 **[Checagem pendente: fonte única; ninguém nomeou os sete]** |
+
+**Kássio Coelho: o que se soma ao registro de 01/10**
+- HiperNotícias, 01/10 19h09 ("Kássio Coelho reativa chapa à presidência da Câmara de Cuiabá", Camila Ribeiro): https://www.hnt.com.br/politica/kassio-coelho-reativa-chapa-a-presidencia-da-camara-de-cuiaba/578451
+  - Kássio "confirmou ao HNT" que é candidato; diz que o nome "nunca deixou de estar" entre os cotados e que as articulações ficaram em segundo plano "até as demais candidaturas estarem definidas" (paráfrase do HNT).
+  - Fala: "Eu nunca retirei o meu nome como candidato e vou até o fim disputar o voto dos demais vereadores".
+  - Chapa "em fase de composição"; vice e 1º secretário anunciados no **sábado (3)**. Segundo ele, o vice sairá do grupo de Paula e o 1º secretário, de aliados de Ilde. **[Checagem pendente: fonte única; nomes não divulgados]**
+  - O HNT diz que a oposição a Abilio está "diluída nos dois grupos": no de Paula, Marcrean (MDB), Mário Nadaf e Marcus Brito, "sendo os dois últimos do PV". Na lista de "nova oposição" atribuída a Abilio, o HNT inclui **Demilson Nogueira** como do Podemos, o que conflita com a foto dos 13 de Dilemário (Demilson, PP). Não reproduzir sem conferir.
+- RepórterMT, 01/10 17h40 (Vinícius Antônio): https://www.reportermt.com/politica/vereador-kassio-coelho-entra-na-disputa-pela-presidencia-da-camara-de-cuiaba-e-articula-apoios/244475. Repete o Olhar Direto (quatro nomes para completar a chapa; não esclareceu se Dilemário sai). Sem fala nova.
+- Folhamax, 01/10 16h43 ("'Sem chance', vereador se lança a presidência da Câmara de Cuiabá"): https://www.folhamax.com/politica/sem-chance-vereador-se-lanca-a-presidencia-da-camara-de-cuiaba/575195
+  - Reproduz a fala do Olhar Direto com pequenas diferenças de transcrição ("Eu sou o candidato e vamos..."). Usar a versão do Olhar Direto.
+  - Escreve, sem citar fonte: "a tendência é que Dilemário recue da disputa". **[Checagem pendente]**
+  - Repete falas de Abilio de 30/09 sobre Lemes (já registradas abaixo, Olhar Direto 15h34).
+- Infoverus, 01/10 16h12: reproduz o Olhar Direto e acrescenta que "a composição dos grupos pode passar por novas mudanças até o prazo para registro das chapas" (prazo não informado).
+- Muvuca, 01/10 16h06: além dos 7 votos, diz que Kássio "trabalha para ampliar o grupo até esta sexta-feira (2)".
+- Antes da virada (29/09), Kássio dizia aguardar o prefeito:
+  - Leia Agora, 29/09 11h18: https://leiagora.com.br/video-kassio-coelho-aguarda-orientacao-de-abilio-para-definir-voto-na-mesa-diretora/ — "Eu vou me posicionar da forma que o prefeito orientar. Se para apoiar Kero Kero ou Brito, né? A gente vai na hora que o prefeito orientar"; e "Eu não conversei isso com o prefeito, né? Eu não conversei com os colegas também assim sobre a questão do meu nome."
+  - O Documento, 29/09 14h20: https://odocumento.com.br/kassio-coelho-aguarda-sinalizacao-de-abilio-para-definir-voto-e-se-isola-no-podemos/ — "Na última conversa com o prefeito, a orientação foi para votar para a Paula. Agora estou aguardando a nova orientação do prefeito" **[fonte única para esta frase]**. O Documento diz que Kássio era "o único vereador da bancada do Podemos" fora do grupo de Ilde (conferir: o HNT põe Demilson no Podemos).
+- Não lidos (403): Estadão MT, https://www.estadaomatogrosso.com.br/politica/kassio-lanca-candidatura-e-amplia-disputa-pela-presidencia-da-camara-de-cuiaba/147213 (a busca de 02/10 devolveu o ID 147213; a seção 0 registra 147200; conferir qual é o válido); Noveen, https://www.noveen.com.br/politica/politica-mt/kassio-coelho-muda-estrategia-e-lanca-candidatura-propria-a-presidencia-da-camara/47450 (01/10 16h38).
+
+**Ilde Taques: "quebra de compromisso" de Paula (Olhar Direto, 01/10 17h00, Airton Marques)**
+- https://www.olhardireto.com.br/noticias/ilde-diz-que-paula-quebrou-compromisso-ao-tentar-reeleicao-mas-deixa-porta-aberta-para-acordo (mesma entrevista do PodOlhar das 11h26, em outra edição)
+- Falas (texto como publicado às 17h00):
+  - "Não, todo o grupo não. Diretamente com ela, a gente tinha esse alinhamento"
+  - "Faz parte da política, a política é muito dinâmica. Eu vejo com naturalidade ela querer disputar uma reeleição. Ela faz um bom trabalho, inclusive, na Câmara de Cuiabá, na frente da Presidência..."
+  - Perguntado se houve quebra da palavra: "Olha, sim. Eu acredito que a gente poderia ter dado continuidade àquela união nossa ali. Foi um grupo vencedor na Mesa dela. Nós poderíamos ter caminhado e vencido a Mesa de novo juntos. Mas a opção de cada um faz parte, vida que segue". A matéria das 11h26 transcreve diferente ("Sim, eu acredito que a gente poderia ter continuidade naquela união nossa ali..."); citar sempre indicando qual versão.
+  - "Quando um prefeito fala para um vereador: 'Eu quero que você dispute, eu acho que você é o melhor caminho, eu acho que a gente tem que ter uma continuidade', com certeza isso influencia numa decisão"
+  - "A pessoa tem que ter uma vontade própria, sim. Com certeza teve esse desejo de disputar uma reeleição..."
+  - "Na política, a gente não pode fechar portas. Portas sempre têm que estar abertas. A Paula, apesar de ela ter tentado disputar a reeleição, é minha amiga. Não tenho nada contra a atual presidente. Pelo contrário"
+  - "Hoje eu tenho um grupo de 15 vereadores. Temos que perguntar a opinião de cada um. E se isso fosse a vontade da Paula, do grupo de lá, eu não falaria: 'Não, não tem condição'. Vamos construir, vamos conversar"
+  - "Coloco a mão no fogo. Eu não vejo mais alguma oportunidade de eles saírem desse bloco" (sobre ter ao menos 14 votos)
+  - "São 27 parlamentares, têm 27 ideologias diferentes, pensamentos diferentes. Então nós temos que escutar todos"
+- Outro lado: nenhuma resposta de Paula a essa declaração localizada até 02/10 de manhã. **[Checagem pendente]** Antecedente (outra acusação, falta de diálogo): Paula ao Olhar Direto, 07/07 17h05, "Houve diálogo, sim. Antes de eu me manifestar publicamente, conversei com o vereador Ilde Taques. Nossa relação de amizade e de colegas de Parlamento continua" e "Tivemos diálogos para a gente compor, não houve um entendimento, um consenso. O retorno que ele me trouxe foi que o grupo dele não aprovaria essa composição": https://olhardireto.com.br/noticias/paula-calil-rebate-ilde-taques-e-diz-que-conversou-com-vereador-antes-de-anunciar-candidatura-a-reeleicao
+
+**Gazeta Digital, reconferida em 02/10**
+- "Após perder força na disputa, Abilio autoriza base a negociar com Ilde Taques" (01/10; a página marca 08h12, que corresponde a 07h12 de Cuiabá pelo horário do Google Notícias): https://www.gazetadigital.com.br/editorias/politica-de-mt/apos-perder-forca-na-disputa-abilio-autoriza-base-a-negociar-com-ilde-taques/861127
+  - O texto afirma, sem fonte nomeada, que "a orientação de Abilio foi transmitida aos vereadores Kássio Coelho (Podemos), Marcus Brito Júnior (Podemos) e Rafael Ranalli (PL)". O "segundo interlocutores" do texto se refere ao objetivo da negociação (recompor a base), não à autorização. **[Checagem pendente: sem fonte nomeada; Abilio não confirmou]**
+  - Kássio lançou a candidatura própria na tarde do mesmo dia. Nenhum veículo relaciona os dois fatos.
+- "Após 15 votos fechados, Ilde confirma negociação com aliados de Abilio" (01/10; página 08h36 = 07h36 de Cuiabá): falas de Ilde conferidas como na seção 0. O texto diz "próxima segunda-feira (6)"; 6/10 é terça.
+- "Lemes abandona base de Paula e decreta apoio a Ilde em respeito ao compromisso com Siqueira" (30/09; página 17h50 = 16h50 de Cuiabá): https://www.gazetadigital.com.br/editorias/politica-de-mt/lemes-abandona-base-de-paula-e-decreta-apoio-a-ilde-em-respeito-ao-compromisso-com-siqueira/861022
+  - Lemes (vídeo de 30/09): "Hoje estou aqui me posicionando favorável à chapa do Ilde Taques. Isso é devido ao compromisso que eu já tinha feito lá atrás com o Jeff, quando ele confiou em abrir a vaga. Então, ficaria muito ruim para mim se eu contrariasse ele e não acompanhasse o candidato dele, que é o Ilde Taques"
+  - Lemes: "Agradeço o outro lado lá pela atenção que me deu, mas eu queria ter a minha consciência tranquila para dormir em paz, sem nenhum tipo de constrangimento com o vereador Jefferson"
+  - Confirma a chapa de Ilde: Ilde (presidente), Eduardo Magalhães (vice), Maria Avalone (2ª vice), Adevair Cabral (1º secretário), Michelly Alencar (2ª secretária).
+
+**MidiaJur, 30/09 15h11 ("Suplente acerta apoio e Ilde já conta com 15 votos")**
+- https://www.midiajur.com.br/politica/suplente-acerta-apoio-e-ilde-ja-conta-com-15-votos-para-comandar-camara-de-cuiaba/87508 (o dossier atribuía o título ao VIP MT; o MidiaJur publicou com o mesmo título)
+- Abre com "Ilde Taques (Podemos) afirma ter conquistado mais um apoio". Lemes: "Ficaria muito ruim pra mim se eu contrariasse ele e não acompanhasse o candidato dele, que é o Ilde Taques" e "Queria ter minha consciência tranquila, para dormir em paz, sem nenhum tipo de constrangimento com o vereador Jeferson."
+- Lista dos 15 com partidos: chapa (Ilde, Eduardo Magalhães, Maria Avalone, Adevair Cabral, Michelly Alencar) + Dra Mara (Podemos), Katiuscia Mantelli (Podemos), Maysa Leão (Republicanos), Chico 2000 (PL), Antônio Lemes (PSD), Daniel Monteiro (Republicanos), Alex Rodrigues (Podemos), Dídimo Vovô (PSB), Baixinha Giraldelli (Solidariedade) e Sargento Joelson (Podemos). Mesma lista do VIP MT.
+
+**Baixinha Giraldelli (Solidariedade)**
+- Folhamax, 25/09 19h21 ("Baixinha garante voto em Ilde na Câmara"): https://www.folhamax.com/politica/baixinha-garante-voto-em-ilde-na-camara/574260
+  - Anúncio em encontro com o grupo de Ilde na sexta (25), depois de "mais de quatro meses" com Dilemário.
+  - Acusação ao grupo de Paula: "Eu entrei nessa discussão acreditando em uma palavra que foi dada. Eu acreditei nisso. Só que esse compromisso não se confirmou. E, para mim, política sem palavra perde o sentido."
+  - "Eu fui leal ao Dilemário durante todo esse período. Estive ao lado dele porque acredito na experiência que ele acumulou em 16 anos de Câmara."
+  - "Meu voto não está à venda. Meu mandato tem um único dono, o povo"; "Apoiar uma candidatura não significa assinar um cheque em branco."
+  - Outro lado: o grupo de Paula lançou Dilemário em 29/09 (fato posterior). Nenhuma resposta direta de Paula à acusação foi localizada.
+- HiperNotícias, 29/09 11h39 ("Baixinha chora ao citar Dilemário e diz que 'ainda pode tomar novo rumo'"): https://www.hnt.com.br/politica/baixinha-chora-ao-citar-dilemario-e-diz-que-ainda-pode-tomar-novo-rumo-veja-video/577885
+  - "Eu não tomei a minha decisão com cabeça quente, não tomei por emoção, não tomei por pressão. Foram mais de cinco meses de articulações..."
+  - "Uma coisa é discordar. Outra é você olhar para uma pessoa e dizer que existe um grupo, falar em compromisso, falar em parceria e depois descobrir que decisões importantes foram tomadas sem ter coragem de conversar olho no olho. Isso machucou"
+  - O "novo rumo" está no título e na paráfrase do HNT ("deixou em aberto a mudança de voto"), não numa fala entre aspas. O HNT também chama a postura de Paula de "traição" na leitura de Baixinha (paráfrase).
+- MidiaJur, 29/09 13h57 ("Mesmo com Dilemário na disputa, Baixinha declara apoio a Ilde Taques à Mesa Diretora"): https://www.midiajur.com.br/politica/mesmo-com-dilemario-na-disputa-baixinha-declara-apoio-a-ilde-taques-a-mesa-diretora/87452
+  - "E se o Dilemário acontecesse, isso que falaram no nome dele, eu não voltaria mais a minha palavra, mas meu coração, meu sentimento estaria torcendo por ele"
+  - "Muitas vezes o Ilde queria conversar e eu dizia: 'eu estou com o Dilemário'..."
+  - Lista de 29/09 do grupo de Ilde ainda com Jeferson Siqueira (antes da adesão de Lemes).
+- Divergência: HNT (11h39) lê a fala como porta aberta; MidiaJur (13h57), Muvuca, en.com.br e Estadão MT do mesmo dia registram que ela mantém o voto em Ilde. Desde 30/09 ela está na lista dos 15. **[Checagem pendente: confirmar posição atual]**
+
+**Dilemário Alencar**
+- Nenhuma fala nova em 01/10 ou 02/10 até as 8h20. Última posição: decidiria "nas próximas horas" (Olhar Direto, 30/09 16h35).
+- Muvuca, 30/09 19h25: https://www.muvucapopular.com.br/2026/09/30/dilemario-admite-desistir-da-disputa-pela-camara-apos-perder-apoio-para-ilde/
+  - "Vou conversar [com os vereadores]. Eu acho que política é em cima de conversas. Esses 12 vereadores comigo, tive uma reunião agora de manhã com eles, eles estão pedindo para que eu possa analisar a possibilidade de continuar como candidato, mas, devido ao exíguo tempo, como eu já falei, fica difícil agora conseguir dois votos. Um era difícil, dois votos agora fica difícil"
+  - "Hoje é dia 30, amanhã é dia 1º e nós estamos ainda com a eleição geral, todos os vereadores correndo atrás do apoio de seus candidatos. Então, realmente, bem complicado"
+  - Propostas citadas: Secretaria da Mulher na Câmara, reforço da Ouvidoria, reforma do Regimento, revisão da Lei Orgânica, sessões nos bairros.
+
+**Abilio Brunini**
+- Nenhuma fala sobre a candidatura de Kássio localizada até 02/10 de manhã. **[Checagem pendente]**
+- Olhar Direto, 30/09 15h34 (reconferido): além do "já há uma definição do que é a mesa", sobre a estratégia do grupo de Paula: "Olha, eu não sei qual é o melhor caminho, cabe a eles aí decidir qual é o melhor caminho que eles vão tomar. Enquanto tiver esses tipos de convencimento e esse tipo de consciência, o caminho deve ser bem refletido para ver qual é o caminho mais prudente, mais adequado a se tomar". O texto diz que ele voltou a afirmar que não pretende interferir diretamente na disputa (paráfrase).
+- MidiaNews, 30/09 15h00 (reconferido): "Eu senti que aumentou a oposição. Outros vereadores optaram por compor a oposição. A vereadora Baixinha, o vereador Adevair e os demais vereadores que ali estão. Vou tratá-los como oposição é tratada. Oposição é oposição, base é base, vida que segue"
+
+**Regras da eleição (reconferidas)**
+- Emenda à Lei Orgânica: eleição na primeira terça-feira após o primeiro turno das eleições gerais; posse em 1º/01 do ano seguinte (HNT 18/08; Muvuca 23/08, publicação na Gazeta Municipal de 20/08 e Resolução 018/2026).
+- Placar da 2ª votação da emenda diverge: 22 a 1 (Gazeta Digital 18/08, CBN 18/08) ou 21 a 1, com o voto contrário de Dra. Mara (HNT 18/08, que dá 20 a 0 ao Projeto de Resolução). A seção 2 registra 21 a 1; anotar a divergência.
+- O MidiaJur de 04/08 chama 6/10 de "primeira segunda-feira após o primeiro turno"; é terça. Não reproduzir.
+- Maioria de 14 votos em 27: Olhar Direto, 01/10 17h00.
+- Horário da sessão, prazo de registro de chapas, forma de votação e regra se ninguém fizer 14 votos com três chapas: **não localizados**. Contexto: em 27/12/2024 o juiz plantonista Ângelo Judai Júnior suspendeu o Projeto de Resolução 21623/2024, que instituía voto secreto na eleição da Mesa (HNT): https://www.hnt.com.br/justica/juiz-derruba-voto-secreto-em-eleicao-da-mesa-diretora-da-camara-de-cuiaba/456073
+
+**Pendências para antes de 06/10 (atualizadas)**
+- Protocolo das chapas: a de Ilde foi anunciada em 30/09 e a de Kássio deve ser protocolada em 5/10, segundo ele. Dilemário não confirmou se mantém a candidatura. Confirmar com a Secom da Câmara o prazo e o que foi protocolado.
+- Nomes do vice e do 1º secretário de Kássio (anúncio prometido para 3/10) e os sete apoios que ele diz ter.
+- Resposta de Paula à acusação de Ilde de quebra de compromisso.
+- Abilio: confirma a autorização a Kássio, Brito Jr. e Ranalli para negociar com Ilde? O que diz da candidatura de Kássio?
+- Baixinha: posição atual.
+- Partidos ainda divergentes: Marcus Brito Júnior (PV no HNT, RDNews e Folhamax; Podemos na Gazeta Digital), Demilson Nogueira (PP na foto dos 13; Podemos no HNT de 01/10).
+
+**Links de 02/10 (todos reabertos por curl em 02/10, salvo indicação)**
+- https://www.hnt.com.br/politica/kassio-coelho-reativa-chapa-a-presidencia-da-camara-de-cuiaba/578451 (01/10 19h09)
+- https://www.reportermt.com/politica/vereador-kassio-coelho-entra-na-disputa-pela-presidencia-da-camara-de-cuiaba-e-articula-apoios/244475 (01/10 17h40)
+- https://www.folhamax.com/politica/sem-chance-vereador-se-lanca-a-presidencia-da-camara-de-cuiaba/575195 (01/10 16h43)
+- https://www.olhardireto.com.br/noticias/ilde-diz-que-paula-quebrou-compromisso-ao-tentar-reeleicao-mas-deixa-porta-aberta-para-acordo (01/10 17h00)
+- https://www.olhardireto.com.br/noticias/kassio-coelho-anuncia-candidatura-a-presidencia-da-camara-e-protocola-chapa-na-segunda-feira (01/10 15h11)
+- https://www.infoverus.com.br/politica/kassio-coelho-lanca-candidatura-a-presidencia-da-camara-e-promete-protocolar-chapa-na-segunda-feira/35922 (01/10 16h12)
+- https://www.muvucapopular.com.br/2026/10/01/kassio-coelho-lanca-nome-a-presidencia-da-camara-de-cuiaba-e-diz-ja-contar-com-7-votos/ (01/10 16h06)
+- https://www.gazetadigital.com.br/editorias/politica-de-mt/apos-perder-forca-na-disputa-abilio-autoriza-base-a-negociar-com-ilde-taques/861127 (01/10 07h12)
+- https://www.gazetadigital.com.br/editorias/politica-de-mt/apos-15-votos-fechados-ilde-confirma-negociacao-com-aliados-de-abilio/861131 (01/10 07h36)
+- https://www.gazetadigital.com.br/editorias/politica-de-mt/lemes-abandona-base-de-paula-e-decreta-apoio-a-ilde-em-respeito-ao-compromisso-com-siqueira/861022 (30/09 16h50)
+- https://www.midiajur.com.br/politica/suplente-acerta-apoio-e-ilde-ja-conta-com-15-votos-para-comandar-camara-de-cuiaba/87508 (30/09 15h11)
+- https://www.muvucapopular.com.br/2026/09/30/dilemario-admite-desistir-da-disputa-pela-camara-apos-perder-apoio-para-ilde/ (30/09 19h25)
+- https://www.midiajur.com.br/politica/mesmo-com-dilemario-na-disputa-baixinha-declara-apoio-a-ilde-taques-a-mesa-diretora/87452 (29/09 13h57)
+- https://www.hnt.com.br/politica/baixinha-chora-ao-citar-dilemario-e-diz-que-ainda-pode-tomar-novo-rumo-veja-video/577885 (29/09 11h39)
+- https://leiagora.com.br/video-kassio-coelho-aguarda-orientacao-de-abilio-para-definir-voto-na-mesa-diretora/ (29/09 11h18)
+- https://odocumento.com.br/kassio-coelho-aguarda-sinalizacao-de-abilio-para-definir-voto-e-se-isola-no-podemos/ (29/09 14h20)
+- https://www.folhamax.com/politica/baixinha-garante-voto-em-ilde-na-camara/574260 (25/09 19h21)
+- https://olhardireto.com.br/noticias/paula-calil-rebate-ilde-taques-e-diz-que-conversou-com-vereador-antes-de-anunciar-candidatura-a-reeleicao (07/07 17h05)
+- https://www.gazetadigital.com.br/editorias/politica-de-mt/camara-aprova-nova-data-para-eleicao-da-mesa-diretora/856716 e https://www.cbncuiaba.com.br/2026/08/18/camara-de-cuiaba-adia-eleicao-da-mesa-diretora-para-outubro/ (18/08, 22 a 1)
+- Não reabertos (403): Estadão MT 147213; Noveen 47450.
