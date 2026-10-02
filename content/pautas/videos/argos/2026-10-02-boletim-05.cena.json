@@ -4,7 +4,7 @@
  "materia": "https://hojemt.com.br/radar-eleitoral/",
  "estilo": "slides",
  "universo": "Slides escuros com ondas e curvas de nível verdes (estilo visual do vídeo de referência indicado pelo editor), sem avatar",
- "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides, sem música, com intro e fechamento (pedidos do editor de 29/09 e 01/10). Voz v6: pt-BR-AntonioNeural (voz sintética genérica do catálogo da Microsoft, pelo edge-tts), +18% e +4 Hz; reserva Kokoro pm_alex. Pauta: só o que entrou em content/paginas/radar-dados.json depois do boletim nº 4 (30/09, 07:17 MT), conferido em 02/10: (1) notícia principal: em 1º/10 o ministro Alexandre de Moraes (STF) devolveu a Doutora Natasha o direito de exibir as propagandas que o TRE-MT tinha suspendido em 28 e 29/9 (sem dizer do que tratam as peças, regra do editor), um dia depois de o Pleno do TRE-MT manter a suspensão (30/9); sem manifestação publicada de Pivetta ou da coligação dele sobre a decisão do STF; (2) pesquisas novas para o governo: Paraná Pesquisas MT-02094/2026 (27 a 29/9) e Povo e Poder MT-07968/2026 (19 a 27/9; divulgada por release da contratante, registro não conferido no PesqEle pelo HOJE MT, ressalva no slide), com os seis candidatos e o 2º turno simulado de cada uma; (3) Senado: Paraná Pesquisas MT-02094/2026 (os dez candidatos) e Percent Brasil MT-09025/2026 (os cinco com números divulgados); (4) Justiça Eleitoral na disputa pelo Senado, 30/9: duas liminares a pedido de Janaina Riva mandaram Zé Medeiros retirar dois vídeos (sem descrever o conteúdo) e Janaina foi multada em R$ 5 mil por programa sem os nomes legíveis dos suplentes (com a defesa no slide); (5) ação em andamento: AIJE de Pedro Taques contra Mauro Mendes (30/9), sem decisão, com a declaração de Mauro; (6) grupos: em Rondonópolis (30/9), Zé Medeiros foi à caminhada de Pivetta e Mauro Mendes pediu votos para Medeiros. Ficaram fora por tempo: direito de resposta de Janaina contra Galvan negado (30/9), o último debate (1º/10), a colinha de Abilio, o apoio de Rosana Martinelli a Margareth Buzetti e os últimos programas na TV. Não entram: a Veritá MT-09975/2026 (divulgação suspensa), a Percent só de Cuiabá (municipal) e o rótulo 'deferido com recurso' de Pivetta (sem fonte sobre quem recorreu). Pesquisa é retrato do momento (dita na cena 7, no fim do bloco das quatro pesquisas, como no nº 3). Gerar antes de montar: node intro-boletim.mjs --prefixo=2026-10-02-boletim-05 --n=5 --data=\"Sexta-feira, 2 de outubro de 2026\" --tema=\"O STF e a propaganda de Doutora Natasha, pesquisas novas e a disputa pelo Senado\" e node graficos-boletim-05.mjs (o gerador confere os números e casos no Radar). Arquivos dos slides no padrão do nº 4 (<prefixo>-<k>-fundo.png e -c<k>.png, k = cena − 1). Postagens das redes: nenhuma reproduzida. Conferido em 02/10 pelo checador (fala com 260 palavras, contando a intro). RASCUNHO: slides ainda não gerados no repositório.",
+ "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides, sem música, com intro e fechamento (pedidos do editor de 29/09 e 01/10). Voz v6: pt-BR-AntonioNeural (voz sintética genérica do catálogo da Microsoft, pelo edge-tts), +18% e +4 Hz; reserva Kokoro pm_alex. Pauta: só o que entrou em content/paginas/radar-dados.json depois do boletim nº 4 (30/09, 07:17 MT), conferido em 02/10: (1) notícia principal: em 1º/10 o ministro Alexandre de Moraes (STF) devolveu a Doutora Natasha o direito de exibir as propagandas que o TRE-MT tinha suspendido em 28 e 29/9 (sem dizer do que tratam as peças, regra do editor), um dia depois de o Pleno do TRE-MT manter a suspensão (30/9); sem manifestação publicada de Pivetta ou da coligação dele sobre a decisão do STF; (2) pesquisas novas para o governo: Paraná Pesquisas MT-02094/2026 (27 a 29/9) e Povo e Poder MT-07968/2026 (19 a 27/9; divulgada por release da contratante, registro não conferido no PesqEle pelo HOJE MT, ressalva no slide), com os seis candidatos e o 2º turno simulado de cada uma; (3) Senado: Paraná Pesquisas MT-02094/2026 (os dez candidatos) e Percent Brasil MT-09025/2026 (os cinco com números divulgados); (4) Justiça Eleitoral na disputa pelo Senado, 30/9: duas liminares a pedido de Janaina Riva mandaram Zé Medeiros retirar dois vídeos (sem descrever o conteúdo) e Janaina foi multada em R$ 5 mil por programa sem os nomes legíveis dos suplentes (com a defesa no slide); (5) ação em andamento: AIJE de Pedro Taques contra Mauro Mendes (30/9), sem decisão, com a declaração de Mauro; (6) grupos: em Rondonópolis (30/9), Zé Medeiros foi à caminhada de Pivetta e Mauro Mendes pediu votos para Medeiros. Ficaram fora por tempo: direito de resposta de Janaina contra Galvan negado (30/9), o último debate (1º/10), a colinha de Abilio, o apoio de Rosana Martinelli a Margareth Buzetti e os últimos programas na TV. Não entram: a Veritá MT-09975/2026 (divulgação suspensa), a Percent só de Cuiabá (municipal) e o rótulo 'deferido com recurso' de Pivetta (sem fonte sobre quem recorreu). Pesquisa é retrato do momento (dita na cena 7, no fim do bloco das quatro pesquisas, como no nº 3). Gerar antes de montar: node intro-boletim.mjs --prefixo=2026-10-02-boletim-05 --n=5 --data=\"Sexta-feira, 2 de outubro de 2026\" --tema=\"O STF e a propaganda de Doutora Natasha, pesquisas novas e a disputa pelo Senado\" e node graficos-boletim-05.mjs (o gerador confere os números e casos no Radar). Arquivos dos slides no padrão do nº 4 (<prefixo>-<k>-fundo.png e -c<k>.png, k = cena − 1). Postagens das redes: nenhuma reproduzida. Conferido em 02/10 pelo checador (fala com 260 palavras, contando a intro). RASCUNHO: slides ainda não gerados no repositório. Versão de 02/10 (pedido do editor: 'deixe a voz aprimorada e com slides profissionais divulgando o nome do site hojemt e pedindo para seguir e compartilhar nossas redes sociais Hoje MT'): intro com o logo do HOJE MT e hojemt.com.br em destaque (intro-boletim.mjs), última cena falada trocada pelo slide de fechamento padrão (fechamento-boletim.mjs: logo, hojemt.com.br, link do Radar, redes do rodapé do site — Instagram @hoje.mt, YouTube @hojemt, X @hojemt — e o botão 'Compartilhe este boletim'), cartela final com 'Acesse:' e 'Siga e compartilhe @hoje.mt'.",
  "voz": {
   "motor": "edge",
   "narrador": "pt-BR-AntonioNeural",
@@ -265,17 +265,21 @@
   {
    "n": 11,
    "quem": "narrador",
-   "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
-   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-10-fundo.png",
+   "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral, em hojemt.com.br. Siga o HOJE MT nas redes sociais e compartilhe.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-fecho-fundo.png",
    "movimento": "zoom-out",
    "camadas": [
     {
-     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-10-c0.png",
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-fecho-c0.png",
      "em": 0
     },
     {
-     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-10-c1.png",
-     "quando": "Radar Eleitoral"
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-fecho-c1.png",
+     "quando": "Siga o HOJE MT"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-fecho-c2.png",
+     "quando": "compartilhe"
     }
    ]
   }
@@ -297,8 +301,10 @@
    "MidiaNews",
    "HiperNotícias"
   ],
-  "aviso": "Voz gerada com IA (narrador sintético). Fatos apurados e conferidos pela redação do HOJE MT; sem música."
+  "aviso": "Voz gerada com IA (narrador sintético). Fatos apurados e conferidos pela redação do HOJE MT; sem música.",
+  "siga": "Siga e compartilhe @hoje.mt",
+  "leia_rotulo": "Acesse:"
  },
- "saida": "pautas/videos/argos/2026-10-02-boletim-05.mp4",
+ "saida": "pautas/videos/argos/2026-10-02-boletim-05-v2.mp4",
  "rotulo_ia": "Voz gerada com IA"
 }

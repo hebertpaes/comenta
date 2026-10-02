@@ -8,7 +8,7 @@
 // HOJE MT.") + a cartela final do charge-cena.mjs.
 // Uso: node intro-boletim.mjs --prefixo=2026-09-30-boletim-04 --n=4 \
 //        --data="Quarta-feira, 30 de setembro de 2026" --tema="A Justiça Eleitoral na última semana de campanha"
-import { mkdirSync } from "node:fs";
+import { mkdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { createRequire } from "node:module";
 import { SCRATCH, esc, fundo, CSS } from "./slides-lib.mjs";
@@ -21,19 +21,23 @@ const OUT = join("/home/user/comenta/content/pautas/videos/argos", "cenas");
 mkdirSync(OUT, { recursive: true });
 const arq = (k) => join(OUT, `${args.prefixo}-intro-${k}.png`);
 
+// logo do HOJE MT no alto (editor, 02/10: slides "divulgando o nome do site hojemt")
+const logo = readFileSync("/home/user/comenta/content/assets/hojemt-logo-site-branca.png").toString("base64");
 const c0 = `<div class="p cab">RADAR ELEITORAL · HOJE MT · ELEIÇÕES 2026</div>
+<div class="p" style="top:300px;text-align:center"><img src="data:image/png;base64,${logo}" style="width:420px"></div>
 <div class="p" style="top:560px"><span class="chip">Boletim nº ${esc(args.n)}</span></div>
 <div class="p tit" style="top:690px;font-size:110px">Radar<br><b>Eleitoral</b></div>`;
 const c1 = `<div class="p" style="top:1010px"><span class="pill">${esc(args.data)}</span></div>` +
   (args.tema ? `<div class="p card" style="top:1150px"><h3>Neste boletim</h3><div class="sub" style="font-size:44px;color:#fff">${esc(args.tema)}</div></div>` : "") +
-  `<div class="p" style="top:1700px;text-align:center;font:600 30px Inter;color:#9fb8ad">Mato Grosso · hojemt.com.br/radar-eleitoral</div>`;
+  `<div class="p" style="top:1640px;text-align:center;font:800 54px Inter;color:#2EDC8A;text-shadow:0 0 26px rgba(46,220,138,.6)">hojemt.com.br</div>` +
+  `<div class="p" style="top:1716px;text-align:center;font:600 30px Inter;color:#9fb8ad">Mato Grosso · Radar Eleitoral</div>`;
 
 const browser = await chromium.launch({ executablePath: process.env.CHROME || "/opt/pw-browsers/chromium-1194/chrome-linux/chrome", args: ["--no-sandbox"] });
 const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
 const html = (corpo, bg) => `<!doctype html><html><head><style>${CSS}</style></head><body${bg ? ' style="background:#030605"' : ""}>${corpo}</body></html>`;
-await page.setContent(html(fundo(7), true)); await page.screenshot({ path: arq("fundo") });
-await page.setContent(html(c0)); await page.screenshot({ path: arq("c0"), omitBackground: true });
+await page.setContent(html(fundo(7), true)); await page.waitForLoadState("load"); await page.screenshot({ path: arq("fundo") });
+await page.setContent(html(c0)); await page.waitForLoadState("load"); await page.screenshot({ path: arq("c0"), omitBackground: true });
 await page.setContent(html(c1)); await page.screenshot({ path: arq("c1"), omitBackground: true });
-await page.setContent(html(fundo(7) + c0 + c1, true)); await page.screenshot({ path: join(SCRATCH, `${args.prefixo}-intro-previa.png`) });
+await page.setContent(html(fundo(7) + c0 + c1, true)); await page.waitForLoadState("load"); await page.screenshot({ path: join(SCRATCH, `${args.prefixo}-intro-previa.png`) });
 await browser.close();
 console.log(`intro: ${arq("fundo")}, ${arq("c0")}, ${arq("c1")} · prévia em ${join(SCRATCH, args.prefixo + "-intro-previa.png")}`);

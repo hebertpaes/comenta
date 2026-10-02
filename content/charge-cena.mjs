@@ -484,6 +484,7 @@ const PRONUNCIA = [
   [/\bJanaina\b/g, "Janaína"],
   [/\bQuaest\b/g, "Cuaést"],
   [/\bNatasha\b/g, "Natacha"],
+  [/\bhojemt\.com\.br\b/g, "hoje ême tê ponto com ponto bê érre"],
   [/\bHOJE MT\b/g, "Hoje ême tê"],
 ];
 function pronuncia(texto) {
@@ -494,6 +495,8 @@ const PRONUNCIA_EDGE = [
   // Editor, 30/09: "Pivetta" se fala com "e" fechado (Pivêta), não "Pivétta".
   [/\bPivetta\b/g, "Pivêta"],
   [/\bQuaest\b/g, "Cuaést"],
+  // Fechamento dos boletins (02/10): o endereço do site, letra por letra
+  [/\bhojemt\.com\.br\b/g, "hoje ême tê ponto com ponto bê érre"],
   [/\bHOJE MT\b/g, "Hoje ême tê"],
   [/\bTRE\b/g, "tê érre é"],
   [/\bJanaina\b/g, "Janaína"],

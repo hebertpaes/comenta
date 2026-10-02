@@ -6,6 +6,35 @@ sugestivo e intrigante").
 
 ## Formato vigente (29/09/2026): só voz e slides
 
+### Ajustes de 02/10/2026 (valem sobre tudo o que está abaixo)
+
+Pedido do editor em 02/10: "Não cite nome do avatar e nem crie avatar,
+simplesmente deixe a voz aprimorada e com slides profissionais divulgando o
+nome do site hojemt e pedindo para seguir e compartilhar nossas redes sociais
+Hoje MT".
+
+- **Sem avatar e sem nome de avatar** em lugar nenhum: fala, slide, título,
+  legenda, página, nome de arquivo hospedado. Os boletins nº 1 e 2 (que eram
+  com avatar) foram tirados da página e refeitos no formato só voz e slides,
+  com os fatos e números da época. As seções abaixo que falam do avatar ficam
+  só como histórico.
+- **Intro:** `intro-boletim.mjs` agora põe o logo do HOJE MT no alto e
+  "hojemt.com.br" em destaque no pé do slide.
+- **Fechamento padrão (última cena falada, igual em todos os boletins):**
+  `node fechamento-boletim.mjs --prefixo=<prefixo> > <scratchpad>/fecho-<prefixo>.json`
+  gera o slide (logo, "hojemt.com.br", link do Radar, cartão "Siga o HOJE MT"
+  com Instagram @hoje.mt, YouTube @hojemt e X @hojemt — as redes do rodapé
+  do site — e o botão "Compartilhe este boletim") e imprime a cena pronta, que
+  entra sem mudança como última cena (só com "n"). Fala fixa: "Todos os casos,
+  com as fontes, estão no Radar Eleitoral, em hojemt.com.br. Siga o HOJE MT nas
+  redes sociais e compartilhe." (~9,5 s; o endereço sai soletrado pela regra de
+  PRONUNCIA_EDGE do charge-cena.mjs). As camadas do cartão e do botão entram
+  quando o narrador diz "Siga o HOJE MT" e "compartilhe".
+- **Cartela final:** `"leia_rotulo": "Acesse:"` e `"siga": "Siga e compartilhe
+  @hoje.mt"` no bloco `fechamento` do roteiro.
+- **Legenda do Instagram:** termina com "Acompanhe em hojemt.com.br. Siga e
+  compartilhe o @hoje.mt."
+
 ### Ajustes de 01/10/2026 (valem sobre o que está abaixo)
 
 Pedido do editor em 01/10: "Deixe os vídeos sem avatar com a voz aprimorada e

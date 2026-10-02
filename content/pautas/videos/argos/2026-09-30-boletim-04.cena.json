@@ -4,7 +4,7 @@
  "materia": "https://hojemt.com.br/radar-eleitoral/",
  "estilo": "slides",
  "universo": "Slides escuros com ondas e curvas de nível verdes (estilo visual do vídeo de referência indicado pelo editor), sem avatar",
- "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides (pedidos do editor de 29/09). Voz v6: pt-BR-AntonioNeural (voz sintética genérica do catálogo da Microsoft, pelo edge-tts), +18% de velocidade e +4 Hz; reserva Kokoro pm_alex. Pauta: casos da Justiça Eleitoral com candidatos ao governo e ao Senado de MT desde o boletim nº 2 (26/9), contados em content/paginas/radar-dados.json em 30/09/2026 (17 casos: 9 decisões, 6 improcedentes ou arquivados, 2 ações em andamento; o gerador confere a contagem), cada um com duas fontes no Radar; registros: os 16 deferidos no Radar (Laudicério e a vice Karen Fortes deferidos em 25/9). Notícia principal: a Corregedoria do TRE-MT suspendeu a propaganda de rádio e TV de Doutora Natasha até 1º/10 (decisão de 29/9, a pedido da coligação de Pivetta), com o outro lado (Natasha fala em censura e impetrou mandado de segurança). Tratamento igual: decisões contra e a favor de Pivetta e dos candidatos ao Senado citados (Janaina, Mauro, Zé Medeiros em ordem alfabética), sem adjetivos. Não entra o áudio de Medeiros (curta ainda em rascunho à espera do editor). Postagens das redes: nenhuma reproduzida — não localizamos post oficial em rede aberta daqui (X/YouTube) que comprove essas decisões; Instagram e Facebook não abrem sem print do editor. v2 (01/10, editor: \"sem música de fundo, com uma intro e com o fechamento\"): sem trilha; cena 1 de intro (intro-boletim.mjs); fechamento = última fala + cartela.",
+ "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides (pedidos do editor de 29/09). Voz v6: pt-BR-AntonioNeural (voz sintética genérica do catálogo da Microsoft, pelo edge-tts), +18% de velocidade e +4 Hz; reserva Kokoro pm_alex. Pauta: casos da Justiça Eleitoral com candidatos ao governo e ao Senado de MT desde o boletim nº 2 (26/9), contados em content/paginas/radar-dados.json em 30/09/2026 (17 casos: 9 decisões, 6 improcedentes ou arquivados, 2 ações em andamento; o gerador confere a contagem), cada um com duas fontes no Radar; registros: os 16 deferidos no Radar (Laudicério e a vice Karen Fortes deferidos em 25/9). Notícia principal: a Corregedoria do TRE-MT suspendeu a propaganda de rádio e TV de Doutora Natasha até 1º/10 (decisão de 29/9, a pedido da coligação de Pivetta), com o outro lado (Natasha fala em censura e impetrou mandado de segurança). Tratamento igual: decisões contra e a favor de Pivetta e dos candidatos ao Senado citados (Janaina, Mauro, Zé Medeiros em ordem alfabética), sem adjetivos. Não entra o áudio de Medeiros (curta ainda em rascunho à espera do editor). Postagens das redes: nenhuma reproduzida — não localizamos post oficial em rede aberta daqui (X/YouTube) que comprove essas decisões; Instagram e Facebook não abrem sem print do editor. v2 (01/10, editor: \"sem música de fundo, com uma intro e com o fechamento\"): sem trilha; cena 1 de intro (intro-boletim.mjs); fechamento = última fala + cartela. Versão de 02/10 (pedido do editor: 'deixe a voz aprimorada e com slides profissionais divulgando o nome do site hojemt e pedindo para seguir e compartilhar nossas redes sociais Hoje MT'): intro com o logo do HOJE MT e hojemt.com.br em destaque (intro-boletim.mjs), última cena falada trocada pelo slide de fechamento padrão (fechamento-boletim.mjs: logo, hojemt.com.br, link do Radar, redes do rodapé do site — Instagram @hoje.mt, YouTube @hojemt, X @hojemt — e o botão 'Compartilhe este boletim'), cartela final com 'Acesse:' e 'Siga e compartilhe @hoje.mt'.",
  "voz": {
   "motor": "edge",
   "narrador": "pt-BR-AntonioNeural",
@@ -254,17 +254,21 @@
   {
    "n": 11,
    "quem": "narrador",
-   "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
-   "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-10-fundo.png",
+   "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral, em hojemt.com.br. Siga o HOJE MT nas redes sociais e compartilhe.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-fecho-fundo.png",
    "movimento": "zoom-out",
    "camadas": [
     {
-     "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-10-c0.png",
+     "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-fecho-c0.png",
      "em": 0
     },
     {
-     "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-10-c1.png",
-     "quando": "Radar Eleitoral"
+     "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-fecho-c1.png",
+     "quando": "Siga o HOJE MT"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-30-boletim-04-fecho-c2.png",
+     "quando": "compartilhe"
     }
    ]
   }
@@ -283,8 +287,10 @@
    "Estadão Mato Grosso",
    "Exclusivo News"
   ],
-  "aviso": "Voz gerada com IA (narrador sintético). Fatos apurados e conferidos pela redação do HOJE MT; cada caso tem duas fontes no Radar Eleitoral."
+  "aviso": "Voz gerada com IA (narrador sintético). Fatos apurados e conferidos pela redação do HOJE MT; cada caso tem duas fontes no Radar Eleitoral.",
+  "siga": "Siga e compartilhe @hoje.mt",
+  "leia_rotulo": "Acesse:"
  },
- "saida": "pautas/videos/argos/2026-09-30-boletim-04.mp4",
+ "saida": "pautas/videos/argos/2026-09-30-boletim-04-v3.mp4",
  "rotulo_ia": "Voz gerada com IA"
 }
