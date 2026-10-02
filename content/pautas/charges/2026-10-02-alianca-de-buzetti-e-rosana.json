@@ -1,0 +1,57 @@
+{
+  "slug": "alianca-de-buzetti-e-rosana",
+  "materia": "https://hojemt.com.br/alianca-de-buzetti-e-rosana/",
+  "titulo": "Aliança de Buzetti e Rosana",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 02/10/2026 06:26 UTC)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Aliança no Nortão: plantou em Sinop, quer colher no Senado.",
+    "instagram_4x5": "Plantou em Sinop, quer colher no Senado."
+  },
+  "contexto": "A ex-prefeita de Sinop Rosana Martinelli (MDB) declarou apoio a Margareth Buzetti (PP), candidata ao Senado na coligação de Pivetta (O Documento e Noveen, 01/10). A charge mostra só o apoio (as duas plantando uma muda numa lavoura do norte de MT), sem atribuir fala, crime ou humilhação.",
+  "fontes": [
+    "https://hojemt.com.br/alianca-de-buzetti-e-rosana/",
+    "https://odocumento.com.br/rosana-martinelli-declara-apoio-a-margareth-buzetti-e-reforca-candidatura-no-norte-de-mt/"
+  ],
+  "observacoes_editoriais": "A curta diz 'duas veteranas do MDB', mas Margareth Buzetti é candidata pelo PP (registro no TSE; content/pautas/eleicoes/2026-mt-candidatos.json). Só Rosana Martinelli é do MDB. Texto não alterado (decisão do editor).",
+  "regras_da_cena": "lavoura de soja com silos ao fundo; Buzetti sorridente planta uma muda num vaso dourado em forma de urna sem texto; apoiadora genérica de costas, sem traços de pessoa real; sem texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "Margareth Buzetti",
+      "referencia_canva": [
+        "MAHWHz00VGQ"
+      ],
+      "origem": "foto oficial de registro no TSE 2026 (DivulgaCand), usada só como referência de desenho; nenhuma foto mais recente com licença encontrada nesta rodada"
+    },
+    {
+      "nome": "Rosana Martinelli (personagem genérica)",
+      "referencia_canva": [],
+      "origem": "sem foto oficial/licenciada cadastrada: desenhada de costas, sem traços de pessoa real"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHW1qkhC7w",
+    "arte_16x9": "MAHW1mBJmAo",
+    "design_instagram_4x5": null,
+    "arte_4x5": null,
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "pendente",
+    "obs": "4:5 bloqueada por pausa de cota do Canva (02/10 ~06:35 UTC). Assunto eleitoral (Senado): se a próxima vaga de charge cair depois de 04/10, o item vai como aguardando_decisao."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-02-alianca-de-buzetti-e-rosana.jpg",
+    "instagram_4x5": null
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-02-alianca-de-buzetti-e-rosana.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/10/2026-10-02-alianca-de-buzetti-e-rosana-og.jpg",
+    "instagram_4x5": null
+  },
+  "site": "feature_image e og/twitter trocadas em 02/10/2026 ~06:35 UTC (antes: charge automática do publicador, charge-1790922108.webp)"
+}
