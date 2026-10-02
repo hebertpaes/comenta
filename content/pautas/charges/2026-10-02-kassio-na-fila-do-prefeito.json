@@ -1,0 +1,58 @@
+{
+  "slug": "kassio-na-fila-do-prefeito",
+  "materia": "https://hojemt.com.br/kassio-na-fila-do-prefeito/",
+  "titulo": "Kássio na fila do prefeito",
+  "pedido": "Editor, 02/10/2026: \"https://hojemt.com.br/kassio-na-fila-do-prefeito/ — Crie a imagens no Canva em substituição\"",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas de Kássio Coelho nem de Abilio Brunini",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Eleição da Mesa: tem vereador esperando o sinal do Alencastro",
+    "instagram_4x5": "Tem vereador esperando o sinal do Alencastro"
+  },
+  "contexto": "A curta diz que o vereador Kássio Coelho (Podemos) aguarda o sinal do prefeito Abilio Brunini para definir o voto na eleição da Mesa da Câmara de Cuiabá (marcada para 06/10/2026). A charge usa só essa premissa (semáforo comandado da sacada do Palácio Alencastro), sem atribuir fala, crime ou humilhação a ninguém. O vereador aparece como personagem genérico, de costas, porque não há foto oficial dele cadastrada.",
+  "fontes": [
+    "https://hojemt.com.br/kassio-na-fila-do-prefeito/"
+  ],
+  "regras_da_cena": "prefeito caricato na sacada segura o controle de um semáforo no vermelho; vereador genérico de terno, de costas, espera na calçada com uma cédula em branco; figurantes de costas; sem texto, logos ou bandeiras na arte",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini",
+      "referencia_canva": ["MAHWHiDa8C0", "MAHWHkYuCOg"],
+      "origem": "Galeria oficial do prefeito, Prefeitura de Cuiabá, 21/09/2026 e 03/09/2026, Foto: Rennan Oliveira/Secom (só referência de desenho)"
+    },
+    {
+      "nome": "Kássio Coelho (vereador, Podemos)",
+      "referencia_canva": null,
+      "origem": "sem foto oficial cadastrada (portal da Câmara de Cuiabá bloqueia este ambiente; DivulgaCand 2024 bloqueado fora do Brasil): personagem genérico, de costas, sem traços de pessoa real"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHW0TNbkZw",
+    "arte_16x9": "MAHW0Wm0Co8",
+    "design_instagram_4x5": null,
+    "arte_4x5": null,
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "pendente",
+    "obs": "versão 4:5 não gerada: pausa de cota do Canva (quota_cooldown) em 02/10/2026 ~01:30 UTC; a rotina de charges refaz quando a cota voltar. O assunto perde sentido depois da eleição da Mesa (06/10)."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-02-kassio-na-fila-do-prefeito.jpg",
+    "instagram_4x5": null
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-02-kassio-na-fila-do-prefeito.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/10/2026-10-02-kassio-na-fila-do-prefeito-og.jpg",
+    "instagram_4x5": null
+  },
+  "site": "feature_image, og_image e twitter_image trocadas em 02/10/2026 ~01:35 UTC (antes: charge automática charge-1790889733.webp e card-889733519.webp)",
+  "observacoes_editoriais": [
+    "O texto da curta (do publicador externo) traz 'sinal de fumaça dos índios' (estereótipo) e 'Palácio Alencas' (o nome é Palácio Alencastro); não alterado, porque texto de post publicado só muda com o editor.",
+    "A curta diz que Kássio só decide com o aval do prefeito; MidiaNews/Muvuca Popular e Estadão MT noticiaram em 01/10 que ele lançou candidatura própria à presidência da Câmara e diz ter 7 votos (dossiê: pautas/2026-09-30-camara-cuiaba-eleicao-da-mesa.md)."
+  ]
+}
