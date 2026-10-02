@@ -1,0 +1,50 @@
+{
+  "slug": "radar-pivetta-no-oeste",
+  "materia": "https://hojemt.com.br/radar-pivetta-no-oeste/",
+  "titulo": "Radar Pivetta no Oeste",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 02/10/2026 ~18:30 UTC)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal entre aspas de Gisela Simona (só a palavra \"eficiência\")",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Oeste no radar: o GPS da campanha já marcou Cáceres no mapa.",
+    "instagram_4x5": null
+  },
+  "contexto": "Segundo a curta, Gisela Simona (União), candidata a vice na chapa de Otaviano Pivetta, esteve em Cáceres e disse que o Oeste de MT está no radar do governador, prometendo presença estratégica na região. A charge brinca só com o radar e o GPS de campanha, sem atribuir fala, crime ou humilhação.",
+  "fontes": [
+    "https://hojemt.com.br/radar-pivetta-no-oeste/"
+  ],
+  "regras_da_cena": "beira do rio Paraguai em Cáceres ao entardecer, tuiuiú e barcos de pesca; Gisela sorridente segura tela de radar verde com o mapa do Oeste; garrafa térmica e xícaras de café, cartões de visita voando; moradores de costas acenando; sem texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "Gisela Simona",
+      "cargo": "candidata a vice-governadora de MT (União), na chapa de Otaviano Pivetta",
+      "referencia_canva": ["MAHW4hXtz9Y"],
+      "origem": "foto oficial de registro de candidatura no TSE 2026 (vice-governador, SQ 110002551479, FMT110002551479_div.jpg, via espelho ND Mais), baixada em 02/10/2026; usada só como referência de desenho; mais recente que MAHWEUCuhl0 (Câmara dos Deputados/Wikimedia, CC BY)",
+      "credito": "TSE/Divulgação"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHW4il_7xI",
+    "arte_16x9": "MAHW4vYbtvQ",
+    "design_instagram_4x5": null,
+    "arte_4x5": null,
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "pendente",
+    "obs": "4:5 não gerada (cota do Canva em pausa). Assunto eleitoral (governo): a próxima vaga de charge livre na agenda cai depois do 1º turno de 4/10, então o item iria como aguardando_decisao."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-02-radar-pivetta-no-oeste.jpg",
+    "instagram_4x5": null
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-02-radar-pivetta-no-oeste.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/radar-pivetta-no-oeste-wa-1.jpg",
+    "instagram_4x5": null
+  },
+  "site": "feature_image e og/twitter trocadas em 02/10/2026 ~18:30 UTC (antes: charge automática do publicador, charge-1790965349.webp)"
+}
