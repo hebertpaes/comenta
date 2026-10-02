@@ -1,0 +1,49 @@
+{
+  "slug": "rito-legal-no-terere",
+  "materia": "https://hojemt.com.br/rito-legal-no-terere/",
+  "titulo": "Rito Legal no Tereré",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 02/10/2026 ~20:30 UTC, depois de duas pausas de cota do Canva)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal entre aspas da presidente do TRE-MT",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Tereré gelado e rito no lugar: degrau por degrau até o Supremo.",
+    "instagram_4x5": null
+  },
+  "contexto": "Segundo a curta, a presidente do TRE-MT, desembargadora Serly Marcondes Alves, afirmou que a suspensão da propaganda de Natasha seguiu o rito legal (representação, julgamento no tribunal e recurso ao STF) e que a decisão do Supremo foi cumprida imediatamente. A charge brinca só com o caminho dos graus de jurisdição e com o tereré, sem atribuir fala, crime ou humilhação.",
+  "fontes": [
+    "https://hojemt.com.br/rito-legal-no-terere/",
+    "https://www.gazetadigital.com.br/editorias/eleicoes-2026/presidente-do-tre-diz-que-decisao-do-stf-pro-natasha-e-parte-do-jogo-judicial-e-evita-falar-sobre-vazamento/861261"
+  ],
+  "regras_da_cena": "personagem genérica (não é a desembargadora real: sem foto oficial cadastrada como referência), toga preta, tereré na guampa e garrafa térmica, varanda sob o sol de Cuiabá; escadinha de quatro degraus com pastas e carimbos até um prédio de colunas brancas; ipê amarelo; sem texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "desembargadora (genérica)",
+      "referencia_canva": [],
+      "origem": "sem foto de referência: personagem genérica, conforme a regra 'sem foto licenciada/oficial, personagem genérico'"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHW4xXGq-w",
+    "arte_16x9": "MAHW5BSyNEk",
+    "design_instagram_4x5": null,
+    "arte_4x5": null,
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "pendente",
+    "obs": "4:5 não gerada (cota do Canva). Assunto eleitoral: a próxima vaga de charge livre na agenda cai depois do 1º turno de 4/10, então o item iria como aguardando_decisao."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-02-rito-legal-no-terere.jpg",
+    "instagram_4x5": null
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-02-rito-legal-no-terere.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/rito-legal-no-terere-wa-1.jpg",
+    "instagram_4x5": null
+  },
+  "site": "feature_image e og/twitter trocadas em 02/10/2026 ~20:30 UTC (antes: charge automática do publicador, charge-1790965307.webp)"
+}
