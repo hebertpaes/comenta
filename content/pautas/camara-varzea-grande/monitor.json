@@ -134,7 +134,7 @@
    "data": "2026-09-10T15:13:44Z"
   }
  },
- "ultima_checagem": "2026-10-02T11:19:04.920Z",
+ "ultima_checagem": "2026-10-02T19:24:17.291Z",
  "pautas": [
   {
    "data": "2026-10-01",
@@ -143,6 +143,30 @@
    "ghost_slug": "camara-de-varzea-grande-aprova-pccss-da-saude-dos-garis-e-de-outras-categorias",
    "ghost_id": "6abe4e1f6357bc8c6ad4d3f1",
    "status": "rascunho"
+  },
+  {
+   "data": "2026-10-02",
+   "titulo": "Presidente da Câmara de Várzea Grande nega pedido de 10 vereadores para nova eleição da Mesa e cita recurso pendente no STF",
+   "arquivo": "pautas/camara-varzea-grande/2026-10-02-mesa-nova-eleicao-negada.md",
+   "ghost_slug": "presidente-da-camara-de-varzea-grande-nega-nova-eleicao-da-mesa",
+   "ghost_id": "6ac004656357bc8c6ad4f0cf",
+   "status": "rascunho",
+   "capa": "pautas/ilustracoes/2026-10-02-camara-vg-mesa.jpg",
+   "card": "pautas/cards/2026-10-02-camara-vg-mesa.jpg",
+   "agenda_instagram": "81",
+   "fontes": [
+    "https://www.hnt.com.br/politica/presidente-da-camara-de-vg-barra-nova-eleicao-da-mesa-apos-pedidos-de-10-vereadores/578590",
+    "https://olhardireto.com.br/noticias/wanderley-nega-pedido-de-10-vereadores-para-realizar-nova-eleicao-da-mesa-nesta-sexta-feira",
+    "https://www.folhamax.com/politica/wanderley-nega-nova-eleicao-e-vereadores-acionam-justica/575242"
+   ]
+  }
+ ],
+ "acompanhar": [
+  {
+   "desde": "2026-10-02",
+   "assunto": "Decreto nº 96/2026 da prefeita Flávia Moretti reorganiza o COMSEA e cria a CAISAN enquanto o projeto de lei enviado em 01/07 (Ofício 1108/2026, urgência especial) espera votação na Câmara; prazo federal do SISAN/Brasil Sem Fome era 30/09",
+   "fonte": "https://www.vgnoticias.com.br/politica/demora-da-camara-poe-programa-contra-a-fome-em-risco-e-moretti-recorre-a-decreto-em-vg/152901",
+   "por_que_nao_virou_pauta": "uma fonte legível só (VGN; o Noveen bloqueia leitura automática) e decreto anterior de 24/09 com composição diferente (16 membros) — conferir no Jornal Oficial da AMM e com a Câmara antes de escrever"
   }
  ]
 }
