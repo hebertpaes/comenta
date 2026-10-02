@@ -299,7 +299,7 @@
   ]
  },
  "pesquisas": {
-  "atualizado": "02/10/2026 13:05",
+  "atualizado": "02/10/2026 17:50",
   "corridas": [
    {
     "id": "governador-mt",
@@ -734,7 +734,7 @@
     "id": "senado-mt",
     "titulo": "Senado por Mato Grosso (2 vagas)",
     "cenario": "Mauro Mendes (União) e Janaina Riva (MDB) à frente para as duas vagas",
-    "porque": "Nas seis pesquisas registradas desde 6/9, Mauro lidera e Janaina fica em segundo no 1º voto; em cinco delas, com vantagem sobre o terceiro colocado maior que a margem de erro. Na Paraná Pesquisas de 27 a 29/9, Janaina tem 18% no 1º voto e Zé Medeiros (PL), 16%: 2 pontos de diferença, dentro da margem de erro de 2,7 pontos; na soma dos dois votos, 33,3% a 29,3%. Na Percent (26 a 29/9), Janaina tem 22,8% e Zé Medeiros, 10,4%. Fávaro (PSD) e Pedro Taques (PSB) vêm em seguida. O gráfico compara o 1º voto, medido do mesmo jeito pelos institutos; a soma dos dois votos de cada pesquisa está nas fichas.",
+    "porque": "Nas sete pesquisas registradas desde 6/9, Mauro lidera e Janaina fica em segundo no 1º voto; em cinco delas, com vantagem sobre o terceiro colocado maior que a margem de erro. Na Paraná Pesquisas de 27 a 29/9, Janaina tem 18% no 1º voto e Zé Medeiros (PL), 16%: 2 pontos de diferença, dentro da margem de erro de 2,7 pontos; na soma dos dois votos, 33,3% a 29,3%. Na MT Dados (25 a 30/9), Janaina tem 19% no 1º voto e Zé Medeiros, 16%: 3 pontos, igual à margem de erro de 3 pontos; na soma dos dois votos, 36% a 31%. Na Percent (26 a 29/9), Janaina tem 22,8% e Zé Medeiros, 10,4%. Fávaro (PSD) e Pedro Taques (PSB) vêm em seguida. O gráfico compara o 1º voto, medido do mesmo jeito pelos institutos; a soma dos dois votos de cada pesquisa está nas fichas.",
     "nomes": [
      "Mauro Mendes",
      "Janaina Riva",
@@ -743,6 +743,49 @@
      "Fávaro"
     ],
     "pesquisas": [
+     {
+      "inst": "MT Dados",
+      "contratante": "não informado no relatório nem nas matérias (a 4ª rodada, MT-00691/2026, foi com recursos próprios)",
+      "campo": "25 a 30/09",
+      "amostra": "3.080",
+      "margem": "3",
+      "conf": 95,
+      "metodo": "híbrido: entrevistas presenciais em 45 cidades e coleta pela internet em outros 134 municípios",
+      "reg": "MT-07362/2026",
+      "base": "totais",
+      "v": {
+       "Mauro Mendes": 32,
+       "Janaina Riva": 19,
+       "Zé Medeiros": 16,
+       "Fávaro": 7,
+       "Pedro Taques": 6,
+       "Galvan": 2,
+       "Margareth Buzetti": 1,
+       "Coronel Darwin": 1,
+       "Professor Nelson Ferreira": 0,
+       "Beny Godoy": 0,
+       "Branco/nulo": 5,
+       "Indecisos": 11
+      },
+      "soma": "consolidado (1º + 2º voto, perto de 200%): Mauro Mendes 50%, Janaina Riva 36%, Zé Medeiros 31%, Fávaro 15%, Pedro Taques 14%, Galvan 7%, Margareth Buzetti 3%, Coronel Darwin 2%, Professor Nelson Ferreira 1%, Beny Godoy 0%; indecisos 30%, brancos e nulos 11%. No 2º voto: Mauro 18%, Janaina 17%, Zé Medeiros 15%, Fávaro e Taques 8% cada.",
+      "fontes": [
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/pesquisa-indica-eleicao-de-mendes-e-janaina-confira-os-numeros/530465",
+        "2026-10-02T17:10"
+       ],
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/a-30-horas-da-eleicao-instituto-preve-vitorias-de-mauro-e-janaina-ao-senado/575366",
+        "2026-10-02T16:40"
+       ],
+       [
+        "MidiaJur",
+        "https://www.midiajur.com.br/eleicoes-2026/mauro-lidera-pesquisa-para-o-senado-com-50-janaina-tem-36-e-medeiros-31/87618",
+        "2026-10-02T16:54"
+       ]
+      ]
+     },
      {
       "inst": "Paraná Pesquisas",
       "contratante": "Sedek Serviços, Tecnologia & Informação Ltda. (segundo o registro no TSE)",
@@ -8928,7 +8971,7 @@
   ]
  },
  "analise": {
-  "atualizado": "02/10/2026 13:05",
+  "atualizado": "02/10/2026 17:50",
   "candidatos": [
    {
     "nome": "Doutora Natasha",
@@ -9719,11 +9762,11 @@
       ]
      ],
      [
-      "Chega a 10% na soma dos votos da MT Dados (11 a 17/9).",
+      "Tem 7% na soma dos dois votos da MT Dados de 25 a 30/9, à frente de Margareth Buzetti, Coronel Darwin, Professor Nelson Ferreira e Beny Godoy.",
       [
        [
-        "MT Dados (MT Dados)",
-        "https://mtdados.com.br/pesquisa-senado-mt-2026-4a-rodada"
+        "MidiaNews (MT Dados)",
+        "https://www.midianews.com.br/politica/pesquisa-indica-eleicao-de-mendes-e-janaina-confira-os-numeros/530465"
        ]
       ]
      ]
@@ -9933,7 +9976,7 @@
     "numero": 444,
     "fortes": [
      [
-      "Lidera o 1º voto em todas as pesquisas com esse recorte: 37% (Quaest), 39,7% (Paraná Pesquisas) e 33% (MT Dados).",
+      "Lidera o 1º voto em todas as pesquisas com esse recorte: 37% (Quaest), 39,7% (Paraná Pesquisas) e 32% (MT Dados, 25 a 30/9).",
       [
        [
         "g1 MT (Quaest)",
@@ -9944,8 +9987,8 @@
         "https://paranapesquisas.com.br/wp-content/uploads/2026/09/MT_Set26-2.pdf"
        ],
        [
-        "MT Dados (MT Dados)",
-        "https://mtdados.com.br/pesquisa-senado-mt-2026-4a-rodada"
+        "MidiaNews (MT Dados)",
+        "https://www.midianews.com.br/politica/pesquisa-indica-eleicao-de-mendes-e-janaina-confira-os-numeros/530465"
        ]
       ]
      ],
