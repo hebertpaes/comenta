@@ -1,0 +1,38 @@
+{
+  "slug": "mala-pesada-no-ar",
+  "materia": "https://hojemt.com.br/mala-pesada-no-ar/",
+  "titulo": "Mala Pesada no Ar",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 02/10/2026 ~15:50 UTC)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal entre aspas",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Mala fechada, dúvida aberta: ninguém provou o recheio.",
+    "instagram_4x5": null
+  },
+  "contexto": "Segundo a curta, o candidato ao governo Sargento Laudicério disse que um deputado, que não é nomeado, teria sido pego pela PM com uma mala de dinheiro; a curta ressalta que nada foi provado. Por ser acusação sem prova, a charge NÃO mostra pessoa, dinheiro, polícia nem cena de crime: só a mala fechada sob o holofote do debate e a dúvida do eleitor (presunção de inocência).",
+  "fontes": [
+    "https://hojemt.com.br/mala-pesada-no-ar/"
+  ],
+  "regras_da_cena": "estúdio de debate com púlpitos vazios; mala de couro fechada com cadeado sob holofote, lupa e balança indecisa; casal de eleitores de costas com tereré; sem pessoa reconhecível, dinheiro, polícia, algemas, texto ou logos",
+  "personagens": [],
+  "duplicata": "a curta mala-de-milhoes-na-brigada (mesmo fato, publicada 9 s depois) foi despublicada como cópia; redirect pendente em pautas/duplicadas/redirects-pendentes.yaml",
+  "canva": {
+    "design_site_16x9": "DAHW31vH_Ao",
+    "arte_16x9": "MAHW31Xvy0A",
+    "design_instagram_4x5": null,
+    "arte_4x5": null,
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "pendente",
+    "obs": "4:5 não gerada: acusação sem prova envolvendo candidato não é tema para a agenda do Instagram sem decisão do editor."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-02-mala-pesada-no-ar.jpg",
+    "instagram_4x5": null
+  },
+  "site": "feature_image e og/twitter trocadas em 02/10/2026 ~15:50 UTC (antes: charge automática do publicador, charge-1790954517.webp)"
+}
