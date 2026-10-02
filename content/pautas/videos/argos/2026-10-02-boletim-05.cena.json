@@ -1,0 +1,304 @@
+{
+ "slug": "boletim-05",
+ "titulo": "Boletim nº 5: o STF e a propaganda de Natasha, pesquisas novas e a disputa pelo Senado",
+ "materia": "https://hojemt.com.br/radar-eleitoral/",
+ "estilo": "slides",
+ "universo": "Slides escuros com ondas e curvas de nível verdes (estilo visual do vídeo de referência indicado pelo editor), sem avatar",
+ "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides, sem música, com intro e fechamento (pedidos do editor de 29/09 e 01/10). Voz v6: pt-BR-AntonioNeural (voz sintética genérica do catálogo da Microsoft, pelo edge-tts), +18% e +4 Hz; reserva Kokoro pm_alex. Pauta: só o que entrou em content/paginas/radar-dados.json depois do boletim nº 4 (30/09, 07:17 MT), conferido em 02/10: (1) notícia principal: em 1º/10 o ministro Alexandre de Moraes (STF) devolveu a Doutora Natasha o direito de exibir as propagandas que o TRE-MT tinha suspendido em 28 e 29/9 (sem dizer do que tratam as peças, regra do editor), um dia depois de o Pleno do TRE-MT manter a suspensão (30/9); sem manifestação publicada de Pivetta ou da coligação dele sobre a decisão do STF; (2) pesquisas novas para o governo: Paraná Pesquisas MT-02094/2026 (27 a 29/9) e Povo e Poder MT-07968/2026 (19 a 27/9; divulgada por release da contratante, registro não conferido no PesqEle pelo HOJE MT, ressalva no slide), com os seis candidatos e o 2º turno simulado de cada uma; (3) Senado: Paraná Pesquisas MT-02094/2026 (os dez candidatos) e Percent Brasil MT-09025/2026 (os cinco com números divulgados); (4) Justiça Eleitoral na disputa pelo Senado, 30/9: duas liminares a pedido de Janaina Riva mandaram Zé Medeiros retirar dois vídeos (sem descrever o conteúdo) e Janaina foi multada em R$ 5 mil por programa sem os nomes legíveis dos suplentes (com a defesa no slide); (5) ação em andamento: AIJE de Pedro Taques contra Mauro Mendes (30/9), sem decisão, com a declaração de Mauro; (6) grupos: em Rondonópolis (30/9), Zé Medeiros foi à caminhada de Pivetta e Mauro Mendes pediu votos para Medeiros. Ficaram fora por tempo: direito de resposta de Janaina contra Galvan negado (30/9), o último debate (1º/10), a colinha de Abilio, o apoio de Rosana Martinelli a Margareth Buzetti e os últimos programas na TV. Não entram: a Veritá MT-09975/2026 (divulgação suspensa), a Percent só de Cuiabá (municipal) e o rótulo 'deferido com recurso' de Pivetta (sem fonte sobre quem recorreu). Pesquisa é retrato do momento (dita na cena 7, no fim do bloco das quatro pesquisas, como no nº 3). Gerar antes de montar: node intro-boletim.mjs --prefixo=2026-10-02-boletim-05 --n=5 --data=\"Sexta-feira, 2 de outubro de 2026\" --tema=\"O STF e a propaganda de Doutora Natasha, pesquisas novas e a disputa pelo Senado\" e node graficos-boletim-05.mjs (o gerador confere os números e casos no Radar). Arquivos dos slides no padrão do nº 4 (<prefixo>-<k>-fundo.png e -c<k>.png, k = cena − 1). Postagens das redes: nenhuma reproduzida. Conferido em 02/10 pelo checador (fala com 260 palavras, contando a intro). RASCUNHO: slides ainda não gerados no repositório.",
+ "voz": {
+  "motor": "edge",
+  "narrador": "pt-BR-AntonioNeural",
+  "velocidade": "+18%",
+  "tom": "+4Hz",
+  "reserva": {
+   "motor": "kokoro",
+   "narrador": "pm_alex",
+   "velocidade": 1.18,
+   "tom": 2,
+   "tratamento": "limpo",
+   "fonetica": "misaki",
+   "sotaque": "cuiabano"
+  }
+ },
+ "legendas": false,
+ "trilha": "nenhuma",
+ "abertura": {
+  "chip": "RADAR ELEITORAL",
+  "gancho": "STF, PESQUISAS E A DISPUTA PELO SENADO",
+  "sub": "Mato Grosso · 02/10"
+ },
+ "cenas": [
+  {
+   "n": 1,
+   "quem": "narrador",
+   "fala": "Radar Eleitoral do HOJE MT. Boletim número cinco, sexta-feira, dois de outubro.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-intro-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-intro-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-intro-c1.png",
+     "quando": "Boletim"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "quem": "narrador",
+   "fala": "O ministro Alexandre de Moraes, do Supremo Tribunal Federal, devolveu à candidata Doutora Natasha o direito de exibir as propagandas que o TRE de Mato Grosso tinha suspendido.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-1-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-1-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-1-c1.png",
+     "quando": "devolveu"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-1-c2.png",
+     "quando": "tinha suspendido"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "quem": "narrador",
+   "fala": "A decisão saiu na quinta-feira, último dia do horário eleitoral. Na véspera, o pleno do TRE manteve a suspensão.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-2-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-2-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-2-c1.png",
+     "quando": "último dia"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-2-c2.png",
+     "quando": "Na véspera"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "quem": "narrador",
+   "fala": "Para o governo, na Paraná Pesquisas, Otaviano Pivetta tem quarenta e seis vírgula quatro por cento; Wellington Fagundes, vinte e sete vírgula um; e Doutora Natasha, quinze vírgula cinco.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-3-fundo.png",
+   "movimento": "pan-dir",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-3-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-3-c1.png",
+     "quando": "Otaviano Pivetta tem"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-3-c2.png",
+     "quando": "Wellington Fagundes, vinte"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-3-c3.png",
+     "quando": "Doutora Natasha, quinze"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "quem": "narrador",
+   "fala": "Na Povo e Poder, divulgada pela emissora contratante, Wellington tem trinta e um vírgula oito por cento, e Pivetta, trinta vírgula sete, em empate técnico. Natasha tem nove.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-4-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-4-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-4-c1.png",
+     "quando": "Wellington tem"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-4-c2.png",
+     "quando": "Pivetta, trinta"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-4-c3.png",
+     "quando": "empate técnico"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-4-c4.png",
+     "quando": "Natasha tem"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "quem": "narrador",
+   "fala": "Para o Senado, na Paraná Pesquisas, Mauro Mendes tem trinta e sete vírgula cinco por cento no primeiro voto; Janaina Riva e Zé Medeiros, dezoito e dezesseis, em empate técnico.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-5-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-5-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-5-c1.png",
+     "quando": "Mauro Mendes tem"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-5-c2.png",
+     "quando": "Janaina Riva"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-5-c3.png",
+     "quando": "Zé Medeiros"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-5-c4.png",
+     "quando": "empate técnico"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "quem": "narrador",
+   "fala": "Na Percent Brasil, Mauro tem trinta e oito vírgula três; Janaina, vinte e dois vírgula oito; e Medeiros, dez vírgula quatro. Pesquisa é retrato do momento.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-6-fundo.png",
+   "movimento": "pan-esq",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-6-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-6-c1.png",
+     "quando": "Mauro tem"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-6-c2.png",
+     "quando": "Janaina, vinte"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-6-c3.png",
+     "quando": "Medeiros, dez"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-6-c4.png",
+     "quando": "retrato do momento"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "quem": "narrador",
+   "fala": "No TRE, liminares pedidas por Janaina Riva mandaram Zé Medeiros retirar dois vídeos, e Janaina foi multada em cinco mil reais por um programa sem os nomes legíveis dos suplentes.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-7-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-7-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-7-c1.png",
+     "quando": "liminares pedidas"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-7-c2.png",
+     "quando": "Janaina foi multada"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "quem": "narrador",
+   "fala": "Pedro Taques entrou com ação contra Mauro Mendes, ainda sem decisão. Mauro disse que não fez nem pediu o ato questionado.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-8-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-8-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-8-c1.png",
+     "quando": "sem decisão"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-8-c2.png",
+     "quando": "Mauro disse"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "quem": "narrador",
+   "fala": "Em Rondonópolis, Zé Medeiros, da coligação de Wellington, foi à caminhada de Pivetta, e Mauro Mendes, da coligação de Pivetta, pediu votos para Medeiros.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-9-fundo.png",
+   "movimento": "pan-dir",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-9-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-9-c1.png",
+     "quando": "Zé Medeiros"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-9-c2.png",
+     "quando": "Mauro Mendes"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "quem": "narrador",
+   "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-10-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-10-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-05-10-c1.png",
+     "quando": "Radar Eleitoral"
+    }
+   ]
+  }
+ ],
+ "fechamento": {
+  "linha1": "Radar Eleitoral · HOJE MT",
+  "leia": "hojemt.com.br/radar-eleitoral",
+  "fontes": [
+   "Olhar Direto",
+   "Gazeta Digital",
+   "RepórterMT",
+   "Folhamax",
+   "RDNews",
+   "Paraná Pesquisas",
+   "Gazeta do Povo",
+   "Primeira Hora",
+   "VGN",
+   "Infoverus",
+   "MidiaNews",
+   "HiperNotícias"
+  ],
+  "aviso": "Voz gerada com IA (narrador sintético). Fatos apurados e conferidos pela redação do HOJE MT; sem música."
+ },
+ "saida": "pautas/videos/argos/2026-10-02-boletim-05.mp4",
+ "rotulo_ia": "Voz gerada com IA"
+}
