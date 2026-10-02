@@ -1,0 +1,49 @@
+{
+  "slug": "ultima-chamada-no-ar",
+  "materia": "https://hojemt.com.br/ultima-chamada-no-ar/",
+  "titulo": "Última chamada no ar",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 02/10/2026 10:25 UTC, depois de três pausas de cota às 09:25)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Véspera do 1º turno: a propaganda voltou, e no volume máximo.",
+    "instagram_4x5": "A propaganda voltou, no volume máximo."
+  },
+  "contexto": "A curta trata da decisão do ministro Alexandre de Moraes (STF), de 01/10, que cassou as decisões do TRE-MT e devolveu o direito de veicular as propagandas suspensas da candidata Doutora Natasha (PSD) (ver radar-dados.json, seção justiça). A charge é deliberadamente genérica: sem pessoas reais, sem rosto e sem referência ao conteúdo das propagandas; só a mão de toga aumentando o volume do rádio e da TV numa cozinha mato-grossense.",
+  "fontes": [
+    "https://hojemt.com.br/ultima-chamada-no-ar/",
+    "content/paginas/radar-dados.json (justiça, Doutora Natasha, decisão STF de 01/10)"
+  ],
+  "regras_da_cena": "cozinha simples à noite com guampa de tereré e garrafa térmica; rádio antigo e TV de tubo; mão genérica com manga de toga gira o volume; gato assustado; sem pessoas identificáveis, texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "nenhum (cena genérica)",
+      "referencia_canva": [],
+      "origem": "sem personagem real: assunto envolve acusação de 2021 contra Pivetta tratada nas propagandas, por isso a arte não mostra ninguém"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHW2pmIXW8",
+    "arte_16x9": "MAHW2gCNOHE",
+    "design_instagram_4x5": null,
+    "arte_4x5": null,
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "nao_agendar",
+    "obs": "assunto eleitoral que perde sentido depois do 1º turno (04/10); a próxima vaga de charge livre é depois disso; não gerada a 4:5."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-02-ultima-chamada-no-ar.jpg",
+    "instagram_4x5": null
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-02-ultima-chamada-no-ar.jpg",
+    "og": "https://hojemt.com.br/content/images/2026/10/2026-10-02-ultima-chamada-no-ar-og.jpg",
+    "instagram_4x5": null
+  },
+  "site": "feature_image e og/twitter trocadas em 02/10/2026 ~10:35 UTC (antes: charge automática do publicador, charge-1790932898.webp)"
+}
