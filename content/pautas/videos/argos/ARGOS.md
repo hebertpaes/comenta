@@ -6,6 +6,31 @@ sugestivo e intrigante").
 
 ## Formato vigente (29/09/2026): só voz e slides
 
+### Voz v7 (02/10/2026, editor: "continue aprimorando a voz")
+
+Mesma voz (pt-BR-AntonioNeural; é a única masculina de pt-BR no catálogo da
+Microsoft), com três mudanças medidas num teste A/B com falas do boletim nº 5
+(nota DNSMOS de qualidade de fala, transcrição e duração):
+
+- **MP3 de 96 kbps** em vez de 48 kbps (o serviço aceita; `lib/edge-tts.py
+  --qualidade 96`, padrão desde v7; volta sozinho para 48 se o serviço recusar):
+  menos artefato de compressão.
+- **Velocidade +14% e tom +3 Hz** (antes +18% e +4 Hz): fala menos apressada;
+  o vídeo fica ~3,5% mais longo (no boletim já perto de 120 s, use +16%).
+- **`tratamento: "leve"`** no motor edge: passa-alta 70 Hz, −1 dB em 220 Hz
+  (tira o "embolado"), +1,5 dB em 3,6 kHz (presença); a mixagem final continua
+  normalizando o volume.
+
+Resultado do teste (mesmo texto): DNSMOS geral 3,23 (v6) → 3,35 (v7), nota
+P.808 3,86 → 3,88, transcrição sem perda. Descartados: sintetizar frase por
+frase com pausa (quebrou "Otaviano" em "o Taviano"), compressão forte e
+de-esser (baixaram a nota geral), +10% e +12% (melhoram pouco e alongam o
+vídeo). Formatos recusados pelo serviço: 48 kHz, Opus/WebM, PCM.
+
+Roteiro: `"voz": {"motor": "edge", "narrador": "pt-BR-AntonioNeural",
+"velocidade": "+14%", "tom": "+3Hz", "tratamento": "leve", "qualidade": 96,
+"reserva": {…Kokoro v5…}}`. Os boletins nº 1 a 5 foram remontados com ela.
+
 ### Ajustes de 02/10/2026 (valem sobre tudo o que está abaixo)
 
 Pedido do editor em 02/10: "Não cite nome do avatar e nem crie avatar,

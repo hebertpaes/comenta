@@ -428,19 +428,23 @@ const motoresVoz = {
     }
     return destino;
   },
-  edge(texto, { modelo = "pt-BR-AntonioNeural", velocidade = "+0%", tom = "+0Hz", destino }) {
+  edge(texto, { modelo = "pt-BR-AntonioNeural", velocidade = "+0%", tom = "+0Hz", tratamento, qualidade = 96, destino }) {
     // voz neural pt-BR (editor, 29/09: "Aprimore a voz"): lib/edge-tts.py; sai
-    // em mp3 e vira wav mono 24 kHz como as outras
+    // em mp3 e vira wav mono 24 kHz como as outras. Voz v7 (02/10, editor:
+    // "continue aprimorando a voz"): MP3 de 96 kbps e `tratamento: "leve"`
+    // (passa-alta 70 Hz, −1 dB em 220 Hz contra o "embolado", +1,5 dB em
+    // 3,6 kHz de presença; a mixagem final já normaliza o volume)
     const mp3 = destino.replace(/\.wav$/, ".mp3");
     const vel = typeof velocidade === "number" ? `${velocidade >= 1 ? "+" : ""}${Math.round((velocidade - 1) * 100)}%` : String(velocidade);
     const tomTxt = typeof tom === "number" ? `${tom >= 0 ? "+" : ""}${tom}Hz` : String(tom);
-    const r = spawnSync("python3", [join(aqui, "lib", "edge-tts.py"), "--voz", modelo, "--velocidade", vel, "--tom", tomTxt, "--saida", mp3], {
+    const r = spawnSync("python3", [join(aqui, "lib", "edge-tts.py"), "--voz", modelo, "--velocidade", vel, "--tom", tomTxt, "--qualidade", String(qualidade), "--saida", mp3], {
       input: pronunciaEdge(texto),
       encoding: "utf8",
       timeout: 90000,
     });
     if (r.status !== 0) throw Object.assign(new Error(`edge-tts falhou: ${(r.stderr || "").trim().split("\n").slice(-2).join(" | ")}`), { edgeIndisponivel: true });
-    rodarFfmpeg(["-i", mp3, "-ac", "1", "-ar", "24000", destino], "voz edge");
+    const leve = "highpass=f=70,equalizer=f=220:t=q:w=1.0:g=-1,equalizer=f=3600:t=q:w=1.2:g=1.5";
+    rodarFfmpeg(["-i", mp3, ...(tratamento === "leve" ? ["-af", leve] : []), "-ac", "1", "-ar", "24000", destino], "voz edge");
     return destino;
   },
   gemini(texto, { modelo = "Charon", estilo, destino }) {
@@ -515,11 +519,11 @@ function pronunciaEdge(texto) {
 }
 
 /** Sintetiza uma fala; com Piper indisponível, cai para o gTTS avisando. */
-function sintetizar(texto, { motor = "piper", modelo, velocidade, tom, tratamento, fonetica, sotaque, estilo, reserva, destino }) {
+function sintetizar(texto, { motor = "piper", modelo, velocidade, tom, tratamento, qualidade, fonetica, sotaque, estilo, reserva, destino }) {
   const fn = motoresVoz[motor];
   if (!fn) throw new Error(`motor de voz desconhecido: ${motor} (use gemini, edge, kokoro, piper, gtts, elevenlabs ou heygen)`);
   try {
-    return fn(texto, { modelo, velocidade, tom, tratamento, fonetica, sotaque, estilo, destino });
+    return fn(texto, { modelo, velocidade, tom, tratamento, qualidade, fonetica, sotaque, estilo, destino });
   } catch (e) {
     if ((e.edgeIndisponivel || e.geminiIndisponivel) && reserva) {
       // serviço da voz fora do ar ou sem chave: segue com a voz de reserva
@@ -1000,7 +1004,7 @@ async function principal() {
         rodarFfmpeg(["-i", origem, "-ac", "1", "-ar", "24000", destino], `voz pronta da cena ${n}`);
         audio = destino;
       } else {
-        audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, tom: voz.tom, tratamento: voz.tratamento, fonetica: voz.fonetica, sotaque: voz.sotaque, estilo: voz.estilo, reserva: voz.reserva, destino });
+        audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, tom: voz.tom, tratamento: voz.tratamento, qualidade: voz.qualidade, fonetica: voz.fonetica, sotaque: voz.sotaque, estilo: voz.estilo, reserva: voz.reserva, destino });
       }
       cena = { ...base, fala, legenda, audio };
     }

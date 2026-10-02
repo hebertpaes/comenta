@@ -17,6 +17,8 @@ p.add_argument('--voz', default='pt-BR-AntonioNeural')
 p.add_argument('--velocidade', default='+0%')
 p.add_argument('--tom', default='+0Hz')
 p.add_argument('--saida', required=True)
+p.add_argument('--qualidade', default='96', choices=['48', '96'],
+               help='kbps do MP3 de 24 kHz pedido ao serviço (96 desde a voz v7, 02/10/2026; 48 é o padrão do pacote)')
 a = p.parse_args()
 
 ca = os.environ.get('SSL_CERT_FILE') or '/root/.ccr/ca-bundle.crt'
@@ -32,10 +34,32 @@ texto = sys.stdin.read().strip()
 if not texto:
     sys.exit('texto vazio')
 
+# O pacote fixa o formato "audio-24khz-48kbitrate-mono-mp3"; o serviço também
+# aceita o de 96 kbps (testado em 02/10/2026: menos artefato de compressão,
+# DNSMOS um pouco maior). Troca só essa string na mensagem de configuração.
+FORMATO_PADRAO = 'audio-24khz-48kbitrate-mono-mp3'
+FORMATO = {'48': FORMATO_PADRAO, '96': 'audio-24khz-96kbitrate-mono-mp3'}[a.qualidade]
+if FORMATO != FORMATO_PADRAO:
+    import aiohttp
+    _orig = aiohttp.ClientWebSocketResponse.send_str
+    async def _send_str(self, data, *args, **kw):
+        if f'"outputFormat":"{FORMATO_PADRAO}"' in data:
+            data = data.replace(FORMATO_PADRAO, FORMATO)
+        return await _orig(self, data, *args, **kw)
+    aiohttp.ClientWebSocketResponse.send_str = _send_str
+
 async def principal():
     c = edge_tts.Communicate(texto, a.voz, rate=a.velocidade, pitch=a.tom, proxy=os.environ.get('HTTPS_PROXY') or None)
     await c.save(a.saida)
 
-asyncio.run(principal())
+try:
+    asyncio.run(principal())
+except edge_tts.exceptions.NoAudioReceived:
+    if FORMATO == FORMATO_PADRAO:
+        raise
+    # o serviço recusou o formato de 96 kbps: refaz no padrão, avisando
+    print('AVISO: formato de 96 kbps recusado; usando 48 kbps', file=sys.stderr)
+    aiohttp.ClientWebSocketResponse.send_str = _orig
+    asyncio.run(principal())
 if not os.path.exists(a.saida) or os.path.getsize(a.saida) == 0:
     sys.exit('edge-tts não devolveu áudio')
