@@ -1472,6 +1472,22 @@
       "legenda": "RADAR ELEITORAL · Boletim nº 6: pesquisa MT Dados para governo e Senado, Justiça Eleitoral e apoios na reta final\n\nGoverno de MT (1º turno, votos totais): Otaviano Pivetta 42%, Wellington Fagundes 23%, Doutora Natasha 14%, Sargento Laudicério 2%, Rafaell Milas 1% e Maurício Coelho 1%. 2º turno simulado: Pivetta 50% × Wellington 28%.\nSenado (1º voto): Mauro Mendes 32%, Janaina Riva 19%, Zé Medeiros 16%, Carlos Fávaro 7%, Pedro Taques 6%, Galvan 2%, Margareth Buzetti 1%, Coronel Darwin 1%, Professor Nelson Ferreira 0% e Beny Godoy 0%. Soma dos dois votos: Mauro 50%, Janaina 36%, Medeiros 31%.\nFicha: MT Dados · registro MT-07362/2026 · contratante não informado no relatório nem nas matérias · 3.080 entrevistas presenciais e online · 25 a 30/9 · margem de 3 pontos · confiança de 95%. Pesquisa é retrato do momento.\n\nJustiça Eleitoral: a presidente do TRE-MT mandou rádios e TVs exibirem em 2 e 3/10 o tempo de propaganda de Doutora Natasha que tinha sido suspenso, cumprindo decisão do STF. A pedido da coligação de Mauro Mendes, um juiz auxiliar multou Pedro Taques em duas representações (mais de R$ 30 mil; cabe recurso).\n\nGrupos: o deputado federal Alfredo Gaspar, candidato a vice de Flávio Bolsonaro, declarou apoio a Wellington Fagundes.\n\nVoz do vídeo gerada com IA; sem música. Fatos apurados e conferidos pela redação do HOJE MT.\n\nAcompanhe em hojemt.com.br. Siga e compartilhe o @hoje.mt.\n\n#eleicoes2026 #matogrosso #radareleitoral #hojemt",
       "materia": "https://hojemt.com.br/radar-eleitoral/",
       "obs": "editor aprova antes de ir ao ar (vídeo de 93 s, voz v7, sem música); se aprovar, mude para \"agendado\" com o horário"
+    },
+    {
+      "id": "84",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Riva Segura o Senado",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-02-riva-segura-o-senado-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Riva Segura o Senado\n\nÂncora de oito anos e dica de pesca para 2030.\n\nA candidata ao Senado Janaina Riva (MDB) disse em entrevista coletiva que, se eleita, vai cumprir os oito anos de mandato e não vai deixar o Senado para disputar o Governo em 2030. Para o Governo em 2030, apontou o presidente da Assembleia Legislativa, Max Russi (Podemos), como o nome do grupo (O Documento, MidiaJur e HiperNotícias).\n\nLeia a curta completa: hojemt.com.br/riva-segura-o-senado\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #eleicoes2026 #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/riva-segura-o-senado/",
+      "charge_json": "pautas/charges/2026-10-02-riva-segura-o-senado.json",
+      "obs": "Charge eleitoral (candidata ao Senado): só faz sentido até o 1º turno de 04/10, e os horários de charge de 03/10 (07:30, 11:30, 15:30, 19:30) e 04/10 já estão ocupados. Por isso fica aguardando decisão do editor (trocar por um item de 03/10 ou não publicar). Fontes da legenda: O Documento (odocumento.com.br/janaina-garante-cumprir-oito-anos-de-mandato-no-senado-e-lanca-max-russi-ao-governo-para-2030/), MidiaJur (midiajur.com.br/eleicoes-2026/janaina-nega-plano-de-deixar-senado-para-disputar-governo-vou-cumprir-os-oito-anos/87525), HiperNotícias (hnt.com.br/politica/janaina-nega-plano-de-deixar-senado-para-disputar-governo-vou-cumprir-os-oito-anos/578235)."
     }
   ]
 }
