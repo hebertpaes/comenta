@@ -18,7 +18,7 @@ import { join } from "node:path";
 import { createRequire } from "node:module";
 
 import { SCRATCH, esc, pct, fundo, CSS } from "./slides-lib.mjs";
-const require = createRequire(join(SCRATCH, "pw", "package.json"));
+const require = createRequire(import.meta.url);
 const { chromium } = require("playwright-core");
 
 const REPO = "/home/user/comenta/content";

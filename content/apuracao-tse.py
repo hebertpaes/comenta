@@ -60,7 +60,7 @@ HOST = 'resultados.tse.jus.br'
 UA = 'hojemt-apuracao/1.0 (+https://hojemt.com.br/apuracao-2026/)'
 AQUI = os.path.dirname(os.path.abspath(__file__))
 CACHE_PADRAO = os.environ.get('TSE_CACHE') or \
-    '/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/tse-cache'
+    os.path.join(os.environ.get('HOJEMT_TMP') or '/tmp/hojemt', 'tse-cache')
 SAIDA_PADRAO = os.path.join(os.path.dirname(CACHE_PADRAO), 'tse-saida')
 MAPA_PADRAO = os.path.join(AQUI, 'pautas', 'eleicoes', 'locais-votacao-mt.csv')
 MAX_CONEXOES = 8

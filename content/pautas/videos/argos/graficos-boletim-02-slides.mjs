@@ -32,7 +32,7 @@ import { createRequire } from "node:module";
 
 import { SCRATCH, esc, fundo, CSS } from "./slides-lib.mjs";
 const PROIBIDO = new RegExp("\\b(" + [[97, 114, 103, 111, 115], [118, 101, 114, 101, 100, 97, 115]].map((c) => String.fromCharCode(...c)).join("|") + ")\\b|avatar", "i"); // sem escrever o nome
-const require = createRequire(join(SCRATCH, "pw", "package.json"));
+const require = createRequire(import.meta.url);
 const { chromium } = require("playwright-core");
 
 const REPO = "/home/user/comenta/content";

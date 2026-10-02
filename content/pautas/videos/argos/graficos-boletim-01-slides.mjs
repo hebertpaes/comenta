@@ -33,7 +33,7 @@ import { join } from "node:path";
 import { createRequire } from "node:module";
 
 import { SCRATCH, esc, pct, fundo, fontes, CSS as CSS_BASE } from "./slides-lib.mjs";
-const require = createRequire(join(SCRATCH, "pw", "package.json"));
+const require = createRequire(import.meta.url);
 const { chromium } = require("playwright-core");
 
 const GIT = "/home/user/comenta";

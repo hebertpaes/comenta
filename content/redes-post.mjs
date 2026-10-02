@@ -10,7 +10,7 @@
 //        --data=2026-09-28 --texto="legenda" --url=<link> [--imagem=print.jpg] [--video=gravacao.mp4]
 //
 // Grava <saida>/<rede>-<id>.json (+ imagem e vídeo baixados) e imprime o JSON.
-// Padrão de <saida>: pasta redes-cache/ do scratchpad (a mídia de terceiros não
+// Padrão de <saida>: $HOJEMT_TMP/redes-cache (ou /tmp/hojemt/redes-cache; a mídia de terceiros não
 // vai para o repositório; o roteiro guarda só origem, perfil, data e crédito).
 //
 // O que funciona daqui (29/09/2026):
@@ -39,7 +39,7 @@ for (const a of process.argv.slice(2)) {
   if (m) args[m[1]] = m[2] ?? true;
   else livres.push(a);
 }
-const SAIDA = resolve(args.saida || "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad/redes-cache");
+const SAIDA = resolve(args.saida || `${process.env.HOJEMT_TMP || "/tmp/hojemt"}/redes-cache`);
 mkdirSync(SAIDA, { recursive: true });
 const UA = { "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36" };
 

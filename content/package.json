@@ -13,6 +13,7 @@
     "@tryghost/admin-api": "^1.13.12",
     "@typesafe-ai/sdk": "^0.6.0",
     "rss-parser": "^3.13.0",
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.3",
+    "playwright-core": "1.56"
   }
 }

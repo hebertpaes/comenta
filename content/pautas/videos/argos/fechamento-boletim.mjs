@@ -14,7 +14,7 @@ import { mkdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { createRequire } from "node:module";
 import { SCRATCH, fundo, CSS } from "./slides-lib.mjs";
-const require = createRequire(join(SCRATCH, "pw", "package.json"));
+const require = createRequire(import.meta.url);
 const { chromium } = require("playwright-core");
 
 export const FALA = "Todos os casos, com as fontes, estão no Radar Eleitoral, em hojemt.com.br. Siga o HOJE MT nas redes sociais e compartilhe.";

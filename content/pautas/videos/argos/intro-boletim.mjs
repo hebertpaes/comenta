@@ -12,7 +12,7 @@ import { mkdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { createRequire } from "node:module";
 import { SCRATCH, esc, fundo, CSS } from "./slides-lib.mjs";
-const require = createRequire(join(SCRATCH, "pw", "package.json"));
+const require = createRequire(import.meta.url);
 const { chromium } = require("playwright-core");
 
 const args = Object.fromEntries(process.argv.slice(2).map((a) => { const m = a.match(/^--([^=]+)(?:=(.*))?$/); return m ? [m[1], m[2] ?? true] : [a, true]; }));

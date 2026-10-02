@@ -4,11 +4,13 @@
 // do Argos desde 26/09: o boletim só noticia os fatos, sem se apresentar).
 // Uso: node graficos-boletim-02.mjs [saida-dir]
 import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
 
-const SCRATCH = "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad";
-const require = createRequire(join(SCRATCH, "pw", "package.json"));
+const SCRATCH = process.env.HOJEMT_TMP || "/tmp/hojemt";
+const FONTES = join(dirname(fileURLToPath(import.meta.url)), "../../../assets/fonts");
+const require = createRequire(import.meta.url);
 const { chromium } = require("playwright-core");
 
 const REPO = "/home/user/comenta/content";
@@ -20,7 +22,7 @@ const radar = JSON.parse(readFileSync(join(REPO, "paginas/radar-dados.json"), "u
 
 const b64 = (p) => readFileSync(p).toString("base64");
 const fontes = [400, 600, 700, 800]
-  .map((w) => `@font-face{font-family:Inter;font-weight:${w};src:url(data:font/woff2;base64,${b64(join(SCRATCH, `fonts/inter-${w}.woff2`))}) format("woff2");}`)
+  .map((w) => `@font-face{font-family:Inter;font-weight:${w};src:url(data:font/woff2;base64,${b64(join(FONTES, `inter-${w}.woff2`))}) format("woff2");}`)
   .join("\n");
 const selo = `data:image/jpeg;base64,${b64(join(REPO, "pautas/videos/argos/argos-veredas-avatar-240.jpg"))}`;
 

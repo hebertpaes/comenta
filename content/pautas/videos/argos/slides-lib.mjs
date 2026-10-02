@@ -2,13 +2,19 @@
 // 29/09): fontes, fundo escuro com ondas e curvas de nível, CSS dos chips e
 // cartões, cartão de reprodução de postagem de rede social e moldura de vídeo.
 // Usado por graficos-boletim-NN.mjs (a partir do nº 3).
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import { readFileSync, mkdirSync } from "node:fs";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
-export const SCRATCH = "/tmp/claude-0/-home-user-comenta/ff03d673-f500-59f9-930f-1d445e49d183/scratchpad";
+// Pasta de trabalho (prévias, cenas parciais, caches): $HOJEMT_TMP ou /tmp/hojemt.
+// As fontes Inter ficam no repositório (content/assets/fonts), e o playwright-core
+// vem de content/node_modules (npm install em content/), para qualquer sessão nova.
+export const SCRATCH = process.env.HOJEMT_TMP || "/tmp/hojemt";
+mkdirSync(SCRATCH, { recursive: true });
+export const FONTES = join(dirname(fileURLToPath(import.meta.url)), "../../../assets/fonts");
 export const b64 = (p) => readFileSync(p).toString("base64");
 export const fontes = [400, 600, 700, 800]
-  .map((w) => `@font-face{font-family:Inter;font-weight:${w};src:url(data:font/woff2;base64,${b64(join(SCRATCH, `fonts/inter-${w}.woff2`))}) format("woff2");}`)
+  .map((w) => `@font-face{font-family:Inter;font-weight:${w};src:url(data:font/woff2;base64,${b64(join(FONTES, `inter-${w}.woff2`))}) format("woff2");}`)
   .join("\n");
 export const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
 export const pct = (v) => String(v).replace(".", ",") + "%";
