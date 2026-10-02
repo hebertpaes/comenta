@@ -10352,11 +10352,14 @@
    "quando": "Boletim nº 1 · 26/09/2026",
    "titulo": "O que dizem as pesquisas a 8 dias da eleição",
    "texto": [
-    "Governo de Mato Grosso: nas cinco pesquisas registradas desde 4/9, Otaviano Pivetta e Wellington Fagundes ficam sempre nos dois primeiros lugares. Pivetta aparece à frente em quatro; na Quaest, a mais recente, é empate técnico (29% a 27%). No 2º turno simulado, Pivetta vence em três pesquisas e Wellington aparece à frente em duas, ambas dentro da margem de erro.",
-    "Senado: Mauro Mendes e Janaina Riva lideram em todas as pesquisas para as duas vagas. Na Quaest, Mauro tem 37% no 1º voto e Janaina, 19%.",
-    "Presidência: Lula e Flávio Bolsonaro disputam o topo nas 11 pesquisas nacionais, quase sempre em empate técnico. Em Mato Grosso, a Quaest mostra Flávio com 50% e Lula com 25%.",
-    "Pesquisa é retrato do momento; quem decide é o eleitor, em 4 de outubro. As fichas técnicas completas estão no bloco de pesquisas, logo abaixo. Música do vídeo: \"Windswept\", de Kevin MacLeod (incompetech.com), licença CC BY 4.0."
+    "Governo de Mato Grosso: nas cinco pesquisas divulgadas desde 4/9, Otaviano Pivetta e Wellington Fagundes ficam sempre nos dois primeiros lugares. Pivetta aparece à frente em quatro; na Quaest, a mais recente, é empate técnico (29% a 27%). No 2º turno simulado, Pivetta aparece à frente em três pesquisas e Wellington, em duas, ambas dentro da margem de erro.",
+    "Senado: Mauro Mendes e Janaina Riva lideram em todas as quatro pesquisas divulgadas desde 6/9 para as duas vagas. Na Quaest, Mauro tem 37% no 1º voto; Janaina, 19%; e Zé Medeiros, 11%.",
+    "Presidência: Lula e Flávio Bolsonaro disputam o topo nas 11 pesquisas nacionais (a rodada mais recente de cada instituto, com campo entre 14 e 23/9), quase sempre em empate técnico. Em Mato Grosso, a Quaest mostra Flávio com 50% e Lula com 25% no 1º turno; no 2º turno, 56% a 30%.",
+    "Pesquisa é retrato do momento. As fichas técnicas completas estão no bloco de pesquisas, logo abaixo (na Presidência, o bloco já traz rodadas mais novas de oito dos 11 institutos).",
+    "Voz do vídeo gerada com IA (narrador sintético); os fatos são apurados e conferidos pela redação do HOJE MT. Sem música."
    ],
+   "video": "https://hojemt.com.br/content/media/2026/10/2026-09-26-boletim-01-slides.mp4",
+   "poster": "https://hojemt.com.br/content/images/2026/10/2026-09-26-boletim-01-slides-capa.jpg",
    "fontes": [
     [
      "TSE (PesqEle)",
@@ -10364,28 +10367,129 @@
      "2026-09-26"
     ],
     [
-     "g1 MT (Quaest)",
-     "https://g1.globo.com/mt/mato-grosso/",
+     "g1 MT (Quaest, governo)",
+     "https://g1.globo.com/mt/mato-grosso/eleicoes/2026/noticia/2026/09/25/quaest-mt-governador-25-setembro.ghtml",
      "2026-09-25"
+    ],
+    [
+     "g1 MT (Quaest, Senado)",
+     "https://g1.globo.com/mt/mato-grosso/eleicoes/2026/noticia/2026/09/25/quaest-mt-senado-25-setembro.ghtml",
+     "2026-09-25"
+    ],
+    [
+     "MT Dados (governo, 11 a 17/9)",
+     "https://mtdados.com.br/pesquisa-governo-mt-2026-4a-rodada",
+     "2026-09-18"
+    ],
+    [
+     "MT Dados (Senado, 11 a 17/9)",
+     "https://mtdados.com.br/pesquisa-senado-mt-2026-4a-rodada",
+     "2026-09-21"
+    ],
+    [
+     "Paraná Pesquisas (relatório, 15 a 17/9)",
+     "https://paranapesquisas.com.br/wp-content/uploads/2026/09/MT_Set26-2.pdf",
+     "2026-09-18"
+    ],
+    [
+     "Paraná Pesquisas (relatório, 6 a 8/9)",
+     "https://paranapesquisas.com.br/wp-content/uploads/2026/09/MT_Set26.pdf",
+     "2026-09-09"
+    ],
+    [
+     "Gazeta do Povo (AtlasIntel, governo de MT)",
+     "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-governador-mato-grosso-setembro-2026/",
+     "2026-09-11"
+    ],
+    [
+     "Capital Política (Quaest, Presidência em MT)",
+     "https://capitalpolitica.com.br/pesquisa-quaest-em-mato-grosso-flavio-bolsonaro-lidera-com-50-para-2026-lula-marca-25-e-bolsonarismo-se-consolida-no-estado/",
+     "2026-09-25"
+    ],
+    [
+     "Cenário MT (Quaest, Presidência em MT)",
+     "https://cenariomt.com.br/cenario-politico/flavio-bolsonaro-lidera-com-50-das-intencoes-de-voto-em-mato-grosso-enquanto-lula-registra-25-aponta-quaest/",
+     "2026-09-26"
+    ],
+    [
+     "G1 (Datafolha, Presidência)",
+     "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/24/datafolha-presidente-24-setembro.ghtml",
+     "2026-09-24"
+    ],
+    [
+     "Poder360 (PoderData)",
+     "https://www.poder360.com.br/poderdata/em-votos-validos-lula-tem-43-contra-42-de-flavio-no-1o-turno/",
+     "2026-09-24"
+    ],
+    [
+     "CNN Brasil (Real Time Big Data)",
+     "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-lula-tem-41-no-1o-turno-flavio-37/",
+     "2026-09-24"
+    ],
+    [
+     "CNN Brasil (Palver)",
+     "https://www.cnnbrasil.com.br/eleicoes/palver-flavio-e-lula-empatam-no-1o-turno-em-43/",
+     "2026-09-24"
+    ],
+    [
+     "Exame (Futura Inteligência)",
+     "https://exame.com/brasil/futura-flavio-bolsonaro-cresce-chega-a-404-e-ultrapassa-lula-no-1o-turno/",
+     "2026-09-24"
+    ],
+    [
+     "Gazeta do Povo (Alfa Inteligência)",
+     "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/alfa-inteligencia-presidente-setembro-2026/",
+     "2026-09-24"
+    ],
+    [
+     "CNN Brasil (AtlasIntel/Bloomberg)",
+     "https://www.cnnbrasil.com.br/eleicoes/atlas-bloomberg-lula-tem-458-no-1o-turno-flavio-434/",
+     "2026-09-23"
+    ],
+    [
+     "G1 (Quaest, Presidência)",
+     "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/21/quaest-presidente-1o-turno-21-setembro.ghtml",
+     "2026-09-21"
+    ],
+    [
+     "CNN Brasil (Nexus/BTG)",
+     "https://www.cnnbrasil.com.br/eleicoes/nexus-btg-lula-tem-40-no-1o-turno-flavio-37-e-cury-6/",
+     "2026-09-21"
+    ],
+    [
+     "Times Brasil | CNBC (American Analytics)",
+     "https://timesbrasil.com.br/brasil/decisao-2026-lula-e-flavio-bolsonaro-estao-empatados-numericamente-em-43-no-2o-turno-indica-pesquisa-american-analytics-times-brasil-cnbc/",
+     "2026-09-23"
+    ],
+    [
+     "Gazeta do Povo (Gerp)",
+     "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/gerp-presidente-setembro-2026-2/",
+     "2026-09-17"
     ]
    ],
-   "duracao_s": 87,
-   "avatar": true
+   "duracao_s": 86
   },
   {
    "n": 2,
    "quando": "Boletim nº 2 · 26/09/2026, 07:03 (MT)",
    "titulo": "A Justiça Eleitoral na reta final",
    "texto": [
-    "O Radar Eleitoral do HOJE MT reúne 86 casos da Justiça Eleitoral envolvendo os 16 candidatos ao governo e ao Senado de Mato Grosso: 57 decisões, 15 ações ainda sem julgamento e 14 arquivadas. Cada caso foi conferido em fonte oficial ou em dois veículos. Quinze candidatos estão com o registro deferido; o pedido de Sargento Laudicério, ao governo, aguarda julgamento.",
-    "Só em 24 e 25 de setembro, o TRE-MT tomou 10 decisões em disputas entre candidatos: 5 mandaram retirar vídeos ou publicações, 3 trataram de impulsionamento pago e 2 deram direito de resposta. Oito das dez foram em disputas entre candidatos ao Senado; houve 3 multas, de R$ 5 mil a R$ 10 mil. Liminar é decisão provisória e pode ser revista, e ação em andamento não é condenação. As partes e as fontes de cada caso estão na seção Justiça Eleitoral, logo abaixo.",
+    "O Radar Eleitoral do HOJE MT reúne 86 casos da Justiça Eleitoral com candidatos ao governo e ao Senado de Mato Grosso: 57 decisões, 15 ações ainda sem julgamento e 14 arquivadas. Os 16 candidatos ao governo e ao Senado estão com o registro deferido; o de Sargento Laudicério, ao governo, foi deferido por unanimidade pelo TRE-MT na sexta-feira, 25/9, e cabe recurso. (Correção em 02/10: a versão de 26/9 deste boletim dizia que o pedido de Laudicério ainda aguardava julgamento.)",
+    "Dez desses casos são decisões do TRE-MT de 24 e 25 de setembro em disputas entre candidatos: 5 mandaram retirar vídeos ou publicações, 3 trataram de impulsionamento pago e 2 deram direito de resposta. Oito das dez foram em disputas entre candidatos ao Senado; houve 3 multas, de R$ 5 mil a R$ 10 mil, e cabe recurso em todas. Liminar é decisão provisória e pode ser revista, e ação em andamento não é condenação. As partes e as fontes de cada caso estão na seção Justiça Eleitoral, logo abaixo.",
     "Nos palanques, entre 23 e 25 de setembro: Mauro Mendes pediu votos para Otaviano Pivetta e para Margareth Buzetti, e a campanha de Pivetta divulgou uma lista de 100 prefeitos que apoiam a reeleição. Flávio Bolsonaro pediu votos para Wellington Fagundes e para Zé Medeiros, e Sergio Moro declarou apoio a Wellington.",
-    "Imagem e voz do vídeo geradas com IA; os fatos são apurados e conferidos pela redação do HOJE MT. Música do vídeo: \"Windswept\", de Kevin MacLeod (incompetech.com), licença CC BY 4.0."
+    "Voz do vídeo gerada com IA (narrador sintético); os fatos são apurados e conferidos pela redação do HOJE MT. Sem música."
    ],
+   "video": "https://hojemt.com.br/content/media/2026/10/2026-09-26-boletim-02-slides.mp4",
+   "poster": "https://hojemt.com.br/content/images/2026/10/2026-09-26-boletim-02-slides-capa.jpg",
    "fontes": [
     [
      "Radar Eleitoral do HOJE MT (Justiça Eleitoral)",
      "https://hojemt.com.br/radar-eleitoral/#rd-justica",
+     "2026-09-26"
+    ],
+    [
+     "Cidadão Consumidor (registro de Laudicério e Karen Fortes)",
+     "https://cidadaoconsumidor.com.br/tre-mt-defere-por-unanimidade-chapa-de-laudicerio-e-karen-fortes-apos-correcao-de-filiacao-ao-uniao-brasil/",
      "2026-09-26"
     ],
     [
@@ -10402,10 +10506,14 @@
      "O Documento (Flávio Bolsonaro pede voto para Wellington)",
      "https://odocumento.com.br/flavio-bolsonaro-pede-voto-para-wellington-e-diz-que-pl-vai-recolocar-mt-nos-trilhos/",
      "2026-09-24"
+    ],
+    [
+     "VGN (Moro declara apoio a Wellington)",
+     "https://www.vgnoticias.com.br/eleicoes-2026/moro-declara-apoio-a-wellington-fagundes-ao-governo-de-mt/152488",
+     "2026-09-24"
     ]
    ],
-   "duracao_s": 72,
-   "avatar": true
+   "duracao_s": 92
   },
   {
    "n": 3,

@@ -1,127 +1,264 @@
 {
-  "slug": "boletim-01",
-  "titulo": "Boletim do Argos nº 1: o que dizem as pesquisas a 8 dias da eleição",
-  "materia": "https://hojemt.com.br/radar-eleitoral/",
-  "estilo": "realista",
-  "universo": "Estúdio do Argos, Pantanal ao pôr do sol",
-  "obs": "Primeiro boletim em vídeo do Argos Veredas, repórter virtual oficial do HOJE MT criado com IA (regras em pautas/videos/argos/ARGOS.md). Só o narrador fala (voz Kokoro pm_santa, 1 semitom mais grave e 8% mais rápida, sintética genérica; nenhuma voz de pessoa real). Números das falas e dos gráficos saem de paginas/radar-dados.json (campo pesquisas, atualizado em 26/09/2026): governador-mt (5 pesquisas desde 4/9, 1º e 2º turno), senado-mt (1º voto: Quaest, Paraná Pesquisas 15-17/9 e MT Dados) e presidente (11 nacionais; gráfico com as 6 mais recentes + Quaest MT). Cenas 1 e 6 usam o avatar 9:16 (Canva, media MAHWQKGqrGo); cenas 2 a 5 são gráficos próprios (HTML + Playwright, 1080x1920) com a ficha curta de cada pesquisa (instituto, período, entrevistas, margem, registro); o miolo claro termina em y=1240 e a faixa verde-escura de baixo fica livre para a legenda queimada (y~1310-1490) e para a interface do Instagram. Legendas com números em algarismos. Trilha 'pantanal' (calma) escolhida no roteiro porque o universo não casa com nenhuma faixa e a reserva 'comedia' não combina com boletim de pesquisa. As fichas completas (com contratante) precisam ir na legenda do post, como diz a fala da cena 6.",
-  "voz": {
-    "motor": "kokoro",
-    "narrador": "pm_santa",
-    "personagem": null,
-    "velocidade": 1.08,
-    "tom": -1
-  },
-  "trilha": {
-    "id": "pantanal"
-  },
-  "abertura": {
-    "chip": "BOLETIM DO ARGOS",
-    "gancho": "O QUE DIZEM AS PESQUISAS A 8 DIAS DA ELEIÇÃO",
-    "sub": "Mato Grosso · 26/09"
-  },
-  "cenas": [
+ "slug": "boletim-01",
+ "titulo": "Boletim nº 1: o que dizem as pesquisas a 8 dias da eleição",
+ "materia": "https://hojemt.com.br/radar-eleitoral/",
+ "estilo": "slides",
+ "universo": "Slides escuros com ondas e curvas de nível verdes, sem avatar",
+ "obs": "Boletim nº 1 (26/09/2026) refeito em 02/10 no formato só voz e slides, sem avatar, sem o nome do avatar, sem música e sem legenda queimada, a pedido do editor (02/10: \"Não cite nome do avatar e nem crie avatar, simplesmente deixe a voz aprimorada e com slides profissionais divulgando o nome do site hojemt e pedindo para seguir e compartilhar nossas redes sociais Hoje MT\"). Voz v6 (pt-BR-AntonioNeural, +18%, +4 Hz; reserva Kokoro pm_alex). Registro histórico: mesmos fatos do texto publicado (boletins[0] do Radar) e números do Radar como estava quando o nº 1 foi feito (git show 4d221f7:content/paginas/radar-dados.json, pesquisas de 26/09/2026): governo (5 pesquisas divulgadas desde 4/9, 1º e 2º turno, todos os candidatos), Senado (4 pesquisas divulgadas desde 6/9, 1º voto; a Paraná de 6 a 8/9 só com a soma dos dois votos no Radar) e Presidência (11 nacionais + Quaest MT). O gerador graficos-boletim-01-slides.mjs confere cada número e contagem no retrato 4d221f7 (para se não bater), confere a fala com o texto publicado e compara com o Radar atual: nenhuma pesquisa usada mudou depois (as rodadas nacionais mais novas só substituíram as antigas; a Veritá, divulgada em 28/9 e depois suspensa, e as pesquisas de 27/9 em diante não entram por serem posteriores). Empate técnico nos slides pelo critério estrito (diferença menor que duas vezes a margem), igual para todos, que reproduz exatamente as classificações do Radar da época: governo, Quaest e AtlasIntel no 1º turno e as duas de Wellington no 2º turno (a MT Dados, 38 × 32 com ±3, fica no limite e sem selo); Presidência, seis no 1º turno e nove no 2º turno, como no Radar ('em nove delas'). Senado sem selo de empate: o Radar da época só diz que a vantagem de Janaina sobre o 3º colocado é maior que a margem em todas. A fala mantém as frases publicadas, que seguem corretas ('vence' virou 'aparece à frente', para os dois), com uma troca: o Radar da época dizia 'registradas'; já havia uma pesquisa Veritá registrada e suspensa pelo TRE-MT em 16/9 (divulgada só em 28/9 e suspensa de novo), por isso a fala e o slide dizem 'divulgadas' (5 para governo desde 4/9, 4 para o Senado desde 6/9); na Presidência a fala diz 'onze pesquisas nacionais', como no texto publicado, e o slide explica que são a rodada mais recente de cada instituto, com campo entre 14 e 23/9. Fora do roteiro: apresentação do narrador, menção a IA, 'vamos às pesquisas', 'e olha só', a projeção 'o cenário provável é de 2º turno', 'quem decide é você' (regra do editor), a despedida e o crédito de música; as fichas (instituto, período, entrevistas, margem, registro) ficam nos slides, com a contratante na Quaest e no Radar. Gerar antes de montar: intro e fechamento já gerados (intro-boletim.mjs, fechamento-boletim.mjs); node graficos-boletim-01-slides.mjs (cenas 2 a 8, arquivos <prefixo>-<k>-fundo.png e -c<j>.png, k = cena − 1). Os JPG antigos cenas/2026-09-26-boletim-01-2.jpg a -5.jpg (versão com avatar) não são usados.",
+ "voz": {
+  "motor": "edge",
+  "narrador": "pt-BR-AntonioNeural",
+  "velocidade": "+18%",
+  "tom": "+4Hz",
+  "reserva": {
+   "motor": "kokoro",
+   "narrador": "pm_alex",
+   "velocidade": 1.18,
+   "tom": 2,
+   "tratamento": "limpo",
+   "fonetica": "misaki",
+   "sotaque": "cuiabano"
+  }
+ },
+ "legendas": false,
+ "trilha": "nenhuma",
+ "abertura": {
+  "chip": "RADAR ELEITORAL",
+  "gancho": "O QUE DIZEM AS PESQUISAS A 8 DIAS DA ELEIÇÃO",
+  "sub": "Mato Grosso · 26/09"
+ },
+ "cenas": [
+  {
+   "n": 1,
+   "quem": "narrador",
+   "fala": "Radar Eleitoral do HOJE MT. Boletim número um, sábado, vinte e seis de setembro.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-intro-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
     {
-      "n": 1,
-      "quem": "narrador",
-      "fala": "Olá, tudo bem? Eu sou o Argos Veredas, repórter virtual do HOJE MT.",
-      "legenda": "Olá, tudo bem? Eu sou o Argos Veredas, repórter virtual do HOJE MT.",
-      "imagem": "pautas/videos/argos/argos-veredas-cena-falando-9x16.jpg",
-      "movimento": "zoom-in"
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-intro-c0.png",
+     "em": 0
     },
     {
-      "n": 2,
-      "quem": "narrador",
-      "fala": "E sim: fui criado com inteligência artificial!",
-      "legenda": "E sim: fui criado com inteligência artificial!",
-      "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
-      "movimento": "close-in"
-    },
-    {
-      "n": 3,
-      "quem": "narrador",
-      "fala": "Meu trabalho é contar pra você, de um jeito direto, o que a redação apurou e conferiu. Vamos às pesquisas?",
-      "legenda": "Meu trabalho é contar pra você, de um jeito direto, o que a redação apurou e conferiu. Vamos às pesquisas?",
-      "imagem": "pautas/videos/argos/argos-veredas-cena-falando-9x16.jpg",
-      "movimento": "close-out"
-    },
-    {
-      "n": 4,
-      "quem": "narrador",
-      "fala": "Começando pelo governo de Mato Grosso. Nas cinco pesquisas registradas desde quatro de setembro, Otaviano Pivetta e Wellington Fagundes estão sempre nos dois primeiros lugares. Pivetta aparece à frente em quatro; na Quaest, a mais recente, é empate técnico: vinte e nove a vinte e sete.",
-      "legenda": "Começando pelo governo de Mato Grosso. Nas 5 pesquisas registradas desde 4 de setembro, Otaviano Pivetta e Wellington Fagundes estão sempre nos 2 primeiros lugares. Pivetta aparece à frente em 4; na Quaest, a mais recente, é empate técnico: 29% a 27%.",
-      "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-2.jpg",
-      "movimento": "zoom-in"
-    },
-    {
-      "n": 5,
-      "quem": "narrador",
-      "fala": "E olha só: no segundo turno simulado, Pivetta vence em três pesquisas, e Wellington aparece à frente em duas, ambas dentro da margem de erro. Por enquanto, o cenário provável é de segundo turno entre os dois.",
-      "legenda": "E olha só: no 2º turno simulado, Pivetta vence em 3 pesquisas, e Wellington aparece à frente em 2, ambas dentro da margem de erro. Por enquanto, o cenário provável é de 2º turno entre os dois.",
-      "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-3.jpg",
-      "movimento": "zoom-out"
-    },
-    {
-      "n": 6,
-      "quem": "narrador",
-      "fala": "Agora, o Senado. Mauro Mendes e Janaina Riva lideram em todas as pesquisas para as duas vagas. Na Quaest, Mauro tem trinta e sete por cento no primeiro voto, e Janaina, dezenove.",
-      "legenda": "Agora, o Senado. Mauro Mendes e Janaina Riva lideram em todas as pesquisas para as 2 vagas. Na Quaest, Mauro tem 37% no 1º voto, e Janaina, 19%.",
-      "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-4.jpg",
-      "movimento": "zoom-in"
-    },
-    {
-      "n": 7,
-      "quem": "narrador",
-      "fala": "E na corrida para presidente? Lula e Flávio Bolsonaro disputam o topo nas onze pesquisas nacionais, quase sempre em empate técnico. Em Mato Grosso, a Quaest mostra Flávio com cinquenta por cento e Lula com vinte e cinco.",
-      "legenda": "E na corrida para presidente? Lula e Flávio Bolsonaro disputam o topo nas 11 pesquisas nacionais, quase sempre em empate técnico. Em Mato Grosso, a Quaest mostra Flávio com 50% e Lula com 25%.",
-      "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-5.jpg",
-      "movimento": "zoom-out"
-    },
-    {
-      "n": 8,
-      "quem": "narrador",
-      "fala": "Mas lembre: pesquisa é retrato do momento, e quem decide é você, no dia quatro de outubro.",
-      "legenda": "Mas lembre: pesquisa é retrato do momento, e quem decide é você, no dia 4 de outubro.",
-      "imagem": "pautas/videos/argos/argos-veredas-cena-falando-9x16.jpg",
-      "movimento": "zoom-in"
-    },
-    {
-      "n": 9,
-      "quem": "narrador",
-      "fala": "As fichas técnicas estão na legenda e no Radar Eleitoral do HOJE MT.",
-      "legenda": "As fichas técnicas estão na legenda e no Radar Eleitoral do HOJE MT.",
-      "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
-      "movimento": "close-in"
-    },
-    {
-      "n": 10,
-      "quem": "narrador",
-      "fala": "Eu volto com as próximas decisões da Justiça Eleitoral. Até já!",
-      "legenda": "Eu volto com as próximas decisões da Justiça Eleitoral. Até já!",
-      "imagem": "pautas/videos/argos/argos-veredas-cena-falando-9x16.jpg",
-      "movimento": "close-out"
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-intro-c1.png",
+     "quando": "Boletim"
     }
-  ],
-  "fechamento": {
-    "linha1": "Argos Veredas · repórter virtual do HOJE MT",
-    "leia": "hojemt.com.br/radar-eleitoral",
-    "fontes": [
-      "Quaest",
-      "MT Dados",
-      "Paraná Pesquisas",
-      "AtlasIntel",
-      "Datafolha",
-      "PoderData",
-      "Real Time Big Data",
-      "Palver",
-      "Futura",
-      "Alfa",
-      "Nexus",
-      "American Analytics",
-      "Gerp",
-      "PesqEle/TSE"
-    ],
-    "aviso": "Argos Veredas é um repórter virtual criado com IA (imagem e voz sintéticas). Fatos apurados e conferidos pela redação do HOJE MT. Pesquisas registradas na Justiça Eleitoral; fichas na legenda."
+   ]
   },
-  "saida": "pautas/videos/argos/2026-09-26-boletim-01.mp4"
+  {
+   "n": 2,
+   "quem": "narrador",
+   "fala": "A oito dias da eleição, as cinco pesquisas divulgadas para o governo de Mato Grosso desde quatro de setembro mostram Otaviano Pivetta e Wellington Fagundes nos dois primeiros lugares. Pivetta aparece à frente em quatro, e Wellington, em uma.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-1-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-1-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-1-c1.png",
+     "quando": "cinco pesquisas"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-1-c2.png",
+     "quando": "Pivetta aparece"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-1-c3.png",
+     "quando": "Wellington, em uma"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "quem": "narrador",
+   "fala": "Na Quaest, a mais recente, Pivetta tem vinte e nove por cento, e Wellington, vinte e sete, em empate técnico. Doutora Natasha tem onze.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-2-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-2-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-2-c1.png",
+     "quando": "Pivetta tem"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-2-c2.png",
+     "quando": "Wellington, vinte"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-2-c3.png",
+     "quando": "empate técnico"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-2-c4.png",
+     "quando": "Doutora Natasha"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "quem": "narrador",
+   "fala": "No segundo turno simulado, Pivetta aparece à frente em três pesquisas, e Wellington, em duas, ambas dentro da margem de erro.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-3-fundo.png",
+   "movimento": "pan-dir",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-3-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-3-c1.png",
+     "quando": "Pivetta aparece"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-3-c2.png",
+     "quando": "Wellington, em duas"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-3-c3.png",
+     "quando": "dentro da margem"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "quem": "narrador",
+   "fala": "Para o Senado, na Quaest, Mauro Mendes tem trinta e sete por cento no primeiro voto; Janaina Riva, dezenove; e Zé Medeiros, onze.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-4-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-4-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-4-c1.png",
+     "quando": "Mauro Mendes tem"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-4-c2.png",
+     "quando": "Janaina Riva, dezenove"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-4-c3.png",
+     "quando": "Zé Medeiros, onze"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "quem": "narrador",
+   "fala": "Mauro e Janaina lideram em todas as quatro pesquisas divulgadas desde seis de setembro.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-5-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-5-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-5-c1.png",
+     "quando": "lideram"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "quem": "narrador",
+   "fala": "Para presidente, Lula e Flávio Bolsonaro disputam o topo nas onze pesquisas nacionais, quase sempre em empate técnico.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-6-fundo.png",
+   "movimento": "pan-esq",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-6-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-6-c1.png",
+     "quando": "disputam o topo"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-6-c2.png",
+     "quando": "empate técnico"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "quem": "narrador",
+   "fala": "Em Mato Grosso, a Quaest mostra Flávio com cinquenta por cento e Lula com vinte e cinco. No segundo turno, Flávio tem cinquenta e seis, e Lula, trinta. Pesquisa é retrato do momento.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-7-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-7-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-7-c1.png",
+     "quando": "Flávio com"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-7-c2.png",
+     "quando": "Lula com"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-7-c3.png",
+     "quando": "No segundo turno"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-7-c4.png",
+     "quando": "retrato do momento"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "quem": "narrador",
+   "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral, em hojemt.com.br. Siga o HOJE MT nas redes sociais e compartilhe.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-fecho-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-fecho-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-fecho-c1.png",
+     "quando": "Siga o HOJE MT"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-01-fecho-c2.png",
+     "quando": "compartilhe"
+    }
+   ]
+  }
+ ],
+ "fechamento": {
+  "linha1": "Radar Eleitoral · HOJE MT",
+  "leia": "hojemt.com.br/radar-eleitoral",
+  "leia_rotulo": "Acesse:",
+  "siga": "Siga e compartilhe @hoje.mt",
+  "fontes": [
+   "PesqEle/TSE",
+   "g1 MT",
+   "Gazeta do Povo",
+   "CNN Brasil",
+   "RD News",
+   "Exame",
+   "Paraná Pesquisas",
+   "MT Dados",
+   "Jornal de Brasília",
+   "Só Notícias",
+   "Olhar Direto",
+   "MidiaNews"
+  ],
+  "aviso": "Voz gerada com IA (narrador sintético). Fatos apurados e conferidos pela redação do HOJE MT; sem música."
+ },
+ "saida": "pautas/videos/argos/2026-09-26-boletim-01-slides.mp4",
+ "rotulo_ia": "Voz gerada com IA"
 }

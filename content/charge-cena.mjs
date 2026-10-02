@@ -505,6 +505,10 @@ const PRONUNCIA_EDGE = [
   [/\bRiva e Zé Medeiros/g, "Riva, e Zé Medeiros"],
   // Boletim nº 5 (02/10): "não fez nem pediu o ato" saía como "nem pedir o ato".
   [/\bnão fez nem pediu\b/g, "não fez, nem pediu,"],
+  // Boletim nº 2 (02/10): "Nos palanques" saía "Nos palantes" na transcrição.
+  [/\bpalanques\b/g, "palanquis"],
+  // Boletim nº 1 (02/10): "Lula e Flávio" emendava e saía "Luma/Luna e Flávio" na transcrição; vírgula só na síntese.
+  [/\bLula e Flávio\b/g, "Lula, e Flávio"],
 ];
 function pronunciaEdge(texto) {
   return PRONUNCIA_EDGE.reduce((t, [de, para]) => t.replace(de, para), texto.trim());

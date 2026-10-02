@@ -1,108 +1,244 @@
 {
-  "slug": "boletim-02",
-  "titulo": "Boletim nº 2: a Justiça Eleitoral na reta final",
-  "materia": "https://hojemt.com.br/radar-eleitoral/",
-  "estilo": "realista",
-  "universo": "Estúdio do Argos, Pantanal ao pôr do sol",
-  "obs": "Boletim em vídeo do Radar Eleitoral (regras em pautas/videos/argos/ARGOS.md). Versão 3 (26/09, pedido do editor: 'A voz está muito feia, precisa ser uma voz mais jovem e sem se apresentar e sem dizer que é IA. Somente noticie os fatos'): o narrador não se apresenta, não cumprimenta nem se despede e só narra os fatos; voz Kokoro pm_alex pura (sintética genérica, mais jovem), velocidade 1,05, sem mudar o tom, tratamento 'limpo'; nenhuma voz de pessoa real. A informação de que imagem e voz são sintéticas fica só na tela: rótulo discreto fixo no canto e aviso na cartela final. Números das falas e dos quadros saem de paginas/radar-dados.json em 26/09/2026 (justica atualizada às 05:50 MT; grupos às 05:50 MT): 86 casos únicos (57 decisões, 15 ações em andamento, 14 arquivadas), 15 de 16 registros deferidos (Sargento Laudicério aguarda julgamento), 10 decisões do TRE-MT em 24 e 25/9, 8 delas em disputas só entre candidatos ao Senado (classificação: 5 retiradas de vídeos ou publicações, 3 sobre impulsionamento pago, 2 direitos de resposta; 3 multas de R$ 5 mil a R$ 10 mil). Tratamento igual: a fala não cita nomes nas disputas judiciais nem repete termos ofensivos das peças; os casos, com as partes e as fontes, ficam no radar. Palanques: só os apoios de 23 a 25/9 (os 2 grupos que tiveram movimentos novos no período), em ordem alfabética. Quadros próprios (graficos-boletim-02.mjs, 1080x1920). Trilha 'pantanal' (calma). Avatar animado por lib/argos-anima.py (anima-v3/).",
-  "voz": {
-    "motor": "kokoro",
-    "narrador": "pm_alex",
-    "personagem": null,
-    "velocidade": 1.05,
-    "tom": 0,
-    "tratamento": "limpo"
-  },
-  "anima": {
-    "pasta": "pautas/videos/argos/anima-v3"
-  },
-  "trilha": {
-    "id": "pantanal"
-  },
-  "abertura": {
-    "chip": "RADAR ELEITORAL",
-    "gancho": "A JUSTIÇA ELEITORAL NA RETA FINAL",
-    "sub": "Mato Grosso · 26/09"
-  },
-  "cenas": [
+ "slug": "boletim-02",
+ "titulo": "Boletim nº 2: a Justiça Eleitoral na reta final",
+ "materia": "https://hojemt.com.br/radar-eleitoral/",
+ "estilo": "slides",
+ "universo": "Slides escuros com ondas e curvas de nível verdes, sem avatar",
+ "obs": "Boletim em vídeo nº 2 do Radar Eleitoral (26/09/2026) refeito em 02/10 no formato só voz e slides, sem avatar, sem música e sem legenda queimada, a pedido do editor em 02/10: 'Não cite nome do avatar e nem crie avatar, simplesmente deixe a voz aprimorada e com slides profissionais divulgando o nome do site hojemt e pedindo para seguir e compartilhar nossas redes sociais Hoje MT'. A versão de 26/09 (com avatar) saiu do ar; esta mantém os fatos e os números da época, com falas novas (o narrador não se apresenta nem cumprimenta; IA só no rótulo e na cartela final). Voz v6: pt-BR-AntonioNeural (edge-tts), +18% e +4 Hz; reserva Kokoro pm_alex. Números: radar-dados.json do commit 0c085c9 (Justiça Eleitoral e grupos atualizados em 26/09, 05:50 MT), lido e conferido pelo graficos-boletim-02-slides.mjs (lança erro se a fala não bater): 86 casos únicos (57 decisões, 15 ações sem julgamento, 14 arquivadas); 10 decisões do TRE-MT de 24 e 25/9 em disputas entre candidatos (5 retiradas de vídeos ou publicações, 3 sobre impulsionamento pago, 2 direitos de resposta; 8 só entre candidatos ao Senado, 2 com candidato ao governo; 3 multas de R$ 5 mil a R$ 10 mil; cabe recurso nas 10); palanques de 23 a 25/9 só com os apoios dos dois grupos que tiveram movimentos novos no período (Pivetta e Wellington, em ordem alfabética; o slide diz que os outros quatro não tiveram). Correção: o boletim de 26/09 disse '15 deferidos; Laudicério aguarda julgamento', mas o TRE-MT já tinha deferido o registro dele por unanimidade em 25/9 (Acórdão 32909; Cidadão Consumidor, 26/9; entrou no Radar em 29/9, commit df56d72): a fala agora diz os 16 deferidos, com o de Laudicério deferido em 25/9 e cabe recurso (conferido no radar-dados.json atual). Escopo: as contagens são dos casos que o Radar reunia até 26/9 ('O Radar reúne…', 'Dez desses casos…'); a fala não diz que o TRE tomou só dez decisões em 24 e 25/9, porque o Radar incluiu depois uma liminar da Corregedoria de 25/9 (AIJE da coligação de Pivetta contra Natasha, divulgada em 28/9). Ficaram de fora: nomes das partes e termos das peças nos casos judiciais (tratamento igual, como no original; partes e fontes no Radar), o pedido de candidatos do Novo de 23/9 (não é apoio) e o apoio de Abilio Brunini a Mauro e Medeiros (25/9, só entrou no Radar depois do boletim). Gerar antes de montar: node graficos-boletim-02-slides.mjs (cenas 2 a 8); intro e fechamento já gerados por intro-boletim.mjs e fechamento-boletim.mjs. Conferência de 02/10 (slides): a frase do texto publicado 'cada caso foi conferido em fonte oficial ou em dois veículos' saiu da ficha da cena 2 (no retrato de 26/9, 2 dos 86 casos tinham um só veículo, o Olhar Direto, e nenhuma fonte oficial); o chip da cena 4 diz '10 decisões de 24 e 25/9 no Radar' (sem 'As', pela mesma razão do 'Dez desses casos'); e o cartão 'Liminar' da cena 5 diz que 4 das 10 decisões eram liminares (as outras 6: 5 de juiz ou juíza auxiliar e 1 em mandado de segurança), com recurso cabível em todas. Pronúncia: 'palanques' saía 'palantes' na voz edge; entrada 'palanquis' acrescentada à PRONUNCIA_EDGE do charge-cena.mjs (o texto da fala não muda).",
+ "voz": {
+  "motor": "edge",
+  "narrador": "pt-BR-AntonioNeural",
+  "velocidade": "+18%",
+  "tom": "+4Hz",
+  "reserva": {
+   "motor": "kokoro",
+   "narrador": "pm_alex",
+   "velocidade": 1.18,
+   "tom": 2,
+   "tratamento": "limpo",
+   "fonetica": "misaki",
+   "sotaque": "cuiabano"
+  }
+ },
+ "legendas": false,
+ "trilha": "nenhuma",
+ "abertura": {
+  "chip": "RADAR ELEITORAL",
+  "gancho": "A JUSTIÇA ELEITORAL NA RETA FINAL",
+  "sub": "Mato Grosso · 26/09"
+ },
+ "cenas": [
+  {
+   "n": 1,
+   "quem": "narrador",
+   "fala": "Radar Eleitoral do HOJE MT. Boletim número dois, sábado, vinte e seis de setembro.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-intro-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
     {
-      "n": 1,
-      "quem": "narrador",
-      "fala": "Oitenta e seis casos na Justiça Eleitoral envolvem os dezesseis candidatos ao governo e ao Senado de Mato Grosso, segundo o Radar Eleitoral do HOJE MT.",
-      "legenda": "86 casos na Justiça Eleitoral envolvem os 16 candidatos ao governo e ao Senado de MT, segundo o Radar Eleitoral do HOJE MT.",
-      "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
-      "movimento": "zoom-in",
-      "anima": true
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-intro-c0.png",
+     "em": 0
     },
     {
-      "n": 2,
-      "quem": "narrador",
-      "fala": "São cinquenta e sete decisões, quinze ações ainda sem julgamento e catorze arquivadas.",
-      "legenda": "São 57 decisões, 15 ações ainda sem julgamento e 14 arquivadas.",
-      "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-4.jpg",
-      "movimento": "zoom-in"
-    },
-    {
-      "n": 3,
-      "quem": "narrador",
-      "fala": "Só em vinte e quatro e vinte e cinco de setembro, o Tribunal Regional Eleitoral tomou dez decisões. Cinco mandaram retirar vídeos ou publicações, três trataram de impulsionamento pago e duas deram direito de resposta. Oito das dez foram em disputas entre candidatos ao Senado.",
-      "legenda": "Só em 24 e 25 de setembro, o TRE-MT tomou 10 decisões. 5 mandaram retirar vídeos ou publicações, 3 trataram de impulsionamento pago e 2 deram direito de resposta. 8 das 10 foram em disputas entre candidatos ao Senado.",
-      "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-5.jpg",
-      "movimento": "zoom-out"
-    },
-    {
-      "n": 4,
-      "quem": "narrador",
-      "fala": "A liminar é uma decisão provisória, que pode ser revista; e ação em andamento não é condenação.",
-      "legenda": "A liminar é uma decisão provisória, que pode ser revista; e ação em andamento não é condenação.",
-      "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
-      "movimento": "close-in",
-      "anima": true
-    },
-    {
-      "n": 5,
-      "quem": "narrador",
-      "fala": "Quinze dos dezesseis candidatos estão com a candidatura deferida. O pedido de Sargento Laudicério, ao governo, ainda aguarda julgamento.",
-      "legenda": "15 dos 16 candidatos estão com a candidatura deferida. O pedido de Sargento Laudicério, ao governo, ainda aguarda julgamento.",
-      "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
-      "movimento": "zoom-out",
-      "anima": true
-    },
-    {
-      "n": 6,
-      "quem": "narrador",
-      "fala": "Nos palanques: Mauro Mendes pediu votos para Pivetta e para Margareth Buzetti, e a campanha de Pivetta divulgou uma lista de cem prefeitos que apoiam a reeleição. Flávio Bolsonaro pediu votos para Wellington e para Zé Medeiros, e Sergio Moro declarou apoio a Wellington.",
-      "legenda": "Nos palanques: Mauro Mendes pediu votos para Pivetta e para Margareth Buzetti, e a campanha de Pivetta divulgou uma lista de 100 prefeitos que apoiam a reeleição. Flávio Bolsonaro pediu votos para Wellington e para Zé Medeiros, e Sergio Moro declarou apoio a Wellington.",
-      "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-8.jpg",
-      "movimento": "zoom-in"
-    },
-    {
-      "n": 7,
-      "quem": "narrador",
-      "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
-      "legenda": "Todos os casos, com as fontes, estão no Radar Eleitoral do HOJE MT.",
-      "imagem": "pautas/videos/argos/argos-veredas-avatar-9x16.jpg",
-      "movimento": "close-out",
-      "anima": true
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-intro-c1.png",
+     "quando": "Boletim"
     }
-  ],
-  "fechamento": {
-    "linha1": "Radar Eleitoral · HOJE MT",
-    "leia": "hojemt.com.br/radar-eleitoral",
-    "fontes": [
-      "TRE-MT",
-      "Olhar Direto",
-      "MidiaNews",
-      "MidiaJur",
-      "Folhamax",
-      "24 Horas MT",
-      "Infoverus",
-      "O Documento",
-      "Gazeta Digital",
-      "RDM Online"
-    ],
-    "aviso": "Imagem e voz geradas com IA. Fatos apurados e conferidos pela redação do HOJE MT; casos da Justiça Eleitoral com fonte oficial ou dois veículos, lista completa no Radar Eleitoral."
+   ]
   },
-  "saida": "pautas/videos/argos/2026-09-26-boletim-02.mp4",
-  "rotulo_ia": "Imagem e voz geradas com IA"
+  {
+   "n": 2,
+   "quem": "narrador",
+   "fala": "O Radar reúne oitenta e seis casos na Justiça Eleitoral com candidatos ao governo e ao Senado de Mato Grosso. São cinquenta e sete decisões, quinze ações ainda sem julgamento e catorze arquivadas.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-1-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-1-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-1-c1.png",
+     "quando": "cinquenta e sete"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-1-c2.png",
+     "quando": "quinze ações"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-1-c3.png",
+     "quando": "catorze"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "quem": "narrador",
+   "fala": "Dez desses casos são decisões tomadas pelo TRE de Mato Grosso em vinte e quatro e vinte e cinco de setembro, em disputas entre candidatos. Oito delas, entre candidatos ao Senado.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-2-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-2-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-2-c1.png",
+     "quando": "Oito delas"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "quem": "narrador",
+   "fala": "Cinco mandaram retirar vídeos ou publicações, três trataram de impulsionamento pago e duas deram direito de resposta. Houve três multas, de cinco mil a dez mil reais.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-3-fundo.png",
+   "movimento": "pan-dir",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-3-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-3-c1.png",
+     "quando": "Cinco mandaram"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-3-c2.png",
+     "quando": "três trataram"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-3-c3.png",
+     "quando": "duas deram"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-3-c4.png",
+     "quando": "três multas"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "quem": "narrador",
+   "fala": "Liminar é decisão provisória e pode ser revista. E ação em andamento não é condenação.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-4-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-4-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-4-c1.png",
+     "quando": "ação em andamento"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "quem": "narrador",
+   "fala": "Os dezesseis candidatos ao governo e ao Senado estão com registro deferido. O registro de Sargento Laudicério, candidato ao governo, foi deferido na sexta-feira, dia vinte e cinco. Cabe recurso.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-5-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-5-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-5-c1.png",
+     "quando": "Sargento Laudicério"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-5-c2.png",
+     "quando": "Cabe recurso"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "quem": "narrador",
+   "fala": "Nos palanques, entre vinte e três e vinte e cinco de setembro, Mauro Mendes pediu votos para Otaviano Pivetta e para Margareth Buzetti, e a campanha de Pivetta divulgou uma lista de cem prefeitos que apoiam a reeleição.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-6-fundo.png",
+   "movimento": "pan-esq",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-6-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-6-c1.png",
+     "quando": "Mauro Mendes pediu"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-6-c2.png",
+     "quando": "a campanha de Pivetta"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "quem": "narrador",
+   "fala": "Flávio Bolsonaro pediu votos para Wellington Fagundes e para Zé Medeiros, e Sergio Moro declarou apoio a Wellington.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-7-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-7-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-7-c1.png",
+     "quando": "pediu votos"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-7-c2.png",
+     "quando": "Sergio Moro"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "quem": "narrador",
+   "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral, em hojemt.com.br. Siga o HOJE MT nas redes sociais e compartilhe.",
+   "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-fecho-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-fecho-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-fecho-c1.png",
+     "quando": "Siga o HOJE MT"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-09-26-boletim-02-fecho-c2.png",
+     "quando": "compartilhe"
+    }
+   ]
+  }
+ ],
+ "fechamento": {
+  "linha1": "Radar Eleitoral · HOJE MT",
+  "leia": "hojemt.com.br/radar-eleitoral",
+  "leia_rotulo": "Acesse:",
+  "siga": "Siga e compartilhe @hoje.mt",
+  "fontes": [
+   "Olhar Direto",
+   "Infoverus",
+   "MidiaNews",
+   "24 Horas MT",
+   "MidiaJur",
+   "FTN Brasil",
+   "Folhamax",
+   "Cidadão Consumidor",
+   "RDM Online",
+   "O Documento",
+   "Gazeta Digital",
+   "VGN"
+  ],
+  "aviso": "Voz gerada com IA (narrador sintético). Fatos apurados e conferidos pela redação do HOJE MT; sem música."
+ },
+ "saida": "pautas/videos/argos/2026-09-26-boletim-02-slides.mp4",
+ "rotulo_ia": "Voz gerada com IA"
 }
