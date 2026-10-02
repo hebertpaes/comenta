@@ -299,13 +299,13 @@
   ]
  },
  "pesquisas": {
-  "atualizado": "01/10/2026 21:50",
+  "atualizado": "02/10/2026 13:05",
   "corridas": [
    {
     "id": "governador-mt",
     "titulo": "Governo de Mato Grosso",
     "cenario": "2º turno entre Otaviano Pivetta (Republicanos) e Wellington Fagundes (PL)",
-    "porque": "Os dois ficam nos dois primeiros lugares nas sete pesquisas registradas desde 4/9 que estão no Radar. Pivetta aparece à frente no 1º turno em cinco delas (na Quaest, em empate técnico) e Wellington em duas (AtlasIntel e Povo e Poder, ambas em empate técnico). Na Paraná Pesquisas de 27 a 29/9, Pivetta tem 51,6% dos votos válidos, acima da metade (Gazeta do Povo); nas demais, nenhum candidato chega a ela. No 2º turno simulado, Pivetta vence em quatro pesquisas e Wellington aparece à frente em três, todas dentro da margem de erro.",
+    "porque": "Os dois ficam nos dois primeiros lugares nas oito pesquisas registradas desde 4/9 que estão no Radar. Pivetta aparece à frente no 1º turno em seis delas (na Quaest, em empate técnico) e Wellington em duas (AtlasIntel e Povo e Poder, ambas em empate técnico). Na Paraná Pesquisas de 27 a 29/9, Pivetta tem 51,6% dos votos válidos (Gazeta do Povo), e na MT Dados de 25 a 30/9, 50,6% (relatório do instituto, que ressalta que, com a margem de 3 pontos, o resultado é compatível tanto com vitória no 1º turno quanto com 2º turno); nas demais, nenhum candidato chega à metade. No 2º turno simulado, Pivetta aparece à frente em cinco pesquisas e Wellington em três, estas todas dentro da margem de erro.",
     "nomes": [
      "Otaviano Pivetta",
      "Wellington Fagundes",
@@ -315,6 +315,50 @@
      "Rafaell Milas"
     ],
     "pesquisas": [
+     {
+      "inst": "MT Dados",
+      "contratante": "não informado no relatório nem nas matérias (a 4ª rodada, MT-00691/2026, foi com recursos próprios)",
+      "campo": "25 a 30/09",
+      "amostra": "3.080",
+      "margem": "3",
+      "conf": 95,
+      "metodo": "presencial e online",
+      "reg": "MT-07362/2026",
+      "base": "totais",
+      "v": {
+       "Otaviano Pivetta": 42,
+       "Wellington Fagundes": 23,
+       "Doutora Natasha": 14,
+       "Sargento Laudicério": 2,
+       "Rafaell Milas": 1,
+       "Maurício Coelho": 1
+      },
+      "fontes": [
+       [
+        "MT Dados (relatório da 5ª rodada)",
+        "https://mtdados.com.br/pesquisa-governo-mt-2026-5a-rodada",
+        "2026-10-02"
+       ],
+       [
+        "MidiaJur",
+        "https://www.midiajur.com.br/eleicoes-2026/mt-dados-mostra-pivetta-com-506-dos-votos-validos-wellington-tem-277/87603",
+        "2026-10-02T12:12-04:00"
+       ],
+       [
+        "RepórterMT",
+        "https://www.reportermt.com/politica/pivetta-chega-a-42-wellington-cai-para-23-e-diferenca-sobe-para-19-pontos-em-mt/244515",
+        "2026-10-02T12:08-04:00"
+       ]
+      ],
+      "t2": [
+       [
+        "Otaviano Pivetta",
+        50,
+        "Wellington Fagundes",
+        28
+       ]
+      ]
+     },
      {
       "inst": "Paraná Pesquisas",
       "contratante": "Sedek Serviços, Tecnologia & Informação Ltda. (segundo a Gazeta do Povo)",
@@ -1880,7 +1924,7 @@
   ]
  },
  "grupos": {
-  "atualizado": "02/10/2026 08:43",
+  "atualizado": "02/10/2026 13:05",
   "grupos": [
    {
     "governador": "Doutora Natasha",
@@ -2365,6 +2409,22 @@
     "desenho": "Candidatura do PL alinhada à de Flávio Bolsonaro para presidente, em coligação com MDB, Novo, PRD e Solidariedade.",
     "movimentos": [
      {
+      "data": "2026-10-02",
+      "fato": "O deputado federal Alfredo Gaspar (PL-AL), candidato a vice-presidente na chapa de Flávio Bolsonaro, declarou apoio a Wellington Fagundes em vídeo gravado ao lado dele.",
+      "fontes": [
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/vice-de-flavio-bolsonaro-declara-apoio-a-wellington-fagundes/530435",
+        "2026-10-02T11:00-04:00"
+       ],
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/vice-de-flavio-apoia-wellington-em-mt-veja-video/575275",
+        "2026-10-02"
+       ]
+      ]
+     },
+     {
       "data": "2026-10-01",
       "fato": "Em Sinop, em 1º/10, Zé Medeiros (PL), candidato ao Senado na coligação de Wellington, fez caminhada de campanha com Pivetta, de novo (a primeira foi em Rondonópolis, em 30/9). Na mesma caminhada, Rosana Martinelli (MDB), ex-prefeita de Sinop e, segundo as matérias, 2ª suplente do senador Wellington Fagundes, declarou apoio a Pivetta. Não há resposta publicada de Wellington ou do PL.",
       "fontes": [
@@ -2423,42 +2483,6 @@
        [
         "HiperNotícias",
         "https://www.hnt.com.br/politica/natasha-cobra-wf-sobre-alianca-com-pivetta-e-leva-invertida-de-adversario/578334",
-        "2026-10-01"
-       ]
-      ]
-     },
-     {
-      "data": "2026-09-30",
-      "fato": "Zé Medeiros (PL), candidato ao Senado na coligação de Wellington, e o 1º suplente dele, Odílio Balbinotti, participaram de caminhada de Pivetta em Rondonópolis, base eleitoral de Wellington. A única fala de Medeiros publicada: “É a Caminhada da Vitória! Caminhada de Pivetta, Zé Medeiros.” Ele segue candidato pela coligação de Wellington; até as 18h30 não havia resposta publicada de Wellington ou do PL. Também em Rondonópolis, no mesmo dia, Mauro Mendes (União), candidato ao Senado na coligação de Pivetta, pediu votos para Medeiros.",
-      "fontes": [
-       [
-        "MidiaNews",
-        "https://www.midianews.com.br/politica/medeiros-oficializa-abandono-a-wf-e-faz-ato-com-pivetta-video/530269",
-        "2026-09-30"
-       ],
-       [
-        "Olhar Direto",
-        "https://www.olhardireto.com.br/noticias/na-casa-do-adversario1",
-        "2026-09-30"
-       ],
-       [
-        "HiperNotícias",
-        "https://www.hnt.com.br/politica/medeiros-declara-voto-em-pivetta-e-participa-de-ato-com-claudio-e-balbinotti/578169",
-        "2026-09-30"
-       ],
-       [
-        "RDNews",
-        "https://www.rdnews.com.br/eleicoes-2026/medeiros-participa-de-ato-politico-ao-lado-de-claudio-e-pivetta-video/249936",
-        "2026-09-30"
-       ],
-       [
-        "RDNews",
-        "https://www.rdnews.com.br/eleicoes-2026/mauro-mendes-pede-votos-para-ze-medeiros-ao-senado-durante-evento/250018",
-        "2026-10-01"
-       ],
-       [
-        "Primeira Hora",
-        "https://primeirahora.com.br/mauro-mendes-pede-votos-para-ze-medeiros-ao-senado-durante-evento-em-rondonopolis/",
         "2026-10-01"
        ]
       ]
@@ -8842,7 +8866,7 @@
   ]
  },
  "analise": {
-  "atualizado": "01/10/2026 16:40",
+  "atualizado": "02/10/2026 13:05",
   "candidatos": [
    {
     "nome": "Doutora Natasha",
@@ -8851,7 +8875,7 @@
     "numero": 55,
     "fortes": [
      [
-      "Terceira colocada em todas as sete pesquisas registradas, com 9% (Povo e Poder) a 23,2% (AtlasIntel) no 1º turno.",
+      "Terceira colocada em todas as oito pesquisas registradas, com 9% (Povo e Poder) a 23,2% (AtlasIntel) no 1º turno.",
       [
        [
         "g1 MT (Quaest)",
@@ -8896,7 +8920,7 @@
     ],
     "fracos": [
      [
-      "Fica de 11 a 29 pontos atrás do líder no 1º turno e perde todos os 2º turnos simulados em que aparece (AtlasIntel, MT Dados e Quaest).",
+      "Fica de 11,2 a 30,9 pontos atrás do líder no 1º turno nas oito pesquisas registradas e perde todos os 2º turnos simulados em que aparece (AtlasIntel, MT Dados e Quaest; na MT Dados de 25 a 30/9, 21% a 54% contra Pivetta e 23% a 40% contra Wellington).",
       [
        [
         "Gazeta do Povo (AtlasIntel)",
@@ -8904,7 +8928,7 @@
        ],
        [
         "MT Dados (MT Dados)",
-        "https://mtdados.com.br/pesquisa-governo-mt-2026-4a-rodada"
+        "https://mtdados.com.br/pesquisa-governo-mt-2026-5a-rodada"
        ],
        [
         "g1 MT (Quaest)",
@@ -9023,7 +9047,7 @@
     "numero": 10,
     "fortes": [
      [
-      "À frente no 1º turno em cinco das sete pesquisas registradas: Paraná Pesquisas (46,4% em 27 a 29/9, 51,6% dos válidos), MT Dados (34%) e Quaest (29%, em empate técnico).",
+      "À frente no 1º turno em seis das oito pesquisas registradas: Paraná Pesquisas (46,4% em 27 a 29/9, 51,6% dos válidos), MT Dados (42% em 25 a 30/9, 50,6% dos válidos) e Quaest (29%, em empate técnico).",
       [
        [
         "Paraná Pesquisas (Paraná Pesquisas)",
@@ -9031,7 +9055,7 @@
        ],
        [
         "MT Dados (MT Dados)",
-        "https://mtdados.com.br/pesquisa-governo-mt-2026-4a-rodada"
+        "https://mtdados.com.br/pesquisa-governo-mt-2026-5a-rodada"
        ],
        [
         "g1 MT (Quaest)",
