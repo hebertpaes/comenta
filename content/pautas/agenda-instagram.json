@@ -1410,6 +1410,22 @@
       "legenda": "RADAR ELEITORAL · Boletim nº 5: STF devolve a propaganda de Natasha; quatro pesquisas novas e a disputa pelo Senado\n\nNa quinta (1º/10), último dia do horário eleitoral, o ministro Alexandre de Moraes (STF) devolveu a Doutora Natasha (PSD) o direito de exibir as propagandas que o TRE-MT tinha suspendido. Na véspera, o Pleno do TRE-MT tinha mantido a suspensão.\n\nGoverno · Paraná Pesquisas (MT-02094/2026; 1.352 entrevistas, 27 a 29/9; margem 2,7 pontos; 95%): Pivetta 46,4%; Wellington Fagundes 27,1%; Natasha 15,5%; Rafaell Milas 0,4%; Sargento Laudicério 0,4%; Maurício Coelho 0,1%. 2º turno: Pivetta 53,1% x Wellington 34,6%.\nGoverno · Povo e Poder (MT-07968/2026; 1.200 entrevistas, 19 a 27/9; margem 2,83 pontos), divulgada pela emissora contratante: Wellington 31,8%; Pivetta 30,7%; Natasha 9%; Laudicério 1,2%; Milas 0,4%; Coelho 0%. 2º turno: Wellington 35,6% x Pivetta 31,5%.\nSenado (1º voto) · Paraná Pesquisas: Mauro Mendes 37,5%; Janaina Riva 18%; Zé Medeiros 16%; Fávaro 9,8%; Pedro Taques 6,1%; Galvan 1,6%; Coronel Darwin 1,4%; Professor Nelson Ferreira 1%; Margareth Buzetti 0,1%; Beny Godoy 0%.\nSenado (1º voto) · Percent Brasil (MT-09025/2026; 1.200 entrevistas, 26 a 29/9; margem 2,83 pontos): Mauro 38,3%; Janaina 22,8%; Medeiros 10,4%; Fávaro 6,1%; Taques 6,1% (os demais não foram divulgados). Pesquisa é retrato do momento.\n\nTRE-MT: liminares pedidas por Janaina mandaram Medeiros retirar dois vídeos; Janaina foi multada em R$ 5 mil por programa sem os nomes legíveis dos suplentes (cabe recurso). Taques entrou com ação contra Mauro, sem decisão; Mauro diz que não fez nem pediu o ato questionado. Em Rondonópolis, Medeiros foi à caminhada de Pivetta e Mauro pediu votos para Medeiros.\n\nTodos os casos, com as fontes: hojemt.com.br/radar-eleitoral\n\nVoz do vídeo gerada com IA; sem música. Fatos apurados e conferidos pela redação do HOJE MT.\n\n#eleicoes2026 #matogrosso #pesquisaeleitoral #hojemt",
       "materia": "https://hojemt.com.br/radar-eleitoral/",
       "obs": "Boletim nº 5 (02/10, 07h38 MT): só voz (edge pt-BR-AntonioNeural, voz v6) e slides, sem música, com intro e fechamento; 107 s; sem postagem de rede reproduzida. Aguarda decisão do editor. Pendência apontada pela checagem: o registro da Povo e Poder (MT-07968/2026) não foi conferido no PesqEle pelo HOJE MT (divulgada por release da contratante); a pesquisa trouxe outros dois cenários de 2º turno (Pivetta 35,8 x Natasha 12,1; Wellington 36,6 x Natasha 11,1, segundo o Folhamax) que não estão no Radar nem no slide. Capa: https://hojemt.com.br/content/images/2026/10/2026-10-02-boletim-05-capa.jpg"
+    },
+    {
+      "id": "80",
+      "status": "aguardando_materia",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-06T11:30:00-04:00",
+      "formato": "card",
+      "titulo": "Kássio Coelho se lança como terceiro nome à presidência da Câmara de Cuiabá",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-02-mesa-camara-cuiaba-kassio.jpg"
+      ],
+      "legenda": "Câmara de Cuiabá: Kássio Coelho se lança como terceiro nome à presidência\n\nO vereador Kássio Coelho (Podemos) anunciou na quinta (1º) que disputa a presidência da Câmara Municipal de Cuiabá e que vai protocolar a chapa na segunda (5), véspera da eleição da Mesa Diretora, marcada para terça (6). Ele se soma a Ilde Taques (Podemos) e Dilemário Alencar (União).\n\nPlacar declarado pelos próprios grupos: Ilde diz ter 15 dos 27 vereadores; Dilemário, 12; Kássio, 7. Os números se sobrepõem e só serão conferidos no voto. A maioria é de 14.\n\nMatéria completa: hojemt.com.br/kassio-coelho-terceiro-nome-presidencia-camara-de-cuiaba\n\nFontes: Olhar Direto, HiperNotícias, Muvuca Popular, Gazeta Digital\n\n#cuiaba #camaramunicipal #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/kassio-coelho-terceiro-nome-presidencia-camara-de-cuiaba/",
+      "ghost_id": "6abfa6566357bc8c6ad4d4bf",
+      "obs": "publicar só depois que a matéria for publicada. Assunto com prazo: eleição da Mesa em 06/10 — o horário nominal é o da manhã do dia da eleição; se a matéria sair antes, antecipar para o próximo horário livre; depois da eleição, não publicar (perde sentido)."
     }
   ]
 }
