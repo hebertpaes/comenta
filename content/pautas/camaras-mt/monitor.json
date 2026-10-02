@@ -81,7 +81,7 @@
    "ghost_id": "6abecbdf6357bc8c6ad4d42d",
    "previa": "https://hojemt.com.br/p/1fc4596f-a04c-4b5a-ac5c-a1c3c2ecc237/",
    "status": "rascunho",
-   "arte": "PENDENTE: Canva em quota_cooldown nas 2 tentativas de 01/10 (~21h UTC); gerar na próxima rodada a cena 'plenário visto de trás das cadeiras, vereadores de costas, documentos sobre a mesa, janela com luz de fim de tarde' (receita do README) e aplicar com imagem-post.mjs + og-whatsapp.mjs + registro.json",
+   "arte": "feita em 02/10/2026 (Canva DAHW3M2GGZI, imagem MAHW3HKWSgo; feature_image, og e registro.json atualizados)",
    "card": "pautas/cards/2026-10-01-lucas-31a-sessao-saude-ocupacional-protecao-animal.card.json (jpg hospedado no Ghost)",
    "agenda_id": 77
   }
@@ -133,7 +133,7 @@
   },
   "lrv:yt:oRmdZ0h8VFg": {
    "titulo": "Sessão Ordinária Nº 31-2026 de 01-10-2026",
-   "data": "2026-09-29"
+   "data": "2026-10-02"
   },
   "lrv:yt:TiEUP_aA31U": {
    "titulo": "Fala, Vereador: Hélio Kaminski",
@@ -476,7 +476,7 @@
    "data": "2026-10-01"
   },
   "barra:gn:após pedido de cpi, prefeito exonera secretária de saúde de barra do garças": {
-   "titulo": "Após pedido de CPI, prefeito exonera secretária de Saúde de Barra do Garças - SEMANA 7",
+   "titulo": "Após pedido de CPI, prefeito exonera secretária de Saúde de Barra do Garças - Notícia dos Municípios",
    "data": "2026-10-01"
   },
   "barra:gn:defensoria aciona justiça para obrigar prefeitura a implantar caps infantil": {
@@ -682,9 +682,21 @@
   "barra:https://www.barradogarcas.mt.leg.br/institucional/noticias/inicio-das-obras-de-pavimentacao-no-jardim-nova-barra-um-marco-para-a-comunidade": {
    "titulo": "Início das obras de pavimentação no Jardim Nova Barra: Um marco para a comunidade",
    "data": "2024-05-28"
+  },
+  "lrv:yt:lLm17tyTZ7s": {
+   "titulo": "Lucas em Debate: Dra. Isabella Chaves",
+   "data": "2026-10-02"
+  },
+  "barra:gn:pivetta chega a barra do garças nesta sexta-feira para carreata e passeata": {
+   "titulo": "Pivetta chega a Barra do Garças nesta sexta-feira para carreata e passeata - SEMANA 7",
+   "data": "2026-10-01"
+  },
+  "barra:gn:pivetta participa da assinatura de termo para construção do hospital regional de barra do ": {
+   "titulo": "Pivetta participa da assinatura de termo para construção do Hospital Regional de Barra do Garças - rededanoticia.com.br",
+   "data": "2026-10-01"
   }
  },
- "ultima_checagem": "2026-10-01T21:12:57.263Z",
+ "ultima_checagem": "2026-10-02T12:39:32.860Z",
  "descartados_2026-10-01_tarde": [
   {
    "cidade": "Sorriso",
