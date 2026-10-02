@@ -1,0 +1,223 @@
+{
+ "slug": "boletim-06",
+ "titulo": "Boletim nº 6: pesquisa MT Dados para governo e Senado, Justiça Eleitoral e apoios na reta final",
+ "materia": "https://hojemt.com.br/radar-eleitoral/",
+ "estilo": "slides",
+ "universo": "Slides escuros com ondas e curvas de nível verdes (estilo visual do vídeo de referência indicado pelo editor), sem avatar",
+ "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides, sem música, com intro e fechamento padrão (pedidos do editor de 29/09, 01/10 e 02/10). Voz v7: pt-BR-AntonioNeural (voz sintética genérica do catálogo da Microsoft, pelo edge-tts), +14% e +3 Hz, 96 kbps, tratamento leve; reserva Kokoro pm_alex. Pauta: só o que entrou em content/paginas/radar-dados.json depois do boletim nº 5 (02/10, 07:38 MT): (1) notícia principal: pesquisa MT Dados MT-07362/2026 (25 a 30/9; 3.080 entrevistas presenciais e online; margem de 3 pontos; confiança de 95%; contratante não informado) para o governo, com os seis candidatos e o 2º turno simulado; (2) a mesma pesquisa para o Senado, os dez candidatos no 1º voto e a soma dos dois votos; (3) Justiça Eleitoral: a presidente do TRE-MT mandou as emissoras exibirem em 2 e 3/10 o tempo de propaganda de Natasha que tinha sido suspenso, cumprindo a Rcl 100.717/MT do STF (sem manifestação publicada de Pivetta); (4) multas a Pedro Taques em duas representações a pedido da coligação de Mauro Mendes (1º/10; cabe recurso; sem manifestação de Taques); (5) grupos: Alfredo Gaspar (PL-AL), candidato a vice de Flávio Bolsonaro, declarou apoio a Wellington Fagundes em vídeo. Ficou fora: a decisão da juíza Glenda Borges que manteve vídeo de Pivetta contestado por Wellington (só uma fonte, HiperNotícias). Gerar antes de montar: node intro-boletim.mjs --prefixo=2026-10-02-boletim-06 --n=6 --data=\"Sexta-feira, 2 de outubro de 2026\" --tema=\"Pesquisa MT Dados, Justiça Eleitoral e apoios na reta final\"; node graficos-boletim-06.mjs (confere números e casos no Radar); node fechamento-boletim.mjs --prefixo=2026-10-02-boletim-06. Postagens das redes: nenhuma reproduzida (as matérias não trazem o link do vídeo de Alfredo Gaspar). Montado sem --cortar-ate-120 (o corte tiraria o fechamento).",
+ "voz": {
+  "motor": "edge",
+  "narrador": "pt-BR-AntonioNeural",
+  "velocidade": "+14%",
+  "tom": "+3Hz",
+  "reserva": {
+   "motor": "kokoro",
+   "narrador": "pm_alex",
+   "velocidade": 1.18,
+   "tom": 2,
+   "tratamento": "limpo",
+   "fonetica": "misaki",
+   "sotaque": "cuiabano"
+  },
+  "tratamento": "leve",
+  "qualidade": 96
+ },
+ "legendas": false,
+ "trilha": "nenhuma",
+ "abertura": {
+  "chip": "RADAR ELEITORAL",
+  "gancho": "MT DADOS, JUSTIÇA ELEITORAL E APOIOS",
+  "sub": "Mato Grosso · 02/10"
+ },
+ "fechamento": {
+  "linha1": "Radar Eleitoral · HOJE MT",
+  "leia": "hojemt.com.br/radar-eleitoral",
+  "fontes": [
+   "MidiaNews",
+   "Folhamax",
+   "MidiaJur",
+   "Gazeta Digital",
+   "RDNews",
+   "Olhar Direto"
+  ],
+  "aviso": "Voz gerada com IA (narrador sintético). Fatos apurados e conferidos pela redação do HOJE MT; sem música.",
+  "siga": "Siga e compartilhe @hoje.mt",
+  "leia_rotulo": "Acesse:"
+ },
+ "saida": "pautas/videos/argos/2026-10-02-boletim-06.mp4",
+ "rotulo_ia": "Voz gerada com IA",
+ "cenas": [
+  {
+   "n": 1,
+   "quem": "narrador",
+   "fala": "Radar Eleitoral do HOJE MT. Boletim número seis, sexta-feira, dois de outubro.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-intro-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-intro-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-intro-c1.png",
+     "quando": "Boletim"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "quem": "narrador",
+   "fala": "Na pesquisa MT Dados, feita de vinte e cinco a trinta de setembro, Otaviano Pivetta tem quarenta e dois por cento para o governo; Wellington Fagundes, vinte e três; e Doutora Natasha, catorze.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-1-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-1-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-1-c1.png",
+     "quando": "Otaviano Pivetta tem"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-1-c2.png",
+     "quando": "Wellington Fagundes, vinte"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-1-c3.png",
+     "quando": "Doutora Natasha, catorze"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "quem": "narrador",
+   "fala": "Sargento Laudicério tem dois por cento; Rafaell Milas e Maurício Coelho, um cada. No segundo turno simulado, Pivetta tem cinquenta, e Wellington, vinte e oito. Pesquisa é retrato do momento.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-2-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-2-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-2-c1.png",
+     "quando": "segundo turno simulado"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-2-c2.png",
+     "quando": "retrato do momento"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "quem": "narrador",
+   "fala": "Para o Senado, na mesma pesquisa, Mauro Mendes tem trinta e dois por cento no primeiro voto; Janaina Riva, dezenove; e Zé Medeiros, dezesseis. Na soma dos dois votos, cinquenta, trinta e seis e trinta e um.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-3-fundo.png",
+   "movimento": "pan-dir",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-3-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-3-c1.png",
+     "quando": "Mauro Mendes tem"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-3-c2.png",
+     "quando": "Janaina Riva, dezenove"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-3-c3.png",
+     "quando": "Zé Medeiros, dezesseis"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-3-c4.png",
+     "quando": "soma dos dois votos"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "quem": "narrador",
+   "fala": "No TRE, a presidente, desembargadora Serly Marcondes Alves, mandou rádios e TVs exibirem nesta sexta e no sábado o tempo de propaganda de Doutora Natasha que tinha sido suspenso, cumprindo decisão do Supremo.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-4-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-4-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-4-c1.png",
+     "quando": "mandou rádios"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-4-c2.png",
+     "quando": "cumprindo decisão"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "quem": "narrador",
+   "fala": "A pedido da coligação de Mauro Mendes, um juiz auxiliar multou Pedro Taques em duas representações, em valores que somam mais de trinta mil reais. Cabe recurso.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-5-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-5-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-5-c1.png",
+     "quando": "multou Pedro Taques"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-5-c2.png",
+     "quando": "Cabe recurso"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "quem": "narrador",
+   "fala": "Nos grupos, o deputado federal Alfredo Gaspar, candidato a vice na chapa de Flávio Bolsonaro, declarou apoio a Wellington Fagundes em vídeo.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-6-fundo.png",
+   "movimento": "pan-esq",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-6-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-6-c1.png",
+     "quando": "Alfredo Gaspar"
+    }
+   ]
+  },
+  {
+   "quem": "narrador",
+   "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral, em hojemt.com.br. Siga o HOJE MT nas redes sociais e compartilhe.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-fecho-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-fecho-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-fecho-c1.png",
+     "quando": "Siga o HOJE MT"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-02-boletim-06-fecho-c2.png",
+     "quando": "compartilhe"
+    }
+   ],
+   "n": 8
+  }
+ ]
+}
