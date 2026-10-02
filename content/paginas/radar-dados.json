@@ -3083,7 +3083,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "02/10/2026 15:50",
+  "atualizado": "02/10/2026 19:50",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -3955,6 +3955,27 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-10-02",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "Medeiros pediu ao TRE-MT a suspensão da divulgação da pesquisa Percent MT-09025/2026 (1.200 entrevistas presenciais de 26 a 29/9) e a retirada, em duas horas, de publicação de Janaina Riva no Instagram com os números; a representação é contra o instituto e contra Janaina. Ele apontou três falhas no cartão usado nas perguntas sobre o Senado: a legenda PP atribuída a Professor Nelson Ferreira (Agir), o nome \"José Medeiros\" em vez do nome de urna \"Zé Medeiros\" e uma foto antiga dele. Em 2/10, o juiz auxiliar Flávio Fraga e Silva negou a tutela de urgência: considerou a legenda trocada um erro material sem impacto demonstrado nos percentuais, entendeu que a regra exige o nome do candidato, não necessariamente o de urna, e que não há norma sobre qual foto usar; negou também o pedido alternativo de incluir esclarecimentos na divulgação. A pesquisa segue liberada; falta o julgamento do mérito.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/medeiros-reclama-de-foto-e-nome-e-tenta-derrubar-pesquisa-tre-nega-em-mt/575393",
+        "2026-10-02"
+       ],
+       [
+        "Olhar Direto",
+        "https://olhardireto.com.br/juridico/noticias/ze-medeiros-tenta-barrar-pesquisa-ao-senado-mas-tr-considera-erros-insuficientes-para-suspender-divulgacao",
+        "2026-10-02"
+       ]
+      ],
+      "papel": "contra"
+     },
      {
       "data": "2026-09-30",
       "tipo": "decisao",
@@ -8335,6 +8356,27 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-10-02",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "Medeiros pediu ao TRE-MT a suspensão da divulgação da pesquisa Percent MT-09025/2026 (1.200 entrevistas presenciais de 26 a 29/9) e a retirada, em duas horas, de publicação de Janaina Riva no Instagram com os números; a representação é contra o instituto e contra Janaina. Ele apontou três falhas no cartão usado nas perguntas sobre o Senado: a legenda PP atribuída a Professor Nelson Ferreira (Agir), o nome \"José Medeiros\" em vez do nome de urna \"Zé Medeiros\" e uma foto antiga dele. Em 2/10, o juiz auxiliar Flávio Fraga e Silva negou a tutela de urgência: considerou a legenda trocada um erro material sem impacto demonstrado nos percentuais, entendeu que a regra exige o nome do candidato, não necessariamente o de urna, e que não há norma sobre qual foto usar; negou também o pedido alternativo de incluir esclarecimentos na divulgação. A pesquisa segue liberada; falta o julgamento do mérito.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/medeiros-reclama-de-foto-e-nome-e-tenta-derrubar-pesquisa-tre-nega-em-mt/575393",
+        "2026-10-02"
+       ],
+       [
+        "Olhar Direto",
+        "https://olhardireto.com.br/juridico/noticias/ze-medeiros-tenta-barrar-pesquisa-ao-senado-mas-tr-considera-erros-insuficientes-para-suspender-divulgacao",
+        "2026-10-02"
+       ]
+      ],
+      "papel": "pedido"
+     },
      {
       "data": "2026-09-30",
       "tipo": "decisao",
