@@ -8,8 +8,9 @@
 // (1080×1350, os cards do Instagram) saem sem imagem ou como miniatura.
 // Este script gera um JPEG BASELINE (não progressivo) 1200×630, ≤ 150 KB,
 // a partir da foto de destaque (ou da og_image atual, se a foto não for
-// paisagem; retrato entra inteiro sobre fundo desfocado), sobe para o Ghost
-// como <slug>-wa.jpg e grava em og_image e twitter_image do post. A
+// paisagem; retrato entra inteiro sobre fundo desfocado), sobe para a área
+// de arquivos do Ghost (/content/files/<ano>/<mês>/<slug>-wa.jpg, sem
+// recompressão) e grava em og_image e twitter_image do post. A
 // feature_image não muda. Posts que já têm "-wa.jpg" são pulados.
 //
 //   node og-whatsapp.mjs --slug=<slug>              um post
@@ -103,9 +104,10 @@ async function paisagem(urls, nome) {
   return { arquivo, bytes: out.length, origem, encaixe: !deitada || arte };
 }
 
-// "-wa.jpg" = JPEG baseline paisagem gerado por esta versão; "-og.jpg" (versão
-// anterior, JPEG progressivo) e os cards em retrato são refeitos.
-const jaBom = (u) => /-wa(-\d+)?\.jpg$/i.test(u || ""); // o Ghost acrescenta -1, -2 em nomes repetidos
+// "/content/files/…-wa.jpg" = JPEG baseline paisagem gerado por esta versão;
+// "-og.jpg", "/content/images/…-wa.jpg" (recomprimidos como progressivos pelo
+// Ghost) e os cards em retrato são refeitos.
+const jaBom = (u) => /\/content\/files\/.*-wa(-\d+)?\.jpg$/i.test(u || ""); // em /content/files; o Ghost acrescenta -1, -2 em nomes repetidos
 async function listar() {
   if (args.slug) return [await api.posts.read({ slug: String(args.slug) })];
   const max = args.recentes === "all" ? Infinity : Number(args.recentes);
@@ -147,7 +149,10 @@ async function processar(p) {
   try {
     const { arquivo, bytes, origem: usada, encaixe } = await paisagem(fontesPost, nome);
     console.log(`    origem: ${usada}${encaixe ? " (encaixada inteira, sem recorte)" : ""}`);
-    const up = await api.images.upload({ file: arquivo, purpose: "image" });
+    // pela área de ARQUIVOS (/content/files/): o upload de imagens do Ghost
+    // recomprime tudo como JPEG progressivo, que o leitor da Meta pode
+    // descartar; os arquivos ficam como enviados (baseline, image/jpeg)
+    const up = await api.files.upload({ file: arquivo });
     if (!up?.url) throw new Error("upload sem url");
     const e = await api.posts.edit({
       id: p.id,

@@ -452,16 +452,22 @@ WhatsApp quando compartilha. Corrija."):
   não pode ter `<div` antes das tags `og:`.
 - Imagens: 1.466 dos 1.789 posts publicados apontavam a og para o card do
   Instagram em retrato (1080×1350), a home também (configuração do site), e as
-  próprias imagens `-og.jpg` eram JPEG progressivo. `og-whatsapp.mjs` passou a
-  gerar `<slug>-wa.jpg`: JPEG baseline (não progressivo), sRGB, 1200×630,
-  ≤ 150 KB, a partir da foto de destaque (recorte "attention"); artes da
-  redação (`AAAA-MM-DD-*.jpg`: charges, cards, ilustrações) e retratos entram
-  inteiros sobre fundo desfocado, sem cortar legenda. Rodou em todos os posts
-  (`--recentes=all --paralelo=3`) e roda de hora em hora na rotina de charges
-  (`--recentes=40`, só os que ainda não têm `-wa.jpg`).
+  próprias imagens `-og.jpg` eram JPEG progressivo (há relato de que o leitor
+  da Meta descarta progressivo sem aviso). `og-whatsapp.mjs` passou a gerar
+  `<slug>-wa.jpg`: JPEG baseline (não progressivo), sRGB, 1200×630, ≤ 150 KB,
+  a partir da foto de destaque (recorte "attention"); artes da redação
+  (`AAAA-MM-DD-*.jpg`: charges, cards, ilustrações) e retratos entram inteiros
+  sobre fundo desfocado, sem cortar legenda. **O upload vai pela área de
+  arquivos** (`api.files.upload` → `/content/files/AAAA/MM/<slug>-wa.jpg`,
+  servido como `image/jpeg` sem mexer): o upload de imagens do Ghost
+  (`/content/images/`) recomprime tudo como JPEG progressivo. Rodou em todos os
+  posts (`--recentes=all --paralelo=4`) e roda de hora em hora na rotina de
+  charges (`--recentes=40`, só os que ainda não têm `/content/files/…-wa.jpg`).
 - Home: a imagem de compartilhamento do site é configuração (a chave da API não
   grava `settings`). Arquivo pronto: `assets/compartilhamento-site-1200x630.jpg`
   → Ghost Admin → Settings → **Facebook card** e **X card** → Upload → Save.
+  (O upload pelo painel passa pela recompressão do Ghost e vira progressivo; ainda
+  assim, paisagem e leve, é bem melhor que o card em retrato de hoje.)
 
 ## Arquivo HOJE MT (vídeos antigos que voltam a viralizar)
 
