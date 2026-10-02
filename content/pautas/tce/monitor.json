@@ -18,9 +18,9 @@
   "https://www.olhardireto.com.br"
  ],
  "ultimo_video_visto": {
-  "id": "oXxObLhdCUg",
-  "titulo": "Sérgio Ricardo destaca certificação internacional em auditoria conquistada por servidoras do TCE-MT",
-  "publicado": "2026-09-29T21:42"
+  "id": "K7OAlGVY6AI",
+  "titulo": "MBA do TCE-MT aborda direitos humanos e proteção da mulher na era digital",
+  "publicado": "2026-10-02T20:22"
  },
  "ultima_sessao_vista": {
   "id": "aTo4U6AIDDs",
@@ -112,6 +112,16 @@
    "card_4x5": "https://hojemt.com.br/content/images/2026/09/2026-09-29-tce-pocone-frota-instagram-retrato.jpg",
    "instagram": "item de agenda devolvido ao orquestrador (aguardando_materia)",
    "origem": "decisão singular de Alisson Alencar no DOC de 25/09 (segundo Poconet) + Olhar Direto, O Documento, Infoverus, VIP MT (29/09)"
+  },
+  {
+   "data": "2026-10-02",
+   "slug": "stj-restabelece-cautelar-do-tce-mt-e-suspende-contrato-do-lote-1-de-rodovias",
+   "status": "rascunho",
+   "ghost_id": "6ac02ac56357bc8c6ad4f0fd",
+   "arquivo": "pautas/tce/2026-10-02-stj-restabelece-cautelar-lote-1-rodovias.md",
+   "arte": "pautas/ilustracoes/2026-10-02-tce-lote-1-rodovias.jpg",
+   "instagram": "arte pendente: card 4:5 (Canva em quota_cooldown em 02/10 ~22:10 UTC); fazer no próximo disparo com copy-design DAHWHxXxNqw e entrar na agenda como aguardando_materia",
+   "origem": "vídeo oficial do TCE-MT Oj2eICgPD0U (02/10) + Olhar Direto, RDNews, Portal Mato Grosso e Folhamax (28/09)"
   }
  ],
  "transcricoes": [
@@ -163,9 +173,7 @@
   }
  ],
  "ultima_verificacao": {
-  "data": "2026-09-29T22:51Z",
-  "rss": "vídeos novos desde DlKj0rqJ8x0: TkGbfICx73s (28/09, entendimento sobre verbas rescisórias de comissionados, consulta da Câmara de Tapurah, relator Alisson Alencar: não virou pauta nesta rodada, fica como sugestão), aScP3SrjD0Y (MBA, governo digital), IK1wiLtPFB4 (balanço 2025, institucional), hIEPaOH4NWU (29/09, Hospital de Câncer: decisão de Maluf publicada no DOC de 18/09, noticiada desde 19/09; vídeo tardio, não virou pauta), aTo4U6AIDDs (14ª sessão presencial, 29/09: virou pauta via imprensa, sem transcrição), oXxObLhdCUg (certificação internacional de auditoras, institucional).",
-  "web": "Olhar Direto, Infoverus e Veja Bem MT (sessão de 29/09); Poconet/Poconé Online, Olhar Direto, O Documento, Infoverus, VIP MT (Poconé); Portal Mato Grosso (Escola de Contas, 29/09); O Documento (Plenário Virtual com 93 processos esta semana; auditoras certificadas); site do TCE-MT fora do ar (503/conexão recusada), HNT e Fatos de MT bloqueados (403) para leitura direta.",
-  "proxima_sessao": "2026-10-06 (terça), 14h30; conferir presença, requerimento de desconto de 1/30 e processos adiados de 22/09"
+  "data": "2026-10-02T22:10Z",
+  "rss": "vídeos novos desde oXxObLhdCUg: Vo7k-Ka525o (curso de lideranças), Id0b2kD53M8 (Carta de Compromissos pela Primeira Infância e Educação aos candidatos, 01/10), LGtKLg5ajbo (Escola de Contas), Fv__Tlyl3i8 (rede de apoio a PcD com o TJMT), HUkixcSR63w (consumo de energia), Oj2eICgPD0U (STJ restabelece cautelar: virou pauta), sh4PqzhB40k e K7OAlGVY6AI (MBA), rEXUjk8z6HM (contas de Conquista D'Oeste, Salto do Céu e Nova Marilândia com parecer favorável, 02/10: sugestão de curta, não feita nesta rodada). Imprensa: HNT 02/10 'TCE-MT entrega aos candidatos plano que projeta desenvolvimento de MT até 2050' (sugestão; conferir no site do TCE). Sem nova sessão plenária desde a 14ª (29/09)."
  }
 }
