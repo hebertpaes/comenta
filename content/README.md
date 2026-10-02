@@ -438,6 +438,31 @@ Para testar depois da correção: o WhatsApp guarda a prévia por URL durante
 dias; mande o link com um sufixo novo (`?v=2`) ou use o depurador do Facebook
 (developers.facebook.com/tools/debug → "Buscar novamente").
 
+**Atualização de 02/10/2026** (editor: "As imagens não estão carregando no
+WhatsApp quando compartilha. Corrija."):
+
+- A primeira causa **continua no ar**: o HTML de produção ainda tem o
+  `<div id="hmt-vm">` no byte ~1000, antes de todas as tags `og:` (a prévia de
+  hojemt.com.br/buque-pos-debate/ saiu só com o título). O conserto é no
+  servidor, por quem administra o Ghost, com um comando:
+  `curl -fsSL https://raw.githubusercontent.com/hebertpaes/comenta/claude/exciting-thompson-4rhut2/deploy/corrigir-head-tema.sh | bash`
+  (acha a instalação em /var/www, corrige todo tema com o modal no `<head>`,
+  guarda `default.hbs.bak-*`, usa sudo se precisar e reinicia o Ghost; rodar de
+  novo não faz nada). Conferir depois: `curl -s https://hojemt.com.br/ | head -c 1500`
+  não pode ter `<div` antes das tags `og:`.
+- Imagens: 1.466 dos 1.789 posts publicados apontavam a og para o card do
+  Instagram em retrato (1080×1350), a home também (configuração do site), e as
+  próprias imagens `-og.jpg` eram JPEG progressivo. `og-whatsapp.mjs` passou a
+  gerar `<slug>-wa.jpg`: JPEG baseline (não progressivo), sRGB, 1200×630,
+  ≤ 150 KB, a partir da foto de destaque (recorte "attention"); artes da
+  redação (`AAAA-MM-DD-*.jpg`: charges, cards, ilustrações) e retratos entram
+  inteiros sobre fundo desfocado, sem cortar legenda. Rodou em todos os posts
+  (`--recentes=all --paralelo=3`) e roda de hora em hora na rotina de charges
+  (`--recentes=40`, só os que ainda não têm `-wa.jpg`).
+- Home: a imagem de compartilhamento do site é configuração (a chave da API não
+  grava `settings`). Arquivo pronto: `assets/compartilhamento-site-1200x630.jpg`
+  → Ghost Admin → Settings → **Facebook card** e **X card** → Upload → Save.
+
 ## Arquivo HOJE MT (vídeos antigos que voltam a viralizar)
 
 Formato fixo para resgatar vídeos antigos (entrevistas, discursos, TV) que estão
