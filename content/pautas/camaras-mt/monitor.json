@@ -84,6 +84,18 @@
    "arte": "feita em 02/10/2026 (Canva DAHW3M2GGZI, imagem MAHW3HKWSgo; feature_image, og e registro.json atualizados)",
    "card": "pautas/cards/2026-10-01-lucas-31a-sessao-saude-ocupacional-protecao-animal.card.json (jpg hospedado no Ghost)",
    "agenda_id": 77
+  },
+  {
+   "data": "2026-10-02",
+   "cidade": "Lucas do Rio Verde",
+   "titulo": "Câmara de Lucas do Rio Verde faz audiência pública na terça sobre mudanças no Plano Diretor e prevê votação para o dia 8",
+   "arquivo": "pautas/camaras-mt/2026-10-02-lucas-plano-diretor-audiencia.md",
+   "ghost_id": "6ac01e676357bc8c6ad4f0dd",
+   "previa": "https://hojemt.com.br/p/f87b0f98-b062-4e48-88d1-242bbb93b05e/",
+   "status": "rascunho",
+   "arte": "feita em 02/10/2026 (Canva DAHW5Why-fU, imagem MAHW5SPayAE; feature_image, og e registro.json atualizados)",
+   "card": "pautas/cards/2026-10-02-lucas-plano-diretor.jpg",
+   "agenda_instagram": "82"
   }
  ],
  "vistos": {
@@ -688,15 +700,79 @@
    "data": "2026-10-02"
   },
   "barra:gn:pivetta chega a barra do garças nesta sexta-feira para carreata e passeata": {
-   "titulo": "Pivetta chega a Barra do Garças nesta sexta-feira para carreata e passeata - SEMANA 7",
+   "titulo": "Pivetta chega a Barra do Garças nesta sexta-feira para carreata e passeata - semana7.com.br",
    "data": "2026-10-01"
   },
   "barra:gn:pivetta participa da assinatura de termo para construção do hospital regional de barra do ": {
-   "titulo": "Pivetta participa da assinatura de termo para construção do Hospital Regional de Barra do Garças - rededanoticia.com.br",
+   "titulo": "Pivetta participa da assinatura de termo para construção do Hospital Regional de Barra do Garças - Rede da Notícia",
+   "data": "2026-10-01"
+  },
+  "barra:gn:pivetta cumpre agenda em barra do garças com caminhada e compromisso oficial nesta sexta-f": {
+   "titulo": "Pivetta cumpre agenda em Barra do Garças com caminhada e compromisso oficial nesta sexta-feira (02/10) - Araguaia Notícia",
+   "data": "2026-10-02"
+  },
+  "barra:gn:presidente da câmara de vg barra nova eleição da mesa após pedidos de 10 vereadores - hipe": {
+   "titulo": "Presidente da Câmara de VG barra nova eleição da Mesa após pedidos de 10 vereadores - HiperNotícias - Você bem informado",
+   "data": "2026-10-02"
+  },
+  "barra:gn:ex-líder de abílio lança deputado beto dois a um como futuro prefeito de cuiabá": {
+   "titulo": "Ex-líder de Abílio lança deputado Beto Dois a Um como futuro prefeito de Cuiabá - Rede da Notícia",
+   "data": "2026-10-02"
+  },
+  "chapada:gn:rosa blanco toma posse como vereadora na câmara de chapada dos guimarães": {
+   "titulo": "Rosa Blanco toma posse como vereadora na Câmara de Chapada dos Guimarães - Alochapada",
+   "data": "2026-10-02"
+  },
+  "chapada:gn:feira da aldeia lança campanha para arrecadar brinquedos para crianças de chapada": {
+   "titulo": "Feira da Aldeia lança campanha para arrecadar brinquedos para crianças de Chapada - Alochapada",
+   "data": "2026-10-02"
+  },
+  "chapada:gn:okada chapada reúne gastronomia, conforto para toda a família e pets": {
+   "titulo": "Okada Chapada reúne gastronomia, conforto para toda a família e pets - Alochapada",
+   "data": "2026-10-02"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/camara-de-sorriso-altera-para-terca-feira-6-a-proxima-sessao-ordinaria": {
+   "titulo": "Câmara de Sorriso altera para terça-feira, 6, a próxima sessão ordinária",
+   "data": "2026-10-02"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/semana-pro-vida-comeca-na-segunda-feira-5-em-sorriso": {
+   "titulo": "Semana Pró-Vida começa na segunda-feira, 5, em Sorriso",
+   "data": "2026-10-02"
+  },
+  "lrv:https://www.camaralucasdorioverde.mt.gov.br/Noticias/Audiencia-publica-sobre-alteracoes-no-plano-diretor-sera-realizada-nesta-terca-feira-06-2444/": {
+   "titulo": "Audiência Pública sobre alterações no Plano Diretor será realizada nesta terça-feira (06)",
+   "data": "2026-10-02"
+  },
+  "lrv:https://www.camaralucasdorioverde.mt.gov.br/Noticias/Outubro-rosa-reforca-importancia-da-prevencao-e-do-diagnostico-precoce-do-cancer-de-mama-em-lucas-do-rio-verde-2443/": {
+   "titulo": "Outubro Rosa reforça importância da prevenção e do diagnóstico precoce do câncer de mama em Lucas do Rio Verde",
+   "data": "2026-10-02"
+  },
+  "lrv:yt:KXHdJ5JwLJg": {
+   "titulo": "Lucas em Debate: Dra. Isabella Chaves",
+   "data": "2026-10-02"
+  },
+  "lrv:yt:2YjR9R47T5o": {
+   "titulo": "Lucas em Debate: Dra. Isabella Chaves",
+   "data": "2026-10-02"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/vereadores-participam-da-abav-expo-20026": {
+   "titulo": "Vereadores participam da ABAV Expo 20026",
+   "data": "2026-10-01"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/vereadores-de-sorriso-participam-da-3a-edicao-do-gaffff-em-sao-paulo": {
+   "titulo": "Vereadores de Sorriso participam da 3ª edição do GAFFFF em São Paulo",
+   "data": "2026-10-01"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/indicacao-sugere-estudo-tecnico-para-melhorar-o-transito-em-cruzamento-da-avenida-ademar-raiter": {
+   "titulo": "Indicação sugere estudo técnico para melhorar o trânsito em cruzamento da Avenida Ademar Raiter",
+   "data": "2026-10-01"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/vereadora-indica-instalacao-de-banheiros-em-campo-de-futebol-entre-os-bairros-santa-maria-i-e-ii": {
+   "titulo": "Vereadora indica instalação de banheiros em campo de futebol entre os bairros Santa Maria I e II",
    "data": "2026-10-01"
   }
  },
- "ultima_checagem": "2026-10-02T12:39:32.860Z",
+ "ultima_checagem": "2026-10-02T21:15:02.547Z",
  "descartados_2026-10-01_tarde": [
   {
    "cidade": "Sorriso",
@@ -711,5 +787,10 @@
    "cidade": "Chapada dos Guimarães",
    "motivo": "sessão de 30/09 adiada para 06/10; nada a deliberar"
   }
+ ],
+ "descartados_2026-10-02": [
+  "Chapada: posse de Rosa Blanco (PSD), 2ª suplente, no lugar temporário de Cida Lessa (Alô Chapada, 02/10) — rodízio de suplência, sem fato novo além disso",
+  "Sorriso: sessão ordinária remarcada para terça (6); Semana Pró-Vida; viagens de vereadores (ABAV Expo, GAFFFF); indicações de rotina",
+  "Lucas: Outubro Rosa; Lucas em Debate (vídeo)"
  ]
 }
