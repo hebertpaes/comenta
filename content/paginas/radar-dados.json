@@ -299,13 +299,13 @@
   ]
  },
  "pesquisas": {
-  "atualizado": "02/10/2026 17:50",
+  "atualizado": "03/10/2026 09:45",
   "corridas": [
    {
     "id": "governador-mt",
     "titulo": "Governo de Mato Grosso",
     "cenario": "2º turno entre Otaviano Pivetta (Republicanos) e Wellington Fagundes (PL)",
-    "porque": "Os dois ficam nos dois primeiros lugares nas oito pesquisas registradas desde 4/9 que estão no Radar. Pivetta aparece à frente no 1º turno em seis delas (na Quaest, em empate técnico) e Wellington em duas (AtlasIntel e Povo e Poder, ambas em empate técnico). Na Paraná Pesquisas de 27 a 29/9, Pivetta tem 51,6% dos votos válidos (Gazeta do Povo), e na MT Dados de 25 a 30/9, 50,6% (relatório do instituto, que ressalta que, com a margem de 3 pontos, o resultado é compatível tanto com vitória no 1º turno quanto com 2º turno); nas demais, nenhum candidato chega à metade. No 2º turno simulado, Pivetta aparece à frente em cinco pesquisas e Wellington em três, estas todas dentro da margem de erro.",
+    "porque": "Os dois ficam nos dois primeiros lugares nas nove pesquisas registradas desde 4/9 que estão no Radar. Pivetta aparece à frente no 1º turno em sete delas (na Quaest, em empate técnico) e Wellington em duas (AtlasIntel e Povo e Poder, ambas em empate técnico). Na Paraná Pesquisas de 27 a 29/9, Pivetta tem 51,6% dos votos válidos (Gazeta do Povo), e na MT Dados de 25 a 30/9, 50,6% (relatório do instituto, que ressalta que, com a margem de 3 pontos, o resultado é compatível tanto com vitória no 1º turno quanto com 2º turno); nas demais, nenhum candidato chega à metade. No 2º turno simulado, Pivetta aparece à frente em cinco pesquisas e Wellington em três, estas todas dentro da margem de erro.",
     "nomes": [
      "Otaviano Pivetta",
      "Wellington Fagundes",
@@ -315,6 +315,42 @@
      "Rafaell Milas"
     ],
     "pesquisas": [
+     {
+      "inst": "TMT Dados",
+      "contratante": "não informado nas matérias",
+      "campo": "28/09 a 01/10",
+      "amostra": "1.542",
+      "margem": "2,4",
+      "conf": 95,
+      "metodo": "presencial, em 30 municípios",
+      "reg": "MT-05051/2026",
+      "base": "totais",
+      "v": {
+       "Otaviano Pivetta": 35,
+       "Wellington Fagundes": 26,
+       "Doutora Natasha": 15.2,
+       "Rafaell Milas": 0.5,
+       "Sargento Laudicério": 0.5,
+       "Maurício Coelho": 0.4
+      },
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://olhardireto.com.br/noticias/pivetta-abre-vantagem-sobre-wellington-em-nova-pesquisa-para-o-governo-de-mt",
+        "2026-10-02T20:04-04:00"
+       ],
+       [
+        "Muvuca Popular",
+        "https://www.muvucapopular.com.br/2026/10/03/pivetta-tem-35-fagundes-26-e-natasha-152-em-pesquisa-tmt-dados/",
+        "2026-10-03T09:33-04:00"
+       ],
+       [
+        "Infoverus",
+        "https://www.infoverus.com.br/politica/pivetta-abre-vantagem-sobre-wellington-em-nova-pesquisa-para-o-governo-de-mt/36026",
+        "2026-10-03T08:37-04:00"
+       ]
+      ]
+     },
      {
       "inst": "MT Dados",
       "contratante": "não informado no relatório nem nas matérias (a 4ª rodada, MT-00691/2026, foi com recursos próprios)",
@@ -734,7 +770,7 @@
     "id": "senado-mt",
     "titulo": "Senado por Mato Grosso (2 vagas)",
     "cenario": "Mauro Mendes (União) e Janaina Riva (MDB) à frente para as duas vagas",
-    "porque": "Nas sete pesquisas registradas desde 6/9, Mauro lidera e Janaina fica em segundo no 1º voto; em cinco delas, com vantagem sobre o terceiro colocado maior que a margem de erro. Na Paraná Pesquisas de 27 a 29/9, Janaina tem 18% no 1º voto e Zé Medeiros (PL), 16%: 2 pontos de diferença, dentro da margem de erro de 2,7 pontos; na soma dos dois votos, 33,3% a 29,3%. Na MT Dados (25 a 30/9), Janaina tem 19% no 1º voto e Zé Medeiros, 16%: 3 pontos, igual à margem de erro de 3 pontos; na soma dos dois votos, 36% a 31%. Na Percent (26 a 29/9), Janaina tem 22,8% e Zé Medeiros, 10,4%. Fávaro (PSD) e Pedro Taques (PSB) vêm em seguida. O gráfico compara o 1º voto, medido do mesmo jeito pelos institutos; a soma dos dois votos de cada pesquisa está nas fichas.",
+    "porque": "Nas oito pesquisas registradas desde 6/9, Mauro lidera e Janaina fica em segundo no 1º voto; em seis delas, com vantagem sobre o terceiro colocado maior que a margem de erro. Na Paraná Pesquisas de 27 a 29/9, Janaina tem 18% no 1º voto e Zé Medeiros (PL), 16%: 2 pontos de diferença, dentro da margem de erro de 2,7 pontos; na soma dos dois votos, 33,3% a 29,3%. Na MT Dados (25 a 30/9), Janaina tem 19% no 1º voto e Zé Medeiros, 16%: 3 pontos, igual à margem de erro de 3 pontos; na soma dos dois votos, 36% a 31%. Na Percent (26 a 29/9), Janaina tem 22,8% e Zé Medeiros, 10,4%. Na TMT Dados (28/9 a 1º/10), Janaina tem 23,4% no 1º voto, Fávaro, 9,1%, e Zé Medeiros, 7,4%. Fávaro (PSD) e Pedro Taques (PSB) vêm em seguida. O gráfico compara o 1º voto, medido do mesmo jeito pelos institutos; a soma dos dois votos de cada pesquisa está nas fichas.",
     "nomes": [
      "Mauro Mendes",
      "Janaina Riva",
@@ -743,6 +779,46 @@
      "Fávaro"
     ],
     "pesquisas": [
+     {
+      "inst": "TMT Dados",
+      "contratante": "não informado nas matérias",
+      "campo": "28/09 a 01/10",
+      "amostra": "1.542",
+      "margem": "2,4",
+      "conf": 95,
+      "metodo": "presencial, em 30 municípios",
+      "reg": "MT-05051/2026",
+      "base": "totais",
+      "v": {
+       "Mauro Mendes": 36,
+       "Janaina Riva": 23.4,
+       "Fávaro": 9.1,
+       "Zé Medeiros": 7.4,
+       "Pedro Taques": 3.6,
+       "Galvan": 0.8,
+       "Margareth Buzetti": 0.7,
+       "Branco/nulo": 5.1,
+       "Indecisos": 13.4
+      },
+      "soma": "consolidado em votos válidos (1º + 2º voto; o instituto exclui indecisos, brancos e nulos e anula o mesmo nome repetido; 2.336 votos nominais): Mauro Mendes 32,2%, Janaina Riva 28,7%, Fávaro 13,7%, Zé Medeiros 11,3%, Pedro Taques 7,9%, Galvan 2,8%, Margareth Buzetti 2,1%, Coronel Darwin 0,6%, Professor Nelson Ferreira 0,6%, Beny Godoy 0,1%. No 2º voto: Janaina 20%, Mauro 12,8%, Fávaro 11,6%, Zé Medeiros 9,8%, Taques 8,3%, Galvan 3,4%, Buzetti 2,5%; indecisos 23,6%.",
+      "fontes": [
+       [
+        "Olhar Direto",
+        "https://olhardireto.com.br/noticias/pesquisa-tmt-dados-mostra-mauro-com-322-e-janaina-com-287-dos-votos-para-o-senado",
+        "2026-10-02T19:58-04:00"
+       ],
+       [
+        "MidiaNews",
+        "https://www.midianews.com.br/politica/mauro-e-janaina-tem-maior-intencao-de-voto-ao-senado-federal/530493",
+        "2026-10-03T09:30-04:00"
+       ],
+       [
+        "RepórterMT",
+        "https://www.reportermt.com/politica/mauro-tem-322-janaina-aparece-com-287-seguida-de-favaro-com-137/244549",
+        "2026-10-03T09:40-04:00"
+       ]
+      ]
+     },
      {
       "inst": "MT Dados",
       "contratante": "não informado no relatório nem nas matérias (a 4ª rodada, MT-00691/2026, foi com recursos próprios)",
@@ -9065,7 +9141,7 @@
   ]
  },
  "analise": {
-  "atualizado": "02/10/2026 17:50",
+  "atualizado": "03/10/2026 09:45",
   "candidatos": [
    {
     "nome": "Doutora Natasha",
@@ -9074,7 +9150,7 @@
     "numero": 55,
     "fortes": [
      [
-      "Terceira colocada em todas as oito pesquisas registradas, com 9% (Povo e Poder) a 23,2% (AtlasIntel) no 1º turno.",
+      "Terceira colocada em todas as nove pesquisas registradas, com 9% (Povo e Poder) a 23,2% (AtlasIntel) no 1º turno.",
       [
        [
         "g1 MT (Quaest)",
@@ -9091,6 +9167,10 @@
        [
         "Folhamax (Povo e Poder)",
         "https://www.folhamax.com/politica/pesquisa-mostra-wellington-liderando-disputa/575061"
+       ],
+       [
+        "Olhar Direto (TMT Dados)",
+        "https://olhardireto.com.br/noticias/pivetta-abre-vantagem-sobre-wellington-em-nova-pesquisa-para-o-governo-de-mt"
        ]
       ]
      ],
@@ -9119,7 +9199,7 @@
     ],
     "fracos": [
      [
-      "Fica de 11,2 a 30,9 pontos atrás do líder no 1º turno nas oito pesquisas registradas e perde todos os 2º turnos simulados em que aparece (AtlasIntel, MT Dados e Quaest; na MT Dados de 25 a 30/9, 21% a 54% contra Pivetta e 23% a 40% contra Wellington).",
+      "Fica de 11,2 a 30,9 pontos atrás do líder no 1º turno nas nove pesquisas registradas e perde todos os 2º turnos simulados em que aparece (AtlasIntel, MT Dados e Quaest; na MT Dados de 25 a 30/9, 21% a 54% contra Pivetta e 23% a 40% contra Wellington).",
       [
        [
         "Gazeta do Povo (AtlasIntel)",
@@ -9132,6 +9212,10 @@
        [
         "g1 MT (Quaest)",
         "https://g1.globo.com/mt/mato-grosso/eleicoes/2026/noticia/2026/09/25/quaest-mt-governador-25-setembro.ghtml"
+       ],
+       [
+        "Olhar Direto (TMT Dados)",
+        "https://olhardireto.com.br/noticias/pivetta-abre-vantagem-sobre-wellington-em-nova-pesquisa-para-o-governo-de-mt"
        ]
       ]
      ],
@@ -9246,7 +9330,7 @@
     "numero": 10,
     "fortes": [
      [
-      "À frente no 1º turno em seis das oito pesquisas registradas: Paraná Pesquisas (46,4% em 27 a 29/9, 51,6% dos válidos), MT Dados (42% em 25 a 30/9, 50,6% dos válidos) e Quaest (29%, em empate técnico).",
+      "À frente no 1º turno em sete das nove pesquisas registradas: Paraná Pesquisas (46,4% em 27 a 29/9, 51,6% dos válidos), MT Dados (42% em 25 a 30/9, 50,6% dos válidos), TMT Dados (35% em 28/9 a 1º/10) e Quaest (29%, em empate técnico).",
       [
        [
         "Paraná Pesquisas (Paraná Pesquisas)",
@@ -9271,6 +9355,10 @@
        [
         "Folhamax (Povo e Poder)",
         "https://www.folhamax.com/politica/pesquisa-mostra-wellington-liderando-disputa/575061"
+       ],
+       [
+        "Olhar Direto (TMT Dados)",
+        "https://olhardireto.com.br/noticias/pivetta-abre-vantagem-sobre-wellington-em-nova-pesquisa-para-o-governo-de-mt"
        ]
       ]
      ],
@@ -9480,7 +9568,7 @@
       ]
      ],
      [
-      "Tem de 0,7% a 2% nas pesquisas registradas.",
+      "Tem de 0,4% a 2% nas pesquisas registradas.",
       [
        [
         "Paraná Pesquisas (Paraná Pesquisas)",
@@ -9493,6 +9581,10 @@
        [
         "Gazeta do Povo (AtlasIntel)",
         "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-governador-mato-grosso-setembro-2026/"
+       ],
+       [
+        "Olhar Direto (TMT Dados)",
+        "https://olhardireto.com.br/noticias/pivetta-abre-vantagem-sobre-wellington-em-nova-pesquisa-para-o-governo-de-mt"
        ]
       ]
      ],
@@ -9795,7 +9887,7 @@
     ],
     "fracos": [
      [
-      "Fica entre o 4º e o 5º lugar, com 7% a 10,5% no 1º voto.",
+      "Fica entre o 3º e o 5º lugar, com 6,1% a 10,5% no 1º voto; o 3º lugar foi na TMT Dados (28/9 a 1º/10), com 9,1%.",
       [
        [
         "g1 MT (Quaest)",
@@ -9808,6 +9900,10 @@
        [
         "Paraná Pesquisas (Paraná Pesquisas)",
         "https://paranapesquisas.com.br/wp-content/uploads/2026/09/MT_Set26-2.pdf"
+       ],
+       [
+        "MidiaNews (TMT Dados)",
+        "https://www.midianews.com.br/politica/mauro-e-janaina-tem-maior-intencao-de-voto-ao-senado-federal/530493"
        ]
       ]
      ],
@@ -10070,7 +10166,7 @@
     "numero": 444,
     "fortes": [
      [
-      "Lidera o 1º voto em todas as pesquisas com esse recorte: 37% (Quaest), 39,7% (Paraná Pesquisas) e 32% (MT Dados, 25 a 30/9).",
+      "Lidera o 1º voto em todas as pesquisas com esse recorte: 37% (Quaest), 39,7% (Paraná Pesquisas) 32% (MT Dados, 25 a 30/9) e 36% (TMT Dados, 28/9 a 1º/10).",
       [
        [
         "g1 MT (Quaest)",
@@ -10083,6 +10179,10 @@
        [
         "MidiaNews (MT Dados)",
         "https://www.midianews.com.br/politica/pesquisa-indica-eleicao-de-mendes-e-janaina-confira-os-numeros/530465"
+       ],
+       [
+        "MidiaNews (TMT Dados)",
+        "https://www.midianews.com.br/politica/mauro-e-janaina-tem-maior-intencao-de-voto-ao-senado-federal/530493"
        ]
       ]
      ],
@@ -10205,7 +10305,7 @@
       ]
      ],
      [
-      "Tem de 5,3% a 8% no 1º voto, atrás de Mauro, Janaina e Medeiros.",
+      "Tem de 3,6% (TMT Dados) a 8% no 1º voto, atrás de Mauro, Janaina e Medeiros.",
       [
        [
         "g1 MT (Quaest)",
@@ -10214,6 +10314,10 @@
        [
         "Paraná Pesquisas (Paraná Pesquisas)",
         "https://paranapesquisas.com.br/wp-content/uploads/2026/09/MT_Set26-2.pdf"
+       ],
+       [
+        "MidiaNews (TMT Dados)",
+        "https://www.midianews.com.br/politica/mauro-e-janaina-tem-maior-intencao-de-voto-ao-senado-federal/530493"
        ]
       ]
      ]
@@ -10290,7 +10394,7 @@
     "numero": 222,
     "fortes": [
      [
-      "Terceiro colocado nas pesquisas, com 11% a 15% no 1º voto; na soma dos dois votos da Paraná Pesquisas, foi de 23,1% (15 a 17/9) para 29,3% (27 a 29/9).",
+      "Terceiro colocado no 1º voto em seis das sete pesquisas registradas com esse recorte, com 10,4% (Percent) a 16% (MT Dados e Paraná Pesquisas); na TMT Dados (28/9 a 1º/10), aparece em quarto, com 7,4%, atrás de Fávaro (9,1%); na soma dos dois votos da Paraná Pesquisas, foi de 23,1% (15 a 17/9) para 29,3% (27 a 29/9).",
       [
        [
         "g1 MT (Quaest)",
@@ -10307,6 +10411,10 @@
        [
         "Boca (Paraná Pesquisas)",
         "https://boca.com.br/politica/mauro-mendes-lidera-pesquisa-para-o-senado-em-mato-grosso"
+       ],
+       [
+        "MidiaNews (TMT Dados)",
+        "https://www.midianews.com.br/politica/mauro-e-janaina-tem-maior-intencao-de-voto-ao-senado-federal/530493"
        ]
       ]
      ],
