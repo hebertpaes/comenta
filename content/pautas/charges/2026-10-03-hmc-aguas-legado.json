@@ -1,0 +1,58 @@
+{
+  "slug": "hmc-aguas-legado",
+  "materia": "https://hojemt.com.br/hmc-aguas-legado/",
+  "titulo": "HMC + Águas: Legado",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 03/10/2026 ~01:30 UTC)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal entre aspas (as matérias citam Dilemário, mas a curta só parafraseia)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Cartão-postal de Cuiabá: hospital de um lado, parque do outro.",
+    "instagram_4x5": null
+  },
+  "contexto": "O vereador de Cuiabá Dilemário Alencar (União) citou, em encontro político, o Hospital Municipal de Cuiabá (HMC), o Hospital São Benedito e a recuperação do Parque das Águas como marcas da gestão de Mauro Mendes (União) como prefeito de Cuiabá. Mauro é candidato ao Senado. A charge mostra só o cartão-postal, sem atribuir fala, crime ou humilhação.",
+  "fontes": [
+    "https://hojemt.com.br/hmc-aguas-legado/",
+    "https://odocumento.com.br/vereador-destaca-legado-de-mauro-mendes-na-capital-fez-o-hmc-e-o-parque-das-aguas/",
+    "https://www.hnt.com.br/politica/foi-o-mauro-que-fez-o-hmc-e-transformou-o-parque-das-aguas-em-cartao-postal-destaca-dilemario-alencar/578591",
+    "https://olhardireto.com.br/noticias/dilemario-cita-hmc-e-parque-das-aguas-como-marcas-de-mauro-em-cuiaba"
+  ],
+  "regras_da_cena": "parque urbano de Cuiabá com lago, chafariz e palmeiras; vereador genérico de terno segura cartão-postal gigante com hospital e parque; Mauro Mendes de camisa social sorri e acena; tuiuiú e crianças ao fundo; humor leve; sem texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "Mauro Mendes",
+      "referencia_canva": [
+        "MAHWHyLCtr0"
+      ],
+      "origem": "foto oficial do registro de candidatura, TSE/Divulgação (ago/2026; content/pautas/eleicoes/2026-mt-candidatos.json); só referência de desenho"
+    },
+    {
+      "nome": "Dilemário Alencar (representado por vereador genérico)",
+      "referencia_canva": [],
+      "origem": "sem foto oficial cadastrada (site da Câmara de Cuiabá bloqueado): personagem genérico"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHW6fMvuJg",
+    "arte_16x9": "MAHW6W0cinU",
+    "design_instagram_4x5": null,
+    "arte_4x5": null,
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "pendente",
+    "obs": "4:5 ainda não gerada. Charge eleitoral (Mauro é candidato ao Senado): os horários de charge de 03/10 e 04/10 já estão ocupados; se a 4:5 sair, gravar na agenda como aguardando_decisao."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-03-hmc-aguas-legado.jpg",
+    "instagram_4x5": null
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-03-hmc-aguas-legado.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/hmc-aguas-legado-wa-1.jpg",
+    "instagram_4x5": null
+  },
+  "site": "feature_image e og/twitter trocadas em 03/10/2026 ~01:30 UTC (antes: charge automática do publicador, charge-1790986930.webp)"
+}
