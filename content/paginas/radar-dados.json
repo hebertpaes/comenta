@@ -1967,7 +1967,7 @@
   ]
  },
  "grupos": {
-  "atualizado": "02/10/2026 13:05",
+  "atualizado": "03/10/2026 07:45",
   "grupos": [
    {
     "governador": "Doutora Natasha",
@@ -2165,6 +2165,22 @@
     "desenho": "Grupo do governo estadual, com o governador candidato à reeleição e o ex-governador Mauro Mendes.",
     "movimentos": [
      {
+      "data": "2026-10-02",
+      "fato": "A prefeita de Várzea Grande, Flávia Moretti (PL), gravou com Pivetta um convite para a “Caminhada da Vitória” em VG neste sábado (3/10), com concentração às 8h na Praça da Todimo e saída às 9h. O PL tem candidato próprio ao Governo, Wellington Fagundes; segundo as matérias, Flávia está entre os prefeitos do PL que apoiam Pivetta, como Cláudio Ferreira (Rondonópolis) e Sérgio Machnic (Primavera do Leste).",
+      "fontes": [
+       [
+        "RDNews",
+        "https://www.rdnews.com.br/eleicoes-2026/ao-lado-de-flavia-pivetta-convoca-apoiadores-para-caminhada-da-vitoria-em-vg-veja-video/250077",
+        "2026-10-02"
+       ],
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/pivetta-e-flavia-mobilizam-para-caminhada-em-vg/575421",
+        "2026-10-02"
+       ]
+      ]
+     },
+     {
       "data": "2026-10-01",
       "fato": "A ex-prefeita de Sinop Rosana Martinelli, filiada ao MDB (partido da coligação de Wellington) e com passagem pelo Senado, declarou apoio a Margareth Buzetti (PP), candidata ao Senado na coligação de Pivetta. Segundo as matérias, Rosana chegou a trabalhar uma candidatura à Câmara dos Deputados, que não avançou por falta de chapa federal do partido. Em 1º/10, em Sinop, Rosana — segundo as matérias, 2ª suplente do senador Wellington Fagundes — participou de caminhada de Pivetta e declarou apoio a ele; na mesma caminhada esteve Zé Medeiros (PL), candidato ao Senado na coligação de Wellington.",
       "fontes": [
@@ -2249,22 +2265,6 @@
         "Primeira Hora",
         "https://primeirahora.com.br/mauro-mendes-pede-votos-para-ze-medeiros-ao-senado-durante-evento-em-rondonopolis/",
         "2026-10-01"
-       ]
-      ]
-     },
-     {
-      "data": "2026-09-30",
-      "fato": "Em entrevista da série com candidatos ao Senado promovida pela Aprosoja-MT, Antônio Galvan (Avante), que declarou apoio a Pivetta, disse que na véspera recebeu “dois, três mensageiros” que lhe pediram que retirasse a candidatura “pelo bem da direita, pelo bem do país”. Ele não identificou os mensageiros nem quem os enviou e afirmou que não vai recuar “um milímetro”. As matérias não atribuem o pedido a nenhum candidato, partido ou coligação.",
-      "fontes": [
-       [
-        "Olhar Direto",
-        "https://www.olhardireto.com.br/noticias/galvan-rejeita-pressao-para-desistir-da-candidatura-ao-senado-nao-vou-recuar-um-milimetro",
-        "2026-09-30"
-       ],
-       [
-        "Muvuca Popular",
-        "https://www.muvucapopular.com.br/2026/09/30/galvan-revela-que-foi-procurado-para-desistir-da-eleicao-ao-senado-mas-diz-que-nao-vai-recuar-nem-um-milimetro/",
-        "2026-09-30"
        ]
       ]
      }
