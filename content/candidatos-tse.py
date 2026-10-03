@@ -36,6 +36,16 @@ def lista(uf, cargo='governador'):
         part = html.unescape(part)
         out.append(dict(nome_urna=html.unescape(nome), numero=num, partido=part, partido_fmt=PARTIDOS.get(part, part),
                         situacao=sit or None, foto=img, sq=re.search(r'F[A-Z]{2}(\d+)_div', img).group(1), perfil=href))
+    if not out:
+        # marcação nova do ND Mais (out/2026): nome, partido e número no aria-label; sem situação do registro
+        for m in re.finditer(r'<a href="([^"]+)" class="card card-candidato[^"]*" aria-label="([^"]*), ([^,"]*), número (\d+), '
+                             r'candidatura a ([^"]*)">.*?<img src="([^"]+)"', t, re.S):
+            href, nome, part, num, carg, img = m.groups()
+            if chave(carg).replace(' ', '') != chave(cargo).replace('-', ''):
+                continue
+            part = html.unescape(part)
+            out.append(dict(nome_urna=html.unescape(nome), numero=num, partido=part, partido_fmt=PARTIDOS.get(part, part),
+                            situacao=None, foto=img, sq=re.search(r'F[A-Z]{2}(\d+)_div', img).group(1), perfil=href))
     out.sort(key=lambda c: chave(c['nome_urna']))
     return out
 

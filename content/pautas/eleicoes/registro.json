@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-09-30",
+  "atualizado_em": "2026-10-03",
   "regra": "Matérias de eleições sobre Mato Grosso: capa com fotos oficiais do TSE (montagem/ficha feita no Canva), nunca rosto gerado por IA. Dados e ids dos assets em 2026-mt-candidatos.json.",
   "artes": [
     {
@@ -1002,6 +1002,14 @@
       "og": "https://hojemt.com.br/content/images/2026/09/2026-09-25-candidatos-presidente-br-6-og.jpg",
       "feito_em": "2026-09-30",
       "obs": "matéria de agenda (sem acusação); cita 7 dos 13 candidatos da montagem, todos com o partido da arte; legenda mantém o link da Agência Brasil. Erro no texto para o editor: diz que Caiado destacou a experiência administrativa 'no Mato Grosso' (ele governou Goiás)"
+    },
+    {
+      "slug": "ultimas-horas-lula-desfila-no-rio-e-caiado-caminha-em-goiania",
+      "antes": "capa-a1d31e42d7c0b8b5.webp",
+      "depois": "2026-09-25-candidatos-presidente-br.jpg (montagem pronta DAHWNWpBR1E, 13 candidatos; o Ghost guardou como 2026/10/2026-09-25-candidatos-presidente-br.jpg)",
+      "og": "https://hojemt.com.br/content/files/2026/10/ultimas-horas-lula-desfila-no-rio-e-caiado-caminha-em-goiani-wa-1.jpg",
+      "feito_em": "2026-10-03",
+      "obs": "matéria de agenda da véspera (sem acusação); cita 11 dos 13 candidatos da montagem, todos com o partido da arte (faltam Leonardo Avalanche e Renan Santos). Lista conferida em 03/10 no ND Mais: os mesmos 13 sequenciais, mais Pablo Marçal com o mesmo número 28 de Avalanche (segue fora, como na obs da arte). Erro no texto para o editor: chama Caiado de 'pré-candidato' que 'disputa a reeleição ao governo de Mato Grosso' (ele é candidato a presidente e governou Goiás)"
     }
   ],
   "mantidos": [
