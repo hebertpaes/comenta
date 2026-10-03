@@ -1,0 +1,52 @@
+{
+  "slug": "propaganda-de-volta",
+  "materia": "https://hojemt.com.br/propaganda-de-volta/",
+  "titulo": "Propaganda de Volta",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 03/10/2026 ~04:30 UTC)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal entre aspas",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Rebobina e dá play: a propaganda volta ao ar até sábado.",
+    "instagram_4x5": null
+  },
+  "contexto": "Em cumprimento à decisão do ministro Alexandre de Moraes (STF) na Reclamação nº 100.717/MT, a presidente do TRE-MT, desembargadora Serly Marcondes Alves, determinou que as emissoras de rádio e TV de Mato Grosso exibam em 2 e 3/10 o tempo de propaganda eleitoral de Doutora Natasha (PSD) que tinha ficado suspenso. A charge brinca só com a fita rebobinada, sem atribuir fala, crime ou humilhação e sem representar a candidata como animal.",
+  "fontes": [
+    "https://hojemt.com.br/propaganda-de-volta/",
+    "https://www.gazetadigital.com.br/editorias/eleicoes-2026/justica-manda-emissoras-de-radio-e-tv-veicularem-propaganda-de-natasha-ate-a-vespera-da-eleicao/861284",
+    "https://www.rdnews.com.br/eleicoes-2026/tvs-e-radios-vao-exibir-propaganda-eleitoral-de-natasha-nos-dias-2-e-3/250062"
+  ],
+  "regras_da_cena": "sala de casa mato-grossense; Natasha acena na tela de uma TV de tubo; videocassete gigante rebobinando; família de costas no sofá com tereré; estrada de terra pela janela; humor leve; sem texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "Doutora Natasha",
+      "referencia_canva": [
+        "MAHWH7_xSAk"
+      ],
+      "origem": "foto oficial de registro no TSE 2026 (DivulgaCand; content/pautas/eleicoes/2026-mt-candidatos.json); só referência de desenho"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHW7B1jRqU",
+    "arte_16x9": "MAHW7JFNH2I",
+    "design_instagram_4x5": null,
+    "arte_4x5": null,
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "pendente",
+    "obs": "4:5 ainda não gerada. Charge eleitoral: perde sentido depois do 1º turno de 04/10 e os horários de charge de 03/10 e 04/10 estão ocupados; se a 4:5 sair, vai para a agenda como aguardando_decisao."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-03-propaganda-de-volta.jpg",
+    "instagram_4x5": null
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-03-propaganda-de-volta.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/propaganda-de-volta-wa-1.jpg",
+    "instagram_4x5": null
+  },
+  "site": "feature_image e og/twitter trocadas em 03/10/2026 ~04:30 UTC (antes: charge automática do publicador, charge-1790997723.webp)"
+}
