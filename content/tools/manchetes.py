@@ -24,10 +24,16 @@ def manchetes(arquivo):
     out = {}
     for m in re.finditer(r'<a[^>]+href="([^"#]+)"[^>]*>(.*?)</a>', s, re.S):
         t = html.unescape(re.sub(r'<[^>]+>', ' ', m.group(2)))
-        t = ' '.join(t.split())
+        # tira a posição dos rankings ("03 Título", "5. Título"), que muda a cada hora
+        t = re.sub(r'^\d{1,2}[.)]?\s+', '', ' '.join(t.split()))
         if 45 <= len(t) <= 220:
             out.setdefault(t, m.group(1))
     return out
+
+
+def chave_url(u):
+    """Caminho do link sem domínio nem barra final: a mesma matéria aparece com ou sem domínio."""
+    return 'url:' + re.sub(r'^https?://[^/]+', '', u).rstrip('/')
 
 
 def main():
@@ -44,19 +50,21 @@ def main():
     for f in sorted(os.listdir(pasta)):
         if not f.endswith('.html'):
             continue
-        novas = [(t, u) for t, u in manchetes(os.path.join(pasta, f)).items() if t not in estado]
+        novas = [(t, u) for t, u in manchetes(os.path.join(pasta, f)).items()
+                 if t not in estado and chave_url(u) not in estado]
         print(f'== {f} novas {len(novas)}')
         for t, u in sorted(novas)[:40]:
             print('  -', t, '|', u[:160])
-        for t, _ in novas:
+        for t, u in novas:
             estado[t] = agora
+            estado[chave_url(u)] = agora
         total_novas += len(novas)
     if gravar:
         limite = agora - DIAS * 86400
         estado = {t: ts for t, ts in estado.items() if ts >= limite}
         os.makedirs(os.path.dirname(ESTADO), exist_ok=True)
         with open(ESTADO, 'w', encoding='utf8') as fh:
-            json.dump({'_comentario': 'Manchetes já vistas pelas rotinas (título -> epoch); gerado por content/tools/manchetes.py; mantém 4 dias.',
+            json.dump({'_comentario': 'Manchetes já vistas pelas rotinas (título ou url:<caminho> -> epoch); gerado por content/tools/manchetes.py; mantém 4 dias.',
                        'vistas': dict(sorted(estado.items()))}, fh, ensure_ascii=False, indent=0)
             fh.write('\n')
     print(f'total de manchetes novas: {total_novas}' + (' (gravadas como vistas)' if gravar else ''))
