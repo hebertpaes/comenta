@@ -1,0 +1,51 @@
+{
+  "slug": "suplente-no-radar",
+  "materia": "https://hojemt.com.br/suplente-no-radar/",
+  "titulo": "Suplente no Radar",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 03/10/2026 ~13:35 UTC)",
+  "balao": null,
+  "balao_obs": "sem balão: a fala citada na curta ('não vote em chapa com suplentes enrolados', confirmada em O Documento e Portal Mato Grosso) insinua algo contra chapas adversárias; a charge fica só na ideia de conferir o banco de reservas",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Fávaro pede ao eleitor: confira também o banco de reservas.",
+    "instagram_4x5": null
+  },
+  "contexto": "Segundo a curta e as matérias, o senador Carlos Fávaro (PSD), candidato à reeleição, pediu ao eleitor que compare também os suplentes de cada chapa ao Senado e citou os seus, Alexandre Schenkel e Carmen Machado. A charge mostra Fávaro como olheiro examinando o banco de reservas vazio, sem atribuir crime ou humilhação a ninguém e sem representar outros candidatos.",
+  "fontes": [
+    "https://hojemt.com.br/suplente-no-radar/",
+    "https://odocumento.com.br/favaro-diz-que-eleitor-deve-comparar-nao-vote-em-chapa-com-suplentes-enrolados/",
+    "https://portalmatogrosso.com.br/favaro-diz-que-eleitor-vai-comparar-nao-vote-em-chapa-com-suplentes-enrolados/"
+  ],
+  "regras_da_cena": "campo de várzea no cerrado de MT ao fim da tarde; Fávaro de terno escuro, como olheiro com lupa, examinando camisas dobradas e chuteiras num banco de reservas vazio; trave de madeira, ipê amarelo e tuiuiú; sem texto, logos ou balão",
+  "personagens": [
+    {
+      "nome": "Carlos Fávaro",
+      "referencia_canva": [
+        "MAHWH915g9Q"
+      ],
+      "origem": "foto oficial de registro do TSE 2026 (content/pautas/eleicoes/2026-mt-candidatos.json); só referência de desenho"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHW9VMBXsY",
+    "arte_16x9": "MAHW9VK0T8A",
+    "design_instagram_4x5": null,
+    "arte_4x5": null,
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "pendente",
+    "obs": "4:5 não gerada (economia de cota do Canva). Assunto eleitoral (Senado): os horários de charge de 03/10 e 04/10 já estão ocupados e o tema perde sentido depois do 1º turno; se for feita, vai como aguardando_decisao."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-03-suplente-no-radar.jpg",
+    "instagram_4x5": null
+  },
+  "site": "feature_image e og/twitter trocadas em 03/10/2026 ~13:35 UTC (antes: charge automática do publicador, charge-1791030556.webp)",
+  "hospedado_em": [
+    "https://hojemt.com.br/content/images/2026/10/2026-10-03-suplente-no-radar.jpg",
+    "https://hojemt.com.br/content/files/2026/10/suplente-no-radar-wa-1.jpg"
+  ]
+}
