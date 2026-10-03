@@ -3083,7 +3083,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "02/10/2026 19:50",
+  "atualizado": "02/10/2026 20:50",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -3955,6 +3955,32 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-10-02",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar, liminar)",
+      "resumo": "A pedido de Janaina Riva, liminar do juiz auxiliar Flávio Fraga e Silva mandou o influenciador Paulo Victor Souza (@paulosouza.oficial) retirar em duas horas um vídeo em formato de esquete humorística e Medeiros retirar o story em que o compartilhou na conta de campanha, sob multa de R$ 10 mil por hora, e proibiu novo compartilhamento; a Meta foi intimada a tornar o conteúdo indisponível. Para o juiz, o vídeo repete o núcleo já considerado irregular em quatro representações anteriores, ao apresentar a divisão do horário eleitoral, decidida pela proporcionalidade de gênero, como favorecimento de ministros do STF a Janaina, e insinua ligação da chapa dela com o PCC sem elemento que a sustente (segundo a decisão, a investigação citada envolve a administradora de um fundo, não a candidata nem o suplente). Por ser a quinta reiteração apontada, elevou para R$ 100 mil por publicação a multa em caso de nova violação e advertiu que nova repetição pode levar à suspensão temporária dos perfis de Medeiros. Decisão liminar, passível de revisão.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "MidiaJur",
+        "https://www.midiajur.com.br/eleicoes-2026/apos-quinta-reiteracao-tre-eleva-multa-de-medeiros-a-r-100-mil-e-ameaca-suspender-perfis/87628",
+        "2026-10-02"
+       ],
+       [
+        "Repórter MT",
+        "https://www.reportermt.com/politica/tre-aponta-repeticao-de-conteudo-fixa-multa-de-r-100-mil-e-deixa-suspensao-das-redes-de-medeiros-no-gatilho/244538",
+        "2026-10-02"
+       ],
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/tre-aumenta-multa-de-medeiros-para-r-100-mil-e-ameaca-suspender-perfis/575423",
+        "2026-10-02"
+       ]
+      ],
+      "papel": "pedido"
+     },
      {
       "data": "2026-10-02",
       "tipo": "acao_em_andamento",
@@ -8356,6 +8382,32 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-10-02",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar, liminar)",
+      "resumo": "A pedido de Janaina Riva, liminar do juiz auxiliar Flávio Fraga e Silva mandou o influenciador Paulo Victor Souza (@paulosouza.oficial) retirar em duas horas um vídeo em formato de esquete humorística e Medeiros retirar o story em que o compartilhou na conta de campanha, sob multa de R$ 10 mil por hora, e proibiu novo compartilhamento; a Meta foi intimada a tornar o conteúdo indisponível. Para o juiz, o vídeo repete o núcleo já considerado irregular em quatro representações anteriores, ao apresentar a divisão do horário eleitoral, decidida pela proporcionalidade de gênero, como favorecimento de ministros do STF a Janaina, e insinua ligação da chapa dela com o PCC sem elemento que a sustente (segundo a decisão, a investigação citada envolve a administradora de um fundo, não a candidata nem o suplente). Por ser a quinta reiteração apontada, elevou para R$ 100 mil por publicação a multa em caso de nova violação e advertiu que nova repetição pode levar à suspensão temporária dos perfis de Medeiros. Decisão liminar, passível de revisão.",
+      "cabe_recurso": true,
+      "defesa": null,
+      "fontes": [
+       [
+        "MidiaJur",
+        "https://www.midiajur.com.br/eleicoes-2026/apos-quinta-reiteracao-tre-eleva-multa-de-medeiros-a-r-100-mil-e-ameaca-suspender-perfis/87628",
+        "2026-10-02"
+       ],
+       [
+        "Repórter MT",
+        "https://www.reportermt.com/politica/tre-aponta-repeticao-de-conteudo-fixa-multa-de-r-100-mil-e-deixa-suspensao-das-redes-de-medeiros-no-gatilho/244538",
+        "2026-10-02"
+       ],
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/tre-aumenta-multa-de-medeiros-para-r-100-mil-e-ameaca-suspender-perfis/575423",
+        "2026-10-02"
+       ]
+      ],
+      "papel": "contra"
+     },
      {
       "data": "2026-10-02",
       "tipo": "acao_em_andamento",
