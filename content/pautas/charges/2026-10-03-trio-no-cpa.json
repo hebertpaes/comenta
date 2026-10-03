@@ -1,0 +1,53 @@
+{
+  "slug": "trio-no-cpa",
+  "materia": "https://hojemt.com.br/trio-no-cpa/",
+  "titulo": "Trio no CPA",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 03/10/2026 ~03:30 UTC)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal entre aspas",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Do ar-condicionado do plenário para o calor do trio no CPA.",
+    "instagram_4x5": null
+  },
+  "contexto": "O presidente da Assembleia Legislativa, deputado Max Russi (Podemos), fez campanha de rua na região do Grande CPA, em Cuiabá, em 2/10, em cima de um trio elétrico e a pé, repetindo o roteiro de 1º/10 no Tijucal e no Pedra 90; participaram o suplente de senador Elson Ramos e a vereadora Katiuscia Manteli (Podemos). A charge brinca só com o calor e o corpo a corpo, sem atribuir fala, crime ou humilhação.",
+  "fontes": [
+    "https://hojemt.com.br/trio-no-cpa/",
+    "https://www.midianews.com.br/politica/max-aposta-no-corpo-a-corpo-as-vesperas-das-eleicoes/530472",
+    "https://odocumento.com.br/max-russi-aposta-no-corpo-a-corpo-em-cuiaba-as-vesperas-das-eleicoes/",
+    "https://www.hnt.com.br/politica/max-russi-intensifica-campanha-nas-ruas-de-cuiaba-na-reta-final-antes-da-eleicao/578664"
+  ],
+  "regras_da_cena": "rua de bairro popular de Cuiabá sob sol forte; Max Russi de camisa social e botas com barro em cima de pequeno trio elétrico, acenando, com cuia de tereré; violeiro e moradores com leques de papelão; termômetro derretendo; ipê; humor leve; sem texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "Max Russi",
+      "referencia_canva": [
+        "MAHWLrtMkZs"
+      ],
+      "origem": "foto oficial da Assembleia Legislativa de MT, conforme a tabela do content/README.md; só referência de desenho"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHW6ziUfPE",
+    "arte_16x9": "MAHW6-DMWRQ",
+    "design_instagram_4x5": null,
+    "arte_4x5": null,
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "pendente",
+    "obs": "4:5 não gerada (cota do Canva em pausa). Campanha de rua da reta final: perde sentido depois de 04/10; horários de charge de 03/10 e 04/10 ocupados, então, se a 4:5 sair, vai para a agenda como aguardando_decisao."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-03-trio-no-cpa.jpg",
+    "instagram_4x5": null
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-03-trio-no-cpa.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/trio-no-cpa-wa-1.jpg",
+    "instagram_4x5": null
+  },
+  "site": "feature_image e og/twitter trocadas em 03/10/2026 ~03:30 UTC (antes: charge automática do publicador, charge-1790997714.webp)"
+}
