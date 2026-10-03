@@ -1,0 +1,52 @@
+{
+  "slug": "tapa-buraco-no-ar",
+  "materia": "https://hojemt.com.br/tapa-buraco-no-ar/",
+  "titulo": "Tapa-buraco no ar",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 03/10/2026 ~00:30 UTC)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal entre aspas",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Horário eleitoral da reta final: cardápio completo no ar.",
+    "instagram_4x5": null
+  },
+  "contexto": "A curta trata do último programa de TV de Wellington Fagundes (PL), candidato ao Governo, exibido em 30/9, com propostas para saúde (filas de consultas e cirurgias, maternidades regionais, médicos no interior), segurança e desenvolvimento, com participação do vice Reinaldo Moraes (Novo) e de apoiadores nacionais. A charge brinca só com o 'cardápio' de promessas servido na TV, sem atribuir fala, crime ou humilhação.",
+  "fontes": [
+    "https://hojemt.com.br/tapa-buraco-no-ar/",
+    "https://www.gazetadigital.com.br/editorias/eleicoes-2026/fagundes-mira-filas-na-saude-pivetta-exalta-hospital-central-e-natasha-fica-fora-da-tv/860780",
+    "https://www.folhamax.com/politica/wellington-reune-propostas-em-mt/574942"
+  ],
+  "regras_da_cena": "estúdio de TV decorado como lanchonete de Cuiabá; Wellington de terno, como garçom, apresenta bandeja com miniaturas (maternidade, ambulância, estetoscópio, quepe sem inscrição, estradinha asfaltada); família de costas no sofá com tereré; humor leve; sem texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "Wellington Fagundes",
+      "referencia_canva": [
+        "MAHWH-KaOvA"
+      ],
+      "origem": "foto oficial de registro no TSE 2026 (DivulgaCand; content/pautas/eleicoes/2026-mt-candidatos.json); só referência de desenho"
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHW6CAqJTw",
+    "arte_16x9": "MAHW6ELx1jA",
+    "design_instagram_4x5": null,
+    "arte_4x5": null,
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "pendente",
+    "obs": "4:5 não gerada (cota do Canva em pausa). Charge eleitoral: os horários de charge de 03/10 e 04/10 já estão ocupados; se a 4:5 sair, gravar na agenda como aguardando_decisao."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-03-tapa-buraco-no-ar.jpg",
+    "instagram_4x5": null
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-03-tapa-buraco-no-ar.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/tapa-buraco-no-ar-wa-1.jpg",
+    "instagram_4x5": null
+  },
+  "site": "feature_image e og/twitter trocadas em 03/10/2026 ~00:30 UTC (antes: charge automática do publicador, charge-1790986906.webp)"
+}
