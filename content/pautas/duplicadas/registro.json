@@ -560,5 +560,15 @@
   "status_agora": "draft",
   "mantido": "mala-pesada-no-ar",
   "mantido_titulo": "Mala Pesada no Ar"
+ },
+ {
+  "data": "2026-10-03T13:26:45.226Z",
+  "id": "6ac0f54e315b6b29ddbc4568",
+  "slug": "trio-no-cpa-2",
+  "titulo": "Trio no CPA",
+  "publicado_em": "2026-10-03T12:30:06.000Z",
+  "status_agora": "draft",
+  "mantido": "trio-no-cpa",
+  "mantido_titulo": "Trio no CPA"
  }
 ]
