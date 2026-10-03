@@ -10383,85 +10383,70 @@
   "metodo": "Análise HOJE MT, feita com dados verificáveis: pesquisas registradas na Justiça Eleitoral, decisões confirmadas por fonte oficial ou dois veículos, coligações e apoios publicados, estudo de redes do Instituto Democracia em Xeque/UFMT e gastos declarados à Justiça Eleitoral. Cada candidato tem o mesmo número de pontos, em ordem alfabética, e cada ponto traz a fonte. Não é recomendação de voto."
  },
  "boletim": {
-  "n": 6,
-  "quando": "Boletim nº 6 · 02/10/2026, 17:52 (MT)",
-  "titulo": "Pesquisa MT Dados para governo e Senado, Justiça Eleitoral e apoios na reta final",
+  "n": 7,
+  "quando": "Boletim nº 7 · 03/10/2026, 07:05 (MT)",
+  "titulo": "Véspera da eleição: eleitorado, último dia de campanha e Justiça Eleitoral na disputa pelo Senado",
   "texto": [
-   "Para o governo, a pesquisa MT Dados (registro MT-07362/2026; contratante não informado no relatório nem nas matérias; 3.080 entrevistas presenciais e online de 25 a 30/9; margem de 3 pontos; confiança de 95%) traz Otaviano Pivetta (Republicanos) com 42%, Wellington Fagundes (PL) com 23%, Doutora Natasha (PSD) com 14%, Sargento Laudicério (Agir) com 2% e Rafaell Milas (Missão) e Maurício Coelho (Mobiliza) com 1% cada; no 2º turno simulado, Pivetta tem 50% e Wellington, 28%. Pesquisa é retrato do momento.",
-   "Para o Senado, na mesma pesquisa, no 1º voto, Mauro Mendes (União) tem 32%, Janaina Riva (MDB) 19%, Zé Medeiros (PL) 16%, Carlos Fávaro (PSD) 7%, Pedro Taques (PSB) 6%, Galvan (Avante) 2%, Margareth Buzetti (PP) e Coronel Darwin (Democrata) 1% cada, e Professor Nelson Ferreira (Agir) e Beny Godoy (Agir) não pontuaram. Na soma dos dois votos, Mauro tem 50%, Janaina 36% e Medeiros 31%.",
-   "Na Justiça Eleitoral, em 2/10, a presidente do TRE-MT, desembargadora Serly Marcondes Alves, mandou as emissoras de rádio e TV exibirem na sexta (2) e no sábado (3) o tempo de propaganda de Doutora Natasha que tinha sido suspenso por decisões depois cassadas, cumprindo a decisão do ministro Alexandre de Moraes, do STF (Reclamação nº 100.717/MT); as matérias não trazem manifestação de Pivetta ou da coligação dele. Em 1º/10, a pedido da coligação de Mauro Mendes, um juiz auxiliar da propaganda multou Pedro Taques em duas representações, com valores que somam mais de R$ 30 mil; cabe recurso, o juiz negou retirar as entrevistas do ar e as matérias não trazem manifestação de Taques. Nos grupos, o deputado federal Alfredo Gaspar (PL-AL), candidato a vice na chapa de Flávio Bolsonaro, declarou apoio a Wellington Fagundes em vídeo.",
+   "Mato Grosso vai às urnas neste domingo (4) com 2.638.230 eleitores aptos, em 142 municípios, 57 zonas eleitorais, 1.519 locais de votação e 8.287 seções, segundo o planejamento apresentado pelo TRE-MT. A votação vai das 7h às 16h, no horário de Mato Grosso.",
+   "Neste sábado (3), último dia de campanha, as agendas divulgadas pelas campanhas, segundo o MidiaJur e o Repórter MT, preveem: Doutora Natasha (PSD), mobilização às 9h no antigo aeroporto de Rondonópolis e, às 15h, a Carreata da Virada em Cuiabá; Otaviano Pivetta (Republicanos), caminhada em Várzea Grande com concentração às 8h na Praça da Todimo, ao lado da prefeita Flávia Moretti; e Wellington Fagundes (PL), caminhada às 7h30 na Praça Bom Jesus, em Rondonópolis, e carreata às 15h na Praça das Bandeiras, em Cuiabá, com a deputada Coronel Fernanda. As matérias não trazem as agendas de Maurício Coelho, Rafaell Milas e Sargento Laudicério.",
+   "Na Justiça Eleitoral, em 2/10, a pedido de Janaina Riva (MDB), o juiz auxiliar da propaganda Flávio Fraga e Silva mandou retirar um vídeo compartilhado por Zé Medeiros (PL) e elevou para R$ 100 mil por publicação a multa em caso de nova violação, por considerar que o vídeo repetia conteúdo já proibido em decisões anteriores; nova repetição pode levar à suspensão temporária dos perfis. A decisão é liminar e cabe recurso; as matérias não trazem manifestação de Medeiros. O mesmo juiz negou a liminar em que Medeiros pedia a suspensão da pesquisa Percent MT-09025/2026 para o Senado: a divulgação segue liberada e falta o julgamento do mérito.",
    "Voz do vídeo gerada com IA (narrador sintético, sem imitar pessoa real); sem música; os slides e os fatos são feitos, apurados e conferidos pela redação do HOJE MT; postagens reproduzidas: nenhuma neste boletim."
   ],
-  "video": "https://hojemt.com.br/content/media/2026/10/2026-10-02-boletim-06.mp4",
-  "poster": "https://hojemt.com.br/content/images/2026/10/2026-10-02-boletim-06-capa.jpg",
+  "video": "https://hojemt.com.br/content/media/2026/10/2026-10-03-boletim-07.mp4",
+  "poster": "https://hojemt.com.br/content/images/2026/10/2026-10-03-boletim-07-capa.jpg",
   "fontes": [
    [
     "Radar Eleitoral do HOJE MT",
     "https://hojemt.com.br/radar-eleitoral/",
+    "2026-10-03"
+   ],
+   [
+    "TRE-MT",
+    "https://www.tre-mt.jus.br/comunicacao/noticias/2026/Outubro/mato-grosso-vai-as-urnas-com-2-6-milhoes-de-eleitores-e-mais-de-54-mil-colaboradores",
     "2026-10-02"
    ],
    [
-    "MT Dados (relatório da 5ª rodada)",
-    "https://mtdados.com.br/pesquisa-governo-mt-2026-5a-rodada",
+    "O Documento",
+    "https://odocumento.com.br/mato-grosso-vai-as-urnas-com-2-6-milhoes-de-eleitores-e-mais-de-54-mil-colaboradores/",
     "2026-10-02"
    ],
    [
     "MidiaJur",
-    "https://www.midiajur.com.br/eleicoes-2026/mt-dados-mostra-pivetta-com-506-dos-votos-validos-wellington-tem-277/87603",
-    "2026-10-02T12:12-04:00"
+    "https://www.midiajur.com.br/eleicoes-2026/pivetta-wellington-e-natasha-encerram-campanha-com-caminhadas-carreatas-e-mobilizacoes-neste-sabado/87627",
+    "2026-10-02"
    ],
    [
-    "RepórterMT",
-    "https://www.reportermt.com/politica/pivetta-chega-a-42-wellington-cai-para-23-e-diferenca-sobe-para-19-pontos-em-mt/244515",
-    "2026-10-02T12:08-04:00"
-   ],
-   [
-    "MidiaNews",
-    "https://www.midianews.com.br/politica/pesquisa-indica-eleicao-de-mendes-e-janaina-confira-os-numeros/530465",
-    "2026-10-02T17:10"
-   ],
-   [
-    "Folhamax",
-    "https://www.folhamax.com/politica/a-30-horas-da-eleicao-instituto-preve-vitorias-de-mauro-e-janaina-ao-senado/575366",
-    "2026-10-02T16:40"
+    "Repórter MT",
+    "https://www.reportermt.com/politica/no-ultimo-dia-de-campanha-pivetta-mobiliza-varzea-grande-natasha-e-wellington-fazem-carreata/244537",
+    "2026-10-02"
    ],
    [
     "MidiaJur",
-    "https://www.midiajur.com.br/eleicoes-2026/mauro-lidera-pesquisa-para-o-senado-com-50-janaina-tem-36-e-medeiros-31/87618",
-    "2026-10-02T16:54"
-   ],
-   [
-    "Gazeta Digital",
-    "https://www.gazetadigital.com.br/editorias/eleicoes-2026/justica-manda-emissoras-de-radio-e-tv-veicularem-propaganda-de-natasha-ate-a-vespera-da-eleicao/861284",
+    "https://www.midiajur.com.br/eleicoes-2026/apos-quinta-reiteracao-tre-eleva-multa-de-medeiros-a-r-100-mil-e-ameaca-suspender-perfis/87628",
     "2026-10-02"
    ],
    [
-    "RDNews",
-    "https://www.rdnews.com.br/eleicoes-2026/tvs-e-radios-vao-exibir-propaganda-eleitoral-de-natasha-nos-dias-2-e-3/250062",
+    "Repórter MT",
+    "https://www.reportermt.com/politica/tre-aponta-repeticao-de-conteudo-fixa-multa-de-r-100-mil-e-deixa-suspensao-das-redes-de-medeiros-no-gatilho/244538",
     "2026-10-02"
-   ],
-   [
-    "RDNews",
-    "https://www.rdnews.com.br/eleicoes-2026/justica-eleitoral-multa-taques-por-ofensas-contra-mauro-mendes/250008",
-    "2026-10-02"
-   ],
-   [
-    "MidiaNews",
-    "https://www.midianews.com.br/politica/justica-volta-a-multar-taques-por-ataques-a-mendes-e-familia/530397",
-    "2026-10-02"
-   ],
-   [
-    "MidiaNews",
-    "https://www.midianews.com.br/politica/vice-de-flavio-bolsonaro-declara-apoio-a-wellington-fagundes/530435",
-    "2026-10-02T11:00-04:00"
    ],
    [
     "Folhamax",
-    "https://www.folhamax.com/politica/vice-de-flavio-apoia-wellington-em-mt-veja-video/575275",
+    "https://www.folhamax.com/politica/tre-aumenta-multa-de-medeiros-para-r-100-mil-e-ameaca-suspender-perfis/575423",
+    "2026-10-02"
+   ],
+   [
+    "Folhamax",
+    "https://www.folhamax.com/politica/medeiros-reclama-de-foto-e-nome-e-tenta-derrubar-pesquisa-tre-nega-em-mt/575393",
+    "2026-10-02"
+   ],
+   [
+    "Olhar Direto",
+    "https://olhardireto.com.br/juridico/noticias/ze-medeiros-tenta-barrar-pesquisa-ao-senado-mas-tr-considera-erros-insuficientes-para-suspender-divulgacao",
     "2026-10-02"
    ]
   ],
-  "duracao_s": 93
+  "duracao_s": 74
  },
  "boletins": [
   {
@@ -11086,6 +11071,72 @@
     ]
    ],
    "duracao_s": 93
+  },
+  {
+   "n": 7,
+   "quando": "Boletim nº 7 · 03/10/2026, 07:05 (MT)",
+   "titulo": "Véspera da eleição: eleitorado, último dia de campanha e Justiça Eleitoral na disputa pelo Senado",
+   "texto": [
+    "Mato Grosso vai às urnas neste domingo (4) com 2.638.230 eleitores aptos, em 142 municípios, 57 zonas eleitorais, 1.519 locais de votação e 8.287 seções, segundo o planejamento apresentado pelo TRE-MT. A votação vai das 7h às 16h, no horário de Mato Grosso.",
+    "Neste sábado (3), último dia de campanha, as agendas divulgadas pelas campanhas, segundo o MidiaJur e o Repórter MT, preveem: Doutora Natasha (PSD), mobilização às 9h no antigo aeroporto de Rondonópolis e, às 15h, a Carreata da Virada em Cuiabá; Otaviano Pivetta (Republicanos), caminhada em Várzea Grande com concentração às 8h na Praça da Todimo, ao lado da prefeita Flávia Moretti; e Wellington Fagundes (PL), caminhada às 7h30 na Praça Bom Jesus, em Rondonópolis, e carreata às 15h na Praça das Bandeiras, em Cuiabá, com a deputada Coronel Fernanda. As matérias não trazem as agendas de Maurício Coelho, Rafaell Milas e Sargento Laudicério.",
+    "Na Justiça Eleitoral, em 2/10, a pedido de Janaina Riva (MDB), o juiz auxiliar da propaganda Flávio Fraga e Silva mandou retirar um vídeo compartilhado por Zé Medeiros (PL) e elevou para R$ 100 mil por publicação a multa em caso de nova violação, por considerar que o vídeo repetia conteúdo já proibido em decisões anteriores; nova repetição pode levar à suspensão temporária dos perfis. A decisão é liminar e cabe recurso; as matérias não trazem manifestação de Medeiros. O mesmo juiz negou a liminar em que Medeiros pedia a suspensão da pesquisa Percent MT-09025/2026 para o Senado: a divulgação segue liberada e falta o julgamento do mérito.",
+    "Voz do vídeo gerada com IA (narrador sintético, sem imitar pessoa real); sem música; os slides e os fatos são feitos, apurados e conferidos pela redação do HOJE MT; postagens reproduzidas: nenhuma neste boletim."
+   ],
+   "video": "https://hojemt.com.br/content/media/2026/10/2026-10-03-boletim-07.mp4",
+   "poster": "https://hojemt.com.br/content/images/2026/10/2026-10-03-boletim-07-capa.jpg",
+   "fontes": [
+    [
+     "Radar Eleitoral do HOJE MT",
+     "https://hojemt.com.br/radar-eleitoral/",
+     "2026-10-03"
+    ],
+    [
+     "TRE-MT",
+     "https://www.tre-mt.jus.br/comunicacao/noticias/2026/Outubro/mato-grosso-vai-as-urnas-com-2-6-milhoes-de-eleitores-e-mais-de-54-mil-colaboradores",
+     "2026-10-02"
+    ],
+    [
+     "O Documento",
+     "https://odocumento.com.br/mato-grosso-vai-as-urnas-com-2-6-milhoes-de-eleitores-e-mais-de-54-mil-colaboradores/",
+     "2026-10-02"
+    ],
+    [
+     "MidiaJur",
+     "https://www.midiajur.com.br/eleicoes-2026/pivetta-wellington-e-natasha-encerram-campanha-com-caminhadas-carreatas-e-mobilizacoes-neste-sabado/87627",
+     "2026-10-02"
+    ],
+    [
+     "Repórter MT",
+     "https://www.reportermt.com/politica/no-ultimo-dia-de-campanha-pivetta-mobiliza-varzea-grande-natasha-e-wellington-fazem-carreata/244537",
+     "2026-10-02"
+    ],
+    [
+     "MidiaJur",
+     "https://www.midiajur.com.br/eleicoes-2026/apos-quinta-reiteracao-tre-eleva-multa-de-medeiros-a-r-100-mil-e-ameaca-suspender-perfis/87628",
+     "2026-10-02"
+    ],
+    [
+     "Repórter MT",
+     "https://www.reportermt.com/politica/tre-aponta-repeticao-de-conteudo-fixa-multa-de-r-100-mil-e-deixa-suspensao-das-redes-de-medeiros-no-gatilho/244538",
+     "2026-10-02"
+    ],
+    [
+     "Folhamax",
+     "https://www.folhamax.com/politica/tre-aumenta-multa-de-medeiros-para-r-100-mil-e-ameaca-suspender-perfis/575423",
+     "2026-10-02"
+    ],
+    [
+     "Folhamax",
+     "https://www.folhamax.com/politica/medeiros-reclama-de-foto-e-nome-e-tenta-derrubar-pesquisa-tre-nega-em-mt/575393",
+     "2026-10-02"
+    ],
+    [
+     "Olhar Direto",
+     "https://olhardireto.com.br/juridico/noticias/ze-medeiros-tenta-barrar-pesquisa-ao-senado-mas-tr-considera-erros-insuficientes-para-suspender-divulgacao",
+     "2026-10-02"
+    ]
+   ],
+   "duracao_s": 74
   }
  ]
 }

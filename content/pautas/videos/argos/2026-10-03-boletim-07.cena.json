@@ -1,0 +1,185 @@
+{
+ "slug": "boletim-07",
+ "titulo": "Boletim nº 7: véspera da eleição, último dia de campanha e Justiça Eleitoral na disputa pelo Senado",
+ "materia": "https://hojemt.com.br/radar-eleitoral/",
+ "estilo": "slides",
+ "universo": "Slides escuros com ondas e curvas de nível verdes (estilo visual do vídeo de referência indicado pelo editor), sem avatar",
+ "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides, sem música, com intro e fechamento padrão (pedidos do editor de 29/09, 01/10 e 02/10). Voz v7: pt-BR-AntonioNeural (voz sintética genérica do catálogo da Microsoft, pelo edge-tts), +14% e +3 Hz, 96 kbps, tratamento leve; reserva Kokoro pm_alex. Pauta: o que entrou depois do boletim nº 6 (02/10, 17:52 MT) e a véspera do 1º turno: (1) notícia principal: o eleitorado e o horário de votação (TRE-MT: 2.638.230 eleitores aptos, 142 municípios, 1.519 locais, 8.287 seções, votação das 7h às 16h no horário de MT; O Documento e MidiaJur); (2) último dia de campanha: agendas divulgadas pelas campanhas de Doutora Natasha, Otaviano Pivetta e Wellington Fagundes, em ordem alfabética (MidiaJur e Repórter MT; as matérias não trazem as dos outros três candidatos); (3) Justiça Eleitoral: a pedido de Janaina Riva, juiz auxiliar mandou retirar vídeo compartilhado por Zé Medeiros e elevou a multa por nova publicação a R$ 100 mil (liminar, cabe recurso; MidiaJur, Repórter MT e Folhamax), sem repetir o conteúdo do vídeo; (4) o mesmo juiz negou a liminar de Medeiros contra a pesquisa Percent MT-09025/2026 (Folhamax e Olhar Direto). Ficaram fora: as pesquisas Quaest e AtlasIntel anunciadas para hoje (ainda não divulgadas). Gerar antes de montar: node intro-boletim.mjs --prefixo=2026-10-03-boletim-07 --n=7 --data=\"Sábado, 3 de outubro de 2026\" --tema=\"Véspera da eleição: eleitorado, último dia de campanha e Justiça Eleitoral\"; node graficos-boletim-07.mjs (confere os casos no Radar); node fechamento-boletim.mjs --prefixo=2026-10-03-boletim-07. Postagens das redes: nenhuma reproduzida. Montado sem --cortar-ate-120 (o corte tiraria o fechamento).",
+ "voz": {
+  "motor": "edge",
+  "narrador": "pt-BR-AntonioNeural",
+  "velocidade": "+14%",
+  "tom": "+3Hz",
+  "reserva": {
+   "motor": "kokoro",
+   "narrador": "pm_alex",
+   "velocidade": 1.18,
+   "tom": 2,
+   "tratamento": "limpo",
+   "fonetica": "misaki",
+   "sotaque": "cuiabano"
+  },
+  "tratamento": "leve",
+  "qualidade": 96
+ },
+ "legendas": false,
+ "trilha": "nenhuma",
+ "abertura": {
+  "chip": "RADAR ELEITORAL",
+  "gancho": "VÉSPERA DA ELEIÇÃO",
+  "sub": "Mato Grosso · 03/10"
+ },
+ "fechamento": {
+  "linha1": "Radar Eleitoral · HOJE MT",
+  "leia": "hojemt.com.br/radar-eleitoral",
+  "fontes": [
+   "TRE-MT",
+   "O Documento",
+   "MidiaJur",
+   "Repórter MT",
+   "Folhamax",
+   "Olhar Direto"
+  ],
+  "aviso": "Voz gerada com IA (narrador sintético). Fatos apurados e conferidos pela redação do HOJE MT; sem música.",
+  "siga": "Siga e compartilhe @hoje.mt",
+  "leia_rotulo": "Acesse:"
+ },
+ "saida": "pautas/videos/argos/2026-10-03-boletim-07.mp4",
+ "rotulo_ia": "Voz gerada com IA",
+ "cenas": [
+  {
+   "n": 1,
+   "quem": "narrador",
+   "fala": "Radar Eleitoral do HOJE MT. Boletim número sete, sábado, três de outubro.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-intro-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-intro-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-intro-c1.png",
+     "quando": "Boletim"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "quem": "narrador",
+   "fala": "Mato Grosso vai às urnas neste domingo com dois milhões, seiscentos e trinta e oito mil eleitores aptos, em cento e quarenta e dois municípios. A votação vai das sete às dezesseis horas, no horário de Mato Grosso.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-1-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-1-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-1-c1.png",
+     "quando": "dois milhões"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-1-c2.png",
+     "quando": "cento e quarenta e dois"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-1-c3.png",
+     "quando": "das sete às dezesseis"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "quem": "narrador",
+   "fala": "Hoje é o último dia de campanha. Pelas agendas divulgadas, Doutora Natasha faz atos em Rondonópolis e Cuiabá; Otaviano Pivetta, caminhada em Várzea Grande; e Wellington Fagundes, caminhada em Rondonópolis e carreata em Cuiabá.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-2-fundo.png",
+   "movimento": "pan-dir",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-2-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-2-c1.png",
+     "quando": "Doutora Natasha faz"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-2-c2.png",
+     "quando": "Otaviano Pivetta, caminhada"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-2-c3.png",
+     "quando": "Wellington Fagundes, caminhada"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "quem": "narrador",
+   "fala": "Na Justiça Eleitoral, a pedido de Janaina Riva, um juiz auxiliar do TRE mandou retirar um vídeo compartilhado por Zé Medeiros e elevou para cem mil reais a multa em caso de nova publicação com conteúdo já proibido. A decisão é liminar e cabe recurso.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-3-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-3-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-3-c1.png",
+     "quando": "mandou retirar"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-3-c2.png",
+     "quando": "cem mil reais"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-3-c3.png",
+     "quando": "cabe recurso"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "quem": "narrador",
+   "fala": "O mesmo juiz negou o pedido de Zé Medeiros para suspender a pesquisa Percent para o Senado. A divulgação segue liberada, e o mérito ainda será julgado.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-4-fundo.png",
+   "movimento": "pan-esq",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-4-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-4-c1.png",
+     "quando": "negou o pedido"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-4-c2.png",
+     "quando": "segue liberada"
+    }
+   ]
+  },
+  {
+   "quem": "narrador",
+   "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral, em hojemt.com.br. Siga o HOJE MT nas redes sociais e compartilhe.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-fecho-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-fecho-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-fecho-c1.png",
+     "quando": "Siga o HOJE MT"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-03-boletim-07-fecho-c2.png",
+     "quando": "compartilhe"
+    }
+   ],
+   "n": 6
+  }
+ ]
+}
