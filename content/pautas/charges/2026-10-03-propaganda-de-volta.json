@@ -44,9 +44,9 @@
     "instagram_4x5": null
   },
   "hospedado_em": {
-    "site_16x9": null,
-    "og": null,
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-03-propaganda-de-volta.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/propaganda-de-volta-wa-2.jpg",
     "instagram_4x5": null
   },
-  "site": "PENDENTE: arte pronta (DAHW7B1jRqU, arquivo 2026-10-03-propaganda-de-volta.jpg), mas a troca da capa falhou em 03/10/2026 ~04:30 UTC porque o site estava fora do ar (home 500, posts 502, Admin API 'Database error'). Próximo disparo: rodar imagem-post.mjs e og-whatsapp.mjs --da-destaque para este slug."
+  "site": "feature_image e og/twitter trocadas em 03/10/2026 ~10:55 UTC, depois que o site voltou da queda de 04:30–10:50 UTC (antes: charge automática do publicador, charge-1790997723.webp)"
 }
