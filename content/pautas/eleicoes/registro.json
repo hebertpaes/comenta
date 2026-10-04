@@ -188,7 +188,9 @@
           "sq": "280002539826"
         }
       ],
-      "obs": "o espelho lista também Pablo Marçal (PRTB, nº 28), mesmo número de Leonardo Avalanche; a matéria e a lista de agendas trazem Avalanche — Marçal fora da arte (checagem pendente da situação no TSE)"
+      "obs": "o espelho lista também Pablo Marçal (PRTB, nº 28), mesmo número de Leonardo Avalanche; a matéria e a lista de agendas trazem Avalanche — Marçal fora da arte (checagem pendente da situação no TSE)",
+      "desatualizada_desde": "2026-09-30",
+      "obs_desatualizada": "Leonardo Avalanche (PRTB) desistiu em 30/09; não reaproveitar esta montagem depois dessa data (lista do TSE na apuração: 12 candidatos). Fontes: https://revistaoeste.com/politica/substituto-de-marcal-leonardo-avalanche-desiste-de-disputar-a-presidencia/ e https://www.spacemoney.com.br/politica/leonardo-avalanche-desiste-presidencia-prtb"
     },
     {
       "nome": "Candidatos ao governo — Alagoas (16:9)",
@@ -1009,7 +1011,9 @@
       "depois": "2026-09-25-candidatos-presidente-br.jpg (montagem pronta DAHWNWpBR1E, 13 candidatos; o Ghost guardou como 2026/10/2026-09-25-candidatos-presidente-br.jpg)",
       "og": "https://hojemt.com.br/content/files/2026/10/ultimas-horas-lula-desfila-no-rio-e-caiado-caminha-em-goiani-wa-1.jpg",
       "feito_em": "2026-10-03",
-      "obs": "matéria de agenda da véspera (sem acusação); cita 11 dos 13 candidatos da montagem, todos com o partido da arte (faltam Leonardo Avalanche e Renan Santos). Lista conferida em 03/10 no ND Mais: os mesmos 13 sequenciais, mais Pablo Marçal com o mesmo número 28 de Avalanche (segue fora, como na obs da arte). Erro no texto para o editor: chama Caiado de 'pré-candidato' que 'disputa a reeleição ao governo de Mato Grosso' (ele é candidato a presidente e governou Goiás)"
+      "obs": "matéria de agenda da véspera (sem acusação); cita 11 dos 13 candidatos da montagem, todos com o partido da arte (faltam Leonardo Avalanche e Renan Santos). Lista conferida em 03/10 no ND Mais: os mesmos 13 sequenciais, mais Pablo Marçal com o mesmo número 28 de Avalanche (segue fora, como na obs da arte). Erro no texto para o editor: chama Caiado de 'pré-candidato' que 'disputa a reeleição ao governo de Mato Grosso' (ele é candidato a presidente e governou Goiás)",
+      "revertido_em": "2026-10-04",
+      "obs_reversao": "capa original devolvida em 04/10: Leonardo Avalanche (PRTB) desistiu da candidatura em 30/09 (Revista Oeste, imirante, SpaceMoney) e não está na lista de candidatos da apuração do TSE; a montagem de 13 ficou desatualizada. Uma montagem com os 12 candidatos depende do Canva, que está sem autorização nesta sessão."
     },
     {
       "slug": "agenda-de-sabado-pre-votacao-movimenta-sp-rj-e-go",
@@ -1017,7 +1021,9 @@
       "depois": "2026-09-25-candidatos-presidente-br.jpg (montagem pronta DAHWNWpBR1E, 13 candidatos; o Ghost guardou como 2026/10/2026-09-25-candidatos-presidente-br-1.jpg)",
       "og": "https://hojemt.com.br/content/files/2026/10/agenda-de-sabado-pre-votacao-movimenta-sp-rj-e-go-wa-1.jpg",
       "feito_em": "2026-10-03",
-      "obs": "matéria de agenda da véspera (sem acusação); cita 12 dos 13 candidatos da montagem, todos com o partido da arte quando informado (falta Leonardo Avalanche). Lista conferida de novo no ND Mais em 03/10; legenda mantém o link da Agência Brasil"
+      "obs": "matéria de agenda da véspera (sem acusação); cita 12 dos 13 candidatos da montagem, todos com o partido da arte quando informado (falta Leonardo Avalanche). Lista conferida de novo no ND Mais em 03/10; legenda mantém o link da Agência Brasil",
+      "revertido_em": "2026-10-04",
+      "obs_reversao": "capa original devolvida em 04/10: Leonardo Avalanche (PRTB) desistiu da candidatura em 30/09 (Revista Oeste, imirante, SpaceMoney) e não está na lista de candidatos da apuração do TSE; a montagem de 13 ficou desatualizada. Uma montagem com os 12 candidatos depende do Canva, que está sem autorização nesta sessão."
     }
   ],
   "mantidos": [
