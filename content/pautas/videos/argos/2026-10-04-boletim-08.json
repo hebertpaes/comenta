@@ -1,0 +1,102 @@
+{
+  "spec": "/home/user/comenta/content/pautas/videos/argos/2026-10-04-boletim-08.cena.json",
+  "saida": "/home/user/comenta/content/pautas/videos/argos/2026-10-04-boletim-08.mp4",
+  "gerado_em": "2026-10-04T14:46:26.325Z",
+  "duracao": 97,
+  "duracao_total": 97,
+  "limite_duracao": 120,
+  "resolucao": "1080x1920",
+  "fps": 25,
+  "universo": "Slides escuros com ondas e curvas de nível verdes (estilo visual do vídeo de referência indicado pelo editor), sem avatar",
+  "trilha": null,
+  "credito_musica": null,
+  "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-AntonioNeural",
+    "velocidade": "+14%",
+    "tom": "+3Hz",
+    "reserva": {
+      "motor": "kokoro",
+      "narrador": "pm_alex",
+      "velocidade": 1.18,
+      "tom": 2,
+      "tratamento": "limpo",
+      "fonetica": "misaki",
+      "sotaque": "cuiabano"
+    },
+    "tratamento": "leve",
+    "qualidade": 96
+  },
+  "abertura": {
+    "duracao": 2.5
+  },
+  "cenas": [
+    {
+      "n": 1,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 2.5,
+      "duracao_audio": 6.28,
+      "duracao": 6.73
+    },
+    {
+      "n": 2,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 9.23,
+      "duracao_audio": 11.13,
+      "duracao": 11.58
+    },
+    {
+      "n": 3,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "pan-dir",
+      "inicio": 20.81,
+      "duracao_audio": 17.8,
+      "duracao": 18.25
+    },
+    {
+      "n": 4,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 39.06,
+      "duracao_audio": 14.32,
+      "duracao": 14.77
+    },
+    {
+      "n": 5,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "pan-esq",
+      "inicio": 53.83,
+      "duracao_audio": 13.51,
+      "duracao": 13.96
+    },
+    {
+      "n": 6,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 67.79,
+      "duracao_audio": 15.5,
+      "duracao": 15.95
+    },
+    {
+      "n": 7,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 83.74,
+      "duracao_audio": 9.74,
+      "duracao": 10.19
+    }
+  ],
+  "fechamento": {
+    "inicio": 93.93,
+    "duracao": 3
+  }
+}

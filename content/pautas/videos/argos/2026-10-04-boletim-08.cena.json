@@ -1,0 +1,210 @@
+{
+ "slug": "boletim-08",
+ "titulo": "Boletim nº 8: dia de eleição, as pesquisas da véspera, a cola de Eduardo Bolsonaro e a Justiça Eleitoral",
+ "materia": "https://hojemt.com.br/radar-eleitoral/",
+ "estilo": "slides",
+ "universo": "Slides escuros com ondas e curvas de nível verdes (estilo visual do vídeo de referência indicado pelo editor), sem avatar",
+ "obs": "Boletim em vídeo do Radar Eleitoral no formato só voz e slides, sem música, com intro e fechamento padrão (pedidos do editor de 29/09, 01/10 e 02/10). Voz v7: pt-BR-AntonioNeural (voz sintética genérica do catálogo da Microsoft, pelo edge-tts), +14% e +3 Hz, 96 kbps, tratamento leve; reserva Kokoro pm_alex. Pauta: o que entrou no Radar depois do boletim nº 7 (03/10, 07:05 MT): (1) notícia principal: dia do 1º turno, votação até as 16h de MT (TRE-MT; O Documento e MidiaJur) e três pesquisas registradas divulgadas na véspera; (2) governo em votos válidos: Quaest MT-02649/2026, AtlasIntel MT-00323/2026 e Veritá MT-06765/2026, com todos os candidatos que cada instituto divulgou; (3) Senado com os dois votos somados, como cada instituto divulgou; (4) cola de Eduardo Bolsonaro (PL) com Pivetta e Zé Medeiros, sem Wellington (RepórterMT, HiperNotícias e Muvuca Popular); (5) liminar negada a Wellington Fagundes sobre reportagens de benefícios fiscais, com a posição da defesa (RDM Online e VGN). Gerar antes de montar: node intro-boletim.mjs --prefixo=2026-10-04-boletim-08 --n=8 --data=\"Domingo, 4 de outubro de 2026\" --tema=\"Dia de eleição: as pesquisas da véspera, apoios e Justiça Eleitoral\"; node graficos-boletim-08.mjs (confere os itens no Radar); node fechamento-boletim.mjs --prefixo=2026-10-04-boletim-08. Postagens das redes: nenhuma reproduzida (a cola de Eduardo Bolsonaro saiu no Instagram/Facebook, que não abrem daqui). Montado sem --cortar-ate-120.",
+ "voz": {
+  "motor": "edge",
+  "narrador": "pt-BR-AntonioNeural",
+  "velocidade": "+14%",
+  "tom": "+3Hz",
+  "reserva": {
+   "motor": "kokoro",
+   "narrador": "pm_alex",
+   "velocidade": 1.18,
+   "tom": 2,
+   "tratamento": "limpo",
+   "fonetica": "misaki",
+   "sotaque": "cuiabano"
+  },
+  "tratamento": "leve",
+  "qualidade": 96
+ },
+ "legendas": false,
+ "trilha": "nenhuma",
+ "abertura": {
+  "chip": "RADAR ELEITORAL",
+  "gancho": "DIA DE ELEIÇÃO",
+  "sub": "Mato Grosso · 04/10"
+ },
+ "fechamento": {
+  "linha1": "Radar Eleitoral · HOJE MT",
+  "leia": "hojemt.com.br/radar-eleitoral",
+  "fontes": [
+   "TRE-MT",
+   "Quaest",
+   "AtlasIntel",
+   "Veritá",
+   "RepórterMT",
+   "MidiaJur",
+   "Gazeta do Povo",
+   "MidiaNews",
+   "HiperNotícias",
+   "VGN"
+  ],
+  "aviso": "Voz gerada com IA (narrador sintético). Fatos apurados e conferidos pela redação do HOJE MT; sem música.",
+  "siga": "Siga e compartilhe @hoje.mt",
+  "leia_rotulo": "Acesse:"
+ },
+ "saida": "pautas/videos/argos/2026-10-04-boletim-08.mp4",
+ "rotulo_ia": "Voz gerada com IA",
+ "cenas": [
+  {
+   "n": 1,
+   "quem": "narrador",
+   "fala": "Radar Eleitoral do HOJE MT. Boletim número oito, domingo, quatro de outubro.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-intro-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-intro-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-intro-c1.png",
+     "quando": "Boletim"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "quem": "narrador",
+   "fala": "Hoje é dia de eleição. Em Mato Grosso, a votação vai até as dezesseis horas, no horário local. Na véspera, saíram três pesquisas registradas para o governo e o Senado.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-1-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-1-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-1-c1.png",
+     "quando": "dezesseis horas"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-1-c2.png",
+     "quando": "três pesquisas"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "quem": "narrador",
+   "fala": "Para o governo, em votos válidos, Otaviano Pivetta tem cinquenta e quatro por cento na Quaest, cinquenta e quatro vírgula três na AtlasIntel e cinquenta e três vírgula sete na Veritá. O segundo lugar é de Wellington Fagundes na Quaest e na Veritá, e de Doutora Natasha na AtlasIntel. Pesquisa é retrato do momento.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-2-fundo.png",
+   "movimento": "pan-dir",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-2-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-2-c1.png",
+     "quando": "na Quaest"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-2-c2.png",
+     "quando": "na AtlasIntel"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-2-c3.png",
+     "quando": "na Veritá"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-2-c4.png",
+     "quando": "retrato do momento"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "quem": "narrador",
+   "fala": "No Senado, com os dois votos somados, Mauro Mendes e Janaina Riva aparecem à frente na Quaest; Mauro e Zé Medeiros, na Veritá; e Zé Medeiros e Mauro, na AtlasIntel. Cada eleitor vota em dois nomes, e são duas vagas em disputa.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-3-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-3-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-3-c1.png",
+     "quando": "na Quaest"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-3-c2.png",
+     "quando": "na Veritá"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-3-c3.png",
+     "quando": "na AtlasIntel"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "quem": "narrador",
+   "fala": "Neste domingo, o ex-deputado Eduardo Bolsonaro, do PL, publicou nas redes uma cola com Otaviano Pivetta para governador e Zé Medeiros para o Senado. Wellington Fagundes, candidato do PL ao governo, ficou fora da lista.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-4-fundo.png",
+   "movimento": "pan-esq",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-4-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-4-c1.png",
+     "quando": "uma cola"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-4-c2.png",
+     "quando": "ficou fora"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "quem": "narrador",
+   "fala": "Na Justiça Eleitoral, um juiz auxiliar do TRE negou a liminar pedida por Wellington Fagundes para retirar reportagens sobre benefícios fiscais atribuídos a empresas ligadas à família dele. A defesa contesta parte dos valores, e o direito de resposta ainda será julgado.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-5-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-5-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-5-c1.png",
+     "quando": "negou a liminar"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-5-c2.png",
+     "quando": "A defesa contesta"
+    }
+   ]
+  },
+  {
+   "quem": "narrador",
+   "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral, em hojemt.com.br. Siga o HOJE MT nas redes sociais e compartilhe.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-fecho-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-fecho-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-fecho-c1.png",
+     "quando": "Siga o HOJE MT"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-04-boletim-08-fecho-c2.png",
+     "quando": "compartilhe"
+    }
+   ],
+   "n": 7
+  }
+ ]
+}
