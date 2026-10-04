@@ -3335,7 +3335,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "04/10/2026 10:38",
+  "atualizado": "04/10/2026 11:43",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -4207,6 +4207,37 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-10-03",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "A pedido de Janaina Riva (MDB), o juiz auxiliar da propaganda Flávio Fraga e Silva determinou, às 19h22 de 3/10, a suspensão temporária, até o fim do 1º turno, dos perfis de Zé Medeiros (PL) nas redes sociais indicados no registro de candidatura, por reiterado descumprimento de decisões anteriores que mandaram retirar publicações sobre Janaina; as provedoras (Meta, X e TikTok, segundo a Folhamax) foram intimadas a cumprir. Na véspera, o juiz tinha fixado multa de R$ 100 mil por nova publicação e avisado sobre a possibilidade de suspensão. Na manhã de 4/10, o site Cidadão Consumidor noticiou que o TRE-MT revogou a suspensão, em liminar pedida pela defesa, e mandou restabelecer os perfis; até as 11:43 de 4/10, a revogação não tinha sido confirmada por outro veículo nem pelo TRE-MT.",
+      "cabe_recurso": true,
+      "defesa": "Segundo o Cidadão Consumidor, Medeiros chamou a decisão de arbitrária e disse que ela tenta censurá-lo.",
+      "fontes": [
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/tre-se-choca-com-ataques-de-medeiros-a-janaina-e-derruba-redes-sociais/575529",
+        "2026-10-04"
+       ],
+       [
+        "Gazeta Digital",
+        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/tre-suspende-redes-sociais-de-medeiros-por-ataques-a-janaina/861407",
+        "2026-10-04"
+       ],
+       [
+        "24 Horas MT",
+        "https://24horasmt.com.br/politica-mt/tre-determina-suspensao-de-perfis-de-ze-medeiros-ate-o-fim-do-1o-turno/",
+        "2026-10-04"
+       ],
+       [
+        "Cidadão Consumidor (revogação, fonte única)",
+        "https://cidadaoconsumidor.com.br/justica-reverte-suspensao-e-manda-reativar-redes-sociais-de-ze-medeiros-apos-janaina-riva-pedir-bloqueio/",
+        "2026-10-04"
+       ]
+      ],
+      "papel": "pedido"
+     },
      {
       "data": "2026-10-02",
       "tipo": "decisao",
@@ -8655,6 +8686,37 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-10-03",
+      "tipo": "decisao",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "A pedido de Janaina Riva (MDB), o juiz auxiliar da propaganda Flávio Fraga e Silva determinou, às 19h22 de 3/10, a suspensão temporária, até o fim do 1º turno, dos perfis de Zé Medeiros (PL) nas redes sociais indicados no registro de candidatura, por reiterado descumprimento de decisões anteriores que mandaram retirar publicações sobre Janaina; as provedoras (Meta, X e TikTok, segundo a Folhamax) foram intimadas a cumprir. Na véspera, o juiz tinha fixado multa de R$ 100 mil por nova publicação e avisado sobre a possibilidade de suspensão. Na manhã de 4/10, o site Cidadão Consumidor noticiou que o TRE-MT revogou a suspensão, em liminar pedida pela defesa, e mandou restabelecer os perfis; até as 11:43 de 4/10, a revogação não tinha sido confirmada por outro veículo nem pelo TRE-MT.",
+      "cabe_recurso": true,
+      "defesa": "Segundo o Cidadão Consumidor, Medeiros chamou a decisão de arbitrária e disse que ela tenta censurá-lo.",
+      "fontes": [
+       [
+        "Folhamax",
+        "https://www.folhamax.com/politica/tre-se-choca-com-ataques-de-medeiros-a-janaina-e-derruba-redes-sociais/575529",
+        "2026-10-04"
+       ],
+       [
+        "Gazeta Digital",
+        "https://www.gazetadigital.com.br/editorias/eleicoes-2026/tre-suspende-redes-sociais-de-medeiros-por-ataques-a-janaina/861407",
+        "2026-10-04"
+       ],
+       [
+        "24 Horas MT",
+        "https://24horasmt.com.br/politica-mt/tre-determina-suspensao-de-perfis-de-ze-medeiros-ate-o-fim-do-1o-turno/",
+        "2026-10-04"
+       ],
+       [
+        "Cidadão Consumidor (revogação, fonte única)",
+        "https://cidadaoconsumidor.com.br/justica-reverte-suspensao-e-manda-reativar-redes-sociais-de-ze-medeiros-apos-janaina-riva-pedir-bloqueio/",
+        "2026-10-04"
+       ]
+      ],
+      "papel": "contra"
+     },
      {
       "data": "2026-10-02",
       "tipo": "decisao",
