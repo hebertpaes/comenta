@@ -2239,7 +2239,7 @@
   ]
  },
  "grupos": {
-  "atualizado": "03/10/2026 07:45",
+  "atualizado": "04/10/2026 10:38",
   "grupos": [
    {
     "governador": "Doutora Natasha",
@@ -2437,6 +2437,27 @@
     "desenho": "Grupo do governo estadual, com o governador candidato à reeleição e o ex-governador Mauro Mendes.",
     "movimentos": [
      {
+      "data": "2026-10-04",
+      "fato": "O ex-deputado federal Eduardo Bolsonaro (PL), irmão de Flávio Bolsonaro, publicou nas redes em 4/10 uma “cola” eleitoral com Otaviano Pivetta (Republicanos) para governador e Zé Medeiros (PL) para o Senado, sem Wellington Fagundes, candidato do PL ao governo; a lista traz também Flávio para presidente e Coronel Assis (PL) para deputado federal. O segundo nome ao Senado na cola aparece diferente nas matérias (Mauro Mendes no RepórterMT, Galvan na Muvuca Popular).",
+      "fontes": [
+       [
+        "RepórterMT",
+        "https://www.reportermt.com/papo-reto/eduardo-bolsonaro-ignora-wellington-e-poe-pivetta-na-colinha-de-votacao/244579",
+        "2026-10-04"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/politica/eduardo-bolsonaro-pede-votos-a-pivetta-e-deixa-wellington-fagundes-fora-da-colinha/578875",
+        "2026-10-04"
+       ],
+       [
+        "Muvuca Popular",
+        "https://www.muvucapopular.com.br/2026/10/04/wf-e-esquecido-em-colinha-de-ex-deputado-eduardo-bolsonaro/",
+        "2026-10-04"
+       ]
+      ]
+     },
+     {
       "data": "2026-10-02",
       "fato": "A prefeita de Várzea Grande, Flávia Moretti (PL), gravou com Pivetta um convite para a “Caminhada da Vitória” em VG neste sábado (3/10), com concentração às 8h na Praça da Todimo e saída às 9h. O PL tem candidato próprio ao Governo, Wellington Fagundes; segundo as matérias, Flávia está entre os prefeitos do PL que apoiam Pivetta, como Cláudio Ferreira (Rondonópolis) e Sérgio Machnic (Primavera do Leste).",
       "fontes": [
@@ -2500,42 +2521,6 @@
        [
         "HiperNotícias",
         "https://www.hnt.com.br/politica/natasha-cobra-wf-sobre-alianca-com-pivetta-e-leva-invertida-de-adversario/578334",
-        "2026-10-01"
-       ]
-      ]
-     },
-     {
-      "data": "2026-09-30",
-      "fato": "Pivetta fez reunião com empresários e caminhada em Rondonópolis, base eleitoral de Wellington, com o prefeito Cláudio Ferreira (PL), que já o apoiava, e com Zé Medeiros (PL), candidato ao Senado da coligação de Wellington, e o suplente dele, Odílio Balbinotti. Cláudio disse: “Agora, sou cabo eleitoral. Trabalho para o Pivetta, Mauro Mendes e Flávio Bolsonaro.” Também em Rondonópolis, no mesmo dia, Mauro Mendes (União), candidato ao Senado na coligação de Pivetta, pediu votos para Medeiros: “Peço o voto aqui para que vocês que conhecem o Medeiros, conhecem a sua história, conhecem a trajetória, que é de Rondonópolis, eu tenho certeza que ele vai ter aqui uma grande votação.”",
-      "fontes": [
-       [
-        "MidiaNews",
-        "https://www.midianews.com.br/politica/medeiros-oficializa-abandono-a-wf-e-faz-ato-com-pivetta-video/530269",
-        "2026-09-30"
-       ],
-       [
-        "Olhar Direto",
-        "https://www.olhardireto.com.br/noticias/na-casa-do-adversario1",
-        "2026-09-30"
-       ],
-       [
-        "RDNews",
-        "https://www.rdnews.com.br/eleicoes-2026/medeiros-participa-de-ato-politico-ao-lado-de-claudio-e-pivetta-video/249936",
-        "2026-09-30"
-       ],
-       [
-        "Minuto MT",
-        "https://minutomt.com.br/espia-ai/pivetta-faz-agenda-em-rondonopolis-com-apoio-do-pl/",
-        "2026-09-30"
-       ],
-       [
-        "RDNews",
-        "https://www.rdnews.com.br/eleicoes-2026/mauro-mendes-pede-votos-para-ze-medeiros-ao-senado-durante-evento/250018",
-        "2026-10-01"
-       ],
-       [
-        "Primeira Hora",
-        "https://primeirahora.com.br/mauro-mendes-pede-votos-para-ze-medeiros-ao-senado-durante-evento-em-rondonopolis/",
         "2026-10-01"
        ]
       ]
@@ -2724,6 +2709,27 @@
     "desenho": "Candidatura do PL alinhada à de Flávio Bolsonaro para presidente, em coligação com MDB, Novo, PRD e Solidariedade.",
     "movimentos": [
      {
+      "data": "2026-10-04",
+      "fato": "O ex-deputado federal Eduardo Bolsonaro (PL), irmão de Flávio Bolsonaro, publicou nas redes em 4/10 uma “cola” eleitoral com Otaviano Pivetta (Republicanos) para governador e Zé Medeiros (PL) para o Senado, sem Wellington Fagundes, candidato do PL ao governo; a lista traz também Flávio para presidente e Coronel Assis (PL) para deputado federal. O segundo nome ao Senado na cola aparece diferente nas matérias (Mauro Mendes no RepórterMT, Galvan na Muvuca Popular).",
+      "fontes": [
+       [
+        "RepórterMT",
+        "https://www.reportermt.com/papo-reto/eduardo-bolsonaro-ignora-wellington-e-poe-pivetta-na-colinha-de-votacao/244579",
+        "2026-10-04"
+       ],
+       [
+        "HiperNotícias",
+        "https://www.hnt.com.br/politica/eduardo-bolsonaro-pede-votos-a-pivetta-e-deixa-wellington-fagundes-fora-da-colinha/578875",
+        "2026-10-04"
+       ],
+       [
+        "Muvuca Popular",
+        "https://www.muvucapopular.com.br/2026/10/04/wf-e-esquecido-em-colinha-de-ex-deputado-eduardo-bolsonaro/",
+        "2026-10-04"
+       ]
+      ]
+     },
+     {
       "data": "2026-10-02",
       "fato": "O deputado federal Alfredo Gaspar (PL-AL), candidato a vice-presidente na chapa de Flávio Bolsonaro, declarou apoio a Wellington Fagundes em vídeo gravado ao lado dele.",
       "fontes": [
@@ -2772,32 +2778,6 @@
        [
         "Infoverus",
         "https://www.infoverus.com.br/politica/abilio-deixa-em-branco-espaco-para-governador-em-colinha-eleitoral-e-nao-cita-wellington-fagundes/35919",
-        "2026-10-01"
-       ]
-      ]
-     },
-     {
-      "data": "2026-10-01",
-      "fato": "Os seis candidatos ao Governo — Otaviano Pivetta (Republicanos), Wellington Fagundes (PL), Doutora Natasha (PSD), Maurício Coelho (Mobiliza), Rafaell Milas (Missão) e Sargento Laudicério (Agir) — participaram em 1º/10, a partir das 10h30, do último debate do 1º turno, na TV Vila Real, mediado por Antônio Carlos Silva, em quatro blocos com perguntas livres entre os candidatos. Entre os temas: incentivos fiscais, infraestrutura, educação, situação fiscal do Estado e as decisões da Justiça Eleitoral sobre a propaganda; houve troca de críticas entre os candidatos, com uso de direito de resposta.",
-      "fontes": [
-       [
-        "MidiaNews",
-        "https://www.midianews.com.br/politica/natasha-cita-agressao-e-pivetta-e-wf-trocam-acusacoes-ao-vivo/530335",
-        "2026-10-01"
-       ],
-       [
-        "RDNews",
-        "https://www.rdnews.com.br/eleicoes-2026/pivetta-defende-gestao-em-debate-wellington-e-natasha-sobem-o-tom/249984",
-        "2026-10-01"
-       ],
-       [
-        "VGN",
-        "https://www.vgnoticias.com.br/politica/wellington-acusa-pivetta-de-mentir-e-desafia-governador-a-renunciar-ao-mandato/152856",
-        "2026-10-01"
-       ],
-       [
-        "HiperNotícias",
-        "https://www.hnt.com.br/politica/natasha-cobra-wf-sobre-alianca-com-pivetta-e-leva-invertida-de-adversario/578334",
         "2026-10-01"
        ]
       ]
@@ -3355,7 +3335,7 @@
   "nota": "Seguidores aproximados de perfis oficiais, consultados em 26/9: TikTok e YouTube na página pública; Instagram, Facebook e X pelo resumo do buscador (data de indexação desconhecida). Instagram de Mauro Mendes, Pedro Taques e Zé Medeiros conferido pela redação nos perfis verificados em 25/9, às 21h (horário de MT). Sem número confiável, fica em branco. Em negrito, a maior base de cada candidato."
  },
  "justica": {
-  "atualizado": "02/10/2026 20:50",
+  "atualizado": "04/10/2026 10:38",
   "candidatos": [
    {
     "nome": "Beny Godoy",
@@ -7954,6 +7934,27 @@
      "fontes": []
     },
     "itens": [
+     {
+      "data": "2026-10-02",
+      "tipo": "acao_em_andamento",
+      "orgao": "TRE-MT (juiz auxiliar)",
+      "resumo": "Wellington Fagundes e a coligação Coração da Gente pediram direito de resposta e a retirada de três reportagens do Olhar Direto publicadas em setembro e de uma publicação no Instagram que atribuem cerca de R$ 3,04 milhões em benefícios fiscais a empresas ligadas à família do candidato (Zootec, Raça Agro Norte e uma empresa identificada como SGM). A defesa contesta os R$ 919,9 mil atribuídos à SGM, que diz ser outra empresa com a mesma sigla; sem esse valor, o total cairia para cerca de R$ 2,1 milhões. O juiz auxiliar Marcelo Morgado negou a liminar: entendeu que não havia urgência para retirar o conteúdo jornalístico antes da manifestação do veículo e que eventual inexatidão pode ser corrigida pelo próprio direito de resposta, se for concedido; registrou que manter as publicações não significa reconhecer as informações como verdadeiras nem rejeitar o pedido. O direito de resposta ainda será julgado.",
+      "cabe_recurso": null,
+      "defesa": null,
+      "fontes": [
+       [
+        "RDM Online",
+        "https://rdmonline.com.br/tre-mt-nega-retirada-de-reportagens-sobre-beneficios-fiscais-ligados-a-wellington/",
+        "2026-10-02"
+       ],
+       [
+        "VGN",
+        "https://www.vgnoticias.com.br/eleicoes-2026/tre-mt-nega-retirada-de-materias-sobre-empresas-ligadas-a-familia-de-wellington/152980",
+        "2026-10-03"
+       ]
+      ],
+      "papel": "pedido"
+     },
      {
       "data": "2026-09-29",
       "tipo": "acao_em_andamento",
