@@ -778,9 +778,37 @@
   "chapada:gn:alô chapada terá cobertura ao vivo das eleições neste domingo (4)": {
    "titulo": "Alô Chapada terá cobertura ao vivo das eleições neste domingo (4) - Alochapada",
    "data": "2026-10-03"
+  },
+  "barra:yt:2cJYnY4oGw4": {
+   "titulo": "TV CÂMARA - SESSÃO ORDINÁRIA 05/10/2026",
+   "data": "2026-10-05"
+  },
+  "chapada:gn:pivetta teve aprovação de 55% dos eleitores de chapada dos guimarães": {
+   "titulo": "Pivetta teve aprovação de 55% dos eleitores de Chapada dos Guimarães - Alochapada",
+   "data": "2026-10-05"
+  },
+  "chapada:gn:atendimentos na prefeitura de chapada retornam nesta segunda-feira a partir das 12h": {
+   "titulo": "Atendimentos na Prefeitura de Chapada retornam nesta segunda-feira a partir das 12h - Alochapada",
+   "data": "2026-10-05"
+  },
+  "chapada:gn:espetáculo infantil gratuito chega a chapada dos guimarães no dia 24 de outubro": {
+   "titulo": "Espetáculo infantil gratuito chega a Chapada dos Guimarães no dia 24 de outubro - Alochapada",
+   "data": "2026-10-05"
+  },
+  "chapada:gn:chapada começa semana com chance de chuva antes de nova escalada do calor": {
+   "titulo": "Chapada começa semana com chance de chuva antes de nova escalada do calor - Alochapada",
+   "data": "2026-10-05"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/semana-pro-vida-e-aberta-oficialmente-em-sorriso": {
+   "titulo": "Semana Pró-Vida é aberta oficialmente em Sorriso",
+   "data": "2026-10-05"
+  },
+  "chapada:gn:homem descobre aos 58 anos que pai biológico é cantor famoso": {
+   "titulo": "Homem descobre aos 58 anos que pai biológico é cantor famoso - Alochapada",
+   "data": "2026-10-03"
   }
  },
- "ultima_checagem": "2026-10-05T12:39:10.851Z",
+ "ultima_checagem": "2026-10-05T20:50:00Z",
  "descartados_2026-10-01_tarde": [
   {
    "cidade": "Sorriso",
@@ -800,5 +828,11 @@
   "Chapada: posse de Rosa Blanco (PSD), 2ª suplente, no lugar temporário de Cida Lessa (Alô Chapada, 02/10) — rodízio de suplência, sem fato novo além disso",
   "Sorriso: sessão ordinária remarcada para terça (6); Semana Pró-Vida; viagens de vereadores (ABAV Expo, GAFFFF); indicações de rotina",
   "Lucas: Outubro Rosa; Lucas em Debate (vídeo)"
+ ],
+ "descartados_2026-10-05": [
+  "Barra do Garças: vídeo da sessão ordinária de 05/10 (TV Câmara, https://www.youtube.com/watch?v=2cJYnY4oGw4) sem texto oficial nem notícia ainda; avaliar quando sair notícia da Câmara/imprensa",
+  "Chapada: Alô Chapada (05/10) sobre votação de Pivetta no município, retomada do atendimento da Prefeitura, espetáculo infantil, clima e notícia sem relação com a Câmara — fora do escopo; sessão ordinária adiada para 06/10 (Ato Legislativo 021/2026) segue em acompanhamento",
+  "Sorriso: GC Notícias sobre aumento de 11 para 15 vereadores (Proposta de Emenda à Lei Orgânica 01/2026) é de 09/04/2026 — antigo; sites da Câmara de Sorriso e de Barra do Garças deram 'fetch failed' nesta rodada",
+  "Lucas do Rio Verde: Cenário MT de 28/09 ('bago roxo', fala de Hélio Kaminski na tribuna e reação de Jackson Lopes, Márcio Albieri e Airton Callai) — anterior à eleição e já sem gancho; próxima sessão ordinária (32ª) em 08/10, audiência do Plano Diretor em 06/10 (pauta de 02/10 já cobre)"
  ]
 }
