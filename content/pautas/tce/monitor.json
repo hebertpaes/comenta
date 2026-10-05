@@ -18,9 +18,9 @@
   "https://www.olhardireto.com.br"
  ],
  "ultimo_video_visto": {
-  "id": "K7OAlGVY6AI",
-  "titulo": "MBA do TCE-MT aborda direitos humanos e proteção da mulher na era digital",
-  "publicado": "2026-10-02T20:22"
+  "id": "Es-WjQBaQDE",
+  "titulo": "Contas de Araguainha, General Carneiro e Guiratinga recebem parecer favorável do TCE-MT",
+  "publicado": "2026-10-05T21:59"
  },
  "ultima_sessao_vista": {
   "id": "aTo4U6AIDDs",
@@ -122,6 +122,16 @@
    "arte": "pautas/ilustracoes/2026-10-02-tce-lote-1-rodovias.jpg",
    "instagram": "arte pendente: card 4:5 (Canva em quota_cooldown em 02/10 ~22:10 UTC); fazer no próximo disparo com copy-design DAHWHxXxNqw e entrar na agenda como aguardando_materia",
    "origem": "vídeo oficial do TCE-MT Oj2eICgPD0U (02/10) + Olhar Direto, RDNews, Portal Mato Grosso e Folhamax (28/09)"
+  },
+  {
+   "data": "2026-10-05",
+   "slug": "tce-mt-muda-regra-do-duodecimo-das-camaras-sem-desconto-do-fundeb",
+   "status": "rascunho",
+   "ghost_id": "6ac41f6538f4fbfe10d62ab2",
+   "rascunho": "https://hojemt.com.br/p/537943c8-d766-4a71-9807-805db26ffc4a/",
+   "arquivo": "pautas/tce/2026-10-05-duodecimo-camaras-sem-desconto-fundeb.md",
+   "arte": "arte pendente (conector do Canva sem autorização)",
+   "origem": "O Documento, Só Notícias, Cenário MT e Folhamax (05/10); consulta da Câmara de Nossa Senhora do Livramento, relator Alisson Alencar"
   }
  ],
  "transcricoes": [
@@ -173,7 +183,7 @@
   }
  ],
  "ultima_verificacao": {
-  "data": "2026-10-02T22:10Z",
-  "rss": "vídeos novos desde oXxObLhdCUg: Vo7k-Ka525o (curso de lideranças), Id0b2kD53M8 (Carta de Compromissos pela Primeira Infância e Educação aos candidatos, 01/10), LGtKLg5ajbo (Escola de Contas), Fv__Tlyl3i8 (rede de apoio a PcD com o TJMT), HUkixcSR63w (consumo de energia), Oj2eICgPD0U (STJ restabelece cautelar: virou pauta), sh4PqzhB40k e K7OAlGVY6AI (MBA), rEXUjk8z6HM (contas de Conquista D'Oeste, Salto do Céu e Nova Marilândia com parecer favorável, 02/10: sugestão de curta, não feita nesta rodada). Imprensa: HNT 02/10 'TCE-MT entrega aos candidatos plano que projeta desenvolvimento de MT até 2050' (sugestão; conferir no site do TCE). Sem nova sessão plenária desde a 14ª (29/09)."
+  "data": "2026-10-05T22:20Z",
+  "rss": "vídeos novos desde K7OAlGVY6AI: rj-O2gTacZQ (contas de Cláudia e Sorriso com parecer favorável), gPl5QuT-V_k (Ouvidoria, Articulação Propositiva), QBChOt3JpoA (Plano de Metas MT 2050 entregue a candidatos; assunto de fim de setembro, já noticiado por HNT/Olhar Direto), Es-WjQBaQDE (contas de Araguainha, General Carneiro e Guiratinga com parecer favorável) — pareceres favoráveis: sugestão de curta, não feita. Imprensa: duodécimo das Câmaras sem desconto do Fundeb (virou pauta); Plenário Virtual de 05 a 09/10 com 66 processos (tomada de contas especial da ponte sobre o Rio Borges, Tapurah/Itanhangá; licitação de sonorização em Primavera do Leste) — acompanhar resultado. Sem nova sessão plenária presencial desde a 14ª (29/09). Site do TCE não abriu; CliqueF5 bloqueou (Cloudflare), não contornado."
  }
 }
