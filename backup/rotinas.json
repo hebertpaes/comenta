@@ -85,7 +85,8 @@
       "cuiaba": "06:13 e 18:13",
       "sessao": "nova a cada disparo (lê as chaves das variáveis de ambiente)",
       "fonte": "content/redes-api.mjs",
-      "resumo": "Roda redes-api.mjs (Instagram Business Discovery, Biblioteca de Anúncios da Meta, YouTube Data API, X API v2) e faz push de content/paginas/radar-redes-api.json; sem nenhuma chave, encerra sem commit. A rotina de hora em hora do Radar puxa, embute e publica."
+      "resumo": "Roda redes-api.mjs (Instagram Business Discovery, Biblioteca de Anúncios da Meta, YouTube Data API, X API v2) e faz push de content/paginas/radar-redes-api.json; sem nenhuma chave, encerra sem commit. A rotina de hora em hora do Radar puxa, embute e publica.",
+      "situacao": "desativada em 05/10/2026 12:10 UTC: fim do prazo (até 4/10); a sessão nova do disparo de 10:14 UTC não conseguiu se desativar sozinha"
     },
     {
       "id": "trig_01959tQrEnSf2MmrXz2N8gB4",
