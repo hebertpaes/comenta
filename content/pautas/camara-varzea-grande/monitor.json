@@ -132,9 +132,13 @@
   "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-de-varzea-grande-prepara-solenidade-de-entrega-da-comenda-couto-magalhaes": {
    "titulo": "Câmara de Várzea Grande prepara solenidade de entrega da Comenda Couto Magalhães",
    "data": "2026-09-10T15:13:44Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-municipal-de-varzea-grande-realiza-sessao-ordinaria-nesta-terca-feira-6-com-pauta-voltada-a-direitos-sociais-preservacao-historica-e-homenagens": {
+   "titulo": "Câmara Municipal de Várzea Grande realiza Sessão Ordinária nesta terça-feira (6) com pauta voltada a direitos sociais, preservação histórica e homenagens",
+   "data": "2026-10-05T14:01:24Z"
   }
  },
- "ultima_checagem": "2026-10-05T11:19:44.776Z",
+ "ultima_checagem": "2026-10-05T19:18:15.512Z",
  "pautas": [
   {
    "data": "2026-10-01",
@@ -167,6 +171,12 @@
    "assunto": "Decreto nº 96/2026 da prefeita Flávia Moretti reorganiza o COMSEA e cria a CAISAN enquanto o projeto de lei enviado em 01/07 (Ofício 1108/2026, urgência especial) espera votação na Câmara; prazo federal do SISAN/Brasil Sem Fome era 30/09",
    "fonte": "https://www.vgnoticias.com.br/politica/demora-da-camara-poe-programa-contra-a-fome-em-risco-e-moretti-recorre-a-decreto-em-vg/152901",
    "por_que_nao_virou_pauta": "uma fonte legível só (VGN; o Noveen bloqueia leitura automática) e decreto anterior de 24/09 com composição diferente (16 membros) — conferir no Jornal Oficial da AMM e com a Câmara antes de escrever"
+  },
+  {
+   "desde": "2026-10-05",
+   "assunto": "Sessão ordinária de terça (06/10, 8h): votação única do PLC 035/2026 do Executivo (Política Municipal dos Direitos da Pessoa Idosa; reestrutura CMDPI/VG e FUMAPI), PR 08/2026 (Espaço Memória do Legislativo), PL 199/2026, PL 242/2026 e PL 250/2026 (aprendizagem e primeiro emprego)",
+   "fonte": "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-municipal-de-varzea-grande-realiza-sessao-ordinaria-nesta-terca-feira-6-com-pauta-voltada-a-direitos-sociais-preservacao-historica-e-homenagens",
+   "por_que_nao_virou_pauta": "é só a pauta prevista; vira matéria se houver resultado relevante (aprovação do PLC 035/2026, embate ou mudança)"
   }
  ]
 }
