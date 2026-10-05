@@ -11,8 +11,12 @@
 //                                       procurados em todo o acervo, independentemente da janela
 //   node sem-titulo.mjs --titular=<slug> --titulo="Título tirado do texto"
 //                                       põe título em post SEM TÍTULO QUE TEM TEXTO (decisão do editor em
-//                                       05/10/2026: "Com texto mantém e crie o título relacionado"); não mexe
-//                                       em texto, slug nem status; registra em pautas/sem-titulo/registro.json
+//                                       05/10/2026: "Com texto mantém e crie o título relacionado") e leva o
+//                                       título para a URL ("Para deixar na URL"): slug novo feito do título e
+//                                       redirecionamento do antigo em pautas/duplicadas/redirects-pendentes.yaml.
+//                                       Post que já tem título mas ainda está em /untitled*/: só troca a URL
+//                                       (dispensa --titulo). Não mexe em texto nem status; registra em
+//                                       pautas/sem-titulo/registro.json quando cria título.
 // Nunca apaga post; nunca despublica nem reescreve post que tenha texto.
 import fs from "node:fs";
 import path from "node:path";
@@ -38,13 +42,25 @@ const g = ghostClient();
 const titular = (args.find((a) => a.startsWith("--titular=")) || "").slice("--titular=".length);
 if (titular) {
   const titulo = (args.find((a) => a.startsWith("--titulo=")) || "").slice("--titulo=".length).trim();
-  if (!titulo || semTitulo(titulo)) { console.error('uso: --titular=<slug> --titulo="Título tirado do texto"'); process.exit(2); }
   const [p] = await g.posts.browse({ filter: `slug:${titular}`, formats: "html", limit: 1 });
   if (!p) { console.error(`post não encontrado: ${titular}`); process.exit(1); }
-  if (!semTitulo(p.title)) { console.error(`não alterado: ${titular} já tem título ("${p.title}")`); process.exit(1); }
   if (!textoDe(p.html).length) { console.error(`não alterado: ${titular} não tem texto (post vazio: use --despublicar)`); process.exit(1); }
-  const r = await g.posts.edit({ id: p.id, title: titulo, updated_at: p.updated_at });
-  console.log(`título criado: ${r.slug} (${r.status}) → ${r.title}`);
+  const soUrl = !semTitulo(p.title);
+  if (soUrl && !/^untitled(-\d+)?$/.test(p.slug)) { console.error(`não alterado: ${titular} já tem título ("${p.title}") e URL própria`); process.exit(1); }
+  if (!soUrl && (!titulo || semTitulo(titulo))) { console.error('uso: --titular=<slug> --titulo="Título tirado do texto"'); process.exit(2); }
+  const novoTitulo = soUrl ? p.title : titulo;
+  const slugNovo = novoTitulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 185).replace(/-+$/, "");
+  const r = await g.posts.edit({ id: p.id, title: novoTitulo, slug: slugNovo, updated_at: p.updated_at });
+  console.log(`${soUrl ? "URL trocada" : "título criado"}: /${p.slug}/ → /${r.slug}/ (${r.status}) · ${r.title}`);
+  if (r.slug !== p.slug && p.status === "published") {
+    const redir = path.join(aqui, "pautas", "duplicadas", "redirects-pendentes.yaml");
+    const linha = `  /${p.slug}/: /${r.slug}/`;
+    const atual = fs.existsSync(redir) ? fs.readFileSync(redir, "utf8") : "301:\n";
+    if (!atual.includes(linha)) fs.writeFileSync(redir, atual.replace(/\n*$/, "\n") + linha + "\n");
+    console.log(`redirecionamento anotado (o editor sobe no Ghost Admin): ${linha.trim()}`);
+  }
+  if (soUrl) process.exit(0);
   let reg = [];
   try { reg = JSON.parse(fs.readFileSync(registroPath, "utf8")); } catch {}
   reg.unshift({
@@ -53,10 +69,11 @@ if (titular) {
     slug: p.slug,
     titulo: p.title,
     titulo_novo: r.title,
+    slug_novo: r.slug,
     publicado_em: p.published_at,
     status_agora: r.status,
     feature_image: p.feature_image,
-    motivo: "Post com texto e sem título: mantido no ar e com título tirado do próprio texto (decisão do editor em 05/10/2026). Texto, slug e status não foram alterados.",
+    motivo: "Post com texto e sem título: mantido no ar, com título tirado do próprio texto e URL feita do título (decisões do editor em 05/10/2026). Texto e status não foram alterados; redirecionamento do endereço antigo em pautas/duplicadas/redirects-pendentes.yaml.",
   });
   fs.mkdirSync(path.dirname(registroPath), { recursive: true });
   fs.writeFileSync(registroPath, JSON.stringify(reg, null, 2) + "\n");
@@ -91,7 +108,7 @@ for (const { p, semTitulo: st, semTexto: sx } of problemas) {
   const tipo = st && sx ? "SEM TÍTULO E SEM TEXTO" : st ? "sem título (tem texto)" : "sem texto (tem título)";
   console.log(`${tipo} · ${p.slug} · publicado ${p.published_at} · capa ${capa} · tags ${tags} · ${p.url}`);
   if (st && !sx) {
-    console.log(`   → mantido no ar: leia o texto e crie o título com --titular=${p.slug} --titulo="..." (decisão do editor em 05/10/2026)`);
+    console.log(`   → mantido no ar: leia o texto e crie o título (vai também para a URL) com --titular=${p.slug} --titulo="..." (decisão do editor em 05/10/2026)`);
     continue;
   }
   if (!(st && sx)) {
