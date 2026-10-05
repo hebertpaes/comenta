@@ -30,7 +30,7 @@ source content/tools/ambiente.sh --checar      # proxy/CA do Node, $HOJEMT_TMP e
 - **Nada inventado.** Todo fato com fonte e link. Fala entre aspas só se estiver literalmente na fonte; paráfrase não leva aspas.
 - Confirmação: fonte oficial (TRE-MT, TSE, Câmara, Prefeitura, Diário Oficial) **ou dois veículos diferentes**. Pesquisa: relatório do instituto + um veículo, ou dois veículos.
 - **Rascunho por padrão.** Nunca publique rascunho de matéria; o editor revisa e publica.
-- Não reescreva texto nem título de post já publicado pela API (o editor decide). Trocar imagem de destaque/og é permitido nas rotinas de arte.
+- Não reescreva texto nem título de post já publicado pela API (o editor decide). Trocar imagem de destaque/og é permitido nas rotinas de arte. Exceção: post publicado **sem título e com texto** fica no ar e ganha título tirado do próprio texto (`content/sem-titulo.mjs --titular=<slug> --titulo="..."`; decisão do editor em 05/10/2026); post sem título e sem texto sai do ar (`--despublicar`).
 - Separar fato de acusação; presunção de inocência; ouvir o outro lado; "checagem pendente" no fim da pauta; tratamento igual; **não atacar ninguém**.
 - Eleições 2026 (1º turno em 04/10/2026): linha editorial a favor de Otaviano Pivetta **sem distorcer dado**; candidatos em ordem alfabética nas listas (menos em resultados de pesquisa).
 - Pesquisas: só registradas, com ficha técnica completa na legenda (instituto, registro, contratante, entrevistas, período, margem, nível de confiança — Res. TSE 23.600/2019). Antes de incluir, confira se a divulgação não foi suspensa pela Justiça Eleitoral.

@@ -9,7 +9,11 @@
 //                                       e registra em pautas/sem-titulo/registro.json
 //   --dias=N                            janela de publicação a varrer (padrão 7); títulos "(Untitled)" são
 //                                       procurados em todo o acervo, independentemente da janela
-// Nunca apaga post; nunca mexe em post que tenha texto (só avisa).
+//   node sem-titulo.mjs --titular=<slug> --titulo="Título tirado do texto"
+//                                       põe título em post SEM TÍTULO QUE TEM TEXTO (decisão do editor em
+//                                       05/10/2026: "Com texto mantém e crie o título relacionado"); não mexe
+//                                       em texto, slug nem status; registra em pautas/sem-titulo/registro.json
+// Nunca apaga post; nunca despublica nem reescreve post que tenha texto.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -30,6 +34,36 @@ const textoDe = (html) =>
 const semTitulo = (t) => !String(t || "").trim() || /^\(untitled\)$/i.test(String(t).trim());
 
 const g = ghostClient();
+
+const titular = (args.find((a) => a.startsWith("--titular=")) || "").slice("--titular=".length);
+if (titular) {
+  const titulo = (args.find((a) => a.startsWith("--titulo=")) || "").slice("--titulo=".length).trim();
+  if (!titulo || semTitulo(titulo)) { console.error('uso: --titular=<slug> --titulo="Título tirado do texto"'); process.exit(2); }
+  const [p] = await g.posts.browse({ filter: `slug:${titular}`, formats: "html", limit: 1 });
+  if (!p) { console.error(`post não encontrado: ${titular}`); process.exit(1); }
+  if (!semTitulo(p.title)) { console.error(`não alterado: ${titular} já tem título ("${p.title}")`); process.exit(1); }
+  if (!textoDe(p.html).length) { console.error(`não alterado: ${titular} não tem texto (post vazio: use --despublicar)`); process.exit(1); }
+  const r = await g.posts.edit({ id: p.id, title: titulo, updated_at: p.updated_at });
+  console.log(`título criado: ${r.slug} (${r.status}) → ${r.title}`);
+  let reg = [];
+  try { reg = JSON.parse(fs.readFileSync(registroPath, "utf8")); } catch {}
+  reg.unshift({
+    data: new Date().toISOString(),
+    id: p.id,
+    slug: p.slug,
+    titulo: p.title,
+    titulo_novo: r.title,
+    publicado_em: p.published_at,
+    status_agora: r.status,
+    feature_image: p.feature_image,
+    motivo: "Post com texto e sem título: mantido no ar e com título tirado do próprio texto (decisão do editor em 05/10/2026). Texto, slug e status não foram alterados.",
+  });
+  fs.mkdirSync(path.dirname(registroPath), { recursive: true });
+  fs.writeFileSync(registroPath, JSON.stringify(reg, null, 2) + "\n");
+  console.log(`registro atualizado: ${path.relative(process.cwd(), registroPath)}`);
+  process.exit(0);
+}
+
 const desde = new Date(Date.now() - dias * 86400e3).toISOString();
 const opts = { limit: "all", formats: "html", include: "tags" };
 const recentes = await g.posts.browse({ ...opts, filter: `status:published+published_at:>'${desde}'` });
@@ -56,8 +90,12 @@ for (const { p, semTitulo: st, semTexto: sx } of problemas) {
   const tags = (p.tags || []).map((t) => t.slug).join(",");
   const tipo = st && sx ? "SEM TÍTULO E SEM TEXTO" : st ? "sem título (tem texto)" : "sem texto (tem título)";
   console.log(`${tipo} · ${p.slug} · publicado ${p.published_at} · capa ${capa} · tags ${tags} · ${p.url}`);
+  if (st && !sx) {
+    console.log(`   → mantido no ar: leia o texto e crie o título com --titular=${p.slug} --titulo="..." (decisão do editor em 05/10/2026)`);
+    continue;
+  }
   if (!(st && sx)) {
-    console.log("   → não despublicado automaticamente: avise o editor (post tem conteúdo parcial).");
+    console.log("   → não despublicado automaticamente: avise o editor (post tem título mas não tem texto).");
     continue;
   }
   if (!despublicar) { console.log("   → rode com --despublicar para tirar do ar"); continue; }

@@ -682,8 +682,11 @@ informado.", tags `curtas` + `charges`. Casos: `untitled-2` (19/09), `untitled-3
 
 - Guarda: `node sem-titulo.mjs --despublicar` tira do ar (status draft) todo post publicado
   **sem título e sem texto** e registra em `pautas/sem-titulo/registro.json`. Sem flag, só lista.
-  Post com texto mas sem título (ex.: `untitled`, 15/09, Economia) não é tocado: o editor decide
-  o título no Ghost Admin. Nunca apaga post.
+  Post com texto mas sem título fica no ar e ganha título tirado do próprio texto (decisão do
+  editor em 05/10/2026: "Com texto mantém e crie o título relacionado"):
+  `node sem-titulo.mjs --titular=<slug> --titulo="..."` (não mexe em texto, slug nem status;
+  registra no mesmo arquivo). Foi o caso de `untitled` (15/09, Economia), hoje "CCJ da Câmara
+  aprova projeto que regulamenta a atividade de operador logístico". Nunca apaga post.
 - Roda automaticamente na rotina "Charges e artes no Canva" (de hora em hora, Parte 0) e na
   rotina "Duplicadas e posts vazios" (a cada 3 h). Esses posts não recebem charge: não há fato.
 - A correção definitiva é no publicador: não publicar quando o item de origem vier vazio.
