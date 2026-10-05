@@ -1,0 +1,36 @@
+# Na véspera da eleição da Mesa, Abilio prevê relação "mais distante" com a Câmara de Cuiabá; Ilde diz que não fará oposição
+
+**Editoria:** Política · **Status:** rascunho (revisar e publicar) · **Data:** 05/10/2026
+
+**Sutiã:** Prefeito compara o cenário com o de Várzea Grande e vê oposição no grupo de 15 vereadores que apoia Ilde Taques. Candidato diz que buscou votos em todos os campos e promete não perseguir o Executivo. A votação é nesta terça-feira (6).
+
+---
+
+A Câmara Municipal de Cuiabá elege nesta terça-feira (6) a Mesa Diretora do biênio 2027–2028, e o prefeito Abilio Brunini (PL) e o vereador Ilde Taques (Podemos), apontado como favorito, chegam à votação com leituras opostas sobre o que a disputa significa para a relação entre Prefeitura e Legislativo.
+
+## O que disse o prefeito
+
+Segundo o [MidiaNews](https://www.midianews.com.br/politica/abilio-ve-risco-de-cuiaba-repetir-crise-de-vg-com-ilde-na-mesa/530452) (02/10), Abilio vê risco de Cuiabá repetir em 2027 o confronto entre Executivo e Legislativo de Várzea Grande, onde a prefeita Flávia Moretti (PL) e o presidente da Câmara, Wanderley Cerqueira (MDB), divergem em público. "A gente já viu esse cenário em Várzea Grande e está vendo como está essa situação. Ela é uma situação que traz preocupações para a gente. Não preocupações no sentido de relacionamento parlamentar, mas de relacionamento institucional", afirmou. E completou: "Então, o que nós podemos esperar para o ano que vem? Uma relação institucional um pouco mais distante."
+
+O prefeito citou a rejeição da Lei de Diretrizes Orçamentárias (LDO) pelos vereadores, em julho, como exemplo de conflito que afeta a administração ([MidiaNews](https://www.midianews.com.br/politica/abilio-ve-risco-de-cuiaba-repetir-crise-de-vg-com-ilde-na-mesa/530452); [Folhamax](https://www.folhamax.com/politica/prefeito-rejeita-ilde-e-ve-distanciamento-entre-poderes-em-cuiaba/574802), 29/09). Disse considerar legítima a atuação da oposição, mas criticou vereadores que, segundo ele, vão para a oposição só para atacar a gestão. Na coletiva de 29 de setembro, segundo a [Folhamax](https://www.folhamax.com/politica/prefeito-rejeita-ilde-e-ve-distanciamento-entre-poderes-em-cuiaba/574802), Abilio afirmou que um grupo ligado à oposição construiu o projeto para assumir a Câmara.
+
+## O que disse o candidato
+
+Ilde se define como independente. "A gente se afastou, mas não fui para a oposição", disse ao [RDNews](https://www.rdnews.com.br/legislativo/ilde-descarta-oposicao-a-abilio-e-mira-17-votos-na-camara/249874) (29/09). Em entrevista ao PodOlhar, do [Olhar Direto](https://olhardireto.com.br/noticias/ilde-diz-que-dialogo-com-oposicao-pode-ter-provocado-reacao-de-abilio-sempre-conversei-com-eles) (03/10), atribuiu a reação do prefeito à conversa com vereadores de oposição e independentes: "Eu ganhei, sim, parte desse apoio da oposição e dos independentes, porque eu sempre conversei com eles. Mesmo quando eu era da base do Abilio, quando eu defendia a gestão, eu sempre conversei com eles, com respeito." Segundo ele, Paula Calil (PL) e Dilemário Alencar (União) também procuraram esses vereadores.
+
+No mesmo programa, citado pela [Infoverus](https://www.infoverus.com.br/politica/ilde-promete-dialogo-com-abilio-e-diz-que-camara-nao-fara-oposicao-ao-prefeito/35904) (01/10), Ilde prometeu: "Não terá perseguição ao Executivo, nada disso." Ele criticou a ação do Município na Justiça contra o quórum de dois terços do Regimento Interno: "Eu vejo que não precisava partir do Executivo uma interferência através do Judiciário." Em 14 de setembro, o Órgão Especial do TJMT manteve a negativa de liminar pedida pela Prefeitura nessa ação ([RDNews](https://www.rdnews.com.br/legislativo/abilio-teme-que-grupo-de-ilde-chegue-a-presidencia-da-camara-prejuizo-para-a-gestao/249114), 16/09).
+
+## O placar declarado
+
+São necessários 14 dos 27 votos ([Olhar Direto](https://www.olhardireto.com.br/noticias/ilde-diz-que-paula-quebrou-compromisso-ao-tentar-reeleicao-mas-deixa-porta-aberta-para-acordo), 01/10). Ilde diz ter 15 ([MidiaJur](https://www.midiajur.com.br/politica/suplente-acerta-apoio-e-ilde-ja-conta-com-15-votos-para-comandar-camara-de-cuiaba/87508); [Folhamax](https://www.folhamax.com/politica/prefeito-rejeita-ilde-e-ve-distanciamento-entre-poderes-em-cuiaba/574802), que lista os nomes). A chapa dele tem Eduardo Magalhães (Republicanos), Maria Avalone (PSDB), Adevair Cabral (Solidariedade) e Michelly Alencar (União). Dilemário disse em 30 de setembro que avaliava continuar na disputa ([Olhar Direto](https://www.olhardireto.com.br/noticias/dilemario-cogita-desistir-de-candidatura-apos-perder-lemes-e-admite-dificuldade-para-buscar-dois-votos-em-cinco-dias)); Kássio Coelho (Podemos) disse que protocolaria a chapa nesta segunda-feira (5) ([Olhar Direto](https://olhardireto.com.br/noticias/kassio-coelho-anuncia-candidatura-a-presidencia-da-camara-e-protocola-chapa-na-segunda-feira); [Infoverus](https://www.infoverus.com.br/politica/kassio-coelho-lanca-candidatura-a-presidencia-da-camara-e-promete-protocolar-chapa-na-segunda-feira/35922)). Até a manhã desta segunda, não localizamos notícia de chapa protocolada. Os números são dos próprios grupos e só serão conferidos no voto.
+
+---
+
+**Fontes:** MidiaNews (02/10): https://www.midianews.com.br/politica/abilio-ve-risco-de-cuiaba-repetir-crise-de-vg-com-ilde-na-mesa/530452 · Folhamax (29/09): https://www.folhamax.com/politica/prefeito-rejeita-ilde-e-ve-distanciamento-entre-poderes-em-cuiaba/574802 · Olhar Direto (03/10): https://olhardireto.com.br/noticias/ilde-diz-que-dialogo-com-oposicao-pode-ter-provocado-reacao-de-abilio-sempre-conversei-com-eles · Infoverus (01/10): https://www.infoverus.com.br/politica/ilde-promete-dialogo-com-abilio-e-diz-que-camara-nao-fara-oposicao-ao-prefeito/35904 · RDNews (29/09): https://www.rdnews.com.br/legislativo/ilde-descarta-oposicao-a-abilio-e-mira-17-votos-na-camara/249874 · RDNews (16/09): https://www.rdnews.com.br/legislativo/abilio-teme-que-grupo-de-ilde-chegue-a-presidencia-da-camara-prejuizo-para-a-gestao/249114 · MidiaJur (30/09): https://www.midiajur.com.br/politica/suplente-acerta-apoio-e-ilde-ja-conta-com-15-votos-para-comandar-camara-de-cuiaba/87508 · Olhar Direto (30/09 e 01/10).
+
+**Checagem pendente:**
+- Confirmar com a Secom da Câmara de Cuiabá (o site oficial bloqueia leitura automática) o horário da sessão de terça (6), as chapas protocoladas até segunda (5) e a forma de votação. O MidiaNews escreveu "segunda-feira (6)"; 06/10/2026 é terça-feira, como dizem Olhar Direto, RDNews e o dossiê.
+- Partido de Ilde Taques: o MidiaNews de 02/10 escreve PSB; Olhar Direto, RDNews, Folhamax e Infoverus escrevem Podemos. O texto usa Podemos; confirmar.
+- A fala de Abilio publicada pelo MidiaNews em 02/10 pode ser da mesma coletiva de 29/09 noticiada pela Folhamax. Os dois veículos transcrevem de forma diferente a frase sobre a oposição ("papel de picuinha", no MidiaNews; "papel apenas de acusação", na Folhamax), por isso ela foi parafraseada.
+- Ouvir a Secom da Prefeitura de Cuiabá e os vereadores Paula Calil, Dilemário Alencar e Kássio Coelho sobre a véspera da votação. Ninguém foi procurado pelo HOJE MT até o fechamento deste rascunho.
+- Dossiê: content/pautas/2026-09-30-camara-cuiaba-eleicao-da-mesa.md.

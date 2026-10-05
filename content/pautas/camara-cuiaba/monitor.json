@@ -508,7 +508,7 @@
   },
   "gn:dilemário diz que beto dois a um será futuro prefeito de cuiabá": {
    "titulo": "Dilemário diz que Beto Dois a Um será futuro prefeito de Cuiabá - Folha do Estado",
-   "data": "2026-10-02T19:27:00.000Z"
+   "data": "2026-10-03T14:46:00.000Z"
   },
   "gn:câmara de cuiabá terá r$ 117,5 milhões no orçamento de 2027": {
    "titulo": "Câmara de Cuiabá terá R$ 117,5 milhões no orçamento de 2027 - MINUTO MT",
@@ -545,9 +545,65 @@
   "gn:concurso câmara de cuiabá mt: definidos banca e cargos para nova seleção": {
    "titulo": "Concurso Câmara de Cuiabá MT: definidos banca e cargos para nova seleção - jcconcursos.com.br",
    "data": "2026-10-02T11:30:30.000Z"
+  },
+  "gn:vitória de samantha iris pode devolver fellipe corrêa à câmara de cuiabá": {
+   "titulo": "Vitória de Samantha Iris pode devolver Fellipe Corrêa à Câmara de Cuiabá - Estadão MT",
+   "data": "2026-10-05T11:33:00.000Z"
+  },
+  "gn:vídeo: samantha comemora eleição e fala em levar projetos de cuiabá para o estado": {
+   "titulo": "VÍDEO: Samantha comemora eleição e fala em levar projetos de Cuiabá para o Estado - Estadão MT",
+   "data": "2026-10-05T02:26:00.000Z"
+  },
+  "gn:botelho, júlio campos, juca do guaraná, elizeu nascimento e paulo araújo ficam fora da ass": {
+   "titulo": "Botelho, Júlio Campos, Juca do Guaraná, Elizeu Nascimento e Paulo Araújo ficam fora da Assembleia Legislativa - RepórterMT",
+   "data": "2026-10-05T00:49:00.000Z"
+  },
+  "gn:influencer do pedra 90 é conduzido por suspeita de crime eleitoral em cuiabá": {
+   "titulo": "Influencer do Pedra 90 é conduzido por suspeita de crime eleitoral em Cuiabá - en.com.br",
+   "data": "2026-10-04T22:10:00.000Z"
+  },
+  "gn:últimos debates e morte de sargento da marinha foram destaques": {
+   "titulo": "Últimos debates e morte de sargento da Marinha foram destaques - MidiaNews",
+   "data": "2026-10-04T12:00:00.000Z"
+  },
+  "gn:midianews": {
+   "titulo": "MidiaNews - MidiaNews",
+   "data": "2026-10-04T11:00:00.000Z"
+  },
+  "gn:faissal participa de carreata com wellington fagundes no encerramento da campanha em cuiab": {
+   "titulo": "Faissal participa de carreata com Wellington Fagundes no encerramento da campanha em Cuiabá - Folha do Estado",
+   "data": "2026-10-03T22:09:00.000Z"
+  },
+  "gn:faissal fecha campanha com carreata e cúpula do pl unida": {
+   "titulo": "Faissal fecha campanha com carreata e cúpula do PL unida - FOLHAMAX",
+   "data": "2026-10-03T21:58:31.000Z"
+  },
+  "gn:ranalli revela articulação para podemos indicar vice de abílio na próxima eleição": {
+   "titulo": "Ranalli revela articulação para Podemos indicar vice de Abílio na próxima eleição - Estadão MT",
+   "data": "2026-10-03T21:34:00.000Z"
+  },
+  "gn:cuiabá cria semana da neurodiversidade e inclusão educacional": {
+   "titulo": "Cuiabá cria Semana da Neurodiversidade e Inclusão Educacional - Fatos de Mato Grosso",
+   "data": "2026-10-03T21:28:00.000Z"
+  },
+  "gn:ilde diz que diálogo com oposição pode ter provocado reação de abilio: “sempre conversei c": {
+   "titulo": "Ilde diz que diálogo com oposição pode ter provocado reação de Abilio: “Sempre conversei com eles” - Olhar Direto",
+   "data": "2026-10-03T18:32:00.000Z"
+  },
+  "gn:abilio: mulheres deveriam fazer manifestação contra cartilha do governo lula que trata mãe": {
+   "titulo": "Abilio: Mulheres deveriam fazer manifestação contra cartilha do Governo Lula que trata mãe como pessoa que gesta - RepórterMT",
+   "data": "2026-10-03T18:08:00.000Z"
+  },
+  "gn:abilio alerta para cenário de vg em cuiabá após eleição da câmara": {
+   "titulo": "Abilio alerta para cenário de VG em Cuiabá após eleição da Câmara - noveen.com.br",
+   "data": "2026-10-03T14:06:00.000Z"
+  },
+  "gn:abilio vê risco de cuiabá repetir crise de vg com ilde na mesa": {
+   "titulo": "Abilio vê risco de Cuiabá repetir crise de VG com Ilde na Mesa - MidiaNews",
+   "data": "2026-10-02T21:00:00.000Z"
   }
  },
- "ultima_checagem": "2026-10-02T20:09:03.074Z",
+ "ultima_checagem": "2026-10-05T12:23:37.371Z",
  "pautas_criadas": [
   {
    "data": "2026-10-01",
@@ -587,6 +643,17 @@
    "card": "pautas/cards/2026-10-02-mesa-camara-cuiaba-kassio.card.json",
    "agenda_id": 80,
    "dossie": "pautas/2026-09-30-camara-cuiaba-eleicao-da-mesa.md (seção 'Atualização de 02/10/2026')"
+  },
+  {
+   "data": "2026-10-05",
+   "titulo": "Na véspera da eleição da Mesa, Abilio prevê relação \"mais distante\" com a Câmara de Cuiabá; Ilde diz que não fará oposição",
+   "arquivo": "pautas/camara-cuiaba/2026-10-05-mesa-vespera-abilio-ilde.md",
+   "ghost_slug": "vespera-eleicao-mesa-camara-de-cuiaba-abilio-ilde",
+   "ghost_id": "6ac396b4315b6b29ddbc4d0e",
+   "previa": "https://hojemt.com.br/p/d21c23c2-6b59-4f5d-bf46-344445de9f56/",
+   "status": "rascunho",
+   "arte": "arte pendente (Canva sem autorização no conector; capa e card no próximo disparo com Canva)",
+   "dossie": "pautas/2026-09-30-camara-cuiaba-eleicao-da-mesa.md (atualização de 05/10)"
   }
  ]
 }
