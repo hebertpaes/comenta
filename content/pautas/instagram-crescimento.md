@@ -82,11 +82,11 @@ Leitura da Graph API (Zapier) em `instagram-metricas.json`:
 
 | # | Fase | Post | Formato | Situação |
 |---|---|---|---|---|
-| 1 | Alcance | "Em MT, a urna fecha às 16h" (horário, documento, celular, justificativa) | Reel 25 s | **Pronto**, agenda item 27, 24/09 19:30 |
-| 2 | Alcance | "Quem são os 6 candidatos ao governo de MT?" (1 por slide, ordem alfabética, fotos do TSE) | Carrossel 8 slides | **Pronto**, agenda item 28, 25/09 19:30 (substitui o post único 23) |
-| 3 | Alcance | Charge em movimento com a charge mais recente de política de MT | Reel | A fazer (a partir das charges 24/25 no Canva) |
-| 4 | Retenção | "Como ver os bens e a ficha de qualquer candidato em 1 minuto" (DivulgaCand passo a passo) | Carrossel | A fazer; conferir cada tela no site do TSE antes |
-| 5 | Retenção | "Votar conta como prova de vida do INSS?" | Reel | A fazer; confirmar a regra atual no site do INSS antes |
+| 1 | Alcance | "Em MT, a urna fecha às 16h" (horário, documento, celular, justificativa) | Reel 25 s | Publicado em 24/09 (https://www.instagram.com/reel/DdsFSp1kgsx/); até 05/10: 0 curtidas, 0 comentários (alcance só no Insights) |
+| 2 | Alcance | "Quem são os 6 candidatos ao governo de MT?" (1 por slide, ordem alfabética, fotos do TSE) | Carrossel 8 slides | Publicado em 26/09 (https://www.instagram.com/p/Ddv8pt3FxRv/); até 05/10: 0 curtidas, 0 comentários (alcance só no Insights) |
+| 3 | Alcance | Charge em movimento com a charge mais recente de política de MT | Reel | A fazer (a partir das charges 24/25 no Canva); 05/10: arte pendente, Canva sem autorização |
+| 4 | Retenção | "Como ver os bens e a ficha de qualquer candidato em 1 minuto" (DivulgaCand passo a passo) | Carrossel | A fazer; conferir cada tela no site do TSE antes; 05/10: reavaliar o gancho depois do 1º turno |
+| 5 | Retenção | "Votar conta como prova de vida do INSS?" | Reel | A fazer; confirmar a regra atual no site do INSS antes; 05/10: reavaliar o gancho depois do 1º turno |
 | 6 | Retenção | "Como conferir as contas da sua prefeitura no TCE-MT" | Carrossel | A fazer; conferir o caminho no portal do TCE-MT |
 | 7 | Prova | "3 boatos da eleição em MT que checamos nesta semana" | Carrossel | A fazer, com as checagens da semana |
 | 8 | Prova | Bastidor da charge: da foto oficial à caricatura | Reel | A fazer |

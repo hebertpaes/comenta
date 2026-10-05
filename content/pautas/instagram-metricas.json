@@ -12,12 +12,91 @@
     "curtidas": 6,
     "comentarios": 0,
     "posts_com_curtida": 6,
-    "formatos": {"IMAGE": 15, "VIDEO": 3, "CAROUSEL_ALBUM": 2}
+    "formatos": {
+     "IMAGE": 15,
+     "VIDEO": 3,
+     "CAROUSEL_ALBUM": 2
+    }
    },
    "observacoes": [
     "Legendas longas (várias com 1.500 a 2.000 caracteres) e sem gancho visual na primeira linha.",
     "3 Reels antigos eram repost de vídeo de terceiros (0 a 1 curtida).",
     "Nenhum post pede salvar ou compartilhar; nenhum tem cara de guia útil."
+   ],
+   "insights_manual": null
+  },
+  {
+   "data": "2026-10-05",
+   "fonte": "Graph API via Zapier (GET /17841460614185827?fields=followers_count,follows_count,media_count,media.limit(40){timestamp,media_type,like_count,comments_count,permalink}), 13:30 UTC",
+   "seguidores": 53,
+   "seguindo": 0,
+   "posts": 56,
+   "variacao_vs_2026-09-24": {
+    "seguidores": 0,
+    "seguindo": -66,
+    "posts": 36
+   },
+   "ultimos_7_dias": {
+    "janela": "2026-09-28 a 2026-10-05",
+    "posts": 4,
+    "curtidas": 1,
+    "comentarios": 0,
+    "formatos": {
+     "IMAGE": 3,
+     "VIDEO": 1
+    }
+   },
+   "top3": [
+    {
+     "permalink": "https://www.instagram.com/reel/Dd_1CLOkbna/",
+     "formato": "VIDEO (Reel)",
+     "curtidas": 1,
+     "comentarios": 0,
+     "post": "RADAR ELEITORAL · Boletim nº 5 (02/10)",
+     "sequencia": false
+    },
+    {
+     "permalink": "https://www.instagram.com/p/DeF1W_7DGKE/",
+     "formato": "IMAGE (charge)",
+     "curtidas": 0,
+     "comentarios": 0,
+     "post": "CHARGE · Baixinha, firme em Taques (04/10)",
+     "sequencia": false
+    },
+    {
+     "permalink": "https://www.instagram.com/p/Dd6rKTnFyKR/",
+     "formato": "IMAGE (charge)",
+     "curtidas": 0,
+     "comentarios": 0,
+     "post": "CHARGE · Patrocínio pediu substituição (30/09)",
+     "sequencia": false
+    }
+   ],
+   "sequencia": [
+    {
+     "n": 1,
+     "permalink": "https://www.instagram.com/reel/DdsFSp1kgsx/",
+     "formato": "Reel",
+     "publicado": "2026-09-24T23:41:00Z",
+     "curtidas": 0,
+     "comentarios": 0
+    },
+    {
+     "n": 2,
+     "permalink": "https://www.instagram.com/p/Ddv8pt3FxRv/",
+     "formato": "Carrossel",
+     "publicado": "2026-09-26T11:39:33Z",
+     "curtidas": 0,
+     "comentarios": 0
+    }
+   ],
+   "metas": "2 semanas (até ~08/10): 150 seguidores e 1 post com alcance ≥ 530 contas — seguidores parados em 53; alcance só aparece em Insights (sem leitura manual até agora).",
+   "observacoes": [
+    "Seguidores parados em 53 desde 24/09; nos últimos 7 dias, 4 posts e 1 curtida no total.",
+    "\"Seguindo\" caiu de 66 para 0: conferir com o editor se a conta deixou de seguir perfis (a API só mostra o número).",
+    "Entre 25 e 26/09 o lote de charges publicou cerca de 30 imagens em poucas horas; nenhuma teve curtida ou comentário.",
+    "Os posts 3 e 4 da sequência não foram produzidos: o conector do Canva está sem autorização (05/10).",
+    "Com o 1º turno encerrado em 04/10, os posts 4 (bens dos candidatos no DivulgaCand) e 5 (votar como prova de vida do INSS) perdem o gancho; reavaliar com o editor antes de produzir."
    ],
    "insights_manual": null
   }
