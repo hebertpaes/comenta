@@ -1,0 +1,45 @@
+{
+  "slug": "sol-nas-fazendas-brasileiras",
+  "materia": "https://hojemt.com.br/sol-nas-fazendas-brasileiras/",
+  "titulo": "Sol nas Fazendas Brasileiras",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge do dia do publicador, charge-dia-*.webp; rotina de charges, 06/10/2026 ~18:30 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal",
+  "legenda": {
+    "site_16x9": "No campo de MT, até o boi descansa à sombra do painel solar.",
+    "instagram_4x5": "Até o boi já pega sombra no painel solar."
+  },
+  "contexto": "Curta sobre o crescimento da energia solar no Brasil. A curta cita 50 GW (ANEEL) como marca recente; a ABSOLAR já noticiou 60 GW e buscas citam 77,6 GW em 2026 — dado da curta parece desatualizado (para o editor). A charge não usa números.",
+  "fontes": [
+    "https://hojemt.com.br/sol-nas-fazendas-brasileiras/",
+    "https://www.absolar.org.br/noticias-externas/energia-solar-atinge-60-gw-de-capacidade-instalada-no-brasil/"
+  ],
+  "regras_da_cena": "fazenda de MT com soja e campo de painéis solares; produtor genérico tirando o chapéu para um sol sorridente; vacas nelore à sombra dos painéis; sem texto, logos ou bandeiras",
+  "personagens": [],
+  "anatomia": "conferida em zoom: dois braços",
+  "canva": {
+    "design_site_16x9": "DAHXQpgE91w",
+    "arte_16x9": "MAHXQl2WvfM",
+    "design_instagram_4x5": "DAHXQlSZ25k",
+    "arte_4x5": "MAHXQvVe-HA",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "94",
+    "quando": "2026-10-09T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-06-sol-nas-fazendas-brasileiras.jpg",
+    "instagram_4x5": "2026-10-06-sol-nas-fazendas-brasileiras-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-06-sol-nas-fazendas-brasileiras.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/sol-nas-fazendas-brasileiras-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-06-sol-nas-fazendas-brasileiras-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 06/10/2026 ~18:35 UTC (antes: charge do dia do publicador, charge-dia-1791310239.webp)"
+}

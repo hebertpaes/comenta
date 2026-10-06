@@ -1,0 +1,46 @@
+{
+  "slug": "fim-de-festa-caro",
+  "materia": "https://hojemt.com.br/fim-de-festa-caro/",
+  "titulo": "Fim de festa caro",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 06/10/2026 ~18:30 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: tema de cobrança/denúncia, cena neutra",
+  "legenda": {
+    "site_16x9": "A campanha acabou; o acerto com a equipe ficou para depois.",
+    "instagram_4x5": "A campanha acabou; o acerto ficou para depois."
+  },
+  "contexto": "Cabos eleitorais de Nova Monte Verde dizem não ter recebido pela campanha de Emanuelzinho (PSD), que não se reelegeu; a vereadora Vera Lúcia (MDB) intermediou e diz que o gabinete confirmou pagamento sem data (RepórterMT, Folhamax, Infoverus). Por ser tema de cobrança/acusação, a charge é cena neutra: comitê vazio, sem pessoa e sem dinheiro.",
+  "fontes": [
+    "https://hojemt.com.br/fim-de-festa-caro/",
+    "https://www.reportermt.com/politica/cabos-eleitorais-cobram-emanuelzinho-apos-ele-perder-eleicao-e-nao-pagar-equipe-vereadora-expoe-calote/244724",
+    "https://www.folhamax.com/politica/cabos-eleitorais-denunciam-deputado-e-vereadora-por-calote-em-mt-prints/575855",
+    "https://www.infoverus.com.br/politica/cabos-eleitorais-dizem-nao-ter-recebido-por-campanha-de-emanuelzinho-e-relatam-dificuldades-financeiras-veja-prints/36201"
+  ],
+  "regras_da_cena": "comitê de campanha vazio no dia seguinte à eleição: cadeiras empilhadas, balões murchos, ventilador desligado, garrafa térmica e caixas de lanche vazias, celular com notificações; sem pessoas e sem dinheiro",
+  "personagens": [],
+  "canva": {
+    "design_site_16x9": "DAHXQsnVYbM",
+    "arte_16x9": "MAHXQpHfgaQ",
+    "design_instagram_4x5": "DAHXQh7V_q0",
+    "arte_4x5": "MAHXQqvDUck",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "aguardando_decisao",
+    "agenda_id": "95",
+    "obs": "tema de cobrança; editor decide"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-06-fim-de-festa-caro.jpg",
+    "instagram_4x5": "2026-10-06-fim-de-festa-caro-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-06-fim-de-festa-caro.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/fim-de-festa-caro-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-06-fim-de-festa-caro-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 06/10/2026 ~18:35 UTC (antes: charge automática do publicador, charge-1791310939.webp)"
+}

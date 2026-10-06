@@ -1615,6 +1615,54 @@
       "materia": "https://hojemt.com.br/reinado-de-conveniencia/",
       "charge_json": "pautas/charges/2026-10-06-reinado-de-conveniencia.json",
       "obs": "assunto vale até a eleição da Mesa da ALMT. Fontes: RepórterMT (reportermt.com/politica/max-russi-confirma-que-vai-disputar-a-presidencia-da-assembleia-legislativa-pela-segunda-vez/244702), Nativa News (nativanews.com.br/politica/apos-ser-o-mais-votado-de-mt-max-mira-novo-mandato-na-presidencia-da-assembleia/), VIP MT. Fala de Max sem aspas porque o texto literal não foi conferido."
+    },
+    {
+      "id": "93",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-09T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Colheita amarga na Câmara",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-colheita-amarga-na-camara-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Colheita amarga na Câmara\n\nVistoria na lavoura alheia: pouca fruta.\n\nDepois da eleição de domingo (4), o prefeito de Cuiabá, Abilio Brunini (PL), comentou o desempenho dos vereadores de oposição: \"Dá para afirmar que ser oposição ao prefeito de Cuiabá não está dando muitos frutos\" (VG Notícias). Dos sete vereadores da Capital que disputaram a eleição, só Samantha Íris (PL) se elegeu (RepórterMT, MidiaNews).\n\nLeia a curta completa: hojemt.com.br/colheita-amarga-na-camara\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #cuiaba #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/colheita-amarga-na-camara/",
+      "charge_json": "pautas/charges/2026-10-06-colheita-amarga-na-camara.json",
+      "obs": "próximo horário livre de charge (07:30 de 09/10). Fala conferida no VG Notícias (vgnoticias.com.br/politica/abilio-provoca-oposicao-apos-eleicao-nao-esta-dando-muitos-frutos/153127)."
+    },
+    {
+      "id": "94",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-09T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Sol nas Fazendas Brasileiras",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-sol-nas-fazendas-brasileiras-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Sol nas Fazendas Brasileiras\n\nAté o boi já pega sombra no painel solar.\n\nA energia solar segue crescendo no Brasil e já ocupa telhados, galpões e áreas de fazendas, segundo a Associação Brasileira de Energia Solar Fotovoltaica (ABSOLAR).\n\nLeia a curta completa: hojemt.com.br/sol-nas-fazendas-brasileiras\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #energiasolar #agro #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/sol-nas-fazendas-brasileiras/",
+      "charge_json": "pautas/charges/2026-10-06-sol-nas-fazendas-brasileiras.json",
+      "obs": "legenda sem número de propósito: a curta cita 50 GW (ANEEL) como novidade, mas a ABSOLAR já noticiou 60 GW (absolar.org.br/noticias-externas/energia-solar-atinge-60-gw-de-capacidade-instalada-no-brasil/) e buscas citam 77,6 GW em 2026 (Canal Solar, que bloqueia leitura automática; não conferido). Editor pode ajustar."
+    },
+    {
+      "id": "95",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Fim de festa caro",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-fim-de-festa-caro-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Fim de festa caro\n\nA campanha acabou; o acerto ficou para depois.\n\nEm Nova Monte Verde, trabalhadores contratados para a campanha do deputado federal Emanuelzinho (PSD), que não se reelegeu, dizem que ainda não receberam pelo serviço; a contratação foi intermediada pela vereadora Vera Lúcia (MDB). Segundo a vereadora, o gabinete do deputado confirmou que o pagamento será feito, sem informar data (RepórterMT, Folhamax, Infoverus).\n\nLeia a curta completa: hojemt.com.br/fim-de-festa-caro\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/fim-de-festa-caro/",
+      "charge_json": "pautas/charges/2026-10-06-fim-de-festa-caro.json",
+      "obs": "tema de cobrança/denúncia (cabos eleitorais sem pagamento): charge em cena neutra, sem pessoa e sem dinheiro; aguardando decisão do editor para ir ao Instagram. Ouvir Emanuelzinho antes. Fontes: reportermt.com/politica/cabos-eleitorais-cobram-emanuelzinho-apos-ele-perder-eleicao-e-nao-pagar-equipe-vereadora-expoe-calote/244724; folhamax.com/politica/cabos-eleitorais-denunciam-deputado-e-vereadora-por-calote-em-mt-prints/575855; infoverus.com.br/politica/cabos-eleitorais-dizem-nao-ter-recebido-por-campanha-de-emanuelzinho-e-relatam-dificuldades-financeiras-veja-prints/36201."
     }
   ]
 }

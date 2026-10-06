@@ -1,0 +1,54 @@
+{
+  "slug": "colheita-amarga-na-camara",
+  "materia": "https://hojemt.com.br/colheita-amarga-na-camara/",
+  "titulo": "Colheita amarga na Câmara",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 06/10/2026 ~18:30 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": "Não está dando muitos frutos.",
+  "balao_obs": "trecho literal da fala de Abilio citada na curta e no VG Notícias: \"Dá para afirmar que ser oposição ao prefeito de Cuiabá não está dando muitos frutos\"",
+  "legenda": {
+    "site_16x9": "O prefeito vistoriou a lavoura alheia e achou pouca fruta.",
+    "instagram_4x5": "Vistoria na lavoura alheia: pouca fruta."
+  },
+  "contexto": "Abilio comentou que ser oposição a ele 'não está dando muitos frutos' depois que seis dos sete vereadores de Cuiabá que disputaram a eleição de 4/10 não se elegeram. A charge mostra só Abilio vistoriando uma lavoura seca, sem retratar os vereadores.",
+  "fontes": [
+    "https://hojemt.com.br/colheita-amarga-na-camara/",
+    "https://www.vgnoticias.com.br/politica/abilio-provoca-oposicao-apos-eleicao-nao-esta-dando-muitos-frutos/153127"
+  ],
+  "regras_da_cena": "Abilio de camiseta cinza e chapéu de palha numa lavoura seca, examinando com lupa uma planta murcha com uma frutinha; regador vazio; sem outras pessoas; sem texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini",
+      "referencia_canva": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "origem": "galeria oficial do prefeito, Prefeitura de Cuiabá (Foto: Rennan Oliveira/Secom), set/2026; só referência de desenho"
+    }
+  ],
+  "anatomia": "conferida em zoom (16:9 e 4:5): dois braços e duas mãos",
+  "canva": {
+    "design_site_16x9": "DAHXQvZ_oSU",
+    "arte_16x9": "MAHXQl2ZUZs",
+    "design_instagram_4x5": "DAHXQibTr-k",
+    "arte_4x5": "MAHXQokeSac",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "93",
+    "quando": "2026-10-09T07:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-06-colheita-amarga-na-camara.jpg",
+    "instagram_4x5": "2026-10-06-colheita-amarga-na-camara-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-06-colheita-amarga-na-camara.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/colheita-amarga-na-camara-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-06-colheita-amarga-na-camara-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 06/10/2026 ~18:35 UTC (antes: charge automática do publicador, charge-1791310971.webp)"
+}
