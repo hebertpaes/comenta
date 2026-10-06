@@ -1148,6 +1148,44 @@
       "antes": "capa-e45ec4f3039536f1.webp (capa genérica do publicador)",
       "obs": "fonte da matéria é a Prefeitura de Sorriso (Semsa), sem foto com licença explícita; ilustração sem rosto. Para o editor: o texto diz 'nesta sexta-feira, 6 de outubro' (06/10/2026 é terça).",
       "data": "2026-10-06"
+    },
+    {
+      "slug": "dois-votos-um-peso-entenda-a-escolha-dupla-para-o-senado-em-2026",
+      "titulo": "Dois votos, um peso: entenda a escolha dupla para o Senado em 2026",
+      "materia": "https://hojemt.com.br/dois-votos-um-peso-entenda-a-escolha-dupla-para-o-senado-em-2026/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHXPwcRAfg",
+        "arte": "MAHXP4BpNx8",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "eleitor de costas na cabine de votação de uma escola de MT; balança de dois pratos equilibrada com duas fichas iguais na mesa dos mesários; mãos dos mesários sem rosto",
+      "arquivo": "2026-10-06-dois-votos-senado.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-06-dois-votos-senado.jpg",
+      "og": "https://hojemt.com.br/content/files/2026/10/dois-votos-um-peso-entenda-a-escolha-dupla-para-o-senado-em--wa-1.jpg",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "antes": "opiniao-1791115442.webp (capa genérica do publicador)",
+      "obs": "refeita na hora UTC 15 (backlog de Opinião); anatomia conferida",
+      "data": "2026-10-06"
+    },
+    {
+      "slug": "lula-na-onu-e-o-diesel-o-que-o-mato-grossense-sente-na-bomba",
+      "titulo": "Lula na ONU e o diesel: o que o mato‑grossense sente na bomba",
+      "materia": "https://hojemt.com.br/lula-na-onu-e-o-diesel-o-que-o-mato-grossense-sente-na-bomba/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHXP6x045w",
+        "arte": "MAHXP2KkcaQ",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "caminhoneiro de costas abastecendo carreta bitrem em posto de rodovia de MT com soja ao fundo; na TV da conveniência, homem de cabelos grisalhos de terno, de costas, discursando num plenário internacional sem logos",
+      "arquivo": "2026-10-06-lula-onu-diesel.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-06-lula-onu-diesel.jpg",
+      "og": "https://hojemt.com.br/content/files/2026/10/lula-na-onu-e-o-diesel-o-que-o-mato-grossense-sente-na-bomba-wa-1.jpg",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "antes": "opiniao-1790510689.webp (capa genérica do publicador)",
+      "obs": "refeita na hora UTC 15 (backlog de Opinião); personagem real sem rosto visível",
+      "data": "2026-10-06"
     }
   ]
 }
