@@ -1450,13 +1450,13 @@
       "publicado_em": null,
       "quando": null,
       "formato": "card",
-      "titulo": "Câmara de Lucas do Rio Verde debate mudanças no Plano Diretor na terça e vota no dia 8",
+      "titulo": "Audiência sobre o Plano Diretor de Lucas do Rio Verde cobra travessias da BR-163",
       "midia": [
-        "https://hojemt.com.br/content/images/2026/10/2026-10-02-lucas-plano-diretor-1.jpg"
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-lucas-plano-diretor-audiencia.jpg"
       ],
-      "legenda": "Câmara de Lucas do Rio Verde debate mudanças no Plano Diretor na terça e vota no dia 8\n\nOs vereadores propõem o zoneamento do novo perímetro urbano e a inclusão de ruas perto da Rua São Paulo e da Avenida Brasil; a ideia é que a Prefeitura possa abrir as vias e cobrar depois por contribuição de melhoria. A audiência pública é na terça (6), às 8h, no auditório da Câmara, aberta à população.\n\nMatéria completa: hojemt.com.br/camara-de-lucas-do-rio-verde-audiencia-plano-diretor\n\n#lucasdorioverde #planodiretor #matogrosso #camaramunicipal #hojemt",
+      "legenda": "Audiência sobre o Plano Diretor de Lucas do Rio Verde cobra travessias da BR-163\n\nA Câmara fez nesta terça (6) a audiência pública sobre as mudanças que os vereadores propõem ao Plano Diretor: zoneamento do novo perímetro urbano e novas vias. O vereador Hélio Kaminski disse que a cidade tem só uma travessia segura da BR-163 e precisa de \"duas ou três\". Prefeitura, CDL e loteadores também falaram. As sugestões vão às comissões antes da votação em plenário.\n\nMatéria completa: hojemt.com.br/camara-de-lucas-do-rio-verde-audiencia-plano-diretor\n\n#lucasdorioverde #planodiretor #matogrosso #camaramunicipal #hojemt",
       "materia": "https://hojemt.com.br/camara-de-lucas-do-rio-verde-audiencia-plano-diretor/",
-      "obs": "publicar só depois que a matéria (rascunho no Ghost, 6ac01e676357bc8c6ad4f0dd) for publicada, e antes da audiência de 06/10"
+      "obs": "card e legenda refeitos em 06/10 depois da audiência (o card anterior anunciava a audiência). Publicar só depois que a matéria (rascunho no Ghost, 6ac01e676357bc8c6ad4f0dd) for publicada."
     },
     {
       "id": "83",

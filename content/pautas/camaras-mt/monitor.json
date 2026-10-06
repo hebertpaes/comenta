@@ -88,14 +88,18 @@
   {
    "data": "2026-10-02",
    "cidade": "Lucas do Rio Verde",
-   "titulo": "Câmara de Lucas do Rio Verde faz audiência pública na terça sobre mudanças no Plano Diretor e prevê votação para o dia 8",
+   "titulo": "Audiência sobre o Plano Diretor de Lucas do Rio Verde cobra travessias da BR-163; mudanças passam pelas comissões antes do voto",
    "arquivo": "pautas/camaras-mt/2026-10-02-lucas-plano-diretor-audiencia.md",
    "ghost_id": "6ac01e676357bc8c6ad4f0dd",
    "previa": "https://hojemt.com.br/p/f87b0f98-b062-4e48-88d1-242bbb93b05e/",
    "status": "rascunho",
    "arte": "feita em 02/10/2026 (Canva DAHW5Why-fU, imagem MAHW5SPayAE; feature_image, og e registro.json atualizados)",
-   "card": "pautas/cards/2026-10-02-lucas-plano-diretor.jpg",
-   "agenda_instagram": "82"
+   "card": "pautas/cards/2026-10-06-lucas-plano-diretor-audiencia.jpg",
+   "agenda_instagram": "82",
+   "atualizado": "2026-10-06: resultado da audiência pública (notícia oficial da Câmara e vídeo psDiEE4hHug); card e legenda do item 82 refeitos",
+   "fontes": [
+    "https://www.camaralucasdorioverde.mt.gov.br/Noticias/Camara-debate-mudancas-no-plano-diretor-com-participacao-da-sociedade-2445/"
+   ]
   }
  ],
  "vistos": {
@@ -812,7 +816,7 @@
    "data": "2026-10-06"
   },
   "barra:gn:trajetória e atuação: conheça o perfil dos deputados eleitos para a 21ª legislatura": {
-   "titulo": "Trajetória e atuação: conheça o perfil dos deputados eleitos para a 21ª Legislatura - al.mt.gov.br",
+   "titulo": "Trajetória e atuação: conheça o perfil dos deputados eleitos para a 21ª Legislatura - Assembleia Legislativa do Estado de Mato Grosso",
    "data": "2026-10-05"
   },
   "barra:gn:nova composição da almt une parlamentares reeleitos, estreantes e retorno ao parlamento pa": {
@@ -822,9 +826,57 @@
   "chapada:gn:um voto que conta": {
    "titulo": "Um voto que conta - Alochapada",
    "data": "2026-10-03"
+  },
+  "barra:gn:intervenção em querência expõe sobrepreço em exames, resgata r$ 15 milhões e reformula red": {
+   "titulo": "Intervenção em Querência expõe sobrepreço em exames, resgata R$ 15 milhões e reformula rede de Saúde - Notícia dos Municípios",
+   "data": "2026-10-06"
+  },
+  "chapada:gn:ufmt abre pré-inscrições para bacharelado em ciência e tecnologia no polo de chapada": {
+   "titulo": "UFMT abre pré-inscrições para bacharelado em ciência e tecnologia no polo de Chapada - Alochapada",
+   "data": "2026-10-06"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/indicacao-pede-melhorias-na-sinalizacao-viaria-dos-bairros-morada-do-bosque-i-ii-e-iii-em-sorriso": {
+   "titulo": "Indicação pede melhorias na sinalização viária dos bairros Morada do Bosque I, II e III, em Sorriso",
+   "data": "2026-10-06"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/camara-de-sorriso-realiza-sessao-solene-em-homenagem-aos-20-anos-do-colegio-regina-coeli-12401": {
+   "titulo": "Câmara de Sorriso realiza sessão solene em homenagem aos 20 anos do Colégio Regina Coeli",
+   "data": "2026-10-06"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/sorriso-camara-realiza-sessao-solene-em-homenagem-ao-dia-do-gaucho-com-honrarias-ao-ctg-12400": {
+   "titulo": "Sorriso: Câmara realiza sessão solene em homenagem ao Dia do Gaúcho com honrarias ao CTG",
+   "data": "2026-10-06"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/9o-ride-sorriso": {
+   "titulo": "9º RIDE SORRISO",
+   "data": "2026-10-06"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/requerimento-cobra-informacoes-sobre-r-135-milhao-em-recursos-para-a-saude-de-sorriso": {
+   "titulo": "Requerimento cobra informações sobre R$ 1,35 milhão em recursos para a Saúde de Sorriso",
+   "data": "2026-10-06"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/construcao-de-praca-publica-no-santa-maria-i-e-solicitada-pela-camara-de-sorriso": {
+   "titulo": "Construção de praça pública no Santa Maria I é solicitada pela Câmara de Sorriso",
+   "data": "2026-10-06"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/parlamentar-quer-recapeamento-asfaltico-em-rua-do-bairro-uniao-em-sorriso": {
+   "titulo": "Parlamentar quer recapeamento asfáltico em rua do bairro União, em Sorriso",
+   "data": "2026-10-06"
+  },
+  "lrv:https://www.camaralucasdorioverde.mt.gov.br/Noticias/Camara-debate-mudancas-no-plano-diretor-com-participacao-da-sociedade-2445/": {
+   "titulo": "Câmara debate mudanças no Plano Diretor com participação da sociedade",
+   "data": "2026-10-06"
+  },
+  "lrv:yt:psDiEE4hHug": {
+   "titulo": "Audiência Pública sobre alterações proposta pelos Vereadores ao Plano Diretor",
+   "data": "2026-10-06"
+  },
+  "barra:gn:veja quem são os 55 deputados estaduais eleitos no rio grande do sul": {
+   "titulo": "Veja quem são os 55 deputados estaduais eleitos no Rio Grande do Sul - GZH",
+   "data": "2026-10-04"
   }
  },
- "ultima_checagem": "2026-10-06T12:39:36.388Z",
+ "ultima_checagem": "2026-10-06T21:29:36.288Z",
  "descartados_2026-10-01_tarde": [
   {
    "cidade": "Sorriso",
@@ -855,6 +907,7 @@
   "Sorriso: 33ª Sessão Ordinária em andamento (06/10, 8h; vídeo https://www.youtube.com/watch?v=lCSfbX2jlOo). Pauta oficial (sorriso.siscam.com.br/Sessoes/Documento/129458, arquivo Id=206899): o prefeito Alei Fernandes pediu e o presidente deferiu a retirada dos PLs 127/2026 (revoga leis), 132/2026 (Programa Sorriso Sustentável, Política Municipal de Governança Climática e Fundo Verde Municipal) e 161/2026 (autorregularização fiscal e repactuação de estoque de ISSQN); 3ª votação do PL 177/2026 (Domicílio Eletrônico do Contribuinte) e 2ª do PL 170/2026 (crédito especial para emendas impositivas de 2026); Requerimentos 155/2026 (execução da emenda impositiva 18/2024 para piscina do Caps) e 156/2026 (emenda estadual 263/2025 de Janaina Riva, R$ 349.500 para ambulância, e R$ 1 milhão federal de MAC). Aguardar resultado/notícia da Câmara para avaliar pauta no próximo disparo (motivo da retirada dos projetos não divulgado)",
   "Chapada: sessão ordinária adiada de 30/09 para 06/10 (Ato Legislativo 021/2026) — sem pauta publicada nem notícia até 12:40 UTC; Alô Chapada 'Um voto que conta' (03/10) é opinião eleitoral, fora do escopo",
   "Barra do Garças: itens do Google Notícias sobre a nova composição da ALMT (al.mt.gov.br e Cenário MT, 05/10) não tratam da Câmara; sessão de 05/10 segue sem notícia oficial",
-  "Lucas do Rio Verde: nada novo; audiência pública do Plano Diretor hoje (06/10) e 32ª sessão em 08/10"
+  "Lucas do Rio Verde: nada novo; audiência pública do Plano Diretor hoje (06/10) e 32ª sessão em 08/10",
+  "Rodada de 20:37 UTC: Sorriso — sem notícia com resultado da 33ª sessão (só a Indicação 673/2026 de sinalização e nota da sessão solene do Colégio Regina Coeli de 29/09); Chapada — Alô Chapada sobre pré-inscrições da UFMT, sem relação com a Câmara; Barra do Garças — Google Notícias trouxe intervenção em Querência (outro município) e deputados do RS, fora do escopo; sites de Barra e de Lucas responderam 'fetch failed' na listagem (Lucas leu pelo texto direto)"
  ]
 }

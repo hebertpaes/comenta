@@ -1,37 +1,42 @@
-# Câmara de Lucas do Rio Verde faz audiência pública na terça sobre mudanças no Plano Diretor e prevê votação para o dia 8
+# Audiência sobre o Plano Diretor de Lucas do Rio Verde cobra travessias da BR-163; mudanças passam pelas comissões antes do voto
 
-**Editoria:** Cidades & Mato Grosso · **Status:** rascunho (revisar e publicar) · **Data:** 02/10/2026
+**Editoria:** Cidades & Mato Grosso · **Status:** rascunho (revisar e publicar) · **Data:** 02/10/2026 (atualizado em 06/10, depois da audiência)
 
-**Sutiã:** As alterações propostas pelos vereadores tratam do zoneamento do novo perímetro urbano e da inclusão de ruas na região da Rua São Paulo e da Avenida Brasil. A ideia é que a Prefeitura possa abrir as vias e cobrar depois por contribuição de melhoria.
+**Sutiã:** Vereadores, Prefeitura, comércio e loteadores discutiram zoneamento do novo perímetro urbano, novas vias e mobilidade. A Câmara diz que as sugestões serão analisadas pelas comissões antes da votação em plenário.
 
 ---
 
-A Câmara Municipal de Lucas do Rio Verde realiza na terça-feira (6), às 8h, no auditório do Legislativo, uma audiência pública para apresentar e discutir as alterações que os vereadores propõem ao Plano Diretor do município. O encontro é aberto à população e terá transmissão ao vivo pela Rádio Câmara, pelo Facebook e pelo YouTube oficiais da Casa, segundo a [Câmara](https://www.camaralucasdorioverde.mt.gov.br/Noticias/Audiencia-publica-sobre-alteracoes-no-plano-diretor-sera-realizada-nesta-terca-feira-06-2444/).
+A Câmara Municipal de Lucas do Rio Verde fez na manhã desta terça-feira (6) a audiência pública sobre as alterações que os vereadores propõem ao Plano Diretor do município. Participaram representantes da Prefeitura, profissionais, empreendedores, loteadores e moradores, que levaram sugestões sobre expansão urbana, zoneamento, infraestrutura e mobilidade, segundo a [Câmara](https://www.camaralucasdorioverde.mt.gov.br/Noticias/Camara-debate-mudancas-no-plano-diretor-com-participacao-da-sociedade-2445/). A gravação está no [canal oficial da Câmara no YouTube](https://www.youtube.com/watch?v=psDiEE4hHug).
 
-## O que muda
+## O que está em discussão
 
-De acordo com o presidente da Câmara, Airton Callai, as alterações tratam do zoneamento do novo perímetro urbano, sem mudanças no perímetro antigo, e da inserção de algumas ruas, principalmente na região da Rua São Paulo e da Avenida Brasil. Segundo ele, a área tem potencial para novas construções, mas hoje enfrenta limitações de infraestrutura. A proposta prevê que o município possa executar as obras de abertura das vias e cobrar depois por meio da contribuição de melhoria, tributo pago pelos donos de imóveis valorizados por uma obra pública.
+As alterações tratam do zoneamento do novo perímetro urbano, sem mudar o perímetro antigo, e da inclusão de ruas, principalmente na região da Rua São Paulo e da Avenida Brasil, segundo o presidente da Câmara, Airton Callai. A proposta prevê que a Prefeitura possa abrir as vias e cobrar depois por contribuição de melhoria, tributo pago pelos donos de imóveis valorizados por uma obra pública ([Câmara, 02/10](https://www.camaralucasdorioverde.mt.gov.br/Noticias/Audiencia-publica-sobre-alteracoes-no-plano-diretor-sera-realizada-nesta-terca-feira-06-2444/)). Na audiência, Callai citou intervenções nas avenidas Pará, Mato Grosso do Sul, São Paulo, Goiás, Santa Catarina e Amazonas e a continuidade da Beira Mata. "Precisamos dar um norte para o que vai acontecer em Lucas do Rio Verde. Isso inclui investidores, planejamento, água, esgoto, energia, obras públicas e a condição de que o investidor saiba quais são os requisitos para fazer seu investimento com tranquilidade jurídica", afirmou.
 
-"A intenção é que a gente mostre essas alterações e para que a gente possa votar aí no dia 8 de outubro a todas as alterações do Plano Diretor, que deve ser perpetuado aí por mais 10 anos, com certeza, no mínimo, sem novas alterações", afirmou Callai, segundo a assessoria da Câmara.
+## Travessias da BR-163
 
-Na sessão de quinta-feira (1º), o presidente disse que a discussão não deve ficar restrita aos vereadores. "Não é uma alteração somente da Câmara Municipal. Essas alterações basicamente se dão em torno do zoneamento do novo perímetro urbano que vai ser feito", afirmou, de acordo com o [Cenário MT](https://cenariomt.com.br/mato-grosso/lucas-do-rio-verde/camara-de-lucas-do-rio-verde-convoca-populacao-para-discutir-alteracoes-no-plano-diretor/).
+A mobilidade foi um dos temas principais. O vereador Hélio Kaminski disse que a cidade tem só uma travessia da BR-163 considerada segura: "O projeto está completo, porém, falta essa parte. Nós precisamos, minimamente, de duas ou três travessias". Callai respondeu que o Legislativo é favorável a buscar soluções para as travessias.
 
-## Quem foi chamado
+## Prefeitura, comércio e loteadores
 
-A Câmara convidou especialmente profissionais de engenharia, arquitetura e urbanismo, loteadores, imobiliárias e a CDL, além dos moradores. A audiência vai tratar somente das alterações propostas pelo Legislativo, segundo o presidente.
+O secretário de Desenvolvimento Econômico, Planejamento e Cidade, Danilo Messias, lembrou que o Plano Diretor é de 2007 e passa por atualização por causa do crescimento da cidade. "É uma discussão boa, uma participação da população e também mostra o nível de maturidade do município em olhar para o planejamento", disse. Segundo ele, a proposta amplia muito a área de planejamento e precisa considerar o interesse público, as áreas particulares e os empreendedores.
+
+O presidente da CDL, Petronilio de Sousa, fez perguntas sobre a expansão de áreas comerciais e a continuidade de vias importantes. A empresária Rafaela Frizzo, do setor de loteamentos, levantou preocupações sobre responsabilidades e exigências na entrega dos empreendimentos: "Nosso município está crescendo, está expandindo cada vez mais. Então, tem que ter um crescimento ordenado".
+
+## Próximos passos
+
+Em 2 de outubro, Callai falava em votar as alterações no dia 8. Depois da audiência, a Câmara informou que as sugestões serão analisadas pelas comissões, com o setor de planejamento, e que o novo Plano Diretor irá ao plenário depois dessa etapa, sem data definida no comunicado.
 
 ## O outro lado
 
-As matérias consultadas não trazem manifestação da Prefeitura de Lucas do Rio Verde, de entidades do setor imobiliário ou de moradores das áreas atingidas sobre as propostas. O tamanho da área, o número de ruas incluídas e a estimativa de custo das obras também não foram divulgados.
+As fontes consultadas não trazem manifestação de moradores das áreas atingidas pelas novas vias nem a estimativa de custo das obras.
 
 ---
 
-**Fontes:** Câmara Municipal de Lucas do Rio Verde (https://www.camaralucasdorioverde.mt.gov.br/Noticias/Audiencia-publica-sobre-alteracoes-no-plano-diretor-sera-realizada-nesta-terca-feira-06-2444/, 02/10/2026); Cenário MT (https://cenariomt.com.br/mato-grosso/lucas-do-rio-verde/camara-de-lucas-do-rio-verde-convoca-populacao-para-discutir-alteracoes-no-plano-diretor/, 02/10/2026).
+**Fontes:** Câmara Municipal de Lucas do Rio Verde (06/10/2026): https://www.camaralucasdorioverde.mt.gov.br/Noticias/Camara-debate-mudancas-no-plano-diretor-com-participacao-da-sociedade-2445/ · Câmara Municipal de Lucas do Rio Verde (02/10/2026): https://www.camaralucasdorioverde.mt.gov.br/Noticias/Audiencia-publica-sobre-alteracoes-no-plano-diretor-sera-realizada-nesta-terca-feira-06-2444/ · Cenário MT (02/10/2026): https://cenariomt.com.br/mato-grosso/lucas-do-rio-verde/camara-de-lucas-do-rio-verde-convoca-populacao-para-discutir-alteracoes-no-plano-diretor/
 
 **Checagem pendente:**
 
-- Número do projeto (ou das emendas) e quem é o autor: se as mudanças entram como emendas a um projeto do Executivo de revisão do Plano Diretor ou como projeto próprio da Câmara; conferir em Proposituras e na pauta da sessão de 08/10.
-- Mapa da área do novo perímetro urbano e lista das ruas incluídas perto da Rua São Paulo e da Avenida Brasil.
+- Número do projeto (ou das emendas) e autoria; mapa do novo perímetro e lista das ruas incluídas.
+- Se a votação de 08/10 foi mantida ou adiada (conferir a pauta da 32ª sessão em Publicações > Pautas das sessões).
 - Estimativa de custo das obras e regras da contribuição de melhoria (quem paga, limite por imóvel).
-- Posição da Prefeitura (Secretaria de Desenvolvimento Econômico, Planejamento e Cidade), da CDL, do setor imobiliário e de moradores.
-- Resultado da audiência de 06/10 e da votação de 08/10.
+- Ouvir moradores das áreas atingidas e o DNIT sobre novas travessias da BR-163. Ninguém foi procurado pelo HOJE MT até o fechamento deste rascunho.
