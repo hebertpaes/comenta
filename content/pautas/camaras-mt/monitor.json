@@ -504,7 +504,7 @@
    "data": "2026-10-01"
   },
   "lrv:yt:gHyTo4Yup9U": {
-   "titulo": "Sessão Ordinária Nº 31-2026 de 01-10-2026",
+   "titulo": "Audiência Pública sobre alterações proposta pelos Vereadores ao Plano Diretor",
    "data": "2026-10-01"
   },
   "barra:gn:dpemt cobra capsi em barra do garças após 211 crianças aguardarem atendimento - hipernotíc": {
@@ -781,7 +781,7 @@
   },
   "barra:yt:2cJYnY4oGw4": {
    "titulo": "TV CÂMARA - SESSÃO ORDINÁRIA 05/10/2026",
-   "data": "2026-10-05"
+   "data": "2026-10-06"
   },
   "chapada:gn:pivetta teve aprovação de 55% dos eleitores de chapada dos guimarães": {
    "titulo": "Pivetta teve aprovação de 55% dos eleitores de Chapada dos Guimarães - Alochapada",
@@ -806,9 +806,25 @@
   "chapada:gn:homem descobre aos 58 anos que pai biológico é cantor famoso": {
    "titulo": "Homem descobre aos 58 anos que pai biológico é cantor famoso - Alochapada",
    "data": "2026-10-03"
+  },
+  "sorriso:yt:lCSfbX2jlOo": {
+   "titulo": "33ª Sessão Ordinária 06-10-26",
+   "data": "2026-10-06"
+  },
+  "barra:gn:trajetória e atuação: conheça o perfil dos deputados eleitos para a 21ª legislatura": {
+   "titulo": "Trajetória e atuação: conheça o perfil dos deputados eleitos para a 21ª Legislatura - al.mt.gov.br",
+   "data": "2026-10-05"
+  },
+  "barra:gn:nova composição da almt une parlamentares reeleitos, estreantes e retorno ao parlamento pa": {
+   "titulo": "Nova composição da ALMT une parlamentares reeleitos, estreantes e retorno ao parlamento para o mandato de 2027 a 2031 - Cenário MT",
+   "data": "2026-10-05"
+  },
+  "chapada:gn:um voto que conta": {
+   "titulo": "Um voto que conta - Alochapada",
+   "data": "2026-10-03"
   }
  },
- "ultima_checagem": "2026-10-05T20:50:00Z",
+ "ultima_checagem": "2026-10-06T12:39:36.388Z",
  "descartados_2026-10-01_tarde": [
   {
    "cidade": "Sorriso",
@@ -834,5 +850,11 @@
   "Chapada: Alô Chapada (05/10) sobre votação de Pivetta no município, retomada do atendimento da Prefeitura, espetáculo infantil, clima e notícia sem relação com a Câmara — fora do escopo; sessão ordinária adiada para 06/10 (Ato Legislativo 021/2026) segue em acompanhamento",
   "Sorriso: GC Notícias sobre aumento de 11 para 15 vereadores (Proposta de Emenda à Lei Orgânica 01/2026) é de 09/04/2026 — antigo; sites da Câmara de Sorriso e de Barra do Garças deram 'fetch failed' nesta rodada",
   "Lucas do Rio Verde: Cenário MT de 28/09 ('bago roxo', fala de Hélio Kaminski na tribuna e reação de Jackson Lopes, Márcio Albieri e Airton Callai) — anterior à eleição e já sem gancho; próxima sessão ordinária (32ª) em 08/10, audiência do Plano Diretor em 06/10 (pauta de 02/10 já cobre)"
+ ],
+ "descartados_2026-10-06": [
+  "Sorriso: 33ª Sessão Ordinária em andamento (06/10, 8h; vídeo https://www.youtube.com/watch?v=lCSfbX2jlOo). Pauta oficial (sorriso.siscam.com.br/Sessoes/Documento/129458, arquivo Id=206899): o prefeito Alei Fernandes pediu e o presidente deferiu a retirada dos PLs 127/2026 (revoga leis), 132/2026 (Programa Sorriso Sustentável, Política Municipal de Governança Climática e Fundo Verde Municipal) e 161/2026 (autorregularização fiscal e repactuação de estoque de ISSQN); 3ª votação do PL 177/2026 (Domicílio Eletrônico do Contribuinte) e 2ª do PL 170/2026 (crédito especial para emendas impositivas de 2026); Requerimentos 155/2026 (execução da emenda impositiva 18/2024 para piscina do Caps) e 156/2026 (emenda estadual 263/2025 de Janaina Riva, R$ 349.500 para ambulância, e R$ 1 milhão federal de MAC). Aguardar resultado/notícia da Câmara para avaliar pauta no próximo disparo (motivo da retirada dos projetos não divulgado)",
+  "Chapada: sessão ordinária adiada de 30/09 para 06/10 (Ato Legislativo 021/2026) — sem pauta publicada nem notícia até 12:40 UTC; Alô Chapada 'Um voto que conta' (03/10) é opinião eleitoral, fora do escopo",
+  "Barra do Garças: itens do Google Notícias sobre a nova composição da ALMT (al.mt.gov.br e Cenário MT, 05/10) não tratam da Câmara; sessão de 05/10 segue sem notícia oficial",
+  "Lucas do Rio Verde: nada novo; audiência pública do Plano Diretor hoje (06/10) e 32ª sessão em 08/10"
  ]
 }
