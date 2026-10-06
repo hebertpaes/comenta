@@ -1,0 +1,57 @@
+{
+  "slug": "placas-sobre-votos",
+  "materia": "https://hojemt.com.br/placas-sobre-votos/",
+  "titulo": "Placas Sobre Votos",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 06/10/2026 ~21:40 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": "Eu acho que ele tinha mais placa do que votos que ele teve lá.",
+  "balao_obs": "fala literal de Abilio Brunini publicada pelo HNT (06/10, 15h55). A curta traz outra redação ('Eu passei num bairro e vi mais placas do Botelho do que ele recebeu de votos'), que não aparece literal nas fontes; a Folhamax registrou 'Passei no bairro Cidade Verde e via casas com placas do Botelho e a Samantha teve mais votos que ele lá'.",
+  "legenda": {
+    "site_16x9": "Na eleição, placa não vota.",
+    "instagram_4x5": "Na eleição, placa não vota."
+  },
+  "contexto": "Curta sobre a ironia de Abilio às placas de Eduardo Botelho (MDB). Botelho não aparece na charge (só placas em branco). Atenção para o editor: a frase entre aspas na curta não é literal nas fontes, e a curta diz que 'a oposição tem menos de 1% de vantagem', trecho sem sentido claro.",
+  "fontes": [
+    "https://hojemt.com.br/placas-sobre-votos/",
+    "https://www.hnt.com.br/politica/abilio-dispara-contra-botelho-e-diz-que-urnas-sinalizam-fim-de-velha-classe-politica/579431",
+    "https://www.folhamax.com/politica/abilio-ironiza-derrota-de-botelho-e-adversarios-placa-nao-vota/576005",
+    "https://www.vgnoticias.com.br/politica/abilio-compara-votacao-de-samantha-e-ludio-e-diz-que-esposa-venceria-petista-para-prefeita/153136"
+  ],
+  "regras_da_cena": "Abilio caricatura (camiseta cinza-escura, careca) numa rua de bairro com placas de campanha em branco diante das casas; urna eletrônica sem braços e sem rosto numa mesinha; sem texto, sem Botelho",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini (prefeito de Cuiabá)",
+      "referencia_canva": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "foto": "Galeria oficial do prefeito, Secom Cuiabá, set/2026 (tabela do README)",
+      "licenca": "referência de desenho"
+    }
+  ],
+  "anatomia": "conferida em zoom nas duas versões: dois braços, duas mãos, duas pernas",
+  "canva": {
+    "design_site_16x9": "DAHXRZjMT-Y",
+    "arte_16x9": "MAHXRfehIUI",
+    "design_instagram_4x5": "DAHXRXKGBqA",
+    "arte_4x5": "MAHXRTsHPQo",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "99",
+    "quando": "2026-10-10T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-06-placas-sobre-votos.jpg",
+    "instagram_4x5": "2026-10-06-placas-sobre-votos-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-06-placas-sobre-votos.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/placas-sobre-votos-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-06-placas-sobre-votos-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 06/10/2026 ~21:40 UTC (antes: charge automática do publicador, charge-1791321733.webp)"
+}

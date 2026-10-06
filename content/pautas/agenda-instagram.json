@@ -1693,6 +1693,38 @@
       "legenda": "Ilde Taques é eleito presidente da Câmara de Cuiabá com os 27 votos\n\nA chapa única \"Lealdade e Compromisso\", de Ilde Taques (Podemos), teve o voto de todos os vereadores nesta terça (6). A Mesa de 2027-2028 terá ainda Eduardo Magalhães, Maria Avalone, Adevair Cabral e Michelly Alencar; a posse é em 1º de janeiro de 2027. Ilde disse que a Câmara não será \"puxadinho\" da Prefeitura. O prefeito Abilio Brunini disse que nunca teve controle dos vereadores e parabenizou o eleito.\n\nMatéria completa: hojemt.com.br/ilde-taques-eleito-presidente-camara-de-cuiaba-27-votos\n\n#cuiaba #camaramunicipal #matogrosso #politica #hojemt",
       "materia": "https://hojemt.com.br/ilde-taques-eleito-presidente-camara-de-cuiaba-27-votos/",
       "obs": "publicar só depois que a matéria (rascunho no Ghost, 6ac5671f737b3659d67c564a) for publicada; conferir a grafia Avalone/Avallone antes"
+    },
+    {
+      "id": "98",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-10T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Oposição de fibra e fé",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-oposicao-de-fibra-e-fe-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Oposição de fibra e fé\n\nUrna fechou, mas a lupa continua aberta.\n\nDepois de o prefeito Abilio Brunini (PL) dizer que ser oposição a ele \"não está dando muitos frutos\", a vereadora Maysa Leão (Republicanos), que ficou como suplente de deputada estadual com 8.958 votos, disse que não é oposição, mas independente, e que vai continuar fiscalizando a Prefeitura de Cuiabá (VG Notícias).\n\nLeia a curta completa: hojemt.com.br/oposicao-de-fibra-e-fe\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #cuiaba #camaramunicipal #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/oposicao-de-fibra-e-fe/",
+      "charge_json": "pautas/charges/2026-10-06-oposicao-de-fibra-e-fe.json",
+      "obs": "próximo horário livre de charge; assunto pós-eleição, sem data de validade curta"
+    },
+    {
+      "id": "99",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-10T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Placas Sobre Votos",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-placas-sobre-votos-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Placas sobre votos\n\nNa eleição, placa não vota.\n\nNa Câmara de Cuiabá, nesta terça (6), o prefeito Abilio Brunini (PL) ironizou as placas de campanha de Eduardo Botelho (MDB) no bairro Cidade Verde: \"Eu acho que ele tinha mais placa do que votos que ele teve lá\" (HNT). Botelho não se elegeu deputado estadual; Samantha Íris (PL), mulher do prefeito, foi eleita com 57.900 votos (VG Notícias).\n\nLeia a curta completa: hojemt.com.br/placas-sobre-votos\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #cuiaba #eleicoes2026 #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/placas-sobre-votos/",
+      "charge_json": "pautas/charges/2026-10-06-placas-sobre-votos.json",
+      "obs": "próximo horário livre de charge; assunto pós-eleição, sem data de validade curta"
     }
   ]
 }

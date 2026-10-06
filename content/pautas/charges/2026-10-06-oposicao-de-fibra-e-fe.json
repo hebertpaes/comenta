@@ -1,0 +1,53 @@
+{
+  "slug": "oposicao-de-fibra-e-fe",
+  "materia": "https://hojemt.com.br/oposicao-de-fibra-e-fe/",
+  "titulo": "Oposição de fibra e fé",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 06/10/2026 ~21:40 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal",
+  "legenda": {
+    "site_16x9": "Urna fechou, mas a lupa continua aberta.",
+    "instagram_4x5": "Urna fechou, mas a lupa continua aberta."
+  },
+  "contexto": "Curta sobre a vereadora Maysa Leão (Republicanos), que disse seguir fiscalizando depois de o prefeito Abilio dizer que ser oposição a ele 'não está dando muitos frutos'. Atenção para o editor: a curta diz que Abilio foi 'eleito com 149.702 votos em Cuiabá' como se fosse nesta eleição; Abilio não disputou em 2026 (a fala de Maysa cita 'quase 150 mil votos' quando ele foi eleito prefeito). A charge não usa números.",
+  "fontes": [
+    "https://hojemt.com.br/oposicao-de-fibra-e-fe/",
+    "https://www.vgnoticias.com.br/politica/apos-fala-de-abilio-maysa-diz-que-urnas-nao-mudam-sua-conduta-e-promete-seguir-fiscalizando/153135",
+    "https://www.vgnoticias.com.br/politica/abilio-provoca-oposicao-apos-eleicao-nao-esta-dando-muitos-frutos/153127"
+  ],
+  "regras_da_cena": "Maysa caricatura caminhando com lupa gigante e prancheta sob sol cansado; pé de mamona estourando; prédio público genérico; sem texto",
+  "personagens": [
+    {
+      "nome": "Maysa Leão (vereadora de Cuiabá, Republicanos)",
+      "referencia_canva": "MAHXRYjlehI",
+      "foto": "TSE 2026, DivulgaCand (SQ 110002547803), via static.ndmais.com.br/eleicoes/2026/mt/FMT110002547803_div.jpg",
+      "licenca": "foto oficial de registro de candidatura, usada só como referência de desenho"
+    }
+  ],
+  "anatomia": "conferida em zoom nas duas versões: dois braços, duas mãos, duas pernas",
+  "canva": {
+    "design_site_16x9": "DAHXRaJ1mCk",
+    "arte_16x9": "MAHXRXio-GU",
+    "design_instagram_4x5": "DAHXRY3cRUs",
+    "arte_4x5": "MAHXRQZzK1Y",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "98",
+    "quando": "2026-10-10T07:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-06-oposicao-de-fibra-e-fe.jpg",
+    "instagram_4x5": "2026-10-06-oposicao-de-fibra-e-fe-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-06-oposicao-de-fibra-e-fe.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/oposicao-de-fibra-e-fe-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-06-oposicao-de-fibra-e-fe-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 06/10/2026 ~21:40 UTC (antes: charge automática do publicador, charge-1791321759.webp)"
+}
