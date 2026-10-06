@@ -856,6 +856,54 @@
       ],
       "layout": "painel 900 px com duas fotos 380×531 em ordem alfabética + nomes; kicker 'ELEIÇÕES 2026 · PRESIDÊNCIA · 2º TURNO'; título exato da matéria 48 px; linha 'Candidatos à Presidência da República · 2º turno em 25 de outubro'",
       "fonte_fotos": "TSE (registro de candidatura), as mesmas da montagem de 25/09 (espelho ND Mais)"
+    },
+    {
+      "nome": "Capa · Acre 2º turno: Alan Rick e Mailza Assis",
+      "design": "DAHXRQlcJIw",
+      "modelo": "DAHXPV0l69E (cópia; fotos, nomes e textos trocados)",
+      "arquivo": "pautas/eleicoes/2026-10-06-capa-acre-2turno-alan-rick-mailza.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-capa-acre-2turno-alan-rick-mailza.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Alan Rick",
+          "partido": "Republicanos",
+          "canva": "MAHXRYv0MEM",
+          "sq": "10002532492"
+        },
+        {
+          "nome_urna": "Mailza Assis",
+          "partido": "PP",
+          "canva": "MAHXRVSp2wg",
+          "sq": "10002544107"
+        }
+      ],
+      "layout": "painel 900 px com duas fotos 380×531 em ordem alfabética + nomes; kicker 'ELEIÇÕES 2026 · GOVERNO DO ACRE · 2º TURNO'; título exato da matéria 48 px"
+    },
+    {
+      "nome": "Capa · Lula e Flávio votam no 1º turno",
+      "design": "DAHXRZ9DdYM",
+      "modelo": "DAHXPV0l69E (cópia; textos trocados)",
+      "arquivo": "pautas/eleicoes/2026-10-06-capa-lula-flavio-votam-1turno.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-capa-lula-flavio-votam-1turno.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Flávio Bolsonaro",
+          "partido": "PL",
+          "canva": "MAHWNRk-aYo",
+          "sq": "280002551544"
+        },
+        {
+          "nome_urna": "Lula",
+          "partido": "PT",
+          "canva": "MAHWNewot14",
+          "sq": "280002542548"
+        }
+      ],
+      "layout": "mesma capa de dois candidatos; linha 'Os dois candidatos à Presidência citados na matéria, em ordem alfabética'"
     }
   ],
   "posts_atualizados": [
@@ -1057,6 +1105,22 @@
       "og": "https://hojemt.com.br/content/files/2026/10/flavio-e-lula-agendam-reunioes-em-brasilia-e-goiania-nesta-t-wa-1.jpg",
       "feito_em": "2026-10-06",
       "obs": "matéria de agenda do 2º turno (sem acusação); só os dois candidatos do 2º turno, em ordem alfabética (Agência Brasil, 04/10: Flávio Bolsonaro x Lula, 2º turno em 25/10). Para o editor: o texto chama Flávio de 'líder nas pesquisas com 47,03% dos votos válidos' (47,03% é o resultado do 1º turno, não pesquisa) e Lula de 'presidente em exercício' (é o presidente); não foi mexido."
+    },
+    {
+      "slug": "acre-tera-segundo-turno-entre-mailza-assis-e-alan-rick-para-governador",
+      "antes": "capa-6b0686081a546b4e.webp",
+      "depois": "2026-10-06-capa-acre-2turno-alan-rick-mailza.jpg (DAHXRQlcJIw)",
+      "og": "https://hojemt.com.br/content/files/2026/10/acre-tera-segundo-turno-entre-mailza-assis-e-alan-rick-para--wa-1.jpg",
+      "feito_em": "2026-10-06",
+      "obs": "refeita na rodada das 21h UTC; os dois candidatos do 2º turno (deferidos no DivulgaCand), em ordem alfabética; resultado do 1º turno confirmado por Gazeta do Povo e Congresso em Foco (Mailza 49,76%, Alan Rick 32,26%); sem acusação"
+    },
+    {
+      "slug": "lula-e-flavio-bolsonaro-votam-no-1o-turno-veja-onde",
+      "antes": "capa-f87290fb343bd7b6.webp",
+      "depois": "2026-10-06-capa-lula-flavio-votam-1turno.jpg (DAHXRZ9DdYM)",
+      "og": "https://hojemt.com.br/content/files/2026/10/lula-e-flavio-bolsonaro-votam-no-1o-turno-veja-onde-wa-1.jpg",
+      "feito_em": "2026-10-06",
+      "obs": "refeita na rodada das 21h UTC; a matéria trata só de onde Lula e Flávio votaram, então a capa mostra os dois citados (não a lista completa do 1º turno), com a linha explicando isso; sem acusação"
     }
   ],
   "mantidos": [
