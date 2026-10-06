@@ -1725,6 +1725,21 @@
       "materia": "https://hojemt.com.br/placas-sobre-votos/",
       "charge_json": "pautas/charges/2026-10-06-placas-sobre-votos.json",
       "obs": "próximo horário livre de charge; assunto pós-eleição, sem data de validade curta"
+    },
+    {
+      "id": "100",
+      "status": "aguardando_materia",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "card",
+      "titulo": "TCE-MT muda o cálculo do duodécimo das Câmaras",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-duodecimo-instagram-retrato.jpg"
+      ],
+      "legenda": "TCE-MT muda o cálculo do duodécimo das Câmaras\n\nO Plenário do Tribunal de Contas de Mato Grosso decidiu, por unanimidade, que as receitas que formam a base do repasse mensal das prefeituras às Câmaras entram pelo valor bruto, sem desconto do Fundeb; o que o município recebe do Fundeb fica fora da conta. A regra responde a consulta da Câmara de Nossa Senhora do Livramento, vale a partir da publicação e não alcança anos já encerrados (O Documento, Só Notícias, Cenário MT).\n\nMatéria completa: hojemt.com.br/tce-mt-muda-regra-do-duodecimo-das-camaras-sem-desconto-do-fundeb\n\n#tcemt #camaramunicipal #matogrosso #politica #hojemt",
+      "materia": "https://hojemt.com.br/tce-mt-muda-regra-do-duodecimo-das-camaras-sem-desconto-do-fundeb/",
+      "obs": "publicar só depois que a matéria (rascunho no Ghost, 6ac41f6538f4fbfe10d62ab2) for publicada"
     }
   ]
 }

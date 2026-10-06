@@ -18,9 +18,9 @@
   "https://www.olhardireto.com.br"
  ],
  "ultimo_video_visto": {
-  "id": "Es-WjQBaQDE",
-  "titulo": "Contas de Araguainha, General Carneiro e Guiratinga recebem parecer favorável do TCE-MT",
-  "publicado": "2026-10-05T21:59"
+  "id": "fv-kemvKsGo",
+  "titulo": "Sérgio Ricardo destaca certificação internacional em auditoria conquistada por servidoras do TCE-MT",
+  "publicado": "2026-10-06T14:21"
  },
  "ultima_sessao_vista": {
   "id": "aTo4U6AIDDs",
@@ -130,8 +130,10 @@
    "ghost_id": "6ac41f6538f4fbfe10d62ab2",
    "rascunho": "https://hojemt.com.br/p/537943c8-d766-4a71-9807-805db26ffc4a/",
    "arquivo": "pautas/tce/2026-10-05-duodecimo-camaras-sem-desconto-fundeb.md",
-   "arte": "arte pendente (conector do Canva sem autorização)",
-   "origem": "O Documento, Só Notícias, Cenário MT e Folhamax (05/10); consulta da Câmara de Nossa Senhora do Livramento, relator Alisson Alencar"
+   "arte": "pautas/ilustracoes/2026-10-06-tce-duodecimo-camaras.jpg (Canva DAHXRnYys6I; feita em 06/10)",
+   "origem": "O Documento, Só Notícias, Cenário MT e Folhamax (05/10); consulta da Câmara de Nossa Senhora do Livramento, relator Alisson Alencar",
+   "card": "pautas/tce/2026-10-06-duodecimo-instagram-retrato.jpg (Canva DAHXRswfM-Y)",
+   "instagram": "agenda 100 (aguardando_materia)"
   }
  ],
  "transcricoes": [
@@ -183,7 +185,12 @@
   }
  ],
  "ultima_verificacao": {
-  "data": "2026-10-05T22:20Z",
-  "rss": "vídeos novos desde K7OAlGVY6AI: rj-O2gTacZQ (contas de Cláudia e Sorriso com parecer favorável), gPl5QuT-V_k (Ouvidoria, Articulação Propositiva), QBChOt3JpoA (Plano de Metas MT 2050 entregue a candidatos; assunto de fim de setembro, já noticiado por HNT/Olhar Direto), Es-WjQBaQDE (contas de Araguainha, General Carneiro e Guiratinga com parecer favorável) — pareceres favoráveis: sugestão de curta, não feita. Imprensa: duodécimo das Câmaras sem desconto do Fundeb (virou pauta); Plenário Virtual de 05 a 09/10 com 66 processos (tomada de contas especial da ponte sobre o Rio Borges, Tapurah/Itanhangá; licitação de sonorização em Primavera do Leste) — acompanhar resultado. Sem nova sessão plenária presencial desde a 14ª (29/09). Site do TCE não abriu; CliqueF5 bloqueou (Cloudflare), não contornado."
+  "data": "2026-10-06T22:10Z",
+  "rss": "novos desde Es-WjQBaQDE: fv-kemvKsGo (certificação internacional de servidoras; descrição cita pareceres favoráveis a Barra do Garças, Mirassol D'Oeste e Reserva do Cabaçal — rotina, sem pauta) e tMk6C15pqAk (15ª sessão presencial, 06/10, pendente). Imprensa: nada novo da sessão de hoje; Plenário Virtual de 05 a 09/10 (66 processos) segue em andamento. Feita a arte pendente do duodécimo (capa + card)."
+ },
+ "sessao_pendente": {
+  "id": "tMk6C15pqAk",
+  "titulo": "TCE-MT – 15ª SESSÃO ORDINÁRIA DO PLENÁRIO PRESENCIAL - 06 DE OUTUBRO DE 2026",
+  "obs": "live de 06/10 sem descrição no RSS e sem notícia na imprensa até 22h10 UTC; avaliar no próximo disparo (notícias do TCE/imprensa, ou transcrição de trecho). ultima_sessao_vista continua na 14ª até a avaliação."
  }
 }
