@@ -1,0 +1,54 @@
+{
+  "slug": "abilio-e-o-tapete-vermelho",
+  "materia": "https://hojemt.com.br/abilio-e-o-tapete-vermelho/",
+  "titulo": "Abilio e o tapete vermelho",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 06/10/2026 ~12:30 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal entre aspas",
+  "legenda": {
+    "site_16x9": "Seja quem for o presidente, o tapete já está estendido.",
+    "instagram_4x5": "Seja quem for, o tapete já está estendido."
+  },
+  "contexto": "Na véspera da eleição da Mesa Diretora da Câmara de Cuiabá (06/10, 9h), a base do prefeito Abilio Brunini (PL) desistiu de lançar chapa contra Ilde Taques (Podemos), e Abilio disse que vai dialogar com qualquer presidente eleito (RDNews, MidiaJur). A charge brinca só com a cordialidade do anfitrião e a cadeira à espera, sem atribuir fala, crime ou humilhação.",
+  "fontes": [
+    "https://hojemt.com.br/abilio-e-o-tapete-vermelho/",
+    "https://www.rdnews.com.br/executivo/abilio-admite-derrota-para-grupo-de-ilde-vou-tentar-conversar-video/250262",
+    "https://www.midiajur.com.br/politica/abilio-admite-vitoria-de-ilde-na-mesa-da-camara-e-buscara-dialogo/87742"
+  ],
+  "regras_da_cena": "escadaria de prédio público de câmara municipal sob sol forte; Abilio de camiseta cinza-escura desenrolando tapete vermelho escada acima, sorrindo; cadeira de presidente vazia no alto; vereadores genéricos espiando pela porta; ipê amarelo; sem texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini",
+      "referencia_canva": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "origem": "galeria oficial do prefeito, Prefeitura de Cuiabá (Foto: Rennan Oliveira/Secom), 21/09/2026 e 03/09/2026, conforme a tabela do content/README.md; só referência de desenho. Em 06/10 a galeria não tinha foto de outubro (mais recente: 23/09)."
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHXPOxhKBA",
+    "arte_16x9": "MAHXPDZTcqA",
+    "design_instagram_4x5": "DAHXPIyZX2g",
+    "arte_4x5": "MAHXPBK_jZM",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "aguardando_decisao",
+    "agenda_id": "89",
+    "obs": "a eleição da Mesa foi às 9h de 06/10; o próximo horário livre de charge (15:30) cai depois dela"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-06-abilio-e-o-tapete-vermelho.jpg",
+    "instagram_4x5": "2026-10-06-abilio-e-o-tapete-vermelho-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-06-abilio-e-o-tapete-vermelho.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/abilio-e-o-tapete-vermelho-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-06-abilio-e-o-tapete-vermelho-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 06/10/2026 ~12:32 UTC (antes: charge automática do publicador, charge-1791288852.webp)"
+}

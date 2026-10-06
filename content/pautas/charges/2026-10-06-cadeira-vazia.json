@@ -1,0 +1,46 @@
+{
+  "slug": "cadeira-vazia",
+  "materia": "https://hojemt.com.br/cadeira-vazia/",
+  "titulo": "Cadeira Vazia",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 06/10/2026 ~12:30 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal entre aspas",
+  "legenda": {
+    "site_16x9": "A eleição passou; o mandato dura quatro anos. Puxe a cadeira.",
+    "instagram_4x5": "O mandato dura quatro anos. Puxe a cadeira."
+  },
+  "contexto": "A curta lembra que o mandato dos deputados estaduais dura quatro anos e que a ALMT oferece site, redes sociais, rádio e TV para acompanhar o plenário e cobrar os deputados. Personagens genéricos; a charge não ataca ninguém.",
+  "fontes": [
+    "https://hojemt.com.br/cadeira-vazia/",
+    "https://www.al.mt.gov.br/institucional/radio-assembleia",
+    "https://www.youtube.com/c/TVAssembleiaMT",
+    "https://momentomt.com.br/politica-mt/saiba-como-acompanhar-a-atuacao-dos-deputados-e-apresentar-suas-demandas-a-almt/"
+  ],
+  "regras_da_cena": "calçada de bairro de Cuiabá ao entardecer, cadeiras de fio; família genérica acompanhando a sessão da Assembleia no celular, no rádio e na TV; cadeira vazia com prancheta e caneta; tereré, cachorro, ipê; sem texto, logos ou bandeiras",
+  "personagens": [],
+  "canva": {
+    "design_site_16x9": "DAHXPBqKP8k",
+    "arte_16x9": "MAHXPPlWb6c",
+    "design_instagram_4x5": "DAHXPCeYmZM",
+    "arte_4x5": "MAHXPHkVbwQ",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "88",
+    "quando": "2026-10-07T07:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-06-cadeira-vazia.jpg",
+    "instagram_4x5": "2026-10-06-cadeira-vazia-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-06-cadeira-vazia.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/cadeira-vazia-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-06-cadeira-vazia-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 06/10/2026 ~12:35 UTC (antes: charge automática do publicador, charge-1791289283.webp)"
+}

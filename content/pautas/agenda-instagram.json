@@ -1519,6 +1519,54 @@
       "capa": "https://hojemt.com.br/content/images/2026/10/2026-10-04-boletim-08-capa.jpg",
       "legenda": "RADAR ELEITORAL · Boletim nº 8: dia de eleição, as pesquisas da véspera, a cola de Eduardo Bolsonaro e a Justiça Eleitoral\n\nHoje é dia de eleição: em Mato Grosso, a votação vai até as 16h, no horário local (TRE-MT).\n\nGoverno, votos válidos — Otaviano Pivetta: 54% na Quaest, 54,3% na AtlasIntel e 53,7% na Veritá. Segundo lugar: Wellington Fagundes na Quaest (28%) e na Veritá (27,1%); Doutora Natasha na AtlasIntel (24,3%). Pesquisa é retrato do momento.\n\nSenado, dois votos somados — Quaest: Mauro Mendes 37% e Janaina Riva 23% (válidos); Veritá: Mauro 57,4% e Zé Medeiros 39% (total de 200%); AtlasIntel: Zé Medeiros 26,8% e Mauro 25,3%.\n\nFichas: Quaest, MT-02649/2026, contratada pela Rede Matogrossense de Comunicação, 1.800 entrevistas, 2 e 3/10, margem de 2 pontos, confiança de 95%. AtlasIntel, MT-00323/2026, recursos próprios, 1.200 entrevistas, 27/9 a 2/10, margem de 3 pontos, confiança de 95%. Veritá, MT-06765/2026, recursos próprios, 1.220 entrevistas, 26/9 a 1º/10, margem de 3 pontos, confiança de 95%.\n\nApoio: Eduardo Bolsonaro (PL) publicou cola com Pivetta para governador e Zé Medeiros para o Senado, sem Wellington Fagundes (RepórterMT, HiperNotícias e Muvuca Popular).\n\nJustiça Eleitoral: juiz auxiliar do TRE-MT negou liminar de Wellington Fagundes para retirar reportagens sobre benefícios fiscais atribuídos a empresas ligadas à família dele; a defesa contesta parte dos valores, e o direito de resposta ainda será julgado.\n\nVoz do vídeo gerada com IA; sem música. Fatos apurados e conferidos pela redação do HOJE MT.\n\nAcompanhe em hojemt.com.br. Siga e compartilhe o @hoje.mt.\n\n#eleicoes2026 #matogrosso #radareleitoral #hojemt",
       "obs": "Boletim do dia da eleição (97 s, voz v7, sem música). Aguardando o editor: se for ao ar, tem de ser antes do fechamento das urnas (16h de MT, 4/10); depois disso, perde o sentido."
+    },
+    {
+      "id": "87",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-06T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Nada de punição eterna",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-nada-de-punicao-eterna-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Nada de punição eterna\n\nDormiu no 1º turno? Em 25/10 tem outra chance.\n\nQuem não votou no 1º turno, em 4 de outubro, pode votar no 2º turno, em 25 de outubro: para a Justiça Eleitoral, cada turno é uma eleição independente, lembrou o Senado Federal. Em Mato Grosso, o 2º turno é só para presidente, entre Flávio Bolsonaro (PL) e Lula (PT) (Agência Brasil).\n\nLeia a curta completa: hojemt.com.br/nada-de-punicao-eterna\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #segundoturno #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/nada-de-punicao-eterna/",
+      "charge_json": "pautas/charges/2026-10-06-nada-de-punicao-eterna.json",
+      "obs": "próximo horário livre de charge (15:30 de 06/10). Assunto vale até o 2º turno de 25/10. Fonte da legenda: Agência Brasil 04/10 (agenciabrasil.ebc.com.br/politica/noticia/2026-10/quando-sera-o-segundo-turno-das-eleicoes-veja-data): 2º turno em 25/10, Flávio Bolsonaro x Lula; MT fora da lista de estados com 2º turno para governador."
+    },
+    {
+      "id": "88",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-07T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Cadeira Vazia",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-cadeira-vazia-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Cadeira Vazia\n\nO mandato dura quatro anos. Puxe a cadeira.\n\nA eleição passou, mas o trabalho dos deputados estaduais continua. As sessões da Assembleia Legislativa de Mato Grosso (ALMT) podem ser acompanhadas pelo site oficial, pelas redes sociais, pela Rádio Assembleia (89,5 FM) e pela TV Assembleia, que também transmite no YouTube.\n\nLeia a curta completa: hojemt.com.br/cadeira-vazia\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #almt #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/cadeira-vazia/",
+      "charge_json": "pautas/charges/2026-10-06-cadeira-vazia.json",
+      "obs": "07:30 de 07/10 (o 19:30 de 06/10 fica para alcance/retenção, conforme pautas/instagram-crescimento.md). Fontes da legenda: al.mt.gov.br/institucional/radio-assembleia; youtube.com/c/TVAssembleiaMT; Momento MT (momentomt.com.br/politica-mt/saiba-como-acompanhar-a-atuacao-dos-deputados-e-apresentar-suas-demandas-a-almt/)."
+    },
+    {
+      "id": "89",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Abilio e o tapete vermelho",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-abilio-e-o-tapete-vermelho-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Abilio e o tapete vermelho\n\nSeja quem for, o tapete já está estendido.\n\nNa véspera da eleição da Mesa Diretora da Câmara de Cuiabá, o prefeito Abilio Brunini (PL) disse que vai conversar com o futuro presidente da Casa: \"Qualquer um que seja o presidente da Câmara, eu vou ter que dialogar com ele\" (RDNews). A eleição da Mesa para 2027–2028 foi marcada para esta terça-feira (6), às 9h.\n\nLeia a curta completa: hojemt.com.br/abilio-e-o-tapete-vermelho\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #cuiaba #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/abilio-e-o-tapete-vermelho/",
+      "charge_json": "pautas/charges/2026-10-06-abilio-e-o-tapete-vermelho.json",
+      "obs": "assunto com prazo: a eleição da Mesa da Câmara de Cuiabá foi às 9h de 06/10 e o próximo horário livre de charge (15:30 de 06/10) cai depois dela; aguardando decisão do editor (publicar com a legenda atualizada pelo resultado, ou não publicar). Fonte da fala: RDNews 05/10 (rdnews.com.br/executivo/abilio-admite-derrota-para-grupo-de-ilde-vou-tentar-conversar-video/250262)."
     }
   ]
 }
