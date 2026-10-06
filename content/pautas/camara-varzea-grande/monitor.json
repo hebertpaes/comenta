@@ -169,12 +169,14 @@
    "titulo": "Grupo de Lucas do Chapéu do Sol protocola novo pedido de eleição da Mesa da Câmara de Várzea Grande e diz ter maioria absoluta",
    "arquivo": "pautas/camara-varzea-grande/2026-10-06-mesa-grupo-lucas-novo-pedido.md",
    "ghost_slug": "grupo-de-lucas-protocola-novo-pedido-de-eleicao-da-mesa-camara-vg",
-   "status": "rascunho PENDENTE no Ghost: site fora do ar às 11h27 UTC (Cloudflare 524); criar com tools/rascunho-ghost.mjs (não duplica o slug) quando voltar",
-   "arte": "arte pendente (site fora do ar)",
+   "status": "rascunho",
+   "arte": "arte pendente (Canva reconectado em 06/10; fazer no próximo disparo)",
    "fontes": [
     "https://www.vgnoticias.com.br/politica/grupo-protocola-pedido-por-nova-eleicao-e-lucas-diz-ter-maioria-absoluta-na-camara-de-vg/153095",
     "https://www.folhamax.com/entrelinhas/grupo-protocola-pedido-para-nova-eleicao/575831"
-   ]
+   ],
+   "ghost_id": "6ac4e55be5da0d06e006d382",
+   "previa": "https://hojemt.com.br/p/345d20e3-2abe-4a21-9a77-b2d3ebe3bc94/"
   }
  ],
  "acompanhar": [
