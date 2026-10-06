@@ -16,15 +16,19 @@
     "https://hojemt.com.br/nada-de-punicao-eterna/",
     "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/quando-sera-o-segundo-turno-das-eleicoes-veja-data"
   ],
-  "regras_da_cena": "varanda de casa em Cuiabá de manhã; eleitor genérico acordando na rede, galo no muro, despertador antigo, cuia de tereré; urna eletrônica simpática acenando no portão; sem texto, logos ou bandeiras",
+  "regras_da_cena": "varanda de casa em Cuiabá de manhã; eleitor genérico espreguiçando na rede com os dois braços para cima, galo no muro, despertador antigo, cuia de tereré; urna eletrônica sorridente sem braços, com duas perninhas, esperando no portão; sem texto, logos ou bandeiras",
   "personagens": [],
   "canva": {
     "design_site_16x9": "DAHXPGZ5kiw",
-    "arte_16x9": "MAHXPMAfRJ0",
+    "arte_16x9": "MAHXP2fOlsE",
     "design_instagram_4x5": "DAHXPNGu0pc",
     "arte_4x5": "MAHXPD5xVxk",
     "modelo_16x9": "DAHWDzwR5c0",
-    "modelo_retrato": "DAHWEJf2P1U"
+    "modelo_retrato": "DAHWEJf2P1U",
+    "arte_16x9_descartadas": [
+      "MAHXPMAfRJ0 (eleitor com três braços; publicada por engano em 06/10 ~12:32 UTC)",
+      "MAHXP3hiCdI (urna com três mãos; não publicada)"
+    ]
   },
   "instagram": {
     "status": "agendado",
@@ -36,9 +40,9 @@
     "instagram_4x5": "2026-10-06-nada-de-punicao-eterna-instagram-retrato.jpg"
   },
   "hospedado_em": {
-    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-06-nada-de-punicao-eterna.jpg",
-    "og": "https://hojemt.com.br/content/files/2026/10/nada-de-punicao-eterna-wa-1.jpg",
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-06-nada-de-punicao-eterna-1.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/nada-de-punicao-eterna-wa-2.jpg",
     "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-06-nada-de-punicao-eterna-instagram-retrato.jpg"
   },
-  "site": "feature_image e og/twitter trocadas em 06/10/2026 ~12:32 UTC (antes: charge automática do publicador, charge-1791289297.webp)"
+  "site": "feature_image e og/twitter trocadas em 06/10/2026 ~12:32 UTC (antes: charge automática do publicador, charge-1791289297.webp); refeita em 06/10/2026 ~14:50 UTC depois do aviso do editor (\"Este personagem tem 3 braços. Está certo?\"): nova arte com anatomia conferida em zoom"
 }
