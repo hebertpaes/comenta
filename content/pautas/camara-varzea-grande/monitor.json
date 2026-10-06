@@ -138,7 +138,7 @@
    "data": "2026-10-05T14:01:24Z"
   }
  },
- "ultima_checagem": "2026-10-05T19:18:15.512Z",
+ "ultima_checagem": "2026-10-06T11:28:00Z",
  "pautas": [
   {
    "data": "2026-10-01",
@@ -162,6 +162,18 @@
     "https://www.hnt.com.br/politica/presidente-da-camara-de-vg-barra-nova-eleicao-da-mesa-apos-pedidos-de-10-vereadores/578590",
     "https://olhardireto.com.br/noticias/wanderley-nega-pedido-de-10-vereadores-para-realizar-nova-eleicao-da-mesa-nesta-sexta-feira",
     "https://www.folhamax.com/politica/wanderley-nega-nova-eleicao-e-vereadores-acionam-justica/575242"
+   ]
+  },
+  {
+   "data": "2026-10-06",
+   "titulo": "Grupo de Lucas do Chapéu do Sol protocola novo pedido de eleição da Mesa da Câmara de Várzea Grande e diz ter maioria absoluta",
+   "arquivo": "pautas/camara-varzea-grande/2026-10-06-mesa-grupo-lucas-novo-pedido.md",
+   "ghost_slug": "grupo-de-lucas-protocola-novo-pedido-de-eleicao-da-mesa-camara-vg",
+   "status": "rascunho PENDENTE no Ghost: site fora do ar às 11h27 UTC (Cloudflare 524); criar com tools/rascunho-ghost.mjs (não duplica o slug) quando voltar",
+   "arte": "arte pendente (site fora do ar)",
+   "fontes": [
+    "https://www.vgnoticias.com.br/politica/grupo-protocola-pedido-por-nova-eleicao-e-lucas-diz-ter-maioria-absoluta-na-camara-de-vg/153095",
+    "https://www.folhamax.com/entrelinhas/grupo-protocola-pedido-para-nova-eleicao/575831"
    ]
   }
  ],
