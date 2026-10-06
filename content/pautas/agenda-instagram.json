@@ -1663,6 +1663,21 @@
       "materia": "https://hojemt.com.br/fim-de-festa-caro/",
       "charge_json": "pautas/charges/2026-10-06-fim-de-festa-caro.json",
       "obs": "tema de cobrança/denúncia (cabos eleitorais sem pagamento): charge em cena neutra, sem pessoa e sem dinheiro; aguardando decisão do editor para ir ao Instagram. Ouvir Emanuelzinho antes. Fontes: reportermt.com/politica/cabos-eleitorais-cobram-emanuelzinho-apos-ele-perder-eleicao-e-nao-pagar-equipe-vereadora-expoe-calote/244724; folhamax.com/politica/cabos-eleitorais-denunciam-deputado-e-vereadora-por-calote-em-mt-prints/575855; infoverus.com.br/politica/cabos-eleitorais-dizem-nao-ter-recebido-por-campanha-de-emanuelzinho-e-relatam-dificuldades-financeiras-veja-prints/36201."
+    },
+    {
+      "id": "96",
+      "status": "aguardando_materia",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "card",
+      "titulo": "Wanderley indefere pedido de 15 vereadores por nova eleição da Mesa da Câmara de VG",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-camara-vg-mesa-15-vereadores-1.jpg"
+      ],
+      "legenda": "Wanderley indefere pedido de 15 vereadores por nova eleição da Mesa da Câmara de VG\n\nO presidente da Câmara de Várzea Grande, Wanderley Cerqueira (MDB), indeferiu nesta terça (6) o requerimento de 15 dos 23 vereadores que pedia data para a nova eleição da Mesa de 2027-2028. Ele diz que espera o julgamento do recurso no STF. O líder da prefeita, Rogerinho da Dakar (PSDB), disse que o Regimento foi rasgado; o vice-presidente Bruno Rios (PL) fala em ir à Justiça.\n\nMatéria completa: hojemt.com.br/wanderley-indefere-pedido-de-15-vereadores-por-nova-eleicao-da-mesa-camara-vg\n\n#varzeagrande #camaramunicipal #matogrosso #politica #hojemt",
+      "materia": "https://hojemt.com.br/wanderley-indefere-pedido-de-15-vereadores-por-nova-eleicao-da-mesa-camara-vg/",
+      "obs": "publicar só depois que a matéria (rascunho no Ghost, 6ac4e55be5da0d06e006d382) for publicada"
     }
   ]
 }

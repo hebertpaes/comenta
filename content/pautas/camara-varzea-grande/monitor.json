@@ -138,7 +138,7 @@
    "data": "2026-10-05T14:01:24Z"
   }
  },
- "ultima_checagem": "2026-10-06T11:28:00Z",
+ "ultima_checagem": "2026-10-06T19:25:32.988Z",
  "pautas": [
   {
    "data": "2026-10-01",
@@ -166,17 +166,22 @@
   },
   {
    "data": "2026-10-06",
-   "titulo": "Grupo de Lucas do Chapéu do Sol protocola novo pedido de eleição da Mesa da Câmara de Várzea Grande e diz ter maioria absoluta",
+   "titulo": "Wanderley indefere pedido de 15 vereadores por nova eleição da Mesa da Câmara de Várzea Grande; vice fala em ir à Justiça",
    "arquivo": "pautas/camara-varzea-grande/2026-10-06-mesa-grupo-lucas-novo-pedido.md",
-   "ghost_slug": "grupo-de-lucas-protocola-novo-pedido-de-eleicao-da-mesa-camara-vg",
+   "ghost_slug": "wanderley-indefere-pedido-de-15-vereadores-por-nova-eleicao-da-mesa-camara-vg",
    "status": "rascunho",
-   "arte": "arte pendente (Canva reconectado em 06/10; fazer no próximo disparo)",
    "fontes": [
+    "https://www.vgnoticias.com.br/politica/bruno-rios-rejeita-espera-de-wanderley-e-ameaca-ir-a-justica-por-eleicao-da-mesa/153112",
+    "https://www.vgnoticias.com.br/politica/wanderley-rejeita-pedido-de-15-vereadores-por-nova-eleicao-e-rogerinho-reage-rasga-o-regimento/153123",
     "https://www.vgnoticias.com.br/politica/grupo-protocola-pedido-por-nova-eleicao-e-lucas-diz-ter-maioria-absoluta-na-camara-de-vg/153095",
     "https://www.folhamax.com/entrelinhas/grupo-protocola-pedido-para-nova-eleicao/575831"
    ],
    "ghost_id": "6ac4e55be5da0d06e006d382",
-   "previa": "https://hojemt.com.br/p/345d20e3-2abe-4a21-9a77-b2d3ebe3bc94/"
+   "previa": "https://hojemt.com.br/p/345d20e3-2abe-4a21-9a77-b2d3ebe3bc94/",
+   "capa": "pautas/ilustracoes/2026-10-06-camara-vg-mesa-15-vereadores.jpg",
+   "card": "pautas/cards/2026-10-06-camara-vg-mesa-15-vereadores.jpg",
+   "agenda_instagram": "96",
+   "atualizado": "2026-10-06 15h30 (Cuiabá): indeferimento do requerimento de 15 vereadores na sessão de 06/10, fala de Rogerinho e entrevista de Bruno Rios"
   }
  ],
  "acompanhar": [
@@ -191,6 +196,10 @@
    "assunto": "Sessão ordinária de terça (06/10, 8h): votação única do PLC 035/2026 do Executivo (Política Municipal dos Direitos da Pessoa Idosa; reestrutura CMDPI/VG e FUMAPI), PR 08/2026 (Espaço Memória do Legislativo), PL 199/2026, PL 242/2026 e PL 250/2026 (aprendizagem e primeiro emprego)",
    "fonte": "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-municipal-de-varzea-grande-realiza-sessao-ordinaria-nesta-terca-feira-6-com-pauta-voltada-a-direitos-sociais-preservacao-historica-e-homenagens",
    "por_que_nao_virou_pauta": "é só a pauta prevista; vira matéria se houver resultado relevante (aprovação do PLC 035/2026, embate ou mudança)"
-  }
+  },
+  "Mesa da Câmara de VG: segunda fonte aberta do indeferimento de 06/10 (Fatos de MT e Noveen bloqueiam leitura); ação de Bruno Rios na Justiça; possível chapa única; julgamento do recurso na 2ª Turma do STF"
+ ],
+ "descartados_2026-10-06": [
+  "Notícia oficial 'Câmara de VG aprova PCCSs por unanimidade' (publicada 01/10, sessão de 29/09) — já coberta pela pauta de 01/10"
  ]
 }
