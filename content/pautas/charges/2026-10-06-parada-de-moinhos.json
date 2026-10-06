@@ -1,0 +1,47 @@
+{
+  "slug": "parada-de-moinhos",
+  "materia": "https://hojemt.com.br/parada-de-moinhos/",
+  "titulo": "Parada de moinhos",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 06/10/2026 ~15:50 UTC)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal entre aspas",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "No dia da eleição, o plenário virou estúdio e a urna, a estrela.",
+    "instagram_4x5": "No dia da eleição, a urna virou estrela de TV."
+  },
+  "contexto": "A ALMT mobilizou mais de 60 profissionais da Secom para cobrir as Eleições 2026 em parceria com o TRE-MT (TV, rádio, site, redes e foto); no domingo (4) as equipes acompanharam a apuração no TRE-MT. A curta tem tom crítico ('mais gente contando o que o povo faz do que fazendo'); a charge fica só no humor do estúdio, sem atacar ninguém.",
+  "fontes": [
+    "https://hojemt.com.br/parada-de-moinhos/",
+    "https://rbtv.com.br/noticia/18691/cobertura-das-eleicoes-2026-mobiliza-mais-de-60-profissionais-da-almt",
+    "https://primeirahora.com.br/cobertura-das-eleicoes-2026-mobiliza-mais-de-60-profissionais-da-almt/"
+  ],
+  "regras_da_cena": "plenário virado estúdio de TV; urna eletrônica sorridente sem braços sob refletores; 16:9 com só três profissionais genéricos (cinegrafista, repórter, técnico) depois da conferência de anatomia; sem texto, logos ou bandeiras",
+  "personagens": [],
+  "anatomia": "conferida em zoom (06/10). A 1ª arte 16:9 (MAHXP59PD3c, multidão) foi descartada por uma figura borrada no fundo; a 4:5 (multidão) foi conferida pessoa a pessoa.",
+  "canva": {
+    "design_site_16x9": "DAHXP-yZHug",
+    "arte_16x9": "MAHXP7qnlM0",
+    "arte_16x9_descartada": "MAHXP59PD3c",
+    "design_instagram_4x5": "DAHXP3QwKhc",
+    "arte_4x5": "MAHXP0D5PV4",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "91",
+    "quando": "2026-10-08T07:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-06-parada-de-moinhos.jpg",
+    "instagram_4x5": "2026-10-06-parada-de-moinhos-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-06-parada-de-moinhos.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/parada-de-moinhos-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-06-parada-de-moinhos-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 06/10/2026 ~15:55 UTC (antes: charge automática do publicador, charge-1791300119.webp)"
+}

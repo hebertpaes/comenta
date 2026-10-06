@@ -1,0 +1,56 @@
+{
+  "slug": "reinado-de-conveniencia",
+  "materia": "https://hojemt.com.br/reinado-de-conveniencia/",
+  "titulo": "Reinado de conveniência",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 06/10/2026 ~15:50 UTC)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal entre aspas",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Candidato confirmado: a brasa só acende depois de 15 de novembro.",
+    "instagram_4x5": "A brasa só acende depois de 15/11."
+  },
+  "contexto": "Max Russi (Podemos), deputado estadual mais votado de MT em 2026 (86.934 votos), confirmou que vai disputar de novo a presidência da ALMT e disse que as articulações só começam depois de 15 de novembro (RepórterMT, Nativa News, VIP MT). A charge brinca com a churrasqueira ainda apagada, sem atribuir fala ou crime.",
+  "fontes": [
+    "https://hojemt.com.br/reinado-de-conveniencia/",
+    "https://www.reportermt.com/politica/max-russi-confirma-que-vai-disputar-a-presidencia-da-assembleia-legislativa-pela-segunda-vez/244702",
+    "https://nativanews.com.br/politica/apos-ser-o-mais-votado-de-mt-max-mira-novo-mandato-na-presidencia-da-assembleia/",
+    "https://vipmt.com.br/cidades/cuiaba/max-confirma-disputa-pela-presidencia-da-assembleia-e-adia-articulacoes/"
+  ],
+  "regras_da_cena": "Max Russi de camisa verde na cadeira de presidente do plenário, pernas cruzadas, cuia de tereré e caixa de fósforos fechada; churrasqueira com carvão apagado; calendário em branco com círculo vermelho; deputados genéricos com espetos; sem texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "Max Russi",
+      "referencia_canva": [
+        "MAHXP7EcIv4",
+        "MAHWLrtMkZs"
+      ],
+      "origem": "MAHXP7EcIv4: foto oficial do registro de candidatura a deputado estadual, TSE/Divulgação, 2026 (FMT110002542640_div.jpg via espelho ND Mais, SQ 110002542640), subida em 06/10/2026 — mais recente que a da ALMT; MAHWLrtMkZs: foto oficial da ALMT. Só referência de desenho."
+    }
+  ],
+  "anatomia": "conferida em zoom (06/10): duas mãos (cuia e fósforos).",
+  "canva": {
+    "design_site_16x9": "DAHXP8flDCw",
+    "arte_16x9": "MAHXP7DsD5w",
+    "design_instagram_4x5": "DAHXPzMvCvA",
+    "arte_4x5": "MAHXP9KY5L4",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "92",
+    "quando": "2026-10-08T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-06-reinado-de-conveniencia.jpg",
+    "instagram_4x5": "2026-10-06-reinado-de-conveniencia-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-06-reinado-de-conveniencia.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/reinado-de-conveniencia-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-06-reinado-de-conveniencia-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 06/10/2026 ~15:50 UTC (antes: charge automática do publicador, charge-1791300104.webp)"
+}

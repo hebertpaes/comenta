@@ -1583,6 +1583,38 @@
       "materia": "https://hojemt.com.br/varredura-no-asfalto/",
       "charge_json": "pautas/charges/2026-10-06-varredura-no-asfalto.json",
       "obs": "próximo horário livre de charge depois de Cadeira Vazia (07:30 de 07/10), deixando o 11:30 para card. Fala conferida literalmente na HiperNotícias de 04/10 (hnt.com.br/politica/abilio-aparece-uniformizado-e-anuncia-forca-tarefa-para-limpar-santinhos-em-cuiaba/578873); RepórterMT 04/10 (reportermt.com/politica/vestido-de-gari-abilio-anuncia-limpeza-de-santinhos-em-frente-as-escolas-de-cuiaba/244582)."
+    },
+    {
+      "id": "91",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-08T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Parada de moinhos",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-parada-de-moinhos-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Parada de moinhos\n\nNo dia da eleição, a urna virou estrela de TV.\n\nA Assembleia Legislativa de Mato Grosso (ALMT) mobilizou mais de 60 profissionais da comunicação para cobrir as Eleições 2026, em parceria com o TRE-MT, com TV, rádio, site, redes sociais e fotografia. No domingo (4), as equipes acompanharam a apuração na sede do TRE-MT.\n\nLeia a curta completa: hojemt.com.br/parada-de-moinhos\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #almt #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/parada-de-moinhos/",
+      "charge_json": "pautas/charges/2026-10-06-parada-de-moinhos.json",
+      "obs": "próximo horário livre de charge depois de Varredura no asfalto (15:30 de 07/10). Fontes da legenda: RBTV (rbtv.com.br/noticia/18691/cobertura-das-eleicoes-2026-mobiliza-mais-de-60-profissionais-da-almt) e Primeira Hora (primeirahora.com.br/cobertura-das-eleicoes-2026-mobiliza-mais-de-60-profissionais-da-almt/)."
+    },
+    {
+      "id": "92",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-08T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Reinado de conveniência",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-reinado-de-conveniencia-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Reinado de conveniência\n\nA brasa só acende depois de 15/11.\n\nMax Russi (Podemos), deputado estadual mais votado de Mato Grosso em 2026, com 86.934 votos, confirmou que vai disputar de novo a presidência da Assembleia Legislativa. Segundo ele, as conversas sobre a eleição da Mesa só começam depois de 15 de novembro (RepórterMT; Nativa News).\n\nLeia a curta completa: hojemt.com.br/reinado-de-conveniencia\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #almt #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/reinado-de-conveniencia/",
+      "charge_json": "pautas/charges/2026-10-06-reinado-de-conveniencia.json",
+      "obs": "assunto vale até a eleição da Mesa da ALMT. Fontes: RepórterMT (reportermt.com/politica/max-russi-confirma-que-vai-disputar-a-presidencia-da-assembleia-legislativa-pela-segunda-vez/244702), Nativa News (nativanews.com.br/politica/apos-ser-o-mais-votado-de-mt-max-mira-novo-mandato-na-presidencia-da-assembleia/), VIP MT. Fala de Max sem aspas porque o texto literal não foi conferido."
     }
   ]
 }
