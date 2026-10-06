@@ -1261,6 +1261,25 @@
       "antes": "capa-7f365bfb266ebcaa.webp (capa genérica do publicador)",
       "obs": "matéria da Prefeitura sem foto com licença explícita; anatomia conferida em zoom (3 pessoas, cada uma com 2 braços e 2 pernas; violão na posição certa; nenhum rosto visível)",
       "data": "2026-10-06"
+    },
+    {
+      "slug": "ilde-taques-eleito-presidente-camara-de-cuiaba-27-votos",
+      "titulo": "Ilde Taques é eleito presidente da Câmara de Cuiabá com os 27 votos; Abilio diz que nunca teve controle dos vereadores",
+      "materia": "rascunho (Ghost 6ac5671f737b3659d67c564a)",
+      "tag": "Política",
+      "canva": {
+        "design": "DAHXRYPAExg",
+        "arte": "MAHXRTFC5tE",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "plenário visto do fundo; vereador de cabelo grisalho e terno escuro, de costas, caminha pelo corredor rumo à mesa diretora vazia; vereadores de costas nas bancadas aplaudem; janelas altas com árvores",
+      "arquivo": "2026-10-06-camara-cuiaba-ilde-eleito.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-06-camara-cuiaba-ilde-eleito.jpg",
+      "og": "https://hojemt.com.br/content/files/2026/10/ilde-taques-eleito-presidente-camara-de-cuiaba-27-votos-wa.jpg",
+      "card": "pautas/cards/2026-10-06-camara-cuiaba-ilde-eleito.jpg",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "obs": "anatomia conferida em zoom (figura central com 2 braços e 2 mãos; nas bancadas, nenhuma mão sobrando); nenhum rosto visível. A cena só tem homens; se o editor quiser, refazer com vereadoras na bancada.",
+      "data": "2026-10-06"
     }
   ]
 }
