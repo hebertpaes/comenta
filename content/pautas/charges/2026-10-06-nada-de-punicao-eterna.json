@@ -30,7 +30,13 @@
       "MAHXP3hiCdI (urna com três mãos; não publicada)"
     ]
   },
-  "instagram": "https://www.instagram.com/p/DeKjftwlypk/",
+  "instagram": {
+    "status": "publicado",
+    "agenda_id": "87",
+    "quando": "2026-10-06T15:30:00-04:00",
+    "permalink": "https://www.instagram.com/p/DeKjftwlypk/",
+    "publicado_em": "2026-10-06T19:39:15+00:00"
+  },
   "arquivos": {
     "site_16x9": "2026-10-06-nada-de-punicao-eterna.jpg",
     "instagram_4x5": "2026-10-06-nada-de-punicao-eterna-instagram-retrato.jpg"
