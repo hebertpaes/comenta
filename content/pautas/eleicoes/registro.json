@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-03",
+  "atualizado_em": "2026-10-06",
   "regra": "Matérias de eleições sobre Mato Grosso: capa com fotos oficiais do TSE (montagem/ficha feita no Canva), nunca rosto gerado por IA. Dados e ids dos assets em 2026-mt-candidatos.json.",
   "artes": [
     {
@@ -831,6 +831,31 @@
         }
       ],
       "obs": "capa do perfil (rascunho) quem-e-galvan-candidato-do-avante-ao-senado-por-mato-grosso"
+    },
+    {
+      "nome": "Capa · Flávio e Lula agendam reuniões (2º turno)",
+      "design": "DAHXPV0l69E",
+      "modelo": "DAHWH_wMHgw (cópia; fotos, nomes e textos trocados)",
+      "arquivo": "pautas/eleicoes/2026-10-06-capa-flavio-lula-agendas.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-capa-flavio-lula-agendas.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Flávio Bolsonaro",
+          "partido": "PL",
+          "canva": "MAHWNRk-aYo",
+          "sq": "280002551544"
+        },
+        {
+          "nome_urna": "Lula",
+          "partido": "PT",
+          "canva": "MAHWNewot14",
+          "sq": "280002542548"
+        }
+      ],
+      "layout": "painel 900 px com duas fotos 380×531 em ordem alfabética + nomes; kicker 'ELEIÇÕES 2026 · PRESIDÊNCIA · 2º TURNO'; título exato da matéria 48 px; linha 'Candidatos à Presidência da República · 2º turno em 25 de outubro'",
+      "fonte_fotos": "TSE (registro de candidatura), as mesmas da montagem de 25/09 (espelho ND Mais)"
     }
   ],
   "posts_atualizados": [
@@ -1024,6 +1049,14 @@
       "obs": "matéria de agenda da véspera (sem acusação); cita 12 dos 13 candidatos da montagem, todos com o partido da arte quando informado (falta Leonardo Avalanche). Lista conferida de novo no ND Mais em 03/10; legenda mantém o link da Agência Brasil",
       "revertido_em": "2026-10-04",
       "obs_reversao": "capa original devolvida em 04/10: Leonardo Avalanche (PRTB) desistiu da candidatura em 30/09 (Revista Oeste, imirante, SpaceMoney) e não está na lista de candidatos da apuração do TSE; a montagem de 13 ficou desatualizada. Uma montagem com os 12 candidatos depende do Canva, que está sem autorização nesta sessão."
+    },
+    {
+      "slug": "flavio-e-lula-agendam-reunioes-em-brasilia-e-goiania-nesta-terca",
+      "antes": "capa-67127eafd3ac6829.webp",
+      "depois": "2026-10-06-capa-flavio-lula-agendas.jpg (DAHXPV0l69E)",
+      "og": "https://hojemt.com.br/content/files/2026/10/flavio-e-lula-agendam-reunioes-em-brasilia-e-goiania-nesta-t-wa-1.jpg",
+      "feito_em": "2026-10-06",
+      "obs": "matéria de agenda do 2º turno (sem acusação); só os dois candidatos do 2º turno, em ordem alfabética (Agência Brasil, 04/10: Flávio Bolsonaro x Lula, 2º turno em 25/10). Para o editor: o texto chama Flávio de 'líder nas pesquisas com 47,03% dos votos válidos' (47,03% é o resultado do 1º turno, não pesquisa) e Lula de 'presidente em exercício' (é o presidente); não foi mexido."
     }
   ],
   "mantidos": [

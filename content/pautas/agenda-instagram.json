@@ -1567,6 +1567,22 @@
       "materia": "https://hojemt.com.br/abilio-e-o-tapete-vermelho/",
       "charge_json": "pautas/charges/2026-10-06-abilio-e-o-tapete-vermelho.json",
       "obs": "assunto com prazo: a eleição da Mesa da Câmara de Cuiabá foi às 9h de 06/10 e o próximo horário livre de charge (15:30 de 06/10) cai depois dela; aguardando decisão do editor (publicar com a legenda atualizada pelo resultado, ou não publicar). Fonte da fala: RDNews 05/10 (rdnews.com.br/executivo/abilio-admite-derrota-para-grupo-de-ilde-vou-tentar-conversar-video/250262)."
+    },
+    {
+      "id": "90",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-07T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Varredura no asfalto",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-06-varredura-no-asfalto-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Varredura no asfalto\n\nA vassoura chegou antes do eleitor.\n\nNo domingo da eleição (4), o prefeito de Cuiabá, Abilio Brunini (PL), apareceu de uniforme de gari num vídeo da força-tarefa da Limpurb que recolheu os santinhos jogados em frente às escolas usadas como locais de votação. \"Eleições limpas, é isso que a gente da Prefeitura de Cuiabá fez\", disse (HiperNotícias; também RepórterMT).\n\nLeia a curta completa: hojemt.com.br/varredura-no-asfalto\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #cuiaba #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/varredura-no-asfalto/",
+      "charge_json": "pautas/charges/2026-10-06-varredura-no-asfalto.json",
+      "obs": "próximo horário livre de charge depois de Cadeira Vazia (07:30 de 07/10), deixando o 11:30 para card. Fala conferida literalmente na HiperNotícias de 04/10 (hnt.com.br/politica/abilio-aparece-uniformizado-e-anuncia-forca-tarefa-para-limpar-santinhos-em-cuiaba/578873); RepórterMT 04/10 (reportermt.com/politica/vestido-de-gari-abilio-anuncia-limpeza-de-santinhos-em-frente-as-escolas-de-cuiaba/244582)."
     }
   ]
 }

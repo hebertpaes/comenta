@@ -1,0 +1,55 @@
+{
+  "slug": "varredura-no-asfalto",
+  "materia": "https://hojemt.com.br/varredura-no-asfalto/",
+  "titulo": "Varredura no asfalto",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 06/10/2026 ~13:30 UTC)",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal entre aspas",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "legenda": {
+    "site_16x9": "Santinho no chão não vota: a vassoura chegou antes do eleitor.",
+    "instagram_4x5": "A vassoura chegou antes do eleitor."
+  },
+  "contexto": "No dia da eleição (04/10), Abilio Brunini apareceu de uniforme de gari em vídeo da força-tarefa da Limpurb que recolheu santinhos em frente às escolas de Cuiabá (HiperNotícias, RepórterMT, Infoverus, O Documento). A charge brinca só com a vassoura e o mar de papéis em branco, sem atribuir crime, fala inventada ou humilhação. O texto da curta insinua algo sobre o resultado ('limpeza do resultado', 'caixa eletrônico'); a charge não reproduz isso.",
+  "fontes": [
+    "https://hojemt.com.br/varredura-no-asfalto/",
+    "https://www.hnt.com.br/politica/abilio-aparece-uniformizado-e-anuncia-forca-tarefa-para-limpar-santinhos-em-cuiaba/578873",
+    "https://www.reportermt.com/politica/vestido-de-gari-abilio-anuncia-limpeza-de-santinhos-em-frente-as-escolas-de-cuiaba/244582",
+    "https://www.infoverus.com.br/politica/abilio-se-veste-de-gari-e-vai-as-ruas-recolher-santinhos-em-frente-a-escolas-de-cuiaba/36097"
+  ],
+  "regras_da_cena": "amanhecer em frente a escola pública usada como local de votação; Abilio de uniforme de gari com faixas refletivas e luvas varrendo papeizinhos coloridos em branco; garis genéricos com carrinhos ao fundo; cachorro; ipê; sem texto, logos ou bandeiras",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini",
+      "referencia_canva": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "origem": "galeria oficial do prefeito, Prefeitura de Cuiabá (Foto: Rennan Oliveira/Secom), 21/09/2026 e 03/09/2026, conforme a tabela do content/README.md; só referência de desenho. Roupa trocada para uniforme de gari porque é o que ele vestiu no fato."
+    }
+  ],
+  "canva": {
+    "design_site_16x9": "DAHXPTod-M8",
+    "arte_16x9": "MAHXPawBxD8",
+    "design_instagram_4x5": "DAHXPeu7pb4",
+    "arte_4x5": "MAHXPWLVU0Q",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "90",
+    "quando": "2026-10-07T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-06-varredura-no-asfalto.jpg",
+    "instagram_4x5": "2026-10-06-varredura-no-asfalto-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-06-varredura-no-asfalto.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/varredura-no-asfalto-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-06-varredura-no-asfalto-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 06/10/2026 ~13:35 UTC (antes: charge automática do publicador, charge-1791288826.webp)"
+}
