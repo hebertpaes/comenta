@@ -4,3 +4,46 @@
 .rolagem-status[data-estado="ocioso"] .rolagem-texto,.rolagem-status[data-estado="pausa"] .rolagem-texto,.rolagem-status[data-estado="fim"] .rolagem-texto{display:none!important}
 .rolagem-status[data-estado="ocioso"],.rolagem-status[data-estado="fim"]{border-top-color:transparent}
 </style>
+
+<!-- HMT relacionadas com 4 cards (07/10/2026, pedido do editor: "complete a coluna com mais um card. ai tem 3 deixe completo com 4"). O post.hbs do tema pede limit="3" no bloco "Mais em <tag>", mas a grade tem 4 colunas. Este trecho busca na Content API pública (a mesma chave que o tema já expõe para a busca) as matérias da mesma tag principal e acrescenta as que faltam até 4, copiando o card existente. Quando o tema for atualizado com limit="4", o trecho não faz nada. -->
+<script>
+(function(){
+  var grid=document.querySelector('.usat-related-section .usat-section-grid');
+  if(!grid||!document.body.classList.contains('post-template'))return;
+  var cards=grid.querySelectorAll('.usat-card');
+  var FALTA=4-cards.length;
+  if(FALTA<=0||!cards.length)return;
+  var s=document.querySelector('script[data-sodo-search][data-key]')||document.querySelector('script[data-api][data-key]');
+  if(!s)return;
+  var key=s.getAttribute('data-key'),api=location.origin+'/ghost/api/content/';
+  var slug=location.pathname.replace(/^\/|\/$/g,'').split('/').pop();
+  if(!slug)return;
+  var vistos={};
+  for(var i=0;i<cards.length;i++){var a=cards[i].querySelector('.usat-card-title a');if(a)vistos[a.getAttribute('href').replace(/\/?$/,'/')]=1;}
+  function q(path,params){var u=api+path+'?key='+encodeURIComponent(key);for(var k in params)u+='&'+k+'='+encodeURIComponent(params[k]);return fetch(u).then(function(r){if(!r.ok)throw r.status;return r.json();});}
+  function img(u){return u&&u.indexOf('/content/images/')>-1&&u.indexOf('/size/')<0?u.replace('/content/images/','/content/images/size/w720/format/webp/'):u;}
+  q('posts/slug/'+slug+'/',{include:'tags'}).then(function(r){
+    var p=r.posts[0],tag=p.primary_tag?p.primary_tag.slug:null;
+    var f='id:-'+p.id+(tag?'+tag:'+tag:'')+'+tag:-hash-ad';
+    return q('posts/',{filter:f,limit:String(cards.length+FALTA+2),order:'published_at desc',fields:'title,url,feature_image,custom_excerpt,excerpt,published_at'});
+  }).then(function(r){
+    var add=0;
+    r.posts.forEach(function(p){
+      if(add>=FALTA)return;
+      var href=new URL(p.url,location.origin).pathname.replace(/\/?$/,'/');
+      if(vistos[href])return;
+      vistos[href]=1;add++;
+      var c=cards[0].cloneNode(true);
+      c.querySelectorAll('a').forEach(function(a){a.setAttribute('href',href);});
+      var t=c.querySelector('.usat-card-title a');if(t)t.textContent=p.title;
+      var im=c.querySelector('.usat-card-media img');
+      if(im){if(p.feature_image){im.src=img(p.feature_image);im.alt=p.title;}else{var m=c.querySelector('.usat-card-media');if(m)m.remove();}}
+      var ex=c.querySelector('.usat-card-excerpt'),txt=(p.custom_excerpt||p.excerpt||'').trim();
+      if(ex){if(txt){ex.textContent=txt.length>140?txt.slice(0,137).replace(/\s+\S*$/,'')+'…':txt;}else ex.remove();}
+      var tm=c.querySelector('time'),d=new Date(p.published_at);
+      if(tm){tm.setAttribute('datetime',d.toISOString().slice(0,10));tm.textContent=d.toLocaleDateString('pt-BR',{timeZone:'America/Cuiaba'});}
+      grid.appendChild(c);
+    });
+  }).catch(function(){});
+})();
+</script>

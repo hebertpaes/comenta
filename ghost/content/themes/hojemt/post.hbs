@@ -60,13 +60,13 @@
             </div>
             <div class="usat-section-grid">
                 {{#if primary_tag}}
-                    {{#get "posts" filter="id:-{{id}}+tag:{{primary_tag.slug}}+tag:-hash-ad" limit="3" order="published_at desc" as |rel|}}
+                    {{#get "posts" filter="id:-{{id}}+tag:{{primary_tag.slug}}+tag:-hash-ad" limit="4" order="published_at desc" as |rel|}}
                         {{#foreach rel}}
                             {{> article-card size="compact"}}
                         {{/foreach}}
                     {{/get}}
                 {{else}}
-                    {{#get "posts" filter="id:-{{id}}+tag:-hash-ad" limit="3" order="published_at desc" as |rel|}}
+                    {{#get "posts" filter="id:-{{id}}+tag:-hash-ad" limit="4" order="published_at desc" as |rel|}}
                         {{#foreach rel}}
                             {{> article-card size="compact"}}
                         {{/foreach}}
