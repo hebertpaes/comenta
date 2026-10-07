@@ -999,6 +999,126 @@
         }
       ],
       "obs": "rascunho quem-apoia-quem-no-2-turno-presidencial-2026 (Ghost 6ac62221737b3659d67c57e2)"
+    },
+    {
+      "nome": "Capa · Lula e Flávio agendam reuniões nesta quarta",
+      "design": "DAHXVUn26j8",
+      "modelo": "DAHXPV0l69E (cópia; fotos, nomes, chamada, título e subtítulo trocados)",
+      "arquivo": "pautas/eleicoes/2026-10-07-capa-lula-flavio-agendas-quarta.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-capa-lula-flavio-agendas-quarta.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Flávio Bolsonaro",
+          "partido": "PL",
+          "canva": "MAHWNRk-aYo",
+          "sq": "280002551544"
+        },
+        {
+          "nome_urna": "Lula",
+          "partido": "PT",
+          "canva": "MAHWNewot14",
+          "sq": "280002542548"
+        }
+      ],
+      "obs": "matéria lula-e-flavio-bolsonaro-agendam-reunioes-em-brasilia-nesta-quarta"
+    },
+    {
+      "nome": "Capa · Tarcísio vê 'arrogância' do PT",
+      "design": "DAHXWQMH2dQ",
+      "modelo": "DAHXPV0l69E (cópia; fotos, nomes, chamada, título e subtítulo trocados)",
+      "arquivo": "pautas/eleicoes/2026-10-07-capa-tarcisio-arrogancia-pt.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-capa-tarcisio-arrogancia-pt.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Flávio Bolsonaro",
+          "partido": "PL",
+          "canva": "MAHWNRk-aYo",
+          "sq": "280002551544"
+        },
+        {
+          "nome_urna": "Lula",
+          "partido": "PT",
+          "canva": "MAHWNewot14",
+          "sq": "280002542548"
+        }
+      ],
+      "obs": "matéria tarcisio-ve-arrogancia-do-pt-e-questiona-lula-por-apostar-no-1o-turno"
+    },
+    {
+      "nome": "Capa · Como MT votou para presidente",
+      "design": "DAHXWYEGOVg",
+      "modelo": "DAHXPV0l69E (cópia; fotos, nomes, chamada, título e subtítulo trocados)",
+      "arquivo": "pautas/eleicoes/2026-10-07-capa-como-mt-votou-presidente.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-capa-como-mt-votou-presidente.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Flávio Bolsonaro",
+          "partido": "PL",
+          "canva": "MAHWNRk-aYo",
+          "sq": "280002551544"
+        },
+        {
+          "nome_urna": "Lula",
+          "partido": "PT",
+          "canva": "MAHWNewot14",
+          "sq": "280002542548"
+        }
+      ],
+      "obs": "matéria como-mt-votou-para-presidente-flavio-a-frente-em-133-cidades-e-lula-em-9"
+    },
+    {
+      "nome": "Capa · Mauro com Flávio, Lúdio com Lula (MT)",
+      "design": "DAHXWTfj9Jk",
+      "modelo": "DAHXPV0l69E (cópia; fotos, nomes, chamada, título e subtítulo trocados)",
+      "arquivo": "pautas/eleicoes/2026-10-07-capa-mt-mauro-flavio-ludio-lula.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-capa-mt-mauro-flavio-ludio-lula.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Lúdio Cabral",
+          "partido": "PT",
+          "canva": "MAHXWfR9de0",
+          "sq": "110002543192"
+        },
+        {
+          "nome_urna": "Mauro Mendes",
+          "partido": "União",
+          "canva": "MAHWHyLCtr0",
+          "sq": "110002551966"
+        }
+      ],
+      "obs": "matéria mauro-mendes-se-reune-com-flavio-ludio-cabral-faz-campanha-por-lula-em-mt"
+    },
+    {
+      "nome": "Capa · 6x1 no 2º turno em MT: Mauro e Lúdio",
+      "design": "DAHXWQkXhfo",
+      "modelo": "DAHXPV0l69E (cópia; fotos, nomes, chamada, título e subtítulo trocados)",
+      "arquivo": "pautas/eleicoes/2026-10-07-capa-mt-6x1-mauro-ludio.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-capa-mt-6x1-mauro-ludio.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Lúdio Cabral",
+          "partido": "PT",
+          "canva": "MAHXWfR9de0",
+          "sq": "110002543192"
+        },
+        {
+          "nome_urna": "Mauro Mendes",
+          "partido": "União",
+          "canva": "MAHWHyLCtr0",
+          "sq": "110002551966"
+        }
+      ],
+      "obs": "matéria escala-6x1-entra-no-2o-turno-em-mt-mauro-critica-fim-e-ludio-rebate"
     }
   ],
   "posts_atualizados": [
@@ -1224,6 +1344,46 @@
       "og": "https://hojemt.com.br/content/files/2026/10/flavio-bolsonaro-busca-apoio-de-caiado-enquanto-lula-defende-wa-1.jpg",
       "feito_em": "2026-10-07",
       "obs": "matéria de campanha do 2º turno, sem acusação; os dois candidatos do 2º turno em ordem alfabética"
+    },
+    {
+      "slug": "lula-e-flavio-bolsonaro-agendam-reunioes-em-brasilia-nesta-quarta",
+      "antes": "capa-6610cb5688ec750f.webp",
+      "depois": "2026-10-07-capa-lula-flavio-agendas-quarta.jpg (DAHXVUn26j8)",
+      "og": "https://hojemt.com.br/content/files/2026/10/lula-e-flavio-bolsonaro-agendam-reunioes-em-brasilia-nesta-q-wa-1.jpg",
+      "feito_em": "2026-10-07",
+      "obs": "agenda dos dois candidatos do 2º turno, sem acusação; ordem alfabética"
+    },
+    {
+      "slug": "tarcisio-ve-arrogancia-do-pt-e-questiona-lula-por-apostar-no-1o-turno",
+      "antes": "capa-tarcisio-arrogancia-pt.webp",
+      "depois": "2026-10-07-capa-tarcisio-arrogancia-pt.jpg (DAHXWQMH2dQ)",
+      "og": "https://hojemt.com.br/content/files/2026/10/tarcisio-ve-arrogancia-do-pt-e-questiona-lula-por-apostar-no-wa-1.jpg",
+      "feito_em": "2026-10-07",
+      "obs": "crítica política de campanha, sem acusação; os dois candidatos do 2º turno (Tarcísio não é candidato no 2º turno, sem foto oficial usada)"
+    },
+    {
+      "slug": "como-mt-votou-para-presidente-flavio-a-frente-em-133-cidades-e-lula-em-9",
+      "antes": "capa-p2-2turno-mt.webp",
+      "depois": "2026-10-07-capa-como-mt-votou-presidente.jpg (DAHXWYEGOVg)",
+      "og": "https://hojemt.com.br/content/files/2026/10/como-mt-votou-para-presidente-flavio-a-frente-em-133-cidades-wa-1.jpg",
+      "feito_em": "2026-10-07",
+      "obs": "resultado do 1º turno em MT; ordem alfabética"
+    },
+    {
+      "slug": "mauro-mendes-se-reune-com-flavio-ludio-cabral-faz-campanha-por-lula-em-mt",
+      "antes": "capa-p1-2turno-mt.webp",
+      "depois": "2026-10-07-capa-mt-mauro-flavio-ludio-lula.jpg (DAHXWTfj9Jk)",
+      "og": "https://hojemt.com.br/content/files/2026/10/mauro-mendes-se-reune-com-flavio-ludio-cabral-faz-campanha-p-wa-1.jpg",
+      "feito_em": "2026-10-07",
+      "obs": "palanques do 2º turno em MT, sem acusação; Lúdio à esquerda e Mauro à direita (ordem alfabética)"
+    },
+    {
+      "slug": "escala-6x1-entra-no-2o-turno-em-mt-mauro-critica-fim-e-ludio-rebate",
+      "antes": "capa-p3-2turno-mt.webp",
+      "depois": "2026-10-07-capa-mt-6x1-mauro-ludio.jpg (DAHXWQkXhfo)",
+      "og": "https://hojemt.com.br/content/files/2026/10/escala-6x1-entra-no-2o-turno-em-mt-mauro-critica-fim-e-ludio-wa-1.jpg",
+      "feito_em": "2026-10-07",
+      "obs": "debate de proposta (escala 6x1), sem acusação; ordem alfabética"
     }
   ],
   "mantidos": [

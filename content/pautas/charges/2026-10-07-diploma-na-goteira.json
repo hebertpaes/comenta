@@ -1,0 +1,55 @@
+{
+  "slug": "diploma-na-goteira",
+  "materia": "https://hojemt.com.br/diploma-na-goteira/",
+  "titulo": "Diploma na goteira",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 07/10/2026 ~17:40 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas. A fala literal está na notícia oficial da Câmara de VG ('Eu vim aqui agradecer...'), mas não na curta.",
+  "legenda": {
+    "site_16x9": "Na Câmara de VG, até visita senta na Mesa.",
+    "instagram_4x5": "Na Câmara de VG, até visita senta na Mesa."
+  },
+  "contexto": "Curta sobre a visita do deputado estadual reeleito Fabinho Tardin (Podemos) à sessão da Câmara de Várzea Grande de 06/10/2026: Wanderley Cerqueira o convidou para compor a Mesa e ele agradeceu o apoio dos vereadores. A goteira é piada genérica de prédio público, sem referência a fato.",
+  "fontes": [
+    "https://hojemt.com.br/diploma-na-goteira/",
+    "https://www.varzeagrande.mt.leg.br/institucional/noticias/deputado-eleito-fabinho-visita-a-camara-discursa-na-tribuna-e-agradece-apoio-de-vereadores"
+  ],
+  "regras_da_cena": "caricatura de Fabinho acenando, com diploma enrolado (fita verde) debaixo do braço, no plenário; vereadores genéricos aplaudindo; goteira pingando num balde ao lado da Mesa. Sem dinheiro, sem cena de crime.",
+  "personagens": [
+    {
+      "nome": "Fabinho Tardin (deputado estadual, Podemos)",
+      "referencia_canva": "MAHXWbD-VDY",
+      "foto": "foto oficial do TSE 2026 (DivulgaCand, SQ 110002542638), espelho ND Mais: https://static.ndmais.com.br/eleicoes/2026/mt/FMT110002542638_div.jpg",
+      "licenca": "referência de desenho"
+    }
+  ],
+  "anatomia": "conferida em zoom nas duas versões: Fabinho com dois braços e duas mãos (uma acena, outra segura o diploma); os 5 vereadores do fundo (16:9) com duas mãos cada, aplaudindo",
+  "canva": {
+    "design_site_16x9": "DAHXWeoRCEY",
+    "arte_16x9": "MAHXWbyZYaU",
+    "design_instagram_4x5": "DAHXWWrf5OM",
+    "arte_4x5": "MAHXWbY5-K0",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "112",
+    "quando": "2026-10-16T07:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-07-diploma-na-goteira.jpg",
+    "instagram_4x5": "2026-10-07-diploma-na-goteira-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-diploma-na-goteira.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/diploma-na-goteira-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-diploma-na-goteira-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~17:40 UTC (antes: charge automática do publicador, charge-1791386539.webp)",
+  "alertas_ao_editor": [
+    "a curta publicada escreve 'deputando estadual eleito' (erro de digitação) e chama Fabinho só de 'eleito'; segundo a Câmara de VG ele foi o mais votado de novo, ou seja, reeleito. O texto não foi mexido (só com pedido do editor)."
+  ]
+}

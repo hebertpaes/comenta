@@ -1,0 +1,67 @@
+{
+  "slug": "velha-politica-nova-briga",
+  "materia": "https://hojemt.com.br/velha-politica-nova-briga/",
+  "titulo": "Velha política, nova briga",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 07/10/2026 ~17:40 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta só traz 'velha política' entre aspas, sem frase completa de ninguém.",
+  "legenda": {
+    "site_16x9": "No tabuleiro de MT, toda jogada tem resposta.",
+    "instagram_4x5": "No tabuleiro de MT, toda jogada tem resposta."
+  },
+  "contexto": "Curta sobre a fala de Abilio Brunini (06/10/2026) de que MT não quer mais a 'velha política', citando a família Campos, e a reação do deputado Júlio Campos (União). Cena neutra de disputa (xadrez), sem acusação, sem dinheiro.",
+  "fontes": [
+    "https://hojemt.com.br/velha-politica-nova-briga/",
+    "https://www.reportermt.com/politica/abilio-votacao-mostrou-que-mato-grosso-nao-quer-mas-os-campos-os-riva-botelho-e-emanuel/244745",
+    "https://www.hnt.com.br/politica/abilio-dispara-contra-botelho-e-diz-que-urnas-sinalizam-fim-de-velha-classe-politica/579431",
+    "https://www.olhardireto.com.br/noticias/julio-reage-a-critica-a-velha-politica-e-diz-que-abilio-usou-e-abusou-da-maquina-publica-para-eleger-esposa",
+    "https://reportermt.com/politica/com-julio-derrotado-nas-urnas-e-jayme-sem-mandato-chega-ao-fim-a-era-campos-em-mato-grosso/244624",
+    "https://www.hnt.com.br/politica/jayme-nao-disputa-julio-e-derrotado-e-familia-campos-nao-conquista-mandato-apos-54-anos/579038"
+  ],
+  "regras_da_cena": "caricaturas de Abilio (camiseta cinza-escura, cabeça raspada) e Júlio Campos (terno, óculos, braços cruzados) jogando xadrez; Cuiabá ao pôr do sol pela janela (16:9). Nenhum objeto de acusação.",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini (prefeito de Cuiabá, PL)",
+      "referencia_canva": "MAHWHiDa8C0 + MAHWHhg33Yw",
+      "foto": "galeria oficial do prefeito, Prefeitura de Cuiabá (Foto: Rennan Oliveira/Secom), 21/09/2026",
+      "licenca": "referência de desenho"
+    },
+    {
+      "nome": "Júlio Campos (deputado estadual, União)",
+      "referencia_canva": "MAHXWXANuV8",
+      "foto": "foto oficial do TSE 2026 (DivulgaCand, SQ 110002550705), espelho ND Mais: https://static.ndmais.com.br/eleicoes/2026/mt/FMT110002550705_div.jpg",
+      "licenca": "referência de desenho"
+    }
+  ],
+  "anatomia": "conferida em zoom nas duas versões: Abilio com dois braços e duas mãos (uma move a peça, outra apoiada na mesa); Júlio com braços cruzados e duas mãos visíveis",
+  "canva": {
+    "design_site_16x9": "DAHXWYyyRik",
+    "arte_16x9": "MAHXWd--P1Q",
+    "design_instagram_4x5": "DAHXWSPNmU4",
+    "arte_4x5": "MAHXWZLeDSQ",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "aguardando_decisao",
+    "agenda_id": "113",
+    "quando_proposto": "2026-10-16T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-07-velha-politica-nova-briga.jpg",
+    "instagram_4x5": "2026-10-07-velha-politica-nova-briga-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-velha-politica-nova-briga.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/velha-politica-nova-briga-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-velha-politica-nova-briga-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~17:40 UTC (antes: charge automática do publicador, charge-1791386527.webp)",
+  "alertas_ao_editor": [
+    "mesmo tema da charge 'Sobrenomes sem veto' (agenda 111, 15/10 15:30): o item 113 ficou aguardando_decisao para o senhor escolher se as duas vão ao Instagram.",
+    "a reação de Júlio Campos ('Eu repudio as palavras do prefeito...') só foi lida no Olhar Direto e traz acusação a Abilio; ficou fora da legenda do Instagram.",
+    "a curta publicada diz que Júlio 'figura como suplente conforme dados do TSE'; não conferido nesta rodada. O texto não foi mexido."
+  ]
+}

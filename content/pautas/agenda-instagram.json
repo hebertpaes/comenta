@@ -1915,6 +1915,38 @@
       "materia": "https://hojemt.com.br/sobrenomes-sem-veto/",
       "charge_json": "pautas/charges/2026-10-07-sobrenomes-sem-veto.json",
       "obs": "próximo horário livre de charge (15/10 15:30). Fontes da legenda: reportermt.com/politica/abilio-votacao-mostrou-que-mato-grosso-nao-quer-mas-os-campos-os-riva-botelho-e-emanuel/244745; hnt.com.br/politica/abilio-dispara-contra-botelho-e-diz-que-urnas-sinalizam-fim-de-velha-classe-politica/579431; folhamax.com/politica/abilio-ironiza-derrota-de-botelho-e-adversarios-placa-nao-vota/576005. Se o editor achar o tema velho em 15/10, adiantar ou trocar."
+    },
+    {
+      "id": "112",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-16T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Diploma na goteira",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-diploma-na-goteira-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Diploma na goteira\n\nNa Câmara de VG, até visita senta na Mesa.\n\nO deputado estadual reeleito Fabinho Tardin (Podemos) visitou a sessão da Câmara Municipal de Várzea Grande na terça (6). O presidente, Wanderley Cerqueira (MDB), anunciou a presença e o convidou para compor a Mesa Diretora. Da tribuna, Fabinho, que foi vereador e presidiu a Casa por dois mandatos, agradeceu o apoio dos vereadores: \"Eu vim aqui agradecer\" (Câmara Municipal de Várzea Grande).\n\nLeia a curta completa: hojemt.com.br/diploma-na-goteira\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #varzeagrande #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/diploma-na-goteira/",
+      "charge_json": "pautas/charges/2026-10-07-diploma-na-goteira.json",
+      "obs": "próximo horário livre de charge (16/10 07:30). Fonte oficial da legenda: varzeagrande.mt.leg.br/institucional/noticias/deputado-eleito-fabinho-visita-a-camara-discursa-na-tribuna-e-agradece-apoio-de-vereadores (07/10, 9h50)."
+    },
+    {
+      "id": "113",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-16T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Velha política, nova briga",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-velha-politica-nova-briga-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Velha política, nova briga\n\nNo tabuleiro de MT, toda jogada tem resposta.\n\nO prefeito de Cuiabá, Abilio Brunini (PL), disse na terça (6) que o resultado das eleições mostra que Mato Grosso \"não quer mais\" famílias tradicionais da política, entre elas a família Campos (RepórterMT e HNT). O deputado estadual Júlio Campos (União) não se reelegeu em 4 de outubro, e a família Campos ficará sem mandato em 2027 (RepórterMT, HNT e Folhamax).\n\nLeia a curta completa: hojemt.com.br/velha-politica-nova-briga\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #cuiaba #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/velha-politica-nova-briga/",
+      "charge_json": "pautas/charges/2026-10-07-velha-politica-nova-briga.json",
+      "obs": "aguardando_decisao: mesmo tema do item 111 (Sobrenomes sem veto, 15/10 15:30). Se o editor quiser as duas, trocar para agendado em 16/10 15:30. Fontes: reportermt.com/politica/abilio-votacao-mostrou-que-mato-grosso-nao-quer-mas-os-campos-os-riva-botelho-e-emanuel/244745; hnt.com.br/politica/abilio-dispara-contra-botelho-e-diz-que-urnas-sinalizam-fim-de-velha-classe-politica/579431; reportermt.com/politica/com-julio-derrotado-nas-urnas-e-jayme-sem-mandato-chega-ao-fim-a-era-campos-em-mato-grosso/244624; hnt.com.br/politica/jayme-nao-disputa-julio-e-derrotado-e-familia-campos-nao-conquista-mandato-apos-54-anos/579038; folhamax.com/politica/familia-campos-nao-ocupara-cargos-ano-que-vem/575870. A reação de Júlio (Olhar Direto, fonte única, com acusação) ficou fora."
     }
   ]
 }
