@@ -873,14 +873,38 @@
   },
   "barra:gn:veja quem são os 55 deputados estaduais eleitos no rio grande do sul": {
    "titulo": "Veja quem são os 55 deputados estaduais eleitos no Rio Grande do Sul - GZH",
-   "data": "2026-10-04"
+   "data": "2026-10-06"
   },
   "barra:gn:wanderley barra pedido de 15 vereadores por nova eleição na câmara de vg": {
    "titulo": "Wanderley barra pedido de 15 vereadores por nova eleição na Câmara de VG - Olhar Direto",
    "data": "2026-10-06"
+  },
+  "chapada:gn:aos 80 anos, júlio campos cogita encerrar carreira política como vereador em chapada - hip": {
+   "titulo": "Aos 80 anos, Júlio Campos cogita encerrar carreira política como vereador em Chapada - HiperNotícias - Você bem informado",
+   "data": "2026-10-07"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/vereador-sugere-criacao-de-centro-especializado-em-dislexia-e-dislalia-em-sorriso": {
+   "titulo": "Vereador sugere criação de centro especializado em dislexia e dislalia em Sorriso",
+   "data": "2026-10-07"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/legislativo-acompanha-entrega-de-van-para-transporte-de-idosos-atendidos-pelo-centro-dia": {
+   "titulo": "Legislativo acompanha entrega de van para transporte de idosos atendidos pelo Centro Dia",
+   "data": "2026-10-07"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/semana-pro-vida-palestra-reune-centenas-de-pessoas-no-centro-de-eventos": {
+   "titulo": "Semana Pró-Vida: palestra reúne centenas de pessoas no Centro de Eventos",
+   "data": "2026-10-07"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/indicacao-quer-ampliar-profissionais-habilitados-a-prescrever-formulas-nutricionais-em-sorriso": {
+   "titulo": "Indicação quer ampliar profissionais habilitados a prescrever fórmulas nutricionais em Sorriso",
+   "data": "2026-10-07"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/semana-pro-vida-palestra-e-possivel-apesar-de-tudo-dizer-sim-a-vida": {
+   "titulo": "Semana Pró-Vida, Palestra é possível, apesar de tudo, dizer sim à vida?",
+   "data": "2026-10-06"
   }
  },
- "ultima_checagem": "2026-10-07T12:39:25.469Z",
+ "ultima_checagem": "2026-10-07T20:38:38.912Z",
  "descartados_2026-10-01_tarde": [
   {
    "cidade": "Sorriso",
@@ -918,6 +942,8 @@
   "Sorriso: Indicação 676/2026 (Brendo Braga) para ampliar quem prescreve fórmulas nutricionais — indicação de rotina de um vereador, sem valor nem efeito concreto",
   "Google Notícias (filtro de Barra do Garças) trouxe matéria da Câmara de Várzea Grande (Olhar Direto, Mesa) — fora do escopo; já coberta pela rotina de VG",
   "Chapada: sem vídeo novo da sessão adiada para 06/10 e sem notícia em fonte aberta até 08h40 de 07/10",
-  "Lucas do Rio Verde e Barra do Garças: sites com falha de conexão na 1ª tentativa; na 2ª, nada novo"
+  "Lucas do Rio Verde e Barra do Garças: sites com falha de conexão na 1ª tentativa; na 2ª, nada novo",
+  "16h37 (MT): Sorriso — indicação de centro de dislexia/dislalia, entrega de van ao Centro Dia (Executivo), palestra da Semana Pró-Vida e Indicação 676/2026 (fórmulas nutricionais, Brendo Braga): rotina sem efeito concreto; sem pauta.",
+  "16h37 (MT): Chapada — HiperNotícias: 'Aos 80 anos, Júlio Campos cogita encerrar carreira política como vereador em Chapada' (intenção para 2028, uma fonte): acompanhar; sem pauta."
  ]
 }
