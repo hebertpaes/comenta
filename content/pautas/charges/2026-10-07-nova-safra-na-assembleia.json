@@ -1,0 +1,47 @@
+{
+  "slug": "nova-safra-na-assembleia",
+  "materia": "https://hojemt.com.br/nova-safra-na-assembleia/",
+  "titulo": "Nova safra na Assembleia",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 07/10/2026 ~06:40 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal",
+  "legenda": {
+    "site_16x9": "Nova safra na Assembleia: 18 replantados e cinco brotos novos.",
+    "instagram_4x5": "Nova safra na Assembleia: 18 replantados e 5 brotos novos."
+  },
+  "contexto": "Curta sobre a renovação da ALMT para 2027: 18 reconduzidos, 5 estreantes (Samantha do Abilio, Leo Bortolin, Alessandra Ferreira, Alcino Barcelos, Adelcino Lopo) e a volta de Ulysses Moraes; renovação de 25%. Votos conferidos na lista do Portal Tela. Cena sem pessoas (lavoura de soja diante de prédio público genérico).",
+  "fontes": [
+    "https://hojemt.com.br/nova-safra-na-assembleia/",
+    "https://portalmatogrosso.com.br/assembleia-tera-18-deputados-reconduzidos-e-cinco-estreantes-na-proxima-legislatura/",
+    "https://www.matogrossomaisnoticias.com.br/politica-mt/assembleia-tera-18-deputados-reconduzidos-e-cinco-estreantes-na-proxima-legislatura/",
+    "https://www.portaltela.com/brasil/2026/10/05/veja-a-lista-dos-deputados-estaduais-eleitos-por-mato-grosso/"
+  ],
+  "regras_da_cena": "lavoura de soja com fileiras de pés altos (reconduzidos) e cinco brotos novos (estreantes) diante de prédio público branco genérico, regador ao lado; sem pessoas, sem letreiro",
+  "personagens": [],
+  "anatomia": "sem pessoas nem animais; conferidos os cinco brotos nas duas versões",
+  "canva": {
+    "design_site_16x9": "DAHXTsmlC9s",
+    "arte_16x9": "MAHXTqCUijU",
+    "design_instagram_4x5": "DAHXTtiBrJE",
+    "arte_4x5": "MAHXTqFaicU",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "105",
+    "quando": "2026-10-13T07:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-07-nova-safra-na-assembleia.jpg",
+    "instagram_4x5": "2026-10-07-nova-safra-na-assembleia-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-nova-safra-na-assembleia.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/nova-safra-na-assembleia-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-nova-safra-na-assembleia-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~06:40 UTC (antes: charge automática do publicador, charge-1791354126.webp)"
+}

@@ -1804,6 +1804,38 @@
       "materia": "https://hojemt.com.br/cabos-em-risco/",
       "charge_json": "pautas/charges/2026-10-07-cabos-em-risco.json",
       "obs": "próximo horário livre de charge"
+    },
+    {
+      "id": "105",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "formato": "charge",
+      "quando": "2026-10-13T07:30:00-04:00",
+      "titulo": "Nova safra na Assembleia",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-nova-safra-na-assembleia-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Nova safra na Assembleia\n\nNova safra na Assembleia: 18 replantados e 5 brotos novos.\n\nA Assembleia Legislativa de Mato Grosso terá, a partir de 2027, 18 deputados reconduzidos, cinco estreantes — Samantha do Abilio (PL), Leo Bortolin (MDB), Alessandra Ferreira (Podemos), Alcino Barcelos (PL) e Adelcino Lopo (Podemos) — e a volta de Ulysses Moraes (Podemos), que exerceu mandato entre 2019 e 2023. A renovação foi de 25% das 24 cadeiras (Portal Mato Grosso, Mato Grosso Mais Notícias; votos: Portal Tela).\n\nLeia a curta completa: hojemt.com.br/nova-safra-na-assembleia\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #almt #eleicoes2026 #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/nova-safra-na-assembleia/",
+      "charge_json": "pautas/charges/2026-10-07-nova-safra-na-assembleia.json",
+      "obs": "próximo horário livre de charge"
+    },
+    {
+      "id": "106",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "formato": "charge",
+      "quando": "2026-10-13T15:30:00-04:00",
+      "titulo": "Desenrola de novo",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-desenrola-de-novo-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Desenrola de novo\n\nDesenrola 3.0: mais uma chance de achar a ponta do novelo.\n\nA Medida Provisória 1.393, de 25 de setembro de 2026, criou o Desenrola Brasil 3.0, nova modalidade de renegociação de dívidas de pessoas físicas inadimplentes. A MP também muda o prazo do Desenrola Adimplentes e tem de ser votada pelo Congresso (Planalto, Senado Federal).\n\nLeia a curta completa: hojemt.com.br/desenrola-de-novo\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #desenrola #dividas #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/desenrola-de-novo/",
+      "charge_json": "pautas/charges/2026-10-07-desenrola-de-novo.json",
+      "obs": "próximo horário livre de charge"
     }
   ]
 }

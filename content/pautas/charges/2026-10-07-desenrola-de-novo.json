@@ -1,0 +1,54 @@
+{
+  "slug": "desenrola-de-novo",
+  "materia": "https://hojemt.com.br/desenrola-de-novo/",
+  "titulo": "Desenrola de novo",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 07/10/2026 ~06:40 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal",
+  "legenda": {
+    "site_16x9": "Desenrola 3.0: mais uma chance de achar a ponta do novelo.",
+    "instagram_4x5": "Desenrola 3.0: mais uma chance de achar a ponta do novelo."
+  },
+  "contexto": "Curta sobre a MP 1.393/2026 (25/09/2026), que institui o Desenrola Brasil 3.0 para renegociação de dívidas de pessoas físicas inadimplentes. Personagem genérico (cuiabano de chapéu de palha), sem pessoa real.",
+  "fontes": [
+    "https://hojemt.com.br/desenrola-de-novo/",
+    "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/mpv/mpv1393.htm",
+    "https://legis.senado.leg.br/norma/44059093",
+    "https://www12.senado.leg.br/publicacoes/estudos-legislativos/tipos-de-estudos/sumarios-de-proposicoes/mpv1393"
+  ],
+  "regras_da_cena": "homem genérico de chapéu de palha numa cadeira de balanço desenrolando um novelo gigante de papéis de contas em branco; varanda de Cuiabá ao entardecer; sem dinheiro, sem texto",
+  "personagens": [
+    {
+      "nome": "personagem genérico (cidadão endividado)",
+      "referencia_canva": null,
+      "foto": null,
+      "licenca": "sem pessoa real"
+    }
+  ],
+  "anatomia": "conferida em zoom nas duas versões: dois braços, duas mãos, duas pernas e dois pés",
+  "canva": {
+    "design_site_16x9": "DAHXTu0yEj8",
+    "arte_16x9": "MAHXTiW9NKo",
+    "design_instagram_4x5": "DAHXThGYcsw",
+    "arte_4x5": "MAHXTuu6QFY",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "106",
+    "quando": "2026-10-13T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-07-desenrola-de-novo.jpg",
+    "instagram_4x5": "2026-10-07-desenrola-de-novo-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-desenrola-de-novo.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/desenrola-de-novo-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-desenrola-de-novo-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~06:40 UTC (antes: charge automática do publicador, charge-1791354169.webp)"
+}
