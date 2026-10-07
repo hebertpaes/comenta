@@ -1,0 +1,52 @@
+{
+  "slug": "entrega-so-no-papel",
+  "materia": "https://hojemt.com.br/entrega-so-no-papel/",
+  "titulo": "Entrega? Só no papel",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 07/10/2026 ~09:40 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta parafraseia o post ('o Brasil entregou política pública, escola, casa e dignidade'); a frase literal do Bluesky é 'Lula entrega política pública, estudante na escola, casa para mães de família, emprego e dignidade.'",
+  "legenda": {
+    "site_16x9": "No segundo turno, a campanha virou serviço de entrega.",
+    "instagram_4x5": "No segundo turno, a campanha virou serviço de entrega."
+  },
+  "contexto": "Curta sobre o post de Lula no Bluesky (06/10/2026) sobre 'entregas' do governo e o 2º turno. A paráfrase da curta não é literal; balão omitido.",
+  "fontes": [
+    "https://hojemt.com.br/entrega-so-no-papel/",
+    "https://bsky.app/profile/lulaoficialbluesky.bsky.social/post/3mx7s4w7dbc2x"
+  ],
+  "regras_da_cena": "caricatura de Lula como entregador de bicicleta numa rua de Cuiabá com caixa térmica e pacote lisos, ipê-amarelo ao fundo",
+  "personagens": [
+    {
+      "nome": "Luiz Inácio Lula da Silva (presidente, PT)",
+      "referencia_canva": "MAHWNewot14",
+      "foto": "foto oficial de registro do TSE 2026 (DivulgaCand)",
+      "licenca": "referência de desenho"
+    }
+  ],
+  "anatomia": "conferida em zoom nas duas versões: dois braços e duas mãos; uma perna e um pé ficam atrás do quadro da bicicleta",
+  "canva": {
+    "design_site_16x9": "DAHXUT34q2s",
+    "arte_16x9": "MAHXUbYchTw",
+    "design_instagram_4x5": "DAHXUXdiEDE",
+    "arte_4x5": "MAHXUTYQPGA",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "109",
+    "quando": "2026-10-15T07:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-07-entrega-so-no-papel.jpg",
+    "instagram_4x5": "2026-10-07-entrega-so-no-papel-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-entrega-so-no-papel.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/entrega-so-no-papel-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-entrega-so-no-papel-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~09:40 UTC (antes: charge automática do publicador, charge-1791364984.webp)"
+}

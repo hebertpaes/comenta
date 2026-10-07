@@ -1,0 +1,52 @@
+{
+  "slug": "presidencia-em-brasa",
+  "materia": "https://hojemt.com.br/presidencia-em-brasa/",
+  "titulo": "Presidência em brasa",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 07/10/2026 ~09:40 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": "Tem escolhas que mudam tudo.",
+  "balao_obs": "fala literal do post de Lula no Bluesky (perfil oficial verificado lulaoficialbluesky.bsky.social, 06/10/2026 15:36 UTC: 'Tem escolhas que mudam tudo. E algumas perdas não têm volta.'), citada na curta",
+  "legenda": {
+    "site_16x9": "Segundo turno: a escolha voltou para a brasa.",
+    "instagram_4x5": "Segundo turno: a escolha voltou para a brasa."
+  },
+  "contexto": "Curta sobre o post de Lula no Bluesky e o resultado do 1º turno (53.879.538 votos, 45,16% dos válidos; 2º turno contra Flávio Bolsonaro). Atenção para o editor: a curta diz que o Bluesky 'virou o diário de bordo oficial de Cuiabá' e cita 'apuração de 5 de outubro' (o 1º turno foi em 4/10).",
+  "fontes": [
+    "https://hojemt.com.br/presidencia-em-brasa/",
+    "https://bsky.app/profile/lulaoficialbluesky.bsky.social/post/3mx7r3rfsgk2x"
+  ],
+  "regras_da_cena": "caricatura de Lula numa encruzilhada de estrada de terra no cerrado sob sol forte, celular na mão, placa com duas setas sem letras",
+  "personagens": [
+    {
+      "nome": "Luiz Inácio Lula da Silva (presidente, PT)",
+      "referencia_canva": "MAHWNewot14",
+      "foto": "foto oficial de registro do TSE 2026 (DivulgaCand)",
+      "licenca": "referência de desenho"
+    }
+  ],
+  "anatomia": "conferida em zoom nas duas versões: dois braços, duas mãos, duas pernas e dois pés",
+  "canva": {
+    "design_site_16x9": "DAHXUcN5YQ4",
+    "arte_16x9": "MAHXUQJnnx0",
+    "design_instagram_4x5": "DAHXUYtzl10",
+    "arte_4x5": "MAHXUSZo3Xg",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "108",
+    "quando": "2026-10-14T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-07-presidencia-em-brasa.jpg",
+    "instagram_4x5": "2026-10-07-presidencia-em-brasa-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-presidencia-em-brasa.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/presidencia-em-brasa-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-presidencia-em-brasa-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~09:40 UTC (antes: charge automática do publicador, charge-1791365023.webp)"
+}

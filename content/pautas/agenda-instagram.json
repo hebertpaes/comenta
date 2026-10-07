@@ -1852,6 +1852,38 @@
       "materia": "https://hojemt.com.br/reforco-do-exterior/",
       "charge_json": "pautas/charges/2026-10-07-reforco-do-exterior.json",
       "obs": "próximo horário livre de charge"
+    },
+    {
+      "id": "108",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "formato": "charge",
+      "quando": "2026-10-14T15:30:00-04:00",
+      "titulo": "Presidência em brasa",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-presidencia-em-brasa-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Presidência em brasa\n\nSegundo turno: a escolha voltou para a brasa.\n\n\"Tem escolhas que mudam tudo. E algumas perdas não têm volta\", escreveu o presidente Lula (PT) no Bluesky em 6 de outubro. No 1º turno, ele teve 53.879.538 votos (45,16% dos válidos) e vai disputar o 2º turno com Flávio Bolsonaro (PL), que teve 47,03% (TSE).\n\nLeia a curta completa: hojemt.com.br/presidencia-em-brasa\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #segundoturno #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/presidencia-em-brasa/",
+      "charge_json": "pautas/charges/2026-10-07-presidencia-em-brasa.json",
+      "obs": "próximo horário livre de charge"
+    },
+    {
+      "id": "109",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "formato": "charge",
+      "quando": "2026-10-15T07:30:00-04:00",
+      "titulo": "Entrega? Só no papel",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-entrega-so-no-papel-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Entrega? Só no papel\n\nNo segundo turno, a campanha virou serviço de entrega.\n\n\"Lula entrega política pública, estudante na escola, casa para mães de família, emprego e dignidade\", diz post do presidente no Bluesky de 6 de outubro. Lula (PT) e Flávio Bolsonaro (PL) disputam o 2º turno da eleição presidencial (TSE).\n\nLeia a curta completa: hojemt.com.br/entrega-so-no-papel\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #segundoturno #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/entrega-so-no-papel/",
+      "charge_json": "pautas/charges/2026-10-07-entrega-so-no-papel.json",
+      "obs": "próximo horário livre de charge"
     }
   ]
 }
