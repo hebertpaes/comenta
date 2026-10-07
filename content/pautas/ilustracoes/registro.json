@@ -1665,6 +1665,42 @@
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
       "obs": "rascunho (rotina TCE-MT). Conferido ampliado: personagem de costas, sem rosto, uma mão visível segurando papéis, sem braço extra; sem texto legível.",
       "data": "2026-10-07"
+    },
+    {
+      "slug": "juiz-valter-simioni-detalha-matriz-de-decisao-para-protecao-a-mulher",
+      "titulo": "Juiz Valter Simioni detalha matriz de decisão para proteção à mulher",
+      "materia": "https://hojemt.com.br/juiz-valter-simioni-detalha-matriz-de-decisao-para-protecao-a-mulher/",
+      "tag": "Política",
+      "canva": {
+        "design": "DAHXXgxo2Ss",
+        "arte": "MAHXXrammnI",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "gabinete de vara especializada em Cuiabá: juiz de toga, de costas, estuda processo ao lado de livro de direito e caderno com diagrama de cinco caixas; balança da justiça e flor lilás na mesa; pela janela, Cuiabá ao entardecer",
+      "arquivo": "2026-10-07-juiz-simioni-matriz-decisao.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-07-juiz-simioni-matriz-decisao.jpg",
+      "og": "https://hojemt.com.br/content/files/2026/10/juiz-valter-simioni-detalha-matriz-de-decisao-para-protecao--wa-1.jpg",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção) · Com informações do Tribunal de Justiça de Mato Grosso (link mantido)",
+      "obs": "substitui a capa genérica do publicador (capa-54162b8bae5e59fe.webp). Juiz genérico (nenhum traço do magistrado pedido no prompt); tema de violência doméstica sem representar vítimas. Conferido ampliado: de costas, rosto não aparece.",
+      "data": "2026-10-07"
+    },
+    {
+      "slug": "time-feminino-do-nova-era-representa-caceres-na-taca-das-favelas-em-cuiaba",
+      "titulo": "Time feminino do Nova Era representa Cáceres na Taça das Favelas em Cuiabá",
+      "materia": "https://hojemt.com.br/time-feminino-do-nova-era-representa-caceres-na-taca-das-favelas-em-cuiaba/",
+      "tag": "Esportes",
+      "canva": {
+        "design": "DAHXXqLfWQQ",
+        "arte": "MAHXXuoq7eA",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "cinco jogadoras de uniforme verde e branco, de costas, caminham para o campo de um torneio comunitário; uma leva a bola; ao fundo, arquibancada, casas coloridas e micro-ônibus branco",
+      "arquivo": "2026-10-07-caceres-nova-era-taca-das-favelas.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-07-caceres-nova-era-taca-das-favelas.jpg",
+      "og": "https://hojemt.com.br/content/files/2026/10/time-feminino-do-nova-era-representa-caceres-na-taca-das-fav-wa-1.jpg",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção) · Com informações da Prefeitura de Cáceres (link mantido)",
+      "obs": "substitui a capa genérica do publicador (capa-243f005b8ead53b8.webp). Conferido ampliado: 5 jogadoras, cada uma com 2 braços, 2 mãos, 2 pernas e 2 pés; ninguém de frente; sem números nas camisas.",
+      "data": "2026-10-07"
     }
   ]
 }
