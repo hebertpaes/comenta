@@ -18,13 +18,14 @@
   "https://www.olhardireto.com.br"
  ],
  "ultimo_video_visto": {
-  "id": "fv-kemvKsGo",
-  "titulo": "Sérgio Ricardo destaca certificação internacional em auditoria conquistada por servidoras do TCE-MT",
-  "publicado": "2026-10-06T14:21"
+  "id": "Z5LXXbOE_Z0",
+  "titulo": "Sérgio Ricardo destaca acolhimento a crianças com câncer durante entrega de brinquedos",
+  "publicado": "2026-10-07T21:55"
  },
  "ultima_sessao_vista": {
-  "id": "aTo4U6AIDDs",
-  "titulo": "TCE-MT – 14ª SESSÃO ORDINÁRIA DO PLENÁRIO PRESENCIAL - 29 DE SETEMBRO DE 2026"
+  "id": "L_7_rif8H5Q",
+  "titulo": "TCE-MT - 15ª SESSÃO ORDINÁRIA DO PLENÁRIO PRESENCIAL - 06 DE OUTUBRO DE 2026",
+  "live": "tMk6C15pqAk"
  },
  "pautas": [
   {
@@ -134,6 +135,25 @@
    "origem": "O Documento, Só Notícias, Cenário MT e Folhamax (05/10); consulta da Câmara de Nossa Senhora do Livramento, relator Alisson Alencar",
    "card": "pautas/tce/2026-10-06-duodecimo-instagram-retrato.jpg (Canva DAHXRswfM-Y)",
    "instagram": "agenda 100 (aguardando_materia)"
+  },
+  {
+   "data": "2026-10-07",
+   "slug": "mt-170-plenario-do-tce-mt-empata-e-sergio-ricardo-mantem-o-processo",
+   "status": "rascunho",
+   "ghost_id": "6ac6c41a11b29b68ea3e9801",
+   "arte": "pautas/ilustracoes/2026-10-07-tce-mt170-empate-avocacao.jpg",
+   "instagram": "agenda 119 (aguardando_materia)",
+   "origem": "15ª sessão ordinária presencial (06/10): Olhar Direto, HNT, O Documento, Folhamax, EN + gravação oficial L_7_rif8H5Q",
+   "pendente": "terceiro voto pela manutenção (Alisson Alencar ou o próprio presidente); transmissão incompleta segundo a Folhamax"
+  },
+  {
+   "data": "2026-10-07",
+   "slug": "tce-mt-orienta-prefeituras-a-recuperar-issqn-ate-dezembro",
+   "status": "rascunho",
+   "ghost_id": "6ac6c41b11b29b68ea3e9806",
+   "arte": "pautas/ilustracoes/2026-10-07-tce-issqn-recuperacao.jpg",
+   "instagram": "agenda 120 (aguardando_materia)",
+   "origem": "orientação da COPSFID (pedido da Prefeitura de Sorriso), divulgada em 06/10: Olhar Direto, O Documento, Muvuca Popular, Folhamax, CircuitoMT + LC 227/2026 e 236/2026 (Planalto); vídeo oficial OjPHWR88MiE"
   }
  ],
  "transcricoes": [
@@ -185,12 +205,7 @@
   }
  ],
  "ultima_verificacao": {
-  "data": "2026-10-06T22:10Z",
-  "rss": "novos desde Es-WjQBaQDE: fv-kemvKsGo (certificação internacional de servidoras; descrição cita pareceres favoráveis a Barra do Garças, Mirassol D'Oeste e Reserva do Cabaçal — rotina, sem pauta) e tMk6C15pqAk (15ª sessão presencial, 06/10, pendente). Imprensa: nada novo da sessão de hoje; Plenário Virtual de 05 a 09/10 (66 processos) segue em andamento. Feita a arte pendente do duodécimo (capa + card)."
- },
- "sessao_pendente": {
-  "id": "tMk6C15pqAk",
-  "titulo": "TCE-MT – 15ª SESSÃO ORDINÁRIA DO PLENÁRIO PRESENCIAL - 06 DE OUTUBRO DE 2026",
-  "obs": "live de 06/10 sem descrição no RSS e sem notícia na imprensa até 22h10 UTC; avaliar no próximo disparo (notícias do TCE/imprensa, ou transcrição de trecho). ultima_sessao_vista continua na 14ª até a avaliação."
+  "data": "2026-10-07T22:30Z",
+  "rss": "novos desde fv-kemvKsGo: OjPHWR88MiE (ISSQN, virou pauta), L_7_rif8H5Q (gravação da 15ª sessão de 06/10; MT-170 virou pauta), G5l2Z7jc8n4 (MBA/direitos humanos; descrição reaproveita nota de 22/09 sobre contas de três municípios — sem pauta), Z1ITodhB_MA (duodécimo — já em rascunho de 05/10), Z5LXXbOE_Z0 (entrega de brinquedos — institucional, sem pauta). Site do TCE-MT recusou conexão nesta rodada. Folhamax registra suspeição de Alisson Alencar num processo do Governo do Estado na mesma sessão (não confirmado)."
  }
 }

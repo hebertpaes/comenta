@@ -2027,6 +2027,36 @@
       "materia": "https://hojemt.com.br/promessas-ao-vento-e-conta/",
       "charge_json": "pautas/charges/2026-10-07-promessas-ao-vento-e-conta.json",
       "obs": "aguardando_decisao: tema de cobrança (acusação de terceiros) sem fonte aberta encontrada e sem o outro lado; legenda sem fatos. O editor decide se vai ao Instagram."
+    },
+    {
+      "id": "119",
+      "status": "aguardando_materia",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "card",
+      "titulo": "MT-170: TCE-MT empata em 3 a 3, e Sérgio Ricardo mantém o processo",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-mt170-empate-instagram-retrato.jpg"
+      ],
+      "legenda": "MT-170: TCE-MT empata em 3 a 3, e Sérgio Ricardo mantém o processo\n\nNa sessão de terça-feira (6), o Plenário do Tribunal de Contas de Mato Grosso empatou sobre a avocação do processo da obra da MT-170, que era do conselheiro Campos Neto. O presidente desempatou e manteve o caso com ele; segue valendo, por enquanto, a cautelar que mantém a empresa MTSUL na obra para reparos. Antes da votação, Sérgio Ricardo e Waldir Teis bateram boca (Olhar Direto, HNT, O Documento, Folhamax, EN).\n\nMatéria completa: hojemt.com.br/mt-170-plenario-do-tce-mt-empata-e-sergio-ricardo-mantem-o-processo\n\n#tcemt #mt170 #matogrosso #politica #hojemt",
+      "materia": "https://hojemt.com.br/mt-170-plenario-do-tce-mt-empata-e-sergio-ricardo-mantem-o-processo/",
+      "obs": "publicar só depois que a matéria (rascunho no Ghost, 6ac6c41a11b29b68ea3e9801) for publicada; conferir antes o terceiro voto (Alisson Alencar ou Sérgio Ricardo) — a legenda não cita nomes do placar"
+    },
+    {
+      "id": "120",
+      "status": "aguardando_materia",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "card",
+      "titulo": "TCE-MT orienta prefeituras a recuperar ISSQN até dezembro",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-issqn-instagram-retrato.jpg"
+      ],
+      "legenda": "TCE-MT orienta prefeituras a recuperar ISSQN até dezembro\n\nA Lei Complementar 227/2026 usa a arrecadação do ISSQN de 2019 a 2026, incluindo o que for cobrado de dívida ativa, para calcular a parte de cada município no novo IBS. Por isso, o Tribunal de Contas de Mato Grosso orienta as prefeituras a reforçar a cobrança e a recuperação de créditos ainda neste ano. A orientação responde a pedido da Prefeitura de Sorriso (Olhar Direto, O Documento, Muvuca Popular, Folhamax, CircuitoMT).\n\nMatéria completa: hojemt.com.br/tce-mt-orienta-prefeituras-a-recuperar-issqn-ate-dezembro\n\n#tcemt #issqn #reformatributaria #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/tce-mt-orienta-prefeituras-a-recuperar-issqn-ate-dezembro/",
+      "obs": "publicar só depois que a matéria (rascunho no Ghost, 6ac6c41b11b29b68ea3e9806) for publicada"
     }
   ]
 }

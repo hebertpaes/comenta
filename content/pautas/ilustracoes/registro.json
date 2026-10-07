@@ -1627,6 +1627,44 @@
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
       "obs": "substitui a capa genérica do publicador (capa-6cefa548ee53e619.webp). Conferido: ninguém de frente.",
       "data": "2026-10-07"
+    },
+    {
+      "slug": "mt-170-plenario-do-tce-mt-empata-e-sergio-ricardo-mantem-o-processo",
+      "titulo": "MT-170: Plenário do TCE-MT empata em 3 a 3, e Sérgio Ricardo mantém o processo com ele",
+      "materia": "https://hojemt.com.br/mt-170-plenario-do-tce-mt-empata-e-sergio-ricardo-mantem-o-processo/",
+      "tag": "Política",
+      "canva": {
+        "design": "DAHXXqi_G_Q",
+        "arte": "MAHXXrPV1Xw",
+        "modelo": "DAHWDzwR5c0",
+        "card_4x5": "DAHXXiv9l50"
+      },
+      "cena": "plenário de tribunal vazio, mesa em semicírculo com sete cadeiras de couro verde, processos e martelo; pela janela, rodovia na floresta com asfalto remendado, cones e máquina de pavimentação parada",
+      "arquivo": "2026-10-07-tce-mt170-empate-avocacao.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-07-tce-mt170-empate-avocacao.jpg",
+      "og": "https://hojemt.com.br/content/files/2026/10/mt-170-plenario-do-tce-mt-empata-e-sergio-ricardo-mantem-o-p-wa.jpg",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "obs": "rascunho (rotina TCE-MT). Cena sem pessoas (tema com acusação à empresa). Conferido ampliado: 7 cadeiras, nenhuma pessoa, sem texto legível.",
+      "data": "2026-10-07"
+    },
+    {
+      "slug": "tce-mt-orienta-prefeituras-a-recuperar-issqn-ate-dezembro",
+      "titulo": "TCE-MT orienta prefeituras a recuperar ISSQN até dezembro",
+      "materia": "https://hojemt.com.br/tce-mt-orienta-prefeituras-a-recuperar-issqn-ate-dezembro/",
+      "tag": "Cidades & Mato Grosso",
+      "canva": {
+        "design": "DAHXXqmBmDQ",
+        "arte": "MAHXXsylq4g",
+        "modelo": "DAHWDzwR5c0",
+        "card_4x5": "DAHXXu1m5qQ"
+      },
+      "cena": "servidora municipal de costas revisando pastas de cobrança numa sala de arrecadação de prefeitura do interior; pela janela, silos de grãos e caminhões graneleiros ao entardecer",
+      "arquivo": "2026-10-07-tce-issqn-recuperacao.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-07-tce-issqn-recuperacao.jpg",
+      "og": "https://hojemt.com.br/content/files/2026/10/tce-mt-orienta-prefeituras-a-recuperar-issqn-ate-dezembro-wa.jpg",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "obs": "rascunho (rotina TCE-MT). Conferido ampliado: personagem de costas, sem rosto, uma mão visível segurando papéis, sem braço extra; sem texto legível.",
+      "data": "2026-10-07"
     }
   ]
 }
