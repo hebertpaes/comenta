@@ -1413,9 +1413,9 @@
       "data": "2026-10-07"
     },
     {
-      "slug": "assembleia-vota-veto-ao-reajuste-de-6-8-dos-servidores-do-judiciario",
-      "titulo": "Assembleia vota nesta quarta, em votação aberta, o veto ao reajuste de 6,8% dos servidores do Judiciário",
-      "materia": "rascunho (Ghost 6ac6252f737b3659d67c5800)",
+      "slug": "assembleia-mantem-veto-ao-reajuste-de-6-8-dos-servidores-do-judiciario",
+      "titulo": "Assembleia mantém, em votação aberta, o veto ao reajuste de 6,8% dos servidores do Judiciário",
+      "materia": "https://hojemt.com.br/p/51c2fa72-b7a6-4fcd-92c7-14eae8ddb08a/ (rascunho)",
       "tag": "Política",
       "canva": {
         "design": "DAHXUuneep8",
@@ -1427,7 +1427,7 @@
       "url": "https://hojemt.com.br/content/images/2026/10/2026-10-07-almt-veto-judiciario.jpg",
       "og": "https://hojemt.com.br/content/files/2026/10/assembleia-vota-veto-ao-reajuste-de-6-8-dos-servidores-do-ju-wa.jpg",
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
-      "obs": "pedido do editor (A Notícia de Frente, TV Vila Real, 07/10). Conferido em zoom (galeria, bancadas e Mesa): todos de costas, nenhum rosto, anatomia sem defeito visível.",
+      "obs": "pedido do editor (A Notícia de Frente, TV Vila Real, 07/10). Conferido em zoom (galeria, bancadas e Mesa): todos de costas, nenhum rosto, anatomia sem defeito visível. Em 07/10 à tarde o rascunho foi atualizado com o resultado (veto mantido por 12 a 6) e ganhou título e slug novos (antes: assembleia-vota-veto-...).",
       "data": "2026-10-07"
     },
     {

@@ -136,9 +136,21 @@
   "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-municipal-de-varzea-grande-realiza-sessao-ordinaria-nesta-terca-feira-6-com-pauta-voltada-a-direitos-sociais-preservacao-historica-e-homenagens": {
    "titulo": "Câmara Municipal de Várzea Grande realiza Sessão Ordinária nesta terça-feira (6) com pauta voltada a direitos sociais, preservação histórica e homenagens",
    "data": "2026-10-05T14:01:24Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/deputado-eleito-fabinho-visita-a-camara-discursa-na-tribuna-e-agradece-apoio-de-vereadores": {
+   "titulo": "Deputado eleito Fabinho visita a Câmara, discursa na tribuna e agradece apoio de vereadores",
+   "data": "2026-10-07T13:50:09Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/vereador-raul-cobra-conclusao-de-tapa-buraco-no-bairro-pirineu-e-aponta-falhas-e-burocracia-na-secretaria-de-meio-ambiente": {
+   "titulo": "Vereador Raul cobra conclusão de tapa-buraco no bairro Pirineu e aponta falhas e burocracia na Secretaria de Meio Ambiente",
+   "data": "2026-10-07T13:48:33Z"
+  },
+  "https://www.varzeagrande.mt.leg.br/institucional/noticias/vereador-jero-neto-cobra-urgencia-do-dae-para-solucionar-falta-de-agua-em-residencia-de-gestante-no-bairro-nova-fronteira": {
+   "titulo": "Vereador Jero Neto cobra urgência do DAE para solucionar falta de água em residência de gestante no bairro Nova Fronteira",
+   "data": "2026-10-07T13:27:25Z"
   }
  },
- "ultima_checagem": "2026-10-07T11:20:35.215Z",
+ "ultima_checagem": "2026-10-07T19:22:30.733Z",
  "pautas": [
   {
    "data": "2026-10-01",
@@ -226,5 +238,11 @@
  ],
  "descartados_2026-10-06": [
   "Notícia oficial 'Câmara de VG aprova PCCSs por unanimidade' (publicada 01/10, sessão de 29/09) — já coberta pela pauta de 01/10"
+ ],
+ "descartados_2026-10-07": [
+  "Deputado eleito Fabinho visita a Câmara (notícia oficial 07/10 09h50): já virou curta/charge 'Diploma na goteira' no site; sem pauta própria.",
+  "Vereador Raul Curvo cobra tapa-buraco no Pirineu e transparência dos TACs do Fundo de Meio Ambiente (discurso de 06/10): fala de tribuna sem fato novo verificável; acompanhar se houver requerimento ou resposta da Secretaria.",
+  "Vereador Jero Neto cobra DAE por falta de água em casa de gestante no Nova Fronteira (06/10): caso individual com dados de moradora; não vira matéria.",
+  "Prefeitura de VG: Decreto nº 99/2026 fixa calendário de fechamento das contas (empenhos até 3/11, diárias suspensas de 13/11 a 19/01/2027) — VG Notícias 153141: ato administrativo de rotina de fim de ano; sem pauta."
  ]
 }

@@ -1,34 +1,38 @@
-# Assembleia vota nesta quarta, em votação aberta, o veto ao reajuste de 6,8% dos servidores do Judiciário
+# Assembleia mantém, em votação aberta, o veto ao reajuste de 6,8% dos servidores do Judiciário
 
-**Editoria:** Política · **Status:** rascunho (atualizar com o resultado antes de publicar) · **Data:** 07/10/2026
+**Editoria:** Política · **Status:** rascunho (revisar e publicar) · **Data:** 07/10/2026 (atualizado às 15h30, horário de Cuiabá, com o resultado da votação)
 
-**Sutiã:** O veto do então governador Mauro Mendes foi mantido em votação secreta em dezembro de 2025, e a Justiça anulou a sessão. A Comissão de Constituição e Justiça recomenda a derrubada.
-
----
-
-A Assembleia Legislativa de Mato Grosso (ALMT) tem como primeiro item da sessão ordinária das 9h desta quarta-feira (7) o veto total ao projeto do Tribunal de Justiça de Mato Grosso (TJMT) que altera os valores das tabelas salariais dos servidores efetivos do Poder Judiciário, segundo a [Ordem do Dia oficial](https://storage.al.mt.gov.br/api/v1/download/default/1088482). O parecer da Comissão de Constituição, Justiça e Redação (CCJR) é pela derrubada do veto. A pauta pode mudar por decisão da Mesa Diretora, do plenário ou das comissões.
-
-O Projeto de Lei nº 1.398/2025 muda a Lei nº 8.814/2008, que criou o Sistema de Desenvolvimento de Carreiras e Remuneração (SDCR) do Judiciário, e prevê reajuste de 6,8% para os servidores, segundo o [VG Notícias](https://www.vgnoticias.com.br/politica/deputados-votam-nesta-quarta-veto-a-salarios-de-servidores-do-judiciario/153137) e o [Muvuca Popular](https://www.muvucapopular.com.br/2026/09/02/justica-manda-almt-votar-novamente-veto-a-reajuste-do-judiciario-e-impoe-multa-diaria-de-r-50-mil/). A pauta da Assembleia não informa os novos valores nem o impacto financeiro, de acordo com o VG Notícias.
-
-## Por que o veto volta ao plenário
-
-Os deputados aprovaram o projeto, e o governo do Estado, na gestão de Mauro Mendes (União Brasil), vetou o texto inteiro. Em 3 de dezembro de 2025, a Assembleia manteve o veto por 12 votos a 10, em votação secreta. O Sindicato dos Servidores do Poder Judiciário de Mato Grosso (Sinjusmat) foi à Justiça alegando que a Constituição Federal aboliu o voto secreto na análise de vetos. O Órgão Especial do TJMT declarou inconstitucional o dispositivo estadual que previa o sigilo, e a Turma de Câmaras Cíveis Reunidas de Direito Público e Coletivo anulou a sessão, por unanimidade, em decisão publicada em 13 de agosto, segundo o Muvuca Popular e o [VG Notícias](https://www.vgnoticias.com.br/vgnjur/tjmt-manda-al-refazer-votacao-de-veto-sobre-reajuste-de-servidores-sob-multa-de-ate-r-1-milhao/151719).
-
-Em 2 de setembro, por ordem do relator, desembargador Márcio Vidal, foi expedida a intimação para que a Assembleia pusesse o veto na primeira sessão seguinte, sob multa pessoal de R$ 50 mil por dia ao presidente da Casa, Max Russi (Podemos), limitada inicialmente a R$ 1 milhão. A Presidência da ALMT tinha marcado a análise para 7 de outubro, depois das eleições, citando o calendário eleitoral, a organização dos trabalhos e a presença dos parlamentares. Depois de novo pedido do Sinjusmat, a desembargadora Helena Maria Bezerra Ramos determinou, em 8 de setembro, a inclusão do veto na sessão do dia seguinte, segundo o VG Notícias. O veto não foi votado naquela sessão e voltou à pauta agora.
-
-## O que está em jogo
-
-A nova votação tem de ser aberta, com o voto de cada deputado registrado. A Justiça não concede o reajuste: cabe ao plenário manter ou derrubar o veto. "O Poder Judiciário não escolhe o voto, não determina o resultado, não mantém nem rejeita o veto", escreveu Helena Ramos na decisão, segundo o VG Notícias.
-
-A Assembleia tem duas sessões ordinárias nesta quarta, às 9h e às 13h, com pauta extensa.
+**Sutiã:** Foram 12 votos pela manutenção e 6 pela derrubada; eram necessários 13 para derrubar o veto do então governador Mauro Mendes. A votação secreta de dezembro de 2025 tinha sido anulada pela Justiça.
 
 ---
 
-**Fontes:** ALMT, Ordem do Dia da sessão ordinária de 07/10/2026, 9h: https://storage.al.mt.gov.br/api/v1/download/default/1088482 · ALMT, Ordem do Dia da sessão das 13h: https://storage.al.mt.gov.br/api/v1/download/default/1088464 · VG Notícias (06/10, 15h03): https://www.vgnoticias.com.br/politica/deputados-votam-nesta-quarta-veto-a-salarios-de-servidores-do-judiciario/153137 · VG Notícias (09/09): https://www.vgnoticias.com.br/vgnjur/tjmt-manda-al-refazer-votacao-de-veto-sobre-reajuste-de-servidores-sob-multa-de-ate-r-1-milhao/151719 · Muvuca Popular (02/09): https://www.muvucapopular.com.br/2026/09/02/justica-manda-almt-votar-novamente-veto-a-reajuste-do-judiciario-e-impoe-multa-diaria-de-r-50-mil/
+A Assembleia Legislativa de Mato Grosso (ALMT) manteve nesta quarta-feira (7), em votação aberta e nominal, o veto total ao projeto do Tribunal de Justiça de Mato Grosso (TJMT) que muda as tabelas salariais dos servidores efetivos do Poder Judiciário e prevê reajuste de 6,8%. O placar foi de 12 votos pela manutenção e 6 pela derrubada, segundo o [VG Notícias](https://www.vgnoticias.com.br/politica/deputados-mantem-veto-e-barram-mudanca-salarial-de-servidores-do-judiciario/153177), a [Folhamax](https://www.folhamax.com/politica/deputados-mantem-veto-ao-reajuste-de-6-8-para-servidores-do-judiciario/576127), o [FTN Brasil](https://ftnbrasil.com.br/almt-mantem-veto-de-mauro-e-servidores-do-judiciario-ficam-sem-reajuste-de-6-8/) e o [HNT](https://hnt.com.br/politica/base-de-pivetta-na-al-forma-maioria-e-mantem-veto-a-reajuste-do-judiciario/579628). Para derrubar o veto eram necessários 13 votos, a maioria absoluta dos 24 deputados, de acordo com o [LeiaAgora](https://leiagora.com.br/mesmo-apos-mobilizacao-de-servidores-al-mantem-veto-a-reajuste-de-68-do-judiciario/) e a Folhamax.
+
+O veto era o primeiro item da [Ordem do Dia](https://storage.al.mt.gov.br/api/v1/download/default/1088482) da sessão das 9h, com parecer da Comissão de Constituição, Justiça e Redação (CCJR) pela derrubada. No plenário, prevaleceu a manutenção. Com o resultado, o reajuste continua sem entrar em vigor.
+
+## Como votaram
+
+Pela derrubada do veto, a favor do reajuste, votaram Carlos Avallone (PSDB), Faissal (PL), Gilberto Cattani (PL), Janaina Riva (MDB), Lúdio Cabral (PT) e Valdir Barranco (PT), segundo a Folhamax e o FTN Brasil.
+
+Pela manutenção do veto votaram, entre outros, Beto Dois a Um (Podemos), Chico Guarnieri (PSDB), Diego Guimarães (Republicanos), Dilmar Dal Bosco (União), Dr. Eugênio (Republicanos), Dr. João (MDB), Elizeu Nascimento (Novo), Fabinho Tardin (Podemos), Juca do Guaraná, Nininho (Republicanos) e Valmir Moretto (Republicanos), de acordo com pelo menos dois dos veículos citados. Os veículos divergem sobre o 12º voto e sobre o número de ausentes.
+
+## Por que houve nova votação
+
+Os deputados aprovaram o projeto em novembro de 2025, e o então governador Mauro Mendes (União) vetou o texto inteiro, alegando falta de estudos consolidados de impacto financeiro e de fonte permanente de custeio, segundo o FTN Brasil e o LeiaAgora. Em 3 de dezembro de 2025, a Assembleia manteve o veto por 12 votos a 10, em votação secreta. O Sindicato dos Servidores do Poder Judiciário de Mato Grosso (Sinjusmat) foi à Justiça, o Órgão Especial do TJMT declarou inconstitucional o dispositivo estadual que previa o sigilo, e a Turma de Câmaras Cíveis Reunidas de Direito Público e Coletivo anulou a sessão, por unanimidade, segundo o [Muvuca Popular](https://www.muvucapopular.com.br/2026/09/02/justica-manda-almt-votar-novamente-veto-a-reajuste-do-judiciario-e-impoe-multa-diaria-de-r-50-mil/) e o [VG Notícias](https://www.vgnoticias.com.br/vgnjur/tjmt-manda-al-refazer-votacao-de-veto-sobre-reajuste-de-servidores-sob-multa-de-ate-r-1-milhao/151719).
+
+O TJMT chegou a fixar multa pessoal de R$ 50 mil por dia ao presidente da Casa, Max Russi (Podemos), limitada inicialmente a R$ 1 milhão, para que o veto fosse votado. Em 9 de setembro, a sessão terminou sem quórum e o veto não foi apreciado; a análise ficou para depois do 1º turno. A Justiça não concedia o reajuste: cabia ao plenário manter ou derrubar o veto, com o voto de cada deputado registrado.
+
+## O outro lado
+
+As fontes consultadas não trazem manifestação do Sinjusmat, do governo do Estado nem da Presidência da ALMT depois da votação.
+
+---
+
+**Fontes:** VG Notícias (07/10, 11h58): https://www.vgnoticias.com.br/politica/deputados-mantem-veto-e-barram-mudanca-salarial-de-servidores-do-judiciario/153177 · Folhamax (07/10): https://www.folhamax.com/politica/deputados-mantem-veto-ao-reajuste-de-6-8-para-servidores-do-judiciario/576127 · FTN Brasil (07/10): https://ftnbrasil.com.br/almt-mantem-veto-de-mauro-e-servidores-do-judiciario-ficam-sem-reajuste-de-6-8/ · HNT (07/10, 12h17): https://hnt.com.br/politica/base-de-pivetta-na-al-forma-maioria-e-mantem-veto-a-reajuste-do-judiciario/579628 · LeiaAgora (07/10): https://leiagora.com.br/mesmo-apos-mobilizacao-de-servidores-al-mantem-veto-a-reajuste-de-68-do-judiciario/ · ALMT, Ordem do Dia da sessão ordinária de 07/10/2026, 9h: https://storage.al.mt.gov.br/api/v1/download/default/1088482 · VG Notícias (09/09): https://www.vgnoticias.com.br/vgnjur/tjmt-manda-al-refazer-votacao-de-veto-sobre-reajuste-de-servidores-sob-multa-de-ate-r-1-milhao/151719 · Muvuca Popular (02/09): https://www.muvucapopular.com.br/2026/09/02/justica-manda-almt-votar-novamente-veto-a-reajuste-do-judiciario-e-impoe-multa-diaria-de-r-50-mil/
 
 **Checagem pendente:**
-- **Atualizar com o resultado da votação** (placar e voto de cada deputado) antes de publicar; se o veto sair da pauta, trocar o título.
-- Sessão de 09/09: o site Esportes & Notícias (https://en.com.br/falta-de-quorum-impede-votacao-de-reajuste-de-68-para-o-judiciario-na-assembleia/) diz que o veto não foi votado por falta de quórum (nove deputados presentes, sessão encerrada às 11h38); sem segunda fonte lida, o motivo ficou fora do texto.
-- Partido de Max Russi: o Muvuca Popular escreve PSB; VG Notícias, Olhar Direto e Esportes & Notícias, Podemos. O texto usa Podemos; conferir.
+- **Lista oficial de votação** (painel/ata da ALMT): os veículos divergem sobre o 12º voto pela manutenção (Folhamax cita Max Russi; HNT cita Eduardo Botelho e põe Thiago Silva nas duas listas; VG Notícias cita Thiago Silva) e sobre os ausentes (FTN Brasil: 6; LeiaAgora: 5; Folhamax: 8, citando Wilson Santos e Júlio Campos). Partido de Juca do Guaraná: MDB (Folhamax) ou PSDB (HNT).
+- Wilson Santos (PSD): segundo o LeiaAgora, pediu depois da proclamação que o voto fosse registrado como "sim"; o MidiaNews também noticiou (403, não lido). Conferir na ata.
 - Valor do reajuste (6,8%): está nas reportagens, não na ementa oficial. Conferir no PL 1.398/2025 e pedir ao TJMT e à Secretaria de Fazenda o impacto financeiro.
-- Ouvir o Sinjusmat, a Presidência da ALMT e o governo do Estado (gestão Otaviano Pivetta) sobre a votação. Ninguém foi procurado pelo HOJE MT até o fechamento deste rascunho.
+- Ouvir o Sinjusmat (próximos passos, novo recurso?), a Presidência da ALMT e o governo do Estado (gestão Otaviano Pivetta). Ninguém foi procurado pelo HOJE MT até o fechamento deste rascunho.
+- Rascunho criado antes da sessão (título antigo: "Assembleia vota nesta quarta, em votação aberta, o veto ao reajuste de 6,8% dos servidores do Judiciário"); atualizado com o resultado em 07/10 à tarde.
