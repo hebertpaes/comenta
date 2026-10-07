@@ -1,0 +1,46 @@
+{
+  "slug": "reforco-do-exterior",
+  "materia": "https://hojemt.com.br/reforco-do-exterior/",
+  "titulo": "Reforço do exterior",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador, capa charge-dia; rotina de charges, 07/10/2026 ~08:35 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal",
+  "legenda": {
+    "site_16x9": "Na roça, tem chuva que chega por carta do exterior.",
+    "instagram_4x5": "Na roça, tem chuva que chega por carta do exterior."
+  },
+  "contexto": "Curta sobre estudo do Fida (IFAD) que aponta as remessas de migrantes como rede de proteção para famílias rurais diante de choques econômicos e climáticos. Conferido o relatório 'Sending Money Home 2026' (14/09/2026; US$ 728,6 bi em 2025). Atenção para o editor: a curta fala em 'brasileiros no exterior'; as fontes abertas consultadas tratam de remessas a países de renda baixa e média em geral, sem recorte do Brasil.",
+  "fontes": [
+    "https://hojemt.com.br/reforco-do-exterior/",
+    "https://www.ifad.org/en/w/news/remittances-nearly-doubled-in-a-decade-to-reach-us-729-billion-in-2025-new-ifad-report-finds",
+    "https://www.ipsnews.net/2026/09/outpacing-foreign-aid-migrant-remittances-are-a-lifeline-ensuring-families-are-fed-and-healthy-says-ifad/"
+  ],
+  "regras_da_cena": "aviõezinhos de papel feitos de cartas, com regadores, mantendo verde a horta de um sítio de agricultura familiar no meio da seca de MT; sem pessoas, sem dinheiro, sem letras",
+  "personagens": [],
+  "anatomia": "sem pessoas nem animais nas duas versões",
+  "canva": {
+    "design_site_16x9": "DAHXUO4BhKY",
+    "arte_16x9": "MAHXUPuDSPI",
+    "design_instagram_4x5": "DAHXUBsH_wE",
+    "arte_4x5": "MAHXUBIz4p4",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "107",
+    "quando": "2026-10-14T07:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-07-reforco-do-exterior.jpg",
+    "instagram_4x5": "2026-10-07-reforco-do-exterior-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-reforco-do-exterior.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/reforco-do-exterior-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-reforco-do-exterior-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~08:35 UTC (antes: charge automática do publicador, charge-dia-1791360620.webp)"
+}

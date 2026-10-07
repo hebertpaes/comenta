@@ -1836,6 +1836,22 @@
       "materia": "https://hojemt.com.br/desenrola-de-novo/",
       "charge_json": "pautas/charges/2026-10-07-desenrola-de-novo.json",
       "obs": "próximo horário livre de charge"
+    },
+    {
+      "id": "107",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-14T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Reforço do exterior",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-reforco-do-exterior-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Reforço do exterior\n\nNa roça, tem chuva que chega por carta do exterior.\n\nO relatório \"Sending Money Home 2026\", do Fundo Internacional de Desenvolvimento Agrícola (Fida/IFAD), lançado em 14 de setembro, mostra que as remessas de migrantes para países de renda baixa e média somaram US$ 728,6 bilhões em 2025 e ajudam famílias do campo a enfrentar choques econômicos e climáticos (IFAD, IPS).\n\nLeia a curta completa: hojemt.com.br/reforco-do-exterior\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #agriculturafamiliar #clima #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/reforco-do-exterior/",
+      "charge_json": "pautas/charges/2026-10-07-reforco-do-exterior.json",
+      "obs": "próximo horário livre de charge"
     }
   ]
 }
