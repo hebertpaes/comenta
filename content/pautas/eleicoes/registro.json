@@ -927,6 +927,78 @@
           "sq": "280002542548"
         }
       ]
+    },
+    {
+      "nome": "Capa · Caiado oficializa apoio a Flávio (2º turno)",
+      "design": "DAHXUp1L-nY",
+      "modelo": "DAHXPV0l69E (cópia; foto da direita, nomes e textos trocados)",
+      "arquivo": "pautas/eleicoes/2026-10-07-capa-caiado-apoio-flavio.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-capa-caiado-apoio-flavio.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Flávio Bolsonaro",
+          "partido": "PL",
+          "canva": "MAHWNRk-aYo",
+          "sq": "280002551544"
+        },
+        {
+          "nome_urna": "Ronaldo Caiado",
+          "partido": "PSD",
+          "canva": "MAHWNQ06dRI",
+          "sq": "280002551932"
+        }
+      ],
+      "obs": "rascunho caiado-oficializa-apoio-a-flavio-bolsonaro-no-2-turno (Ghost 6ac6221e737b3659d67c57d8), pedido do editor em 07/10 a partir do vídeo da Jovem Pan https://youtu.be/6-49WyGhthA"
+    },
+    {
+      "nome": "Capa · Pivetta, Mauro Mendes e PL por Flávio (MT, 2º turno)",
+      "design": "DAHXUhh5nek",
+      "modelo": "DAHXPV0l69E (cópia; fotos, nomes e textos trocados; ordem alfabética: Mauro, Otaviano)",
+      "arquivo": "pautas/eleicoes/2026-10-07-capa-mt-pivetta-mauro-flavio.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-capa-mt-pivetta-mauro-flavio.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Mauro Mendes",
+          "partido": "União",
+          "canva": "MAHWHyLCtr0",
+          "sq": "110002551966"
+        },
+        {
+          "nome_urna": "Otaviano Pivetta",
+          "partido": "Republicanos",
+          "canva": "MAHWH0J-3js",
+          "sq": "110002551480"
+        }
+      ],
+      "obs": "rascunho pivetta-mauro-mendes-e-pl-se-unem-por-flavio-no-2-turno (Ghost 6ac62220737b3659d67c57dd)"
+    },
+    {
+      "nome": "Capa · Quem apoia quem no 2º turno",
+      "design": "DAHXUhWORrk",
+      "modelo": "DAHXPV0l69E (cópia; título e subtítulo trocados)",
+      "arquivo": "pautas/eleicoes/2026-10-07-capa-quem-apoia-quem-2turno.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-capa-quem-apoia-quem-2turno.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Flávio Bolsonaro",
+          "partido": "PL",
+          "canva": "MAHWNRk-aYo",
+          "sq": "280002551544"
+        },
+        {
+          "nome_urna": "Lula",
+          "partido": "PT",
+          "canva": "MAHWNewot14",
+          "sq": "280002542548"
+        }
+      ],
+      "obs": "rascunho quem-apoia-quem-no-2-turno-presidencial-2026 (Ghost 6ac62221737b3659d67c57e2)"
     }
   ],
   "posts_atualizados": [
