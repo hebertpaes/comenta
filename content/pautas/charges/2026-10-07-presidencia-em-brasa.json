@@ -11,7 +11,7 @@
     "site_16x9": "Segundo turno: a escolha voltou para a brasa.",
     "instagram_4x5": "Segundo turno: a escolha voltou para a brasa."
   },
-  "contexto": "Curta sobre o post de Lula no Bluesky e o resultado do 1º turno (53.879.538 votos, 45,16% dos válidos; 2º turno contra Flávio Bolsonaro). Atenção para o editor: a curta diz que o Bluesky 'virou o diário de bordo oficial de Cuiabá' e cita 'apuração de 5 de outubro' (o 1º turno foi em 4/10).",
+  "contexto": "Curta sobre o post de Lula no Bluesky e o resultado do 1º turno (53.879.538 votos, 45,16% dos válidos; 2º turno contra Flávio Bolsonaro). Atenção para o editor: a curta diz que o Bluesky 'virou o diário de bordo oficial de Cuiabá' (não corrigido).",
   "fontes": [
     "https://hojemt.com.br/presidencia-em-brasa/",
     "https://bsky.app/profile/lulaoficialbluesky.bsky.social/post/3mx7r3rfsgk2x"
@@ -48,5 +48,14 @@
     "og": "https://hojemt.com.br/content/files/2026/10/presidencia-em-brasa-wa-1.jpg",
     "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-presidencia-em-brasa-instagram-retrato.jpg"
   },
-  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~09:40 UTC (antes: charge automática do publicador, charge-1791365023.webp)"
+  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~09:40 UTC (antes: charge automática do publicador, charge-1791365023.webp)",
+  "correcoes_no_texto": [
+    {
+      "quando": "2026-10-07",
+      "pedido": "editor: 'Favor corrigir as datas'",
+      "de": "apuração de 5 de outubro",
+      "para": "apuração de 4 de outubro",
+      "obs": "troca pontual no lexical pela Admin API; título e resto do texto intactos"
+    }
+  ]
 }
