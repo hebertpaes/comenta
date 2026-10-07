@@ -29,9 +29,11 @@
     "modelo_retrato": "DAHWEJf2P1U"
   },
   "instagram": {
-    "status": "agendado",
+    "status": "publicado",
     "agenda_id": "88",
-    "quando": "2026-10-07T07:30:00-04:00"
+    "quando": "2026-10-07T07:30:00-04:00",
+    "permalink": "https://www.instagram.com/p/DeMRUaYF8Jm/",
+    "publicado_em": "2026-10-07T11:38:55+00:00"
   },
   "arquivos": {
     "site_16x9": "2026-10-06-cadeira-vazia.jpg",

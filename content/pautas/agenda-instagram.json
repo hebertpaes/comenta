@@ -1538,9 +1538,9 @@
     },
     {
       "id": "88",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
+      "status": "publicado",
+      "permalink": "https://www.instagram.com/p/DeMRUaYF8Jm/",
+      "publicado_em": "2026-10-07T11:38:55+00:00",
       "quando": "2026-10-07T07:30:00-04:00",
       "formato": "charge",
       "titulo": "Cadeira Vazia",
