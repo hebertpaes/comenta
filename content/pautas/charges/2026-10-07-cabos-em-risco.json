@@ -1,0 +1,46 @@
+{
+  "slug": "cabos-em-risco",
+  "materia": "https://hojemt.com.br/cabos-em-risco/",
+  "titulo": "Cabos em risco",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 07/10/2026 ~03:40 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: tema de acusação (cobrança de cabos eleitorais) pede cena neutra sem pessoa; a frase dos cabos ('Se o candidato perdeu ou ganhou, tem que pagar', Olhar Direto) não foi usada",
+  "legenda": {
+    "site_16x9": "Cabos soltos em Nova Monte Verde: quem fez a ligação?",
+    "instagram_4x5": "Cabos soltos em Nova Monte Verde: quem fez a ligação?"
+  },
+  "contexto": "Curta sobre cabos eleitorais de Nova Monte Verde que dizem não ter recebido pela campanha de Emanuelzinho (PSD); o deputado nega ter contratado ou autorizado o serviço. Tema de acusação: cena neutra, sem pessoa e sem dinheiro; a legenda fica na pergunta em disputa (quem contratou). Atenção para o editor: a curta diz que Emanuelzinho era 'candidato à deputado estadual'; as fontes (RepórterMT, Olhar Direto) dizem deputado federal (PSD) candidato à reeleição.",
+  "fontes": [
+    "https://hojemt.com.br/cabos-em-risco/",
+    "https://www.reportermt.com/politica/cabos-eleitorais-cobram-emanuelzinho-apos-ele-perder-eleicao-e-nao-pagar-equipe-vereadora-expoe-calote/244724",
+    "https://olhardireto.com.br/noticias/se-perdeu-ou-ganhou-tem-que-pagar-cabos-eleitorais-acusam-emanuelzinho-de-nao-pagar-equipe-apos-derrota"
+  ],
+  "regras_da_cena": "poste de madeira com cabos elétricos soltos (trocadilho com cabo eleitoral), bandeiras de campanha murchas sem letras, megafone no chão de terra vermelha; cidade do norte de MT; sem pessoas e sem dinheiro",
+  "personagens": [],
+  "anatomia": "sem pessoas nem animais nas duas versões",
+  "canva": {
+    "design_site_16x9": "DAHXSy-aswI",
+    "arte_16x9": "MAHXSxY720M",
+    "design_instagram_4x5": "DAHXS_cZRtQ",
+    "arte_4x5": "MAHXS2yY7_0",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "104",
+    "quando": "2026-10-12T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-07-cabos-em-risco.jpg",
+    "instagram_4x5": "2026-10-07-cabos-em-risco-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-cabos-em-risco.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/cabos-em-risco-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-cabos-em-risco-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~03:40 UTC (antes: charge automática do publicador, charge-1791343418.webp)"
+}

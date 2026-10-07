@@ -1,0 +1,46 @@
+{
+  "slug": "liberdade-a-moda-do-pedregal",
+  "materia": "https://hojemt.com.br/liberdade-a-moda-do-pedregal/",
+  "titulo": "Liberdade à moda do Pedregal",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 07/10/2026 ~03:40 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: cena neutra sem pessoas (tema com acusação contra facção não identificada)",
+  "legenda": {
+    "site_16x9": "No Pedregal, o voto ganhou escolta.",
+    "instagram_4x5": "No Pedregal, o voto ganhou escolta."
+  },
+  "contexto": "Curta sobre a Operação Liberdade de Expressão da PM no Pedregal (Cuiabá), na noite de 06/10, depois de Abilio Brunini (PL) dizer que uma liderança ligada a facção ameaçava moradores que votassem em Flávio Bolsonaro. Tema de acusação/crime: cena neutra, sem pessoa, sem arma, sem dinheiro. Atenção para o editor: o resumo da curta diz que a PM 'invade' o Pedregal; as fontes falam em policiamento ostensivo e preventivo, sem prisões ou apreensões relatadas até a publicação; a denúncia de Abilio não tinha confirmação independente (24 Horas MT).",
+  "fontes": [
+    "https://hojemt.com.br/liberdade-a-moda-do-pedregal/",
+    "https://www.reportermt.com/policia/pm-faz-megaoperacao-no-pedregal-apos-abilio-denunciar-ameacas-de-faccao-a-eleitores-de-flavio/244762",
+    "https://24horasmt.com.br/politica-nacional/abilio-diz-que-lideranca-de-faccao-ameaca-moradores-do-pedregal-por-causa-de-voto-em-flavio/"
+  ],
+  "regras_da_cena": "urna eletrônica genérica numa mesinha de calçada de bairro de Cuiabá, gaiola aberta e bem-te-vi voando; brilho de giroflex ao fundo, sem veículo e sem pessoas",
+  "personagens": [],
+  "anatomia": "conferida em zoom nas duas versões: o bem-te-vi com duas asas e duas patas; nenhuma pessoa",
+  "canva": {
+    "design_site_16x9": "DAHXS1hGvgc",
+    "arte_16x9": "MAHXS4FbMcM",
+    "design_instagram_4x5": "DAHXS-qedNo",
+    "arte_4x5": "MAHXS5U0vmU",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "103",
+    "quando": "2026-10-12T07:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-07-liberdade-a-moda-do-pedregal.jpg",
+    "instagram_4x5": "2026-10-07-liberdade-a-moda-do-pedregal-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-liberdade-a-moda-do-pedregal.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/liberdade-a-moda-do-pedregal-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-liberdade-a-moda-do-pedregal-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~03:40 UTC (antes: charge automática do publicador, charge-1791343354.webp)"
+}

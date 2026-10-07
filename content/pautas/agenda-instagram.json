@@ -1772,6 +1772,38 @@
       "materia": "https://hojemt.com.br/russi-no-topo-do-pantanal/",
       "charge_json": "pautas/charges/2026-10-07-russi-no-topo-do-pantanal.json",
       "obs": "próximo horário livre de charge"
+    },
+    {
+      "id": "103",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "formato": "charge",
+      "quando": "2026-10-12T07:30:00-04:00",
+      "titulo": "Liberdade à moda do Pedregal",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-liberdade-a-moda-do-pedregal-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Liberdade à moda do Pedregal\n\nNo Pedregal, o voto ganhou escolta.\n\nA Polícia Militar fez na noite de 6/10 a Operação Liberdade de Expressão no bairro Pedregal, em Cuiabá, depois de o prefeito Abilio Brunini (PL) dizer que foi informado de ameaças de uma liderança ligada a facção a moradores que votassem em Flávio Bolsonaro (PL). Segundo a PM, o foco foi o policiamento preventivo contra ameaça ou intimidação ligada à eleição. Abilio orientou: \"O voto é secreto. Se você está com medo, não precisa se manifestar\" (RepórterMT, 24 Horas MT).\n\nLeia a curta completa: hojemt.com.br/liberdade-a-moda-do-pedregal\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #cuiaba #eleicoes2026 #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/liberdade-a-moda-do-pedregal/",
+      "charge_json": "pautas/charges/2026-10-07-liberdade-a-moda-do-pedregal.json",
+      "obs": "próximo horário livre de charge"
+    },
+    {
+      "id": "104",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "formato": "charge",
+      "quando": "2026-10-12T15:30:00-04:00",
+      "titulo": "Cabos em risco",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-cabos-em-risco-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Cabos em risco\n\nCabos soltos em Nova Monte Verde: quem fez a ligação?\n\nCabos eleitorais de Nova Monte Verde dizem não ter recebido pelo trabalho na campanha do deputado federal Emanuelzinho (PSD), que teve 50.951 votos e não se reelegeu. A vereadora Vera Lúcia do Nascimento (MDB), que intermediou as contratações, expôs as cobranças e disse que a assessoria do deputado confirmou o pagamento, sem data nem valor. O deputado nega: afirmou que nunca houve contato dele com os cabos e que, se o trabalho foi feito, foi sem a autorização dele (RepórterMT, Olhar Direto).\n\nLeia a curta completa: hojemt.com.br/cabos-em-risco\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #novamonteverde #eleicoes2026 #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/cabos-em-risco/",
+      "charge_json": "pautas/charges/2026-10-07-cabos-em-risco.json",
+      "obs": "próximo horário livre de charge"
     }
   ]
 }
