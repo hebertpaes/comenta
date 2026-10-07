@@ -509,7 +509,7 @@
   },
   "lrv:yt:gHyTo4Yup9U": {
    "titulo": "Audiência Pública sobre alterações proposta pelos Vereadores ao Plano Diretor",
-   "data": "2026-10-01"
+   "data": "2026-10-07"
   },
   "barra:gn:dpemt cobra capsi em barra do garças após 211 crianças aguardarem atendimento - hipernotíc": {
    "titulo": "DPEMT cobra CapsI em Barra do Garças após 211 crianças aguardarem atendimento - HiperNotícias - Você bem informado",
@@ -813,7 +813,7 @@
   },
   "sorriso:yt:lCSfbX2jlOo": {
    "titulo": "33ª Sessão Ordinária 06-10-26",
-   "data": "2026-10-06"
+   "data": "2026-10-07"
   },
   "barra:gn:trajetória e atuação: conheça o perfil dos deputados eleitos para a 21ª legislatura": {
    "titulo": "Trajetória e atuação: conheça o perfil dos deputados eleitos para a 21ª Legislatura - Assembleia Legislativa do Estado de Mato Grosso",
@@ -874,9 +874,13 @@
   "barra:gn:veja quem são os 55 deputados estaduais eleitos no rio grande do sul": {
    "titulo": "Veja quem são os 55 deputados estaduais eleitos no Rio Grande do Sul - GZH",
    "data": "2026-10-04"
+  },
+  "barra:gn:wanderley barra pedido de 15 vereadores por nova eleição na câmara de vg": {
+   "titulo": "Wanderley barra pedido de 15 vereadores por nova eleição na Câmara de VG - Olhar Direto",
+   "data": "2026-10-06"
   }
  },
- "ultima_checagem": "2026-10-06T21:29:36.288Z",
+ "ultima_checagem": "2026-10-07T12:39:25.469Z",
  "descartados_2026-10-01_tarde": [
   {
    "cidade": "Sorriso",
@@ -909,5 +913,11 @@
   "Barra do Garças: itens do Google Notícias sobre a nova composição da ALMT (al.mt.gov.br e Cenário MT, 05/10) não tratam da Câmara; sessão de 05/10 segue sem notícia oficial",
   "Lucas do Rio Verde: nada novo; audiência pública do Plano Diretor hoje (06/10) e 32ª sessão em 08/10",
   "Rodada de 20:37 UTC: Sorriso — sem notícia com resultado da 33ª sessão (só a Indicação 673/2026 de sinalização e nota da sessão solene do Colégio Regina Coeli de 29/09); Chapada — Alô Chapada sobre pré-inscrições da UFMT, sem relação com a Câmara; Barra do Garças — Google Notícias trouxe intervenção em Querência (outro município) e deputados do RS, fora do escopo; sites de Barra e de Lucas responderam 'fetch failed' na listagem (Lucas leu pelo texto direto)"
+ ],
+ "descartados_2026-10-07": [
+  "Sorriso: Indicação 676/2026 (Brendo Braga) para ampliar quem prescreve fórmulas nutricionais — indicação de rotina de um vereador, sem valor nem efeito concreto",
+  "Google Notícias (filtro de Barra do Garças) trouxe matéria da Câmara de Várzea Grande (Olhar Direto, Mesa) — fora do escopo; já coberta pela rotina de VG",
+  "Chapada: sem vídeo novo da sessão adiada para 06/10 e sem notícia em fonte aberta até 08h40 de 07/10",
+  "Lucas do Rio Verde e Barra do Garças: sites com falha de conexão na 1ª tentativa; na 2ª, nada novo"
  ]
 }
