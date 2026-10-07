@@ -1,0 +1,6 @@
+<!-- HMT rolagem limpa (07/10/2026, pedido do editor: "Deixe somente carregar mais matérias... Tire os próximos e os números"). Esconde o "Página X de Y", o "Você chegou ao fim · N matérias" e o link "Próximas →" da linha de status do assets/js/rolagem.js; a rolagem automática e o botão continuam. -->
+<style>
+.rolagem-status .rolagem-link{display:none!important}
+.rolagem-status[data-estado="ocioso"] .rolagem-texto,.rolagem-status[data-estado="pausa"] .rolagem-texto,.rolagem-status[data-estado="fim"] .rolagem-texto{display:none!important}
+.rolagem-status[data-estado="ocioso"],.rolagem-status[data-estado="fim"]{border-top-color:transparent}
+</style>
