@@ -1,0 +1,58 @@
+{
+  "slug": "sobrenomes-sem-veto",
+  "materia": "https://hojemt.com.br/sobrenomes-sem-veto/",
+  "titulo": "Sobrenomes sem veto",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 07/10/2026 ~12:40 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta só traz 'não quer mais' entre aspas simples, sem frase completa; a fala literal (RepórterMT) é 'Os resultados desse processo eleitoral demonstram que Mato Grosso não quer mais a família Riva, não quer mais a família Campos, não quer mais a família Botelho e não quer mais a família Emanuel. Eu acho que esse resultado foi consolidado agora'.",
+  "legenda": {
+    "site_16x9": "Para o prefeito, sobrenome tradicional virou peça de museu.",
+    "instagram_4x5": "Sobrenome tradicional virou peça de museu."
+  },
+  "contexto": "Curta sobre a fala de Abilio Brunini (06/10/2026) de que as urnas mostraram que MT 'não quer mais' as famílias tradicionais. Brasões genéricos, sem nome nem símbolo de família real; nenhuma outra pessoa na cena.",
+  "fontes": [
+    "https://hojemt.com.br/sobrenomes-sem-veto/",
+    "https://www.reportermt.com/politica/abilio-votacao-mostrou-que-mato-grosso-nao-quer-mas-os-campos-os-riva-botelho-e-emanuel/244745",
+    "https://www.hnt.com.br/politica/abilio-dispara-contra-botelho-e-diz-que-urnas-sinalizam-fim-de-velha-classe-politica/579431",
+    "https://www.folhamax.com/politica/abilio-ironiza-derrota-de-botelho-e-adversarios-placa-nao-vota/576005"
+  ],
+  "regras_da_cena": "caricatura de Abilio como curador de museu, de luvas brancas, guardando um brasão antigo genérico numa vitrine com outros brasões, uma moeda antiga e um quepe; sol de Cuiabá pela janela",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini (prefeito de Cuiabá, PL)",
+      "referencia_canva": "MAHWHiDa8C0 + MAHWHhg33Yw",
+      "foto": "galeria oficial do prefeito, Prefeitura de Cuiabá (Foto: Rennan Oliveira/Secom), 21/09/2026",
+      "licenca": "referência de desenho"
+    }
+  ],
+  "anatomia": "conferida em zoom nas duas versões: dois braços e duas mãos (de luvas)",
+  "canva": {
+    "design_site_16x9": "DAHXVHZlaSw",
+    "arte_16x9": "MAHXVK7Z8vk",
+    "design_instagram_4x5": "DAHXVGUl7oA",
+    "arte_4x5": "MAHXVL0BMWw",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "111",
+    "quando": "2026-10-15T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-07-sobrenomes-sem-veto.jpg",
+    "instagram_4x5": "2026-10-07-sobrenomes-sem-veto-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-sobrenomes-sem-veto.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/sobrenomes-sem-veto-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-sobrenomes-sem-veto-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~12:40 UTC (antes: charge automática do publicador, charge-1791375712.webp)",
+  "duplicata": "a curta gêmea 'Adeus, dinastias' (publicada 11 s antes, mesmo fato) foi despublicada por erro factual: chamava Samantha Iris de 'filha do prefeito' (é a primeira-dama). Redirecionamento /adeus-dinastias/ → /sobrenomes-sem-veto/ em pautas/duplicadas/redirects-pendentes.yaml.",
+  "alertas_ao_editor": [
+    "a curta mantida diz 'Novo prefeito de Cuiabá' (Abilio assumiu em 01/01/2025), traz 'Garoto de Cuiabá' no resumo e cita 'Luis Vinicius, da Bahia, 98 votos', dado sem relação com o tema e não conferido; o texto publicado não foi mexido (só com pedido do editor)."
+  ]
+}

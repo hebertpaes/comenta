@@ -1899,6 +1899,22 @@
       "legenda": "Vídeo da sessão vai à Justiça na disputa pela Mesa da Câmara de VG\n\nCinco vereadores de Várzea Grande pedem liminar para que o presidente da Câmara, Wanderley Cerqueira (MDB), convoque em 24 horas a eleição da Mesa de 2027-2028, e juntaram ao processo o vídeo da sessão desta terça (6), em que ele indeferiu o pedido de 15 vereadores. Wanderley diz que o STF anulou a eleição de maio, mas não mandou fazer outra.\n\nMatéria completa: hojemt.com.br/vereadores-levam-video-da-sessao-a-justica-eleicao-mesa-camara-vg\n\n#varzeagrande #camaramunicipal #matogrosso #politica #hojemt",
       "materia": "https://hojemt.com.br/vereadores-levam-video-da-sessao-a-justica-eleicao-mesa-camara-vg/",
       "obs": "publicar só depois que a matéria (rascunho no Ghost, 6ac6252c737b3659d67c57f6) for publicada"
+    },
+    {
+      "id": "111",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-15T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Sobrenomes sem veto",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-sobrenomes-sem-veto-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Sobrenomes sem veto\n\nPara o prefeito, sobrenome tradicional virou peça de museu.\n\nO prefeito de Cuiabá, Abilio Brunini (PL), disse na terça (6) que o resultado das eleições mostra que Mato Grosso \"não quer mais\" as famílias Riva, Campos e Botelho nem o grupo do ex-prefeito Emanuel Pinheiro. Ele citou a votação da primeira-dama, Samantha Iris (PL), eleita deputada estadual com 57,9 mil votos, mas disse que não cabe a ele decretar o fim político de ninguém (RepórterMT, HNT e Folhamax).\n\nLeia a curta completa: hojemt.com.br/sobrenomes-sem-veto\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #cuiaba #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/sobrenomes-sem-veto/",
+      "charge_json": "pautas/charges/2026-10-07-sobrenomes-sem-veto.json",
+      "obs": "próximo horário livre de charge (15/10 15:30). Fontes da legenda: reportermt.com/politica/abilio-votacao-mostrou-que-mato-grosso-nao-quer-mas-os-campos-os-riva-botelho-e-emanuel/244745; hnt.com.br/politica/abilio-dispara-contra-botelho-e-diz-que-urnas-sinalizam-fim-de-velha-classe-politica/579431; folhamax.com/politica/abilio-ironiza-derrota-de-botelho-e-adversarios-placa-nao-vota/576005. Se o editor achar o tema velho em 15/10, adiantar ou trocar."
     }
   ]
 }
