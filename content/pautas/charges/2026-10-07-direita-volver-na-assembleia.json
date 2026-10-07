@@ -1,0 +1,58 @@
+{
+  "slug": "direita-volver-na-assembleia",
+  "materia": "https://hojemt.com.br/direita-volver-na-assembleia/",
+  "titulo": "Direita, volver na Assembleia",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 07/10/2026 ~18:45 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas. A fala literal está em O Documento: 'A esquerda não tem mais espaço em Mato Grosso.'",
+  "legenda": {
+    "site_16x9": "Na nova Assembleia, até o cata-vento aponta para a direita.",
+    "instagram_4x5": "Na Assembleia, o cata-vento virou à direita."
+  },
+  "contexto": "Curta sobre Abilio Brunini comemorando, depois do 1º turno, a eleição de deputados estaduais de direita e dizendo que a esquerda não tem mais espaço em MT (05/10/2026).",
+  "fontes": [
+    "https://hojemt.com.br/direita-volver-na-assembleia/",
+    "https://odocumento.com.br/esquerda-nao-tem-mais-espaco-em-mt-diz-abilio-apos-vitorias-da-direita/",
+    "https://24horasmt.com.br/politica-mt/abilio-comemora-eleicao-de-samantha-e-diz-que-esquerda-nao-tem-mais-espaco-em-mt/",
+    "https://hnt.com.br/politica/abilio-provoca-esquerda-e-afirma-que-direita-tem-mais-mulheres-eleitas-em-mt/579439"
+  ],
+  "regras_da_cena": "caricatura de Abilio (camiseta cinza-escura, cabeça raspada) com um apito, apontando para a direita diante de uma Assembleia genérica com colunas; cata-vento no telhado apontando para a direita; ipês amarelos. Sem outras pessoas.",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini (prefeito de Cuiabá, PL)",
+      "referencia_canva": "MAHWHiDa8C0 + MAHWHkYuCOg",
+      "foto": "galeria oficial do prefeito, Prefeitura de Cuiabá (Foto: Rennan Oliveira/Secom), set/2026",
+      "licenca": "referência de desenho"
+    }
+  ],
+  "anatomia": "conferida em zoom nas duas versões: dois braços e duas mãos (uma segura o apito, a outra aponta)",
+  "canva": {
+    "design_site_16x9": "DAHXWmIXMBk",
+    "arte_16x9": "MAHXWq7sfbc",
+    "design_instagram_4x5": "DAHXWjpGJjM",
+    "arte_4x5": "MAHXWoMY0TY",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "116",
+    "quando": "2026-10-17T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-07-direita-volver-na-assembleia.jpg",
+    "instagram_4x5": "2026-10-07-direita-volver-na-assembleia-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-direita-volver-na-assembleia.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/direita-volver-na-assembleia-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-direita-volver-na-assembleia-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~18:45 UTC (antes: charge automática do publicador, charge-1791397354.webp)",
+  "alertas_ao_editor": [
+    "a curta lista os eleitos citados por Abilio, mas omite Alessandra Ferreira (Podemos), que ele também citou segundo O Documento e o 24 Horas MT. O texto não foi mexido.",
+    "terceira charge de Abilio na fila do Instagram (111 em 15/10, 113 aguardando decisão, esta em 17/10); se o senhor preferir espaçar, troque a data."
+  ]
+}

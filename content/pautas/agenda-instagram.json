@@ -1947,6 +1947,54 @@
       "materia": "https://hojemt.com.br/velha-politica-nova-briga/",
       "charge_json": "pautas/charges/2026-10-07-velha-politica-nova-briga.json",
       "obs": "aguardando_decisao: mesmo tema do item 111 (Sobrenomes sem veto, 15/10 15:30). Se o editor quiser as duas, trocar para agendado em 16/10 15:30. Fontes: reportermt.com/politica/abilio-votacao-mostrou-que-mato-grosso-nao-quer-mas-os-campos-os-riva-botelho-e-emanuel/244745; hnt.com.br/politica/abilio-dispara-contra-botelho-e-diz-que-urnas-sinalizam-fim-de-velha-classe-politica/579431; reportermt.com/politica/com-julio-derrotado-nas-urnas-e-jayme-sem-mandato-chega-ao-fim-a-era-campos-em-mato-grosso/244624; hnt.com.br/politica/jayme-nao-disputa-julio-e-derrotado-e-familia-campos-nao-conquista-mandato-apos-54-anos/579038; folhamax.com/politica/familia-campos-nao-ocupara-cargos-ano-que-vem/575870. A reação de Júlio (Olhar Direto, fonte única, com acusação) ficou fora."
+    },
+    {
+      "id": "114",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-08T11:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Senado e a escala 6x1",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-senado-e-a-escala-6x1-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Senado e a escala 6x1\n\nNo Senado, a folga entra em votação.\n\nO Plenário do Senado começou na terça (6) a discutir a PEC 221/2019, que acaba com a escala 6x1: a jornada cai de 44 para 40 horas semanais, sem redução de salário, com duas folgas por semana, de preferência com o domingo. São cinco sessões de discussão antes da votação em 1º turno, prevista para a semana que vem; a PEC precisa de 49 votos em dois turnos (Agência Senado e CNN Brasil).\n\nLeia a curta completa: hojemt.com.br/senado-e-a-escala-6x1\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #escala6x1 #senado #trabalho #hojemt",
+      "materia": "https://hojemt.com.br/senado-e-a-escala-6x1/",
+      "charge_json": "pautas/charges/2026-10-07-senado-e-a-escala-6x1.json",
+      "obs": "horário das 11:30 (fora da fila de charges das 07:30/15:30) porque o assunto vence com a votação em 1º turno, prevista para a semana de 12/10. Fontes: www12.senado.leg.br/noticias/materias/2026/10/06/pec-que-acaba-com-escala-6x1-comeca-a-tramitar-no-plenario; www12.senado.leg.br/radio/1/noticia/2026/10/06/plenario-inicia-discussao-da-pec-que-acaba-com-a-escala-6x1; cnnbrasil.com.br/politica/senado-inicia-discussao-da-pec-do-fim-da-6x1-com-baixa-presenca-da-oposicao/. Se a votação mudar de data, ajustar a legenda antes."
+    },
+    {
+      "id": "115",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-17T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Russi quer o repeteco",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-russi-quer-o-repeteco-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Russi quer o repeteco\n\nRussi já pôs o repeteco na brasa.\n\nMais votado para a Assembleia Legislativa de Mato Grosso, com 86.934 votos (RepórterMT e VG Notícias), o presidente da Casa, Max Russi (Podemos), disse que vai disputar de novo a Presidência no próximo biênio: \"Eu sei que eu serei candidato. Isso eu posso adiantar.\" Ele afirmou que só vai conversar com os colegas depois de 15 de novembro (Mato Grosso Mais).\n\nLeia a curta completa: hojemt.com.br/russi-quer-o-repeteco\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #assembleia #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/russi-quer-o-repeteco/",
+      "charge_json": "pautas/charges/2026-10-07-russi-quer-o-repeteco.json",
+      "obs": "próximo horário livre de charge (17/10 07:30). Fontes: matogrossomais.com.br/eu-sei-que-serei-candidato-diz-max-russi-sobre-presidencia-da-almt/ (fala literal); reportermt.com/politica/max-russi-e-o-deputado-estadual-mais-votado-de-mt-com-quase-87-mil-votos/244635; vgnoticias.com.br/politica/max-supera-meta-e-termina-eleicao-como-o-mais-votado-de-mt/153053. Nativa News e CliqueF5 também noticiaram a candidatura (títulos na busca; não lidos: 403/anti-robô)."
+    },
+    {
+      "id": "116",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-17T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Direita, volver na Assembleia",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-direita-volver-na-assembleia-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Direita, volver na Assembleia\n\nNa Assembleia, o cata-vento virou à direita.\n\nO prefeito de Cuiabá, Abilio Brunini (PL), comemorou em 5 de outubro a eleição de deputados estaduais de direita, entre eles a primeira-dama, Samantha Iris (PL), e disse: \"A esquerda não tem mais espaço em Mato Grosso\" (O Documento e 24 Horas MT).\n\nLeia a curta completa: hojemt.com.br/direita-volver-na-assembleia\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #assembleia #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/direita-volver-na-assembleia/",
+      "charge_json": "pautas/charges/2026-10-07-direita-volver-na-assembleia.json",
+      "obs": "próximo horário livre de charge (17/10 15:30). Fontes: odocumento.com.br/esquerda-nao-tem-mais-espaco-em-mt-diz-abilio-apos-vitorias-da-direita/ (fala literal); 24horasmt.com.br/politica-mt/abilio-comemora-eleicao-de-samantha-e-diz-que-esquerda-nao-tem-mais-espaco-em-mt/. Terceira charge de Abilio na fila (111, 113, 116): o editor pode espaçar."
     }
   ]
 }

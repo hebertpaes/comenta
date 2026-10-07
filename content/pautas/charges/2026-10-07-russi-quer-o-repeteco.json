@@ -1,0 +1,57 @@
+{
+  "slug": "russi-quer-o-repeteco",
+  "materia": "https://hojemt.com.br/russi-quer-o-repeteco/",
+  "titulo": "Russi quer o repeteco",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 07/10/2026 ~18:45 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala entre aspas. A fala literal está no Mato Grosso Mais: 'Eu sei que eu serei candidato. Isso eu posso adiantar.'",
+  "legenda": {
+    "site_16x9": "Russi já pôs o repeteco da presidência na brasa.",
+    "instagram_4x5": "Russi já pôs o repeteco na brasa."
+  },
+  "contexto": "Curta sobre Max Russi, deputado estadual mais votado de MT (86.934 votos), que quer disputar de novo a Presidência da Assembleia.",
+  "fontes": [
+    "https://hojemt.com.br/russi-quer-o-repeteco/",
+    "https://matogrossomais.com.br/eu-sei-que-serei-candidato-diz-max-russi-sobre-presidencia-da-almt/",
+    "https://reportermt.com/politica/max-russi-e-o-deputado-estadual-mais-votado-de-mt-com-quase-87-mil-votos/244635",
+    "https://www.vgnoticias.com.br/politica/max-supera-meta-e-termina-eleicao-como-o-mais-votado-de-mt/153053"
+  ],
+  "regras_da_cena": "caricatura de Russi de terno virando um pacu na brasa (metáfora da própria curta, 'peixe na brasa'); ao lado, a cadeira vermelha da Presidência, vazia, com um guardanapo xadrez guardando o lugar; pôr do sol de Cuiabá.",
+  "personagens": [
+    {
+      "nome": "Max Russi (deputado estadual, Podemos; presidente da ALMT)",
+      "referencia_canva": "MAHXP7EcIv4",
+      "foto": "foto oficial do TSE 2026 (DivulgaCand, SQ 110002542640), espelho ND Mais: https://static.ndmais.com.br/eleicoes/2026/mt/FMT110002542640_div.jpg",
+      "licenca": "referência de desenho"
+    }
+  ],
+  "anatomia": "conferida em zoom nas duas versões: dois braços e duas mãos (uma vira o peixe com a espátula, a outra na cintura)",
+  "canva": {
+    "design_site_16x9": "DAHXWmsYexE",
+    "arte_16x9": "MAHXWiw6Li4",
+    "design_instagram_4x5": "DAHXWsDxj28",
+    "arte_4x5": "MAHXWqh6OHY",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "115",
+    "quando": "2026-10-17T07:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-07-russi-quer-o-repeteco.jpg",
+    "instagram_4x5": "2026-10-07-russi-quer-o-repeteco-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-russi-quer-o-repeteco.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/russi-quer-o-repeteco-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-russi-quer-o-repeteco-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~18:45 UTC (antes: charge automática do publicador, charge-1791397303.webp)",
+  "alertas_ao_editor": [
+    "a curta diz que Russi 'já tratou de colocar o projeto de reeleição' e que 'a articulação interna já começou a todo vapor'; segundo o Mato Grosso Mais, ele disse que só vai conversar com os colegas depois de 15 de novembro. O texto não foi mexido."
+  ]
+}

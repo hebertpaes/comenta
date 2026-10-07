@@ -1,0 +1,51 @@
+{
+  "slug": "senado-e-a-escala-6x1",
+  "materia": "https://hojemt.com.br/senado-e-a-escala-6x1/",
+  "titulo": "Senado e a escala 6x1",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 07/10/2026 ~18:45 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala de ninguém.",
+  "legenda": {
+    "site_16x9": "Escala 6x1: no Senado, a folga do trabalhador vai a voto.",
+    "instagram_4x5": "No Senado, a folga entra em votação."
+  },
+  "contexto": "Curta (post 'charge do dia' do publicador) sobre a PEC 221/2019, que acaba com a escala 6x1, em discussão no Plenário do Senado desde 06/10/2026.",
+  "fontes": [
+    "https://hojemt.com.br/senado-e-a-escala-6x1/",
+    "https://www12.senado.leg.br/noticias/materias/2026/10/06/pec-que-acaba-com-escala-6x1-comeca-a-tramitar-no-plenario",
+    "https://www12.senado.leg.br/radio/1/noticia/2026/10/06/plenario-inicia-discussao-da-pec-que-acaba-com-a-escala-6x1",
+    "https://www.cnnbrasil.com.br/politica/senado-inicia-discussao-da-pec-do-fim-da-6x1-com-baixa-presenca-da-oposicao/"
+  ],
+  "regras_da_cena": "sem pessoas: calendário de mesa com seis colunas de trabalho (capacete, marmita, relógio de ponto) e uma de rede; balança de pratos; cúpulas do Congresso pela janela. A 1ª versão 16:9 saiu com 7 dias de trabalho + rede e foi refeita (MAHXWqneujY descartada).",
+  "personagens": [],
+  "anatomia": "sem pessoas; conferido o calendário nas duas versões: 6 colunas de trabalho + 1 de folga",
+  "canva": {
+    "design_site_16x9": "DAHXWk0wvAI",
+    "arte_16x9": "MAHXWrEBNcU",
+    "design_instagram_4x5": "DAHXWqkR-cE",
+    "arte_4x5": "MAHXWmHpWFM",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "114",
+    "quando": "2026-10-08T11:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-07-senado-e-a-escala-6x1.jpg",
+    "instagram_4x5": "2026-10-07-senado-e-a-escala-6x1-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-senado-e-a-escala-6x1.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/senado-e-a-escala-6x1-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-senado-e-a-escala-6x1-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~18:45 UTC (antes: charge automática do publicador, charge-dia-1791396642.webp)",
+  "alertas_ao_editor": [
+    "a curta diz que a CCJ 'debateu' a PEC nesta semana e que a votação final é 'no dia 15'; segundo a Agência Senado, a CCJ aprovou o texto antes e o Plenário começou a discutir em 06/10, com votação em 1º turno prevista para a semana seguinte (a CNN Brasil fala em 15/10); depois ainda há o 2º turno. O texto não foi mexido.",
+    "agendada em 08/10 às 11:30, fora da fila das 07:30/15:30, porque o assunto vence com a votação prevista para a semana que vem."
+  ]
+}
