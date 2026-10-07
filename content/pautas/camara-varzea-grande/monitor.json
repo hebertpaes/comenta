@@ -138,7 +138,7 @@
    "data": "2026-10-05T14:01:24Z"
   }
  },
- "ultima_checagem": "2026-10-06T19:25:32.988Z",
+ "ultima_checagem": "2026-10-07T10:58:33.395Z",
  "pautas": [
   {
    "data": "2026-10-01",
@@ -182,6 +182,22 @@
    "card": "pautas/cards/2026-10-06-camara-vg-mesa-15-vereadores.jpg",
    "agenda_instagram": "96",
    "atualizado": "2026-10-06 15h30 (Cuiabá): indeferimento do requerimento de 15 vereadores na sessão de 06/10, fala de Rogerinho e entrevista de Bruno Rios"
+  },
+  {
+   "data": "2026-10-07",
+   "titulo": "Vereadores levam à Justiça vídeo da sessão de terça para tentar obrigar Wanderley a convocar eleição da Mesa da Câmara de VG",
+   "arquivo": "pautas/camara-varzea-grande/2026-10-07-mesa-video-da-sessao-vai-a-justica.md",
+   "ghost_slug": "vereadores-levam-video-da-sessao-a-justica-eleicao-mesa-camara-vg",
+   "ghost_id": "6ac6252c737b3659d67c57f6",
+   "status": "rascunho",
+   "previa": "https://hojemt.com.br/p/ec60b9b2-9d5c-41de-b3c2-f36e3850b909/",
+   "capa": "pautas/ilustracoes/2026-10-07-camara-vg-mesa-video-justica.jpg",
+   "pedido": "editor, 07/10: 'Crie notícias relacionadas da câmara de Várzea Grande MT' (live da sessão ordinária de 06/10, https://www.youtube.com/live/cqfldGZvOMs; vídeo não lido por verificação anti-robô)",
+   "fontes": [
+    "https://www.vgnoticias.com.br/vgnjur/vereadores-alegam-descumprimento-do-stf-e-cobram-de-wanderley-nova-eleicao-em-vg/153149",
+    "https://olhardireto.com.br/noticias/wanderley-barra-pedido-de-15-vereadores-por-nova-eleicao-na-camara-de-vg",
+    "https://www.folhamax.com/politica/derrotado-presidente-da-camara-de-vg-se-nega-convocar-nova-eleicao/575966"
+   ]
   }
  ],
  "acompanhar": [
@@ -195,9 +211,10 @@
    "desde": "2026-10-05",
    "assunto": "Sessão ordinária de terça (06/10, 8h): votação única do PLC 035/2026 do Executivo (Política Municipal dos Direitos da Pessoa Idosa; reestrutura CMDPI/VG e FUMAPI), PR 08/2026 (Espaço Memória do Legislativo), PL 199/2026, PL 242/2026 e PL 250/2026 (aprendizagem e primeiro emprego)",
    "fonte": "https://www.varzeagrande.mt.leg.br/institucional/noticias/camara-municipal-de-varzea-grande-realiza-sessao-ordinaria-nesta-terca-feira-6-com-pauta-voltada-a-direitos-sociais-preservacao-historica-e-homenagens",
-   "por_que_nao_virou_pauta": "é só a pauta prevista; vira matéria se houver resultado relevante (aprovação do PLC 035/2026, embate ou mudança)"
+   "por_que_nao_virou_pauta": "é só a pauta prevista; vira matéria se houver resultado relevante (aprovação do PLC 035/2026, embate ou mudança)",
+   "resultado_2026-10-07": "PLC 035/2026 aprovado em 06/10 (Prefeitura: https://www.varzeagrande.mt.gov.br/varzea-grande-aprova-reestruturacao-do-conselho-municipal-da-pessoa-idosa-e-fortalece-politicas-publicas); o site já publicou 'Várzea Grande reestrutura Conselho Municipal da Pessoa Idosa' (06/10) — sem nova pauta. Resultado dos PR 08/2026, PL 199, 242 e 250/2026 não apareceu em fonte aberta até 07/10 7h."
   },
-  "Mesa da Câmara de VG: segunda fonte aberta do indeferimento de 06/10 (Fatos de MT e Noveen bloqueiam leitura); ação de Bruno Rios na Justiça; possível chapa única; julgamento do recurso na 2ª Turma do STF"
+  "Mesa da Câmara de VG: segunda fonte aberta do indeferimento de 06/10 (Fatos de MT e Noveen bloqueiam leitura); ação de Bruno Rios na Justiça; possível chapa única; julgamento do recurso na 2ª Turma do STF | 07/10: segunda e terceira fontes do indeferimento achadas (Folhamax 575966, Olhar Direto); mandado de segurança dos 5 vereadores na 3ª Vara da Fazenda Pública de VG, com emenda de 06/10 juntando o vídeo da sessão — acompanhar decisão da liminar"
  ],
  "descartados_2026-10-06": [
   "Notícia oficial 'Câmara de VG aprova PCCSs por unanimidade' (publicada 01/10, sessão de 29/09) — já coberta pela pauta de 01/10"
