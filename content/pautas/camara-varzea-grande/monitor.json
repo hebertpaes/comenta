@@ -138,7 +138,7 @@
    "data": "2026-10-05T14:01:24Z"
   }
  },
- "ultima_checagem": "2026-10-07T10:58:33.395Z",
+ "ultima_checagem": "2026-10-07T11:20:35.215Z",
  "pautas": [
   {
    "data": "2026-10-01",
@@ -197,7 +197,9 @@
     "https://www.vgnoticias.com.br/vgnjur/vereadores-alegam-descumprimento-do-stf-e-cobram-de-wanderley-nova-eleicao-em-vg/153149",
     "https://olhardireto.com.br/noticias/wanderley-barra-pedido-de-15-vereadores-por-nova-eleicao-na-camara-de-vg",
     "https://www.folhamax.com/politica/derrotado-presidente-da-camara-de-vg-se-nega-convocar-nova-eleicao/575966"
-   ]
+   ],
+   "card": "pautas/cards/2026-10-07-camara-vg-mesa-video-justica.jpg",
+   "agenda_instagram": "110"
   }
  ],
  "acompanhar": [
@@ -214,7 +216,13 @@
    "por_que_nao_virou_pauta": "é só a pauta prevista; vira matéria se houver resultado relevante (aprovação do PLC 035/2026, embate ou mudança)",
    "resultado_2026-10-07": "PLC 035/2026 aprovado em 06/10 (Prefeitura: https://www.varzeagrande.mt.gov.br/varzea-grande-aprova-reestruturacao-do-conselho-municipal-da-pessoa-idosa-e-fortalece-politicas-publicas); o site já publicou 'Várzea Grande reestrutura Conselho Municipal da Pessoa Idosa' (06/10) — sem nova pauta. Resultado dos PR 08/2026, PL 199, 242 e 250/2026 não apareceu em fonte aberta até 07/10 7h."
   },
-  "Mesa da Câmara de VG: segunda fonte aberta do indeferimento de 06/10 (Fatos de MT e Noveen bloqueiam leitura); ação de Bruno Rios na Justiça; possível chapa única; julgamento do recurso na 2ª Turma do STF | 07/10: segunda e terceira fontes do indeferimento achadas (Folhamax 575966, Olhar Direto); mandado de segurança dos 5 vereadores na 3ª Vara da Fazenda Pública de VG, com emenda de 06/10 juntando o vídeo da sessão — acompanhar decisão da liminar"
+  "Mesa da Câmara de VG: segunda fonte aberta do indeferimento de 06/10 (Fatos de MT e Noveen bloqueiam leitura); ação de Bruno Rios na Justiça; possível chapa única; julgamento do recurso na 2ª Turma do STF | 07/10: segunda e terceira fontes do indeferimento achadas (Folhamax 575966, Olhar Direto); mandado de segurança dos 5 vereadores na 3ª Vara da Fazenda Pública de VG, com emenda de 06/10 juntando o vídeo da sessão — acompanhar decisão da liminar",
+  {
+   "desde": "2026-10-07",
+   "assunto": "TJMT (2ª Câmara de Direito Público, relator Mário Kono, 29/09) negou recurso em ação popular e manteve o contrato emergencial de R$ 14,3 milhões da Prefeitura de VG com a Ramac (limpeza urbana); pedidos de bloqueio de bens e quebra de sigilo também negados",
+   "fonte": "https://www.vgnoticias.com.br/vgnjur/tjmt-mantem-contrato-da-limpeza-urbana-de-varzea-grande/153124",
+   "por_que_nao_virou_pauta": "uma fonte legível só (o Fatos de MT também noticiou, mas bloqueia leitura automática); tema de acusação (sobrepreço apurado pelo TCE) — conferir no PJe/TJMT e ouvir a Prefeitura antes de escrever"
+  }
  ],
  "descartados_2026-10-06": [
   "Notícia oficial 'Câmara de VG aprova PCCSs por unanimidade' (publicada 01/10, sessão de 29/09) — já coberta pela pauta de 01/10"

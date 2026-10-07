@@ -1884,6 +1884,21 @@
       "materia": "https://hojemt.com.br/entrega-so-no-papel/",
       "charge_json": "pautas/charges/2026-10-07-entrega-so-no-papel.json",
       "obs": "próximo horário livre de charge"
+    },
+    {
+      "id": "110",
+      "status": "aguardando_materia",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "card",
+      "titulo": "Vídeo da sessão vai à Justiça na disputa pela Mesa da Câmara de VG",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-camara-vg-mesa-video-justica-1.jpg"
+      ],
+      "legenda": "Vídeo da sessão vai à Justiça na disputa pela Mesa da Câmara de VG\n\nCinco vereadores de Várzea Grande pedem liminar para que o presidente da Câmara, Wanderley Cerqueira (MDB), convoque em 24 horas a eleição da Mesa de 2027-2028, e juntaram ao processo o vídeo da sessão desta terça (6), em que ele indeferiu o pedido de 15 vereadores. Wanderley diz que o STF anulou a eleição de maio, mas não mandou fazer outra.\n\nMatéria completa: hojemt.com.br/vereadores-levam-video-da-sessao-a-justica-eleicao-mesa-camara-vg\n\n#varzeagrande #camaramunicipal #matogrosso #politica #hojemt",
+      "materia": "https://hojemt.com.br/vereadores-levam-video-da-sessao-a-justica-eleicao-mesa-camara-vg/",
+      "obs": "publicar só depois que a matéria (rascunho no Ghost, 6ac6252c737b3659d67c57f6) for publicada"
     }
   ]
 }
