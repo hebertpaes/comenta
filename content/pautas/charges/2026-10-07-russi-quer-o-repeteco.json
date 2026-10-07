@@ -24,17 +24,22 @@
       "nome": "Max Russi (deputado estadual, Podemos; presidente da ALMT)",
       "referencia_canva": "MAHXP7EcIv4",
       "foto": "foto oficial do TSE 2026 (DivulgaCand, SQ 110002542640), espelho ND Mais: https://static.ndmais.com.br/eleicoes/2026/mt/FMT110002542640_div.jpg",
-      "licenca": "referência de desenho"
+      "licenca": "referência de desenho",
+      "tracos_conferidos": "sem óculos; rosto redondo; cabelo castanho-escuro curto penteado para trás; sorriso largo"
     }
   ],
-  "anatomia": "conferida em zoom nas duas versões: dois braços e duas mãos (uma vira o peixe com a espátula, a outra na cintura)",
+  "anatomia": "conferida na versão corrigida: dois braços e duas mãos (espátula e mão na cintura); sem óculos, como na foto oficial",
   "canva": {
     "design_site_16x9": "DAHXWmsYexE",
-    "arte_16x9": "MAHXWiw6Li4",
+    "arte_16x9": "MAHXXexKohs",
     "design_instagram_4x5": "DAHXWsDxj28",
-    "arte_4x5": "MAHXWqh6OHY",
+    "arte_4x5": "MAHXXV64pjE",
     "modelo_16x9": "DAHWDzwR5c0",
-    "modelo_retrato": "DAHWEJf2P1U"
+    "modelo_retrato": "DAHWEJf2P1U",
+    "artes_descartadas": [
+      "MAHXWiw6Li4",
+      "MAHXWqh6OHY"
+    ]
   },
   "instagram": {
     "status": "agendado",
@@ -46,12 +51,13 @@
     "instagram_4x5": "2026-10-07-russi-quer-o-repeteco-instagram-retrato.jpg"
   },
   "hospedado_em": {
-    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-russi-quer-o-repeteco.jpg",
-    "og": "https://hojemt.com.br/content/files/2026/10/russi-quer-o-repeteco-wa-1.jpg",
-    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-russi-quer-o-repeteco-instagram-retrato.jpg"
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-russi-quer-o-repeteco-v2.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/russi-quer-o-repeteco-wa-2.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-russi-quer-o-repeteco-v2-instagram-retrato.jpg"
   },
   "site": "feature_image e og/twitter trocadas em 07/10/2026 ~18:45 UTC (antes: charge automática do publicador, charge-1791397303.webp)",
   "alertas_ao_editor": [
     "a curta diz que Russi 'já tratou de colocar o projeto de reeleição' e que 'a articulação interna já começou a todo vapor'; segundo o Mato Grosso Mais, ele disse que só vai conversar com os colegas depois de 15 de novembro. O texto não foi mexido."
-  ]
+  ],
+  "correcao": "07/10/2026 ~21:45 UTC: a 1ª versão (18:45 UTC) desenhou Russi de óculos e com rosto diferente, porque o prompt pedia 'os óculos da foto'; a foto oficial do TSE (SQ 110002542640) mostra Russi sem óculos, rosto redondo, cabelo castanho-escuro curto. Artes refeitas e trocadas no post (feature_image -v2, og -wa-2) e na agenda (item 115)."
 }

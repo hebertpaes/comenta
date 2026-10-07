@@ -1973,12 +1973,12 @@
       "formato": "charge",
       "titulo": "Russi quer o repeteco",
       "midia": [
-        "https://hojemt.com.br/content/images/2026/10/2026-10-07-russi-quer-o-repeteco-instagram-retrato.jpg"
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-russi-quer-o-repeteco-v2-instagram-retrato.jpg"
       ],
       "legenda": "CHARGE · Russi quer o repeteco\n\nRussi já pôs o repeteco na brasa.\n\nMais votado para a Assembleia Legislativa de Mato Grosso, com 86.934 votos (RepórterMT e VG Notícias), o presidente da Casa, Max Russi (Podemos), disse que vai disputar de novo a Presidência no próximo biênio: \"Eu sei que eu serei candidato. Isso eu posso adiantar.\" Ele afirmou que só vai conversar com os colegas depois de 15 de novembro (Mato Grosso Mais).\n\nLeia a curta completa: hojemt.com.br/russi-quer-o-repeteco\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #assembleia #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/russi-quer-o-repeteco/",
       "charge_json": "pautas/charges/2026-10-07-russi-quer-o-repeteco.json",
-      "obs": "próximo horário livre de charge (17/10 07:30). Fontes: matogrossomais.com.br/eu-sei-que-serei-candidato-diz-max-russi-sobre-presidencia-da-almt/ (fala literal); reportermt.com/politica/max-russi-e-o-deputado-estadual-mais-votado-de-mt-com-quase-87-mil-votos/244635; vgnoticias.com.br/politica/max-supera-meta-e-termina-eleicao-como-o-mais-votado-de-mt/153053. Nativa News e CliqueF5 também noticiaram a candidatura (títulos na busca; não lidos: 403/anti-robô)."
+      "obs": "próximo horário livre de charge (17/10 07:30). Fontes: matogrossomais.com.br/eu-sei-que-serei-candidato-diz-max-russi-sobre-presidencia-da-almt/ (fala literal); reportermt.com/politica/max-russi-e-o-deputado-estadual-mais-votado-de-mt-com-quase-87-mil-votos/244635; vgnoticias.com.br/politica/max-supera-meta-e-termina-eleicao-como-o-mais-votado-de-mt/153053. Nativa News e CliqueF5 também noticiaram a candidatura (títulos na busca; não lidos: 403/anti-robô). Mídia trocada em 07/10 ~21:45 UTC pela versão corrigida (a 1ª desenhou Russi de óculos; ele não usa)."
     },
     {
       "id": "116",
@@ -1995,6 +1995,38 @@
       "materia": "https://hojemt.com.br/direita-volver-na-assembleia/",
       "charge_json": "pautas/charges/2026-10-07-direita-volver-na-assembleia.json",
       "obs": "próximo horário livre de charge (17/10 15:30). Fontes: odocumento.com.br/esquerda-nao-tem-mais-espaco-em-mt-diz-abilio-apos-vitorias-da-direita/ (fala literal); 24horasmt.com.br/politica-mt/abilio-comemora-eleicao-de-samantha-e-diz-que-esquerda-nao-tem-mais-espaco-em-mt/. Terceira charge de Abilio na fila (111, 113, 116): o editor pode espaçar."
+    },
+    {
+      "id": "117",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Adeus cocho, olá trono",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-adeus-cocho-ola-trono-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Adeus cocho, olá trono\n\nRussi já arruma a mala.\n\nLeia a curta completa: hojemt.com.br/adeus-cocho-ola-trono\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/adeus-cocho-ola-trono/",
+      "charge_json": "pautas/charges/2026-10-07-adeus-cocho-ola-trono.json",
+      "obs": "aguardando_decisao: a fala de Russi sobre encerrar o ciclo na ALMT não foi confirmada em fonte aberta; legenda sem fatos. Se confirmar, acrescentar o fato com fonte e marcar 'agendado' no próximo horário livre de charge."
+    },
+    {
+      "id": "118",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Promessas ao vento e conta",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-promessas-ao-vento-e-conta-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Promessas ao vento e conta\n\nDepois da urna, hora de fechar contas.\n\nLeia a curta completa: hojemt.com.br/promessas-ao-vento-e-conta\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/promessas-ao-vento-e-conta/",
+      "charge_json": "pautas/charges/2026-10-07-promessas-ao-vento-e-conta.json",
+      "obs": "aguardando_decisao: tema de cobrança (acusação de terceiros) sem fonte aberta encontrada e sem o outro lado; legenda sem fatos. O editor decide se vai ao Instagram."
     }
   ]
 }

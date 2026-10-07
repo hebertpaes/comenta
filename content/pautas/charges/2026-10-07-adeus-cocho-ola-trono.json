@@ -1,0 +1,56 @@
+{
+  "slug": "adeus-cocho-ola-trono",
+  "materia": "https://hojemt.com.br/adeus-cocho-ola-trono/",
+  "titulo": "Adeus cocho, olá trono",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 07/10/2026 ~21:40 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal com fonte.",
+  "legenda": {
+    "site_16x9": "Na ALMT, Russi já arruma a mala para o próximo andar.",
+    "instagram_4x5": "Russi já arruma a mala."
+  },
+  "contexto": "Curta sobre Max Russi (Podemos), presidente da ALMT e deputado mais votado de MT (86.934 votos), que teria dito à imprensa considerar encerrado o ciclo na Assembleia e mirar o Senado ou o governo.",
+  "fontes": [
+    "https://hojemt.com.br/adeus-cocho-ola-trono/"
+  ],
+  "regras_da_cena": "caricatura de Russi (sem óculos, como na foto oficial) de terno, com mala de couro num corredor da Assembleia, diante de janelas com o Congresso Nacional e a cúpula de um palácio.",
+  "personagens": [
+    {
+      "nome": "Max Russi (deputado estadual, Podemos; presidente da ALMT)",
+      "referencia_canva": "MAHXP7EcIv4",
+      "foto": "foto oficial do TSE 2026 (DivulgaCand, SQ 110002542640), espelho ND Mais",
+      "licenca": "referência de desenho",
+      "tracos_conferidos": "sem óculos; rosto redondo; cabelo castanho-escuro curto"
+    }
+  ],
+  "anatomia": "conferida em zoom nas duas versões: dois braços e duas mãos (mala e gravata); sem óculos",
+  "canva": {
+    "design_site_16x9": "DAHXXd-vQ6A",
+    "arte_16x9": "MAHXXez99T4",
+    "design_instagram_4x5": "DAHXXSk2Bxc",
+    "arte_4x5": "MAHXXXWhF38",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "aguardando_decisao",
+    "agenda_id": "117"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-07-adeus-cocho-ola-trono.jpg",
+    "instagram_4x5": "2026-10-07-adeus-cocho-ola-trono-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-adeus-cocho-ola-trono.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/adeus-cocho-ola-trono-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-adeus-cocho-ola-trono-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~21:40 UTC (antes: charge automática do publicador, charge-1791408126.webp)",
+  "alertas_ao_editor": [
+    "a declaração de Russi (ciclo encerrado na ALMT, Senado ou governo) não foi encontrada em fonte aberta nesta rodada; contrasta com a curta 'Russi quer o repeteco' (quer presidir a ALMT de novo no próximo biênio, segundo o Mato Grosso Mais). Item do Instagram aguardando_decisao, com legenda sem fatos.",
+    "a curta fala em 'Palácio da Alfândega' (a sede do governo de MT é o Palácio Paiaguás) e usa 'cocho' no título; o texto publicado não foi mexido.",
+    "quarta charge de Russi no Instagram (102, 115, esta e a do topo)."
+  ]
+}
