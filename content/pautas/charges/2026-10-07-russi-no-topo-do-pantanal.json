@@ -1,0 +1,53 @@
+{
+  "slug": "russi-no-topo-do-pantanal",
+  "materia": "https://hojemt.com.br/russi-no-topo-do-pantanal/",
+  "titulo": "Russi no topo do pantanal",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 07/10/2026 ~00:40 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal",
+  "legenda": {
+    "site_16x9": "Deu Russi no topo: até o tuiuiú abriu as asas.",
+    "instagram_4x5": "Deu Russi no topo: até o tuiuiú abriu as asas."
+  },
+  "contexto": "Curta sobre Max Russi (Podemos) ser o deputado estadual mais votado (86.934). Atenção para o editor: a curta chama Lúdio Cabral de Podemos; ele é do PT (a curta 'Calculadora em dia de festa' e as fontes dizem PT). Sem balão (sem fala literal).",
+  "fontes": [
+    "https://hojemt.com.br/russi-no-topo-do-pantanal/",
+    "https://exclusivonews.com.br/politica-mt/max-russi-e-o-deputado-mais-votado-de-mato-grosso-e-renova-mandato-com-86-934-votos/",
+    "https://www.unicanews.com.br/politica/max-russi-e-o-deputado-estadual-mais-votado-de-mato-grosso-com-869-mil-votos/142158"
+  ],
+  "regras_da_cena": "Russi caricatura acenando do alto de um cupinzeiro no Pantanal, tuiuiú de asas abertas ao lado, ipês amarelos e campo alagado",
+  "personagens": [
+    {
+      "nome": "Max Russi (deputado estadual, Podemos; presidente da ALMT)",
+      "referencia_canva": "MAHXP7EcIv4",
+      "foto": "TSE 2026 (DivulgaCand)",
+      "licenca": "referência de desenho"
+    }
+  ],
+  "anatomia": "conferida em zoom nas duas versões: dois braços e duas mãos; o tuiuiú com duas asas e duas pernas",
+  "canva": {
+    "design_site_16x9": "DAHXSLAWafc",
+    "arte_16x9": "MAHXSEj66NA",
+    "design_instagram_4x5": "DAHXSBjql7o",
+    "arte_4x5": "MAHXSII0EOE",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "102",
+    "quando": "2026-10-11T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-07-russi-no-topo-do-pantanal.jpg",
+    "instagram_4x5": "2026-10-07-russi-no-topo-do-pantanal-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-07-russi-no-topo-do-pantanal.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/russi-no-topo-do-pantanal-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-07-russi-no-topo-do-pantanal-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 07/10/2026 ~00:40 UTC (antes: charge automática do publicador, charge-1791332524.webp)"
+}

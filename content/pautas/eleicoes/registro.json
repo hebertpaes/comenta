@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-06",
+  "atualizado_em": "2026-10-07",
   "regra": "Matérias de eleições sobre Mato Grosso: capa com fotos oficiais do TSE (montagem/ficha feita no Canva), nunca rosto gerado por IA. Dados e ids dos assets em 2026-mt-candidatos.json.",
   "artes": [
     {
@@ -904,6 +904,29 @@
         }
       ],
       "layout": "mesma capa de dois candidatos; linha 'Os dois candidatos à Presidência citados na matéria, em ordem alfabética'"
+    },
+    {
+      "nome": "Capa · Flávio busca Caiado, Lula defende fim da 6x1 (2º turno)",
+      "design": "DAHXSJvBGrA",
+      "modelo": "DAHXPV0l69E (cópia; título trocado)",
+      "arquivo": "pautas/eleicoes/2026-10-07-capa-flavio-caiado-lula-6x1.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-capa-flavio-caiado-lula-6x1.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Flávio Bolsonaro",
+          "partido": "PL",
+          "canva": "MAHWNRk-aYo",
+          "sq": "280002551544"
+        },
+        {
+          "nome_urna": "Lula",
+          "partido": "PT",
+          "canva": "MAHWNewot14",
+          "sq": "280002542548"
+        }
+      ]
     }
   ],
   "posts_atualizados": [
@@ -1121,6 +1144,14 @@
       "og": "https://hojemt.com.br/content/files/2026/10/lula-e-flavio-bolsonaro-votam-no-1o-turno-veja-onde-wa-1.jpg",
       "feito_em": "2026-10-06",
       "obs": "refeita na rodada das 21h UTC; a matéria trata só de onde Lula e Flávio votaram, então a capa mostra os dois citados (não a lista completa do 1º turno), com a linha explicando isso; sem acusação"
+    },
+    {
+      "slug": "flavio-bolsonaro-busca-apoio-de-caiado-enquanto-lula-defende-fim-da-6x1",
+      "antes": "capa-bd9b4726aa93eef1.webp",
+      "depois": "2026-10-07-capa-flavio-caiado-lula-6x1.jpg (DAHXSJvBGrA)",
+      "og": "https://hojemt.com.br/content/files/2026/10/flavio-bolsonaro-busca-apoio-de-caiado-enquanto-lula-defende-wa-1.jpg",
+      "feito_em": "2026-10-07",
+      "obs": "matéria de campanha do 2º turno, sem acusação; os dois candidatos do 2º turno em ordem alfabética"
     }
   ],
   "mantidos": [

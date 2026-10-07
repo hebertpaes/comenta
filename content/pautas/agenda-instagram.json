@@ -1740,6 +1740,38 @@
       "legenda": "TCE-MT muda o cálculo do duodécimo das Câmaras\n\nO Plenário do Tribunal de Contas de Mato Grosso decidiu, por unanimidade, que as receitas que formam a base do repasse mensal das prefeituras às Câmaras entram pelo valor bruto, sem desconto do Fundeb; o que o município recebe do Fundeb fica fora da conta. A regra responde a consulta da Câmara de Nossa Senhora do Livramento, vale a partir da publicação e não alcança anos já encerrados (O Documento, Só Notícias, Cenário MT).\n\nMatéria completa: hojemt.com.br/tce-mt-muda-regra-do-duodecimo-das-camaras-sem-desconto-do-fundeb\n\n#tcemt #camaramunicipal #matogrosso #politica #hojemt",
       "materia": "https://hojemt.com.br/tce-mt-muda-regra-do-duodecimo-das-camaras-sem-desconto-do-fundeb/",
       "obs": "publicar só depois que a matéria (rascunho no Ghost, 6ac41f6538f4fbfe10d62ab2) for publicada"
+    },
+    {
+      "id": "101",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-11T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Calculadora em dia de festa",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-calculadora-em-dia-de-festa-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Calculadora em dia de festa\n\nBola de cristal não entra na apuração.\n\nO prefeito de Cuiabá, Abilio Brunini (PL), disse nesta terça (6) que a mulher, a deputada estadual eleita Samantha Íris (PL), venceria Lúdio Cabral (PT) numa disputa pela Prefeitura. Na eleição para a Assembleia, em Cuiabá, Lúdio teve 43.586 votos e Samantha, 33.774 (VG Notícias).\n\nLeia a curta completa: hojemt.com.br/calculadora-em-dia-de-festa\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #cuiaba #eleicoes2026 #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/calculadora-em-dia-de-festa/",
+      "charge_json": "pautas/charges/2026-10-07-calculadora-em-dia-de-festa.json",
+      "obs": "próximo horário livre de charge"
+    },
+    {
+      "id": "102",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-11T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Russi no topo do pantanal",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-07-russi-no-topo-do-pantanal-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Russi no topo do pantanal\n\nDeu Russi no topo: até o tuiuiú abriu as asas.\n\nPresidente da Assembleia Legislativa, Max Russi (Podemos) foi o deputado estadual mais votado de Mato Grosso, com 86.934 votos, 827 a mais que Lúdio Cabral (PT), segundo colocado (Exclusivo News, Única News).\n\nLeia a curta completa: hojemt.com.br/russi-no-topo-do-pantanal\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #almt #eleicoes2026 #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/russi-no-topo-do-pantanal/",
+      "charge_json": "pautas/charges/2026-10-07-russi-no-topo-do-pantanal.json",
+      "obs": "próximo horário livre de charge"
     }
   ]
 }
