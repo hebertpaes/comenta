@@ -1573,6 +1573,42 @@
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
       "obs": "substitui a capa genérica do publicador (capa-b1ceacc82fd515a5.webp). Conferido em zoom: tutores de costas; a agente sob a tenda aparece de perfil, pequena e não identificável (personagem genérica).",
       "data": "2026-10-07"
+    },
+    {
+      "slug": "samantha-eleita-deputada-vaga-camara-cuiaba-fellipe-correa",
+      "titulo": "Eleita deputada estadual, Samantha Íris deve deixar a Câmara de Cuiabá em 2027; vaga é do suplente Fellipe Corrêa, hoje secretário de Abilio",
+      "materia": "rascunho (prévia no monitor.json da Câmara de Cuiabá)",
+      "tag": "Política",
+      "canva": {
+        "design": "DAHXXDRXKeU",
+        "arte": "MAHXXEWBtoM",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "corredor de câmara municipal: mulher de cabelos escuros, de costas, sai em direção à luz; homem de terno, de costas, diante das portas do plenário; cadeira vazia em primeiro plano; nenhum rosto visível",
+      "arquivo": "2026-10-07-camara-cuiaba-samantha-vaga.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-07-camara-cuiaba-samantha-vaga.jpg",
+      "og": "(gerada por og-whatsapp.mjs --da-destaque em 07/10)",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "obs": "capa pendente desde 05/10 (Canva sem autorização na época); feita na rotina da Câmara de Cuiabá de 07/10 16h07 MT. Conferido: todos de costas.",
+      "data": "2026-10-07"
+    },
+    {
+      "slug": "vespera-eleicao-mesa-camara-de-cuiaba-abilio-ilde",
+      "titulo": "Na véspera da eleição da Mesa, Abilio prevê relação \"mais distante\" com a Câmara de Cuiabá; Ilde diz que não fará oposição",
+      "materia": "rascunho (prévia no monitor.json da Câmara de Cuiabá)",
+      "tag": "Política",
+      "canva": {
+        "design": "DAHXXIaWVzM",
+        "arte": "MAHXXCgMuAc",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "gabinete antigo ao entardecer: homem de cabeça raspada e camiseta cinza-escura (Abilio, de costas) olha pela janela para um prédio público ao longe; nenhum rosto visível",
+      "arquivo": "2026-10-07-camara-cuiaba-abilio-relacao-distante.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-07-camara-cuiaba-abilio-relacao-distante.jpg",
+      "og": "(gerada por og-whatsapp.mjs --da-destaque em 07/10)",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "obs": "capa pendente desde 05/10 (Canva sem autorização na época); feita na rotina da Câmara de Cuiabá de 07/10 16h07 MT. Conferido: todos de costas.",
+      "data": "2026-10-07"
     }
   ]
 }
