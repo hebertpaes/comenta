@@ -2,6 +2,25 @@
   "_como_funciona": "Ilustrações editoriais feitas no Canva para artigos com capa genérica (opiniao-*.webp / capa-*.webp). Receita em content/README.md, seção 'Artes dos artigos no Canva'. Legenda no site: 'Ilustração: HOJE MT (gerada com IA)'.",
   "itens": [
     {
+      "arquivo": "2026-10-08-santa-carmem-picape.jpg",
+      "canva": {
+        "arte": "MAHXcWcrnX4",
+        "design": "DAHXcQQ0xAs",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "capa_anterior": "capa-2cd2f9af9a919f1c.webp",
+      "cena": "servidor de costas passa pano numa picape branca nova (sem placa nem emblemas) no pátio de uma secretaria de obras; retroescavadeira e motoniveladora no galpão (site da prefeitura não respondeu)",
+      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto",
+      "feito_em": "2026-10-08",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "materia": "https://hojemt.com.br/santa-carmem-compra-nova-picape-economiza-mais-de-r-61-mil/",
+      "slug": "santa-carmem-compra-nova-picape-economiza-mais-de-r-61-mil",
+      "tag": "Cidades & Mato Grosso",
+      "titulo": "Santa Carmem compra nova picape, economiza mais de R$ 61 mil",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-08-santa-carmem-picape.jpg",
+      "fonte": "https://www.santacarmem.mt.gov.br/Noticias/Gestao-eficiente-assegura-novos-investimentos-e-economia-de-mais-de-r-61-mil-em-licitacao-3439"
+    },
+    {
       "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto",
       "feito_em": "2026-10-08",
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
