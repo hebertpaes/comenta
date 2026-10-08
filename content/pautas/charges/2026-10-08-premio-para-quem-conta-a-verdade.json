@@ -1,0 +1,51 @@
+{
+  "slug": "premio-para-quem-conta-a-truth",
+  "materia": "https://hojemt.com.br/premio-para-quem-conta-a-truth/",
+  "titulo": "Prêmio para quem conta a verdade",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 08/10/2026 ~18:30 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal com fonte.",
+  "legenda": {
+    "site_16x9": "Da hora: ALMT abre prêmio pra quem conta a verdade; inscrição até 9/11.",
+    "instagram_4x5": "Da hora: prêmio pra quem conta a verdade. Inscrição até 9/11."
+  },
+  "contexto": "Curta sobre a 2ª edição do Troféu Parlamento, da Assembleia Legislativa de Mato Grosso (ALMT), com inscrições até 9 de novembro, tema \"Onde a lei nasce, a cidadania cresce\" e cinco categorias: Texto, Fotojornalismo, Telejornalismo, Radiojornalismo e Universitário.",
+  "fontes": [
+    "https://hojemt.com.br/premio-para-quem-conta-a-truth/"
+  ],
+  "regras_da_cena": "três repórteres genéricos de costas (microfone, câmera e bloco de notas), sem rosto visível, caminhando para um troféu dourado em forma de coluna de parlamento diante de uma assembleia estilizada com a bandeira de Mato Grosso; nenhuma pessoa real.",
+  "personagens": [],
+  "anatomia": "conferida em zoom nas duas versões: cada repórter com dois braços, duas mãos e duas pernas; ninguém de frente",
+  "canva": {
+    "design_site_16x9": "DAHXcm8XwZ0",
+    "arte_16x9": "MAHXchYJ22s",
+    "design_instagram_4x5": "DAHXcuN1Ebo",
+    "arte_4x5": "MAHXcvtyZfY",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "135",
+    "quando": "2026-10-22T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-08-premio-para-quem-conta-a-verdade.jpg",
+    "instagram_4x5": "2026-10-08-premio-para-quem-conta-a-verdade-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-08-premio-para-quem-conta-a-verdade.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/premio-para-quem-conta-a-truth-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-08-premio-para-quem-conta-a-verdade-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 08/10/2026 ~18:30 UTC (antes: charge-1791483712.webp, charge automática do publicador)",
+  "regionalismo": {
+    "regiao": "Sudeste",
+    "estado": "São Paulo (capital e interior)",
+    "expressao": "Da hora",
+    "significado": "muito bom, legal, excelente",
+    "fonte": "regionalismos.json (BlaBlaCar – gírias de SP; The Brazilian Ways)"
+  }
+}

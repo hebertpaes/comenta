@@ -8,7 +8,7 @@
       "Sudeste",
       "Sul"
     ],
-    "ultima_regiao": "Nordeste",
+    "ultima_regiao": "Sudeste",
     "data": "2026-10-08",
     "usadas": [
       {
@@ -22,6 +22,18 @@
         "regiao": "Nordeste",
         "expressao": "Oxente!",
         "charge": "2026-10-08-o-amor-muda-de-endereco"
+      },
+      {
+        "data": "2026-10-08",
+        "regiao": "Centro-Oeste",
+        "expressao": "Tchá por Deus!",
+        "charge": "2026-10-08-teto-seguro-cadeira-incerta"
+      },
+      {
+        "data": "2026-10-08",
+        "regiao": "Sudeste",
+        "expressao": "Da hora",
+        "charge": "2026-10-08-premio-para-quem-conta-a-verdade"
       }
     ]
   },

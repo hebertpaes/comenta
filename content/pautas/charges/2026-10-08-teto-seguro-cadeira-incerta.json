@@ -1,0 +1,59 @@
+{
+  "slug": "teto-seguro-cadeira-incerta",
+  "materia": "https://hojemt.com.br/teto-seguro-cadeira-incerta/",
+  "titulo": "Teto seguro, cadeira incerta",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 08/10/2026 ~18:30 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal com fonte.",
+  "legenda": {
+    "site_16x9": "Tchá por Deus! Zaeli quer teto pra polícia e fica na fila da cadeira.",
+    "instagram_4x5": "Tchá por Deus! Teto pra polícia, cadeira na fila."
+  },
+  "contexto": "Curta sobre o deputado federal suplente Rodrigo da Zaeli (PL), que propôs mudanças nas regras do programa Habite Seguro (crédito imobiliário para profissionais de segurança pública); na eleição de 4/10 ele teve 35.845 votos (1,88% dos válidos), 13ª colocação, e ficou como suplente, segundo o TSE.",
+  "fontes": [
+    "https://hojemt.com.br/teto-seguro-cadeira-incerta/"
+  ],
+  "regras_da_cena": "caricatura de Rodrigo da Zaeli (cabelo curto escuro, óculos de armação escura retangular, sem barba, blazer azul-marinho e camisa branca, como na foto do TSE) entregando uma casinha de brinquedo a um policial militar genérico; ao fundo, cadeiras de plenário ocupadas por silhuetas de costas e uma cadeira vazia distante com placa SUPLENTE. Sem dinheiro, sem nada que sugira crime.",
+  "personagens": [
+    {
+      "nome": "Rodrigo da Zaeli (PL), deputado federal suplente",
+      "referencia_canva": "MAHXchzbyk0",
+      "foto": "TSE, candidatura 2026 (SQ 110002538954), espelho ND Mais https://static.ndmais.com.br/eleicoes/2026/mt/FMT110002538954_div.jpg",
+      "licenca": "referência de desenho",
+      "tracos_conferidos": "foto aberta e conferida antes do prompt: cabelo curto escuro, óculos de armação escura retangular, sem barba, rosto oval, sorriso largo, blazer azul-marinho e camisa branca de gola aberta"
+    }
+  ],
+  "anatomia": "conferida em zoom nas duas versões: Zaeli e o policial com dois braços, duas mãos (segurando a casinha), duas pernas e dois pés; óculos e cabelo conferidos com a foto do TSE",
+  "canva": {
+    "design_site_16x9": "DAHXcrtfbUo",
+    "arte_16x9": "MAHXcogWzbY",
+    "design_instagram_4x5": "DAHXcpOPwT4",
+    "arte_4x5": "MAHXclm0vQo",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "134",
+    "quando": "2026-10-22T07:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-08-teto-seguro-cadeira-incerta.jpg",
+    "instagram_4x5": "2026-10-08-teto-seguro-cadeira-incerta-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-08-teto-seguro-cadeira-incerta.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/teto-seguro-cadeira-incerta-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-08-teto-seguro-cadeira-incerta-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 08/10/2026 ~18:30 UTC (antes: charge-1791483747.webp, charge automática do publicador)",
+  "regionalismo": {
+    "regiao": "Centro-Oeste",
+    "estado": "Mato Grosso (Cuiabá e Baixada Cuiabana)",
+    "expressao": "Tchá por Deus!",
+    "significado": "expressão cuiabana de espanto, admiração ou dúvida",
+    "fonte": "regionalismos.json (Dicionário Cuiabano da Prefeitura de Cuiabá; artigo da UNEMAT, 2023)"
+  }
+}

@@ -1119,6 +1119,30 @@
         }
       ],
       "obs": "matéria escala-6x1-entra-no-2o-turno-em-mt-mauro-critica-fim-e-ludio-rebate"
+    },
+    {
+      "nome": "Capa · Compromissos de Flávio Bolsonaro e Lula nesta quinta",
+      "design": "DAHXcrNHnks",
+      "modelo": "DAHXVUn26j8 (cópia; título trocado)",
+      "arquivo": "pautas/eleicoes/2026-10-08-capa-flavio-lula-agendas-quinta.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-capa-flavio-lula-agendas-quinta.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Flávio Bolsonaro",
+          "partido": "PL",
+          "canva": "MAHWNRk-aYo",
+          "sq": "280002551544"
+        },
+        {
+          "nome_urna": "Lula",
+          "partido": "PT",
+          "canva": "MAHWNewot14",
+          "sq": "280002542548"
+        }
+      ],
+      "obs": "matéria veja-os-compromissos-de-flavio-bolsonaro-e-lula-nesta-quinta"
     }
   ],
   "posts_atualizados": [
@@ -1384,6 +1408,14 @@
       "og": "https://hojemt.com.br/content/files/2026/10/escala-6x1-entra-no-2o-turno-em-mt-mauro-critica-fim-e-ludio-wa-1.jpg",
       "feito_em": "2026-10-07",
       "obs": "debate de proposta (escala 6x1), sem acusação; ordem alfabética"
+    },
+    {
+      "slug": "veja-os-compromissos-de-flavio-bolsonaro-e-lula-nesta-quinta",
+      "antes": "capa-efd6ecc887a257da.webp",
+      "depois": "2026-10-08-capa-flavio-lula-agendas-quinta.jpg (DAHXcrNHnks)",
+      "og": "https://hojemt.com.br/content/files/2026/10/veja-os-compromissos-de-flavio-bolsonaro-e-lula-nesta-quinta-wa-1.jpg",
+      "feito_em": "2026-10-08",
+      "obs": "agenda dos dois candidatos do 2º turno, sem acusação; ordem alfabética"
     }
   ],
   "mantidos": [

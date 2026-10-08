@@ -2262,6 +2262,38 @@
       "materia": "https://hojemt.com.br/o-amor-muda-de-endereco/",
       "charge_json": "pautas/charges/2026-10-08-o-amor-muda-de-endereco.json",
       "obs": "próximo horário livre de charge; legenda no linguajar regional (rodízio do glossário)."
+    },
+    {
+      "id": "134",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-22T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Teto seguro, cadeira incerta",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-teto-seguro-cadeira-incerta-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Teto seguro, cadeira incerta\n\nTchá por Deus! Teto pra polícia, cadeira na fila.\n(\"Tchá por Deus!\", em Cuiabá, é o espanto de quem não acredita no que vê.)\n\nCurta sobre o deputado federal suplente Rodrigo da Zaeli (PL), que propôs mudanças nas regras do programa Habite Seguro (crédito imobiliário para profissionais de segurança pública); na eleição de 4/10 ele teve 35.845 votos (1,88% dos válidos), 13ª colocação, e ficou como suplente, segundo o TSE.\n\nLeia a curta completa: hojemt.com.br/teto-seguro-cadeira-incerta\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #Brasilia #politica #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/teto-seguro-cadeira-incerta/",
+      "charge_json": "pautas/charges/2026-10-08-teto-seguro-cadeira-incerta.json",
+      "obs": "próximo horário livre de charge; legenda no linguajar regional (rodízio do glossário)."
+    },
+    {
+      "id": "135",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-22T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Prêmio para quem conta a verdade",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-premio-para-quem-conta-a-verdade-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Prêmio para quem conta a verdade\n\nDa hora: prêmio pra quem conta a verdade. Inscrição até 9/11.\n(\"Da hora\", em São Paulo, é o que é muito bom.)\n\nCurta sobre a 2ª edição do Troféu Parlamento, da Assembleia Legislativa de Mato Grosso (ALMT), com inscrições até 9 de novembro, tema \"Onde a lei nasce, a cidadania cresce\" e cinco categorias: Texto, Fotojornalismo, Telejornalismo, Radiojornalismo e Universitário.\n\nLeia a curta completa: hojemt.com.br/premio-para-quem-conta-a-truth\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #ALMT #jornalismo #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/premio-para-quem-conta-a-truth/",
+      "charge_json": "pautas/charges/2026-10-08-premio-para-quem-conta-a-verdade.json",
+      "obs": "próximo horário livre de charge; legenda no linguajar regional (rodízio do glossário)."
     }
   ]
 }
