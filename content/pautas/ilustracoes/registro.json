@@ -2,6 +2,25 @@
   "_como_funciona": "Ilustrações editoriais feitas no Canva para artigos com capa genérica (opiniao-*.webp / capa-*.webp). Receita em content/README.md, seção 'Artes dos artigos no Canva'. Legenda no site: 'Ilustração: HOJE MT (gerada com IA)'.",
   "itens": [
     {
+      "arquivo": "2026-10-08-lucas-audiencia-ldo.jpg",
+      "canva": {
+        "arte": "MAHXbwpw5gw",
+        "design": "DAHXb5WZoVI",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "capa_anterior": "capa-d2cf60e27e560e95.webp",
+      "cena": "plenário de Câmara Municipal visto do fundo, moradores de costas, dois gestores de costas apontando para um telão com gráfico sem letras, câmera de transmissão (a fonte só tinha cartaz, não foto)",
+      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto",
+      "feito_em": "2026-10-08",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "materia": "https://hojemt.com.br/lucas-do-rio-verde-realiza-audiencia-da-ldo-2027-em-19-de-outubro/",
+      "slug": "lucas-do-rio-verde-realiza-audiencia-da-ldo-2027-em-19-de-outubro",
+      "tag": "Cidades & Mato Grosso",
+      "titulo": "Lucas do Rio Verde realiza audiência da LDO 2027 em 19 de outubro",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-08-lucas-audiencia-ldo.jpg",
+      "fonte": "https://www.lucasdorioverde.mt.gov.br/site/noticias/orcamento-para-2027-sera-apresentado-em-audiencia-publica-no-dia-19-de-outubro-15227"
+    },
+    {
       "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto",
       "feito_em": "2026-10-08",
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",

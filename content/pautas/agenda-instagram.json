@@ -2229,6 +2229,38 @@
       "origem": "content/pautas/videos/argos/2026-10-08-boletim-09.cena.json",
       "duracao_s": 318,
       "observacao": "Boletim diário aprofundado (pedido do editor em 08/10): 5 min 18 s, duas vozes (Antonio/Thalita, v8); Instagram Reels aceita até 15 min, mas o editor decide se publica inteiro ou corta."
+    },
+    {
+      "id": "132",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-21T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Devagar com o andor",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-devagar-com-o-andor-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Devagar com o andor\n\nDe bubuia: Russi só frita o peixe depois da urna.\n(\"De bubuia\", no Norte, é ficar boiando, à toa, sem pressa.)\n\nCurta sobre Max Russi (Podemos), 86.934 votos (4,51% dos válidos, 1º lugar geral), que adiou as articulações pela presidência da ALMT para depois do 2º turno (25/10) e diz não ter pedido voto a ninguém.\n\nLeia a curta completa: hojemt.com.br/devagar-com-o-andor\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #ALMT #politica #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/devagar-com-o-andor/",
+      "charge_json": "pautas/charges/2026-10-08-devagar-com-o-andor.json",
+      "obs": "próximo horário livre de charge; legenda no linguajar regional (rodízio do glossário)."
+    },
+    {
+      "id": "133",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-21T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "O amor muda de endereço",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-o-amor-muda-de-endereco-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · O amor muda de endereço\n\nOxente! O GPS de Abilio agora aponta pra Assembleia.\n(\"Oxente!\", no Nordeste, é a surpresa de quem não esperava.)\n\nCurta sobre Abilio Brunini, que disse que a partir de 2027 vai frequentar a Assembleia Legislativa para acompanhar a esposa, Samantha Iris, eleita deputada estadual com 57.900 votos (3,00%), sem deixar de ir à Câmara de Cuiabá.\n\nLeia a curta completa: hojemt.com.br/o-amor-muda-de-endereco\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #Cuiaba #politica #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/o-amor-muda-de-endereco/",
+      "charge_json": "pautas/charges/2026-10-08-o-amor-muda-de-endereco.json",
+      "obs": "próximo horário livre de charge; legenda no linguajar regional (rodízio do glossário)."
     }
   ]
 }

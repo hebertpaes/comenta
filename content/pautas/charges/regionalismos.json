@@ -8,9 +8,22 @@
       "Sudeste",
       "Sul"
     ],
-    "ultima_regiao": null,
-    "data": null,
-    "usadas": []
+    "ultima_regiao": "Nordeste",
+    "data": "2026-10-08",
+    "usadas": [
+      {
+        "data": "2026-10-08",
+        "regiao": "Norte",
+        "expressao": "De bubuia",
+        "charge": "2026-10-08-devagar-com-o-andor"
+      },
+      {
+        "data": "2026-10-08",
+        "regiao": "Nordeste",
+        "expressao": "Oxente!",
+        "charge": "2026-10-08-o-amor-muda-de-endereco"
+      }
+    ]
   },
   "regioes": [
     {

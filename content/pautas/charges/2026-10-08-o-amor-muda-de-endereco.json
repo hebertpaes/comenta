@@ -1,0 +1,59 @@
+{
+  "slug": "o-amor-muda-de-endereco",
+  "materia": "https://hojemt.com.br/o-amor-muda-de-endereco/",
+  "titulo": "O amor muda de endereço",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 08/10/2026 ~15:30 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal com fonte.",
+  "legenda": {
+    "site_16x9": "Oxente! Abilio trocou o GPS da Câmara pelo endereço do coração.",
+    "instagram_4x5": "Oxente! O GPS de Abilio agora aponta pra Assembleia."
+  },
+  "contexto": "Curta sobre Abilio Brunini, que disse que a partir de 2027 vai frequentar a Assembleia Legislativa para acompanhar a esposa, Samantha Iris, eleita deputada estadual com 57.900 votos (3,00%), sem deixar de ir à Câmara de Cuiabá.",
+  "fontes": [
+    "https://hojemt.com.br/o-amor-muda-de-endereco/"
+  ],
+  "regras_da_cena": "caricatura de Abilio (careca, sem barba, rosto anguloso, camiseta cinza-escura) atravessando a avenida com mala de rodinhas e uma bússola cujo ponteiro é um coração; Câmara à esquerda com vereadores genéricos acenando; ALMT à direita com um coração na porta. Samantha Iris não é desenhada (sem foto oficial conferida).",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini (prefeito de Cuiabá)",
+      "referencia_canva": "MAHWHiDa8C0 + MAHWHkYuCOg",
+      "foto": "galeria oficial do prefeito, Prefeitura de Cuiabá (Rennan Oliveira/Secom), 21/09 e 03/09/2026",
+      "licenca": "referência de desenho",
+      "tracos_conferidos": "cabeça raspada, sem barba, rosto anguloso e magro, orelhas marcadas, camiseta cinza-escura lisa (tabela do README)"
+    }
+  ],
+  "anatomia": "conferida em zoom nas duas versões: Abilio com dois braços, duas mãos (mala e bússola), duas pernas e dois pés; careca, sem barba",
+  "canva": {
+    "design_site_16x9": "DAHXbwhTljU",
+    "arte_16x9": "MAHXb_urEWs",
+    "design_instagram_4x5": "DAHXbwWkx6U",
+    "arte_4x5": "MAHXbxpfJhQ",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "133",
+    "quando": "2026-10-21T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-08-o-amor-muda-de-endereco.jpg",
+    "instagram_4x5": "2026-10-08-o-amor-muda-de-endereco-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-08-o-amor-muda-de-endereco.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/o-amor-muda-de-endereco-wa.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-08-o-amor-muda-de-endereco-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 08/10/2026 ~15:30 UTC (antes: charge automática do publicador)",
+  "regionalismo": {
+    "regiao": "Nordeste",
+    "estado": "todo o Nordeste (Bahia, Pernambuco, Ceará…)",
+    "expressao": "Oxente!",
+    "significado": "interjeição de espanto ou surpresa (aglutinação de 'ó, gente')",
+    "fonte": "regionalismos.json (fontes conferidas no glossário)"
+  }
+}
