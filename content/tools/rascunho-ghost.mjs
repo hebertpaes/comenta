@@ -4,7 +4,8 @@
 // Vai para o Ghost: o corpo (## subtítulos, parágrafos, **negrito**, [links](url)) e o parágrafo
 // de Fontes (URLs soltas viram links). A checagem pendente fica só no .md.
 //   node content/tools/rascunho-ghost.mjs --md=<arquivo.md> --slug=<slug> --tag=cidades|politica|... --resumo="até 300 caracteres" [--seco]
-// Nunca publica: status sempre "draft". Se o slug já existir, não cria outro.
+// Por padrão cria RASCUNHO (status "draft"). `--publicar` publica direto: só com ordem explícita do editor
+// (ex.: sugestões de pauta do e-mail contato@hojemt.com.br, pedido de 08/10/2026). Se o slug já existir, não cria outro.
 import { readFileSync } from "node:fs";
 import { ghostClient } from "../lib/ghost.mjs";
 
@@ -70,9 +71,9 @@ const p = await api.posts.add(
     slug: args.slug,
     html: html.join("\n"),
     custom_excerpt: String(args.resumo),
-    status: "draft",
+    status: args.publicar ? "published" : "draft",
     tags: [{ slug: String(args.tag) }],
   },
   { source: "html" }
 );
-console.log(`rascunho criado: ${p.id} ${p.slug} (${p.status}) — ${p.url}`);
+console.log(`${args.publicar ? "publicado" : "rascunho criado"}: ${p.id} ${p.slug} (${p.status}) — ${p.url}`);
