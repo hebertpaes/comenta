@@ -2180,6 +2180,38 @@
       "legenda": "CHARGE · Brincar na relva lei\n\nO concreto cede ao joelho sujo.\n\nLeia a curta completa: hojemt.com.br/brincar-na-relva-lei\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/brincar-na-relva-lei/",
       "charge_json": "pautas/charges/2026-10-08-brincar-na-relva-lei.json"
+    },
+    {
+      "id": "129",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-20T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Soraba chinela lotérica",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-soraba-chinela-loterica-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Soraba chinela lotérica\n\nAos clubes, a migalha.\n\nA Lei 15.523/2026, sancionada em 28 de setembro, passa ao Comitê Brasileiro de Clubes (CBC) a fatia de 0,01% da arrecadação das loterias numéricas que antes ia à Fenaclubes, para a formação de gestores de clubes. A mudança não aumenta o total destinado ao setor (Senado Federal; Congresso em Foco).\n\nLeia a curta completa: hojemt.com.br/soraba-chinela-loterica\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #esporte #loterias #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/soraba-chinela-loterica/",
+      "charge_json": "pautas/charges/2026-10-08-soraba-chinela-loterica.json",
+      "obs": "próximo horário livre de charge depois de Brincar na relva lei (20/10 07:30). Fatos da legenda conferidos no texto da lei (Senado) e em dois veículos; a curta tem erros (ver alertas no charge_json)."
+    },
+    {
+      "id": "130",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Sobrepeso em quadruplicata",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-sobrepeso-em-quadruplicata-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Sobrepeso em quadruplicata\n\nA prevenção começa no prato.\n\n[Confirmar no site da OMS os números antes de agendar: obesidade de 2% para 8% entre 5 e 19 anos de 1990 a 2024, 170 milhões; a OMS citou 188 milhões em 2025 em janeiro.]\n\nLeia a curta completa: hojemt.com.br/sobrepeso-em-quadruplicata\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #saude #obesidadeinfantil #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/sobrepeso-em-quadruplicata/",
+      "charge_json": "pautas/charges/2026-10-08-sobrepeso-em-quadruplicata.json",
+      "obs": "aguardando decisão: dado da curta com uma fonte só (La Capital); o editor decide depois de conferir na OMS."
     }
   ]
 }

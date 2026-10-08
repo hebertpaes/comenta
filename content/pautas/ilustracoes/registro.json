@@ -1718,6 +1718,38 @@
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção) · Com informações do Tribunal de Justiça de Mato Grosso (link mantido)",
       "obs": "substitui a capa genérica do publicador (capa-c6e6c010acdac3fd.webp). Professor genérico (sem traços do juiz federal citado). Conferido ampliado: todos de costas, sem texto legível.",
       "data": "2026-10-07"
+    },
+    {
+      "slug": "8-de-outubro-entre-a-memoria-do-7-de-outubro-e-a-vigilancia-interna",
+      "titulo": "8 de outubro: entre a memória do 7 de outubro e a vigilância interna",
+      "materia": "https://hojemt.com.br/8-de-outubro-entre-a-memoria-do-7-de-outubro-e-a-vigilancia-interna/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHXbDHEX4E",
+        "arte": "MAHXbAlwP9U",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "cena sóbria (tema com vítimas: nada de guerra, armas ou feridos): homem de costas numa varanda de Cuiabá à noite, com jornal, vela acesa, café e rádio antigo; luzes da cidade ao longe",
+      "arquivo": "2026-10-08-opiniao-8-de-outubro.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-08-opiniao-8-de-outubro.jpg",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "obs": "substitui a capa genérica opiniao-1791461304.webp (rotina de charges, 08/10 ~12:35 UTC); legenda antiga era só 'Arte: HOJE MT'"
+    },
+    {
+      "slug": "chapada-dos-guimaraes-lanca-edital-de-r-170-mil-para-projetos-culturais",
+      "titulo": "Chapada dos Guimarães lança edital de R$ 170 mil para projetos culturais",
+      "materia": "https://hojemt.com.br/chapada-dos-guimaraes-lanca-edital-de-r-170-mil-para-projetos-culturais/",
+      "tag": "Cidades & Mato Grosso",
+      "canva": {
+        "design": "DAHXbAXq1N0",
+        "arte": "MAHXbHbDCyg",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "violeiro com viola de cocho, artesã com cerâmica e dançarina de siriri, todos de costas, ensaiando diante dos paredões de arenito de Chapada ao entardecer",
+      "arquivo": "2026-10-08-chapada-edital-cultural.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-08-chapada-edital-cultural-1.jpg",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção) · Com informações da Prefeitura de Chapada dos Guimarães (link mantido)",
+      "obs": "substitui a capa genérica capa-ac2cc2a30cda6fde.webp; rostos e mãos conferidos na ampliação"
     }
   ]
 }

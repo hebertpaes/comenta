@@ -1,0 +1,49 @@
+{
+  "slug": "soraba-chinela-loterica",
+  "materia": "https://hojemt.com.br/soraba-chinela-loterica/",
+  "titulo": "Soraba chinela lotérica",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 08/10/2026 ~12:30 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal com fonte.",
+  "legenda": {
+    "site_16x9": "Do bolo da loteria, aos clubes chegou a migalha.",
+    "instagram_4x5": "Aos clubes, a migalha."
+  },
+  "contexto": "Curta sobre a Lei 15.523/2026: passa ao Comitê Brasileiro de Clubes (CBC) os 0,01% da arrecadação das loterias numéricas que iam à Fenaclubes, para formar gestores de clubes.",
+  "fontes": [
+    "https://hojemt.com.br/soraba-chinela-loterica/",
+    "https://legis.senado.leg.br/norma/44076412/publicacao/44080332",
+    "https://www.congressoemfoco.com.br/noticia/122702/nova-lei-transfere-repasse-de-loterias-ao-comite-brasileiro-de-clubes",
+    "https://atlaspublico.com.br/noticias/presidente-sanciona-lei-que-destina-0-01pct-de-loterias-ao-812016"
+  ],
+  "regras_da_cena": "sem pessoas; bolo de bilhetes de loteria com fatia minúscula num pratinho ao lado de bola remendada e chinela; sol de Cuiabá na janela.",
+  "personagens": [],
+  "anatomia": "sem pessoas; objetos sem braços nem mãos (conferido na exportação)",
+  "canva": {
+    "design_site_16x9": "DAHXbNguVQw",
+    "arte_16x9": "MAHXbDbW6-Y",
+    "design_instagram_4x5": "DAHXbBvV0ow",
+    "arte_4x5": "MAHXbNxCVBs",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "129",
+    "quando": "2026-10-20T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-08-soraba-chinela-loterica.jpg",
+    "instagram_4x5": "2026-10-08-soraba-chinela-loterica-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-08-soraba-chinela-loterica.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-08-soraba-chinela-loterica-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 08/10/2026 ~12:35 UTC (antes: charge automática do publicador, charge-1791462098.webp)",
+  "alertas_ao_editor": [
+    "a curta diz que 'o Senado sancionou' a Lei 15.523 e que o CBC 'governa o futebol': a lei foi sancionada pela Presidência em 28/09/2026 (DOU de 29/09), e o CBC é o Comitê Brasileiro de Clubes (formação esportiva de clubes), não entidade do futebol; o dinheiro é para formar gestores de clubes e não aumenta o total. Texto publicado não foi mexido; a legenda do Instagram usa os fatos corretos."
+  ]
+}

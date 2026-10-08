@@ -1,0 +1,47 @@
+{
+  "slug": "sobrepeso-em-quadruplicata",
+  "materia": "https://hojemt.com.br/sobrepeso-em-quadruplicata/",
+  "titulo": "Sobrepeso em quadruplicata",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 08/10/2026 ~12:30 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal com fonte.",
+  "legenda": {
+    "site_16x9": "Na balança do mundo, a prevenção começa no prato.",
+    "instagram_4x5": "A prevenção começa no prato."
+  },
+  "contexto": "Curta sobre dado atribuído à OMS: a obesidade entre crianças e adolescentes de 5 a 19 anos passou de 2% para 8% entre 1990 e 2024 (170 milhões), com o lançamento de diretrizes sobre o tema.",
+  "fontes": [
+    "https://hojemt.com.br/sobrepeso-em-quadruplicata/",
+    "https://www.lacapitalmdp.com/la-obesidad-infantil-se-cuadruplico-desde-1990-y-ya-afecta-a-170-millones/"
+  ],
+  "regras_da_cena": "sem pessoas (tema de saúde infantil: nenhuma criança retratada); balança assustada entre prato de frituras e refrigerante e prato de peixe na brasa com arroz e frutas.",
+  "personagens": [],
+  "anatomia": "sem pessoas; objetos sem braços nem mãos (conferido na exportação)",
+  "canva": {
+    "design_site_16x9": "DAHXbA4gfSA",
+    "arte_16x9": "MAHXbPPRjsg",
+    "design_instagram_4x5": "DAHXbG5Pe1U",
+    "arte_4x5": "MAHXbNykL8A",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "aguardando_decisao",
+    "agenda_id": "130",
+    "quando": null
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-08-sobrepeso-em-quadruplicata.jpg",
+    "instagram_4x5": "2026-10-08-sobrepeso-em-quadruplicata-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-08-sobrepeso-em-quadruplicata.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-08-sobrepeso-em-quadruplicata-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 08/10/2026 ~12:35 UTC (antes: charge automática do publicador, charge-1791462101.webp)",
+  "alertas_ao_editor": [
+    "os números da curta (2% para 8%, 170 milhões em 2024) e a 'primeira diretriz' só foram achados num veículo (La Capital, Argentina); a OMS divulgou em jan/2026 outro dado (188 milhões em 2025). Card do Instagram fica aguardando decisão até conferir no who.int."
+  ]
+}
