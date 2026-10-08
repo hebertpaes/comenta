@@ -6,6 +6,41 @@ sugestivo e intrigante").
 
 ## Formato vigente (29/09/2026): só voz e slides
 
+### Boletim diário aprofundado e voz v8 (08/10/2026)
+
+Pedido do editor em 08/10: "Inicie o boletim diário mais aprofundado e com
+imagens e vídeos disponíveis nas redes. Com mais detalhes e gráficos com uma
+voz aprimorada e mais português do Brasil possível e com maior tempo de análise
+com mais detalhes dos passos dos candidatos a presidência".
+
+- **Periodicidade e duração:** um boletim por dia às 10:30 de Cuiabá até o
+  2º turno (25/10); 4 a 6 min (`"limite_s": 420`; o charge-cena.mjs aceita
+  de 30 a 600 s). O nº 9 (08/10) tem 5 min 18 s e 15 cenas.
+- **Estrutura:** intro → placar do 1º turno e calendário → "Os passos de
+  Flávio Bolsonaro" → "Os passos de Lula" (agenda dia a dia, apoios, propostas,
+  redes, com cartões de posts e clipes ≤ 10 s dos perfis oficiais, sem o áudio
+  original) → próximos passos → pesquisa registrada nova (ficha completa) →
+  Justiça Eleitoral → Mato Grosso → fechamento padrão. Blocos de tamanho
+  parecido, ordem fixa (Flávio, depois Lula), só fato com fonte oficial ou
+  duas fontes.
+- **Voz v8** (teste A/B de 08/10 com DNSMOS, P.808 e Whisper, amostras em
+  `$HOJEMT_TMP/boletim-diario/voz/`): Antonio **+6% e +1 Hz** (v7 era +14%/+3 Hz:
+  181 palavras/min, apressado; v8 fica em ~156), tratamento "leve", 96 kbps,
+  frases curtas. Segunda âncora **pt-BR-ThalitaMultilingualNeural (+4%, +0 Hz)**,
+  escolhida por cena (`"voz": {"narrador": …}` dentro da cena, que o
+  charge-cena.mjs mescla com a voz do roteiro), alternando por bloco temático,
+  nunca uma voz por candidato. Cada fala sai nivelada a −20 LUFS
+  (`loudnorm=I=-20:TP=-2:LRA=11`). Pronúncias novas em PRONUNCIA_EDGE:
+  "Pivetta" → "Pi vêta", "Otaviano" → "Ôtaviano", "Cuiabá e" → "Cuiabá, e".
+  Reserva Kokoro `pm_alex` em velocidade 1.0.
+- **Modelo:** `2026-10-08-boletim-09.cena.json` + `graficos-boletim-09.mjs`
+  (peças `linha`, `cardEsq`, `barras`, `agenda` e `moldura` sobre
+  `slides-lib.mjs`; `imagemMax` 300 nos cartões de post para não cortar;
+  clipes na caixa `[590, 500, 420, 747]`).
+- **Avisos:** cartela final e legenda com "Voz gerada com IA (narradores
+  sintéticos)"; agenda do Instagram com `formato: "video"` e
+  `aguardando_decisao` (o editor decide se o Reels vai inteiro).
+
 ### Voz v7 (02/10/2026, editor: "continue aprimorando a voz")
 
 Mesma voz (pt-BR-AntonioNeural; é a única masculina de pt-BR no catálogo da

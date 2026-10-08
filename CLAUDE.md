@@ -50,7 +50,7 @@ source content/tools/ambiente.sh --checar      # proxy/CA do Node, $HOJEMT_TMP e
 ## Voz e vídeo (boletins do Radar)
 
 - Sem avatar e sem nome de avatar em nada público; nunca sintetizar ou clonar voz de pessoa real; narrador não se apresenta nem cita IA (o aviso de IA vai só na tela/legenda/página).
-- Voz v7: edge-tts `pt-BR-AntonioNeural`, 96 kbps, +14% (até +16% se encostar em 120 s; nunca acima de +18%), +3 Hz, tratamento "leve"; reserva Kokoro `pm_alex`. "Pivetta" se pronuncia "Pivêta". Sem música. Vídeo ≤ 120 s.
+- Voz v8 (08/10/2026, boletim diário aprofundado): edge-tts `pt-BR-AntonioNeural` +6% +1 Hz, tratamento "leve", 96 kbps, frases curtas (~156 palavras/min); segunda âncora `pt-BR-ThalitaMultilingualNeural` +4% +0 Hz, alternando por bloco temático (nunca por candidato); cada fala nivelada a −20 LUFS; reserva Kokoro `pm_alex`. "Pivetta" se pronuncia "Pivêta". Sem música. Boletim diário de 4 a 6 min (`limite_s` até 600); os boletins antigos (≤ 120 s, voz v7 +14%) ficam como estão.
 - Intro: `content/pautas/videos/argos/intro-boletim.mjs`; fechamento padrão: `fechamento-boletim.mjs` (site + redes @hoje.mt, YouTube @hojemt, X @hojemt). Detalhes: skill `hojemt-boletim` e `content/pautas/videos/argos/ARGOS.md`.
 
 ## Rotinas em paralelo
