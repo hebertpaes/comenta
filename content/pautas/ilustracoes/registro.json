@@ -2,6 +2,45 @@
   "_como_funciona": "Ilustrações editoriais feitas no Canva para artigos com capa genérica (opiniao-*.webp / capa-*.webp). Receita em content/README.md, seção 'Artes dos artigos no Canva'. Legenda no site: 'Ilustração: HOJE MT (gerada com IA)'.",
   "itens": [
     {
+      "canva": {
+        "arte": "MAHXbbxJeTs",
+        "design": "DAHXbeTCDxU",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto",
+      "feito_em": "2026-10-08",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "arquivo": "2026-10-08-sorriso-outubro-rosa.jpg",
+      "capa_anterior": "capa-277d322a3154eacf.webp",
+      "cena": "nutricionista de jaleco, de costas, fala a mulheres com laços cor-de-rosa numa sala de espera de UBS; cartaz do Outubro Rosa sem letras",
+      "materia": "https://hojemt.com.br/sorriso-inicia-palestras-de-outubro-rosa-nas-ubss/",
+      "slug": "sorriso-inicia-palestras-de-outubro-rosa-nas-ubss",
+      "tag": "Saúde",
+      "titulo": "Sorriso inicia palestras de Outubro Rosa nas UBSs",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-08-sorriso-outubro-rosa.jpg",
+      "fonte": "https://site.sorriso.mt.gov.br/noticia/saude-inicia-serie-de-palestras-abordando-importancia-do-autocuidado-na-saude-feminina-6ac797d79bc6d"
+    },
+    {
+      "canva": {
+        "arte": "MAHXbWGboZI",
+        "arte_v1_descartada": "MAHXbZCdQUQ",
+        "design": "DAHXbRBO9kc",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto",
+      "feito_em": "2026-10-08",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "arquivo": "2026-10-08-chapada-festa-das-criancas.jpg",
+      "capa_anterior": "capa-cd054f204e647fc8.webp",
+      "cena": "crianças de costas correm para parque inflável e piscina de bolinhas num salão coberto; mesa de pipoca e algodão-doce; paredão de Chapada pela porta (1ª versão descartada: crianças de frente)",
+      "materia": "https://hojemt.com.br/chapada-dos-guimaraes-abre-salao-do-divino-para-festa-das-criancas/",
+      "slug": "chapada-dos-guimaraes-abre-salao-do-divino-para-festa-das-criancas",
+      "tag": "Cidades & Mato Grosso",
+      "titulo": "Chapada dos Guimarães abre Salão do Divino para festa das crianças",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-08-chapada-festa-das-criancas.jpg",
+      "fonte": "https://www.chapadadosguimaraes.mt.gov.br/Noticias/Chapada-dos-guimaraes-prepara-grande-festa-para-celebrar-o-dia-das-criancas-3100"
+    },
+    {
       "slug": "o-cnpj-como-salvo-conduto-a-formalizacao-que-muda-a-vida",
       "titulo": "O CNPJ como salvo-conduto: a formalização que muda a vida",
       "materia": "https://hojemt.com.br/o-cnpj-como-salvo-conduto-a-formalizacao-que-muda-a-vida/",
