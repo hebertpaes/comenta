@@ -11807,7 +11807,7 @@
   }
  ],
  "autoridades": {
-  "gerado_em": "2026-10-08T15:07:02Z",
+  "gerado_em": "2026-10-08T18:21:52Z",
   "janela_dias": 7,
   "fonte": "Google Notícias (manchetes que citam o nome); classificação automática por palavras",
   "candidatos": [
@@ -11966,8 +11966,8 @@
       "data": "03/10"
      }
     ],
-    "neutras": 0,
-    "total": 2
+    "neutras": 1,
+    "total": 3
    },
    {
     "nome": "Sérgio Machnic",
