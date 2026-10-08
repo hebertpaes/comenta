@@ -10814,90 +10814,112 @@
   "metodo": "Análise HOJE MT, feita com dados verificáveis: pesquisas registradas na Justiça Eleitoral, decisões confirmadas por fonte oficial ou dois veículos, coligações e apoios publicados, estudo de redes do Instituto Democracia em Xeque/UFMT e gastos declarados à Justiça Eleitoral. Cada candidato tem o mesmo número de pontos, em ordem alfabética, e cada ponto traz a fonte. Não é recomendação de voto."
  },
  "boletim": {
-  "n": 8,
-  "quando": "Boletim nº 8 · 04/10/2026, 10:48 (MT)",
-  "titulo": "Dia de eleição: as pesquisas da véspera, a cola de Eduardo Bolsonaro e a Justiça Eleitoral",
+  "n": 9,
+  "quando": "Boletim nº 9 · 08/10/2026, 10:30 (MT)",
+  "titulo": "2º turno: os passos de Flávio Bolsonaro e de Lula, a primeira pesquisa registrada, a Justiça Eleitoral e Mato Grosso",
   "texto": [
-   "Mato Grosso vota neste domingo (4) no 1º turno; a votação vai até as 16h, no horário de Mato Grosso, segundo o planejamento do TRE-MT. Na véspera, foram divulgadas três pesquisas registradas para o governo e o Senado: Quaest (MT-02649/2026), AtlasIntel (MT-00323/2026) e Veritá (MT-06765/2026).",
-   "Para o governo, em votos válidos, Otaviano Pivetta (Republicanos) tem 54% na Quaest (contratada pela Rede Matogrossense de Comunicação; 1.800 entrevistas em 2 e 3/10; margem de 2 pontos; confiança de 95%), 54,3% na AtlasIntel (recursos próprios; 1.200 entrevistas de 27/9 a 2/10; margem de 3 pontos; 95%) e 53,7% na Veritá (recursos próprios; 1.220 entrevistas de 26/9 a 1º/10; margem de 3 pontos; 95%). O segundo lugar é de Wellington Fagundes (PL) na Quaest (28%) e na Veritá (27,1%), e de Doutora Natasha (PSD) na AtlasIntel (24,3%, contra 19,6% de Wellington). Os demais: Sargento Laudicério, Maurício Coelho e Rafaell Milas, de 0,4% a 3%. Pesquisa é retrato do momento.",
-   "No Senado, com os dois votos somados, Mauro Mendes (União) e Janaina Riva (MDB) aparecem à frente na Quaest (37% e 23% dos válidos); Mauro e Zé Medeiros (PL), na Veritá (57,4% e 39%, em total de 200%); e Zé Medeiros e Mauro, na AtlasIntel (26,8% e 25,3%). Neste domingo, o ex-deputado Eduardo Bolsonaro (PL) publicou nas redes uma cola com Otaviano Pivetta para governador e Zé Medeiros para o Senado, sem Wellington Fagundes, candidato do PL ao governo (RepórterMT, HiperNotícias e Muvuca Popular).",
-   "Na Justiça Eleitoral, o juiz auxiliar da propaganda Marcelo Morgado negou a liminar pedida por Wellington Fagundes e pela coligação Coração da Gente para retirar reportagens do Olhar Direto sobre benefícios fiscais atribuídos a empresas ligadas à família do candidato; a defesa contesta R$ 919,9 mil atribuídos a uma empresa com a mesma sigla, e o direito de resposta ainda será julgado. Voz do vídeo gerada com IA (narrador sintético, sem imitar pessoa real); sem música; os slides e os fatos são feitos, apurados e conferidos pela redação do HOJE MT; postagens reproduzidas: nenhuma neste boletim."
+   "Primeiro boletim diário aprofundado do 2º turno. Flávio Bolsonaro (PL) e Lula (PT) voltam às urnas em 25 de outubro. No 1º turno, Flávio teve 47,03% dos votos válidos e Lula, 45,16%, uma diferença de 2.224.965 votos (1,87 ponto); 33.469.244 eleitores (21,08%) não compareceram, segundo o TSE. A propaganda gratuita no rádio e na TV começa nesta sexta-feira (9) e vai até 23/10, com tempo igual para os dois (plano de mídia aprovado por unanimidade pelo TSE em 6/10). Os debates previstos são na Record (11/10), num pool de 11 veículos (15/10), na Band (18/10, 20h) e na Globo (23/10). Flávio disse que vai aos debates; Lula disse que agora o debate é importante; nenhum confirmou data a data.",
+   "Flávio Bolsonaro trabalhou no comitê da campanha, no Lago Sul, em Brasília, e viajou uma vez, a Goiânia (6/10), onde Ronaldo Caiado (PSD), 5º colocado no 1º turno, declarou apoio (“Estarei com Flávio de corpo inteiro”, segundo a CNN Brasil). Na quarta (7), a federação União Progressista (União Brasil e PP), o Novo e o Republicanos oficializaram apoio em Brasília; em coletiva, Flávio defendeu mudar a Constituição por PEC (maioridade penal, Judiciário, fim da reeleição) e disse que não disputará um segundo mandato. Nas redes, publicou vídeo sobre o Bolsa Família (“não acredite quando disserem que o programa vai acabar”). Próximos passos: reunião prevista com o Podemos (8/10) e, segundo o coordenador Rogério Marinho, viagens a partir de sexta, por São Paulo.",
+   "Lula não viajou: ficou em Brasília, entre o Palácio da Alvorada e o QG, recebeu governadores do Nordeste e reorganizou a coordenação (Camilo Santana passou a dividir o comando com Edinho Silva). Na segunda (5), disse que agora é importante ter debate na TV; no 1º turno não foi a nenhum. Na quarta (7), numa plenária com parlamentares eleitos, desafiou Flávio a votar pelo fim da escala 6x1 (“Eu desafio ele a votar favoravelmente”), defendeu a PEC da Segurança Pública e admitiu que esta foi “a campanha menos organizada” de que participou desde 1989. Começou a gravar vídeos selfie e prometeu incluir exames e teleconsultas no Farmácia Popular. Sem adesão de partido novo nem de candidato derrotado; cinco governadores eleitos do Nordeste o apoiam. Próximos passos: caminhada em Ceilândia (DF) na sexta (9) e ato em Natal (RN) no sábado (10).",
+   "A primeira pesquisa registrada do 2º turno, PoderData/Aya (TSE BR-08134/2026; contratante: o próprio instituto; 3.000 entrevistas de 5 a 7/10; margem de 1,8 ponto; confiança de 95%), dá Flávio 53% x Lula 47% em votos válidos. Pesquisa é retrato do momento. O Datafolha (BR-02949/2026) sai nesta quinta às 18h45 de Brasília. Na Justiça Eleitoral, Kassio Nunes Marques negou pedidos da campanha de Lula para tirar do ar vídeos de Flávio e para direito de resposta (7/10), e a PGR deu parecer favorável à volta das visitas de Flávio ao pai, Jair Bolsonaro, em prisão domiciliar (decisão de Alexandre de Moraes). Em Mato Grosso, Flávio teve 65,15% dos válidos e Lula, 29,18% (Flávio à frente em 133 municípios, Lula em 9); Otaviano Pivetta, Mauro Mendes e José Medeiros apoiam Flávio; aliados de Lula fazem atos em Cuiabá até sábado e um ato pró-Flávio está marcado para terça (13), 18h. Voz do vídeo gerada com IA (dois narradores sintéticos, sem imitar pessoa real); sem música; os slides e os fatos são feitos, apurados e conferidos pela redação do HOJE MT; postagens reproduzidas: @flaviobolsonaro (TikTok e YouTube) e @LulaOficial (X e YouTube)."
   ],
-  "video": "https://hojemt.com.br/content/media/2026/10/2026-10-04-boletim-08.mp4",
-  "poster": "https://hojemt.com.br/content/images/2026/10/2026-10-04-boletim-08-capa.jpg",
   "fontes": [
    [
-    "Radar Eleitoral do HOJE MT",
-    "https://hojemt.com.br/radar-eleitoral/",
-    "2026-10-04"
+    "TSE · resultado oficial do 1º turno (Brasil)",
+    "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/br/br-c0001-e006257-u.json"
    ],
    [
-    "TRE-MT",
-    "https://www.tre-mt.jus.br/comunicacao/noticias/2026/Outubro/mato-grosso-vai-as-urnas-com-2-6-milhoes-de-eleitores-e-mais-de-54-mil-colaboradores",
-    "2026-10-02"
+    "HOJE MT · Apuração 2026",
+    "https://hojemt.com.br/apuracao-2026/"
    ],
    [
-    "RepórterMT (Quaest)",
-    "https://www.reportermt.com/politica/quaest-crava-vitoria-de-pivetta-no-1-turno-com-54-dos-votos-validos-wellington-tem-28-e-natasha-13/244564",
-    "2026-10-03"
+    "CNN Brasil · Caiado oficializa apoio a Flávio",
+    "https://www.cnnbrasil.com.br/eleicoes/caiado-oficializa-apoio-a-flavio-no-segundo-turno-em-evento-em-goiania/"
    ],
    [
-    "MidiaJur (Quaest)",
-    "https://www.midiajur.com.br/eleicoes-2026/pivetta-aparece-com-54-dos-votos-validos-e-wellington-com-28-aponta-quaest/87651",
-    "2026-10-03"
+    "Metrópoles · Flávio confirma que vai a debates",
+    "https://www.metropoles.com/brasil/flavio-confirma-que-vai-a-debates-no-2-turno-sao-importantes"
    ],
    [
-    "Gazeta do Povo (Quaest)",
-    "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-mato-grosso-outubro-2026/",
-    "2026-10-03"
+    "Gazeta do Povo · Flávio confirma debates",
+    "https://www.gazetadopovo.com.br/eleicoes/2026/flavio-bolsonaro-confirma-que-ira-a-debates-do-segundo-turno/"
    ],
    [
-    "Gazeta do Povo (AtlasIntel)",
-    "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-governo-senado-mato-grosso-outubro-2026/",
-    "2026-10-03"
+    "Metrópoles · Novo formaliza apoio a Flávio",
+    "https://www.metropoles.com/brasil/apos-apoio-de-uniao-pp-flavio-bolsonaro-ganha-reforco-do-novo-no-2o-turno"
    ],
    [
-    "Infoverus (AtlasIntel)",
-    "https://www.infoverus.com.br/politica/pivetta-lidera-corrida-ao-governo-de-mt-medeiros-e-mauro-aparecem-a-frente-para-ao-senado/36066",
-    "2026-10-03"
+    "Agência Brasil · Flávio recebe apoio de partidos e fala em mudar a Constituição",
+    "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/flavio-bolsonaro-recebe-apoio-de-partidos-e-fala-em-mudar-constituicao"
    ],
    [
-    "Muvuca Popular (Veritá)",
-    "https://www.muvucapopular.com.br/2026/10/03/pivetta-tem-537-fagundes-271-e-natasha-163-dos-votos-validos-em-nova-pesquisa/",
-    "2026-10-03"
+    "CNN Brasil · Republicanos confirma apoio a Flávio",
+    "https://www.cnnbrasil.com.br/eleicoes/republicanos-confirma-apoio-a-flavio-bolsonaro-no-2o-turno-das-eleicoes/"
    ],
    [
-    "MidiaNews (Veritá, Senado)",
-    "https://www.midianews.com.br/politica/mendes-tem-574-medeiros-39-e-janaina-277-diz-verita/530510",
-    "2026-10-03"
+    "Agência Brasil · Lula desafia Flávio sobre a 6x1",
+    "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/lula-cobra-flavio-bolsonaro-sobre-apoio-ao-fim-da-escala-6x1"
    ],
    [
-    "RepórterMT (Quaest, Senado)",
-    "https://www.reportermt.com/politica/mauro-lidera-com-37-janaina-tem-23-medeiros-17-e-favaro-9-dos-votos-validos/244565",
-    "2026-10-03"
+    "CNN Brasil · Lula: campanha menos organizada",
+    "https://www.cnnbrasil.com.br/eleicoes/foi-a-campanha-menos-organizada-que-participei-desde-1989-diz-lula/"
    ],
    [
-    "RepórterMT (Eduardo Bolsonaro)",
-    "https://www.reportermt.com/papo-reto/eduardo-bolsonaro-ignora-wellington-e-poe-pivetta-na-colinha-de-votacao/244579",
-    "2026-10-04"
+    "Agência Brasil · PGR e visitas de Flávio ao pai",
+    "https://agenciabrasil.ebc.com.br/justica/noticia/2026-10/pgr-da-parecer-favoravel-retomada-de-visitas-de-flavio-ao-pai"
    ],
    [
-    "HiperNotícias (Eduardo Bolsonaro)",
-    "https://www.hnt.com.br/politica/eduardo-bolsonaro-pede-votos-a-pivetta-e-deixa-wellington-fagundes-fora-da-colinha/578875",
-    "2026-10-04"
+    "CNN Brasil · PoderData/Aya 2º turno",
+    "https://www.cnnbrasil.com.br/eleicoes/poderdata-aya-flavio-tem-53-dos-votos-validos-no-2o-turno-lula-47/"
    ],
    [
-    "RDM Online (Justiça)",
-    "https://rdmonline.com.br/tre-mt-nega-retirada-de-reportagens-sobre-beneficios-fiscais-ligados-a-wellington/",
-    "2026-10-02"
+    "Gazeta do Povo · PoderData 2º turno",
+    "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/poderdata-presidente-outubro-2026-segundo-turno/"
    ],
    [
-    "VGN (Justiça)",
-    "https://www.vgnoticias.com.br/eleicoes-2026/tre-mt-nega-retirada-de-materias-sobre-empresas-ligadas-a-familia-de-wellington/152980",
-    "2026-10-03"
+    "Gazeta do Povo · TSE define horário eleitoral",
+    "https://www.gazetadopovo.com.br/eleicoes/2026/tse-define-horario-eleitoral-de-lula-e-flavio-no-2o-turno/"
+   ],
+   [
+    "O Tempo · Nunes Marques mantém vídeos de Flávio",
+    "https://www.otempo.com.br/eleicoes/2026/presidentes/2026/10/7/nunes-marques-mantem-videos-de-ataques-de-flavio-a-lula-e-moraes-e-nega-direito-de-resposta"
+   ],
+   [
+    "Brasil de Fato · datas das pesquisas do 2º turno",
+    "https://www.brasildefato.com.br/2026/10/06/datafolha-quaest-atlasintel-quando-saem-as-pesquisas-de-2o-turno-entre-lula-e-flavio/"
+   ],
+   [
+    "Portal Mato Grosso · lideranças de MT com Flávio",
+    "https://portalmatogrosso.com.br/alianca-em-mato-grosso-se-une-para-sustentar-candidatura-de-flavio-bolsonaro-no-segundo-turno/"
+   ],
+   [
+    "@flaviobolsonaro no TikTok (Bolsa Família)",
+    "https://www.tiktok.com/@flaviobolsonaro/video/7693889445606509845"
+   ],
+   [
+    "@flaviobolsonaro no YouTube (apoios, 07/10)",
+    "https://www.youtube.com/shorts/bPxevzkag54"
+   ],
+   [
+    "@flaviobolsonaro no YouTube (Goiânia, 06/10)",
+    "https://www.youtube.com/shorts/w0JHCiYshRo"
+   ],
+   [
+    "@LulaOficial no X (vídeo selfie, 07/10)",
+    "https://x.com/LulaOficial/status/2107830931474223283"
+   ],
+   [
+    "@LulaOficial no YouTube (plenária, 07/10)",
+    "https://www.youtube.com/watch?v=2w-2NzLulLU"
+   ],
+   [
+    "@LulaOficial no YouTube (reunião, 05/10)",
+    "https://www.youtube.com/watch?v=Dn0fHiWl3ys"
    ]
   ],
-  "duracao_s": 97
+  "video": "https://hojemt.com.br/content/media/2026/10/2026-10-08-boletim-09.mp4",
+  "poster": "https://hojemt.com.br/content/images/2026/10/2026-10-08-boletim-09-capa.jpg",
+  "duracao_s": 318
  },
  "boletins": [
   {
@@ -11674,6 +11696,114 @@
     ]
    ],
    "duracao_s": 97
+  },
+  {
+   "n": 9,
+   "quando": "Boletim nº 9 · 08/10/2026, 10:30 (MT)",
+   "titulo": "2º turno: os passos de Flávio Bolsonaro e de Lula, a primeira pesquisa registrada, a Justiça Eleitoral e Mato Grosso",
+   "texto": [
+    "Primeiro boletim diário aprofundado do 2º turno. Flávio Bolsonaro (PL) e Lula (PT) voltam às urnas em 25 de outubro. No 1º turno, Flávio teve 47,03% dos votos válidos e Lula, 45,16%, uma diferença de 2.224.965 votos (1,87 ponto); 33.469.244 eleitores (21,08%) não compareceram, segundo o TSE. A propaganda gratuita no rádio e na TV começa nesta sexta-feira (9) e vai até 23/10, com tempo igual para os dois (plano de mídia aprovado por unanimidade pelo TSE em 6/10). Os debates previstos são na Record (11/10), num pool de 11 veículos (15/10), na Band (18/10, 20h) e na Globo (23/10). Flávio disse que vai aos debates; Lula disse que agora o debate é importante; nenhum confirmou data a data.",
+    "Flávio Bolsonaro trabalhou no comitê da campanha, no Lago Sul, em Brasília, e viajou uma vez, a Goiânia (6/10), onde Ronaldo Caiado (PSD), 5º colocado no 1º turno, declarou apoio (“Estarei com Flávio de corpo inteiro”, segundo a CNN Brasil). Na quarta (7), a federação União Progressista (União Brasil e PP), o Novo e o Republicanos oficializaram apoio em Brasília; em coletiva, Flávio defendeu mudar a Constituição por PEC (maioridade penal, Judiciário, fim da reeleição) e disse que não disputará um segundo mandato. Nas redes, publicou vídeo sobre o Bolsa Família (“não acredite quando disserem que o programa vai acabar”). Próximos passos: reunião prevista com o Podemos (8/10) e, segundo o coordenador Rogério Marinho, viagens a partir de sexta, por São Paulo.",
+    "Lula não viajou: ficou em Brasília, entre o Palácio da Alvorada e o QG, recebeu governadores do Nordeste e reorganizou a coordenação (Camilo Santana passou a dividir o comando com Edinho Silva). Na segunda (5), disse que agora é importante ter debate na TV; no 1º turno não foi a nenhum. Na quarta (7), numa plenária com parlamentares eleitos, desafiou Flávio a votar pelo fim da escala 6x1 (“Eu desafio ele a votar favoravelmente”), defendeu a PEC da Segurança Pública e admitiu que esta foi “a campanha menos organizada” de que participou desde 1989. Começou a gravar vídeos selfie e prometeu incluir exames e teleconsultas no Farmácia Popular. Sem adesão de partido novo nem de candidato derrotado; cinco governadores eleitos do Nordeste o apoiam. Próximos passos: caminhada em Ceilândia (DF) na sexta (9) e ato em Natal (RN) no sábado (10).",
+    "A primeira pesquisa registrada do 2º turno, PoderData/Aya (TSE BR-08134/2026; contratante: o próprio instituto; 3.000 entrevistas de 5 a 7/10; margem de 1,8 ponto; confiança de 95%), dá Flávio 53% x Lula 47% em votos válidos. Pesquisa é retrato do momento. O Datafolha (BR-02949/2026) sai nesta quinta às 18h45 de Brasília. Na Justiça Eleitoral, Kassio Nunes Marques negou pedidos da campanha de Lula para tirar do ar vídeos de Flávio e para direito de resposta (7/10), e a PGR deu parecer favorável à volta das visitas de Flávio ao pai, Jair Bolsonaro, em prisão domiciliar (decisão de Alexandre de Moraes). Em Mato Grosso, Flávio teve 65,15% dos válidos e Lula, 29,18% (Flávio à frente em 133 municípios, Lula em 9); Otaviano Pivetta, Mauro Mendes e José Medeiros apoiam Flávio; aliados de Lula fazem atos em Cuiabá até sábado e um ato pró-Flávio está marcado para terça (13), 18h. Voz do vídeo gerada com IA (dois narradores sintéticos, sem imitar pessoa real); sem música; os slides e os fatos são feitos, apurados e conferidos pela redação do HOJE MT; postagens reproduzidas: @flaviobolsonaro (TikTok e YouTube) e @LulaOficial (X e YouTube)."
+   ],
+   "fontes": [
+    [
+     "TSE · resultado oficial do 1º turno (Brasil)",
+     "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/br/br-c0001-e006257-u.json"
+    ],
+    [
+     "HOJE MT · Apuração 2026",
+     "https://hojemt.com.br/apuracao-2026/"
+    ],
+    [
+     "CNN Brasil · Caiado oficializa apoio a Flávio",
+     "https://www.cnnbrasil.com.br/eleicoes/caiado-oficializa-apoio-a-flavio-no-segundo-turno-em-evento-em-goiania/"
+    ],
+    [
+     "Metrópoles · Flávio confirma que vai a debates",
+     "https://www.metropoles.com/brasil/flavio-confirma-que-vai-a-debates-no-2-turno-sao-importantes"
+    ],
+    [
+     "Gazeta do Povo · Flávio confirma debates",
+     "https://www.gazetadopovo.com.br/eleicoes/2026/flavio-bolsonaro-confirma-que-ira-a-debates-do-segundo-turno/"
+    ],
+    [
+     "Metrópoles · Novo formaliza apoio a Flávio",
+     "https://www.metropoles.com/brasil/apos-apoio-de-uniao-pp-flavio-bolsonaro-ganha-reforco-do-novo-no-2o-turno"
+    ],
+    [
+     "Agência Brasil · Flávio recebe apoio de partidos e fala em mudar a Constituição",
+     "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/flavio-bolsonaro-recebe-apoio-de-partidos-e-fala-em-mudar-constituicao"
+    ],
+    [
+     "CNN Brasil · Republicanos confirma apoio a Flávio",
+     "https://www.cnnbrasil.com.br/eleicoes/republicanos-confirma-apoio-a-flavio-bolsonaro-no-2o-turno-das-eleicoes/"
+    ],
+    [
+     "Agência Brasil · Lula desafia Flávio sobre a 6x1",
+     "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/lula-cobra-flavio-bolsonaro-sobre-apoio-ao-fim-da-escala-6x1"
+    ],
+    [
+     "CNN Brasil · Lula: campanha menos organizada",
+     "https://www.cnnbrasil.com.br/eleicoes/foi-a-campanha-menos-organizada-que-participei-desde-1989-diz-lula/"
+    ],
+    [
+     "Agência Brasil · PGR e visitas de Flávio ao pai",
+     "https://agenciabrasil.ebc.com.br/justica/noticia/2026-10/pgr-da-parecer-favoravel-retomada-de-visitas-de-flavio-ao-pai"
+    ],
+    [
+     "CNN Brasil · PoderData/Aya 2º turno",
+     "https://www.cnnbrasil.com.br/eleicoes/poderdata-aya-flavio-tem-53-dos-votos-validos-no-2o-turno-lula-47/"
+    ],
+    [
+     "Gazeta do Povo · PoderData 2º turno",
+     "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/poderdata-presidente-outubro-2026-segundo-turno/"
+    ],
+    [
+     "Gazeta do Povo · TSE define horário eleitoral",
+     "https://www.gazetadopovo.com.br/eleicoes/2026/tse-define-horario-eleitoral-de-lula-e-flavio-no-2o-turno/"
+    ],
+    [
+     "O Tempo · Nunes Marques mantém vídeos de Flávio",
+     "https://www.otempo.com.br/eleicoes/2026/presidentes/2026/10/7/nunes-marques-mantem-videos-de-ataques-de-flavio-a-lula-e-moraes-e-nega-direito-de-resposta"
+    ],
+    [
+     "Brasil de Fato · datas das pesquisas do 2º turno",
+     "https://www.brasildefato.com.br/2026/10/06/datafolha-quaest-atlasintel-quando-saem-as-pesquisas-de-2o-turno-entre-lula-e-flavio/"
+    ],
+    [
+     "Portal Mato Grosso · lideranças de MT com Flávio",
+     "https://portalmatogrosso.com.br/alianca-em-mato-grosso-se-une-para-sustentar-candidatura-de-flavio-bolsonaro-no-segundo-turno/"
+    ],
+    [
+     "@flaviobolsonaro no TikTok (Bolsa Família)",
+     "https://www.tiktok.com/@flaviobolsonaro/video/7693889445606509845"
+    ],
+    [
+     "@flaviobolsonaro no YouTube (apoios, 07/10)",
+     "https://www.youtube.com/shorts/bPxevzkag54"
+    ],
+    [
+     "@flaviobolsonaro no YouTube (Goiânia, 06/10)",
+     "https://www.youtube.com/shorts/w0JHCiYshRo"
+    ],
+    [
+     "@LulaOficial no X (vídeo selfie, 07/10)",
+     "https://x.com/LulaOficial/status/2107830931474223283"
+    ],
+    [
+     "@LulaOficial no YouTube (plenária, 07/10)",
+     "https://www.youtube.com/watch?v=2w-2NzLulLU"
+    ],
+    [
+     "@LulaOficial no YouTube (reunião, 05/10)",
+     "https://www.youtube.com/watch?v=Dn0fHiWl3ys"
+    ]
+   ],
+   "video": "https://hojemt.com.br/content/media/2026/10/2026-10-08-boletim-09.mp4",
+   "poster": "https://hojemt.com.br/content/images/2026/10/2026-10-08-boletim-09-capa.jpg",
+   "duracao_s": 318
   }
  ],
  "autoridades": {

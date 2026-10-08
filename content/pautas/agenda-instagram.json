@@ -2212,6 +2212,23 @@
       "materia": "https://hojemt.com.br/sobrepeso-em-quadruplicata/",
       "charge_json": "pautas/charges/2026-10-08-sobrepeso-em-quadruplicata.json",
       "obs": "aguardando decisão: dado da curta com uma fonte só (La Capital); o editor decide depois de conferir na OMS."
+    },
+    {
+      "id": "131",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "video",
+      "titulo": "Radar Eleitoral · Boletim nº 9",
+      "midia": [
+        "https://hojemt.com.br/content/media/2026/10/2026-10-08-boletim-09.mp4"
+      ],
+      "capa": "https://hojemt.com.br/content/images/2026/10/2026-10-08-boletim-09-capa.jpg",
+      "legenda": "RADAR ELEITORAL · Boletim nº 9: 2º turno, os passos de Flávio Bolsonaro e de Lula, a primeira pesquisa registrada, a Justiça Eleitoral e Mato Grosso\n\nO 2º turno para presidente é em 25/10 entre Flávio Bolsonaro (PL) e Lula (PT). No 1º turno: 47,03% e 45,16% dos votos válidos (TSE). A propaganda gratuita começa nesta sexta (9/10) e vai até 23/10, com tempos iguais.\n\nFlávio: comitê no Lago Sul (Brasília), viagem a Goiânia e apoio de Ronaldo Caiado (PSD); na quarta, Federação União Progressista (União + PP), Novo e Republicanos oficializaram apoio. Em coletiva, defendeu PECs (maioridade penal, Judiciário e fim da reeleição) e disse que não disputará um 2º mandato.\n\nLula: ficou em Brasília, recebeu governadores do Nordeste, reorganizou a coordenação (Camilo Santana divide o comando com Edinho Silva), desafiou Flávio a votar pelo fim da escala 6x1 e admitiu que esta foi a campanha menos organizada de que participou desde 1989. Cinco governadores eleitos apoiam a campanha dele.\n\nPesquisa registrada: PoderData/Aya, votos válidos — Flávio 53% e Lula 47%. Ficha técnica: registro TSE BR-08134/2026, contratante o próprio instituto, 3.000 entrevistas, 5 a 7/10, margem de 1,8 ponto, confiança de 95%. Pesquisa é retrato do momento.\n\nJustiça Eleitoral: TSE aprovou por unanimidade o plano de mídia; Nunes Marques negou pedidos da campanha de Lula; PGR deu parecer favorável à volta das visitas de Flávio ao pai (decisão cabe a Alexandre de Moraes).\n\nMato Grosso: Flávio 65,15% e Lula 29,18% no 1º turno; Flávio à frente em 133 municípios e Lula em 9. Otaviano Pivetta, Mauro Mendes e José Medeiros declararam apoio a Flávio; aliados de Lula fazem atos em Cuiabá até sábado; ato pró-Flávio na terça (13/10), 18h.\n\nReprodução: @flaviobolsonaro (TikTok e YouTube) e @LulaOficial (X e YouTube), postagens públicas de 5 a 7/10.\nVoz gerada com IA (narradores sintéticos); fatos apurados e conferidos pela redação; sem música.\n\nAcompanhe em hojemt.com.br/radar-eleitoral. Siga e compartilhe o @hoje.mt.\n\n#Eleicoes2026 #SegundoTurno #RadarEleitoral #MatoGrosso #HojeMT",
+      "origem": "content/pautas/videos/argos/2026-10-08-boletim-09.cena.json",
+      "duracao_s": 318,
+      "observacao": "Boletim diário aprofundado (pedido do editor em 08/10): 5 min 18 s, duas vozes (Antonio/Thalita, v8); Instagram Reels aceita até 15 min, mas o editor decide se publica inteiro ou corta."
     }
   ]
 }
