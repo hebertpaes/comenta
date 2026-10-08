@@ -28,6 +28,13 @@ const JANELA_DIAS = 7;
 
 const norm = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 const tem = (t, l) => l.some((w) => t.includes(w));
+// "prefeito de sorriso" não pode casar com "ex-prefeito de sorriso" (outra pessoa).
+const citaAtual = (t, c) => {
+  for (let i = t.indexOf(c); i >= 0; i = t.indexOf(c, i + 1)) {
+    if (!/\bex[- ]$/.test(t.slice(Math.max(0, i - 3), i))) return true;
+  }
+  return false;
+};
 
 // Palavras de polêmica e de proposta (sem acento, minúsculas). A polêmica vence quando há as duas.
 const POL = ["operacao", " pf ", "policia federal", "investiga", "denuncia", "acusa", "suspeit", "irregular", "improbidade",
@@ -89,7 +96,7 @@ for (const a of CFG.autoridades) {
       const bar = t.lastIndexOf(" | ");
       if (bar > 20 && it.fonte && norm(it.fonte).startsWith(norm(t.slice(bar + 3)).slice(0, 8))) t = t.slice(0, bar);
       const tn = norm(t);
-      if (!chaves.some((c) => tn.includes(c))) continue; // só manchete que cita a pessoa
+      if (!chaves.some((c) => citaAtual(tn, c))) continue; // só manchete que cita a pessoa (e não um ex-ocupante do cargo)
       const k = tn.replace(/[^a-z0-9]/g, "").slice(0, 90);
       if (vistos.has(k)) continue;
       vistos.add(k);

@@ -11807,7 +11807,7 @@
   }
  ],
  "autoridades": {
-  "gerado_em": "2026-10-08T18:21:52Z",
+  "gerado_em": "2026-10-08T21:07:15Z",
   "janela_dias": 7,
   "fonte": "Google Notícias (manchetes que citam o nome); classificação automática por palavras",
   "candidatos": [
@@ -11835,8 +11835,15 @@
     "confirmar": false,
     "situacao": "Prefeito em exercício · sem candidatura em 2026",
     "polemicas": [],
-    "solucoes": [],
-    "neutras": 2,
+    "solucoes": [
+     {
+      "titulo": "Sorriso coloca 4 nomes para estadual, 1 para federal e 3 para o Senado; articulação de Alei amplia força política do município",
+      "fonte": "MOMENTO MT",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPNzVISTAxcW03eXVzcXd0blROM0FfYjJxQTIxeW9XQlpuRTI1cDRER0gyaUZtWFVOT1p1eUdia1hvTzdHMWxJS1pEVkROaER1eVh2Q0lnNng4RlpRbW12MnR1eTR6VlluaF9xVmUzYUF1NFNsVTZCLUVKUlhva1NYdnBXcUhfbG80TDlzeVhOcGJlOEczYVZzTS1rUzVrTUVKUkFjeUJyem53QW9seHp2ZnNnNUNPbzdUbjByVGxVXzJVa1BHVVRYVjN6cEtoWmhrUXA2T2NXdzl3eTM1amI0eHZfalk?oc=5",
+      "data": "08/10"
+     }
+    ],
+    "neutras": 1,
     "total": 2
    },
    {
@@ -11925,8 +11932,8 @@
     "situacao": "Prefeita em exercício · sem candidatura em 2026",
     "polemicas": [],
     "solucoes": [],
-    "neutras": 1,
-    "total": 1
+    "neutras": 0,
+    "total": 0
    },
    {
     "nome": "Miguel Vaz",
@@ -11981,6 +11988,12 @@
     "polemicas": [],
     "solucoes": [
      {
+      "titulo": "Sérgio Machnic anuncia mudança no comando da Secretaria de Agricultura de Primavera do Leste",
+      "fonte": "MOMENTO MT",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNWUhlXy1TYVNvMlljd2VoX0pYelpNU2JkLXhGRnBoa1FlVVZkNnZTV3RDZUhJUExVT1dWVS1rbzRzTlZUUEdvbHVhRE8zM0F2WDZvWHNDdVBsUUZpYzZUWlBKNVlTcGZ5YnVuUmNzeHBIQXRua1dDSTRoRHVhYWEtWjhoWWVGM1UtcmlvOUt4LTF3NXlQUGdjNU9sS1E4cmFoS0dVXzYtYW1mbU1UYmZjT0sxRElfWXp2Vmc?oc=5",
+      "data": "08/10"
+     },
+     {
       "titulo": "Prefeito Sérgio Machnic reforça convite para contribuintes aderirem ao Regulariza PVA",
       "fonte": "Prefeitura de Primavera do Leste",
       "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPTnFLS1N3S3RUdTlpWGhXeHIxbXhSV3BGdTBEaGc4X3c2QndLcmk4TGJMd3JrSW85TF8tZnQ1SkZCV2ZjSVVDb1NTM2R3QkhwTl8tTEhCdDNWcnV3V0hLUkpuZnBLV190YmdNdVZ0QzhycFRUV0FLWEMwNnhvOEpjN09ybWdiS3ZVcFRhQUZoQTJRWGxFSUJnV2hKVmx3SHIxUHRyUUQwRkhmM0pMWGVmR0Rua3FDbVVWNW9OVFhybk1xVFBJUEFiakpKOFFpMEJxSlpXMVNvMUViOWtZU1hJWnk0UQ?oc=5",
@@ -11994,7 +12007,7 @@
      }
     ],
     "neutras": 1,
-    "total": 3
+    "total": 4
    },
    {
     "nome": "Vander Masson",
