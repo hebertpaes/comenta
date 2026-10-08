@@ -1,0 +1,49 @@
+{
+  "slug": "brincar-na-relva-lei",
+  "materia": "https://hojemt.com.br/brincar-na-relva-lei/",
+  "titulo": "Brincar na relva lei",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 08/10/2026 ~09:45 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal com fonte.",
+  "legenda": {
+    "site_16x9": "Na praça, o concreto cede lugar ao joelho sujo.",
+    "instagram_4x5": "O concreto cede ao joelho sujo."
+  },
+  "contexto": "Curta sobre a Lei 15.512/2026 (ECA Ambiental), sancionada em 22/09/2026, que inclui o brincar livre em contato com a natureza e praças e parques mais lúdicos entre as diretrizes.",
+  "fontes": [
+    "https://hojemt.com.br/brincar-na-relva-lei/",
+    "https://agenciagov.ebc.com.br/noticias/202609/eca-ambiental-sancionada-lei-que-estabelece-principios-e-diretrizes-para-garantir-o-direito-de-criancas-e-adolescentes-a-natureza",
+    "https://www.unicef.org/brazil/comunicados-de-imprensa/unicef-celebra-sancao-de-lei-que-garante-o-direito-de-criancas-e-adolescentes-a-natureza"
+  ],
+  "regras_da_cena": "sem pessoas: piso de concreto de praça rachando e dele brotam grama, ipê amarelo com balanço de pneu, pipa, baldinho e bola.",
+  "personagens": [],
+  "anatomia": "sem pessoas; nada a contar",
+  "canva": {
+    "design_site_16x9": "DAHXaZpL9sM",
+    "arte_16x9": "MAHXae4long",
+    "design_instagram_4x5": "DAHXacpqV8A",
+    "arte_4x5": "MAHXab8n41o",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "128",
+    "quando": "2026-10-20T07:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-08-brincar-na-relva-lei.jpg",
+    "instagram_4x5": "2026-10-08-brincar-na-relva-lei-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-08-brincar-na-relva-lei.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/brincar-na-relva-lei-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-08-brincar-na-relva-lei-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 08/10/2026 ~09:45 UTC (antes: charge automática do publicador, charge-1791451340.webp)",
+  "alertas_ao_editor": [
+    "a curta diz que 'o Senado obriga cidades a criar parques'; a Lei 15.512/2026 foi sancionada pela Presidência em 22/09 e traz diretrizes, não uma obrigação nesses termos. O texto publicado não foi mexido."
+  ]
+}

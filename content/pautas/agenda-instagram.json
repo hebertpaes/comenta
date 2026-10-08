@@ -2150,6 +2150,36 @@
       "legenda": "CHARGE · Sede de água e pressa\n\nAté a torneira está com sede.\n\nLeia a curta completa: hojemt.com.br/sede-de-agua-e-pressa\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/sede-de-agua-e-pressa/",
       "charge_json": "pautas/charges/2026-10-08-sede-de-agua-e-pressa.json"
+    },
+    {
+      "id": "127",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-19T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Pancada de febre",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-pancada-de-febre-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Pancada de febre\n\nO pré-natal avisa.\n\nLeia a curta completa: hojemt.com.br/pancada-de-febre\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/pancada-de-febre/",
+      "charge_json": "pautas/charges/2026-10-08-pancada-de-febre.json"
+    },
+    {
+      "id": "128",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-20T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Brincar na relva lei",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-brincar-na-relva-lei-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Brincar na relva lei\n\nO concreto cede ao joelho sujo.\n\nLeia a curta completa: hojemt.com.br/brincar-na-relva-lei\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/brincar-na-relva-lei/",
+      "charge_json": "pautas/charges/2026-10-08-brincar-na-relva-lei.json"
     }
   ]
 }
