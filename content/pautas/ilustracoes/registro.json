@@ -2,6 +2,44 @@
   "_como_funciona": "Ilustrações editoriais feitas no Canva para artigos com capa genérica (opiniao-*.webp / capa-*.webp). Receita em content/README.md, seção 'Artes dos artigos no Canva'. Legenda no site: 'Ilustração: HOJE MT (gerada com IA)'.",
   "itens": [
     {
+      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto",
+      "feito_em": "2026-10-08",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "arquivo": "2026-10-08-vg-cadastro-unico.jpg",
+      "canva": {
+        "arte": "MAHXcEo_i5g",
+        "design": "DAHXcCWGubA",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "capa_anterior": "capa-0ddac2ea317994bf.webp",
+      "cena": "fila de moradores de costas no balcão de um centro de assistência social; atendente de costas afixa cartaz em branco; computador apagado (a fonte não tinha foto)",
+      "materia": "https://hojemt.com.br/cadastro-unico-em-varzea-grande-tem-atendimento-suspenso-para-manutencao/",
+      "slug": "cadastro-unico-em-varzea-grande-tem-atendimento-suspenso-para-manutencao",
+      "tag": "Cidades & Mato Grosso",
+      "titulo": "Cadastro Único em Várzea Grande tem atendimento suspenso para manutenção",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-08-vg-cadastro-unico.jpg",
+      "fonte": "https://www.varzeagrande.mt.gov.br/cadastro-unico-ficara-indisponivel-nesta-sexta-feira-9-para-manutencao"
+    },
+    {
+      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto",
+      "feito_em": "2026-10-08",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "arquivo": "2026-10-08-unemat-alto-araguaia.jpg",
+      "canva": {
+        "arte": "MAHXcIKUkug",
+        "design": "DAHXcCt_Gnk",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "capa_anterior": "capa-85ad2ca11220f2f6.webp",
+      "cena": "professor de costas escreve num quadro em branco; estudantes de costas; cerrado e prédio do campus pela janela (a fonte não tinha foto com crédito)",
+      "materia": "https://hojemt.com.br/unemat-abre-vagas-para-professores-temporarios-em-alto-araguaia/",
+      "slug": "unemat-abre-vagas-para-professores-temporarios-em-alto-araguaia",
+      "tag": "Cidades & Mato Grosso",
+      "titulo": "Unemat abre vagas para professores temporários em Alto Araguaia",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-08-unemat-alto-araguaia.jpg",
+      "fonte": "https://unemat.br/noticias/8-10-2026-unemat-abre-inscricoes-para-processo-seletivo-de-professores-temporarios-do-campus-de-alto-araguaia"
+    },
+    {
       "arquivo": "2026-10-08-lucas-audiencia-ldo.jpg",
       "canva": {
         "arte": "MAHXbwpw5gw",
