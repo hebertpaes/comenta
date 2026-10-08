@@ -1,0 +1,59 @@
+{
+  "slug": "lideranca-de-peso-no-alencastro",
+  "materia": "https://hojemt.com.br/lideranca-de-peso-no-alencastro/",
+  "titulo": "Liderança de peso no Alencastro",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 08/10/2026 ~21:30 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala que caiba como citação da pessoa desenhada.",
+  "legenda": {
+    "site_16x9": "Tabuleiro armado no Alencastro: a peleia vai ser com 17.",
+    "instagram_4x5": "Vem aí a peleia com 17 na Câmara."
+  },
+  "contexto": "Curta sobre a especulação de que o prefeito Abilio Brunini (PL) quer a presidente da Câmara, Paula Calil (PL), como líder do governo no próximo biênio, diante de uma oposição estimada em cerca de 17 vereadores.",
+  "fontes": [
+    "https://hojemt.com.br/lideranca-de-peso-no-alencastro/"
+  ],
+  "regras_da_cena": "caricatura de Abilio (cabeça raspada, sem barba, rosto magro e anguloso, camiseta cinza-escura lisa) diante de um tabuleiro de xadrez gigante num salão de palácio, pondo uma rainha diante de uma fileira de peões; Paula Calil não é desenhada (sem foto oficial recente conferida).",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini (prefeito de Cuiabá)",
+      "referencia_canva": "MAHWHiDa8C0 + MAHWHkYuCOg",
+      "foto": "galeria oficial do prefeito, Prefeitura de Cuiabá (Rennan Oliveira/Secom), 21/09 e 03/09/2026",
+      "licenca": "referência de desenho",
+      "tracos_conferidos": "cabeça raspada, sem barba, rosto anguloso e magro, orelhas marcadas, camiseta cinza-escura lisa (tabela do README)"
+    }
+  ],
+  "anatomia": "conferida em zoom nas duas versões: Abilio com dois braços e duas mãos (uma na peça, outra no queixo); careca, sem barba",
+  "canva": {
+    "design_site_16x9": "DAHXdToYZts",
+    "arte_16x9": "MAHXdeIJIcE",
+    "design_instagram_4x5": "DAHXdTTgnG4",
+    "arte_4x5": "MAHXddyGMrU",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "aguardando_decisao",
+    "agenda_id": "140",
+    "quando": null
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-08-lideranca-de-peso-no-alencastro.jpg",
+    "instagram_4x5": "2026-10-08-lideranca-de-peso-no-alencastro-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-08-lideranca-de-peso-no-alencastro.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/lideranca-de-peso-no-alencastro-wa.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-08-lideranca-de-peso-no-alencastro-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 08/10/2026 ~21:30 UTC (antes: charge-1791494578.webp, charge automática do publicador)",
+  "regionalismo": {
+    "regiao": "Sul",
+    "estado": "Rio Grande do Sul",
+    "expressao": "Peleia",
+    "significado": "briga, disputa, luta (do espanhol pelear)",
+    "fonte": "regionalismos.json (Dicio)"
+  }
+}

@@ -8,7 +8,7 @@
       "Sudeste",
       "Sul"
     ],
-    "ultima_regiao": "Sudeste",
+    "ultima_regiao": "Norte",
     "data": "2026-10-08",
     "usadas": [
       {
@@ -34,6 +34,18 @@
         "regiao": "Sudeste",
         "expressao": "Da hora",
         "charge": "2026-10-08-premio-para-quem-conta-a-verdade"
+      },
+      {
+        "data": "2026-10-08",
+        "regiao": "Norte",
+        "expressao": "Boca de jambu",
+        "charge": "2026-10-08-o-preco-da-lingua-afiada"
+      },
+      {
+        "data": "2026-10-08",
+        "regiao": "Sul",
+        "expressao": "Peleia",
+        "charge": "2026-10-08-lideranca-de-peso-no-alencastro"
       }
     ]
   },

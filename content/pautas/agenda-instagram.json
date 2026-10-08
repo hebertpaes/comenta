@@ -2339,6 +2339,38 @@
       "legenda": "Plano Diretor aprovado; emenda por viadutos na BR-163 é barrada\n\nA Câmara de Lucas do Rio Verde aprovou por unanimidade, em dois turnos nesta quinta (8), os cinco projetos do Plano Diretor: perímetro urbano, sistema viário, código de obras, zoneamento e parcelamento do solo. A emenda do vereador Hélio Kaminski que previa ao menos três viadutos e travessias na BR-163 foi considerada ilegal pela Comissão Especial e não foi votada (Câmara de Lucas do Rio Verde).\n\nMatéria completa: hojemt.com.br/lucas-do-rio-verde-aprova-plano-diretor-emenda-viadutos-br-163-barrada\n\n#LucasDoRioVerde #planodiretor #BR163 #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/lucas-do-rio-verde-aprova-plano-diretor-emenda-viadutos-br-163-barrada/",
       "obs": "publicar só depois que a matéria (rascunho no Ghost, 6ac7ff9723c41b1557c4a4b8) for publicada"
+    },
+    {
+      "id": "139",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-23T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "O preço da língua afiada",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-o-preco-da-lingua-afiada-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · O preço da língua afiada\n\nBoca de jambu no teclado custa R$ 10 mil.\n(\"Boca de jambu\", no Norte, é quem não segura a língua: o jambu faz a boca tremer.)\n\nCurta sobre a decisão da Segunda Turma Recursal do Tribunal de Justiça de Mato Grosso que condenou um blogueiro de Cuiabá a pagar R$ 10 mil por chamar o prefeito Abilio Brunini (PL) de \"canalha\" e \"patife\".\n\nLeia a curta completa: hojemt.com.br/o-preco-da-lingua-afiada\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #Cuiaba #justica #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/o-preco-da-lingua-afiada/",
+      "charge_json": "pautas/charges/2026-10-08-o-preco-da-lingua-afiada.json",
+      "obs": "próximo horário livre de charge; legenda no linguajar regional (rodízio do glossário)."
+    },
+    {
+      "id": "140",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Liderança de peso no Alencastro",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-lideranca-de-peso-no-alencastro-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Liderança de peso no Alencastro\n\nVem aí a peleia com 17 na Câmara.\n(\"Peleia\", no Sul, é briga, disputa.)\n\nCurta sobre a especulação de que o prefeito Abilio Brunini (PL) quer a presidente da Câmara, Paula Calil (PL), como líder do governo no próximo biênio, diante de uma oposição estimada em cerca de 17 vereadores.\n\nLeia a curta completa: hojemt.com.br/lideranca-de-peso-no-alencastro\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #Cuiaba #politica #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/lideranca-de-peso-no-alencastro/",
+      "charge_json": "pautas/charges/2026-10-08-lideranca-de-peso-no-alencastro.json",
+      "obs": "curta baseada em especulação (\"corre à boca pequena\"; uma fonte, O Documento, segundo a rotina da Câmara de Cuiabá): o editor decide se e quando publicar."
     }
   ]
 }
