@@ -1,0 +1,480 @@
+{
+ "slug": "boletim-09",
+ "titulo": "Boletim nº 9: 2º turno — os passos de Flávio Bolsonaro e de Lula, a primeira pesquisa registrada, a Justiça Eleitoral e Mato Grosso",
+ "materia": "https://hojemt.com.br/radar-eleitoral/",
+ "estilo": "slides",
+ "universo": "Slides escuros com ondas e curvas de nível verdes, sem avatar; boletim diário aprofundado do 2º turno (~5 min)",
+ "obs": "Primeiro boletim diário aprofundado (pedido do editor em 08/10/2026: mais detalhes, gráficos, imagens e vídeos das redes, voz aprimorada em português do Brasil, mais tempo de análise dos passos dos presidenciáveis). Voz v8 (teste A/B de 08/10, DNSMOS/P.808/Whisper): dupla de narradores sintéticos genéricos pt-BR — Antonio +6% +1 Hz (blocos panorama, Lula, Justiça, fechamento) e Thalita +4% (blocos Flávio, pesquisa, Mato Grosso); alternância por bloco temático, nunca por candidato; cada fala nivelada a -20 LUFS; frases curtas. limite_s 420 (charge-cena aceita até 600). Apuração: agentes de 08/10 (/tmp/hojemt/boletim-diario), TSE (apuração do site), posts só de perfis oficiais (@flaviobolsonaro TikTok/YouTube; @LulaOficial X/YouTube), clipes sem áudio original com crédito. Gerar antes de montar: intro-boletim.mjs --n=9, graficos-boletim-09.mjs, fechamento-boletim.mjs.",
+ "limite_s": 420,
+ "voz": {
+  "motor": "edge",
+  "narrador": "pt-BR-AntonioNeural",
+  "velocidade": "+6%",
+  "tom": "+1Hz",
+  "tratamento": "leve",
+  "qualidade": 96,
+  "reserva": {
+   "motor": "kokoro",
+   "narrador": "pm_alex",
+   "velocidade": 1.0,
+   "tom": 2,
+   "tratamento": "limpo",
+   "fonetica": "misaki",
+   "sotaque": "cuiabano"
+  }
+ },
+ "legendas": false,
+ "trilha": "nenhuma",
+ "abertura": {
+  "chip": "RADAR ELEITORAL",
+  "gancho": "2º TURNO",
+  "sub": "Boletim diário · 08/10"
+ },
+ "fechamento": {
+  "linha1": "Radar Eleitoral · HOJE MT",
+  "leia": "hojemt.com.br/radar-eleitoral",
+  "leia_rotulo": "Acesse:",
+  "siga": "Siga e compartilhe @hoje.mt",
+  "fontes": [
+   "TSE",
+   "PoderData/Aya",
+   "Agência Brasil",
+   "CNN Brasil",
+   "Metrópoles",
+   "Gazeta do Povo",
+   "O Tempo",
+   "Correio Braziliense",
+   "24 Horas MT",
+   "HNT",
+   "Muvuca Popular",
+   "@flaviobolsonaro",
+   "@LulaOficial"
+  ],
+  "aviso": "Voz gerada com IA (narradores sintéticos). Fatos apurados e conferidos pela redação do HOJE MT; sem música."
+ },
+ "saida": "pautas/videos/argos/2026-10-08-boletim-09.mp4",
+ "rotulo_ia": "Voz gerada com IA",
+ "cenas": [
+  {
+   "n": 1,
+   "quem": "narrador",
+   "fala": "Radar Eleitoral do HOJE MT. Boletim número nove, quinta-feira, oito de outubro.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-intro-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-intro-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-intro-c1.png",
+     "quando": "Boletim"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "quem": "narrador",
+   "fala": "O segundo turno para presidente já começou. Flávio Bolsonaro, do PL, e Lula, do PT, voltam às urnas em vinte e cinco de outubro. No primeiro turno, Flávio teve quarenta e sete vírgula zero três por cento dos votos válidos. Lula teve quarenta e cinco vírgula dezesseis. A diferença foi de um vírgula oitenta e sete ponto. Mais de trinta e três milhões de eleitores não compareceram.",
+   "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-AntonioNeural",
+    "velocidade": "+6%",
+    "tom": "+1Hz"
+   },
+   "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-1-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-1-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-1-c1.png",
+     "quando": "quarenta e sete"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-1-c2.png",
+     "quando": "trinta e três milhões"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "quem": "narrador",
+   "fala": "A propaganda gratuita no rádio e na televisão começa nesta sexta-feira, dia nove, e vai até o dia vinte e três. O TSE aprovou tempo igual para os dois: cinco minutos para cada um em cada bloco. Os debates previstos são na Record, no dia onze; num grupo de onze veículos, no dia quinze; na Band, no dia dezoito; e na Globo, no dia vinte e três. Flávio disse que vai aos debates. Lula disse que agora o debate é importante. Nenhum dos dois confirmou cada data.",
+   "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-AntonioNeural",
+    "velocidade": "+6%",
+    "tom": "+1Hz"
+   },
+   "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-2-fundo.png",
+   "movimento": "pan-dir",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-2-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-2-c1.png",
+     "quando": "A propaganda gratuita"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-2-c2.png",
+     "quando": "Nenhum dos dois"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "quem": "narrador",
+   "fala": "Os passos de Flávio Bolsonaro. Desde segunda-feira, ele trabalha no comitê da campanha, no Lago Sul, em Brasília. Na terça, viajou a Goiânia. Lá, o ex-governador Ronaldo Caiado, do PSD, quinto colocado no primeiro turno, declarou apoio a ele. Caiado disse: “Estarei com Flávio de corpo inteiro”.",
+   "citacao": true,
+   "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-ThalitaMultilingualNeural",
+    "velocidade": "+4%",
+    "tom": "+0Hz"
+   },
+   "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-3-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-3-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-3-c1.png",
+     "quando": "Na terça"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-3-c2.png",
+     "quando": "Caiado disse"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "quem": "narrador",
+   "fala": "Na quarta-feira, três partidos oficializaram apoio a Flávio em Brasília: a federação União Progressista, que reúne União Brasil e PP; o Novo, de Romeu Zema; e o Republicanos, de Tarcísio de Freitas. A senadora Tereza Cristina, do PP, disse que a decisão foi unânime.",
+   "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-ThalitaMultilingualNeural",
+    "velocidade": "+4%",
+    "tom": "+0Hz"
+   },
+   "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-4-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-4-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-4-c1.png",
+     "quando": "a federação"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-4-c2.png",
+     "quando": "Tereza Cristina"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "quem": "narrador",
+   "fala": "Em entrevista coletiva, Flávio defendeu mudar a Constituição por emenda. Citou a redução da maioridade penal, a reforma do Judiciário e o fim da reeleição. Disse que, se eleito, não disputará um segundo mandato. Nas redes, publicou um vídeo sobre o Bolsa Família. Segundo ele, o programa não vai acabar e vai melhorar.",
+   "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-ThalitaMultilingualNeural",
+    "velocidade": "+4%",
+    "tom": "+0Hz"
+   },
+   "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-5-fundo.png",
+   "movimento": "parado",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-5-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-5-c1.png",
+     "quando": "Em entrevista"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-5-c2.png",
+     "quando": "Nas redes"
+    }
+   ],
+   "clipe": {
+    "arquivo": "/tmp/hojemt/redes-cache/tiktok-7693889445606509845.mp4",
+    "inicio": 13.6,
+    "fim": 23.1,
+    "origem_url": "https://www.tiktok.com/@flaviobolsonaro/video/7693889445606509845",
+    "credito": "Reprodução: @flaviobolsonaro no TikTok, 07/10/2026",
+    "caixa": [
+     590,
+     500,
+     420,
+     747
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "quem": "narrador",
+   "fala": "Os próximos passos de Flávio. Nesta quinta, estava prevista uma reunião com o Podemos para formalizar mais um apoio. Segundo o coordenador da campanha, senador Rogério Marinho, as viagens recomeçam na sexta, por São Paulo.",
+   "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-ThalitaMultilingualNeural",
+    "velocidade": "+4%",
+    "tom": "+0Hz"
+   },
+   "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-6-fundo.png",
+   "movimento": "pan-esq",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-6-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-6-c1.png",
+     "quando": "Nesta quinta"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "quem": "narrador",
+   "fala": "Os passos de Lula. Ele não viajou: ficou em Brasília de segunda a quinta, entre o Palácio da Alvorada e o comitê da campanha. Recebeu governadores do Nordeste e reorganizou a coordenação. Camilo Santana passou a dividir o comando com Edinho Silva. Na segunda, Lula disse que agora é importante ter debate na televisão. No primeiro turno, ele não foi a nenhum.",
+   "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-AntonioNeural",
+    "velocidade": "+6%",
+    "tom": "+1Hz"
+   },
+   "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-7-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-7-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-7-c1.png",
+     "quando": "Recebeu governadores"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-7-c2.png",
+     "quando": "Na segunda"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "quem": "narrador",
+   "fala": "Na quarta, numa reunião com os parlamentares eleitos, Lula desafiou Flávio a votar pelo fim da escala seis por um. Ele disse: “Eu desafio ele a votar favoravelmente”. Defendeu a PEC da Segurança Pública. E admitiu que esta foi a campanha menos organizada de que participou desde mil novecentos e oitenta e nove.",
+   "citacao": true,
+   "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-AntonioNeural",
+    "velocidade": "+6%",
+    "tom": "+1Hz"
+   },
+   "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-8-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-8-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-8-c1.png",
+     "quando": "Ele disse"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-8-c2.png",
+     "quando": "E admitiu"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "quem": "narrador",
+   "fala": "No mesmo dia, Lula começou a gravar vídeos em formato selfie. Num deles, chama os apoiadores às ruas. Em outro, fala do fim da escala seis por um. Nas redes, prometeu incluir exames e teleconsultas no Farmácia Popular.",
+   "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-AntonioNeural",
+    "velocidade": "+6%",
+    "tom": "+1Hz"
+   },
+   "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-9-fundo.png",
+   "movimento": "parado",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-9-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-9-c1.png",
+     "quando": "Num deles"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-9-c2.png",
+     "quando": "Nas redes"
+    }
+   ],
+   "clipe": {
+    "arquivo": "/tmp/hojemt/redes-cache/x-2107830931474223283.mp4",
+    "inicio": 15,
+    "fim": 25,
+    "origem_url": "https://x.com/LulaOficial/status/2107830931474223283",
+    "credito": "Reprodução: @LulaOficial no X, 07/10/2026",
+    "caixa": [
+     590,
+     500,
+     420,
+     747
+    ]
+   }
+  },
+  {
+   "n": 11,
+   "quem": "narrador",
+   "fala": "Até agora, Lula não ganhou a adesão de nenhum partido novo nem de candidato derrotado no primeiro turno. Cinco governadores eleitos, todos do Nordeste, apoiam a campanha dele. Os próximos passos: caminhada em Ceilândia, no Distrito Federal, nesta sexta; e ato em Natal, no sábado.",
+   "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-AntonioNeural",
+    "velocidade": "+6%",
+    "tom": "+1Hz"
+   },
+   "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-10-fundo.png",
+   "movimento": "pan-dir",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-10-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-10-c1.png",
+     "quando": "Cinco governadores"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-10-c2.png",
+     "quando": "Os próximos passos"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "quem": "narrador",
+   "fala": "A primeira pesquisa registrada do segundo turno é da PoderData, com a Aya. Em votos válidos, Flávio Bolsonaro tem cinquenta e três por cento, e Lula, quarenta e sete. A margem de erro é de um vírgula oito ponto. Pesquisa é retrato do momento. O Datafolha divulga a primeira pesquisa dele nesta quinta, no fim da tarde.",
+   "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-ThalitaMultilingualNeural",
+    "velocidade": "+4%",
+    "tom": "+0Hz"
+   },
+   "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-11-fundo.png",
+   "movimento": "zoom-in",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-11-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-11-c1.png",
+     "quando": "Em votos válidos"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-11-c2.png",
+     "quando": "retrato do momento"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "quem": "narrador",
+   "fala": "Na Justiça Eleitoral, o TSE aprovou por unanimidade o plano de mídia do segundo turno, com tempos iguais para os dois candidatos. O presidente do tribunal, Kassio Nunes Marques, negou pedidos da campanha de Lula para tirar do ar vídeos da campanha de Flávio e para dar direito de resposta. E a Procuradoria-Geral da República deu parecer favorável a que Flávio volte a visitar o pai, Jair Bolsonaro, que cumpre prisão domiciliar. A decisão é do ministro Alexandre de Moraes.",
+   "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-AntonioNeural",
+    "velocidade": "+6%",
+    "tom": "+1Hz"
+   },
+   "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-12-fundo.png",
+   "movimento": "pan-esq",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-12-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-12-c1.png",
+     "quando": "o TSE aprovou"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-12-c2.png",
+     "quando": "Kassio Nunes Marques"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-12-c3.png",
+     "quando": "a Procuradoria-Geral"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "quem": "narrador",
+   "fala": "Em Mato Grosso, Flávio teve sessenta e cinco vírgula quinze por cento dos votos válidos no primeiro turno. Lula teve vinte e nove vírgula dezoito. Flávio ficou à frente em cento e trinta e três cidades, e Lula, em nove. O governador Otaviano Pivetta e os senadores eleitos Mauro Mendes e José Medeiros declararam apoio a Flávio. Aliados de Lula fazem atos de rua em Cuiabá até sábado. Um ato de apoio a Flávio está marcado para terça, dia treze, às dezoito horas, em Cuiabá.",
+   "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-ThalitaMultilingualNeural",
+    "velocidade": "+4%",
+    "tom": "+0Hz"
+   },
+   "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-13-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-13-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-13-c1.png",
+     "quando": "Em Mato Grosso"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-13-c2.png",
+     "quando": "O governador"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-13-c3.png",
+     "quando": "Aliados de Lula"
+    }
+   ]
+  },
+  {
+   "quem": "narrador",
+   "fala": "Todos os casos, com as fontes, estão no Radar Eleitoral, em hojemt.com.br. Siga o HOJE MT nas redes sociais e compartilhe.",
+   "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-fecho-fundo.png",
+   "movimento": "zoom-out",
+   "camadas": [
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-fecho-c0.png",
+     "em": 0
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-fecho-c1.png",
+     "quando": "Siga o HOJE MT"
+    },
+    {
+     "imagem": "pautas/videos/argos/cenas/2026-10-08-boletim-09-fecho-c2.png",
+     "quando": "compartilhe"
+    }
+   ],
+   "n": 15
+  }
+ ]
+}

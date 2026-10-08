@@ -447,7 +447,10 @@ const motoresVoz = {
     });
     if (r.status !== 0) throw Object.assign(new Error(`edge-tts falhou: ${(r.stderr || "").trim().split("\n").slice(-2).join(" | ")}`), { edgeIndisponivel: true });
     const leve = "highpass=f=70,equalizer=f=220:t=q:w=1.0:g=-1,equalizer=f=3600:t=q:w=1.2:g=1.5";
-    rodarFfmpeg(["-i", mp3, ...(tratamento === "leve" ? ["-af", leve] : []), "-ac", "1", "-ar", "24000", destino], "voz edge");
+    // 08/10 (dupla de vozes, v8): cada fala nivelada a -20 LUFS (Antonio -21,2, Thalita -22,5 medidos), para que
+    // duas vozes no mesmo vídeo fiquem com o mesmo volume; a mixagem final continua com loudnorm -16
+    const nivel = "loudnorm=I=-20:TP=-2:LRA=11";
+    rodarFfmpeg(["-i", mp3, "-af", (tratamento === "leve" ? leve + "," : "") + nivel, "-ac", "1", "-ar", "24000", destino], "voz edge");
     return destino;
   },
   gemini(texto, { modelo = "Charon", estilo, destino }) {
@@ -500,7 +503,12 @@ function pronuncia(texto) {
 /** A voz neural (edge) já lê bem os nomes; só as siglas e marcas que ela erra. */
 const PRONUNCIA_EDGE = [
   // Editor, 30/09: "Pivetta" se fala com "e" fechado (Pivêta), não "Pivétta".
-  [/\bPivetta\b/g, "Pivêta"],
+  // 08/10 (teste v8): entre vírgulas, ", Otaviano Pivêta," saía "Pizeta" no Antonio (3/3, também a +14%); "Pi vêta" não cria pausa
+  [/\bPivetta\b/g, "Pi vêta"],
+  // 08/10: a Thalita juntava "como Otaviano" → "como Taviano"; no Antonio não muda nada
+  [/\bOtaviano\b/g, "Ôtaviano"],
+  // 08/10: o Antonio a +4%/+6% lia "Cuiabá e em" como "cuja baia em"; vírgula só na síntese
+  [/\bCuiabá e\b/g, "Cuiabá, e"],
   [/\bQuaest\b/g, "Cuaést"],
   // Fechamento dos boletins (02/10): o endereço do site, letra por letra
   [/\bhojemt\.com\.br\b/g, "hoje ême tê ponto com ponto bê érre"],
