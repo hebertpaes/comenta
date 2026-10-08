@@ -2294,6 +2294,21 @@
       "materia": "https://hojemt.com.br/premio-para-quem-conta-a-truth/",
       "charge_json": "pautas/charges/2026-10-08-premio-para-quem-conta-a-verdade.json",
       "obs": "próximo horário livre de charge; legenda no linguajar regional (rodízio do glossário)."
+    },
+    {
+      "id": "136",
+      "status": "aguardando_materia",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "card",
+      "titulo": "Novas tabelas de servidores de VG só valem em 2027 e dependem do caixa",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-vg-leis-carreira-sancionadas-1.jpg"
+      ],
+      "legenda": "Novas tabelas de servidores de VG só valem em 2027 e dependem do caixa\n\nA prefeita Flávia Moretti sancionou as leis complementares 5.589 e 5.586/2026, com novas tabelas para os servidores de apoio (carreira que inclui os garis) e da Assistência Social (SUAS). Os valores começam em janeiro de 2027, com segunda etapa em 2028, dependem de orçamento e dos limites da Lei de Responsabilidade Fiscal e podem ser escalonados. No apoio, a revisão geral anual de 2027 e 2028 já está incluída nas tabelas (Prefeitura de Várzea Grande e VGN).\n\nMatéria completa: hojemt.com.br/flavia-moretti-sanciona-tabelas-servidores-apoio-e-assistencia-social-vg\n\n#VarzeaGrande #servidores #pccs #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/flavia-moretti-sanciona-tabelas-servidores-apoio-e-assistencia-social-vg/",
+      "obs": "publicar só depois que a matéria (rascunho no Ghost, 6ac7ece623c41b1557c4a42b) for publicada"
     }
   ]
 }

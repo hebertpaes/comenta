@@ -150,7 +150,7 @@
    "data": "2026-10-07T13:27:25Z"
   }
  },
- "ultima_checagem": "2026-10-08T11:20:17.374Z",
+ "ultima_checagem": "2026-10-08T19:22:02.417Z",
  "pautas": [
   {
    "data": "2026-10-01",
@@ -212,6 +212,22 @@
    ],
    "card": "pautas/cards/2026-10-07-camara-vg-mesa-video-justica.jpg",
    "agenda_instagram": "110"
+  },
+  {
+   "data": "2026-10-08",
+   "titulo": "Flávia Moretti sanciona novas tabelas de servidores de apoio e da Assistência Social de Várzea Grande; aumentos ficam para 2027 e 2028 e dependem do caixa",
+   "arquivo": "pautas/camara-varzea-grande/2026-10-08-leis-carreira-sancionadas-apoio-suas.md",
+   "ghost_slug": "flavia-moretti-sanciona-tabelas-servidores-apoio-e-assistencia-social-vg",
+   "ghost_id": "6ac7ece623c41b1557c4a42b",
+   "status": "rascunho",
+   "capa": "pautas/ilustracoes/2026-10-08-vg-leis-carreira-sancionadas.jpg",
+   "card": "pautas/cards/2026-10-08-vg-leis-carreira-sancionadas.jpg",
+   "agenda_instagram": "136",
+   "fontes": [
+    "https://www.varzeagrande.mt.gov.br/flavia-moretti-sanciona-leis-que-ampliam-valorizacao-de-servidores-de-servicos-externos-e-da-assistencia-social",
+    "https://www.vgnoticias.com.br/politica/servidores-de-vg-terao-novas-tabelas-salariais-mas-sem-rga-extra-ate-2028/153222",
+    "https://www.vgnoticias.com.br/cidades/salarios-de-ate-r-235-mil-veja-o-que-muda-para-servidores-da-saude-de-vg/153103"
+   ]
   }
  ],
  "acompanhar": [
@@ -248,6 +264,7 @@
  "descartados_2026-10-08": [
   "Mandado de segurança dos 5 vereadores (juiz Carlos Roberto Barros de Campos, 3ª Vara da Fazenda Pública de VG, deu 10 dias a Wanderley e não decidiu a liminar) — Folhamax 576119, MidiaNews, O Livre, VG Notícias 153171, Unica News, Noveen (07–08/10): já está no rascunho de 07/10 (vereadores-levam-video-da-sessao-a-justica-eleicao-mesa-camara-vg); sem fato novo.",
   "EN (07/10) 'Justiça recomenda cautela e Wanderley mantém suspensão': repete o indeferimento de 06/10 e a fala de Rogerinho da Dakar; sem fato novo.",
-  "RSS da Câmara: 0 notícias novas às 11h20 UTC de 08/10."
+  "RSS da Câmara: 0 notícias novas às 11h20 UTC de 08/10.",
+  "19h17 UTC: RSS da Câmara sem notícias novas; agenda de eventos só com evento de exemplo. Olhar Direto (08/10) 'Vereadores de VG fracassam nas urnas' (Caio Cordeiro 16.720, Wender Madureira 10.361, Gisa Barros 8.165 votos para deputado federal; nenhum eleito): já noticiado por VGN 153079, RDNews e Leia Agora desde 05/10 e coberto pelos resultados do Radar; sem pauta própria."
  ]
 }
