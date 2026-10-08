@@ -1,0 +1,47 @@
+{
+  "slug": "poder-na-mira-da-pm",
+  "materia": "https://hojemt.com.br/poder-na-mira-da-pm/",
+  "titulo": "Poder na mira da PM",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 08/10/2026 ~00:40 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal com fonte.",
+  "legenda": {
+    "site_16x9": "No Pedregal, a urna pede luz acesa.",
+    "instagram_4x5": "No Pedregal, a urna pede luz acesa."
+  },
+  "contexto": "Curta sobre ação da PM no bairro Pedregal, em Cuiabá, na noite de 6/10, depois de o prefeito Abilio Brunini dizer que uma liderança de facção coagia moradores a votar em determinado candidato no 2º turno.",
+  "fontes": [
+    "https://hojemt.com.br/poder-na-mira-da-pm/"
+  ],
+  "regras_da_cena": "tema de acusação/crime: cena neutra, sem pessoa, sem arma e sem dinheiro — rua de bairro à noite, poste iluminando uma cabine de votação com urna eletrônica genérica, brilho distante de giroflex sem veículo. Diferente da cena de 'Liberdade à moda do Pedregal' (gaiola e bem-te-vi).",
+  "personagens": [],
+  "anatomia": "sem pessoas; nada a contar",
+  "canva": {
+    "design_site_16x9": "DAHXYEQUqCQ",
+    "arte_16x9": "MAHXYLYpD_k",
+    "design_instagram_4x5": "DAHXYG6GlnI",
+    "arte_4x5": "MAHXYDIxM1E",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "aguardando_decisao",
+    "agenda_id": "121"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-08-poder-na-mira-da-pm.jpg",
+    "instagram_4x5": "2026-10-08-poder-na-mira-da-pm-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-08-poder-na-mira-da-pm.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/poder-na-mira-da-pm-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-08-poder-na-mira-da-pm-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 08/10/2026 ~00:40 UTC (antes: charge automática do publicador, charge-1791418926.webp)",
+  "alertas_ao_editor": [
+    "mesmo tema da charge 'Liberdade à moda do Pedregal' (agenda 103, agendada para 12/10 07:30); este item fica aguardando_decisao para não repetir o assunto no feed.",
+    "a curta cita a 'Operação Liberdade de Expressão' e a acusação de coação por facção sem link de fonte; o texto publicado não foi mexido. Conferir em fonte oficial (PM-MT/Sesp) antes de agendar."
+  ]
+}

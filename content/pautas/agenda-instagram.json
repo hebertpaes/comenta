@@ -2057,6 +2057,38 @@
       "legenda": "TCE-MT orienta prefeituras a recuperar ISSQN até dezembro\n\nA Lei Complementar 227/2026 usa a arrecadação do ISSQN de 2019 a 2026, incluindo o que for cobrado de dívida ativa, para calcular a parte de cada município no novo IBS. Por isso, o Tribunal de Contas de Mato Grosso orienta as prefeituras a reforçar a cobrança e a recuperação de créditos ainda neste ano. A orientação responde a pedido da Prefeitura de Sorriso (Olhar Direto, O Documento, Muvuca Popular, Folhamax, CircuitoMT).\n\nMatéria completa: hojemt.com.br/tce-mt-orienta-prefeituras-a-recuperar-issqn-ate-dezembro\n\n#tcemt #issqn #reformatributaria #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/tce-mt-orienta-prefeituras-a-recuperar-issqn-ate-dezembro/",
       "obs": "publicar só depois que a matéria (rascunho no Ghost, 6ac6c41b11b29b68ea3e9806) for publicada"
+    },
+    {
+      "id": "121",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Poder na mira da PM",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-poder-na-mira-da-pm-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Poder na mira da PM\n\nNo Pedregal, a urna pede luz acesa.\n\nLeia a curta completa: hojemt.com.br/poder-na-mira-da-pm\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/poder-na-mira-da-pm/",
+      "charge_json": "pautas/charges/2026-10-08-poder-na-mira-da-pm.json",
+      "obs": "aguardando_decisao: mesmo tema da charge 103 (Pedregal, 12/10) e fato sem fonte oficial na curta; o editor decide se e quando publicar."
+    },
+    {
+      "id": "122",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Russi na corrida de cabeça",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-russi-na-corrida-de-cabeca-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Russi na corrida de cabeça\n\nRussi sai na frente rumo à cadeira.\n\nLeia a curta completa: hojemt.com.br/russi-na-corrida-de-cabeca\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/russi-na-corrida-de-cabeca/",
+      "charge_json": "pautas/charges/2026-10-08-russi-na-corrida-de-cabeca.json",
+      "obs": "aguardando_decisao: quinta charge de Russi; 115 sai em 17/10. O editor decide o espaçamento (próximo horário livre de charge: 18/10 07:30)."
     }
   ]
 }

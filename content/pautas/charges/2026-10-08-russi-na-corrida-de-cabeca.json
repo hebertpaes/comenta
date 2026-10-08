@@ -1,0 +1,55 @@
+{
+  "slug": "russi-na-corrida-de-cabeca",
+  "materia": "https://hojemt.com.br/russi-na-corrida-de-cabeca/",
+  "titulo": "Russi na corrida de cabeça",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 08/10/2026 ~00:40 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal com fonte.",
+  "legenda": {
+    "site_16x9": "Russi sai na frente rumo à cadeira.",
+    "instagram_4x5": "Russi sai na frente rumo à cadeira."
+  },
+  "contexto": "Curta sobre Max Russi (Podemos), 86.934 votos, que confirmou a intenção de disputar a presidência da ALMT; o Podemos elegeu seis dos 24 deputados.",
+  "fontes": [
+    "https://hojemt.com.br/russi-na-corrida-de-cabeca/"
+  ],
+  "regras_da_cena": "caricatura de Russi (sem óculos, rosto largo, cabelo castanho-escuro curto levemente grisalho, camisa social verde-escura) correndo com bastão de revezamento numa pista rumo a uma cadeira presidencial; dois corredores genéricos desfocados atrás.",
+  "personagens": [
+    {
+      "nome": "Max Russi (deputado estadual, Podemos; presidente da ALMT)",
+      "referencia_canva": "MAHXP7EcIv4",
+      "foto": "foto oficial do TSE 2026 (DivulgaCand, SQ 110002542640), espelho ND Mais",
+      "licenca": "referência de desenho",
+      "tracos_conferidos": "sem óculos; rosto largo/arredondado; cabelo castanho-escuro curto (traços do README, conferidos na correção de 07/10)"
+    }
+  ],
+  "anatomia": "conferida em zoom nas duas versões: Russi e os dois corredores com dois braços, duas mãos, duas pernas e dois pés; sem óculos",
+  "canva": {
+    "design_site_16x9": "DAHXYDjuTvw",
+    "arte_16x9": "MAHXYI3-2lo",
+    "design_instagram_4x5": "DAHXYBuhAQQ",
+    "arte_4x5": "MAHXYK4GNPQ",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "aguardando_decisao",
+    "agenda_id": "122"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-08-russi-na-corrida-de-cabeca.jpg",
+    "instagram_4x5": "2026-10-08-russi-na-corrida-de-cabeca-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-08-russi-na-corrida-de-cabeca.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/russi-na-corrida-de-cabeca-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-08-russi-na-corrida-de-cabeca-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 08/10/2026 ~00:40 UTC (antes: charge automática do publicador, charge-1791418905.webp)",
+  "alertas_ao_editor": [
+    "quinta charge de Russi (102, 115, 117, 'topo do pantanal' e esta); 115 já sai em 17/10 07:30 — item aguardando_decisao para o editor espaçar.",
+    "a curta chama Lula de 'presidente em exercício' e fala em 'rodeio de 2027'; o texto publicado não foi mexido."
+  ]
+}
