@@ -1,7 +1,7 @@
 {
   "name": "@comenta/editor",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
   "description": "Editor web de vídeo e música que importa arquivos de apps externos (Suno, CapCut, etc.) e edita tudo no navegador.",
   "scripts": {

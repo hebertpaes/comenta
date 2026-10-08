@@ -46,7 +46,7 @@ const INITIAL_MESSAGES: Message[] = [
   {
     id: "m1",
     sender: "system",
-    text: "🔒 Atendimento criptografado iniciado com Sofia AI — Atendente Virtual Comenta AI v2.0",
+    text: "Demonstração iniciada com Sofia — atendente virtual de exemplo do Comenta 1.0 (respostas simuladas no navegador)",
     time: "14:30",
   },
   {
@@ -85,7 +85,7 @@ const INITIAL_LEADS: Lead[] = [
     name: "Lucas Alencar",
     phone: "+55 (31) 99112-8877",
     status: "fechado",
-    interest: "Comenta SaaS Pro",
+    interest: "Comenta 1.0 Pro",
     intentScore: 100,
     value: 3588,
     timeAgo: "Há 25 min",
@@ -113,7 +113,7 @@ export default function ComentaAIPortalPage() {
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
 
   // Agent Studio Customization
-  const [agentName, setAgentName] = useState("Sofia 2.0");
+  const [agentName, setAgentName] = useState("Sofia");
   const [agentTone, setAgentTone] = useState("Consultiva, Ágil e Persuasiva");
   const [agentPrompt, setAgentPrompt] = useState(
     "Você é a Sofia, atendente de IA de alto desempenho da Comenta. Seu objetivo é qualificar leads no WhatsApp em até 3 perguntas, apresentar os planos Pro/Enterprise e encaminhar propostas."
@@ -217,9 +217,9 @@ export default function ComentaAIPortalPage() {
           </div>
           <div>
             <span className="font-extrabold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-[#cbd5e1] to-[#94a3b8]">
-              Comenta AI{" "}
+              Comenta{" "}
               <span className="text-xs px-2 py-0.5 rounded-full bg-[#0050ff]/20 text-[#38bdf8] font-bold border border-[#0050ff]/40">
-                v2.0
+                1.0
               </span>
             </span>
             <p className="text-[11px] text-[#64748b]">
@@ -285,6 +285,14 @@ export default function ComentaAIPortalPage() {
           </a>
         </div>
       </header>
+
+      <div
+        role="note"
+        className="bg-amber-400/10 border-b border-amber-300/30 text-amber-200 px-4 py-2 text-xs font-semibold text-center"
+      >
+        Demonstração: o simulador, os agentes, o CRM e as métricas desta página usam dados de
+        exemplo e respostas automáticas no navegador. Nada é enviado ao WhatsApp nem salvo.
+      </div>
 
       {/* MAIN CONTAINER */}
       <main className="flex-1 max-w-7xl w-full mx-auto p-6 grid grid-cols-1 gap-6">

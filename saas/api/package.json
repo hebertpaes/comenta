@@ -1,7 +1,7 @@
 {
   "name": "@comenta/api",
   "version": "1.0.0",
-  "description": "Comenta SaaS — API de atendimento multicanal (comenta.com.br)",
+  "description": "Comenta 1.0 — API de atendimento multicanal",
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",

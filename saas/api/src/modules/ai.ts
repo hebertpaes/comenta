@@ -37,9 +37,10 @@ export async function aiRoutes(app: FastifyInstance) {
   app.addHook("preHandler", authenticate);
   app.addHook("preHandler", async (_req, reply) => {
     if (!aiEnabled()) {
-      return reply
-        .code(503)
-        .send({ error: "IA indisponível — configure GEMINI_API_KEY ou GOOGLE_AI_API_KEY no .env" });
+      return reply.code(503).send({
+        error:
+          "IA indisponível — configure ANTHROPIC_API_KEY (Claude) ou GEMINI_API_KEY (Google Gemini) no .env",
+      });
     }
   });
 

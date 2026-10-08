@@ -14,7 +14,7 @@ export const DEFAULT_WHATSAPP_MENU_CONFIG = {
   headerTitle: "🤖 *MENU INTERATIVO - COMENTA AI & ABACS*",
   greeting:
     "_Seja bem-vindo ao sistema de atendimento inteligente oficial!_\n\nPor favor, escolha uma opção digitando o número correspondente:",
-  footerText: "--- \n📱 *Comenta SaaS v2.0* · _https://abacs.org.br_",
+  footerText: "--- \n📱 *Comenta 1.0* · _https://abacs.org.br_",
   options: [
     {
       key: "1️⃣",
@@ -96,7 +96,7 @@ export async function erpCrmRoutes(app: FastifyInstance) {
         {
           id: "tx_2",
           type: "receita",
-          description: "Mensalidade Comenta SaaS Pro",
+          description: "Mensalidade Comenta 1.0 Pro",
           amount: 349.0,
           date: "2026-08-13",
           category: "SaaS",

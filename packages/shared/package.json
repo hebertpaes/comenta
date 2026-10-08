@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Contratos de domínio compartilhados entre a API e o painel",
+  "description": "Comenta 1.0 — contratos de domínio usados pelo painel",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",

@@ -30,7 +30,7 @@ EOF
 #######################################
 system_git_clone() {
   print_banner
-  printf "${WHITE} 💻 Fazendo download do código Comenta...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Fazendo download do código da instância (base Whaticket/Atendechat)...${GRAY_LIGHT}"
   printf "\n\n"
 
 
@@ -50,7 +50,7 @@ EOF
 #######################################
 system_update() {
   print_banner
-  printf "${WHITE} 💻 Vamos atualizar o sistema do Comenta...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Vamos atualizar os pacotes do sistema operacional...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -66,13 +66,33 @@ EOF
 
 
 #######################################
+# valida o nome da instância antes de qualquer
+# rm, dropdb, docker ou pm2
+# Arguments:
+#   $1 nome informado
+#   $2 ação (para a mensagem)
+#######################################
+validar_nome_instancia() {
+  local nome="$1"
+  local acao="$2"
+
+  if [[ -z "${nome}" || "${nome}" == *"/"* || "${nome}" == *".."* || "${nome}" =~ [[:space:]] || "${nome}" == *[\*\?\[\]]* ]]; then
+    printf "${RED} ❌ Nome de instância inválido para %s: \"%s\".${NC}\n" "${acao}" "${nome}"
+    printf "${WHITE} O nome não pode ficar vazio nem conter /, .., espaços ou curingas (* ? [ ]). Nada foi alterado.${NC}\n\n"
+    exit 1
+  fi
+}
+
+#######################################
 # delete system
 # Arguments:
 #   None
 #######################################
 deletar_tudo() {
+  validar_nome_instancia "${empresa_delete}" "deletar"
+
   print_banner
-  printf "${WHITE} 💻 Vamos deletar o Comenta...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Vamos deletar a instância ${empresa_delete}...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -115,8 +135,10 @@ EOF
 #   None
 #######################################
 configurar_bloqueio() {
+  validar_nome_instancia "${empresa_bloquear}" "bloquear"
+
   print_banner
-  printf "${WHITE} 💻 Vamos bloquear o Comenta...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Vamos bloquear a instância ${empresa_bloquear}...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -142,14 +164,16 @@ EOF
 #   None
 #######################################
 configurar_desbloqueio() {
+  validar_nome_instancia "${empresa_desbloquear}" "desbloquear"
+
   print_banner
-  printf "${WHITE} 💻 Vamos Desbloquear o Comenta...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Vamos desbloquear a instância ${empresa_desbloquear}...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
 
 sudo su - deploy <<EOF
- pm2 start ${empresa_bloquear}-backend
+ pm2 start ${empresa_desbloquear}-backend
  pm2 save
 EOF
 
@@ -168,8 +192,10 @@ EOF
 #   None
 #######################################
 configurar_dominio() {
+  validar_nome_instancia "${empresa_dominio}" "alterar os domínios"
+
   print_banner
-  printf "${WHITE} 💻 Vamos Alterar os Dominios do Comenta...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Vamos alterar os domínios da instância ${empresa_dominio}...${GRAY_LIGHT}"
   printf "\n\n"
 
 sleep 2

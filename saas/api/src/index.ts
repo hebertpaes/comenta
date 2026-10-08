@@ -67,7 +67,7 @@ app.addContentTypeParser("application/json", { parseAs: "string" }, (req, body, 
 await app.register(swagger, {
   openapi: {
     info: {
-      title: "Comenta SaaS API",
+      title: "Comenta 1.0 API",
       version: "1.0.0",
       description: "API de atendimento multicanal — comenta.com.br",
     },
@@ -145,7 +145,7 @@ restoreSessions().catch(() => {});
 startCampaignScheduler();
 server.listen(config.PORT, "0.0.0.0", () => {
   app.log.info(
-    `Comenta API on :${config.PORT} — docs em /docs — IA ${aiEnabled() ? "ativa" : "inativa"}`
+    `Comenta 1.0 API on :${config.PORT} — docs em /docs — IA ${aiEnabled() ? "ativa" : "inativa"}`
   );
 });
 

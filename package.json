@@ -1,9 +1,9 @@
 {
   "name": "comenta",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Monorepo do Comenta — plataforma de atendimento multicanal (comenta.com.br)",
+  "description": "Comenta 1.0 — monorepo da plataforma de atendimento multicanal",
   "engines": {
     "node": ">=22"
   },

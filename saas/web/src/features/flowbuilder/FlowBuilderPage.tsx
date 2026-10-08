@@ -172,6 +172,22 @@ export function FlowBuilderPage() {
   return (
     <div style={{ paddingBottom: 40, userSelect: draggingNodeId ? "none" : "auto" }}>
       <div
+        role="note"
+        style={{
+          padding: "10px 14px",
+          borderRadius: 8,
+          background: "rgba(217, 119, 6, 0.12)",
+          border: "1px solid #d97706",
+          fontSize: 13,
+          fontWeight: 600,
+          marginBottom: 16,
+        }}
+      >
+        ⚠️ Demonstração: esta tela ainda não salva dados na 1.0. Os fluxos ficam só nesta página e
+        não são executados nas conversas; ao recarregar, voltam os fluxos de exemplo.
+      </div>
+
+      <div
         style={{
           display: "flex",
           justifyContent: "space-between",

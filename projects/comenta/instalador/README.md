@@ -1,183 +1,133 @@
-# Atendechat
+# Instalador legado — Comenta 1.0
 
-O Atendechat é uma empresa distribuidora de White Label que possui uma solução de atendimentos via Whatsapp que aumenta a produtividade e organização das equipes
+Esta pasta guarda um instalador em Bash herdado de uma base **Whaticket/Atendechat**.
+Ele continua aqui como referência e para quem mantém uma instalação própria dessa base.
 
-## 🚀 Começando
+> **Ele não instala o Comenta 1.0 deste monorepo.** O caminho oficial de instalação do
+> Comenta 1.0 é `deploy/bootstrap.sh` (com `deploy/docker-compose.yml`), descrito no
+> cabeçalho do próprio script e em `deploy/RUNBOOK.md`.
 
-O repositório do Atendechat possui 3 pastas importantes:
-- backend
-- frontend
-- instalador
+## O que o instalador faz
 
-O backend é feito em Express e possui toda a estrutura organizada dentro dessa pasta para que seja aplicado no ambiente do cliente. A pasta de frontend contém todo o framework do React.js que gerencia toda a interação com o usuário do sistema.
+Há dois pontos de entrada, os dois com o mesmo menu interativo (`lib/_inquiry.sh`):
 
-A pasta de instalador dentro dessa repositório é uma cópia do instalador usado para que os clientes de sistemas possam fazer o clone dentro da pasta home de seus servidores e seguirem com a instalação automática de todas as dependências do projeto
+- `install_primaria`: prepara o servidor do zero e depois instala a primeira instância.
+- `install_instancia`: instala mais uma instância num servidor já preparado (pula as
+  etapas de sistema).
 
-Link para o repositório do instalador atualizado:
-- [Instalador](https://github.com/atendechat-org/instalador)
+O menu tem seis opções:
 
-Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto.
+| Opção | O que faz de fato                                                                                                                                                                                           |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0     | Instala uma instância (passos abaixo).                                                                                                                                                                      |
+| 1     | Atualiza uma instância: para os processos no PM2, `git pull`, `npm install`/`npm update -f` e rebuild de `frontend/` e `backend/`, `npx sequelize db:migrate` e `npx sequelize db:seed`, e reinicia no PM2. |
+| 2     | Deleta uma instância: container Redis, vhosts do Nginx, banco e usuário do Postgres, pasta `/home/deploy/<nome>` e processos do PM2.                                                                        |
+| 3     | Bloqueia uma instância: `pm2 stop <nome>-backend`.                                                                                                                                                          |
+| 4     | Desbloqueia uma instância: `pm2 start <nome>-backend`.                                                                                                                                                      |
+| 5     | Altera os domínios: recria os vhosts, troca `BACKEND_URL`, `FRONTEND_URL` e `REACT_APP_BACKEND_URL` nos `.env` de `backend/` e `frontend/` e roda o Certbot de novo.                                        |
 
-### 📋 Pré-requisitos
+As opções 1 a 5 recusam nome de instância vazio ou com `/`, `..`, espaços ou curingas
+(`* ? [ ]`) antes de qualquer `rm`, `dropdb`, `docker` ou `pm2`.
 
-```
-- Node.js v20.x
-- Postgres (release)
-- Npm ( latest )
-- Docker (bionic stable)
-- Redis
-```
+### Preparação do servidor (`install_primaria`)
 
-### 🔧 Instalação
+- `apt update` e dependências do Puppeteer/Chromium;
+- Node.js 20 (NodeSource), `npm@latest` e PM2 global;
+- PostgreSQL (apt.postgresql.org) e Docker CE;
+- Nginx (remove `sites-enabled/default`) e Certbot via snap;
+- usuário `deploy` no grupo `sudo`, com senha aleatória gravada só no arquivo `config`
+  (fora do Git, `chmod 700`).
 
-Para iniciar a instalação do projeto é necessário ter todas as ferramentas de pré-requisitos disponíveis para uso
+A senha que o menu pede vale para o banco e o Redis da instância; a do usuário `deploy`
+é gerada automaticamente.
 
-#### Redis
-```
-- su - root
-- docker run --name redis-${instancia_add} -p ${redis_port}:6379 --restart always --detach redis redis-server --requirepass ${root_password}
-```
+### Instalação de uma instância
 
-#### Postgres
-```
-- sudo su - postgres
-- createdb ${instancia_add};
-- psql
-- CREATE USER ${instancia_add} SUPERUSER INHERIT CREATEDB CREATEROLE;
-- ALTER USER ${instancia_add} PASSWORD '${root_password}';
-```
+1. `git clone` da URL informada em `/home/deploy/<instância>/`, como `deploy`
+   (repositório privado precisa de credencial ou deploy key configurada à mão).
+2. Redis em container (`redis-<instância>`) na porta informada, com senha.
+3. Banco e usuário Postgres com o nome da instância.
+4. `backend/.env` com `DB_*`, `REDIS_URI`, `BACKEND_URL`, `FRONTEND_URL`, `JWT_*`,
+   `USER_LIMIT`, `CONNECTIONS_LIMIT` e `npm_package_version="1.0.0"`.
+5. `backend/`: `npm install --force`, `npm run build`, `npx sequelize db:migrate`,
+   `npx sequelize db:seed:all` e `pm2 start dist/server.js`.
+6. `frontend/`: `.env` com `REACT_APP_BACKEND_URL`, build, um `server.js` (Express,
+   CommonJS) que serve `build/` e `pm2 start server.js`.
+7. Vhosts do Nginx para os dois domínios (proxy para `127.0.0.1:<porta>`, com WebSocket)
+   e `certbot --nginx` com o e-mail fixo `deploy@deploy.com`.
 
-#### .env backend
-```
-NODE_ENV=
-BACKEND_URL=${backend_url}
-FRONTEND_URL=${frontend_url}
-PROXY_PORT=443
-PORT=${backend_port}
+## Por que ele não instala o Comenta 1.0
 
-DB_DIALECT=postgres
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=${instancia_add}
-DB_PASS=${mysql_root_password}
-DB_NAME=${instancia_add}
+O instalador espera um repositório com as pastas `backend/` (Express + Sequelize) e
+`frontend/` (React com variáveis `REACT_APP_*`). O Comenta 1.0 é outro sistema:
 
-JWT_SECRET=${jwt_secret}
-JWT_REFRESH_SECRET=${jwt_refresh_secret}
+1. **Pastas.** Os apps estão em `saas/api`, `saas/web` e `site`; não existem `backend/`
+   nem `frontend/`, então os `cd` falham e o resto dos passos roda no lugar errado.
+2. **Build da API.** A `saas/api` compila com `tsc -p tsconfig.build.json` e precisa do
+   `@comenta/shared` compilado antes (`npm run build -w @comenta/shared`); o instalador
+   não faz isso nem instala o workspace pela raiz.
+3. **Migrações.** Não há Sequelize. O esquema é aplicado com `drizzle-kit push`.
+4. **Seed.** O seed real é `npm run db:seed` (`tsx src/db/seed.ts`), não
+   `sequelize db:seed:all`.
+5. **Ponto de entrada.** O build gera `dist/index.js`, e a produção roda
+   `npx tsx src/index.ts`; não existe `dist/server.js`.
+6. **Variáveis de ambiente.** A API lê `DATABASE_URL`, `REDIS_URL`, `API_URL`, `APP_URL`
+   e `CORS_ORIGINS` e não carrega arquivo `.env`. Com o instalador ela subiria com os
+   valores padrão de desenvolvimento (inclusive o `JWT_SECRET` de exemplo).
+7. **`NODE_ENV`.** O instalador grava `NODE_ENV=` vazio; a API só aceita `development`,
+   `test` ou `production`. Sob o PM2 ela rodaria como `development`, e o seed criaria o
+   usuário de demonstração.
+8. **Limites.** `USER_LIMIT` e `CONNECTIONS_LIMIT` não são lidos; a API limita usuários
+   pelo plano gravado no banco.
+9. **Painel.** A `saas/web` usa Vite e lê `VITE_API_URL` no build, não
+   `REACT_APP_BACKEND_URL`.
+10. **Servidor do painel.** O `server.js` gerado usa `require("express")` e serve
+    `build/`; a `saas/web` é ESM, não tem Express e gera `dist/`.
+11. **Node.** O instalador põe Node 20; o monorepo exige Node 22 ou mais novo.
+12. **WhatsApp.** A API usa Baileys (sem navegador) e grava as sessões em
+    `WHATSAPP_DATA_DIR` (padrão `/data/wa`); o instalador instala dependências do
+    Puppeteer, que não são usadas, e não cria essa pasta.
+13. **Site.** O site institucional (Next.js, `site/`) não é tratado: sem build, PM2 nem
+    vhost.
+14. **Porta.** A porta escrita no `.env` não é lida; todas as instâncias tentariam
+    usar a 4000, enquanto o Nginx aponta para a porta informada.
 
-REDIS_URI=redis://:${mysql_root_password}@127.0.0.1:${redis_port}
-REDIS_OPT_LIMITER_MAX=1
-REGIS_OPT_LIMITER_DURATION=3000
+O README antigo desta pasta mostrava variáveis `GERENCIANET_*` e `MAIL_*`. O instalador
+não as grava, e a API do Comenta 1.0 não tem integração com Gerencianet/Efí.
 
-USER_LIMIT=${max_user}
-CONNECTIONS_LIMIT=${max_whats}
-CLOSED_SEND_BY_ME=true
+## Quando ainda pode servir
 
-GERENCIANET_SANDBOX=false
-GERENCIANET_CLIENT_ID=Client_Id_Gerencianet
-GERENCIANET_CLIENT_SECRET=Client_Secret_Gerencianet
-GERENCIANET_PIX_CERT=certificado-Gerencianet
-GERENCIANET_PIX_KEY=chave pix gerencianet
+- Para quem mantém uma instalação própria de **Whaticket/Atendechat** (repositório com
+  `backend/` e `frontend/` nos moldes originais) e quer o mesmo fluxo de instâncias com
+  PM2, Nginx e Certbot.
+- Como referência das etapas de servidor (Nginx, Certbot, Redis em Docker) caso alguém
+  monte um instalador sem Docker para o Comenta no futuro.
 
-# EMAIL
- MAIL_HOST="smtp.gmail.com"
- MAIL_USER="seu@gmail.com"
- MAIL_PASS="SuaSenha"
- MAIL_FROM="seu@gmail.com"
- MAIL_PORT="465"
+Mesmo nesses casos, revise antes de rodar: a lista de pacotes do Puppeteer inclui pacotes
+que não existem nas versões recentes do Ubuntu (por exemplo `libappindicator1` e
+`libgconf-2-4`), e o script não foi testado em Ubuntu 22.04/24.04.
 
-```
+## Como usar (base Whaticket/Atendechat)
 
-#### .env frontend
-```
-REACT_APP_BACKEND_URL=${backend_url}
-REACT_APP_HOURS_CLOSE_TICKETS_AUTO = 24
-```
+No servidor, como root (os scripts gravam o arquivo `config` como root, com `chmod 700`,
+e depois o leem):
 
-#### Instalando dependências
-```
-cd backend/
-npm install --force
-cd frontend/
-npm install --force
-```
-
-### Rodando localmente
-```
-cd backend/
-npm run watch
-npm start
-
-cd frontend/
-npm start
-```
-
-## ⚙️ Executando os testes
-
-//
-
-### 🔩 Analise os testes de ponta a ponta
-
-//
-
-## 📦 Implantação em produção
-
-Para correta implantação é necessário realizar uma atualização do código fonte da aplicação e criar novamente os arquivos da pasta dist/
-
-Atenção: é necessário acessar utilizando o usuário de deploy
-
-```
-su - deploy
+```bash
+chmod +x install_primaria install_instancia   # se o clone não trouxer a permissão
+sudo ./install_primaria     # servidor novo
+sudo ./install_instancia    # instância adicional
 ```
 
-```
-cd /home/deploy/${empresa_atualizar}
-pm2 stop ${empresa_atualizar}-frontend
-git pull
-cd /home/deploy/${empresa_atualizar}/frontend
-npm install
-rm -rf build
-npm run build
-pm2 start ${empresa_atualizar}-frontend
-pm2 save
-```
+## Instalar o Comenta 1.0
 
-```
-cd /home/deploy/${empresa_atualizar}
-pm2 stop ${empresa_atualizar}-backend
-git pull
-cd /home/deploy/${empresa_atualizar}/backend
-npm install
-npm update -f
-npm install @types/fs-extra
-rm -rf dist 
-npm run build
-npx sequelize db:migrate
-npx sequelize db:migrate
-npx sequelize db:seed
-pm2 start ${empresa_atualizar}-backend
-pm2 save 
-```
+Use o `deploy/bootstrap.sh` na raiz do monorepo. Ele sobe site, painel, API, Postgres e
+Redis em Docker e publica tudo pelo Nginx do host com HTTPS. As instruções de uso e as
+variáveis (`DOMAIN`, `BRANCH`, `EMAIL`, `SKIP_SSL` etc.) estão no cabeçalho do script.
 
-## 🛠️ Construído com
+## Origem e licença
 
-
-* [Express](https://expressjs.com/pt-br/) - O framework backend usado
-* [React](https://react.dev/) - Framework frontend usado
-* [NPM](https://www.npmjs.com/) - Gerenciador de dependências
-
-## 🖇️ Colaborando
-
-//
-
-## 📌 Versão
-
-Versão 1.0.0
-
-## 📄 Licença
-
-Este projeto está sob a licença
-
-⌨️ com ❤️ por [Atendechat](https://atendechat.com) 😊
-
-Todos os direitos reservados a https://atendechat.com
+O código deste instalador vem do instalador do **Atendechat** (base Whaticket), com
+ajustes de textos e correções pontuais feitos no projeto Comenta. O arquivo `LICENSE` que
+veio com o código é a WTFPL versão 2 (copyright riservato.xyz). O README original do
+Atendechat dizia "todos os direitos reservados" ao Atendechat; confirme os termos com a
+origem antes de redistribuir.

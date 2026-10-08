@@ -376,7 +376,7 @@ export default function LojaPage() {
           <div className="relative mx-auto max-w-6xl px-4 text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold text-fuchsia-200">
               <ShoppingBag className="w-4 h-4 text-fuchsia-400" />
-              Loja Oficial Comenta AI
+              Loja de demonstração · Comenta 1.0
             </span>
             <h1 className="mt-5 text-4xl font-extrabold sm:text-5xl lg:text-6xl tracking-tight">
               Tudo para impulsionar suas <span className="text-gradient">Vendas & Atendimento</span>
@@ -384,6 +384,13 @@ export default function LojaPage() {
             <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-300">
               Planos do software SaaS, formações práticas para sua equipe e serviços de implantação
               sob medida.
+            </p>
+            <p
+              role="note"
+              className="mt-6 inline-block rounded-2xl border border-amber-300/40 bg-amber-400/10 px-4 py-2 text-sm font-semibold text-amber-200"
+            >
+              Loja de demonstração: nenhum pagamento é processado. Os preços e produtos são
+              exemplos.
             </p>
           </div>
         </section>
@@ -481,16 +488,16 @@ export default function LojaPage() {
           <div className="mx-auto max-w-6xl px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="p-6 rounded-2xl bg-slate-50">
               <ShieldCheck className="w-10 h-10 text-fuchsia-600 mx-auto mb-3" />
-              <h4 className="font-bold text-sm text-slate-900">Garantia de 7 Dias</h4>
+              <h4 className="font-bold text-sm text-slate-900">Garantia (exemplo)</h4>
               <p className="mt-1 text-xs text-slate-500">
-                Se não aprovar a plataforma, devolvemos 100% do seu valor.
+                Condições ilustrativas: esta loja não vende nada.
               </p>
             </div>
             <div className="p-6 rounded-2xl bg-slate-50">
               <Zap className="w-10 h-10 text-indigo-600 mx-auto mb-3" />
-              <h4 className="font-bold text-sm text-slate-900">Liberação Imediata</h4>
+              <h4 className="font-bold text-sm text-slate-900">Liberação (exemplo)</h4>
               <p className="mt-1 text-xs text-slate-500">
-                Acesso instantâneo ao painel e cursos logo após o pagamento.
+                Na demonstração nenhum acesso é liberado.
               </p>
             </div>
             <div className="p-6 rounded-2xl bg-slate-50">
@@ -504,7 +511,7 @@ export default function LojaPage() {
         </section>
       </div>
 
-      {/* Modal de Carrinho e Checkout Integrado com Validação Real */}
+      {/* Modal de Carrinho e Checkout (demonstração: nada é cobrado) */}
       {modalCheckout && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-in fade-in">
           <div className="bg-white rounded-3xl border border-slate-200 max-w-lg w-full p-6 sm:p-8 shadow-2xl relative max-h-[92vh] overflow-y-auto">
@@ -520,15 +527,14 @@ export default function LojaPage() {
                 <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-3xl font-bold">
                   ✓
                 </div>
-                <h3 className="text-2xl font-extrabold text-slate-900">Pagamento Confirmado!</h3>
+                <h3 className="text-2xl font-extrabold text-slate-900">Compra simulada</h3>
                 <p className="text-xs text-slate-600 max-w-xs mx-auto">
-                  Seu pedido foi aprovado. Enviamos os dados de acesso e a chave da licença para seu
-                  e-mail e WhatsApp!
+                  Esta loja é uma demonstração: nenhum pagamento foi processado, nada foi cobrado e
+                  nenhum e-mail, mensagem de WhatsApp ou licença foi enviado.
                 </p>
                 <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-left text-xs font-mono space-y-1">
-                  <div>Status: Aprovado (Pagamento Confirmado)</div>
-                  <div>ID Transação: tx_{Date.now().toString().slice(-8)}</div>
-                  <div>Licença: ACTIVE-PRO-{Math.floor(1000 + Math.random() * 9000)}</div>
+                  <div>Status: simulação (sem cobrança)</div>
+                  <div>Pedido de exemplo: demo_{Date.now().toString().slice(-8)}</div>
                 </div>
               </div>
             ) : (
@@ -536,6 +542,13 @@ export default function LojaPage() {
                 <h3 className="text-xl font-extrabold text-slate-900 mb-4 flex items-center gap-2">
                   <ShoppingBag className="w-5 h-5 text-fuchsia-600" /> Resumo do Pedido
                 </h3>
+                <div
+                  role="note"
+                  className="mb-4 p-3 rounded-xl bg-amber-50 border border-amber-300 text-amber-900 text-xs font-semibold"
+                >
+                  ⚠️ Loja de demonstração: nenhum pagamento é processado. Nada é cobrado nem enviado
+                  a um gateway de pagamento; não digite dados de um cartão real.
+                </div>
 
                 {carrinho.length === 0 ? (
                   <div className="text-center py-8 text-slate-500 text-xs">
@@ -641,7 +654,7 @@ export default function LojaPage() {
                     {metodoPagamento === "pix" && (
                       <div className="p-4 rounded-2xl bg-slate-900 text-white space-y-3">
                         <div className="text-xs font-bold text-emerald-400 flex items-center justify-between">
-                          <span>PIX QR Code Gerado</span>
+                          <span>Pix de exemplo (não pague)</span>
                           <span>Validade: 30 min</span>
                         </div>
                         <div className="bg-white p-3 rounded-xl w-32 h-32 mx-auto flex items-center justify-center">
@@ -652,7 +665,9 @@ export default function LojaPage() {
                           className="w-full py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold flex items-center justify-center gap-2 border border-slate-700"
                         >
                           <Copy className="w-3.5 h-3.5" />
-                          {pixCopiado ? "Chave Pix Copiada! ✓" : "Copiar Chave Pix Copia e Cola"}
+                          {pixCopiado
+                            ? "Código de exemplo copiado ✓"
+                            : "Copiar código Pix de exemplo"}
                         </button>
                       </div>
                     )}
@@ -718,11 +733,10 @@ export default function LojaPage() {
                     {metodoPagamento === "boleto" && (
                       <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-900 space-y-2">
                         <div className="font-bold flex items-center gap-2">
-                          <FileText className="w-4 h-4 text-amber-600" /> Boleto Registrado
+                          <FileText className="w-4 h-4 text-amber-600" /> Boleto (exemplo, não é
+                          emitido)
                         </div>
-                        <p>
-                          O boleto expira em 3 dias úteis. A compensação ocorre em até 24 horas.
-                        </p>
+                        <p>Na demonstração nenhum boleto é gerado nem registrado em banco.</p>
                       </div>
                     )}
 
@@ -738,10 +752,10 @@ export default function LojaPage() {
                       className="w-full py-4 rounded-2xl bg-emerald-600 text-white font-extrabold text-xs shadow-lg shadow-emerald-500/25 hover:bg-emerald-700 transition-colors flex items-center justify-center gap-2 mt-4 disabled:opacity-50"
                     >
                       {processando ? (
-                        <span>Processando Transação...</span>
+                        <span>Simulando...</span>
                       ) : (
                         <>
-                          CONFIRMAR PAGAMENTO DE {totalFormatado} <ArrowRight className="w-4 h-4" />
+                          SIMULAR COMPRA DE {totalFormatado} <ArrowRight className="w-4 h-4" />
                         </>
                       )}
                     </button>

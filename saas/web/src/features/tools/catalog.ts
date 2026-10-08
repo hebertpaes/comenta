@@ -81,7 +81,7 @@ export const TOOLS: Tool[] = [
     training: [
       "1. Acesse o WAScript e conecte sua conta Google OAuth.",
       "2. Instale a extensão no Google Chrome e ative o painel lateral em web.whatsapp.com.",
-      "3. Sincronize suas anotações e contatos com o banco do Comenta SaaS.",
+      "3. Sincronize suas anotações e contatos com o banco do Comenta 1.0.",
     ],
   },
 ];

@@ -53,7 +53,7 @@ export function ErpCrmPage() {
     headerTitle: "🤖 *MENU INTERATIVO - COMENTA AI & ABACS*",
     greeting:
       "_Seja bem-vindo ao sistema de atendimento inteligente oficial!_\n\nPor favor, escolha uma opção digitando o número correspondente:",
-    footerText: "--- \n📱 *Comenta SaaS v2.0* · _https://abacs.org.br_",
+    footerText: "--- \n📱 *Comenta 1.0* · _https://abacs.org.br_",
     options: [
       {
         key: "1️⃣",
@@ -109,7 +109,7 @@ export function ErpCrmPage() {
     {
       id: "tx_2",
       type: "receita",
-      description: "Mensalidade Comenta SaaS Pro",
+      description: "Mensalidade Comenta 1.0 Pro",
       amount: 349.0,
       date: "2026-08-13",
       category: "SaaS",
@@ -299,6 +299,22 @@ export function ErpCrmPage() {
 
   return (
     <div style={{ paddingBottom: 40 }}>
+      <div
+        role="note"
+        style={{
+          padding: "10px 14px",
+          borderRadius: 8,
+          background: "rgba(217, 119, 6, 0.12)",
+          border: "1px solid #d97706",
+          fontSize: 13,
+          fontWeight: 600,
+          marginBottom: 16,
+        }}
+      >
+        ⚠️ Demonstração: esta tela ainda não salva dados na 1.0. Os números, negócios, produtos e o
+        menu são dados de exemplo guardados só nesta página; ao recarregar, tudo volta ao início.
+      </div>
+
       {/* Top Header do Módulo CRM & ERP */}
       <div
         style={{
@@ -512,7 +528,7 @@ export function ErpCrmPage() {
                   marginBottom: 16,
                 }}
               >
-                ✓ Menu interativo do WhatsApp salvo com sucesso!
+                Demonstração: o menu não foi gravado nem enviado ao WhatsApp.
               </div>
             )}
 

@@ -112,10 +112,12 @@ export function ConversationsPage() {
         }}
       >
         <div>
-          <h2>💬 Central WhatsApp Business API Oficial</h2>
+          <h2>💬 Conversas</h2>
           <p className="muted" style={{ marginTop: -8 }}>
-            Atendimento oficial via Meta Cloud API com suporte a áudio, mídias, catálogo de cursos,
-            tags e IA Gemini.
+            Atendimento das conversas do WhatsApp (conexão por QR code, via Baileys), do Instagram
+            Direct e do Messenger (pela Meta) e do widget do site. Daqui você envia respostas em
+            texto. Áudio, documento e anexos recebidos ainda não são gravados na 1.0 (imagem e vídeo
+            chegam só pela legenda). A lista atualiza ao voltar para a aba.
           </p>
         </div>
       </div>
@@ -301,17 +303,10 @@ export function ConversationsPage() {
                     }}
                   >
                     <span>{detail.contact?.name || "Contato"}</span>
-                    <span
-                      style={{ fontSize: 13, color: "#25D366" }}
-                      title="Conta Comercial Verificada"
-                    >
-                      ✓
-                    </span>
                   </div>
                   {detail.contact?.phone && (
                     <div className="muted" style={{ fontSize: 12 }}>
-                      📱 {detail.contact.phone} ·{" "}
-                      <span style={{ color: "#25D366", fontWeight: 700 }}>WhatsApp Oficial</span>
+                      📱 {detail.contact.phone}
                     </div>
                   )}
                 </div>

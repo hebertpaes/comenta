@@ -61,6 +61,23 @@ export function SettingsPage() {
       {/* Card 0: Integração ABACS & Escola Avançada */}
       <div className="card" style={{ padding: 20, marginBottom: 20, alignItems: "stretch" }}>
         <div
+          role="note"
+          style={{
+            padding: "10px 14px",
+            borderRadius: 8,
+            background: "rgba(217, 119, 6, 0.12)",
+            border: "1px solid #d97706",
+            fontSize: 13,
+            fontWeight: 600,
+            marginBottom: 14,
+          }}
+        >
+          ⚠️ Demonstração: este bloco ainda não salva dados na 1.0. O token exibido é um exemplo
+          fixo, os campos de pagamento não são enviados ao servidor e o botão "Salvar" não grava
+          nada. O token real da ABACS fica no servidor: na variável ABACS_TOKEN ou no valor salvo
+          pela rota POST /abacs/config (que esta tela ainda não usa).
+        </div>
+        <div
           style={{
             fontWeight: 700,
             fontSize: 16,
@@ -81,12 +98,12 @@ export function SettingsPage() {
               fontWeight: 700,
             }}
           >
-            ⚡ TOKEN ATIVO
+            TOKEN DE EXEMPLO
           </span>
         </div>
         <p className="muted" style={{ fontSize: 13, marginTop: 0 }}>
-          Link oficial para conectar os cursos da Hotmart à plataforma via API da Escola Avançada /
-          ABACS.
+          Modelo do link que conecta os cursos da Hotmart ao Comenta via ABACS. Troque o token de
+          exemplo e o endereço local pelos valores do seu servidor.
         </p>
 
         <div
@@ -238,7 +255,7 @@ export function SettingsPage() {
             </button>
             {abacsSaved && (
               <span style={{ fontSize: 12, color: "#10b981", fontWeight: 700 }}>
-                Credenciais salvas com sucesso! ✓
+                Demonstração: nada foi gravado.
               </span>
             )}
           </div>
@@ -276,8 +293,9 @@ export function SettingsPage() {
           </a>
         </div>
         <p className="muted" style={{ fontSize: 13, marginTop: 0 }}>
-          Ao realizar vendas na Hotmart, este webhook cadastra o comprador automaticamente, envia a
-          mensagem de boas-vindas no WhatsApp e libera o acesso aos cursos.
+          Quando a Hotmart aprova uma venda, este webhook cadastra o comprador e envia a mensagem de
+          boas-vindas pelo WhatsApp. Exige HOTMART_HOTTOK configurado no servidor; o endereço abaixo
+          é o local de desenvolvimento.
         </p>
 
         <div
@@ -331,7 +349,7 @@ export function SettingsPage() {
             justifyContent: "space-between",
           }}
         >
-          <span>✦ Google Gemini AI Studio</span>
+          <span>✦ Provedor de IA</span>
           <span
             style={{
               fontSize: 11,
@@ -342,12 +360,15 @@ export function SettingsPage() {
               fontWeight: 700,
             }}
           >
-            🟢 CONECTADO E ATIVO
+            CONFIGURADO NO SERVIDOR
           </span>
         </div>
         <p className="muted" style={{ fontSize: 13, marginTop: 0 }}>
-          Sua chave de API do Google Gemini está configurada. O modelo generativo padrão ativo é o{" "}
-          <b>Gemini 1.5 / 2.0 Flash</b>.
+          A IA (classificar, resumir e sugerir resposta na conversa, autoatendimento e assistente do
+          widget) usa a chave definida no servidor: <b>ANTHROPIC_API_KEY</b> ou{" "}
+          <b>GEMINI_API_KEY</b>. Esta tela não verifica a chave. Sem ela, classificar, resumir e
+          sugerir mostram o aviso de IA indisponível; o autoatendimento não responde e o widget usa
+          respostas guiadas.
         </p>
       </div>
 
@@ -413,7 +434,8 @@ export function SettingsPage() {
           🎓 Portal de Cursos Comenta & Kiwify (curso.comenta.com.br)
         </div>
         <p className="muted" style={{ fontSize: 13, marginTop: 0, marginBottom: 12 }}>
-          Integração oficial de alunos, membros e webhooks com a área de membros Kiwify.
+          Recebe webhooks da Kiwify e cadastra ou atualiza o contato com etiquetas. O endereço
+          abaixo é o local de desenvolvimento.
         </p>
 
         <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>

@@ -3,7 +3,7 @@
 get_mysql_root_password() {
   
   print_banner
-  printf "${WHITE} 💻 Insira senha para o usuario Deploy e Banco de Dados (Não utilizar caracteres especiais):${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Insira a senha do banco de dados e do Redis desta instância (não utilizar caracteres especiais; a senha do usuário deploy é gerada automaticamente):${GRAY_LIGHT}"
   printf "\n\n"
   read -p "> " mysql_root_password
 }
@@ -152,7 +152,7 @@ get_alter_backend_port() {
 get_link_git() {
 
   print_banner
-  printf "${WHITE} 💻 Informe a URL do repositório Git do código Comenta (ex: https://github.com/usuario/repositorio.git):${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Informe a URL do repositório Git a instalar (base Whaticket/Atendechat, com pastas backend/ e frontend/; ex: https://github.com/usuario/repositorio.git):${GRAY_LIGHT}"
   printf "\n\n"
   read -p "> " link_git
 }
@@ -172,6 +172,7 @@ get_urls() {
 
 software_update() {
   get_empresa_atualizar
+  validar_nome_instancia "${empresa_atualizar}" "atualizar"
   frontend_update
   backend_update
 }
@@ -203,14 +204,17 @@ software_dominio() {
 inquiry_options() {
   
   print_banner
-  printf "${WHITE} 💻 Bem vindo(a) ao Gerenciador Comenta, Selecione abaixo a proxima ação!${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Comenta 1.0 — instalador legado (base Whaticket/Atendechat). Selecione abaixo a próxima ação:${GRAY_LIGHT}"
   printf "\n\n"
-  printf "   [0] Instalar Comenta\n"
-  printf "   [1] Atualizar Comenta\n"
-  printf "   [2] Deletar Comenta\n"
-  printf "   [3] Bloquear Comenta\n"
-  printf "   [4] Desbloquear Comenta\n"
-  printf "   [5] Alter. dominio Comenta\n"
+  printf "   Atenção: este menu espera um repositório com as pastas backend/ e frontend/\n"
+  printf "   (Whaticket/Atendechat). Para o Comenta 1.0 deste monorepo use deploy/bootstrap.sh.\n"
+  printf "\n"
+  printf "   [0] Instalar instância (base Whaticket/Atendechat)\n"
+  printf "   [1] Atualizar instância\n"
+  printf "   [2] Deletar instância\n"
+  printf "   [3] Bloquear instância\n"
+  printf "   [4] Desbloquear instância\n"
+  printf "   [5] Alterar domínios da instância\n"
   printf "\n"
   read -p "> " option
 

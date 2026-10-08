@@ -16,7 +16,7 @@ export async function kiwifyRoutes(app: FastifyInstance) {
     const email = body.Customer?.email || body.email || "aluno@comenta.com.br";
     const name = body.Customer?.full_name || body.name || "Aluno Kiwify Comenta";
     const phone = body.Customer?.mobile || body.phone || "";
-    const productName = body.Product?.product_name || "Curso Comenta SaaS";
+    const productName = body.Product?.product_name || "Curso Comenta 1.0";
 
     const [comp] = await db.select({ id: schema.companies.id }).from(schema.companies).limit(1);
     if (!comp) return reply.code(400).send({ error: "Nenhuma empresa cadastrada." });

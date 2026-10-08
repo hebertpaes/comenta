@@ -28,29 +28,43 @@ export function DashboardPage() {
 
   const dashboardRef = useRef<HTMLDivElement>(null);
 
-  // Estados locais editáveis de KPIs
+  // Estados locais editáveis de KPIs. Os valores começam em "—" e só os que a
+  // API devolve (GET /dashboard/metrics) são preenchidos; vendas e taxa de IA
+  // não têm fonte de dados na 1.0.
   const [customKpis, setCustomKpis] = useState<KpiItem[]>([
-    { id: "open", label: "Em Atendimento", value: 18, icon: "💬", color: "#2563eb" },
-    { id: "pending", label: "Aguardando / Triagem", value: 5, icon: "⏳", color: "#d97706" },
-    { id: "resolved", label: "Conversas Resolvidas", value: 142, icon: "✅", color: "#16a34a" },
+    { id: "open", label: "Em Atendimento", value: "—", icon: "💬", color: "#2563eb" },
+    { id: "pending", label: "Aguardando / Triagem", value: "—", icon: "⏳", color: "#d97706" },
+    { id: "resolved", label: "Conversas Resolvidas", value: "—", icon: "✅", color: "#16a34a" },
     {
       id: "sales",
-      label: "Vendas Hotmart / ABACS",
-      value: "R$ 14.890,00",
+      label: "Vendas Hotmart / ABACS (sem dados na 1.0)",
+      value: "—",
       icon: "💰",
       color: "#10b981",
     },
-    { id: "ai_rate", label: "Atendimentos por IA", value: "88.4%", icon: "🤖", color: "#6d28d9" },
+    {
+      id: "ai_rate",
+      label: "Atendimentos por IA (sem dados na 1.0)",
+      value: "—",
+      icon: "🤖",
+      color: "#6d28d9",
+    },
     {
       id: "messages",
-      label: "Mensagens Disparadas Hoje",
-      value: 890,
+      label: "Mensagens Hoje (recebidas e enviadas)",
+      value: "—",
       icon: "✉️",
       color: "#8b5cf6",
     },
-    { id: "contacts", label: "Leads / Contatos Totais", value: 1240, icon: "👥", color: "#0891b2" },
-    { id: "tma", label: "1ª Resposta (Méd.)", value: "14s", icon: "⚡", color: "#db2777" },
-    { id: "csat", label: "Satisfação CSAT (NPS)", value: "9.8 / 10", icon: "⭐", color: "#f59e0b" },
+    { id: "contacts", label: "Leads / Contatos Totais", value: "—", icon: "👥", color: "#0891b2" },
+    { id: "tma", label: "1ª Resposta (Méd.)", value: "—", icon: "⚡", color: "#db2777" },
+    {
+      id: "csat",
+      label: "Satisfação (média das avaliações)",
+      value: "—",
+      icon: "⭐",
+      color: "#f59e0b",
+    },
   ]);
 
   const toggleKpiVisibility = (id: string) => {
@@ -87,7 +101,7 @@ export function DashboardPage() {
   // Compartilhar Resumo no WhatsApp / Copiar Link
   const handleShareDashboard = () => {
     const summaryText =
-      `📊 *RESUMO EXECUTIVO COMENTA SAAS*\n\n` +
+      `📊 *RESUMO DO DASHBOARD — COMENTA 1.0*\n\n` +
       customKpis
         .filter((k) => !k.hidden)
         .map((k) => `• *${k.label}*: ${k.value}`)
@@ -115,7 +129,8 @@ export function DashboardPage() {
         <div>
           <h2>📊 Dashboard Executivo & Métricas de Desempenho</h2>
           <p className="muted" style={{ marginTop: -8, marginBottom: 0 }}>
-            Visão geral de atendimentos, conversões de vendas Hotmart/ABACS e performance de IA.
+            Visão geral dos atendimentos com dados da API, atualizada a cada 15 s. Indicadores sem
+            fonte de dados aparecem como "—". O filtro de período ainda não muda os números.
           </p>
         </div>
 
@@ -350,7 +365,7 @@ export function DashboardPage() {
                       📈 Volume Mensagens por Dia (Últimos 7 Dias)
                     </div>
                     <span className="tag" style={{ fontSize: 10 }}>
-                      Tempo Real
+                      Atualiza a cada 15 s
                     </span>
                   </div>
                   <BarChart data={m.messages7d} />
@@ -419,7 +434,7 @@ export function DashboardPage() {
                   segundos.
                 </p>
                 <span className="muted" style={{ fontSize: 11 }}>
-                  Comenta SaaS Executivo v2.0
+                  Comenta 1.0
                 </span>
               </div>
             </>

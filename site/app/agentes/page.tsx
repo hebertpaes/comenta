@@ -46,7 +46,7 @@ const AGENTES: Agent[] = [
       "Agendamento",
     ],
     promptInicial:
-      "Olá, Hebert. Sou a Sofia, sua especialista comercial de IA do Comenta. Como posso impulsionar suas vendas hoje?",
+      "Olá! Sou a Sofia, sua especialista comercial de IA do Comenta. Como posso impulsionar suas vendas hoje?",
     sugestoes: [
       "Como qualificar um cliente interessado no Plano Pro?",
       "Escreva um script de vendas de WhatsApp para clínica médica",
@@ -208,7 +208,7 @@ export default function FullscreenComentaAIPage() {
         vid =
           "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4";
       } else if (agenteSelecionado.id === "agente-vendas") {
-        respostaTexto = `Com certeza! Aqui está a recomendação de abordagem comercial baseada no **${modeloAtivo}**:\n\n"Olá! Seja bem-vindo ao Comenta SaaS. Nosso Plano Pro inclui 3 conexões de WhatsApp + IA generativa por apenas R$ 349/mês. Gostaria de ativar sua avaliação gratuita de 7 dias?"`;
+        respostaTexto = `Com certeza! Aqui está a recomendação de abordagem comercial baseada no **${modeloAtivo}**:\n\n"Olá! Seja bem-vindo ao Comenta 1.0. Nosso Plano Pro inclui 3 conexões de WhatsApp + IA generativa por apenas R$ 349/mês. Gostaria de ativar sua avaliação gratuita de 7 dias?"`;
       } else if (agenteSelecionado.id === "agente-analista-bi") {
         respostaTexto = `📊 **Boletim Executivo de Inteligência de Dados**:\n\n• **Conversas Ativas**: 48 no total\n• **Tempo Médio de Atendimento**: 52 segundos\n• **NPS Geral**: 4.95 / 5.0 ⭐\n• **Respostas por IA**: 84% de resolução automática sem transbordo`;
       }
@@ -357,6 +357,14 @@ export default function FullscreenComentaAIPage() {
           </div>
         </header>
 
+        <div
+          role="note"
+          className="bg-amber-400/10 border-b border-amber-300/30 text-amber-200 px-4 py-2 text-xs font-semibold text-center"
+        >
+          Demonstração: as respostas, imagens e vídeos são simulados no navegador. Nenhum modelo de
+          IA é chamado, nada é salvo e o &ldquo;treinamento&rdquo; não muda nada.
+        </div>
+
         {mensagemStatusTreino && (
           <div className="bg-gradient-to-r from-[#4285f4] via-[#9b72cb] to-[#d96570] text-white px-4 py-2 text-xs font-semibold text-center flex items-center justify-center gap-2 shadow-lg animate-in slide-in-from-top duration-300 z-30">
             <Sparkles className="w-4 h-4 animate-spin" />
@@ -376,7 +384,7 @@ export default function FullscreenComentaAIPage() {
               <div className="space-y-2">
                 <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4285f4] via-[#9b72cb] to-[#d96570]">
-                    Olá, Hebert.
+                    Olá!
                   </span>
                 </h1>
                 <p className="text-xl sm:text-2xl text-[#8e918f] font-normal">

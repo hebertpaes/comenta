@@ -1,7 +1,7 @@
 {
   "name": "@comenta/web",
   "version": "1.0.0",
-  "description": "Comenta SaaS — painel do atendente",
+  "description": "Comenta 1.0 — painel do atendente",
   "type": "module",
   "scripts": {
     "dev": "vite",

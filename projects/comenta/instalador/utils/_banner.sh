@@ -29,8 +29,8 @@ printf " #####    ######   ##   ##   ######   ##  ##     ##     ##  ##\n";
 
 printf "\n"
 
-printf "Comenta — Plataforma de Atendimento via WhatsApp\n"
-printf "2026 @ Projeto Comenta\n"
+printf "Comenta 1.0 — instalador legado (base Whaticket/Atendechat)\n"
+printf "Não instala o Comenta 1.0 deste monorepo; o caminho oficial é deploy/bootstrap.sh\n"
 
 
 

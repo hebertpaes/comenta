@@ -132,6 +132,22 @@ export function PermissionsPage() {
   return (
     <div style={{ paddingBottom: 40 }}>
       <div
+        role="note"
+        style={{
+          padding: "10px 14px",
+          borderRadius: 8,
+          background: "rgba(217, 119, 6, 0.12)",
+          border: "1px solid #d97706",
+          fontSize: 13,
+          fontWeight: 600,
+          marginBottom: 16,
+        }}
+      >
+        ⚠️ Demonstração: esta tela ainda não salva dados na 1.0. Os cargos e permissões daqui não
+        valem no sistema: na 1.0 o painel distingue apenas administrador e atendente.
+      </div>
+
+      <div
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -255,7 +271,8 @@ export function PermissionsPage() {
                 marginBottom: 16,
               }}
             >
-              ✓ Permissões do cargo "{selectedRole.name}" salvas e aplicadas com sucesso!
+              Demonstração: as permissões do cargo "{selectedRole.name}" não foram gravadas nem
+              aplicadas.
             </div>
           )}
 

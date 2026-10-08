@@ -15,7 +15,7 @@ export type Agent = {
 const AGENTES: Agent[] = [
   {
     id: "gemini-spark",
-    nome: "Sofia Gemini 2.0 Spark (Google IA Oficial)",
+    nome: "Sofia (demonstração)",
     papel: "Inteligência Artificial Multimodal Completa",
     avatar: "✨",
     cor: "linear-gradient(135deg, #4285F4, #9B51E0, #E91E63)",
@@ -28,7 +28,7 @@ const AGENTES: Agent[] = [
       "Integração Comenta",
     ],
     promptInicial:
-      "Olá! Sou a Sofia Gemini 2.0 Spark. Como posso ajudar com sua empresa, criação de imagens, vídeos ou automações hoje?",
+      "Olá! Sou a Sofia (demonstração). Como posso ajudar com sua empresa, criação de imagens, vídeos ou automações hoje?",
   },
   {
     id: "agente-imagens",
@@ -109,7 +109,7 @@ export function AgentsPage() {
         textoFinal.toLowerCase().includes("imagem") ||
         textoFinal.toLowerCase().includes("banner")
       ) {
-        respostaTexto = `🎨 Imagem HD gerada com sucesso via Google Imagen 3 para o prompt: "${textoFinal}"!`;
+        respostaTexto = `🎨 Imagem de exemplo (demonstração, nada foi gerado) para o prompt: "${textoFinal}"`;
         img =
           "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80";
       } else if (
@@ -117,11 +117,11 @@ export function AgentsPage() {
         textoFinal.toLowerCase().includes("vídeo") ||
         textoFinal.toLowerCase().includes("roteiro")
       ) {
-        respostaTexto = `🎬 Roteiro e vídeo animado gerados com sucesso via Google Veo AI!\n\n📹 **Cena 1**: Apresentação visual da oferta.\n📹 **Cena 2**: Demonstração de recursos do Comenta SaaS.\n📹 **Cena 3**: Call to Action com direcionamento para WhatsApp.`;
+        respostaTexto = `🎬 Roteiro de exemplo (demonstração, nenhum vídeo foi gerado)\n\n📹 **Cena 1**: Apresentação visual da oferta.\n📹 **Cena 2**: Demonstração de recursos do Comenta 1.0.\n📹 **Cena 3**: Call to Action com direcionamento para WhatsApp.`;
         vid =
           "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4";
       } else if (agenteSelecionado.id === "agente-bi") {
-        respostaTexto = `📊 **Relatório Executivo de Vendas & Atendimento**:\n\n• Conversas Ativas: 42\n• Tempo Médio de Resposta: 14s\n• Avaliação de Satisfação (NPS): 9.8 / 10 ⭐\n• Vendas Acumuladas: R$ 14.890,00`;
+        respostaTexto = `📊 **Relatório de exemplo (números fictícios)**:\n\n• Conversas Ativas: 42\n• Tempo Médio de Resposta: 14s\n• Avaliação de Satisfação (NPS): 9.8 / 10 ⭐\n• Vendas Acumuladas: R$ 14.890,00`;
       }
 
       setMensagens((prev) => [
@@ -134,6 +134,23 @@ export function AgentsPage() {
 
   return (
     <div style={{ paddingBottom: 40, maxWidth: 1280, margin: "0 auto" }}>
+      <div
+        role="note"
+        style={{
+          padding: "10px 14px",
+          borderRadius: 8,
+          background: "rgba(217, 119, 6, 0.12)",
+          border: "1px solid #d97706",
+          fontSize: 13,
+          fontWeight: 600,
+          marginBottom: 16,
+        }}
+      >
+        ⚠️ Demonstração: esta tela ainda não salva dados na 1.0. As respostas são simuladas no
+        navegador (nenhuma chamada ao Gemini, Imagen ou Veo); a imagem e o vídeo exibidos são sempre
+        os mesmos arquivos de exemplo.
+      </div>
+
       {/* Google Gemini Spark Interface Header */}
       <div
         className="card"
@@ -174,7 +191,7 @@ export function AgentsPage() {
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                 <h1 style={{ margin: 0, fontSize: 22, fontWeight: 800, letterSpacing: "-0.5px" }}>
-                  Google Gemini Spark AI
+                  Agentes IA & Mídia
                 </h1>
                 <span
                   className="tag"
@@ -185,12 +202,12 @@ export function AgentsPage() {
                     fontSize: 10,
                   }}
                 >
-                  gemini.google.com/spark
+                  demonstração
                 </span>
               </div>
               <p className="muted" style={{ margin: "2px 0 0 0", fontSize: 13 }}>
-                Ambiente de Inteligência Artificial Multimodal com geração de texto, imagens Imagen
-                3 e vídeos Veo.
+                Protótipo de interface para agentes de texto, imagem e vídeo. Ainda sem integração
+                com provedores de IA.
               </p>
             </div>
           </div>
@@ -453,7 +470,7 @@ export function AgentsPage() {
                           fontSize: 11,
                         }}
                       >
-                        <span>🎨 Imagem HD Gerada via Google Imagen 3</span>
+                        <span>🖼️ Imagem de exemplo (não gerada)</span>
                         <a
                           href={msg.imagemUrl}
                           target="_blank"
@@ -493,7 +510,7 @@ export function AgentsPage() {
                           fontSize: 11,
                         }}
                       >
-                        <span>🎬 Vídeo Promocional Gerado via Google Veo</span>
+                        <span>🎬 Vídeo de exemplo (não gerado)</span>
                         <a
                           href={msg.videoUrl}
                           target="_blank"
@@ -527,7 +544,8 @@ export function AgentsPage() {
                   ✨
                 </div>
                 <span className="muted" style={{ fontSize: 13 }}>
-                  Sofia Gemini Spark está processando seu comando no modelo {modeloAtivo}...
+                  Sofia (demonstração) está simulando a resposta (modelo escolhido: {modeloAtivo}
+                  )...
                 </span>
               </div>
             )}

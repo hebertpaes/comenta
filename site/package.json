@@ -1,7 +1,7 @@
 {
   "name": "@comenta/site",
   "version": "1.0.0",
-  "description": "Plataforma pessoal Hebert Paes - Next.js no Cloud Run",
+  "description": "Comenta 1.0 — site (landing, documentação e chat do site)",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
