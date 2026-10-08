@@ -2089,6 +2089,37 @@
       "materia": "https://hojemt.com.br/russi-na-corrida-de-cabeca/",
       "charge_json": "pautas/charges/2026-10-08-russi-na-corrida-de-cabeca.json",
       "obs": "aguardando_decisao: quinta charge de Russi; 115 sai em 17/10. O editor decide o espaçamento (próximo horário livre de charge: 18/10 07:30)."
+    },
+    {
+      "id": "123",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-18T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Pirineu pede tapa-bojo",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-pirineu-pede-tapa-bojo-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Pirineu pede tapa-bojo\n\nNo Pirineu, o buraco virou lago.\n\nLeia a curta completa: hojemt.com.br/pirineu-pede-tapa-bojo\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/pirineu-pede-tapa-bojo/",
+      "charge_json": "pautas/charges/2026-10-08-pirineu-pede-tapa-bojo.json"
+    },
+    {
+      "id": "124",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Tiraram o cocho",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-tiraram-o-cocho-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Tiraram o cocho\n\nNa ALMT, a esteira corre.\n\nLeia a curta completa: hojemt.com.br/tiraram-o-cocho\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #politica #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/tiraram-o-cocho/",
+      "charge_json": "pautas/charges/2026-10-08-tiraram-o-cocho.json",
+      "obs": "aguardando_decisao: a curta erra a autoria do veto (TJ/TSE); o editor decide se corrige o texto e se publica a charge."
     }
   ]
 }
