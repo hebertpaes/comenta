@@ -34,7 +34,7 @@ const POL = ["operacao", " pf ", "policia federal", "investiga", "denuncia", "ac
   "ministerio publico", "mpmt", "mpe ", "promotor", "acao civil", "multa", "cassa", "afastad", "preso", "prisao", "condena",
   " reu ", "alvo", "busca e apreensao", "crise", "polemica", "critica", "rebate", "ataca", "briga", "bate-boca", "protesto",
   "reclama", "cobra ", "falta de", "caos", "atraso", "rombo", "calote", "greve", "nega ", "contesta", "questiona", "repudi",
-  "derrota", "racha", "rompe", "processo", "liminar", "tce ", "tribunal de contas", "justica eleitoral", "propaganda irregular"];
+  "racha", "rompe", "processo disciplinar", "expuls", "liminar", "tce ", "tribunal de contas", "justica eleitoral", "propaganda irregular"];
 const PROP = ["anuncia", "inaugura", "entrega", "lanca", "investe", "investimento", "assina", "garante", "amplia", "reforma",
   "obra", "pavimenta", "asfalto", "programa", "projeto", "convenio", "parceria", "inicia", "conclui", "implanta", "cria ",
   "mutirao", "vacina", "capacita", "regulariza", "recursos", "milhoes", "moderniza", "revitaliza", "construcao", "constroi",
@@ -86,25 +86,27 @@ for (const a of CFG.autoridades) {
       // tira o " - Veículo" do fim, como o radar faz
       let t = it.titulo;
       if (it.fonte && t.endsWith(" - " + it.fonte)) t = t.slice(0, -(it.fonte.length + 3));
+      const bar = t.lastIndexOf(" | ");
+      if (bar > 20 && it.fonte && norm(it.fonte).startsWith(norm(t.slice(bar + 3)).slice(0, 8))) t = t.slice(0, bar);
       const tn = norm(t);
       if (!chaves.some((c) => tn.includes(c))) continue; // só manchete que cita a pessoa
       const k = tn.replace(/[^a-z0-9]/g, "").slice(0, 90);
       if (vistos.has(k)) continue;
       vistos.add(k);
-      const x = { titulo: t, fonte: it.fonte || "", url: it.link || "", data: ddmm(it.data), _ts: it.data.getTime() };
+      const x = { titulo: t, fonte: (it.fonte || "").split(" - ")[0].trim(), url: it.link || "", data: ddmm(it.data), _ts: it.data.getTime() };
       const c = classifica(t);
-      if (c === "p") pol.push(x); else if (c === "s") sol.push(x); else neutras++;
+      if (c === "p") pol.push(x); else if (c === "s") sol.push(x); else { neutras++; if (SECO) console.log("  n " + x.data + " " + t + " [" + x.fonte + "]"); }
     }
   }
   const ord = (l) => l.sort((p, q) => q._ts - p._ts).map(({ _ts, ...r }) => r);
   candidatos.push({ nome: a.nome, cargo: a.cargo || "prefeito", partido: a.partido || "", instagram: "", cidade: a.cidade || "",
-    candidato: false, confirmar: false, polemicas: ord(pol), solucoes: ord(sol), neutras, total: pol.length + sol.length + neutras });
+    candidato: false, confirmar: false, situacao: a.situacao || "", polemicas: ord(pol), solucoes: ord(sol), neutras, total: pol.length + sol.length + neutras });
   console.log(`${a.nome} (${a.cidade}): ${pol.length} polêmicas, ${sol.length} propostas, ${neutras} de rotina`);
 }
 
 const bloco = { gerado_em: new Date().toISOString().replace(/\.\d+Z$/, "Z"), janela_dias: JANELA_DIAS,
   fonte: "Google Notícias (manchetes que citam o nome); classificação automática por palavras", candidatos };
-if (SECO) { console.log(JSON.stringify(bloco, null, 1).slice(0, 3000)); process.exit(0); }
+if (SECO) { for (const c of candidatos) { console.log("== " + c.nome); for (const x of c.polemicas) console.log("  P " + x.data + " " + x.titulo + " [" + x.fonte + "]"); for (const x of c.solucoes) console.log("  S " + x.data + " " + x.titulo + " [" + x.fonte + "]"); } process.exit(0); }
 // grava pelo Python para preservar o formato do radar-dados.json (indentação de 1 espaço, números como 9.0)
 const r = spawnSync("python3", ["-I", "-c", [
   "import json,sys",

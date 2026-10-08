@@ -1,0 +1,175 @@
+{
+ "_comentario": "Autoridades extras do Radar Eleitoral (pedido do editor em 08/10/2026: incluir, além de Abilio Brunini e Flávia Moretti, os prefeitos de Rondonópolis, Sinop e de outras cidades grandes de MT). A lista principal vem do servidor (/content/media/apuracao/radar-candidatos.json, fora do repositório); estes nomes são coletados por content/tools/radar-autoridades.mjs e entram no card só se o servidor ainda não os trouxer. Partido conferido em 08/10/2026 com fonte oficial ou dois veículos (campo fontes_partido). 'termos' vão ao Google Notícias; 'cita' são os trechos (sem acento, minúsculos) que a manchete precisa conter.",
+ "autoridades": [
+  {
+   "nome": "Adilson Gonçalves",
+   "cargo": "prefeito",
+   "cidade": "Barra do Garças",
+   "partido": "União Brasil",
+   "termos": [
+    "\"Dr. Adilson\" Barra do Garças",
+    "\"prefeito de Barra do Garças\"",
+    "\"Adilson Gonçalves\" Barra do Garças"
+   ],
+   "cita": [
+    "adilson goncalves",
+    "dr. adilson",
+    "dr adilson",
+    "prefeito de barra do garcas"
+   ],
+   "fontes_partido": [
+    "https://www.barradogarcas.mt.gov.br/Prefeitura/Nosso-Prefeito/",
+    "https://rededanoticia.com.br/candidata-a-vice-do-governador-otaviano-pivetta-gisela-simona-visita-barra-do-garcas-nesta-sexta-feira/",
+    "https://rededanoticia.com.br/pivetta-chega-a-barra-do-garcas-nesta-sexta-feira-para-carreata-e-passeata/"
+   ],
+   "situacao": "Prefeito em exercício · sem candidatura em 2026"
+  },
+  {
+   "nome": "Alei Fernandes",
+   "cargo": "prefeito",
+   "cidade": "Sorriso",
+   "partido": "União Brasil",
+   "termos": [
+    "\"Alei Fernandes\"",
+    "\"prefeito de Sorriso\""
+   ],
+   "cita": [
+    "alei fernandes",
+    "alei",
+    "prefeito de sorriso"
+   ],
+   "fontes_partido": [
+    "https://www.olhardireto.com.br/noticias/prefeito-de-sorriso-pede-uniao-por-pivetta-e-diz-que-reeleicao-fara-mt-avancar-mais",
+    "https://www.sonoticias.com.br/politica/prefeito-de-sorriso-manifesta-apoio-para-pivetta/",
+    "https://24horasmt.com.br/politica-mt/alei-diz-que-mt-vai-avancar-mais-ao-apoiar-reeleicao-de-pivetta/"
+   ],
+   "situacao": "Prefeito em exercício · sem candidatura em 2026"
+  },
+  {
+   "nome": "Cláudio Ferreira",
+   "cargo": "prefeito",
+   "cidade": "Rondonópolis",
+   "partido": "PL",
+   "termos": [
+    "\"Cláudio Ferreira\" Rondonópolis",
+    "\"prefeito de Rondonópolis\""
+   ],
+   "cita": [
+    "claudio ferreira",
+    "prefeito de rondonopolis"
+   ],
+   "fontes_partido": [
+    "https://ndmais.com.br/politica/juiz-do-mato-grosso-libera-propaganda-de-pivetta-candidato-a-reeleicao-e-diz-que-apoio-de-prefeitos-do-pl-nao-e-irregular-no-1o-turno/",
+    "https://ftnbrasil.com.br/juiz-auxiliar-do-tre-manda-retirar-propaganda-de-otaviano-pivetta-com-prefeitos-do-pl/",
+    "https://24horasmt.com.br/politica-mt/ivetta-e-liderancas-de-mt-se-unem-em-apoio-a-flavio-bolsonaro/"
+   ],
+   "situacao": "Prefeito em exercício · sem candidatura em 2026"
+  },
+  {
+   "nome": "Eliene Liberato",
+   "cargo": "prefeito",
+   "cidade": "Cáceres",
+   "partido": "Podemos",
+   "termos": [
+    "\"Eliene Liberato\"",
+    "\"prefeita de Cáceres\""
+   ],
+   "cita": [
+    "eliene liberato",
+    "eliene",
+    "prefeita de caceres"
+   ],
+   "fontes_partido": [
+    "https://www.gazetadigital.com.br/editorias/politica-de-mt/prefeita-de-caceres-anuncia-mudanca-para-o-podemos-junto-a-deputado/834802",
+    "https://www.olhardireto.com.br/noticias/prefeita-de-caceres-declara-apoio-a-janaina-riva-para-o-senado",
+    "https://plantaonews.com.br/pivetta-percorre-maratona-de-obras-em-caceres-e-destaca-missao-de-fazer-a-diferenca-na-vida-das-pessoas/"
+   ],
+   "situacao": "Prefeita em exercício · sem candidatura em 2026"
+  },
+  {
+   "nome": "Miguel Vaz",
+   "cargo": "prefeito",
+   "cidade": "Lucas do Rio Verde",
+   "partido": "Republicanos",
+   "termos": [
+    "\"Miguel Vaz\" Lucas do Rio Verde",
+    "\"prefeito de Lucas do Rio Verde\""
+   ],
+   "cita": [
+    "miguel vaz",
+    "prefeito de lucas do rio verde",
+    "prefeito de lucas"
+   ],
+   "fontes_partido": [
+    "https://olhardireto.com.br/noticias/podolhar-miguel-vaz-aposta-em-virada-nas-pesquisas-e-vitoria-ao-governo-a-hora-e-de-pivetta",
+    "https://www.muvucapopular.com.br/2026/09/25/apos-receber-apoio-de-flavio-bolsonaro-miguel-vaz-declara-voto-no-presidenciavel-e-reafirma-apoio-a-pivetta/",
+    "https://www.hnt.com.br/politica/miguel-vaz-participa-de-ato-de-apoio-de-133-prefeitos-a-reeleicao-de-pivetta/570084"
+   ],
+   "situacao": "Prefeito em exercício · sem candidatura em 2026"
+  },
+  {
+   "nome": "Roberto Dorner",
+   "cargo": "prefeito",
+   "cidade": "Sinop",
+   "partido": "PL",
+   "termos": [
+    "\"Roberto Dorner\"",
+    "\"prefeito de Sinop\""
+   ],
+   "cita": [
+    "roberto dorner",
+    "dorner",
+    "prefeito de sinop"
+   ],
+   "fontes_partido": [
+    "https://www.sonoticias.com.br/politica/sinop-vice-prefeito-confirma-apoio-para-pivetta-e-diz-que-divergencia-com-dorner-foi-bem-alinhada/",
+    "https://odocumento.com.br/prefeito-nega-rompimento-com-wellington-fagundes-e-garante-apoio-juntos-sempre/",
+    "https://www.sonoticias.com.br/politica/sinop-com-mais-de-592-mil-em-votos-pivetta-venceu-wellignton-em-todas-as-secoes/"
+   ],
+   "situacao": "Prefeito em exercício · sem candidatura em 2026"
+  },
+  {
+   "nome": "Sérgio Machnic",
+   "cargo": "prefeito",
+   "cidade": "Primavera do Leste",
+   "partido": "PL",
+   "termos": [
+    "\"Sérgio Machnic\"",
+    "\"prefeito de Primavera do Leste\""
+   ],
+   "cita": [
+    "sergio machnic",
+    "machnic",
+    "prefeito de primavera do leste",
+    "prefeito de primavera"
+   ],
+   "fontes_partido": [
+    "https://www.reportermt.com/politica/nao-vou-sair-do-pl-se-quiserem-que-me-expulsem-diz-prefeito-de-primavera-do-leste-que-mantem-apoio-a-pivetta/243617",
+    "https://www.muvucapopular.com.br/2026/09/16/mesmo-que-bolsonaro-fale-comigo-nao-vou-mudar-diz-prefeito-do-pl-sobre-apoio-a-pivetta/",
+    "https://www.muvucapopular.com.br/2026/06/26/terceiro-prefeito-do-pl-fecha-apoio-a-pivetta-em-menos-de-uma-semana/"
+   ],
+   "situacao": "Prefeito em exercício · sem candidatura em 2026"
+  },
+  {
+   "nome": "Vander Masson",
+   "cargo": "prefeito",
+   "cidade": "Tangará da Serra",
+   "partido": "União Brasil",
+   "termos": [
+    "\"Vander Masson\"",
+    "\"prefeito de Tangará da Serra\""
+   ],
+   "cita": [
+    "vander masson",
+    "prefeito de tangara da serra",
+    "prefeito de tangara"
+   ],
+   "fontes_partido": [
+    "https://portalmatogrosso.com.br/prefeito-vander-masson-enumera-obras-em-tangara-da-serra-e-aposta-em-mauro-mendes-e-otaviano-pivetta-nas-eleicoes/",
+    "https://diariodaserra.com.br/noticia/desempenho-vander-masson-avalia-resultado-das-eleicoes-e-projeta",
+    "https://www.itatiaia.com.br/politica/eleicoes-2024/todos-os-candidatos-a-prefeito-e-vereador-de-tangara-da-serra-mt-da-eleicao-2024/"
+   ],
+   "situacao": "Prefeito em exercício · sem candidatura em 2026"
+  }
+ ]
+}

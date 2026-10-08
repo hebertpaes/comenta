@@ -11675,5 +11675,212 @@
    ],
    "duracao_s": 97
   }
- ]
+ ],
+ "autoridades": {
+  "gerado_em": "2026-10-08T12:03:52Z",
+  "janela_dias": 7,
+  "fonte": "Google Notícias (manchetes que citam o nome); classificação automática por palavras",
+  "candidatos": [
+   {
+    "nome": "Adilson Gonçalves",
+    "cargo": "prefeito",
+    "partido": "União Brasil",
+    "instagram": "",
+    "cidade": "Barra do Garças",
+    "candidato": false,
+    "confirmar": false,
+    "situacao": "Prefeito em exercício · sem candidatura em 2026",
+    "polemicas": [],
+    "solucoes": [],
+    "neutras": 0,
+    "total": 0
+   },
+   {
+    "nome": "Alei Fernandes",
+    "cargo": "prefeito",
+    "partido": "União Brasil",
+    "instagram": "",
+    "cidade": "Sorriso",
+    "candidato": false,
+    "confirmar": false,
+    "situacao": "Prefeito em exercício · sem candidatura em 2026",
+    "polemicas": [],
+    "solucoes": [],
+    "neutras": 2,
+    "total": 2
+   },
+   {
+    "nome": "Cláudio Ferreira",
+    "cargo": "prefeito",
+    "partido": "PL",
+    "instagram": "",
+    "cidade": "Rondonópolis",
+    "candidato": false,
+    "confirmar": false,
+    "situacao": "Prefeito em exercício · sem candidatura em 2026",
+    "polemicas": [
+     {
+      "titulo": "Cláudio Ferreira critica grupo Riva e diz: “A gente aposentou da vida pública”",
+      "fonte": "Portal MT",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPemRMSUpwY2lqSHh0bzhrMW9GdTZKU195Skw2UmpFUXNMc21Vb3p3ZklRcWd1OTdqTHFsSXNKNjVYMGl3TkJ0TDJDbUgwem1MYnR0Y2pBUHluMHR1cDJDRzhNcEhKQkxWYUNZSXdOc0FrT2RiMTVFdDJ3QXBqWUctemgwa0xFQ1ZBSHlMMlNEaVJDUlRLSzZTQkpJdHMxbkRLRFE?oc=5",
+      "data": "07/10"
+     },
+     {
+      "titulo": "TCE rejeita pedido de medida urgente contra gestão de Cláudio Ferreira após série de denúncias",
+      "fonte": "EXCLUSIVO NEWS",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxONVJaVFZfaEFYaHFWOXZidEs4QWpnbTNUTXpoNjQxRzdQWmdKRUNDSWJfU0I4R0hFVkZhTmRLUGNzODI4OGxyYlk5YkxUUnN2Y1EtN3RsUTNqNkJ3OWs4Tk9LWXVOeTIyYWpYdlFkaUJBNEtyWTQ0X3g3WlpXeXQwa3E5NURPd0VfdUJLbW9BSGJReG9FRW5fOEZjQm95VXhQNmstRWdlTWVxVkcyTmVxVHJpQmhtX0MyM3dZcjM2XzVPbGI5aUduejZPcXZydnJYX2c?oc=5",
+      "data": "06/10"
+     },
+     {
+      "titulo": "Após denúncias, TCE rejeita medida urgente contra gestão de Cláudio Ferreira",
+      "fonte": "VG Notícias",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNT0RMWVdJWFlUN3BhaW5QVk45TjNWamo5Z0g1eFFqMHViVGdQQV9oMFEwSEZ6TjJsNXh3V19BeU5JaER3dFBpckUtNjgyek9UdEhneVJpcFdTSWU0Mk05c0RNcHJnYm5PSFRMZHpZenBFVm9rNEJhNG9EQUFycTlZaWtGZzN0QjQ0dEgtcV8tcDIzcEdSYUFUVUptOHpwbmpXNHlkYko3M3U0cHRlbkpOTWZ2Wlh2T3NjMV9EUg?oc=5",
+      "data": "06/10"
+     },
+     {
+      "titulo": "Resultado das urnas pode evitar expulsão de Cláudio Ferreira do PL",
+      "fonte": "Primeira Hora",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPdTQ1MmgtaHVza1QtZjBfcWFoMW9LX01XdUZCMWhNZDdFMUxGcXZZZV84OHNKTGdHNklxMmpmQTVRT0owQlllNUpKb29wZUEtc2pSZkxmdmpKdHZ6YkctN2lLSzZXTUF0dGRkYTljWmdPUU9icXQwRWRSRjdGYXNDUklHWkt1clE1dTUtQWFPS0FpMTlaM0FkWE1Zdw?oc=5",
+      "data": "05/10"
+     },
+     {
+      "titulo": "Wellington manda recado para grupo de Cláudio Ferreira e cita PF: “Essa é a resposta”",
+      "fonte": "Estadão MT",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQVU1uZTV2b05OaF96YnA0d2EySXJSWE53amtaeXZsdTliTVpIWkU5MUtCZ0cyczY1YWVmWlo5aTAxQUJJY0I0OUxuSE84bldHbWUtQ0VGazhCMkRnZm1ZMjFlLXFFLWlVZ3VUX193MG10RnFOaVBJZHJQS3hTVjNEdXVCRjZYWUQ2Z1ZTU3RtVjZkVkpQWHhQUVh1Z2JBMXdvQzlMdEJ2ZVBJdEVpUjA0d0lvX1RNNzljNElvczFfbkZZUXd5bzJRdzBUamJCcHVPbjg4UGhmTQ?oc=5",
+      "data": "04/10"
+     },
+     {
+      "titulo": "Alvos da PF, secretários de Cláudio Ferreira doaram R$ 49 mil à campanha da esposa do prefeito",
+      "fonte": "VG Notícias",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPaGVNV3gtbVpmOHUxLVRlYnB2SmljTmt5Y1RKbDJVQ1lOSDJOSkpnWWhlakxOUWVWVGlPVHZoQUxsTkNya24zZHpxWEhiUGNkVHZjQlltUVZ0d0w1ZmJPV09NY1l0YjAwOUdET0dKbGx6UHM2akRmcWd0Q1doNnhrbFdkME41ajhrRE9aY1Fyb3lKUThyU3V4a0xQNmlzdVJENXM3RDMzcDFSQ3pvMDMxYVRnUzFPbm1kV3hnUkxrUW85QkFGdmtfMkNmNlJtSUtkclJZ?oc=5",
+      "data": "03/10"
+     },
+     {
+      "titulo": "Cláudio Ferreira questiona operação da PF contra integrantes da gestão na véspera da eleição",
+      "fonte": "Perrengue Mato Grosso",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQN0duZ3JLdFRlVVRXeWpaTFBwb2ZzUTlfUGRFcGN4T2xmWkxiWlJ2VVdfemgtWnhiZlk1d3RqUlQ5UXRRMEhObUFDb3BWZWFWbEtKRTVIb0xXZlVoVk11c2Rkbk44bzNaNy02VERnOEt4R2hURjFHb3Q2SUtTcnNTZ0dqWHBCaVowV2dtcGNxOWpsQ3RWcHJrajJQVGhqMXA0UVN1aV9ZM3NYNGdsRno2ZF9ZeWtTSjhjUW5sOWhTUkF0Z00?oc=5",
+      "data": "03/10"
+     },
+     {
+      "titulo": "Cláudio Ferreira questiona ação da PF e diz que adversários “estão fazendo o diabo pelo poder”",
+      "fonte": "Muvuca Popular",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQRmYwR2p2RnZLVzdsVzNnaXBwSzFMYjlSRXZiRUZQUnpWVXFtYW5PZ21Sd21yd0p4Tmp4VHJrcVRJQ0h4ckJKTXpJMnY0emdOcmRRMFVVVUxhWTVKbTdid1hlUUYwd0tiZFBRS3JUZ2VETkVTRHBpeUVGYVpPZmp1c3dVdVFJXzRmWnJYUF9CN1ZHdk01YXFzSUpZWDEyMTRlemY1aUpnaXJvdDRyVk1aTVh6dm5jSHVBa3pXUERiVENON1BRdGRBOVE1eWF2aElQcEo0?oc=5",
+      "data": "03/10"
+     },
+     {
+      "titulo": "\"Por que às vésperas da eleição?\", questiona prefeito de Rondonópolis sobre operação da PF",
+      "fonte": "Isso É Notícia",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPdE80bXczekthSmxvQlIzYl9MTUVyc3p5QUtvTEpzbGw0OVNYOEpDMHE4MGNTSnJRX25abW9OdEtBbmZIblBRZl9YbTVQTEFvOVB5T1lkRDBCSDBrWF9GNWNLck5OOUY0ZHhRSS1oRTBZNGNwSzRjYW83SDBrY3lQNVNRVFhUdno2SG9USEZBTDNET25mbklEdk5nNkFTQUg0MmhyQ0EzVkRkemZZNVQ4WW13Vk9VWjNpVUtfVkl5eTZYQmhCUmNGdmtwSUtwTWtZRlJJbTlCZl9Zdw?oc=5",
+      "data": "03/10"
+     },
+     {
+      "titulo": "Cláudio Ferreira afirma confiar na inocência de secretários alvos da PF",
+      "fonte": "HiperNotícias",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVnl6Tno0VmVYa2VzQ09ZV2I5eDJYUW1oS2NHcEJMM3ZUeGNNNGgtb3Y0dGpObENiSWNucmVESHQ1TUpFdnVKYkRnc19CVGZrTU8tSjFqWUVORk1UQmJVVGpxaXg3WFZkSVdaUnNGUFhwaF8wbnRGM1NJa0xacE5KWFJzS0l3NXhqR2hPY01VRnhlLWktYWlvX2RrdkRkRUl2M1VRN2xPYlZrUmNraWo4?oc=5",
+      "data": "03/10"
+     }
+    ],
+    "solucoes": [],
+    "neutras": 5,
+    "total": 15
+   },
+   {
+    "nome": "Eliene Liberato",
+    "cargo": "prefeito",
+    "partido": "Podemos",
+    "instagram": "",
+    "cidade": "Cáceres",
+    "candidato": false,
+    "confirmar": false,
+    "situacao": "Prefeita em exercício · sem candidatura em 2026",
+    "polemicas": [],
+    "solucoes": [],
+    "neutras": 2,
+    "total": 2
+   },
+   {
+    "nome": "Miguel Vaz",
+    "cargo": "prefeito",
+    "partido": "Republicanos",
+    "instagram": "",
+    "cidade": "Lucas do Rio Verde",
+    "candidato": false,
+    "confirmar": false,
+    "situacao": "Prefeito em exercício · sem candidatura em 2026",
+    "polemicas": [],
+    "solucoes": [],
+    "neutras": 3,
+    "total": 3
+   },
+   {
+    "nome": "Roberto Dorner",
+    "cargo": "prefeito",
+    "partido": "PL",
+    "instagram": "",
+    "cidade": "Sinop",
+    "candidato": false,
+    "confirmar": false,
+    "situacao": "Prefeito em exercício · sem candidatura em 2026",
+    "polemicas": [],
+    "solucoes": [
+     {
+      "titulo": "Ao lado de Wellington e Dorner, Scheila encerra campanha na maior entrega habitacional de Sinop",
+      "fonte": "Infoverus",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOVzVzNWxhTlY3SnJFQTMtRTJCdS11dmFoSGZ1eGJEYlEzbHpDU2dJNTJUYnpucXdTZXVXSTZBN1pGaVdtWXV0Qzl1MkhiQkhvcTRzZERiS2pWYmViUXM0SGdhY3ZtNEdtaXNpVGVqUVhQQktMRjJXSGN5eFM5RDFMR2syQThhUkN6Q0d1OV9Yakc0bThtelpyS2g0UkY4NzJEMGVFaXlwWDdnYzB5RHdjbW1kbFlPa3RxaEVQcHBkZmxBeXBQb1ctWkFHb0tXTXlZV2Jsaw?oc=5",
+      "data": "03/10"
+     }
+    ],
+    "neutras": 0,
+    "total": 1
+   },
+   {
+    "nome": "Sérgio Machnic",
+    "cargo": "prefeito",
+    "partido": "PL",
+    "instagram": "",
+    "cidade": "Primavera do Leste",
+    "candidato": false,
+    "confirmar": false,
+    "situacao": "Prefeito em exercício · sem candidatura em 2026",
+    "polemicas": [],
+    "solucoes": [
+     {
+      "titulo": "Prefeito Sérgio Machnic reforça convite para contribuintes aderirem ao Regulariza PVA",
+      "fonte": "Prefeitura de Primavera do Leste",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPTnFLS1N3S3RUdTlpWGhXeHIxbXhSV3BGdTBEaGc4X3c2QndLcmk4TGJMd3JrSW85TF8tZnQ1SkZCV2ZjSVVDb1NTM2R3QkhwTl8tTEhCdDNWcnV3V0hLUkpuZnBLV190YmdNdVZ0QzhycFRUV0FLWEMwNnhvOEpjN09ybWdiS3ZVcFRhQUZoQTJRWGxFSUJnV2hKVmx3SHIxUHRyUUQwRkhmM0pMWGVmR0Rua3FDbVVWNW9OVFhybk1xVFBJUEFiakpKOFFpMEJxSlpXMVNvMUViOWtZU1hJWnk0UQ?oc=5",
+      "data": "07/10"
+     },
+     {
+      "titulo": "Articulação de Sérgio Machnic viabiliza investimento de R$ 8,4 milhões em pavimentação de Nova Poxoréu",
+      "fonte": "Prefeitura de Primavera do Leste",
+      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOODhfQkpLSWFWdWoxejZiOF9Ld0Q3Z2lYVFRpSi1tNUMxYm41aktpYTVSaUE5Uy14QWlwSzZndUZIcWNkT1FrWXRfdEVjMVdzbkNITDUzLU5acTFSZ2RpNnl4N0dfTklLemhNalY3cmVGenFKMU5ZVDJJcDJpbWZvT1lmNnh2OTRkOHd3RnZOLVd6WldpQ2NvM2RqRGxFajVMQmw1RWYtck9ibzljUmRDaFhXSEZZZm1oU09Cb3NkUkQtYS1DbG02cGRIc24wenRnSXRabmpaWFo0TC1FMFNEcGg3TjZRZUVIU0gwbkhfUnJ1b1FnalE?oc=5",
+      "data": "02/10"
+     }
+    ],
+    "neutras": 1,
+    "total": 3
+   },
+   {
+    "nome": "Vander Masson",
+    "cargo": "prefeito",
+    "partido": "União Brasil",
+    "instagram": "",
+    "cidade": "Tangará da Serra",
+    "candidato": false,
+    "confirmar": false,
+    "situacao": "Prefeito em exercício · sem candidatura em 2026",
+    "polemicas": [],
+    "solucoes": [
+     {
+      "titulo": "DESEMPENHO - Vander Masson avalia resultado das eleições e projeta novas parcerias para Tangará da Serra",
+      "fonte": "Diário da Serra",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPMlZKVXNELTNLWlVNZGpMVlR3VV9FUFZ2NUNRWlpyMUctbG5PWFhhV081LUk3djJLVUlIcjd4ekpMNUxqMjJNdVlCVVdzNld0V3gtelVtZjFVZGM0akZleWIxeUcxZWlaZzhtSVItTWNrb19NLVE2ajFxUWNEVTNIb1I0ck1pdmJyN2FONlVnNFN6T0FiZWNULXlkWmpnN0hNSUIw?oc=5",
+      "data": "06/10"
+     }
+    ],
+    "neutras": 0,
+    "total": 1
+   }
+  ]
+ }
 }

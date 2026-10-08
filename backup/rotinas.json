@@ -114,6 +114,15 @@
       "sessao": "esta (persistente)",
       "fonte": "content/camaras-mt.mjs + content/pautas/camaras-mt/monitor.json",
       "resumo": "Pedido do editor (01/10/2026): sorriso.mt.leg.br e camaralucasdorioverde.mt.gov.br. Sem RSS: lê a lista de notícias de cada site e o RSS do YouTube oficial; escreve até 2 pautas por disparo (rascunho no Ghost, ilustração no Canva, card aguardando_materia). Chapada dos Guimarães entrou em 01/10/2026 (site com verificação anti-robô; fontes: YouTube oficial e imprensa). Barra do Garças entrou em 01/10/2026 (RSS de notícias do site + TV Câmara no YouTube + imprensa)."
+    },
+    {
+      "id": "trig_01GWwQfDK743of2dFPWHBWmo",
+      "nome": "Radar — autoridades extras (prefeitos de MT): manchetes e republicação (a cada 3 h)",
+      "cron_utc": "5 */3 * * *",
+      "cuiaba": "a cada 3 h (xx:05 UTC)",
+      "fonte": "content/paginas/radar-autoridades.json",
+      "skill": ".claude/skills/hojemt-radar-autoridades/SKILL.md",
+      "resumo": "Coleta no Google Notícias as manchetes dos prefeitos extras (Rondonópolis, Sinop, Tangará da Serra, Sorriso, Lucas do Rio Verde, Primavera do Leste, Cáceres, Barra do Garças), grava em radar-dados.json → autoridades, reconstrói e republica a página do Radar (pedido do editor em 08/10/2026)."
     }
   ],
   "modelos_canva": {
