@@ -2,6 +2,45 @@
   "_como_funciona": "Ilustrações editoriais feitas no Canva para artigos com capa genérica (opiniao-*.webp / capa-*.webp). Receita em content/README.md, seção 'Artes dos artigos no Canva'. Legenda no site: 'Ilustração: HOJE MT (gerada com IA)'.",
   "itens": [
     {
+      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto",
+      "feito_em": "2026-10-08",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "arquivo": "2026-10-08-sorriso-aulao-veiculos-eletricos.jpg",
+      "canva": {
+        "arte": "MAHXbqIfJWs",
+        "arte_v1_descartada": "MAHXbqKLtnI",
+        "design": "DAHXbqBm3UU",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "capa_anterior": "capa-14cb5df60a0dfdd2.webp",
+      "cena": "adolescentes e pais de costas, com capacetes, em volta de ciclomotores elétricos num pátio coberto; instrutor de colete, de costas, aponta para um painel (1ª versão descartada: instrutor de frente)",
+      "materia": "https://hojemt.com.br/sorriso-promove-aulao-sobre-seguranca-em-veiculos-eletricos/",
+      "slug": "sorriso-promove-aulao-sobre-seguranca-em-veiculos-eletricos",
+      "tag": "Cidades & Mato Grosso",
+      "titulo": "Sorriso promove aulão sobre segurança em veículos elétricos",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-08-sorriso-aulao-veiculos-eletricos.jpg",
+      "fonte": "https://site.sorriso.mt.gov.br/noticia/prefeitura-reforca-convite-para-aulao-sobre-conducao-de-veiculos-eletricos-e-ciclomotores-6ac79ee72338c"
+    },
+    {
+      "estilo": "v2 realista (pintura digital cinematográfica); personagens reais como ficção, sempre de costas/silhueta, sem rosto",
+      "feito_em": "2026-10-08",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "arquivo": "2026-10-08-sorriso-golpe-whatsapp.jpg",
+      "canva": {
+        "arte": "MAHXbp3s_Dw",
+        "design": "DAHXbi7AFVk",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "capa_anterior": "capa-eedd41765db34555.webp",
+      "cena": "pessoa de costas segura celular com balões de conversa vazios; ao fundo, agente de trânsito de costas e cones numa avenida arborizada",
+      "materia": "https://hojemt.com.br/semsep-de-sorriso-alerta-para-golpe-financeiro-via-whatsapp/",
+      "slug": "semsep-de-sorriso-alerta-para-golpe-financeiro-via-whatsapp",
+      "tag": "Polícia",
+      "titulo": "Semsep de Sorriso alerta para golpe financeiro via WhatsApp",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-08-sorriso-golpe-whatsapp.jpg",
+      "fonte": "https://site.sorriso.mt.gov.br/noticia/semsep-alerta-para-golpe-usando-o-nome-da-pasta-6ac79f956a19a"
+    },
+    {
       "canva": {
         "arte": "MAHXbbxJeTs",
         "design": "DAHXbeTCDxU",
