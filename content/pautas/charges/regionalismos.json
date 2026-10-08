@@ -1,0 +1,1520 @@
+{
+  "_sobre": "Glossário de expressões regionais para as legendas das charges (pedido do editor em 08/10/2026). Só expressão conferida com fonte; registro jocoso só com personagem genérico ou objeto-mascote, nunca com pessoa real; \"bloqueada\": true = fonte única não corroborada, não usar até confirmar. Revisado em 08/10/2026 (6 reprovadas: Telezé, Bate-pau, duplicatas de Armaria!/Pegar o beco/Uai/Trem).",
+  "rodizio": {
+    "ordem": [
+      "Norte",
+      "Nordeste",
+      "Centro-Oeste",
+      "Sudeste",
+      "Sul"
+    ],
+    "ultima_regiao": null,
+    "data": null,
+    "usadas": []
+  },
+  "regioes": [
+    {
+      "regiao": "Norte",
+      "estados": "AM, PA, AC, RO, RR, AP, TO",
+      "observacao": "Observação: não achei fonte verificável de gíria exclusiva do Amapá; as fontes (DOL/UFPA e Portal Amazônia) registram \"égua\", \"pai d'égua\" e \"mana\" como comuns às cidades amazônicas, incluindo Macapá por proximidade com Belém, mas sem lista própria. Expressões interioranas: ruma, arre diacho (seringais/AC), carapanã encheu voou (beira de rio/RO), arrocha o buriti (TO), tédoidé (lavrado/RR).",
+      "expressoes": [
+        {
+          "expressao": "Égua!",
+          "onde": "Pará (Belém e todo o estado); comum também no Amazonas e no Amapá",
+          "significado": "Interjeição multiuso: surpresa, admiração, contrariedade, alívio ou reforço, conforme a entonação. Não se refere ao animal.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Égua! Segundo turno de novo? A urna nem esfriou.",
+          "compreensivel_fora": true,
+          "cuidado": "Fora da Amazônia pode ser lido como palavrão leve; em legenda escrita, use com ponto de exclamação para marcar a interjeição.",
+          "fontes": [
+            {
+              "nome": "DOL – A origem do 'égua' e outras curiosidades do sotaque paraense (prof. Alcides Lima, UFPA)",
+              "url": "https://dol.com.br/especiais/872128/a-origem-do-egua-e-outras-curiosidades-do-sotaque-paraense"
+            },
+            {
+              "nome": "Portal Amazônia – Telezé: gírias e expressões do vocabulário amazônico",
+              "url": "https://portalamazonia.com/amazonia/vocabulario-amazonico-teleze-conheca-girias-e-expressoes-que-sao-faladas-na-amazonia/"
+            },
+            {
+              "nome": "Correio Braziliense – Diferentes gírias de cada estado (Pará e Amazonas)",
+              "url": "https://www.correiobraziliense.com.br/webstories/flipar/2024/02/6796854-diferentes-girias-de-cada-estado-brasileiro-conhece-todas.html"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Pai d'égua",
+          "onde": "Pará (Belém); usado também no Amazonas e no Amapá",
+          "significado": "Muito bom, excelente ('very good!', na cartilha bilíngue da COP 30).",
+          "registro": "popular",
+          "exemplo_legenda": "Debate pai d'égua é o que termina antes do açaí da noite.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "O Liberal – COP 30 pai d'égua: cartilha traduz expressões paraenses (Ufra, profa. Carlene Salvador)",
+              "url": "https://www.oliberal.com/cop-30/cop-30-pai-d-egua-cartilha-traduz-expressoes-paraenses-para-o-ingles-na-green-zone-1.1052172"
+            },
+            {
+              "nome": "UFPA – app 'Português Pai d'Égua' (repositório institucional)",
+              "url": "https://www.repositorio.ufpa.br/bitstream/2011/15952/6/Produto_Telas_PortuguesPaiDEgua.pdf"
+            },
+            {
+              "nome": "Portal Amazônia – Amazonês: 30 gírias e expressões que são a cara de Manaus",
+              "url": "https://portalamazonia.com/cultura/amazones-aprenda-30-girias-e-expressoes-que-sao-a-cara-de-manaus"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Não que não",
+          "onde": "Pará (Belém); registrado no Banco de Dados Fraseológicos do Pará (Ufra)",
+          "significado": "Apesar da forma negativa, significa 'sim', 'claro'.",
+          "registro": "coloquial",
+          "exemplo_legenda": "— Vai votar no 2º turno? — Não que não!",
+          "compreensivel_fora": false,
+          "cuidado": "Leitor de fora pode entender como 'não'; em charge, o desenho (eleitor indo à urna) precisa resolver o sentido.",
+          "fontes": [
+            {
+              "nome": "DOL – Pai d'égua: pesquisa da Ufra cataloga fraseologias paraenses",
+              "url": "https://dol.com.br/noticias/para/843930/pai-degua-pesquisa-da-ufra-cataloga-fraseologias-paraenses"
+            },
+            {
+              "nome": "O Liberal – Cartilha Fraseológica Bilíngue COP 30 ('não que não' = 'of course')",
+              "url": "https://www.oliberal.com/cop-30/cop-30-pai-d-egua-cartilha-traduz-expressoes-paraenses-para-o-ingles-na-green-zone-1.1052172"
+            },
+            {
+              "nome": "Portal Amazônia – Telezé: gírias e expressões do vocabulário amazônico",
+              "url": "https://portalamazonia.com/amazonia/vocabulario-amazonico-teleze-conheca-girias-e-expressoes-que-sao-faladas-na-amazonia/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Boca de jambu",
+          "onde": "Pará (Belém e interior)",
+          "significado": "Pessoa que não controla a língua, fofoqueiro(a) (o jambu faz a língua tremer). Confirmado na pesquisa da Ufra citada pelo DOL.",
+          "registro": "jocoso",
+          "exemplo_legenda": "Boca de jambu da esquina já 'apurou' o 2º turno.",
+          "compreensivel_fora": true,
+          "cuidado": "Pejorativo leve; nunca aplicar a candidato, instituto ou jornalista real — só a personagem genérica.",
+          "fontes": [
+            {
+              "nome": "DOL – Pai d'égua: pesquisa da Ufra cataloga fraseologias paraenses (profa. Carlene Salvador)",
+              "url": "https://dol.com.br/noticias/para/843930/pai-degua-pesquisa-da-ufra-cataloga-fraseologias-paraenses"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Maceta",
+          "onde": "Amazonas (Manaus); também Roraima e Rondônia",
+          "significado": "Muito grande, enorme ('nosso rio é maceta').",
+          "registro": "coloquial",
+          "exemplo_legenda": "Debate maceta: três horas e o eleitor ainda com dúvida.",
+          "compreensivel_fora": false,
+          "cuidado": "Fora do Norte pode ser confundido com 'maceta' (martelo/ferramenta); contexto resolve.",
+          "fontes": [
+            {
+              "nome": "Portal Amazônia – Amazonês: 30 gírias e expressões que são a cara de Manaus",
+              "url": "https://portalamazonia.com/cultura/amazones-aprenda-30-girias-e-expressoes-que-sao-a-cara-de-manaus"
+            },
+            {
+              "nome": "Correio Braziliense – Diferentes gírias de cada estado (Roraima)",
+              "url": "https://www.correiobraziliense.com.br/webstories/flipar/2024/02/6796854-diferentes-girias-de-cada-estado-brasileiro-conhece-todas.html"
+            },
+            {
+              "nome": "Portal Amazônia – Portovelhês (verbete 'maceta': coisa grande)",
+              "url": "https://portalamazonia.com/cultura/portovelhes-conheca-o-jeitinho-de-falar-na-capital-rondoniense/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "De bubuia",
+          "onde": "Amazonas (Manaus) e Pará; vale para toda a Amazônia ribeirinha",
+          "significado": "Boiando, à toa: descansando, tranquilo, sem fazer nada (do tupi 'bubuiar', boiar).",
+          "registro": "coloquial",
+          "exemplo_legenda": "Domingo de 2º turno: eleitor de bubuia só até as 17h.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Dicio – Gírias e expressões regionais brasileiras (Região Norte: 'de bubuia')",
+              "url": "https://www.dicio.com.br/girias-e-expressoes-regionais-brasileiras/"
+            },
+            {
+              "nome": "Portal Amazônia – Amazonês: 30 gírias e expressões que são a cara de Manaus",
+              "url": "https://portalamazonia.com/cultura/amazones-aprenda-30-girias-e-expressoes-que-sao-a-cara-de-manaus"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Até o tucupi",
+          "onde": "Amazonas (Manaus) e Pará",
+          "significado": "Muito cheio, lotado, no limite (alusão à garrafa de tucupi cheia até a borda).",
+          "registro": "popular",
+          "exemplo_legenda": "Grupo da família até o tucupi de pesquisa do 2º turno.",
+          "compreensivel_fora": true,
+          "cuidado": "Se a charge mostrar pesquisa, a ficha técnica (Res. TSE 23.600) tem de aparecer na matéria.",
+          "fontes": [
+            {
+              "nome": "Dicio – Gírias e expressões regionais brasileiras (Região Norte: 'até o tucupi')",
+              "url": "https://www.dicio.com.br/girias-e-expressoes-regionais-brasileiras/"
+            },
+            {
+              "nome": "Portal Amazônia – Amazonês: 30 gírias e expressões que são a cara de Manaus ('estar até o tucupi')",
+              "url": "https://portalamazonia.com/cultura/amazones-aprenda-30-girias-e-expressoes-que-sao-a-cara-de-manaus"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Arre diacho!",
+          "onde": "Acre (herança nordestina dos seringais; interior)",
+          "significado": "Interjeição de espanto ou contrariedade (eufemismo de 'diabo').",
+          "registro": "popular",
+          "exemplo_legenda": "Arre diacho! Mais um debate e eu sem ver o jogo.",
+          "compreensivel_fora": true,
+          "cuidado": "Datado para o público jovem; soa bem em personagem mais velho do interior.",
+          "fontes": [
+            {
+              "nome": "Correio Braziliense – Diferentes gírias de cada estado (Acre)",
+              "url": "https://www.correiobraziliense.com.br/webstories/flipar/2024/02/6796854-diferentes-girias-de-cada-estado-brasileiro-conhece-todas.html"
+            },
+            {
+              "nome": "Edufac/UFAC – livro 'Vamos falar o acreanês' (João Batista de Sousa), referência do falar do estado",
+              "url": "https://www.ufac.br/edufac/livros/vamos-falar-o-acreanes/livro.pdf"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Ruma",
+          "onde": "Acre (também comum no interior do Norte e no Nordeste)",
+          "significado": "Amontoado, grande quantidade de coisas ('uma ruma de...').",
+          "registro": "coloquial",
+          "exemplo_legenda": "Uma ruma de pesquisa e o eleitor ainda indeciso.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Correio Braziliense – Diferentes gírias de cada estado (Acre: ruma = amontoado)",
+              "url": "https://www.correiobraziliense.com.br/webstories/flipar/2024/02/6796854-diferentes-girias-de-cada-estado-brasileiro-conhece-todas.html"
+            },
+            {
+              "nome": "Portal Amazônia – 'Acreanês': expressões mais usadas pelos acreanos (cita 'ruma')",
+              "url": "https://portalamazonia.com/cultura/acreanes-conheca-algumas-das-expressoes-mais-usadas-pelos-acreanos/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Carapanã encheu, voou",
+          "onde": "Rondônia (Porto Velho e beira do Madeira)",
+          "significado": "Provérbio para quem faz visita rápida, come alguma coisa e vai logo embora (carapanã = mosquito).",
+          "registro": "jocoso",
+          "exemplo_legenda": "Comício no interior: carapanã encheu, voou. Eleitor também.",
+          "compreensivel_fora": false,
+          "cuidado": "Não dirigir a candidato real (soaria como acusação de 'só aparecer em eleição'); use eleitor ou plateia genérica.",
+          "fontes": [
+            {
+              "nome": "Portal Amazônia – Portovelhês: o 'jeitinho' de falar na capital rondoniense (livro 'Carapanã encheu, voou', Nair Gurgel do Amaral)",
+              "url": "https://portalamazonia.com/cultura/portovelhes-conheca-o-jeitinho-de-falar-na-capital-rondoniense/"
+            },
+            {
+              "nome": "Dicio – Gírias e expressões regionais brasileiras ('carapanã' = pernilongo)",
+              "url": "https://www.dicio.com.br/girias-e-expressoes-regionais-brasileiras/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Refrigerante de dois litros",
+          "onde": "Rondônia (Porto Velho)",
+          "significado": "Pessoa ou coisa que vai bem até a metade e depois perde o gás.",
+          "registro": "jocoso",
+          "exemplo_legenda": "Debate de 2 horas: refrigerante de dois litros.",
+          "compreensivel_fora": true,
+          "cuidado": "Aplicar só ao evento (debate, apuração, fila), nunca a candidato — viraria ataque.",
+          "fontes": [
+            {
+              "nome": "Portal Amazônia – Portovelhês: o 'jeitinho' de falar na capital rondoniense",
+              "url": "https://portalamazonia.com/cultura/portovelhes-conheca-o-jeitinho-de-falar-na-capital-rondoniense/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Tédoidé!",
+          "onde": "Roraima (Boa Vista e lavrado)",
+          "significado": "Contração de 'tu é doido, é?': expressão de admiração ou espanto.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Tédoidé! Resultado do 2º turno saiu antes do jantar.",
+          "compreensivel_fora": false,
+          "cuidado": "Fonte única (webstory do Correio Braziliense, republicada em 2023 e 2024 sem mudança); busca em 08/10/2026 não achou corroboração em fonte local ou acadêmica. NÃO usar em charge até confirmar no Dicionário de Palavras e Expressões do Português de Roraima (Eliabe Procópio/UFRR) ou no levantamento de Nascimento & Carvalho (2016). Grafia pode variar ('tedoidé').",
+          "fontes": [
+            {
+              "nome": "Correio Braziliense – Diferentes gírias de cada estado (Roraima)",
+              "url": "https://www.correiobraziliense.com.br/webstories/flipar/2024/02/6796854-diferentes-girias-de-cada-estado-brasileiro-conhece-todas.html"
+            },
+            {
+              "nome": "Nascimento & Carvalho (2016) – Expressões orais populares do lavrado de Roraima (Revista Geográfica Acadêmica)",
+              "url": "https://biblat.unam.mx/hevila/Revistageograficaacademica/2016/vol10/no1/10.pdf"
+            }
+          ],
+          "bloqueada": true
+        },
+        {
+          "expressao": "Armaria!",
+          "onde": "Tocantins (herança nordestina); corrente também no Maranhão, Piauí, Paraíba e em todo o Nordeste",
+          "significado": "Interjeição de aborrecimento ou espanto, contração de 'Ave Maria'.",
+          "registro": "popular",
+          "exemplo_legenda": "Armaria! Mudou a seção e ninguém me avisou.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Correio Braziliense – Diferentes gírias de cada estado (Tocantins)",
+              "url": "https://www.correiobraziliense.com.br/webstories/flipar/2024/02/6796854-diferentes-girias-de-cada-estado-brasileiro-conhece-todas.html"
+            },
+            {
+              "nome": "Conexão Tocantins – Tese da UFT mapeia os falares do Tocantins (aproximação com Norte e Nordeste)",
+              "url": "https://conexaoto.com.br/2019/01/21/tese-de-professora-da-uft-mapeia-os-falares-presentes-no-tocantins"
+            },
+            {
+              "nome": "BlaBlaCar – Gírias nordestinas (Maranhão: Armaria!)",
+              "url": "https://blog.blablacar.com.br/dicas/girias-nordestinas"
+            },
+            {
+              "nome": "Você Pergunta – Como falam os piauienses",
+              "url": "https://vocepergunta.com/library/artigo/read/683552-como-fala-os-piauienses"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Arrocha o buriti",
+          "onde": "Tocantins (interior, área dos buritizais)",
+          "significado": "Siga em frente, continue, não pare.",
+          "registro": "popular",
+          "exemplo_legenda": "Deu 2º turno? Arrocha o buriti: dia 25 tem mais.",
+          "compreensivel_fora": false,
+          "cuidado": "Fonte única (webstory do Correio Braziliense), sem origem documentada; busca em 08/10/2026 não achou nenhuma outra ocorrência. NÃO usar em charge até confirmação por fonte tocantinense (tese da UFT sobre os falares do Tocantins ou veículo local). Conferir a data do 2º turno (25/10/2026) antes de publicar.",
+          "fontes": [
+            {
+              "nome": "Correio Braziliense – Diferentes gírias de cada estado (Tocantins: 'arrocha o buriti' = siga em frente)",
+              "url": "https://www.correiobraziliense.com.br/webstories/flipar/2024/02/6796854-diferentes-girias-de-cada-estado-brasileiro-conhece-todas.html"
+            }
+          ],
+          "bloqueada": true
+        }
+      ]
+    },
+    {
+      "regiao": "Nordeste",
+      "estados": "BA, PE, CE, MA, PB, RN, AL, SE, PI",
+      "observacao": "",
+      "expressoes": [
+        {
+          "expressao": "Oxente! / Ôxe!",
+          "onde": "Todo o Nordeste; muito marcada na Bahia, em Pernambuco e na Paraíba",
+          "significado": "Interjeição de espanto, surpresa, estranheza ou admiração (aglutinação de \"ó gentes\"). Em charge serve como abertura de fala do eleitor diante de uma notícia.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Oxente, 2º turno de novo? A urna confere, o eleitor decide.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Dicio – verbete oxente",
+              "url": "https://www.dicio.com.br/oxente/"
+            },
+            {
+              "nome": "Correio Braziliense – gírias por estado (Bahia e Paraíba)",
+              "url": "https://www.correiobraziliense.com.br/webstories/flipar/2024/02/6796854-diferentes-girias-de-cada-estado-brasileiro-conhece-todas.html"
+            },
+            {
+              "nome": "BlaBlaCar – Gírias nordestinas estado por estado (Bahia: Ôxe)",
+              "url": "https://blog.blablacar.com.br/dicas/girias-nordestinas"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Vixe Maria!",
+          "onde": "Nordeste em geral (Bahia, Pernambuco, Ceará, Piauí)",
+          "significado": "Interjeição de surpresa, susto ou preocupação; variante de \"vige\", que vem de \"Virgem Maria\". \"Vixe\" sozinho também é corrente.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Vixe Maria, pesquisa nova! E a margem de erro vai junto.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Dicio – verbete vixe",
+              "url": "https://www.dicio.com.br/vixe/"
+            },
+            {
+              "nome": "O Povo – origem de aperreio (cita oxente e vixe Maria como herança galaico-portuguesa)",
+              "url": "https://www.opovo.com.br/noticias/ceara/2020/07/02/as-origens-do-cearences--deixe-de-ser-aperreado-que-nos-explicamos-a-origem-de--aperreio.html"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Arretado",
+          "onde": "Nordeste; em Pernambuco também no sentido de \"irritado\"",
+          "significado": "Adjetivo-coringa, em geral positivo: muito bom, excelente, valente (\"debate arretado\", \"cabra arretado\"). Em Pernambuco pode significar zangado, nervoso.",
+          "registro": "popular",
+          "exemplo_legenda": "Debate arretado: Flávio e Lula no palco, relógio no comando.",
+          "compreensivel_fora": true,
+          "cuidado": "O Dicio registra também um sentido popular de \"assanhado\"; evite usar para descrever pessoa fora do sentido de \"ótimo/valente\".",
+          "fontes": [
+            {
+              "nome": "Dicio – verbete arretado (Regionalismo: Nordeste / Pernambuco)",
+              "url": "https://www.dicio.com.br/arretado/"
+            },
+            {
+              "nome": "Diário do Nordeste – coluna de Durval Muniz de Albuquerque Jr. sobre os sentidos de arretado",
+              "url": "https://diariodonordeste.verdesmares.com.br/opiniao/colunistas/durval-muniz-de-albuquerque-jr/por-uma-forma-arretada-de-pensar-ii-rompendo-com-o-regionalismo-1.3228410"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Visse?",
+          "onde": "Pernambuco (Recife e Zona da Mata); ouvido no Nordeste",
+          "significado": "Forma coloquial de \"viste\", usada no fim da frase como reforço, equivalente a \"viu?\", \"tá?\". Dá tom de conversa íntima à legenda.",
+          "registro": "coloquial",
+          "exemplo_legenda": "É 2º turno, visse? Título na mão e urna à espera.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Dicio – Vice ou visse? (uso regional em Pernambuco)",
+              "url": "https://www.dicio.com.br/vice-ou-visse/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Aperreado / aperreio",
+          "onde": "Ceará, Sergipe, Paraíba, Pernambuco e todo o Nordeste",
+          "significado": "Aflito, agoniado, muito preocupado ou aborrecido; \"aperreio\" é a aflição em si. Vem do espanhol/galego \"aperrear\" (atiçar cães).",
+          "registro": "coloquial",
+          "exemplo_legenda": "Eleitor aperreado: já decidiu, só falta a urna abrir.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Dicio – verbete aperreado (Regionalismo: Região Nordeste)",
+              "url": "https://www.dicio.com.br/aperreado/"
+            },
+            {
+              "nome": "O Povo – As origens do cearensês: aperreio",
+              "url": "https://www.opovo.com.br/noticias/ceara/2020/07/02/as-origens-do-cearences--deixe-de-ser-aperreado-que-nos-explicamos-a-origem-de--aperreio.html"
+            },
+            {
+              "nome": "BlaBlaCar – Gírias nordestinas (Sergipe: aperreado)",
+              "url": "https://blog.blablacar.com.br/dicas/girias-nordestinas"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Cabra da peste",
+          "onde": "Ceará, Rio Grande do Norte, Maranhão e sertão nordestino em geral",
+          "significado": "Pessoa valente, resistente, admirável por sua coragem ou disposição. Em charge, serve bem como elogio a um objeto-mascote (a urna, o título de eleitor).",
+          "registro": "popular",
+          "exemplo_legenda": "A urna é cabra da peste: aguenta turno e returno.",
+          "compreensivel_fora": true,
+          "cuidado": "Dependendo do contexto pode significar pessoa temida; use só no sentido elogioso e, de preferência, para objeto-mascote, não para candidato.",
+          "fontes": [
+            {
+              "nome": "Infopédia (Porto Editora) – verbete cabra, locução \"cabra da peste\" (Brasil, regionalismo)",
+              "url": "https://www.infopedia.pt/dicionarios/lingua-portuguesa/cabra"
+            },
+            {
+              "nome": "BlaBlaCar – Gírias nordestinas (Maranhão: cabra da peste)",
+              "url": "https://blog.blablacar.com.br/dicas/girias-nordestinas"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Pegar o beco",
+          "onde": "Ceará e Rio Grande do Norte; registrada também no Amazonas (Correio Braziliense) e em Brasília (BlaBlaCar)",
+          "significado": "Ir embora, sair de um lugar, \"vazar\". Funciona para brincar com abstenção ou com quem deixa o debate antes do fim.",
+          "registro": "jocoso",
+          "exemplo_legenda": "Abstenção pegou o beco? O TSE quer todo mundo na fila.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "BlaBlaCar – Gírias nordestinas (Ceará: pegar o beco = ir embora)",
+              "url": "https://blog.blablacar.com.br/dicas/girias-nordestinas"
+            },
+            {
+              "nome": "Vive Pipa – Mini dicionário de expressões potiguares",
+              "url": "https://www.vivepipa.com/en/posts/blog/91-potiguares-mini-expression-dictionary"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Lá ele!",
+          "onde": "Bahia (Salvador e Recôncavo)",
+          "significado": "\"Outra pessoa, não eu\": frase de defesa bem-humorada para afastar de si uma insinuação ou uma provocação; hoje usada para qualquer coisa que a pessoa não quer que lhe seja atribuída.",
+          "registro": "jocoso",
+          "exemplo_legenda": "Palpite errado? Lá ele! Quem dá a palavra final é a urna.",
+          "compreensivel_fora": false,
+          "cuidado": "Nasceu como resposta a frases de duplo sentido e já gerou polêmica nas redes; use só em contexto neutro (como no exemplo), sem ligar a pessoa real.",
+          "fontes": [
+            {
+              "nome": "Bahia Notícias – 'Lá ele' e seus significados (cita o Dicionário de Baianês, de Nivaldo Lariú)",
+              "url": "https://www.bahianoticias.com.br/holofote/noticia/62389-la-ele-e-seus-significados-expressao-do-baianes-gera-polemica-nas-redes-sociais"
+            },
+            {
+              "nome": "BlaBlaCar – Gírias nordestinas (Bahia: Lá ele)",
+              "url": "https://blog.blablacar.com.br/dicas/girias-nordestinas"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Barril / barril dobrado",
+          "onde": "Bahia (Salvador)",
+          "significado": "Situação difícil, tensa, complicada ou perigosa; \"barril dobrado\" intensifica. Pelo contexto também pode ser algo muito bom.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Reta final barril dobrado: debate hoje, urna no domingo.",
+          "compreensivel_fora": false,
+          "cuidado": "Sentido duplo (muito ruim ou muito bom); a legenda precisa deixar claro qual é.",
+          "fontes": [
+            {
+              "nome": "Correio Braziliense – gírias por estado (Bahia: barril dobrado = tenso)",
+              "url": "https://www.correiobraziliense.com.br/webstories/flipar/2024/02/6796854-diferentes-girias-de-cada-estado-brasileiro-conhece-todas.html"
+            },
+            {
+              "nome": "BlaBlaCar – Gírias nordestinas (Bahia: barril)",
+              "url": "https://blog.blablacar.com.br/dicas/girias-nordestinas"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Mangar",
+          "onde": "Piauí, Ceará, Pernambuco, Paraíba e Nordeste em geral",
+          "significado": "Zombar, caçoar, fazer troça de alguém ou de algo (\"mangar da pesquisa\", \"mangar do adversário\").",
+          "registro": "popular",
+          "exemplo_legenda": "Mangar da pesquisa é fácil; difícil é votar na hora certa.",
+          "compreensivel_fora": true,
+          "cuidado": "Não use com pessoa real como alvo da zombaria; funciona melhor com coisas (pesquisa, boato, clima).",
+          "fontes": [
+            {
+              "nome": "Dicio – verbete mangar (escarnecer, zombar)",
+              "url": "https://www.dicio.com.br/mangar/"
+            },
+            {
+              "nome": "Correio Braziliense – gírias por estado (Piauí: mangar = zoar alguém)",
+              "url": "https://www.correiobraziliense.com.br/webstories/flipar/2024/02/6796854-diferentes-girias-de-cada-estado-brasileiro-conhece-todas.html"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Brocado",
+          "onde": "Maranhão (São Luís)",
+          "significado": "Com muita fome. Em charge, metáfora para eleitor faminto de resposta, de proposta ou de resultado.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Eleitor brocado: debate longo e nenhuma resposta curta.",
+          "compreensivel_fora": false,
+          "cuidado": "Fora do Maranhão lê-se como \"quebrado/arrombado\"; a cena precisa mostrar a fome (prato vazio, relógio).",
+          "fontes": [
+            {
+              "nome": "O Imparcial – Éguas, brocado, kiu: 10 gírias que só os maranhenses usam",
+              "url": "https://oimparcial.com.br/noticias/2017/02/eguas-brocado-kiu-veja-10-girias-que-so-os-maranhenses-usam/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Avexado / Se avexe não",
+          "onde": "Paraíba, Rio Grande do Norte, Ceará e sertão nordestino",
+          "significado": "Avexado = apressado, afobado, ansioso; \"se avexe não\" = tenha calma, não se apresse.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Se avexe não: o TSE só fala depois que a última urna fecha.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Dicio – verbete avexado (apressado, impaciente)",
+              "url": "https://www.dicio.com.br/avexado/"
+            },
+            {
+              "nome": "BlaBlaCar – Gírias nordestinas (Paraíba: avexado; RN: avexar)",
+              "url": "https://blog.blablacar.com.br/dicas/girias-nordestinas"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Peba",
+          "onde": "Paraíba, Pernambuco, Alagoas e Nordeste em geral",
+          "significado": "Ruim, de baixa qualidade, sem valor, que não funciona direito (por extensão do nome do tatu-peba).",
+          "registro": "popular",
+          "exemplo_legenda": "Boato é peba: no 2º turno vale o que o TSE confirma.",
+          "compreensivel_fora": false,
+          "cuidado": "Use só para coisas (boato, aparelho, argumento), nunca para pessoa ou região.",
+          "fontes": [
+            {
+              "nome": "Dicio – verbete peba ([Por extensão] ordinário, sem valor)",
+              "url": "https://www.dicio.com.br/peba/"
+            },
+            {
+              "nome": "BlaBlaCar – Gírias nordestinas (Paraíba: peba = ruim, de baixa qualidade)",
+              "url": "https://blog.blablacar.com.br/dicas/girias-nordestinas"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Avalie!",
+          "onde": "Alagoas (também ouvido em Pernambuco e Sergipe)",
+          "significado": "\"Imagine só!\", \"veja só!\": pede ao interlocutor que avalie o tamanho do absurdo ou da surpresa.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Avalie: apoio novo na semana do debate! Agenda cheia.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "BlaBlaCar – Gírias nordestinas (Alagoas: avalie = imagine só)",
+              "url": "https://blog.blablacar.com.br/dicas/girias-nordestinas"
+            },
+            {
+              "nome": "Correio Braziliense – gírias por estado (Alagoas: avalie)",
+              "url": "https://www.correiobraziliense.com.br/webstories/flipar/2024/02/6796854-diferentes-girias-de-cada-estado-brasileiro-conhece-todas.html"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Engabelar",
+          "onde": "Piauí e interior do Nordeste (verbo dicionarizado, de uso popular)",
+          "significado": "Enganar com agrados ou falsas promessas, iludir (\"político que engabelou o povo\" é exemplo do próprio Dicio).",
+          "registro": "popular",
+          "exemplo_legenda": "Promessa de palanque não engabela urna: ela só conta voto.",
+          "compreensivel_fora": true,
+          "cuidado": "Não aplique a candidato nomeado: a legenda deve ficar no genérico (palanque, promessa), senão vira acusação.",
+          "fontes": [
+            {
+              "nome": "Dicio – verbete engabelar",
+              "url": "https://www.dicio.com.br/engabelar/"
+            },
+            {
+              "nome": "Você Pergunta – Como falam os piauienses (engabelar: enganar, fazer falsas promessas)",
+              "url": "https://vocepergunta.com/library/artigo/read/683552-como-fala-os-piauienses"
+            }
+          ],
+          "bloqueada": false
+        }
+      ]
+    },
+    {
+      "regiao": "Sudeste",
+      "estados": "SP capital e caipira, RJ, MG, ES",
+      "observacao": "",
+      "expressoes": [
+        {
+          "expressao": "Mano",
+          "onde": "São Paulo (capital e Grande SP; ligado ao rap e à periferia paulistana)",
+          "significado": "Vocativo informal para qualquer pessoa ('cara', 'irmão'); de tão usado vira quase pontuação da frase.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Mano, 2º turno é prorrogação: Flávio e Lula de volta ao campo.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Catraca Livre – expressões mais típicas de São Paulo",
+              "url": "https://catracalivre.com.br/variedades/estas-sao-as-expressoes-mais-tipicas-de-sao-paulo-um-verdadeiro-dicionario-que-so-os-paulistanos-conhecem/"
+            },
+            {
+              "nome": "Dicio – mano (tratamento familiar; exemplo da Folha de S.Paulo)",
+              "url": "https://www.dicio.com.br/mano/"
+            },
+            {
+              "nome": "The Brazilian Ways – Paulista slang",
+              "url": "https://thebrazilianways.com/mastering-paulista-slang/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Ô loco, meu!",
+          "onde": "São Paulo (capital)",
+          "significado": "Exclamação de espanto ou indignação; 'meu' é o vocativo paulistano por excelência, usado para chamar alguém ou intercalar frases.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Ô loco, meu! Mais um debate e a pipoca não deu conta.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Catraca Livre – 'meu' (exemplo: 'Ô loco, meu')",
+              "url": "https://catracalivre.com.br/variedades/estas-sao-as-expressoes-mais-tipicas-de-sao-paulo-um-verdadeiro-dicionario-que-so-os-paulistanos-conhecem/"
+            },
+            {
+              "nome": "BlaBlaCar – gírias de SP ('Orra, meu!', 'Tá metendo o loco?')",
+              "url": "https://blog.blablacar.com.br/dicas/girias-de-sp"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Da hora",
+          "onde": "São Paulo (capital e interior)",
+          "significado": "Muito bom, legal, excelente (também grafado 'daora').",
+          "registro": "coloquial",
+          "exemplo_legenda": "Pesquisa da hora é a que confirma meu palpite, diz o eleitor.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "BlaBlaCar – gírias de SP",
+              "url": "https://blog.blablacar.com.br/dicas/girias-de-sp"
+            },
+            {
+              "nome": "The Brazilian Ways – Paulista slang ('da hora')",
+              "url": "https://thebrazilianways.com/mastering-paulista-slang/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Firmeza",
+          "onde": "São Paulo (capital, periferia)",
+          "significado": "Cumprimento ('e aí, firmeza?') e confirmação de que está tudo certo/combinado.",
+          "registro": "coloquial",
+          "exemplo_legenda": "— E aí, firmeza? — Firmeza: urna testada, lacre no lugar.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "BlaBlaCar – gírias de SP",
+              "url": "https://blog.blablacar.com.br/dicas/girias-de-sp"
+            },
+            {
+              "nome": "The Brazilian Ways – Paulista slang ('E aí, firmeza?')",
+              "url": "https://thebrazilianways.com/mastering-paulista-slang/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Demorô (demorou)",
+          "onde": "São Paulo (capital)",
+          "significado": "Concordância, 'combinado', 'fechado', 'topo'.",
+          "registro": "coloquial",
+          "exemplo_legenda": "— Bora votar no 2º turno? — Demorô. — Domingo cedo? — Demorô.",
+          "compreensivel_fora": true,
+          "cuidado": "Grafia 'demorô' reproduz a fala; em texto formal, 'demorou'.",
+          "fontes": [
+            {
+              "nome": "The Brazilian Ways – Paulista slang ('demorou')",
+              "url": "https://thebrazilianways.com/mastering-paulista-slang/"
+            },
+            {
+              "nome": "Le Petit Journal – 30 expressões do argot paulista",
+              "url": "https://lepetitjournal.com/sao-paulo/comprendre-bresil/30-expressions-argot-pauliste-signification-337017"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Prosa (puxar uma prosa)",
+          "onde": "Interior caipira de SP (vale do Tietê, Piracicaba, Sorocaba) e também MG",
+          "significado": "Conversa sem formalidade; 'puxar uma prosa' é começar um bate-papo.",
+          "registro": "popular",
+          "exemplo_legenda": "Na venda, a prosa é uma só: Flávio ou Lula, e o café já esfriou.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Dicio – prosa ('conversa sem formalidades')",
+              "url": "https://www.dicio.com.br/prosa/"
+            },
+            {
+              "nome": "Paulus – conto caipira ('puxar uma prosa é dialogar')",
+              "url": "https://loja-legado.paulus.com.br/loja/appendix/4258.pdf"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Picar a mula",
+          "onde": "Interior caipira de SP (Piracicaba, Capivari, Sorocaba); uso popular em todo o Brasil",
+          "significado": "Ir embora, dar o fora, fugir.",
+          "registro": "popular",
+          "exemplo_legenda": "Abstenção: eleitor pica a mula antes da urna. TSE pede que fique.",
+          "compreensivel_fora": true,
+          "cuidado": "Datado entre jovens do interior paulista, segundo pesquisa da USP citada pela Folha Vitória.",
+          "fontes": [
+            {
+              "nome": "Dicio – picar a mula ('ir embora, dar o fora')",
+              "url": "https://www.dicio.com.br/picar-a-mula/"
+            },
+            {
+              "nome": "Folha Vitória – internet faz o caipirês cair em desuso no interior paulista",
+              "url": "https://www.folhavitoria.com.br/geral/internet-faz-o-caipires-cair-em-desuso-no-interior-paulista/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Maneiro",
+          "onde": "Rio de Janeiro",
+          "significado": "Muito legal, bacana (um degrau acima de 'legal', abaixo de 'irado').",
+          "registro": "coloquial",
+          "exemplo_legenda": "Maneiro seria o debate acabar antes do segundo tempo do jogo.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Dicio – maneiro ('[Gíria] muito legal')",
+              "url": "https://www.dicio.com.br/maneiro/"
+            },
+            {
+              "nome": "Diário do Rio – dicionário carioquês-português",
+              "url": "https://diariodorio.com/um-dicionario-de-carioques-portugues/"
+            },
+            {
+              "nome": "BlaBlaCar – gírias cariocas",
+              "url": "https://blog.blablacar.com.br/?p=7959"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Caô",
+          "onde": "Rio de Janeiro",
+          "significado": "Mentira, papo furado; quem conta é 'caozeiro'.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Pesquisa sem registro no TSE é caô. Procure o número da ficha.",
+          "compreensivel_fora": false,
+          "cuidado": "Pode soar acusatório se dirigido a pessoa; usar para situação, não para candidato.",
+          "fontes": [
+            {
+              "nome": "BlaBlaCar – gírias cariocas ('caô: mentira')",
+              "url": "https://blog.blablacar.com.br/?p=7959"
+            },
+            {
+              "nome": "Caminhos Languages – carioca slang ('caô')",
+              "url": "https://caminhoslanguages.com/blog/the-ultimate-list-of-carioca-slang/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Sangue bom",
+          "onde": "Rio de Janeiro",
+          "significado": "Pessoa gente boa, confiável, agradável de conviver.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Mesário voluntário no 2º turno: o sangue bom da democracia.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "BlaBlaCar – gírias cariocas ('sangue bom')",
+              "url": "https://blog.blablacar.com.br/?p=7959"
+            },
+            {
+              "nome": "Diário do Rio – Pequeno dicionário de carioquês ('mais do que brother, menos que mermão')",
+              "url": "https://diariodorio.com/cronicas-do-cariello-pequeno-dicionario-de-carioques"
+            },
+            {
+              "nome": "Caminhos Languages – carioca slang",
+              "url": "https://caminhoslanguages.com/blog/the-ultimate-list-of-carioca-slang/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Coé (qual é)",
+          "onde": "Rio de Janeiro",
+          "significado": "Contração de 'qual é'; cumprimento informal, abertura de frase, ou expressão de surpresa/contestação.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Coé, 2º turno! Flávio e Lula de novo na tela, e a pipoca acabou.",
+          "compreensivel_fora": false,
+          "cuidado": "Conforme o tom, pode soar de confronto; na legenda, usar como saudação.",
+          "fontes": [
+            {
+              "nome": "Diário do Rio – dicionário carioquês-português ('coé / qual é')",
+              "url": "https://diariodorio.com/um-dicionario-de-carioques-portugues/"
+            },
+            {
+              "nome": "BlaBlaCar – gírias cariocas ('coé')",
+              "url": "https://blog.blablacar.com.br/?p=7959"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Uai",
+          "onde": "Minas Gerais (e Goiás)",
+          "significado": "Interjeição coringa: surpresa, dúvida, concordância ou ênfase, conforme o contexto.",
+          "registro": "coloquial",
+          "exemplo_legenda": "— O eleitor decidiu? — Uai, decidiu que decide no domingo.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Estado de Minas – dicionário de mineirês (2026)",
+              "url": "https://www.em.com.br/cultura/2026/07/7457715-voce-fala-mineires-dicionario-de-girias-e-expressoes-de-minas.html"
+            },
+            {
+              "nome": "Dicio – uai (interjeição de espanto)",
+              "url": "https://www.dicio.com.br/uai/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Nó!",
+          "onde": "Minas Gerais",
+          "significado": "Exclamação de espanto ou surpresa, forma reduzida de 'Nossa Senhora'; mais enfática que 'nu'.",
+          "registro": "popular",
+          "exemplo_legenda": "Nó! Pesquisa nova a cada hora, e a urna só abre no domingo.",
+          "compreensivel_fora": false,
+          "cuidado": "Fora de MG pode ser lido como 'nó' (laço); a exclamação ajuda.",
+          "fontes": [
+            {
+              "nome": "Estado de Minas – dicionário de mineirês ('nó')",
+              "url": "https://www.em.com.br/cultura/2026/07/7457715-voce-fala-mineires-dicionario-de-girias-e-expressoes-de-minas.html"
+            },
+            {
+              "nome": "BlaBlaCar – gírias mineiras ('nó' e 'nu')",
+              "url": "https://blog.blablacar.com.br/dicas/girias-mineiras"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Pocar",
+          "onde": "Espírito Santo (Grande Vitória)",
+          "significado": "Estourar; por extensão, algo muito bom, que 'bomba' ('a festa vai pocar'); 'pocar fora' é sair correndo.",
+          "registro": "coloquial",
+          "exemplo_legenda": "O debate vai pocar: Flávio x Lula no palco e a pipoca na mão.",
+          "compreensivel_fora": false,
+          "cuidado": "Fora do ES entende-se só o sentido literal de estourar; evitar junto a imagem que sugira explosão ou violência.",
+          "fontes": [
+            {
+              "nome": "BlaBlaCar – 14 gírias capixabas ('pocar')",
+              "url": "https://blog.blablacar.com.br/dicas/girias-capixabas"
+            },
+            {
+              "nome": "Auditório Ibirapuera – Como é o sotaque dos capixabas ('pocar é gíria regional do ES')",
+              "url": "https://www.auditorioibirapuera.com.br/como-e-o-sotaque-dos-capixabas/"
+            },
+            {
+              "nome": "Dicio – pocar ('bater com força; rebentar')",
+              "url": "https://www.dicio.com.br/pocar/"
+            }
+          ],
+          "bloqueada": false
+        }
+      ]
+    },
+    {
+      "regiao": "Centro-Oeste",
+      "estados": "MT — cuiabano e pantaneiro; MS — Campo Grande e Pantanal; GO — goianês; DF — brasiliense/candango",
+      "observacao": "",
+      "expressoes": [
+        {
+          "expressao": "Quá! / O quá",
+          "onde": "Cuiabá e Baixada Cuiabana (MT)",
+          "significado": "Interjeição de espanto ou indignação; na forma \"o quá\", exprime dúvida, descrença (\"Ele vem aqui? O quá!\").",
+          "registro": "popular",
+          "exemplo_legenda": "Pesquisa nova de novo? O quá! Quem decide é a urna.",
+          "compreensivel_fora": false,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Dicionário Cuiabano — Prefeitura de Cuiabá (Secretaria de Cultura)",
+              "url": "https://www.cuiaba.mt.gov.br/secretarias/cultura/dicionario-cuiabano"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Tchá por Deus (ou Chá por Deus)",
+          "onde": "Cuiabá e Baixada Cuiabana (MT)",
+          "significado": "Expressão de espanto, admiração ou dúvida; o \"tch\" reproduz o chiado cuiabano. Ganhou projeção nas redes sociais (estudo da UNEMAT, 2023).",
+          "registro": "popular",
+          "exemplo_legenda": "Tchá por Deus! Já é domingo de 2º turno outra vez?",
+          "compreensivel_fora": true,
+          "cuidado": "Grafia oscila entre \"Tchá\" e \"Chá\"; não confundir com o \"tchá com bolo\" (café cuiabano).",
+          "fontes": [
+            {
+              "nome": "Dicionário Cuiabano — Prefeitura de Cuiabá",
+              "url": "https://www.cuiaba.mt.gov.br/secretarias/cultura/dicionario-cuiabano"
+            },
+            {
+              "nome": "Revista de Estudos Acadêmicos de Letras (UNEMAT), artigo sobre \"Tchá por Deus\" no Instagram, 2023",
+              "url": "https://periodicos.unemat.br/index.php/reacl/article/download/12250/8757/47849"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Pau-rodado",
+          "onde": "Cuiabá e Mato Grosso",
+          "significado": "Quem não nasceu em Cuiabá ou em Mato Grosso; o forasteiro que chegou de fora, como o tronco que o rio traz.",
+          "registro": "jocoso",
+          "exemplo_legenda": "No 2º turno não tem pau-rodado: todo título vale igual.",
+          "compreensivel_fora": false,
+          "cuidado": "Em geral afetuoso, mas pode soar excludente se aplicado a pessoa específica; na legenda, usar como categoria genérica.",
+          "fontes": [
+            {
+              "nome": "Glossário Cuiabano (\"Pau-rodado: Não nasceu em Cuiabá ou em Mato Grosso\")",
+              "url": "https://glossariocuiabano.blogspot.com/"
+            },
+            {
+              "nome": "Portal Amazônia — Coisas que só quem é cuiabano entende",
+              "url": "https://portalamazonia.com/cultura/coisas-que-so-cuiabano-entende/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Chapa e cruz (cuiabano de chapa e cruz)",
+          "onde": "Cuiabá (MT)",
+          "significado": "Cuiabano autêntico, legítimo: quem nasceu e vai morrer em Cuiabá (da chapa do batismo à cruz do enterro).",
+          "registro": "popular",
+          "exemplo_legenda": "Eleitor chapa e cruz: vota cedo e vai pro tchá com bolo.",
+          "compreensivel_fora": false,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Glossário Cuiabano (\"Chapa e cruz: Autêntico, legítimo\")",
+              "url": "https://glossariocuiabano.blogspot.com/"
+            },
+            {
+              "nome": "Portal Amazônia — Coisas que só quem é cuiabano entende",
+              "url": "https://portalamazonia.com/cultura/coisas-que-so-cuiabano-entende/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Vôte!",
+          "onde": "Cuiabá e interior de MT (também corrente no Nordeste como \"vote!\")",
+          "significado": "Interjeição de espanto, surpresa ou repulsa; nos dicionários gerais, \"vote\" = desdém, aversão (\"credo, cruzes\").",
+          "registro": "popular",
+          "exemplo_legenda": "Vôte! Fila na urna às 8h da manhã de domingo.",
+          "compreensivel_fora": true,
+          "cuidado": "Pode carregar tom de repulsa; evitar junto a nome de candidato.",
+          "fontes": [
+            {
+              "nome": "Portal Amazônia — Coisas que só quem é cuiabano entende",
+              "url": "https://portalamazonia.com/cultura/coisas-que-so-cuiabano-entende/"
+            },
+            {
+              "nome": "Dicio — vote (interjeição)",
+              "url": "https://www.dicio.com.br/vote/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Na txintxa (na tchintcha)",
+          "onde": "Cuiabá e Baixada Cuiabana (MT)",
+          "significado": "Fazer algo com seriedade, rigor e controle; \"moage\", no mesmo dicionário, é frescura, enrolação.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Debate na txintxa: um minuto pra cada, sem moage.",
+          "compreensivel_fora": false,
+          "cuidado": "Grafia não padronizada (txintxa/tchintcha); legenda depende de dois termos cuiabanos.",
+          "fontes": [
+            {
+              "nome": "Dicionário Cuiabano — Prefeitura de Cuiabá (verbetes \"Na txintxa\" e \"Moage\")",
+              "url": "https://www.cuiaba.mt.gov.br/secretarias/cultura/dicionario-cuiabano"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Quebra-torto",
+          "onde": "Pantanal (MT e MS) e Cuiabá",
+          "significado": "Café da manhã reforçado do pantaneiro, com arroz carreteiro, ovo, mandioca e pão; o peão acorda \"torto\" da rede e \"quebra\" com a primeira refeição.",
+          "registro": "popular",
+          "exemplo_legenda": "Domingo de votação: primeiro o quebra-torto, depois a urna.",
+          "compreensivel_fora": false,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Dicionário Cuiabano — Prefeitura de Cuiabá (\"Quebra-torto: café da manhã reforçado\")",
+              "url": "https://www.cuiaba.mt.gov.br/secretarias/cultura/dicionario-cuiabano"
+            },
+            {
+              "nome": "O Tempo — Mato Grosso do Sul tem gosto de encontro (chef Paulo Machado)",
+              "url": "https://www.otempo.com.br/gastronomia/2026/9/28/mato-grosso-do-sul-tem-gosto-de-encontro-conheca-a-cozinha-que-nasceu-entre-fronteiras"
+            },
+            {
+              "nome": "Olhar Direto — Café da manhã \"quebra-torto\" é atração no Pantanal",
+              "url": "https://olhardireto.com.br/noticias/cafe-da-manha-quebra-torto-e-atracao-no-pantanal"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Quando o sol esfriar",
+          "onde": "Campo Grande e MS",
+          "significado": "Deixar algo para o fim da tarde, quando o calor diminui.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Vota agora ou quando o sol esfriar? A urna fecha às 17h.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "A Crítica (MS) — Sobá, tereré e cadeira na calçada traduzem o cotidiano de Campo Grande",
+              "url": "https://acritica.net/cidades/soba-terere-e-cadeira-na-calcada-traduzem-o-cotidiano-de-quem-vive-em-campo-grande/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Roda de tereré (convidar pra um tereré)",
+          "onde": "Campo Grande, fronteira e todo o MS (também em MT)",
+          "significado": "Bebida gelada de erva-mate de origem guarani/paraguaia; \"roda de tereré\" é o encontro de conversa na calçada ou no parque — convite para prosear.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Na roda de tereré, a pesquisa já tem margem de erro própria.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "A Crítica (MS) — Sobá, tereré e cadeira na calçada",
+              "url": "https://acritica.net/cidades/soba-terere-e-cadeira-na-calcada-traduzem-o-cotidiano-de-quem-vive-em-campo-grande/"
+            },
+            {
+              "nome": "O Tempo — cozinha sul-mato-grossense (tereré, chipa, sobá)",
+              "url": "https://www.otempo.com.br/gastronomia/2026/9/28/mato-grosso-do-sul-tem-gosto-de-encontro-conheca-a-cozinha-que-nasceu-entre-fronteiras"
+            },
+            {
+              "nome": "Midiamax — Sotaques de MS refletem migração e fronteira",
+              "url": "https://midiamax.com.br/cotidiano/2025/sotaques-mato-grosso-sul-refletem-migracao-fronteira-diversidade-estado-quase-meio-seculo/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Trem",
+          "onde": "Goiás (e Tocantins, Minas Gerais)",
+          "significado": "Qualquer coisa, objeto ou situação; \"treco\" (\"pega esse trem aí\").",
+          "registro": "coloquial",
+          "exemplo_legenda": "Esse trem de pesquisa muda toda semana, uai.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Dicio — trem [Regionalismo: Minas Gerais, Goiás e Tocantins]",
+              "url": "https://www.dicio.com.br/trem/"
+            },
+            {
+              "nome": "O Popular — Português falado em Goiás é objeto de pesquisa (uai, trem, ocê, sô)",
+              "url": "https://opopular.com.br/magazine/portugu%C3%AAs-falado-em-goi%C3%A1s-%C3%A9-objeto-de-pesquisa-1.1985204"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Bão demais da conta",
+          "onde": "Goiás (interior e Goiânia)",
+          "significado": "Muito bom, excelente; resposta clássica a \"tudo bem?\".",
+          "registro": "popular",
+          "exemplo_legenda": "Debate sem interrupção? Bão demais da conta, sô.",
+          "compreensivel_fora": true,
+          "cuidado": "Reproduz pronúncia (\"bão\"); usar sem caricaturar sotaque.",
+          "fontes": [
+            {
+              "nome": "Auditório Ibirapuera — Por que goiano fala igual mineiro? (lista de expressões goianas)",
+              "url": "https://www.auditorioibirapuera.com.br/porque-goiano-fala-igual-mineiro/"
+            },
+            {
+              "nome": "O Popular — Português falado em Goiás é objeto de pesquisa",
+              "url": "https://opopular.com.br/magazine/portugu%C3%AAs-falado-em-goi%C3%A1s-%C3%A9-objeto-de-pesquisa-1.1985204"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Candango",
+          "onde": "Distrito Federal (Brasília)",
+          "significado": "Originalmente, o operário que construiu Brasília (em geral nordestino); hoje, forma carinhosa de chamar o brasiliense.",
+          "registro": "neutro",
+          "exemplo_legenda": "Candango na fila da urna: a capital decide de novo.",
+          "compreensivel_fora": true,
+          "cuidado": "Já teve uso depreciativo no passado; hoje é homenagem.",
+          "fontes": [
+            {
+              "nome": "Dicio — candango",
+              "url": "https://www.dicio.com.br/candango/"
+            },
+            {
+              "nome": "BlaBlaCar — Gírias de Brasília",
+              "url": "https://blog.blablacar.com.br/dicas/girias-de-brasilia"
+            },
+            {
+              "nome": "Curta Mais — Gentílico de Brasília: candango ou brasiliense",
+              "url": "https://curtamais.com.br/brasilia/2024/07/08/gentilico-de-brasilia-saiba-se-voce-e-candango-ou-brasiliense/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "De rocha",
+          "onde": "Distrito Federal (Brasília e Entorno)",
+          "significado": "Reforço de que algo é verdade, certo, garantido.",
+          "registro": "jocoso",
+          "exemplo_legenda": "Resultado só é de rocha depois que o TSE totaliza.",
+          "compreensivel_fora": true,
+          "cuidado": "Fonte única de blog; o perfil dicionariobsb (Instagram) também registra.",
+          "fontes": [
+            {
+              "nome": "BlaBlaCar — Gírias de Brasília (\"De rocha\")",
+              "url": "https://blog.blablacar.com.br/dicas/girias-de-brasilia"
+            }
+          ],
+          "bloqueada": false
+        }
+      ]
+    },
+    {
+      "regiao": "Sul",
+      "estados": "RS, SC, PR",
+      "observacao": "",
+      "expressoes": [
+        {
+          "expressao": "Bah!",
+          "onde": "Rio Grande do Sul (todo o estado); ouvida também em SC e PR",
+          "significado": "Interjeição coringa: espanto, admiração, aprovação ou desânimo, conforme a entonação. Aulete registra 'bah!' como interjeição do RS que exprime espanto (compara com o castelhano).",
+          "registro": "coloquial",
+          "exemplo_legenda": "Bah! Pesquisa nova e a cuia nem deu a volta na roda.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Aulete Digital – verbete bah!",
+              "url": "https://www.aulete.com.br/bah"
+            },
+            {
+              "nome": "Dicio – Gírias e expressões regionais brasileiras (Região Sul)",
+              "url": "https://www.dicio.com.br/girias-e-expressoes-regionais-brasileiras/"
+            },
+            {
+              "nome": "Exame – 11 costumes do RS que só os gaúchos entendem",
+              "url": "https://exame.com/casual/11-costumes-do-rio-grande-do-sul-que-so-os-gauchos-entendem/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Tchê",
+          "onde": "Rio Grande do Sul (extremo sul do Brasil); também na fronteira com Uruguai e Argentina ('che')",
+          "significado": "Vocativo para chamar alguém ou prender a atenção ('ei, amigo'); também exclamação de surpresa. Wikcionário marca como regionalismo do extremo sul, do guarani 'che' (amigo).",
+          "registro": "coloquial",
+          "exemplo_legenda": "Tchê, o debate é hoje: larga o mate e liga a TV.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Wikcionário – verbete tchê",
+              "url": "https://pt.wiktionary.org/wiki/tch%C3%AA"
+            },
+            {
+              "nome": "Exame – 11 costumes do RS que só os gaúchos entendem",
+              "url": "https://exame.com/casual/11-costumes-do-rio-grande-do-sul-que-so-os-gauchos-entendem/"
+            },
+            {
+              "nome": "Correio Braziliense – Diferentes gírias de cada estado brasileiro",
+              "url": "https://www.correiobraziliense.com.br/webstories/flipar/2024/02/6796854-diferentes-girias-de-cada-estado-brasileiro-conhece-todas.html"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Tri",
+          "onde": "Rio Grande do Sul (sobretudo Porto Alegre e região metropolitana)",
+          "significado": "Intensificador: 'muito', 'super' ('tri legal', 'tri bom'); forma reduzida do antigo 'tri legal'. Sozinho, também quer dizer 'ótimo', 'bacana'.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Domingo tri cedo: urna abre às 8h e o gaúcho já na fila.",
+          "compreensivel_fora": true,
+          "cuidado": "Fora do RS, 'tri' lembra 'tricampeão'; a legenda deve deixar o sentido de 'muito' evidente.",
+          "fontes": [
+            {
+              "nome": "BlaBlaCar – 88 gírias gaúchas",
+              "url": "https://blog.blablacar.com.br/dicas/girias-gauchas"
+            },
+            {
+              "nome": "Exame – 11 costumes do RS que só os gaúchos entendem",
+              "url": "https://exame.com/casual/11-costumes-do-rio-grande-do-sul-que-so-os-gauchos-entendem/"
+            },
+            {
+              "nome": "Toda Matéria – Gírias de cada região do Brasil",
+              "url": "https://www.todamateria.com.br/girias-de-cada-regiao-do-brasil-dicionario-regionalista/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Capaz!",
+          "onde": "Rio Grande do Sul; ouvido também em SC e no interior do PR ('ade, capaiz!' em Ponta Grossa)",
+          "significado": "Negação enfática ou incredulidade: 'de jeito nenhum', 'imagina!'. 'Bem capaz' = não; 'capaz que não' = sim (sentido invertido em relação ao português padrão).",
+          "registro": "coloquial",
+          "exemplo_legenda": "Faltar no 2º turno? Capaz! Dia 25 tem urna de novo.",
+          "compreensivel_fora": false,
+          "cuidado": "Sentido invertido: leitor de fora pode ler 'capaz' como 'é possível'. Deixe a negação clara no desenho ou no contexto.",
+          "fontes": [
+            {
+              "nome": "Exame – 11 costumes do RS que só os gaúchos entendem",
+              "url": "https://exame.com/casual/11-costumes-do-rio-grande-do-sul-que-so-os-gauchos-entendem/"
+            },
+            {
+              "nome": "BlaBlaCar – 88 gírias gaúchas",
+              "url": "https://blog.blablacar.com.br/dicas/girias-gauchas"
+            },
+            {
+              "nome": "Tribuna do Paraná – Dicionário de Ponta Grossa (Dante Mendonça)",
+              "url": "https://www.tribunapr.com.br/blogs/dante-mendonca/dicionario-de-ponta-grossa/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Barbaridade!",
+          "onde": "Rio Grande do Sul; Dicio marca como regionalismo do Sul do Brasil",
+          "significado": "Interjeição de espanto, indignação ou surpresa ('não é possível!'). No padrão é substantivo (crueldade); no Sul vira exclamação.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Barbaridade! Três horas de debate e o mate acabou.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Dicio – verbete barbaridade (interj., Brasil: Sul)",
+              "url": "https://www.dicio.com.br/barbaridade/"
+            },
+            {
+              "nome": "BlaBlaCar – 88 gírias gaúchas",
+              "url": "https://blog.blablacar.com.br/dicas/girias-gauchas"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Peleia",
+          "onde": "Rio Grande do Sul (campanha e cidades); conhecida em SC e PR",
+          "significado": "Briga, disputa, luta (do espanhol 'pelear'). Dicio marca a acepção 'briga, disputa' como regionalismo do RS. Usada para disputa esportiva, política ou qualquer contenda.",
+          "registro": "popular",
+          "exemplo_legenda": "Peleia no 2º turno: dois na pista, uma urna e o TSE de juiz.",
+          "compreensivel_fora": true,
+          "cuidado": "Use no sentido de disputa; evite desenho que sugira agressão física entre os candidatos.",
+          "fontes": [
+            {
+              "nome": "Dicio – verbete peleia (RS: briga, disputa)",
+              "url": "https://www.dicio.com.br/peleia/"
+            },
+            {
+              "nome": "Correio Braziliense – Diferentes gírias de cada estado brasileiro",
+              "url": "https://www.correiobraziliense.com.br/webstories/flipar/2024/02/6796854-diferentes-girias-de-cada-estado-brasileiro-conhece-todas.html"
+            },
+            {
+              "nome": "Wikipedia – Gaúcho dialect (peleia = briga)",
+              "url": "https://en.wikipedia.org/wiki/Ga%C3%BAcho_dialect"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Me caiu os butiá do bolso",
+          "onde": "Interior do Rio Grande do Sul (campanha, serra, região do butiá); conhecida em todo o estado",
+          "significado": "Levar um susto, ficar pasmo com algo inesperado. O butiá é o fruto de uma palmeira nativa; a frase se usa sem plural ('os butiá').",
+          "registro": "jocoso",
+          "exemplo_legenda": "Abriu a pesquisa e caiu os butiá do bolso.",
+          "compreensivel_fora": false,
+          "cuidado": "Interiorana e pouco conhecida fora do Sul; a cena precisa mostrar o susto. Concordância popular proposital ('os butiá').",
+          "fontes": [
+            {
+              "nome": "Exame – 11 costumes do RS que só os gaúchos entendem",
+              "url": "https://exame.com/casual/11-costumes-do-rio-grande-do-sul-que-so-os-gauchos-entendem/"
+            },
+            {
+              "nome": "Toda Matéria – Gírias de cada região do Brasil (cair os butiá do bolso)",
+              "url": "https://www.todamateria.com.br/girias-de-cada-regiao-do-brasil-dicionario-regionalista/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Não tem?",
+          "onde": "Santa Catarina, sobretudo Florianópolis e litoral (fala 'manezinha')",
+          "significado": "Pergunta de confirmação no fim da frase, equivalente a 'não é?', 'sabe?'.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Dia 25 tem urna de novo, não tem?",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "NSC Total – Dicionário manezês explica gírias dos manezinhos de Florianópolis",
+              "url": "https://www.nsctotal.com.br/?p=2585306"
+            },
+            {
+              "nome": "NSC Total – O que é ser manezinho?",
+              "url": "https://www.nsctotal.com.br/cotidiano/o-que-e-ser-manezinho"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Mofas com a pomba na balaia",
+          "onde": "Santa Catarina, Florianópolis e litoral açoriano (fala 'manezinha')",
+          "significado": "'Vai ficar esperando à toa', 'não vai conseguir o que quer' (literalmente, ficar mofando com a pomba na cesta).",
+          "registro": "jocoso",
+          "exemplo_legenda": "Quer pesquisa sem margem de erro? Mofas com a pomba na balaia.",
+          "compreensivel_fora": false,
+          "cuidado": "Só com a cena explicando a espera inútil; não dirigir a candidato (soaria como 'não vai ganhar').",
+          "fontes": [
+            {
+              "nome": "NSC Total – Dicionário manezês explica gírias dos manezinhos de Florianópolis",
+              "url": "https://www.nsctotal.com.br/?p=2585306"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Matar a pau",
+          "onde": "Santa Catarina (litoral e Grande Florianópolis), segundo a lista do Correio Braziliense; a expressão é corrente em todo o Brasil, não é exclusiva de SC",
+          "significado": "Acertar em cheio, mandar muito bem em algo.",
+          "registro": "popular",
+          "exemplo_legenda": "Instituto que acertar o 2º turno vai matar a pau.",
+          "compreensivel_fora": true,
+          "cuidado": "Literalmente violenta; usar só no sentido figurado de 'acertar', sem pau ou agressão no desenho.",
+          "fontes": [
+            {
+              "nome": "Correio Braziliense – Diferentes gírias de cada estado brasileiro (SC)",
+              "url": "https://www.correiobraziliense.com.br/webstories/flipar/2024/02/6796854-diferentes-girias-de-cada-estado-brasileiro-conhece-todas.html"
+            },
+            {
+              "nome": "NSC Total – Tanso, bobiça e istepô: as gírias mais faladas em SC",
+              "url": "https://www.nsctotal.com.br/?p=7215698"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Em dois toques",
+          "onde": "Santa Catarina (lista do Correio Braziliense); de uso comum em várias regiões do país",
+          "significado": "Rapidamente, num instante.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Na urna é em dois toques; a fila é que demora.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Correio Braziliense – Diferentes gírias de cada estado brasileiro (SC)",
+              "url": "https://www.correiobraziliense.com.br/webstories/flipar/2024/02/6796854-diferentes-girias-de-cada-estado-brasileiro-conhece-todas.html"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Piá",
+          "onde": "Paraná (todo o estado, com força em Curitiba); também em SC e RS",
+          "significado": "Menino, guri. Aulete registra o uso 'qualquer menino' como típico do PR e de Curitiba; do tupi-guarani pi'a. 'Piá de prédio' = menino criado em apartamento, superprotegido.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Piá de 16 com título na mão: primeiro 2º turno da vida.",
+          "compreensivel_fora": true,
+          "cuidado": "",
+          "fontes": [
+            {
+              "nome": "Aulete Digital – verbete piá (PR, Curitiba)",
+              "url": "https://www.aulete.com.br/pi%C3%A1"
+            },
+            {
+              "nome": "Dicio – verbete piá",
+              "url": "https://www.dicio.com.br/pia-3/"
+            },
+            {
+              "nome": "Bem Paraná – 16 expressões que só os curitibanos entendem",
+              "url": "https://www.bemparana.com.br/curitiba-mil-grau/passageiro-peida-no-uber-e-motorista-fica-enfurecido/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Daí",
+          "onde": "Curitiba e região metropolitana (Paraná)",
+          "significado": "Muleta de fala curitibana: 'daí' abre quase toda frase e encadeia a narrativa ('daí eu fui, daí ele disse'), sem sentido de lugar.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Daí teve 1º turno, daí tem 2º, daí o eleitor volta à fila.",
+          "compreensivel_fora": true,
+          "cuidado": "Humor de repetição; funciona melhor com três 'daí' na mesma frase.",
+          "fontes": [
+            {
+              "nome": "Bem Paraná – 16 expressões que só os curitibanos entendem ('Fale daí para começar qualquer frase')",
+              "url": "https://www.bemparana.com.br/curitiba-mil-grau/passageiro-peida-no-uber-e-motorista-fica-enfurecido/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Vina",
+          "onde": "Curitiba e Paraná",
+          "significado": "Salsicha (de 'salsicha vienense'); o cachorro-quente curitibano é 'com vina'.",
+          "registro": "coloquial",
+          "exemplo_legenda": "Debate longo pede dogão: em Curitiba, com vina, claro.",
+          "compreensivel_fora": false,
+          "cuidado": "Fora do PR ninguém sabe o que é; a cena precisa mostrar o cachorro-quente.",
+          "fontes": [
+            {
+              "nome": "Bem Paraná – Veja manual de sobrevivência para quem vem a Curitiba",
+              "url": "https://www.bemparana.com.br/curitiba-mil-grau/veja-manual-de-sobrevivencia-para-quem-vem-a-curitiba/"
+            },
+            {
+              "nome": "Banda B – Tesão Piá faz paródia com o 'calor do djanho' de Curitiba (lista vina, japona, penal)",
+              "url": "https://www.bandab.com.br/geral/tesao-pia-faz-parodia-com-o-calor-do-djanho-de-curitiba/amp/"
+            },
+            {
+              "nome": "Bem Paraná – 16 expressões que só os curitibanos entendem ('come vina')",
+              "url": "https://www.bemparana.com.br/curitiba-mil-grau/passageiro-peida-no-uber-e-motorista-fica-enfurecido/"
+            }
+          ],
+          "bloqueada": false
+        },
+        {
+          "expressao": "Pila (dois pila)",
+          "onde": "Paraná (Curitiba, Ponta Grossa) e Rio Grande do Sul; comum em todo o Sul",
+          "significado": "Real, dinheiro ('dois pila' = dois reais). Dicio registra 'papel-moeda'; no Sul não leva plural.",
+          "registro": "popular",
+          "exemplo_legenda": "Votar não custa um pila; faltar sai mais caro.",
+          "compreensivel_fora": true,
+          "cuidado": "Em Portugal 'pila' é chulo (pênis); no Brasil é inocente, mas evite em arte para público lusitano.",
+          "fontes": [
+            {
+              "nome": "Dicio – verbete pila (papel-moeda)",
+              "url": "https://www.dicio.com.br/pila/"
+            },
+            {
+              "nome": "Tribuna do Paraná – Dicionário de Ponta Grossa ('dois pila')",
+              "url": "https://www.tribunapr.com.br/blogs/dante-mendonca/dicionario-de-ponta-grossa/"
+            },
+            {
+              "nome": "Correio Braziliense – Diferentes gírias de cada estado brasileiro (PR: pila = moeda)",
+              "url": "https://www.correiobraziliense.com.br/webstories/flipar/2024/02/6796854-diferentes-girias-de-cada-estado-brasileiro-conhece-todas.html"
+            },
+            {
+              "nome": "Exame – 11 costumes do RS ('pila' sem plural)",
+              "url": "https://exame.com/casual/11-costumes-do-rio-grande-do-sul-que-so-os-gauchos-entendem/"
+            }
+          ],
+          "bloqueada": false
+        }
+      ]
+    }
+  ]
+}
