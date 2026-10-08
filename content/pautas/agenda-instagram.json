@@ -2371,6 +2371,21 @@
       "materia": "https://hojemt.com.br/lideranca-de-peso-no-alencastro/",
       "charge_json": "pautas/charges/2026-10-08-lideranca-de-peso-no-alencastro.json",
       "obs": "curta baseada em especulação (\"corre à boca pequena\"; uma fonte, O Documento, segundo a rotina da Câmara de Cuiabá): o editor decide se e quando publicar."
+    },
+    {
+      "id": "141",
+      "status": "aguardando_materia",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "card",
+      "titulo": "TCE-MT abre tomada de contas sobre dívida de Canarana com a previdência",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/card-canarana.jpg"
+      ],
+      "legenda": "TCE-MT abre tomada de contas sobre dívida de R$ 9,5 milhões de Canarana com a previdência\n\nO conselheiro Guilherme Maluf converteu duas denúncias em Tomada de Contas Especial para apurar os débitos da Prefeitura com o Prevican, o fundo de previdência dos servidores. O prefeito Vilson Biguelini (União) reconhece os atrasos e os atribui às dificuldades financeiras do município. A decisão não aponta culpados nem manda devolver dinheiro (VGN, RepórterMT, Olhar Direto).\n\nMatéria completa: hojemt.com.br/canarana-tce-mt-abre-tomada-de-contas-para-apurar-divida-de-r-95-milhoes-com-a-previdencia\n\n#tcemt #canarana #previdencia #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/canarana-tce-mt-abre-tomada-de-contas-para-apurar-divida-de-r-95-milhoes-com-a-previdencia/",
+      "obs": "publicar só depois que a matéria (rascunho no Ghost, 6ac8143023c41b1557c4a552) for publicada"
     }
   ]
 }

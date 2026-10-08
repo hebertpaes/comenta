@@ -18,9 +18,9 @@
   "https://www.olhardireto.com.br"
  ],
  "ultimo_video_visto": {
-  "id": "Z5LXXbOE_Z0",
-  "titulo": "Sérgio Ricardo destaca acolhimento a crianças com câncer durante entrega de brinquedos",
-  "publicado": "2026-10-07T21:55"
+  "id": "c9EOpjoCdOI",
+  "titulo": "Contas de Alto Araguaia, Pontal do Araguaia e Ponte Branca recebem parecer favorável do TCE-MT",
+  "publicado": "2026-10-08T20:52"
  },
  "ultima_sessao_vista": {
   "id": "L_7_rif8H5Q",
@@ -154,6 +154,15 @@
    "arte": "pautas/ilustracoes/2026-10-07-tce-issqn-recuperacao.jpg",
    "instagram": "agenda 120 (aguardando_materia)",
    "origem": "orientação da COPSFID (pedido da Prefeitura de Sorriso), divulgada em 06/10: Olhar Direto, O Documento, Muvuca Popular, Folhamax, CircuitoMT + LC 227/2026 e 236/2026 (Planalto); vídeo oficial OjPHWR88MiE"
+  },
+  {
+   "data": "2026-10-08",
+   "slug": "canarana-tce-mt-abre-tomada-de-contas-para-apurar-divida-de-r-95-milhoes-com-a-previdencia",
+   "status": "rascunho",
+   "ghost_id": "6ac8143023c41b1557c4a552",
+   "arte": "pautas/ilustracoes/2026-10-08-tce-canarana-previdencia.jpg",
+   "instagram": "agenda 141 (aguardando_materia)",
+   "origem": "WebSearch: decisão de Guilherme Maluf no DOC de 30/09–01/10 (VGN, RepórterMT, Olhar Direto 07/10)"
   }
  ],
  "transcricoes": [
@@ -205,7 +214,7 @@
   }
  ],
  "ultima_verificacao": {
-  "data": "2026-10-07T22:30Z",
-  "rss": "novos desde fv-kemvKsGo: OjPHWR88MiE (ISSQN, virou pauta), L_7_rif8H5Q (gravação da 15ª sessão de 06/10; MT-170 virou pauta), G5l2Z7jc8n4 (MBA/direitos humanos; descrição reaproveita nota de 22/09 sobre contas de três municípios — sem pauta), Z1ITodhB_MA (duodécimo — já em rascunho de 05/10), Z5LXXbOE_Z0 (entrega de brinquedos — institucional, sem pauta). Site do TCE-MT recusou conexão nesta rodada. Folhamax registra suspeição de Alisson Alencar num processo do Governo do Estado na mesma sessão (não confirmado)."
+  "data": "2026-10-08T22:30Z",
+  "rss": "novos desde Z5LXXbOE_Z0: 6lhUKqGvvJM (rede de apoio TCE-MT e TJMT a pessoas com deficiência — institucional, sem pauta), JY_rFxhdGT4 (MBA, sem pauta), c9EOpjoCdOI (parecer favorável às contas de Alto Araguaia, Pontal do Araguaia e Ponte Branca — rotina, sem pauta). Pauta do disparo: Canarana (TCE de R$ 9,5 mi com o Prevican), ainda sem matéria no site. Exclusivo News fala em possível aposentadoria de Waldir Teis — especulação de uma fonte, fora. Site do TCE-MT não respondeu (timeout)."
  }
 }
