@@ -173,6 +173,13 @@ real com licença; `imagens.mjs` descarta imagens de autor "Gemini", "DALL·E",
 Milas. Backlog em 24/09: cerca de 30 curtas com charge
 automática.
 
+### Foco e linguagem regional (editor, 08/10/2026)
+
+Prioridade para Curtas de eleições nacionais e de eleições internacionais ligadas
+ao Brasil; legendas no linguajar de cada região do país, revezando as cinco
+regiões com o glossário conferido `pautas/charges/regionalismos.json` (rodízio e
+regras na skill `hojemt-charges`). Tratamento igual aos presidenciáveis.
+
 ### Referências de imagem por personagem (usar sempre a mais recente)
 
 Orientação do editor (24/09/2026): **"Deixa o Abílio mais atual com referências

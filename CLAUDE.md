@@ -39,6 +39,7 @@ source content/tools/ambiente.sh --checar      # proxy/CA do Node, $HOJEMT_TMP e
 
 ## Arte
 
+- **Foco das charges (editor, 08/10/2026):** prioridade para pautas nacionais ligadas às eleições (2º turno presidencial, TSE, Congresso, campanhas) e para eleições internacionais ligadas ao Brasil; e **legendas variadas, no linguajar de cada região do país** (Norte, Nordeste, Centro-Oeste, Sudeste, Sul), revezando a região a cada charge com o glossário conferido `content/pautas/charges/regionalismos.json` (registre a expressão e a região no JSON da charge e no rodízio do glossário; nunca expressão chula ou que ridicularize sotaque; a legenda tem de ser entendida fora da região). Detalhes na skill `hojemt-charges`.
 - Charges e artes **sempre no Canva** (conector Canva). Charges só em Curtas; caricatura a partir de foto oficial recente (tabela "Referências de imagem por personagem" em `content/README.md`); sem foto oficial, personagem genérico.
 - **Nunca** cena que sugira crime; tema de acusação → cena neutra, sem pessoa e sem dinheiro. Balão só com fala real citada. Crédito público único: "Charge: HOJE MT".
 - Ilustrações de artigos: realistas, de ficção, personagens reais **sem rosto visível**; legenda "Ilustração: HOJE MT (gerada com IA; cena de ficção)".
