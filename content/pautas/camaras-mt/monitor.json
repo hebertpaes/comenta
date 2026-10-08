@@ -100,6 +100,23 @@
    "fontes": [
     "https://www.camaralucasdorioverde.mt.gov.br/Noticias/Camara-debate-mudancas-no-plano-diretor-com-participacao-da-sociedade-2445/"
    ]
+  },
+  {
+   "data": "2026-10-08",
+   "cidade": "Lucas do Rio Verde",
+   "titulo": "Câmara de Lucas do Rio Verde aprova Plano Diretor em dois turnos; emenda por viadutos na BR-163 é barrada como ilegal",
+   "arquivo": "pautas/camaras-mt/2026-10-08-lucas-plano-diretor-aprovado.md",
+   "ghost_id": "6ac7ff9723c41b1557c4a4b8",
+   "ghost_slug": "lucas-do-rio-verde-aprova-plano-diretor-emenda-viadutos-br-163-barrada",
+   "previa": "https://hojemt.com.br/p/341e9480-02e9-463d-8d92-a1776becf5aa/",
+   "status": "rascunho",
+   "arte": "feita em 08/10/2026 (Canva DAHXdKfzg1c, imagem MAHXdIGINCA; feature_image, og e registro.json atualizados)",
+   "card": "pautas/cards/2026-10-08-lucas-plano-diretor-aprovado.jpg",
+   "agenda_instagram": "138",
+   "fontes": [
+    "https://www.camaralucasdorioverde.mt.gov.br/Noticias/Camara-de-lucas-do-rio-verde-aprova-projetos-do-plano-diretor-e-atualiza-estrutura-dos-servicos-publicos-2446/",
+    "https://www.youtube.com/watch?v=TLD8l-JXuCQ"
+   ]
   }
  ],
  "vistos": {
@@ -816,7 +833,7 @@
    "data": "2026-10-07"
   },
   "barra:gn:trajetória e atuação: conheça o perfil dos deputados eleitos para a 21ª legislatura": {
-   "titulo": "Trajetória e atuação: conheça o perfil dos deputados eleitos para a 21ª Legislatura - Assembleia Legislativa do Estado de Mato Grosso",
+   "titulo": "Trajetória e atuação: conheça o perfil dos deputados eleitos para a 21ª Legislatura - AtualMT",
    "data": "2026-10-05"
   },
   "barra:gn:nova composição da almt une parlamentares reeleitos, estreantes e retorno ao parlamento pa": {
@@ -869,7 +886,7 @@
   },
   "lrv:yt:psDiEE4hHug": {
    "titulo": "Sessão Ordinária Nº 32-2026 de 08-10-2026",
-   "data": "2026-10-06"
+   "data": "2026-10-08"
   },
   "barra:gn:veja quem são os 55 deputados estaduais eleitos no rio grande do sul": {
    "titulo": "Veja quem são os 55 deputados estaduais eleitos no Rio Grande do Sul - GZH",
@@ -926,9 +943,65 @@
   "chapada:gn:júlio campos avalia futuro político após ficar fora da assembleia": {
    "titulo": "Júlio Campos avalia futuro político após ficar fora da Assembleia - rdmonline.com.br",
    "data": "2026-10-07"
+  },
+  "chapada:gn:após derrota nas urnas, júlio campos cogita disputar vaga de vereador em chapada dos guima": {
+   "titulo": "Após derrota nas urnas, Júlio Campos cogita disputar vaga de vereador em Chapada dos Guimarães - Alochapada",
+   "data": "2026-10-08"
+  },
+  "chapada:gn:vereador de várzea grande é internado em cuiabá após sofrer queimaduras": {
+   "titulo": "Vereador de Várzea Grande é internado em Cuiabá após sofrer queimaduras - en.com.br",
+   "data": "2026-10-08"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/indicacao-pede-reforco-no-quadro-de-profissionais-da-ubs-do-morada-do-bosque-em-sorriso": {
+   "titulo": "Indicação pede reforço no quadro de profissionais da UBS do Morada do Bosque, em Sorriso",
+   "data": "2026-10-08"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/cpi-das-aguas-de-sorriso-e-instalada-e-cargos-sao-definidos": {
+   "titulo": "CPI das Águas de Sorriso é instalada e cargos são definidos",
+   "data": "2026-10-08"
+  },
+  "lrv:https://www.camaralucasdorioverde.mt.gov.br/Noticias/Camara-de-lucas-do-rio-verde-aprova-projetos-do-plano-diretor-e-atualiza-estrutura-dos-servicos-publicos-2446/": {
+   "titulo": "Câmara de Lucas do Rio Verde aprova projetos do Plano Diretor e atualiza estrutura dos serviços públicos",
+   "data": "2026-10-08"
+  },
+  "lrv:yt:UuKZEphQ1vs": {
+   "titulo": "Wlad Mesquita - Grande Expediente 08/10/2026",
+   "data": "2026-10-08"
+  },
+  "lrv:yt:1HJ60jn9CrA": {
+   "titulo": "Nelson Hasegawa - Grande Expediente 08/10/2026",
+   "data": "2026-10-08"
+  },
+  "lrv:yt:q7CUZ-NWKyc": {
+   "titulo": "Nadir Santana - Grande Expediente 08/10/2026",
+   "data": "2026-10-08"
+  },
+  "lrv:yt:-vjfyXj02xA": {
+   "titulo": "Márcio Albieri - Grande Expediente 08/10/2026",
+   "data": "2026-10-08"
+  },
+  "lrv:yt:iT88kAWJspM": {
+   "titulo": "Jackson Lopes - Grande Expediente 08/10/2026",
+   "data": "2026-10-08"
+  },
+  "lrv:yt:MgFFl-TF1w0": {
+   "titulo": "Hélio Kaminski - Grande Expediente 08/10/2026",
+   "data": "2026-10-08"
+  },
+  "lrv:yt:AkuWyZkGRoI": {
+   "titulo": "Josias Ferreira - Grande Expediente 08/10/2026",
+   "data": "2026-10-08"
+  },
+  "lrv:yt:PTmaWfNu0h4": {
+   "titulo": "Débora Carneiro Grande Expediente 08/10/2026",
+   "data": "2026-10-08"
+  },
+  "lrv:yt:TLD8l-JXuCQ": {
+   "titulo": "Sessão Ordinária Nº 32-2026 de 08-10-2026",
+   "data": "2026-10-08"
   }
  },
- "ultima_checagem": "2026-10-08T12:39:54.710Z",
+ "ultima_checagem": "2026-10-08T20:42:03.497Z",
  "descartados_2026-10-01_tarde": [
   {
    "cidade": "Sorriso",
@@ -974,6 +1047,10 @@
   {
    "data": "2026-10-08",
    "nota": "Disparo de 12h37 UTC: 6 itens novos, sem pauta. Sorriso: Indicações 672/26 (semáforo no Morada do Bosque I, Rodrigo Matterazzi) e 675/26 (placas no Mário Raiter) são pedidos de rotina sem valor nem efeito; reunião de comissões (vídeo). Chapada: coluna 'Evidência' (Gazeta Digital) e Júlio Campos fora da ALMT (RDM) não são da Câmara. Sites de Lucas do Rio Verde e Barra do Garças não abriram (fetch failed); na busca, nada de LRV depois da 31ª sessão (01/10) nem de Barra em outubro."
+  },
+  {
+   "data": "2026-10-08",
+   "nota": "Rodada de 20h37 UTC: 12 itens novos. Pauta: Plano Diretor de Lucas aprovado (fonte oficial). Sem pauta: Júlio Campos cogita disputar vaga de vereador em Chapada (Alô Chapada, especulação de uma fonte); vereador de VG internado (assunto de outra cidade); vídeos do Grande Expediente de Lucas (falas individuais). Site da Câmara de Sorriso fora do ar (fetch failed)."
   }
  ]
 }
