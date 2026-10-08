@@ -104,7 +104,9 @@ const DUR_FECHAMENTO = 3;
 const FOLGA_CENA = 0.45; // silêncio depois da fala
 const DUR_MIN_CENA = 2.5;
 const MAX_AUDIO_REAL = 12; // s: trecho real mais longo aceito (ESPEC)
-const MAX_TOTAL = 120; // s: nenhum Reel passa de 2 min (regra do editor; cortar cenas, nunca acelerar voz)
+let MAX_TOTAL = 120; // s: nenhum Reel passa de 2 min (regra do editor; cortar cenas, nunca acelerar voz).
+// O boletim diário aprofundado do 2º turno (pedido do editor em 08/10/2026: "maior tempo de análise") declara
+// `limite_s` no roteiro (até 600 s).
 const TRILHAS_JSON = process.env.HOJEMT_TRILHAS || join(aqui, "assets", "trilhas", "trilhas.json"); // catálogo (env só para teste)
 const TRILHA_VOLUME = 0.12; // música sob a narração (multiplicador, com a faixa normalizada a −16 LUFS)
 const TRILHA_CARTELAS = 2.5; // × volume nas cartelas (≈ 0,3)
@@ -150,6 +152,7 @@ if (!existsSync(specPath)) {
   process.exit(1);
 }
 const spec = JSON.parse(await readFile(specPath, "utf8"));
+if (spec.limite_s != null) MAX_TOTAL = Math.min(600, Math.max(30, Number(spec.limite_s) || 120));
 if (!Array.isArray(spec.cenas) || spec.cenas.length === 0) {
   console.error("ERRO: o roteiro precisa de pelo menos uma cena em `cenas`.");
   process.exit(1);
@@ -992,10 +995,11 @@ async function principal() {
       const legenda = c.legenda || fala;
       if ((c.citacao === true || c.citacao_lida_pelo_narrador === true) && !/["“«][^"“”«»]{3,}["”»]/.test(legenda))
         throw new Error(`cena ${n}: citação lida pelo narrador precisa da frase real entre aspas na legenda (\`legenda\` ou \`fala\`)`);
-      const modelo = voz.motor === "arquivo" ? "audio_tts" : voz.narrador;
-      process.stdout.write(`voz ${n} (${quem}, ${voz.motor}/${modelo})… `);
+      const vz = c.voz ? { ...voz, ...c.voz } : voz; // voz por cena (ex.: dupla de narradores sintéticos genéricos)
+      const modelo = vz.motor === "arquivo" ? "audio_tts" : vz.narrador;
+      process.stdout.write(`voz ${n} (${quem}, ${vz.motor}/${modelo})… `);
       let audio;
-      if (voz.motor === "arquivo") {
+      if (vz.motor === "arquivo") {
         // Fala já sintetizada fora daqui (ex.: voz do HeyGen baixada pelo Zapier):
         // `audio_tts` em cada cena, relativo a content/. Só voz sintética genérica.
         if (!c.audio_tts) throw new Error(`cena ${n}: com voz.motor "arquivo", cada cena do narrador precisa de \`audio_tts\``);
@@ -1004,7 +1008,7 @@ async function principal() {
         rodarFfmpeg(["-i", origem, "-ac", "1", "-ar", "24000", destino], `voz pronta da cena ${n}`);
         audio = destino;
       } else {
-        audio = sintetizar(fala, { motor: voz.motor, modelo, velocidade: c.velocidade ?? voz.velocidade, tom: voz.tom, tratamento: voz.tratamento, qualidade: voz.qualidade, fonetica: voz.fonetica, sotaque: voz.sotaque, estilo: voz.estilo, reserva: voz.reserva, destino });
+        audio = sintetizar(fala, { motor: vz.motor, modelo, velocidade: c.velocidade ?? vz.velocidade, tom: vz.tom, tratamento: vz.tratamento, qualidade: vz.qualidade, fonetica: vz.fonetica, sotaque: vz.sotaque, estilo: vz.estilo, reserva: vz.reserva, destino });
       }
       cena = { ...base, fala, legenda, audio };
     }
