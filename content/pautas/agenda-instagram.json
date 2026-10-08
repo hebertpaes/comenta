@@ -1950,9 +1950,9 @@
     },
     {
       "id": "114",
-      "status": "agendado",
-      "permalink": null,
-      "publicado_em": null,
+      "status": "publicado",
+      "permalink": "https://www.instagram.com/p/DePRhnGl8sF/",
+      "publicado_em": "2026-10-08T15:38:23+00:00",
       "quando": "2026-10-08T11:30:00-04:00",
       "formato": "charge",
       "titulo": "Senado e a escala 6x1",
@@ -1962,7 +1962,8 @@
       "legenda": "CHARGE · Senado e a escala 6x1\n\nNo Senado, a folga entra em votação.\n\nO Plenário do Senado começou na terça (6) a discutir a PEC 221/2019, que acaba com a escala 6x1: a jornada cai de 44 para 40 horas semanais, sem redução de salário, com duas folgas por semana, de preferência com o domingo. São cinco sessões de discussão antes da votação em 1º turno, prevista para a semana que vem; a PEC precisa de 49 votos em dois turnos (Agência Senado e CNN Brasil).\n\nLeia a curta completa: hojemt.com.br/senado-e-a-escala-6x1\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #escala6x1 #senado #trabalho #hojemt",
       "materia": "https://hojemt.com.br/senado-e-a-escala-6x1/",
       "charge_json": "pautas/charges/2026-10-07-senado-e-a-escala-6x1.json",
-      "obs": "horário das 11:30 (fora da fila de charges das 07:30/15:30) porque o assunto vence com a votação em 1º turno, prevista para a semana de 12/10. Fontes: www12.senado.leg.br/noticias/materias/2026/10/06/pec-que-acaba-com-escala-6x1-comeca-a-tramitar-no-plenario; www12.senado.leg.br/radio/1/noticia/2026/10/06/plenario-inicia-discussao-da-pec-que-acaba-com-a-escala-6x1; cnnbrasil.com.br/politica/senado-inicia-discussao-da-pec-do-fim-da-6x1-com-baixa-presenca-da-oposicao/. Se a votação mudar de data, ajustar a legenda antes."
+      "obs": "horário das 11:30 (fora da fila de charges das 07:30/15:30) porque o assunto vence com a votação em 1º turno, prevista para a semana de 12/10. Fontes: www12.senado.leg.br/noticias/materias/2026/10/06/pec-que-acaba-com-escala-6x1-comeca-a-tramitar-no-plenario; www12.senado.leg.br/radio/1/noticia/2026/10/06/plenario-inicia-discussao-da-pec-que-acaba-com-a-escala-6x1; cnnbrasil.com.br/politica/senado-inicia-discussao-da-pec-do-fim-da-6x1-com-baixa-presenca-da-oposicao/. Se a votação mudar de data, ajustar a legenda antes.",
+      "media_id": "18162550099491032"
     },
     {
       "id": "115",

@@ -30,9 +30,11 @@
     "modelo_retrato": "DAHWEJf2P1U"
   },
   "instagram": {
-    "status": "agendado",
+    "status": "publicado",
     "agenda_id": "114",
-    "quando": "2026-10-08T11:30:00-04:00"
+    "quando": "2026-10-08T11:30:00-04:00",
+    "permalink": "https://www.instagram.com/p/DePRhnGl8sF/",
+    "publicado_em": "2026-10-08T15:38:23+00:00"
   },
   "arquivos": {
     "site_16x9": "2026-10-07-senado-e-a-escala-6x1.jpg",
