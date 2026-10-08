@@ -11807,7 +11807,7 @@
   }
  ],
  "autoridades": {
-  "gerado_em": "2026-10-08T12:03:52Z",
+  "gerado_em": "2026-10-08T15:07:02Z",
   "janela_dias": 7,
   "fonte": "Google Notícias (manchetes que citam o nome); classificação automática por palavras",
   "candidatos": [
@@ -11925,8 +11925,8 @@
     "situacao": "Prefeita em exercício · sem candidatura em 2026",
     "polemicas": [],
     "solucoes": [],
-    "neutras": 2,
-    "total": 2
+    "neutras": 1,
+    "total": 1
    },
    {
     "nome": "Miguel Vaz",
@@ -11954,6 +11954,12 @@
     "polemicas": [],
     "solucoes": [
      {
+      "titulo": "Dorner reserva quase R$ 10 milhões de arrecadação extra para pagar bancos",
+      "fonte": "Fatos de Mato Grosso",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPWUlRVU44b2tVTGhaVlE2WHJDYjNVSmJmWC1nRU9sQVB4NFFwNnp6WDA2RUFUMU9aQkRYZUpoNVJWWVNDc3BEUTItcFE0MWlaQjZDaVNJMGFqcnRYYXF6UjlnTnpIVjV3UFdfTGNTWU1HNHNlbV82UkUxOGdKeUZwUXRlMS04QW9aUjM5c1FzaU44ZDQ3allxWnNPRVRlWDZxYUI2d09OLUdwTW9VQTM3MEhkOUhXdUJmQ1VRcDQ5M1M?oc=5",
+      "data": "08/10"
+     },
+     {
       "titulo": "Ao lado de Wellington e Dorner, Scheila encerra campanha na maior entrega habitacional de Sinop",
       "fonte": "Infoverus",
       "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOVzVzNWxhTlY3SnJFQTMtRTJCdS11dmFoSGZ1eGJEYlEzbHpDU2dJNTJUYnpucXdTZXVXSTZBN1pGaVdtWXV0Qzl1MkhiQkhvcTRzZERiS2pWYmViUXM0SGdhY3ZtNEdtaXNpVGVqUVhQQktMRjJXSGN5eFM5RDFMR2syQThhUkN6Q0d1OV9Yakc0bThtelpyS2g0UkY4NzJEMGVFaXlwWDdnYzB5RHdjbW1kbFlPa3RxaEVQcHBkZmxBeXBQb1ctWkFHb0tXTXlZV2Jsaw?oc=5",
@@ -11961,7 +11967,7 @@
      }
     ],
     "neutras": 0,
-    "total": 1
+    "total": 2
    },
    {
     "nome": "Sérgio Machnic",
