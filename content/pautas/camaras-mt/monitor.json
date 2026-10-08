@@ -868,7 +868,7 @@
    "data": "2026-10-06"
   },
   "lrv:yt:psDiEE4hHug": {
-   "titulo": "Audiência Pública sobre alterações proposta pelos Vereadores ao Plano Diretor",
+   "titulo": "Sessão Ordinária Nº 32-2026 de 08-10-2026",
    "data": "2026-10-06"
   },
   "barra:gn:veja quem são os 55 deputados estaduais eleitos no rio grande do sul": {
@@ -902,9 +902,33 @@
   "sorriso:https://sorriso.mt.leg.br/noticia/semana-pro-vida-palestra-e-possivel-apesar-de-tudo-dizer-sim-a-vida": {
    "titulo": "Semana Pró-Vida, Palestra é possível, apesar de tudo, dizer sim à vida?",
    "data": "2026-10-06"
+  },
+  "chapada:gn:evidência": {
+   "titulo": "Evidência - Gazeta Digital",
+   "data": "2026-10-08"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/bairro-morada-do-bosque-i-pode-ganhar-semaforo-em-cruzamento-perigoso-apos-pedido-do-presidente": {
+   "titulo": "Bairro Morada do Bosque I pode ganhar semáforo em cruzamento perigoso, após pedido do presidente",
+   "data": "2026-10-08"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/vereadores-pedem-placas-de-identificacao-e-de-sinalizacao-de-transito-em-vias-do-mario-raiter": {
+   "titulo": "Vereadores pedem placas de identificação e de sinalização de trânsito em vias do Mário Raiter",
+   "data": "2026-10-08"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/parlamentar-pede-melhoria-no-sistema-de-drenagem-das-aguas-pluviais-agua-na-rua-alemanha-no-bairro-jardim-aurora": {
+   "titulo": "Parlamentar pede melhoria no sistema de drenagem das águas pluviais água na Rua Alemanha no bairro Jardim Aurora",
+   "data": "2026-10-08"
+  },
+  "sorriso:yt:bAJbjAlxEFs": {
+   "titulo": "Reunião de Comissões 08-10-26",
+   "data": "2026-10-08"
+  },
+  "chapada:gn:júlio campos avalia futuro político após ficar fora da assembleia": {
+   "titulo": "Júlio Campos avalia futuro político após ficar fora da Assembleia - rdmonline.com.br",
+   "data": "2026-10-07"
   }
  },
- "ultima_checagem": "2026-10-07T20:38:38.912Z",
+ "ultima_checagem": "2026-10-08T12:39:54.710Z",
  "descartados_2026-10-01_tarde": [
   {
    "cidade": "Sorriso",
@@ -945,5 +969,11 @@
   "Lucas do Rio Verde e Barra do Garças: sites com falha de conexão na 1ª tentativa; na 2ª, nada novo",
   "16h37 (MT): Sorriso — indicação de centro de dislexia/dislalia, entrega de van ao Centro Dia (Executivo), palestra da Semana Pró-Vida e Indicação 676/2026 (fórmulas nutricionais, Brendo Braga): rotina sem efeito concreto; sem pauta.",
   "16h37 (MT): Chapada — HiperNotícias: 'Aos 80 anos, Júlio Campos cogita encerrar carreira política como vereador em Chapada' (intenção para 2028, uma fonte): acompanhar; sem pauta."
+ ],
+ "notas": [
+  {
+   "data": "2026-10-08",
+   "nota": "Disparo de 12h37 UTC: 6 itens novos, sem pauta. Sorriso: Indicações 672/26 (semáforo no Morada do Bosque I, Rodrigo Matterazzi) e 675/26 (placas no Mário Raiter) são pedidos de rotina sem valor nem efeito; reunião de comissões (vídeo). Chapada: coluna 'Evidência' (Gazeta Digital) e Júlio Campos fora da ALMT (RDM) não são da Câmara. Sites de Lucas do Rio Verde e Barra do Garças não abriram (fetch failed); na busca, nada de LRV depois da 31ª sessão (01/10) nem de Barra em outubro."
+  }
  ]
 }
