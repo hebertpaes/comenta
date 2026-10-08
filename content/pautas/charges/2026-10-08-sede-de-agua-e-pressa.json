@@ -1,0 +1,48 @@
+{
+  "slug": "sede-de-agua-e-pressa",
+  "materia": "https://hojemt.com.br/sede-de-agua-e-pressa/",
+  "titulo": "Sede de água e pressa",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 08/10/2026 ~06:45 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal com fonte.",
+  "legenda": {
+    "site_16x9": "No Nova Fronteira, até a torneira está com sede.",
+    "instagram_4x5": "Até a torneira está com sede."
+  },
+  "contexto": "Curta sobre a cobrança do vereador Jero Neto (MDB), na Câmara de Várzea Grande, ao DAE pela falta d'água no bairro Nova Fronteira.",
+  "fontes": [
+    "https://hojemt.com.br/sede-de-agua-e-pressa/"
+  ],
+  "regras_da_cena": "sem pessoas (a curta cita uma moradora gestante pelo nome; ela não é representada): torneira seca com cara de sede, baldes vazios e caixa d'água num quintal.",
+  "personagens": [],
+  "anatomia": "sem pessoas; nada a contar",
+  "canva": {
+    "design_site_16x9": "DAHXZgC5Yzo",
+    "arte_16x9": "MAHXZl1luVQ",
+    "design_instagram_4x5": "DAHXZnUIdxQ",
+    "arte_4x5": "MAHXZlyArQ8",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "126",
+    "quando": "2026-10-19T07:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-08-sede-de-agua-e-pressa.jpg",
+    "instagram_4x5": "2026-10-08-sede-de-agua-e-pressa-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-08-sede-de-agua-e-pressa.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/sede-de-agua-e-pressa-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-08-sede-de-agua-e-pressa-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 08/10/2026 ~06:45 UTC (antes: charge automática do publicador, charge-1791440499.webp)",
+  "alertas_ao_editor": [
+    "a curta expõe o nome e o endereço (Quadra 80) de uma moradora gestante; avaliar se mantém. O texto publicado não foi mexido.",
+    "se o abastecimento for normalizado antes de 19/10, o card do Instagram (126) pode perder sentido."
+  ]
+}

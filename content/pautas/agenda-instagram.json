@@ -2120,6 +2120,36 @@
       "materia": "https://hojemt.com.br/tiraram-o-cocho/",
       "charge_json": "pautas/charges/2026-10-08-tiraram-o-cocho.json",
       "obs": "aguardando_decisao: a curta erra a autoria do veto (TJ/TSE); o editor decide se corrige o texto e se publica a charge."
+    },
+    {
+      "id": "125",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-18T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Bola no chão virou lei",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-bola-no-chao-virou-lei-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Bola no chão virou lei\n\nNa lei, a bola agora é delas.\n\nLeia a curta completa: hojemt.com.br/bola-no-chao-virou-lei\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/bola-no-chao-virou-lei/",
+      "charge_json": "pautas/charges/2026-10-08-bola-no-chao-virou-lei.json"
+    },
+    {
+      "id": "126",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-19T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Sede de água e pressa",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-08-sede-de-agua-e-pressa-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Sede de água e pressa\n\nAté a torneira está com sede.\n\nLeia a curta completa: hojemt.com.br/sede-de-agua-e-pressa\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/sede-de-agua-e-pressa/",
+      "charge_json": "pautas/charges/2026-10-08-sede-de-agua-e-pressa.json"
     }
   ]
 }

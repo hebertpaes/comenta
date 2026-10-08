@@ -1,0 +1,49 @@
+{
+  "slug": "bola-no-chao-virou-lei",
+  "materia": "https://hojemt.com.br/bola-no-chao-virou-lei/",
+  "titulo": "Bola no chão virou lei",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 08/10/2026 ~06:45 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal com fonte.",
+  "legenda": {
+    "site_16x9": "No campo da lei, a bola agora é delas também.",
+    "instagram_4x5": "Na lei, a bola agora é delas."
+  },
+  "contexto": "Curta sobre a Lei 15.522/2026, que torna o futebol feminino prioridade da política esportiva (sancionada em 28/09/2026, publicada no DOU em 29/09).",
+  "fontes": [
+    "https://hojemt.com.br/bola-no-chao-virou-lei/",
+    "https://agenciagov.ebc.com.br/noticias/202609/sancionada-a-lei-do-futebol-feminino-com-medidas-para-profissionalizacao-e-incentivo-a-igualdade-salarial",
+    "https://www.brasildefato.com.br/2026/09/28/lula-sanciona-lei-que-torna-futebol-feminino-prioridade-da-politica-esportiva/"
+  ],
+  "regras_da_cena": "sem pessoas: bola de futebol sobre documento oficial carimbado no centro do gramado, chuteiras com cadarços cor-de-rosa ao lado.",
+  "personagens": [],
+  "anatomia": "sem pessoas; nada a contar",
+  "canva": {
+    "design_site_16x9": "DAHXZtXIQxY",
+    "arte_16x9": "MAHXZnjOmx4",
+    "design_instagram_4x5": "DAHXZnHOi1A",
+    "arte_4x5": "MAHXZszU9uI",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "125",
+    "quando": "2026-10-18T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-08-bola-no-chao-virou-lei.jpg",
+    "instagram_4x5": "2026-10-08-bola-no-chao-virou-lei-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-08-bola-no-chao-virou-lei.jpg",
+    "og": "https://hojemt.com.br/content/files/2026/10/bola-no-chao-virou-lei-wa-1.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-08-bola-no-chao-virou-lei-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 08/10/2026 ~06:45 UTC (antes: charge automática do publicador, charge-1791440546.webp)",
+  "alertas_ao_editor": [
+    "o resumo da curta diz 'Senado aprova'; a lei foi sancionada pelo presidente em 28/09 (o texto fala em anúncio do Senado no Bluesky). O texto publicado não foi mexido."
+  ]
+}
