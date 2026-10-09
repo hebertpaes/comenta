@@ -8,8 +8,8 @@
       "Sudeste",
       "Sul"
     ],
-    "ultima_regiao": "Norte",
-    "data": "2026-10-08",
+    "ultima_regiao": "Centro-Oeste",
+    "data": "2026-10-09",
     "usadas": [
       {
         "data": "2026-10-08",
@@ -46,6 +46,18 @@
         "regiao": "Sul",
         "expressao": "Peleia",
         "charge": "2026-10-08-lideranca-de-peso-no-alencastro"
+      },
+      {
+        "data": "2026-10-09",
+        "regiao": "Nordeste",
+        "expressao": "Arretado",
+        "charge": "2026-10-09-ocupacao-na-assembleia"
+      },
+      {
+        "data": "2026-10-09",
+        "regiao": "Centro-Oeste",
+        "expressao": "Vôte!",
+        "charge": "2026-10-09-defesa-de-ocasiao-na-praca"
       }
     ]
   },

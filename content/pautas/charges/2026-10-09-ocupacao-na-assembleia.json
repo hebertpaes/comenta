@@ -1,0 +1,62 @@
+{
+  "slug": "ocupacao-na-assembleia",
+  "materia": "https://hojemt.com.br/ocupacao-na-assembleia/",
+  "titulo": "Ocupação na Assembleia",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 09/10/2026 ~00:30 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal da pessoa desenhada que caiba como citação.",
+  "legenda": {
+    "site_16x9": "Votação arretada: Lúdio jura que foi trabalho, não sorte.",
+    "instagram_4x5": "Votação arretada, e não foi sorte."
+  },
+  "contexto": "Curta sobre Lúdio Cabral (PT), 2º deputado estadual mais votado de MT em 2026 (86.107 votos), que diz que a votação foi reconhecimento do trabalho; Max Russi (Podemos) foi o mais votado (86.934).",
+  "fontes": [
+    "https://hojemt.com.br/ocupacao-na-assembleia/",
+    "https://www.portaltela.com/brasil/2026/10/05/veja-a-lista-dos-deputados-estaduais-eleitos-por-mato-grosso/"
+  ],
+  "regras_da_cena": "Lúdio na escadaria da Assembleia segurando um leque de boletins de votos; ao fundo, figuras genéricas trocam cadeiras de lugar (dança das cadeiras).",
+  "personagens": [
+    {
+      "nome": "Lúdio Cabral (deputado estadual, PT)",
+      "referencia_canva": [
+        "MAHXeG3UvOc"
+      ],
+      "foto": "foto oficial de registro de candidatura no TSE 2026 (SQ 110002543192), via DivulgaCand/ND Mais",
+      "licenca": "referência de desenho",
+      "tracos_conferidos": "cabelo escuro curto, óculos de armação escura arredondada, sem barba, rosto oval, sorriso largo, camisa branca de gola aberta"
+    }
+  ],
+  "anatomia": "conferida ampliada: 16:9 refeita porque a primeira versão tinha três mãos; versão final com duas mãos (uma com os boletins, outra na cintura); figuras do fundo com dois braços e duas pernas",
+  "canva": {
+    "design_site_16x9": "DAHXeNApYrM",
+    "arte_16x9": "MAHXeJwQx0A",
+    "arte_16x9_descartada": "MAHXeGUhnHI (três mãos)",
+    "design_instagram_4x5": "DAHXeNQS0cE",
+    "arte_4x5": "MAHXeG0axFU",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "142",
+    "quando": "2026-10-23T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-09-ocupacao-na-assembleia.jpg",
+    "instagram_4x5": "2026-10-09-ocupacao-na-assembleia-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-09-ocupacao-na-assembleia.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-09-ocupacao-na-assembleia-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 09/10/2026 ~00:40 UTC (antes: charge-1791505368.webp, charge automática do publicador)",
+  "regionalismo": {
+    "regiao": "Nordeste",
+    "estado": "Nordeste em geral",
+    "expressao": "Arretado",
+    "significado": "muito bom, excelente",
+    "fonte": "regionalismos.json"
+  }
+}

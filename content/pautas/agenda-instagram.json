@@ -2386,6 +2386,38 @@
       "legenda": "TCE-MT abre tomada de contas sobre dívida de R$ 9,5 milhões de Canarana com a previdência\n\nO conselheiro Guilherme Maluf converteu duas denúncias em Tomada de Contas Especial para apurar os débitos da Prefeitura com o Prevican, o fundo de previdência dos servidores. O prefeito Vilson Biguelini (União) reconhece os atrasos e os atribui às dificuldades financeiras do município. A decisão não aponta culpados nem manda devolver dinheiro (VGN, RepórterMT, Olhar Direto).\n\nMatéria completa: hojemt.com.br/canarana-tce-mt-abre-tomada-de-contas-para-apurar-divida-de-r-95-milhoes-com-a-previdencia\n\n#tcemt #canarana #previdencia #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/canarana-tce-mt-abre-tomada-de-contas-para-apurar-divida-de-r-95-milhoes-com-a-previdencia/",
       "obs": "publicar só depois que a matéria (rascunho no Ghost, 6ac8143023c41b1557c4a552) for publicada"
+    },
+    {
+      "id": "142",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-23T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Ocupação na Assembleia",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-09-ocupacao-na-assembleia-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Ocupação na Assembleia\n\nVotação arretada, e não foi sorte.\n(\"Arretado\", no Nordeste, é muito bom, excelente.)\n\nCurta sobre Lúdio Cabral (PT), segundo deputado estadual mais votado de Mato Grosso, com 86.107 votos, que diz que o resultado foi reconhecimento do trabalho. Max Russi (Podemos) foi o mais votado, com 86.934.\n\nLeia a curta completa: hojemt.com.br/ocupacao-na-assembleia\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #ALMT #eleicoes2026 #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/ocupacao-na-assembleia/",
+      "charge_json": "pautas/charges/2026-10-09-ocupacao-na-assembleia.json",
+      "obs": "próximo horário livre de charge; legenda no linguajar regional (rodízio do glossário)."
+    },
+    {
+      "id": "143",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Defesa de ocasião na praça",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-09-defesa-de-ocasiao-na-praca-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Defesa de ocasião na praça\n\nVôte! Virou tradutor de fala alheia.\n(\"Vôte!\", no Centro-Oeste, é interjeição de espanto.)\n\nCurta sobre o prefeito Abilio Brunini (PL), que defendeu a deputada estadual eleita por São Paulo Eduarda Campopiano (PL), autora da frase \"feminicídio não existe\": para ele, a fala foi mal interpretada, o feminicídio existe e deve ser separado de crimes passionais.\n\nLeia a curta completa: hojemt.com.br/defesa-de-ocasiao-na-praca\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #Cuiaba #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/defesa-de-ocasiao-na-praca/",
+      "charge_json": "pautas/charges/2026-10-09-defesa-de-ocasiao-na-praca.json",
+      "obs": "aguardando decisão do editor: tema sensível (feminicídio) e datado; próximo horário livre de charge seria 24/10 07:30."
     }
   ]
 }

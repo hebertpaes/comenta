@@ -1,0 +1,66 @@
+{
+  "slug": "defesa-de-ocasiao-na-praca",
+  "materia": "https://hojemt.com.br/defesa-de-ocasiao-na-praca/",
+  "titulo": "Defesa de ocasião na praça",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 09/10/2026 ~00:30 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal da pessoa desenhada que caiba como citação.",
+  "legenda": {
+    "site_16x9": "Vôte! Na praça, o prefeito virou tradutor de fala alheia.",
+    "instagram_4x5": "Vôte! Virou tradutor de fala alheia."
+  },
+  "contexto": "Curta sobre o prefeito Abilio Brunini (PL), que em vídeo defendeu a deputada estadual eleita por SP Eduarda Campopiano (PL), autora da frase \"feminicídio não existe\": disse que a fala foi mal interpretada e que o feminicídio existe, mas deve ser separado de crimes passionais.",
+  "fontes": [
+    "https://hojemt.com.br/defesa-de-ocasiao-na-praca/",
+    "https://olhardireto.com.br/noticias/abilio-defende-deputada-do-pl-que-negou-feminicidio-ve-interpretacao-equivocada-e-cita-morte-de-homens-apos-traicao",
+    "https://www.vgnoticias.com.br/politica/abilio-defende-separar-feminicidio-de-crime-passional-se-coloca-tudo-no-mesmo-rol-prejudica-os-fatos/153160",
+    "https://24horasmt.com.br/politica-mt/feminicidio-existe-mas-nao-e-tudo-abilio-rebate-fala-de-deputada-do-pl-sp/"
+  ],
+  "regras_da_cena": "Abilio numa praça com fones de intérprete e dicionário aberto, diante de um púlpito vazio com microfone; curiosos de sobrancelha erguida. Sem vítimas, sem violência, sem a deputada desenhada.",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini (prefeito de Cuiabá)",
+      "referencia_canva": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "foto": "Galeria oficial do prefeito, Secom Cuiabá, set/2026",
+      "licenca": "referência de desenho",
+      "tracos_conferidos": "cabeça raspada, sem barba, magro/atlético, camiseta cinza-escura"
+    }
+  ],
+  "anatomia": "conferida ampliada: 4:5 refeita porque a primeira versão tinha três mãos; versão final com duas mãos (uma sob o livro, outra gesticulando); curiosos com dois braços e duas pernas",
+  "canva": {
+    "design_site_16x9": "DAHXeBLZavc",
+    "arte_16x9": "MAHXeP48vBg",
+    "design_instagram_4x5": "DAHXeKjBZ4I",
+    "arte_4x5": "MAHXeKJSJcs",
+    "arte_4x5_descartada": "MAHXeD3S7aw (três mãos)",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "aguardando_decisao",
+    "agenda_id": "143",
+    "quando": null,
+    "motivo": "tema sensível (feminicídio) e datado: o próximo horário livre de charge é 24/10; o editor decide se publica"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-09-defesa-de-ocasiao-na-praca.jpg",
+    "instagram_4x5": "2026-10-09-defesa-de-ocasiao-na-praca-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-09-defesa-de-ocasiao-na-praca.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-09-defesa-de-ocasiao-na-praca-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 09/10/2026 ~00:40 UTC (antes: charge-1791505319.webp, charge automática do publicador)",
+  "regionalismo": {
+    "regiao": "Centro-Oeste",
+    "estado": "MT, GO",
+    "expressao": "Vôte!",
+    "significado": "interjeição de espanto, surpresa ou repulsa",
+    "fonte": "regionalismos.json"
+  }
+}
