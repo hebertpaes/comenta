@@ -1,0 +1,61 @@
+{
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: as falas atribuídas a Abilio na curta (\"surto coletivo\", \"ruim de serviço\") não foram localizadas em outra fonte.",
+  "slug": "terapia-de-grupo-eleitoral",
+  "materia": "https://hojemt.com.br/terapia-de-grupo-eleitoral/",
+  "titulo": "Terapia de grupo eleitoral",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 09/10/2026 ~16:30 UTC; imagem gerada no Canva antes do pedido do editor de usar a API do GPT para gerar as charges)",
+  "legenda": {
+    "site_16x9": "Quá! No divã do Alencastro, a receita é Maria Isabel.",
+    "instagram_4x5": "Quá! No divã do Alencastro, a receita é Maria Isabel."
+  },
+  "regionalismo": {
+    "expressao": "Quá!",
+    "regiao": "Centro-Oeste",
+    "onde": "Cuiabá e Baixada Cuiabana (MT)",
+    "significado": "interjeição de espanto ou descrença",
+    "linha_instagram": "“Quá!” é a interjeição cuiabana de espanto e descrença."
+  },
+  "contexto": "Curta-crônica: Abilio Brunini teria dito que a esquerda vive um 'surto coletivo' e que um eventual governo Flávio precisaria de programa de saúde mental; cita Maria Isabel e a eleição de Samantha do Abilio para a ALMT.",
+  "fontes": [
+    "https://hojemt.com.br/terapia-de-grupo-eleitoral/"
+  ],
+  "regras_da_cena": "Abilio de jaleco, prancheta, divã VAZIO (ninguém retratado como paciente), prato de Maria Isabel; humor leve, sem humilhação de terceiros.",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini",
+      "foto_referencia": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "origem": "tabela 'Referências de imagem por personagem' do content/README.md",
+      "tracos_no_prompt": "cabeça raspada, sem barba, sem óculos, magro, camiseta cinza-escura",
+      "conferencia": "arte ampliada: cabeça raspada, sem óculos, só sombra leve de barba; duas mãos, duas pernas"
+    }
+  ],
+  "anatomia": "conferida ampliada: duas mãos e duas pernas nas duas versões",
+  "canva": {
+    "design_site_16x9": "DAHXiKtjO3Y",
+    "arte_16x9": "MAHXiDH82Zs",
+    "design_instagram_4x5": "DAHXiKHEakQ",
+    "arte_4x5": "MAHXiEyPyR4",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "aguardando_decisao",
+    "agenda_id": "155",
+    "quando": null,
+    "motivo": "as declarações atribuídas a Abilio e os números de Samantha do Abilio (57.900 votos) não foram confirmados em outra fonte nesta rodada."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-09-terapia-de-grupo-eleitoral.jpg",
+    "instagram_4x5": "2026-10-09-terapia-de-grupo-eleitoral-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-09-terapia-de-grupo-eleitoral.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-09-terapia-de-grupo-eleitoral-instagram-retrato.jpg"
+  }
+}

@@ -36,6 +36,7 @@ else
   echo "ambiente HOJE MT: credenciais do Ghost AUSENTES (configure GHOST_ADMIN_URL e GHOST_ADMIN_API_KEY nas variáveis de ambiente do ambiente do Claude Code; nunca no chat nem no repositório)"
   _hojemt_ok=1
 fi
+[ -n "${OPENAI_API_KEY:-}" ] && echo "chave da OpenAI (imagem das charges): ok" || echo "chave da OpenAI (imagem das charges): ausente — charges caem no generate-image do Canva"
 unset _hojemt_raiz
 if [ "${1:-}" = "--checar" ]; then
   _r=$_hojemt_ok; unset _hojemt_ok; return $_r 2>/dev/null || exit $_r

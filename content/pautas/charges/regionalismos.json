@@ -8,7 +8,7 @@
       "Sudeste",
       "Sul"
     ],
-    "ultima_regiao": "Nordeste",
+    "ultima_regiao": "Centro-Oeste",
     "data": "2026-10-09",
     "usadas": [
       {
@@ -112,6 +112,12 @@
         "regiao": "Nordeste",
         "expressao": "Avalie!",
         "charge": "2026-10-09-mente-livre-da-muralha"
+      },
+      {
+        "data": "2026-10-09",
+        "regiao": "Centro-Oeste",
+        "expressao": "Quá!",
+        "charge": "2026-10-09-terapia-de-grupo-eleitoral"
       }
     ]
   },

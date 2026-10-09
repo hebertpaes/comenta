@@ -2592,6 +2592,22 @@
       "materia": "https://hojemt.com.br/mente-livre-da-muralha/",
       "charge_json": "pautas/charges/2026-10-09-mente-livre-da-muralha.json",
       "obs": "aguardando decisão: o pronunciamento da OMS citado na curta não foi localizado; a data (10/10) passa antes do próximo horário livre de charge (26/10 07:30)."
+    },
+    {
+      "id": "155",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Terapia de grupo eleitoral",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-09-terapia-de-grupo-eleitoral-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Terapia de grupo eleitoral\n\nQuá! No divã do Alencastro, a receita é Maria Isabel.\n(“Quá!”, em Cuiabá, é interjeição de espanto e descrença.)\n\nCurta sobre o prefeito Abilio Brunini e a “terapia” que ele receita para a oposição depois do 1º turno.\n\nLeia a curta completa: hojemt.com.br/terapia-de-grupo-eleitoral\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #Cuiaba #HojeMT",
+      "materia": "https://hojemt.com.br/terapia-de-grupo-eleitoral/",
+      "charge_json": "pautas/charges/2026-10-09-terapia-de-grupo-eleitoral.json",
+      "obs": "aguardando decisão: declarações atribuídas a Abilio na curta não localizadas em outra fonte."
     }
   ]
 }
