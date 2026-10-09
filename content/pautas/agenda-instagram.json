@@ -2466,6 +2466,22 @@
       "materia": "https://hojemt.com.br/parlamento-sem-rabo-preso/",
       "charge_json": "pautas/charges/2026-10-09-parlamento-sem-rabo-preso.json",
       "obs": "aguardando decisão do editor: a curta diz 'coletiva nesta quarta', mas o fato foi na quinta (8), em palestra da Seplag."
+    },
+    {
+      "id": "147",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Lotérica do TSE",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-09-loterica-do-tse-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Lotérica do TSE\n\nSe avexe não, Paraná: o TSE adiou e a cadeira espera.\n(\"Se avexe não\", no Nordeste, quer dizer \"tenha calma, não se apresse\".)\n\nO TSE adiou o julgamento do registro de candidatura de Deltan Dallagnol (Novo), eleito senador pelo Paraná com 2,9 milhões de votos. Se o registro for negado, haverá nova eleição para a vaga.\n\nLeia a curta completa: hojemt.com.br/loterica-do-tse\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #TSE #eleicoes2026 #Senado #hojemt",
+      "materia": "https://hojemt.com.br/loterica-do-tse/",
+      "charge_json": "pautas/charges/2026-10-09-loterica-do-tse.json",
+      "obs": "aguardando decisão do editor: próximo horário livre de charge é 25/10 07:30 e o TSE pode julgar o caso antes; publicar antes, se o editor quiser, ou descartar."
     }
   ]
 }

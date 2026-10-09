@@ -8,7 +8,7 @@
       "Sudeste",
       "Sul"
     ],
-    "ultima_regiao": "Norte",
+    "ultima_regiao": "Nordeste",
     "data": "2026-10-09",
     "usadas": [
       {
@@ -76,6 +76,12 @@
         "regiao": "Norte",
         "expressao": "Égua!",
         "charge": "2026-10-09-parlamento-sem-rabo-preso"
+      },
+      {
+        "data": "2026-10-09",
+        "regiao": "Nordeste",
+        "expressao": "Se avexe não",
+        "charge": "2026-10-09-loterica-do-tse"
       }
     ]
   },

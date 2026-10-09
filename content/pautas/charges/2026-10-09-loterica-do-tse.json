@@ -1,0 +1,63 @@
+{
+  "slug": "loterica-do-tse",
+  "materia": "https://hojemt.com.br/loterica-do-tse/",
+  "titulo": "Lotérica do TSE",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 09/10/2026 ~08:30 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal citável.",
+  "legenda": {
+    "site_16x9": "Se avexe não, Paraná: o TSE adiou e a cadeira espera.",
+    "instagram_4x5": "Se avexe não, Paraná: o TSE adiou e a cadeira espera."
+  },
+  "contexto": "Curta sobre o adiamento, em 08/10/2026, do julgamento no TSE do registro de candidatura de Deltan Dallagnol (Novo), eleito senador pelo Paraná no 1º turno com 2.904.594 votos; o caso foi retirado de pauta a pedido da defesa e ainda não tem nova data. Se o registro for negado, haverá eleição complementar para a vaga.",
+  "fontes": [
+    "https://hojemt.com.br/loterica-do-tse/",
+    "https://agenciabrasil.ebc.com.br/justica/noticia/2026-10/tse-adia-julgamento-sobre-candidatura-de-deltan-dalagnol-ao-senado",
+    "https://www.cnnbrasil.com.br/eleicoes/tse-define-candidatura-dallagnol/",
+    "https://www.otempo.com.br/eleicoes/2026/senadores/2026/10/8/tse-adia-julgamento-que-pode-definir-futuro-de-deltan-dallagnol-no-senado"
+  ],
+  "regras_da_cena": "caso de registro de candidatura (não é acusação de crime): Deltan em caricatura neutra e simpática, sentado numa sala de espera com uma senha em branco, olhando o relógio; ao lado, poltrona azul do Senado vazia atrás de corda de veludo; ao fundo, globo de sorteio (título da curta). Sem humilhação, sem texto.",
+  "personagens": [
+    {
+      "nome": "Deltan Dallagnol",
+      "partido": "Novo",
+      "foto": "TSE/DivulgaCand 2026, SQ 160002547661 (https://static.ndmais.com.br/eleicoes/2026/pr/FPR160002547661_div.jpg)",
+      "canva_media_foto": "MAHXgEYB-t4",
+      "tracos_conferidos": "rosto oval com maçãs marcadas, cabelo curto escuro penteado para o lado, sem barba, óculos de armação retangular escura, sorriso largo, blazer azul e camisa azul-clara sem gravata"
+    }
+  ],
+  "anatomia": "conferida ampliada: dois braços, duas mãos (cinco dedos), duas pernas e dois pés nas duas versões",
+  "canva": {
+    "design_site_16x9": "DAHXgGCbuws",
+    "arte_16x9": "MAHXgDiG2IA",
+    "design_instagram_4x5": "DAHXgIhwWZA",
+    "arte_4x5": "MAHXgO9CoOk",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "aguardando_decisao",
+    "agenda_id": "147",
+    "quando": null,
+    "motivo": "o próximo horário livre de charge é 25/10 07:30; o TSE pode julgar o registro antes disso e a charge perderia o sentido."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-09-loterica-do-tse.jpg",
+    "instagram_4x5": "2026-10-09-loterica-do-tse-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-09-loterica-do-tse.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-09-loterica-do-tse-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 09/10/2026 ~08:35 UTC (antes: charge-dia-1791533458.webp, charge automática do publicador)",
+  "regionalismo": {
+    "regiao": "Nordeste",
+    "estado": "PB/RN/CE",
+    "expressao": "Se avexe não",
+    "significado": "tenha calma, não se apresse",
+    "fonte": "regionalismos.json"
+  },
+  "obs_na_curta": "o resumo (custom_excerpt) tem erro de digitação: 'Paraná pode eleição' (falta 'ter nova'). Não corrigido: decisão do editor."
+}
