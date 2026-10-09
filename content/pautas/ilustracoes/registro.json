@@ -2249,21 +2249,30 @@
       "url": "https://hojemt.com.br/content/images/2026/10/2026-10-09-lucas-semana-literaria.jpg",
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção) · Com informações da Prefeitura de Lucas do Rio Verde (link mantido)",
       "obs": "charges 09/10 14h27 UTC, Parte B"
+    },
+    {
+      "slug": "eleicoes-aguaprevi-votacao-para-conselhos-curador-e-fiscal-em-16-10",
+      "titulo": "Eleições AGUAPREVI: Votação para Conselhos Curador e Fiscal em 16/10",
+      "materia": "https://hojemt.com.br/eleicoes-aguaprevi-votacao-para-conselhos-curador-e-fiscal-em-16-10/",
+      "tag": "Eleições",
+      "canva": {
+        "design": "DAHXi3YDhcg",
+        "arte": "MAHXiyb-HxM",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "servidora de costas, cabelo preso e blusa verde, vota pelo computador numa repartição de Água Boa com fichários de previdência; janela com avenida de ipês; nenhum rosto visível",
+      "arquivo": "2026-10-09-aguaprevi-eleicao-conselhos.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-09-aguaprevi-eleicao-conselhos.jpg",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção) · Com informações da Prefeitura de Água Boa (link mantido)",
+      "obs": "charges 09/10 ~19:35 UTC, Parte B (pendente desde 15:30 UTC por cota do Canva)"
     }
   ],
   "pendentes": [
     {
-      "slug": "eleicoes-aguaprevi-votacao-para-conselhos-curador-e-fiscal-em-16-10",
-      "tipo": "ilustração (Parte B)",
-      "desde": "2026-10-09T15:30Z",
-      "motivo": "Canva em quota_cooldown",
-      "cena_planejada": "servidora de costas votando pelo celular/computador num escritório de Água Boa, com fichários de previdência; nenhum rosto visível"
-    },
-    {
       "slug": "unemat-se-solidariza-com-ufpe-apos-incendio-em-laboratorios",
       "tipo": "ilustração (Parte B)",
       "desde": "2026-10-09T15:30Z",
-      "motivo": "Canva em quota_cooldown",
+      "motivo": "Canva em quota_cooldown (de novo às 19:35 UTC)",
       "cena_planejada": "cena sóbria: corredor de laboratório universitário com bancadas e vidrarias intactas, luz de fim de tarde; sem fogo, sem pessoas"
     }
   ]
