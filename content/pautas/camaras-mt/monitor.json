@@ -938,7 +938,7 @@
   },
   "sorriso:yt:bAJbjAlxEFs": {
    "titulo": "Reunião de Comissões 08-10-26",
-   "data": "2026-10-08"
+   "data": "2026-10-09"
   },
   "chapada:gn:júlio campos avalia futuro político após ficar fora da assembleia": {
    "titulo": "Júlio Campos avalia futuro político após ficar fora da Assembleia - rdmonline.com.br",
@@ -949,7 +949,7 @@
    "data": "2026-10-08"
   },
   "chapada:gn:vereador de várzea grande é internado em cuiabá após sofrer queimaduras": {
-   "titulo": "Vereador de Várzea Grande é internado em Cuiabá após sofrer queimaduras - en.com.br",
+   "titulo": "Vereador de Várzea Grande é internado em Cuiabá após sofrer queimaduras - Esportes & Notícias",
    "data": "2026-10-08"
   },
   "sorriso:https://sorriso.mt.leg.br/noticia/indicacao-pede-reforco-no-quadro-de-profissionais-da-ubs-do-morada-do-bosque-em-sorriso": {
@@ -999,9 +999,17 @@
   "lrv:yt:TLD8l-JXuCQ": {
    "titulo": "Sessão Ordinária Nº 32-2026 de 08-10-2026",
    "data": "2026-10-08"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/indicacao-sugere-mudanca-no-periodo-de-renovacao-de-alvaras-em-sorriso": {
+   "titulo": "Indicação sugere mudança no período de renovação de alvarás, em Sorriso",
+   "data": "2026-10-09"
+  },
+  "sorriso:https://sorriso.mt.leg.br/noticia/presidente-solicita-construcao-de-espacos-de-lazer-infantil-em-areas-arborizadas-e-sombreadas-nos-bairros-morada-do-bosque": {
+   "titulo": "Presidente solicita construção de espaços de lazer infantil em áreas arborizadas e sombreadas nos bairros Morada do Bosque",
+   "data": "2026-10-09"
   }
  },
- "ultima_checagem": "2026-10-08T20:42:03.497Z",
+ "ultima_checagem": "2026-10-09T12:39:41.354Z",
  "descartados_2026-10-01_tarde": [
   {
    "cidade": "Sorriso",
@@ -1051,6 +1059,10 @@
   {
    "data": "2026-10-08",
    "nota": "Rodada de 20h37 UTC: 12 itens novos. Pauta: Plano Diretor de Lucas aprovado (fonte oficial). Sem pauta: Júlio Campos cogita disputar vaga de vereador em Chapada (Alô Chapada, especulação de uma fonte); vereador de VG internado (assunto de outra cidade); vídeos do Grande Expediente de Lucas (falas individuais). Site da Câmara de Sorriso fora do ar (fetch failed)."
+  },
+  {
+   "data": "2026-10-09",
+   "nota": "Disparo de 12h38 UTC: 0 itens novos (sites de Sorriso e Barra do Garças com fetch failed). Busca na imprensa: só a 32ª sessão de Lucas (Plano Diretor, já em rascunho de 08/10) e a comissão especial do Código de Posturas (rotina, sem fato concreto ainda). Nada de Sorriso, Barra ou Chapada nas últimas 48 h. Sem pauta; sem arte pendente."
   }
  ]
 }
