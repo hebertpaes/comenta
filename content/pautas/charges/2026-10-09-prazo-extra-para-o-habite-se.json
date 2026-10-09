@@ -1,0 +1,63 @@
+{
+  "slug": "prazo-extra-para-o-habite-se",
+  "materia": "https://hojemt.com.br/prazo-extra-para-o-habite-se/",
+  "titulo": "Prazo extra para o Habite-se",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 09/10/2026 ~03:30 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal citável.",
+  "legenda": {
+    "site_16x9": "Demorô! Habite-se ganha mais um ano de prazo em Cuiabá.",
+    "instagram_4x5": "Demorô: mais um ano pro Habite-se."
+  },
+  "contexto": "Curta sobre a prorrogação, anunciada por Abilio Brunini (PL) em 08/10 no Palácio Alencastro a entidades empresariais, de um ano de prazo para empresas obterem alvará sem o Habite-se.",
+  "fontes": [
+    "https://hojemt.com.br/prazo-extra-para-o-habite-se/",
+    "https://olhardireto.com.br/noticias/abilio-prorroga-por-um-ano-prazo-para-adequacao-do-habite-se-em-cuiaba",
+    "https://www.midianews.com.br/cotidiano/abilio-amplia-prazo-para-empresas-obterem-alvaras-sem-habite-se/530984"
+  ],
+  "regras_da_cena": "Abilio vira uma ampulheta gigante diante de um prédio colonial com palmeiras; comerciantes genéricos aliviados.",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini (prefeito de Cuiabá)",
+      "referencia_canva": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "foto": "Galeria oficial do prefeito, Secom Cuiabá, set/2026",
+      "licenca": "referência de desenho",
+      "tracos_conferidos": "cabeça raspada, sem barba, magro/atlético, camiseta cinza-escura"
+    }
+  ],
+  "anatomia": "conferida ampliada: Abilio com duas mãos na ampulheta; comerciantes com dois braços e duas pernas",
+  "canva": {
+    "design_site_16x9": "DAHXe0AwTco",
+    "arte_16x9": "MAHXe6iip0Q",
+    "design_instagram_4x5": "DAHXe4bn7bY",
+    "arte_4x5": "MAHXe8qyiq0",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "144",
+    "quando": "2026-10-24T07:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-09-prazo-extra-para-o-habite-se.jpg",
+    "instagram_4x5": "2026-10-09-prazo-extra-para-o-habite-se-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-09-prazo-extra-para-o-habite-se.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-09-prazo-extra-para-o-habite-se-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 09/10/2026 ~03:35 UTC (antes: charge-1791516265.webp). A curta duplicada praia-em-cuiaba (mesmo fato, título sem relação com o texto) foi despublicada.",
+  "regionalismo": {
+    "regiao": "Sudeste",
+    "estado": "SP, RJ, MG",
+    "expressao": "Demorô",
+    "significado": "combinado, fechado, topo",
+    "fonte": "regionalismos.json"
+  }
+}

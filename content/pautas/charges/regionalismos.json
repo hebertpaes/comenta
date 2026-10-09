@@ -8,7 +8,7 @@
       "Sudeste",
       "Sul"
     ],
-    "ultima_regiao": "Centro-Oeste",
+    "ultima_regiao": "Sudeste",
     "data": "2026-10-09",
     "usadas": [
       {
@@ -58,6 +58,12 @@
         "regiao": "Centro-Oeste",
         "expressao": "Vôte!",
         "charge": "2026-10-09-defesa-de-ocasiao-na-praca"
+      },
+      {
+        "data": "2026-10-09",
+        "regiao": "Sudeste",
+        "expressao": "Demorô",
+        "charge": "2026-10-09-prazo-extra-para-o-habite-se"
       }
     ]
   },

@@ -2418,6 +2418,22 @@
       "materia": "https://hojemt.com.br/defesa-de-ocasiao-na-praca/",
       "charge_json": "pautas/charges/2026-10-09-defesa-de-ocasiao-na-praca.json",
       "obs": "aguardando decisão do editor: tema sensível (feminicídio) e datado; próximo horário livre de charge seria 24/10 07:30."
+    },
+    {
+      "id": "144",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-24T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Prazo extra para o Habite-se",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-09-prazo-extra-para-o-habite-se-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Prazo extra para o Habite-se\n\nDemorô: mais um ano pro Habite-se.\n(\"Demorô\", no Sudeste, é \"combinado\", \"fechado\".)\n\nCurta sobre a decisão do prefeito Abilio Brunini (PL) de dar mais um ano para empresas de Cuiabá obterem alvará sem o Habite-se, anunciada a entidades empresariais no Palácio Alencastro.\n\nLeia a curta completa: hojemt.com.br/prazo-extra-para-o-habite-se\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #Cuiaba #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/prazo-extra-para-o-habite-se/",
+      "charge_json": "pautas/charges/2026-10-09-prazo-extra-para-o-habite-se.json",
+      "obs": "próximo horário livre de charge; legenda no linguajar regional (rodízio do glossário)."
     }
   ]
 }
