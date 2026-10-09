@@ -37,9 +37,11 @@
     "modelo_retrato": "DAHWEJf2P1U"
   },
   "instagram": {
-    "status": "agendado",
+    "status": "publicado",
     "agenda_id": "93",
-    "quando": "2026-10-09T07:30:00-04:00"
+    "quando": "2026-10-09T07:30:00-04:00",
+    "permalink": "https://www.instagram.com/p/DeRbAr-lwOI/",
+    "publicado_em": "2026-10-09T11:39:46+00:00"
   },
   "arquivos": {
     "site_16x9": "2026-10-06-colheita-amarga-na-camara.jpg",
