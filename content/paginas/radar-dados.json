@@ -11807,7 +11807,7 @@
   }
  ],
  "autoridades": {
-  "gerado_em": "2026-10-09T03:08:01Z",
+  "gerado_em": "2026-10-09T12:07:52Z",
   "janela_dias": 7,
   "fonte": "Google Notícias (manchetes que citam o nome); classificação automática por palavras",
   "candidatos": [
@@ -11862,6 +11862,12 @@
     "confirmar": false,
     "situacao": "Prefeito em exercício · sem candidatura em 2026",
     "polemicas": [
+     {
+      "titulo": "Mesmo após vitória de Alessandra, Cláudio Ferreira cobra resultados e dá recado duro ao secretariado",
+      "fonte": "Primeira Hora",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQYzJkWWRBYzZDTVlxWTBTQXNsLWNTQTAtU1pTbENBbTlYOUFyRmNNTU16bU1walNOd0hHN19WVldZQUZTX3JhVXBRNllIUjNFSnF1bkI5UU00bXVWS3NLQy03UXh6V0VBeGkxWDdtSWJfNGdETFFxSFNRekIzakhiNERwQ0Y3LXNaYmw1X3EyQ1ZfTS1YV0J1c0VIRkJsTEZ2MzRaaDZrSkZieWZ1VEh1cGlfbzI3b1ZtZUpxZW5oZF9QcGNibmhz?oc=5",
+      "data": "09/10"
+     },
      {
       "titulo": "Cláudio Ferreira critica grupo Riva e diz: “A gente aposentou da vida pública”",
       "fonte": "Portal MT",
@@ -11925,7 +11931,7 @@
     ],
     "solucoes": [],
     "neutras": 4,
-    "total": 14
+    "total": 15
    },
    {
     "nome": "Eliene Liberato",
@@ -12025,16 +12031,9 @@
     "confirmar": false,
     "situacao": "Prefeito em exercício · sem candidatura em 2026",
     "polemicas": [],
-    "solucoes": [
-     {
-      "titulo": "DESEMPENHO - Vander Masson avalia resultado das eleições e projeta novas parcerias para Tangará da Serra",
-      "fonte": "Diário da Serra",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPMlZKVXNELTNLWlVNZGpMVlR3VV9FUFZ2NUNRWlpyMUctbG5PWFhhV081LUk3djJLVUlIcjd4ekpMNUxqMjJNdVlCVVdzNld0V3gtelVtZjFVZGM0akZleWIxeUcxZWlaZzhtSVItTWNrb19NLVE2ajFxUWNEVTNIb1I0ck1pdmJyN2FONlVnNFN6T0FiZWNULXlkWmpnN0hNSUIw?oc=5",
-      "data": "06/10"
-     }
-    ],
+    "solucoes": [],
     "neutras": 0,
-    "total": 1
+    "total": 0
    }
   ]
  }
