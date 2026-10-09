@@ -2185,20 +2185,46 @@
       "url": "https://hojemt.com.br/content/images/2026/10/2026-10-09-cuiaba-20-vereadores-flavio.jpg",
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
       "obs": "rotina Câmara de Cuiabá 09/10 08h07 (MT); rascunho; card em pautas/cards/2026-10-09-camara-cuiaba-20-vereadores-flavio.jpg (agenda 150)"
+    },
+    {
+      "slug": "feriado-de-12-de-outubro-o-que-o-mato-grosso-realmente-perde",
+      "titulo": "Feriado de 12 de Outubro: o que o Mato‑Grosso realmente perde",
+      "materia": "https://hojemt.com.br/feriado-de-12-de-outubro-o-que-o-mato-grosso-realmente-perde/",
+      "tag": "Opinião",
+      "canva": {
+        "design": "DAHXhaHlcnU",
+        "arte": "MAHXhdFo2r8",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "agência bancária fechada em rua arborizada de Cuiabá num feriado; pessoa de costas pagando pelo celular; caixa eletrônico iluminado; nenhum rosto visível",
+      "arquivo": "2026-10-09-feriado-12-outubro-bancos.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-09-feriado-12-outubro-bancos.jpg",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
+      "obs": "charges 09/10 13h26, Parte B (pendente desde 12h26 por quota_cooldown); substitui opiniao-1791547562.webp"
+    },
+    {
+      "slug": "jurista-sul-africana-navi-pillay-e-consagrada-com-o-nobel-da-paz-de-2026",
+      "titulo": "Jurista sul-africana Navi Pillay é consagrada com o Nobel da Paz de 2026",
+      "materia": "https://hojemt.com.br/jurista-sul-africana-navi-pillay-e-consagrada-com-o-nobel-da-paz-de-2026/",
+      "tag": "Mundo",
+      "canva": {
+        "design": "DAHXhSMpW5M",
+        "arte": "MAHXhZDXXK8",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "senhora de 85 anos, cabelos grisalhos curtos, terno escuro, de costas num salão nobre com janelas para um fiorde; medalha dourada em estojo de veludo verde e livros de direito; nenhum rosto visível",
+      "arquivo": "2026-10-09-nobel-paz-navi-pillay.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-09-nobel-paz-navi-pillay.jpg",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção) · Com informações da Agência Brasil (link mantido)",
+      "obs": "charges 09/10 13h26, Parte B (pendente desde 12h26 por quota_cooldown); substitui capa-39634f7c4add7297.webp; prêmio confirmado em CNN Brasil e Correio Braziliense"
     }
   ],
   "pendentes": [
     {
-      "slug": "jurista-sul-africana-navi-pillay-e-consagrada-com-o-nobel-da-paz-de-2026",
-      "desde": "2026-10-09T12:30Z",
-      "motivo": "Canva em quota_cooldown",
-      "cena_planejada": "senhora de 85 anos, cabelos grisalhos curtos e terno escuro, de costas, num salão nobre de madeira com janelas para um fiorde; medalha dourada em estojo de veludo verde"
-    },
-    {
-      "slug": "feriado-de-12-de-outubro-o-que-o-mato-grosso-realmente-perde",
-      "desde": "2026-10-09T12:30Z",
-      "motivo": "Canva em quota_cooldown",
-      "cena_planejada": "agência bancária fechada em rua arborizada de Cuiabá num feriado; pessoa de costas pagando pelo celular; caixa eletrônico iluminado"
+      "slug": "homem-e-baleado-por-agentes-do-ice-dentro-de-carro-em-nova-york",
+      "desde": "2026-10-09T13:30Z",
+      "motivo": "limite de 2 artes da Parte B por disparo",
+      "cena_planejada": "a definir: tema de violência policial com vítima — cena sóbria, sem representar o ato nem a vítima"
     }
   ]
 }
