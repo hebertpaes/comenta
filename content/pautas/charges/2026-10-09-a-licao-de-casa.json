@@ -1,0 +1,51 @@
+{
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal citável.",
+  "slug": "a-licao-de-casa",
+  "materia": "https://hojemt.com.br/a-licao-de-casa/",
+  "titulo": "A lição de casa",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 09/10/2026 ~12:30 UTC)",
+  "legenda": {
+    "site_16x9": "Manual pai d'égua: entender o Senado antes de reclamar.",
+    "instagram_4x5": "Manual pai d'égua: entender o Senado antes de reclamar."
+  },
+  "contexto": "Curta-crônica sobre publicação do Senado no Bluesky divulgando o guia 'O Senado Federal em Perguntas e Respostas', para o eleitor entender o funcionamento do Estado.",
+  "fontes": [
+    "https://hojemt.com.br/a-licao-de-casa/"
+  ],
+  "regras_da_cena": "eleitor genérico (não é pessoa real) lendo um livro enorme na rede, com o Congresso ao fundo.",
+  "personagens": [],
+  "anatomia": "conferida: eleitor com duas mãos e dois pés nas duas versões",
+  "canva": {
+    "design_site_16x9": "DAHXhDkBNEc",
+    "arte_16x9": "MAHXhKMypsY",
+    "design_instagram_4x5": "DAHXhKs1vwY",
+    "arte_4x5": "MAHXhPZW7w8",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "aguardando_decisao",
+    "agenda_id": "152",
+    "quando": null,
+    "motivo": "a publicação do Senado e o título do guia citados na curta não foram localizados nesta rodada (buscas no site do Senado sem resultado)."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-09-a-licao-de-casa.jpg",
+    "instagram_4x5": "2026-10-09-a-licao-de-casa-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-09-a-licao-de-casa.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-09-a-licao-de-casa-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 09/10/2026 ~12:35 UTC (antes: charge-1791548508.webp)",
+  "regionalismo": {
+    "regiao": "Norte",
+    "estado": "PA",
+    "expressao": "Pai d'égua",
+    "significado": "muito bom, excelente",
+    "fonte": "regionalismos.json"
+  }
+}

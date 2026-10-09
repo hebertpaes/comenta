@@ -2186,5 +2186,19 @@
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção)",
       "obs": "rotina Câmara de Cuiabá 09/10 08h07 (MT); rascunho; card em pautas/cards/2026-10-09-camara-cuiaba-20-vereadores-flavio.jpg (agenda 150)"
     }
+  ],
+  "pendentes": [
+    {
+      "slug": "jurista-sul-africana-navi-pillay-e-consagrada-com-o-nobel-da-paz-de-2026",
+      "desde": "2026-10-09T12:30Z",
+      "motivo": "Canva em quota_cooldown",
+      "cena_planejada": "senhora de 85 anos, cabelos grisalhos curtos e terno escuro, de costas, num salão nobre de madeira com janelas para um fiorde; medalha dourada em estojo de veludo verde"
+    },
+    {
+      "slug": "feriado-de-12-de-outubro-o-que-o-mato-grosso-realmente-perde",
+      "desde": "2026-10-09T12:30Z",
+      "motivo": "Canva em quota_cooldown",
+      "cena_planejada": "agência bancária fechada em rua arborizada de Cuiabá num feriado; pessoa de costas pagando pelo celular; caixa eletrônico iluminado"
+    }
   ]
 }

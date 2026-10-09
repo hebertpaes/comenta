@@ -1,0 +1,63 @@
+{
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal citável.",
+  "slug": "corte-na-margem",
+  "materia": "https://hojemt.com.br/corte-na-margem/",
+  "titulo": "Corte na margem",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 09/10/2026 ~12:30 UTC)",
+  "legenda": {
+    "site_16x9": "Barbaridade! O cartão da Aspe encolheu de 30% para 5%.",
+    "instagram_4x5": "Barbaridade! O cartão da Aspe encolheu de 30% para 5%."
+  },
+  "contexto": "Decreto do prefeito Abilio Brunini (PL), publicado em 28/09/2026, reduziu de 30% para 5% do rendimento líquido a margem de desconto em folha dos filiados à Aspe (associação dos servidores de Cuiabá), e a Secretaria de Economia anunciou que não renovará o contrato com a entidade; a Prefeitura cita descumprimento de obrigação contratual (repasse de 1% ao Fundo de Capacitação do Servidor).",
+  "fontes": [
+    "https://hojemt.com.br/corte-na-margem/",
+    "https://www.fatosdematogrosso.com.br/politica/prefeitura-corta-limite-e-encerra-convenio-do-cartao-da-aspe-em-cuiaba/17119",
+    "https://vipmt.com.br/cidades/varzea-grande/prefeitura-de-cuiaba-nao-renova-contrato-com-a-aspe-por-descumprimento-de-obrigacoes-contratuais/"
+  ],
+  "regras_da_cena": "decisão administrativa (não é acusação): Abilio em caricatura recorta com tesoura gigante um cartão em branco; servidor genérico com cesta de remédio e pão olha espantado. Sem dinheiro, sem humilhação.",
+  "personagens": [
+    {
+      "nome": "Abilio Brunini",
+      "foto": "galeria oficial da Prefeitura de Cuiabá (Rennan Oliveira/Secom), 21/09 e 03/09/2026 — referência de desenho",
+      "canva_media_foto": [
+        "MAHWHiDa8C0",
+        "MAHWHkYuCOg"
+      ],
+      "tracos_conferidos": "cabeça raspada, sem barba, magro/atlético, camiseta cinza-escura lisa (tabela do README)"
+    }
+  ],
+  "anatomia": "conferida ampliada: Abilio e servidor com duas mãos (e dois pés no 4:5) nas duas versões",
+  "canva": {
+    "design_site_16x9": "DAHXhHSOn2c",
+    "arte_16x9": "MAHXhIjBmdQ",
+    "design_instagram_4x5": "DAHXhKXcxaw",
+    "arte_4x5": "MAHXhI7yuOY",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "151",
+    "quando": "2026-10-25T15:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-09-corte-na-margem.jpg",
+    "instagram_4x5": "2026-10-09-corte-na-margem-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-09-corte-na-margem.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-09-corte-na-margem-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 09/10/2026 ~12:35 UTC (antes: charge-1791548484.webp)",
+  "regionalismo": {
+    "regiao": "Sul",
+    "estado": "RS",
+    "expressao": "Barbaridade!",
+    "significado": "interjeição de espanto ou indignação",
+    "fonte": "regionalismos.json"
+  },
+  "obs_na_curta": "a curta diz que o prefeito 'decidiu não renovar'; segundo o VIP MT, a não renovação foi anunciada pela Secretaria de Economia, por descumprimento contratual (a curta não cita o motivo)."
+}

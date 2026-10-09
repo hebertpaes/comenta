@@ -2528,6 +2528,37 @@
       "legenda": "Vinte vereadores de Cuiabá assinam manifesto de apoio a Flávio Bolsonaro\n\nO documento, de autoria de Dilemário Alencar (União Brasil), reúne parlamentares de dez partidos e um vereador sem partido e será levado à coordenação da campanha do candidato do PL no 2º turno. Na quinta-feira (8), a Câmara Municipal recebeu um ato de adesivaço da campanha (RepórterMT, Infoverus). O 2º turno é em 25 de outubro.\n\nMatéria completa: hojemt.com.br/vinte-vereadores-de-cuiaba-assinam-manifesto-de-apoio-a-flavio-bolsonaro\n\n#eleicoes2026 #cuiaba #camaradecuiaba #matogrosso #hojemt",
       "materia": "https://hojemt.com.br/vinte-vereadores-de-cuiaba-assinam-manifesto-de-apoio-a-flavio-bolsonaro/",
       "obs": "publicar só depois que a matéria (rascunho no Ghost, 6ac8dc1423c41b1557c4a687) for publicada"
+    },
+    {
+      "id": "151",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-25T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Corte na margem",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-09-corte-na-margem-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Corte na margem\n\nBarbaridade! O cartão da Aspe encolheu de 30% para 5%.\n(\"Barbaridade!\", no Sul, é interjeição de espanto ou indignação.)\n\nDecreto do prefeito de Cuiabá, Abilio Brunini (PL), reduziu de 30% para 5% a margem de desconto em folha do cartão da Aspe, usado por servidores para comprar remédio, comida e combustível, e a Prefeitura anunciou que não renovará o contrato com a associação (Fatos de MT, VIP MT).\n\nLeia a curta completa: hojemt.com.br/corte-na-margem\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #cuiaba #servidores #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/corte-na-margem/",
+      "charge_json": "pautas/charges/2026-10-09-corte-na-margem.json"
+    },
+    {
+      "id": "152",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "A lição de casa",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-09-a-licao-de-casa-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · A lição de casa\n\nManual pai d'égua: entender o Senado antes de reclamar.\n(\"Pai d'égua\", no Norte, quer dizer muito bom, excelente.)\n\nCurta sobre o guia do Senado para o eleitor entender como funciona o Estado.\n\nLeia a curta completa: hojemt.com.br/a-licao-de-casa\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #senado #cidadania #hojemt",
+      "materia": "https://hojemt.com.br/a-licao-de-casa/",
+      "charge_json": "pautas/charges/2026-10-09-a-licao-de-casa.json",
+      "obs": "aguardando decisão do editor: não localizei a publicação do Senado nem o guia 'O Senado Federal em Perguntas e Respostas' citados na curta."
     }
   ]
 }
