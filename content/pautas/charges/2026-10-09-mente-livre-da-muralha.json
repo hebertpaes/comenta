@@ -1,0 +1,50 @@
+{
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal citável.",
+  "slug": "mente-livre-da-muralha",
+  "materia": "https://hojemt.com.br/mente-livre-da-muralha/",
+  "titulo": "Mente Livre da Muralha",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 09/10/2026 ~15:30 UTC)",
+  "legenda": {
+    "site_16x9": "Avalie! A OMS manda trocar a muralha pelo quintal.",
+    "instagram_4x5": "Avalie! A OMS manda trocar a muralha pelo quintal."
+  },
+  "regionalismo": {
+    "expressao": "Avalie!",
+    "regiao": "Nordeste",
+    "onde": "Alagoas (também Pernambuco e Sergipe)",
+    "significado": "\"Imagine só!\", \"veja só!\"",
+    "linha_instagram": "“Avalie!” é como se diz “imagine só!” em Alagoas e no Nordeste."
+  },
+  "contexto": "Curta-crônica sobre a OMS defender, no Dia Mundial da Saúde Mental (10/10), o fim dos manicômios e o cuidado na comunidade, respeitando as escolhas da pessoa.",
+  "fontes": [
+    "https://hojemt.com.br/mente-livre-da-muralha/"
+  ],
+  "regras_da_cena": "personagens genéricos (não são pessoas reais), de costas, saindo pelo portão aberto de um antigo manicômio rumo a casinhas com quintal; sem grades fechadas, sem sofrimento.",
+  "personagens": [],
+  "anatomia": "conferida ampliada: homem e agente de saúde com dois braços, duas mãos e duas pernas cada, nas duas versões",
+  "canva": {
+    "design_site_16x9": "DAHXhxUcy8U",
+    "arte_16x9": "MAHXh1M7YG4",
+    "design_instagram_4x5": "DAHXh_ObQHk",
+    "arte_4x5": "MAHXhw1i8n4",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "aguardando_decisao",
+    "agenda_id": "154",
+    "quando": null,
+    "motivo": "o pronunciamento da OMS citado na curta não foi localizado nesta rodada; a data (10/10) passa antes do próximo horário livre de charge (26/10). A curta tem ainda o trecho \"comme ou non\" (francês) no texto."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-09-mente-livre-da-muralha.jpg",
+    "instagram_4x5": "2026-10-09-mente-livre-da-muralha-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-09-mente-livre-da-muralha.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-09-mente-livre-da-muralha-instagram-retrato.jpg"
+  }
+}
