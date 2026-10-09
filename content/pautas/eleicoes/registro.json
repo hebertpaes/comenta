@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-07",
+  "atualizado_em": "2026-10-09",
   "regra": "Matérias de eleições sobre Mato Grosso: capa com fotos oficiais do TSE (montagem/ficha feita no Canva), nunca rosto gerado por IA. Dados e ids dos assets em 2026-mt-candidatos.json.",
   "artes": [
     {
@@ -1143,6 +1143,30 @@
         }
       ],
       "obs": "matéria veja-os-compromissos-de-flavio-bolsonaro-e-lula-nesta-quinta"
+    },
+    {
+      "nome": "Capa · Flávio Bolsonaro e Lula têm agendas distintas em Brasília nesta sexta",
+      "design": "DAHXgziV5bg",
+      "modelo": "DAHXcrNHnks (cópia; título trocado)",
+      "arquivo": "pautas/eleicoes/2026-10-09-capa-flavio-lula-agendas-sexta.jpg",
+      "hospedado_em": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-09-capa-flavio-lula-agendas-sexta.jpg"
+      ],
+      "candidatos": [
+        {
+          "nome_urna": "Flávio Bolsonaro",
+          "partido": "PL",
+          "canva": "MAHWNRk-aYo",
+          "sq": "280002551544"
+        },
+        {
+          "nome_urna": "Lula",
+          "partido": "PT",
+          "canva": "MAHWNewot14",
+          "sq": "280002542548"
+        }
+      ],
+      "obs": "matéria lula-e-flavio-bolsonaro-tem-agendas-distintas-em-brasilia-nesta-sexta"
     }
   ],
   "posts_atualizados": [
@@ -1416,6 +1440,13 @@
       "og": "https://hojemt.com.br/content/files/2026/10/veja-os-compromissos-de-flavio-bolsonaro-e-lula-nesta-quinta-wa-1.jpg",
       "feito_em": "2026-10-08",
       "obs": "agenda dos dois candidatos do 2º turno, sem acusação; ordem alfabética"
+    },
+    {
+      "slug": "lula-e-flavio-bolsonaro-tem-agendas-distintas-em-brasilia-nesta-sexta",
+      "antes": "capa-a7a818819f9ff75e.webp",
+      "depois": "2026-10-09-capa-flavio-lula-agendas-sexta.jpg (DAHXgziV5bg)",
+      "feito_em": "2026-10-09",
+      "obs": "agenda dos dois candidatos do 2º turno, sem acusação; ordem alfabética; legenda mantém 'Com informações da Agência Brasil'"
     }
   ],
   "mantidos": [
