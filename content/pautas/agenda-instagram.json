@@ -2513,6 +2513,21 @@
       "legenda": "CHARGE · Ebola em campo\n\nUai, o mundo não para pra eleição: a OMS de olho no Congo.\n(\"Uai\", em Minas Gerais, é interjeição de surpresa, dúvida ou ênfase.)\n\nEnquanto o Brasil vive o 2º turno, a OMS acompanha o surto de ebola da variante Bundibugyo na República Democrática do Congo.\n\nLeia a curta completa: hojemt.com.br/ebola-em-campo\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #saude #OMS #hojemt",
       "materia": "https://hojemt.com.br/ebola-em-campo/",
       "charge_json": "pautas/charges/2026-10-09-ebola-em-campo.json"
+    },
+    {
+      "id": "150",
+      "status": "aguardando_materia",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "card",
+      "titulo": "Vinte vereadores de Cuiabá assinam manifesto de apoio a Flávio Bolsonaro",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/card-cuiaba-20-vereadores-flavio.jpg"
+      ],
+      "legenda": "Vinte vereadores de Cuiabá assinam manifesto de apoio a Flávio Bolsonaro\n\nO documento, de autoria de Dilemário Alencar (União Brasil), reúne parlamentares de dez partidos e um vereador sem partido e será levado à coordenação da campanha do candidato do PL no 2º turno. Na quinta-feira (8), a Câmara Municipal recebeu um ato de adesivaço da campanha (RepórterMT, Infoverus). O 2º turno é em 25 de outubro.\n\nMatéria completa: hojemt.com.br/vinte-vereadores-de-cuiaba-assinam-manifesto-de-apoio-a-flavio-bolsonaro\n\n#eleicoes2026 #cuiaba #camaradecuiaba #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/vinte-vereadores-de-cuiaba-assinam-manifesto-de-apoio-a-flavio-bolsonaro/",
+      "obs": "publicar só depois que a matéria (rascunho no Ghost, 6ac8dc1423c41b1557c4a687) for publicada"
     }
   ]
 }
