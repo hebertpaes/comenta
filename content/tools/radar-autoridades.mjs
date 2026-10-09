@@ -37,9 +37,10 @@ const citaAtual = (t, c) => {
 };
 
 // Palavras de polêmica e de proposta (sem acento, minúsculas). A polêmica vence quando há as duas.
+// Espaço inicial evita casar dentro de outra palavra ("obriga" contém "briga"; "salvo" contém "alvo").
 const POL = ["operacao", " pf ", "policia federal", "investiga", "denuncia", "acusa", "suspeit", "irregular", "improbidade",
   "ministerio publico", "mpmt", "mpe ", "promotor", "acao civil", "multa", "cassa", "afastad", "preso", "prisao", "condena",
-  " reu ", "alvo", "busca e apreensao", "crise", "polemica", "critica", "rebate", "ataca", "briga", "bate-boca", "protesto",
+  " reu ", " alvo", "busca e apreensao", "crise", "polemica", "critica", "rebate", "ataca", " briga", "bate-boca", "protesto",
   "reclama", "cobra ", "falta de", "caos", "atraso", "rombo", "calote", "greve", "nega ", "contesta", "questiona", "repudi",
   "racha", "rompe", "processo disciplinar", "expuls", "liminar", "tce ", "tribunal de contas", "justica eleitoral", "propaganda irregular"];
 const PROP = ["anuncia", "inaugura", "entrega", "lanca", "investe", "investimento", "assina", "garante", "amplia", "reforma",

@@ -11807,7 +11807,7 @@
   }
  ],
  "autoridades": {
-  "gerado_em": "2026-10-08T21:07:15Z",
+  "gerado_em": "2026-10-09T03:08:01Z",
   "janela_dias": 7,
   "fonte": "Google Notícias (manchetes que citam o nome); classificação automática por palavras",
   "candidatos": [
@@ -11837,6 +11837,12 @@
     "polemicas": [],
     "solucoes": [
      {
+      "titulo": "Sorriso: Alei assina Lei que obriga espera máxima de 20 minutos em bancos, Correios e concessionárias",
+      "fonte": "JK Notícias",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxONzk4LXhwUUJTLVZyUU1VdEpFUGlnNFkxN25vTDBkbVhLb05kZEJ4dDYzWHNxbHBabjdySVctekdNY3BJOHhEbjQxYU9aRzU2VlVreVhTSzNLc0w1S01FQ194QU5OczU1eDc0M0h6UktjNFF6aEM0d2hPbG5DWFVSaGlsWGlUVXNnbWFrZ05lV2M5bnNRemdabXBuVkNfU2NHVFB5ZkQwbTBzVUo2blBmTVRJaDlfOFR1TkRUVUxsY012STZSbXo5dWJ3QU44dnM?oc=5",
+      "data": "08/10"
+     },
+     {
       "titulo": "Sorriso coloca 4 nomes para estadual, 1 para federal e 3 para o Senado; articulação de Alei amplia força política do município",
       "fonte": "MOMENTO MT",
       "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPNzVISTAxcW03eXVzcXd0blROM0FfYjJxQTIxeW9XQlpuRTI1cDRER0gyaUZtWFVOT1p1eUdia1hvTzdHMWxJS1pEVkROaER1eVh2Q0lnNng4RlpRbW12MnR1eTR6VlluaF9xVmUzYUF1NFNsVTZCLUVKUlhva1NYdnBXcUhfbG80TDlzeVhOcGJlOEczYVZzTS1rUzVrTUVKUkFjeUJyem53QW9seHp2ZnNnNUNPbzdUbjByVGxVXzJVa1BHVVRYVjN6cEtoWmhrUXA2T2NXdzl3eTM1amI0eHZfalk?oc=5",
@@ -11844,7 +11850,7 @@
      }
     ],
     "neutras": 1,
-    "total": 2
+    "total": 3
    },
    {
     "nome": "Cláudio Ferreira",
@@ -11918,8 +11924,8 @@
      }
     ],
     "solucoes": [],
-    "neutras": 5,
-    "total": 15
+    "neutras": 4,
+    "total": 14
    },
    {
     "nome": "Eliene Liberato",
@@ -11989,14 +11995,14 @@
     "solucoes": [
      {
       "titulo": "Sérgio Machnic anuncia mudança no comando da Secretaria de Agricultura de Primavera do Leste",
-      "fonte": "MOMENTO MT",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNWUhlXy1TYVNvMlljd2VoX0pYelpNU2JkLXhGRnBoa1FlVVZkNnZTV3RDZUhJUExVT1dWVS1rbzRzTlZUUEdvbHVhRE8zM0F2WDZvWHNDdVBsUUZpYzZUWlBKNVlTcGZ5YnVuUmNzeHBIQXRua1dDSTRoRHVhYWEtWjhoWWVGM1UtcmlvOUt4LTF3NXlQUGdjNU9sS1E4cmFoS0dVXzYtYW1mbU1UYmZjT0sxRElfWXp2Vmc?oc=5",
+      "fonte": "Prefeitura de Primavera do Leste",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOSHVYa0pQVlZVM1hscURPLUZSLXh3aWRHcVNRRFdhek9USDYtQTlWWkF6MEQ4WkVlUXVleUg2SEtUOWFxN0t2VnFrT25mWmdITG1jelJVaW9DS2l1Y0lobmo2Yk5FYk9OeTBsekN6QUZVRGVVNkNZQkRkT2poSHVLYkU4a2Y2RE55YWxzRnhCSk0zZW9DV2txdmZ3UHh0dExsOEpEc3dQaXJmSzlGeVZWeXFlX19McDNITC1rbmN2VzN2RGFpVGxQakdlRlc4akc4RlJqdkhqenh4MVUxUENqeS1meXJ5MGJLODBv?oc=5",
       "data": "08/10"
      },
      {
       "titulo": "Prefeito Sérgio Machnic reforça convite para contribuintes aderirem ao Regulariza PVA",
-      "fonte": "Prefeitura de Primavera do Leste",
-      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPTnFLS1N3S3RUdTlpWGhXeHIxbXhSV3BGdTBEaGc4X3c2QndLcmk4TGJMd3JrSW85TF8tZnQ1SkZCV2ZjSVVDb1NTM2R3QkhwTl8tTEhCdDNWcnV3V0hLUkpuZnBLV190YmdNdVZ0QzhycFRUV0FLWEMwNnhvOEpjN09ybWdiS3ZVcFRhQUZoQTJRWGxFSUJnV2hKVmx3SHIxUHRyUUQwRkhmM0pMWGVmR0Rua3FDbVVWNW9OVFhybk1xVFBJUEFiakpKOFFpMEJxSlpXMVNvMUViOWtZU1hJWnk0UQ?oc=5",
+      "fonte": "mtagora.com.br",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQZ1hIaTJNUVpPTktqUkE4MTFOREtFbFBQZkx3WWEwQVJJQVhUODBPQUszQkZZY0UxWHFXNm12aFRYSGYwSUFaaXdLbkp4OXE1QU13Vmk3enF6Wk9xLW5QaEhtWFhYWm5HZncwZjQ4a0FFMjYxZjNSaWZFWWhIc05IWXlnbVV1QS1VbGZlZDF4OHVuelRReWNSbUpWY19FVEx6d3JZeDhsZWZOUGtyRXNlRjdONkxabDdhVVYzU0VZNXQySEoxLVE?oc=5",
       "data": "07/10"
      },
      {
