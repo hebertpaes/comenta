@@ -1,0 +1,54 @@
+{
+  "slug": "parlamento-sem-rabo-preso",
+  "materia": "https://hojemt.com.br/parlamento-sem-rabo-preso/",
+  "titulo": "Parlamento sem rabo preso",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 09/10/2026 ~06:30 UTC)",
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal citável.",
+  "legenda": {
+    "site_16x9": "Égua! A Assembleia agora explica a lei em bom português.",
+    "instagram_4x5": "Égua! Lei explicada em bom português."
+  },
+  "contexto": "Curta sobre o projeto da TV Assembleia (ALMT) 'Como é que é?', que explica termos do Legislativo em linguagem simples, apresentado no 2º Circuito de Palestras de Linguagem Simples da Seplag.",
+  "fontes": [
+    "https://hojemt.com.br/parlamento-sem-rabo-preso/",
+    "https://www.folhamax.com/politica/linguagem-simples-fortalece-meios-de-comunicacao-da-almt/576460",
+    "https://cenariomt.com.br/mato-grosso/comunicacao-sem-juridiques-seplag-e-tv-assembleia-debatem-uso-da-linguagem-simples-na-gestao-publica-de-mato-grosso/"
+  ],
+  "regras_da_cena": "apresentador genérico de TV legislativa (não é pessoa real) despeja jargão de um livro de leis numa máquina tradutora; saem lâmpadas e corações para uma família que assiste no celular.",
+  "personagens": [],
+  "anatomia": "conferida ampliada: apresentador e família com dois braços, duas mãos e duas pernas",
+  "canva": {
+    "design_site_16x9": "DAHXfnIe1S0",
+    "arte_16x9": "MAHXft_yO00",
+    "design_instagram_4x5": "DAHXft5Kr0Q",
+    "arte_4x5": "MAHXfuRXsHs",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "aguardando_decisao",
+    "agenda_id": "146",
+    "quando": null,
+    "motivo": "a curta diz 'em coletiva nesta quarta', mas a apresentação da TV Assembleia foi na quinta (8), no circuito de palestras da Seplag (Folhamax, Cenário MT)"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-09-parlamento-sem-rabo-preso.jpg",
+    "instagram_4x5": "2026-10-09-parlamento-sem-rabo-preso-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-09-parlamento-sem-rabo-preso.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-09-parlamento-sem-rabo-preso-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 09/10/2026 ~06:40 UTC (antes: charge-1791527011.webp, charge automática do publicador)",
+  "regionalismo": {
+    "regiao": "Norte",
+    "estado": "PA",
+    "expressao": "Égua!",
+    "significado": "interjeição multiuso: surpresa, admiração",
+    "fonte": "regionalismos.json"
+  },
+  "erro_na_curta": "'Em coletiva nesta quarta' — a apresentação foi na quinta-feira (8), no 2º Circuito de Palestras de Linguagem Simples da Seplag, não numa coletiva da ALMT."
+}

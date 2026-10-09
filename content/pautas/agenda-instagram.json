@@ -2434,6 +2434,38 @@
       "materia": "https://hojemt.com.br/prazo-extra-para-o-habite-se/",
       "charge_json": "pautas/charges/2026-10-09-prazo-extra-para-o-habite-se.json",
       "obs": "próximo horário livre de charge; legenda no linguajar regional (rodízio do glossário)."
+    },
+    {
+      "id": "145",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-24T15:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Duas cadeiras, um atraso",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-09-duas-cadeiras-um-atraso-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Duas cadeiras, um atraso\n\nBah! Duas cadeiras, 16 anos depois.\n(\"Bah!\", no Sul, é interjeição de espanto ou admiração.)\n\nCurta sobre a eleição de Samantha do Abilio (PL) e Alessandra Ferreira (Podemos) para a Assembleia Legislativa: é a primeira vez desde 2010 que Mato Grosso elege duas deputadas estaduais.\n\nLeia a curta completa: hojemt.com.br/duas-cadeiras-um-atraso\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #ALMT #eleicoes2026 #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/duas-cadeiras-um-atraso/",
+      "charge_json": "pautas/charges/2026-10-09-duas-cadeiras-um-atraso.json",
+      "obs": "próximo horário livre de charge; legenda no linguajar regional (rodízio do glossário)."
+    },
+    {
+      "id": "146",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Parlamento sem rabo preso",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-09-parlamento-sem-rabo-preso-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Parlamento sem rabo preso\n\nÉgua! Lei explicada em bom português.\n(\"Égua!\", no Norte, é interjeição de surpresa ou admiração.)\n\nCurta sobre o projeto da TV Assembleia que explica termos do Legislativo em linguagem simples, em vídeos curtos para as redes.\n\nLeia a curta completa: hojemt.com.br/parlamento-sem-rabo-preso\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #ALMT #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/parlamento-sem-rabo-preso/",
+      "charge_json": "pautas/charges/2026-10-09-parlamento-sem-rabo-preso.json",
+      "obs": "aguardando decisão do editor: a curta diz 'coletiva nesta quarta', mas o fato foi na quinta (8), em palestra da Seplag."
     }
   ]
 }
