@@ -2274,6 +2274,27 @@
       "desde": "2026-10-09T15:30Z",
       "motivo": "Canva em quota_cooldown (de novo às 19:35 UTC)",
       "cena_planejada": "cena sóbria: corredor de laboratório universitário com bancadas e vidrarias intactas, luz de fim de tarde; sem fogo, sem pessoas"
+    },
+    {
+      "slug": "o-veredito-adiado",
+      "tipo": "charge (Parte A, prioridade 1: TSE)",
+      "desde": "2026-10-09T19:35Z",
+      "motivo": "Canva em quota_cooldown",
+      "cena_planejada": "Deltan Dallagnol (ref. MAHXgEYB-t4, TSE: óculos retangulares escuros, cabelo curto escuro, sem barba) sentado numa sala de espera ao lado de uma cadeira azul do Senado coberta por plástico, relógio de parede; prato do Paraná do glossário pratos.json (ex.: barreado na panela de barro) se a cena tiver comida; fato conferido: TSE tirou de pauta o recurso do registro (Gazeta do Povo, O Tempo, 08/10); '2,9 milhões de votos' não conferido"
+    },
+    {
+      "slug": "cadeira-na-mesa-prato-na-mao",
+      "tipo": "charge (Parte A, MT)",
+      "desde": "2026-10-09T19:35Z",
+      "motivo": "Canva em quota_cooldown",
+      "cena_planejada": "Max Russi (sem óculos; ver lição de 07/10 e foto TSE SQ 110002542640) servindo um prato típico de MT do glossário a Faissal Calil numa mesa da ALMT; disputa pela 1ª secretaria do próximo biênio não confirmada em outra fonte (DO-ALMT mostra Dr. João como 1º secretário atual) → Instagram aguardando_decisao"
+    },
+    {
+      "slug": "saia-justa-no-ninho",
+      "tipo": "charge (Parte A, MT) — tema sensível",
+      "desde": "2026-10-09T19:35Z",
+      "motivo": "Canva em quota_cooldown",
+      "cena_planejada": "embate não confirmado entre Coronel Fernanda e Gilberto Cattani sobre a lei do feminicídio; Cattani é pai de Raquel Cattani, vítima de feminicídio (2024): NADA de humor com o tema; cena neutra e sóbria, sem pessoas (Código Penal aberto entre duas cadeiras vazias), legenda sóbria sem regionalismo jocoso; avisar o editor de que a curta trata o assunto com piadas ('troca de afagos', 'gado') e que o embate não foi localizado em outra fonte"
     }
   ]
 }
