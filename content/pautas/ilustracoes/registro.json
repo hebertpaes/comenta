@@ -2217,14 +2217,39 @@
       "url": "https://hojemt.com.br/content/images/2026/10/2026-10-09-nobel-paz-navi-pillay.jpg",
       "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção) · Com informações da Agência Brasil (link mantido)",
       "obs": "charges 09/10 13h26, Parte B (pendente desde 12h26 por quota_cooldown); substitui capa-39634f7c4add7297.webp; prêmio confirmado em CNN Brasil e Correio Braziliense"
-    }
-  ],
-  "pendentes": [
+    },
     {
       "slug": "homem-e-baleado-por-agentes-do-ice-dentro-de-carro-em-nova-york",
-      "desde": "2026-10-09T13:30Z",
-      "motivo": "limite de 2 artes da Parte B por disparo",
-      "cena_planejada": "a definir: tema de violência policial com vítima — cena sóbria, sem representar o ato nem a vítima"
+      "titulo": "Homem é baleado por agentes do ICE dentro de carro em Nova York",
+      "materia": "https://hojemt.com.br/homem-e-baleado-por-agentes-do-ice-dentro-de-carro-em-nova-york/",
+      "tag": "Mundo",
+      "canva": {
+        "design": "DAHXhl9166I",
+        "arte": "MAHXhjuTp0w",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "rua residencial de Nova York ao entardecer, prédios de tijolos e árvores, faixa de isolamento amarela sem letras na calçada vazia, luzes de viatura ao fundo refletidas no asfalto molhado; sem pessoas, sem armas, sem vítima (tema com vítima: cena sóbria)",
+      "arquivo": "2026-10-09-ice-nova-york.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-09-ice-nova-york.jpg",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção) · Com informações da Agência Brasil (link mantido)",
+      "obs": "charges 09/10 14h27 UTC, Parte B (pendente do disparo anterior)"
+    },
+    {
+      "slug": "lucas-do-rio-verde-promove-semana-literaria-com-atividades-culturais",
+      "titulo": "Lucas do Rio Verde promove Semana Literária com atividades culturais",
+      "materia": "https://hojemt.com.br/lucas-do-rio-verde-promove-semana-literaria-com-atividades-culturais/",
+      "tag": "Cultura",
+      "canva": {
+        "design": "DAHXhrLLSYU",
+        "arte": "MAHXhnUeCJ8",
+        "modelo": "DAHWDzwR5c0"
+      },
+      "cena": "ônibus-biblioteca branco e verde de portas abertas numa praça com ipês em cidade do interior de MT; crianças de costas no gramado ouvindo uma contadora de histórias vista de costas; nenhum rosto visível",
+      "arquivo": "2026-10-09-lucas-semana-literaria.jpg",
+      "url": "https://hojemt.com.br/content/images/2026/10/2026-10-09-lucas-semana-literaria.jpg",
+      "legenda": "Ilustração: HOJE MT (gerada com IA; cena de ficção) · Com informações da Prefeitura de Lucas do Rio Verde (link mantido)",
+      "obs": "charges 09/10 14h27 UTC, Parte B"
     }
-  ]
+  ],
+  "pendentes": []
 }
