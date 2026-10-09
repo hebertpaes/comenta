@@ -1,0 +1,53 @@
+{
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal citável.",
+  "personagens": [],
+  "slug": "ebola-em-campo",
+  "materia": "https://hojemt.com.br/ebola-em-campo/",
+  "titulo": "Ebola em campo",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 09/10/2026 ~09:30 UTC)",
+  "legenda": {
+    "site_16x9": "Uai, o mundo não para pra eleição: a OMS de olho no Congo.",
+    "instagram_4x5": "Uai, o mundo não para pra eleição: a OMS de olho no Congo."
+  },
+  "contexto": "Curta-crônica sobre o surto de ebola (variante Bundibugyo) na República Democrática do Congo, monitorado pela OMS, que declarou emergência internacional em 16/05/2026.",
+  "fontes": [
+    "https://hojemt.com.br/ebola-em-campo/",
+    "https://olhardigital.com.br/2026/05/25/medicina-e-saude/oms-monitora-mais-de-900-casos-suspeitos-de-ebola-na-republica-democratica-do-congo/",
+    "https://rr.pt/noticia/mundo/2026/06/05/oms-lanca-plano-de-450-milhoes-de-euros-para-travar-surto-de-ebola-na-rdc/473385/"
+  ],
+  "regras_da_cena": "tragédia com vítimas: cena sóbria, sem doentes nem hospital — urna-mascote (sem braços e sem pernas) no sofá de uma sala quente em Cuiabá vê na TV um mapa-múndi com alerta na África.",
+  "anatomia": "urna-mascote sem braços e sem pernas, conferida ampliada nas duas versões",
+  "canva": {
+    "design_site_16x9": "DAHXgVxIMQM",
+    "arte_16x9": "MAHXgWRjQu0",
+    "design_instagram_4x5": "DAHXgQfL9S0",
+    "arte_4x5": "MAHXgWMu4_k",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "agendado",
+    "agenda_id": "149",
+    "quando": "2026-10-25T07:30:00-04:00"
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-09-ebola-em-campo.jpg",
+    "instagram_4x5": "2026-10-09-ebola-em-campo-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-09-ebola-em-campo.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-09-ebola-em-campo-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 09/10/2026 ~09:35 UTC (antes: charge-1791537787.webp, charge automática do publicador)",
+  "regionalismo": {
+    "regiao": "Sudeste",
+    "estado": "MG",
+    "expressao": "Uai",
+    "significado": "interjeição coringa: surpresa, dúvida, ênfase",
+    "fonte": "regionalismos.json"
+  },
+  "obs_na_curta": "erro de digitação no texto: 'noticina' (notícia); o alerta da OMS no Bluesky citado na curta não foi localizado nesta rodada — o surto em si está confirmado."
+}

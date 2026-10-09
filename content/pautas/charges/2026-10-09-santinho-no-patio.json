@@ -1,0 +1,55 @@
+{
+  "selo": "CHARGE · HOJE MT",
+  "referencia_publica": "Charge: HOJE MT",
+  "balao": null,
+  "balao_obs": "sem balão: a curta não traz fala literal citável.",
+  "personagens": [],
+  "slug": "santinho-no-patio",
+  "materia": "https://hojemt.com.br/santinho-no-patio/",
+  "titulo": "Santinho no pátio",
+  "formato": "charge de jornal montada inteira no Canva (substitui a charge automática do publicador; rotina de charges, 09/10/2026 ~09:30 UTC)",
+  "legenda": {
+    "site_16x9": "Trem de papel na porta da escola virou dever de casa do MP.",
+    "instagram_4x5": "Trem de papel na porta da escola virou dever de casa do MP."
+  },
+  "contexto": "Curta sobre as duas comunicações do aplicativo Pardal (6h33 e 6h38 de 4/10/2026) de derrame de santinhos de Janaina Riva (MDB) e Wellington Fagundes (PL) diante da Escola Estadual Pedro Alberto Tayano, em Tangará da Serra; o juiz da 19ª Zona Eleitoral encaminhou os casos ao Ministério Público Eleitoral, sem multa nem condenação e sem apontar autoria.",
+  "fontes": [
+    "https://hojemt.com.br/santinho-no-patio/",
+    "https://www.reportermt.com/politica/santinhos-de-janaina-e-wellington-diante-de-escola-levam-justica-a-acionar-mp/244845",
+    "https://www.vgnoticias.com.br/eleicoes-2026/mpe-vai-apurar-derrame-de-santinhos-de-janaina-riva/153229",
+    "https://www.infoverus.com.br/politica/mpe-vai-apurar-suposto-derrame-de-santinhos-de-janaina-riva-em-local-de-votacao/36374"
+  ],
+  "regras_da_cena": "tema de denúncia: cena neutra, sem pessoa e sem dinheiro — calçada da escola coberta de papéis em branco, mochila infantil no portão, vassoura e pá no muro.",
+  "anatomia": "sem pessoas nem mascotes",
+  "canva": {
+    "design_site_16x9": "DAHXgU76lno",
+    "arte_16x9": "MAHXgVn2WiI",
+    "design_instagram_4x5": "DAHXgQlyb1A",
+    "arte_4x5": "MAHXgUdbSsg",
+    "modelo_16x9": "DAHWDzwR5c0",
+    "modelo_retrato": "DAHWEJf2P1U"
+  },
+  "instagram": {
+    "status": "aguardando_decisao",
+    "agenda_id": "148",
+    "quando": null,
+    "motivo": "tema de denúncia com candidatos nomeados e resumo da curta impreciso ('Justiça denuncia': a Justiça Eleitoral só encaminhou as comunicações ao MP); o editor decide."
+  },
+  "arquivos": {
+    "site_16x9": "2026-10-09-santinho-no-patio.jpg",
+    "instagram_4x5": "2026-10-09-santinho-no-patio-instagram-retrato.jpg"
+  },
+  "hospedado_em": {
+    "site_16x9": "https://hojemt.com.br/content/images/2026/10/2026-10-09-santinho-no-patio.jpg",
+    "instagram_4x5": "https://hojemt.com.br/content/images/2026/10/2026-10-09-santinho-no-patio-instagram-retrato.jpg"
+  },
+  "site": "feature_image e og/twitter trocadas em 09/10/2026 ~09:35 UTC (antes: charge-1791537745.webp, charge automática do publicador)",
+  "regionalismo": {
+    "regiao": "Centro-Oeste",
+    "estado": "MT/GO",
+    "expressao": "Trem",
+    "significado": "qualquer coisa, objeto ou situação",
+    "fonte": "regionalismos.json"
+  },
+  "erro_na_curta": "Resumo: 'Justiça denuncia derramamento de santinhos' — a Justiça Eleitoral não denunciou; o juiz encaminhou as comunicações do Pardal ao MP Eleitoral. No texto, 'aquele papelaria' (concordância). Votações citadas não conferidas nesta rodada."
+}

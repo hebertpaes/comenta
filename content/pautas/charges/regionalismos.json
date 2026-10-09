@@ -8,7 +8,7 @@
       "Sudeste",
       "Sul"
     ],
-    "ultima_regiao": "Nordeste",
+    "ultima_regiao": "Sudeste",
     "data": "2026-10-09",
     "usadas": [
       {
@@ -82,6 +82,18 @@
         "regiao": "Nordeste",
         "expressao": "Se avexe não",
         "charge": "2026-10-09-loterica-do-tse"
+      },
+      {
+        "data": "2026-10-09",
+        "regiao": "Centro-Oeste",
+        "expressao": "Trem",
+        "charge": "2026-10-09-santinho-no-patio"
+      },
+      {
+        "data": "2026-10-09",
+        "regiao": "Sudeste",
+        "expressao": "Uai",
+        "charge": "2026-10-09-ebola-em-campo"
       }
     ]
   },

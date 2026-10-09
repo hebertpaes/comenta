@@ -2482,6 +2482,37 @@
       "materia": "https://hojemt.com.br/loterica-do-tse/",
       "charge_json": "pautas/charges/2026-10-09-loterica-do-tse.json",
       "obs": "aguardando decisão do editor: próximo horário livre de charge é 25/10 07:30 e o TSE pode julgar o caso antes; publicar antes, se o editor quiser, ou descartar."
+    },
+    {
+      "id": "148",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "charge",
+      "titulo": "Santinho no pátio",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-09-santinho-no-patio-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Santinho no pátio\n\nTrem de papel na porta da escola virou dever de casa do MP.\n(\"Trem\", no Centro-Oeste e em Minas, é qualquer coisa, objeto ou situação.)\n\nEm Tangará da Serra, a Justiça Eleitoral encaminhou ao Ministério Público duas comunicações do aplicativo Pardal sobre santinhos espalhados diante de uma escola na manhã da eleição. Não houve multa nem condenação, e a autoria não foi apontada.\n\nLeia a curta completa: hojemt.com.br/santinho-no-patio\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #eleicoes2026 #TangaradaSerra #matogrosso #hojemt",
+      "materia": "https://hojemt.com.br/santinho-no-patio/",
+      "charge_json": "pautas/charges/2026-10-09-santinho-no-patio.json",
+      "obs": "aguardando decisão do editor: tema de denúncia com candidatos nomeados; o resumo da curta diz 'Justiça denuncia', mas a Justiça só encaminhou ao MP."
+    },
+    {
+      "id": "149",
+      "status": "agendado",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": "2026-10-25T07:30:00-04:00",
+      "formato": "charge",
+      "titulo": "Ebola em campo",
+      "midia": [
+        "https://hojemt.com.br/content/images/2026/10/2026-10-09-ebola-em-campo-instagram-retrato.jpg"
+      ],
+      "legenda": "CHARGE · Ebola em campo\n\nUai, o mundo não para pra eleição: a OMS de olho no Congo.\n(\"Uai\", em Minas Gerais, é interjeição de surpresa, dúvida ou ênfase.)\n\nEnquanto o Brasil vive o 2º turno, a OMS acompanha o surto de ebola da variante Bundibugyo na República Democrática do Congo.\n\nLeia a curta completa: hojemt.com.br/ebola-em-campo\n\nCharge: HOJE MT · hojemt.com.br\n\n#charge #saude #OMS #hojemt",
+      "materia": "https://hojemt.com.br/ebola-em-campo/",
+      "charge_json": "pautas/charges/2026-10-09-ebola-em-campo.json"
     }
   ]
 }
