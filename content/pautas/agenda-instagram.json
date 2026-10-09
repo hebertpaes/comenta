@@ -2559,6 +2559,23 @@
       "materia": "https://hojemt.com.br/a-licao-de-casa/",
       "charge_json": "pautas/charges/2026-10-09-a-licao-de-casa.json",
       "obs": "aguardando decisão do editor: não localizei a publicação do Senado nem o guia 'O Senado Federal em Perguntas e Respostas' citados na curta."
+    },
+    {
+      "id": "153",
+      "status": "aguardando_decisao",
+      "permalink": null,
+      "publicado_em": null,
+      "quando": null,
+      "formato": "video",
+      "titulo": "Radar Eleitoral · Boletim nº 10",
+      "midia": [
+        "https://hojemt.com.br/content/media/2026/10/2026-10-09-boletim-10.mp4"
+      ],
+      "capa": "https://hojemt.com.br/content/images/2026/10/2026-10-09-boletim-10-capa.jpg",
+      "legenda": "RADAR ELEITORAL · Boletim nº 10: 2º turno — Podemos e Augusto Cury com Flávio Bolsonaro, Lula nas ruas do DF, Datafolha e Vox Brasil, o TSE e Mato Grosso\n\nFaltam 16 dias para o 2º turno (25/10). A propaganda gratuita no rádio e na TV começa nesta sexta (9/10) e vai até 23/10; em MT, rádio às 6h e 11h e TV às 12h e 19h30.\n\nFlávio: apoio oficial do Podemos (Renata Abreu) e ato com 14 governadores eleitos em Brasília, com Otaviano Pivetta; Augusto Cury (Avante) declarou apoio após Flávio assinar 8 compromissos; na live, prometeu manter Bolsa Família e Pé-de-Meia e reajuste acima da inflação às aposentadorias.\n\nLula: reuniões no Alvorada; sobre o Datafolha, disse que “o único jeito de você ganhar uma eleição é você ganhar voto”; nesta sexta, caminhada em Ceilândia (DF) com Leandro Grass; no sábado, passeata em Natal (RN).\n\nPesquisas registradas — Datafolha, votos válidos: Flávio 52% e Lula 48% (totais 49% e 45%). Ficha: BR-02949/2026, contratantes Folha de S.Paulo e TV Globo, 2.520 entrevistas, 6 e 7/10, margem de 2 pontos, confiança de 95%. Vox Brasil, votos totais: Lula 44,2% e Flávio 42,7%. Ficha: BR-09623/2026, contratante o próprio instituto, 2.100 entrevistas presenciais, 5 a 7/10, margem de 2,15 pontos, confiança de 95%. Pesquisa é retrato do momento.\n\nJustiça Eleitoral: TSE mandou Flávio apagar 3 posts de maio; a pedido de Flávio, ministros mandaram remover vídeos da campanha de Lula, posts de aliados e um vídeo de Janja. Julgamento do registro de Deltan Dallagnol saiu de pauta.\n\nMato Grosso: carta de 18 deputados entregue a Flávio por Max Russi; 20 dos 27 vereadores de Cuiabá assinaram manifesto de apoio; TJMT elegeu Hélio Nishiyama e Jorge Luiz Tadeu Rodrigues para o TRE-MT.\n\nReprodução: @flaviobolsonaro e @LulaOficial (YouTube), postagens públicas de 8 e 9/10.\nVoz gerada com IA (narradores sintéticos); fatos apurados e conferidos pela redação; sem música.\n\nAcompanhe em hojemt.com.br/radar-eleitoral. Siga e compartilhe o @hoje.mt.\n\n#Eleicoes2026 #SegundoTurno #RadarEleitoral #MatoGrosso #HojeMT",
+      "origem": "content/pautas/videos/argos/2026-10-09-boletim-10.cena.json",
+      "duracao_s": 357,
+      "observacao": "Boletim diário aprofundado: 5 min 57 s, duas vozes (Antonio/Thalita, v8), sem clipe (só cartões de posts do YouTube); o editor decide se publica inteiro ou corta."
     }
   ]
 }

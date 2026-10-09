@@ -1,0 +1,183 @@
+{
+  "spec": "/home/user/comenta/content/pautas/videos/argos/2026-10-09-boletim-10.cena.json",
+  "saida": "/home/user/comenta/content/pautas/videos/argos/2026-10-09-boletim-10.mp4",
+  "gerado_em": "2026-10-09T14:30:55.943Z",
+  "duracao": 356.88,
+  "duracao_total": 356.88,
+  "limite_duracao": 420,
+  "resolucao": "1080x1920",
+  "fps": 25,
+  "universo": "Slides escuros com ondas e curvas de nível verdes, sem avatar; boletim diário aprofundado do 2º turno (~5 min)",
+  "trilha": null,
+  "credito_musica": null,
+  "voz": {
+    "motor": "edge",
+    "narrador": "pt-BR-AntonioNeural",
+    "velocidade": "+6%",
+    "tom": "+1Hz",
+    "tratamento": "leve",
+    "qualidade": 96,
+    "reserva": {
+      "motor": "kokoro",
+      "narrador": "pm_alex",
+      "velocidade": 1,
+      "tom": 2,
+      "tratamento": "limpo",
+      "fonetica": "misaki",
+      "sotaque": "cuiabano"
+    }
+  },
+  "abertura": {
+    "duracao": 2.5
+  },
+  "cenas": [
+    {
+      "n": 1,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 2.5,
+      "duracao_audio": 6.86,
+      "duracao": 7.31
+    },
+    {
+      "n": 2,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 9.81,
+      "duracao_audio": 32.97,
+      "duracao": 33.42
+    },
+    {
+      "n": 3,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "pan-dir",
+      "inicio": 43.23,
+      "duracao_audio": 29.2,
+      "duracao": 29.65
+    },
+    {
+      "n": 4,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 72.88,
+      "duracao_audio": 26.4,
+      "duracao": 26.85
+    },
+    {
+      "n": 5,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 99.73,
+      "duracao_audio": 20.92,
+      "duracao": 21.37
+    },
+    {
+      "n": 6,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "parado",
+      "inicio": 121.1,
+      "duracao_audio": 21.14,
+      "duracao": 21.59
+    },
+    {
+      "n": 7,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "pan-esq",
+      "inicio": 142.69,
+      "duracao_audio": 24.24,
+      "duracao": 24.69
+    },
+    {
+      "n": 8,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 167.38,
+      "duracao_audio": 21.24,
+      "duracao": 21.69
+    },
+    {
+      "n": 9,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 189.07,
+      "duracao_audio": 22.65,
+      "duracao": 23.1
+    },
+    {
+      "n": 10,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 212.17,
+      "duracao_audio": 23.73,
+      "duracao": 24.18
+    },
+    {
+      "n": 11,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "pan-dir",
+      "inicio": 236.35,
+      "duracao_audio": 23.88,
+      "duracao": 24.33
+    },
+    {
+      "n": 12,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "pan-esq",
+      "inicio": 260.68,
+      "duracao_audio": 26.3,
+      "duracao": 26.75
+    },
+    {
+      "n": 13,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "parado",
+      "inicio": 287.43,
+      "duracao_audio": 17.25,
+      "duracao": 17.7
+    },
+    {
+      "n": 14,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 305.13,
+      "duracao_audio": 25.12,
+      "duracao": 25.57
+    },
+    {
+      "n": 15,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-in",
+      "inicio": 330.7,
+      "duracao_audio": 11.68,
+      "duracao": 12.13
+    },
+    {
+      "n": 16,
+      "quem": "narrador",
+      "voz": "sintetica",
+      "movimento": "zoom-out",
+      "inicio": 342.83,
+      "duracao_audio": 10.48,
+      "duracao": 10.93
+    }
+  ],
+  "fechamento": {
+    "inicio": 353.76,
+    "duracao": 3
+  }
+}
