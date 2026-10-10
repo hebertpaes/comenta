@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.comenta.com.br";
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.comenta.com.br";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:5173";
 
 const SUMARIO = [
   { href: "#comecar", label: "Primeiros passos" },
